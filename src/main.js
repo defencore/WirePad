@@ -4,7 +4,8 @@ import { componentById } from './catalog.js';
 import { bindLibrary } from './component-library.js';
 import { DiagramEditor } from './editor.js';
 import { addIcons, icon } from './icons.js';
-import { bindInspector } from './inspector.js';
+import { bindInspector, endpointName } from './inspector.js';
+import { bindPinPicker } from './pin-picker.js';
 import { bindProjectControls } from './project-controls.js';
 import { ProjectHistory } from './project-history.js';
 import { loadProject, newProject, saveProject } from './project.js';
@@ -15,6 +16,9 @@ const title = element('project-title');
 const count = element('project-count');
 const hint = element('canvas-hint-text');
 const cancelWire = element('cancel-wire');
+const branchWire = element('branch-wire');
+const inspectWire = element('inspect-wire');
+const clearTrace = element('clear-trace');
 const status = element('editor-status-text');
 const saveState = element('save-state');
 const emptyBoard = element('empty-board');
@@ -72,18 +76,33 @@ function setPanel(name, open, { focus = false } = {}) {
 }
 
 function paint(project = editor.project) {
-  canvas.draw(project, editor.selection, editor.pending?.from);
+  canvas.draw(project, editor.selection, editor.pending?.from, editor.traceSeed);
   controls.renderDraft();
 }
 
 function canvasHint() {
-  if (editor.pending) return 'Choose a pin, wire, or junction to connect. Click empty space to add a bend.';
-  if (editor.mode === 'wire') return 'Choose a pin, wire, or junction to start.';
-  if (editor.mode === 'pan') return 'Drag the canvas to move the view.';
-  if (editor.selection?.type === 'wire') return panels.inspector.compact.matches
-    ? 'Drag a segment to reroute. Open Inspector to change the color.'
-    : 'Drag a wire segment sideways to reroute it.';
-  return 'Drag parts to move them. Choose a pin to start a wire.';
+  const touchLayout = panels.library.compact.matches;
+  if (editor.pending) {
+    const { from } = editor.pending;
+    if (from.wireId) return 'Choose a pin or another wire to add a branch.';
+    if (from.junctionId) return 'Choose a pin or wire to connect to this junction.';
+    const source = endpointName(editor.project, from);
+    return `From ${source}. Choose a destination pin or wire.`;
+  }
+  const net = canvas.tracedNet;
+  if (net?.wireIds.size) {
+    const pins = [...net.endpoints.values()].filter(endpoint => endpoint.partId).length;
+    const wires = net.wireIds.size;
+    return `Highlighted net: ${pins} ${pins === 1 ? 'pin' : 'pins'} · ${wires} ${wires === 1 ? 'wire' : 'wires'}.`;
+  }
+  if (editor.mode === 'trace') return editor.trace
+    ? 'No wires are connected to this point.' : 'Choose a wire, junction, or pin to trace its connections.';
+  if (editor.mode === 'wire') return touchLayout
+    ? 'Tap a module to choose a pin, or tap a wire to branch.'
+    : 'Choose a pin, module, wire, or junction to start.';
+  if (editor.mode === 'pan') return 'Drag to move the view. Pinch to zoom on touchscreens.';
+  return touchLayout ? 'Use Wire to choose pins. Tap a wire to highlight its connections.'
+    : 'Drag parts to move them. Click a pin to wire or a wire to trace it.';
 }
 
 function render({ persist: shouldSave = false } = {}) {
@@ -103,8 +122,9 @@ function render({ persist: shouldSave = false } = {}) {
 
   const { parts, wires } = editor.project;
   const routing = Boolean(editor.pending);
+  const selectedWire = editor.wire && !routing && editor.mode !== 'pan';
   const guide = canvasHint();
-  const currentStatus = routing ? 'Routing wire' : 'Ready';
+  const currentStatus = routing ? 'Routing wire' : editor.traceSeed ? 'Tracing connections' : 'Ready';
   const total = `${parts.length} ${parts.length === 1 ? 'part' : 'parts'} · ${wires.length} ${wires.length === 1 ? 'wire' : 'wires'}`;
   if (hint.textContent !== guide) hint.textContent = guide;
   if (status.textContent !== currentStatus) status.textContent = currentStatus;
@@ -112,6 +132,9 @@ function render({ persist: shouldSave = false } = {}) {
   undo.disabled = !history.canUndo;
   redo.disabled = !history.canRedo;
   cancelWire.hidden = !routing;
+  branchWire.hidden = !selectedWire;
+  inspectWire.hidden = !selectedWire || !panels.inspector.compact.matches;
+  clearTrace.hidden = editor.mode !== 'trace' || !editor.trace;
   emptyBoard.hidden = editor.hasDrawing;
   if (document.activeElement !== title) title.value = editor.project.title;
   for (const button of modes) button.setAttribute('aria-pressed', String(button.dataset.mode === editor.mode));
@@ -165,10 +188,22 @@ function addPart(id, drop) {
 
 const controls = bindCanvas({
   canvas, svg, editor, paint,
-  revealInspector: options => setPanel('inspector', true, options),
+  openPinPicker: (id, pinId) => pinPicker.open(editor.item('part', id), {
+    mode: editor.mode === 'trace' ? 'trace' : 'wire', from: editor.pending?.from, pinId,
+  }),
   dismissInspector: () => setPanel('inspector', false),
 });
-const inspector = bindInspector({ inspection: element('inspection'), editor, notify, focusCanvas });
+const pinPicker = bindPinPicker({ onChoose: controls.chooseEndpoint, focusCanvas });
+const inspector = bindInspector({
+  inspection: element('inspection'), editor, notify, focusCanvas,
+  autoRouteWire() {
+    const wire = editor.wire;
+    if (!wire) return;
+    const plan = canvas.autoRoute(canvas.position(wire.from), canvas.position(wire.to), { excludeWire: wire.id });
+    if (!plan) notify('An automatic route is unavailable for this wire.');
+    else editor.rerouteWire(plan);
+  },
+});
 const projectControls = bindProjectControls({
   editor, canvas, savedProject, notify, focusCanvas, canExport: () => !controls.gesturing,
 });
@@ -187,7 +222,16 @@ title.addEventListener('keydown', event => {
   if (event.key === 'Escape') title.value = editor.project.title;
   if (event.key === 'Enter' || event.key === 'Escape') title.blur();
 });
-for (const button of modes) button.addEventListener('click', () => editor.setMode(button.dataset.mode));
+function changeMode(mode) {
+  if (controls.gesturing) return;
+  if (mode !== 'select') {
+    setPanel('library', false);
+    setPanel('inspector', false);
+  }
+  editor.setMode(mode);
+}
+
+for (const button of modes) button.addEventListener('click', () => changeMode(button.dataset.mode));
 for (const [name, panel] of Object.entries(panels)) {
   panel.toggle.addEventListener('click', () => {
     setPanel(name, !panel.node.classList.contains('open'), { focus: true });
@@ -203,13 +247,23 @@ element('browse-components').addEventListener('click', library.browse);
 undo.addEventListener('click', () => editor.step('undo'));
 redo.addEventListener('click', () => editor.step('redo'));
 cancelWire.addEventListener('click', () => { editor.cancelWire(); focusCanvas(); });
+branchWire.addEventListener('click', () => {
+  const anchor = editor.wire && canvas.branchAnchor(editor.wire.id);
+  if (!anchor) return;
+  setPanel('inspector', false);
+  editor.beginWire(anchor, 'wire');
+  focusCanvas();
+});
+inspectWire.addEventListener('click', () => setPanel('inspector', true, { focus: true }));
+clearTrace.addEventListener('click', () => { editor.tracePoint(null); focusCanvas(); });
 
 const shortcuts = {
-  v: () => editor.setMode('select'), w: () => editor.setMode('wire'), h: () => editor.setMode('pan'),
+  v: () => changeMode('select'), w: () => changeMode('wire'), t: () => changeMode('trace'), h: () => changeMode('pan'),
   f: () => canvas.fit(), r: () => editor.rotatePart(), '/': library.browse,
   delete: () => editor.removeSelection(), backspace: () => editor.removeSelection(),
   escape: () => {
     editor.cancelWire();
+    editor.tracePoint(null);
     setPanel('library', false);
     setPanel('inspector', false);
     projectControls.closeMenus();

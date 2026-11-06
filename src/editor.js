@@ -1,6 +1,7 @@
 import { componentById } from './catalog.js';
-import { makeId, MAX_POINTS_PER_WIRE } from './project.js';
-import { clampPoint, sameEndpoint, splitWire } from './routing.js';
+import { traceNet } from './continuity.js';
+import { makeId, MAX_POINTS_PER_WIRE, POSITION_LIMIT } from './project.js';
+import { clampPoint, endpointKey, sameEndpoint, splitWire } from './routing.js';
 
 const collections = { part: 'parts', wire: 'wires', junction: 'junctions' };
 const initialColor = '#2c83d9';
@@ -10,7 +11,15 @@ export function updateItem(project, type, id, properties) {
   return { ...project, [key]: project[key].map(item => item.id === id ? { ...item, ...properties } : item) };
 }
 
-function connect(project, draft, end, color, position) {
+function automaticWaypoints(route) {
+  const points = route.slice(1, -1).map(({ x, y }) => ({ x, y }));
+  if (points.some(({ x, y }) => Math.abs(x) > POSITION_LIMIT || Math.abs(y) > POSITION_LIMIT)) {
+    return { fixedRoute: false, points: [] };
+  }
+  return { fixedRoute: true, points };
+}
+
+function connect(project, draft, end, color, position, plan) {
   const wires = [...project.wires];
   let junctions = project.junctions;
   function endpoint(anchor) {
@@ -24,6 +33,7 @@ function connect(project, draft, end, color, position) {
 
   const wire = { id: makeId('wire'), from: endpoint(draft.from), to: endpoint(end), color };
   if (draft.points.length) wire.points = draft.points;
+  else if (plan) Object.assign(wire, automaticWaypoints(plan));
   wires.push(wire);
   return {
     next: { ...project, wires, ...(junctions && { junctions }) },
@@ -34,6 +44,7 @@ function connect(project, draft, end, color, position) {
 export class DiagramEditor {
   mode = 'select';
   pending = null;
+  trace = null;
   wireColor = initialColor;
 
   constructor(history, render, notify) {
@@ -50,6 +61,11 @@ export class DiagramEditor {
   }
   get part() { return this.selection?.type === 'part' ? this.item('part', this.selection.id) : null; }
   get wire() { return this.selection?.type === 'wire' ? this.item('wire', this.selection.id) : null; }
+  get traceSeed() {
+    if (this.mode === 'trace') return this.trace;
+    if (this.mode !== 'pan' && !this.pending && this.selection?.type === 'wire') return { wireId: this.selection.id };
+    return null;
+  }
 
   item(type, id) { return this.project[collections[type]]?.find(item => item.id === id); }
 
@@ -78,12 +94,14 @@ export class DiagramEditor {
     this.selection = this.firstPart();
     this.mode = 'select';
     this.pending = null;
+    this.trace = null;
     this.render({ persist: true });
   }
 
   step(direction) {
     if (!this.history[direction]()) return;
     this.pending = null;
+    this.trace = null;
     if (this.selection && !this.item(this.selection.type, this.selection.id)) this.selection = null;
     this.render({ persist: true });
   }
@@ -98,8 +116,15 @@ export class DiagramEditor {
   setMode(mode) {
     if (this.mode === mode && !this.pending && (mode !== 'wire' || !this.selection)) return;
     if (mode !== 'wire') this.pending = null;
-    if (mode === 'wire') this.selection = null;
+    if (mode === 'wire' || mode === 'trace') this.selection = null;
+    this.trace = null;
     this.mode = mode;
+    this.render();
+  }
+
+  tracePoint(endpoint) {
+    if (!endpoint && !this.trace) return;
+    this.trace = endpoint;
     this.render();
   }
 
@@ -148,6 +173,15 @@ export class DiagramEditor {
     else this.render();
   }
 
+  rerouteWire(plan) {
+    if (!this.wire || !plan) return;
+    const route = automaticWaypoints(plan);
+    const current = this.wire.points ?? [];
+    if (Boolean(this.wire.fixedRoute) === route.fixedRoute && current.length === route.points.length &&
+      current.every((point, index) => point.x === route.points[index].x && point.y === route.points[index].y)) return;
+    this.commit(updateItem(this.project, 'wire', this.wire.id, route));
+  }
+
   addBend(point) {
     if (this.pending.points.length >= MAX_POINTS_PER_WIRE) {
       this.notify(`A wire can have up to ${MAX_POINTS_PER_WIRE} bend points.`);
@@ -156,11 +190,17 @@ export class DiagramEditor {
     this.pending.points.push(clampPoint(point));
   }
 
-  activateEndpoint(endpoint, position) {
+  beginWire(endpoint, mode = this.mode) {
+    this.mode = mode;
+    this.pending = { from: endpoint, points: [] };
+    if (endpoint.wireId) this.wireColor = this.item('wire', endpoint.wireId).color;
+    this.selection = null;
+    this.render();
+  }
+
+  activateEndpoint(endpoint, position, planRoute) {
     if (!this.pending) {
-      this.pending = { from: endpoint, points: [] };
-      this.selection = null;
-      this.render();
+      this.beginWire(endpoint);
       return;
     }
     const { from } = this.pending;
@@ -168,19 +208,17 @@ export class DiagramEditor {
       this.notify('Choose a different wire or pin to finish the connection.');
       return;
     }
-    if (!from.wireId && !endpoint.wireId) {
-      if (sameEndpoint(from, endpoint)) {
-        this.cancelWire();
-        return;
-      }
-      if (this.project.wires.some(wire =>
-        (sameEndpoint(wire.from, from) && sameEndpoint(wire.to, endpoint)) ||
-        (sameEndpoint(wire.to, from) && sameEndpoint(wire.from, endpoint)))) {
-        this.notify('These points already have a connection.');
-        return;
-      }
+    if (!from.wireId && !endpoint.wireId && sameEndpoint(from, endpoint)) {
+      this.cancelWire();
+      return;
     }
-    const { next, wire } = connect(this.project, this.pending, endpoint, this.wireColor, position);
+    const net = traceNet(this.project, from);
+    if (endpoint.wireId ? net.wireIds.has(endpoint.wireId) : net.endpoints.has(endpointKey(endpoint))) {
+      this.notify('These points are already on the same net. Choose another point.');
+      return;
+    }
+    const plan = this.pending.points.length ? null : planRoute(position(from), position(endpoint));
+    const { next, wire } = connect(this.project, this.pending, endpoint, this.wireColor, position, plan);
     this.commit(next, { selection: { type: 'wire', id: wire.id }, pending: null });
   }
 }

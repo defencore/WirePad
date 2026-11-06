@@ -67,7 +67,7 @@ function inspectPart(part, tab) {
     </div>`;
 }
 
-function endpointName(project, endpoint) {
+export function endpointName(project, endpoint) {
   if (endpoint.junctionId) return 'Wire junction';
   if (endpoint.wireId) return 'Existing wire';
   const part = project.parts.find(item => item.id === endpoint.partId);
@@ -78,21 +78,21 @@ function endpointName(project, endpoint) {
 
 function inspectWire(wire, color, endpoints) {
   return `<h3 class="inspector-name">${wire ? 'Wire' : 'New wire'}</h3>
-    <p class="component-description">${wire ? 'Drag a segment sideways on the canvas to adjust its route. Use Wire to join another connection.' : 'Click a pin, a wire, or a junction to start or finish. Click the canvas to add a bend.'}</p>
+    <p class="component-description">${wire ? 'Drag a segment to move it, or use Auto route to lay out this wire again. Use Add branch on the canvas to connect another point.' : 'Choose a module to pick a pin, or choose a wire or junction. WirePad routes the connection automatically.'}</p>
     ${endpoints.length ? `<div class="wire-endpoints">${endpoints.map(name => `<div>${escapeText(name)}</div>`).join('')}</div>` : ''}
     <div class="section-heading">WIRE COLOR</div>
     <div class="palette">
       ${palette.map(([value, label]) => `<button type="button" class="swatch" data-color="${value}" style="--swatch:${value}" aria-label="${label}" title="${label}" aria-pressed="${value === color}"><span></span></button>`).join('')}
       <input type="color" value="${color}" id="custom-color" title="Custom color" aria-label="Custom wire color">
     </div>
-    ${wire ? `<div class="asset-actions"><button class="button danger" type="button" data-action="delete">${icon('trash')} Remove wire</button></div>` : ''}`;
+    ${wire ? `<div class="asset-actions"><button class="button" type="button" data-action="auto-route">${icon('wire')} Auto route</button><button class="button danger" type="button" data-action="delete">${icon('trash')} Remove wire</button></div>` : ''}`;
 }
 
 function inspectEmpty() {
   return `<div class="inspector-placeholder">${icon('cursor')}<strong>Nothing selected</strong><span>Select a component to inspect its pinout, or select a wire to change its color.</span></div>`;
 }
 
-export function bindInspector({ inspection, editor, notify, focusCanvas }) {
+export function bindInspector({ inspection, editor, notify, focusCanvas, autoRouteWire }) {
   const dialog = document.getElementById('asset-dialog');
   const image = document.getElementById('asset-image');
   const title = document.getElementById('asset-title');
@@ -148,6 +148,7 @@ export function bindInspector({ inspection, editor, notify, focusCanvas }) {
     if (next) showTab(next);
     if (action === 'rotate') editor.rotatePart();
     if (action === 'delete') editor.removeSelection();
+    if (action === 'auto-route') autoRouteWire();
     if (color) editor.setWireColor(color);
     if (!asset && action !== 'preview') return;
 

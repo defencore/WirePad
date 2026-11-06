@@ -1,25 +1,32 @@
 import { updateItem } from './editor.js';
 import { clampPoint, segmentDrag, slideSegment } from './routing.js';
 
-const dragThreshold = 3;
+const targetSelector = '.canvas-pin, .canvas-junction, .wire-hit, .part-body';
+const clientPoint = event => ({ x: event.clientX, y: event.clientY });
 
-function pinAt(target) {
-  const pin = target.closest('[data-pin]');
-  return pin ? { partId: pin.dataset.part, pinId: pin.dataset.pin } : null;
+function targetInfo(target) {
+  const { part, pin, junction, wire } = target.closest(targetSelector)?.dataset ?? {};
+  return { partId: part, wireId: wire, pin: pin && { partId: part, pinId: pin }, junction: junction && { junctionId: junction } };
 }
 
-function junctionAt(target) {
-  const junction = target.closest('[data-junction]');
-  return junction ? { junctionId: junction.dataset.junction } : null;
+function touchPair(first, second) {
+  return {
+    x: (first.x + second.x) / 2,
+    y: (first.y + second.y) / 2,
+    distance: Math.hypot(first.x - second.x, first.y - second.y),
+  };
 }
 
-export function bindCanvas({ canvas, svg, editor, paint, revealInspector, dismissInspector }) {
+export function bindCanvas({ canvas, svg, editor, paint, openPinPicker, dismissInspector }) {
   let gesture;
   let cursor;
   let hover;
   let frame;
-  let movement;
+  let frameAction;
   let holdingSpace = false;
+  let pinch;
+  let multipleTouches = false;
+  const touches = new Map();
   const position = endpoint => canvas.position(endpoint);
 
   function setCanvasMode() {
@@ -30,80 +37,132 @@ export function bindCanvas({ canvas, svg, editor, paint, revealInspector, dismis
   function renderDraft() {
     setCanvasMode();
     if (!editor.pending) cursor = hover = null;
-    const point = cursor ?? (editor.pending && canvas.position(editor.pending.from));
+    const point = cursor ?? (editor.pending && position(editor.pending.from));
     canvas.showDraft(editor.pending, point, editor.wireColor, hover);
   }
 
-  function wireAt(event, point) {
-    const hit = event.target.closest('[data-wire]');
-    if (!hit) return null;
-    const hits = document.elementsFromPoint(event.clientX, event.clientY)
-      .filter(node => node.matches('.wire-hit')).map(node => node.dataset.wire);
-    return hits.length > 1 ? canvas.nearestWire(hits, point) : hits[0] ?? hit.dataset.wire;
-  }
-
-  function anchorAt(id, point) {
-    return id ? canvas.anchorWire(id, point, Math.min(20, 9 / canvas.scale)) : null;
-  }
-
-  function activate(endpoint) {
-    editor.activateEndpoint(endpoint, position);
-  }
-
-  function capture(event, type, item, segment) {
-    gesture = {
-      id: event.pointerId, type, item, segment, x: event.clientX, y: event.clientY,
-      center: canvas.center, scale: canvas.scale, project: editor.project,
-    };
-    svg.setPointerCapture(event.pointerId);
-  }
-
-  function cancelFrame() {
-    cancelAnimationFrame(frame);
-    movement = frame = null;
-  }
-
-  svg.addEventListener('pointerdown', event => {
-    if (gesture || ![0, 1].includes(event.button)) return;
-    cancelFrame();
-    if (document.activeElement.matches('#project-title, #part-label')) document.activeElement.blur();
-    if (event.button === 1 || editor.mode === 'pan' || holdingSpace) {
-      event.preventDefault();
-      capture(event, 'pan');
-      svg.classList.add('dragging');
-      return;
-    }
-    const pin = pinAt(event.target);
-    const junction = junctionAt(event.target);
+  function hitAt(event) {
     const point = canvas.point(event.clientX, event.clientY);
-    const wire = !pin && !junction && wireAt(event, point);
-    const endpoint = pin ?? ((editor.pending || editor.mode === 'wire') && (junction ?? anchorAt(wire, point)));
-    if (endpoint) {
-      event.preventDefault();
-      activate(endpoint);
+    const stack = document.elementsFromPoint(event.clientX, event.clientY);
+    const hit = targetInfo(stack.find(node => svg.contains(node) && node.closest(targetSelector)) ?? event.target);
+    if (hit.wireId) {
+      const ids = stack.filter(node => node.matches('.wire-hit')).map(node => node.dataset.wire);
+      if (ids.length > 1) hit.wireId = canvas.nearestWire(ids, point) ?? hit.wireId;
+    }
+    return { ...hit, point };
+  }
+
+  function anchorAt({ pin, junction, wireId, point }) {
+    return pin || junction || (wireId && point && canvas.anchorWire(wireId, point, Math.min(20, 9 / canvas.scale)));
+  }
+
+  function chooseEndpoint(endpoint) {
+    if (editor.mode === 'trace') editor.tracePoint(endpoint);
+    else editor.activateEndpoint(endpoint, position, (from, to) => canvas.autoRoute(from, to));
+  }
+
+  function tap(hit, { touch = false, keyboard = false } = {}) {
+    const { partId, pin, junction, wireId, point } = hit;
+    if (editor.mode === 'trace') {
+      if (partId && (touch || !pin)) openPinPicker(partId, pin?.pinId);
+      else editor.tracePoint(pin || junction || (wireId ? { wireId } : null));
       return;
     }
-    if (editor.pending) {
-      capture(event, 'bend');
+    if (editor.pending || editor.mode === 'wire' || pin) {
+      const endpoint = anchorAt(hit);
+      if (partId && (touch || !pin)) openPinPicker(partId, pin?.pinId);
+      else if (endpoint) chooseEndpoint(endpoint);
+      else if (!touch && !keyboard && editor.pending) {
+        cursor = clampPoint(point);
+        hover = null;
+        editor.addBend(cursor);
+        renderDraft();
+      }
       return;
     }
-    if (editor.mode === 'select' && junction) {
-      editor.select(null);
-      capture(event, 'junction', editor.item('junction', junction.junctionId));
-      return;
-    }
-    const part = event.target.closest('[data-part]');
-    if (editor.mode === 'select' && wire) {
-      editor.select('wire', wire);
-      const segment = segmentDrag(editor.wire, position, point);
-      if (segment) capture(event, 'wire', editor.wire, segment);
-    } else if (editor.mode === 'select' && part) {
-      editor.select('part', part.dataset.part);
-      capture(event, 'part', editor.part);
-    } else {
+    if (wireId) editor.select('wire', wireId);
+    else if (partId) editor.select('part', partId);
+    else {
       editor.select(null);
       dismissInspector();
     }
+  }
+
+  function schedule(update) {
+    frameAction = update;
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      const run = frameAction;
+      frame = frameAction = null;
+      run();
+    });
+  }
+
+  function cancelFrame() {
+    if (frame) cancelAnimationFrame(frame);
+    frameAction = frame = null;
+  }
+
+  function applyPinch() {
+    const [first, second] = pinch.ids.map(id => touches.get(id));
+    const { x, y, distance } = touchPair(first, second);
+    canvas.zoomAt(pinch.scale * distance / pinch.distance, pinch.anchor, x, y);
+  }
+
+  function startPinch() {
+    if (multipleTouches) return;
+    multipleTouches = true;
+    cancelFrame();
+    if (gesture?.next) paint(editor.project);
+    gesture = null;
+    const ids = [...touches.keys()];
+    const { x, y, distance } = touchPair(...touches.values());
+    pinch = { ids, distance: Math.max(1, distance), scale: canvas.scale, anchor: canvas.point(x, y) };
+    svg.classList.add('dragging');
+  }
+
+  svg.addEventListener('pointerdown', event => {
+    if (![0, 1].includes(event.button)) return;
+    const touch = event.pointerType === 'touch';
+    svg.dataset.input = touch ? 'touch' : 'pointer';
+    if (touch) {
+      touches.set(event.pointerId, clientPoint(event));
+      if (touches.size > 1 || multipleTouches) {
+        event.preventDefault();
+        svg.setPointerCapture(event.pointerId);
+        startPinch();
+        return;
+      }
+    }
+    if (gesture) return;
+    cancelFrame();
+    if (document.activeElement.matches('#project-title, #part-label')) document.activeElement.blur();
+
+    const forcePan = event.button === 1 || editor.mode === 'pan' || holdingSpace;
+    const hit = forcePan ? {} : hitAt(event);
+    const { wireId, partId, pin, junction, point } = hit;
+    let type = touch || forcePan ? 'pan' : 'tap';
+    let item;
+    let segment;
+    if (!forcePan && editor.mode === 'select' && !editor.pending && !pin) {
+      if (junction) {
+        type = 'junction';
+        item = editor.item('junction', junction.junctionId);
+      } else if (wireId) {
+        item = editor.item('wire', wireId);
+        segment = segmentDrag(item, position, point);
+        if (segment) type = 'wire';
+      } else if (partId) {
+        type = 'part';
+        item = editor.item('part', partId);
+      }
+    }
+    gesture = {
+      id: event.pointerId, type, item, segment, hit, forcePan, touch,
+      ...clientPoint(event), center: canvas.center, scale: canvas.scale, project: editor.project,
+    };
+    event.preventDefault();
+    svg.setPointerCapture(event.pointerId);
   });
 
   function move(action, event) {
@@ -112,99 +171,114 @@ export function bindCanvas({ canvas, svg, editor, paint, revealInspector, dismis
     if (dx === action.dx && dy === action.dy) return;
     action.dx = dx;
     action.dy = dy;
-    if (action.type === 'pan') {
+    if (action.type === 'tap') return;
+    const threshold = action.touch ? 7 : 3;
+    const distance = Math.hypot(dx, dy);
+    if (!action.moved && distance <= threshold) return;
+
+    const { item, segment, type, scale, project } = action;
+    if (!action.moved && item) {
+      if (type === 'junction') editor.select(null);
+      else editor.select(type, item.id);
+    }
+    action.moved = true;
+    svg.classList.add('dragging');
+    if (type === 'pan') {
       canvas.pan(action.center, dx, dy);
       return;
     }
-    if (action.type === 'bend') return;
 
-    const { item, segment, type, scale, project } = action;
     const offset = segment?.axis === 'x' ? dx : dy;
-    const distance = segment ? Math.abs(offset) : Math.hypot(dx, dy);
-    if (!action.moved && distance <= dragThreshold) return;
-    action.moved = true;
-    svg.classList.add('dragging');
-
     const properties = segment ? { fixedRoute: true, points: slideSegment(segment, offset / scale) }
       : clampPoint({ x: item.x + dx / scale, y: item.y + dy / scale });
-    const changed = segment ? offset !== 0 : item.x !== properties.x || item.y !== properties.y;
-    action.next = changed ? updateItem(project, type, item.id, properties) : null;
-    paint(action.next ?? project);
+    const changed = segment ? Math.abs(offset) > threshold : item.x !== properties.x || item.y !== properties.y;
+    if (changed || action.next) {
+      action.next = changed ? updateItem(project, type, item.id, properties) : null;
+      paint(action.next ?? project);
+    }
   }
 
   svg.addEventListener('pointermove', event => {
-    if (gesture ? gesture.id !== event.pointerId : !editor.pending) return;
-    movement = event;
-    if (frame) return;
-    frame = requestAnimationFrame(() => {
-      const event = movement;
-      movement = frame = null;
-      if (gesture) {
-        if (gesture.project === editor.project) move(gesture, event);
-      } else if (editor.pending) {
-        cursor = canvas.point(event.clientX, event.clientY);
-        hover = pinAt(event.target) ?? junctionAt(event.target) ?? anchorAt(wireAt(event, cursor), cursor);
+    if (touches.has(event.pointerId)) touches.set(event.pointerId, clientPoint(event));
+    if (pinch) {
+      schedule(() => applyPinch());
+    } else if (gesture?.id === event.pointerId) {
+      schedule(() => {
+        if (gesture?.project === editor.project) move(gesture, event);
+      });
+    } else if (!gesture && !multipleTouches && editor.pending && event.pointerType !== 'touch') {
+      schedule(() => {
+        if (!editor.pending) return;
+        const hit = hitAt(event);
+        cursor = hit.point;
+        hover = anchorAt(hit);
         renderDraft();
-      }
-    });
+      });
+    }
   });
 
   function finish(event) {
+    const wasTouch = touches.has(event.pointerId);
+    if (wasTouch && pinch?.ids.includes(event.pointerId)) {
+      if (event.type === 'pointerup') {
+        touches.set(event.pointerId, clientPoint(event));
+        applyPinch();
+      }
+      cancelFrame();
+      pinch = null;
+    }
+    if (wasTouch) touches.delete(event.pointerId);
+    if (multipleTouches) {
+      if (!touches.size) {
+        multipleTouches = false;
+        svg.classList.remove('dragging');
+      }
+      return;
+    }
     if (gesture?.id !== event.pointerId) return;
     const action = gesture;
     gesture = null;
     cancelFrame();
-    if (event.type === 'pointerup' && action.project === editor.project) {
-      if (action.type === 'bend' && editor.pending) {
-        cursor = clampPoint(canvas.point(event.clientX, event.clientY));
-        hover = null;
-        editor.addBend(cursor);
-        renderDraft();
-      } else {
-        move(action, event);
-        if (action.next) editor.commit(action.next);
-        else if (action.type === 'wire' && Math.hypot(action.dx, action.dy) <= dragThreshold) revealInspector();
-      }
-    } else if (action.next) {
-      paint(editor.project);
-    }
     svg.classList.remove('dragging');
+    if (event.type !== 'pointerup' || action.project !== editor.project) {
+      if (action.next) paint(editor.project);
+      return;
+    }
+    move(action, event);
+    svg.classList.remove('dragging');
+    if (action.next) editor.commit(action.next);
+    else if (!action.moved && !action.forcePan && Math.hypot(action.dx, action.dy) <= (action.touch ? 7 : 3)) tap(action.hit, action);
   }
 
   for (const event of ['pointerup', 'pointercancel', 'lostpointercapture']) svg.addEventListener(event, finish);
 
   svg.addEventListener('wheel', event => {
     event.preventDefault();
-    if (gesture) return;
+    if (gesture || multipleTouches) return;
     const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? svg.clientHeight : 1);
     canvas.zoom(canvas.scale * Math.exp(-Math.max(-160, Math.min(160, delta)) * .002), canvas.point(event.clientX, event.clientY));
   }, { passive: false });
 
+  function focusedHit(target) {
+    const hit = targetInfo(target);
+    if (hit.wireId) hit.point = canvas.branchAnchor(hit.wireId)?.point;
+    return hit;
+  }
+
   svg.addEventListener('keydown', event => {
     if (event.key !== 'Enter' && event.key !== ' ') return;
-    const pin = pinAt(event.target);
-    const junction = junctionAt(event.target);
-    const wire = event.target.closest('[data-wire]');
-    const part = event.target.closest('[data-part]');
-    if (!pin && !junction && !wire && !part) return;
+    const hit = focusedHit(event.target);
+    if (!hit.partId && !hit.wireId && !hit.junction) return;
     event.preventDefault();
-    if (editor.mode === 'pan') return;
-    if (pin) activate(pin);
-    else if (editor.pending || editor.mode === 'wire') {
-      const endpoint = junction ?? (wire && anchorAt(wire.dataset.wire, wire.getPointAtLength(wire.getTotalLength() / 2)));
-      if (endpoint) activate(endpoint);
-    } else if (wire || part) {
-      editor.select(wire ? 'wire' : 'part', wire ? wire.dataset.wire : part.dataset.part);
-      if (wire) revealInspector({ focus: true });
-    }
+    if (editor.mode !== 'pan') tap(hit, { keyboard: true });
   });
 
   svg.addEventListener('focusin', event => {
     if (!editor.pending) return;
-    const endpoint = pinAt(event.target) ?? junctionAt(event.target);
+    const endpoint = anchorAt(focusedHit(event.target));
     if (!endpoint) return;
     hover = endpoint;
-    cursor = canvas.position(endpoint);
+    cursor = position(endpoint);
     renderDraft();
   });
 
@@ -216,5 +290,5 @@ export function bindCanvas({ canvas, svg, editor, paint, revealInspector, dismis
   document.addEventListener('keyup', event => { if (event.key === ' ') panWithSpace(false); });
   window.addEventListener('blur', () => panWithSpace(false));
 
-  return { renderDraft, panWithSpace, get gesturing() { return Boolean(gesture); } };
+  return { renderDraft, chooseEndpoint, panWithSpace, get gesturing() { return Boolean(gesture || multipleTouches); } };
 }

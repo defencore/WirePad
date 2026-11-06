@@ -1,9 +1,12 @@
+import { createAutoRouter } from './autoroute.js';
 import { componentArt, componentById } from './catalog.js';
+import { traceNet } from './continuity.js';
 import { endpointKey, endpointPositions, nearestSegment, wireAnchor, wireRoute } from './routing.js';
 import { escapeText } from './text.js';
 
 const MIN_ZOOM = .01;
 const MAX_ZOOM = 4;
+const limitZoom = scale => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, scale));
 const SVG_FONT = 'Arial, sans-serif';
 const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
@@ -123,6 +126,23 @@ function resolveDrawing(project, previousRoutes) {
 
 function junctionDot({ x, y }) {
   return `<circle cx="${x}" cy="${y}" r="4.6" fill="#18232d" stroke="#fff" stroke-width="1.2"/>`;
+}
+
+function traceMarkup(net, geometry) {
+  const color = '#6b38d5';
+  const outlines = [];
+  const lines = [];
+  for (const id of net.wireIds) {
+    const { path } = geometry.wires.get(id).geometry;
+    const shape = `<path d="${path}" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"`;
+    outlines.push(`${shape} stroke="#ffffff" stroke-width="8"/>`);
+    lines.push(`${shape} stroke="${color}" stroke-width="4" data-trace-wire="${id}"/>`);
+  }
+  const terminals = [...net.endpoints].map(([key, endpoint]) => {
+    const { x, y } = geometry.position(endpoint);
+    return `<circle cx="${x}" cy="${y}" r="5" fill="${color}" stroke="#ffffff" stroke-width="2" vector-effect="non-scaling-stroke" data-trace-endpoint="${key}"/>`;
+  });
+  return outlines.join('') + lines.join('') + terminals.join('');
 }
 
 export function drawingMarkup(project) {
@@ -268,25 +288,47 @@ export class DrawingCanvas {
     scene.append(this.branches);
     this.parts = new SceneLayer(scene);
     this.junctions = new SceneLayer(scene);
+    this.traceLayer = group(svg);
+    this.traceLayer.setAttribute('class', 'net-trace');
+    this.traceLayer.setAttribute('aria-hidden', 'true');
+    this.traceLayer.setAttribute('pointer-events', 'none');
+    svg.insertBefore(this.traceLayer, draft);
     this.draftMarkup = '';
     new ResizeObserver(() => this.autoFit ? this.fit() : this.applyView()).observe(svg);
   }
 
-  draw(project, selection, active) {
-    if (this.geometryProject === project && this.selection === selection && this.active === active) return;
+  draw(project, selection, active, trace) {
+    const projectChanged = this.geometryProject !== project;
+    const selectionChanged = this.selection !== selection || this.active !== active;
     const previous = this.geometry;
-    if (this.geometryProject !== project) this.geometry = resolveDrawing(project, previous?.wires);
-    this.geometryProject = project;
-    this.selection = selection;
-    this.active = active;
-    const { wires, branches, parts, junctions } = this.geometry;
-    this.wires.update(wires, (data, entry) => updateWire(this.wires.node, entry, data,
-      selection?.type === 'wire' && selection.id === data.wire.id));
-    if (branches !== (previous?.branches ?? '')) this.branches.innerHTML = branches;
-    this.parts.update(parts, (data, entry) => updatePart(this.parts.node, entry, data,
-      selection?.type === 'part' && selection.id === data.part.id,
-      active?.partId === data.part.id ? active.pinId : undefined));
-    this.junctions.update(junctions, (data, entry) => updateJunction(this.junctions.node, entry, data));
+    if (projectChanged || selectionChanged) {
+      if (projectChanged) {
+        this.geometry = resolveDrawing(project, previous?.wires);
+        this.autoRouter = null;
+        this.lastAutoRoute = null;
+      }
+      this.geometryProject = project;
+      this.selection = selection;
+      this.active = active;
+      const { wires, branches, parts, junctions } = this.geometry;
+      this.wires.update(wires, (data, entry) => updateWire(this.wires.node, entry, data,
+        selection?.type === 'wire' && selection.id === data.wire.id));
+      if (branches !== (previous?.branches ?? '')) this.branches.innerHTML = branches;
+      this.parts.update(parts, (data, entry) => updatePart(this.parts.node, entry, data,
+        selection?.type === 'part' && selection.id === data.part.id,
+        active?.partId === data.part.id ? active.pinId : undefined));
+      this.junctions.update(junctions, (data, entry) => updateJunction(this.junctions.node, entry, data));
+    }
+    const traceKey = trace?.wireId ? `wire/${trace.wireId}` : trace && endpointKey(trace);
+    if (this.traceKey !== traceKey || (trace && projectChanged)) {
+      this.traceKey = traceKey;
+      const net = trace && traceNet(project, trace);
+      this.tracedNet = net;
+      const dim = Boolean(net?.wireIds.size);
+      this.traceLayer.innerHTML = net ? traceMarkup(net, this.geometry) : '';
+      this.wires.node.setAttribute('opacity', dim ? '.26' : '1');
+      this.branches.setAttribute('opacity', dim ? '.26' : '1');
+    }
   }
 
   position(endpoint) {
@@ -300,9 +342,11 @@ export class DrawingCanvas {
       const entry = this.geometry.wires.get(id);
       if (!entry) continue;
       const hit = nearestSegment(entry.geometry.route, point);
-      if (hit && hit.distance < distance) {
+      if (!hit) continue;
+      const squaredDistance = (point.x - hit.point.x) ** 2 + (point.y - hit.point.y) ** 2;
+      if (squaredDistance < distance) {
         best = id;
-        distance = hit.distance;
+        distance = squaredDistance;
       }
     }
     return best;
@@ -313,14 +357,51 @@ export class DrawingCanvas {
     return entry ? wireAnchor(entry.wire, entry.geometry.route, point, threshold) : null;
   }
 
+  branchAnchor(wireId) {
+    const route = this.geometry.wires.get(wireId)?.geometry.route;
+    if (!route) return null;
+    let length = 0;
+    let point = null;
+    for (let index = 1; index < route.length; index++) {
+      const start = route[index - 1];
+      const end = route[index];
+      const distance = Math.abs(end.x - start.x) + Math.abs(end.y - start.y);
+      if (distance > length) {
+        length = distance;
+        point = { x: (start.x + end.x) / 2, y: (start.y + end.y) / 2 };
+      }
+    }
+    return point ? { wireId, point } : null;
+  }
+
+  autoRoute(start, end, { excludeWire } = {}) {
+    const previous = this.lastAutoRoute;
+    if (!excludeWire && previous && samePosition(start, previous.start) && samePosition(end, previous.end)) {
+      return previous.route;
+    }
+
+    let router = excludeWire ? null : this.autoRouter;
+    if (!router) {
+      const routes = [];
+      for (const [id, { geometry }] of this.geometry.wires) {
+        if (id !== excludeWire) routes.push(geometry.route);
+      }
+      router = createAutoRouter(this.geometryProject, routes);
+      if (!excludeWire) this.autoRouter = router;
+    }
+    const route = router(start, end);
+    if (!excludeWire) this.lastAutoRoute = { start, end, route };
+    return route;
+  }
+
   showDraft(pending, point, color, endpoint) {
     let markup = '';
     if (pending && point) {
       const start = this.position(pending.from);
       const end = endpoint ? this.position(endpoint) : point;
       if (start.x !== end.x || start.y !== end.y) {
-        const route = wireRoute(start, end, pending.points);
-        markup = `<path d="${pathFrom(route)}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>`;
+        const route = endpoint && !pending.points?.length ? this.autoRoute(start, end) : wireRoute(start, end, pending.points);
+        markup = `<path d="${pathFrom(route)}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" vector-effect="non-scaling-stroke"/>`;
       }
       const ring = ({ x, y }) => `<circle cx="${x}" cy="${y}" r="6.3" fill="#d7f4ed" stroke="#087a6f" stroke-width="1.5"/>`;
       if (!pending.from.partId) markup += ring(start);
@@ -359,13 +440,24 @@ export class DrawingCanvas {
   }
 
   zoom(scale, anchor = this.center) {
-    const next = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, scale));
+    const next = limitZoom(scale);
     const ratio = this.scale / next;
     this.center = {
       x: anchor.x + (this.center.x - anchor.x) * ratio,
       y: anchor.y + (this.center.y - anchor.y) * ratio,
     };
     this.scale = next;
+    this.autoFit = false;
+    this.applyView();
+  }
+
+  zoomAt(scale, anchor, clientX, clientY) {
+    const rect = this.svg.getBoundingClientRect();
+    this.scale = limitZoom(scale);
+    this.center = {
+      x: anchor.x - (clientX - rect.left - rect.width / 2) / this.scale,
+      y: anchor.y - (clientY - rect.top - rect.height / 2) / this.scale,
+    };
     this.autoFit = false;
     this.applyView();
   }

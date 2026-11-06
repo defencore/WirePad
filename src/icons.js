@@ -16,6 +16,7 @@ const icons = {
   box: '<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Zm0 9 8-4.5M12 12 4 7.5m8 4.5v9"/>',
   cursor: '<path d="m5 3 14 10-7 1-3.5 6Z"/>',
   wire: '<circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M5 16v-4h14V8"/>',
+  trace: '<path d="M5 16v-4h14V8M12 12V6"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="4" r="2"/><circle cx="19" cy="6" r="2"/>',
   hand: '<path d="M8 13V6a1.5 1.5 0 0 1 3 0v5-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v6-3a1.5 1.5 0 0 1 3 0v6a6 6 0 0 1-6 6h-2c-2 0-3-1-4-2l-4-5a1.5 1.5 0 0 1 2-2Z"/>',
   undo: '<path d="M4 11h10a5 5 0 0 1 0 10M4 11l5-5m-5 5 5 5"/>',
   redo: '<path d="M20 11H10a5 5 0 0 0 0 10m10-10-5-5m5 5-5 5"/>',
