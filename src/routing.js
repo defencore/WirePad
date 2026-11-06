@@ -41,7 +41,16 @@ export function endpointPositions(project) {
     const cy = component.height / 2;
     const offset = rotate({ x: pin.x - cx, y: pin.y - cy }, part.rotation);
     const normal = rotate(pinVector(pin, component), part.rotation);
-    return { x: part.x + cx + offset.x, y: part.y + cy + offset.y, normal };
+    const turned = (part.rotation ?? 0) % 180 !== 0;
+    const halfWidth = turned ? cy : cx;
+    const halfHeight = turned ? cx : cy;
+    return {
+      x: part.x + cx + offset.x, y: part.y + cy + offset.y, normal,
+      bounds: {
+        x: [part.x + cx - halfWidth, part.x + cx + halfWidth],
+        y: [part.y + cy - halfHeight, part.y + cy + halfHeight],
+      },
+    };
   };
 }
 
@@ -58,6 +67,8 @@ function follows(a, b) {
     a.x === b.x && (b.y - a.y) * a.normal.y >= 0;
 }
 
+const needsLead = (pin, next) => next && pin.normal && !follows(pin, next);
+
 function connectPoints(points, target, horizontalFirst) {
   const previous = points.at(-1);
   if (previous.x !== target.x && previous.y !== target.y) {
@@ -66,53 +77,111 @@ function connectPoints(points, target, horizontalFirst) {
   if (!equal(previous, target)) points.push(target);
 }
 
-export function wireRoute(start, end, bends = [], fixedRoute = false) {
+const pinAxis = point => point.normal?.x ? 'x' : point.normal?.y ? 'y' : null;
+const otherAxis = axis => axis === 'x' ? 'y' : 'x';
+
+function outsideLane(start, end, axis, clearance = LEAD) {
+  const low = Math.min(start.bounds?.[axis][0] ?? start[axis], end.bounds?.[axis][0] ?? end[axis]);
+  const high = Math.max(start.bounds?.[axis][1] ?? start[axis], end.bounds?.[axis][1] ?? end[axis]);
+  return start[axis] + end[axis] <= low + high ? low - clearance : high + clearance;
+}
+
+function onePinRoute(pin, target, axis) {
+  const cross = otherAxis(axis);
+  const elbow = { ...pin, [axis]: target[axis] };
+  if (!equal(pin, elbow) && follows(pin, elbow)) return [pin, elbow, target];
+  const a = lead(pin);
+  if (pin[cross] !== target[cross]) return [pin, a, { ...a, [cross]: target[cross] }, target];
+  const lane = outsideLane(pin, target, cross);
+  return [pin, a, { ...a, [cross]: lane }, { ...target, [cross]: lane }, target];
+}
+
+function parallelRoute(start, end, axis) {
+  const cross = otherAxis(axis);
+  const direction = start.normal[axis];
+  const sameDirection = direction === end.normal[axis];
+  if (!sameDirection && (end[axis] - start[axis]) * direction > 0) {
+    const middle = (start[axis] + end[axis]) / 2;
+    return [start, { ...start, [axis]: middle }, { ...end, [axis]: middle }, end];
+  }
+  if (sameDirection && start[cross] !== end[cross]) {
+    const edge = direction > 0 ? Math.max(start[axis], end[axis]) : Math.min(start[axis], end[axis]);
+    const lane = edge + direction * 2 * LEAD;
+    return [start, { ...start, [axis]: lane }, { ...end, [axis]: lane }, end];
+  }
+
   const a = lead(start);
   const b = lead(end);
-  const points = [start];
-  if (bends.length || fixedRoute) {
-    const first = bends[0] ?? end;
-    const last = bends.at(-1) ?? start;
-    if (start.normal && !follows(start, first)) points.push(a);
-    for (const bend of bends) connectPoints(points, bend, true);
-    if (end.normal && !follows(end, last)) connectPoints(points, b, end.normal.x === 0);
-  } else {
-    if (start.normal) points.push(a);
-    if (start.normal?.x && end.normal?.x) {
-      const x = start.normal.x === end.normal.x
-        ? (start.normal.x > 0 ? Math.max(a.x, b.x) + LEAD : Math.min(a.x, b.x) - LEAD)
-        : (a.x + b.x) / 2;
-      points.push({ x, y: a.y }, { x, y: b.y }, b);
-    } else if (start.normal?.y && end.normal?.y) {
-      const y = start.normal.y === end.normal.y
-        ? (start.normal.y > 0 ? Math.max(a.y, b.y) + LEAD : Math.min(a.y, b.y) - LEAD)
-        : (a.y + b.y) / 2;
-      points.push({ x: a.x, y }, { x: b.x, y }, b);
-    } else {
-      connectPoints(points, b, start.normal ? Boolean(start.normal.x) : !end.normal?.x);
-    }
+  const lane = outsideLane(start, end, cross);
+  return [start, a, { ...a, [cross]: lane }, { ...b, [cross]: lane }, b, end];
+}
+
+function automaticRoute(start, end) {
+  const startAxis = pinAxis(start);
+  const endAxis = pinAxis(end);
+  if (!startAxis && !endAxis) return [start, { x: end.x, y: start.y }, end];
+  if (!endAxis) return onePinRoute(start, end, startAxis);
+  if (!startAxis) return onePinRoute(end, start, endAxis).reverse();
+  if (startAxis === endAxis) return parallelRoute(start, end, startAxis);
+
+  const corner = { ...start, [startAxis]: end[startAxis] };
+  if (!equal(start, corner) && !equal(end, corner) && follows(start, corner) && follows(end, corner)) {
+    return [start, corner, end];
   }
+  const a = lead(start);
+  const b = lead(end);
+  const between = { ...a, [endAxis]: b[endAxis] };
+  if (!equal(a, between) && !equal(b, between)) return [start, a, between, b, end];
+
+  const lane = outsideLane(start, end, endAxis, 2 * LEAD);
+  const turn = outsideLane(start, end, startAxis, 2 * LEAD);
+  return [start, a, { ...a, [endAxis]: lane }, { [startAxis]: turn, [endAxis]: lane },
+    { ...b, [startAxis]: turn }, b, end];
+}
+
+export function wireRoute(start, end, bends = [], fixedRoute = false) {
+  if (equal(start, end) && !bends.length) return [start];
+  if (!bends.length && !fixedRoute) return compact(automaticRoute(start, end));
+
+  const points = [start];
+  if (start.normal && !follows(start, bends[0] ?? end)) points.push(lead(start));
+  for (const bend of bends) connectPoints(points, bend, true);
+  if (end.normal && !follows(end, bends.at(-1) ?? start)) connectPoints(points, lead(end), !end.normal.x);
   connectPoints(points, end, true);
-  return points.filter((point, index) => index === 0 || !equal(point, points[index - 1]));
+  // Forward waypoints can mark a shared branch in older projects.
+  const route = compact(points, true);
+
+  const fixStart = needsLead(start, route[1]);
+  const fixEnd = needsLead(end, route.at(-2));
+  if (!fixStart && !fixEnd) return route;
+
+  if (route.length > 2) {
+    if (fixStart) route.splice(0, 2, ...onePinRoute(start, route[1], pinAxis(start)));
+    if (fixEnd) route.splice(-2, 2, ...onePinRoute(end, route.at(-2), pinAxis(end)).reverse());
+    const repaired = compact(route, true);
+    if (!needsLead(start, repaired[1]) && !needsLead(end, repaired.at(-2))) return repaired;
+  }
+  return compact(automaticRoute(start, end));
 }
 
 export function routeFor(wire, position) {
   return wireRoute(position(wire.from), position(wire.to), wire.points, wire.fixedRoute);
 }
 
-function compact(route) {
+function redundant(before, current, next, keepStraight) {
+  const axis = before.x === current.x && current.x === next.x ? 'y'
+    : before.y === current.y && current.y === next.y ? 'x' : null;
+  return axis && (!keepStraight || (current[axis] - before[axis]) * (next[axis] - current[axis]) < 0);
+}
+
+function compact(route, keepStraight = false) {
   const simplified = [];
   for (const point of route) {
-    const previous = simplified.at(-1);
-    if (previous && equal(previous, point)) continue;
-    const before = simplified.at(-2);
-    if (before && ((point.y === previous.y && previous.y === before.y &&
-      (point.x - previous.x) * (previous.x - before.x) > 0) ||
-      (point.x === previous.x && previous.x === before.x &&
-      (point.y - previous.y) * (previous.y - before.y) > 0))) {
+    while (simplified.length >= 2 && !equal(simplified.at(-1), point) &&
+      redundant(simplified.at(-2), simplified.at(-1), point, keepStraight)) {
       simplified.pop();
     }
-    simplified.push(point);
+    if (!simplified.length || !equal(simplified.at(-1), point)) simplified.push(point);
   }
   return simplified;
 }
