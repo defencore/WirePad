@@ -1,0 +1,54 @@
+name: Deploy WirePad to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Run tests
+        run: node --test
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare the static site
+        run: |
+          mkdir -p "$RUNNER_TEMP/wirepad-pages"
+          cp -R index.html style.css favicon.svg src "$RUNNER_TEMP/wirepad-pages/"
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/wirepad-pages
+
+      - name: Deploy WirePad
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -57,7 +57,6 @@ The project format and browser persistence live in [project.js](src/project.js),
 
 ## Publish with GitHub Pages
 
-1. Push the site files to the `main` branch of `defencore/WirePad`.
-2. In **Settings → Pages**, choose **Deploy from a branch**, then `main` and `/(root)`. [GitHub Pages publishing guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-3. Set the Pages custom domain to `wirepad.defencore.com`. The repository root already contains the matching `CNAME` file.
-4. In the DNS zone for `defencore.com`, set the `wirepad` CNAME record to `defencore.github.io`. After GitHub validates the domain and provisions the certificate, enable **Enforce HTTPS** in Pages settings. [GitHub custom domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+1. In **Settings → Pages**, choose **GitHub Actions** as the publishing source and set the custom domain to `wirepad.defencore.com`. [GitHub Pages publishing guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+2. Push to `main` or run **Deploy WirePad to GitHub Pages** from the **Actions** tab on `main`. The [workflow](.github/workflows/pages.yml) runs the tests and publishes the static editor files.
+3. In the DNS zone for `defencore.com`, point the `wirepad` CNAME record to `defencore.github.io`. After GitHub validates the domain and provisions the certificate, enable **Enforce HTTPS** in Pages settings. [GitHub custom domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
