@@ -1,4 +1,8 @@
 import { drawAds1220 } from "./catalog-ads1220.js";
+import { commonInterfaceArt } from "./catalog-common-interfaces.js";
+import { commonPeripheralArt } from "./catalog-common-peripherals.js";
+import { commonPowerArt } from "./catalog-common-power.js";
+import { commonSensorArt } from "./catalog-common-sensors.js";
 import { espDevKitCArt, espRpArt } from "./catalog-esp-rp.js";
 import { heltecSemtechArt } from "./catalog-heltec-semtech.js";
 import { nordicBoardArt } from "./catalog-nordic-boards.js";
@@ -280,6 +284,7 @@ const renderers = {
   terminal: connectorArt, header: connectorArt, jst: connectorArt,
   ...heltecSemtechArt, ...espRpArt, ...stmArduinoArt, ...nordicBoardArt, ...nordicArt,
   ...powerArt, ...spXtArt, ...switchMosfetArt,
+  ...commonInterfaceArt, ...commonPeripheralArt, ...commonPowerArt, ...commonSensorArt,
 };
 
 export function componentArt(component, { labels = true } = {}) {

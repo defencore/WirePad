@@ -1,4 +1,8 @@
 import { ads1220Footprint } from "./catalog-ads1220.js";
+import { commonInterfaceFootprints, commonInterfaceModels } from "./catalog-common-interfaces.js";
+import { commonPeripheralFootprints } from "./catalog-common-peripherals.js";
+import { commonPowerFootprints, commonPowerModels } from "./catalog-common-power.js";
+import { commonSensorFootprints, commonSensorModels } from "./catalog-common-sensors.js";
 import { espRpFootprints, espRpModels } from "./catalog-esp-rp.js";
 import { heltecSemtechFootprints, heltecSemtechModels } from "./catalog-heltec-semtech.js";
 import { nordicBoardFootprints, nordicBoardModels } from "./catalog-nordic-boards.js";
@@ -69,6 +73,7 @@ const footprints = {
   ...waveshareFootprints, ...heltecSemtechFootprints, ...espRpFootprints,
   ...stmArduinoFootprints, ...nordicBoardFootprints, ...nordicFootprints,
   ...powerFootprints, ...spXtFootprints, ...switchMosfetFootprints,
+  ...commonInterfaceFootprints, ...commonPeripheralFootprints, ...commonPowerFootprints, ...commonSensorFootprints,
 };
 
 function padAt(pin, x, y, settings, square) {
@@ -193,6 +198,7 @@ const models = {
   },
   ...heltecSemtechModels, ...espRpModels, ...stmArduinoModels, ...nordicBoardModels, ...nordicModels,
   ...powerModels, ...spXtModels, ...switchMosfetModels,
+  ...commonInterfaceModels, ...commonPowerModels, ...commonSensorModels,
 };
 
 export function modelFor(component) {

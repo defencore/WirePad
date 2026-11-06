@@ -1,4 +1,8 @@
 import { ads1220 } from "./catalog-ads1220.js";
+import { commonInterfaceComponents } from "./catalog-common-interfaces.js";
+import { commonPeripheralComponents } from "./catalog-common-peripherals.js";
+import { commonPowerComponents } from "./catalog-common-power.js";
+import { commonSensorComponents } from "./catalog-common-sensors.js";
 import { espRpComponents } from "./catalog-esp-rp.js";
 import { heltecSemtechComponents } from "./catalog-heltec-semtech.js";
 import { nordicBoardComponents } from "./catalog-nordic-boards.js";
@@ -296,6 +300,7 @@ export const components = [
   ...heltecSemtechComponents, ...espRpComponents, ...stmArduinoComponents,
   ...nordicBoardComponents, ...nordicComponents,
   ...powerComponents, ...spXtComponents, ...switchMosfetComponents,
+  ...commonInterfaceComponents, ...commonPeripheralComponents, ...commonPowerComponents, ...commonSensorComponents,
 ];
 
 export const componentById = new Map(components.map((component) => [component.id, component]));
