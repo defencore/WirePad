@@ -21,22 +21,22 @@
     <div class="top-spacer"></div>
     <span id="save-state" class="save-state"></span>
     <button class="button compact" id="help" type="button" data-icon="help" aria-label="Help" title="Help"></button>
-    <details class="menu">
+    <details class="menu project-menu">
       <summary class="button" data-icon="folder">Project <span data-icon="chevron"></span></summary>
       <div class="menu-panel">
         <button type="button" id="new-project" data-icon="plus">New project</button>
         <button type="button" id="open-project" data-icon="folder">Open project file</button>
         <button type="button" id="save-project" data-icon="save">Save project file</button>
         <hr>
-        <button type="button" id="load-demo" data-icon="grid">Load example</button>
+        <button type="button" id="load-demo" data-icon="grid">Open demo</button>
       </div>
     </details>
+    <button type="button" class="button primary copy-image" id="copy-image" data-export="copy" data-icon="copy" title="Copy diagram as a PNG image" disabled><span id="copy-image-label">Copy image</span></button>
     <details class="menu">
-      <summary class="button primary" data-icon="download">Export <span data-icon="chevron"></span></summary>
+      <summary class="button" data-icon="download">Export <span data-icon="chevron"></span></summary>
       <div class="menu-panel">
         <button type="button" data-export="png" data-icon="image">Download PNG</button>
         <button type="button" data-export="svg" data-icon="file">Download SVG</button>
-        <button type="button" data-export="copy" data-icon="copy">Copy image</button>
       </div>
     </details>
     <input type="file" id="project-file" accept=".json,application/json" hidden>
@@ -66,11 +66,11 @@
 
     <main class="workspace" aria-label="Wiring workspace">
       <div class="workspace-toolbar">
-        <button type="button" class="button compact mobile-panel" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-expanded="false"></button>
+        <button type="button" class="button compact mobile-panel" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-controls="library" aria-expanded="false"></button>
         <div class="tool-group" role="group" aria-label="Canvas tools">
-          <button type="button" data-mode="select" data-icon="cursor" title="Select (V)" aria-pressed="true">Select</button>
-          <button type="button" data-mode="wire" data-icon="wire" title="Connect pins and wires (W)" aria-pressed="false">Wire</button>
-          <button type="button" data-mode="pan" data-icon="hand" title="Pan (H or Space)" aria-pressed="false">Pan</button>
+          <button type="button" data-mode="select" data-icon="cursor" title="Select and move components (V)" aria-label="Select" aria-keyshortcuts="V" aria-pressed="true">Select <kbd aria-hidden="true">V</kbd></button>
+          <button type="button" data-mode="wire" data-icon="wire" title="Connect pins and wires (W)" aria-label="Wire" aria-keyshortcuts="W" aria-pressed="false">Wire <kbd aria-hidden="true">W</kbd></button>
+          <button type="button" data-mode="pan" data-icon="hand" title="Pan (H or Space)" aria-label="Pan" aria-keyshortcuts="H" aria-pressed="false">Pan <kbd aria-hidden="true">H</kbd></button>
         </div>
         <span class="toolbar-divider"></span>
         <div class="history" role="group" aria-label="History">
@@ -79,7 +79,7 @@
         </div>
         <div class="top-spacer"></div>
         <button type="button" id="fit" class="button fit" data-icon="fit" title="Fit drawing (F)">Fit view</button>
-        <button type="button" class="button compact mobile-panel" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-expanded="false"></button>
+        <button type="button" class="button compact mobile-panel" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-controls="inspector" aria-expanded="false"></button>
       </div>
       <section class="board" id="board" aria-label="Diagram canvas">
         <svg id="canvas" tabindex="0" xmlns="http://www.w3.org/2000/svg" aria-label="Wiring diagram. Use Tab to focus components and pins.">
@@ -103,8 +103,13 @@
         </div>
         <div id="empty-board" class="empty-board" hidden>
           <span data-icon="wire"></span>
-          <strong>Start a wiring diagram</strong>
-          <p>Add a component from the library, then connect its pins.</p>
+          <h2>Build your wiring diagram</h2>
+          <p>Add components, then click their pins to connect them.</p>
+          <button type="button" class="button primary" data-action="browse-components" data-icon="library">Browse components</button>
+          <div class="empty-actions">
+            <button type="button" class="button bare" data-start="open">Import project</button>
+            <button type="button" class="button bare" data-start="demo">Open demo</button>
+          </div>
         </div>
       </section>
     </main>
@@ -127,15 +132,38 @@
   </footer>
   <div class="toast" id="toast" role="status" hidden></div>
 
+  <dialog id="start-dialog" class="dialog start-dialog" aria-labelledby="start-title" aria-describedby="start-description">
+    <div class="start-heading">
+      <img src="./favicon.svg" alt="" width="36" height="36">
+      <div class="eyebrow">WIREPAD WORKSPACE</div>
+      <h2 id="start-title">Open a workspace</h2>
+      <p id="start-description">Import a WirePad project file or explore a ready-made wiring diagram.</p>
+    </div>
+    <button type="button" class="start-choice start-resume" id="start-resume" data-start="continue" data-icon="wire" hidden>
+      <span><strong>Continue project</strong><small id="start-project-name"></small></span>
+    </button>
+    <div class="start-options">
+      <button type="button" class="start-choice" data-start="open" data-icon="folder">
+        <span><strong>Import project</strong><small>Open a .wirepad.json file from your device.</small></span>
+      </button>
+      <button type="button" class="start-choice" data-start="demo" data-icon="grid">
+        <span><strong>Open demo</strong><small>Explore a connected ESP32 sensor node.</small></span>
+      </button>
+    </div>
+    <p id="start-error" class="start-error" role="alert" hidden></p>
+    <div class="start-footer">
+      <button type="button" class="button bare" data-start="blank" data-icon="plus">Start a blank project</button>
+    </div>
+  </dialog>
   <dialog id="asset-dialog" class="dialog asset-dialog" aria-labelledby="asset-title">
     <div class="dialog-title"><h2 id="asset-title"></h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close preview"></button></form></div>
     <div id="asset-image" class="asset-image"></div>
   </dialog>
-  <dialog id="help-dialog" class="dialog">
-    <div class="dialog-title"><h2>WirePad help</h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close"></button></form></div>
-    <p>Choose a part from the library and place it on the canvas. With <strong>Wire</strong>, click a pin or wire to start, then click a pin, wire, or junction to connect. Click empty canvas to add a bend.</p>
+  <dialog id="help-dialog" class="dialog" aria-labelledby="help-title">
+    <div class="dialog-title"><h2 id="help-title">WirePad help</h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close"></button></form></div>
+    <p>Choose a part from the library and place it on the canvas. Click one pin and then another to connect them. Use <strong>Wire</strong> to start from an existing wire or junction. Click empty canvas while routing to add a bend.</p>
     <p>Use <strong>Select</strong> to drag a horizontal or vertical wire section sideways, drag a junction dot, or click a wire to change its color. Filled dots mark connections. Wires crossing without a dot remain separate.</p>
-    <p>Select a component to view its pins and download its KiCad assets. Export the drawing as a PNG or SVG, or save an editable project file.</p>
+    <p>Select a component to view its pins and download its KiCad assets. Use <strong>Copy image</strong> to paste the diagram into another app, or use <strong>Export</strong> to download it.</p>
     <dl class="shortcuts">
       <dt>Select, wire, pan</dt><dd><kbd>V</kbd> <kbd>W</kbd> <kbd>H</kbd></dd>
       <dt>Pan temporarily</dt><dd><kbd>Space</kbd></dd>
@@ -147,8 +175,8 @@
       <dt>Search library</dt><dd><kbd>/</kbd></dd>
     </dl>
   </dialog>
-  <dialog id="replace-dialog" class="dialog">
-    <div class="dialog-title"><h2>Replace the current project?</h2></div>
+  <dialog id="replace-dialog" class="dialog" aria-labelledby="replace-title" aria-describedby="replace-description">
+    <div class="dialog-title"><h2 id="replace-title">Replace the current project?</h2></div>
     <p id="replace-description">The new project will replace the browser’s saved workspace. You can save the current project file first.</p>
     <div class="dialog-actions">
       <button type="button" class="button" id="backup-project" data-icon="save">Save current file</button>

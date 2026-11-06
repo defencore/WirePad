@@ -14,13 +14,17 @@ const board = $('#board');
 const svg = $('#canvas');
 const inspection = $('#inspection');
 const title = $('#project-title');
+const startDialog = $('#start-dialog');
+const startError = $('#start-error');
 const replaceDialog = $('#replace-dialog');
 const projectFile = $('#project-file');
+const copyImage = $('#copy-image');
+const copyImageLabel = $('#copy-image-label');
 const modes = Array.from(document.querySelectorAll('[data-mode]'));
 const toolHints = {
-  select: 'Drag segments to reroute · use Wire to join',
-  wire: 'Start on a pin or wire',
-  pan: 'Drag the canvas to pan',
+  select: 'Drag parts to move them. Click a pin to connect.',
+  wire: 'Click a pin, wire, or junction to start.',
+  pan: 'Drag the canvas to move the view.',
 };
 const undoStack = [];
 const redoStack = [];
@@ -28,7 +32,8 @@ const fileLimit = 20_000_000;
 const touchInspector = matchMedia('(max-width: 880px)');
 const touchLibrary = matchMedia('(max-width: 630px)');
 
-let project = loadProject() ?? demoProject();
+const savedProject = loadProject();
+let project = savedProject ?? newProject();
 let selection = project.parts.length ? { type: 'part', id: project.parts[0].id } : null;
 let mode = 'select';
 let inspectorTab = 'part';
@@ -39,9 +44,12 @@ let draftEndpoint = null;
 let gesture = null;
 let holdingSpace = false;
 let replacement = null;
+let pendingImport = null;
 let toastTimer;
 let draggingComponent = null;
-let saved = false;
+let saved = Boolean(savedProject);
+let storageFailed = false;
+let copying = false;
 
 const canvas = new DrawingCanvas({
   svg, scene: $('#scene'), draft: $('#draft'),
@@ -63,9 +71,11 @@ function persist() {
   try {
     saveProject(project);
     saved = true;
+    storageFailed = false;
   } catch {
-    if (saved) notify('Browser storage is unavailable. Save a project file to keep a copy.');
+    if (!storageFailed) notify('Browser storage is unavailable. Save a project file to keep a copy.');
     saved = false;
+    storageFailed = true;
   }
 }
 
@@ -110,18 +120,31 @@ function renderInspector() {
   }
 }
 
+function updateCopyButton() {
+  const hasDrawing = project.parts.length > 0;
+  copyImage.disabled = !hasDrawing;
+  copyImage.setAttribute('aria-disabled', String(copying || !hasDrawing));
+  copyImage.title = hasDrawing ? 'Copy the drawing as a PNG image' : 'Add a component before copying the drawing';
+  copyImage.setAttribute('aria-busy', String(copying));
+  copyImageLabel.textContent = copying ? 'Copying…' : 'Copy image';
+}
+
 function render({ refreshInspector = true } = {}) {
   paint();
   if (refreshInspector) renderInspector();
-  $('#save-state').innerHTML = saved ? `${icon('check')} Saved in this browser` : 'Browser storage unavailable';
+  $('#save-state').innerHTML = saved ? `${icon('check')} Saved in this browser`
+    : storageFailed ? 'Browser storage unavailable' : 'Edits save to this browser';
   $('#undo').disabled = !undoStack.length;
   $('#redo').disabled = !redoStack.length;
+  updateCopyButton();
   $('#empty-board').hidden = Boolean(project.parts.length);
   if (document.activeElement !== title) title.value = project.title;
   svg.dataset.mode = holdingSpace ? 'pan' : mode;
   svg.dataset.routing = Boolean(pending);
   for (const button of modes) button.setAttribute('aria-pressed', button.dataset.mode === mode);
-  const hint = pending ? 'Finish on a pin or wire · click the canvas to bend' : toolHints[mode];
+  const hint = pending ? 'Click a pin or wire to finish. Click empty space to bend.'
+    : mode === 'select' && selectedWire() ? 'Drag a wire segment to reroute it.'
+      : toolHints[mode];
   $('#canvas-hint').innerHTML = `${icon(pending ? 'wire' : 'info')} ${hint}`;
   $('#editor-status').innerHTML = `<span class="status-dot"></span> ${pending ? 'Routing wire' : 'Ready'}`;
   const { parts, wires } = project;
@@ -141,13 +164,18 @@ function renderCatalog() {
     <span class="part-thumb" aria-hidden="true">${componentArt(component, { labels: false })}</span>
     <span><strong>${escapeText(component.name)}</strong><small>${escapeText(component.subtitle ?? component.category)}</small></span>
     <span class="card-add" aria-hidden="true">${icon('plus')}</span>
-  </button>`).join('') || '<div class="inspector-placeholder">No parts match your search.</div>';
+  </button>`).join('') || '<div class="inspector-placeholder"><strong>No matching components</strong><button class="button" type="button" data-action="clear-catalog">Clear filters</button></div>';
 }
 
 function setPanel(name, open) {
   $(`#${name}`).classList.toggle('open', open);
   $(`#toggle-${name}`).setAttribute('aria-expanded', open);
   if (open) setPanel(name === 'library' ? 'inspector' : 'library', false);
+}
+
+function browseComponents() {
+  if (touchLibrary.matches) setPanel('library', true);
+  search.focus();
 }
 
 function select(type, id, { reveal = false } = {}) {
@@ -471,6 +499,13 @@ svg.addEventListener('keydown', event => {
 });
 
 catalog.addEventListener('click', event => {
+  if (event.target.closest('[data-action="clear-catalog"]')) {
+    search.value = '';
+    category.value = '';
+    renderCatalog();
+    search.focus();
+    return;
+  }
   const card = event.target.closest('[data-component]');
   if (card) addPart(card.dataset.component);
 });
@@ -558,7 +593,8 @@ inspection.addEventListener('keydown', event => {
 });
 
 function replaceProject(next) {
-  if (!project.parts.length && project.title === 'Untitled project') {
+  pendingImport = null;
+  if (!project.parts.length && !project.wires.length && project.title === 'Untitled project') {
     useProject(next);
     return;
   }
@@ -575,6 +611,7 @@ function useProject(next) {
   resetDraft();
   undoStack.length = 0;
   redoStack.length = 0;
+  if (startDialog.open) startDialog.close();
   persist();
   render();
   canvas.fit();
@@ -594,9 +631,15 @@ async function exportDrawing(format) {
     notify('Add a component before exporting a drawing.');
     return;
   }
+  const copy = format === 'copy';
+  if (copy && copying) return;
+  if (copy) {
+    copying = true;
+    updateCopyButton();
+  }
   try {
     const drawing = createDrawingSVG({ title: project.title, bounds: canvas.bounds(), markup: drawingMarkup(project) });
-    if (format === 'copy') {
+    if (copy) {
       await copyDrawing(drawing);
       notify('Drawing copied to the clipboard.');
     } else {
@@ -604,7 +647,13 @@ async function exportDrawing(format) {
       notify(`${format.toUpperCase()} downloaded.`);
     }
   } catch (error) {
-    notify(error.message);
+    notify(copy && error.name === 'NotAllowedError'
+      ? 'Clipboard access was blocked. Use Export to download a PNG.' : error.message);
+  } finally {
+    if (copy) {
+      copying = false;
+      updateCopyButton();
+    }
   }
 }
 
@@ -617,10 +666,27 @@ document.querySelectorAll('.menu-panel button').forEach(button => button.addEven
   button.closest('.menu').open = false;
   if (button.dataset.export) exportDrawing(button.dataset.export);
 }));
+const openProjectFile = () => {
+  pendingImport = null;
+  startError.hidden = true;
+  projectFile.click();
+};
+const openDemo = () => replaceProject(demoProject());
+const startBlank = () => replaceProject(newProject());
+const startActions = { open: openProjectFile, demo: openDemo, blank: startBlank, continue: () => startDialog.close() };
+for (const button of document.querySelectorAll('[data-start]')) {
+  button.addEventListener('click', startActions[button.dataset.start]);
+}
+startDialog.addEventListener('close', () => {
+  startError.hidden = true;
+  svg.focus({ preventScroll: true });
+});
+document.querySelector('[data-action="browse-components"]').addEventListener('click', browseComponents);
+copyImage.addEventListener('click', () => exportDrawing('copy'));
 $('#help').addEventListener('click', () => $('#help-dialog').showModal());
-$('#new-project').addEventListener('click', () => replaceProject(newProject()));
-$('#load-demo').addEventListener('click', () => replaceProject(demoProject()));
-$('#open-project').addEventListener('click', () => projectFile.click());
+$('#new-project').addEventListener('click', startBlank);
+$('#load-demo').addEventListener('click', openDemo);
+$('#open-project').addEventListener('click', openProjectFile);
 $('#save-project').addEventListener('click', saveFile);
 $('#backup-project').addEventListener('click', saveFile);
 replaceDialog.addEventListener('close', () => {
@@ -631,11 +697,23 @@ projectFile.addEventListener('change', async () => {
   const file = projectFile.files[0];
   projectFile.value = '';
   if (!file) return;
+  pendingImport = file;
+  const fromStartup = startDialog.open;
+  const isCurrent = () => pendingImport === file && (!fromStartup || startDialog.open);
   try {
     if (file.size > fileLimit) throw new Error('This project file exceeds 20 MB.');
-    replaceProject(parseProject(await file.text()));
+    const contents = await file.text();
+    if (isCurrent()) replaceProject(parseProject(contents));
   } catch (error) {
-    notify(error.message);
+    if (!isCurrent()) return;
+    if (startDialog.open) {
+      startError.textContent = error.message;
+      startError.hidden = false;
+    } else {
+      notify(error.message);
+    }
+  } finally {
+    if (pendingImport === file) pendingImport = null;
   }
 });
 
@@ -704,8 +782,7 @@ document.addEventListener('keydown', event => {
   }
   if (key === '/') {
     event.preventDefault();
-    if (touchLibrary.matches) setPanel('library', true);
-    search.focus();
+    browseComponents();
   }
 });
 function releaseSpace() {
@@ -720,7 +797,11 @@ category.innerHTML = '<option value="">All categories</option>' + categories.map
 search.addEventListener('input', renderCatalog);
 category.addEventListener('change', renderCatalog);
 addIcons();
-persist();
 renderCatalog();
 render();
 canvas.fit();
+if (savedProject) {
+  $('#start-project-name').textContent = savedProject.title;
+  $('#start-resume').hidden = false;
+}
+startDialog.showModal();
