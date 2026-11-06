@@ -1,3 +1,8 @@
+import { drawAds1220 } from "./catalog-ads1220.js";
+import { drawHw0519 } from "./catalog-hw0519.js";
+import { drawSt3215 } from "./catalog-st3215.js";
+import { waveshareArt } from "./catalog-waveshare.js";
+
 function escapeText(value) {
   return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
@@ -237,18 +242,23 @@ function batteryArt() {
     label(52, 31, "DC", 10) + label(87, 15, "+", 8, "#ab4652") + label(87, 47, "−", 8, "#44556b");
 }
 
-const boardArt = { esp32: esp32Art, heltec: heltecArt, rs485: rs485Art, bme280: bmeArt, ads1115: adsArt, ina219: inaArt, oled: oledArt, buck: buckArt };
+const boardTools = { board, chip, circle, label, line, mountingHole, path, rect, screw, smd, usb };
+const boardArt = {
+  esp32: esp32Art, heltec: heltecArt, rs485: rs485Art, bme280: bmeArt, ads1115: adsArt,
+  ads1220: drawAds1220, ina219: inaArt, oled: oledArt, buck: buckArt, ...waveshareArt,
+};
 
 const standaloneArt = {
   soil: soilArt, resistor, capacitor, electrolytic, inductor, "ferrite-bead": ferrite, diode, led,
   npn: transistorArt, nmos: transistorArt, button: buttonArt, battery: batteryArt,
+  hw0519: drawHw0519, st3215: drawSt3215,
   terminal: connectorArt, header: connectorArt, jst: connectorArt,
 };
 
 export function componentArt(component, { labels = true } = {}) {
   const { art, width, height } = component;
   const graphic = boardArt[art]
-    ? boardArt[art](component) + edgePads(component, labels)
+    ? boardArt[art](component, boardTools) + edgePads(component, labels)
     : standaloneArt[art](component, labels);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" aria-hidden="true">${graphic}</svg>`;
 }

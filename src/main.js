@@ -132,7 +132,8 @@ function renderCatalog() {
   const query = search.value.trim().toLowerCase().split(/\s+/);
   const filtered = components.filter(component => {
     if (category.value && component.category !== category.value) return false;
-    const terms = [component.name, component.shortName, component.description, component.category, component.subtitle, ...(component.tags ?? [])].join(' ').toLowerCase();
+    const terms = [component.name, component.shortName, component.description, component.category, component.subtitle,
+      component.manufacturer, ...(component.tags ?? [])].join(' ').toLowerCase();
     return query.every(term => terms.includes(term));
   });
   $('#part-count').textContent = `${filtered.length}`;

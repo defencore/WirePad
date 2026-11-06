@@ -1,3 +1,8 @@
+import { ads1220 } from "./catalog-ads1220.js";
+import { hw0519 } from "./catalog-hw0519.js";
+import { st3215 } from "./catalog-st3215.js";
+import { waveshareComponents } from "./catalog-waveshare.js";
+
 export { componentArt } from "./catalog-art.js";
 
 // Pin specifications are [id, label, description, electrical type, terminal number].
@@ -333,6 +338,9 @@ const battery = {
   ]),
 };
 
-export const components = [esp32, heltec, max3485, bme280, soil, ads1115, ina219, oled, regulator, ...passives, ...discrete, ...connectors, battery];
+export const components = [
+  esp32, heltec, max3485, hw0519, bme280, soil, ads1115, ads1220, ina219, st3215, oled, regulator,
+  ...waveshareComponents, ...passives, ...discrete, ...connectors, battery,
+];
 
 export const componentById = new Map(components.map((component) => [component.id, component]));
