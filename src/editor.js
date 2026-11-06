@@ -1,7 +1,8 @@
 import { componentById } from './catalog.js';
+import { pinById } from './component-pins.js';
 import { traceNet } from './continuity.js';
 import { makeId, MAX_POINTS_PER_WIRE, POSITION_LIMIT } from './project.js';
-import { clampPoint, endpointKey, sameEndpoint, splitWire } from './routing.js';
+import { clampPoint, deleteWireBend, endpointKey, insertWireBend, routeFor, sameEndpoint, splitWire, wireAnchor } from './routing.js';
 
 const collections = { part: 'parts', wire: 'wires', junction: 'junctions' };
 const initialColor = '#2c83d9';
@@ -19,19 +20,30 @@ function automaticWaypoints(route) {
   return { fixedRoute: true, points };
 }
 
+function resolveAnchor(wires, anchor, position) {
+  if (!anchor.wireId) return { endpoint: anchor };
+  const index = wires.findIndex(wire => wire.id === anchor.wireId);
+  const target = wires[index];
+  if (!target) return null;
+  const snapped = wireAnchor(target, routeFor(target, position), anchor.point, 0);
+  if (!snapped) return null;
+  if (!snapped.wireId) return { endpoint: snapped };
+  const split = splitWire(target, position, snapped.point, makeId('junction'), makeId('wire'));
+  wires.splice(index, 1, split.before, split.after);
+  return { endpoint: { junctionId: split.junction.id }, junction: split.junction };
+}
+
 function connect(project, draft, end, color, position, plan) {
   const wires = [...project.wires];
   let junctions = project.junctions;
   function endpoint(anchor) {
-    if (!anchor.wireId) return anchor;
-    const index = wires.findIndex(wire => wire.id === anchor.wireId);
-    const split = splitWire(wires[index], position, anchor.point, makeId('junction'), makeId('wire'));
-    wires.splice(index, 1, split.before, split.after);
-    junctions = [...(junctions ?? []), split.junction];
-    return { junctionId: split.junction.id };
+    const result = resolveAnchor(wires, anchor, position);
+    if (result?.junction) junctions = [...(junctions ?? []), result.junction];
+    return result?.endpoint;
   }
 
   const wire = { id: makeId('wire'), from: endpoint(draft.from), to: endpoint(end), color };
+  if (!wire.from || !wire.to) return null;
   if (draft.points.length) wire.points = draft.points;
   else if (plan) Object.assign(wire, automaticWaypoints(plan));
   wires.push(wire);
@@ -39,6 +51,14 @@ function connect(project, draft, end, color, position, plan) {
     next: { ...project, wires, ...(junctions && { junctions }) },
     wire,
   };
+}
+
+function targetExists(project, endpoint) {
+  if (endpoint.wireId) return Number.isFinite(endpoint.point?.x) && Number.isFinite(endpoint.point?.y)
+    && project.wires.some(wire => wire.id === endpoint.wireId);
+  if (endpoint.junctionId) return project.junctions?.some(junction => junction.id === endpoint.junctionId);
+  const part = project.parts.find(item => item.id === endpoint.partId);
+  return Boolean(pinById(componentById.get(part?.componentId), endpoint.pinId));
 }
 
 export class DiagramEditor {
@@ -182,6 +202,58 @@ export class DiagramEditor {
     this.commit(updateItem(this.project, 'wire', this.wire.id, route));
   }
 
+  reconnectWire(wireId, side, target, position, planRoute) {
+    const wire = this.item('wire', wireId);
+    if (!wire || (side !== 'from' && side !== 'to') || !target) return false;
+    const { project } = this;
+    if (target.wireId === wireId || !targetExists(project, target)) {
+      this.notify('Choose a pin, junction, or a different wire.');
+      return false;
+    }
+
+    const wires = [...project.wires];
+    const attachment = resolveAnchor(wires, target, position);
+    if (!attachment || sameEndpoint(wire[side], attachment.endpoint)) return false;
+
+    const fixed = wire[side === 'from' ? 'to' : 'from'];
+    const net = traceNet({ ...project, wires: project.wires.filter(item => item.id !== wireId) }, fixed);
+    const duplicate = attachment.junction ? net.wireIds.has(target.wireId)
+      : net.endpoints.has(endpointKey(attachment.endpoint));
+    if (duplicate) {
+      this.notify('These points are already on the same net. Choose another point.');
+      return false;
+    }
+
+    const edited = { ...wire, [side]: attachment.endpoint };
+    const point = attachment.junction ?? position(attachment.endpoint);
+    const from = side === 'from' ? point : position(fixed);
+    const to = side === 'to' ? point : position(fixed);
+    const plan = planRoute?.(from, to);
+    Object.assign(edited, plan ? automaticWaypoints(plan) : { fixedRoute: false, points: [] });
+    const index = wires.findIndex(item => item.id === wireId);
+    wires[index] = edited;
+
+    let junctions = project.junctions;
+    const previous = wire[side].junctionId;
+    if (previous && !wires.some(item => item.from.junctionId === previous || item.to.junctionId === previous)) {
+      junctions = junctions.filter(junction => junction.id !== previous);
+    }
+    if (attachment.junction) junctions = [...(junctions ?? []), attachment.junction];
+    return this.commit({ ...project, wires, ...(junctions && { junctions }) }, { selection: { type: 'wire', id: wireId } });
+  }
+
+  addWireBend(wireId, point, position) {
+    const wire = this.item('wire', wireId);
+    const points = wire && insertWireBend(wire, position, point);
+    return points ? this.commit(updateItem(this.project, 'wire', wireId, { fixedRoute: true, points })) : false;
+  }
+
+  removeWireBend(wireId, point, position) {
+    const wire = this.item('wire', wireId);
+    const points = wire && deleteWireBend(wire, position, point);
+    return points ? this.commit(updateItem(this.project, 'wire', wireId, { fixedRoute: true, points })) : false;
+  }
+
   addBend(point) {
     if (this.pending.points.length >= MAX_POINTS_PER_WIRE) {
       this.notify(`A wire can have up to ${MAX_POINTS_PER_WIRE} bend points.`);
@@ -218,7 +290,12 @@ export class DiagramEditor {
       return;
     }
     const plan = this.pending.points.length ? null : planRoute(position(from), position(endpoint));
-    const { next, wire } = connect(this.project, this.pending, endpoint, this.wireColor, position, plan);
+    const connection = connect(this.project, this.pending, endpoint, this.wireColor, position, plan);
+    if (!connection) {
+      this.notify('Choose another point to finish the connection.');
+      return;
+    }
+    const { next, wire } = connection;
     this.commit(next, { selection: { type: 'wire', id: wire.id }, pending: null });
   }
 }

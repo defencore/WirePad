@@ -97,8 +97,10 @@
         <div class="board-bottom">
           <div class="canvas-guide">
             <span id="canvas-hint" class="canvas-hint"><span data-icon="info" aria-hidden="true"></span><span id="canvas-hint-text"></span></span>
-            <div class="canvas-actions">
-              <button type="button" id="cancel-wire" class="button canvas-action" data-icon="close" hidden>Cancel wire</button>
+            <div class="canvas-actions" role="group" aria-label="Canvas actions">
+              <button type="button" id="cancel-wire" class="button canvas-action" data-icon="close" hidden><span id="cancel-wire-label">Cancel wire</span></button>
+              <button type="button" id="add-bend" class="button canvas-action" data-icon="plus" aria-pressed="false" hidden>Add bend</button>
+              <button type="button" id="remove-bend" class="button canvas-action" data-icon="minus" hidden>Remove bend</button>
               <button type="button" id="branch-wire" class="button canvas-action" data-icon="wire" aria-label="Add a branch from the selected wire" hidden>Add branch</button>
               <button type="button" id="inspect-wire" class="button canvas-action" data-icon="sliders" aria-label="Show wire details" hidden>Details</button>
               <button type="button" id="clear-trace" class="button canvas-action" data-icon="close" hidden>Clear trace</button>
@@ -185,9 +187,11 @@
   </dialog>
   <dialog id="help-dialog" class="dialog" aria-labelledby="help-title">
     <div class="dialog-title"><h2 id="help-title">WirePad help</h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close"></button></form></div>
-    <p>Use <strong>Wire</strong>, then choose a starting pin and a destination. Tap a component to open its searchable pin list, or click a pin directly. WirePad routes the connection automatically. With a mouse, click empty canvas to add a bend. Choose <strong>Cancel wire</strong> to stop.</p>
+    <p>Use <strong>Wire</strong>, then choose a starting pin and a destination. Tap a component to open its searchable pin list. With a mouse, click a pin or drag from it to the destination. WirePad routes the connection automatically.</p>
     <p>To connect two wires, choose <strong>Wire</strong>, then tap the first wire and the second wire. You can also select a wire and choose <strong>Add branch</strong> to connect it to another wire or pin. Filled dots mark joined points.</p>
-    <p>Use <strong>Trace</strong> and tap a pin, wire, or junction to highlight every connection it reaches. Use <strong>Select</strong> to move wire segments and junctions. In the Inspector, you can change a wire’s color or use <strong>Auto route</strong> to redraw it.</p>
+    <p>In <strong>Select</strong>, choose a wire to show its blue handles. Drag a segment handle to shift that part of the wire. Drag an end handle to a new pin, junction, or wire, or tap the handle and then choose a destination.</p>
+    <p>Choose <strong>Add bend</strong> and pick a point on the canvas. Drag a bend to move it, or select it and choose <strong>Remove bend</strong>. In the Inspector, use <strong>Auto route</strong> to redraw the wire or change its color.</p>
+    <p>Use <strong>Trace</strong> and tap a pin, wire, or junction to highlight every connection it reaches.</p>
     <p>On touch screens, drag empty canvas with one finger to pan. Pinch with two fingers to zoom.</p>
     <p>Select a component to view its pinout and KiCad assets in the Inspector. Use <strong>Copy image</strong> to paste the diagram into another app, or use <strong>Export</strong> to download it.</p>
     <dl class="shortcuts">

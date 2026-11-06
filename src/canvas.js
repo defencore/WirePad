@@ -182,6 +182,101 @@ class SceneLayer {
   }
 }
 
+const handleKey = (kind, index) => kind === 'segment' || kind === 'bend' ? `${kind}/${index}` : kind;
+const midpoint = (a, b) => ({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+const handleOrder = ({ kind, index }) => kind === 'from' ? 0 : kind === 'to' ? 1 : 2 + index * 2 + Number(kind === 'segment');
+
+function wireHandleLayout(wireId, { route, from, to }, active, spacing) {
+  const items = new Map();
+  const placed = [];
+  const activeKey = active && handleKey(active.kind, active.index);
+  function add(kind, index, point, axis, display = point) {
+    const key = handleKey(kind, index);
+    const current = key === activeKey;
+    if (current && active.point) display = point = active.point;
+    if (current && active.axis) axis = active.axis;
+    if (index !== undefined && !current && placed.some(other =>
+      (other.x - display.x) ** 2 + (other.y - display.y) ** 2 < spacing ** 2)) return;
+    placed.push(display);
+    items.set(`${wireId}/${key}`, { wireId, kind, index, point, axis, display, active: current });
+  }
+
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  const span = Math.hypot(dx, dy);
+  let first = from;
+  let last = to;
+  if (span < spacing) {
+    const spread = (spacing - span) / 2;
+    const x = span ? dx * spread / span : spread;
+    const y = span ? dy * spread / span : 0;
+    first = { x: from.x - x, y: from.y - y };
+    last = { x: to.x + x, y: to.y + y };
+  }
+  add('from', undefined, from, undefined, first);
+  add('to', undefined, to, undefined, last);
+
+  const segment = index => {
+    const a = route[index];
+    const b = route[index + 1];
+    if (a && b) add('segment', index, midpoint(a, b), a.x === b.x ? 'x' : 'y');
+    else if (active?.point) add('segment', index, active.point, active.axis);
+  };
+  if (active?.kind === 'segment') segment(active.index);
+  if (active?.kind === 'bend') {
+    const point = active.point ?? route[active.index];
+    if (point) add('bend', active.index, point);
+  }
+  for (let index = 1; index + 1 < route.length; index++) {
+    if (handleKey('bend', index) !== activeKey) add('bend', index, route[index]);
+  }
+  for (let index = 0; index + 1 < route.length; index++) {
+    if (handleKey('segment', index) !== activeKey) segment(index);
+  }
+  return new Map([...items].sort(([, a], [, b]) => handleOrder(a) - handleOrder(b)));
+}
+
+function updateWireHandle(layer, entry, handle, scale) {
+  const { wireId, kind, index, point, display, axis, active } = handle;
+  if (!entry) {
+    const node = group(layer);
+    node.setAttribute('class', 'wire-handle');
+    node.dataset.wireHandle = kind;
+    node.dataset.handleWire = wireId;
+    node.setAttribute('role', 'button');
+    node.setAttribute('tabindex', '0');
+    if (index !== undefined) node.dataset[kind === 'segment' ? 'segmentIndex' : 'bendIndex'] = index;
+    const marker = kind === 'bend'
+      ? '<rect class="wire-handle-marker" x="-3.8" y="-3.8" width="7.6" height="7.6" rx="1.2" transform="rotate(45)" pointer-events="none"/>'
+      : `<circle class="wire-handle-marker" r="${kind === 'segment' ? 4.5 : 5.5}" pointer-events="none"/>`;
+    node.innerHTML = `<line class="wire-handle-leader" stroke="#4b82cc" stroke-width="1.2" pointer-events="none"/>
+      <circle class="wire-handle-hit" r="11" fill="transparent"/>${marker}<title/>`;
+    entry = { node };
+  }
+  const { node } = entry;
+  if (entry.axis !== axis || !entry.label) {
+    const label = { from: 'Reconnect wire start', to: 'Reconnect wire end', bend: 'Move wire bend',
+      segment: axis === 'x' ? 'Move wire segment left or right' : 'Move wire segment up or down' }[kind];
+    node.setAttribute('aria-label', label);
+    node.lastElementChild.textContent = label;
+    if (axis) node.dataset.axis = axis;
+    entry.axis = axis;
+    entry.label = label;
+  }
+  node.dataset.handleX = point.x;
+  node.dataset.handleY = point.y;
+  node.toggleAttribute('data-active', active);
+  if (kind === 'bend') node.setAttribute('aria-pressed', String(active));
+  node.setAttribute('transform', `${translation(display.x, display.y)} scale(${1 / scale})`);
+  const leader = node.firstElementChild;
+  const x = (point.x - display.x) * scale;
+  const y = (point.y - display.y) * scale;
+  leader.setAttribute('x2', x);
+  leader.setAttribute('y2', y);
+  leader.setAttribute('visibility', x || y ? 'visible' : 'hidden');
+  return entry;
+}
+
 function updateWire(layer, entry, { wire, geometry }, selected) {
   if (!entry) {
     const node = group(layer);
@@ -293,19 +388,30 @@ export class DrawingCanvas {
     this.traceLayer.setAttribute('aria-hidden', 'true');
     this.traceLayer.setAttribute('pointer-events', 'none');
     svg.insertBefore(this.traceLayer, draft);
+    this.reconnectLayer = group(svg);
+    this.reconnectLayer.setAttribute('class', 'wire-reconnect-preview');
+    this.reconnectLayer.setAttribute('aria-hidden', 'true');
+    this.reconnectLayer.setAttribute('pointer-events', 'none');
+    svg.insertBefore(this.reconnectLayer, draft);
+    this.wireHandles = new SceneLayer(svg);
+    this.wireHandles.node.setAttribute('class', 'wire-handle-layer');
+    this.wireHandles.node.setAttribute('role', 'group');
+    this.wireHandles.node.setAttribute('aria-label', 'Wire editing handles');
+    this.coarsePointer = matchMedia('(pointer: coarse)');
+    this.coarsePointer.addEventListener('change', () => this.updateWireHandles());
     this.draftMarkup = '';
     new ResizeObserver(() => this.autoFit ? this.fit() : this.applyView()).observe(svg);
   }
 
-  draw(project, selection, active, trace) {
+  draw(project, selection, active, trace, wireControls) {
     const projectChanged = this.geometryProject !== project;
     const selectionChanged = this.selection !== selection || this.active !== active;
     const previous = this.geometry;
     if (projectChanged || selectionChanged) {
       if (projectChanged) {
         this.geometry = resolveDrawing(project, previous?.wires);
-        this.autoRouter = null;
-        this.lastAutoRoute = null;
+        this.defaultRouteCache = null;
+        this.excludedRouteCache = null;
       }
       this.geometryProject = project;
       this.selection = selection;
@@ -329,6 +435,20 @@ export class DrawingCanvas {
       this.wires.node.setAttribute('opacity', dim ? '.26' : '1');
       this.branches.setAttribute('opacity', dim ? '.26' : '1');
     }
+    this.wireControls = wireControls;
+    this.updateWireHandles();
+  }
+
+  updateWireHandles() {
+    const { wireId, active } = this.wireControls ?? {};
+    const geometry = this.geometry?.wires.get(wireId)?.geometry;
+    const { scale } = this;
+    const spacing = (this.coarsePointer.matches || this.svg.dataset.input === 'touch' ? 36 : 24) / scale;
+    const state = [wireId, geometry, scale, spacing, active?.kind, active?.index, active?.axis, active?.point?.x, active?.point?.y];
+    if (state.every((value, index) => value === this.handleState?.[index])) return;
+    this.handleState = state;
+    const items = geometry ? wireHandleLayout(wireId, geometry, active, spacing) : new Map();
+    this.wireHandles.update(items, (item, entry) => updateWireHandle(this.wireHandles.node, entry, item, scale));
   }
 
   position(endpoint) {
@@ -357,8 +477,12 @@ export class DrawingCanvas {
     return entry ? wireAnchor(entry.wire, entry.geometry.route, point, threshold) : null;
   }
 
+  wireRoute(wireId) {
+    return this.geometry.wires.get(wireId)?.geometry.route;
+  }
+
   branchAnchor(wireId) {
-    const route = this.geometry.wires.get(wireId)?.geometry.route;
+    const route = this.wireRoute(wireId);
     if (!route) return null;
     let length = 0;
     let point = null;
@@ -375,23 +499,23 @@ export class DrawingCanvas {
   }
 
   autoRoute(start, end, { excludeWire } = {}) {
-    const previous = this.lastAutoRoute;
-    if (!excludeWire && previous && samePosition(start, previous.start) && samePosition(end, previous.end)) {
-      return previous.route;
-    }
-
-    let router = excludeWire ? null : this.autoRouter;
-    if (!router) {
+    const key = excludeWire ? 'excludedRouteCache' : 'defaultRouteCache';
+    let cached = this[key];
+    if (!cached || cached.excludeWire !== excludeWire) {
       const routes = [];
       for (const [id, { geometry }] of this.geometry.wires) {
         if (id !== excludeWire) routes.push(geometry.route);
       }
-      router = createAutoRouter(this.geometryProject, routes);
-      if (!excludeWire) this.autoRouter = router;
+      cached = { excludeWire, router: createAutoRouter(this.geometryProject, routes) };
+      this[key] = cached;
     }
-    const route = router(start, end);
-    if (!excludeWire) this.lastAutoRoute = { start, end, route };
-    return route;
+    if (cached.route && samePosition(start, cached.start) && samePosition(end, cached.end)) {
+      return cached.route;
+    }
+    cached.start = start;
+    cached.end = end;
+    cached.route = cached.router(start, end);
+    return cached.route;
   }
 
   showDraft(pending, point, color, endpoint) {
@@ -410,6 +534,20 @@ export class DrawingCanvas {
     if (this.draftMarkup !== markup) {
       this.draft.innerHTML = markup;
       this.draftMarkup = markup;
+    }
+  }
+
+  showReconnectPreview(start, end, route, color) {
+    let markup = '';
+    if (route?.length) {
+      const outline = 'fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"';
+      const ring = ({ x, y }) => `<circle cx="${x}" cy="${y}" r="${5 / this.scale}" fill="#eff6ff" stroke="${color}" stroke-width="1.5" vector-effect="non-scaling-stroke"/>`;
+      markup = `<path d="${pathFrom(route)}" ${outline} stroke="#ffffff" stroke-width="5"/>
+        <path d="${pathFrom(route)}" ${outline} stroke="${color}" stroke-width="2.5" stroke-dasharray="6 4"/>${ring(start)}${ring(end)}`;
+    }
+    if (markup !== this.reconnectMarkup) {
+      this.reconnectLayer.innerHTML = markup;
+      this.reconnectMarkup = markup;
     }
   }
 
@@ -473,6 +611,7 @@ export class DrawingCanvas {
     const height = this.svg.clientHeight / this.scale;
     if (!width || !height) return;
     this.svg.setAttribute('viewBox', `${this.center.x - width / 2} ${this.center.y - height / 2} ${width} ${height}`);
+    this.updateWireHandles();
     this.onZoom(this.scale);
   }
 }

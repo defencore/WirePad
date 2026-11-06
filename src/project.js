@@ -6,13 +6,13 @@ const STORAGE_KEY = "wirepad.project";
 const MAX_PARTS = 500;
 const MAX_WIRES = 3000;
 const MAX_JUNCTIONS = 3000;
-// Routing can materialize extra orthogonal corners when a wire is split or dragged.
-const MAX_FIXED_ROUTE_POINTS = 216;
 const MAX_PROJECT_ROUTE_POINTS = 320_000;
 
 export const DEFAULT_PROJECT_TITLE = "Untitled project";
 export const POSITION_LIMIT = 1_000_000;
 export const MAX_POINTS_PER_WIRE = 100;
+// Routing can materialize extra orthogonal corners when a wire is split or dragged.
+export const MAX_FIXED_ROUTE_POINTS = 216;
 export const PROJECT_FILE_LIMIT = 24 * 1024 * 1024;
 
 // Only normalized, frozen records and lists can bypass their structural checks.

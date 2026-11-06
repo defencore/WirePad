@@ -84,7 +84,7 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
 .card-add .icon { width: 14px; height: 14px; }
 .library-footer { display: flex; gap: 7px; align-items: center; padding: 11px 15px; border-top: 1px solid var(--line-light); color: var(--quiet); font-size: 11px; }
 .library-footer .icon { width: 14px; height: 14px; }
-.workspace { display: grid; min-width: 0; min-height: 0; grid-template-rows: var(--toolbar) minmax(0, 1fr); }
+.workspace { display: grid; min-width: 0; min-height: 0; grid-template: var(--toolbar) minmax(0, 1fr) / minmax(0, 1fr); }
 .workspace-toolbar { z-index: 3; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-bottom: 1px solid var(--line); background: var(--chrome); }
 .tool-group, .history { display: flex; align-items: center; }
 .tool-group { gap: 3px; padding: 3px; border: 1px solid var(--line-light); border-radius: 9px; background: #f2f5f6; }
@@ -101,6 +101,7 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
 #canvas:focus-visible { outline-offset: -2px; }
 #canvas[data-mode="pan"] { cursor: grab; }
 #canvas[data-mode="wire"] { cursor: crosshair; }
+#canvas:is([data-wire-action="add-bend"], [data-wire-action="reconnect"]) { cursor: crosshair; }
 #canvas.dragging { cursor: grabbing; }
 .board.is-drop-target { box-shadow: inset 0 0 0 2px var(--accent); }
 .board-header, .board-bottom { position: absolute; z-index: 1; pointer-events: none; }
@@ -118,6 +119,7 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
 .canvas-actions:not(:has(> button:not([hidden]))) { display: none; }
 .canvas-action { min-height: 31px; padding: 0 8px; pointer-events: auto; color: var(--accent-dark); font-size: 12px; }
 .canvas-action .icon { width: 13px; height: 13px; }
+.canvas-action[aria-pressed="true"] { border-color: #95c8bf; background: var(--accent-bg); }
 .zoom { display: flex; align-items: center; padding: 2px; border: 1px solid var(--line); border-radius: var(--radius); background: white; pointer-events: auto; box-shadow: 0 2px 6px #233c5010; }
 .zoom .button { min-height: 29px; }
 .zoom .compact { width: 28px; }
@@ -137,7 +139,18 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
 .wire-hit, .canvas-junction { cursor: grab; }
 .wire-hit:focus-visible { outline: none; stroke: #51c5b869; }
 #canvas[data-input="touch"] .wire-hit { stroke-width: 24px; }
+.wire-handle { cursor: grab; }
+.wire-handle[data-wire-handle="bend"] { cursor: move; }
+.wire-handle[data-axis="x"] { cursor: ew-resize; }
+.wire-handle[data-axis="y"] { cursor: ns-resize; }
+.wire-handle:focus-visible { outline: none; }
+.wire-handle-marker { fill: #e8f2ff; stroke: #215ca5; stroke-width: 1.6; pointer-events: none; }
+.wire-handle:is([data-wire-handle="from"], [data-wire-handle="to"]) .wire-handle-marker { fill: #226bc1; stroke: #fff; }
+.wire-handle:is(:focus-visible, [data-active]) .wire-handle-marker { fill: #184d91; stroke: #fff; stroke-width: 2.5; }
+.wire-handle-leader { stroke: #215ca5; pointer-events: none; }
+#canvas[data-input="touch"] .wire-handle-hit { r: 17px; }
 #canvas:is([data-mode="wire"], [data-mode="trace"], [data-routing="true"]) :is(.wire-hit, .canvas-junction, .part-body) { cursor: crosshair; }
+#canvas:is([data-wire-action="add-bend"], [data-wire-action="reconnect"]) :is(.part-body, .wire-hit, .canvas-junction) { cursor: crosshair; }
 #canvas[data-mode="pan"] :is(.part-body, .canvas-pin, .wire-hit, .canvas-junction) { cursor: inherit; }
 #canvas.dragging :is(.wire-hit, .canvas-junction) { cursor: grabbing; }
 .inspector-heading { padding-bottom: 13px; border-bottom: 1px solid var(--line-light); }
@@ -247,6 +260,14 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
   .inspector.open { display: flex; }
   #toggle-inspector { display: inline-flex; }
 }
+@media (min-width: 631px) and (max-width: 800px) {
+  .topbar { gap: 8px; padding-inline: 10px; }
+  .top-divider, .app-label, .save-state { display: none; }
+  .workspace-toolbar { gap: 4px; padding-inline: 6px; }
+  .tool-group button { padding-inline: 4px; }
+  .toolbar-divider, .fit .desktop-label { display: none; }
+  .fit { width: 34px; padding: 0; }
+}
 @media (max-width: 630px) {
   :root { --top: 52px; --toolbar: 111px; }
   .editor { grid-template-columns: minmax(0, 1fr); }
@@ -274,6 +295,24 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
   .board-bottom { right: 8px; bottom: 8px; left: 8px; display: grid; grid-template-columns: minmax(0, 1fr) auto; }
   .canvas-guide { max-width: none; }
   .canvas-action, .zoom .button { min-height: 44px; }
+  .board-bottom:has(#add-bend:not([hidden]), #remove-bend:not([hidden])) .canvas-guide { display: contents; }
+  .board-bottom:has(#add-bend:not([hidden]), #remove-bend:not([hidden])) .canvas-hint { grid-area: 1 / 1; }
+  .board-bottom:has(#add-bend:not([hidden]), #remove-bend:not([hidden])) .zoom { grid-area: 1 / 2; }
+  .board-bottom:has(#add-bend:not([hidden]), #remove-bend:not([hidden])) .canvas-actions {
+    grid-area: 2 / 1 / 3 / -1;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+  }
+  .board-bottom:has(#add-bend:not([hidden]), #remove-bend:not([hidden])) .canvas-action {
+    flex-direction: column;
+    gap: 3px;
+    padding-inline: 2px;
+    font-size: 11px;
+    line-height: 1.1;
+    text-align: center;
+    white-space: normal;
+  }
   .zoom .compact { width: 40px; }
   .zoom-value { min-width: 42px; }
   .statusbar { gap: 5px; padding: 0 7px; }

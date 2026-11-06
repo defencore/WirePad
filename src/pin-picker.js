@@ -3,7 +3,7 @@ import { partName } from './canvas.js';
 
 const normalize = value => value.normalize('NFKD').toLowerCase();
 
-function pinChoice(pin, { disabled, suggested }) {
+function pinChoice(pin, { disabled, suggested, fixedLabel }) {
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'pin-choice';
@@ -20,7 +20,7 @@ function pinChoice(pin, { disabled, suggested }) {
   if (disabled || (pin.number !== undefined && String(pin.number) !== pin.label)) {
     const terminal = document.createElement('span');
     terminal.className = 'pin-terminal';
-    terminal.textContent = disabled ? 'Wire start' : `Contact ${pin.number}`;
+    terminal.textContent = disabled ? fixedLabel : `Contact ${pin.number}`;
     heading.append(terminal);
   }
 
@@ -98,13 +98,15 @@ export function bindPinPicker({ onChoose, focusCanvas }) {
       if (!component?.pins.length) return false;
       partId = part.id;
       pressedInside = false;
-      title.textContent = mode === 'trace' ? 'Trace a pin' : 'Choose a pin';
+      title.textContent = mode === 'trace' ? 'Trace a pin' : mode === 'reconnect' ? 'Reconnect wire' : 'Choose a pin';
       partLabel.textContent = partName(part, component);
       instruction.textContent = mode === 'trace' ? 'Choose a pin to highlight its connected wires.'
-        : from ? 'Choose where the wire should connect.' : 'Choose a starting pin for the wire.';
+        : mode === 'reconnect' ? 'Choose a new contact for this wire end.'
+          : from ? 'Choose where the wire should connect.' : 'Choose a starting pin for the wire.';
       search.value = '';
+      const fixedLabel = mode === 'reconnect' ? 'Fixed end' : 'Wire start';
       entries = component.pins.map(pin => ({
-        button: pinChoice(pin, { disabled: from?.partId === partId && from.pinId === pin.id, suggested: pin.id === pinId }),
+        button: pinChoice(pin, { disabled: from?.partId === partId && from.pinId === pin.id, suggested: pin.id === pinId, fixedLabel }),
         text: normalize([pin.id, pin.label, pin.number, pin.description].join(' ')),
       }));
       list.replaceChildren(...entries.map(({ button }) => button));

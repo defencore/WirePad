@@ -16,6 +16,9 @@ const title = element('project-title');
 const count = element('project-count');
 const hint = element('canvas-hint-text');
 const cancelWire = element('cancel-wire');
+const cancelWireLabel = element('cancel-wire-label');
+const addBend = element('add-bend');
+const removeBend = element('remove-bend');
 const branchWire = element('branch-wire');
 const inspectWire = element('inspect-wire');
 const clearTrace = element('clear-trace');
@@ -76,12 +79,16 @@ function setPanel(name, open, { focus = false } = {}) {
 }
 
 function paint(project = editor.project) {
-  canvas.draw(project, editor.selection, editor.pending?.from, editor.traceSeed);
+  canvas.draw(project, editor.selection, editor.pending?.from, editor.traceSeed, controls.wireControls);
   controls.renderDraft();
 }
 
 function canvasHint() {
   const touchLayout = panels.library.compact.matches;
+  const tool = controls.wireTool?.kind;
+  if (tool === 'add') return 'Choose a place on the canvas for the new bend.';
+  if (tool === 'from' || tool === 'to') return 'Choose a pin, module, junction, or another wire for this end.';
+  if (tool === 'bend') return 'Drag this bend to move it, or choose Remove bend.';
   if (editor.pending) {
     const { from } = editor.pending;
     if (from.wireId) return 'Choose a pin or another wire to add a branch.';
@@ -93,7 +100,8 @@ function canvasHint() {
   if (net?.wireIds.size) {
     const pins = [...net.endpoints.values()].filter(endpoint => endpoint.partId).length;
     const wires = net.wireIds.size;
-    return `Highlighted net: ${pins} ${pins === 1 ? 'pin' : 'pins'} · ${wires} ${wires === 1 ? 'wire' : 'wires'}.`;
+    const summary = `${pins} ${pins === 1 ? 'pin' : 'pins'} · ${wires} ${wires === 1 ? 'wire' : 'wires'}`;
+    return editor.mode === 'select' ? `Drag the handles to edit. ${summary}.` : `Highlighted net: ${summary}.`;
   }
   if (editor.mode === 'trace') return editor.trace
     ? 'No wires are connected to this point.' : 'Choose a wire, junction, or pin to trace its connections.';
@@ -123,17 +131,24 @@ function render({ persist: shouldSave = false } = {}) {
   const { parts, wires } = editor.project;
   const routing = Boolean(editor.pending);
   const selectedWire = editor.wire && !routing && editor.mode !== 'pan';
+  const tool = controls.wireTool?.kind;
+  const editingWire = tool === 'from' || tool === 'to' || tool === 'add';
+  const editableWire = selectedWire && editor.mode === 'select';
   const guide = canvasHint();
-  const currentStatus = routing ? 'Routing wire' : editor.traceSeed ? 'Tracing connections' : 'Ready';
+  const currentStatus = editingWire ? 'Editing wire' : routing ? 'Routing wire' : editor.traceSeed ? 'Tracing connections' : 'Ready';
   const total = `${parts.length} ${parts.length === 1 ? 'part' : 'parts'} · ${wires.length} ${wires.length === 1 ? 'wire' : 'wires'}`;
   if (hint.textContent !== guide) hint.textContent = guide;
   if (status.textContent !== currentStatus) status.textContent = currentStatus;
   if (count.textContent !== total) count.textContent = total;
   undo.disabled = !history.canUndo;
   redo.disabled = !history.canRedo;
-  cancelWire.hidden = !routing;
-  branchWire.hidden = !selectedWire;
-  inspectWire.hidden = !selectedWire || !panels.inspector.compact.matches;
+  cancelWire.hidden = !routing && !editingWire;
+  cancelWireLabel.textContent = editingWire ? 'Cancel edit' : 'Cancel wire';
+  addBend.hidden = !editableWire || (editingWire && tool !== 'add');
+  addBend.setAttribute('aria-pressed', String(tool === 'add'));
+  removeBend.hidden = !editableWire || tool !== 'bend';
+  branchWire.hidden = !selectedWire || editingWire;
+  inspectWire.hidden = !selectedWire || editingWire || !panels.inspector.compact.matches;
   clearTrace.hidden = editor.mode !== 'trace' || !editor.trace;
   emptyBoard.hidden = editor.hasDrawing;
   if (document.activeElement !== title) title.value = editor.project.title;
@@ -187,9 +202,9 @@ function addPart(id, drop) {
 }
 
 const controls = bindCanvas({
-  canvas, svg, editor, paint,
-  openPinPicker: (id, pinId) => pinPicker.open(editor.item('part', id), {
-    mode: editor.mode === 'trace' ? 'trace' : 'wire', from: editor.pending?.from, pinId,
+  canvas, svg, editor, paint, refresh: render,
+  openPinPicker: (id, pinId, from, mode = editor.mode === 'trace' ? 'trace' : 'wire') => pinPicker.open(editor.item('part', id), {
+    mode, from, pinId,
   }),
   dismissInspector: () => setPanel('inspector', false),
 });
@@ -224,6 +239,7 @@ title.addEventListener('keydown', event => {
 });
 function changeMode(mode) {
   if (controls.gesturing) return;
+  controls.clearWireTool();
   if (mode !== 'select') {
     setPanel('library', false);
     setPanel('inspector', false);
@@ -246,7 +262,9 @@ element('zoom-value').addEventListener('click', () => canvas.zoom(1));
 element('browse-components').addEventListener('click', library.browse);
 undo.addEventListener('click', () => editor.step('undo'));
 redo.addEventListener('click', () => editor.step('redo'));
-cancelWire.addEventListener('click', () => { editor.cancelWire(); focusCanvas(); });
+cancelWire.addEventListener('click', () => { controls.clearWireTool(); editor.cancelWire(); focusCanvas(); });
+addBend.addEventListener('click', () => { controls.armBend(); focusCanvas(); });
+removeBend.addEventListener('click', () => { controls.removeBend(); focusCanvas(); });
 branchWire.addEventListener('click', () => {
   const anchor = editor.wire && canvas.branchAnchor(editor.wire.id);
   if (!anchor) return;
@@ -257,11 +275,19 @@ branchWire.addEventListener('click', () => {
 inspectWire.addEventListener('click', () => setPanel('inspector', true, { focus: true }));
 clearTrace.addEventListener('click', () => { editor.tracePoint(null); focusCanvas(); });
 
+function deleteSelection() {
+  const tool = controls.wireTool?.kind;
+  if (tool === 'bend') controls.removeBend();
+  else if (tool === 'add' || tool === 'from' || tool === 'to') controls.clearWireTool();
+  else editor.removeSelection();
+}
+
 const shortcuts = {
   v: () => changeMode('select'), w: () => changeMode('wire'), t: () => changeMode('trace'), h: () => changeMode('pan'),
   f: () => canvas.fit(), r: () => editor.rotatePart(), '/': library.browse,
-  delete: () => editor.removeSelection(), backspace: () => editor.removeSelection(),
+  delete: deleteSelection, backspace: deleteSelection,
   escape: () => {
+    controls.clearWireTool();
     editor.cancelWire();
     editor.tracePoint(null);
     setPanel('library', false);

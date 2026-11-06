@@ -1,6 +1,6 @@
 import { componentById } from './catalog.js';
 import { pinById } from './component-pins.js';
-import { POSITION_LIMIT } from './project.js';
+import { MAX_FIXED_ROUTE_POINTS, POSITION_LIMIT } from './project.js';
 
 const LEAD = 15;
 
@@ -211,13 +211,14 @@ export function nearestSegment(route, target) {
   return nearest;
 }
 
-export function segmentDrag(wire, position, point) {
-  const route = compact(routeFor(wire, position));
-  const segment = nearestSegment(route, point);
-  if (!segment) return null;
-  const a = route[segment.index];
-  const b = route[segment.index + 1];
-  return { route, index: segment.index, axis: a.x === b.x ? 'x' : 'y' };
+export function segmentDrag(wire, position, point, handleIndex) {
+  const keepWaypoints = Number.isInteger(handleIndex);
+  const rendered = routeFor(wire, position);
+  const route = keepWaypoints ? rendered : compact(rendered);
+  const index = keepWaypoints ? handleIndex : nearestSegment(route, point)?.index;
+  const a = route[index];
+  const b = route[index + 1];
+  return a && b ? { route, index, axis: a.x === b.x ? 'x' : 'y', keepWaypoints } : null;
 }
 
 function routeWaypoints(points) {
@@ -234,7 +235,7 @@ function routeWaypoints(points) {
   return bends;
 }
 
-export function slideSegment({ route, index, axis }, delta) {
+export function slideSegment({ route, index, axis, keepWaypoints }, delta) {
   const a = route[index];
   const b = route[index + 1];
   const cross = axis === 'x' ? 'y' : 'x';
@@ -244,17 +245,116 @@ export function slideSegment({ route, index, axis }, delta) {
   const coordinate = bounded(a[axis] + delta);
   const first = index === 0;
   const last = index === route.length - 2;
+  const keepStart = first || (keepWaypoints && route[index - 1]?.[axis] === a[axis]);
+  const keepEnd = last || (keepWaypoints && route[index + 2]?.[axis] === b[axis]);
   const innerA = { ...a, [cross]: a[cross] + (first ? inset * direction : 0) };
   const innerB = { ...b, [cross]: b[cross] - (last ? inset * direction : 0) };
   const updated = [
     ...route.slice(0, index),
-    ...(first ? [a, innerA] : []),
+    ...(keepStart ? [a, innerA] : []),
     { ...innerA, [axis]: coordinate },
     { ...innerB, [axis]: coordinate },
-    ...(last ? [innerB, b] : []),
+    ...(keepEnd ? [innerB, b] : []),
     ...route.slice(index + 2),
   ];
-  return routeWaypoints(updated);
+  const edited = keepWaypoints && compact(updated, true).slice(1, -1).map(({ x, y }) => ({ x, y }));
+  return edited && edited.length <= MAX_FIXED_ROUTE_POINTS ? edited : routeWaypoints(updated);
+}
+
+function editWaypoints(route, vertices) {
+  const points = compact(vertices, true).slice(1, -1).map(({ x, y }) => ({ x, y }));
+  if (points.length > MAX_FIXED_ROUTE_POINTS || points.some(({ x, y }) => !Number.isFinite(x) || !Number.isFinite(y)
+    || Math.abs(x) > POSITION_LIMIT || Math.abs(y) > POSITION_LIMIT)) return null;
+  const edited = wireRoute(route[0], route.at(-1), points, true);
+  return edited.length === route.length && edited.every((point, index) => equal(point, route[index])) ? null : points;
+}
+
+function detour(start, end, point) {
+  const along = start.x === end.x ? 'y' : 'x';
+  const cross = otherAxis(along);
+  const span = end[along] - start[along];
+  const length = Math.abs(span);
+  const direction = Math.sign(span);
+  const offset = (point[along] - start[along]) * direction;
+  if (point[cross] === start[cross]) return offset > 0 && offset < length ? [point] : [];
+
+  const margin = Math.min(LEAD, length / 4);
+  const center = start[along] + direction * Math.max(margin, Math.min(length - margin, offset));
+  const entry = center - direction * margin / 2;
+  const exit = center + direction * margin / 2;
+  return [
+    { [along]: entry, [cross]: start[cross] },
+    { [along]: entry, [cross]: point[cross] },
+    { [along]: center, [cross]: point[cross] },
+    { [along]: exit, [cross]: point[cross] },
+    { [along]: exit, [cross]: end[cross] },
+  ];
+}
+
+export function insertWireBend(wire, position, point) {
+  const route = routeFor(wire, position);
+  const nearest = nearestSegment(route, point);
+  if (!nearest) return null;
+  const { index } = nearest;
+  const target = equal(nearest.point, point) ? point : clampPoint(point);
+  const added = detour(route[index], route[index + 1], target);
+  if (!added.length) return null;
+  return editWaypoints(route, [...route.slice(0, index + 1), ...added, ...route.slice(index + 1)]);
+}
+
+function cornerIndex(route, point) {
+  const index = route.findIndex(vertex => equal(vertex, point));
+  return index > 0 && index < route.length - 1 ? index : -1;
+}
+
+function shiftedNeighbor(route, index, step, along, across) {
+  const neighbor = route[index + step];
+  const outer = route[index + step * 2];
+  const cross = otherAxis(along);
+  if (neighbor[cross] === across) return { vertices: [], replace: false };
+  if (!outer && neighbor.normal) {
+    const offset = route[index][along] - neighbor[along];
+    const anchor = neighbor[along] + Math.sign(offset) * Math.min(LEAD, Math.abs(offset) / 3);
+    return {
+      vertices: [{ ...neighbor, [along]: anchor }, { [along]: anchor, [cross]: across }],
+      replace: false,
+    };
+  }
+  return {
+    vertices: [{ ...neighbor, [cross]: across }],
+    replace: Boolean(outer && outer[along] === neighbor[along]),
+  };
+}
+
+export function moveWireBend(wire, position, point, destination) {
+  const route = routeFor(wire, position);
+  const index = cornerIndex(route, point);
+  if (index === -1 || equal(point, destination)) return null;
+  const target = clampPoint(destination);
+  const before = route[index - 1];
+  const after = route[index + 1];
+  const incoming = before.x === point.x ? 'y' : 'x';
+  const outgoing = after.x === point.x ? 'y' : 'x';
+  if (incoming === outgoing) {
+    return editWaypoints(route, [...route.slice(0, index), ...detour(before, after, target), ...route.slice(index + 1)]);
+  }
+  const leading = shiftedNeighbor(route, index, -1, incoming, target[otherAxis(incoming)]);
+  const trailing = shiftedNeighbor(route, index, 1, outgoing, target[otherAxis(outgoing)]);
+  return editWaypoints(route, [
+    ...route.slice(0, index - Number(leading.replace)), ...leading.vertices, target,
+    ...trailing.vertices.reverse(), ...route.slice(index + 1 + Number(trailing.replace)),
+  ]);
+}
+
+export function deleteWireBend(wire, position, point) {
+  const route = routeFor(wire, position);
+  const index = cornerIndex(route, point);
+  if (index === -1) return null;
+  const a = route[index - 1];
+  const b = route[index + 1];
+  const elbow = a.x === b.x || a.y === b.y ? []
+    : [point.x === a.x ? { x: b.x, y: a.y } : { x: a.x, y: b.y }];
+  return editWaypoints(route, [...route.slice(0, index), ...elbow, ...route.slice(index + 1)]);
 }
 
 export function wireAnchor(wire, route, target, threshold) {
