@@ -1,4 +1,4 @@
-import { board, chip, circle, label, moduleArt, mountingHole, pinRow, rect, tactile, usb } from "./catalog-extension.js";
+import { board, circle, edgePads, label, line, moduleArt, mountingHole, path, pinRow, rect, smd } from "./catalog-extension.js";
 
 const seeedDocs = "https://wiki.seeedstudio.com/XIAO_BLE/";
 const xiaoCad = {
@@ -72,14 +72,75 @@ function xiaoFootprint(plus) {
   };
 }
 
-function xiaoBody({ width, height, shortName, id }) {
-  const center = width / 2;
-  return board(width, height, "#28353c", "#61717a") + usb(center - 17, 5, 34) +
-    tactile(center - 26, 28) + circle(center + 21, 38, 3, "#8fc4a1", "#d1e1b4") +
-    rect(center - 25, 62, 50, 46, 3, "#afbbb9", "#d6dfdb") +
-    label(center, 80, "XIAO", 10, "#2f4648") + label(center, 95, "nRF52840", 8, "#2f4648") +
-    (id.includes("sense") ? chip(center - 10, 118, 20, 17, "IMU", 2) : "") +
-    label(center, height - 30, shortName, 8, "#e3e9f1");
+function usbShell(x, y, width, height) {
+  return rect(x, y, width, height, 1.8, "#b3babc", "#8a979c") +
+    rect(x + 3, y + 3, width - 6, height - 6, 1, "#cbd1d0", "#e7eae5") +
+    line(x + 4, y + 3, x + width - 4, y + 3, "#f0f1e9", 1.5) +
+    [x + 6, x + width - 13].map(notch => rect(notch, y + height - 9, 7, 4, 0.4, "#5f7078")).join("");
+}
+
+function tactSwitch(x, y, width, height) {
+  return rect(x, y, width, height, 1.2, "#9aadb0", "#e6e7dc") +
+    circle(x + width / 2, y + height / 2, Math.min(width, height) * 0.29, "#353d40", "#c5cac3");
+}
+
+function xiaoBody({ width, height, id }) {
+  const c = width / 2;
+  const plus = id.endsWith("-plus");
+  const sense = id.includes("-sense");
+  const edgeContacts = Array.from({ length: 7 }, (_, index) => {
+    const y = 29 + index * 14.1;
+    return [c - 47, c + 47].map(x =>
+      rect(x - 6, y - 4.4, 12, 8.8, plus ? 2.8 : 3.8, "#c9a65c", "#f1d992") +
+      circle(x, y, 2.4, "#222621", "#edd9a5")).join("");
+  }).join("");
+  const lower = sense
+    ? rect(c + 18, 116, 17, 14, 1, "#202421", "#63695a") +
+      circle(c + 26.5, 123, 2, "#c8ad71", "#f0ddaf") + smd(c + 11, 114)
+    : [0, 1, 2].map(row => [c + 19, c + 30].map(x =>
+      rect(x, 115 + 4.8 * row, 6.5, 3.4, 0.5, "#c4a066")).join("")).join("");
+  return board(width, height, "#25343a", "#475b60") +
+    rect(c - 52, 11, 104, 124, 10, "#272927", "#50584b") +
+    edgeContacts +
+    usbShell(c - 25, 4, 50, 36) +
+    tactSwitch(c - 40, 15, 9, 13) + label(c - 36, 31, "R", 6) +
+    rect(c + 32, 14, 6, 5, 0.7, "#d9cf8e") + rect(c + 32, 24, 6, 5, 0.7, "#a4b5a0") +
+    Array.from({ length: 10 }, (_, index) => line(c - 19 + 4.2 * index, 40, c - 19 + 4.2 * index, 45, "#b49b6e")).join("") +
+    rect(c - 36, 47, 72, 65, 2, "#a4aaa2", "#d4d6c5") +
+    rect(c - 33, 49, 66, 60, 1.6, "#eeeade", "#c9c7b9") +
+    label(c, 62, "seeed studio", 8.3, "#343a30") +
+    label(c, 78, "XIAO nRF52840", 6.3, "#424740") +
+    label(c, 96, [sense && "SENSE", plus && "PLUS"].filter(Boolean).join(" ") || "BLE", 7, "#444b41") +
+    rect(c - 25, 118, 26, 9, 1.2, "#b7bdb0", "#d7c694") +
+    rect(c - 20, 118, 17, 9, 0.8, "#34649a", "#809bb7") +
+    lower +
+    label(c, height - 49, "REAR CONTACTS", 8, "#bfd0d1") +
+    line(24, height - 43, width - 24, height - 43, "#58666a");
+}
+
+function xiaoArt(component, showLabels) {
+  const { height, width, pins } = component;
+  const front = [];
+  const rear = [];
+  for (const pin of pins) {
+    // Plus GPIO 11–19 are rear lands grouped in the side rows on the canvas.
+    (pin.y === height || /^d1[1-9]$/.test(pin.id) ? rear : front).push(pin);
+  }
+  const rearArt = rear.map(({ x, y, label: signal }) => {
+    if (y === height) {
+      const captionY = height - 17;
+      const caption = showLabels
+        ? `<g transform="rotate(-90 ${x} ${captionY})">${label(x, captionY, signal, 7, "#e1e9e8", "start")}</g>`
+        : "";
+      return line(x, y, x, height - 10, "#a78b5d", 1.4) +
+        rect(x - 2.5, height - 13, 5, 6, 0.7, "#d4aa65") + caption;
+    }
+    const left = x === 0;
+    const caption = showLabels ? label(left ? 16 : width - 16, y, signal, 8, "#d1dddf", left ? "start" : "end") : "";
+    return line(x, y, left ? 9 : width - 9, y, "#a78b5d", 1.4) +
+      rect(left ? 6 : width - 12, y - 2.4, 6, 4.8, 0.7, "#d4aa65") + caption;
+  }).join("");
+  return xiaoBody(component) + edgePads({ ...component, pins: front }, showLabels) + rearArt;
 }
 
 function xiaoBoard(plus, sense) {
@@ -107,7 +168,7 @@ function xiaoBoard(plus, sense) {
         ...pinRow("bottom", width, height, (width - (debug.length - 1) * 19) / 2, 19, debug),
       ],
     },
-    art: moduleArt(xiaoBody), footprint: xiaoFootprint(plus),
+    art: xiaoArt, footprint: xiaoFootprint(plus),
     model: !plus && sense ? xiaoCad : null,
   };
 }
@@ -152,6 +213,34 @@ const nanoRight = [
   ground(), reset("reset"), gpio("d1", "RX", "P1.10", "UART RX"), gpio("d0", "TX", "P1.03", "UART TX"),
 ].map((pin, index) => numbered(pin, `JP3.${15 - index}`));
 
+function nanoFront({ width, height }, sense) {
+  const c = width / 2;
+  const shieldY = height - 104;
+  const smallParts = [[35, 55], [38, 69], [52, 112], [62, 112], [81, 114], [91, 124], [47, 160], [94, 171], [53, 181]]
+    .map(([x, y]) => smd(x, y, "#abac93")).join("");
+  const sensors = sense
+    ? rect(c - 13, 151, 21, 15, 1, "#262e32", "#79918c") +
+      rect(c - 10, 174, 26, 16, 1, "#24282a", "#5e6b63") +
+      circle(c + 5, 182, 2.3, "#c3ab72", "#f0d698") + rect(c + 19, 143, 10, 9, 1, "#a6b5af")
+    : smd(c - 26, 166) + rect(c + 12, 150, 13, 12, 1, "#263131", "#577575");
+  return board(width, height, "#08778a", "#419aa3") +
+    [[15, 17], [width - 15, 17], [15, height - 16], [width - 15, height - 16]]
+      .map(([x, y]) => mountingHole(x, y)).join("") +
+    usbShell(c - 27, 3, 54, 36) +
+    rect(c - 39, 17, 6, 10, 1, "#d8c786") + rect(c + 32, 17, 6, 10, 1, "#9bc5a0") +
+    smallParts +
+    tactSwitch(c - 13, 73, 26, 18) +
+    rect(c - 8, 122, 17, 23, 0.8, "#172425", "#566c68") +
+    rect(c - 29, 125, 13, 11, 0.8, "#192728", "#567270") + sensors +
+    rect(c - 33, shieldY, 66, 85, 1, "#718851", "#4d6851") +
+    rect(c - 33, shieldY, 66, 65, 1, "#a8b1ab", "#d7dad0") +
+    rect(c - 29, shieldY + 3, 58, 59, 1, "#bbc5bd") +
+    label(c, shieldY + 20, "u-blox", 9, "#4a5c58") +
+    label(c, shieldY + 37, "NINA-B306", 7.7, "#4a5c58") +
+    label(c, shieldY + 51, sense ? "SENSE REV2" : "BLE REV2", 7, "#4a5c58") +
+    path(`M${c - 23} ${shieldY + 70}h46l-7 4h-32Zm10 7h26l-6 4h-14Z`, "#36704e");
+}
+
 function nanoBoard(sense) {
   const model = `Nano 33 BLE${sense ? " Sense" : ""} Rev2`;
   const id = `arduino-nano-33-ble${sense ? "-sense" : ""}-rev2`;
@@ -160,14 +249,7 @@ function nanoBoard(sense) {
     description: `3.3 V Arduino Nano with a u-blox NINA-B306 module, USB and ${sense ? "onboard motion and environmental sensors" : "an onboard IMU"}. The two Nano headers are exposed.`,
     source: `https://docs.arduino.cc/hardware/${id.slice("arduino-".length)}/`,
     size: [18, 45], spacing: 15.24, color: "#177875",
-    art: ({ width, height }) => {
-      const c = width / 2;
-      return board(width, height, "#177875", "#69a9a3") + usb(c - 14, 6, 28) +
-        tactile(c - 8, 37) + rect(c - 25, 102, 50, 67, 3, "#b8c5c5", "#dce7e8") +
-        label(c, 130, "NINA", 10, "#30494f") + label(c, 145, "B306", 8, "#30494f") +
-        chip(c - 14, 185, 28, 23, "IMU", 3) +
-        label(c, height - 56, "NANO 33 BLE", 9) + label(c, height - 40, sense ? "SENSE REV2" : "REV2", 8);
-    },
+    art: component => nanoFront(component, sense),
   });
 }
 
@@ -196,12 +278,26 @@ const feather = headerBoard({
   },
   art: ({ width, height }) => {
     const c = width / 2;
-    return board(width, height, "#265590", "#6286b2") + usb(c - 16, 8, 32) +
-      mountingHole(20, 16) + mountingHole(width - 20, 16) +
-      mountingHole(20, height - 16) + mountingHole(width - 20, height - 16) +
-      tactile(c - 26, 49) + rect(c + 6, 48, 27, 24, 2, "#e1dfd5", "#fcfaf0") +
-      chip(c - 21, 90, 42, 26, "SWD", 4) + label(c, 160, "FEATHER", 10) +
-      rect(c - 29, 183, 58, 72, 3, "#b7c3c9", "#dfe9e9") + label(c, 215, "nRF52840", 8, "#354a5b");
+    const swd = [146, 154].flatMap(y => [c - 13, c - 6.5, c, c + 6.5, c + 13]
+      .map(x => rect(x - 1, y - 1, 2, 2, 0.4, "#bca36d"))).join("");
+    const components = [[52, 60], [67, 53], [80, 72], [57, 89], [88, 102], [69, 114], [50, 183], [89, 191]]
+      .map(([x, y]) => smd(x, y)).join("");
+    return board(width, height, "#1253a0", "#507bb3") + usbShell(c - 25, 5, 50, 31) +
+      mountingHole(21, 18) + mountingHole(width - 21, 18) +
+      mountingHole(21, height - 17) + mountingHole(width - 21, height - 17) +
+      rect(c - 40, 9, 7, 12, 1, "#cbd592") + rect(c + 32, 9, 7, 12, 1, "#eab68b") +
+      rect(101, 44, 33, 41, 1.5, "#575754", "#9a9985") +
+      rect(107, 49, 25, 10, 1, "#2c3432") + rect(109, 71, 21, 9, 1, "#2c3432") +
+      tactSwitch(34, 63, 15, 14) + tactSwitch(34, 177, 15, 14) +
+      rect(34, 110, 15, 14, 1, "#d6d6c4", "#353d46") + circle(41.5, 117, 4, "#f6ebd1", "#b6aa92") +
+      components +
+      rect(c - 27, 138, 54, 24, 1, "#313737", "#989b8d") +
+      rect(c - 22, 142, 44, 16, 0.8, "#171a1a") + swd +
+      label(c + 11, 172, "Adafruit", 7.5, "#e5ebee") +
+      rect(c - 32, 211, 64, 84, 1.1, "#154883", "#6585a9") +
+      rect(c - 30, 213, 60, 63, 0.8, "#b6bfb9", "#d5ddda") +
+      circle(c - 23, 220, 2.6, "#495756") + label(c, 246, "nRF52840", 8, "#425758") +
+      rect(c - 18, 283, 36, 6, 0.8, "#303c43") + rect(c + 6, 284, 9, 4, 0.5, "#d9d9bd");
   },
 });
 

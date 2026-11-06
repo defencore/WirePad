@@ -1,7 +1,6 @@
 import { board, chip, circle, label, line, path, rect, smd } from "./catalog-extension.js";
 
-const hoperfDatasheet = "https://www.hoperf.com/uploads/RFM95W-V2.0_1695351437.pdf";
-const ebyteManual = "https://www.ebyte.com/downpdf/435.html";
+const ebyteProduct = name => `https://www.cdebyte.com/products/${name}`;
 const aiDocs = name => `https://docs.ai-thinker.com/en/${name}/index.html`;
 
 const terminal = {
@@ -88,11 +87,11 @@ const hoperfRows = [
 ];
 
 const hoperf = [
-  ["RFM95W", "868 / 915 MHz"],
-  ["RFM96W", "433 / 470 MHz"],
-  ["RFM98W", "169 / 433 / 470 MHz"],
-].map(([name, band]) => radio({
-  id: name.toLowerCase(), name, manufacturer: "HopeRF", band, source: hoperfDatasheet,
+  ["RFM95W", "868 / 915 MHz", "https://www.hoperf.com/uploads/RFM95W-V2.0_1695351437.pdf"],
+  ["RFM96W", "433 / 470 MHz", "https://www.hoperf.com/uploads/RFM96W-V2.0_1695351477.pdf"],
+  ["RFM98W", "169 / 433 / 470 MHz", "https://www.hoperf.com/uploads/RFM98W-V2_0_1702287607.pdf"],
+].map(([name, band, source]) => radio({
+  id: name.toLowerCase(), name, manufacturer: "HopeRF", band, source,
   art: "hoperf-radio", labels: hoperfLabels, body: [16, 16], rows: hoperfRows, canvas: [170, 170],
   modelDetails: [[-1, -2, 5, 5, 1, "#262930"], [0, 3.5, 3.5, 2.3, 0.9, "#a5adb1"]],
   supply: "Radio supply input. The module is typically powered at 3.3 V. Follow the datasheet limits for the selected transmit power.",
@@ -171,7 +170,7 @@ const ebyteSubGhz = [
   ["E22-900M30S", "850–930 MHz", "SX1262", "amplified", 30],
   ["E22-900M33S", "850–930 MHz", "SX1262", "amplified", 33],
 ].map(([name, band, chipName, size, power]) => radio({
-  id: name.toLowerCase(), name, manufacturer: "Ebyte", band, chipName, source: ebyteManual,
+  id: name.toLowerCase(), name, manufacturer: "Ebyte", band, chipName, source: ebyteProduct(name),
   ...ebytePackages[size],
   supply: size === "amplified"
     ? "Supply input. Connect both VCC pads. Use the manufacturer’s voltage and current requirements for the intended transmit power."
@@ -184,11 +183,11 @@ const e28Labels = [
   "GND", "NRESET", "BUSY", "DIO1", "DIO2", "DIO3", "GND",
 ];
 const ebyte2G4 = [
-  ["E28-2G4M12S", 24, 306, "285", true],
-  ["E28-2G4M12SX", 17.8, 227, "2049", false],
-].map(([name, length, height, productNumber, pcbAntenna]) => radio({
+  ["E28-2G4M12S", 24, 306, true],
+  ["E28-2G4M12SX", 17.8, 227, false],
+].map(([name, length, height, pcbAntenna]) => radio({
   id: name.toLowerCase(), name, manufacturer: "Ebyte", band: "2.4–2.5 GHz", chipName: "SX1281",
-  source: `https://www.ebyte.com/product/${productNumber}.html`,
+  source: ebyteProduct(name),
   art: pcbAntenna ? "ebyte-radio-2g4-pcb" : "ebyte-radio-2g4-coax",
   body: [15, length], canvas: [192, height], labels: e28Labels,
   rows: [
@@ -205,72 +204,121 @@ const ebyte2G4 = [
 }));
 
 function contacts(component, showLabels) {
-  const { width, height } = component;
+  const { art, width, height } = component;
+  const annular = art === "hoperf-radio";
   return component.pins.map((pin) => {
     const horizontal = pin.x === 0 || pin.x === width;
     const before = pin.x === 0 || pin.y === 0;
     const delta = before ? 1 : -1;
-    const x = pin.x + (horizontal ? delta * 9 : 0);
-    const y = pin.y + (horizontal ? 0 : delta * 9);
-    const w = horizontal ? 9 : 6;
-    const h = horizontal ? 6 : 9;
-    const caption = horizontal
-      ? label(x + delta * 7, y, pin.label, 7.2, "#f1f2ee", before ? "start" : "end")
-      : label(x, y + delta * 10, pin.label, 6.6);
-    return line(pin.x, pin.y, x, y, "#b38b52", 1.4) +
-      rect(x - w / 2, y - h / 2, w, h, 1, "#d7ad63", "#f0ce87") +
-      (showLabels ? caption : "");
+    const x = pin.x + (horizontal ? delta * 10 : 0);
+    const y = pin.y + (horizontal ? 0 : delta * 10);
+    const w = horizontal ? 12 : 7;
+    const h = horizontal ? (annular ? 10 : 7) : 12;
+    const captionWidth = pin.label.length * 4.2 + 5;
+    const caption = !showLabels ? "" : horizontal
+      ? rect(before ? x + 7 : x - 7 - captionWidth, y - 5, captionWidth, 10, 2, "#152b33") +
+        label(x + delta * 9, y, pin.label, 6.9, "#f1f2ee", before ? "start" : "end")
+      : rect(x - captionWidth / 2, y + delta * 11 - 5, captionWidth, 10, 2, "#152b33") +
+        label(x, y + delta * 11, pin.label, 6.6);
+    const cutout = annular ? circle(x + delta * 1.5, y, 3.3, "#f1e3c4", "#b28543")
+      : circle(x - (horizontal ? delta * 4 : 0), y - (horizontal ? 0 : delta * 4), 2.2, "#463b2c");
+    return line(pin.x, pin.y, x, y, "#b38b52", 1.2) +
+      rect(x - w / 2, y - h / 2, w, h, annular ? 3 : 1, "#d9ae60", "#edcf86") +
+      cutout + caption;
   }).join("");
 }
 
-function coax(x, y) {
-  return rect(x - 8, y - 7, 16, 14, 2, "#d4c8b4", "#f2e7d5") +
-    circle(x, y, 4.7, "#b79455", "#dabc86") + circle(x, y, 1.8, "#393126");
+function coax(x, y, size = 17) {
+  return rect(x - size / 2, y - size / 2, size, size, 2, "#c1c8c8", "#eef1ed") +
+    circle(x, y, size * 0.39, "#d0c7a6", "#ad8d4f") +
+    circle(x, y, size * 0.28, "#f3eddb") + circle(x, y, size * 0.095, "#c89e56");
 }
 
 function hoperfBody({ width, height, shortName }) {
-  const center = width / 2;
-  return board(width, height, "#32443b", "#55695d") +
-    chip(center - 20, 40, 40, 40, shortName, 6) +
-    rect(center - 13, 101, 26, 13, 2, "#9ba4aa", "#c8d0d3") +
-    [42, 57, 72, 87, 102, 117].map((y, index) => smd(center + 29, y, index % 2 ? "#3d4847" : "#bba778")).join("") +
-    [53, 68, 83, 98].map(y => smd(center - 39, y)).join("") +
-    label(center, 24, "HOPERF", 10) + label(center, height - 22, shortName, 9, "#a5cfbd");
+  const passiveParts = [
+    [31, 17], [42, 17], [53, 17], [98, 18], [112, 46], [129, 46], [110, 56], [127, 56],
+    [105, 73], [128, 75], [108, 84], [128, 85], [28, 97], [41, 99], [58, 99],
+    [75, 102], [89, 104], [32, 111], [48, 115], [65, 119], [81, 116], [104, 111],
+    [29, 124], [47, 127], [60, 133], [78, 129], [107, 131], [125, 130], [123, 141],
+    [44, 140], [58, 143], [92, 142], [121, 115],
+  ];
+  const qfnPads = Array.from({ length: 9 }, (_, i) => {
+    const offset = 4 + i * 6.5;
+    return line(36, 33 + offset, 41, 33 + offset, "#abb7b2", 1.6) +
+      line(96, 33 + offset, 101, 33 + offset, "#abb7b2", 1.6) +
+      line(39 + offset, 29, 39 + offset, 34, "#abb7b2", 1.6) +
+      line(39 + offset, 88, 39 + offset, 93, "#abb7b2", 1.6);
+  }).join("");
+  return board(width, height, "#245d48", "#5a8b6b") +
+    path("M20 29H31V44M98 16H103V32H111M20 106H35V148H74M98 108H117V96H145M110 152V140H145", "none", "#44876d", 1.3) +
+    rect(28, 13, 34, 12, 1.2, "none", "#94a690") +
+    rect(110, 14, 25, 29, 1.4, "#a5aba6", "#d0d8cf") +
+    rect(113, 17, 19, 23, 1.2, "#7b837e", "#bbc6bd") +
+    label(122.5, 28.5, "32.0", 5.6, "#eef1ec") +
+    passiveParts.map(([x, y], i) => smd(x, y, i % 3 ? "#b5ad92" : "#525952")).join("") +
+    qfnPads + rect(39, 32, 59, 58, 1.6, "#172427", "#454f4d") +
+    circle(46, 39, 1.6, "#848e88") + label(68.5, 59, shortName, 7, "#acb5b1") +
+    chip(115, 93, 15, 18, "", 3) + chip(94, 114, 14, 22, "", 4);
 }
 
 function aiBody({ width, height, shortName }) {
-  const center = width / 2;
-  return board(width, height, "#29333d", "#556575") +
-    path(`M37 17H${width - 37}V${height - 17}H37V48H53V17Z`, "#a4aeb5", "#d4dcdf") +
-    coax(44, 32) +
-    label(center, height / 2 - 6, "Ai-Thinker", 10, "#3d4c56") +
-    label(center, height / 2 + 12, shortName, 13, "#2f404a") +
-    label(center, height / 2 + 34, "LoRa", 9, "#455865");
+  const withoutConnector = shortName === "Ra-01S";
+  const shield = shortName === "Ra-01SH" ? "#747e82" : "#c7c6bf";
+  const ink = shortName === "Ra-01SH" ? "#f0eee7" : "#4c5150";
+  const coaxLand = rect(19, 24, 19, 18, 1.2, "#283334", "#798580") +
+    rect(19, 26, 3, 12, 1, "#b3bbb0") + rect(35, 26, 3, 12, 1, "#b3bbb0") +
+    circle(28.5, 33, 2.7, "#bd944e");
+  const cx = width / 2;
+  const cy = height / 2;
+  return board(width, height, "#252d35", "#575c60") +
+    path(`M44 13H${width - 16}V${height - 13}H16V48H44Z`, "#818984", "#dde0d7") +
+    path(`M47 16H${width - 19}V${height - 16}H19V51H47Z`, shield, "#9d9f96") +
+    (withoutConnector ? coaxLand + circle(21, 16, 3.4, "#b99758", "#ddc995") : coax(29, 33)) +
+    `<g transform="rotate(90 ${cx} ${cy})">` +
+    label(cx, cy - 17, shortName, 15, ink) +
+    label(cx, cy + 2, "Ai-Thinker", 9, ink) +
+    label(cx, cy + 20, "LoRa", 8.2, ink) + "</g>";
 }
 
 function ebyteBody({ width, height, shortName, art }) {
-  const center = width / 2;
+  const cx = width / 2;
+  const cy = height / 2;
   const compact = art === "ebyte-radio-compact";
-  const inset = compact ? 29 : 37;
-  const top = compact ? 30 : 13;
-  return board(width, height, "#263849", "#4a6073") +
-    rect(inset, top, width - 2 * inset, height - 2 * top, 4, "#aeb9c1", "#d3dbe0") +
-    label(center, height / 2 - 20, "EBYTE", 12, "#344757") +
-    label(center, height / 2 + 1, shortName, 8.3, "#293e51") +
-    label(center, height / 2 + 19, "LoRa / SPI", 8, "#405b6b") +
-    (compact ? circle(inset + 8, top + 8, 2, "#536271") : coax(inset + 12, height - 28));
+  const substrate = board(width, height, "#27624a", "#5c8667");
+  if (compact) {
+    return substrate + rect(16, 16, width - 32, height - 32, 1, "#e1e4e2", "#9faeaa") +
+      circle(24, 25, 3.3, "#66706a") +
+      label(cx, cy - 11, shortName, 11, "#34444a") +
+      label(cx, cy + 9, "EBYTE", 13, "#34444a");
+  }
+  const connector = shortName.endsWith("M22S") ? 24 : 16;
+  const cut = connector + 11;
+  return substrate +
+    path(`M16 12H${width - 16}V${height - 12}H${16 + cut}V${height - 12 - cut}H16Z`, "#e0e5e4", "#a3aca8") +
+    coax(16 + connector / 2, height - 12 - connector / 2, connector) +
+    circle(23 + cut, height - 24, 2.2, "#697875") +
+    `<g transform="rotate(90 ${cx} ${cy})">` +
+    label(cx - 36, cy - 15, shortName, 13, "#39494e") +
+    label(cx + 65, cy - 15, "EBYTE", 11, "#3d4c52") +
+    label(cx - 36, cy + 9, "SPI LoRa", 8.5, "#52636a") + "</g>";
 }
 
 function ebyte2G4Body({ width, height, shortName, art }) {
-  const center = width / 2;
+  const cx = width / 2;
   const pcbAntenna = art === "ebyte-radio-2g4-pcb";
-  const shieldEnd = pcbAntenna ? height - 83 : height - 16;
-  return board(width, height, "#2a3d45", "#58737d") +
-    rect(45, 13, width - 90, shieldEnd - 14, 4, "#aeb9c1", "#d3dbe0") +
-    label(center, 56, "EBYTE", 12, "#344757") +
-    label(center, 83, shortName, 8.5, "#293e51") +
-    label(center, 106, "SX1281", 10, "#405b6b") + coax(width - 52, shieldEnd - 20) +
-    (pcbAntenna ? path(`M50 ${height - 35}H68V${height - 64}H86V${height - 35}H106V${height - 64}H124V${height - 35}H142`, "none", "#bd9653", 3) : "");
+  const shieldEnd = pcbAntenna ? height - 91 : height - 13;
+  const cy = shieldEnd / 2;
+  const cxCoax = width - 31;
+  const cyCoax = shieldEnd - 22;
+  return board(width, height, "#285787", "#547ca4") +
+    path(`M15 14H${width - 15}V${shieldEnd - 52}H${width - 64}V${shieldEnd}H15Z`, "#dfe4eb", "#a6b5c4") +
+    circle(25, shieldEnd - 13, 3, "#737e89") +
+    smd(cxCoax - 22, cyCoax - 14, "#f0eee1") + smd(cxCoax - 22, cyCoax + 4, "#f0eee1") +
+    coax(cxCoax, cyCoax, 24) +
+    `<g transform="rotate(90 ${cx} ${cy})">` +
+    label(cx - 21, cy - 14, shortName, 12, "#39494e") +
+    label(cx - 28, cy + 8, "EBYTE", 9.5, "#52636a") + "</g>" +
+    (pcbAntenna ? path("M123 212L143 232H169V284H154V250H128V286H95V249H72V286H48V246", "none", "#82a1bd", 3.4) : "");
 }
 
 const renderer = body => (component, showLabels) => body(component) + contacts(component, showLabels);

@@ -1,3 +1,5 @@
+import { circle, label, line, path, rect } from "./catalog-extension.js";
+
 const width = 176;
 const height = 160;
 
@@ -45,21 +47,46 @@ export const ads1220Footprint = {
   note: "Reference carrier for the pictured ADS1220 breakout. Board outline and header row spacing are approximate. Measure your module and verify the header order before fabrication.",
 };
 
-export function drawAds1220(component, { board, rect, circle, line, path, label, smd }) {
-  const trace = "#77528e";
+function passive(x, y, bodyWidth, bodyHeight, fill, marking = "") {
+  return rect(x, y, bodyWidth, bodyHeight, 0.7, "#b3afb8", "#ddd6df") +
+    rect(x + 4, y + 0.7, bodyWidth - 8, bodyHeight - 1.4, 0.5, fill) +
+    (marking ? label(x + bodyWidth / 2, y + bodyHeight / 2, marking, 5.5, "#f0ebed") : "");
+}
+
+function headerPad(pin, showLabels) {
+  const left = pin.x === 0;
+  const x = left ? 15 : width - 15;
+  const textX = left ? 28 : width - 28;
+  const overbar = pin.id === "drdy" || pin.id === "cs"
+    ? line(28, pin.y - 5.2, pin.id === "cs" ? 38 : 48, pin.y - 5.2, "#f5eaf6", 0.8)
+    : "";
+  return line(pin.x, pin.y, x, pin.y, "#bdb9c5", 1.4) +
+    rect(x - 11, pin.y - 7.1, 22, 14.2, 6.4, "#b2aeb7", "#d3cbd7") +
+    circle(x, pin.y, 5.25, "#2c1938", "#ede9eb") +
+    (showLabels ? label(textX, pin.y, pin.label, 8.1, "#f5eaf6", left ? "start" : "end") + overbar : "");
+}
+
+export function drawAds1220({ pins }, showLabels = true) {
   const contacts = Array.from({ length: 8 }, (_, index) => {
-    const x = 70 + index * 5;
-    return line(x, 51, x, 58, "#c2becb", 2.6) + line(x, 105, x, 112, "#c2becb", 2.6);
+    const x = 73 + index * 4.2;
+    return line(x, 56, x, 65, "#c2becb", 2.5) + line(x, 102, x, 111, "#c2becb", 2.5);
   }).join("");
-  const passives = [
-    [66, 23, "#cbba94"], [88, 23, "#cbba94"], [85, 12, "#36333d"],
-    [52, 50, "#36333d"], [52, 70, "#36333d"], [52, 90, "#36333d"], [52, 110, "#36333d"],
-    [86, 132, "#36333d"],
-  ].map(([x, y, color]) => smd(x, y, color)).join("");
-  return board(component.width, component.height, "#56326d", "#785992") +
-    path("M38 17H56L71 36H83V52M42 35H54L65 45H77V52M45 53H59L70 63M37 125H62L71 112", "none", trace, 1.4) +
-    path("M133 17H111L103 34H98V51M131 35H117L109 47H104V51M129 53H119L109 64M130 108H119L110 97M136 125H113L105 112", "none", trace, 1.4) +
-    contacts + rect(63, 56, 49, 51, 3, "#26232c", "#8a818f") +
-    rect(66, 59, 43, 45, 2, "#34313a") + circle(68.5, 62, 1.3, "#9a939e") +
-    label(87.5, 80, "ADS1220", 8, "#e4d9ea") + label(87.5, 94, "24-BIT", 6.5, "#bfb2c6") + passives;
+  const passives = passive(62, 26, 22, 10, "#c7b594") + passive(93, 26, 22, 10, "#c7b594") +
+    passive(78, 10, 22, 10, "#29252b", "0") + passive(79, 126, 23, 10, "#29252b", "0") +
+    [52, 76, 100, 125].map((y, index) =>
+      `<g transform="translate(59 ${y}) rotate(90)">${passive(-10, -4.2, 20, 8.4, "#332d36", ["121", "121", "202", "103"][index])}</g>`
+    ).join("");
+  const vias = [[67, 15], [52, 24], [47, 58], [48, 87], [48, 116], [37, 135], [79, 148], [83, 123],
+    [112, 64], [117, 84], [133, 102], [144, 102], [120, 128], [120, 144]].map(([x, y]) =>
+    circle(x, y, 2.2, "#b79bc2") + circle(x, y, 1.05, "#402950")
+  ).join("");
+  return rect(3, 5, width - 6, height - 10, 0.7, "#613b73", "#a48ab0") +
+    path("M16 17H44L51 24H67L81 38V57M16 35H54L76 56M16 53H46L68 75M16 71H46L69 96M16 107H45L65 121L79 109M16 125H40L57 142H69L90 120V107", "none", "#432756", 2) +
+    path("M161 17H133L113 38H105L98 57M161 35H136L118 50H108L103 57M161 53H131L111 66M161 71H136L110 91M161 89H137L111 103M161 107H130L109 116H101V108M161 143H115L101 131", "none", "#432756", 2) +
+    path("M87 20V57M95 21V57M90 112V128M95 111V129M86 135V153M96 135V153", "none", "#825393", 2.1) +
+    vias + contacts + rect(68, 62, 40, 44, 2, "#26242d", "#847789") +
+    rect(70, 64, 36, 40, 1, "#38343d") + circle(73.2, 67.2, 1.3, "#8d8691") +
+    label(88, 77, "ADS1220", 7.6, "#beb2c5") + label(88, 86, "46K64", 6.4, "#aca1b5") +
+    label(88, 95, "C296", 6.4, "#aca1b5") + passives +
+    pins.map(pin => headerPad(pin, showLabels)).join("");
 }

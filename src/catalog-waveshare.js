@@ -1,3 +1,5 @@
+import { chip, circle, label, line, path, rect, screw, smd, usb } from "./catalog-extension.js";
+
 const manufacturer = "Waveshare";
 
 function port(x, y, dx, dy, name, pins) {
@@ -150,54 +152,125 @@ export const waveshareFootprints = {
   },
 };
 
-function rs485BoardArt({ width, height }, { board, chip, label, line, rect, screw, smd }) {
-  return board(width, height, "#284e82", "#5477a1") +
-    chip(72, 34, 30, 35, "3485") + smd(69, 22) + smd(88, 22) + smd(88, 75) + smd(72, 78) +
-    line(105, 49, 113, 49, "#6c89ae", 1.5) +
-    rect(112, 23, 55, 43, 3, "#3466a8", "#6c99d0") +
-    screw(128, 42) + screw(154, 42) +
-    rect(171, 25, 46, 64, 3, "#29353f", "#71808c") +
-    rect(175, 32, 39, 49, 2, "#222b34") +
-    label(194, 56, "RJ11", 9, "#c3cbd1") +
-    label(129, 82, "RS485", 10) + label(129, 93, "3.3 V", 7, "#bdd0e8");
+function rs485BoardArt({ pins }, showLabels = true) {
+  const uart = pins.filter(pin => pin.x === 0).map(pin =>
+    line(1, pin.y, 31, pin.y, "#c0a074", 2.2) +
+    rect(24, pin.y - 5, 14, 10, 1.1, "#22272f", "#4b5867") +
+    circle(37, pin.y, 3.15, "#b7b0a3", "#e0d8c5") +
+    (showLabels ? label(43, pin.y, pin.label, 7.6, "#eef4f8", "start") : "")
+  ).join("");
+  const bus = pins.filter(pin => pin.y === 0).map(pin =>
+    line(pin.x, pin.y, pin.x, 24, "#b9a477", 1.6) +
+    screw(pin.x, 41, 8) +
+    circle(pin.x, 56, 2.4, "#122542") +
+    (showLabels ? label(pin.x, 16, pin.label, 8, "#eff5fa") : "")
+  ).join("");
+  return rect(26, 8, 192, 89, 0.8, "#244f82", "#6896bd") +
+    path("M30 17H39Q43 17 43 22V83H30M72 64H108V86H72Z", "none", "#bdcfe0", 0.85) +
+    path("M33 21H68L77 33M34 37H71M34 51H70M34 65H69L78 63M99 49H115M96 57H110L122 62", "none", "#456c9a", 1.45) +
+    chip(78, 30, 21, 31, "", 4) +
+    [69, 82, 95].map(x => smd(x, 69, "#3f4543") + smd(x, 78, "#56534d")).join("") +
+    smd(56, 15, "#44494a") + smd(68, 15, "#b8b29d") + smd(82, 15, "#a6c4b8") +
+    label(93, 19, "PWR", 5.7, "#e3eef3", "start") +
+    rect(113, 23, 55, 44, 1.8, "#3468ab", "#7f9fc5") +
+    rect(116, 27, 49, 37, 1, "#3b72b7") +
+    line(141, 26, 141, 65, "#1e477e", 1.5) +
+    rect(170, 17, 54, 72, 1.5, "#363b41", "#838789") +
+    rect(174, 20, 47, 66, 1.2, "#43474c") +
+    line(220, 20, 220, 86, "#252b31") +
+    [83, 101].map(x => rect(x - 6, 86, 12, 9, 1, "#28292b", "#a6b4c2") + circle(x, 90, 2, "#b9a579")).join("") +
+    label(76, 91, "B", 6.2) + label(108, 91, "A", 6.2, "#edf3f6", "start") +
+    label(143, 78, "3485 / 485", 7.1) + label(142, 90, "Waveshare", 8.2) +
+    uart + bus;
 }
 
-function servoAdapterArt({ width, height }, { board, chip, label, mountingHole, rect, screw, smd, usb }) {
-  return board(width, height, "#293342", "#536173") +
-    [19, 209].map(x => mountingHole(x, 22) + mountingHole(x, 148)).join("") +
-    [25, 90].map(x => rect(x, 24, 49, 24, 3, "#dedbd0", "#f6f3eb") +
-      rect(x + 4, 28, 41, 15, 1, "#8f8778")).join("") +
-    rect(155, 24, 55, 17, 3, "#141c25", "#596774") +
-    chip(72, 62, 30, 33, "UART") + chip(111, 75, 28, 29, "DC/DC") +
-    rect(158, 59, 42, 40, 4, "#222a33", "#737b84") +
-    rect(166, 68, 11, 24, 2, "#dfb750", "#f8d87c") +
-    rect(181, 68, 11, 24, 2, "#dfb750", "#f8d87c") +
-    smd(43, 63) + smd(54, 83) + smd(107, 59) + smd(137, 112) +
-    rect(27, 110, 52, 45, 4, "#19222a", "#697784") +
-    rect(88, 120, 56, 29, 3, "#447b5b", "#8eb89a") +
-    screw(105, 133, 7) + screw(127, 133, 7) +
-    usb(161, 129, 36) +
-    label(113, 111, "BUS SERVO", 8) + label(179, 110, "A / B", 7, "#ecd17f");
+function servoAdapterArt({ pins }, showLabels = true) {
+  const shrouds = [35, 100].map(x =>
+    path(`M${x - 11} 37V19l5-5h41l5 5v18Z`, "#f0e9d7", "#c0b7a4") +
+    path(`M${x - 7} 34V21l5-4h33l5 4v13Z`, "#8e806c", "#e1d7c0") +
+    rect(x - 9, 35, 48, 5, 0.7, "#d8d0bb")
+  ).join("");
+  const topPins = pins.filter(pin => pin.y === 0).map(pin =>
+    line(pin.x, 0, pin.x, 24, "#b5a17a", 1.65) +
+    circle(pin.x, 25, 2.8, "#d8c39b", "#8c8170") +
+    (showLabels ? label(pin.x, 45, pin.label, 8, "#e9edf0") : "")
+  ).join("");
+  const powerPins = pins.filter(pin => pin.y !== 0).map(pin =>
+    line(pin.x, pin.y, pin.x, 151, "#a48d67", 1.7) +
+    screw(pin.x, 151, 7.8) +
+    (showLabels ? label(pin.x, 125, pin.label, 7.6) : "")
+  ).join("");
+  const modeJumper = [175, 189].map(x =>
+    rect(x - 5.5, 71, 11, 26, 1, "#dabb51", "#fff1a0") +
+    rect(x - 2.6, 75, 5.2, 17, 0.8, "#6f582b") +
+    circle(x, 79, 1.7, "#f1d58b") + circle(x, 88, 1.7, "#f1d58b")
+  ).join("");
+  return rect(8, 8, 212, 154, 10, "#2d3034", "#666561") +
+    [19, 208].map(x => screw(x, 23, 9) + screw(x, 151, 9)).join("") +
+    shrouds + rect(154, 16, 55, 18, 1.5, "#1b1d20", "#a2a3a0") +
+    rect(166, 61, 33, 41, 0.9, "#1e2125", "#d2d3c9") + modeJumper +
+    [175, 189].map(x => circle(x, 66, 2.35, "#c8b48b")).join("") +
+    label(159, 72, "A", 7) + label(159, 90, "B", 7) +
+    label(182, 53, "UART / USB", 7.4) +
+    chip(88, 99, 31, 24, "", 4) + chip(56, 64, 13, 17, "", 3) +
+    chip(149, 111, 17, 14, "", 4) +
+    rect(107, 54, 18, 23, 1.2, "#1e2022", "#4c5155") +
+    rect(125, 58, 12, 13, 1, "#aaaead", "#d2d5d3") +
+    rect(126, 103, 20, 19, 2, "#5c5e60", "#a1a4a2") + label(136, 112, "4R7", 6, "#303639") +
+    [[67, 56], [67, 62], [89, 60], [89, 74], [71, 80], [47, 82], [129, 95],
+      [138, 95], [148, 95], [173, 109], [191, 111], [169, 121], [195, 122]].map(([x, y]) => smd(x, y)).join("") +
+    rect(30, 101, 48, 63, 2.5, "#1c2126", "#555b5e") +
+    rect(33, 105, 42, 43, 1.5, "#303439") +
+    rect(31, 150, 46, 13, 1.2, "#26282d") +
+    rect(93, 136, 46, 29, 2, "#73a875", "#b0c6a4") +
+    rect(95, 138, 42, 12, 1.2, "#8bb88a") +
+    rect(154, 135, 44, 30, 1.5, "#b8b9b3", "#e5e4dc") + usb(156, 147, 40) +
+    label(54, 95, "DC 9–12.6 V", 6.8) + label(176, 130, "USB", 7) +
+    `<g transform="rotate(-90 15 82)">${label(15, 82, "Bus Servo Adapter (A)", 6.5)}</g>` +
+    topPins + powerPins;
 }
 
-function esp32Rs485CanArt({ width, height }, { circle, label, rect, screw, usb }) {
-  return rect(46, 4, 48, 21, 5, "#bf5737", "#973c2a") +
-    rect(8, 9, width - 16, height - 18, 9, "#dce1e3", "#9ca9af") +
-    rect(14, 12, width - 28, 34, 5, "#3d5157", "#6a7d83") +
-    rect(14, 276, width - 28, 33, 5, "#3d5157", "#6a7d83") +
-    [30, 55, 80, 105].map(x => screw(x, 290, 7)).join("") +
-    screw(89, 33, 7) + screw(114, 33, 7) + usb(30, 26, 28) +
-    rect(7, 63, 126, 198, 5, "#25343c", "#657783") +
-    rect(55, 75, 67, 170, 5, "#15242c", "#4b6269") +
-    [77, 96, 115, 134].map(y => rect(40, y - 2, 8, 4, 1, "#dfd9c8")).join("") +
-    circle(70, 96, 4, "#96d099", "#b2ddbd") +
-    circle(89, 96, 4, "#78aec3", "#b2dded") +
-    circle(108, 96, 4, "#ca806d", "#edb4ab") +
-    label(88, 124, "WAVESHARE", 8, "#8db9ad") +
-    label(88, 146, "ESP32-S3", 10) +
-    label(88, 163, "RS485", 10) +
-    label(88, 179, "CAN", 10) +
-    label(88, 217, "DIN RAIL", 7, "#adc4c4");
+function esp32Rs485CanArt({ pins, height }, showLabels = true) {
+  const terminals = pins.filter(pin => pin.x !== 0).map(pin => {
+    const top = pin.y === 0;
+    const screwY = top ? 35 : 294;
+    return line(pin.x, pin.y, pin.x, top ? 20 : 309, "#82947c", 1.5) +
+      circle(pin.x, screwY, 9.3, "#47544d", "#ececea") +
+      screw(pin.x, screwY, 7.6) +
+      circle(pin.x, top ? 100 : 244, 10, "#78b33d", "#a8cb76") +
+      (showLabels ? label(pin.x, top ? 100 : 244, pin.label, top ? 6.6 : 8.2, "#ffffff") : "");
+  }).join("");
+  const expansion = pins.filter(pin => pin.x === 0).map((pin, index) => {
+    const stripe = ["#515658", "#cf5650", "#e3974f", "#d5b84c"][index];
+    const rowY = 116 + index * 6;
+    return path(`M0 ${pin.y}H10L24 ${rowY}H44`, "none", stripe, 1.7) +
+      (showLabels ? label(8, pin.y - 4.8, pin.label, 6.2, "#344651", "start") : "");
+  }).join("");
+  const lights = [[32, "#967e68", "CAN"], [68, "#a08972", "RS485"], [103, "#a33b2d", "PWR"]].map(([x, fill, text]) =>
+    circle(x, 143, 8, fill, "#d4c8b9") +
+    circle(x - 2, 141, 2.5, "#ded6cb") +
+    label(x, 157, text, 6.9, "#f2f3ee")
+  ).join("");
+  return path("M39 27V13L52 3H85L98 13V27H83V18Q68 8 54 18V27Z", "#df552f", "#ab4027") +
+    rect(8, 18, 122, height - 20, 8, "#e5e6e5", "#c0c3c3") +
+    rect(10, 19, 118, 42, 7, "#f1f1ee", "#e3e2df") +
+    rect(8, 53, 122, 35, 4, "#e2e2df", "#d3d4d2") +
+    rect(11, 68, 116, 17, 2, "#ebece8") +
+    rect(9, 256, 120, 27, 4, "#d6d8d7", "#c7c9c8") +
+    rect(10, 281, 118, 38, 3, "#edefeb", "#e4e6e3") +
+    circle(30, 35, 9.1, "#3d4140", "#c2c4bf") +
+    circle(55, 35, 9.1, "#3a403c", "#c2c4bf") +
+    rect(17, 87, 104, 169, 1.2, "#212420", "#858b80") +
+    rect(23, 93, 37, 15, 2.5, "#77b544") +
+    rect(28, 97, 27, 7, 3.5, "none", "#eff6ea") +
+    label(101, 117, "DC 7–36 V", 6.8) +
+    rect(43, 112, 7, 26, 1, "#dfddcf", "#f5f4e8") +
+    lights +
+    `<g transform="rotate(90 50 192)">${label(50, 192, "ESP32-S3-RS485-CAN", 7.2)}</g>` +
+    `<g transform="rotate(90 91 192)">${label(91, 192, "WAVESHARE", 9)}</g>` +
+    path("M65 222V170l-4 6M71 168V222l4-6", "none", "#95bf59", 1.25) +
+    label(42, 229, "CAN", 7.4) + label(92, 229, "RS485", 7.4) +
+    expansion + terminals;
 }
 
 export const waveshareArt = {

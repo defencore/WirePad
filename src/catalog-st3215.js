@@ -1,3 +1,5 @@
+import { circle, label, line, path, rect, screw } from "./catalog-extension.js";
+
 const width = 185;
 const height = 120;
 
@@ -17,31 +19,40 @@ export const st3215 = {
 };
 
 export function drawSt3215({ pins }, showLabels = true) {
-  const leadColors = ["#46535f", "#ca5d62", "#547bac"];
+  const leadColors = ["#46535f", "#c8544a", "#e6b653"];
   const leads = pins.map((pin, index) => {
-    const caption = showLabels ? `<text x="171" y="${pin.y - 4}" text-anchor="end" fill="#344450" font-size="7.5">${pin.label}</text>` : "";
-    return `<path d="M126 ${pin.y}H${pin.x}" stroke="${leadColors[index]}" stroke-width="2.6"/>${caption}`;
+    const startY = 37 + index * 7;
+    return path(`M150 ${startY}H158L170 ${pin.y}H${pin.x}`, "none", leadColors[index], 2) +
+      (showLabels ? label(181, pin.y - 6, pin.label, 7, "#344450", "end") : "");
   }).join("");
+  const frontScrews = [31, 89].map(y => screw(14, y, 3.8) + screw(130, y, 3.8)).join("");
+  const mountingThreads = [32, 88].map(y =>
+    circle(60, y, 3, "#151a21", "#525960") + circle(118, y, 3, "#151a21", "#525960")
+  ).join("");
+  const hornHoles = [[37, 41], [18, 60], [56, 60], [37, 79]].map(([x, y]) =>
+    circle(x, y, 3.6, "#202832", "#d5dcdf")
+  ).join("");
+  const rearSockets = [32, 64].map(y =>
+    rect(141, y, 13, 24, 1.2, "#ded7bd", "#ada596") +
+    rect(143, y + 2, 9, 20, 0.6, "#9c8f73", "#f1e8d2") +
+    [5, 12, 19].map(offset => line(145, y + offset, 150, y + offset, "#e3d2a7", 1.4)).join("")
+  ).join("");
 
-  return `<g font-family="ui-monospace, monospace" font-weight="600">
-    ${leads}
-    <rect x="7" y="15" width="132" height="91" rx="10" fill="#151b24"/>
-    <rect x="7" y="12" width="132" height="91" rx="10" fill="#303b47" stroke="#151b24"/>
-    <rect x="11" y="16" width="124" height="83" rx="8" fill="#242d38" stroke="#4d5a67"/>
-    <path d="M74 19V96M78 19V96" fill="none" stroke="#171e28"/>
-    <path d="M32 24h19l15 15v34L51 88H32L17 73V39Z" fill="#35424e" stroke="#576372"/>
-    <circle cx="41.5" cy="56" r="22" fill="#242c34" stroke="#59646f"/>
-    <circle cx="41.5" cy="56" r="14" fill="#9e734a" stroke="#d6b074" stroke-width="2"/>
-    <circle cx="41.5" cy="56" r="10.2" fill="#a47c4a" stroke="#efcf8d" stroke-width="2" stroke-dasharray="1 1.6"/>
-    <circle cx="41.5" cy="56" r="4.2" fill="#33302b" stroke="#aa8354"/>
-    <circle cx="26" cy="37" r="2.3" fill="#10161e" stroke="#65717d"/>
-    <circle cx="57" cy="37" r="2.3" fill="#10161e" stroke="#65717d"/>
-    <circle cx="26" cy="75" r="2.3" fill="#10161e" stroke="#65717d"/>
-    <circle cx="57" cy="75" r="2.3" fill="#10161e" stroke="#65717d"/>
-    <rect x="84" y="33" width="40" height="48" rx="4" fill="#161f28" stroke="#475563"/>
-    <text x="104" y="53" fill="#e3e9f1" text-anchor="middle" font-size="8.5">ST3215</text>
-    <text x="104" y="66" fill="#a5bac9" text-anchor="middle" font-size="6.5">TTL SERVO</text>
-    <rect x="129" y="32" width="13" height="54" rx="3" fill="#d8d7cf" stroke="#898d8a"/>
-    <path d="M133 41h6m-6 19h6m-6 19h6" fill="none" stroke="#74654c" stroke-width="2"/>
-  </g>`;
+  // The product's face shows the output disk. The two bus sockets are on the rear.
+  return leads +
+    rect(7, 25, 130, 72, 7, "#151b23", "#1b2229") +
+    rect(7, 24, 130, 71, 6, "#30353b", "#494f55") +
+    rect(13, 35, 118, 50, 5, "#292e34", "#3c4249") +
+    line(65, 35, 126, 35, "#565d63") + line(65, 85, 125, 85, "#161e25") +
+    frontScrews + mountingThreads +
+    circle(37, 60, 28.2, "#b5c1c8", "#eef0f1") +
+    circle(37, 60, 25.2, "#bcc6cd", "#a5b2ba") + hornHoles +
+    circle(37, 60, 5.4, "#a87945", "#e7c391") +
+    circle(37, 60, 2.8, "#292621", "#7d582f") +
+    rect(77, 46, 48, 28, 1.8, "#161b1f", "#42484d") +
+    line(81, 59, 121, 59, "#354438", 0.8) +
+    label(101, 53, "WAVESHARE", 6.2, "#9bc757") +
+    label(101, 66, "ST3215", 7, "#ebefeb") +
+    rect(139, 30, 17, 60, 2, "#30363c", "#656d74") + rearSockets +
+    (showLabels ? label(147.5, 24, "REAR", 6.2, "#344450") : "");
 }

@@ -1,4 +1,4 @@
-import { board, chip, circle, label, line, moduleArt, mountingHole, path, pinRow, rect, smd, tactile, usb } from "./catalog-extension.js";
+import { board, chip, circle, label, line, moduleArt, mountingHole, path, pinRow, rect, smd, tactile } from "./catalog-extension.js";
 
 const espDocs = "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3";
 const seeedS3 = "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/";
@@ -58,10 +58,46 @@ function microUsb(x, y, width = 28) {
     rect(x + 3, y + 8, width - 6, 5, 2, "#303a46") + line(x + 7, y + 11, x + width - 7, y + 11, "#89979e");
 }
 
-function antenna(x, y, w, h) {
-  return rect(x, y, w, h, 3, "#19242b", "#53626a") +
-    path(`M${x + 5} ${y + h - 5} V${y + 5} h8 v${h - 10} h8 v-${h - 10} h8 v${h - 10} h8`, "none", "#b08b52", 1.7);
+function topUsbC(x, y, width, height) {
+  return rect(x - 2, y + height - 7, width + 4, 7, 2, "#9f9272") +
+    rect(x, y, width, height, 3, "#d4d8d9", "#eef0ef") +
+    rect(x + 4, y + 1, width - 8, 4, 1, "#a0aaae") +
+    line(x + 3, y + 7, x + 3, y + height - 3, "#b1b8b9") +
+    line(x + width - 3, y + 7, x + width - 3, y + height - 3, "#b1b8b9") +
+    rect(x + width / 4, y + height - 7, 5, 2.5, 1, "#818b90") +
+    rect(x + width * 0.75 - 5, y + height - 7, 5, 2.5, 1, "#818b90");
 }
+
+function espDevKitArt({ width, height }, mini) {
+  const mid = width / 2;
+  const moduleWidth = mini ? 72 : 82;
+  const shieldBottom = mini ? 104 : 137;
+  const x = mid - moduleWidth / 2;
+  return board(width, height, "#21252a", "#515961") +
+    rect(7, 14, 9, 326, 2, "#191e25", "#545a60") +
+    rect(width - 16, 14, 9, 326, 2, "#191e25", "#545a60") +
+    rect(x, 2, moduleWidth, shieldBottom + 1, 2, "#25272a", "#515961") +
+    path(`M${x + 9} 27v-16h10v16h10v-16h10v16h10v-16h10v16`, "none", "#504a3c", 1.5) +
+    rect(x + 1, 32, moduleWidth - 2, shieldBottom - 32, 3, "#b0b0ab", "#deded7") +
+    rect(x + 5, 36, moduleWidth - 10, shieldBottom - 40, 2, "#c4c5bf") +
+    label(mid, 56, "ESPRESSIF", 8.5, "#414747") +
+    label(mid, 72, "ESP32-S3", 8, "#505653") +
+    label(mid, 86, mini ? "MINI-1" : "WROOM-1", 7.5, "#515856") +
+    rect(mid - 23, 156, 23, 29, 2, "#343538", "#787b79") +
+    rect(mid - 20, 153, 17, 7, 1, "#bfc3bb", "#e1e1da") +
+    smd(mid + 19, 154, "#c7d78b") + label(mid + 23, 167, "PWR", 6) +
+    rect(mid - 27, 202, 16, 17, 2, "#e4e5d9", "#b9c2b4") +
+    circle(mid - 19, 210, 3.6, "#c7d2be") + label(mid - 19, 227, "RGB", 6) +
+    chip(mid + 3, 237, 24, 31, "UART", 6) +
+    smd(mid - 28, 237) + smd(mid - 29, 248) + smd(mid + 23, 279) +
+    label(mid, 285, mini ? "DEVKITM-1" : "DEVKITC-1", 7.5) +
+    tactile(mid - 33, 308) + tactile(mid + 18, 308) +
+    label(mid - 26, 334, "BOOT", 6) + label(mid + 26, 334, "RESET", 6) +
+    label(mid - 26, 347, "UART", 6) + label(mid + 26, 347, "USB", 6) +
+    microUsb(mid - 41, height - 20, 30) + microUsb(mid + 11, height - 20, 30);
+}
+
+export const espDevKitCArt = component => espDevKitArt(component, false);
 
 const espDevKitM = makeBoard({
   id: "esp32-s3-devkitm-1", name: "ESP32-S3 DevKitM-1", shortName: "DevKitM-1",
@@ -82,16 +118,7 @@ const espDevKitM = makeBoard({
       20: "Native USB D+.", 19: "Native USB D-.", 48: "Shared with the on-board RGB LED.",
     })[n])),
   ], 11.43, -29.97, { start: 19, prefix: "J3." }),
-], ({ width, height }) =>
-  board(width, height, "#26323e", "#465767") +
-  antenna(42, 24, 66, 31) +
-  rect(40, 54, 70, 78, 5, "#b5c1c5", "#e3e8e9") +
-  rect(44, 59, 62, 68, 4, "#cbd1d1", "#92a1a6") +
-  label(75, 86, "ESP32-S3", 9, "#364453") + label(75, 101, "MINI-1", 8, "#425263") +
-  chip(56, 207, 38, 44, "UART", 7) + smd(49, 163) + smd(88, 173) + smd(89, 264) +
-  circle(60, 176, 4.1, "#77d4ae", "#caeee3") + label(75, 282, "DEVKITM-1", 9) +
-  tactile(42, 310) + tactile(93, 310) + label(51, 333, "BOOT", 6) + label(99, 333, "RST", 6) +
-  microUsb(37, 348, 31) + microUsb(83, 348, 31) + label(53, 370, "UART", 6) + label(100, 370, "USB", 6), {
+], component => espDevKitArt(component, true), {
   body: [25.4, 62.74], color: "#26323e", details: [[0, -20, 15.4, 15.4, 2.4, "#b5c1c5"], [-6.4, 28.5, 7.5, 5.5, 2.5, "#a8b2b9"], [6.4, 28.5, 7.5, 5.5, 2.5, "#a8b2b9"]],
   note: "Revision 1.0 reference carrier from the Espressif 62.74 × 25.40 mm drawing. Rows are 22.86 mm apart at 2.54 mm pitch. Check antenna and USB overhang clearance.",
 });
@@ -120,11 +147,21 @@ const espZero = makeBoard({
   carrierRow("right", zeroTop, 13, 5.7, { start: 184, gap: 17, prefix: "F." }),
   carrierRow("left", zeroBack, 5.37, -2.96, { start: 153, gap: 11, prefix: "B.", pitch: 1.59, size: 1.43, smd: true }),
 ], ({ width, height }) =>
-  board(width, height, "#174675", "#3c6b9b") +
-  usb(55, 6, 40) + tactile(37, 36) + tactile(97, 36) +
-  chip(51, 66, 49, 52, "ESP32-S3", 7) + smd(37, 60) + smd(103, 65) + smd(104, 99) +
-  circle(75, 42, 3.5, "#84d6ba", "#bdede0") + rect(51, 132, 48, 13, 2, "#b1a387", "#d6c8ad") +
-  label(75, 165, "S3-ZERO", 8) + label(73, 197, "REAR", 7, "#9ac7e3") + label(78, 215, "FRONT", 7, "#9ac7e3"), {
+  board(width, 161, "#145783", "#37769e") +
+  topUsbC(47, 3, 56, 39) +
+  tactile(35, 47) + tactile(100, 47) + label(43, 42, "B", 6) + label(107, 42, "R", 6) +
+  rect(69, 49, 12, 12, 2, "#e2e5dc", "#c0d5ce") + circle(75, 55, 2, "#9bb3a6") +
+  '<g transform="rotate(45 74 99)">' + chip(49, 76, 50, 46, "", 10) + "</g>" +
+  label(74, 99, "ESP32-S3", 7, "#b0b9c0") +
+  rect(35, 71, 9, 12, 1, "#c2c6be", "#dfdfd7") +
+  chip(104, 70, 14, 12, "", 3) + smd(34, 117) + smd(101, 119) +
+  rect(34, 139, 58, 12, 1, "#e2d9c6", "#f3e9db") +
+  rect(47, 139, 33, 12, 1, "#8f3433") + label(63, 145, "C3", 7) +
+  [129, 139, 149].map(y => circle(113, y, 3, "#dcb16a")).join("") +
+  rect(7, 159, width - 14, height - 166, 5, "#193449", "#37769e") +
+  label(75, 176, "S3-ZERO", 8, "#d2ebf9") +
+  label(75, 196, "REAR PADS", 7, "#a9cee3") +
+  label(75, 213, "FRONT PADS", 7, "#a9cee3"), {
   body: [18, 23.5], color: "#174675", details: [[0, -8.4, 8.5, 5.5, 3.3, "#a8b2b9"], [0, 0, 7, 7, 1.5, "#273041"]],
   note: "Reference carrier for the 18 × 23.5 mm ESP32-S3-Zero. Side headers use 2.54 mm pitch and rear test-pad positions follow the drawing. The separate row outside the outline terminates individual wires to the three front solder pads. Verify clearances and leave the antenna exposed.",
 });
@@ -151,6 +188,50 @@ const picoDebug = [
   ground("gnd-swd"), bidirectional("swdio", "SWDIO", "Serial Wire Debug data."),
 ];
 
+function rp2040Package(x, y, size) {
+  const pads = Array.from({ length: 12 }, (_, index) => {
+    const offset = (index + 1) * size / 13;
+    return line(x + offset, y - 1, x + offset, y + size + 1, "#998974", 1) +
+      line(x - 1, y + offset, x + size + 1, y + offset, "#998974", 1);
+  }).join("");
+  return pads + rect(x, y, size, size, 1.5, "#252829", "#3e4240") +
+    circle(x + 4, y + 4, 1.4, "#636663") +
+    label(x + size / 2, y + size / 2, "RP2040", 7, "#a6a9a3");
+}
+
+function picoArt({ width, height }, wireless) {
+  const cpuY = wireless ? 135 : 148;
+  const bottom = height - 16;
+  const debugPads = wireless ? [78, 94, 110] : [57, 73, 89];
+  const debugY = wireless ? 204 : bottom - 13;
+  const lowerBoard = wireless
+    ? rect(39, 211, 70, 62, 2, "#c6cbc6", "#e1e3df") +
+      line(42, 214, 106, 214, "#d7dcd7") +
+      label(74, 240, "Pico W", 8, "#5e6762") +
+      rect(46, 278, 55, 20, 1, "#20684c")
+    : label(73, 270, "PICO", 13, "#e5f3e9");
+  return rect(7, 11, width - 14, bottom - 9, 2, "#19382e") +
+    rect(7, 9, width - 14, bottom - 9, 2, "#146544", "#3e8c6b") +
+    [37, 109].map(x => mountingHole(x, 22) + mountingHole(x, bottom - 13)).join("") +
+    path("M51 2H95V32L91 37H55L51 32Z", "#c9ccc6", "#e4e6e2") +
+    rect(55, 29, 36, 7, 1, "#454c4b") + rect(57, 30, 6, 4, 0.5, "#aeb5af") +
+    rect(83, 30, 6, 4, 0.5, "#aeb5af") +
+    smd(33, 39, "#d4daaa") + label(73, 44, "USB", 6) +
+    rect(83, 64, 18, 15, 1, "#252d2c") + rect(105, 62, 10, 14, 1, "#272f2d") +
+    smd(83, 55) + smd(83, 82) +
+    rect(43, 63, 20, 23, 2, "#cdd3cf", "#edf0e9") + circle(53, 74.5, 8, "#f5f6f1") +
+    label(53, 92, "BOOTSEL", 6) +
+    rect(42, 112, 14, 17, 1, "#252a28") +
+    smd(96, 106) + smd(102, 119, "#bbb68f") +
+    [61, 68, 75, 82, 89, 96].map(x => rect(x, cpuY - 11, 3, 5, 0.5, "#c3ae91")).join("") +
+    rp2040Package(51, cpuY, 44) +
+    rect(48, wireless ? 197 : 218, 19, 9, 1, "#bbc2bd", "#d8e2dd") +
+    `<g transform="rotate(-90 36 239)">${label(36, 239, "Raspberry Pi", 7, "#d6ebe1")}</g>` +
+    lowerBoard +
+    debugPads.map(x => rect(x - 4, debugY - 5, 8, 10, 1, "#ab9d76") + circle(x, debugY, 2.1, "#ecead4")).join("") +
+    label(wireless ? 94 : 73, debugY - 11, "DEBUG", 6, "#d5e6db");
+}
+
 function picoBoard(wireless) {
   return makeBoard({
     id: wireless ? "raspberry-pi-pico-w" : "raspberry-pi-pico", name: wireless ? "Raspberry Pi Pico W" : "Raspberry Pi Pico",
@@ -167,16 +248,7 @@ function picoBoard(wireless) {
     carrierRow("bottom", picoDebug, wireless ? 0.5841 : -2.54, wireless ? 5.7 : 24.13, {
       start: 35, gap: 38, prefix: "SWD.", size: wireless ? 1.5748 : 1.6, drill: 1, smd: wireless,
     }),
-  ], ({ width, height }) =>
-    board(width, height, "#126b51", "#459b7c") +
-    [40, 106].map(x => mountingHole(x, 28) + mountingHole(x, 315)).join("") +
-    microUsb(52, 5, 42) + circle(44, 45, 3.5, "#c8d976", "#e0eda5") +
-    tactile(46, 65) + label(80, 72, "BOOTSEL", 6) + chip(51, 131, 44, 43, "RP2040", 7) +
-    smd(43, 105) + smd(98, 109) + smd(96, 199) + smd(44, 214) +
-    (wireless
-      ? rect(45, 233, 56, 42, 3, "#a9b8ad", "#d2ded5") + label(73, 252, "CYW43439", 7, "#364a42") + antenna(44, 279, 58, 17)
-      : label(73, 235, "RASPBERRY", 8, "#d6ebe1") + label(73, 254, "PI PICO", 10, "#e5f3e9")) +
-    label(73, 320, wireless ? "PICO W" : "DEBUG", 7), {
+  ], component => picoArt(component, wireless), {
     body: [21, 51], color: "#126b51", details: [[0, -22, 8, 6, 2.8, "#a8b2b9"], [0, -3, 7, 7, 1, "#273041"], ...(wireless ? [[0, 13, 11, 12, 1.9, "#b4c2b9"]] : [])],
     note: wireless
       ? "Pico W 40-pin carrier at 2.54 mm pitch and 17.78 mm between rows. The separate SWD pads match Pico W. Check access to the fitted connector when using Pico WH. Leave the board antenna clear."
@@ -301,6 +373,67 @@ const rpPlusRearCoords = [
 ];
 const rpPlusGpioCoords = [[5.03, -1.31], [5.03, 1.23], [5.03, 3.77], [-5.13, 3.77], [-5.13, 1.23], [-5.13, -1.31]];
 
+function xiaoS3Art({ width, height }, { plus, sense, rearStart }) {
+  const bottom = rearStart - 10;
+  const shieldBottom = bottom - 21;
+  const camera = sense
+    ? rect(47, 22, 62, 42, 3, "#dedcd5", "#f5f2e7") +
+      rect(59, 34, 38, 55, 2, "#c78431", "#e2ad51") +
+      [64, 70, 86, 92].map(x => line(x, 45, x, 85, "#e6ad50")).join("") +
+      rect(55, 7, 46, 43, 3, "#272a2c", "#676b69") +
+      circle(78, 28, 17, "#1c222a", "#575f65") +
+      circle(78, 28, 11, "#273341", "#424e60") +
+      circle(78, 28, 5.5, "#141c29", "#738ba3") +
+      rect(48, 88, 60, 13, 2, "#dad9ce", "#f2eddd") +
+      rect(52, 88, 52, 6, 1, "#56575a") +
+      label(79, 108, "SENSE", 7, "#32424a")
+    : "";
+  return board(width, bottom, "#272a29", "#565c56") +
+    rect(39, 47, 78, shieldBottom - 47, 3, "#d4d3cb", "#9c937a") +
+    rect(43, 50, 70, shieldBottom - 54, 2, "#eeeae0") +
+    label(78, 66, "seeed studio", 9, "#323b37") +
+    label(78, 82, "XIAO ESP32-S3", 7, "#46514a") +
+    (plus ? label(78, 103, "PLUS", 8, "#46514a") : "") +
+    rect(42, shieldBottom + 5, 13, 13, 1, "#e3d6b9", "#f6ecd7") +
+    circle(48.5, shieldBottom + 11.5, 4, "#c1a16b", "#86714e") +
+    circle(48.5, shieldBottom + 11.5, 1.4, "#e4d2a9") +
+    rect(65, shieldBottom + 6, 45, 11, 1, "#2f3134", "#8b8a77") +
+    Array.from({ length: 10 }, (_, i) => line(68 + 4.2 * i, shieldBottom + 5, 68 + 4.2 * i, shieldBottom + 8, "#bfaa6e")).join("") +
+    topUsbC(55, 2, 46, 42) +
+    tactile(35, 9) + tactile(107, 9) + smd(39, 30, "#eee8c6") + smd(110, 30, "#dcd9b4") +
+    camera +
+    rect(7, rearStart - 7, width - 14, height - rearStart, 5, "#252d34", "#5d6268") +
+    label(78, rearStart + 24, "REAR PADS", 8, "#c3c9cb");
+}
+
+function xiaoRpArt({ width, height }, { plus, rearStart }) {
+  const frontHeight = rearStart - 9;
+  const usbHeight = plus ? 42 : 34;
+  const stickerY = plus ? 49 : 40;
+  const buttonsY = frontHeight - 25;
+  const ledY = buttonsY + 7.5;
+  return board(width, frontHeight, "#282a28", "#575a54") +
+    topUsbC(50, 2, 56, usbHeight) +
+    Array.from({ length: 10 }, (_, index) => {
+      const x = 60 + 4 * index;
+      return line(x, usbHeight + 2, x, usbHeight + 7, "#b8a774", 1);
+    }).join("") +
+    (plus
+      ? smd(38, 17, "#dec692") + smd(109, 17, "#e2ddb3") +
+        label(42, 28, "C", 6) + label(113, 28, "L", 6)
+      : [19, 25, 31, 37].map(y => circle(112, y, 1.8, "#d7dcd2")).join("")) +
+    rect(43, stickerY, 70, buttonsY - stickerY - 5, 3, "#efefeb", "#a9aaa2") +
+    label(78, stickerY + 15, "seeed studio", 9, "#292e2b") +
+    label(78, stickerY + 31, "XIAO RP2040", 8, "#454944") +
+    (plus ? label(78, stickerY + 45, "PLUS", 8, "#454944") : "") +
+    tactile(44, buttonsY) + tactile(97, buttonsY) +
+    label(38, ledY, "R", 6) + label(119, ledY, "B", 6) +
+    rect(72, ledY - 5.5, 12, 11, 1, "#dcdccc", "#faf9e9") +
+    circle(78, ledY, 2.6, "#aabfb9") +
+    rect(7, rearStart - 5, width - 14, height - rearStart + 2, 5, "#253039", "#5d6268") +
+    label(78, rearStart + 22, "REAR PADS", 8, "#b6c4cb");
+}
+
 function xiaoBoard({ esp, plus, sense = false }) {
   const platform = esp ? "ESP32-S3" : "RP2040";
   const suffix = plus ? " Plus" : sense ? " Sense" : "";
@@ -341,17 +474,9 @@ function xiaoBoard({ esp, plus, sense = false }) {
       ? "Compact ESP32-S3 board with the Sense camera, microphone and microSD expansion. The side and rear pads follow the base XIAO pinout. The expansion shares D8, D9 and D10 for microSD and GPIO41/42 for PDM audio."
       : `Compact ${platform} board with native USB-C, ${plus ? "extra castellated I/O and rear contact pads" : "castellated headers and rear contact pads"}. ${esp || plus ? "Includes a single-cell battery connection." : "Rear VIN and GND provide access to board power."}`,
     source: esp ? seeedS3 : seeedRp, width: 156, height: canvasHeight,
-  }, rows, ({ width, height }) =>
-    board(width, rearStart - 15, "#292d31", "#5d6268") +
-    rect(7, rearStart - 13, width - 14, height - rearStart + 9, 5, "#24303b", "#5d6268") +
-    usb(56, 6, 44) +
-    rect(50, 35, 56, plus ? 110 : 78, 5, "#c3c3bd", "#e4e5e0") +
-    rect(54, 39, 48, plus ? 102 : 70, 3, "#deded9", "#9b9d97") +
-    (sense ? rect(66, 44, 24, 22, 3, "#313a46", "#667782") + circle(78, 55, 6, "#171d26", "#839cab") : "") +
-    label(78, sense ? 76 : 65, "SEEED", 8, "#344450") + label(78, sense ? 92 : 83, "XIAO", 11, "#344450") +
-    (plus ? label(78, 117, "PLUS", 8, "#344450") : "") +
-    (esp ? circle(57, plus ? 166 : 123, 6, "#ddcba2", "#f4e9c8") : tactile(52, plus ? 159 : 117)) +
-    smd(93, plus ? 165 : 123) + label(78, rearStart - 2, "REAR PADS", 8, "#abbbc2"), {
+  }, rows, esp
+    ? component => xiaoS3Art(component, { plus, sense, rearStart })
+    : component => xiaoRpArt(component, { plus, rearStart }), {
     body: [17.8, 21], color: "#292d31", details: [[0, -9, 8.9, 6.4, 3.1, "#a8b2b9"], [0, 1, 11, 12, 1.5, "#c3c3bd"]],
     pads: [...smdPads(rear, rearCoords), ...extraPads],
     note: `Reference carrier aligned to Seeed's ${plus ? "Plus" : "standard"} SMD footprint. Rear pads and any additional castellated pads are included. Check carrier clearances and mating-connector height against the actual board.`,
@@ -384,16 +509,28 @@ const espUsbOtg = makeBoard({
   carrierRow("bottom", otgRows[0], -12.39, -7.01, { start: 67, gap: 35 }),
   carrierRow("left", [number(rearBatMinus, "PAD1.2"), number(rearBatPlus, "PAD1.1")], -30.1, 8.18, { start: 133, gap: 18, smd: true, size: 1.7 }),
 ], ({ width, height }) =>
-  board(width, height, "#283b4b", "#587281") +
-  [29, 330].map(x => mountingHole(x, 25) + mountingHole(x, 162)).join("") +
-  rect(4, 58, 48, 59, 3, "#aeb9bf", "#e3e8e9") + rect(305, 56, 49, 62, 3, "#aeb9bf", "#e3e8e9") +
-  rect(8, 65, 20, 45, 3, "#65767f") + rect(328, 63, 20, 48, 3, "#273744") +
-  label(78, 85, "DEVICE", 8) + label(283, 85, "HOST", 8) +
-  rect(125, 40, 107, 102, 6, "#131d26", "#647f8b") + rect(132, 47, 93, 87, 4, "#132d3b", "#284b58") +
-  label(178, 76, "ESP32-S3", 11, "#92d8cf") + label(178, 98, "USB OTG", 11, "#93d6e5") +
-  label(178, 118, "1.3-inch LCD", 7, "#92a9b3") +
-  tactile(96, 114) + tactile(247, 114) + smd(83, 60) + smd(259, 60) +
-  microUsb(271, 146, 30) + label(286, 143, "DEBUG", 6) + label(178, 151, "J5 EXPANSION", 7), {
+  rect(39, 20, width - 78, height - 39, 5, "#15191f", "#696454") +
+  rect(40, 17, width - 80, height - 39, 5, "#282b2d", "#9c9580") +
+  [50, 308].map(x => [29, 156].map(y =>
+    circle(x, y, 8, "#15191d", "#575853") +
+    path(`M${x - 3} ${y}h6m-3-3v6`, "none", "#575e5c", 1.2)).join("")).join("") +
+  rect(3, 64, 39, 57, 2, "#b2b6b1", "#e8e8df") +
+  rect(13, 74, 11, 12, 1, "#3b3c39") + rect(13, 99, 11, 12, 1, "#3b3c39") +
+  rect(316, 65, 39, 56, 2, "#bcc0bb", "#e8e8df") +
+  rect(336, 72, 15, 42, 1, "#646861", "#e2e5da") +
+  rect(344, 75, 8, 36, 1, "#222722") +
+  label(73, 92, "USB DEV", 7, "#d4c39d") + label(286, 92, "USB HOST", 7, "#d4c39d") +
+  rect(121, 36, 117, 108, 2, "#b4a279", "#d5c297") +
+  rect(128, 43, 103, 94, 1, "#131a21", "#6c6757") +
+  label(179, 96, "1.3-inch LCD", 8, "#8e9a99") +
+  label(180, 150, "ESP32-S3-USB-OTG", 7.5, "#ded1ac") +
+  label(89, 33, "RST", 6, "#cdbd99") + label(175, 30, "MENU", 6, "#cdbd99") +
+  label(76, 146, "ON / OFF", 6, "#cdbd99") + rect(72, 156, 20, 10, 2, "#91968d") +
+  rect(83, 157, 7, 11, 1, "#24292b") +
+  [113, 182, 225].map(x => rect(x, 163, 11, 5, 1.5, "#a9ada4", "#d5dbd0")).join("") +
+  label(118, 157, "BOOT", 6, "#ded1ac") + label(188, 158, "DW−", 6, "#ded1ac") +
+  label(231, 158, "UP+", 6, "#ded1ac") +
+  microUsb(263, 154, 28) + label(276, 145, "USB-UART", 6, "#ded1ac"), {
   body: [65, 32], color: "#283b4b", details: [[0, 0, 29, 23, 3.8, "#182733"], [-30, 0, 14, 12, 5.5, "#adb9be"], [30, 0, 14, 13, 6.3, "#adb9be"], [21, 15, 8, 4.8, 2.4, "#adb9be"]],
   note: "Reference carrier uses the Espressif 65 × 32 mm board outline and 2.54 mm J5 expansion/test pad array. Verify pad clearances, USB overhang and the rear battery solder connection before fabrication.",
 });
@@ -438,8 +575,65 @@ const featherRpRight = [
   rpGpio(2, "SDA", "I²C1 data. Also present on the STEMMA QT connector."),
 ];
 
-function shSocket(x, y, width = 32) {
-  return rect(x, y, width, 13, 2, "#d6d8ce", "#f1f1ec") + rect(x + 4, y + 4, width - 8, 6, 1, "#69716d");
+function shSocket(x, y, width, height) {
+  return [0.2, 0.4, 0.6, 0.8].map(offset =>
+    line(x + offset * width, y - 4, x + offset * width, y, "#b6a784", 1.7),
+  ).join("") +
+    rect(x, y, width, height, 2, "#dcdacf", "#f4f2e8") +
+    rect(x + 4, y + height - 6, width - 8, 5, 1, "#9d9d92") +
+    line(x + 4, y + 2, x + width - 4, y + 2, "#f3f1e8");
+}
+
+function featherS3Art({ width, height }) {
+  return board(width, height, "#23262a", "#596064") +
+    [26, 128].map(x => mountingHole(x, 22) + mountingHole(x, 278)).join("") +
+    topUsbC(55, 3, 44, 38) +
+    smd(42, 21, "#e7e18e") + smd(105, 21, "#b84946") +
+    tactile(37, 57) + tactile(37, 110) +
+    label(44, 78, "RST", 6) + label(45, 130, "BOOT", 6) +
+    rect(95, 43, 37, 39, 2, "#676963", "#b0b0a2") +
+    rect(104, 51, 20, 7, 1, "#24272a") + rect(104, 67, 20, 7, 1, "#24272a") +
+    label(112, 88, "LiPo", 7) +
+    rect(58, 119, 38, 18, 1, "#2e3233", "#8b8e84") +
+    ["#e5d147", "#557fa3", "#bd5147", "#5e6260"].map((fill, i) => circle(65 + 8 * i, 129, 2.2, fill)).join("") +
+    label(77, 145, "STEMMA QT", 6) +
+    chip(68, 150, 22, 17, "", 3) + smd(100, 145) + smd(50, 152) +
+    rect(48, 159, 9, 9, 1, "#c3b78b", "#e4d7aa") +
+    circle(53, 164, 2, "#9b8eb3") +
+    rect(36, 175, 82, 111, 2, "#22252a", "#5d5c56") +
+    rect(37, 175, 80, 87, 2, "#b9b9b3", "#dfdfd4") +
+    rect(41, 178, 72, 81, 2, "#cecec7") +
+    label(77, 208, "ESP32-S3", 10, "#414b48") +
+    label(77, 226, "FEATHER", 8, "#535b53") +
+    path("M44 264v17h13v-13h13v13h13v-13h13v13h13v-17", "none", "#8c7654", 1.8);
+}
+
+function featherRpArt({ width, height }) {
+  const debugPads = [51, 59, 67, 75, 83].map(x =>
+    rect(x, 116, 4.7, 13, 0.5, "#c3ad7a") + rect(x, 139, 4.7, 13, 0.5, "#c3ad7a"),
+  ).join("");
+  return board(width, height, "#222526", "#525755") +
+    [26, 128].map(x => mountingHole(x, 22) + mountingHole(x, 279)).join("") +
+    topUsbC(53, 3, 48, 37) +
+    smd(37, 15, "#e3d995") + smd(106, 15, "#b34f47") +
+    label(40, 28, "CHG", 6) + label(112, 27, "13", 6) +
+    rect(96, 47, 41, 37, 2, "#dfdbcc", "#f3eee0") +
+    rect(100, 51, 31, 13, 1, "#a49d8b") +
+    rect(103, 60, 8, 15, 1, "#4e514c") + rect(119, 60, 8, 15, 1, "#4e514c") +
+    line(111, 80, 121, 80, "#c3ae86", 1.4) +
+    tactile(38, 62) + label(45, 82, "RESET", 6) +
+    chip(67, 51, 16, 23, "", 3) + smd(68, 88) + smd(94, 89) +
+    rect(38, 96, 15, 15, 2, "#dad9d0", "#ece9df") + circle(45.5, 103.5, 4.7, "#eee4ba") +
+    rect(45, 112, 49, 45, 1, "none", "#939690") + debugPads +
+    circle(55, 134, 1.6, "#1b2020", "#6c6f6b") + circle(83, 134, 1.6, "#1b2020", "#6c6f6b") +
+    label(69, 162, "SWD", 6) +
+    smd(48, 172) + smd(102, 153) + smd(104, 171) +
+    rp2040Package(57, 179, 42) + label(78, 170, "FEATHER", 8, "#ece9df") +
+    chip(85, 229, 31, 29, "8MB", 4) + smd(48, 232) + smd(48, 243) + smd(48, 254) +
+    shSocket(43, 267, 35, 22) +
+    rect(86, 270, 26, 20, 2, "#e2dfd4", "#f6f3eb") +
+    rect(91, 288, 16, 6, 1, "#8b8980") +
+    label(99, 265, "BOOTSEL", 6) + label(58, 260, "I²C", 6);
 }
 
 function featherBoard(esp) {
@@ -456,16 +650,7 @@ function featherBoard(esp) {
   }, [
     carrierRow("left", numbered(esp ? featherS3Left : featherRpLeft, 1), -10.16, -19.05, { start: 39 }),
     carrierRow("right", numbered(esp ? featherS3Right : featherRpRight, 28, -1), 10.16, -8.89, { start: 99 }),
-  ], ({ width, height }) =>
-    board(width, height, "#282f36", "#57656d") +
-    [28, 126].map(x => mountingHole(x, 23) + mountingHole(x, 277)).join("") +
-    usb(57, 5, 40) + tactile(43, 57) + smd(89, 38) +
-    rect(92, 49, 36, 27, 3, "#d7d7cd", "#efeee5") + rect(99, 54, 23, 16, 1, "#777b71") +
-    shSocket(60, esp ? 100 : 277, 34) +
-    (esp
-      ? rect(46, 153, 62, 82, 5, "#c9cecc", "#e0e4e3") + label(77, 183, "ESP32-S3", 9, "#445460") + antenna(46, 228, 62, 25)
-      : chip(55, 149, 44, 43, "RP2040", 6) + tactile(67, 234) + label(77, 208, "FEATHER", 9)) +
-    smd(49, 122) + smd(93, 129) + circle(77, 83, 3, "#e1b876", "#f3e2b8"), {
+  ], esp ? featherS3Art : featherRpArt, {
     body: [22.86, 50.8], color: "#282f36", details: [[0, -22.5, 9, 6, 3, "#a8b2b9"], [7, -13.5, 8, 6, 4.5, "#d7d7cd"], [0, 9, esp ? 15 : 7, esp ? 17 : 7, esp ? 2 : 1.3, esp ? "#c9cecc" : "#273041"]],
     note: "Reference Feather carrier. The two headers use 2.54 mm pitch and 20.32 mm between rows. The STEMMA QT and battery connectors are accessible through their corresponding header signals. Verify connector and antenna clearances.",
   });
@@ -501,6 +686,39 @@ const qtpyRpRight = [
   rpGpio(6, "SCK", "SPI0 clock."), rpGpio(5, "RX", "Default UART1 RX."),
 ];
 
+function qtpyS3Art({ width, height }) {
+  return board(width, height, "#75328c", "#a55eb6") +
+    rect(10, 32, 30, 105, 3, "#743491", "#a65bb7") +
+    rect(118, 32, 30, 105, 3, "#743491", "#a65bb7") +
+    rect(58, 2, 9, 9, 1, "#c4ad70") + rect(91, 2, 9, 9, 1, "#c4ad70") +
+    topUsbC(52, 8, 54, 41) +
+    label(29, 28, "QT", 8) + label(129, 28, "PY", 8) +
+    tactile(44, 62) + tactile(44, 87) +
+    label(52, 55, "BOOT", 6) + label(52, 110, "RST", 6) +
+    chip(82, 67, 26, 22, "", 3) + smd(83, 52) + smd(108, 89) + smd(75, 99) +
+    rect(101, 101, 12, 12, 1, "#dbd1af", "#efe4c3") + circle(107, 107, 2.4, "#9381aa") +
+    rect(35, 132, 37, 12, 2, "#d1ccba", "#ede6cf") +
+    rect(50, 134, 14, 8, 1, "#e8ddc3") +
+    rect(80, 123, 37, 23, 2, "#202226", "#6c616e") +
+    [85, 94, 103, 112].map(x => line(x, 117, x, 128, "#c0aa74", 1.4)).join("") +
+    rect(84, 138, 29, 7, 1, "#414145") +
+    label(98, 133, "QT", 6);
+}
+
+function qtpyRpArt({ width, height }) {
+  return board(width, height, "#222627", "#565b57") +
+    topUsbC(48, 3, 62, 49) +
+    label(28, 20, "QT", 9) + label(130, 20, "PY", 9) +
+    tactile(38, 76) + label(45, 98, "BOOT", 6) +
+    tactile(101, 119) + label(109, 141, "RST", 6) +
+    chip(70, 72, 18, 24, "", 3) + smd(67, 59) + smd(89, 58) +
+    smd(69, 101) + smd(102, 63) + smd(98, 84) +
+    rect(105, 94, 13, 13, 1, "#dcd5bc", "#f0e6cf") + circle(111.5, 100.5, 2.4, "#b7a0c3") +
+    shSocket(44, 119, 43, 27) +
+    label(65, 111, "I²C1", 6) +
+    line(65, 148, 65, 153, "#a28b62");
+}
+
 function qtpyBoard(esp) {
   const qt = [
     ground("qt-gnd"), output("qt-3v3", "3V3", "3.3 V supply on the STEMMA QT connector."),
@@ -523,11 +741,7 @@ function qtpyBoard(esp) {
     carrierRow("right", numbered(esp ? qtpyEspRight : qtpyRpRight, 14, -1), 7.62, -7.62, { start: 38, gap: 15, size: 1.778, drill: 1 }),
     carrierRow("bottom", qt, -3.81, 14.1, { start: 27, gap: 34, prefix: "QT." }),
     ...(esp ? [carrierRow("top", qtpyBattery, -1.905, -8.5725, { start: 32, gap: 94, pitch: 3.81, smd: true, size: [1, 3] })] : []),
-  ], ({ width, height }) =>
-    board(width, height, color, esp ? "#8a69b1" : "#606875") + usb(57, 5, 44) +
-    tactile(41, 50) + tactile(103, 55) + chip(58, 67, 42, 41, esp ? "ESP32-S3" : "RP2040", 6) +
-    circle(79, 43, 4, "#ded380", "#f5e9ae") + smd(50, 113) + smd(100, 112) +
-    label(79, 119, "QT PY", 8) + shSocket(61, 130, 36), {
+  ], esp ? qtpyS3Art : qtpyRpArt, {
     body: [17.78, 20.701], color, details: [[0, -8.1, 9, 6, 3, "#a8b2b9"], [0, 8.3, 6.1, 4.2, 2.7, "#d6d8ce"]],
     note: "Reference carrier for the fourteen 2.54 mm-pitch side contacts. The QT pads outside the board outline are a separate cable-termination row for the JST-SH connector.",
   });
@@ -582,17 +796,44 @@ const metroEsp32S3 = makeBoard({
     number(ground("bat-minus", "BAT−", "Battery return on the JST-PH socket."), "X1.1"),
     number(rail("bat-plus", "BAT+", "Positive contact of the 3.7 V single-cell LiPo socket and on-board charger."), "X1.2"),
   ], 15.383, 38, { start: 186, gap: 32, pitch: -2.54 }),
-], ({ width, height }) =>
-  board(width, height, "#28313a", "#576773") +
-  mountingHole(30, 57) + mountingHole(198, 38) + mountingHole(40, 270) + mountingHole(151, 270) +
-  rect(30, 5, 41, 42, 4, "#282b30", "#64686d") + rect(35, 5, 31, 12, 2, "#171a1d", "#64686d") +
-  usb(157, 5, 40) + shSocket(168, 67, 26) + tactile(181, 40) +
-  antenna(68, 43, 73, 28) + rect(67, 68, 76, 63, 4, "#b4bec1", "#d8e0e2") +
-  label(105, 102, "ESP32-S3", 10, "#3e4a55") + smd(155, 90) + smd(64, 151) +
-  label(115, 158, "ADAFRUIT", 8, "#acbbc7") + label(115, 177, "METRO", 15) + label(115, 192, "REV B", 7) +
-  tactile(154, 196) + circle(161, 139, 4, "#acde83", "#ebefbe") +
-  rect(66, 224, 46, 46, 3, "#a0adb4", "#ccd4d8") + label(89, 251, "microSD", 8, "#27333d") +
-  shSocket(151, 244, 31), {
+], ({ width }) =>
+  path(`M7 12H${width - 14}l7 7v253l-9 9h-53l-11 11H26L7 277Z`, "#25282c", "#5d6264") +
+  rect(6, 85, 12, 87, 2, "#222429", "#4c5051") +
+  rect(6, 198, 12, 77, 2, "#222429", "#4c5051") +
+  rect(width - 18, 39, 12, 129, 2, "#222429", "#4c5051") +
+  rect(width - 18, 176, 12, 104, 2, "#222429", "#4c5051") +
+  mountingHole(24, 68) + mountingHole(207, 69) + mountingHole(35, 277) + mountingHole(158, 277) +
+  rect(24, 2, 37, 58, 2, "#242526", "#696d6c") +
+  rect(28, 4, 29, 9, 1, "#171a1d", "#595d5e") +
+  topUsbC(152, 8, 39, 37) +
+  rect(197, 36, 28, 22, 2, "#333636", "#6b6e69") +
+  rect(216, 39, 9, 16, 1, "#525752") + label(212, 25, "QT", 7) +
+  tactile(197, 13) + label(204, 33, "RST", 6) +
+  rect(66, 13, 78, 105, 2, "#22252b", "#777168") +
+  path("M71 36V18h12v15h11V18h12v15h11V18h12v15h10", "none", "#8f7957", 1.8) +
+  rect(67, 40, 76, 80, 1, "#b7b8b4", "#deded6") +
+  rect(71, 44, 68, 72, 1, "#cbccc4") +
+  label(105, 80, "ESP32-S3", 10, "#424f4d") +
+  rect(148, 84, 38, 23, 2, "#262a2c", "#8a897d") +
+  [92, 99].map(y => [153, 160, 167, 174, 181].map(x => circle(x, y, 1.4, "#ad9968")).join("")).join("") +
+  label(167, 78, "JTAG", 6) + circle(178, 123, 5, "#c9c7af", "#efead8") +
+  rect(17, 87, 17, 16, 2, "#9c9b89") + rect(17, 92, 8, 6, 1, "#282c30") +
+  label(43, 95, "ON", 6) +
+  [147, 208].map(y => circle(66, y, 13, "#b9beb9", "#dde1da") +
+    circle(66, y, 9, "#cbd0ca")).join("") +
+  smd(82, 137) + chip(72, 167, 25, 28, "", 4) + smd(106, 211) +
+  '<g transform="rotate(32 129 173)">' +
+    label(129, 155, "ADAFRUIT", 8, "#e2e1d8") +
+    label(129, 173, "Metro", 18, "#f0efe7") +
+    label(129, 190, "ESP32-S3 / REV B", 7, "#e2e1d8") +
+  "</g>" +
+  tactile(162, 170) + label(169, 191, "BOOT", 6) +
+  rect(51, 223, 54, 50, 2, "#a8aca6", "#d9dbd3") +
+  rect(57, 267, 42, 6, 1, "#777b73") + label(78, 247, "microSD", 8, "#404b49") +
+  rect(115, 259, 33, 22, 2, "#282a2e", "#65675e") +
+  [120, 131, 142].map(x => rect(x, 264, 4, 12, 1, "#af9d71")).join("") +
+  rect(174, 237, 32, 37, 2, "#5c6059", "#a3a398") +
+  rect(181, 243, 18, 25, 1, "#272d2c") + label(191, 230, "LiPo", 6), {
   body: [53.34, 68.58], color: "#28313a",
   details: [[-21, -28, 9, 13, 11, "#282b30"], [11.43, -29.21, 9, 7, 3.1, "#a8b2b9"],
     [-10, -22, 19, 20, 2.9, "#b4bec1"], [-10.16, 25.02, 13, 11, 2.2, "#a0adb4"]],

@@ -1,4 +1,4 @@
-import { board, chip, edgePads, label, path, pinRow, rect, smd } from "./catalog-extension.js";
+import { board, circle, edgePads, label, line, path, pinRow, rect, smd } from "./catalog-extension.js";
 
 const raytacDownload = index => `https://www.raytac.com/document/act.php?act=1&index_id=${index}`;
 
@@ -58,35 +58,88 @@ function raytacFamily({ family, body, thickness, spec, design, contacts, sides, 
       source: raytacDownload(spec), width, height, art: id, referencePrefix: "U", pins,
     };
     const modelLink = { label: "Raytac footprint, keepout and STEP files", url: raytacDownload(design) };
-    return { component, footprint, modelLink, art: (entry, labels) => raytacArt(entry, labels, family, antenna) };
+    return { component, footprint, modelLink, art: (entry, labels) => raytacArt(entry, labels, family, antenna, footprint) };
   });
 }
 
-function raytacArt(component, showLabels, family, antenna) {
+const raytacFronts = {
+  nRF52832: { color: "#15576c", shieldTop: 0.23, shieldInset: 0.09 },
+  nRF52840: { color: "#075a70", shieldTop: 0.25, shieldInset: 0.04 },
+  nRF5340: { color: "#12566d", shieldTop: 0.31, shieldInset: 0.04 },
+  nRF54L15: { color: "#228354", shieldTop: 0.26, shieldInset: 0.025 },
+};
+
+function raytacAntenna(family, antenna, width, height) {
+  if (antenna === "PCB") {
+    const feed = family === "nRF5340" ? 14 : 9;
+    return path(`M${feed} ${height - 2}V11h8v13h8V11h8v13h8V11h8v13h8V11h8v13h8V11H${width - 9}`,
+      "none", "#163f52", 2.3);
+  }
+  if (family === "nRF54L15") {
+    return line(7, 7, width - 13, 7, "#c2b47b", 1) +
+      rect(10, 4, 15, 5, 1, "#d1d6ce", "#b3a979") +
+      rect(width - 28, 4, 16, 5, 1, "#d1d6ce", "#b3a979") +
+      smd(width - 24, height - 8, "#bcad73");
+  }
+  return rect(7, 4, width - 14, 9, 1, "#cbd3d4", "#102d43") +
+    rect(8, 4, 7, 9, 1, "#b9a66e") + rect(width - 15, 4, 7, 9, 1, "#b9a66e") +
+    rect(16, 5, width - 32, 7, 0.5, "#e1e3de") + smd(width - 23, height - 7, "#b6ad7e");
+}
+
+function raytacArt(component, showLabels, family, antenna, { body: [bodyWidth, bodyHeight], pads }) {
   const { width, height, shortName, pins } = component;
   const cx = width / 2;
-  const inset = 39;
-  const antennaArt = antenna === "PCB"
-    ? path(`M${cx - 30} 43h9v-15h9v15h9v-15h9v15h9v-15h9v15h6`, "none", "#d1a36c", 2.1)
-    : rect(cx - 24, 31, 48, 12, 2, "#d9d3bf", "#f3ebd5");
+  const front = raytacFronts[family];
+  const scale = Math.min((width - 90) / 100, (height - 60) / (100 * bodyHeight / bodyWidth));
+  const physicalHeight = 100 * bodyHeight / bodyWidth;
+  const shieldY = physicalHeight * front.shieldTop;
+  const shieldX = 100 * front.shieldInset;
+  const shieldWidth = 100 - 2 * shieldX;
+  const shieldHeight = physicalHeight - shieldY - 5;
+  const shieldCenter = shieldY + shieldHeight / 2;
+  const castellations = family === "nRF52832" ? pads
+    .filter(({ x, y }) => Math.abs(x) >= 4.6 || y >= 7.5)
+    .map(({ x, y, size: [padWidth, padHeight] }) => {
+      const left = Math.max(0, 50 + (x - padWidth / 2) * 10);
+      const right = Math.min(100, 50 + (x + padWidth / 2) * 10);
+      const top = physicalHeight / 2 + (y - padHeight / 2) * 10;
+      return rect(left, top, right - left, Math.min(padHeight * 10, physicalHeight - top), 0.4, "#c3a665");
+    }).join("") : "";
+  const physical = rect(0, 0, 100, physicalHeight, 1, front.color, "#103848") +
+    raytacAntenna(family, antenna, 100, shieldY) +
+    castellations +
+    rect(shieldX, shieldY, shieldWidth, shieldHeight, 1, "#9eaaa9", "#7b8c93") +
+    rect(shieldX + 3, shieldY + 3, shieldWidth - 6, shieldHeight - 6, 1, "#bfc8c7", "#d1d9d7") +
+    line(shieldX + 3, shieldY + 4, 100 - shieldX - 3, shieldY + 4, "#e2e6e1", 1.2) +
+    `<g transform="rotate(90 50 ${shieldCenter})">` +
+    label(50, shieldCenter - 17, "RAYTAC", 10, "#364b53") +
+    label(50, shieldCenter, shortName, 8, "#3b5056") +
+    label(50, shieldCenter + 14, family, 8, "#4d6468") + "</g>";
   const captions = showLabels ? pins.map(pin => {
     const horizontal = pin.x === 0 || pin.x === width;
     if (horizontal) {
       const left = pin.x === 0;
-      return label(left ? 16 : width - 16, pin.y, pin.label, 8, "#eef3e8", left ? "start" : "end");
+      return label(left ? 16 : width - 16, pin.y, pin.label, 7.5, "#eef3e8", left ? "start" : "end");
     }
     const upper = pin.y === 0;
     const y = upper ? 16 : height - 16;
     return `<g transform="rotate(${upper ? 90 : -90} ${pin.x} ${y})">${label(pin.x, y, pin.label, 7.5, "#eef3e8", "start")}</g>`;
   }).join("") : "";
 
-  return board(width, height, "#25564e", "#4d8374") + antennaArt +
-    rect(inset, 70, width - inset * 2, height - 123, 7, "#a8b5bc", "#d2dcdf") +
-    rect(inset + 4, 75, width - (inset + 4) * 2, height - 133, 4, "#c1cbcf", "#9baab0") +
-    label(cx, height * 0.46, "RAYTAC", 12, "#405864") +
-    label(cx, height * 0.54, shortName, 9.5, "#324652") +
-    label(cx, height * 0.61, family, 9, "#52707b") +
-    edgePads(component, false) + captions;
+  const top = (height - physicalHeight * scale) / 2 - 11;
+  const terminals = pins.map(({ x, y }) => {
+    if (x === 0 || x === width) {
+      const left = x === 0;
+      return line(x, y, left ? 10 : width - 10, y, "#ac8550", 1.3) +
+        rect(left ? 7 : width - 13, y - 2.2, 6, 4.4, 0.7, "#dbb274");
+    }
+    const upper = y === 0;
+    return line(x, y, x, upper ? 10 : height - 10, "#ac8550", 1.3) +
+      rect(x - 2.2, upper ? 7 : height - 13, 4.4, 6, 0.7, "#dbb274");
+  }).join("");
+  return board(width, height, "#24363e", "#435a62") +
+    `<g transform="translate(${cx - 50 * scale} ${top}) scale(${scale})">${physical}</g>` +
+    terminals + captions;
 }
 
 // Land dimensions come from the Raytac Eagle or Protel libraries linked from each entry.
@@ -409,6 +462,38 @@ const radioHeader = [
   ["irq", "IRQ", "Active-low interrupt output.", "output", "8"],
 ];
 
+function ebyteFront({ width, height }, model, amplified) {
+  const c = width / 2;
+  if (amplified) {
+    const groundVias = [c - 34, c - 23, c + 23, c + 34].map(x =>
+      circle(x, 53, 3.1, "#b7aa62", "#e0cf92") + circle(x, 64, 3.1, "#b7aa62", "#e0cf92")).join("");
+    return rect(c - 39, 44, 78, 156, 0.7, "#408154", "#265a3d") +
+      groundVias +
+      rect(c - 10, 29, 20, 34, 1, "#b79049", "#ede0a8") +
+      rect(c - 15, 26, 30, 16, 1, "#c5a25b", "#f1dea3") +
+      rect(c - 12, 5, 24, 24, 1, "#c49b52", "#e3cb85") +
+      [9, 12, 15, 18, 21, 24].map(y => line(c - 11, y, c + 11, y, "#8b6d3d", 0.8)).join("") +
+      line(c, 42, c, 62, "#ecd3a3", 2.6) +
+      rect(c - 33, 69, 66, 113, 1, "#aeb8b7", "#d5dcda") +
+      rect(c - 30, 72, 60, 105, 1, "#d5d9d5", "#8f9d98") +
+      label(c, 99, "EBYTE", 9, "#435751") +
+      label(c, 118, model, 7, "#435751") +
+      label(c, 143, "2.4 GHz", 7, "#546b5c") +
+      circle(c + 32, 192, 3, "#cfbe83", "#325c47");
+  }
+  const contacts = [116, 130].flatMap(y => [-25.5, -8.5, 8.5, 25.5].map(x =>
+    circle(c + x, y, 4.3, "#bfa363", "#e2c788") +
+    rect(c + x - 1.7, y - 1.7, 3.4, 3.4, 0.3, "#a5aab0", "#e4e6e3"))).join("");
+  return rect(c - 42, 5, 84, 148, 1, "#ad3737", "#6f2e34") +
+    path(`M${c + 20} 51H${c + 33}V14h-20v27h-14V14h-15v27h-17V14`,
+      "none", "#7c242a", 3) +
+    rect(c - 15, 66, 30, 29, 1.5, "#262b31", "#70777b") +
+    circle(c - 11, 71, 1.4, "#929b9f") + label(c, 81, "nRF24", 7.5, "#b4bab9") +
+    rect(c + 21, 78, 13, 15, 1, "#c3c2a4", "#e3d3a9") +
+    smd(c - 31, 71) + smd(c - 32, 83) + smd(c + 19, 59) + contacts +
+    label(c, height - 15, model, 7.5, "#f8d6c6");
+}
+
 function ebyteDIP(model, body, amplified) {
   const id = `ebyte-${model.toLowerCase()}`;
   const width = 134;
@@ -439,15 +524,9 @@ function ebyteDIP(model, body, amplified) {
     note: "Reference carrier for a 2.54 mm 2 × 4 header. Verify pin 1, mating orientation, connector location and antenna clearance against the module.",
   };
   const art = (entry, labels) => {
-    const c = entry.width / 2;
-    const top = amplified
-      ? rect(c - 16, 8, 32, 29, 4, "#bd9e65", "#edd5a4") +
-        rect(c - 12, 10, 24, 6, 2, "#8d734d", "#d2b67e") +
-        rect(c - 30, 43, 60, 58, 4, "#a6b4b9", "#d0d9d9")
-      : path(`M${c - 26} 39h9V23h9v16h9V23h9v16h9V23h9v16h6`, "none", "#d0a068", 2.3);
-    return board(entry.width, entry.height, "#27584b", "#4f8573") + top +
-      chip(c - 17, amplified ? 108 : 54, 34, 25, "nRF24", 4) + smd(c - 15, amplified ? 143 : 86) +
-      label(c, height - 14, model, 8.2) + edgePads(entry, labels);
+    const banks = board(entry.width, 78, amplified ? "#254137" : "#522e33", amplified ? "#4e7763" : "#8a5b59");
+    return `<g transform="translate(0 ${entry.height - 78})">${banks}</g>` +
+      ebyteFront(entry, model, amplified) + edgePads(entry, labels);
   };
   return { component, footprint, art };
 }

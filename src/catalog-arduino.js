@@ -1,4 +1,4 @@
-import { board, chip, circle, label, mountingHole, rect, smd, tactile, usb } from "./catalog-extension.js";
+import { chip, circle, edgePads, label, line, mountingHole, pad, path, rect, smd, tactile } from "./catalog-extension.js";
 import { boardDefinition, contact, gpio, ground, header, reset, supply } from "./catalog-stm-arduino-tools.js";
 
 const manufacturer = "Arduino";
@@ -56,36 +56,151 @@ const avrPorts = ["PD0", "PD1", "PD2", "PD3", "PD4", "PD5", "PD6", "PD7", "PB0",
 const avrRoles = { 0: "UART RX.", 1: "UART TX.", 3: "PWM.", 5: "PWM.", 6: "PWM.", 9: "PWM.", 10: "SPI SS and PWM.", 11: "SPI MOSI and PWM.", 12: "SPI MISO.", 13: "SPI SCK and built-in LED." };
 const analogAvr = range(6).map(index => analog(index, `PC${index}`, ({ 4: "I²C SDA.", 5: "I²C SCL." })[index]));
 
-function shieldBoardArt(component) {
-  const { width, height, shortName, art } = component;
+const pcbEdge = "#3e929a";
+const bankColor = "#20383f";
+const metal = "#bbc7ca";
+
+function usbPort(x, y, width, depth, kind) {
+  const shell = kind === "mini" || kind === "micro"
+    ? path(`M${x + 3} ${y}H${x + width - 3}L${x + width} ${y + 4}V${y + depth}H${x}V${y + 4}Z`, metal, "#748790")
+    : rect(x, y, width, depth, kind === "c" ? 3 : 1.5, metal, "#748790");
+  return shell + rect(x + 3, y + 2, width - 6, 5, kind === "c" ? 2.5 : 1, "#354550") +
+    rect(x + 5, y + 11, width - 10, depth - 14, 1, "#a3b0b5") +
+    line(x + 6, y + depth - 4, x + width - 6, y + depth - 4, "#e1e8e9", 1.4);
+}
+
+function barrelJack(x, y, width, height) {
+  return rect(x + 3, y, width - 6, height, 2, "#252c2e", "#586269") +
+    rect(x, y + 1, width, 9, 1, "#171d20", "#73786f") +
+    rect(x + 5, y + 3, width - 10, 4, 1, "#10171a") +
+    line(x + 8, y + 13, x + 8, y + height - 5, "#3f484c");
+}
+
+function connector(x, y, columns, rows, { pitch = 8, male = false } = {}) {
+  return rect(x - pitch / 2, y - pitch / 2, columns * pitch, rows * pitch, 1, "#222c32", "#5d6b70") +
+    range(rows).map(row => range(columns).map(column => {
+      const px = x + column * pitch;
+      const py = y + row * pitch;
+      return rect(px - 2.55, py - 2.55, 5.1, 5.1, 0.7, "#111b21", "#6a685d") +
+        (male ? rect(px - 1.5, py - 1.5, 3, 3, 0.3, "#d2b981") : "");
+    }).join("")).join("");
+}
+
+function qfp(x, y, size, caption, pins) {
+  const legs = range(pins).map(index => {
+    const offset = 4 + index * (size - 8) / (pins - 1);
+    const px = x + offset;
+    const py = y + offset;
+    return line(px, y - 4, px, y, "#a3aeb1", 1.15) +
+      line(px, y + size, px, y + size + 4, "#a3aeb1", 1.15) +
+      line(x - 4, py, x, py, "#a3aeb1", 1.15) +
+      line(x + size, py, x + size + 4, py, "#a3aeb1", 1.15);
+  }).join("");
+  return legs + rect(x, y, size, size, 2, "#22292e", "#77888c") +
+    circle(x + 4, y + 4, 1.3, "#9b9e9c") +
+    label(x + size / 2, y + size / 2, caption, Math.min(6, size / 4.5), "#d2d8d9");
+}
+
+function dip328(x, y) {
+  const legs = range(14).map(index => {
+    const py = y + 5 + index * 4.5;
+    return line(x - 3, py, x + 3, py, "#acb3af", 2) +
+      line(x + 23, py, x + 29, py, "#acb3af", 2);
+  }).join("");
+  return rect(x - 2, y - 1, 30, 70, 2, "#202c31", "#718080") + legs +
+    rect(x, y, 26, 68, 2, "#202224", "#455159") +
+    path(`M${x + 9} ${y}a4 4 0 0 0 8 0`, "none", "#768184") +
+    `<g transform="translate(${x + 13} ${y + 35}) rotate(90)">${label(0, 0, "ATMEGA328P", 5.5, "#d2dbd8")}</g>`;
+}
+
+function passives(points) {
+  return points.map(([x, y]) => smd(x, y, "#d7c091")).join("");
+}
+
+function shieldBoardArt({ shortName, art }) {
   const wifi = art === "arduino-uno-r4-wifi";
-  const r4 = wifi || art === "arduino-uno-r4-minima";
+  const minima = art === "arduino-uno-r4-minima";
   const leonardo = art === "arduino-leonardo";
-  const center = width / 2;
-  let body = board(width, height, arduinoBlue, "#4798a0") +
-    mountingHole(34, 57) + mountingHole(width - 34, 57) + mountingHole(34, height - 37) + mountingHole(width - 34, height - 37) +
-    rect(33, 27, 39, 57, 3, "#20282d", "#899099") + circle(53, 40, 10, "#10151d", "#a9aca9") +
-    usb(width - 95, 28, r4 ? 38 : leonardo ? 39 : 51) + tactile(width - 63, 62) +
-    rect(8, 133, 9, 230, 3, "#264349") + rect(width - 17, 69, 9, 296, 3, "#264349") +
-    chip(center + 13, 173, 46, 52, r4 ? "RA4M1" : leonardo ? "32U4" : "328P", 7) +
-    label(center, 105, "ARDUINO", 13, "#d8f1ef") + label(center, height - 59, shortName, 12) +
-    [72, 88, 103, 117].map(x => smd(x, 115, "#e1cf8b")).join("") +
-    rect(center - 40, height - 39, 80, 22, 3, "#264349") +
-    label(center, height - 28, "SPI", 8);
-  if (wifi) {
-    body += rect(56, 134, 59, 24, 4, "#bdc6c6") + label(85, 146, "ESP32-S3", 8, "#26373b") +
-      rect(49, 167, 69, 100, 4, "#1c3139") +
-      range(96).map(index => circle(55 + index % 8 * 8, 173 + Math.floor(index / 8) * 8, 1.8, "#dbc777")).join("") +
-      rect(50, height - 100, 26, 18, 2, "#dfdfd2") + label(63, height - 91, "I²C", 7, "#2b4549");
+  const r3 = !wifi && !minima && !leonardo;
+  const outline = "M4 5H174Q179 5 179 10V224H134L126 232H17L9 224H4Q1 224 1 219V10Q1 5 4 5Z";
+  let parts;
+  if (r3) {
+    parts = dip328(41, 134) + qfp(113, 63, 18, "16U2", 8) +
+      rect(88, 48, 14, 31, 6, metal, "#748891") +
+      connector(148, 58, 2, 3, { pitch: 7, male: true }) +
+      [56, 79].map(y => circle(27, y, 8, metal, "#86989d") + line(23, y, 31, y, "#87969b")).join("") +
+      label(110, 108, shortName, 12) + passives([[47, 45], [47, 55], [57, 64], [57, 73], [137, 82], [133, 103], [92, 181]]);
+  } else if (wifi) {
+    parts = rect(44, 4, 53, 67, 1, "#2d4746", "#a6ad81") +
+      rect(47, 7, 47, 20, 1, "#263c32") + path("M53 22v-9h9v9h9v-9h9v9h8", "none", "#a68a46", 1.15) +
+      rect(47, 28, 47, 41, 1, "#9ca7ab", "#ccd5d3") + label(70.5, 49, "ESP32-S3", 6, "#253640") +
+      connector(131, 48, 2, 3, { pitch: 8, male: true }) +
+      rect(36, 108, 61, 91, 1, "#155d69") +
+      range(12).map(row => range(8).map(column => {
+        const x = 41 + column * 7.3;
+        const y = 112 + row * 7.4;
+        return `<g transform="rotate(45 ${x} ${y})">${rect(x - 2.2, y - 2.2, 4.4, 4.4, 0.4, "#d9bc5c", "#f0d989")}</g>`;
+      }).join("")).join("") +
+      qfp(108, 166, 36, "RA4M1", 16) +
+      rect(38, 215, 26, 13, 2, "#dadcd5", "#9ca7a5") +
+      rect(42, 222, 18, 5, 1, "#6f8184") + label(119, 119, "UNO R4", 8) + label(119, 130, "WIFI", 8) +
+      passives([[52, 81], [64, 89], [76, 94], [99, 82], [104, 151], [117, 147], [129, 145]]);
+  } else {
+    parts = (minima ? qfp(91, 141, 36, "RA4M1", 16) : qfp(47, 145, 30, "32U4", 11)) +
+      chip(49, 33, 20, 19, "", 3) + rect(53, 18, 16, 8, 1, metal, "#82969a") +
+      label(103, minima ? 91 : 111, shortName, 10) +
+      passives([[74, 20], [74, 31], [93, 37], [113, 35], [129, 40], [90, 62], [106, 65], [77, 143], [75, 173], [117, 188], [83, 203]]);
   }
-  return body;
+
+  return path(outline, arduinoBlue, pcbEdge) +
+    [[10, 47], [169, 51], [25, 222], [119, 222]].map(([x, y]) => mountingHole(x, y)).join("") +
+    barrelJack(9, 0, 36, 43) +
+    (r3 ? usbPort(109, -4, 29, 47, "b") : usbPort(111, 0, 27, leonardo ? 23 : 25, leonardo ? "micro" : "c")) +
+    tactile(157, 12) +
+    connector(7, 101, 1, 8) + connector(7, 171, 1, 6) +
+    connector(172, 64, 1, 10) + connector(172, 149, 1, 8) +
+    parts + connector(83, 218, 3, 2, { pitch: 7, male: true });
+}
+
+function diagramArt(component, showLabels, drawBoard, boardWidth, boardHeight) {
+  const { width, height, pins } = component;
+  const padding = showLabels ? 82 : 13;
+  const scale = Math.min((width - padding) / boardWidth, (height - 35) / boardHeight);
+  const x = (width - scale * boardWidth) / 2;
+  const y = (height - scale * boardHeight) / 2;
+  const artwork = `<g transform="translate(${x} ${y}) scale(${scale})">${drawBoard(component)}</g>`;
+  if (!showLabels) return artwork;
+
+  // The physical illustration and the logical banks have different spacing.
+  const sides = pins.filter(pin => pin.x === 0 || pin.x === width);
+  const ends = pins.filter(pin => pin.y === 0 || pin.y === height);
+  const rails = [0, width].map(edge => {
+    const row = sides.filter(pin => pin.x === edge);
+    const top = Math.min(...row.map(pin => pin.y)) - 7;
+    const bottom = Math.max(...row.map(pin => pin.y)) + 7;
+    return rect(edge === 0 ? 3 : width - 38, top, 35, bottom - top, 3, bankColor);
+  }).join("");
+  return artwork + rails + edgePads({ ...component, pins: sides }, true) +
+    ends.map(pin => {
+      const top = pin.y === 0;
+      const direction = top ? 1 : -1;
+      const padY = pin.y + 9 * direction;
+      return rect(pin.x - 7, top ? 3 : height - 38, 14, 35, 2, bankColor) +
+        line(pin.x, pin.y, pin.x, padY, "#ac8550", 1.5) + pad(pin.x, padY) +
+        `<g transform="translate(${pin.x} ${padY + 7 * direction}) rotate(${90 * direction})">${label(0, 0, pin.label, 7.7, "#e3e9f1", "start")}</g>`;
+    }).join("");
+}
+
+function arduinoBoard(component, headers, footprint, drawBoard, boardSize) {
+  const definition = boardDefinition(component, headers, footprint, drawBoard);
+  return { ...definition, art: (entry, showLabels) => diagramArt(entry, showLabels, drawBoard, ...boardSize) };
 }
 
 function unoDefinition(id, model, subtitle, description, configuration) {
-  return boardDefinition({
+  return arduinoBoard({
     id, art: id, name: `Arduino ${model}`, shortName: model, manufacturer, subtitle, description,
     source: docs + id.slice("arduino-".length) + "/", width: 240, height: 399, tags: ["arduino", "shield", "development board"],
-  }, unoHeaders(configuration), { body: [53.34, 68.58], color: arduinoBlue, note: boardNote }, shieldBoardArt);
+  }, unoHeaders(configuration), { body: [53.34, 68.58], color: arduinoBlue, note: boardNote }, shieldBoardArt, [180, 232]);
 }
 
 const unoR3 = unoDefinition("arduino-uno-rev3", "UNO R3", "ATmega328P · 5 V",
@@ -175,20 +290,85 @@ const leonardo = unoDefinition("arduino-leonardo", "Leonardo", "ATmega32U4 · na
     spi: avrSpi(),
   });
 
-function nanoBodyArt({ width, height, art, shortName }) {
-  const isWireless = art === "arduino-nano-esp32" || art === "arduino-nano-rp2040-connect";
-  const nanoR4 = art === "arduino-nano-r4";
-  const avr = art === "arduino-nano" || art === "arduino-micro";
-  const center = width / 2;
-  return board(width, height, arduinoBlue, "#4798a0") +
-    [23, width - 23].map(x => mountingHole(x, 21) + mountingHole(x, height - 22)).join("") +
-    usb(center - 23, 8, 46) +
-    chip(center - 22, 86, 44, 49, nanoR4 ? "RA4M1" : art === "arduino-nano-every" ? "4809" : avr ? "AVR" : art === "arduino-nano-esp32" ? "ESP32-S3" : "RP2040", 6) +
-    tactile(center - 8, 52) +
-    [center - 23, center - 11, center + 3, center + 17].map(x => smd(x, 159, "#d9bc67")).join("") +
-    (isWireless ? rect(center - 29, 175, 58, 65, 4, "#b9c5c7", "#788f93") + rect(center - 23, 222, 46, 13, 2, "#3a7976") : "") +
-    label(center, isWireless ? 206 : 205, shortName, isWireless ? 7.5 : 8.5, isWireless ? "#233b3f" : "#e7f3ee") +
-    label(center, height - 39, "ARDUINO", 8, "#bfdfda");
+const nanoArtVariants = {
+  "arduino-nano": { usb: "mini", rows: 15, boardHeight: 224 },
+  "arduino-nano-every": { usb: "micro", rows: 15, boardHeight: 224 },
+  "arduino-nano-esp32": { usb: "c", rows: 15, boardHeight: 224 },
+  "arduino-nano-rp2040-connect": { usb: "micro", rows: 15, boardHeight: 224 },
+  "arduino-nano-r4": { usb: "c", rows: 15, boardHeight: 224 },
+  "arduino-micro": { usb: "micro", rows: 17, boardHeight: 244 },
+};
+
+function platedHole(x, y) {
+  return circle(x, y, 3.65, "#d2b374", "#f0dca3") + circle(x, y, 1.9, "#edf1eb", "#867d60");
+}
+
+function diamondQfp(x, y, size, name, pins) {
+  const centerX = x + size / 2;
+  const centerY = y + size / 2;
+  return `<g transform="rotate(45 ${centerX} ${centerY})">${qfp(x, y, size, "", pins)}</g>` +
+    label(centerX, centerY, name, 6, "#d1d7db");
+}
+
+function wirelessModule(x, y, name, antennaColor) {
+  return rect(x, y, 52, 67, 1, antennaColor, "#85a19a") +
+    rect(x + 3, y + 3, 46, 49, 1, "#aebbc0", "#d7e0df") +
+    line(x + 6, y + 48, x + 45, y + 48, "#829398") +
+    label(x + 26, y + 25, name, 6.8, "#324952") +
+    rect(x + 18, y + 58, 16, 3, 0.4, "#6f8580");
+}
+
+function nanoBodyArt({ art, shortName }) {
+  const { usb: type, rows, boardHeight } = nanoArtVariants[art];
+  const pads = range(rows).map(index => {
+    const y = 20 + index * (boardHeight - 40) / (rows - 1);
+    return platedHole(5, y) + platedHole(83, y);
+  }).join("");
+  let parts;
+  switch (art) {
+    case "arduino-nano":
+      parts = diamondQfp(33, 75, 23, "328P", 8) + tactile(37, 118) +
+        rect(58, 101, 12, 8, 2, metal, "#819399") +
+        passives([[17, 145], [32, 145], [48, 145], [63, 145]]) +
+        connector(30, 202, 3, 2, { pitch: 12, male: true }) + label(44, 178, shortName, 9);
+      break;
+    case "arduino-nano-every":
+      parts = tactile(36, 54) + chip(20, 78, 16, 16, "", 3) +
+        qfp(33, 99, 22, "D11", 4) + diamondQfp(29, 150, 30, "4809", 12) +
+        passives([[15, 42], [26, 42], [57, 45], [66, 65], [17, 114], [27, 134], [45, 128], [49, 137], [67, 128], [18, 201], [60, 201]]) +
+        label(44, 209, shortName, 8);
+      break;
+    case "arduino-nano-esp32":
+      parts = tactile(36, 55) + rect(56, 56, 9, 11, 1, "#dedcd2", "#adbbba") +
+        chip(41, 83, 24, 23, "FLASH", 4) +
+        wirelessModule(18, 151, "NORA-W106", "#77934b") +
+        passives([[16, 44], [20, 66], [17, 81], [22, 105], [31, 119], [58, 120], [61, 135]]) +
+        label(44, 137, shortName, 8);
+      break;
+    case "arduino-nano-rp2040-connect":
+      parts = tactile(36, 48) + chip(57, 45, 14, 15, "", 3) +
+        chip(32, 67, 26, 26, "FLASH", 4) + rect(28, 102, 36, 36, 2, "#22292e", "#7b8e92") +
+        label(46, 121, "RP2040", 6.8) + wirelessModule(18, 154, "NINA-W102", "#a8bac0") +
+        passives([[18, 41], [20, 57], [22, 76], [17, 99], [66, 93], [67, 141]]) +
+        label(44, 146, "RP2040 CONNECT", 6.7);
+      break;
+    case "arduino-nano-r4":
+      parts = tactile(36, 46) + qfp(20, 80, 15, "", 4) + chip(48, 81, 15, 17, "", 3) +
+        qfp(25, 128, 39, "RA4M1", 16) +
+        passives([[22, 48], [56, 49], [18, 71], [39, 68], [63, 70], [24, 103], [45, 102], [60, 111], [21, 180], [60, 183]]) +
+        rect(32, 207, 24, 14, 2, "#d4dacf", "#a2aaa2") + rect(36, 216, 16, 4, 1, "#728484") +
+        label(44, 194, shortName, 8.5);
+      break;
+    default:
+      parts = diamondQfp(29, 93, 29, "32U4", 11) + rect(58, 140, 12, 16, 1, metal, "#7e9098") +
+        connector(27, 203, 2, 3, { pitch: 10, male: true }) + tactile(56, 209) +
+        passives([[26, 58], [42, 62], [58, 58], [15, 129], [20, 159], [56, 171], [56, 183]]) +
+        label(44, 187, shortName, 9);
+  }
+  const [usbWidth, usbDepth] = { mini: [40, 39], micro: [35, 24], c: [45, 29] }[type];
+  return rect(1, 3, 86, boardHeight - 5, 2, arduinoBlue, pcbEdge) + pads +
+    [[5, 8], [83, 8], [5, boardHeight - 8], [83, boardHeight - 8]].map(([x, y]) => mountingHole(x, y)).join("") +
+    usbPort((88 - usbWidth) / 2, 0, usbWidth, usbDepth, type) + parts;
 }
 
 function nanoDefinition(id, model, subtitle, description, left, right, extras = []) {
@@ -200,11 +380,11 @@ function nanoDefinition(id, model, subtitle, description, left, right, extras = 
     header(connectors[1], "right", 32, right, { x: 7.62, y: -(right.length - 1) * 1.27 }),
     ...extras,
   ];
-  return boardDefinition({
+  return arduinoBoard({
     id, art: id, name: `Arduino ${model}`, shortName: model, manufacturer, subtitle, description,
     source: docs + id.slice("arduino-".length) + "/", width: 138, height,
     tags: ["arduino", "breadboard", "development board"],
-  }, headers, { body: [18, length], color: arduinoBlue, note: boardNote }, nanoBodyArt);
+  }, headers, { body: [18, length], color: arduinoBlue, note: boardNote }, nanoBodyArt, [88, nanoArtVariants[id].boardHeight]);
 }
 
 const nanoRight = pins => [...pins.slice(2, 13).reverse(), ground("digital-gnd"), reset("digital-reset"), pins[0], pins[1]];
@@ -294,24 +474,37 @@ const megaRoles = {
 };
 const megaPins = megaPorts.map((port, index) => digital(index, port, megaRoles[index] ?? (index >= 2 && index <= 12 ? "PWM." : "")));
 
-function megaBodyArt({ width, height, art, shortName }) {
-  const center = width / 2;
+function megaBodyArt({ art, shortName }) {
   const due = art === "arduino-due";
-  return board(width, height, arduinoBlue, "#4798a0") +
-    [28, width - 28].map(x => mountingHole(x, 67) + mountingHole(x, height - 79)).join("") +
-    rect(56, 42, 47, 58, 4, "#26343a", "#828e95") + circle(79, 58, 10, "#111b22") +
-    usb(width - 120, 41, due ? 36 : 55) + (due ? usb(width - 165, 41, 36) : "") + tactile(width - 60, 42) +
-    rect(8, 112, 9, 393, 3, "#264349") + rect(width - 17, 104, 9, 373, 3, "#264349") +
-    chip(center - 38, 215, 76, 82, due ? "SAM3X8E" : "ATmega2560", 12) +
-    chip(center + 15, 114, 27, 35, "USB", 4) +
-    label(center, 174, "ARDUINO", 17, "#d6efec") +
-    label(center, 360, shortName, 15) + label(center, 388, "DIGITAL / ANALOG", 9, "#bce3e1") +
-    rect(37, height - 64, width - 74, 27, 4, "#25383d") +
-    range(36).map(index => circle(48 + Math.floor(index / 2) * 13.7, height - 57 + index % 2 * 12, 2.8, "#c4a66e")).join("");
+  const outline = "M6 5H179Q184 5 184 11V347H142L134 355H17L9 347H6Q1 347 1 342V11Q1 5 6 5Z";
+  const usbAndControl = due
+    ? usbPort(65, -3, 25, 23, "micro") + usbPort(121, -3, 25, 23, "micro") +
+      label(77, 31, "PROGRAM", 6.3) + label(134, 31, "NATIVE", 6.3) +
+      tactile(157, 13) + tactile(143, 104) +
+      connector(43, 86, 3, 2, { pitch: 7, male: true }) +
+      connector(150, 68, 2, 5, { pitch: 7, male: true }) +
+      qfp(58, 144, 67, "SAM3X8E", 36) + connector(84, 228, 3, 2, { pitch: 7, male: true }) +
+      label(88, 272, shortName.toUpperCase(), 14) + chip(82, 302, 42, 18, "", 6)
+    : usbPort(110, -6, 34, 49, "b") + tactile(160, 14) +
+      rect(88, 52, 13, 28, 6, metal, "#778b91") + qfp(114, 61, 21, "16U2", 8) +
+      connector(151, 48, 2, 3, { pitch: 7, male: true }) +
+      qfp(77, 156, 47, "ATMEGA2560", 25) + connector(93, 227, 3, 2, { pitch: 7, male: true }) +
+      label(96, 267, "MEGA 2560", 12) + label(96, 283, "REV3", 8);
+
+  return path(outline, arduinoBlue, pcbEdge) + barrelJack(8, -1, 36, 42) +
+    [[8, 52], [173, 59], [26, 246], [125, 246], [8, 338], [173, 322]].map(([x, y]) => mountingHole(x, y)).join("") +
+    connector(7, 111, 1, 8) + connector(7, 181, 1, 8) + connector(7, 252, 1, 8) +
+    connector(177, 80, 1, 10) + connector(177, 166, 1, 8) + connector(177, 237, 1, 8) +
+    connector(25, 331, 18, 2, { pitch: 8 }) +
+    [65, 86].map(y => circle(30, y, 9, metal, "#829699") + line(26, y, 34, y, "#829699")).join("") +
+    chip(49, 27, 17, 17, "", 3) +
+    passives([[73, 32], [52, 50], [60, 60], [61, 75], [70, 95], [97, 90], [111, 101], [138, 89], [144, 124],
+      [41, 118], [38, 149], [37, 174], [45, 192], [64, 218], [131, 225], [147, 253], [65, 284], [131, 309]]) +
+    usbAndControl;
 }
 
 function megaDefinition(id, model, subtitle, description, { pins, analogPins, highI2c, spi, logicVoltage = "5 V" }) {
-  return boardDefinition({
+  return arduinoBoard({
     id, art: id, name: `Arduino ${model}`, shortName: model, manufacturer, subtitle, width: 332, height: 568,
     description: description + " The two rows of the D22–D53 header are drawn on opposite ends.",
     source: docs + id.slice("arduino-".length) + "/", tags: ["arduino", "shield", "development board"],
@@ -329,7 +522,7 @@ function megaDefinition(id, model, subtitle, description, { pins, analogPins, hi
     header("AUX-ODD", "bottom", 30, [boardPower("aux-5v-odd"), ...range(16).map(index => pins[23 + index * 2]), ground("aux-gnd-odd")],
       { x: -21.59, y: 48.54, axis: "x" }),
     header("SPI", "left", 25, spi, { x: 3, y: 13, axis: "x", columns: 2 }),
-  ], { body: [53.34, 101.52], color: arduinoBlue, note: boardNote }, megaBodyArt);
+  ], { body: [53.34, 101.52], color: arduinoBlue, note: boardNote }, megaBodyArt, [185, 355]);
 }
 
 const mega = megaDefinition("arduino-mega-2560", "Mega 2560 Rev3", "ATmega2560 · 4 hardware UARTs",

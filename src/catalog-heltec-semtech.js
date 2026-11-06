@@ -1,4 +1,4 @@
-import { board, chip, circle, label, line, moduleArt, pinRow, rect, screw, smd, tactile } from "./catalog-extension.js";
+import { chip, circle, label, line, path, pinRow, rect, smd } from "./catalog-extension.js";
 import { semtechArt, semtechComponents, semtechFootprints } from "./catalog-semtech.js";
 
 const heltecV3Page = "https://heltec.org/project/wifi-lora-32-v3/";
@@ -172,30 +172,109 @@ function heltecFootprint(component) {
   };
 }
 
-function heltecBody(component) {
-  const { height, width, shortName } = component;
-  const v3 = component.id === "heltec-v3";
-  return board(width, height, v3 ? "#495b69" : "#25303e", "#556577") +
-    rect(32, 12, width - 64, height - 24, 4, v3 ? "#d1d7d9" : "#2d3948", "#708092") +
-    tactile(33, 17) + tactile(width - 48, 17) +
-    rect(56, 2, 30, 24, 2, "#a6aeb9", "#dce2e8") +
-    rect(59, 4, 24, 6, 1, "#303c4a") + line(63, 7, 79, 7, "#bbc4cd") +
-    label(40, 41, "RST", 6, v3 ? "#28333c" : "#aebed0") +
-    label(width - 40, 41, "PRG", 6, v3 ? "#28333c" : "#aebed0") +
-    smd(37, 49) + smd(97, 49) + smd(59, 39) + chip(57, 49, 28, 16, v3 ? "USB" : "PMU") +
-    rect(29, 73, width - 58, 192, 7, "#18212d", "#778595") +
-    rect(43, 105, width - 86, 128, 3, "#081420", "#354654") +
-    label(width / 2, 148, "HELTEC", 12, "#79d5ec") +
-    label(width / 2, 170, shortName.slice("Heltec ".length), 9, "#acc9dd") +
-    label(width / 2, 193, "LoRa", 8, "#6886a6") +
-    (v3 ? "" : [[39, 83], [103, 83], [39, 255], [103, 255]].map(([x, y]) => screw(x, y, 6)).join("")) +
-    rect(64, height - 35, 14, 14, 2, "#d4c7b1", "#f2eadf") +
-    circle(71, height - 28, 5, "#c39a54") + circle(71, height - 28, 2, "#4c3b26") +
-    (v3 ? rect(32, height - 36, 16, 15, 2, "#2f8474") +
-      line(33, height - 28, 47, height - 28, "#87bfad", 1.4) : "");
+function heltecUsb() {
+  return rect(48, 2, 46, 42, 2, "#b9bec0", "#858d93") +
+    rect(50, 3, 42, 5, 1, "#535b63") +
+    line(53, 9, 89, 9, "#e3e7e8") +
+    rect(56, 26, 6, 4, 0.5, "#42464b") + rect(80, 26, 6, 4, 0.5, "#42464b") +
+    rect(55, 35, 8, 9, 0.7, "#454b50") + rect(79, 35, 8, 9, 0.7, "#454b50") +
+    [65, 69, 73, 77].map(x => line(x, 45, x, 48, "#bac0c1", 1.4)).join("");
 }
 
-const renderHeltec = moduleArt(heltecBody);
+function heltecSwitch(x, caption, v3) {
+  const silk = v3 ? "#29353d" : "#d5d8d8";
+  const captionX = x + (caption === "RST" ? 17 : -3);
+  return rect(x + 4, 9, 6, 31, 1, "#b5babe", "#929b9d") +
+    rect(x, 13, 14, 23, 1, "#b9c7cc", "#687477") +
+    circle(x + 7, 24, 5, v3 ? "#2c3031" : "#eee9c9", "#737971") +
+    label(captionX, 45, caption, 6.5, silk);
+}
+
+function coax(x, y) {
+  return rect(x - 6.5, y - 6.5, 13, 13, 1, "#ded9c4", "#857d65") +
+    circle(x, y, 5.2, "#d0ad57", "#f3df9c") +
+    circle(x, y, 3.3, "#eee5c7") + circle(x, y, 1.6, "#aa7d2c");
+}
+
+function bracketScrew(x, y) {
+  return circle(x, y, 8, "#575b5b", "#242827") +
+    circle(x, y, 5.1, "#b2b7b7") +
+    line(x - 2.5, y, x + 2.5, y, "#596364", 1.3) +
+    line(x, y - 2.5, x, y + 2.5, "#596364", 1.3);
+}
+
+function heltecV3Body() {
+  return path("M18 6H124L136 17V282H123L112 305H33L19 282H6V17Z", "#dedfdd", "#9aa5a6") +
+    heltecUsb() + heltecSwitch(21, "RST", true) + heltecSwitch(107, "PRG", true) +
+    smd(24, 51, "#d9d56d") + smd(34, 54) + smd(55, 55, "#c9bba0") + smd(81, 54) +
+    chip(26, 69, 13, 13, "", 2) + chip(88, 52, 13, 11, "", 2) +
+    chip(83, 73, 15, 10, "", 2) + smd(100, 59) + smd(56, 78) + coax(108, 75) +
+    rect(19, 89, 104, 201, 2, "#bec5c5", "#828e8d") +
+    rect(25, 96, 92, 183, 1, "#dce2df", "#a4acaa") +
+    path("M18 112H40L45 140L39 154V228L43 258L38 272H19L16 245V134Z", "#222726", "#3b4241") +
+    rect(41, 111, 77, 157, 2, "#242a2a", "#5d6664") +
+    rect(44, 115, 70, 149, 1, "#141a1a", "#303736") +
+    line(46, 119, 111, 119, "#343e3d") +
+    [27, 115].flatMap(x => [101, 280].map(y => circle(x, y, 4.4, "#e2e6e2", "#adb6b2"))).join("") +
+    rect(87, 270, 29, 29, 1, "#087964", "#20584c") +
+    line(89, 272, 113, 272, "#52a38c") + coax(70, 295) +
+    label(47, 295, "V3.2", 7, "#303b40");
+}
+
+function heltecV4Body() {
+  // The V4.2, V4.3 R2 and V4.3.2 R8 pin maps share the same OLED-side assembly.
+  return path("M18 7H124L136 20V287H121L103 323H39L21 287H6V20Z", "#303332", "#4c5351") +
+    heltecUsb() + heltecSwitch(22, "RST", false) + heltecSwitch(106, "PRG", false) +
+    rect(26, 52, 10, 18, 1, "#b48a45", "#e1b360") + rect(36, 55, 5, 12, 1, "#c8c6b9") +
+    smd(33, 71) + smd(30, 77) + smd(45, 80) + smd(48, 58) + smd(89, 53) +
+    smd(95, 81) + smd(105, 52) + smd(108, 70) +
+    chip(42, 66, 14, 11, "", 2) + chip(88, 61, 12, 11, "", 2) +
+    chip(102, 74, 12, 12, "", 2) +
+    rect(65, 61, 12, 19, 1, "#e0e2dc", "#969b92") +
+    label(71, 70, "V4", 8, "#202624") +
+    rect(23, 88, 96, 203, 2, "#202322", "#7c8380") +
+    rect(27, 92, 88, 195, 1, "#292b2a", "#393e3c") +
+    rect(43, 120, 56, 135, 1.4, "#111414", "#5c6260") +
+    rect(45, 123, 52, 129, 1, "#090d0d") +
+    '<g transform="translate(71 187) rotate(-90)">' + label(0, 0, "HELTEC", 13, "#303636") + "</g>" +
+    [36, 106].flatMap(x => [100, 279].map(y => bracketScrew(x, y))).join("") +
+    rect(47, 307, 9, 5, 1, "#373a38", "#6a706e") +
+    rect(86, 307, 9, 5, 1, "#373a38", "#6a706e") +
+    label(44, 316, "868", 5.5, "#cbd2cf") + label(98, 316, "915", 5.5, "#cbd2cf") +
+    coax(71, 314);
+}
+
+function heltecPads({ width, height, pins }, labels, v3) {
+  const metal = v3 ? "#abb3b3" : "#e0b657";
+  const captionColor = v3 ? "#243138" : "#eff1ed";
+  const captionOutline = v3 ? "#e3e6e2" : "#232a29";
+  const endPads = { X1: 42, X2: 54, X3: 88, X4: 100 };
+  return pins.map(pin => {
+    if (pin.y === height) {
+      // Preserve the saved canvas anchors while showing the tighter physical pad pairs.
+      const center = endPads[pin.number];
+      return path(`M${pin.x} ${height}V320L${center} 302`, "none", "#aa9255", 1.15) +
+        circle(center, 302, 3.7, metal) + circle(center, 302, 1.8, "#202626") +
+        (labels ? label(center, 295, pin.label, 6.5, captionColor) : "");
+    }
+    const left = pin.x === 0;
+    const center = left ? 11 : width - 11;
+    const first = pin.number.endsWith(".1");
+    const annulus = first && !v3
+      ? rect(center - 3.7, pin.y - 3.7, 7.4, 7.4, 0.5, metal, "#9f8036")
+      : circle(center, pin.y, 3.6, metal, v3 ? "#909999" : "#977a34");
+    const caption = labels
+      ? `<g paint-order="stroke fill" stroke="${captionOutline}" stroke-width="1">${label(left ? 17 : width - 17, pin.y, pin.label, 7.3, captionColor, left ? "start" : "end")}</g>`
+      : "";
+    return line(pin.x, pin.y, center, pin.y, v3 ? "#98a3a4" : "#aa9255", 1.15) +
+      annulus + circle(center, pin.y, 1.85, "#27302f") + caption;
+  }).join("");
+}
+
+function renderHeltec(component, labels) {
+  const v3 = component.id === "heltec-v3";
+  return (v3 ? heltecV3Body() : heltecV4Body()) + heltecPads(component, labels, v3);
+}
 
 export const heltecSemtechComponents = [...heltecBoards, ...semtechComponents];
 export const heltecSemtechArt = {
