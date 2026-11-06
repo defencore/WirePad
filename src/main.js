@@ -4,6 +4,7 @@ import { copyDrawing, createDrawingSVG, downloadBlob, downloadDrawing, downloadP
 import { addIcons, icon } from './icons.js';
 import { assetFile, inspectEmpty, inspectPart, inspectWire, previewAsset } from './inspector.js';
 import { demoProject, loadProject, makeId, newProject, parseProject, saveProject, validateProject } from './project.js';
+import { clampPoint, endpointPositions, sameEndpoint, segmentDrag, slideSegment, splitWire, wireAnchor } from './routing.js';
 
 const $ = selector => document.querySelector(selector);
 const search = $('#search');
@@ -17,14 +18,13 @@ const replaceDialog = $('#replace-dialog');
 const projectFile = $('#project-file');
 const modes = Array.from(document.querySelectorAll('[data-mode]'));
 const toolHints = {
-  select: 'Click a pin to start wiring',
-  wire: 'Click a starting pin',
+  select: 'Drag segments to reroute · use Wire to join',
+  wire: 'Start on a pin or wire',
   pan: 'Drag the canvas to pan',
 };
 const undoStack = [];
 const redoStack = [];
 const fileLimit = 20_000_000;
-const positionLimit = 1_000_000;
 const touchInspector = matchMedia('(max-width: 880px)');
 const touchLibrary = matchMedia('(max-width: 630px)');
 
@@ -50,9 +50,6 @@ const canvas = new DrawingCanvas({
 
 const selectedPart = () => selection?.type === 'part' && project.parts.find(part => part.id === selection.id);
 const selectedWire = () => selection?.type === 'wire' && project.wires.find(wire => wire.id === selection.id);
-const sameEndpoint = (a, b) => a.partId === b.partId && a.pinId === b.pinId;
-const bounded = value => Math.max(-positionLimit, Math.min(positionLimit, Math.round(value)));
-const clampPoint = ({ x, y }) => ({ x: bounded(x), y: bounded(y) });
 
 function notify(message) {
   const toast = $('#toast');
@@ -122,8 +119,9 @@ function render({ refreshInspector = true } = {}) {
   $('#empty-board').hidden = Boolean(project.parts.length);
   if (document.activeElement !== title) title.value = project.title;
   svg.dataset.mode = holdingSpace ? 'pan' : mode;
+  svg.dataset.routing = Boolean(pending);
   for (const button of modes) button.setAttribute('aria-pressed', button.dataset.mode === mode);
-  const hint = pending ? 'Click a pin to finish · click the canvas to bend' : toolHints[mode];
+  const hint = pending ? 'Finish on a pin or wire · click the canvas to bend' : toolHints[mode];
   $('#canvas-hint').innerHTML = `${icon(pending ? 'wire' : 'info')} ${hint}`;
   $('#editor-status').innerHTML = `<span class="status-dot"></span> ${pending ? 'Routing wire' : 'Ready'}`;
   const { parts, wires } = project;
@@ -225,27 +223,43 @@ function addPart(id, point) {
   if (touchLibrary.matches) setPanel('library', false);
 }
 
-function activatePin(endpoint) {
+function resolveAnchor(endpoint) {
+  if (!endpoint.wireId) return endpoint;
+  const index = project.wires.findIndex(wire => wire.id === endpoint.wireId);
+  const split = splitWire(project.wires[index], endpointPositions(project), endpoint.point, makeId('junction'), makeId('wire'));
+  (project.junctions ??= []).push(split.junction);
+  project.wires.splice(index, 1, split.before, split.after);
+  return { junctionId: split.junction.id };
+}
+
+function activateEndpoint(endpoint) {
   if (!pending) {
     pending = { from: endpoint, points: [] };
+    draftCursor = endpointPositions(project)(endpoint);
     selection = null;
     inspection.scrollTop = 0;
     render();
     return;
   }
-  if (sameEndpoint(pending.from, endpoint)) {
+  if (!pending.from.wireId && !endpoint.wireId && sameEndpoint(pending.from, endpoint)) {
     resetDraft();
     render();
     return;
   }
-  if (project.wires.some(wire =>
+  if (endpoint.wireId && endpoint.wireId === pending.from.wireId) {
+    notify('Choose a different wire or pin to finish the connection.');
+    return;
+  }
+  if (!pending.from.wireId && !endpoint.wireId && project.wires.some(wire =>
     (sameEndpoint(wire.from, pending.from) && sameEndpoint(wire.to, endpoint)) ||
     (sameEndpoint(wire.to, pending.from) && sameEndpoint(wire.from, endpoint)))) {
     notify('These pins already have a connection.');
     return;
   }
   const previous = structuredClone(project);
-  const wire = { id: makeId('wire'), from: pending.from, to: endpoint, color: wireColor };
+  const from = resolveAnchor(pending.from);
+  const to = resolveAnchor(endpoint);
+  const wire = { id: makeId('wire'), from, to, color: wireColor };
   if (pending.points.length) wire.points = pending.points;
   project.wires.push(wire);
   resetDraft();
@@ -256,6 +270,18 @@ function activatePin(endpoint) {
 function targetPin(target) {
   const pin = target.closest('[data-pin]');
   return pin ? { partId: pin.dataset.part, pinId: pin.dataset.pin } : null;
+}
+
+function targetJunction(target) {
+  const junction = target.closest('[data-junction]');
+  return junction ? { junctionId: junction.dataset.junction } : null;
+}
+
+function targetWire(target, point) {
+  const hit = target.closest('[data-wire]');
+  if (!hit) return null;
+  const wire = project.wires.find(item => item.id === hit.dataset.wire);
+  return wireAnchor(wire, endpointPositions(project), point, Math.min(20, 9 / canvas.scale));
 }
 
 function rotateSelection() {
@@ -277,6 +303,10 @@ function deleteSelection() {
   } else {
     project.wires = project.wires.filter(item => item.id !== wire.id);
   }
+  if (project.junctions) {
+    const used = new Set(project.wires.flatMap(item => [item.from.junctionId, item.to.junctionId]));
+    project.junctions = project.junctions.filter(junction => used.has(junction.id));
+  }
   selection = null;
   commit(previous);
 }
@@ -294,10 +324,10 @@ function setWireColor(color) {
   }
 }
 
-function capture(event, type, part) {
+function capture(event, type, item, segment) {
   gesture = {
-    id: event.pointerId, type, part, x: event.clientX, y: event.clientY,
-    center: canvas.center, position: part && { x: part.x, y: part.y },
+    id: event.pointerId, type, item, segment, x: event.clientX, y: event.clientY,
+    center: canvas.center, position: item && { x: item.x, y: item.y },
   };
   svg.setPointerCapture(event.pointerId);
 }
@@ -314,15 +344,31 @@ svg.addEventListener('pointerdown', event => {
   const pin = targetPin(event.target);
   if (pin) {
     event.preventDefault();
-    activatePin(pin);
+    activateEndpoint(pin);
     return;
   }
+  const junction = targetJunction(event.target);
   const wire = event.target.closest('[data-wire]');
   const body = event.target.closest('[data-part]');
+  const point = canvas.point(event.clientX, event.clientY);
+  if (pending || mode === 'wire') {
+    const endpoint = junction ?? targetWire(event.target, point);
+    if (endpoint) {
+      event.preventDefault();
+      activateEndpoint(endpoint);
+      return;
+    }
+  }
   if (pending) {
     capture(event, 'bend');
+  } else if (junction && mode === 'select') {
+    select(null);
+    capture(event, 'junction', project.junctions.find(item => item.id === junction.junctionId));
   } else if (wire && mode === 'select') {
     select('wire', wire.dataset.wire, { reveal: true });
+    const item = selectedWire();
+    const segment = segmentDrag(item, endpointPositions(project), point);
+    if (segment) capture(event, 'wire', item, segment);
   } else if (body && mode === 'select') {
     select('part', body.dataset.part);
     capture(event, 'part', selectedPart());
@@ -337,17 +383,28 @@ svg.addEventListener('pointermove', event => {
     const dx = event.clientX - gesture.x;
     const dy = event.clientY - gesture.y;
     if (gesture.type === 'pan') canvas.pan(gesture.center, dx, dy);
-    if (gesture.type === 'part' && (gesture.previous || Math.hypot(dx, dy) > 3)) {
+    if (gesture.type === 'wire') {
+      const offset = gesture.segment.axis === 'x' ? dx : dy;
+      if (gesture.previous || Math.abs(offset) > 3) {
+        gesture.previous ??= structuredClone(project);
+        svg.classList.add('dragging');
+        gesture.item.fixedRoute = true;
+        gesture.item.points = slideSegment(gesture.segment, offset / canvas.scale);
+        paint();
+      }
+    }
+    if ((gesture.type === 'part' || gesture.type === 'junction') && (gesture.previous || Math.hypot(dx, dy) > 3)) {
       gesture.previous ??= structuredClone(project);
+      svg.classList.add('dragging');
       const point = clampPoint({ x: gesture.position.x + dx / canvas.scale, y: gesture.position.y + dy / canvas.scale });
-      Object.assign(gesture.part, point);
+      Object.assign(gesture.item, point);
       paint();
     }
     return;
   }
   if (pending) {
     draftCursor = canvas.point(event.clientX, event.clientY);
-    draftEndpoint = targetPin(event.target);
+    draftEndpoint = targetPin(event.target) ?? targetJunction(event.target) ?? targetWire(event.target, draftCursor);
     canvas.showDraft(project, pending, draftCursor, wireColor, draftEndpoint);
   }
 });
@@ -389,13 +446,22 @@ svg.addEventListener('wheel', event => {
 svg.addEventListener('keydown', event => {
   if (event.key !== 'Enter' && event.key !== ' ') return;
   const pin = targetPin(event.target);
+  const junction = targetJunction(event.target);
   const wire = event.target.closest('[data-wire]');
   const part = event.target.closest('[data-part]');
-  if (!pin && !wire && !part) return;
+  if (!pin && !junction && !wire && !part) return;
   event.preventDefault();
+  if (mode === 'pan') return;
   if (pin) {
-    activatePin(pin);
+    activateEndpoint(pin);
     svg.querySelector(`[data-pin="${pin.pinId}"][data-part="${pin.partId}"]`)?.focus();
+  } else if (junction) {
+    if (pending || mode === 'wire') activateEndpoint(junction);
+    svg.querySelector(`[data-junction="${junction.junctionId}"]`)?.focus();
+  } else if (wire && (pending || mode === 'wire')) {
+    const anchor = targetWire(wire, wire.getPointAtLength(wire.getTotalLength() / 2));
+    if (anchor) activateEndpoint(anchor);
+    svg.querySelector(`[data-wire="${wire.dataset.wire}"]`)?.focus();
   } else {
     const id = wire ? wire.dataset.wire : part.dataset.part;
     select(wire ? 'wire' : 'part', id, { reveal: Boolean(wire) });

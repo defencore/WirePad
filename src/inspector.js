@@ -69,6 +69,8 @@ export function inspectPart(part, tab) {
 }
 
 function endpointName(project, endpoint) {
+  if (endpoint.junctionId) return 'Wire junction';
+  if (endpoint.wireId) return 'Existing wire';
   const part = project.parts.find(item => item.id === endpoint.partId);
   const component = componentById.get(part.componentId);
   const pin = component.pins.find(item => item.id === endpoint.pinId);
@@ -79,7 +81,7 @@ export function inspectWire(project, wire, pending, currentColor) {
   const color = wire?.color ?? currentColor;
   const endpoints = wire ? [wire.from, wire.to] : pending ? [pending.from] : [];
   return `<h3 class="inspector-name">${wire ? 'Wire' : 'New wire'}</h3>
-    <p class="component-description">${wire ? 'Change the color of this connection.' : 'Click a starting pin, then a destination pin. Click the canvas to add a bend.'}</p>
+    <p class="component-description">${wire ? 'Drag a segment sideways on the canvas to adjust its route. Use Wire to join another connection.' : 'Click a pin, a wire, or a junction to start or finish. Click the canvas to add a bend.'}</p>
     ${endpoints.length ? `<div class="wire-endpoints">${endpoints.map(endpoint => `<div>${escapeText(endpointName(project, endpoint))}</div>`).join('')}</div>` : ''}
     <div class="section-heading">WIRE COLOR</div>
     <div class="palette">

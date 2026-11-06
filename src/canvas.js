@@ -1,8 +1,8 @@
 import { componentArt, componentById } from './catalog.js';
+import { endpointKey, endpointPositions, routeFor, wireRoute } from './routing.js';
 
 const MIN_ZOOM = .01;
 const MAX_ZOOM = 4;
-const LEAD = 15;
 const SVG_FONT = 'Arial, sans-serif';
 const escapeMap = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 
@@ -15,85 +15,6 @@ export function partName(part, component = componentById.get(part.componentId)) 
   return part.label?.trim() || component.name;
 }
 
-function rotate({ x, y }, rotation) {
-  switch (rotation) {
-    case 90: return { x: -y, y: x };
-    case 180: return { x: -x, y: -y };
-    case 270: return { x: y, y: -x };
-    default: return { x, y };
-  }
-}
-
-function pinVector(pin, component) {
-  if (pin.x === 0) return { x: -1, y: 0 };
-  if (pin.x === component.width) return { x: 1, y: 0 };
-  if (pin.y === 0) return { x: 0, y: -1 };
-  if (pin.y === component.height) return { x: 0, y: 1 };
-  return { x: 1, y: 0 };
-}
-
-export function terminal(parts, { partId, pinId }) {
-  const part = parts.get(partId);
-  const component = componentById.get(part.componentId);
-  const pin = component.pins.find(item => item.id === pinId);
-  const cx = component.width / 2;
-  const cy = component.height / 2;
-  const offset = rotate({ x: pin.x - cx, y: pin.y - cy }, part.rotation);
-  const normal = rotate(pinVector(pin, component), part.rotation);
-  return { x: part.x + cx + offset.x, y: part.y + cy + offset.y, normal };
-}
-
-function lead(pin) {
-  return { x: pin.x + pin.normal.x * LEAD, y: pin.y + pin.normal.y * LEAD };
-}
-
-function connectPoints(points, target, horizontalFirst) {
-  const previous = points.at(-1);
-  if (previous.x !== target.x && previous.y !== target.y) {
-    points.push(horizontalFirst ? { x: target.x, y: previous.y } : { x: previous.x, y: target.y });
-  }
-  if (previous.x !== target.x || previous.y !== target.y) points.push(target);
-}
-
-function wireRoute(start, end, bends = []) {
-  const a = lead(start);
-  const b = end.normal ? lead(end) : end;
-  const points = [start];
-
-  if (bends.length) {
-    const first = bends[0];
-    const last = bends.at(-1);
-    const leavesStraight = start.normal.x
-      ? first.y === start.y && (first.x - start.x) * start.normal.x >= 0
-      : first.x === start.x && (first.y - start.y) * start.normal.y >= 0;
-    const arrivesStraight = end.normal && (end.normal.x
-      ? last.y === end.y && (last.x - end.x) * end.normal.x >= 0
-      : last.x === end.x && (last.y - end.y) * end.normal.y >= 0);
-    if (!leavesStraight) points.push(a);
-    for (const bend of bends) connectPoints(points, bend, true);
-    if (!arrivesStraight) connectPoints(points, b, end.normal?.x === 0);
-    connectPoints(points, end, true);
-    return points;
-  }
-
-  points.push(a);
-  if (start.normal.x && end.normal?.x) {
-    const x = start.normal.x === end.normal.x
-      ? (start.normal.x > 0 ? Math.max(a.x, b.x) + LEAD : Math.min(a.x, b.x) - LEAD)
-      : (a.x + b.x) / 2;
-    points.push({ x, y: a.y }, { x, y: b.y }, b);
-  } else if (start.normal.y && end.normal?.y) {
-    const y = start.normal.y === end.normal.y
-      ? (start.normal.y > 0 ? Math.max(a.y, b.y) + LEAD : Math.min(a.y, b.y) - LEAD)
-      : (a.y + b.y) / 2;
-    points.push({ x: a.x, y }, { x: b.x, y }, b);
-  } else {
-    connectPoints(points, b, Boolean(start.normal.x));
-  }
-  connectPoints(points, end, true);
-  return points;
-}
-
 function pathFrom(points) {
   return points.map(({ x, y }, i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' ');
 }
@@ -102,7 +23,7 @@ function wireMarkup(wire, route, selected, editing) {
   const d = pathFrom(route);
   const shape = `<path d="${d}" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
   const hit = editing
-    ? `${shape} stroke="transparent" stroke-width="12" class="wire-hit" data-wire="${wire.id}" role="button" aria-label="Select wire" tabindex="0"/>`
+    ? `${shape} stroke="transparent" stroke-width="12" vector-effect="non-scaling-stroke" class="wire-hit" data-wire="${wire.id}" role="button" aria-label="Wire segment" tabindex="0"/>`
     : '';
   return `${shape} stroke="${selected ? '#9cdcd0' : '#ffffff'}" stroke-width="${selected ? 9 : 5.7}"/>${shape} stroke="${wire.color}" stroke-width="3.1"/>${hit}`;
 }
@@ -175,22 +96,29 @@ function partMarkup(part, wired, options) {
 }
 
 export function drawingMarkup(project, { editing = false, selection = null, active = null } = {}) {
-  const parts = new Map(project.parts.map(part => [part.id, part]));
+  const position = endpointPositions(project);
   const connections = new Map(project.parts.map(part => [part.id, new Set()]));
   const groups = new Map();
   const wires = project.wires.map(wire => {
-    const route = wireRoute(terminal(parts, wire.from), terminal(parts, wire.to), wire.points);
-    for (const { partId, pinId } of [wire.from, wire.to]) {
-      connections.get(partId).add(pinId);
-      const key = `${partId}/${pinId}/${wire.color}`;
+    const route = routeFor(wire, position);
+    for (const endpoint of [wire.from, wire.to]) {
+      if (endpoint.partId) connections.get(endpoint.partId).add(endpoint.pinId);
+      const key = `${endpointKey(endpoint)}/${wire.color}`;
       if (!groups.has(key)) groups.set(key, { color: wire.color, routes: [] });
       groups.get(key).routes.push(route);
     }
     return wireMarkup(wire, route, selection?.type === 'wire' && selection.id === wire.id, editing);
   });
+  const junctions = (project.junctions ?? []).map(({ id, x, y }) => {
+    const dot = `<circle cx="${x}" cy="${y}" r="4.6" fill="#18232d" stroke="#fff" stroke-width="1.2"/>`;
+    if (!editing) return dot;
+    return `<g class="canvas-junction" data-junction="${id}" role="button" tabindex="0" aria-label="Wire junction">
+      <circle cx="${x}" cy="${y}" r="10" fill="transparent"/>${dot}
+    </g>`;
+  });
   return wires.join('') + junctionMarkup(groups) + project.parts.map(part => partMarkup(part, connections.get(part.id), {
     editing, active, selected: selection?.type === 'part' && selection.id === part.id,
-  })).join('');
+  })).join('') + junctions.join('');
 }
 
 export class DrawingCanvas {
@@ -214,10 +142,12 @@ export class DrawingCanvas {
       this.draft.innerHTML = '';
       return;
     }
-    const parts = new Map(project.parts.map(part => [part.id, part]));
-    const end = endpoint ? terminal(parts, endpoint) : point;
-    const d = pathFrom(wireRoute(terminal(parts, pending.from), end, pending.points));
-    this.draft.innerHTML = `<path d="${d}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>`;
+    const position = endpointPositions(project);
+    const start = position(pending.from);
+    const end = endpoint ? position(endpoint) : point;
+    const path = start.x === end.x && start.y === end.y ? '' : `<path d="${pathFrom(wireRoute(start, end, pending.points))}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>`;
+    const ring = ({ x, y }) => `<circle cx="${x}" cy="${y}" r="6.3" fill="#d7f4ed" stroke="#087a6f" stroke-width="1.5"/>`;
+    this.draft.innerHTML = path + (pending.from.partId ? '' : ring(start)) + (endpoint && !endpoint.partId ? ring(end) : '');
   }
 
   bounds() {

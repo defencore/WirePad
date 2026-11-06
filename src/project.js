@@ -5,6 +5,7 @@ const STORAGE_KEY = "wirepad.project";
 const POSITION_LIMIT = 1_000_000;
 const MAX_PARTS = 500;
 const MAX_WIRES = 3000;
+const MAX_JUNCTIONS = 3000;
 const MAX_POINTS_PER_WIRE = 100;
 
 export function newProject(title = "Untitled project") {
@@ -20,11 +21,12 @@ export function demoProject() {
 
   const pinY = (part, pinId) => part.y + componentById.get(part.componentId).pins.find(pin => pin.id === pinId).y;
   const point = (x, y) => ({ x, y });
+  const endpoint = (part, pinId) => pinId ? { partId: part.id, pinId } : { junctionId: part.id };
   const wire = (id, color, start, startPin, end, endPin, points) => ({
     id,
     color,
-    from: { partId: start.id, pinId: startPin },
-    to: { partId: end.id, pinId: endPin },
+    from: endpoint(start, startPin),
+    to: endpoint(end, endPin),
     points,
   });
   const through = (x, start, startPin, end, endPin) => [
@@ -36,25 +38,31 @@ export function demoProject() {
   const power = "#e35050";
   const ground = "#46536a";
   const direction = "#d08722";
+  const powerJunction = { id: "power-branch", x: 474, y: pinY(sensor, "vin") };
+  const groundJunction = { id: "ground-branch", x: 439, y: pinY(sensor, "gnd") };
+  const directionJunction = { id: "direction-branch", x: 494, y: pinY(transceiver, "de") };
+  project.junctions = [powerJunction, groundJunction, directionJunction];
+
   const powerTrunk = [
     point(4, pinY(controller, "3v3")),
     point(4, 10),
-    point(474, 10),
-    point(474, pinY(sensor, "vin")),
+    point(powerJunction.x, 10),
   ];
-  const groundTrunk = through(439, controller, groundPin, sensor, "gnd");
 
   project.wires = [
-    wire("sensor-power", power, controller, "3v3", sensor, "vin", powerTrunk),
-    wire("bus-power", power, controller, "3v3", transceiver, "vcc", [...powerTrunk, point(474, pinY(transceiver, "vcc"))]),
-    wire("sensor-ground", ground, controller, groundPin, sensor, "gnd", groundTrunk),
-    wire("bus-ground", ground, controller, groundPin, transceiver, "gnd", [...groundTrunk, point(439, pinY(transceiver, "gnd"))]),
+    wire("power-trunk", power, controller, "3v3", powerJunction, null, powerTrunk),
+    wire("sensor-power", power, powerJunction, null, sensor, "vin", []),
+    wire("bus-power", power, powerJunction, null, transceiver, "vcc", [point(powerJunction.x, pinY(transceiver, "vcc"))]),
+    wire("ground-trunk", ground, controller, groundPin, groundJunction, null, [point(groundJunction.x, pinY(controller, groundPin))]),
+    wire("sensor-ground", ground, groundJunction, null, sensor, "gnd", []),
+    wire("bus-ground", ground, groundJunction, null, transceiver, "gnd", [point(groundJunction.x, pinY(transceiver, "gnd"))]),
     wire("i2c-clock", "#2c83d9", controller, "gpio1", sensor, "scl", through(396, controller, "gpio1", sensor, "scl")),
     wire("i2c-data", "#12946d", controller, "gpio2", sensor, "sda", through(373, controller, "gpio2", sensor, "sda")),
     wire("uart-tx", "#8b5cc7", controller, "gpio42", transceiver, "di", through(386, controller, "gpio42", transceiver, "di")),
     wire("uart-rx", "#5475c5", controller, "gpio41", transceiver, "ro", through(350, controller, "gpio41", transceiver, "ro")),
-    wire("driver-enable", direction, controller, "gpio40", transceiver, "de", through(314, controller, "gpio40", transceiver, "de")),
-    wire("receiver-enable", direction, transceiver, "de", transceiver, "re", through(494, transceiver, "de", transceiver, "re")),
+    wire("direction-trunk", direction, controller, "gpio40", directionJunction, null, through(314, controller, "gpio40", transceiver, "de")),
+    wire("driver-enable", direction, directionJunction, null, transceiver, "de", []),
+    wire("receiver-enable", direction, directionJunction, null, transceiver, "re", [point(directionJunction.x, pinY(transceiver, "re"))]),
   ];
   return project;
 }
@@ -126,8 +134,29 @@ function readPart(value, label, partComponents) {
   return part;
 }
 
-function readEndpoint(value, label, partComponents) {
+function readJunction(value, label, junctionIds) {
   record(value, label);
+  const id = identifier(value.id, label);
+  if (junctionIds.has(id)) {
+    throw new Error(`Junction ID “${id}” is duplicated.`);
+  }
+  const junction = { id, ...position(value, label) };
+  junctionIds.add(id);
+  return junction;
+}
+
+function readEndpoint(value, label, partComponents, junctionIds) {
+  record(value, label);
+  if (value.junctionId !== undefined) {
+    if (value.partId !== undefined || value.pinId !== undefined) {
+      throw new Error(`${label} must refer to a pin or a junction.`);
+    }
+    const junctionId = identifier(value.junctionId, label);
+    if (!junctionIds.has(junctionId)) {
+      throw new Error(`${label} refers to a missing junction.`);
+    }
+    return { junctionId };
+  }
   const partId = identifier(value.partId, label);
   const pinId = identifier(value.pinId, label);
   if (!partComponents.get(partId)?.pins.some(pin => pin.id === pinId)) {
@@ -144,22 +173,31 @@ function readColor(value, label) {
   return color.length === 4 ? color.replace(/[a-f0-9]/g, digit => digit + digit) : color;
 }
 
-function readWire(value, label, partComponents, wireIds) {
+function readWire(value, label, partComponents, junctionIds, wireIds) {
   record(value, label);
   const id = identifier(value.id, label);
   if (wireIds.has(id)) {
     throw new Error(`Wire ID “${id}” is duplicated.`);
   }
-  const from = readEndpoint(value.from, `${label} start`, partComponents);
-  const to = readEndpoint(value.to, `${label} end`, partComponents);
-  if (from.partId === to.partId && from.pinId === to.pinId) {
-    throw new Error(`${label} connects a pin to itself.`);
+  const from = readEndpoint(value.from, `${label} start`, partComponents, junctionIds);
+  const to = readEndpoint(value.to, `${label} end`, partComponents, junctionIds);
+  const selfLoop = from.junctionId
+    ? from.junctionId === to.junctionId
+    : from.partId === to.partId && from.pinId === to.pinId;
+  if (selfLoop) {
+    throw new Error(`${label} connects an endpoint to itself.`);
   }
   const wire = { id, from, to, color: readColor(value.color, label) };
   if (value.points !== undefined) {
     wire.points = list(value.points, `${label} route`, MAX_POINTS_PER_WIRE).map((point, index) => {
       return position(point, `${label} waypoint ${index + 1}`);
     });
+  }
+  if (value.fixedRoute !== undefined) {
+    if (typeof value.fixedRoute !== "boolean") {
+      throw new Error(`${label} has an invalid fixed route setting.`);
+    }
+    wire.fixedRoute = value.fixedRoute;
   }
   wireIds.add(id);
   return wire;
@@ -175,11 +213,19 @@ export function validateProject(value) {
   const parts = list(value.parts, "Components", MAX_PARTS).map((part, index) => {
     return readPart(part, `Component ${index + 1}`, partComponents);
   });
+  const junctionIds = new Set();
+  const junctions = value.junctions === undefined
+    ? undefined
+    : list(value.junctions, "Junctions", MAX_JUNCTIONS).map((junction, index) => {
+      return readJunction(junction, `Junction ${index + 1}`, junctionIds);
+    });
   const wireIds = new Set();
   const wires = list(value.wires, "Wires", MAX_WIRES).map((wire, index) => {
-    return readWire(wire, `Wire ${index + 1}`, partComponents, wireIds);
+    return readWire(wire, `Wire ${index + 1}`, partComponents, junctionIds, wireIds);
   });
-  return { version: VERSION, title, parts, wires };
+  const project = { version: VERSION, title, parts, wires };
+  if (junctions !== undefined) project.junctions = junctions;
+  return project;
 }
 
 export function parseProject(text) {

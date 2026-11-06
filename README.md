@@ -15,9 +15,10 @@ Open [WirePad on localhost](http://localhost:8080/).
 ## Draw a diagram
 
 1. Search or filter the component library. Click a part to add it, or drag it onto the canvas.
-2. Click a pin and then the destination pin to make a connection. Click the canvas while routing to add bends. Use **Esc** to cancel the current wire.
-3. Select a component to inspect its pins, change its label, or rotate it. Select a wire to change its color.
-4. Use **Fit view** to frame the drawing. Choose **Download PNG**, **Download SVG**, or **Copy image** from **Export**. Image copying uses the browser clipboard and requires a secure context.
+2. With **Wire**, click a pin or an existing wire to start. Click a pin, wire, or junction to connect. Click empty canvas to add a bend, or press **Esc** to cancel.
+3. With **Select**, drag a horizontal or vertical wire section sideways to reroute it. Drag a junction dot to move the junction, or click a wire to change its color. Filled dots mark connections. Wires crossing without a dot remain separate.
+4. Select a component to inspect its pins, change its label, or rotate it.
+5. Use **Fit view** to frame the drawing. Choose **Download PNG**, **Download SVG**, or **Copy image** from **Export**. Image copying uses the browser clipboard and requires a secure context.
 
 **Project → Load example** opens an ESP32-S3 sensor node with a BME280 and a 3.3 V MAX3485 breakout. The example uses GPIO1 for SCL, GPIO2 for SDA, GPIO42 for UART TX, GPIO41 for UART RX, and GPIO40 for RS-485 direction control. The transceiver’s A and B terminals are available for field wiring.
 

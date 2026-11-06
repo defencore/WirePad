@@ -69,7 +69,7 @@
         <button type="button" class="button compact mobile-panel" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-expanded="false"></button>
         <div class="tool-group" role="group" aria-label="Canvas tools">
           <button type="button" data-mode="select" data-icon="cursor" title="Select (V)" aria-pressed="true">Select</button>
-          <button type="button" data-mode="wire" data-icon="wire" title="Wire (W)" aria-pressed="false">Wire</button>
+          <button type="button" data-mode="wire" data-icon="wire" title="Connect pins and wires (W)" aria-pressed="false">Wire</button>
           <button type="button" data-mode="pan" data-icon="hand" title="Pan (H or Space)" aria-pressed="false">Pan</button>
         </div>
         <span class="toolbar-divider"></span>
@@ -133,8 +133,9 @@
   </dialog>
   <dialog id="help-dialog" class="dialog">
     <div class="dialog-title"><h2>WirePad help</h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close"></button></form></div>
-    <p>Choose a part from the library and place it on the canvas. Click one pin, then another, to connect them. While wiring, click the canvas to add a bend.</p>
-    <p>Select a wire to set its color. Select a component to view its pins and download its KiCad assets. Export the drawing as a PNG or SVG, or save an editable project file.</p>
+    <p>Choose a part from the library and place it on the canvas. With <strong>Wire</strong>, click a pin or wire to start, then click a pin, wire, or junction to connect. Click empty canvas to add a bend.</p>
+    <p>Use <strong>Select</strong> to drag a horizontal or vertical wire section sideways, drag a junction dot, or click a wire to change its color. Filled dots mark connections. Wires crossing without a dot remain separate.</p>
+    <p>Select a component to view its pins and download its KiCad assets. Export the drawing as a PNG or SVG, or save an editable project file.</p>
     <dl class="shortcuts">
       <dt>Select, wire, pan</dt><dd><kbd>V</kbd> <kbd>W</kbd> <kbd>H</kbd></dd>
       <dt>Pan temporarily</dt><dd><kbd>Space</kbd></dd>

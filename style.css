@@ -122,9 +122,12 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
 .canvas-pin { cursor: crosshair; outline: none; }
 .canvas-pin .pin-highlight { opacity: 0; }
 .canvas-pin:hover .pin-highlight, .canvas-pin:focus-visible .pin-highlight, .canvas-pin.is-active .pin-highlight { opacity: 1; }
-.wire-hit { cursor: pointer; }
+.wire-hit, .canvas-junction { cursor: grab; }
 .wire-hit:focus-visible { outline: none; stroke: #51c5b869; }
-#canvas[data-mode="pan"] .part-body, #canvas[data-mode="pan"] .canvas-pin, #canvas[data-mode="pan"] .wire-hit { cursor: inherit; }
+#canvas[data-mode="wire"] :is(.wire-hit, .canvas-junction),
+#canvas[data-routing="true"] :is(.wire-hit, .canvas-junction) { cursor: crosshair; }
+#canvas[data-mode="pan"] :is(.part-body, .canvas-pin, .wire-hit, .canvas-junction) { cursor: inherit; }
+#canvas.dragging :is(.wire-hit, .canvas-junction) { cursor: grabbing; }
 .inspector-heading { padding-bottom: 13px; border-bottom: 1px solid var(--line-light); }
 .inspection { min-height: 0; flex: 1; overflow: auto; padding: 12px 13px 16px; scrollbar-width: thin; scrollbar-color: #d2dce0 transparent; }
 .inspector-placeholder { display: grid; justify-items: center; gap: 8px; margin-top: 22px; padding: 14px; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.45; }
