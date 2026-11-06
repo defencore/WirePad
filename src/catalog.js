@@ -3,7 +3,10 @@ import { espRpComponents } from "./catalog-esp-rp.js";
 import { heltecSemtechComponents } from "./catalog-heltec-semtech.js";
 import { nordicBoardComponents } from "./catalog-nordic-boards.js";
 import { nordicComponents } from "./catalog-nordic.js";
+import { powerComponents } from "./catalog-power.js";
+import { spXtComponents } from "./catalog-sp-xt.js";
 import { stmArduinoComponents } from "./catalog-stm-arduino.js";
+import { switchMosfetComponents } from "./catalog-switches-mosfets.js";
 import { hw0519 } from "./catalog-hw0519.js";
 import { st3215 } from "./catalog-st3215.js";
 import { waveshareComponents } from "./catalog-waveshare.js";
@@ -292,6 +295,7 @@ export const components = [
   ...waveshareComponents, ...passives, ...discrete, ...connectors, battery,
   ...heltecSemtechComponents, ...espRpComponents, ...stmArduinoComponents,
   ...nordicBoardComponents, ...nordicComponents,
+  ...powerComponents, ...spXtComponents, ...switchMosfetComponents,
 ];
 
 export const componentById = new Map(components.map((component) => [component.id, component]));

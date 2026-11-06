@@ -90,6 +90,39 @@ const transistorSymbols = {
   },
 };
 
+function mosfetSymbol(pChannel) {
+  const direction = pChannel ? -1 : 1;
+  const barrier = -direction * 0.95;
+  const base = direction * 0.75;
+  const bodyArrow = pChannel
+    ? arrow([0, 0], [1.7, 0], [1.05, -0.47], [1.05, 0.47])
+    : arrow([1.7, 0], [0.35, 0], [0.95, -0.47], [0.95, 0.47]);
+  return {
+    pins: ["g", "d", "s"],
+    shapes: [
+      line(-1.27, -2.54, -1.27, 2.54),
+      ...[-1.78, 0, 1.78].map(y => line(0, y - 0.64, 0, y + 0.64)),
+      path([0, -1.78], [2.54, -1.78], [2.54, -3.81]),
+      path([0, 1.78], [2.54, 1.78], [2.54, 3.81]),
+      path([0, 0], [2.54, 0], [2.54, 1.78]),
+      ...bodyArrow,
+      path([2.54, -3.81], [5.08, -3.81], [5.08, Math.min(barrier, base)]),
+      path([2.54, 3.81], [5.08, 3.81], [5.08, Math.max(barrier, base)]),
+      path([4.19, base], [5.08, barrier], [5.97, base], [4.19, base]),
+      line(4.19, barrier, 5.97, barrier),
+    ],
+  };
+}
+
+const mosfetSymbols = { nmos: mosfetSymbol(false), pmos: mosfetSymbol(true) };
+const toggleSymbols = {
+  "toggle-spst": { poles: 1, throws: 1 },
+  "toggle-spdt": { poles: 1, throws: 2 },
+  "toggle-spdt-center-off": { poles: 1, throws: 2, centerOff: true },
+  "toggle-dpdt": { poles: 2, throws: 2 },
+  "toggle-dpdt-center-off": { poles: 2, throws: 2, centerOff: true },
+};
+
 function inlineLayout(component, design) {
   const [left, right] = component.pins.map((pin, index) => ({ ...pin, number: pinNumber(pin, index) }))
     .sort((a, b) => a.x - b.x);
@@ -123,6 +156,55 @@ function transistorLayout(component, design) {
   return { shapes: design.shapes, pins, bounds: [-10, -9.5, 8, 9.5], compact: true };
 }
 
+function symbolTerminal(component, id, x, y, angle, length) {
+  const index = component.pins.findIndex(pin => pin.id === id);
+  const pin = component.pins[index];
+  return { ...pin, x, y, angle, length, number: pinNumber(pin, index) };
+}
+
+function toggleLayout(component, { poles, throws, centerOff }) {
+  const pin = (id, x, y, angle) => symbolTerminal(component, id, x, y, angle, 2.54);
+  const doublePole = poles === 2;
+  const poleRows = doublePole ? [["a-", -5.08], ["b-", 5.08]] : [["", 0]];
+  const throwRows = throws === 1 ? [0] : [-2.54, 2.54];
+  const blade = throws === 1 ? [3.08, -1.85] : centerOff ? [3.35, 0] : [4.24, -2.32];
+  const shapes = [];
+  const pins = [];
+  for (const [prefix, y] of poleRows) {
+    pins.push(pin(`${prefix}common`, -7.62, y, 0));
+    shapes.push(circle(-4.64, y, 0.44), line(-4.2, y, blade[0], y + blade[1]));
+    throwRows.forEach((row, index) => {
+      pins.push(pin(`${prefix}throw-${index + 1}`, 7.62, y + row, 180));
+      shapes.push(circle(4.64, y + row, 0.44));
+    });
+  }
+  if (doublePole) {
+    for (const y of [-4.6, -2.6, -0.6, 1.4]) shapes.push(line(0, y, 0, y + 1.1));
+  }
+  const halfHeight = doublePole ? 9.5 : 4.6;
+  return { pins, shapes, bounds: [-9.5, -halfHeight, 9.5, halfHeight], compact: true };
+}
+
+function filterLayout(component, pi) {
+  const groundIds = component.pins.filter(pin => pin.id === "gnd" || pin.id === "gnd-2").map(pin => pin.id);
+  const groundPositions = groundIds.map((_, index) => (index - (groundIds.length - 1) / 2) * 5.08);
+  const capacitorPositions = pi ? [-5.08, 5.08] : [5.08];
+  const shapes = [
+    ...coil, line(-7.62, 0, -2.54, 0), line(2.54, 0, 7.62, 0),
+    line(Math.min(capacitorPositions[0], groundPositions[0]), 5.08, 5.08, 5.08),
+    ...capacitorPositions.flatMap(x => [
+      line(x, 0, x, 2.12), line(x - 1.14, 2.12, x + 1.14, 2.12),
+      line(x - 1.14, 3.17, x + 1.14, 3.17), line(x, 3.17, x, 5.08),
+    ]),
+  ];
+  const pins = [
+    symbolTerminal(component, "in", -12.7, 0, 0, 5.08),
+    symbolTerminal(component, "out", 12.7, 0, 180, 5.08),
+    ...groundIds.map((id, index) => symbolTerminal(component, id, groundPositions[index], 7.62, 90, 2.54)),
+  ];
+  return { pins, shapes, bounds: [-14.6, -4.5, 14.6, 9.5], compact: true };
+}
+
 function blockLayout(component) {
   const groups = [[], []];
   component.pins.forEach((pin, index) => {
@@ -154,8 +236,13 @@ function blockLayout(component) {
 function symbolLayout(component) {
   const inline = inlineSymbols[component.id];
   if (inline && component.pins.length === 2) return inlineLayout(component, inline);
-  const transistor = transistorSymbols[component.id];
+  const transistor = mosfetSymbols[component.symbol] ?? transistorSymbols[component.id];
   if (transistor) return transistorLayout(component, transistor);
+  const toggle = toggleSymbols[component.symbol];
+  if (toggle) return toggleLayout(component, toggle);
+  if (component.symbol === "lc-filter" || component.symbol === "pi-filter") {
+    return filterLayout(component, component.symbol === "pi-filter");
+  }
   return blockLayout(component);
 }
 

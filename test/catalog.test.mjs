@@ -40,6 +40,24 @@ test("KiCad exports numbered SMD lands, including round and rounded XIAO contact
   assert.doesNotMatch(footprint, /\(drill /);
 });
 
+test("LC filter symbols connect both return terminals to the ground rail", () => {
+  const filter = componentById.get("lc-filter");
+  const symbol = kicadSymbol(filter);
+  assert.match(symbol, /\(xy -2\.54 -5\.08\) \(xy 5\.08 -5\.08\)/);
+  for (const x of ["-2.54", "2.54"]) {
+    assert.ok(symbol.includes(`(at ${x} -7.62 90) (length 2.54)`));
+  }
+});
+
+test("LM1117 exports both VOUT lands under the same schematic terminal number", () => {
+  const regulator = componentById.get("lm1117-3-3-sot223");
+  assert.equal(regulator.pins.find(pin => pin.id === "vout").number, "2");
+  const outputLands = footprintLayout(regulator).pads.filter(pad => pad.number === "2");
+  assert.equal(outputLands.length, 2);
+  assert.ok(outputLands[0].x < 0 && outputLands[1].x > 0);
+  assert.equal([...kicadFootprint(regulator).matchAll(/\(pad "2" smd /g)].length, 2);
+});
+
 test("the original Heltec V4 identifier still resolves saved V4.2 wire anchors", () => {
   const heltec = componentById.get("heltec-v4");
   const legacyHeaders = [

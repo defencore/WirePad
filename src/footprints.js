@@ -3,7 +3,10 @@ import { espRpFootprints, espRpModels } from "./catalog-esp-rp.js";
 import { heltecSemtechFootprints, heltecSemtechModels } from "./catalog-heltec-semtech.js";
 import { nordicBoardFootprints, nordicBoardModels } from "./catalog-nordic-boards.js";
 import { nordicFootprints, nordicModels } from "./catalog-nordic.js";
+import { powerFootprints, powerModels } from "./catalog-power.js";
+import { spXtFootprints, spXtModels } from "./catalog-sp-xt.js";
 import { stmArduinoFootprints, stmArduinoModels } from "./catalog-stm-arduino.js";
+import { switchMosfetFootprints, switchMosfetModels } from "./catalog-switches-mosfets.js";
 import { waveshareFootprints } from "./catalog-waveshare.js";
 
 const GRID = 2.54;
@@ -65,6 +68,7 @@ const footprints = {
   "jst-ph-2": { body: [5.9, 4.5], pitch: 2, drill: 0.75, inline: true, modelHeight: 5.9, color: "#d9dad4", package: "JST PH vertical through-hole header, 2 mm pitch" },
   ...waveshareFootprints, ...heltecSemtechFootprints, ...espRpFootprints,
   ...stmArduinoFootprints, ...nordicBoardFootprints, ...nordicFootprints,
+  ...powerFootprints, ...spXtFootprints, ...switchMosfetFootprints,
 };
 
 function padAt(pin, x, y, settings, square) {
@@ -188,6 +192,7 @@ const models = {
     url: "https://www.vishay.com/en/product/81857/tab/designtools-ppg/",
   },
   ...heltecSemtechModels, ...espRpModels, ...stmArduinoModels, ...nordicBoardModels, ...nordicModels,
+  ...powerModels, ...spXtModels, ...switchMosfetModels,
 };
 
 export function modelFor(component) {

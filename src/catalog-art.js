@@ -3,7 +3,10 @@ import { espDevKitCArt, espRpArt } from "./catalog-esp-rp.js";
 import { heltecSemtechArt } from "./catalog-heltec-semtech.js";
 import { nordicBoardArt } from "./catalog-nordic-boards.js";
 import { nordicArt } from "./catalog-nordic.js";
+import { powerArt } from "./catalog-power.js";
+import { spXtArt } from "./catalog-sp-xt.js";
 import { stmArduinoArt } from "./catalog-stm-arduino.js";
+import { switchMosfetArt } from "./catalog-switches-mosfets.js";
 import { drawHw0519 } from "./catalog-hw0519.js";
 import { drawSt3215 } from "./catalog-st3215.js";
 import { waveshareArt } from "./catalog-waveshare.js";
@@ -276,6 +279,7 @@ const renderers = {
   ads1220: drawAds1220, hw0519: drawHw0519, st3215: drawSt3215, ...waveshareArt,
   terminal: connectorArt, header: connectorArt, jst: connectorArt,
   ...heltecSemtechArt, ...espRpArt, ...stmArduinoArt, ...nordicBoardArt, ...nordicArt,
+  ...powerArt, ...spXtArt, ...switchMosfetArt,
 };
 
 export function componentArt(component, { labels = true } = {}) {
