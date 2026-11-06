@@ -253,11 +253,14 @@ export function footprintPreview(component) {
   const layout = footprintLayout(component);
   const { width, height, halfWidth, halfHeight } = layout;
   const bounds = [-halfWidth - 2.1, -halfHeight - 2.1, halfWidth + 2.1, halfHeight + 2.1];
-  const pads = layout.pads.map(({ number, x, y, size, drill, square }) => {
-    const copper = square
-      ? `<rect x="${x - size / 2}" y="${y - size / 2}" width="${size}" height="${size}" rx=".08"/>`
-      : `<circle cx="${x}" cy="${y}" r="${size / 2}"/>`;
-    return `<g><title>Pad ${xml(number)}</title><g fill="#d89036" stroke="#f0b762" stroke-width=".1">${copper}</g><circle cx="${x}" cy="${y}" r="${drill / 2}" fill="#0f172a"/></g>`;
+  const pads = layout.pads.map(({ number, x, y, width, height, drill, shape, cornerRatio }) => {
+    const round = shape === "circle" || shape === "oval";
+    const radius = shape === "roundrect" ? Math.min(width, height) * cornerRatio : 0.08;
+    const copper = round
+      ? `<ellipse cx="${x}" cy="${y}" rx="${width / 2}" ry="${height / 2}"/>`
+      : `<rect x="${x - width / 2}" y="${y - height / 2}" width="${width}" height="${height}" rx="${radius}"/>`;
+    const hole = drill ? `<circle cx="${x}" cy="${y}" r="${drill / 2}" fill="#0f172a"/>` : "";
+    return `<g><title>Pad ${xml(number)}</title><g fill="#d89036" stroke="#f0b762" stroke-width=".1">${copper}</g>${hole}</g>`;
   }).join("");
   const [left, top, right, bottom] = bounds;
   return svgFrame(component, bounds, [
@@ -277,15 +280,19 @@ export function kicadFootprint(component) {
   const box = (x, y, layer, stroke) => (
     `  (fp_rect (start ${format(-x)} ${format(-y)}) (end ${format(x)} ${format(y)}) (stroke (width ${stroke}) (type solid)) (fill no) (layer ${quote(layer)}))`
   );
-  const pads = layout.pads.map(({ number, x, y, size, drill, square }) => (
-    `  (pad ${quote(number)} thru_hole ${square ? "rect" : "circle"} (at ${format(x)} ${format(y)}) (size ${size} ${size}) (drill ${drill}) (layers "*.Cu" "*.Mask"))`
-  ));
+  const pads = layout.pads.map(({ number, x, y, width, height, drill, shape, cornerRatio, smd }) => {
+    const placement = `(at ${format(x)} ${format(y)}) (size ${format(width)} ${format(height)})`;
+    const corner = shape === "roundrect" ? ` (roundrect_rratio ${cornerRatio})` : "";
+    return smd
+      ? `  (pad ${quote(number)} smd ${shape} ${placement} (layers "F.Cu" "F.Paste" "F.Mask")${corner})`
+      : `  (pad ${quote(number)} thru_hole ${shape} ${placement} (drill ${drill}) (layers "*.Cu" "*.Mask"))`;
+  });
   const modelPath = "${KIPRJMOD}/WirePad.3dshapes/" + component.id + ".wrl";
   return [
     `(footprint ${quote(component.id)} (version 20240108) (generator wirepad)`,
     '  (layer "F.Cu")',
     `  (descr ${quote(`${component.name}. ${layout.note}`)})`,
-    "  (attr through_hole)",
+    layout.pads.every(pad => pad.smd) ? "  (attr smd)" : "  (attr through_hole)",
     text("reference", "REF**", -halfHeight - 1.5, "F.SilkS"),
     text("value", component.id, halfHeight + 1.5, "F.Fab"),
     box(halfWidth + 0.25, halfHeight + 0.25, "F.CrtYd", 0.05),
@@ -306,7 +313,8 @@ function modelBoxes(component) {
   const fittings = details.map(([x, y, w, h, depth, tint]) => [
     x, y, shell + 0.2 + depth / 2, w, h, depth, tint,
   ]);
-  const leads = layout.pads.flatMap(({ x, y }) => {
+  const leads = layout.pads.flatMap(({ x, y, smd }) => {
+    if (smd) return [];
     const reach = Math.max(0, Math.abs(x) - width / 2);
     const lead = [x, y, -0.65, 0.53, 0.53, 2.4, "#a7b2bc"];
     if (!layout.inline || reach === 0) return [lead];
@@ -317,7 +325,8 @@ function modelBoxes(component) {
     ];
   });
   const terminals = layout.inline || layout.switch ? [] : layout.pads.map((pad) => (
-    [pad.x, pad.y, shell + 0.27, 1.15, 1.15, 0.14, "#d5a450"]
+    pad.smd ? [pad.x, pad.y, 0.19, pad.width, pad.height, 0.14, "#d5a450"]
+      : [pad.x, pad.y, shell + 0.27, 1.15, 1.15, 0.14, "#d5a450"]
   ));
   return [...leads, body, ...terminals, ...fittings];
 }

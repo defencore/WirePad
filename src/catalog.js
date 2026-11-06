@@ -1,4 +1,9 @@
 import { ads1220 } from "./catalog-ads1220.js";
+import { espRpComponents } from "./catalog-esp-rp.js";
+import { heltecSemtechComponents } from "./catalog-heltec-semtech.js";
+import { nordicBoardComponents } from "./catalog-nordic-boards.js";
+import { nordicComponents } from "./catalog-nordic.js";
+import { stmArduinoComponents } from "./catalog-stm-arduino.js";
 import { hw0519 } from "./catalog-hw0519.js";
 import { st3215 } from "./catalog-st3215.js";
 import { waveshareComponents } from "./catalog-waveshare.js";
@@ -43,7 +48,7 @@ function pair(id1 = "1", label1 = "1", description1 = "First terminal.", id2 = "
 const esp32 = {
   id: "esp32-s3", name: "ESP32-S3 DevKitC-1", shortName: "ESP32-S3", category: "Microcontrollers",
   description: "Espressif development board (v1.1) with an ESP32-S3-WROOM module, Wi-Fi, Bluetooth LE and two USB ports.",
-  manufacturer: "Espressif", subtitle: "Wi-Fi / BLE development board", tags: ["devkit", "esp32", "uart", "wifi"],
+  manufacturer: "Espressif", subtitle: "Wi-Fi / BLE development board", tags: ["devkit", "esp32", "esp32-s3", "dual usb", "uart", "wifi"],
   source: "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html",
   width: 142, height: 374, art: "esp32", referencePrefix: "U",
   pins: [
@@ -95,62 +100,6 @@ const esp32 = {
       ground("gnd-3"),
       ground("gnd-4"),
     ], "J3."),
-  ],
-};
-
-const heltec = {
-  id: "heltec-v4", name: "Heltec WiFi LoRa 32 V4", shortName: "Heltec V4", category: "Microcontrollers",
-  description: "Wi-Fi, BLE and LoRa development board with OLED and battery management. This pinout is for the V4.2.0 ESP32-S3R2 version.",
-  manufacturer: "Heltec Automation", subtitle: "ESP32-S3 / SX1262 / OLED", tags: ["lora", "wifi", "ble", "esp32", "heltec"],
-  source: "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.2.0.pdf",
-  width: 142, height: 330, art: "heltec", referencePrefix: "U",
-  pins: [
-    ...row("left", 142, 20, 15, [
-      ground(),
-      supply("5v", "5V", "Alternative 5 V input. Use this input or USB power."),
-      ["ve", "VE", "Switched 3.3 V output. Drive GPIO36 low to enable it.", "power_out"],
-      ["ve-2", "VE", "Second contact on the switched 3.3 V output.", "power_out"],
-      gpio(44, "UART0 RX.", "RX"),
-      gpio(43, "UART0 TX.", "TX"),
-      input("reset", "RST", "Active-low chip enable and reset."),
-      gpio(0, "Program button and boot strapping."),
-      gpio(36, "Controls the switched external 3.3 V rail."),
-      gpio(35, "Shared with the onboard LED."),
-      gpio(34, "Shared with GNSS power control."),
-      gpio(33),
-      gpio(47),
-      gpio(48),
-      gpio(26),
-      gpio(21, "Shared with OLED reset."),
-      gpio(20, "Native USB D+ and ADC2 channel 9."),
-      gpio(19, "Native USB D− and ADC2 channel 8."),
-    ], "J2."),
-    ...row("right", 142, 20, 15, [
-      ground("gnd-2"),
-      supply("3v3", "3V3", "3.3 V supply rail."),
-      supply("3v3-2", "3V3", "Second contact on the 3.3 V rail."),
-      gpio(37, "Enables battery voltage sensing when high."),
-      gpio(46, "Boot strapping pin."),
-      gpio(45, "Boot strapping pin. Shared with the V4.2 LoRa front-end control."),
-      gpio(42, "Shared with GNSS reset."),
-      gpio(41, "Shared with GNSS pulse-per-second input."),
-      gpio(40, "Shared with GNSS wake-up."),
-      gpio(39, "Shared with the GNSS serial connection."),
-      gpio(38, "Shared with the GNSS serial connection."),
-      gpio(1, "ADC1 channel 0. Shared with battery voltage sensing."),
-      gpio(2, "ADC1 channel 1 and touch input. Check LoRa PA usage on your board."),
-      gpio(3, "Boot strapping pin, ADC1 channel 2 and touch input."),
-      gpio(4, "ADC1 channel 3 and touch input."),
-      gpio(5, "ADC1 channel 4 and touch input."),
-      gpio(6, "ADC1 channel 5 and touch input."),
-      gpio(7, "Shared with the LoRa front-end supply control."),
-    ], "J3."),
-    ...row("bottom", 330, 26, 30, [
-      gpio(18, "Additional pad. Shared with onboard OLED clock."),
-      gpio(17, "Additional pad. Shared with onboard OLED data."),
-      gpio(16, "Additional pad. ADC2 channel 5 and 32 kHz oscillator input."),
-      gpio(15, "Additional pad. ADC2 channel 4 and 32 kHz oscillator input."),
-    ], "X"),
   ],
 };
 
@@ -339,8 +288,10 @@ const battery = {
 };
 
 export const components = [
-  esp32, heltec, max3485, hw0519, bme280, soil, ads1115, ads1220, ina219, st3215, oled, regulator,
+  esp32, max3485, hw0519, bme280, soil, ads1115, ads1220, ina219, st3215, oled, regulator,
   ...waveshareComponents, ...passives, ...discrete, ...connectors, battery,
+  ...heltecSemtechComponents, ...espRpComponents, ...stmArduinoComponents,
+  ...nordicBoardComponents, ...nordicComponents,
 ];
 
 export const componentById = new Map(components.map((component) => [component.id, component]));

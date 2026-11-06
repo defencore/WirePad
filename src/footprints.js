@@ -1,4 +1,9 @@
 import { ads1220Footprint } from "./catalog-ads1220.js";
+import { espRpFootprints, espRpModels } from "./catalog-esp-rp.js";
+import { heltecSemtechFootprints, heltecSemtechModels } from "./catalog-heltec-semtech.js";
+import { nordicBoardFootprints, nordicBoardModels } from "./catalog-nordic-boards.js";
+import { nordicFootprints, nordicModels } from "./catalog-nordic.js";
+import { stmArduinoFootprints, stmArduinoModels } from "./catalog-stm-arduino.js";
 import { waveshareFootprints } from "./catalog-waveshare.js";
 
 const GRID = 2.54;
@@ -16,12 +21,6 @@ const footprints = {
       [-5.8, 28, 7.4, 5.2, 2.4, "#9ca9b5"],
       [5.8, 28, 7.4, 5.2, 2.4, "#9ca9b5"],
     ],
-  },
-  "heltec-v4": {
-    body: [25.4, 51.69], rows: 22.86, start: -22.04,
-    note: "Heltec WiFi LoRa 32 V4.2 reference carrier. The main header rows use 2.54 mm pitch. Verify the auxiliary pads, mounting holes, and antenna clearance against the hardware revision.",
-    color: "#20373a",
-    details: [[0, -5, 14, 28, 4.2, "#192530"], [0, -5, 10, 22, 0.2, "#366475"], [0, 23, 8.7, 5, 2.6, "#a7b2bc"]],
   },
   max3485: { body: [24, 20], rows: 21, color: "#183d53", details: [[0, 0, 5, 6, 1.9, "#273041"]] },
   sp3485: { body: [24, 20], rows: 21, color: "#183d53", details: [[0, 0, 5, 6, 1.9, "#273041"]] },
@@ -64,11 +63,19 @@ const footprints = {
   "terminal-3": { body: [15.24, 8.5], pitch: 5.08, drill: 1.25, size: 2.7, inline: true, modelHeight: 8, color: "#367b58", package: "Three-position screw terminal, 5.08 mm pitch" },
   "pin-header-4": { body: [10.16, 2.54], pitch: GRID, drill: 1, size: 1.7, inline: true, modelHeight: 2.5, color: "#273041", package: "Single-row pin header, 2.54 mm pitch" },
   "jst-ph-2": { body: [5.9, 4.5], pitch: 2, drill: 0.75, inline: true, modelHeight: 5.9, color: "#d9dad4", package: "JST PH vertical through-hole header, 2 mm pitch" },
-  ...waveshareFootprints,
+  ...waveshareFootprints, ...heltecSemtechFootprints, ...espRpFootprints,
+  ...stmArduinoFootprints, ...nordicBoardFootprints, ...nordicFootprints,
 };
 
 function padAt(pin, x, y, settings, square) {
-  return { ...pin, x, y, square, size: settings.size ?? 1.6, drill: settings.drill ?? 0.8 };
+  const size = settings.size ?? 1.6;
+  const [width, height] = Array.isArray(size) ? size : [size, size];
+  const smd = Boolean(settings.smd);
+  const shape = settings.shape ?? (square || smd ? "rect" : width === height ? "circle" : "oval");
+  return {
+    ...pin, x, y, shape, width, height, smd,
+    cornerRatio: settings.cornerRatio, drill: smd ? null : settings.drill ?? 0.8,
+  };
 }
 
 function rowPads(pins, settings, axis, across, start) {
@@ -84,9 +91,13 @@ function rowPads(pins, settings, axis, across, start) {
 
 function connectorPads(pins, settings) {
   const pinsById = new Map(pins.map(pin => [pin.id, pin]));
-  return settings.groups.flatMap(({ ids, x, y, axis = "x", ...dimensions }) => rowPads(
+  const groups = (settings.groups ?? []).flatMap(({ ids, x, y, axis = "x", ...dimensions }) => rowPads(
     ids.map(id => pinsById.get(id)), { ...settings, ...dimensions }, axis, axis === "x" ? y : x, axis === "x" ? x : y,
   ));
+  const individual = (settings.pads ?? []).map(({ id, x, y, square = false, ...dimensions }) => (
+    padAt(pinsById.get(id), x, y, { ...settings, ...dimensions }, square)
+  ));
+  return [...groups, ...individual];
 }
 
 function modulePads(component, pins, settings) {
@@ -111,22 +122,6 @@ function modulePads(component, pins, settings) {
   ];
 }
 
-function heltecPads(component, pins, settings) {
-  const main = pins.filter((pin) => /^J[23][.:]/.test(pin.number));
-  if (main.length === 0) return modulePads(component, pins, settings);
-  const sorted = (header) => main.filter((pin) => pin.number.startsWith(header))
-    .sort((a, b) => Number(a.number.slice(3)) - Number(b.number.slice(3)));
-  const x = settings.rows / 2;
-  const start = settings.start;
-  const side = (header) => sorted(header)[0]?.x <= component.width / 2 ? -x : x;
-  const extra = pins.filter((pin) => !main.includes(pin));
-  return [
-    ...rowPads(sorted("J2"), settings, "y", side("J2"), start),
-    ...rowPads(sorted("J3"), settings, "y", side("J3"), start),
-    ...rowPads(extra.sort((a, b) => a.x - b.x), settings, "x", 23.68),
-  ];
-}
-
 function esp32Pads(component, pins, settings) {
   const main = pins.filter((pin) => /^J[13][.:]/.test(pin.number));
   if (main.length !== pins.length) return modulePads(component, pins, settings);
@@ -144,7 +139,7 @@ export function footprintLayout(component) {
   };
   const pins = component.pins.map((pin, index) => ({ ...pin, number: String(pin.number ?? index + 1) }));
   let pads;
-  if (settings.groups) {
+  if (settings.groups || settings.pads) {
     pads = connectorPads(pins, settings);
   } else if (settings.switch && pins.length === 2) {
     const [a, b] = pins;
@@ -159,46 +154,42 @@ export function footprintLayout(component) {
     pads = rowPads(ordered, settings, "x", 0);
   } else if (component.id === "esp32-s3") {
     pads = esp32Pads(component, pins, settings);
-  } else if (component.id === "heltec-v4") {
-    pads = heltecPads(component, pins, settings);
   } else {
     pads = modulePads(component, pins, settings);
   }
   const [width, height] = settings.body;
-  const halfWidth = Math.max(width / 2, ...pads.map((pad) => Math.abs(pad.x) + pad.size / 2));
-  const halfHeight = Math.max(height / 2, ...pads.map((pad) => Math.abs(pad.y) + pad.size / 2));
+  const halfWidth = Math.max(width / 2, ...pads.map((pad) => Math.abs(pad.x) + pad.width / 2));
+  const halfHeight = Math.max(height / 2, ...pads.map((pad) => Math.abs(pad.y) + pad.height / 2));
   const note = settings.note ?? (settings.package
     ? `${settings.package}. Verify the package dimensions and pin numbering for your specific part.`
     : breakout);
   return { ...settings, width, height, halfWidth, halfHeight, pads, note };
 }
 
+const models = {
+  ads1115: {
+    label: "Adafruit ADS1115 models",
+    url: "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/1085%20ADS1115%20ADC",
+  },
+  ina219: {
+    label: "Adafruit INA219 models",
+    url: "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/904%20INA219%20Stemma",
+  },
+  st3215: {
+    label: "Waveshare ST3215 STEP model",
+    url: "https://files.waveshare.com/upload/5/59/ST3215-3D.zip",
+  },
+  "waveshare-bus-servo-adapter-a": {
+    label: "Waveshare Bus Servo Adapter (A) STEP model",
+    url: "https://files.waveshare.com/wiki/Bus-Servo-Adapter-%28A%29/Bus%20Servo%20Adapter%20%28A%29_3D.zip",
+  },
+  diode: {
+    label: "Vishay DO-35 model",
+    url: "https://www.vishay.com/en/product/81857/tab/designtools-ppg/",
+  },
+  ...heltecSemtechModels, ...espRpModels, ...stmArduinoModels, ...nordicBoardModels, ...nordicModels,
+};
+
 export function modelFor(component) {
-  const models = {
-    "heltec-v4": {
-      label: "Heltec V4 CAD downloads",
-      url: "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/3D/",
-    },
-    ads1115: {
-      label: "Adafruit ADS1115 models",
-      url: "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/1085%20ADS1115%20ADC",
-    },
-    ina219: {
-      label: "Adafruit INA219 models",
-      url: "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/904%20INA219%20Stemma",
-    },
-    st3215: {
-      label: "Waveshare ST3215 STEP model",
-      url: "https://files.waveshare.com/upload/5/59/ST3215-3D.zip",
-    },
-    "waveshare-bus-servo-adapter-a": {
-      label: "Waveshare Bus Servo Adapter (A) STEP model",
-      url: "https://files.waveshare.com/wiki/Bus-Servo-Adapter-%28A%29/Bus%20Servo%20Adapter%20%28A%29_3D.zip",
-    },
-    diode: {
-      label: "Vishay DO-35 model",
-      url: "https://www.vishay.com/en/product/81857/tab/designtools-ppg/",
-    },
-  };
   return models[component.id] ?? null;
 }
