@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
 import { DrawingCanvas, drawingMarkup } from '../src/canvas.js';
-import { demoProject, parseProject, serializeProject } from '../src/project.js';
+import { demoProject } from '../src/demo.js';
+import { MAX_POINTS_PER_WIRE, parseProject, serializeProject } from '../src/project.js';
 import { endpointPositions, routeFor, segmentDrag, slideSegment, splitWire, wireRoute } from '../src/routing.js';
 
 const point = (x, y) => ({ x, y });
@@ -55,8 +56,8 @@ test('an existing wire with two protruding bends renders cleanly in the draft an
   assertClean(route, start, end);
   assert.ok(route.every(({ x, y }) => x >= 83 && y >= start.y));
 
-  const preview = Object.assign(Object.create(DrawingCanvas.prototype), { draft: { innerHTML: '' } });
-  preview.showDraft(project, wire, end, wire.color, wire.to);
+  const preview = Object.assign(Object.create(DrawingCanvas.prototype), { draft: { innerHTML: '' }, position });
+  preview.showDraft(wire, end, wire.color, wire.to);
   const path = markup => markup.match(/<path d="([^"]+)"/)?.[1];
   assert.ok(path(preview.draft.innerHTML));
   assert.equal(path(preview.draft.innerHTML), path(drawingMarkup(project)));
@@ -88,6 +89,34 @@ test('dragging a segment through an adjacent bend removes the retraced length', 
   const route = routeFor({ ...wire, points: slideSegment(gesture, 30) }, position);
   assertClean(route, start, end);
   assert.ok(!route.some(({ x, y }) => x > 40 && y === 45));
+});
+
+test('a maximum-length diagonal waypoint list can be split or rerouted and saved', () => {
+  const demo = demoProject();
+  const wire = {
+    ...demo.wires.find(item => item.id === 'i2c-clock'),
+    points: Array.from({ length: MAX_POINTS_PER_WIRE }, (_, index) => point(250 + 8 * index, 150 + 4 * (index % 2))),
+  };
+  const project = { ...demo, wires: [wire], junctions: [] };
+  const position = endpointPositions(project);
+  const route = routeFor(wire, position);
+  assert.ok(route.length > 2 * MAX_POINTS_PER_WIRE);
+
+  const split = splitWire(wire, position, route[3], 'branch', 'branch-wire');
+  const splitProject = parseProject(serializeProject({ ...project, wires: [split.before, split.after], junctions: [split.junction] }));
+  const splitPosition = endpointPositions(splitProject);
+  const [before, after] = splitProject.wires.map(item => routeFor(item, splitPosition));
+  const length = path => path.slice(1).reduce((sum, { x, y }, index) => sum + Math.abs(x - path[index].x) + Math.abs(y - path[index].y), 0);
+  assertClean(before, route[0], split.junction);
+  assertClean(after, split.junction, route.at(-1));
+  assert.equal(length(before) + length(after), length(route));
+
+  const gesture = segmentDrag(wire, position, point(258, 152));
+  const points = slideSegment(gesture, 1);
+  const edited = parseProject(serializeProject({ ...project, wires: [{ ...wire, fixedRoute: true, points }] }));
+  const editedRoute = routeFor(edited.wires[0], endpointPositions(edited));
+  assertClean(editedRoute, route[0], route.at(-1));
+  assert.notDeepEqual(editedRoute.map(coordinates), route.map(coordinates));
 });
 
 test('pin routes stay orthogonal and keep their departure directions', () => {

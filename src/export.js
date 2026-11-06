@@ -1,37 +1,46 @@
 import { serializeProject } from "./project.js";
+import { escapeText } from "./text.js";
 
 const PNG_SCALE = 2;
 const PNG_EDGE_LIMIT = 8192;
 const PNG_PIXEL_LIMIT = 16_000_000;
 
-function xml(value) {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g, "");
-}
-
 export function createDrawingSVG({ title = "WirePad drawing", bounds, markup, background = "#ffffff", padding = 24 }) {
-  if (![bounds.x, bounds.y, bounds.width, bounds.height, padding].every(Number.isFinite) ||
-    bounds.width < 0 || bounds.height < 0 || padding < 0) {
+  const { x, y, width, height } = bounds;
+  if (![x, y, width, height, padding].every(Number.isFinite) || width < 0 || height < 0 || padding < 0) {
     throw new Error("The drawing has invalid dimensions.");
   }
-  const x = Math.floor(bounds.x - padding);
-  const y = Math.floor(bounds.y - padding);
-  const width = Math.max(1, Math.ceil(bounds.x + bounds.width + padding) - x);
-  const height = Math.max(1, Math.ceil(bounds.y + bounds.height + padding) - y);
+  const left = Math.floor(x - padding);
+  const top = Math.floor(y - padding);
+  const viewWidth = Math.max(1, Math.ceil(x + width + padding) - left);
+  const viewHeight = Math.max(1, Math.ceil(y + height + padding) - top);
+  if (![left, top, viewWidth, viewHeight].every(Number.isSafeInteger)) {
+    throw new Error("The drawing has invalid dimensions.");
+  }
+
+  const viewBox = `${left} ${top} ${viewWidth} ${viewHeight}`;
   const backdrop = background === null ? "" :
-    `<rect x="${x}" y="${y}" width="${width}" height="${height}" fill="${xml(background)}"/>`;
-  const svg = [
-    `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="${x} ${y} ${width} ${height}" font-family="Arial, sans-serif">`,
-    `<title>${xml(title)}</title>`,
-    backdrop,
-    markup,
-    "</svg>",
+    `<rect x="${left}" y="${top}" width="${viewWidth}" height="${viewHeight}" fill="${escapeText(background)}"/>`;
+  const heading = `<title>${escapeText(title)}</title>`;
+  const render = (imageWidth, imageHeight, options = "") => [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${imageWidth}" height="${imageHeight}" viewBox="${viewBox}" font-family="Arial, sans-serif"${options}>`,
+    heading, backdrop, markup, "</svg>",
   ].join("\n");
-  return { svg, width, height };
+  return {
+    width: viewWidth,
+    height: viewHeight,
+    get svg() { return render(viewWidth, viewHeight); },
+    raster() {
+      const scale = Math.min(
+        PNG_SCALE,
+        PNG_EDGE_LIMIT / Math.max(viewWidth, viewHeight),
+        Math.sqrt(PNG_PIXEL_LIMIT / (viewWidth * viewHeight)),
+      );
+      const width = Math.max(1, Math.floor(viewWidth * scale));
+      const height = Math.max(1, Math.floor(viewHeight * scale));
+      return { width, height, svg: render(width, height, ' preserveAspectRatio="none"') };
+    },
+  };
 }
 
 function fileStem(title) {
@@ -41,14 +50,17 @@ function fileStem(title) {
 }
 
 export function downloadBlob(blob, filename) {
-  const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  document.body.append(link);
-  link.click();
-  link.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const url = URL.createObjectURL(blob);
+  try {
+    link.href = url;
+    link.download = filename;
+    document.body.append(link);
+    link.click();
+  } finally {
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
 }
 
 function svgBlob(svg) {
@@ -64,23 +76,19 @@ function imageFromURL(url) {
   });
 }
 
-async function drawingPNG({ svg, width, height }) {
+async function drawingPNG(drawing) {
+  const { svg, width, height } = drawing.raster();
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  const context = canvas.getContext("2d");
+  if (!context) {
+    throw new Error("PNG export is unavailable in this browser.");
+  }
   const url = URL.createObjectURL(svgBlob(svg));
   try {
     const image = await imageFromURL(url);
-    const scale = Math.min(
-      PNG_SCALE,
-      PNG_EDGE_LIMIT / Math.max(width, height),
-      Math.sqrt(PNG_PIXEL_LIMIT / (width * height)),
-    );
-    const canvas = document.createElement("canvas");
-    canvas.width = Math.max(1, Math.floor(width * scale));
-    canvas.height = Math.max(1, Math.floor(height * scale));
-    const context = canvas.getContext("2d");
-    if (!context) {
-      throw new Error("PNG export is unavailable in this browser.");
-    }
-    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    context.drawImage(image, 0, 0);
     return await new Promise((resolve, reject) => {
       canvas.toBlob(blob => {
         if (blob) resolve(blob);
@@ -104,9 +112,16 @@ export async function copyDrawing(drawing) {
   if (!globalThis.ClipboardItem || !navigator.clipboard?.write) {
     throw new Error("Image copying is unavailable here. Download the drawing as PNG.");
   }
-  await navigator.clipboard.write([
-    new ClipboardItem({ "image/png": drawingPNG(drawing) }),
-  ]);
+  const png = Promise.resolve(drawing).then(drawingPNG);
+  try {
+    // Start the write during the user gesture, before the PNG is ready.
+    const item = new ClipboardItem({ "image/png": png });
+    await Promise.all([navigator.clipboard.write([item]), png]);
+  } catch (error) {
+    // A synchronous clipboard failure can occur before Promise.all observes the PNG.
+    png.catch(() => {});
+    throw error;
+  }
 }
 
 export function downloadProject(project) {

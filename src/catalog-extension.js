@@ -1,6 +1,4 @@
-function escapeText(value) {
-  return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-}
+import { escapeText } from "./text.js";
 
 export const rect = (x, y, width, height, radius, fill, stroke = "none") =>
   `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}" fill="${fill}" stroke="${stroke}"/>`;

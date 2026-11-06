@@ -41,6 +41,7 @@ a { color: var(--accent-dark); }
 .button:not(:disabled):hover, .tool-group button:hover { background: #f1f5f6; border-color: #cad5da; }
 .button.primary { border-color: var(--accent); background: var(--accent); color: white; }
 .button.primary:not(:disabled):hover { border-color: var(--accent-dark); background: var(--accent-dark); }
+.copy-image[aria-busy="true"] { cursor: progress; }
 .button.compact { width: 34px; padding: 0; }
 .button.bare { border-color: transparent; background: transparent; }
 .button.danger { color: #a13c40; }
@@ -109,8 +110,11 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
 .title-field input:focus { border-color: #75b8ad; }
 .title-field .icon { width: 14px; height: 14px; color: var(--quiet); }
 .board-bottom { right: 12px; bottom: 12px; left: 12px; display: flex; align-items: end; justify-content: space-between; gap: 8px; }
+.canvas-guide { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; max-width: calc(100% - 120px); }
 .canvas-hint { display: inline-flex; align-items: center; gap: 6px; min-height: 31px; padding: 5px 8px; border: 1px solid var(--line-light); border-radius: var(--radius); background: #fffffff0; color: var(--muted); font-size: 11px; }
 .canvas-hint .icon { width: 13px; height: 13px; color: var(--accent-dark); }
+.cancel-wire { min-height: 31px; padding: 0 8px; pointer-events: auto; color: var(--accent-dark); font-size: 12px; }
+.cancel-wire .icon { width: 13px; height: 13px; }
 .zoom { display: flex; align-items: center; padding: 2px; border: 1px solid var(--line); border-radius: var(--radius); background: white; pointer-events: auto; box-shadow: 0 2px 6px #233c5010; }
 .zoom .button { min-height: 29px; }
 .zoom .compact { width: 28px; }
@@ -241,7 +245,6 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
   .title-field input { font-size: 18px; }
   .statusbar { gap: 5px; padding: 0 7px; }
   .statusbar .local-status, .status-separator { display: none; }
-  .canvas-hint { max-width: 57%; }
 }
 @media (max-width: 430px) {
   .brand > span, .topbar summary > .icon { display: none; }
@@ -250,7 +253,7 @@ kbd { display: inline-block; min-width: 17px; padding: 1px 4px; border: 1px soli
   .start-options { grid-template-columns: 1fr; gap: 8px; }
 }
 @media (max-width: 365px) {
-  .tool-group button { font-size: 0; padding: 0 6px; }
+  .tool-group button:not([data-mode="wire"]) { font-size: 0; padding: 0 6px; }
   .topbar { gap: 5px; }
   .topbar summary > span { display: none; }
 }

@@ -1,14 +1,15 @@
 import { componentById } from './catalog.js';
+import { pinById } from './component-pins.js';
+import { POSITION_LIMIT } from './project.js';
 
 const LEAD = 15;
-const positionLimit = 1_000_000;
 
 export const sameEndpoint = (a, b) => a.junctionId
   ? a.junctionId === b.junctionId
   : !b.junctionId && a.partId === b.partId && a.pinId === b.pinId;
 
 export const endpointKey = ({ junctionId, partId, pinId }) => junctionId ? `junction/${junctionId}` : `pin/${partId}/${pinId}`;
-export const bounded = value => Math.max(-positionLimit, Math.min(positionLimit, Math.round(value)));
+export const bounded = value => Math.max(-POSITION_LIMIT, Math.min(POSITION_LIMIT, Math.round(value)));
 export const clampPoint = ({ x, y }) => ({ x: bounded(x), y: bounded(y) });
 
 function rotate({ x, y }, rotation) {
@@ -30,13 +31,16 @@ function pinVector(pin, component) {
 
 export function endpointPositions(project) {
   const parts = new Map(project.parts.map(part => [part.id, part]));
-  const junctions = new Map((project.junctions ?? []).map(junction => [junction.id, junction]));
+  const junctions = new Map((project.junctions ?? []).map(({ id, x, y }) => [id, { x, y }]));
+  const pins = new Map();
   return endpoint => {
     if (endpoint.wireId) return endpoint.point;
     if (endpoint.junctionId) return junctions.get(endpoint.junctionId);
+    const key = endpointKey(endpoint);
+    if (pins.has(key)) return pins.get(key);
     const part = parts.get(endpoint.partId);
     const component = componentById.get(part.componentId);
-    const pin = component.pins.find(item => item.id === endpoint.pinId);
+    const pin = pinById(component, endpoint.pinId);
     const cx = component.width / 2;
     const cy = component.height / 2;
     const offset = rotate({ x: pin.x - cx, y: pin.y - cy }, part.rotation);
@@ -44,13 +48,15 @@ export function endpointPositions(project) {
     const turned = (part.rotation ?? 0) % 180 !== 0;
     const halfWidth = turned ? cy : cx;
     const halfHeight = turned ? cx : cy;
-    return {
+    const point = {
       x: part.x + cx + offset.x, y: part.y + cy + offset.y, normal,
       bounds: {
         x: [part.x + cx - halfWidth, part.x + cx + halfWidth],
         y: [part.y + cy - halfHeight, part.y + cy + halfHeight],
       },
     };
+    pins.set(key, point);
+    return point;
   };
 }
 
@@ -188,13 +194,19 @@ function compact(route, keepStraight = false) {
 
 export function nearestSegment(route, target) {
   let nearest = null;
+  let nearestDistance = Infinity;
   for (let index = 0; index + 1 < route.length; index++) {
     const start = route[index];
     const end = route[index + 1];
     const x = Math.max(Math.min(start.x, end.x), Math.min(Math.max(start.x, end.x), target.x));
     const y = Math.max(Math.min(start.y, end.y), Math.min(Math.max(start.y, end.y), target.y));
-    const distance = Math.hypot(target.x - x, target.y - y);
-    if (!nearest || distance < nearest.distance) nearest = { index, point: { x, y }, distance };
+    const dx = target.x - x;
+    const dy = target.y - y;
+    const distance = dx * dx + dy * dy;
+    if (distance < nearestDistance) {
+      nearest = { index, point: { x, y } };
+      nearestDistance = distance;
+    }
   }
   return nearest;
 }
@@ -206,6 +218,20 @@ export function segmentDrag(wire, position, point) {
   const a = route[segment.index];
   const b = route[segment.index + 1];
   return { route, index: segment.index, axis: a.x === b.x ? 'x' : 'y' };
+}
+
+function routeWaypoints(points) {
+  const route = compact(points);
+  const bends = [];
+  for (let index = 1; index < route.length - 1; index++) {
+    const previous = route[index - 1];
+    const { x, y } = route[index];
+    const next = route[index + 1];
+    const pinLead = (index === 1 && previous.normal) || (index === route.length - 2 && next.normal);
+    // The router reconstructs horizontal-first elbows between waypoints.
+    if (pinLead || previous.y !== y || next.x !== x) bends.push({ x, y });
+  }
+  return bends;
 }
 
 export function slideSegment({ route, index, axis }, delta) {
@@ -228,11 +254,10 @@ export function slideSegment({ route, index, axis }, delta) {
     ...(last ? [innerB, b] : []),
     ...route.slice(index + 2),
   ];
-  return compact(updated).slice(1, -1).map(({ x, y }) => ({ x, y }));
+  return routeWaypoints(updated);
 }
 
-export function wireAnchor(wire, position, target, threshold) {
-  const route = routeFor(wire, position);
+export function wireAnchor(wire, route, target, threshold) {
   const nearest = nearestSegment(route, target);
   if (!nearest) return null;
   const { point } = nearest;
@@ -246,8 +271,7 @@ export function splitWire(wire, position, point, junctionId, newWireId) {
   const route = routeFor(wire, position);
   const { index, point: split } = nearestSegment(route, point);
   const junction = { id: junctionId, ...split };
-  const routePoints = points => compact(points).slice(1, -1).map(({ x, y }) => ({ x, y }));
-  const before = { ...wire, to: { junctionId }, fixedRoute: true, points: routePoints([...route.slice(0, index + 1), split]) };
-  const after = { ...wire, id: newWireId, from: { junctionId }, fixedRoute: true, points: routePoints([split, ...route.slice(index + 1)]) };
+  const before = { ...wire, to: { junctionId }, fixedRoute: true, points: routeWaypoints([...route.slice(0, index + 1), split]) };
+  const after = { ...wire, id: newWireId, from: { junctionId }, fixedRoute: true, points: routeWaypoints([split, ...route.slice(index + 1)]) };
   return { junction, before, after };
 }

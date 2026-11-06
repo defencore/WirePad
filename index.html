@@ -46,7 +46,7 @@
     <aside class="library panel" id="library" aria-label="Component library">
       <div class="panel-heading library-heading">
         <div class="eyebrow"><span data-icon="library"></span> PARTS LIBRARY</div>
-        <h1>Components</h1>
+        <h1 tabindex="-1" data-panel-heading>Components</h1>
         <p>Click or drag a part onto the canvas.</p>
       </div>
       <div class="library-filters">
@@ -94,7 +94,10 @@
           </label>
         </div>
         <div class="board-bottom">
-          <span id="canvas-hint" class="canvas-hint"></span>
+          <div class="canvas-guide">
+            <span id="canvas-hint" class="canvas-hint"><span data-icon="info" aria-hidden="true"></span><span id="canvas-hint-text"></span></span>
+            <button type="button" id="cancel-wire" class="button cancel-wire" data-icon="close" hidden>Cancel wire</button>
+          </div>
           <div class="zoom" role="group" aria-label="Zoom">
             <button type="button" class="button compact bare" id="zoom-out" data-icon="minus" aria-label="Zoom out" title="Zoom out"></button>
             <button type="button" class="button bare zoom-value" id="zoom-value" title="Actual size">100%</button>
@@ -105,7 +108,7 @@
           <span data-icon="wire"></span>
           <h2>Build your wiring diagram</h2>
           <p>Add components, then click their pins to connect them.</p>
-          <button type="button" class="button primary" data-action="browse-components" data-icon="library">Browse components</button>
+          <button type="button" id="browse-components" class="button primary" data-action="browse-components" data-icon="library">Browse components</button>
           <div class="empty-actions">
             <button type="button" class="button bare" data-start="open">Import project</button>
             <button type="button" class="button bare" data-start="demo">Open demo</button>
@@ -117,14 +120,14 @@
     <aside class="inspector panel" id="inspector" aria-label="Inspector">
       <div class="panel-heading inspector-heading">
         <div class="eyebrow"><span data-icon="sliders"></span> DETAILS</div>
-        <h2>Inspector</h2>
+        <h2 tabindex="-1" data-panel-heading>Inspector</h2>
       </div>
       <div id="inspection" class="inspection"></div>
     </aside>
   </div>
 
   <footer class="statusbar">
-    <span id="editor-status"><span class="status-dot"></span> Ready</span>
+    <span id="editor-status" role="status"><span class="status-dot" aria-hidden="true"></span><span id="editor-status-text">Ready</span></span>
     <div class="top-spacer"></div>
     <span id="project-count"></span>
     <span class="status-separator"></span>
@@ -161,9 +164,9 @@
   </dialog>
   <dialog id="help-dialog" class="dialog" aria-labelledby="help-title">
     <div class="dialog-title"><h2 id="help-title">WirePad help</h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close"></button></form></div>
-    <p>Choose a part from the library and place it on the canvas. Click one pin and then another to connect them. Use <strong>Wire</strong> to start from an existing wire or junction. Click empty canvas while routing to add a bend.</p>
-    <p>Use <strong>Select</strong> to drag a horizontal or vertical wire section sideways, drag a junction dot, or click a wire to change its color. Filled dots mark connections. Wires crossing without a dot remain separate.</p>
-    <p>Select a component to view its pins and download its KiCad assets. Use <strong>Copy image</strong> to paste the diagram into another app, or use <strong>Export</strong> to download it.</p>
+    <p>Choose a part from the library to place it on the canvas. Click one pin and then another to connect them. Use <strong>Wire</strong> to start from an existing wire or junction. Click empty canvas to add a bend, or choose <strong>Cancel wire</strong> to stop.</p>
+    <p>Use <strong>Select</strong> to drag a wire segment sideways or move a junction dot. Filled dots mark electrical connections. Select a wire to change its color in the Inspector.</p>
+    <p>Select a component to view its pinout and KiCad assets in the Inspector. Use <strong>Copy image</strong> to paste the diagram into another app, or use <strong>Export</strong> to download it.</p>
     <dl class="shortcuts">
       <dt>Select, wire, pan</dt><dd><kbd>V</kbd> <kbd>W</kbd> <kbd>H</kbd></dd>
       <dt>Pan temporarily</dt><dd><kbd>Space</kbd></dd>
@@ -172,6 +175,7 @@
       <dt>Delete selection</dt><dd><kbd>Delete</kbd></dd>
       <dt>Cancel wiring</dt><dd><kbd>Esc</kbd></dd>
       <dt>Undo / redo</dt><dd><kbd>Ctrl/⌘ Z</kbd> / <kbd>Shift</kbd></dd>
+      <dt>Save project file</dt><dd><kbd>Ctrl/⌘ S</kbd></dd>
       <dt>Search library</dt><dd><kbd>/</kbd></dd>
     </dl>
   </dialog>

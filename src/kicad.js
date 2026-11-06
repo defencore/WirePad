@@ -1,4 +1,5 @@
 import { footprintLayout } from "./footprints.js";
+import { escapeText } from "./text.js";
 
 export { modelFor } from "./footprints.js";
 
@@ -9,9 +10,6 @@ const pinTypes = new Set([
   "unspecified", "power_in", "power_out", "open_collector", "open_emitter", "no_connect",
 ]);
 
-const xml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
-  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;",
-})[character]);
 const quote = (value) => JSON.stringify(String(value));
 const format = (value) => Number(value.toFixed(4));
 const pinNumber = (pin, index) => String(pin.number ?? index + 1);
@@ -262,7 +260,7 @@ function svgShape(shape) {
 
 function svgFrame(component, bounds, markup, label) {
   const [left, top, right, bottom] = bounds.map(format);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${left} ${top} ${format(right - left)} ${format(bottom - top)}" role="img" aria-label="${xml(component.name)} ${label}">${markup}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${left} ${top} ${format(right - left)} ${format(bottom - top)}" role="img" aria-label="${escapeText(component.name)} ${label}">${markup}</svg>`;
 }
 
 export function symbolPreview(component) {
@@ -275,7 +273,7 @@ export function symbolPreview(component) {
     const wire = `<g fill="none" stroke="#64748b" stroke-width=".16">${svgLine(pin.x, pin.y, x, y)}<circle cx="${pin.x}" cy="${pin.y}" r=".34" fill="#f8fafc"/></g>`;
     if (layout.compact) return wire;
     const anchor = dx === 1 ? "start" : "end";
-    return `${wire}<text x="${x + dx * 0.75}" y="${y + 0.36}" font-size="1.05" fill="#334155" text-anchor="${anchor}">${xml(pin.label)}</text><text x="${(pin.x + x) / 2}" y="${y - 0.47}" font-size=".74" fill="#475569" text-anchor="middle">${xml(pin.number)}</text>`;
+    return `${wire}<text x="${x + dx * 0.75}" y="${y + 0.36}" font-size="1.05" fill="#334155" text-anchor="${anchor}">${escapeText(pin.label)}</text><text x="${(pin.x + x) / 2}" y="${y - 0.47}" font-size=".74" fill="#475569" text-anchor="middle">${escapeText(pin.number)}</text>`;
   }).join("");
   return svgFrame(component, layout.bounds,
     `<g fill="none" stroke="#9a4831" stroke-width=".23" stroke-linejoin="round" stroke-linecap="round">${layout.shapes.map(svgShape).join("")}</g><g font-family="ui-monospace, monospace">${pins}</g>`,
@@ -347,7 +345,7 @@ export function footprintPreview(component) {
       ? `<ellipse cx="${x}" cy="${y}" rx="${width / 2}" ry="${height / 2}"/>`
       : `<rect x="${x - width / 2}" y="${y - height / 2}" width="${width}" height="${height}" rx="${radius}"/>`;
     const hole = drill ? `<circle cx="${x}" cy="${y}" r="${drill / 2}" fill="#0f172a"/>` : "";
-    return `<g><title>Pad ${xml(number)}</title><g fill="#d89036" stroke="#f0b762" stroke-width=".1">${copper}</g>${hole}</g>`;
+    return `<g><title>Pad ${escapeText(number)}</title><g fill="#d89036" stroke="#f0b762" stroke-width=".1">${copper}</g>${hole}</g>`;
   }).join("");
   const [left, top, right, bottom] = bounds;
   return svgFrame(component, bounds, [

@@ -1,15 +1,11 @@
 import { componentArt, componentById } from './catalog.js';
-import { endpointKey, endpointPositions, routeFor, wireRoute } from './routing.js';
+import { endpointKey, endpointPositions, nearestSegment, wireAnchor, wireRoute } from './routing.js';
+import { escapeText } from './text.js';
 
 const MIN_ZOOM = .01;
 const MAX_ZOOM = 4;
 const SVG_FONT = 'Arial, sans-serif';
-const escapeMap = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
-
-export function escapeText(value) {
-  return String(value).replace(/[&<>"']/g, character => escapeMap[character])
-    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\ufffe\uffff]/g, '');
-}
+const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
 export function partName(part, component = componentById.get(part.componentId)) {
   return part.label?.trim() || component.name;
@@ -19,13 +15,12 @@ function pathFrom(points) {
   return points.map(({ x, y }, i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' ');
 }
 
-function wireMarkup(wire, route, selected, editing) {
-  const d = pathFrom(route);
+function wireMarkup(wire, d, editing) {
   const shape = `<path d="${d}" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
   const hit = editing
     ? `${shape} stroke="transparent" stroke-width="12" vector-effect="non-scaling-stroke" class="wire-hit" data-wire="${wire.id}" role="button" aria-label="Wire segment" tabindex="0"/>`
     : '';
-  return `${shape} stroke="${selected ? '#9cdcd0' : '#ffffff'}" stroke-width="${selected ? 9 : 5.7}"/>${shape} stroke="${wire.color}" stroke-width="3.1"/>${hit}`;
+  return `${shape} stroke="#ffffff" stroke-width="5.7"/>${shape} stroke="${wire.color}" stroke-width="3.1"/>${hit}`;
 }
 
 function junctionMarkup(groups) {
@@ -56,14 +51,11 @@ function junctionMarkup(groups) {
   return [...junctions.values()].join('');
 }
 
-function partMarkup(part, wired, options) {
-  const component = componentById.get(part.componentId);
+function partMarkup(part, component, wired, editing) {
   const { width, height } = component;
-  const name = escapeText(partName(part, component));
-  const { editing, selected, active } = options;
-  const angle = part.rotation ?? 0;
-  const bottom = height / 2 + (angle % 180 ? width : height) / 2;
-  const labelWidth = Math.max(54, partName(part, component).length * 7 + 16);
+  const name = partName(part, component);
+  const text = escapeText(name);
+  const labelWidth = Math.max(54, name.length * 7 + 16);
   const pins = component.pins.map(pin => {
     const connected = wired.has(pin.id);
     if (!editing) {
@@ -71,9 +63,8 @@ function partMarkup(part, wired, options) {
         ? `<circle cx="${pin.x}" cy="${pin.y}" r="3" fill="#087a6f" stroke="#fff" stroke-width=".9"/>`
         : '';
     }
-    const current = active?.partId === part.id && active.pinId === pin.id;
-    const label = escapeText(`${partName(part, component)} · ${pin.label} — ${pin.description}`);
-    return `<g class="canvas-pin${current ? ' is-active' : ''}" data-pin="${pin.id}" data-part="${part.id}" role="button" tabindex="0" aria-label="${label}">
+    const label = escapeText(`${name} · ${pin.label} — ${pin.description}`);
+    return `<g class="canvas-pin" data-pin="${pin.id}" data-part="${part.id}" role="button" tabindex="0" aria-label="${label}">
       <title>${label}</title>
       <circle cx="${pin.x}" cy="${pin.y}" r="8" fill="transparent"/>
       <circle class="pin-highlight" cx="${pin.x}" cy="${pin.y}" r="6" fill="#aeeadf" stroke="#087a6f" stroke-width="1"/>
@@ -81,44 +72,186 @@ function partMarkup(part, wired, options) {
     </g>`;
   }).join('');
   const body = editing
-    ? `<g class="part-body" data-part="${part.id}" role="button" tabindex="0" aria-label="Select ${name}">
-        <rect class="part-focus" x="-8" y="-8" width="${width + 16}" height="${height + 16}" rx="9" fill="transparent" stroke="${selected ? '#62ac9f' : 'transparent'}" stroke-width="1.3" stroke-dasharray="4 4"/>
+    ? `<g class="part-body" data-part="${part.id}" role="button" tabindex="0" aria-label="Select ${text}">
+        <rect class="part-focus" x="-8" y="-8" width="${width + 16}" height="${height + 16}" rx="9" fill="transparent" stroke="transparent" stroke-width="1.3" stroke-dasharray="4 4"/>
         ${componentArt(component)}
       </g>`
     : componentArt(component);
-  return `<g transform="translate(${part.x} ${part.y})">
-    <g transform="rotate(${angle} ${width / 2} ${height / 2})">${body}${pins}</g>
-    <g transform="translate(${width / 2} ${bottom + 8})" font-family="${SVG_FONT}" ${editing ? `data-part="${part.id}" class="part-body"` : ''}>
-      <rect x="${-labelWidth / 2}" width="${labelWidth}" height="21" rx="5" fill="${selected ? '#e6f5f1' : '#ffffff'}" stroke="${selected ? '#c4e3dc' : '#dce5e8'}"/>
-      <text text-anchor="middle" y="14" fill="${selected ? '#08675e' : '#24313d'}" font-size="11" font-weight="700">${name}</text>
-    </g>
-  </g>`;
+  return `<g transform="${partRotation(part, component)}">${body}${pins}</g>
+    <g transform="${labelPosition(part, component)}" font-family="${SVG_FONT}" ${editing ? `data-part="${part.id}" class="part-body"` : ''}>
+      <rect x="${-labelWidth / 2}" width="${labelWidth}" height="21" rx="5" fill="#ffffff" stroke="#dce5e8"/>
+      <text text-anchor="middle" y="14" fill="#24313d" font-size="11" font-weight="700">${text}</text>
+    </g>`;
 }
 
-export function drawingMarkup(project, { editing = false, selection = null, active = null } = {}) {
+const translation = (x, y) => `translate(${x} ${y})`;
+const partRotation = ({ rotation = 0 }, { width, height }) => `rotate(${rotation} ${width / 2} ${height / 2})`;
+const labelPosition = ({ rotation = 0 }, { width, height }) =>
+  translation(width / 2, height / 2 + (rotation % 180 ? width : height) / 2 + 8);
+
+function samePosition(a, b) {
+  return a.x === b.x && a.y === b.y && a.normal?.x === b.normal?.x && a.normal?.y === b.normal?.y &&
+    a.bounds?.x[0] === b.bounds?.x[0] && a.bounds?.x[1] === b.bounds?.x[1] &&
+    a.bounds?.y[0] === b.bounds?.y[0] && a.bounds?.y[1] === b.bounds?.y[1];
+}
+
+function resolveDrawing(project, previousRoutes) {
   const position = endpointPositions(project);
-  const connections = new Map(project.parts.map(part => [part.id, new Set()]));
+  const parts = new Map(project.parts.map(part => [part.id, { part, connected: new Set() }]));
+  const wires = new Map();
   const groups = new Map();
-  const wires = project.wires.map(wire => {
-    const route = routeFor(wire, position);
+  for (const wire of project.wires) {
+    const from = position(wire.from);
+    const to = position(wire.to);
+    let geometry = previousRoutes?.get(wire.id)?.geometry;
+    if (!geometry || geometry.points !== wire.points || geometry.fixedRoute !== wire.fixedRoute ||
+      !samePosition(geometry.from, from) || !samePosition(geometry.to, to)) {
+      const route = wireRoute(from, to, wire.points, wire.fixedRoute);
+      geometry = { from, to, route, path: pathFrom(route), points: wire.points, fixedRoute: wire.fixedRoute };
+    }
+    wires.set(wire.id, { wire, geometry });
     for (const endpoint of [wire.from, wire.to]) {
-      if (endpoint.partId) connections.get(endpoint.partId).add(endpoint.pinId);
+      if (endpoint.partId) parts.get(endpoint.partId).connected.add(endpoint.pinId);
       const key = `${endpointKey(endpoint)}/${wire.color}`;
       if (!groups.has(key)) groups.set(key, { color: wire.color, routes: [] });
-      groups.get(key).routes.push(route);
+      groups.get(key).routes.push(geometry.route);
     }
-    return wireMarkup(wire, route, selection?.type === 'wire' && selection.id === wire.id, editing);
-  });
-  const junctions = (project.junctions ?? []).map(({ id, x, y }) => {
-    const dot = `<circle cx="${x}" cy="${y}" r="4.6" fill="#18232d" stroke="#fff" stroke-width="1.2"/>`;
-    if (!editing) return dot;
-    return `<g class="canvas-junction" data-junction="${id}" role="button" tabindex="0" aria-label="Wire junction">
-      <circle cx="${x}" cy="${y}" r="10" fill="transparent"/>${dot}
-    </g>`;
-  });
-  return wires.join('') + junctionMarkup(groups) + project.parts.map(part => partMarkup(part, connections.get(part.id), {
-    editing, active, selected: selection?.type === 'part' && selection.id === part.id,
-  })).join('') + junctions.join('');
+  }
+  const junctions = new Map((project.junctions ?? []).map(junction => [junction.id, junction]));
+  return { position, parts, wires, junctions, branches: junctionMarkup(groups) };
+}
+
+function junctionDot({ x, y }) {
+  return `<circle cx="${x}" cy="${y}" r="4.6" fill="#18232d" stroke="#fff" stroke-width="1.2"/>`;
+}
+
+export function drawingMarkup(project) {
+  const { parts, wires, branches, junctions } = resolveDrawing(project);
+  const wireShapes = [...wires.values()].map(({ wire, geometry }) => wireMarkup(wire, geometry.path, false));
+  const partShapes = [...parts.values()].map(({ part, connected }) => `<g transform="${translation(part.x, part.y)}">${
+    partMarkup(part, componentById.get(part.componentId), connected, false)
+  }</g>`);
+  return wireShapes.join('') + branches + partShapes.join('') + [...junctions.values()].map(junctionDot).join('');
+}
+
+function group(parent) {
+  return parent.ownerDocument.createElementNS(SVG_NAMESPACE, 'g');
+}
+
+class SceneLayer {
+  constructor(parent) {
+    this.node = group(parent);
+    this.entries = new Map();
+    parent.append(this.node);
+  }
+
+  update(items, updateEntry) {
+    for (const [id, entry] of this.entries) {
+      if (!items.has(id)) {
+        entry.node.remove();
+        this.entries.delete(id);
+      }
+    }
+    let cursor = this.node.firstElementChild;
+    for (const [id, item] of items) {
+      const entry = updateEntry(item, this.entries.get(id));
+      this.entries.set(id, entry);
+      if (entry.node === cursor) cursor = cursor.nextElementSibling;
+      else this.node.insertBefore(entry.node, cursor);
+    }
+  }
+}
+
+function updateWire(layer, entry, { wire, geometry }, selected) {
+  if (!entry) {
+    const node = group(layer);
+    node.innerHTML = wireMarkup(wire, geometry.path, true);
+    entry = { node, path: geometry.path, color: wire.color, selected: false };
+  }
+  const [outline, line] = entry.node.children;
+  if (entry.path !== geometry.path) {
+    for (const path of entry.node.children) path.setAttribute('d', geometry.path);
+    entry.path = geometry.path;
+  }
+  if (entry.color !== wire.color) {
+    line.setAttribute('stroke', wire.color);
+    entry.color = wire.color;
+  }
+  if (entry.selected !== selected) {
+    outline.setAttribute('stroke', selected ? '#9cdcd0' : '#ffffff');
+    outline.setAttribute('stroke-width', selected ? 9 : 5.7);
+    entry.selected = selected;
+  }
+  return entry;
+}
+
+function updatePin(pin, connected) {
+  const dot = pin.lastElementChild;
+  dot.setAttribute('r', connected ? 3.3 : 2.55);
+  dot.setAttribute('fill', connected ? '#087a6f' : '#fffbeb');
+  dot.setAttribute('stroke', connected ? '#ffffff' : '#967543');
+}
+
+function updatePart(layer, entry, { part, connected }, selected, active) {
+  const { componentId, label, x, y, rotation } = part;
+  if (!entry || entry.componentId !== componentId || entry.label !== label) {
+    const node = entry?.node ?? group(layer);
+    const component = componentById.get(componentId);
+    node.innerHTML = partMarkup(part, component, connected, true);
+    const [body, caption] = node.children;
+    const pins = new Map([...body.children].slice(1).map(pin => [pin.dataset.pin, pin]));
+    entry = { node, component, componentId, label, body, caption, pins, connected, rotation, selected: false };
+  }
+  if (entry.x !== x || entry.y !== y) {
+    entry.node.setAttribute('transform', translation(x, y));
+    entry.x = x;
+    entry.y = y;
+  }
+  if (entry.rotation !== rotation) {
+    entry.body.setAttribute('transform', partRotation(part, entry.component));
+    entry.caption.setAttribute('transform', labelPosition(part, entry.component));
+    entry.rotation = rotation;
+  }
+  for (const id of entry.connected) if (!connected.has(id)) updatePin(entry.pins.get(id), false);
+  for (const id of connected) if (!entry.connected.has(id)) updatePin(entry.pins.get(id), true);
+  entry.connected = connected;
+  if (entry.active !== active) {
+    entry.pins.get(entry.active)?.classList.remove('is-active');
+    entry.pins.get(active)?.classList.add('is-active');
+    entry.active = active;
+  }
+  if (entry.selected !== selected) {
+    const outline = entry.body.firstElementChild.firstElementChild;
+    const [background, text] = entry.caption.children;
+    outline.setAttribute('stroke', selected ? '#62ac9f' : 'transparent');
+    background.setAttribute('fill', selected ? '#e6f5f1' : '#ffffff');
+    background.setAttribute('stroke', selected ? '#c4e3dc' : '#dce5e8');
+    text.setAttribute('fill', selected ? '#08675e' : '#24313d');
+    entry.selected = selected;
+  }
+  return entry;
+}
+
+function updateJunction(layer, entry, junction) {
+  const { id, x, y } = junction;
+  if (!entry) {
+    const node = group(layer);
+    node.setAttribute('class', 'canvas-junction');
+    node.dataset.junction = id;
+    node.setAttribute('role', 'button');
+    node.setAttribute('tabindex', '0');
+    node.setAttribute('aria-label', 'Wire junction');
+    node.innerHTML = `<circle cx="${x}" cy="${y}" r="10" fill="transparent"/>${junctionDot(junction)}`;
+    entry = { node, x, y };
+  } else if (entry.x !== x || entry.y !== y) {
+    for (const circle of entry.node.children) {
+      circle.setAttribute('cx', x);
+      circle.setAttribute('cy', y);
+    }
+    entry.x = x;
+    entry.y = y;
+  }
+  return entry;
 }
 
 export class DrawingCanvas {
@@ -130,24 +263,73 @@ export class DrawingCanvas {
     this.scale = 1;
     this.center = { x: 0, y: 0 };
     this.autoFit = true;
+    this.wires = new SceneLayer(scene);
+    this.branches = group(scene);
+    scene.append(this.branches);
+    this.parts = new SceneLayer(scene);
+    this.junctions = new SceneLayer(scene);
+    this.draftMarkup = '';
     new ResizeObserver(() => this.autoFit ? this.fit() : this.applyView()).observe(svg);
   }
 
   draw(project, selection, active) {
-    this.scene.innerHTML = drawingMarkup(project, { editing: true, selection, active });
+    if (this.geometryProject === project && this.selection === selection && this.active === active) return;
+    const previous = this.geometry;
+    if (this.geometryProject !== project) this.geometry = resolveDrawing(project, previous?.wires);
+    this.geometryProject = project;
+    this.selection = selection;
+    this.active = active;
+    const { wires, branches, parts, junctions } = this.geometry;
+    this.wires.update(wires, (data, entry) => updateWire(this.wires.node, entry, data,
+      selection?.type === 'wire' && selection.id === data.wire.id));
+    if (branches !== (previous?.branches ?? '')) this.branches.innerHTML = branches;
+    this.parts.update(parts, (data, entry) => updatePart(this.parts.node, entry, data,
+      selection?.type === 'part' && selection.id === data.part.id,
+      active?.partId === data.part.id ? active.pinId : undefined));
+    this.junctions.update(junctions, (data, entry) => updateJunction(this.junctions.node, entry, data));
   }
 
-  showDraft(project, pending, point, color, endpoint) {
-    if (!pending || !point) {
-      this.draft.innerHTML = '';
-      return;
+  position(endpoint) {
+    return this.geometry.position(endpoint);
+  }
+
+  nearestWire(ids, point) {
+    let best;
+    let distance = Infinity;
+    for (const id of ids) {
+      const entry = this.geometry.wires.get(id);
+      if (!entry) continue;
+      const hit = nearestSegment(entry.geometry.route, point);
+      if (hit && hit.distance < distance) {
+        best = id;
+        distance = hit.distance;
+      }
     }
-    const position = endpointPositions(project);
-    const start = position(pending.from);
-    const end = endpoint ? position(endpoint) : point;
-    const path = start.x === end.x && start.y === end.y ? '' : `<path d="${pathFrom(wireRoute(start, end, pending.points))}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>`;
-    const ring = ({ x, y }) => `<circle cx="${x}" cy="${y}" r="6.3" fill="#d7f4ed" stroke="#087a6f" stroke-width="1.5"/>`;
-    this.draft.innerHTML = path + (pending.from.partId ? '' : ring(start)) + (endpoint && !endpoint.partId ? ring(end) : '');
+    return best;
+  }
+
+  anchorWire(id, point, threshold) {
+    const entry = this.geometry.wires.get(id);
+    return entry ? wireAnchor(entry.wire, entry.geometry.route, point, threshold) : null;
+  }
+
+  showDraft(pending, point, color, endpoint) {
+    let markup = '';
+    if (pending && point) {
+      const start = this.position(pending.from);
+      const end = endpoint ? this.position(endpoint) : point;
+      if (start.x !== end.x || start.y !== end.y) {
+        const route = wireRoute(start, end, pending.points);
+        markup = `<path d="${pathFrom(route)}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>`;
+      }
+      const ring = ({ x, y }) => `<circle cx="${x}" cy="${y}" r="6.3" fill="#d7f4ed" stroke="#087a6f" stroke-width="1.5"/>`;
+      if (!pending.from.partId) markup += ring(start);
+      if (endpoint && !endpoint.partId) markup += ring(end);
+    }
+    if (this.draftMarkup !== markup) {
+      this.draft.innerHTML = markup;
+      this.draftMarkup = markup;
+    }
   }
 
   bounds() {
