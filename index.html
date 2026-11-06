@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WirePad is a browser-based wiring editor for documenting electronics projects.">
+  <meta name="theme-color" content="#fbfcfd">
+  <title>WirePad — Wiring editor</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="WirePad home">
+      <img src="./favicon.svg" alt="" width="32" height="32">
+      <span>WirePad</span>
+    </a>
+    <span class="top-divider"></span>
+    <span class="app-label">Wiring editor</span>
+    <div class="top-spacer"></div>
+    <span id="save-state" class="save-state"></span>
+    <button class="button compact" id="help" type="button" data-icon="help" aria-label="Help" title="Help"></button>
+    <details class="menu">
+      <summary class="button" data-icon="folder">Project <span data-icon="chevron"></span></summary>
+      <div class="menu-panel">
+        <button type="button" id="new-project" data-icon="plus">New project</button>
+        <button type="button" id="open-project" data-icon="folder">Open project file</button>
+        <button type="button" id="save-project" data-icon="save">Save project file</button>
+        <hr>
+        <button type="button" id="load-demo" data-icon="grid">Load example</button>
+      </div>
+    </details>
+    <details class="menu">
+      <summary class="button primary" data-icon="download">Export <span data-icon="chevron"></span></summary>
+      <div class="menu-panel">
+        <button type="button" data-export="png" data-icon="image">Download PNG</button>
+        <button type="button" data-export="svg" data-icon="file">Download SVG</button>
+        <button type="button" data-export="copy" data-icon="copy">Copy image</button>
+      </div>
+    </details>
+    <input type="file" id="project-file" accept=".json,application/json" hidden>
+  </header>
+
+  <div class="editor">
+    <aside class="library panel" id="library" aria-label="Component library">
+      <div class="panel-heading library-heading">
+        <div class="eyebrow"><span data-icon="library"></span> PARTS LIBRARY</div>
+        <h1>Components</h1>
+        <p>Click or drag a part onto the canvas.</p>
+      </div>
+      <div class="library-filters">
+        <label class="search" data-icon="search">
+          <input type="search" id="search" aria-label="Search components" placeholder="Search components…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <label class="category" data-icon="filter">
+          <select id="category" aria-label="Component category"></select>
+          <span data-icon="chevron"></span>
+        </label>
+      </div>
+      <div class="catalog-meta"><span>AVAILABLE PARTS</span><span id="part-count"></span></div>
+      <div id="catalog" class="catalog"></div>
+      <div class="library-footer" data-icon="box">WirePad component library</div>
+    </aside>
+
+    <main class="workspace" aria-label="Wiring workspace">
+      <div class="workspace-toolbar">
+        <button type="button" class="button compact mobile-panel" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-expanded="false"></button>
+        <div class="tool-group" role="group" aria-label="Canvas tools">
+          <button type="button" data-mode="select" data-icon="cursor" title="Select (V)" aria-pressed="true">Select</button>
+          <button type="button" data-mode="wire" data-icon="wire" title="Wire (W)" aria-pressed="false">Wire</button>
+          <button type="button" data-mode="pan" data-icon="hand" title="Pan (H or Space)" aria-pressed="false">Pan</button>
+        </div>
+        <span class="toolbar-divider"></span>
+        <div class="history" role="group" aria-label="History">
+          <button type="button" id="undo" class="button compact bare" data-icon="undo" title="Undo" aria-label="Undo" disabled></button>
+          <button type="button" id="redo" class="button compact bare" data-icon="redo" title="Redo" aria-label="Redo" disabled></button>
+        </div>
+        <div class="top-spacer"></div>
+        <button type="button" id="fit" class="button fit" data-icon="fit" title="Fit drawing (F)">Fit view</button>
+        <button type="button" class="button compact mobile-panel" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-expanded="false"></button>
+      </div>
+      <section class="board" id="board" aria-label="Diagram canvas">
+        <svg id="canvas" tabindex="0" xmlns="http://www.w3.org/2000/svg" aria-label="Wiring diagram. Use Tab to focus components and pins.">
+          <g id="scene"></g>
+          <g id="draft" pointer-events="none"></g>
+        </svg>
+        <div class="board-header">
+          <div class="eyebrow"><span class="board-dot"></span> WIRING WORKSPACE</div>
+          <label class="title-field" title="Rename project">
+            <input id="project-title" type="text" maxlength="100" aria-label="Project name" value="">
+            <span data-icon="edit"></span>
+          </label>
+        </div>
+        <div class="board-bottom">
+          <span id="canvas-hint" class="canvas-hint"></span>
+          <div class="zoom" role="group" aria-label="Zoom">
+            <button type="button" class="button compact bare" id="zoom-out" data-icon="minus" aria-label="Zoom out" title="Zoom out"></button>
+            <button type="button" class="button bare zoom-value" id="zoom-value" title="Actual size">100%</button>
+            <button type="button" class="button compact bare" id="zoom-in" data-icon="plus" aria-label="Zoom in" title="Zoom in"></button>
+          </div>
+        </div>
+        <div id="empty-board" class="empty-board" hidden>
+          <span data-icon="wire"></span>
+          <strong>Start a wiring diagram</strong>
+          <p>Add a component from the library, then connect its pins.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="inspector panel" id="inspector" aria-label="Inspector">
+      <div class="panel-heading inspector-heading">
+        <div class="eyebrow"><span data-icon="sliders"></span> DETAILS</div>
+        <h2>Inspector</h2>
+      </div>
+      <div id="inspection" class="inspection"></div>
+    </aside>
+  </div>
+
+  <footer class="statusbar">
+    <span id="editor-status"><span class="status-dot"></span> Ready</span>
+    <div class="top-spacer"></div>
+    <span id="project-count"></span>
+    <span class="status-separator"></span>
+    <span class="local-status" data-icon="shield">Local workspace</span>
+  </footer>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <dialog id="asset-dialog" class="dialog asset-dialog" aria-labelledby="asset-title">
+    <div class="dialog-title"><h2 id="asset-title"></h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close preview"></button></form></div>
+    <div id="asset-image" class="asset-image"></div>
+  </dialog>
+  <dialog id="help-dialog" class="dialog">
+    <div class="dialog-title"><h2>WirePad help</h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close"></button></form></div>
+    <p>Choose a part from the library and place it on the canvas. Click one pin, then another, to connect them. While wiring, click the canvas to add a bend.</p>
+    <p>Select a wire to set its color. Select a component to view its pins and download its KiCad assets. Export the drawing as a PNG or SVG, or save an editable project file.</p>
+    <dl class="shortcuts">
+      <dt>Select, wire, pan</dt><dd><kbd>V</kbd> <kbd>W</kbd> <kbd>H</kbd></dd>
+      <dt>Pan temporarily</dt><dd><kbd>Space</kbd></dd>
+      <dt>Fit view</dt><dd><kbd>F</kbd></dd>
+      <dt>Rotate selected component</dt><dd><kbd>R</kbd></dd>
+      <dt>Delete selection</dt><dd><kbd>Delete</kbd></dd>
+      <dt>Cancel wiring</dt><dd><kbd>Esc</kbd></dd>
+      <dt>Undo / redo</dt><dd><kbd>Ctrl/⌘ Z</kbd> / <kbd>Shift</kbd></dd>
+      <dt>Search library</dt><dd><kbd>/</kbd></dd>
+    </dl>
+  </dialog>
+  <dialog id="replace-dialog" class="dialog">
+    <div class="dialog-title"><h2>Replace the current project?</h2></div>
+    <p id="replace-description">The new project will replace the browser’s saved workspace. You can save the current project file first.</p>
+    <div class="dialog-actions">
+      <button type="button" class="button" id="backup-project" data-icon="save">Save current file</button>
+      <form method="dialog">
+        <button class="button" value="cancel">Cancel</button>
+        <button class="button primary" value="replace">Replace</button>
+      </form>
+    </div>
+  </dialog>
+</body>
+</html>

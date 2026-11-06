@@ -1,0 +1,169 @@
+const GRID = 2.54;
+const offBoard = "This footprint is a host-board termination for the cable. Verify the connector and wire order before fabrication.";
+const breakout = "Reference carrier pattern for the exposed connections. Verify pad positions and numbering against the exact breakout before fabrication.";
+
+const footprints = {
+  "esp32-s3": {
+    body: [25.4, 62.74], rows: 22.86, start: -26.67,
+    note: "ESP32-S3-DevKitC-1 v1.1 carrier pattern. The headers use 2.54 mm pitch and 22.86 mm row spacing. Verify board outline, antenna clearance, and the fitted revision before fabrication.",
+    color: "#23343b",
+    details: [
+      [0, -17, 17.8, 24.5, 2.4, "#a7b2bc"],
+      [0, -27, 17.8, 6.2, 0.6, "#23343b"],
+      [-5.8, 28, 7.4, 5.2, 2.4, "#9ca9b5"],
+      [5.8, 28, 7.4, 5.2, 2.4, "#9ca9b5"],
+    ],
+  },
+  "heltec-v4": {
+    body: [25.4, 51.69], rows: 22.86, start: -22.04,
+    note: "Heltec WiFi LoRa 32 V4.2 reference carrier. The main header rows use 2.54 mm pitch. Verify the auxiliary pads, mounting holes, and antenna clearance against the hardware revision.",
+    color: "#20373a",
+    details: [[0, -5, 14, 28, 4.2, "#192530"], [0, -5, 10, 22, 0.2, "#366475"], [0, 23, 8.7, 5, 2.6, "#a7b2bc"]],
+  },
+  max3485: { body: [24, 20], rows: 21, color: "#183d53", details: [[0, 0, 5, 6, 1.9, "#273041"]] },
+  sp3485: { body: [24, 20], rows: 21, color: "#183d53", details: [[0, 0, 5, 6, 1.9, "#273041"]] },
+  bme280: { body: [25.4, 17.8], edge: "horizontal", color: "#25476c", details: [[0, -1.6, 3, 3, 1.05, "#8b9ca5"]] },
+  ads1115: { body: [27.9, 18], rows: 15.24, edge: "two-horizontal", color: "#315f9e", details: [[0, 0, 3, 4.9, 1.15, "#273041"]] },
+  ina219: { body: [25.4, 22.9], rows: 17.78, color: "#315f9e", details: [[0, 0, 5, 6, 1.7, "#273041"]] },
+  ssd1306: { body: [27.5, 27.8], edge: "horizontal", color: "#254f70", details: [[0, 2, 25.5, 15.7, 2.15, "#172638"]] },
+  lm2596: { body: [43, 23], rows: 39, pitch: 5.08, size: 2.2, drill: 1.2, color: "#285fa1", details: [[0, 0, 12, 12, 5.6, "#273041"]] },
+  "rs485-soil": { body: [15.24, 7.6], pitch: 3.81, inline: true, drill: 1.2, size: 2.25, color: "#396c50", modelHeight: 7, note: offBoard },
+  battery: { body: [5.8, 4.5], pitch: 2, inline: true, color: "#d9dad4", modelHeight: 4.5, note: offBoard },
+  resistor: { body: [6.3, 2.5], pitch: 7.62, inline: true, modelHeight: 2.5, color: "#c9ac75", package: "DIN0207 axial, 7.62 mm lead pitch" },
+  capacitor: { body: [5, 2.5], pitch: 2.5, inline: true, modelHeight: 5, color: "#bf964c", package: "5 mm ceramic disc, 2.5 mm lead pitch" },
+  electrolytic: { body: [6.3, 6.3], pitch: 2.5, inline: true, modelHeight: 7.7, color: "#354b62", package: "6.3 mm radial electrolytic, 2.5 mm lead pitch" },
+  inductor: { body: [6.3, 3], pitch: 7.62, inline: true, modelHeight: 3, color: "#476457", package: "Axial inductor, 7.62 mm lead pitch" },
+  "ferrite-bead": { body: [5.8, 3.5], pitch: 7.62, inline: true, modelHeight: 3.5, color: "#303a42", package: "Axial ferrite bead, 7.62 mm lead pitch" },
+  diode: { body: [3.4, 1.75], pitch: 7.62, inline: true, modelHeight: 1.75, color: "#ad5f38", package: "DO-35 axial, 7.62 mm lead pitch" },
+  led: { body: [5.6, 5.6], pitch: 2.54, inline: true, modelHeight: 7.3, color: "#af434e", package: "5 mm through-hole LED, 2.54 mm lead pitch" },
+  npn: { body: [5.2, 4.2], pitch: 1.27, size: 1.12, drill: 0.65, inline: true, modelHeight: 5, color: "#2f3742", package: "TO-92 inline, 1.27 mm lead pitch" },
+  nmos: { body: [5.2, 4.2], pitch: 1.27, size: 1.12, drill: 0.65, inline: true, modelHeight: 5, color: "#2f3742", package: "TO-92 inline, 1.27 mm lead pitch" },
+  button: {
+    body: [6, 6], drill: 1.1, size: 1.8, modelHeight: 3.4, color: "#a8a9aa",
+    switch: true, package: "6 × 6 mm tact switch, 6.5 × 4.5 mm pad pattern",
+    details: [[0, 0, 3.2, 3.2, 1.1, "#334155"]],
+  },
+  "terminal-2": { body: [10.16, 8.5], pitch: 5.08, drill: 1.25, size: 2.7, inline: true, modelHeight: 8, color: "#367b58", package: "Two-position screw terminal, 5.08 mm pitch" },
+  "terminal-3": { body: [15.24, 8.5], pitch: 5.08, drill: 1.25, size: 2.7, inline: true, modelHeight: 8, color: "#367b58", package: "Three-position screw terminal, 5.08 mm pitch" },
+  "pin-header-4": { body: [10.16, 2.54], pitch: GRID, drill: 1, size: 1.7, inline: true, modelHeight: 2.5, color: "#273041", package: "Single-row pin header, 2.54 mm pitch" },
+  "jst-ph-2": { body: [5.9, 4.5], pitch: 2, drill: 0.75, inline: true, modelHeight: 5.9, color: "#d9dad4", package: "JST PH vertical through-hole header, 2 mm pitch" },
+};
+
+function padAt(pin, x, y, settings, square) {
+  return { ...pin, x, y, square, size: settings.size ?? 1.6, drill: settings.drill ?? 0.8 };
+}
+
+function rowPads(pins, settings, axis, across, start) {
+  const pitch = settings.pitch ?? GRID;
+  const origin = start ?? -(pins.length - 1) * pitch / 2;
+  return pins.map((pin, index) => {
+    const along = origin + index * pitch;
+    return axis === "x"
+      ? padAt(pin, along, across, settings, index === 0)
+      : padAt(pin, across, along, settings, index === 0);
+  });
+}
+
+function modulePads(component, pins, settings) {
+  const [width, height] = settings.body;
+  const sortByX = (a, b) => a.x - b.x;
+  if (settings.edge === "two-horizontal") {
+    const distance = settings.rows / 2;
+    const top = pins.filter((pin) => pin.y === 0).sort(sortByX);
+    const bottom = pins.filter((pin) => pin.y > 0).sort(sortByX);
+    return [...rowPads(top, settings, "x", -distance), ...rowPads(bottom, settings, "x", distance)];
+  }
+  if (settings.edge === "horizontal") {
+    const ordered = [...pins].sort((a, b) => Number(a.number) - Number(b.number));
+    return rowPads(ordered, settings, "x", component.id === "ssd1306" ? -height / 2 + 1.5 : height / 2 - 1.5);
+  }
+  const distance = (settings.rows ?? width - 3) / 2;
+  const left = pins.filter((pin) => pin.x <= component.width / 2).sort((a, b) => a.y - b.y);
+  const right = pins.filter((pin) => pin.x > component.width / 2).sort((a, b) => a.y - b.y);
+  return [
+    ...rowPads(left, settings, "y", -distance, settings.start),
+    ...rowPads(right, settings, "y", distance, settings.start),
+  ];
+}
+
+function heltecPads(component, pins, settings) {
+  const main = pins.filter((pin) => /^J[23][.:]/.test(pin.number));
+  if (main.length === 0) return modulePads(component, pins, settings);
+  const sorted = (header) => main.filter((pin) => pin.number.startsWith(header))
+    .sort((a, b) => Number(a.number.slice(3)) - Number(b.number.slice(3)));
+  const x = settings.rows / 2;
+  const start = settings.start;
+  const side = (header) => sorted(header)[0]?.x <= component.width / 2 ? -x : x;
+  const extra = pins.filter((pin) => !main.includes(pin));
+  return [
+    ...rowPads(sorted("J2"), settings, "y", side("J2"), start),
+    ...rowPads(sorted("J3"), settings, "y", side("J3"), start),
+    ...rowPads(extra.sort((a, b) => a.x - b.x), settings, "x", 23.68),
+  ];
+}
+
+function esp32Pads(component, pins, settings) {
+  const main = pins.filter((pin) => /^J[13][.:]/.test(pin.number));
+  if (main.length !== pins.length) return modulePads(component, pins, settings);
+  const sorted = (header) => main.filter((pin) => pin.number.startsWith(header))
+    .sort((a, b) => Number(a.number.slice(3)) - Number(b.number.slice(3)));
+  return [
+    ...rowPads(sorted("J1"), settings, "y", -settings.rows / 2, settings.start),
+    ...rowPads(sorted("J3"), settings, "y", settings.rows / 2, settings.start),
+  ];
+}
+
+export function footprintLayout(component) {
+  const settings = footprints[component.id] ?? {
+    body: [16, Math.max(8, component.pins.length * GRID + 3)], note: breakout,
+  };
+  const pins = component.pins.map((pin, index) => ({ ...pin, number: String(pin.number ?? index + 1) }));
+  let pads;
+  if (settings.switch && pins.length === 2) {
+    const [a, b] = pins;
+    pads = [
+      padAt(a, -3.25, -2.25, settings, true),
+      padAt(a, -3.25, 2.25, settings, false),
+      padAt(b, 3.25, -2.25, settings, false),
+      padAt(b, 3.25, 2.25, settings, false),
+    ];
+  } else if (settings.inline) {
+    const ordered = [...pins].sort((a, b) => Number(a.number) - Number(b.number));
+    pads = rowPads(ordered, settings, "x", 0);
+  } else if (component.id === "esp32-s3") {
+    pads = esp32Pads(component, pins, settings);
+  } else if (component.id === "heltec-v4") {
+    pads = heltecPads(component, pins, settings);
+  } else {
+    pads = modulePads(component, pins, settings);
+  }
+  const [width, height] = settings.body;
+  const halfWidth = Math.max(width / 2, ...pads.map((pad) => Math.abs(pad.x) + pad.size / 2));
+  const halfHeight = Math.max(height / 2, ...pads.map((pad) => Math.abs(pad.y) + pad.size / 2));
+  const note = settings.note ?? (settings.package
+    ? `${settings.package}. Verify the package dimensions and pin numbering for your specific part.`
+    : breakout);
+  return { ...settings, width, height, halfWidth, halfHeight, pads, note };
+}
+
+export function modelFor(component) {
+  const models = {
+    "heltec-v4": {
+      label: "Heltec V4 CAD downloads",
+      url: "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/3D/",
+    },
+    ads1115: {
+      label: "Adafruit ADS1115 models",
+      url: "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/1085%20ADS1115%20ADC",
+    },
+    ina219: {
+      label: "Adafruit INA219 models",
+      url: "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/904%20INA219%20Stemma",
+    },
+    diode: {
+      label: "Vishay DO-35 model",
+      url: "https://www.vishay.com/en/product/81857/tab/designtools-ppg/",
+    },
+  };
+  return models[component.id] ?? null;
+}
