@@ -1,11 +1,11 @@
 import { drawingMarkup } from './canvas.js';
 import { demoProject } from './demo.js';
-import { copyDrawing, createDrawingSVG, downloadDrawing, downloadProject } from './export.js';
+import { copyDrawing, createDrawingSVG, downloadBlob, downloadDrawing, downloadProject } from './export.js';
 import { DEFAULT_PROJECT_TITLE, newProject, parseProject, PROJECT_FILE_LIMIT } from './project.js';
 
 const element = id => document.getElementById(id);
 
-export function bindProjectControls({ editor, canvas, savedProject, notify, focusCanvas, canExport }) {
+export function bindProjectControls({ editor, canvas, savedProject, storage, notify, focusCanvas, canExport }) {
   const start = element('start-dialog');
   const importError = element('start-error');
   const replace = element('replace-dialog');
@@ -13,6 +13,13 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
   const copyButton = element('copy-image');
   const copyLabel = element('copy-image-label');
   const menus = [...document.querySelectorAll('.topbar .menu')];
+  const importButtons = [...document.querySelectorAll('[data-start="open"], #open-project')];
+  const importHeading = start.querySelector('[data-start="open"] strong');
+  const importStatus = element('project-import-status');
+  const startImportStatus = element('start-import-status');
+  const storageNotice = element('storage-notice');
+  const storageNoticeText = element('storage-notice-text');
+  const recoveryButtons = [element('download-recovery'), element('download-recovery-start')];
   let replacement;
   let importing;
   let copying = false;
@@ -28,6 +35,22 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
     copyButton.setAttribute('aria-busy', String(copying));
     copyButton.title = hasDrawing ? 'Copy the drawing as a PNG image' : 'Add a component before copying the drawing';
     copyLabel.textContent = copying ? 'Copying…' : 'Copy image';
+    const hasRecovery = storage.recovery !== null;
+    const storageWarning = storage.status !== 'empty' && storage.status !== 'saved';
+    storageNotice.hidden = !storageWarning && !hasRecovery;
+    storageNoticeText.textContent = storageWarning ? storage.message : 'Recovery data from an earlier workspace is available.';
+    for (const button of recoveryButtons) button.hidden = !hasRecovery;
+  }
+
+  function setImportBusy(busy) {
+    for (const button of importButtons) {
+      button.disabled = busy;
+      button.setAttribute('aria-busy', String(busy));
+    }
+    importHeading.textContent = busy ? 'Opening project…' : 'Import project';
+    importStatus.hidden = !busy;
+    startImportStatus.hidden = !busy;
+    fileInput.disabled = busy;
   }
 
   function useProject(next) {
@@ -39,6 +62,7 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
 
   function offerProject(next) {
     importing = null;
+    setImportBusy(false);
     if (!editor.hasDrawing && editor.project.title === DEFAULT_PROJECT_TITLE) {
       useProject(next);
       return;
@@ -49,7 +73,7 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
   }
 
   function chooseFile() {
-    importing = null;
+    if (importing) return;
     importError.hidden = true;
     fileInput.click();
   }
@@ -61,6 +85,12 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
     } catch (error) {
       notify(error.message);
     }
+  }
+
+  function downloadRecovery() {
+    if (storage.recovery === null) return;
+    downloadBlob(new Blob([storage.recovery], { type: 'application/json' }), 'wirepad-recovery.json');
+    notify('Original recovery data downloaded.');
   }
 
   async function exportDrawing(format) {
@@ -115,6 +145,7 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
   for (const button of document.querySelectorAll('[data-export]')) {
     button.addEventListener('click', () => exportDrawing(button.dataset.export));
   }
+  for (const button of recoveryButtons) button.addEventListener('click', downloadRecovery);
   for (const menu of menus) {
     menu.addEventListener('toggle', () => { if (menu.open) closeMenus(menu); });
     menu.querySelector('.menu-panel').addEventListener('click', event => {
@@ -127,6 +158,10 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
   document.addEventListener('pointerdown', event => closeMenus(event.target.closest('.menu')));
   start.addEventListener('close', () => {
     importError.hidden = true;
+    if (importing?.fromStartup) {
+      importing = null;
+      setImportBusy(false);
+    }
     focusCanvas();
   });
   replace.addEventListener('close', () => {
@@ -137,13 +172,19 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
   fileInput.addEventListener('change', async () => {
     const file = fileInput.files[0];
     fileInput.value = '';
-    if (!file) return;
-    importing = file;
+    if (!file || importing) return;
     const fromStartup = start.open;
-    const stillOpening = () => importing === file && (!fromStartup || start.open);
+    const token = { file, fromStartup };
+    importing = token;
+    setImportBusy(true);
+    const stillOpening = () => importing === token && (!fromStartup || start.open);
     try {
       if (file.size > PROJECT_FILE_LIMIT) throw new Error(`This project file exceeds ${PROJECT_FILE_LIMIT / 1024 ** 2} MB.`);
       const text = await file.text();
+      await new Promise(resolve => {
+        if (document.visibilityState === 'hidden') setTimeout(resolve, 0);
+        else requestAnimationFrame(() => setTimeout(resolve, 0));
+      });
       if (stillOpening()) offerProject(parseProject(text));
     } catch (error) {
       if (!stillOpening()) return;
@@ -152,7 +193,10 @@ export function bindProjectControls({ editor, canvas, savedProject, notify, focu
         importError.hidden = false;
       } else notify(error.message);
     } finally {
-      if (importing === file) importing = null;
+      if (importing === token) {
+        importing = null;
+        setImportBusy(false);
+      }
     }
   });
 

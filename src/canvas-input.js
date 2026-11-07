@@ -1,4 +1,5 @@
 import { updateItem } from './editor.js';
+import { nudgeTarget } from './nudge.js';
 import { clampPoint, moveWireBend, segmentDrag, slideSegment, wireRoute } from './routing.js';
 
 const targetSelector = '.canvas-pin, .canvas-junction, .wire-hit, .part-body';
@@ -36,11 +37,15 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
   let pinch;
   let multipleTouches = false;
   let wireTool;
+  let pendingNudge;
   const touches = new Map();
   const position = endpoint => canvas.position(endpoint);
   const planRoute = (from, to) => canvas.autoRoute(from, to);
   const editableWire = () => editor.mode === 'select' && !editor.pending ? editor.wire : null;
   function currentTool() {
+    if (pendingNudge && pendingNudge.before !== editor.project) {
+      wireTool = pendingNudge.target && { ...pendingNudge.target, project: editor.project };
+    }
     if (wireTool && (wireTool.project !== editor.project || wireTool.wireId !== editableWire()?.id)) wireTool = null;
     return wireTool;
   }
@@ -179,7 +184,8 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
       return;
     }
     clearWireTool();
-    if (wireId) editor.select('wire', wireId);
+    if (junction) editor.select('junction', junction.junctionId);
+    else if (wireId) editor.select('wire', wireId);
     else if (partId) editor.select('part', partId);
     else {
       editor.select(null);
@@ -409,8 +415,61 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     return hit;
   }
 
+  function movementTarget(hit) {
+    if (editor.mode !== 'select' || editor.pending) return null;
+    if (hit?.junction) return { kind: 'junction', id: hit.junction.junctionId };
+    if (hit?.partId && !hit.pin) return { kind: 'part', id: hit.partId };
+    const tool = hit?.handle ?? currentTool();
+    if (tool?.kind === 'bend' || tool?.kind === 'segment') return tool;
+    if (tool) return null;
+    const selection = editor.selection;
+    return selection && ['part', 'junction'].includes(selection.type) ? { kind: selection.type, id: selection.id } : null;
+  }
+
+  function focusMovementTarget(target) {
+    if (!target || !['bend', 'segment'].includes(target.kind)) return;
+    const index = target.kind === 'bend' ? 'bend-index' : 'segment-index';
+    const selector = `[data-wire-handle="${target.kind}"][data-handle-wire="${CSS.escape(target.wireId)}"][data-${index}="${target.index}"]`;
+    (svg.querySelector(selector) ?? svg).focus({ preventScroll: true });
+  }
+
+  function nudge(dx, dy, pixels = 8, target = movementTarget()) {
+    if (!target || gesture || multipleTouches || editor.mode !== 'select' || editor.pending) return false;
+    const step = Math.max(1, Math.round(pixels / canvas.scale));
+    const result = nudgeTarget(editor.project, target, dx * step, dy * step);
+    if (!result) return false;
+
+    const fromHandle = document.activeElement.closest(handleSelector);
+    const wire = target.kind === 'bend' || target.kind === 'segment';
+    const selection = { type: wire ? 'wire' : target.kind, id: wire ? target.wireId : target.id };
+    pendingNudge = wire ? { before: editor.project, target: result.target } : null;
+    const moved = editor.commit(result.project, { selection });
+    pendingNudge = null;
+    if (moved && fromHandle) {
+      if (result.target) focusMovementTarget(result.target);
+      else svg.focus({ preventScroll: true });
+    }
+    return moved;
+  }
+
   svg.addEventListener('keydown', event => {
+    if (event.isComposing) return;
     const hit = focusedHit(event.target);
+    const direction = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
+    if (direction && !event.altKey && !event.ctrlKey && !event.metaKey && !gesture && !multipleTouches) {
+      if (editor.mode === 'pan') {
+        event.preventDefault();
+        const distance = event.shiftKey ? 100 : 40;
+        canvas.pan(canvas.center, -direction[0] * distance, -direction[1] * distance);
+        return;
+      }
+      const target = !hit.pin && movementTarget(hit);
+      if (target) {
+        event.preventDefault();
+        nudge(...direction, event.shiftKey ? 10 : 1, target);
+        return;
+      }
+    }
     if (hit.handle && ['Delete', 'Backspace'].includes(event.key)) {
       event.preventDefault();
       if (hit.handle.kind === 'bend') removeBend(hit.handle);
@@ -453,12 +512,18 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
   }
 
   return {
-    renderDraft, chooseEndpoint, panWithSpace, clearWireTool, removeBend,
+    renderDraft, chooseEndpoint, panWithSpace, clearWireTool, removeBend, nudge,
     armBend() {
       const wire = editableWire();
       if (wire) setWireTool(currentTool()?.kind === 'add' ? null : { kind: 'add', wireId: wire.id });
     },
     get wireTool() { return currentTool(); },
+    get movable() {
+      const target = movementTarget();
+      if (!target || gesture || multipleTouches) return null;
+      const label = { part: 'component', junction: 'junction', bend: 'wire bend', segment: 'wire segment' }[target.kind];
+      return { kind: target.kind, label, axis: target.axis };
+    },
     get wireControls() {
       const wire = editableWire();
       if (!wire || holdingSpace) return null;

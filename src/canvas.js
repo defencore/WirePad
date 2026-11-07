@@ -347,7 +347,7 @@ function updatePart(layer, entry, { part, connected }, selected, active) {
   return entry;
 }
 
-function updateJunction(layer, entry, junction) {
+function updateJunction(layer, entry, junction, selected) {
   const { id, x, y } = junction;
   if (!entry) {
     const node = group(layer);
@@ -365,6 +365,16 @@ function updateJunction(layer, entry, junction) {
     }
     entry.x = x;
     entry.y = y;
+  }
+  if (entry.selected !== selected) {
+    const halo = entry.node.firstElementChild;
+    halo.setAttribute('fill', selected ? '#aeeadf' : 'transparent');
+    halo.setAttribute('fill-opacity', '.65');
+    halo.setAttribute('stroke', selected ? '#087a6f' : 'none');
+    halo.setAttribute('stroke-width', '2');
+    halo.setAttribute('vector-effect', 'non-scaling-stroke');
+    entry.node.setAttribute('aria-pressed', String(selected));
+    entry.selected = selected;
   }
   return entry;
 }
@@ -423,7 +433,8 @@ export class DrawingCanvas {
       this.parts.update(parts, (data, entry) => updatePart(this.parts.node, entry, data,
         selection?.type === 'part' && selection.id === data.part.id,
         active?.partId === data.part.id ? active.pinId : undefined));
-      this.junctions.update(junctions, (data, entry) => updateJunction(this.junctions.node, entry, data));
+      this.junctions.update(junctions, (data, entry) => updateJunction(this.junctions.node, entry, data,
+        selection?.type === 'junction' && selection.id === data.id));
     }
     const traceKey = trace?.wireId ? `wire/${trace.wireId}` : trace && endpointKey(trace);
     if (this.traceKey !== traceKey || (trace && projectChanged)) {

@@ -2,7 +2,6 @@ import { componentById } from "./catalog.js";
 import { pinById } from "./component-pins.js";
 
 const VERSION = 1;
-const STORAGE_KEY = "wirepad.project";
 const MAX_PARTS = 500;
 const MAX_WIRES = 3000;
 const MAX_JUNCTIONS = 3000;
@@ -231,17 +230,4 @@ function encodeProject(project) {
 
 export function serializeProject(project) {
   return `${encodeProject(project)}\n`;
-}
-
-export function loadProject() {
-  try {
-    const saved = globalThis.localStorage.getItem(STORAGE_KEY);
-    return saved === null ? null : parseProject(saved);
-  } catch {
-    return null;
-  }
-}
-
-export function saveProject(project) {
-  globalThis.localStorage.setItem(STORAGE_KEY, encodeProject(project));
 }

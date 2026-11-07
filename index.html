@@ -11,6 +11,7 @@
   <script type="module" src="./src/main.js"></script>
 </head>
 <body>
+  <a class="skip-link" id="skip-to-canvas" href="#canvas">Skip to canvas</a>
   <header class="topbar">
     <a class="brand" href="./" aria-label="WirePad home">
       <img src="./favicon.svg" alt="" width="32" height="32">
@@ -19,7 +20,7 @@
     <span class="top-divider"></span>
     <span class="app-label">Wiring editor</span>
     <div class="top-spacer"></div>
-    <span id="save-state" class="save-state"></span>
+    <span id="save-state" class="save-state" role="status"></span>
     <button class="button compact" id="help" type="button" data-icon="help" aria-label="Help" title="Help"></button>
     <details class="menu project-menu">
       <summary class="button" data-icon="folder">Project <span data-icon="chevron"></span></summary>
@@ -27,6 +28,7 @@
         <button type="button" id="new-project" data-icon="plus">New project</button>
         <button type="button" id="open-project" data-icon="folder">Open project file</button>
         <button type="button" id="save-project" data-icon="save">Save project file</button>
+        <button type="button" id="download-recovery" data-icon="download" hidden>Download recovery data</button>
         <hr>
         <button type="button" id="load-demo" data-icon="grid">Open demo</button>
       </div>
@@ -83,6 +85,10 @@
         <button type="button" class="button compact mobile-panel" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-controls="inspector" aria-expanded="false"><span class="mobile-label">Inspect</span></button>
       </div>
       <section class="board" id="board" aria-label="Diagram canvas">
+        <div id="workspace-warning" class="workspace-warning" role="alert" hidden>
+          <span id="workspace-warning-text"></span>
+          <button type="button" id="download-unsaved" class="button" data-icon="save">Save project file</button>
+        </div>
         <svg id="canvas" tabindex="0" xmlns="http://www.w3.org/2000/svg" aria-label="Wiring diagram. Use Tab to focus components and pins.">
           <g id="scene"></g>
           <g id="draft" pointer-events="none"></g>
@@ -101,9 +107,17 @@
               <button type="button" id="cancel-wire" class="button canvas-action" data-icon="close" hidden><span id="cancel-wire-label">Cancel wire</span></button>
               <button type="button" id="add-bend" class="button canvas-action" data-icon="plus" aria-pressed="false" hidden>Add bend</button>
               <button type="button" id="remove-bend" class="button canvas-action" data-icon="minus" hidden>Remove bend</button>
+              <button type="button" id="toggle-move" class="button canvas-action" data-icon="hand" aria-controls="move-controls" aria-expanded="false" hidden>Move</button>
               <button type="button" id="branch-wire" class="button canvas-action" data-icon="wire" aria-label="Add a branch from the selected wire" hidden>Add branch</button>
               <button type="button" id="inspect-wire" class="button canvas-action" data-icon="sliders" aria-label="Show wire details" hidden>Details</button>
               <button type="button" id="clear-trace" class="button canvas-action" data-icon="close" hidden>Clear trace</button>
+            </div>
+            <div id="move-controls" class="move-controls" role="group" aria-label="Move selection" hidden>
+              <span class="move-controls-label">Move</span>
+              <button type="button" class="button" data-nudge-x="-1" data-nudge-y="0" aria-label="Move left" title="Move left">←</button>
+              <button type="button" class="button" data-nudge-x="0" data-nudge-y="-1" aria-label="Move up" title="Move up">↑</button>
+              <button type="button" class="button" data-nudge-x="0" data-nudge-y="1" aria-label="Move down" title="Move down">↓</button>
+              <button type="button" class="button" data-nudge-x="1" data-nudge-y="0" aria-label="Move right" title="Move right">→</button>
             </div>
           </div>
           <div class="zoom" role="group" aria-label="Zoom">
@@ -142,6 +156,7 @@
     <span class="local-status" data-icon="shield">Local workspace</span>
   </footer>
   <div class="toast" id="toast" role="status" hidden></div>
+  <div class="toast import-status" id="project-import-status" role="status" hidden>Opening project…</div>
 
   <dialog id="start-dialog" class="dialog start-dialog" aria-labelledby="start-title" aria-describedby="start-description">
     <div class="start-heading">
@@ -161,7 +176,12 @@
         <span><strong>Open demo</strong><small>Explore a connected ESP32 sensor node.</small></span>
       </button>
     </div>
+    <p id="start-import-status" role="status" hidden>Opening project…</p>
     <p id="start-error" class="start-error" role="alert" hidden></p>
+    <div id="storage-notice" class="storage-notice" role="status" hidden>
+      <p id="storage-notice-text"></p>
+      <button type="button" id="download-recovery-start" class="button" data-icon="download" hidden>Download recovery data</button>
+    </div>
     <div class="start-footer">
       <button type="button" class="button bare" data-start="blank" data-icon="plus">Start a blank project</button>
     </div>
@@ -191,6 +211,7 @@
     <p>To connect two wires, choose <strong>Wire</strong>, then tap the first wire and the second wire. You can also select a wire and choose <strong>Add branch</strong> to connect it to another wire or pin. Filled dots mark joined points.</p>
     <p>In <strong>Select</strong>, choose a wire to show its blue handles. Drag a segment handle to shift that part of the wire. Drag an end handle to a new pin, junction, or wire, or tap the handle and then choose a destination.</p>
     <p>Choose <strong>Add bend</strong> and pick a point on the canvas. Drag a bend to move it, or select it and choose <strong>Remove bend</strong>. In the Inspector, use <strong>Auto route</strong> to redraw the wire or change its color.</p>
+    <p>Use <strong>Move</strong> and its arrow buttons to reposition a selected component, wire segment, or bend. Arrow keys move a focused item. Hold <strong>Shift</strong> for larger steps.</p>
     <p>Use <strong>Trace</strong> and tap a pin, wire, or junction to highlight every connection it reaches.</p>
     <p>On touch screens, drag empty canvas with one finger to pan. Pinch with two fingers to zoom.</p>
     <p>Select a component to view its pinout and KiCad assets in the Inspector. Use <strong>Copy image</strong> to paste the diagram into another app, or use <strong>Export</strong> to download it.</p>
@@ -198,6 +219,7 @@
       <dt>Select, wire, trace, pan</dt><dd><kbd>V</kbd> <kbd>W</kbd> <kbd>T</kbd> <kbd>H</kbd></dd>
       <dt>Pan temporarily</dt><dd><kbd>Space</kbd></dd>
       <dt>Fit view</dt><dd><kbd>F</kbd></dd>
+      <dt>Switch panel</dt><dd><kbd>F6</kbd> / <kbd>Shift F6</kbd></dd>
       <dt>Rotate selected component</dt><dd><kbd>R</kbd></dd>
       <dt>Delete selection</dt><dd><kbd>Delete</kbd></dd>
       <dt>Cancel wiring</dt><dd><kbd>Esc</kbd></dd>
@@ -205,6 +227,8 @@
       <dt>Save project file</dt><dd><kbd>Ctrl/⌘ S</kbd></dd>
       <dt>Search library</dt><dd><kbd>/</kbd></dd>
     </dl>
+    <label class="shortcut-preference"><input id="single-key-shortcuts" type="checkbox" checked aria-describedby="help-shortcuts-description"> <span>Enable single-key canvas shortcuts</span></label>
+    <p id="help-shortcuts-description" class="preference-note">Turn these off when using voice input.</p>
   </dialog>
   <dialog id="replace-dialog" class="dialog" aria-labelledby="replace-title" aria-describedby="replace-description">
     <div class="dialog-title"><h2 id="replace-title">Replace the current project?</h2></div>
