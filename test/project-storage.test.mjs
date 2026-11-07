@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { newProject, serializeProject } from '../src/project.js';
-import { ProjectStorage } from '../src/project-storage.js';
+import { newProject, serializeProject } from '../src/model/project.js';
+import { ProjectStorage } from '../src/app/project-storage.js';
 
 const primary = 'wirepad.project';
 const recovery = 'wirepad.project.recovery';

@@ -40,18 +40,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Prepare the static site
-        run: |
-          site="$RUNNER_TEMP/wirepad-pages"
-          assets="assets/$GITHUB_SHA"
-          mkdir -p "$site/$assets"
-          # Keep the original asset URLs available for cached, unversioned pages.
-          cp -R style.css favicon.svg src "$site/"
-          cp -R style.css favicon.svg src "$site/$assets/"
-          sed \
-            -e "s|\./style\.css|./$assets/style.css|g" \
-            -e "s|\./favicon\.svg|./$assets/favicon.svg|g" \
-            -e "s|\./src/main\.js|./$assets/src/main.js|g" \
-            index.html > "$site/index.html"
+        run: node scripts/build-site.mjs "$RUNNER_TEMP/wirepad-pages" "$GITHUB_SHA"
 
       - name: Upload the site
         uses: actions/upload-pages-artifact@v4

@@ -1,0 +1,767 @@
+import svg from "../../artwork/ready-adafruit-more/adafruit-itsy-m4-3800.js";
+
+// Exact manufacturer CAD contacts and provenance; the illustration is a separate generated asset.
+const board = {
+  "key": "itsy-m4",
+  "id": "adafruit-itsy-m4-3800",
+  "name": "Adafruit ItsyBitsy M4 Express",
+  "shortName": "ItsyBitsy M4 Express",
+  "manufacturer": "Adafruit",
+  "source": "https://github.com/adafruit/Adafruit-ItsyBitsy-M4-Express-PCB",
+  "cad": {
+    "label": "Adafruit manufacturer Eagle CAD / schematics",
+    "url": "https://github.com/adafruit/Adafruit-ItsyBitsy-M4-Express-PCB"
+  },
+  "subtitle": "ATSAMD51G19 / 120 MHz / 2 MB flash",
+  "revision": "published Eagle board",
+  "description": "Adafruit product #3800; published Eagle board. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+  "tags": [
+    "adafruit",
+    "itsybitsy m4 express",
+    "circuitpython",
+    "microcontroller"
+  ],
+  "color": "#292e30",
+  "body": [
+    35.56,
+    17.78
+  ],
+  "view": [
+    35.56,
+    17.78
+  ],
+  "contacts": [
+    {
+      "id": "jp2-1",
+      "number": "JP2.1",
+      "label": "BAT",
+      "type": "passive",
+      "description": "BAT unregulated external power input; ItsyBitsy does not include LiPo charging. Follow the board supply range. CAD net: VBAT. published Eagle board; component-side contact.",
+      "x": 1.27,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 1.27,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-2",
+      "number": "JP2.2",
+      "label": "GND",
+      "type": "power_in",
+      "description": "Common ground / supply return. CAD net: GND. published Eagle board; component-side contact.",
+      "x": 3.81,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 3.81,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-3",
+      "number": "JP2.3",
+      "label": "USB",
+      "type": "passive",
+      "description": "USB VBUS 5 V rail. Do not back-feed an attached host. CAD net: VBUS. published Eagle board; component-side contact.",
+      "x": 6.35,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 6.35,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-4",
+      "number": "JP2.4",
+      "label": "D13",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D13. published Eagle board; component-side contact.",
+      "x": 8.89,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 8.89,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-5",
+      "number": "JP2.5",
+      "label": "D12",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D12. published Eagle board; component-side contact.",
+      "x": 11.43,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 11.43,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-6",
+      "number": "JP2.6",
+      "label": "D11",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D11. published Eagle board; component-side contact.",
+      "x": 13.97,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 13.97,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-7",
+      "number": "JP2.7",
+      "label": "D10",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D10. published Eagle board; component-side contact.",
+      "x": 16.51,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 16.51,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-8",
+      "number": "JP2.8",
+      "label": "D9",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D9. published Eagle board; component-side contact.",
+      "x": 19.05,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 19.05,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-9",
+      "number": "JP2.9",
+      "label": "D7",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D7. published Eagle board; component-side contact.",
+      "x": 21.59,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 21.59,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-10",
+      "number": "JP2.10",
+      "label": "D5",
+      "type": "output",
+      "description": "Level-shifted 5 V digital output (unidirectional), supplied from VHI. CAD net: D5_5V. published Eagle board; component-side contact.",
+      "x": 24.13,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 24.13,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-11",
+      "number": "JP2.11",
+      "label": "SCL",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: SCL. published Eagle board; component-side contact.",
+      "x": 26.67,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 26.67,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-12",
+      "number": "JP2.12",
+      "label": "SDA",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: SDA. published Eagle board; component-side contact.",
+      "x": 29.21,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 29.21,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-13",
+      "number": "JP2.13",
+      "label": "TX",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: TX_D1. published Eagle board; component-side contact.",
+      "x": 31.75,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 31.75,
+      "vy": 1.27
+    },
+    {
+      "id": "jp2-14",
+      "number": "JP2.14",
+      "label": "RX",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: RX_D0. published Eagle board; component-side contact.",
+      "x": 34.29,
+      "y": 1.27,
+      "back": false,
+      "connector": "JP2",
+      "vx": 34.29,
+      "vy": 1.27
+    },
+    {
+      "id": "jp4-1",
+      "number": "JP4.1",
+      "label": "D2",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D2. published Eagle board; component-side contact.",
+      "x": 34.29,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 34.29,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-2",
+      "number": "JP4.2",
+      "label": "MISO",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: MISO. published Eagle board; component-side contact.",
+      "x": 31.75,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 31.75,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-3",
+      "number": "JP4.3",
+      "label": "MOSI",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: MOSI. published Eagle board; component-side contact.",
+      "x": 29.21,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 29.21,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-4",
+      "number": "JP4.4",
+      "label": "SCK",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: SCK. published Eagle board; component-side contact.",
+      "x": 26.67,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 26.67,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-5",
+      "number": "JP4.5",
+      "label": "A5",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: A5. published Eagle board; component-side contact.",
+      "x": 24.13,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 24.13,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-6",
+      "number": "JP4.6",
+      "label": "A4",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: A4. published Eagle board; component-side contact.",
+      "x": 21.59,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 21.59,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-7",
+      "number": "JP4.7",
+      "label": "A3",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: A3. published Eagle board; component-side contact.",
+      "x": 19.05,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 19.05,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-8",
+      "number": "JP4.8",
+      "label": "A2",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: A2. published Eagle board; component-side contact.",
+      "x": 16.51,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 16.51,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-9",
+      "number": "JP4.9",
+      "label": "A1",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: A1. published Eagle board; component-side contact.",
+      "x": 13.97,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 13.97,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-10",
+      "number": "JP4.10",
+      "label": "A0",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: A0. published Eagle board; component-side contact.",
+      "x": 11.43,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 11.43,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-11",
+      "number": "JP4.11",
+      "label": "VHI",
+      "type": "power_out",
+      "description": "Higher USB/battery supply through the board power path; this is not a 3.3 V GPIO. CAD net: VHI. published Eagle board; component-side contact.",
+      "x": 8.89,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 8.89,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-12",
+      "number": "JP4.12",
+      "label": "AREF",
+      "type": "input",
+      "description": "3.3 V control/debug/reference input; follow the manufacturer circuit. CAD net: AREF. published Eagle board; component-side contact.",
+      "x": 6.35,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 6.35,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-13",
+      "number": "JP4.13",
+      "label": "3V3",
+      "type": "power_out",
+      "description": "Regulated 3.3 V supply output. CAD net: +3V3. published Eagle board; component-side contact.",
+      "x": 3.81,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 3.81,
+      "vy": 16.51
+    },
+    {
+      "id": "jp4-14",
+      "number": "JP4.14",
+      "label": "RST",
+      "type": "input",
+      "description": "3.3 V active-low reset input. CAD net: !RESET. published Eagle board; component-side contact.",
+      "x": 1.27,
+      "y": 16.51,
+      "back": false,
+      "connector": "JP4",
+      "vx": 1.27,
+      "vy": 16.51
+    },
+    {
+      "id": "jp1-1",
+      "number": "JP1.1",
+      "label": "EN",
+      "type": "input",
+      "description": "3.3 V control/debug/reference input; follow the manufacturer circuit. CAD net: EN. published Eagle board; component-side contact.",
+      "x": 34.29,
+      "y": 13.97,
+      "back": false,
+      "connector": "JP1",
+      "vx": 34.29,
+      "vy": 13.97
+    },
+    {
+      "id": "jp1-2",
+      "number": "JP1.2",
+      "label": "SWDIO",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: SWDIO. published Eagle board; component-side contact.",
+      "x": 34.29,
+      "y": 11.43,
+      "back": false,
+      "connector": "JP1",
+      "vx": 34.29,
+      "vy": 11.43
+    },
+    {
+      "id": "jp1-3",
+      "number": "JP1.3",
+      "label": "SWCLK",
+      "type": "input",
+      "description": "3.3 V control/debug/reference input; follow the manufacturer circuit. CAD net: SWCLK. published Eagle board; component-side contact.",
+      "x": 34.29,
+      "y": 8.89,
+      "back": false,
+      "connector": "JP1",
+      "vx": 34.29,
+      "vy": 8.89
+    },
+    {
+      "id": "jp1-4",
+      "number": "JP1.4",
+      "label": "D3",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D3. published Eagle board; component-side contact.",
+      "x": 34.29,
+      "y": 6.35,
+      "back": false,
+      "connector": "JP1",
+      "vx": 34.29,
+      "vy": 6.35
+    },
+    {
+      "id": "jp1-5",
+      "number": "JP1.5",
+      "label": "D4",
+      "type": "bidirectional",
+      "description": "3.3 V GPIO; select the peripheral/analog function documented in the manufacturer pinout. GPIO is not specified for 5 V input. CAD net: D4. published Eagle board; component-side contact.",
+      "x": 34.29,
+      "y": 3.81,
+      "back": false,
+      "connector": "JP1",
+      "vx": 34.29,
+      "vy": 3.81
+    }
+  ],
+  "pads": [
+    {
+      "id": "jp2-1",
+      "x": -16.51,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-2",
+      "x": -13.97,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-3",
+      "x": -11.43,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-4",
+      "x": -8.89,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-5",
+      "x": -6.35,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-6",
+      "x": -3.81,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-7",
+      "x": -1.27,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-8",
+      "x": 1.27,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-9",
+      "x": 3.81,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-10",
+      "x": 6.35,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-11",
+      "x": 8.89,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-12",
+      "x": 11.43,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-13",
+      "x": 13.97,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp2-14",
+      "x": 16.51,
+      "y": -7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-1",
+      "x": 16.51,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-2",
+      "x": 13.97,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-3",
+      "x": 11.43,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-4",
+      "x": 8.89,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-5",
+      "x": 6.35,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-6",
+      "x": 3.81,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-7",
+      "x": 1.27,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-8",
+      "x": -1.27,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-9",
+      "x": -3.81,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-10",
+      "x": -6.35,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-11",
+      "x": -8.89,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-12",
+      "x": -11.43,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-13",
+      "x": -13.97,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp4-14",
+      "x": -16.51,
+      "y": 7.62,
+      "size": 1.6764,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp1-1",
+      "x": 16.51,
+      "y": 5.08,
+      "size": 1.778,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp1-2",
+      "x": 16.51,
+      "y": 2.54,
+      "size": 1.778,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp1-3",
+      "x": 16.51,
+      "y": 0.0,
+      "size": 1.778,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp1-4",
+      "x": 16.51,
+      "y": -2.54,
+      "size": 1.778,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    },
+    {
+      "id": "jp1-5",
+      "x": 16.51,
+      "y": -5.08,
+      "size": 1.778,
+      "drill": 1.0,
+      "smd": false,
+      "shape": "circle"
+    }
+  ],
+  "hasBack": false,
+  "printedPinLabels": false
+};
+
+export default { ...board, svg };

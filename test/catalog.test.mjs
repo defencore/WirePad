@@ -1,10 +1,10 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { test } from 'node:test';
 
-import { componentArt, componentById, components } from "../src/catalog.js";
-import { footprintLayout } from "../src/footprints.js";
-import { kicadFootprint, kicadSymbol } from "../src/kicad.js";
-import { parseProject } from "../src/project.js";
+import { componentArt, componentById, components } from '../src/catalog/index.js';
+import { footprintLayout } from '../src/assets/footprint-layout.js';
+import { kicadFootprint, kicadModel, kicadSymbol } from '../src/assets/kicad.js';
+import { parseProject } from '../src/model/project.js';
 
 test("each library component maps its canvas contacts to KiCad pads", () => {
   assert.equal(componentById.size, components.length);
@@ -16,18 +16,64 @@ test("each library component maps its canvas contacts to KiCad pads", () => {
     assert.equal(new Set(pins.map(pin => `${pin.x},${pin.y}`)).size, pins.length, id);
     for (const pin of pins) {
       assert.ok(pin.x >= 0 && pin.x <= width && pin.y >= 0 && pin.y <= height, `${id}/${pin.id}`);
-      assert.ok(pin.x === 0 || pin.x === width || pin.y === 0 || pin.y === height, `${id}/${pin.id}`);
+      assert.ok(pin.surface || pin.x === 0 || pin.x === width || pin.y === 0 || pin.y === height, `${id}/${pin.id}`);
     }
 
     const { pads } = footprintLayout(component);
     assert.deepEqual(new Map(pads.map(pad => [pad.id, pad.number])), terminals, id);
     for (const pad of pads) {
+      assert.equal(pad.number, terminals.get(pad.id), `${id}/${pad.id}`);
       assert.ok(Number.isFinite(pad.x) && Number.isFinite(pad.y), `${id}/${pad.id}`);
       assert.ok(pad.width > 0 && pad.height > 0, `${id}/${pad.id}`);
       assert.ok(pad.smd ? pad.drill === null : pad.drill > 0, `${id}/${pad.id}`);
     }
+    const symbol = kicadSymbol(component);
+    const footprint = kicadFootprint(component);
+    const numbers = [...symbol.matchAll(/\(number "([^"]+)"/g)].map(([, number]) => number);
+    const padNumbers = [...footprint.matchAll(/^\s*\(pad "([^"]+)"/gm)].map(([, number]) => number);
+    assert.deepEqual(numbers.sort(), [...terminals.values()].sort(), id);
+    assert.deepEqual(padNumbers, pads.map(pad => pad.number), id);
+    assert.ok(symbol.includes(`(property "Footprint" "WirePad:${id}"`), id);
+    assert.ok(footprint.includes(`(model "\${KIPRJMOD}/WirePad.3dshapes/${id}.wrl"`), id);
+    const model = kicadModel(component);
+    assert.match(model, /^#VRML V2\.0 utf8\n/, id);
+    assert.match(model, /\bShape\s*\{/, id);
     assert.match(componentArt(component), /^<svg /, id);
-    assert.equal([...kicadSymbol(component).matchAll(/^\s*\(pin /gm)].length, pins.length, id);
+    assert.match(componentArt(component, { labels: false }), /^<svg /, id);
+  }
+});
+
+test("carrier footprints use the published header positions", () => {
+  const padPositions = (id, number) => footprintLayout(componentById.get(id)).pads
+    .filter(pad => pad.number === number).map(({ x, y }) => [x, y]);
+
+  assert.deepEqual(padPositions("esp32-s3", "J1.1"), [[-11.43, -29.97]]);
+  assert.deepEqual(padPositions("esp32-s3", "J3.1"), [[11.43, -29.97]]);
+  assert.deepEqual(padPositions("bme280", "1"), [[-7.62, 6.35]]);
+  assert.deepEqual(padPositions("ads1115", "1"), [[-6.35, 6.35]]);
+  assert.deepEqual(padPositions("ads1115", "7"), [[-6.35, -6.35]]);
+  const ina219 = componentById.get("ina219");
+  assert.equal(ina219.pins.find(pin => pin.id === "vin-plus").number, "6");
+  assert.equal(ina219.pins.find(pin => pin.id === "vin-minus").number, "5");
+  assert.deepEqual(padPositions("ina219", "5").map(([, y]) => y), [7.62, -6.35]);
+  assert.deepEqual(padPositions("ina219", "6").map(([, y]) => y), [7.62, -6.35]);
+});
+
+test("Raspberry Pi GPIO and Pololu UART carriers keep their component-side pin order", () => {
+  const pi = componentById.get("raspberry-pi-5");
+  const piPads = footprintLayout(pi).pads;
+  assert.equal(piPads.length, 40);
+  assert.deepEqual(piPads.filter(pad => ["1", "2", "40"].includes(pad.number)).map(({ label, x, y }) => [label, x, y]), [
+    ["3V3", -34.13, -23.23], ["5V", -34.13, -25.77], ["GPIO21", 14.13, -25.77],
+  ]);
+
+  const adapter = componentById.get("pololu-cp2102n-usb-uart");
+  const serialPads = footprintLayout(adapter).pads;
+  const endHeader = serialPads.filter(pad => pad.y === 10.16).sort((a, b) => a.x - b.x);
+  assert.deepEqual(endHeader.map(pad => pad.id), ["gnd", "cts", "vbus", "tx", "rx", "rts"]);
+  for (const id of ["cts", "vbus", "tx", "rx"]) {
+    const terminal = adapter.pins.find(pin => pin.id === id);
+    assert.deepEqual(serialPads.filter(pad => pad.id === id).map(pad => pad.number), [terminal.number, terminal.number]);
   }
 });
 

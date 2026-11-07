@@ -1,0 +1,935 @@
+{
+  "checked": "2026-11-07",
+  "baseline": 444,
+  "added": 58,
+  "total": 502,
+  "contacts": 2300,
+  "unchangedExistingAnchors": 444,
+  "families": [
+    {
+      "id": "espressif-more",
+      "count": 7
+    },
+    {
+      "id": "adafruit-more",
+      "count": 9
+    },
+    {
+      "id": "arduino-more",
+      "count": 5
+    },
+    {
+      "id": "sipeed-maix",
+      "count": 7
+    },
+    {
+      "id": "lilygo-wireless",
+      "count": 7
+    },
+    {
+      "id": "friendlyelec-more",
+      "count": 6
+    },
+    {
+      "id": "bananapi-more",
+      "count": 5
+    },
+    {
+      "id": "radxa-more",
+      "count": 5
+    },
+    {
+      "id": "nxp-more",
+      "count": 2
+    },
+    {
+      "id": "waveshare-more",
+      "count": 5
+    }
+  ],
+  "entries": [
+    {
+      "id": "esp32-devkitc-v4-wroom-32e",
+      "name": "ESP32-DevKitC V4",
+      "manufacturer": "Espressif Systems",
+      "revision": "V4 / Wi-Fi + BLE",
+      "contacts": 38,
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+      "description": "WROOM-32E PCB-antenna assembly. GPIO6–11 are reserved for the module flash. GPIO34–39 are input-only. GPIO and reset use 3.3 V logic. Component-side view, antenna at the top and USB at the bottom. Contact anchors coincide with the header holes.",
+      "cad": "https://dl.espressif.com/dl/schematics/esp32_devkitc_v4_dimensions.dxf",
+      "footprintNote": "Reference carrier based on the linked Espressif mechanical drawing; 25.4 mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance. Use the vendor CAD for manufacturing."
+    },
+    {
+      "id": "esp32-c3-devkitc-02",
+      "name": "ESP32-C3-DevKitC-02",
+      "manufacturer": "Espressif Systems",
+      "revision": "V1.1 / Wi-Fi + BLE",
+      "contacts": 30,
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkitc-02/user_guide.html",
+      "description": "WROOM-02 PCB-antenna assembly with 4 MB flash, Micro-B USB-UART bridge and GPIO8 RGB LED. GPIO and reset use 3.3 V logic. Component-side view, antenna at the top and USB at the bottom. Contact anchors coincide with the header holes.",
+      "cad": "https://dl.espressif.com/dl/schematics/DXF_ESP32-C3-DevKitC-02_V1_1_20210121AA.dxf",
+      "footprintNote": "Reference carrier based on the linked Espressif mechanical drawing; 22.86 mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance. Use the vendor CAD for manufacturing."
+    },
+    {
+      "id": "esp32-c6-devkitm-1",
+      "name": "ESP32-C6-DevKitM-1",
+      "manufacturer": "Espressif Systems",
+      "revision": "V1 / Wi-Fi 6 + 802.15.4",
+      "contacts": 32,
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitm-1/user_guide.html",
+      "description": "MINI-1-N4 PCB-antenna assembly with 4 MB flash, two USB-C ports and GPIO8 RGB LED. GPIO0/1 routes depend on the optional 32 kHz oscillator population. GPIO and reset use 3.3 V logic. Component-side view, antenna at the top and USB at the bottom. Contact anchors coincide with the header holes.",
+      "cad": "https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.dxf",
+      "footprintNote": "Reference carrier based on the linked Espressif mechanical drawing; 22.86 mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance. Auxiliary J5 coordinates are approximate. Use the vendor CAD for manufacturing."
+    },
+    {
+      "id": "esp32-s2-saola-1-v1-2",
+      "name": "ESP32-S2-Saola-1",
+      "manufacturer": "Espressif Systems",
+      "revision": "V1.2 / 4 MB flash + 2 MB PSRAM",
+      "contacts": 42,
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-saola-1/user_guide_v1.2.html",
+      "description": "V1.2 WROVER assembly with 4 MB flash and 2 MB PSRAM. GPIO18 drives the RGB LED. J3.15/16/17 follow the schematic and physical drawing, correcting duplicated terminal numbers in the HTML table. GPIO and reset use 3.3 V logic. Component-side view, antenna at the top and USB at the bottom. Contact anchors coincide with the header holes.",
+      "cad": "https://dl.espressif.com/dl/schematics/ESP32-S2-Saola-1_V1.2_Dimensions.pdf",
+      "footprintNote": "Reference carrier based on the linked Espressif mechanical drawing; 25.4 mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance. Use the vendor CAD for manufacturing."
+    },
+    {
+      "id": "esp32-s2-devkitm-1",
+      "name": "ESP32-S2-DevKitM-1",
+      "manufacturer": "Espressif Systems",
+      "revision": "V1 / Wi-Fi + native USB",
+      "contacts": 42,
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-devkitm-1/user_guide.html",
+      "description": "V1 MINI-1 PCB-antenna assembly. GPIO18 drives the RGB LED. Micro-B uses the UART bridge; GPIO19/20 expose native USB. GPIO46 is input-only. GPIO and reset use 3.3 V logic. Component-side view, antenna at the top and USB at the bottom. Contact anchors coincide with the header holes.",
+      "cad": "https://dl.espressif.com/dl/schematics/ESP32-S2-DevKitM-1_V1_Dimensions.pdf",
+      "footprintNote": "Reference carrier based on the linked Espressif mechanical drawing; 22.86 mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance. Use the vendor CAD for manufacturing."
+    },
+    {
+      "id": "esp32-c5-devkitc-1-v1-2",
+      "name": "ESP32-C5-DevKitC-1",
+      "manufacturer": "Espressif Systems",
+      "revision": "V1.2 / dual-band Wi-Fi 6",
+      "contacts": 34,
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html",
+      "description": "V1.2 N8R8 assembly with 8 MB flash and 8 MB PSRAM, DC-DC supply and GPIO27 RGB LED. J3.6 is reserved for PSRAM, not available GPIO15. GPIO and reset use 3.3 V logic. Component-side view, antenna at the top and USB at the bottom. Contact anchors coincide with the header holes.",
+      "cad": "https://dl.espressif.com/dl/schematics/Dimension_esp32-c5-devkitc-1_v1.2_20250509.dxf",
+      "footprintNote": "Reference carrier based on the linked Espressif mechanical drawing; 22.86 mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance. Auxiliary J5 coordinates are approximate. Use the vendor CAD for manufacturing."
+    },
+    {
+      "id": "esp32-c61-devkitc-1-v2",
+      "name": "ESP32-C61-DevKitC-1",
+      "manufacturer": "Espressif Systems",
+      "revision": "V2.0 / Wi-Fi 6 + BLE",
+      "contacts": 34,
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c61/esp32-c61-devkitc-1/user_guide.html",
+      "description": "V2.0 N8R2 assembly with 8 MB flash and 2 MB PSRAM. GPIO8 drives the RGB LED. J1.11 is reserved for PSRAM, not available GPIO14. GPIO and reset use 3.3 V logic. Component-side view, antenna at the top and USB at the bottom. Contact anchors coincide with the header holes.",
+      "cad": "https://dl.espressif.com/dl/schematics/ESP32-C61-DevKitC-1-dimensions_v2.0.dxf",
+      "footprintNote": "Reference carrier based on the linked Espressif mechanical drawing; 25.4 mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance. Auxiliary J5 coordinates are approximate. Use the vendor CAD for manufacturing."
+    },
+    {
+      "id": "adafruit-feather-m0-basic-2772",
+      "name": "Adafruit Feather M0 Basic Proto",
+      "manufacturer": "Adafruit",
+      "revision": "ATSAMD21G18 / 48 MHz / proto area",
+      "contacts": 32,
+      "source": "https://github.com/adafruit/Adafruit-Feather-M0-Basic-Proto-PCB",
+      "description": "Adafruit product #2772; Rev C. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-Feather-M0-Basic-Proto-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-feather-m4-3857",
+      "name": "Adafruit Feather M4 Express",
+      "manufacturer": "Adafruit",
+      "revision": "ATSAMD51J19 / 120 MHz / 2 MB flash",
+      "contacts": 32,
+      "source": "https://github.com/adafruit/Adafruit-Feather-M4-Express-PCB",
+      "description": "Adafruit product #3857; published Eagle board. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-Feather-M4-Express-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-feather-esp32-v2-5400",
+      "name": "Adafruit ESP32 Feather V2",
+      "manufacturer": "Adafruit",
+      "revision": "ESP32-PICO-MINI-02 / 8 MB flash / 2 MB PSRAM",
+      "contacts": 34,
+      "source": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+      "description": "Adafruit product #5400; Feather V2. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-feather-rp2350-6000",
+      "name": "Adafruit Feather RP2350 with HSTX",
+      "manufacturer": "Adafruit",
+      "revision": "RP2350A / 8 MB flash / HSTX FPC",
+      "contacts": 62,
+      "source": "https://github.com/adafruit/Adafruit-Feather-RP2350-PCB",
+      "description": "Adafruit product #6000; published Eagle board; PSRAM is an option. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-Feather-RP2350-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-qtpy-samd21-4600",
+      "name": "Adafruit QT Py SAMD21",
+      "manufacturer": "Adafruit",
+      "revision": "ATSAMD21E18 / USB-C / STEMMA QT",
+      "contacts": 22,
+      "source": "https://github.com/adafruit/Adafruit-QT-Py-PCB",
+      "description": "Adafruit product #4600; published Eagle board. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-QT-Py-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-itsy-m4-3800",
+      "name": "Adafruit ItsyBitsy M4 Express",
+      "manufacturer": "Adafruit",
+      "revision": "ATSAMD51G19 / 120 MHz / 2 MB flash",
+      "contacts": 33,
+      "source": "https://github.com/adafruit/Adafruit-ItsyBitsy-M4-Express-PCB",
+      "description": "Adafruit product #3800; published Eagle board. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-ItsyBitsy-M4-Express-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-itsy-m0-3727",
+      "name": "Adafruit ItsyBitsy M0 Express",
+      "manufacturer": "Adafruit",
+      "revision": "ATSAMD21G18 / 48 MHz / 2 MB flash",
+      "contacts": 35,
+      "source": "https://github.com/adafruit/Adafruit-ItsyBitsy-M0-PCB",
+      "description": "Adafruit product #3727; published Eagle board. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-ItsyBitsy-M0-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-feather-f405-4382",
+      "name": "Adafruit Feather STM32F405 Express",
+      "manufacturer": "Adafruit",
+      "revision": "STM32F405 / 168 MHz / SDIO / USB-C",
+      "contacts": 47,
+      "source": "https://github.com/adafruit/Adafruit-Feather-STM32F405-Express-PCB",
+      "description": "Adafruit product #4382; published Eagle board. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-Feather-STM32F405-Express-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "adafruit-feather-esp32s2-5000",
+      "name": "Adafruit Feather ESP32-S2",
+      "manufacturer": "Adafruit",
+      "revision": "ESP32-S2 / 4 MB flash / 2 MB PSRAM",
+      "contacts": 35,
+      "source": "https://github.com/adafruit/Adafruit-Feather-ESP32-S2-PCB",
+      "description": "Adafruit product #5000; Rev C. Physical headers, battery/STEMMA/debug contacts and exposed documented test pads are represented. USB, microSD and RF are complete cable/card interfaces. Unassigned prototyping holes are illustrated; they are not claimed as numbered manufacturer connectors.",
+      "cad": "https://github.com/adafruit/Adafruit-Feather-ESP32-S2-PCB",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "arduino-mkr-wan-1300",
+      "name": "Arduino MKR WAN 1300",
+      "manufacturer": "Arduino",
+      "revision": "ABX00017 / SAMD21 / 3.3 V GPIO",
+      "contacts": 45,
+      "source": "https://docs.arduino.cc/hardware/mkr-wan-1300/",
+      "description": "ABX00017, manufacturer Eagle V1.0. MKR expansion rows, SWD pad group, battery and any fitted ESLOV contacts follow this exact board CAD. Radio/SIM/USB ports are complete cable/card interfaces. Two AA/AAA cells, maximum 3.3 V battery input; this version has no LiPo charging.",
+      "cad": "https://docs.arduino.cc/static/fccaf5f4a3388a3c68ec709017e404e6/ABX00017-cad-files.zip",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "arduino-mkr-wan-1310",
+      "name": "Arduino MKR WAN 1310",
+      "manufacturer": "Arduino",
+      "revision": "ABX00029 / SAMD21 / 3.3 V GPIO",
+      "contacts": 41,
+      "source": "https://docs.arduino.cc/hardware/mkr-wan-1310/",
+      "description": "ABX00029, manufacturer Eagle V3.0. MKR expansion rows, SWD pad group, battery and any fitted ESLOV contacts follow this exact board CAD. Radio/SIM/USB ports are complete cable/card interfaces. Single-cell 3.7 V LiPo battery/charger connection; use the board-specific minimum battery capacity in Arduino documentation.",
+      "cad": "https://docs.arduino.cc/static/15f456e5f8dae930df2fb11d4b812b49/ABX00029-cad-files.zip",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "arduino-mkr-gsm-1400",
+      "name": "Arduino MKR GSM 1400",
+      "manufacturer": "Arduino",
+      "revision": "ABX00018 / SAMD21 / 3.3 V GPIO",
+      "contacts": 41,
+      "source": "https://docs.arduino.cc/hardware/mkr-gsm-1400/",
+      "description": "ABX00018, manufacturer Eagle V2.3. MKR expansion rows, SWD pad group, battery and any fitted ESLOV contacts follow this exact board CAD. Radio/SIM/USB ports are complete cable/card interfaces. Single-cell 3.7 V LiPo battery/charger connection; use the board-specific minimum battery capacity in Arduino documentation.",
+      "cad": "https://docs.arduino.cc/static/183422719404d26bb7aa7cc5979d3e99/ABX00018-cad-files.zip",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "arduino-mkr-nb-1500",
+      "name": "Arduino MKR NB 1500",
+      "manufacturer": "Arduino",
+      "revision": "ABX00019 / SAMD21 / 3.3 V GPIO",
+      "contacts": 44,
+      "source": "https://docs.arduino.cc/hardware/mkr-nb-1500/",
+      "description": "ABX00019, manufacturer Eagle V3.0. MKR expansion rows, SWD pad group, battery and any fitted ESLOV contacts follow this exact board CAD. Radio/SIM/USB ports are complete cable/card interfaces. Single-cell 3.7 V LiPo battery/charger connection; use the board-specific minimum battery capacity in Arduino documentation.",
+      "cad": "https://docs.arduino.cc/static/805ad064db23d06963136e4af3ea39a7/ABX00019-cad-files.zip",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "arduino-mkr-fox-1200",
+      "name": "Arduino MKR FOX 1200",
+      "manufacturer": "Arduino",
+      "revision": "ABX00014 / SAMD21 / 3.3 V GPIO",
+      "contacts": 38,
+      "source": "https://docs.arduino.cc/hardware/mkr-fox-1200/",
+      "description": "ABX00014, manufacturer Eagle V2.0. MKR expansion rows, SWD pad group, battery and any fitted ESLOV contacts follow this exact board CAD. Radio/SIM/USB ports are complete cable/card interfaces. Two AA/AAA cells, maximum 3.3 V battery input; this version has no LiPo charging.",
+      "cad": "https://docs.arduino.cc/static/bfecdb2c864160c665289b9f20b233dd/ABX00014-cad-files.zip",
+      "footprintNote": "Reference contact carrier using the exact published board CAD pad centers, drill sizes and contact order. The illustration separately mirrors underside contacts. Connector solder lands, castellated repeats and debug pads retain their manufacturer identifiers; this is not a complete board reproduction or production connector/socket land pattern. Review the linked original manufacturer CAD, fitted revision, mating side and clearances before fabrication."
+    },
+    {
+      "id": "sipeed-maix-bit-v2-0",
+      "name": "Sipeed Maix Bit V2.0 (MEMS microphone)",
+      "manufacturer": "Sipeed",
+      "revision": "K210 / 2020-01-18 / USB-C",
+      "contacts": 36,
+      "source": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maix-Bit/Maix-Bit_V2.0_with_MEMS_microphone",
+      "description": "Component-side view, USB-C at the left. All 36 user through-holes are shown with original J13/J14 schematic numbers. Positions 10/11 are the central mounting annulus on each schematic row, not two extra header holes; they are excluded. Camera/LCD FPCs and the microSD socket are illustrated cable/card ports, outside this wire-contact scope. Reset is a 1.8 V-domain signal; GPIO0–35 use the configured 3.3 V banks.",
+      "cad": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maix-Bit/Maix-Bit_V2.0_with_MEMS_microphone/MAIX%20Bit%20V2.0.step",
+      "footprintNote": "Reference off-board cable-termination carrier for Sipeed Maix Bit V2.0 (MEMS microphone). One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "sipeed-maixduino-2832-v1-5",
+      "name": "Sipeed Maixduino 2832 V1.5",
+      "manufacturer": "Sipeed",
+      "revision": "K210 + ESP32 / schematic V1.5",
+      "contacts": 34,
+      "source": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maixduino/Maixduino_2832",
+      "description": "Rear silkscreen-side view with USB-C and DC jack at the bottom, matching the official pin-assignment drawing. All 32 Arduino-style header contacts plus the two differential speaker terminals are exposed. The analog header goes to ESP32; digital headers go to K210 and are 3.3 V. V1.5 P6.2 is NC even though the older drawing prints 3V3 there. Camera/LCD FPCs and microSD are illustrated as fitted cable/card ports; their fine contacts are outside the jumper-wire scope. The speaker is a bridge output: neither terminal is ground.",
+      "cad": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maixduino/Maixduino_2832/MaixDuino-2832-3D.stp",
+      "footprintNote": "Reference off-board cable-termination carrier for Sipeed Maixduino 2832 V1.5. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "sipeed-maix-m1s-module",
+      "name": "Sipeed Maix M1s Module",
+      "manufacturer": "Sipeed",
+      "revision": "BL808 / 31 × 18 mm / 66 castellations",
+      "contacts": 66,
+      "source": "https://wiki.sipeed.com/hardware/en/maix/m1s/m1s_module.html",
+      "description": "Shield-side view, PCB antenna at the top. All 66 castellated contacts use the official standalone-module references P2/P3/P4, rather than the different Dock module-symbol reference names. Bank supplies VDDIO1, VDDIO3/UHS and VDDIO4 must be provided separately in addition to 3.3 V. GPIO-bank voltage depends on those supplies; the 3.3 V Dock defaults are not an intrinsic module setting. Reference carrier only; use the official 1 mm-pitch module drawing for a mating footprint.",
+      "cad": "https://dl.sipeed.com/shareURL/MAIX/M1s/M1s/5_3D_file",
+      "footprintNote": "Reference off-board cable-termination carrier for Sipeed Maix M1s Module. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "sipeed-maix-m1s-dock-3272",
+      "name": "Sipeed Maix M1s Dock 3272",
+      "manufacturer": "Sipeed",
+      "revision": "BL808 / Dock schematic V1.0",
+      "contacts": 36,
+      "source": "https://wiki.sipeed.com/hardware/en/maix/m1s/m1s_dock.html",
+      "description": "Module-shield side with both USB-C sockets at the bottom, matching the official pin map. All 32 2.54 mm header contacts and the four P7 UART socket contacts are shown. GPIO banks are 3.3 V with the factory R10/R16/R33 links; alternative 1.8 V bank configurations require modifying those links. P7 is shown at its socket mouth, ordered IO26, IO27, GND, 5 V left to right. Camera/LCD FPC and microSD contacts are outside the jumper-wire scope.",
+      "cad": "https://dl.sipeed.com/shareURL/MAIX/M1s/M1s_Dock/5_3D_file",
+      "footprintNote": "Reference off-board cable-termination carrier for Sipeed Maix M1s Dock 3272. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "sipeed-maix-m0sense-30215",
+      "name": "Sipeed Maix M0sense 30215",
+      "manufacturer": "Sipeed",
+      "revision": "BL702 / QMI8658A / 30215 V1",
+      "contacts": 16,
+      "source": "https://wiki.sipeed.com/hardware/en/maixzero/sense/maix_zero_sense.html",
+      "description": "USB-C component-side view. All 16 edge contacts are located directly on the castellated/through-hole pads; J2 is the right physical edge and J3 the left, as in the manufacturer iBOM. Fine LCD FPC contacts on the reverse are outside the jumper-wire scope. BOOT is IO2. The blue/green/red LED shares IO23/24/25 with the LCD SPI interface. VSYS is the USB/system supply rail, not 3.3 V.",
+      "cad": "https://dl.sipeed.com/shareURL/Maix-Zero/M0sense/5_3D_file",
+      "footprintNote": "Reference off-board cable-termination carrier for Sipeed Maix M0sense 30215. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "sipeed-maix-ii-dock-3072",
+      "name": "Sipeed Maix II Dock 3072",
+      "manufacturer": "Sipeed",
+      "revision": "Allwinner V831 / 3072 rev0.01",
+      "contacts": 20,
+      "source": "https://wiki.sipeed.com/hardware/en/maixII/M2/resources.html",
+      "description": "Display-side view with two USB-C sockets at the top. All 20 P5/P1 expansion contacts are exposed; physical numbers follow the 2021-03-30 schematic. The ADC0 contact is a dedicated analog input, not a 5 V GPIO; consult the V831 analog limits before use. Camera/LCD/NGFF, audio and microSD fitted ports are illustrated outside this expansion-header wire scope. PH12/PH11 I²C is shared with the onboard MSA301 and has 1.5 kΩ pull-ups to 3.3 V.",
+      "cad": "https://dl.sipeed.com/shareURL/MaixII/MaixII-Dock/HDK/Sipeed_MaixII_Dock_V831/MaixII_Dock_V831_v3072",
+      "footprintNote": "Reference off-board cable-termination carrier for Sipeed Maix II Dock 3072. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "sipeed-maixcam-pro-60174",
+      "name": "Sipeed MaixCAM Pro 60174",
+      "manufacturer": "Sipeed",
+      "revision": "SG2002 / 60174 / 2024-11-15",
+      "contacts": 26,
+      "source": "https://wiki.sipeed.com/hardware/en/maixcam/maixcam_pro.html",
+      "description": "Camera-side view, matching the manufacturer connector pin map. All 20 PMOD/servo socket contacts and the six external 1.25 mm extension contacts are shown. H2 carries fused VSYS, not 3.3 V; H3 is supplied from 3.3 V. The GPIO paths include 100 Ω series protection. H3.9 is A15/I²C5 SDA and H3.11 A27/I²C5 SCL according to the 60174 schematic; the marketing drawing swaps those two I²C captions. Use GPIO names to identify the physical contacts. The assembled camera, display, battery and internal CH32 programming pads are outside this external expansion scope.",
+      "cad": "https://dl.sipeed.com/shareURL/MaixCAM/MaixCAM_Pro/05_3D_file",
+      "footprintNote": "Reference off-board cable-termination carrier for Sipeed MaixCAM Pro 60174. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "lilygo-t-beam-v1-2-sx1276",
+      "name": "LILYGO T-Beam V1.2 SX1276",
+      "manufacturer": "LILYGO",
+      "revision": "ESP32 / AXP2101 / NEO-6M / SX1276",
+      "contacts": 28,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/LilyGo_TBeam_V1.2-lastest.pdf",
+      "description": "ESP32 component-side view, antenna at the top and NEO-6M at the bottom; the separate rear view shows the 18650 holder terminals. All 26 U12/U14 header contacts and two battery terminals are represented. This is the AXP2101 V1.2 revision; older AXP192 V1.1 power-rail assumptions do not apply. U14.7/11 share legacy net VCC_2_5V, linked to the 3.3 V board rail by R54; retain the factory 3.3 V PMIC setting. GPIO32/33 appear twice and share the LoRa DIO2/DIO1 paths through 22 Ω resistors. RF sockets, USB and GNSS antenna are illustrated fitted cable ports outside the jumper-wire scope.",
+      "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/LilyGo_TBeam_V1.2-lastest.pdf",
+      "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Beam V1.2 SX1276. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "lilygo-t-beam-s3-supreme-v3-1",
+      "name": "LILYGO T-Beam S3 Supreme V3.1",
+      "manufacturer": "LILYGO",
+      "revision": "ESP32-S3 Core / SX1262 / MAX-M10S",
+      "contacts": 32,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T-Beam-S3-Supreme/T-Beam-S3-Supreme-V3.1.pdf",
+      "description": "Component-side assembly with the OLED at the left, matching the manufacturer photo; lower inset is the rear battery/UART side. All 26 PN1/PM1 contacts, the four CNC1 UART contacts and two rear battery terminals are shown. PM1/PN1 physical numbers run top to bottom in this view. PN1.5 is ALDO1 with the fitted R24=0 Ω/R25=NC in the V3.1 schematic, although the older marketing drawing calls it ALDO2. DC4/DC5/BLDO2/ALDO1 are programmable PMIC outputs: configure and verify their voltage before use. The Core M.2 edge connector and fitted RF/display/card ports are outside this assembled-board jumper-wire scope.",
+      "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/dimensions/T-BEAM-SUPREME-V3.0.DXF",
+      "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Beam S3 Supreme V3.1. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "lilygo-t3-lora32-v1-6-1-sx1276",
+      "name": "LILYGO T3 LoRa32 V1.6.1 SX1276",
+      "manufacturer": "LILYGO",
+      "revision": "ESP32-PICO-D4 / 20210104 / SX1276",
+      "contacts": 28,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T3_V1.6.1.pdf",
+      "description": "Radio/component-side view with USB at the top. All 26 main-header contacts and the two fitted battery-socket contacts are represented. JP1/JP2 numbering follows the exact schematic; the right-hand photo row is JP1 and the left-hand row JP2. LoRa1/LoRa2 on the marketing drawing are GPIO33/32 through 22 Ω. The OLED and microSD are fitted ports on the opposite side; the two extra battery solder lands are outside this socket/header scope. Marketing also calls this family LoRa32 V2.1_1.6; it is not a separate electrical variant here.",
+      "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T3_V1.6.1.pdf",
+      "footprintNote": "Reference off-board cable-termination carrier for LILYGO T3 LoRa32 V1.6.1 SX1276. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "lilygo-t3-s3-v1-3-sx1262",
+      "name": "LILYGO T3-S3 V1.3 SX1262",
+      "manufacturer": "LILYGO",
+      "revision": "ESP32-S3FH4R2 / SX1262 / PCB 20250110",
+      "contacts": 40,
+      "source": "https://wiki.lilygo.cc/products/t3-series/t3-s3-v1.3/",
+      "description": "Radio/component-side view of the official 20250110 V1.3 pinout photo, USB and both JST1.0 auxiliary sockets at the bottom. All 28 main-header contacts, eight auxiliary socket contacts, two battery contacts and two solar socket contacts are shown. Main-header terminal numbers use the actual printed pad names prefixed JP1/JP2, since the older schematic's GPIO8/12 order differs from this production photo; two right-side grounds are keyed GND1/GND2. GPIO10/21 at P3 remain tied to the radio TX/RX control until the two marked zero-ohm links are removed. Solar input is 4.5–5.6 V in the hardware guide. OLED and microSD fitted ports on the reverse are outside this wire-contact scope.",
+      "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/dimensions/T3S3%20V1.3.dxf",
+      "footprintNote": "Reference off-board cable-termination carrier for LILYGO T3-S3 V1.3 SX1262. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "lilygo-t-echo-v1-0",
+      "name": "LILYGO T-Echo V1.0",
+      "manufacturer": "LILYGO",
+      "revision": "nRF52840 / SX1262 / L76K / 2021-03-26",
+      "contacts": 6,
+      "source": "https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/schematic/T-Echo_Schematic.pdf",
+      "description": "Component-side view with USB-C and the battery socket at the right. The four SWD contacts and two battery contacts are the six wiring contacts in this entry; the device has no general-purpose GPIO expansion header. Display FPCs, RF/NFC sockets and the touch pad are shown as fitted cable/control ports. SWD pin1 is the board's switched nRF supply/reference, not a 5 V input. SWD pad geometry is representative, based on the manufacturer photo and electrical schematic; no official numbered pad-layout drawing is published. Verify the VDD/GND reference against the exact board before attaching a debug probe.",
+      "cad": "https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/dimensions/t-echo_3d.stl",
+      "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Echo V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "lilygo-t-sim7000g-20200415",
+      "name": "LILYGO T-SIM7000G 20200415",
+      "manufacturer": "LILYGO",
+      "revision": "ESP32-WROVER / SIM7000G / PCB 2020-04-15",
+      "contacts": 36,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-SIM7000G/blob/master/schematic/SIM7000G_20200415.pdf",
+      "description": "ESP32 component-side view matching the official Historical/SIM7000G_20200415 pinout photo; a separate rear view shows the 18650 holder contacts. All 32 main-header contacts, two battery terminals and both solar socket contacts are represented. Main-header terminal numbers use the actual printed pad names prefixed U5/U6; two right-side grounds are keyed GND1/GND2. This avoids assigning speculative sequence numbers where the old schematic and actual photo disagree on GPIO25/26 order. Solar input is 4.4–6 V. Modem UART GPIO26/27 and PWRKEY GPIO4 are shared nets. RF, SIM and card contacts are outside this header/power scope.",
+      "cad": "https://github.com/Xinyuan-LilyGO/LilyGO-T-SIM7000G/blob/master/3D_file",
+      "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-SIM7000G 20200415. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "lilygo-t-a7670x-v1-4",
+      "name": "LILYGO T-A7670X V1.4 (ESP32)",
+      "manufacturer": "LILYGO",
+      "revision": "ESP32-WROVER / A7670 cellular carrier / 2024-05-23",
+      "contacts": 32,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-A7670X/blob/main/schematic/esp32/T-A7670X-V1.4.pdf",
+      "description": "ESP32 component-side view, rotated so the ESP32 antenna is at the top and modem at the bottom. All 32 PY/PX header contacts are shown. The rear 18650 holder and solar DC socket are drawn as fitted power ports outside this main-header scope; their exact mating geometry is not substituted with loose pads. Select an A7670 regional modem assembly using its fitted label; the ESP32 carrier pinout is common. GPIO25/26/27/33/4/5 are shared modem control/UART lines. GPIO35 and GPIO36 also serve the battery/solar monitor paths. This entry follows the V1.4 schematic, not the older V1.0 marketing photo.",
+      "cad": "https://github.com/Xinyuan-LilyGO/LilyGO-T-A7670X/blob/main/dimensions/esp32/T-A7670X-Board-3D.stp",
+      "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-A7670X V1.4 (ESP32). One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+    },
+    {
+      "id": "friendlyelec-nanopi-r2s",
+      "name": "FriendlyElec NanoPi R2S",
+      "manufacturer": "FriendlyElec",
+      "revision": "RK3328 / rev v1.1 /2009",
+      "contacts": 15,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R2S",
+      "documentation": [
+        "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R2S",
+        "https://wiki.friendlyelec.com/wiki/images/0/0f/NanoPi-R2S-V1.1-2009-Schematic.pdf"
+      ],
+      "description": "Board revision v1.1 /2009. GPIO1 ten-contact header, serial console and two-contact fan socket. USB-C board revision is selected; some unchanged schematic sheets retain 1912 labels. Ethernet and USB socket cable contacts are outside this entry. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://wiki.friendlyelec.com/wiki/images/0/0f/NanoPi-R2S-V1.1-2009-Schematic.pdf",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi R2S, revision v1.1 /2009. Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "friendlyelec-nanopi-r4s",
+      "name": "FriendlyElec NanoPi R4S",
+      "manufacturer": "FriendlyElec",
+      "revision": "RK3399 / rev 2008 (4GB PCB)",
+      "contacts": 21,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R4S",
+      "documentation": [
+        "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R4S",
+        "https://wiki.friendlyelec.com/wiki/images/c/c2/NanoPi-R4S-4GB-2008-Schematic.pdf"
+      ],
+      "description": "Board revision 2008 (4GB PCB). Ten-contact SPI/I2C/GPIO, four USB2 header contacts, debug UART, controlled fan and RTC battery. GPIO and console logic are 3.0 V, as shown by this exact schematic; the 3.3 V header rail is separate. The 4GB PCB is illustrated; RAM-only variants are not separate catalog cards. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://wiki.friendlyelec.com/wiki/images/1/18/NanoPi_R4S_4GB_2008_dxf.zip",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi R4S, revision 2008 (4GB PCB). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "friendlyelec-nanopi-r5s",
+      "name": "FriendlyElec NanoPi R5S",
+      "manufacturer": "FriendlyElec",
+      "revision": "RK3568B2 / rev 2204",
+      "contacts": 35,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R5S",
+      "documentation": [
+        "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R5S",
+        "https://wiki.friendlyelec.com/wiki/images/0/0f/NanoPi_R5S_2204_SCH.PDF"
+      ],
+      "description": "Board revision 2204. Twelve-contact GPIO FPC, sixteen-contact SDIO/I2S header, debug UART, fan and RTC. The SDIO/I2S signals are 1.8 V; the GPIO FPC is 3.3 V. Both small header pad locations and CON9 pin1 side were checked against the 2204 DXF. R5S LTS 2308 is a separate revision, not silently aliased. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://wiki.friendlyelec.com/wiki/images/a/a6/NanoPi_R5S_2204_DXF.zip",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi R5S, revision 2204. Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "friendlyelec-nanopi-r6s",
+      "name": "FriendlyElec NanoPi R6S",
+      "manufacturer": "FriendlyElec",
+      "revision": "RK3588S / rev 2208",
+      "contacts": 17,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R6S",
+      "documentation": [
+        "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R6S",
+        "https://wiki.friendlyelec.com/wiki/images/2/2f/NanoPi_R6S_2208_SCH.PDF"
+      ],
+      "description": "Board revision 2208. Twelve-contact 3.3 V GPIO FPC, serial console and RTC battery. The source board has no fan socket; none is invented. CON9 physical solder-tail geometry and pin1 side were measured from the 2208 DXF. USB, Ethernet, HDMI and microSD cable contacts are outside the wiring scope. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://wiki.friendlyelec.com/wiki/images/9/96/NanoPi_R6S_2208_2D_DXF.zip",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi R6S, revision 2208. Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "friendlyelec-nanopi-m4",
+      "name": "FriendlyElec NanoPi M4",
+      "manufacturer": "FriendlyElec",
+      "revision": "RK3399 / rev 1807 (4GB PCB)",
+      "contacts": 72,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M4",
+      "documentation": [
+        "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M4",
+        "https://wiki.friendlyelec.com/wiki/images/7/7a/NanoPi-M4-4GB-1807-Schematic.pdf"
+      ],
+      "description": "Board revision 1807 (4GB PCB). All 40 GPIO1 contacts and 24 GPIO2 PCIe/USB expansion contacts, four console contacts, RTC and differential microphone. GPIO1 contains 3.0 V and 1.8 V domains; the latter are explicitly marked per contact. RK3399 is on the reverse side, so the illustrated component face shows the two RAM packages. Camera/eMMC sockets are outside the wiring scope. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://wiki.friendlyelec.com/wiki/images/e/e4/NanoPi-M4-1807_Drawing%28dxf%29.zip",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi M4, revision 1807 (4GB PCB). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "friendlyelec-nanopi-m5",
+      "name": "FriendlyElec NanoPi M5",
+      "manufacturer": "FriendlyElec",
+      "revision": "RK3576 / rev 2411 (LPDDR4X PCB)",
+      "contacts": 39,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M5",
+      "documentation": [
+        "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M5",
+        "https://wiki.friendlyelec.com/wiki/images/1/10/NanoPi_M5_LP4X_2411_SCH.PDF"
+      ],
+      "description": "Board revision 2411 (LPDDR4X PCB). Current RK3576 NanoPi M5 with 30 GPIO contacts, debug UART, fan, RTC and microphone. This is not an Amlogic 40-pin board. The LPDDR4X 2411 PCB is selected; LPDDR5 and RAM-size choices are not duplicated as separate entries. M.2, UFS and camera/display sockets are outside this low-speed wiring scope. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://wiki.friendlyelec.com/wiki/images/e/e1/NanoPi_M5_2411_DXF.zip",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi M5, revision 2411 (LPDDR4X PCB). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "banana-pi-bpi-m2-berry",
+      "name": "Banana Pi BPI M2 Berry",
+      "manufacturer": "Banana Pi",
+      "revision": "Allwinner A40i / rev v1.0 (2017-05-08)",
+      "contacts": 45,
+      "source": "https://docs.banana-pi.org/en/BPI-M2_Berry/BananaPi_BPI-M2_Berry",
+      "documentation": [
+        "https://docs.banana-pi.org/en/BPI-M2_Berry/BananaPi_BPI-M2_Berry",
+        "https://drive.google.com/uc?export=download&id=1U_v17Z-RXhSB5Supv4sdAl1O8eWw_pjn",
+        "https://drive.google.com/file/d/1-blky8xrwuH51lCJytu_sEzHgjCxh6T7/view?usp=sharing"
+      ],
+      "description": "Board revision v1.0 (2017-05-08). All 40 CON1 GPIO contacts, debug UART and two-contact 5 V SATA power. The official table misspells CON1-P39 as ON1-P39; its ground contact is retained. CSI/DSI, SATA data and microSD socket contacts are outside this scope. Main GPIO and console pin-one location/orientation were checked against the matching top-side manufacturer DXF. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://drive.google.com/file/d/1-blky8xrwuH51lCJytu_sEzHgjCxh6T7/view?usp=sharing",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI M2 Berry, revision v1.0 (2017-05-08). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "banana-pi-bpi-m2s",
+      "name": "Banana Pi BPI M2S",
+      "manufacturer": "Banana Pi",
+      "revision": "Amlogic A311D / rev v1.0 (2022-12-13)",
+      "contacts": 43,
+      "source": "https://docs.banana-pi.org/en/BPI-M2_Super/BananaPi_BPI-M2_Super",
+      "documentation": [
+        "https://docs.banana-pi.org/en/BPI-M2_Super/BananaPi_BPI-M2_Super",
+        "https://drive.google.com/uc?export=download&id=176LPTjQgcXXNNibSbRRXKqTYxZHQqLDu",
+        "https://drive.google.com/file/d/1kZjWV91WUNK7rNJQw5HNUNMf5Lob2qsi/view?usp=sharing"
+      ],
+      "description": "Board revision v1.0 (2022-12-13). All 40 GPIO header contacts and debug UART. A311D version selected; S922X variant lacks the NPU/MIPI features. The web page repeats CON2 for debug, while the exact schematic identifies console CON1; schematic references are used. Fan socket CN2 appears in the schematic but lacks a matching confirmed position on the published component-side photograph, so it is outside this physical-contact entry. Main GPIO and console pin-one location/orientation were checked against the matching top-side manufacturer DXF. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://drive.google.com/file/d/1kZjWV91WUNK7rNJQw5HNUNMf5Lob2qsi/view?usp=sharing",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI M2S, revision v1.0 (2022-12-13). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "banana-pi-bpi-m4-zero",
+      "name": "Banana Pi BPI M4 Zero",
+      "manufacturer": "Banana Pi",
+      "revision": "Allwinner H618 / rev v2.0 (2024-08-21)",
+      "contacts": 67,
+      "source": "https://docs.banana-pi.org/en/BPI-M4_Zero/BananaPi_BPI-M4_Zero",
+      "documentation": [
+        "https://docs.banana-pi.org/en/BPI-M4_Zero/BananaPi_BPI-M4_Zero",
+        "https://drive.google.com/uc?export=download&id=1AtKZROqmdPSz2XQzdeQLL4K6wCPerqeu"
+      ],
+      "description": "Board revision v2.0 (2024-08-21). Main 40 GPIO contacts, three console and 24 CN8 miscellaneous FPC contacts. CN8 includes Ethernet PHY, analog audio/video, USB and power; it is not a camera-only connector or 24 digital GPIOs. FPC pin 24 is at the printed top end of the component-side photograph. The v2.0 H618 schematic is selected. Pins 15/22/36 follow the exact schematic (PI11/PC2_3V3/PC7_3V3), correcting older web-table labels; 22/36 are GPIO, not power rails. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://drive.google.com/uc?export=download&id=1AtKZROqmdPSz2XQzdeQLL4K6wCPerqeu",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI M4 Zero, revision v2.0 (2024-08-21). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "banana-pi-bpi-r3",
+      "name": "Banana Pi BPI R3",
+      "manufacturer": "Banana Pi",
+      "revision": "MediaTek MT7986A / rev v1.1 (2022-08-03)",
+      "contacts": 37,
+      "source": "https://docs.banana-pi.org/en/BPI-R3/BananaPi_BPI-R3",
+      "documentation": [
+        "https://docs.banana-pi.org/en/BPI-R3/BananaPi_BPI-R3",
+        "https://drive.google.com/uc?export=download&id=1ED2z_e01Y0e6LDzMC_vLhCsTHEZTGwcg",
+        "https://drive.google.com/file/d/1BE09wS1ca 5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing"
+      ],
+      "description": "Board revision v1.1 (2022-08-03). All 26 GPIO contacts, four-contact console, default 5 V three-contact PWM fan and switched 12 V/5 V power output. The console includes a fourth 3.3 V contact, visible in the source schematic. Optional unpopulated two-contact USB data headers and two-contact fan footprint are excluded; miniPCIe/M.2/high-speed port sockets are illustrated only. Main GPIO and console pin-one location/orientation were checked against the matching top-side manufacturer DXF. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://drive.google.com/file/d/1BE09wS1ca 5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI R3, revision v1.1 (2022-08-03). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "banana-pi-bpi-r4",
+      "name": "Banana Pi BPI R4",
+      "manufacturer": "Banana Pi",
+      "revision": "MediaTek MT7988A / rev v1.1 (2023-10-23)",
+      "contacts": 38,
+      "source": "https://docs.banana-pi.org/en/BPI-R4/BananaPi_BPI-R4",
+      "documentation": [
+        "https://docs.banana-pi.org/en/BPI-R4/BananaPi_BPI-R4",
+        "https://drive.google.com/uc?export=download&id=1r-c2urU-DFVHpZ7cRk2qzKtVB8tg82mZ",
+        "https://drive.google.com/file/d/1FMqHSZnug-IebvTIhkSwmWhDAPyWxr6A/view?usp=sharing"
+      ],
+      "description": "Board revision v1.1 (2023-10-23). All 26 GPIO contacts, three-contact console, default 5 V PWM fan, RTC battery and four-contact 12 V/5 V auxiliary output. Exact v1.1 schematic selected; later 2.5G/8GB variants are not silently substituted. The published v1.1 component-side photograph locates GPIO on the short right edge. M.2/miniPCIe, optional USB data pads and high-speed socket contacts are outside this wiring scope. Main GPIO and console pin-one location/orientation were checked against the matching top-side manufacturer DXF. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://drive.google.com/file/d/1FMqHSZnug-IebvTIhkSwmWhDAPyWxr6A/view?usp=sharing",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI R4, revision v1.1 (2023-10-23). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "radxa-zero",
+      "name": "Radxa ZERO",
+      "manufacturer": "Radxa",
+      "revision": "Amlogic S905Y2 / rev v1.51",
+      "contacts": 40,
+      "source": "https://docs.radxa.com/en/zero/zero/hardware-design/hardware-interface",
+      "documentation": [
+        "https://docs.radxa.com/en/zero/zero/hardware-design/hardware-interface",
+        "https://dl.radxa.com/zero/docs/hw/v1510/radxa_zero_v1.51_schematic.pdf",
+        "https://dl.radxa.com/zero/docs/hw/v1510/radxa_zero_v1.51_components_placement_map.pdf"
+      ],
+      "description": "Board revision v1.51. Original Amlogic ZERO, all 40 GPIO contacts. This is distinct from ZERO2 Pro and ZERO3 families. Exact v1.51 schematic and placement map selected; maker overview photograph is v1.4 with the same visible connector arrangement. microSD/eMMC and USB/HDMI socket cable contacts are outside this scope. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://dl.radxa.com/zero/docs/hw/v1510/radxa_zero_v1.51_2d_dxf.zip",
+      "footprintNote": "Reference wiring carrier for Radxa ZERO, revision v1.51. Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "radxa-rock4se",
+      "name": "Radxa ROCK4SE",
+      "manufacturer": "Radxa",
+      "revision": "RK3399-T / rev v1.53",
+      "contacts": 40,
+      "source": "https://docs.radxa.com/en/rock4/rock4ab-se/hardware-design/hardware-interface",
+      "documentation": [
+        "https://docs.radxa.com/en/rock4/rock4ab-se/hardware-design/hardware-interface",
+        "https://dl.radxa.com/rockpi4/docs/hw/rockpi4/ROCK-4-SE-V1.53-SCH.pdf",
+        "https://dl.radxa.com/rockpi4/docs/hw/rockpi4/ROCK-4-SE-V1.53-SMD.pdf"
+      ],
+      "description": "Board revision v1.53. All 40 CON8601 contacts. Most digital signals are 3.0 V; pin 32 GPIO3_C0 is 3.3 V and pin 26 ADC_IN0 accepts up to 1.8 V. The component-side photograph places RK3399-T on the reverse, so no front-face SoC package is invented. Reverse-side RTC and high-speed/eMMC sockets are excluded from the front-contact scope. The shared ROCK4B STEP file is not presented as an exact 4SE model. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://dl.radxa.com/rockpi4/docs/hw/rockpi4/ROCK-4-SE-V1.53-SCH.pdf",
+      "footprintNote": "Reference wiring carrier for Radxa ROCK4SE, revision v1.53. Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "radxa-rock5c",
+      "name": "Radxa ROCK5C",
+      "manufacturer": "Radxa",
+      "revision": "RK3588S2 / rev v2.10",
+      "contacts": 42,
+      "source": "https://docs.radxa.com/en/rock5/rock5c/hardware-design/hardware-interface",
+      "documentation": [
+        "https://docs.radxa.com/en/rock5/rock5c/hardware-design/hardware-interface",
+        "https://dl.radxa.com/rock5/5c/docs/radxa_rock_5c_schematic_v2.10.pdf",
+        "https://dl.radxa.com/rock5/5c/docs/radxa_rock_5c_components_placement_map_v2.10.pdf"
+      ],
+      "description": "Board revision v2.10. All 40 GPIO contacts and two fan cable contacts. Illustration follows the v2.10 assembly placement, not the older v1.1 overview: GPIO occupies the long right edge. Fan pin 1 is the low-side switched return, pin 2 is +5 V; schematic mounting tabs 3/4 are ground but are not cable contacts. Reverse-side RTC, PoE and high-speed expansion sockets are outside the declared wiring scope. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://dl.radxa.com/rock5/5c/docs/radxa_rock_5c_3d_stp_v2.10.stp.zip",
+      "footprintNote": "Reference wiring carrier for Radxa ROCK5C, revision v2.10. Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "radxa-rock5t",
+      "name": "Radxa ROCK5T",
+      "manufacturer": "Radxa",
+      "revision": "RK3588 / rev v1.24 (standard)",
+      "contacts": 40,
+      "source": "https://docs.radxa.com/en/rock5/rock5t/hardware-design/hardware-interface",
+      "documentation": [
+        "https://docs.radxa.com/en/rock5/rock5t/hardware-design/hardware-interface",
+        "https://dl.radxa.com/rock5/5t/docs/hw/radxa_rock_5t_schematic_v1.24.pdf",
+        "https://dl.radxa.com/rock5/5t/docs/hw/radxa_rock_5t_components_placement_map_v1.24.pdf"
+      ],
+      "description": "Board revision v1.24 (standard). All 40 GPIO contacts, using the published v1.2 header-function table and exact v1.24 standard-board schematic. Physical top-side layout was checked against the v1.24 assembly drawing; industrial v2.01 is not substituted. The maker publishes STEP v1.2 but no exact v1.24 STEP was verified, so the model link is the exact schematic. Fan, rear RTC, PoE, M.2 and high-speed sockets are outside this GPIO-focused scope. Pins 27/28 follow the exact v1.24 schematic: GPIO4_C6/GPIO4_C5 through fitted zero-ohm links, replacing the older web-table GPIO2_B3/GPIO2_B2 functions. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://dl.radxa.com/rock5/5t/docs/hw/radxa_rock_5t_schematic_v1.24.pdf",
+      "footprintNote": "Reference wiring carrier for Radxa ROCK5T, revision v1.24 (standard). Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "radxa-rock3c",
+      "name": "Radxa ROCK3C",
+      "manufacturer": "Radxa",
+      "revision": "RK3566 / rev v1.4",
+      "contacts": 42,
+      "source": "https://docs.radxa.com/en/rock3/rock3c/hardware-design/hardware-interface",
+      "documentation": [
+        "https://docs.radxa.com/en/rock3/rock3c/hardware-design/hardware-interface",
+        "https://dl.radxa.com/rock3/docs/hw/3c/v1400/radxa_rock_3c_v1400_schematic.pdf",
+        "https://dl.radxa.com/rock3/docs/hw/3c/v1400/radxa_rock_3c_v1400_component_placement_map.pdf"
+      ],
+      "description": "Board revision v1.4. All 40 GPIO contacts and two fan cable contacts. U23 pin 1 is the low-side switched return and pin 2 is +5 V; ground shell tabs 3/4 are not cable contacts. The v1.4 component-side source is used. Reverse RTC battery pads, PoE and eMMC/M.2/CSI/DSI socket contacts are outside this scope. All listed connector contacts are available. The component-side drawing places contacts on their corresponding physical pads/connectors. High-speed sockets, test points and configuration straps outside the declared scope are illustrated only. Mechanical offsets are reference geometry unless a manufacturer dimension drawing is explicitly identified.",
+      "cad": "https://dl.radxa.com/rock3/docs/hw/3c/v1400/radxa_rock_3c_v1400_2d_dxf.zip",
+      "footprintNote": "Reference wiring carrier for Radxa ROCK3C, revision v1.4. Main through-hole row pitches and source contact numbers are retained. Board offsets, mounting holes and component heights are illustrative. Small sockets/FPCs use separate off-board 2.54 mm cable landing columns outside the outline; these are not their physical mating or manufacturer solder patterns. Canvas/art contacts use the source-identified board locations independently of these cable lands. Follow the linked maker drawing and verify the exact revision before adapter fabrication."
+    },
+    {
+      "id": "nxp-frdm-kl25z-e",
+      "name": "NXP FRDM-KL25Z (Rev E)",
+      "manufacturer": "NXP",
+      "revision": "Kinetis KL25 / Cortex-M0+ / touch slider",
+      "contacts": 99,
+      "source": "https://www.nxp.com/downloads/en/schematics/FRDM-KL25Z_SCH_REV_E.pdf",
+      "description": "SCH-27556 E (2013-01-30). All 64 expansion-header contacts, target/debug and the listed power/configuration headers are available. Main header orientation follows the manufacturer component-side photographs and schematic. Auxiliary keyed mating-face views are identified by connector reference; their PCB landing orientation is not asserted. USB, Ethernet and memory-card interfaces are complete cable/card ports. Internal fixture/test points, oscillator sockets and USB shield links are outside this wiring scope.",
+      "cad": "https://www.nxp.com/webapp/Download?colCode=FRDM-KL25Z_BOM_SCH",
+      "footprintNote": "Reference cable/contact carrier for SCH-27556 E (2013-01-30). Main expansion headers retain verified 2.54 mm pitch and terminal order; the board envelope/placement are photo-derived reference geometry. Auxiliary pads below the outline are off-board connector terminations corresponding to separately identified physical mating-face views, not asserted module PCB pad locations. Obtain the original NXP CAD and check the fitted revision before fabrication."
+    },
+    {
+      "id": "nxp-frdm-k64f-e4",
+      "name": "NXP FRDM-K64F (E4)",
+      "manufacturer": "NXP",
+      "revision": "Kinetis K64 / Cortex-M4 / Ethernet",
+      "contacts": 131,
+      "source": "https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-K64F",
+      "description": "SCH-28163 E4 (2016-05-16). All 64 expansion-header contacts, RF eight and Bluetooth four contacts, target/debug and the listed power/configuration headers are available. Main header orientation follows the manufacturer component-side photographs and schematic. Auxiliary keyed mating-face views are identified by connector reference; their PCB landing orientation is not asserted. USB, Ethernet and memory-card interfaces are complete cable/card ports. Internal fixture/test points, oscillator sockets and USB shield links are outside this wiring scope.",
+      "cad": "https://www.nxp.com/webapp/Download?colCode=FRDM-K64F_BOM_SCH",
+      "footprintNote": "Reference cable/contact carrier for SCH-28163 E4 (2016-05-16). Main expansion headers retain verified 2.54 mm pitch and terminal order; the board envelope/placement are photo-derived reference geometry. Auxiliary pads below the outline are off-board connector terminations corresponding to separately identified physical mating-face views, not asserted module PCB pad locations. Obtain the original NXP CAD and check the fitted revision before fabrication."
+    },
+    {
+      "id": "waveshare-rp2040-zero",
+      "name": "Waveshare RP2040-Zero",
+      "manufacturer": "Waveshare",
+      "revision": "3.3 V I/O / physical board contacts",
+      "contacts": 33,
+      "source": "https://www.waveshare.net/wiki/RP2040-Zero",
+      "description": "RP2040-Zero with USB-C, BOOT/RESET and WS2812 on GPIO16. All 23 edge contacts and ten underside GPIO/ground pads are exposed. The two Zero generations have different underside terminal numbering and spacing; each is mapped from its own schematic.",
+      "cad": "https://www.waveshare.net/w/upload/f/f7/RP2040_Zero_stp.zip",
+      "footprintNote": "Reference contact carrier. Expansion pitch, terminal numbers and board dimensions follow the manufacturer mechanical/pinout drawings; backside small-pad placement is a same-side photograph reconstruction. Connector/test-pad land dimensions and component clearances are representative, not a verified vendor production land pattern. Match the fitted board and linked STEP/schematic before fabrication."
+    },
+    {
+      "id": "waveshare-rp2350-zero",
+      "name": "Waveshare RP2350-Zero",
+      "manufacturer": "Waveshare",
+      "revision": "3.3 V I/O / physical board contacts",
+      "contacts": 36,
+      "source": "https://www.waveshare.net/wiki/RP2350-Zero",
+      "description": "RP2350-Zero with USB-C, BOOT/RESET and WS2812 on GPIO16. All 23 edge contacts and ten underside GPIO/ground pads are exposed, plus three underside SWD contacts. The two Zero generations have different underside terminal numbering and spacing; each is mapped from its own schematic.",
+      "cad": "https://www.waveshare.net/w/upload/1/1d/RP2350_Zero_step.zip",
+      "footprintNote": "Reference contact carrier. Expansion pitch, terminal numbers and board dimensions follow the manufacturer mechanical/pinout drawings; backside small-pad placement is a same-side photograph reconstruction. Connector/test-pad land dimensions and component clearances are representative, not a verified vendor production land pattern. Match the fitted board and linked STEP/schematic before fabrication."
+    },
+    {
+      "id": "waveshare-rp2350-plus",
+      "name": "Waveshare RP2350-Plus",
+      "manufacturer": "Waveshare",
+      "revision": "3.3 V I/O / physical board contacts",
+      "contacts": 48,
+      "source": "https://www.waveshare.net/wiki/RP2350-Plus",
+      "description": "RP2350A Pico-format board with USB-C, 4 MB flash, buck-boost 3.3 V supply and LiPo charging. All 40 Pico expansion contacts, three underside SWD pads, USB D-/D+ and BOOT test pads, and the two-contact PH1.25 battery socket are exposed. GPIO29 is used internally for supply measurement rather than as an expansion-header ADC.",
+      "cad": "https://www.waveshare.net/w/upload/f/fc/RP2350_Plus_STEP.zip",
+      "footprintNote": "Reference contact carrier. Expansion pitch, terminal numbers and board dimensions follow the manufacturer mechanical/pinout drawings; backside small-pad placement is a same-side photograph reconstruction. Connector/test-pad land dimensions and component clearances are representative, not a verified vendor production land pattern. Match the fitted board and linked STEP/schematic before fabrication."
+    },
+    {
+      "id": "waveshare-esp32-c6-zero",
+      "name": "Waveshare ESP32-C6-Zero",
+      "manufacturer": "Waveshare",
+      "revision": "3.3 V I/O / physical board contacts",
+      "contacts": 25,
+      "source": "https://docs.waveshare.net/ESP32-C6-Zero/",
+      "description": "ESP32-C6 Zero / Zero-M with Wi-Fi 6, BLE and IEEE 802.15.4. All 18 castellated/header contacts and seven underside test pads are included. The published schematic labels ESP32-C6FH4 while current product documentation lists FH8; flash size follows the fitted chip. The pin map is verified against this board's schematic and current physical pinout, not inferred from the S3 Zero.",
+      "cad": "https://www.waveshare.net/w/upload/1/1b/ESP32-C6-Zero-3D.zip",
+      "footprintNote": "Reference contact carrier. Expansion pitch, terminal numbers and board dimensions follow the manufacturer mechanical/pinout drawings; backside small-pad placement is a same-side photograph reconstruction. Connector/test-pad land dimensions and component clearances are representative, not a verified vendor production land pattern. Match the fitted board and linked STEP/schematic before fabrication."
+    },
+    {
+      "id": "waveshare-pico-relay-b",
+      "name": "Waveshare Pico-Relay-B",
+      "manufacturer": "Waveshare",
+      "revision": "3.3 V I/O / physical board contacts",
+      "contacts": 66,
+      "source": "https://www.waveshare.net/wiki/Pico-Relay-B",
+      "description": "Eight-channel SPDT relay carrier for a separate Raspberry Pi Pico/Pico W. All 40 Pico socket contacts, 24 isolated relay terminals and two external 5 V input terminals are available. GPIO21/20/19/18/17/16/15/14 control CH1–8, GPIO6 controls the buzzer and GPIO13 the RGB LED. The Pico module's internal underside USB/BOOT assembly landings are outside this carrier wiring scope. Artwork shows the open carrier without the optional Pico/case.",
+      "cad": "https://www.waveshare.net/w/upload/c/cb/Pico-Relay-B_SchDoc.pdf",
+      "footprintNote": "Reference contact carrier. Expansion pitch, terminal numbers and board dimensions follow the manufacturer mechanical/pinout drawings; backside small-pad placement is a same-side photograph reconstruction. Connector/test-pad land dimensions and component clearances are representative, not a verified vendor production land pattern. Match the fitted board and linked STEP/schematic before fabrication."
+    }
+  ],
+  "scope": "58 additional revision-specific boards/modules. This batch extends coverage; it does not claim complete manufacturer product ranges.",
+  "physicalFootprintPads": 2314,
+  "validation": {
+    "tests": {
+      "passed": 115,
+      "failed": 0
+    },
+    "diffCheck": "passed",
+    "existingGeometry": "All 444 baseline component IDs, dimensions, pin IDs and pin coordinates compared unchanged.",
+    "svg": "All 116 labeled/unlabeled views rendered and visually reviewed; self-contained artwork.",
+    "nativeKiCad": "All 58 symbol and 58 footprint files loaded and exported by the installed KiCad CLI. Native GUI was not opened.",
+    "editor": "Ten representative family boards imported into an isolated browser workspace, three wires rendered on physical contacts, PNG downloaded. Existing user workspace retained 3 parts / 13 wires.",
+    "manufacturerFilter": "Actual UI checked: NXP 3, Waveshare 24, Espressif Systems 13, Gowin FPGA category 32; all manufacturer options have nonempty matching results. Canonical manufacturer aliases retain original component IDs."
+  },
+  "reviews": {
+    "sbc": {
+      "scope": "16 additional ready-made SBCs, not complete manufacturer lineups; six FriendlyElec, five Banana Pi, five Radxa. No RAM-size-only duplicate cards.",
+      "discrepancies": [
+        {
+          "id": "friendlyelec-nanopi-r2s",
+          "details": "GPIO1 contact10 wiki GPIOG3_A6 typo corrected to GPIO3_A6 from RK3328 schematic. USB-C v1.1/2009 selected; unchanged schematic sheets retain1912 footers."
+        },
+        {
+          "id": "friendlyelec-nanopi-r4s",
+          "details": "CON6 contact1 is5 V and contact2 is3.3 V. Digital I/O and console are3.0 V. This10-contact header is not a Raspberry Pi pinout."
+        },
+        {
+          "id": "friendlyelec-nanopi-r5s",
+          "details": "CON9 FPC3.3 V vs CON11 SDIO/I2S1.8 V; source-DXF alternating FPC solder-tail geometry retained. 2204 board, not LTS2308."
+        },
+        {
+          "id": "friendlyelec-nanopi-m4",
+          "details": "GPIO1 mixes3.0/1.8 V digital domains. MIC1 negative differential contact is not ground. RK3399 is on reverse; front picture shows two RAM packages."
+        },
+        {
+          "id": "friendlyelec-nanopi-m5",
+          "details": "Current M5 is RK3576/30 GPIO contacts. LPDDR4X2411 schematic selected. No Amlogic40-pin map substituted."
+        },
+        {
+          "id": "banana-pi-bpi-m2-berry",
+          "details": "Web ON1-P39 typo means CON1.39 ground. Exact DXF confirms GPIO1 inner row; console GND1 is bottom and TX3 top."
+        },
+        {
+          "id": "banana-pi-bpi-m2s",
+          "details": "Web repeats CON2 for console; v1.0 schematic identifies CON1 console and CON2 GPIO. Manufacturer top DXF is180 degrees rotated relative to maker overview; transformed to the same front view. Fan CN2 excluded because fitted position is not confirmed on source photograph."
+        },
+        {
+          "id": "banana-pi-bpi-m4-zero",
+          "details": "v2.0 schematic overrides web table: pin15 PI11 (not PH11); pin22 PC2_3V3 and pin36 PC7_3V3 are level-shifted GPIO (not3.3 V supply rails). Pin28 TWI1_SCL rather than website TE1_SLC. Debug is horizontal GND/RX/TX. CN8 FPC24 includes PHY/USB/analog/power, not24 camera GPIOs."
+        },
+        {
+          "id": "banana-pi-bpi-r3",
+          "details": "Exact v1.1 schematic console has FOUR contacts including3.3 V, despite three-wire examples. Source DXF verifies main GPIO starts x30.5435mm, GND1 console top at x1.524mm, fan3 vertical, switched power4 reversed left-to-right. Fan defaults5 V;12 V resistor alternative is unpopulated."
+        },
+        {
+          "id": "banana-pi-bpi-r4",
+          "details": "v1.1 source DXF confirms GPIO pin1 inner column, console on lower LEFT edge, horizontal reverse fan and reversed vertical power4. Console has THREE contacts. Later2.5G/8GB editions not substituted."
+        },
+        {
+          "id": "radxa-zero",
+          "details": "v1.51 exact schematic/placement used; public maker overview photo v1.4 has matching connector arrangement. Original Amlogic ZERO, not ZERO2/3."
+        },
+        {
+          "id": "radxa-rock4se",
+          "details": "GPIO3_C0 pin32 is3.3 V, most GPIO3.0 V, ADC_IN0 pin26 max1.8 V. Reverse-side SoC/RTC not invented on front. Shared ROCK4B STEP is not exact4SE CAD."
+        },
+        {
+          "id": "radxa-rock5c",
+          "details": "Exact v2.10 assembly placement supersedes old v1.1 overview photo. GPIO on long right edge in portrait view. Fan1 is switched low-side return;2+5 V. Grounded shell tabs3/4 excluded as non-cable contacts. Pin37 analog divider input, not GPIO."
+        },
+        {
+          "id": "radxa-rock5t",
+          "details": "Exact v1.24 schematic overrides older v1.2 web table at27/28: GPIO4_C6 via fitted R95157 and GPIO4_C5 via R95159, rather than GPIO2_B3/GPIO2_B2. Optional USB links NC. Standard v1.24 used, not industrial2.01. No exact1.24 STEP verified; published STEP is1.2."
+        },
+        {
+          "id": "radxa-rock3c",
+          "details": "U23 fan1 is low-side switched return,2+5 V; grounded mounting tabs3/4 excluded from cable contacts. Rear RTC pads excluded from front scope."
+        }
+      ],
+      "checkedGaps": [
+        {
+          "model": "Banana Pi BPI-M2 Ultra",
+          "reason": "Manufacturer legacy schematic Drive link0B4PAo2nW2KfndUZobUNSQ0YtaIE could not be retrieved (curl56); no second exact schematic was found in checked source. Not cloned from Berry."
+        },
+        {
+          "model": "Radxa ROCK4C+",
+          "reason": "Hardware-interface source fetch failed in current docs. Software/download page was retrieved, but a separate exact-revision hardware map was not verified. Shared ROCK4 pinout was not treated as sufficient."
+        }
+      ],
+      "geometry": "All633 anchors surface=true/contactLayout=physical. Art and pins use the same physical contact-coordinate function. Board offsets approximate unless measured from specified DXF; R5S/R6S staggered FPC and R5S SDIO tails source-measured. Banana Berry/M2S/R3/R4 main/debug and selected power/fan positions measured from exact top DXFs. Reference carriers retain through-hole row positions but small sockets/FPC use clearly labeled off-board2.54 mm cable lands, not mating footprints."
+    },
+    "maixWireless": {
+      "scope": "Selected verified Maix and LILYGO wireless board batch, not a claim that all manufacturer products are included.",
+      "limitations": [
+        "All footprints are explicitly approximate off-board 2.54 mm cable-termination carriers, not board-mating land patterns.",
+        "Individually enumerated wiring scope is stated per entry. Fitted USB/RF/SD/SIM/camera/display cable ports are illustrated, but their fine cable/card contacts are not all separate jumper-wire contacts.",
+        "T3-S3 V1.3 GPIO8/12 and SIM7000G GPIO25/26 orders differ between old schematics and exact official production pinout photos. Physical art follows those photos; unnumbered main headers use printed pad names as terminal numbers, with repeated grounds disambiguated.",
+        "T-Echo electrical SWD mapping is from the manufacturer schematic. Its SWD pad geometry is representative because no official numbered pad-layout drawing was found; the entry explicitly requests checking VDD/GND against the board before attaching a probe.",
+        "Maix Bit V2.0 user headers have 18 holes per side. Schematic row positions 10/11 are mounting-annulus nodes, not four extra jumper holes; only the 36 real header holes are included.",
+        "Maixduino V1.5 P6.2 is NC despite an older marketing drawing printing 3V3. MaixCAM Pro schematic assigns A15=SDA and A27=SCL, unlike swapped marketing captions. Exact schematic functions are documented.",
+        "Supreme V3.1 PN1.5 is ALDO1 with fitted R24=0 ohm / R25=NC; the older marketing drawing calls it ALDO2. Programmable PMIC rail voltages are not presented as fixed 3.3 V.",
+        "T-Beam and T3 LoRa32 model links are clearly labeled manufacturer schematic references because no verified exact-revision STEP/mechanical file was found. Other links lead to verified manufacturer CAD/drawing files or folders."
+      ],
+      "remainingManufacturerGaps": [
+        {
+          "manufacturer": "Sipeed",
+          "names": [
+            "Maix Dock11.27",
+            "MaixCube2757",
+            "Maix Amigo",
+            "Maix Go",
+            "Maix M1/M1W/M1n",
+            "Maix Nano",
+            "Maix HAT",
+            "Maix III AXera Pi",
+            "Maix IV M4C/Dock/HAT",
+            "MaixCAM2"
+          ],
+          "status": "remaining manufacturer families, not a whole-line claim",
+          "source": "https://wiki.sipeed.com/hardware/en/maix/m1s/m1s_module.html",
+          "note": "Full official sidebar roster retained here; this batch targets verified Maix development modules/boards rather than appliance variants."
+        },
+        {
+          "manufacturer": "LILYGO",
+          "names": [
+            "T-Deck",
+            "T-Echo Plus/Card/Lite",
+            "T-Beam 1W/BPF",
+            "T3 TCXO/LR1121/SX1280",
+            "T-SIM7080/7600/7670",
+            "T-LoRa C6/Dual/Pager",
+            "T-Halow",
+            "T-TWR",
+            "T-PCIE"
+          ],
+          "status": "remaining documented wireless families",
+          "source": "https://wiki.lilygo.cc/products/t3-series/t3-s3-v1.3/",
+          "note": "Regional RF bins and identical carrier assembly options are aliases/tags, not duplicated PCBs."
+        }
+      ]
+    },
+    "readyBoards": {
+      "boards": 21,
+      "contacts": 979,
+      "scopeAudit": "catalog-ready-board-audit-2026-11-07.md"
+    },
+    "espressif": {
+      "boards": 7,
+      "contacts": 252,
+      "view": "Component side, antenna above, USB below; anchors and pads share coordinates.",
+      "deferred": [
+        {
+          "name": "ESP32-DevKitM-1 V1.0",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitm-1/user_guide.html",
+          "schematic": "https://dl.espressif.com/dl/schematics/SCH_ESP32-DEVKITM-1_V1_20200910A.pdf",
+          "reason": "Official continuous 1–34 pin table and photo disagree with the V1.0 schematic J3.2/3.3 UART order. Resolve against the numbered PCB netlist before adding."
+        }
+      ],
+      "limitations": [
+        "Reference carriers follow the published header pitch and row spacing. Auxiliary J5 placement and non-contact illustration details are approximate. Vendor mechanical drawings/CAD are linked for manufacturing.",
+        "Saola HTML repeats J3 terminal numbers. The added entry uses the schematic/dimension drawing order for J3.15/16/17.",
+        "C5 N8R8 and C61 N8R2 PSRAM-reserved contacts are no_connect; C6 GPIO0/1 oscillator population dependency is recorded."
+      ]
+    }
+  },
+  "assemblyAliases": [
+    {
+      "id": "sipeed-licheerv-nano-w",
+      "alias": "Sipeed MaixCAM",
+      "change": "Search tags and assembly note only; existing geometry and electrical contact IDs unchanged."
+    }
+  ]
+}

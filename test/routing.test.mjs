@@ -1,10 +1,13 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { DrawingCanvas, drawingMarkup } from '../src/canvas.js';
-import { demoProject } from '../src/demo.js';
-import { MAX_POINTS_PER_WIRE, parseProject, serializeProject } from '../src/project.js';
-import { endpointPositions, routeFor, segmentDrag, slideSegment, splitWire, wireRoute } from '../src/routing.js';
+import { DrawingCanvas } from '../src/canvas/canvas.js';
+import { drawingMarkup } from '../src/canvas/markup.js';
+import { demoProject } from '../src/app/demo.js';
+import { parseProject, serializeProject } from '../src/model/project.js';
+import { MAX_POINTS_PER_WIRE } from '../src/model/limits.js';
+import { routeFor, segmentDrag, slideSegment, splitWire, wireRoute } from '../src/geometry/routing.js';
+import { endpointPositions } from '../src/geometry/parts.js';
 
 const point = (x, y) => ({ x, y });
 const pin = (x, y, dx, dy) => ({ x, y, normal: point(dx, dy) });

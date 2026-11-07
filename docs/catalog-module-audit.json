@@ -1,0 +1,1538 @@
+{
+  "date": "2026-11-07",
+  "scope": "New ready-made modules and development boards",
+  "addedComponents": 142,
+  "addedContacts": 12717,
+  "preservedExistingComponents": 302,
+  "checks": [
+    "Manufacturer reference and revision or explicit representative variant",
+    "Electrical identity and contact numbering",
+    "Physical contact positions shared with illustration; no remote canvas banks",
+    "Both illustration label modes reviewed",
+    "Every symbol terminal mapped to footprint pads",
+    "Symbols and footprints loaded by native KiCad CLI",
+    "Representative editor canvas, wiring and exported image review",
+    "Existing component dimensions, IDs and pin anchors unchanged"
+  ],
+  "families": [
+    {
+      "id": "hilink",
+      "components": [
+        "hlk-7688a",
+        "hlk-7628n",
+        "hlk-7621a",
+        "hlk-rm08k"
+      ]
+    },
+    {
+      "id": "cellular-gnss",
+      "components": [
+        "simcom-sim7600g-h-m2",
+        "simcom-sim800c",
+        "simcom-sim7600e-minipcie",
+        "quectel-ec25-e-minipcie",
+        "quectel-lc76g-ab",
+        "quectel-lc76g-pa",
+        "quectel-lc76g-pb"
+      ]
+    },
+    {
+      "id": "weact-bluepill",
+      "components": [
+        "weact-blackpill-stm32f401ceu6",
+        "weact-blackpill-stm32f411ceu6",
+        "weact-bluepill-plus-stm32f103c8t6",
+        "weact-bluepill-plus-gd32f303cct6",
+        "bluepill-stm32f103c8t6"
+      ]
+    },
+    {
+      "id": "friendlyelec",
+      "components": [
+        "friendlyelec-nanopi-m6",
+        "friendlyelec-nanopi-neo",
+        "friendlyelec-nanopi-neo2"
+      ]
+    },
+    {
+      "id": "bananapi",
+      "components": [
+        "banana-pi-bpi-m2-zero",
+        "banana-pi-bpi-m5",
+        "banana-pi-bpi-m7"
+      ]
+    },
+    {
+      "id": "radxa",
+      "components": [
+        "radxa-rock-5a",
+        "radxa-rock-5b",
+        "radxa-rock-3a",
+        "radxa-zero-3w"
+      ]
+    },
+    {
+      "id": "lilygo",
+      "components": [
+        "lilygo-ttgo-t-display-v1-1",
+        "lilygo-t-display-s3",
+        "lilygo-t-display-s3-touch"
+      ]
+    },
+    {
+      "id": "luckfox",
+      "components": [
+        "luckfox-pico",
+        "luckfox-pico-mini-a",
+        "luckfox-pico-mini-b",
+        "luckfox-pico-plus",
+        "luckfox-pico-pro",
+        "luckfox-pico-max",
+        "luckfox-pico-ultra",
+        "luckfox-pico-ultra-w",
+        "luckfox-pico-ultra-b",
+        "luckfox-pico-ultra-bw",
+        "luckfox-pico-pi-a",
+        "luckfox-pico-pi-a-w",
+        "luckfox-pico-pi-b",
+        "luckfox-pico-pi-b-w",
+        "luckfox-pico-zero",
+        "luckfox-lyra",
+        "luckfox-lyra-b",
+        "luckfox-lyra-plus",
+        "luckfox-lyra-ultra",
+        "luckfox-lyra-ultra-w",
+        "luckfox-lyra-pi-a",
+        "luckfox-lyra-pi-a-w",
+        "luckfox-lyra-pi-b",
+        "luckfox-lyra-pi-b-w",
+        "luckfox-lyra-zero-w",
+        "luckfox-nova",
+        "luckfox-nova-w",
+        "luckfox-aura",
+        "luckfox-lume",
+        "luckfox-omni3576",
+        "luckfox-cm5-io-board",
+        "luckfox-pico2",
+        "luckfox-webbee",
+        "luckfox-pico-86-panel",
+        "luckfox-picokvm-base",
+        "luckfox-picokvm",
+        "luckfox-picokvm-ext",
+        "luckfox-lyra-plc",
+        "luckfox-core1106",
+        "luckfox-core1106d",
+        "luckfox-core3506",
+        "luckfox-core3566",
+        "luckfox-core3576"
+      ]
+    },
+    {
+      "id": "sipeed-fpga",
+      "components": [
+        "sipeed-tang-nano",
+        "sipeed-tang-nano-1k",
+        "sipeed-tang-nano-4k",
+        "sipeed-tang-nano-9k",
+        "sipeed-tang-nano-20k",
+        "sipeed-tang-primer-20k-lite",
+        "sipeed-tang-primer-20k-dock",
+        "sipeed-tang-primer-25k-som",
+        "sipeed-tang-primer-25k-dock",
+        "sipeed-tang-mega-138k-neo",
+        "sipeed-tang-mega-60k-neo",
+        "sipeed-tang-console-138k",
+        "sipeed-tang-console-60k",
+        "sipeed-tang-mega-138k-pro-dock",
+        "sipeed-tang-mega-60k-som",
+        "sipeed-tang-mega-138k-som",
+        "sipeed-tang-mega-138k-pro-som",
+        "sipeed-tang-primer-20k-som",
+        "sipeed-tang-primer-eg4s20"
+      ]
+    },
+    {
+      "id": "sipeed-lichee",
+      "components": [
+        "sipeed-lichee-nano",
+        "sipeed-lichee-zero",
+        "sipeed-lichee-rv-core",
+        "sipeed-lichee-rv-dock",
+        "sipeed-licheerv-nano-b",
+        "sipeed-licheerv-nano-w",
+        "sipeed-licheerv-nano-e",
+        "sipeed-licheerv-nano-we",
+        "sipeed-licheepi-3a",
+        "sipeed-licheepi-4a",
+        "sipeed-lichee-module-3a",
+        "sipeed-lichee-module-4a"
+      ]
+    },
+    {
+      "id": "gowin-gw1-gw2",
+      "components": [
+        "gowin-dk-motor-gw2a-lv55pg484c8i7-v3-0",
+        "gowin-dk-start-gw1n-lv4lq144c6i5-v1-1",
+        "gowin-dk-start-gw1n-lv9eq144c6i5-v2-1",
+        "gowin-dk-start-gw1nr-lv9lq144pc6i5-v3-1",
+        "gowin-dk-start-gw1ns-lv4cqn48c7i6-v1-1",
+        "gowin-dk-start-gw1nsr-lv4cqn48pc7i6-v1-1",
+        "gowin-dk-start-gw1nz-lv1fn32c6i5-v3-1",
+        "gowin-dk-start-gw2a-lv18pg256c8i7-v2-0",
+        "gowin-dk-start-gw2a-lv55pg484c8i7-v1-3",
+        "gowin-dk-start-gw2an-uv9xug400c7i6-v1-0",
+        "gowin-dk-start-gw2ar-lv18eq144pc8i7-v1-1",
+        "gowin-dk-start-gw1nsr-lv4cqn48gc7i6-v1-1"
+      ]
+    },
+    {
+      "id": "gowin-display-usb",
+      "components": [
+        "gowin-dk-usb-gw5at-lv60ug225-v1-1",
+        "gowin-dk-usb-gw5at-lv60ug225-v1-0",
+        "gowin-dk-dp-gw5at-lv60ug225-v1-0",
+        "gowin-dk-edp-gw5at-lv15mg132-v1-0",
+        "gowin-dk-edp-gw5art-lv15mg132p-v1-0",
+        "gowin-dk-start-gw5ar-lv25ug256pc2i1-v1-0"
+      ]
+    },
+    {
+      "id": "gowin-programmers",
+      "components": [
+        "gowin-pl-usb-cable-v5-1",
+        "gowin-op720-4",
+        "gowin-b-op901-16"
+      ]
+    },
+    {
+      "id": "gowin-special",
+      "components": [
+        "gowin-dk-start-gw5ast-lv138fpg676a-v2-1",
+        "gowin-dk-start-gw5ast-lv138fpg676a-v1-0",
+        "gowin-dk-uac2-gw1n-lv9lq144c7i6-v2-1",
+        "gowin-dk-usb2-0-gw2ar-lv18qn88pc8i7-gw1nsr-lv4cmg64pc7i6-v3-0",
+        "gowin-dk-video-gw2a-lv18pg484c8i7-v1-2",
+        "gowin-dk-start-gw5a-lv25ug324-v2-0"
+      ]
+    },
+    {
+      "id": "gowin-modern",
+      "components": [
+        "gowin-dk-led-rxcard-gw3a-lv20ug324s-v2-1",
+        "gowin-dk-pcie-gw5art-lv15mg132p-v1-1",
+        "gowin-dk-pcie-gw5at-lv60ug324-v1-1",
+        "gowin-dk-start-gw5a-lv25lq144-v1-0",
+        "gowin-dk-start-gw5at-lv60pg484a-v1-2",
+        "gowin-dk-video-gw5at-lv60ug225-v1-0",
+        "gowin-dk-usb-gw5art-lv15mg132p-v1-1",
+        "gowin-dk-start-gw5at-lv60pg484a-v1-1"
+      ]
+    },
+    {
+      "id": "gowin-third-party",
+      "components": [
+        "brisbane-silicon-epm11",
+        "brisbane-silicon-brs-100-gw1nr9",
+        "onekiwi-kiwi-1p5",
+        "trenz-tec0117-01"
+      ]
+    }
+  ],
+  "gowin": {
+    "inventorySource": "https://www.gowinsemi.com/en/support/devkits/37/",
+    "officialBoards": 32,
+    "programmers": 3,
+    "officialEntries": [
+      {
+        "manufacturerEntry": "DK_LED-RxCard_GW3A-LV20UG324S_V2.1",
+        "catalogId": "gowin-dk-led-rxcard-gw3a-lv20ug324s-v2-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/79/",
+        "kind": "board",
+        "status": "EOL"
+      },
+      {
+        "manufacturerEntry": "DK_PCIE_GW5ART-LV15MG132P_V1.1",
+        "catalogId": "gowin-dk-pcie-gw5art-lv15mg132p-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/77/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_PCIE_GW5AT-LV60UG324_V1.1",
+        "catalogId": "gowin-dk-pcie-gw5at-lv60ug324-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/76/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW5A-LV25LQ144_V1.0",
+        "catalogId": "gowin-dk-start-gw5a-lv25lq144-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/75/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW5AT-LV60PG484A_V1.2",
+        "catalogId": "gowin-dk-start-gw5at-lv60pg484a-v1-2",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/73/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_VIDEO_GW5AT-LV60UG225_V1.0",
+        "catalogId": "gowin-dk-video-gw5at-lv60ug225-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/69/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_USB_GW5ART-LV15MG132P_V1.1",
+        "catalogId": "gowin-dk-usb-gw5art-lv15mg132p-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/68/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW5AT-LV60PG484A_V1.1",
+        "catalogId": "gowin-dk-start-gw5at-lv60pg484a-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/67/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_USB_GW5AT-LV60UG225_V1.1",
+        "catalogId": "gowin-dk-usb-gw5at-lv60ug225-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/72/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_USB_GW5AT-LV60UG225_V1.0",
+        "catalogId": "gowin-dk-usb-gw5at-lv60ug225-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/66/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_DP_GW5AT-LV60UG225_V1.0",
+        "catalogId": "gowin-dk-dp-gw5at-lv60ug225-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/63/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_EDP_GW5AT-LV15MG132_V1.0",
+        "catalogId": "gowin-dk-edp-gw5at-lv15mg132-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/64/",
+        "kind": "board",
+        "status": "EOL"
+      },
+      {
+        "manufacturerEntry": "DK_EDP_GW5ART-LV15MG132P_V1.0",
+        "catalogId": "gowin-dk-edp-gw5art-lv15mg132p-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/65/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW5AR-LV25UG256PC2I1_V1.0",
+        "catalogId": "gowin-dk-start-gw5ar-lv25ug256pc2i1-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/62/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "B-OP901-16  (16 channel offline programmer)",
+        "catalogId": "gowin-b-op901-16",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/15/",
+        "kind": "programmer",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_Motor_GW2A-LV55PG484C8I7_V3.0",
+        "catalogId": "gowin-dk-motor-gw2a-lv55pg484c8i7-v3-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/56/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW1N-LV4LQ144C6I5_V1.1",
+        "catalogId": "gowin-dk-start-gw1n-lv4lq144c6i5-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/1/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW1N-LV9EQ144C6I5_V2.1",
+        "catalogId": "gowin-dk-start-gw1n-lv9eq144c6i5-v2-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/5/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW1NR-LV9LQ144PC6I5_V3.1",
+        "catalogId": "gowin-dk-start-gw1nr-lv9lq144pc6i5-v3-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/16/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW1NS-LV4CQN48C7I6_V1.1",
+        "catalogId": "gowin-dk-start-gw1ns-lv4cqn48c7i6-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/32/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW1NSR-LV4CQN48PC7I6_V1.1",
+        "catalogId": "gowin-dk-start-gw1nsr-lv4cqn48pc7i6-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/28/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW1NZ-LV1FN32C6I5_V3.1",
+        "catalogId": "gowin-dk-start-gw1nz-lv1fn32c6i5-v3-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/27/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW2A-LV18PG256C8I7_V2.0",
+        "catalogId": "gowin-dk-start-gw2a-lv18pg256c8i7-v2-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/31/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW2A-LV55PG484C8I7_V1.3",
+        "catalogId": "gowin-dk-start-gw2a-lv55pg484c8i7-v1-3",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/22/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW2AN-UV9XUG400C7I6_V1.0",
+        "catalogId": "gowin-dk-start-gw2an-uv9xug400c7i6-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/50/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW2AR-LV18EQ144PC8I7_V1.1",
+        "catalogId": "gowin-dk-start-gw2ar-lv18eq144pc8i7-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/30/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW5AST-LV138FPG676A_V2.1",
+        "catalogId": "gowin-dk-start-gw5ast-lv138fpg676a-v2-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/70/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW5AST-LV138FPG676A_V1.0",
+        "catalogId": "gowin-dk-start-gw5ast-lv138fpg676a-v1-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/58/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_UAC2_GW1N-LV9LQ144C7I6_V2.1",
+        "catalogId": "gowin-dk-uac2-gw1n-lv9lq144c7i6-v2-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/55/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_USB2.0_GW2AR-LV18QN88PC8I7_GW1NSR-LV4CMG64PC7I6_V3.0",
+        "catalogId": "gowin-dk-usb2-0-gw2ar-lv18qn88pc8i7-gw1nsr-lv4cmg64pc7i6-v3-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/45/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_VIDEO_GW2A-LV18PG484C8I7_V1.2",
+        "catalogId": "gowin-dk-video-gw2a-lv18pg484c8i7-v1-2",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/21/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "Gowin FPGA Download Cable (PL_USB_CABLE_V5.1)",
+        "catalogId": "gowin-pl-usb-cable-v5-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/3/",
+        "kind": "programmer",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "OL-Programmer-A_V3.0 (4 channel offline programmer)",
+        "catalogId": "gowin-op720-4",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/7/",
+        "kind": "programmer",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW1NSR-LV4CQN48GC7I6_V1.1",
+        "catalogId": "gowin-dk-start-gw1nsr-lv4cqn48gc7i6-v1-1",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/41/",
+        "kind": "board",
+        "status": "Active"
+      },
+      {
+        "manufacturerEntry": "DK_START_GW5A-LV25UG324_V2.0",
+        "catalogId": "gowin-dk-start-gw5a-lv25ug324-v2-0",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/57/",
+        "kind": "board",
+        "status": "Active"
+      }
+    ],
+    "additionalEntries": [
+      {
+        "manufacturerEntry": "EPM11",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/78/",
+        "catalogId": "brisbane-silicon-epm11"
+      },
+      {
+        "manufacturerEntry": "BRS-100-GW1NR9",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/74/",
+        "catalogId": "brisbane-silicon-brs-100-gw1nr9"
+      },
+      {
+        "manufacturerEntry": "KIWI 1P5",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/71/",
+        "catalogId": "onekiwi-kiwi-1p5"
+      },
+      {
+        "manufacturerEntry": "TEC0117",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/44/",
+        "catalogId": "trenz-tec0117-01"
+      },
+      {
+        "manufacturerEntry": "SiPeed Tang Nano",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/40/",
+        "catalogId": "sipeed-tang-nano"
+      },
+      {
+        "manufacturerEntry": "SiPeed Tang Nano 4k",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/39/",
+        "catalogId": "sipeed-tang-nano-4k"
+      },
+      {
+        "manufacturerEntry": "SiPeed Tang Nano 9k",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/43/",
+        "catalogId": "sipeed-tang-nano-9k"
+      },
+      {
+        "manufacturerEntry": "SiPeed Tang Primer 20K",
+        "url": "https://www.gowinsemi.com/en/support/devkits_detail/47/",
+        "catalogId": "sipeed-tang-primer-20k-dock"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "hlk-7688a",
+      "name": "Hi-Link HLK-7688A Router Module",
+      "contacts": 56,
+      "source": "https://h.hlktech.com/download/HLK-7688A/1/HLK-7688A%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV1.4.pdf",
+      "footprintNote": "Reference SMD carrier using the manufacturer's top-view pad numbering and pitch. Verify land extension and solder-mask openings against the linked CAD. The three unnumbered thermal lands on the 56-contact modules repeat ground terminal 1. Canvas contacts use the same component-side numbering as the physical lands."
+    },
+    {
+      "id": "hlk-7628n",
+      "name": "Hi-Link HLK-7628N Router Module",
+      "contacts": 56,
+      "source": "https://h.hlktech.com/download/HLK-7628N/1/HLK-7628N%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV2.6.pdf",
+      "footprintNote": "Reference SMD carrier using the manufacturer's top-view pad numbering and pitch. Verify land extension and solder-mask openings against the linked CAD. The three unnumbered thermal lands on the 56-contact modules repeat ground terminal 1. Canvas contacts use the same component-side numbering as the physical lands."
+    },
+    {
+      "id": "hlk-7621a",
+      "name": "Hi-Link HLK-7621A Router Module",
+      "contacts": 140,
+      "source": "https://h.hlktech.com/download/HLK-7621/1/HLK-7621A%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_V1.5.pdf",
+      "footprintNote": "Reference SMD carrier using the manufacturer's top-view pad numbering and pitch. Verify land extension and solder-mask openings against the linked CAD. The three unnumbered thermal lands on the 56-contact modules repeat ground terminal 1. Canvas contacts use the same component-side numbering as the physical lands."
+    },
+    {
+      "id": "hlk-rm08k",
+      "name": "Hi-Link HLK-RM08K Router Module",
+      "contacts": 52,
+      "source": "https://h.hlktech.com/download/HLK-RM08K/1/HLK-RM08K--%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C--V1.6.pdf",
+      "footprintNote": "Reference SMD carrier for the 52-contact RM08K version. Two-millimeter contact pitch follows the manual; pad centers, board-edge offsets and land sizes are representative and must be checked against the fitted module. The pin and half-pin variants require their own mechanical carrier."
+    },
+    {
+      "id": "simcom-sim7600g-h-m2",
+      "name": "SIMCom SIM7600G-H M.2 (Luckfox)",
+      "contacts": 67,
+      "source": "https://wiki.luckfox.com/SIM7600G-H-M.2",
+      "footprintNote": "Off-board 67-contact reference termination in two 2.54 mm rows, labelled by M.2 contact number. This is not a mating M.2 B-key connector footprint or a card-edge land pattern. Select the actual socket footprint and mounting-height variant separately. Numbered positions 12–19 are the key notch and have no contacts. Antenna sockets are complete coaxial cable ports."
+    },
+    {
+      "id": "simcom-sim800c",
+      "name": "SIMCom SIM800C",
+      "contacts": 42,
+      "source": "https://simcom.ee/documents/SIM800C/SIM800C_Hardware_Design_V1.05.pdf",
+      "footprintNote": "SIMCom V1.05 recommended 42-land pattern, Figure 4: 1.10 mm pitch, 0.60 × 1.60 mm rounded lands. Module top view, 15.7 × 17.6 mm outline. Check the stated RF keepout regions and stencil drawing."
+    },
+    {
+      "id": "simcom-sim7600e-minipcie",
+      "name": "SIMCom SIM7600E-PCIE",
+      "contacts": 52,
+      "source": "https://simcom.ee/documents/SIM7600E/SIM7600%20Series_PCIE_Hardware%20Design_V1.01.pdf",
+      "footprintNote": "Off-board 52-contact reference termination in two 2.54 mm rows, labelled by Mini PCIe contact number. This is not a mating Mini PCIe connector footprint or a card-edge land pattern. Select the actual socket footprint and mounting-height variant separately.  Antenna sockets are complete coaxial cable ports."
+    },
+    {
+      "id": "quectel-ec25-e-minipcie",
+      "name": "Quectel EC25-E Mini PCIe",
+      "contacts": 52,
+      "source": "https://quectel.com/content/uploads/2024/02/Quectel_EC25_Mini_PCIe_Hardware_Design_V2.4-2.pdf",
+      "footprintNote": "Off-board 52-contact reference termination in two 2.54 mm rows, labelled by Mini PCIe contact number. This is not a mating Mini PCIe connector footprint or a card-edge land pattern. Select the actual socket footprint and mounting-height variant separately.  Antenna sockets are complete coaxial cable ports."
+    },
+    {
+      "id": "quectel-lc76g-ab",
+      "name": "Quectel LC76G (AB)",
+      "contacts": 28,
+      "source": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "footprintNote": "Quectel V1.3 recommended footprint, Figure 18: eighteen 1.8 × 0.8 mm LCC lands and ten 0.8 mm square underside LGA lands, 1.1 mm pitch. Top-view numbering. Keep at least 3 mm clear around the module as specified in the hardware manual."
+    },
+    {
+      "id": "quectel-lc76g-pa",
+      "name": "Quectel LC76G (PA)",
+      "contacts": 28,
+      "source": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "footprintNote": "Quectel V1.3 recommended footprint, Figure 18: eighteen 1.8 × 0.8 mm LCC lands and ten 0.8 mm square underside LGA lands, 1.1 mm pitch. Top-view numbering. Keep at least 3 mm clear around the module as specified in the hardware manual."
+    },
+    {
+      "id": "quectel-lc76g-pb",
+      "name": "Quectel LC76G (PB)",
+      "contacts": 28,
+      "source": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "footprintNote": "Quectel V1.3 recommended footprint, Figure 18: eighteen 1.8 × 0.8 mm LCC lands and ten 0.8 mm square underside LGA lands, 1.1 mm pitch. Top-view numbering. Keep at least 3 mm clear around the module as specified in the hardware manual."
+    },
+    {
+      "id": "weact-blackpill-stm32f401ceu6",
+      "name": "WeAct STM32F401CEU6 Black Pill",
+      "contacts": 44,
+      "source": "https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/blob/master/Hardware/MiniF4x1Cx_V31%20SchDoc.pdf",
+      "footprintNote": "Reference host-board carrier for WeAct MiniF4 V3.1. Main headers use 15.24 mm separation and 2.54 mm pitch. Outline and auxiliary connector placement are approximate, except the SWD row center follows the manufacturer's KiCad footprint. USB faces the top in the canvas view."
+    },
+    {
+      "id": "weact-blackpill-stm32f411ceu6",
+      "name": "WeAct STM32F411CEU6 Black Pill",
+      "contacts": 44,
+      "source": "https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/blob/master/Hardware/MiniF4x1Cx_V31%20SchDoc.pdf",
+      "footprintNote": "Reference host-board carrier for WeAct MiniF4 V3.1. Main headers use 15.24 mm separation and 2.54 mm pitch. Outline and auxiliary connector placement are approximate, except the SWD row center follows the manufacturer's KiCad footprint. USB faces the top in the canvas view."
+    },
+    {
+      "id": "weact-bluepill-plus-stm32f103c8t6",
+      "name": "WeAct BluePill Plus STM32F103C8T6",
+      "contacts": 44,
+      "source": "https://github.com/WeActStudio/BluePill-Plus/blob/master/HDK/BluePillPlus_V11_SchDoc.pdf",
+      "footprintNote": "Reference host-board carrier for WeAct BluePill Plus V1.1. Main headers use 15.24 mm separation and 2.54 mm pitch. Outline and auxiliary connector placement are approximate. USB faces the top in the canvas view."
+    },
+    {
+      "id": "weact-bluepill-plus-gd32f303cct6",
+      "name": "WeAct BluePill Plus GD32F303CCT6",
+      "contacts": 44,
+      "source": "https://github.com/WeActStudio/BluePill-Plus/blob/master/HDK/BluePillPlus_V11_SchDoc.pdf",
+      "footprintNote": "Reference host-board carrier for WeAct BluePill Plus V1.1. Main headers use 15.24 mm separation and 2.54 mm pitch. Outline and auxiliary connector placement are approximate. USB faces the top in the canvas view."
+    },
+    {
+      "id": "bluepill-stm32f103c8t6",
+      "name": "STM32F103C8T6 Blue Pill (Representative)",
+      "contacts": 50,
+      "source": "https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill",
+      "footprintNote": "Representative carrier for the original unbranded Blue Pill schematic. Verify clone header, SWD and boot-jumper orientation. Outline and auxiliary connector placement are approximate. USB faces the top in the canvas view."
+    },
+    {
+      "id": "friendlyelec-nanopi-m6",
+      "name": "FriendlyElec NanoPi M6",
+      "contacts": 39,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M6",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi M6 revision 2405, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "friendlyelec-nanopi-neo",
+      "name": "FriendlyElec NanoPi NEO",
+      "contacts": 46,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_NEO",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi NEO revision 1.4 / 1801, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "friendlyelec-nanopi-neo2",
+      "name": "FriendlyElec NanoPi NEO2",
+      "contacts": 46,
+      "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_NEO2",
+      "footprintNote": "Reference wiring carrier for FriendlyElec NanoPi NEO2 revision 1.1 / 1711, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "banana-pi-bpi-m2-zero",
+      "name": "Banana Pi BPI-M2 Zero",
+      "contacts": 43,
+      "source": "https://docs.banana-pi.org/en/BPI-M2_Zero/BananaPi_BPI-M2_Zero",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI-M2 Zero revision 1.0 (H3 variant), component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "banana-pi-bpi-m5",
+      "name": "Banana Pi BPI-M5",
+      "contacts": 43,
+      "source": "https://docs.banana-pi.org/en/BPI-M5/BananaPi_BPI-M5",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI-M5 revision 1.0, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "banana-pi-bpi-m7",
+      "name": "Banana Pi BPI-M7",
+      "contacts": 48,
+      "source": "https://docs.banana-pi.org/en/BPI-M7/BananaPi_BPI-M7",
+      "footprintNote": "Reference wiring carrier for Banana Pi BPI-M7 revision 1.1 / 2023-12-13, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "radxa-rock-5a",
+      "name": "Radxa ROCK 5A",
+      "contacts": 42,
+      "source": "https://docs.radxa.com/en/rock5/rock5a/hardware-design/hardware-interface",
+      "footprintNote": "Reference wiring carrier for Radxa ROCK 5A revision 1.1, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "radxa-rock-5b",
+      "name": "Radxa ROCK 5B",
+      "contacts": 44,
+      "source": "https://docs.radxa.com/en/rock5/rock5b/hardware-design/hardware-interface",
+      "footprintNote": "Reference wiring carrier for Radxa ROCK 5B revision 1.423, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "radxa-rock-3a",
+      "name": "Radxa ROCK 3A",
+      "contacts": 45,
+      "source": "https://docs.radxa.com/en/rock3/rock3a/hardware-design/hardware-interface",
+      "footprintNote": "Reference wiring carrier for Radxa ROCK 3A revision 1.31, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "radxa-zero-3w",
+      "name": "Radxa ZERO 3W",
+      "contacts": 40,
+      "source": "https://docs.radxa.com/en/zero/zero3/hardware-design/hardware-interface",
+      "footprintNote": "Reference wiring carrier for Radxa ZERO 3W revision 1.11, component-side view. Main header pitch and contact order follow manufacturer documentation; header offsets, outline and component heights are approximate. Auxiliary contacts outside the outline are 2.54 mm cable landing rows, not physical board socket land patterns. These rows do not establish cable polarity from a mating-face view. High-speed sockets, test points, switch pads and mechanical holes are not fabrication pads. Verify the actual board and vendor CAD before making an adapter."
+    },
+    {
+      "id": "lilygo-ttgo-t-display-v1-1",
+      "name": "LILYGO TTGO T-Display V1.1",
+      "contacts": 26,
+      "source": "https://github.com/Xinyuan-LilyGO/TTGO-T-Display/blob/master/schematic/ESP32-TFT(6-26).pdf",
+      "footprintNote": "Reference carrier using the original official EAGLE library's 22.86 mm row separation and 2.54 mm pitch. Header offset and outline remain reference geometry. Battery contacts use off-board 2.54 mm cable-termination rows beyond the outline, not the fitted socket/solder-pad land pattern. Check the exact board CAD and connector polarity."
+    },
+    {
+      "id": "lilygo-t-display-s3",
+      "name": "LILYGO T-Display-S3",
+      "contacts": 30,
+      "source": "https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/schematic/T_Display_S3.pdf",
+      "footprintNote": "Reference carrier for T-Display-S3, main headers at 2.54 mm pitch. Header offsets and the 25.5 × 58 mm reference envelope are approximate. Battery and CNC UART contacts use off-board 2.54 mm cable-termination rows beyond the outline, not the fitted socket/solder-pad land pattern. Check the exact board CAD and connector polarity."
+    },
+    {
+      "id": "lilygo-t-display-s3-touch",
+      "name": "LILYGO T-Display-S3 Touch",
+      "contacts": 30,
+      "source": "https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/schematic/T_Display_S3.pdf",
+      "footprintNote": "Reference carrier for T-Display-S3, main headers at 2.54 mm pitch. Header offsets and the 25.5 × 58 mm reference envelope are approximate. Battery and CNC UART contacts use off-board 2.54 mm cable-termination rows beyond the outline, not the fitted socket/solder-pad land pattern. Check the exact board CAD and connector polarity."
+    },
+    {
+      "id": "luckfox-pico",
+      "name": "Luckfox Pico",
+      "contacts": 45,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-mini-a",
+      "name": "Luckfox Pico Mini A",
+      "contacts": 27,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-mini-b",
+      "name": "Luckfox Pico Mini B",
+      "contacts": 27,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-plus",
+      "name": "Luckfox Pico Plus",
+      "contacts": 40,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-pro",
+      "name": "Luckfox Pico Pro",
+      "contacts": 40,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Pro-Max",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-max",
+      "name": "Luckfox Pico Max",
+      "contacts": 40,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Pro-Max",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-ultra",
+      "name": "Luckfox Pico Ultra",
+      "contacts": 58,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-ultra-w",
+      "name": "Luckfox Pico Ultra W",
+      "contacts": 58,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-ultra-b",
+      "name": "Luckfox Pico Ultra B",
+      "contacts": 58,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-ultra-bw",
+      "name": "Luckfox Pico Ultra BW",
+      "contacts": 58,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-pi-a",
+      "name": "Luckfox Pico Pi A",
+      "contacts": 48,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-pi-a-w",
+      "name": "Luckfox Pico Pi A W",
+      "contacts": 48,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-pi-b",
+      "name": "Luckfox Pico Pi B",
+      "contacts": 48,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-pi-b-w",
+      "name": "Luckfox Pico Pi B W",
+      "contacts": 48,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico-zero",
+      "name": "Luckfox Pico Zero",
+      "contacts": 42,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-Zero",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra",
+      "name": "Luckfox Lyra",
+      "contacts": 40,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-b",
+      "name": "Luckfox Lyra B",
+      "contacts": 40,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-plus",
+      "name": "Luckfox Lyra Plus",
+      "contacts": 40,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Plus",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-ultra",
+      "name": "Luckfox Lyra Ultra",
+      "contacts": 58,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Ultra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-ultra-w",
+      "name": "Luckfox Lyra Ultra W",
+      "contacts": 58,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Ultra",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-pi-a",
+      "name": "Luckfox Lyra Pi A",
+      "contacts": 44,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-pi-a-w",
+      "name": "Luckfox Lyra Pi A W",
+      "contacts": 44,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-pi-b",
+      "name": "Luckfox Lyra Pi B",
+      "contacts": 44,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-pi-b-w",
+      "name": "Luckfox Lyra Pi B W",
+      "contacts": 44,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lyra-zero-w",
+      "name": "Luckfox Lyra Zero W",
+      "contacts": 40,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Zero-W",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-nova",
+      "name": "Luckfox Nova",
+      "contacts": 54,
+      "source": "https://wiki.luckfox.com/Luckfox-Nova",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-nova-w",
+      "name": "Luckfox Nova W",
+      "contacts": 54,
+      "source": "https://wiki.luckfox.com/Luckfox-Nova",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-aura",
+      "name": "Luckfox Aura",
+      "contacts": 59,
+      "source": "https://wiki.luckfox.com/Luckfox-Aura/Introduction",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-lume",
+      "name": "Luckfox Lume",
+      "contacts": 48,
+      "source": "https://wiki.luckfox.com/Luckfox-Lume/Introduction",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-omni3576",
+      "name": "Luckfox Omni3576",
+      "contacts": 56,
+      "source": "https://wiki.luckfox.com/Luckfox-Omni3576/Luckfox-Omni3576-Introduction",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-cm5-io-board",
+      "name": "Luckfox CM5 IO Board",
+      "contacts": 65,
+      "source": "https://wiki.luckfox.com/Luckfox-CM5-IO-Board",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-pico2",
+      "name": "Luckfox Pico2",
+      "contacts": 43,
+      "source": "https://wiki.luckfox.com/Pico2/Pinout",
+      "footprintNote": "Reference carrier for the listed expansion/control contacts. Header pitch is 2.54 mm; connector placement and component clearances are approximate. Complete USB, Ethernet, HDMI, MIPI/FFC, SD and PCIe/M.2 interfaces are illustrated as cable ports, not raw GPIO. Check the fitted board revision against the linked manufacturer CAD before fabrication."
+    },
+    {
+      "id": "luckfox-webbee",
+      "name": "Luckfox WebBee",
+      "contacts": 12,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+      "footprintNote": "Off-board USB 2.0 / RJ45 cable breakout reference for the enclosed WebBee. Contact numbers follow the standard mating connectors; this is not the appliance PCB footprint. No GPIO or undocumented internal pads are represented."
+    },
+    {
+      "id": "luckfox-pico-86-panel",
+      "name": "Luckfox Pico 86-Panel",
+      "contacts": 8,
+      "source": "https://wiki.luckfox.com/Luckfox-Pico-86-Panel",
+      "footprintNote": "Off-board reference terminal carrier for the enclosed 86-Panel. 5 mm placement is illustrative, not a manufacturer land pattern. Use the marked VIN/GND, RS485 A/B and L0/L1/L2/L3 terminals on the fitted assembly. Relay contact function comes from 86-Panel-Bottom-Board.pdf."
+    },
+    {
+      "id": "luckfox-picokvm-base",
+      "name": "Luckfox PicoKVM Base / Base Lite",
+      "contacts": 10,
+      "source": "https://wiki.luckfox.com/Luckfox-PicoKVM/Introduction",
+      "footprintNote": "Off-board SH1.0 ten-wire breakout reference for the KVM assembly. IO.1–IO.10 are left-to-right contact references in the manufacturer's mating-face diagram, not verified PCB pad numbers. Use the keyed original cable and match signal names. The approximate enclosure/carrier geometry is not the KVM PCB land pattern."
+    },
+    {
+      "id": "luckfox-picokvm",
+      "name": "Luckfox PicoKVM / PicoKVM Lite",
+      "contacts": 10,
+      "source": "https://wiki.luckfox.com/Luckfox-PicoKVM/Introduction",
+      "footprintNote": "Off-board SH1.0 ten-wire breakout reference for the KVM assembly. IO.1–IO.10 are left-to-right contact references in the manufacturer's mating-face diagram, not verified PCB pad numbers. Use the keyed original cable and match signal names. The approximate enclosure/carrier geometry is not the KVM PCB land pattern."
+    },
+    {
+      "id": "luckfox-picokvm-ext",
+      "name": "Luckfox PicoKVM Ext",
+      "contacts": 37,
+      "source": "https://wiki.luckfox.com/Luckfox-PicoKVM-Ext",
+      "footprintNote": "Reference carrier for the exposed J3, P1, P2 and P3 connectors. Pin 1 of J3 is at the lower end in the manufacturer's component-side photograph. P1/P2/P3 are 2.54 mm two-row headers with contact 10 absent. PCIe power edge and USB ports are complete cable/slot interfaces and are not reproduced as raw carrier lands. Outline and placement are approximate; use the 68.7 × 51 mm manufacturer main-board drawing for mechanical design."
+    },
+    {
+      "id": "luckfox-lyra-plc",
+      "name": "Luckfox Lyra PLC / PoE Kit",
+      "contacts": 33,
+      "source": "https://wiki.luckfox.com/Luckfox-Lyra-PLC/OpenPLC-Pinout",
+      "footprintNote": "Off-board reference carrier for the Lyra PLC enclosure. POWER.1–11 and COMM.1–11 follow the manufacturer's separate terminal diagrams. Service socket contacts use left-to-right mating-face references; their connector pad numbering is not printed in the published diagram. Terminal pitch and placement here are illustrative; use the linked 71.84 × 87.8 mm enclosure drawing and the actual pluggable connector before fabrication."
+    },
+    {
+      "id": "luckfox-core1106",
+      "name": "Luckfox Core1106",
+      "contacts": 112,
+      "source": "https://wiki.luckfox.com/Core1106/Introduction",
+      "footprintNote": "Manufacturer KiCad SMD land pattern: terminal centers and rectangular pad dimensions imported from the published footprint. Component-side orientation is preserved. Verify assembly tolerances against the original archive before fabrication."
+    },
+    {
+      "id": "luckfox-core1106d",
+      "name": "Luckfox Core1106D",
+      "contacts": 112,
+      "source": "https://wiki.luckfox.com/Core1106D/Introduction",
+      "footprintNote": "Reference carrier using the Core1106 land pattern; manufacturer explicitly states Core1106D has the same 112-pin definitions and 30 × 30 mm package. Check the D revision's mechanical clearances against the linked schematic."
+    },
+    {
+      "id": "luckfox-core3506",
+      "name": "Luckfox Core3506",
+      "contacts": 120,
+      "source": "https://wiki.luckfox.com/Core3506",
+      "footprintNote": "Manufacturer KiCad SMD land pattern: terminal centers and rectangular pad dimensions imported from the published footprint. Component-side orientation is preserved. Verify assembly tolerances against the original archive before fabrication."
+    },
+    {
+      "id": "luckfox-core3566",
+      "name": "Luckfox Core3566",
+      "contacts": 200,
+      "source": "https://wiki.luckfox.com/Core3566",
+      "footprintNote": "Reference mating carrier for Core3566's two 100-pin connectors. Terminal map is from manufacturer datasheet chapter 4. Shown rows and pad sizes are representative, not a DF40 production land pattern. Select DF40C-100DS-0.4V or DF40HC(3.0)-100DS-0.4V and obtain its manufacturer land pattern for fabrication."
+    },
+    {
+      "id": "luckfox-core3576",
+      "name": "Luckfox Core3576",
+      "contacts": 260,
+      "source": "https://wiki.luckfox.com/Luckfox-Omni3576/Luckfox-Omni3576-Introduction",
+      "footprintNote": "Reference breakout carrier for all 260 Core3576 SO-DIMM contacts. The two separated rows represent the front/back contacts logically; they are not a production SO-DIMM socket footprint. Preserve the actual key position, mating socket land pattern, impedance and clearance from the manufacturer CAD."
+    },
+    {
+      "id": "sipeed-tang-nano",
+      "name": "Sipeed Tang Nano (original)",
+      "contacts": 44,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano/Nano.html",
+      "footprintNote": "Original GW1N-1 reference carrier for 40 expansion contacts and four JTAG pads; contact numbers denote the FPGA package pad printed in the manufacturer pin diagram. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-nano-1k",
+      "name": "Sipeed Tang Nano 1K",
+      "contacts": 44,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-1K/Nano-1k.html",
+      "footprintNote": "6100 reference carrier for both 20-contact expansion rows and both two-contact JTAG pad pairs. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-nano-4k",
+      "name": "Sipeed Tang Nano 4K",
+      "contacts": 44,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-4K/Nano-4K.html",
+      "footprintNote": "3603 reference carrier for both 22-contact expansion headers. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-nano-9k",
+      "name": "Sipeed Tang Nano 9K",
+      "contacts": 48,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K.html",
+      "footprintNote": "3672 reference carrier for J5 and J6 24-contact expansion rows. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-nano-20k",
+      "name": "Sipeed Tang Nano 20K",
+      "contacts": 40,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html",
+      "footprintNote": "3923 rev1.31 reference carrier for J6 and J5 20-contact expansion rows. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-primer-20k-lite",
+      "name": "Sipeed Tang Primer 20K + Lite Dock",
+      "contacts": 128,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/primer-20k.html",
+      "footprintNote": "3711 rev1.2 (2024-06-18) reference carrier for J1/J3 40-contact rows and J2/J6/J7/J8 12-contact headers, including power, configuration and JTAG contacts. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-primer-20k-dock",
+      "name": "Sipeed Tang Primer 20K + Dock",
+      "contacts": 88,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/primer-20k.html",
+      "footprintNote": "3714 (3713 anniversary circuit) reference carrier for all four 12-contact extension headers, touch header J4, camera FPC J11 and microphone FPC J15. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-primer-25k-som",
+      "name": "Sipeed Tang Primer 25K SOM",
+      "contacts": 120,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-25k/primer-25k.html",
+      "footprintNote": "52300 reference carrier for all 120 contacts on the two DF40C-60DP-0.4V board-to-board connectors. All 120 connector-qualified contacts are represented as off-board cable terminals. This is not a DF40C mating footprint; use the official connector CAD and bottom-view pin map for a carrier PCB."
+    },
+    {
+      "id": "sipeed-tang-primer-25k-dock",
+      "name": "Sipeed Tang Primer 25K + Dock",
+      "contacts": 84,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-25k/primer-25k.html",
+      "footprintNote": "60033 reference carrier for J3 40-contact header, J4/J5/J6 PMOD sockets and J7 eight-contact debugger header. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-mega-138k-neo",
+      "name": "Sipeed Tang Mega 138K + NEO Dock",
+      "contacts": 120,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k.html",
+      "footprintNote": "31005 rev1.3 reference carrier for J13/J14 40-contact expansion rows, J8/J9 PMOD sockets, J11 ADC header and J32 ten-contact FPC extension. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-mega-60k-neo",
+      "name": "Sipeed Tang Mega 60K + NEO Dock",
+      "contacts": 120,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-60k/mega-60k.html",
+      "footprintNote": "31004 rev1.2 reference carrier for J13/J14 40-contact expansion rows, J8/J9 PMOD sockets, J11 ADC header and J32 ten-contact FPC extension. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-console-138k",
+      "name": "Sipeed Tang Console 138K",
+      "contacts": 104,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-console/retro-console.html",
+      "footprintNote": "32001C rev1.3 reference carrier for J9/J10 40-contact expansion headers and J6/J7 PMOD sockets. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-console-60k",
+      "name": "Sipeed Tang Console 60K",
+      "contacts": 104,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-console/retro-console.html",
+      "footprintNote": "32001C rev1.3 reference carrier for J9/J10 40-contact expansion headers and J6/J7 PMOD sockets. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-mega-138k-pro-dock",
+      "name": "Sipeed Tang Mega 138K Pro + Dock",
+      "contacts": 94,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k-pro.html",
+      "footprintNote": "4071f rev1.2 reference carrier for J23 SDRAM 40-contact header, J22/J24/J26 PMOD sockets, both ADC headers and J28 microphone FPC. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-tang-mega-60k-som",
+      "name": "Sipeed Tang Mega 60K SOM",
+      "contacts": 280,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-60k/mega-60k.html",
+      "footprintNote": "30353 reference carrier for all 280 signal/power contacts on C2399/C2400/BTB9900; grounded connector retention tabs are mechanical. Complete connector contact set in an off-board reference carrier. The pad banks are cable terminations, not a DF40C mating pattern. Consult the bottom-view connector drawing and official CAD for a custom carrier. External bank supplies and high-speed lane requirements must be observed."
+    },
+    {
+      "id": "sipeed-tang-mega-138k-som",
+      "name": "Sipeed Tang Mega 138K SOM",
+      "contacts": 280,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k.html",
+      "footprintNote": "30353 reference carrier for all 280 signal/power contacts on C2399/C2400/BTB9900; grounded connector retention tabs are mechanical. Complete connector contact set in an off-board reference carrier. The pad banks are cable terminations, not a DF40C mating pattern. Consult the bottom-view connector drawing and official CAD for a custom carrier. External bank supplies and high-speed lane requirements must be observed."
+    },
+    {
+      "id": "sipeed-tang-mega-138k-pro-som",
+      "name": "Sipeed Tang Mega 138K Pro SOM",
+      "contacts": 360,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k-pro.html",
+      "footprintNote": "4072 rev1.10 reference carrier for all 360 signal/power contacts on J1/J2/J3; grounded connector retention tabs are mechanical. Complete connector contact set in an off-board reference carrier. The pad banks are cable terminations, not a DF40C mating pattern. Consult the bottom-view connector drawing and official CAD for a custom carrier. External bank supplies and high-speed lane requirements must be observed."
+    },
+    {
+      "id": "sipeed-tang-primer-20k-som",
+      "name": "Sipeed Tang Primer 20K SOM",
+      "contacts": 204,
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/primer-20k.html",
+      "footprintNote": "3691 circuit (3961 schematic download) reference carrier for all 204 SODIMM edge contacts, including power and NC positions. All 204 numbered contacts in an off-board termination carrier, not a SODIMM mating footprint. Use the manufacturer bottom assembly and edge-connector drawing for a carrier board."
+    },
+    {
+      "id": "sipeed-tang-primer-eg4s20",
+      "name": "Sipeed Tang Primer EG4S20 (original)",
+      "contacts": 80,
+      "source": "https://tang.sipeed.com/en/hardware-overview/lichee-tang/",
+      "footprintNote": "Original EG4S20BG256 board reference carrier for both 40-position expansion rows, numbered top-to-bottom as in the manufacturer-linked pinout supplement; these are reference row positions because connector terminal numbers are not printed in that diagram. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-lichee-nano",
+      "name": "Sipeed Lichee Nano",
+      "contacts": 72,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/Nano/Nano.html",
+      "footprintNote": "8.16 reference carrier for J2/J5 22-contact perimeter rows, J8 20-contact LCD row, J9 touch pads, J6 TV inputs and J7 backlight pads. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-lichee-zero",
+      "name": "Sipeed Lichee Zero",
+      "contacts": 84,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/Zero/Zero.html",
+      "footprintNote": "Manufacturer schematic 2017-03-05 reference carrier for all U3/U8 30-contact perimeter signals, J3 LCD row and J2/J12 supply pads; J8/J9 taps share existing logical nets. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-lichee-rv-core",
+      "name": "Sipeed Lichee RV Core",
+      "contacts": 138,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/RV/RV.html",
+      "footprintNote": "7001 rev1.0 reference carrier for all 134 M.2 edge contacts on J3/J4 and the four-contact UART/power header J5. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-lichee-rv-dock",
+      "name": "Sipeed Lichee RV + Dock",
+      "contacts": 40,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/RV/Dock.html",
+      "footprintNote": "3516 rev1.0 reference carrier for all 40 J4 expansion contacts. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-licheerv-nano-b",
+      "name": "Sipeed LicheeRV Nano B",
+      "contacts": 28,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+      "footprintNote": "70418 rev1.4 reference carrier for all 28 castellated/header contacts J1–J28; each contact is individually identified in the schematic. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-licheerv-nano-w",
+      "name": "Sipeed LicheeRV Nano W",
+      "contacts": 28,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+      "footprintNote": "70418 rev1.4 reference carrier for all 28 castellated/header contacts J1–J28; each contact is individually identified in the schematic. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-licheerv-nano-e",
+      "name": "Sipeed LicheeRV Nano E",
+      "contacts": 28,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+      "footprintNote": "70418 rev1.4 reference carrier for all 28 castellated/header contacts J1–J28; each contact is individually identified in the schematic. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-licheerv-nano-we",
+      "name": "Sipeed LicheeRV Nano WE",
+      "contacts": 28,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+      "footprintNote": "70418 rev1.4 reference carrier for all 28 castellated/header contacts J1–J28; each contact is individually identified in the schematic. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-licheepi-3a",
+      "name": "Sipeed LicheePi 3A",
+      "contacts": 20,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/K1/lpi3a/1_intro.html",
+      "footprintNote": "52801 (2024-08-08) reference carrier for J2500 and J2501 ten-contact expansion rows. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-licheepi-4a",
+      "name": "Sipeed LicheePi 4A",
+      "contacts": 20,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/th1520/lpi4a/1_intro.html",
+      "footprintNote": "51602 (2023-07-28) reference carrier for J2500/J2501 ten-contact expansion rows. Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."
+    },
+    {
+      "id": "sipeed-lichee-module-3a",
+      "name": "Sipeed Lichee Module 3A",
+      "contacts": 260,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/K1/lm3a.html",
+      "footprintNote": "52701 (2024-07-30) reference carrier for all 260 SODIMM edge contacts, including NC, boot, power and high-speed interfaces. All 260 numbered contacts are represented as off-board cable terminals. This is not a SODIMM mating pattern. Use the manufacturer mechanical drawing and connector orientation for carrier design; the displayed bank positions prioritize wiring legibility."
+    },
+    {
+      "id": "sipeed-lichee-module-4a",
+      "name": "Sipeed Lichee Module 4A",
+      "contacts": 260,
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/th1520/lm4a.html",
+      "footprintNote": "Manufacturer pin table rev1.1 (2023-04-26) reference carrier for all 260 SODIMM edge contacts, including NC, boot, power and high-speed interfaces. All 260 numbered contacts are represented as off-board cable terminals. This is not a SODIMM mating pattern. Use the manufacturer mechanical drawing and connector orientation for carrier design; the displayed bank positions prioritize wiring legibility."
+    },
+    {
+      "id": "gowin-dk-motor-gw2a-lv55pg484c8i7-v3-0",
+      "name": "Gowin DK_Motor_GW2A-LV55PG484C8I7_V3.0",
+      "contacts": 186,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/56/",
+      "footprintNote": "Reference connector carrier for DK_Motor_GW2A-LV55PG484C8I7_V3.0. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw1n-lv4lq144c6i5-v1-1",
+      "name": "Gowin DK_START_GW1N-LV4LQ144C6I5_V1.1",
+      "contacts": 131,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/1/",
+      "footprintNote": "Reference connector carrier for DK_START_GW1N-LV4LQ144C6I5_V1.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw1n-lv9eq144c6i5-v2-1",
+      "name": "Gowin DK_START_GW1N-LV9EQ144C6I5_V2.1",
+      "contacts": 125,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/5/",
+      "footprintNote": "Reference connector carrier for DK_START_GW1N-LV9EQ144C6I5_V2.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw1nr-lv9lq144pc6i5-v3-1",
+      "name": "Gowin DK_START_GW1NR-LV9LQ144PC6I5_V3.1",
+      "contacts": 125,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/16/",
+      "footprintNote": "Reference connector carrier for DK_START_GW1NR-LV9LQ144PC6I5_V3.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw1ns-lv4cqn48c7i6-v1-1",
+      "name": "Gowin DK_START_GW1NS-LV4CQN48C7I6_V1.1",
+      "contacts": 120,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/32/",
+      "footprintNote": "Reference connector carrier for DK_START_GW1NS-LV4CQN48C7I6_V1.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw1nsr-lv4cqn48pc7i6-v1-1",
+      "name": "Gowin DK_START_GW1NSR-LV4CQN48PC7I6_V1.1",
+      "contacts": 120,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/28/",
+      "footprintNote": "Reference connector carrier for DK_START_GW1NSR-LV4CQN48PC7I6_V1.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw1nz-lv1fn32c6i5-v3-1",
+      "name": "Gowin DK_START_GW1NZ-LV1FN32C6I5_V3.1",
+      "contacts": 43,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/27/",
+      "footprintNote": "Reference connector carrier for DK_START_GW1NZ-LV1FN32C6I5_V3.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw2a-lv18pg256c8i7-v2-0",
+      "name": "Gowin DK_START_GW2A-LV18PG256C8I7_V2.0",
+      "contacts": 98,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/31/",
+      "footprintNote": "Reference connector carrier for DK_START_GW2A-LV18PG256C8I7_V2.0. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw2a-lv55pg484c8i7-v1-3",
+      "name": "Gowin DK_START_GW2A-LV55PG484C8I7_V1.3",
+      "contacts": 297,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/22/",
+      "footprintNote": "Reference connector carrier for DK_START_GW2A-LV55PG484C8I7_V1.3. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw2an-uv9xug400c7i6-v1-0",
+      "name": "Gowin DK_START_GW2AN-UV9XUG400C7I6_V1.0",
+      "contacts": 70,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/50/",
+      "footprintNote": "Reference connector carrier for DK_START_GW2AN-UV9XUG400C7I6_V1.0. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw2ar-lv18eq144pc8i7-v1-1",
+      "name": "Gowin DK_START_GW2AR-LV18EQ144PC8I7_V1.1",
+      "contacts": 114,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/30/",
+      "footprintNote": "Reference connector carrier for DK_START_GW2AR-LV18EQ144PC8I7_V1.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw1nsr-lv4cqn48gc7i6-v1-1",
+      "name": "Gowin DK_START_GW1NSR-LV4CQN48GC7I6_V1.1",
+      "contacts": 120,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/41/",
+      "footprintNote": "Reference connector carrier for DK_START_GW1NSR-LV4CQN48GC7I6_V1.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-usb-gw5at-lv60ug225-v1-1",
+      "name": "Gowin DK_USB_GW5AT-LV60UG225_V1.1",
+      "contacts": 83,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/72/",
+      "footprintNote": "Off-board reference termination carrier, with one numbered two-row 2.54 mm bank per listed connector outside the board envelope. This is not a mating BTB/FPC/socket land pattern. Actual connectors use their specified 0.5, 2.0 or 2.54 mm pitch, which is retained in the pin descriptions and linked guide. The board envelope and placement are approximate; use the selected connector manufacturer's CAD for a physical adapter."
+    },
+    {
+      "id": "gowin-dk-usb-gw5at-lv60ug225-v1-0",
+      "name": "Gowin DK_USB_GW5AT-LV60UG225_V1.0",
+      "contacts": 83,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/66/",
+      "footprintNote": "Off-board reference termination carrier, with one numbered two-row 2.54 mm bank per listed connector outside the board envelope. This is not a mating BTB/FPC/socket land pattern. Actual connectors use their specified 0.5, 2.0 or 2.54 mm pitch, which is retained in the pin descriptions and linked guide. The board envelope and placement are approximate; use the selected connector manufacturer's CAD for a physical adapter."
+    },
+    {
+      "id": "gowin-dk-dp-gw5at-lv60ug225-v1-0",
+      "name": "Gowin DK_DP_GW5AT-LV60UG225_V1.0",
+      "contacts": 133,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/63/",
+      "footprintNote": "Off-board reference termination carrier, with one numbered two-row 2.54 mm bank per listed connector outside the board envelope. This is not a mating BTB/FPC/socket land pattern. Actual connectors use their specified 0.5, 2.0 or 2.54 mm pitch, which is retained in the pin descriptions and linked guide. The board envelope and placement are approximate; use the selected connector manufacturer's CAD for a physical adapter."
+    },
+    {
+      "id": "gowin-dk-edp-gw5at-lv15mg132-v1-0",
+      "name": "Gowin DK_EDP_GW5AT-LV15MG132_V1.0",
+      "contacts": 128,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/64/",
+      "footprintNote": "Off-board reference termination carrier, with one numbered two-row 2.54 mm bank per listed connector outside the board envelope. This is not a mating BTB/FPC/socket land pattern. Actual connectors use their specified 0.5, 2.0 or 2.54 mm pitch, which is retained in the pin descriptions and linked guide. The board envelope and placement are approximate; use the selected connector manufacturer's CAD for a physical adapter."
+    },
+    {
+      "id": "gowin-dk-edp-gw5art-lv15mg132p-v1-0",
+      "name": "Gowin DK_EDP_GW5ART-LV15MG132P_V1.0",
+      "contacts": 108,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/65/",
+      "footprintNote": "Off-board reference termination carrier, with one numbered two-row 2.54 mm bank per listed connector outside the board envelope. This is not a mating BTB/FPC/socket land pattern. Actual connectors use their specified 0.5, 2.0 or 2.54 mm pitch, which is retained in the pin descriptions and linked guide. The board envelope and placement are approximate; use the selected connector manufacturer's CAD for a physical adapter."
+    },
+    {
+      "id": "gowin-dk-start-gw5ar-lv25ug256pc2i1-v1-0",
+      "name": "Gowin DK_START_GW5AR-LV25UG256PC2I1_V1.0",
+      "contacts": 124,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/62/",
+      "footprintNote": "Off-board reference termination carrier, with one numbered two-row 2.54 mm bank per listed connector outside the board envelope. This is not a mating BTB/FPC/socket land pattern. Actual connectors use their specified 0.5, 2.0 or 2.54 mm pitch, which is retained in the pin descriptions and linked guide. The board envelope and placement are approximate; use the selected connector manufacturer's CAD for a physical adapter."
+    },
+    {
+      "id": "gowin-pl-usb-cable-v5-1",
+      "name": "Gowin PL-USB-Cable V5.1",
+      "contacts": 10,
+      "source": "https://www.gowinsemi.com/upload/database_doc/206/document/68b8a03ea0c3f.pdf",
+      "footprintNote": "Off-board reference cable termination for 1 documented target interface. Each target interface uses a two-by-five contact bank at 2.54 mm pitch. Numbering follows the guide's target connector diagram, not a mirrored cable solder side. The enclosure envelope and bank offsets are representative; this is not an enclosure mounting or programmer PCB footprint."
+    },
+    {
+      "id": "gowin-op720-4",
+      "name": "Gowin OP720-4 Quad Offline Programmer",
+      "contacts": 40,
+      "source": "https://www.gowinsemi.com/upload/database_doc/701/document/687a756528856.pdf",
+      "footprintNote": "Off-board reference cable termination for 4 documented target interfaces. Each target interface uses a two-by-five contact bank at 2.54 mm pitch. Numbering follows the guide's target connector diagram, not a mirrored cable solder side. The enclosure envelope and bank offsets are representative; this is not an enclosure mounting or programmer PCB footprint."
+    },
+    {
+      "id": "gowin-b-op901-16",
+      "name": "Gowin B-OP901-16 Offline Programmer",
+      "contacts": 144,
+      "source": "https://www.gowinsemi.com/upload/database_doc/702/document/687a7593d5866.pdf",
+      "footprintNote": "Off-board reference cable termination for 16 documented target interfaces. Each channel uses a nine-contact single row at 2.54 mm pitch. Numbering follows the guide's target connector diagram, not a mirrored cable solder side. The enclosure envelope and bank offsets are representative; this is not an enclosure mounting or programmer PCB footprint."
+    },
+    {
+      "id": "gowin-dk-start-gw5ast-lv138fpg676a-v2-1",
+      "name": "Gowin DK_START_GW5AST-LV138FPG676A_V2.1",
+      "contacts": 356,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/70/",
+      "footprintNote": "Reference connector carrier for DK_START_GW5AST-LV138FPG676A_V2.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw5ast-lv138fpg676a-v1-0",
+      "name": "Gowin DK_START_GW5AST-LV138FPG676A_V1.0",
+      "contacts": 745,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/58/",
+      "footprintNote": "Reference connector carrier for DK_START_GW5AST-LV138FPG676A_V1.0. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-uac2-gw1n-lv9lq144c7i6-v2-1",
+      "name": "Gowin DK_UAC2_GW1N-LV9LQ144C7I6_V2.1",
+      "contacts": 55,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/55/",
+      "footprintNote": "Reference connector carrier for DK_UAC2_GW1N-LV9LQ144C7I6_V2.1. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-usb2-0-gw2ar-lv18qn88pc8i7-gw1nsr-lv4cmg64pc7i6-v3-0",
+      "name": "Gowin DK_USB2.0_GW2AR-LV18QN88PC8I7_GW1NSR-LV4CMG64PC7I6_V3.0",
+      "contacts": 79,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/45/",
+      "footprintNote": "Reference connector carrier for DK_USB2.0_GW2AR-LV18QN88PC8I7_GW1NSR-LV4CMG64PC7I6_V3.0. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-video-gw2a-lv18pg484c8i7-v1-2",
+      "name": "Gowin DK_VIDEO_GW2A-LV18PG484C8I7_V1.2",
+      "contacts": 251,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/21/",
+      "footprintNote": "Reference connector carrier for DK_VIDEO_GW2A-LV18PG484C8I7_V1.2. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-start-gw5a-lv25ug324-v2-0",
+      "name": "Gowin DK_START_GW5A-LV25UG324_V2.0",
+      "contacts": 177,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/57/",
+      "footprintNote": "Reference connector carrier for DK_START_GW5A-LV25UG324_V2.0. All header banks are cable landing rows outside the approximate board outline; their positions are not PCB socket coordinates. 2.00/2.54 mm expansion headers retain the manufacturer contact pitch. FPC, stacked MIPI, USB, SMA and motor D-sub contacts use 2.54 mm reference cable lands instead of pretending to be manufacturer land patterns. Confirm the exact contact numbering, cable orientation and selectable bank voltage. Board dimensions, component heights and offsets are photo-based approximations; mounting holes and connector shells are not fabrication pads."
+    },
+    {
+      "id": "gowin-dk-led-rxcard-gw3a-lv20ug324s-v2-1",
+      "name": "GOWIN DK_LED-RxCard_GW3A-LV20UG324S_V2.1",
+      "contacts": 271,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/79/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "gowin-dk-pcie-gw5art-lv15mg132p-v1-1",
+      "name": "GOWIN DK_PCIE_GW5ART-LV15MG132P_V1.1",
+      "contacts": 75,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/77/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "gowin-dk-pcie-gw5at-lv60ug324-v1-1",
+      "name": "GOWIN DK_PCIE_GW5AT-LV60UG324_V1.1",
+      "contacts": 125,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/76/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "gowin-dk-start-gw5a-lv25lq144-v1-0",
+      "name": "GOWIN DK_START_GW5A-LV25LQ144_V1.0",
+      "contacts": 137,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/75/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "gowin-dk-start-gw5at-lv60pg484a-v1-2",
+      "name": "GOWIN DK_START_GW5AT-LV60PG484A_V1.2",
+      "contacts": 110,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/73/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "gowin-dk-video-gw5at-lv60ug225-v1-0",
+      "name": "GOWIN DK_VIDEO_GW5AT-LV60UG225_V1.0",
+      "contacts": 340,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/69/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "gowin-dk-usb-gw5art-lv15mg132p-v1-1",
+      "name": "GOWIN DK_USB_GW5ART-LV15MG132P_V1.1",
+      "contacts": 123,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/68/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "gowin-dk-start-gw5at-lv60pg484a-v1-1",
+      "name": "GOWIN DK_START_GW5AT-LV60PG484A_V1.1",
+      "contacts": 144,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/67/",
+      "footprintNote": "Reference connector carrier for the exact board revision named on this entry. Header/contact pitch follows the manufacturer guide; placement, board envelope and clearances are representative, not a vendor production land pattern. Fine-pitch contacts are breakout references rather than asserted connector lands. POWER.+/POWER.- are off-board input cable terminations. The video kit IO_J3/IO_J4 are off-board DisplayPort cable-contact breakouts using the guide’s mating-contact numbers. Other complete USB, HDMI, RJ45, SMA/BNC and PCIe ports are not duplicated as raw GPIO. Use the linked schematic and connector manufacturer CAD before fabrication."
+    },
+    {
+      "id": "brisbane-silicon-epm11",
+      "name": "Brisbane Silicon EPM11",
+      "contacts": 30,
+      "source": "https://brisbanesilicon.com.au/epm11/",
+      "footprintNote": "Representative off-board cable termination for the verified logical signal scope only. Header bank geometry, power-pad locations and PCB revision were not verified; the outline is a photo-proportion reference, not measured board geometry or a physical mating footprint. No unverified power contacts are invented."
+    },
+    {
+      "id": "brisbane-silicon-brs-100-gw1nr9",
+      "name": "Brisbane Silicon BRS-100-GW1NR9",
+      "contacts": 32,
+      "source": "https://brisbanesilicon.com.au/brs-100-gw1nr9/",
+      "footprintNote": "Representative off-board cable termination for the verified logical signal scope only. Header bank geometry, power-pad locations and PCB revision were not verified; the outline is a photo-proportion reference, not measured board geometry or a physical mating footprint. No unverified power contacts are invented."
+    },
+    {
+      "id": "onekiwi-kiwi-1p5",
+      "name": "OneKiwi KIWI 1P5 (QN48X)",
+      "contacts": 48,
+      "source": "https://www.gowinsemi.com/en/support/devkits_detail/71/",
+      "footprintNote": "Component-side reference carrier for the published QN48X board: 70 × 26 mm outline, 2.54 mm contact pitch and 22.86 mm header-row spacing from the mechanical drawing. Confirm the pin-1 side and exact PCB revision before fabrication; mounting holes, USB sockets and component heights are outside this reference footprint."
+    },
+    {
+      "id": "trenz-tec0117-01",
+      "name": "Trenz Electronic TEC0117-01",
+      "contacts": 46,
+      "source": "https://wiki.trenz-electronic.de/display/PD/TEC0117+TRM",
+      "footprintNote": "Reference carrier for TEC0117-01. Main row pitch is 2.54 mm and body is 61.5 × 25 mm; header offsets are approximate. JTAG/Pmod contacts outside the outline are reference cable landings, not the physical mating/socket land pattern. Vendor STEP is linked for mechanical checking; verify all offsets and orientation before adapter fabrication."
+    }
+  ],
+  "limits": [
+    "Reference illustrations and cable carriers are not fabrication CAD. Connector bodies, internal fine-pitch contacts and underside layouts may use explicitly representative geometry.",
+    "Brisbane EPM11/BRS-100 entries cover verified signal contacts only. PCB revision and separate power-pad numbering are unverified; EPM11 GPIO3 package-ball sources disagree.",
+    "Luckfox capacity/storage options sharing a PCB and pin map are consolidated. Nova raw PoE tap order is unpublished and not inferred.",
+    "Sipeed Tang Primer 15K is manufacturer TBD and has no invented catalog entry.",
+    "Current published Gowin detail cards include EOL products; this is not a claim to cover every historical navigation alias."
+  ]
+}

@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { DrawingCanvas } from '../src/canvas.js';
-import { traceNet } from '../src/continuity.js';
+import { DrawingCanvas } from '../src/canvas/canvas.js';
+import { traceNet } from '../src/model/continuity.js';
 
 const point = (x, y) => ({ x, y });
 const pin = pinId => ({ partId: 'board', pinId });
@@ -51,7 +51,10 @@ test('close wire targets select the nearest segment and branching uses the longe
 });
 
 test('pinch keeps the original world point beneath the moving midpoint after clamping zoom', () => {
-  const svg = { getBoundingClientRect: () => ({ left: 40, top: 120, width: 320, height: 520 }) };
+  const svg = { getScreenCTM: () => ({ inverse: () => ({
+    a: 1 / canvas.scale, b: 0, c: 0, d: 1 / canvas.scale,
+    e: canvas.center.x - 200 / canvas.scale, f: canvas.center.y - 380 / canvas.scale,
+  }) }) };
   const canvas = Object.assign(Object.create(DrawingCanvas.prototype), {
     svg, applyView: () => {}, scale: 1, center: point(100, 100), autoFit: true,
   });

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { createDrawingSVG } from '../src/export.js';
+import { createDrawingSVG } from '../src/export/drawing.js';
 
 test('PNG sources keep the full viewBox within the bitmap dimension limits', () => {
   const drawing = (width, height) => createDrawingSVG({

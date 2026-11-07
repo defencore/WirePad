@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="WirePad is a browser-based wiring editor for documenting electronics projects.">
-  <meta name="theme-color" content="#fbfcfd">
+  <meta name="theme-color" content="#202a35">
   <title>WirePad — Wiring editor</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./src/ui/styles/library.css">
+  <link rel="stylesheet" href="./src/ui/styles/inspector.css">
   <script type="module" src="./src/main.js"></script>
 </head>
 <body>
@@ -18,12 +20,17 @@
       <span>WirePad</span>
     </a>
     <span class="top-divider"></span>
-    <span class="app-label">Wiring editor</span>
-    <div class="top-spacer"></div>
+    <div class="project-context">
+      <label class="title-field" title="Rename project" data-icon="file">
+        <input id="project-title" type="text" maxlength="100" aria-label="Project name" value="">
+        <span data-icon="edit"></span>
+      </label>
+      <span class="document-kind">Wiring diagram</span>
+    </div>
     <span id="save-state" class="save-state" role="status"></span>
     <button class="button compact" id="help" type="button" data-icon="help" aria-label="Help" title="Help"></button>
     <details class="menu project-menu">
-      <summary class="button" data-icon="folder">Project <span data-icon="chevron"></span></summary>
+      <summary class="button" data-icon="folder" aria-label="Project"><span class="menu-label">Project</span> <span data-icon="chevron"></span></summary>
       <div class="menu-panel">
         <button type="button" id="new-project" data-icon="plus">New project</button>
         <button type="button" id="open-project" data-icon="folder">Open project file</button>
@@ -33,9 +40,9 @@
         <button type="button" id="load-demo" data-icon="grid">Open demo</button>
       </div>
     </details>
-    <button type="button" class="button primary copy-image" id="copy-image" data-export="copy" data-icon="copy" title="Copy diagram as a PNG image" disabled><span id="copy-image-label">Copy image</span></button>
+    <button type="button" class="button primary copy-image" id="copy-image" data-export="copy" data-icon="copy" title="Copy diagram as a PNG image" aria-label="Copy diagram as a PNG image" disabled><span id="copy-image-label">Copy image</span></button>
     <details class="menu">
-      <summary class="button" data-icon="download">Export <span data-icon="chevron"></span></summary>
+      <summary class="button" data-icon="download" aria-label="Export"><span class="menu-label">Export</span> <span data-icon="chevron"></span></summary>
       <div class="menu-panel">
         <button type="button" data-export="png" data-icon="image">Download PNG</button>
         <button type="button" data-export="svg" data-icon="file">Download SVG</button>
@@ -47,42 +54,47 @@
   <div class="editor">
     <aside class="library panel" id="library" aria-label="Component library">
       <div class="panel-heading library-heading">
-        <div class="eyebrow"><span data-icon="library"></span> PARTS LIBRARY</div>
-        <h1 tabindex="-1" data-panel-heading>Components</h1>
-        <p>Click or drag a part onto the canvas.</p>
+        <div class="panel-title-row">
+          <h1 tabindex="-1" data-panel-heading data-icon="library">Components</h1>
+          <button type="button" class="button compact bare panel-close" id="close-library" data-icon="close" aria-label="Close component library"></button>
+        </div>
+        <p id="catalog-help">Click to add · Drag to place</p>
       </div>
       <div class="library-filters">
         <label class="search" data-icon="search">
-          <input type="search" id="search" aria-label="Search components" placeholder="Search components…" autocomplete="off">
+          <input type="search" id="search" aria-label="Search components" placeholder="Search components…" autocomplete="off" aria-controls="catalog">
           <kbd>/</kbd>
         </label>
-        <label class="category" data-icon="filter">
-          <select id="category" aria-label="Component category"></select>
-          <span data-icon="chevron"></span>
-        </label>
+        <div class="library-filter-grid">
+          <label class="filter-field"><span>Category</span><span class="category"><select id="category" aria-label="Component category" aria-controls="catalog"></select><span data-icon="chevron"></span></span></label>
+          <label class="filter-field"><span>Manufacturer</span><span class="category"><select id="manufacturer" aria-label="Component manufacturer" aria-controls="catalog"></select><span data-icon="chevron"></span></span></label>
+        </div>
       </div>
-      <div class="catalog-meta"><span>AVAILABLE PARTS</span><span id="part-count"></span></div>
-      <div id="catalog" class="catalog"></div>
-      <div class="library-footer" data-icon="box">WirePad component library</div>
+      <div class="catalog-meta"><span id="part-count" role="status" aria-live="polite" aria-atomic="true"></span><button type="button" class="text-button" id="clear-catalog-filters" data-action="clear-catalog" hidden>Reset filters</button></div>
+      <div id="catalog" class="catalog" aria-describedby="catalog-help"></div>
+      <div class="library-footer" data-icon="info">Select a part on the canvas for its pins and files.</div>
     </aside>
 
     <main class="workspace" aria-label="Wiring workspace">
       <div class="workspace-toolbar">
         <div class="tool-group" role="group" aria-label="Canvas tools">
-          <button type="button" data-mode="select" data-icon="cursor" title="Select and move components (V)" aria-label="Select" aria-keyshortcuts="V" aria-pressed="true">Select <kbd aria-hidden="true">V</kbd></button>
-          <button type="button" data-mode="wire" data-icon="wire" title="Connect pins and wires (W)" aria-label="Wire" aria-keyshortcuts="W" aria-pressed="false">Wire <kbd aria-hidden="true">W</kbd></button>
-          <button type="button" data-mode="trace" data-icon="trace" title="Highlight a connected net (T)" aria-label="Trace" aria-keyshortcuts="T" aria-pressed="false">Trace <kbd aria-hidden="true">T</kbd></button>
-          <button type="button" data-mode="pan" data-icon="hand" title="Pan (H or Space)" aria-label="Pan" aria-keyshortcuts="H" aria-pressed="false">Pan <kbd aria-hidden="true">H</kbd></button>
+          <button type="button" data-mode="select" data-icon="cursor" title="Select and move components (V)" aria-label="Select" aria-keyshortcuts="V" aria-pressed="true"><span class="tool-label">Select</span> <kbd aria-hidden="true">V</kbd></button>
+          <button type="button" data-mode="wire" data-icon="wire" title="Connect pins and wires (W)" aria-label="Wire" aria-keyshortcuts="W" aria-pressed="false"><span class="tool-label">Wire</span> <kbd aria-hidden="true">W</kbd></button>
+          <button type="button" data-mode="trace" data-icon="trace" title="Highlight every connected pin and wire (T)" aria-label="Trace" aria-keyshortcuts="T" aria-pressed="false"><span class="tool-label">Trace</span> <kbd aria-hidden="true">T</kbd></button>
+          <button type="button" data-mode="pan" data-icon="hand" title="Pan (H; hold Shift or Space temporarily)" aria-label="Pan" aria-keyshortcuts="H" aria-pressed="false"><span class="tool-label">Pan</span> <kbd aria-hidden="true">H</kbd></button>
         </div>
-        <button type="button" class="button compact mobile-panel" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-controls="library" aria-expanded="false"><span class="mobile-label">Parts</span></button>
         <span class="toolbar-divider"></span>
         <div class="history" role="group" aria-label="History">
           <button type="button" id="undo" class="button compact bare" data-icon="undo" title="Undo" aria-label="Undo" disabled><span class="mobile-label">Undo</span></button>
           <button type="button" id="redo" class="button compact bare" data-icon="redo" title="Redo" aria-label="Redo" disabled><span class="mobile-label">Redo</span></button>
         </div>
         <div class="top-spacer"></div>
-        <button type="button" id="fit" class="button fit" data-icon="fit" title="Fit drawing (F)" aria-label="Fit view"><span class="desktop-label">Fit view</span><span class="mobile-label">Fit</span></button>
-        <button type="button" class="button compact mobile-panel" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-controls="inspector" aria-expanded="false"><span class="mobile-label">Inspect</span></button>
+        <div class="view-controls" role="group" aria-label="View controls">
+          <button type="button" id="fit" class="button compact bare fit" data-icon="fit" title="Fit drawing (F / Home)" aria-label="Fit view"><span class="mobile-label">Fit</span></button>
+          <span class="toolbar-divider"></span>
+          <button type="button" class="button compact panel-toggle" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-controls="library" aria-expanded="false"><span class="mobile-label">Parts</span></button>
+          <button type="button" class="button compact panel-toggle" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-controls="inspector" aria-expanded="false"><span class="mobile-label">Inspect</span></button>
+        </div>
       </div>
       <section class="board" id="board" aria-label="Diagram canvas">
         <div id="workspace-warning" class="workspace-warning" role="alert" hidden>
@@ -93,21 +105,13 @@
           <g id="scene"></g>
           <g id="draft" pointer-events="none"></g>
         </svg>
-        <div class="board-header">
-          <div class="eyebrow"><span class="board-dot"></span> WIRING WORKSPACE</div>
-          <label class="title-field" title="Rename project">
-            <input id="project-title" type="text" maxlength="100" aria-label="Project name" value="">
-            <span data-icon="edit"></span>
-          </label>
-        </div>
         <div class="board-bottom">
           <div class="canvas-guide">
-            <span id="canvas-hint" class="canvas-hint"><span data-icon="info" aria-hidden="true"></span><span id="canvas-hint-text"></span></span>
             <div class="canvas-actions" role="group" aria-label="Canvas actions">
               <button type="button" id="cancel-wire" class="button canvas-action" data-icon="close" hidden><span id="cancel-wire-label">Cancel wire</span></button>
               <button type="button" id="add-bend" class="button canvas-action" data-icon="plus" aria-pressed="false" hidden>Add bend</button>
               <button type="button" id="remove-bend" class="button canvas-action" data-icon="minus" hidden>Remove bend</button>
-              <button type="button" id="toggle-move" class="button canvas-action" data-icon="hand" aria-controls="move-controls" aria-expanded="false" hidden>Move</button>
+              <button type="button" id="toggle-move" class="button canvas-action" data-icon="sliders" aria-controls="move-controls" aria-expanded="false" hidden>Nudge</button>
               <button type="button" id="branch-wire" class="button canvas-action" data-icon="wire" aria-label="Add a branch from the selected wire" hidden>Add branch</button>
               <button type="button" id="inspect-wire" class="button canvas-action" data-icon="sliders" aria-label="Show wire details" hidden>Details</button>
               <button type="button" id="clear-trace" class="button canvas-action" data-icon="close" hidden>Clear trace</button>
@@ -122,14 +126,15 @@
           </div>
           <div class="zoom" role="group" aria-label="Zoom">
             <button type="button" class="button compact bare" id="zoom-out" data-icon="minus" aria-label="Zoom out" title="Zoom out"></button>
-            <button type="button" class="button bare zoom-value" id="zoom-value" title="Actual size">100%</button>
+            <button type="button" class="button bare zoom-value" id="zoom-value" title="Actual size (100%)" aria-label="Reset zoom to actual size">100%</button>
             <button type="button" class="button compact bare" id="zoom-in" data-icon="plus" aria-label="Zoom in" title="Zoom in"></button>
           </div>
         </div>
         <div id="empty-board" class="empty-board" hidden>
           <span data-icon="wire"></span>
-          <h2>Build your wiring diagram</h2>
-          <p>Add components, then use <strong>Wire</strong> to choose pins and connect them.</p>
+          <span class="empty-eyebrow">BLANK DIAGRAM</span>
+          <h2>Start your diagram</h2>
+          <p>Add a board, sensor or breadboard. Choose <strong>Wire</strong> to connect its pins.</p>
           <button type="button" id="browse-components" class="button primary" data-action="browse-components" data-icon="library">Browse components</button>
           <div class="empty-actions">
             <button type="button" class="button bare" data-start="open">Import project</button>
@@ -141,8 +146,10 @@
 
     <aside class="inspector panel" id="inspector" aria-label="Inspector">
       <div class="panel-heading inspector-heading">
-        <div class="eyebrow"><span data-icon="sliders"></span> DETAILS</div>
-        <h2 tabindex="-1" data-panel-heading>Inspector</h2>
+        <div class="panel-title-row">
+          <h2 tabindex="-1" data-panel-heading data-icon="sliders">Inspector</h2>
+          <button type="button" class="button compact bare panel-close" id="close-inspector" data-icon="close" aria-label="Close inspector"></button>
+        </div>
       </div>
       <div id="inspection" class="inspection"></div>
     </aside>
@@ -150,10 +157,9 @@
 
   <footer class="statusbar">
     <span id="editor-status" role="status"><span class="status-dot" aria-hidden="true"></span><span id="editor-status-text">Ready</span></span>
-    <div class="top-spacer"></div>
-    <span id="project-count"></span>
     <span class="status-separator"></span>
-    <span class="local-status" data-icon="shield">Local workspace</span>
+    <span id="canvas-hint" class="canvas-hint"><span id="canvas-hint-text"></span></span>
+    <span id="project-count"></span>
   </footer>
   <div class="toast" id="toast" role="status" hidden></div>
   <div class="toast import-status" id="project-import-status" role="status" hidden>Opening project…</div>
@@ -162,8 +168,8 @@
     <div class="start-heading">
       <img src="./favicon.svg" alt="" width="36" height="36">
       <div class="eyebrow">WIREPAD WORKSPACE</div>
-      <h2 id="start-title">Open a workspace</h2>
-      <p id="start-description">Import a WirePad project file or explore a ready-made wiring diagram.</p>
+      <h2 id="start-title">What are you building?</h2>
+      <p id="start-description">Start a wiring diagram, open a saved project or explore a connected example.</p>
     </div>
     <button type="button" class="start-choice start-resume" id="start-resume" data-start="continue" data-icon="wire" hidden>
       <span><strong>Continue project</strong><small id="start-project-name"></small></span>
@@ -207,22 +213,36 @@
   </dialog>
   <dialog id="help-dialog" class="dialog" aria-labelledby="help-title">
     <div class="dialog-title"><h2 id="help-title">WirePad help</h2><form method="dialog"><button type="submit" class="button compact bare" data-icon="close" aria-label="Close"></button></form></div>
-    <p>Use <strong>Wire</strong>, then choose a starting pin and a destination. Tap a component to open its searchable pin list. With a mouse, click a pin or drag from it to the destination. WirePad routes the connection automatically.</p>
-    <p>To connect two wires, choose <strong>Wire</strong>, then tap the first wire and the second wire. You can also select a wire and choose <strong>Add branch</strong> to connect it to another wire or pin. Filled dots mark joined points.</p>
-    <p>In <strong>Select</strong>, choose a wire to show its blue handles. Drag a segment handle to shift that part of the wire. Drag an end handle to a new pin, junction, or wire, or tap the handle and then choose a destination.</p>
-    <p>Choose <strong>Add bend</strong> and pick a point on the canvas. Drag a bend to move it, or select it and choose <strong>Remove bend</strong>. In the Inspector, use <strong>Auto route</strong> to redraw the wire or change its color.</p>
-    <p>Use <strong>Move</strong> and its arrow buttons to reposition a selected component, wire segment, or bend. Arrow keys move a focused item. Hold <strong>Shift</strong> for larger steps.</p>
-    <p>Use <strong>Trace</strong> and tap a pin, wire, or junction to highlight every connection it reaches.</p>
-    <p>On touch screens, drag empty canvas with one finger to pan. Pinch with two fingers to zoom.</p>
-    <p>Select a component to view its pinout and KiCad assets in the Inspector. Use <strong>Copy image</strong> to paste the diagram into another app, or use <strong>Export</strong> to download it.</p>
+    <div class="help-section"><h3>Add and connect</h3>
+      <p>Search the library by part number, board or function, then narrow it by category and manufacturer. Click a part to add it, or drag it into place.</p>
+      <p>Choose <strong>Wire</strong>, then a starting pin and destination. Tap a component to open its searchable pin list. With a mouse, click a pin or drag from it. WirePad routes the connection automatically.</p>
+      <p>To join wires, choose <strong>Wire</strong> and pick both wires, or select a wire and choose <strong>Add branch</strong>. Filled dots mark joined points.</p>
+    </div>
+    <div class="help-section"><h3>Edit your diagram</h3>
+      <p>In <strong>Select</strong>, pick a wire to reveal its blue handles. Drag a segment to shift it, or move an end to a new pin, junction or wire. Use <strong>Add bend</strong>, <strong>Remove bend</strong> or <strong>Auto route</strong> to adjust its path.</p>
+      <p>Click to select a component, wire or junction. Drag empty canvas to select a group: left to right selects fully enclosed items; right to left selects anything the box touches. Hold <strong>Ctrl/⌘</strong> to toggle items, or <strong>Ctrl/⌘ + Shift</strong> to subtract.</p>
+      <p>Drag a selected component to move the group. Arrow keys move the selection; hold <strong>Shift</strong> for larger steps. <strong>Nudge</strong> provides arrow buttons. Select one component to change its label or orientation in the Inspector.</p>
+      <p>New power connections use red for supply and black for ground. Choose a wire color in the Inspector to override the automatic choice.</p>
+    </div>
+    <div class="help-section"><h3>Explore and share</h3>
+      <p>Hold <strong>Shift</strong> or <strong>Space</strong> to use the hand tool temporarily, then drag to pan. Release the key to return to your previous tool and any unfinished wire. A middle- or right-button drag also pans in any tool. Scroll to zoom at the pointer; <strong>Shift + scroll</strong> pans without changing the zoom. Hold <strong>Alt</strong> to pan vertically. On touch screens, drag empty canvas to pan and pinch to zoom.</p>
+      <p>Choose <strong>Trace</strong> and pick a pin, wire or junction to highlight its connected network.</p>
+      <p>The Inspector contains each part’s pinout and KiCad files. Use <strong>Copy image</strong> to paste your diagram into another app, or <strong>Export</strong> to download an image. Use <strong>Project → Save project file</strong> to keep an editable copy.</p>
+    </div>
+    <h3>Keyboard shortcuts</h3>
     <dl class="shortcuts">
       <dt>Select, wire, trace, pan</dt><dd><kbd>V</kbd> <kbd>W</kbd> <kbd>T</kbd> <kbd>H</kbd></dd>
-      <dt>Pan temporarily</dt><dd><kbd>Space</kbd></dd>
-      <dt>Fit view</dt><dd><kbd>F</kbd></dd>
+      <dt>Temporary hand tool</dt><dd>Hold <kbd>Shift</kbd> / <kbd>Space</kbd></dd>
+      <dt>Pan without zooming</dt><dd><kbd>Shift</kbd> + scroll</dd>
+      <dt>Fit drawing</dt><dd><kbd>F</kbd> / <kbd>Home</kbd></dd>
+      <dt>Fit selection</dt><dd><kbd>Shift F</kbd></dd>
+      <dt>Zoom in / out</dt><dd><kbd>+</kbd> / <kbd>−</kbd></dd>
+      <dt>Actual size</dt><dd><kbd>0</kbd></dd>
+      <dt>Select all on canvas</dt><dd><kbd>Ctrl/⌘ A</kbd></dd>
       <dt>Switch panel</dt><dd><kbd>F6</kbd> / <kbd>Shift F6</kbd></dd>
       <dt>Rotate selected component</dt><dd><kbd>R</kbd></dd>
       <dt>Delete selection</dt><dd><kbd>Delete</kbd></dd>
-      <dt>Cancel wiring</dt><dd><kbd>Esc</kbd></dd>
+      <dt>Cancel action / clear selection</dt><dd><kbd>Esc</kbd></dd>
       <dt>Undo / redo</dt><dd><kbd>Ctrl/⌘ Z</kbd> / <kbd>Shift</kbd></dd>
       <dt>Save project file</dt><dd><kbd>Ctrl/⌘ S</kbd></dd>
       <dt>Search library</dt><dd><kbd>/</kbd></dd>

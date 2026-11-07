@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { traceNet } from '../src/continuity.js';
-import { DiagramEditor } from '../src/editor.js';
-import { newProject } from '../src/project.js';
-import { ProjectHistory } from '../src/project-history.js';
-import { endpointPositions, moveWireBend, routeFor, segmentDrag, slideSegment, wireRoute } from '../src/routing.js';
+import { traceNet } from '../src/model/continuity.js';
+import { DiagramEditor } from '../src/editor/editor.js';
+import { newProject } from '../src/model/project.js';
+import { ProjectHistory } from '../src/model/history.js';
+import { moveWireBend, routeFor, segmentDrag, slideSegment, wireRoute } from '../src/geometry/routing.js';
+import { endpointPositions } from '../src/geometry/parts.js';
 
 const point = (x, y) => ({ x, y });
 const pin = (partId, pinId = '2') => ({ partId, pinId });

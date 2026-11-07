@@ -7,20 +7,22 @@ WirePad is a browser-based editor for drawing electronics wiring diagrams for pr
 Serve the repository root over HTTP. The site has no build step or application dependencies.
 
 ```sh
-python3 -m http.server 8080
+node scripts/serve.mjs 8080
 ```
 
-Open [WirePad on localhost](http://localhost:8080/).
+Open [WirePad on localhost](http://127.0.0.1:8080/). This development server disables asset caching so reloading after an edit loads the matching interface, catalog and filters.
 
 ## Draw a diagram
 
-1. Search or filter the component library. Click a part to add it, or drag it onto the canvas.
-2. With **Wire**, click a pin or an existing wire to start. Click a pin, wire, or junction to connect. Click empty canvas to add a bend, or press **Esc** to cancel.
-3. With **Select**, drag a horizontal or vertical wire section sideways to reroute it. Drag a junction dot to move the junction, or click a wire to change its color. Filled dots mark connections. Wires crossing without a dot remain separate.
-4. Select a component to inspect its pins, change its label, or rotate it.
-5. Use **Fit view** to frame the drawing. Choose **Download PNG**, **Download SVG**, or **Copy image** from **Export**. Image copying uses the browser clipboard and requires a secure context.
+1. Search the library by part number, board or function. Filter by category and manufacturer. Click a part to add it, or drag it onto the canvas.
+2. With **Wire**, choose a starting pin and a destination. Click a module to open its searchable pin picker, or click a wire to add a branch. Click empty canvas to add a bend, or press **Esc** to cancel.
+3. New wires connected to recognized supply contacts such as VCC, VDD, 3V3 or 5V default to red. GND wires default to black. The color also follows connected pins through junctions and declared internal connections, including breadboard strips. Use the Inspector palette or custom color to override a wire, or choose **Use automatic color** to restore the inferred color. A draft color choice applies to that connection.
+4. With **Select**, drag a wire's handles to move a segment, edit a bend or reconnect an end. Select a component to inspect its searchable pinout, change its label or rotate it. **Trace** highlights the connected net. Filled dots mark connections. Wires crossing without a dot remain separate.
+5. Drag empty canvas in **Select** to select a group: left to right encloses whole objects; right to left includes anything the box touches. **Ctrl/⌘ + click** toggles items, and **Ctrl/⌘ + Shift + click** removes them. Drag a selected item to move the group with its connections. Arrow keys nudge the selection; **Shift** makes larger steps.
+6. Hold **Shift** or **Space** to use the hand tool temporarily, then drag to pan. Releasing the key restores the previous tool and keeps any unfinished wire. Middle/right mouse drag also pans in any tool. The wheel zooms at the cursor; **Shift + scroll** pans in the direction of your wheel or trackpad gesture without changing the zoom. **Alt + wheel** pans vertically. On touchscreens, drag empty canvas to pan and pinch to zoom. Collapse **Components** or **Inspector** from the toolbar for more drawing space.
+7. Use **Fit view** to frame the drawing, or **Shift + F** to frame the selection. Choose **Download PNG**, **Download SVG**, or **Copy image** from **Export**. Image copying uses the browser clipboard and requires a secure context.
 
-**Project → Load example** opens an ESP32-S3 sensor node with a BME280 and a 3.3 V MAX3485 breakout. The example uses GPIO1 for SCL, GPIO2 for SDA, GPIO42 for UART TX, GPIO41 for UART RX, and GPIO40 for RS-485 direction control. The transceiver’s A and B terminals are available for field wiring.
+**Project → Open demo** opens an ESP32-S3 sensor node with a BME280 and a 3.3 V MAX3485 breakout. The example uses GPIO1 for SCL, GPIO2 for SDA, GPIO42 for UART TX, GPIO41 for UART RX, and GPIO40 for RS-485 direction control. The transceiver’s A and B terminals are available for field wiring.
 
 WirePad autosaves the active project to browser storage. Use **Project → Save project file** to download a versioned `.wirepad.json` file you can back up, share, or reopen with **Open project file**. Browser storage is separate for each site origin.
 
@@ -29,31 +31,123 @@ WirePad autosaves the active project to browser storage. Use **Project → Save 
 | Shortcut | Action |
 | --- | --- |
 | `V`, `W`, `H` | Select, Wire, Pan |
-| `Space` | Pan temporarily |
-| `F` | Fit view |
+| `T` | Trace connected wires |
+| Hold `Shift` or `Space` | Temporary hand tool; release to restore the previous tool |
+| `F`, `Home` | Fit view |
+| `Shift+F` | Fit selection |
+| `+`, `−`, `0` | Zoom in, zoom out, actual size |
+| `Ctrl/⌘+A` | Select all (when the canvas has focus) |
 | `R` | Rotate selected component |
 | `Delete` | Delete selection |
-| `Esc` | Cancel wiring |
+| `Esc` | Cancel the current tool, then clear selection |
 | `Ctrl/⌘+Z`, `Ctrl/⌘+Shift+Z` | Undo, redo |
 | `/` | Search library |
+| `F6`, `Shift+F6` | Move focus between library, canvas and Inspector |
+| `Ctrl/⌘+S` | Download the project file |
+
+## Code organization
+
+| Area | Modules |
+| --- | --- |
+| Startup and application services | `src/main.js`, `src/app/` |
+| Component definitions and registration | `src/catalog/` — families, shared builders, CAD data and artwork |
+| Project data, configuration and connectivity | `src/model/` |
+| Editing commands, groups and wire transactions | `src/editor/` |
+| Rotation, routing and bounds | `src/geometry/` |
+| SVG drawing, scene layers, viewport and gestures | `src/canvas/` |
+| Library, Inspector, dialogs and controls | `src/ui/` |
+| Symbol/footprint/model geometry, previews and KiCad serialization | `src/assets/` |
+| Drawing generation and browser downloads/clipboard | `src/export/` |
+
+[Architecture and extension contracts](docs/ARCHITECTURE.md) describe ownership, dependency boundaries, component records, configurable instances and cleanup. The browser entry creates one application; `application.destroy()` releases its listeners, observers, timers and canvas layers before a remount.
+
+## Configure and move a breadboard
+
+Select the board to set **Terminal rows**, **Left terminal cells** and **Right terminal cells** independently. Each terminal bank supports 1–10 cells per row; the default is five on each side. Power rails are configured separately. Existing contact identities remain stable as a bank is resized, and a layout change cannot remove a contact that has a wire attached.
+
+Drag the board border or its caption to move it together with contained components, junctions and internal wire routes. External wire endpoints stay in place. Drag inside its face to draw a selection rectangle; the board joins that selection only when the rectangle encloses it completely. **Ctrl/⌘ + click** toggles separate items.
+
+## Verify changes
+
+```sh
+node --test
+node scripts/catalog.mjs
+node scripts/build-site.mjs /tmp/wirepad-site local
+```
+
+The catalog check validates entries, both illustration modes, contact coordinates and pin-to-pad numbering, including repeated physical lands. The tests also guard published contact geometry, module dependency boundaries and static-site asset resolution.
 
 ## Use the KiCad assets
 
-Select a component to preview its illustration, schematic symbol, and PCB footprint. The inspector provides component downloads and 3D assets where available.
+Select a component and download its files from the **Symbol**, **Footprint** and **3D** tabs. Each tab also includes **Use this part in KiCad** instructions. The 3D tab links to manufacturer CAD where available. The following example uses the catalog's AP2112K-3.3TRG1 regulator.
 
-1. In KiCad’s Symbol Editor, add the downloaded `.kicad_sym` file using **Preferences → Manage Symbol Libraries**. [KiCad symbol library guide](https://docs.kicad.org/10.0/en/eeschema/eeschema.html#managing-symbol-libraries)
-2. Put the downloaded `.kicad_mod` files in a folder named `WirePad.pretty`. In the Footprint Editor, add the folder using **Preferences → Manage Footprint Libraries** with the nickname `WirePad` so the symbol’s footprint link resolves. [KiCad footprint library guide](https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html#managing-footprint-libraries)
-3. Compare the pin numbering, pad positions, and mechanical dimensions with the manufacturer documentation for your exact part and board revision before fabrication. Module footprints marked as references describe the module’s connections and approximate placement.
+```text
+MyProject/
+  MyProject.kicad_pro
+  WirePad.symbols/
+    ap2112k-3-3.kicad_sym
+  WirePad.pretty/
+    ap2112k-3-3.kicad_mod
+  WirePad.3dshapes/
+    ap2112k-3-3.wrl
+```
+
+1. Save the three downloads in the folders shown above, beside the KiCad project's `.kicad_pro` file.
+2. In the Schematic Editor, open **Preferences → Manage Symbol Libraries → Project Specific Libraries**. Add the downloaded `.kicad_sym` file. Use a unique nickname for each symbol library, such as `ap2112k-3-3`. Choose a project-relative library path beginning with `${KIPRJMOD}`. [KiCad symbol library guide](https://docs.kicad.org/10.0/en/eeschema/eeschema.html#managing-symbol-libraries)
+3. In the PCB Editor, open **Preferences → Manage Footprint Libraries → Project Specific Libraries**. Add the `WirePad.pretty` folder with the nickname **WirePad** and path `${KIPRJMOD}/WirePad.pretty`. This nickname resolves the symbol's `WirePad:ap2112k-3-3` footprint assignment. [KiCad footprint library guide](https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html#managing-footprint-libraries)
+4. Use **Add Symbol** in the Schematic Editor to place the imported part. Its **Footprint** property should match the `.kicad_mod` filename, for example `WirePad:ap2112k-3-3`.
+5. In the PCB Editor, choose **Tools → Update PCB from Schematic** to bring the part onto the PCB. Check pin numbers, pad positions and dimensions against the exact part's datasheet or mechanical drawing.
+6. Open **View → 3D Viewer**. The footprint loads `${KIPRJMOD}/WirePad.3dshapes/ap2112k-3-3.wrl`. If it is missing, check that the folder and filename match the footprint's **3D Models** entry.
+
+For detailed enclosure work, download the matching manufacturer STEP file and select it in **Footprint Properties → 3D Models**. Store it inside the project and use a `${KIPRJMOD}` path. Check scale, rotation, origin and alignment with the pads in the 3D Viewer. Keep a STEP file's initial scale at `1, 1, 1` and verify its dimensions. WirePad's downloadable WRL contains approximate package or carrier geometry. Footprints marked as references or cable terminations describe the mounting arrangement stated in their notes. [KiCad 3D model controls](https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html#_3d_models)
+
+## Source additional KiCad assets
+
+WirePad's catalog and downloads are generated from the definitions in `src/catalog/families/catalog-*.js`, [footprint-layout.js](src/assets/footprint-layout.js) and [kicad.js](src/assets/kicad.js). Manufacturer links in the 3D tab point to external CAD. Tools below can prepare assets for a reviewed catalog contribution or supply files for a user's own KiCad project.
+
+| Source or tool | Suitable use | Assets and practical limits |
+| --- | --- | --- |
+| Manufacturer libraries and official KiCad libraries | Start with the exact part number, package and board revision. Reuse matching standard packages and models. | Symbols, footprints and 3D models depend on the part. Retain source and license information when distributing a library collection. [KiCad libraries](https://www.kicad.org/libraries/), [library license](https://www.kicad.org/libraries/license/) |
+| easyeda2kicad | Prepare LCSC/EasyEDA components by their LCSC IDs, including batches. | Exports `.kicad_sym`, `.pretty`, WRL and STEP when source models are available. Check converted pin mappings and geometry. [Upstream documentation](https://github.com/uPesy/easyeda2kicad.py) |
+| EasyEDA2KiCad GUI wrappers | Use a desktop interface for the same conversion workflow. | Independent frontends have their own installation and platform requirements. [Madarakante Windows GUI](https://github.com/Madarakante/easyeda2kicad-gui), [ProjectProcrastinator GUI](https://github.com/ProjectProcrastinator/EasyEDA2Kicad-GUI) |
+| KiCad Library Tools | Generate footprints and supported symbol/3D families from reviewed parameters and manufacturer dimensions. | Includes generators and library checks. Supported 3D generators can produce STEP and WRL. [Official tools](https://gitlab.com/kicad/libraries/kicad-library-tools) |
+| KiCad-JLCPCB-tools | Search JLCPCB parts, assign LCSC numbers and prepare fabrication/assembly outputs inside KiCad. | Produces BOM, CPL, Gerber and drill files and supports placement corrections. [Plugin documentation](https://github.com/Bouni/kicad-jlcpcb-tools) |
+| SnapMagic / SnapEDA | Download a KiCad package from the website and import it manually. | The provider has sunset its older plugins. Its legacy KiCad plugin is listed for versions through 5.1.10. [Plugin status](https://www.snapeda.com/plugins/), [manual import](https://api.snapeda.com/about/import/) |
+| Ultra Librarian | Download the KiCad export and corresponding 3D model for a specific part. | Select the current KiCad format offered for that part. Check the download terms before redistributing files through WirePad. [KiCad import help](https://app.ultralibrarian.com/content/help/kicad-6_0.htm), [terms](https://www.ultralibrarian.com/legal) |
+| SamacSys / Component Search Engine | Download a part and use Library Loader or KiCad's library managers to import it. | Desktop-helper compatibility depends on the installation. Public catalog redistribution requires applicable rights. [Library Loader](https://componentsearchengine.com/learn-more), [service terms](https://intelligence.supplyframe.com/terms/) |
+| KiCad's Altium importers | Convert existing Altium designs or load supported Altium libraries in KiCad. | KiCad 10 supports Altium board/schematic import and library formats. Review import warnings and save converted parts into KiCad libraries. [Board import](https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html#importing-boards-from-other-eda-tools), [symbol libraries](https://docs.kicad.org/10.0/en/eeschema/eeschema.html#managing-symbol-libraries) |
+
+The older `pointhi/kicad-footprint-generator` repository is archived and redirects contributors to the official tools. The historical Altium2KiCad converter also points users to KiCad's native importers. [Archived generator](https://github.com/pointhi/kicad-footprint-generator), [Altium2KiCad](https://github.com/thesourcerer8/altium2kicad)
+
+### Example conversion with easyeda2kicad
+
+With `easyeda2kicad` 1.0.1 or newer installed in a Python environment, run this macOS/Linux shell example from the root of your KiCad project. `C2040` is the upstream example ID. Replace it with the LCSC ID whose manufacturer part number and package match your chosen component. The absolute output path stays inside the project so `--project-relative` can generate portable model paths.
+
+```sh
+mkdir -p libs
+python -m easyeda2kicad --full --lcsc_id C2040 \
+  --output "$PWD/libs/Imported.kicad_sym" --project-relative
+```
+
+This creates `libs/Imported.kicad_sym`, `libs/Imported.pretty/` and, when models are available, `libs/Imported.3dshapes/`. Register the symbol file and footprint folder in KiCad's project-specific library tables. Use **Imported** as the footprint-library nickname and confirm that the symbol's Footprint property uses that nickname. The converter downloads the supplied STEP and converts the supplied OBJ to WRL. Compare the result with the manufacturer drawing. [Converter usage](https://github.com/uPesy/easyeda2kicad.py), [3D conversion details](https://github.com/uPesy/easyeda2kicad.py/blob/master/docs/CMD_3D_MODEL.md)
+
+### Prepare an asset for WirePad
+
+Use these tools during catalog preparation, then review and version the resulting files. For a public WirePad download, record the manufacturer part number, package/revision, source URL, license and permitted redistribution, plus the correspondence between stable canvas pin IDs, symbol numbers and physical pads. Match a breakout module to its board headers and revision. An ADS1220 IC footprint describes the chip on the breakout, while the catalog's ADS1220 module uses its own board headers.
+
+Keep source licensing with copied assets. KiCad's library license has an exception for using parts in designs, while redistribution of a library collection retains attribution and share-alike requirements. SnapMagic, Ultra Librarian and Component Search Engine have their own terms for distributing downloaded content. Use provider download links for assets whose public redistribution needs separate permission. [KiCad library license](https://www.kicad.org/libraries/license/), [SnapMagic terms](https://www.snapeda.com/about/terms/), [Ultra Librarian legal information](https://www.ultralibrarian.com/legal), [Component Search Engine terms](https://intelligence.supplyframe.com/terms/)
+
+For future native-asset downloads, a per-component asset record should identify the reviewed symbol, footprint and 3D files and their pin mapping. The existing catalog definitions generate the current downloads. Serving a prepared native asset requires an explicit export path for that file and a matching preview. Validate it in native KiCad and preserve existing component IDs, pin IDs and canvas anchors when adding that support.
 
 ## Add a component
 
-1. Add an entry to the exported `components` list in [catalog.js](src/catalog.js). Give it a unique `id`, an English name and description, a category, and its drawing `width` and `height`. Record the manufacturer reference and the applicable board revision where available.
-2. Define each pin’s stable `id`, printed `label`, description, electrical `type`, terminal `number`, and `x` and `y` in the drawing’s coordinate system. Place the pins along the edge they connect through. Keep existing component and pin IDs stable so saved projects still load.
-3. Add or reuse a renderer in [catalog-art.js](src/catalog-art.js). Use a self-contained SVG so the illustration works in exported diagrams. Prefer original artwork or record the source and license for reused assets.
-4. Add the mechanical data in [footprints.js](src/footprints.js) and any dedicated symbol geometry in [kicad.js](src/kicad.js). Keep symbol pin numbers and footprint pad numbers aligned, and add a 3D model when suitable geometry is available.
-5. Check the library preview, pin connections, image export, and the generated symbol and footprint in KiCad.
+1. Run `node scripts/new-family.mjs family-id` to create an unregistered family scaffold. Fill it with verified part numbers, board revisions, manufacturer references and component entries before registration.
+2. Each entry keeps `{ component, render, footprint, model? }` together. Define stable contact IDs, printed labels, functions, electrical types and terminal numbers. Draw each pad at the same coordinates as its canvas contact. Interior contacts use `surface: true`; the component uses `contactLayout: "physical"`. Identify hidden or mating faces explicitly.
+3. Add the generated default import and one family entry in [catalog-families.js](src/catalog/catalog-families.js). The library, artwork, configuration resolver and KiCad assets all consume this registration.
+4. Reuse shared drawing/board builders from `src/catalog/shared/`. Large CAD illustrations can live in `artwork/` with their readable component data and attribution in `data/`. Keep source references, scope and CAD links with the entry.
+5. Run `node scripts/catalog.mjs`, `node --test` and `git diff --check`. Review both SVG modes, connect the part on the canvas, export an image and open the native assets in KiCad.
 
-The project format and browser persistence live in [project.js](src/project.js), and the image and project downloads live in [export.js](src/export.js).
+See the [extension example](docs/ARCHITECTURE.md#adding-a-family) and the [latest module audit](docs/catalog-module-expansion-2026-11-07.json).
 
 ## Publish with GitHub Pages
 

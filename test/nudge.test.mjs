@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { nudgeTarget } from '../src/nudge.js';
-import { POSITION_LIMIT, newProject, projectSnapshot } from '../src/project.js';
-import { endpointPositions, routeFor } from '../src/routing.js';
+import { nudgeTarget } from '../src/editor/nudge.js';
+import { newProject, projectSnapshot } from '../src/model/project.js';
+import { POSITION_LIMIT } from '../src/model/limits.js';
+import { routeFor } from '../src/geometry/routing.js';
+import { endpointPositions } from '../src/geometry/parts.js';
 
 const point = (x, y) => ({ x, y });
 const fixture = () => projectSnapshot({

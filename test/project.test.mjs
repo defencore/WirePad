@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { test } from 'node:test';
 
-import { ProjectHistory } from "../src/project-history.js";
-import { newProject, parseProject, serializeProject, validateProject } from "../src/project.js";
+import { ProjectHistory } from '../src/model/history.js';
+import { newProject, parseProject, serializeProject, validateProject } from '../src/model/project.js';
 
 function branchedProject() {
   return {

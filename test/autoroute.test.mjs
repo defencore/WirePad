@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { createAutoRouter } from '../src/autoroute.js';
-import { newProject, parseProject, serializeProject } from '../src/project.js';
-import { endpointPositions, routeFor, wireRoute } from '../src/routing.js';
+import { createAutoRouter } from '../src/geometry/autoroute.js';
+import { newProject, parseProject, serializeProject } from '../src/model/project.js';
+import { routeFor, wireRoute } from '../src/geometry/routing.js';
+import { endpointPositions } from '../src/geometry/parts.js';
 
 const point = (x, y) => ({ x, y });
 const part = (id, x, y, componentId = 'resistor', rotation) => ({ id, componentId, x, y, rotation });
