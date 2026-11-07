@@ -1,5 +1,6 @@
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
-import { board, circle, edgePads, label, line, path, pinRow, rect, smd } from "../shared/svg.js";
+import { circle, label, line, path, pinRow, rect, smd } from "../shared/svg.js";
 
 const raytacDownload = index => `https://www.raytac.com/document/act.php?act=1&index_id=${index}`;
 
@@ -54,20 +55,26 @@ function raytacFamily({ family, body, thickness, spec, design, contacts, sides, 
     const component = {
       id, name: `Raytac ${model}`, shortName: model, category: "Wireless modules",
       manufacturer: "Raytac", subtitle: `${family} / ${antenna} antenna`,
-      description: `${family} Bluetooth LE module with a ${antenna.toLowerCase()} antenna. The diagram groups numbered module lands by edge. Check the datasheet for supply configuration and the RF keepout.`,
+      description: `${family} Bluetooth LE module with a ${antenna.toLowerCase()} antenna. The mirrored underside view places every contact on its actual module land. Check the datasheet for supply configuration and the RF keepout.`,
       tags: ["nordic", "ble", "bluetooth", "smd", family, model, "rf"],
       source: raytacDownload(spec), width, height, art: id, referencePrefix: "U", pins,
     };
     const modelLink = { label: "Raytac footprint, keepout and STEP files", url: raytacDownload(design) };
-    return { component, footprint, modelLink, art: (entry, labels) => raytacArt(entry, labels, family, antenna, footprint) };
+    const projection = raytacProjection(component, body);
+    const byId = new Map(footprint.pads.map(pad => [pad.id, pad]));
+    const physical = physicalComponent(component, pin => {
+      const pad = byId.get(pin.id);
+      return [projection.x - pad.x * projection.scale, projection.y + (pad.y + body[1] / 2) * projection.scale];
+    });
+    return { component: physical, footprint, modelLink, art: (entry, labels) => raytacArt(entry, labels, family, antenna, footprint) };
   });
 }
 
 const raytacFronts = {
-  nRF52832: { color: "#15576c", shieldTop: 0.23, shieldInset: 0.09 },
-  nRF52840: { color: "#075a70", shieldTop: 0.25, shieldInset: 0.04 },
-  nRF5340: { color: "#12566d", shieldTop: 0.31, shieldInset: 0.04 },
-  nRF54L15: { color: "#228354", shieldTop: 0.26, shieldInset: 0.025 },
+  nRF52832: { color: "#15576c" },
+  nRF52840: { color: "#075a70" },
+  nRF5340: { color: "#12566d" },
+  nRF54L15: { color: "#228354" },
 };
 
 function raytacAntenna(family, antenna, width, height) {
@@ -87,60 +94,25 @@ function raytacAntenna(family, antenna, width, height) {
     rect(16, 5, width - 32, 7, 0.5, "#e1e3de") + smd(width - 23, height - 7, "#b6ad7e");
 }
 
-function raytacArt(component, showLabels, family, antenna, { body: [bodyWidth, bodyHeight], pads }) {
-  const { width, height, shortName, pins } = component;
-  const cx = width / 2;
-  const front = raytacFronts[family];
-  const scale = Math.min((width - 90) / 100, (height - 60) / (100 * bodyHeight / bodyWidth));
-  const physicalHeight = 100 * bodyHeight / bodyWidth;
-  const shieldY = physicalHeight * front.shieldTop;
-  const shieldX = 100 * front.shieldInset;
-  const shieldWidth = 100 - 2 * shieldX;
-  const shieldHeight = physicalHeight - shieldY - 5;
-  const shieldCenter = shieldY + shieldHeight / 2;
-  const castellations = family === "nRF52832" ? pads
-    .filter(({ x, y }) => Math.abs(x) >= 4.6 || y >= 7.5)
-    .map(({ x, y, size: [padWidth, padHeight] }) => {
-      const left = Math.max(0, 50 + (x - padWidth / 2) * 10);
-      const right = Math.min(100, 50 + (x + padWidth / 2) * 10);
-      const top = physicalHeight / 2 + (y - padHeight / 2) * 10;
-      return rect(left, top, right - left, Math.min(padHeight * 10, physicalHeight - top), 0.4, "#c3a665");
-    }).join("") : "";
-  const physical = rect(0, 0, 100, physicalHeight, 1, front.color, "#103848") +
-    raytacAntenna(family, antenna, 100, shieldY) +
-    castellations +
-    rect(shieldX, shieldY, shieldWidth, shieldHeight, 1, "#9eaaa9", "#7b8c93") +
-    rect(shieldX + 3, shieldY + 3, shieldWidth - 6, shieldHeight - 6, 1, "#bfc8c7", "#d1d9d7") +
-    line(shieldX + 3, shieldY + 4, 100 - shieldX - 3, shieldY + 4, "#e2e6e1", 1.2) +
-    `<g transform="rotate(90 50 ${shieldCenter})">` +
-    label(50, shieldCenter - 17, "RAYTAC", 10, "#364b53") +
-    label(50, shieldCenter, shortName, 8, "#3b5056") +
-    label(50, shieldCenter + 14, family, 8, "#4d6468") + "</g>";
-  const captions = showLabels ? pins.map(pin => {
-    const horizontal = pin.x === 0 || pin.x === width;
-    if (horizontal) {
-      const left = pin.x === 0;
-      return label(left ? 16 : width - 16, pin.y, pin.label, 7.5, "#eef3e8", left ? "start" : "end");
-    }
-    const upper = pin.y === 0;
-    const y = upper ? 16 : height - 16;
-    return `<g transform="rotate(${upper ? 90 : -90} ${pin.x} ${y})">${label(pin.x, y, pin.label, 7.5, "#eef3e8", "start")}</g>`;
-  }).join("") : "";
+function raytacProjection(component, body) {
+  const scale = Math.min((component.width - 32) / body[0], (component.height - 40) / body[1]);
+  return { scale, x: component.width / 2, y: (component.height - body[1] * scale) / 2 + 8 };
+}
 
-  const top = (height - physicalHeight * scale) / 2 - 11;
-  const terminals = pins.map(({ x, y }) => {
-    if (x === 0 || x === width) {
-      const left = x === 0;
-      return line(x, y, left ? 10 : width - 10, y, "#ac8550", 1.3) +
-        rect(left ? 7 : width - 13, y - 2.2, 6, 4.4, 0.7, "#dbb274");
-    }
-    const upper = y === 0;
-    return line(x, y, x, upper ? 10 : height - 10, "#ac8550", 1.3) +
-      rect(x - 2.2, upper ? 7 : height - 13, 4.4, 6, 0.7, "#dbb274");
+function raytacArt(component, showLabels, family, antenna, { body, pads }) {
+  const projection = raytacProjection(component, body);
+  const { scale, x, y } = projection;
+  const width = body[0] * scale, height = body[1] * scale;
+  const terminals = pads.map(pad => {
+    const pin = component.pins.find(pin => pin.id === pad.id);
+    return rect(pin.x - pad.size[0] * scale / 2, pin.y - pad.size[1] * scale / 2,
+      pad.size[0] * scale, pad.size[1] * scale, .4, "#d4b36c", "#efdb9a") +
+      (showLabels ? label(pin.x, pin.y, pin.number, Math.min(6, scale * .32), "#263e43") : "");
   }).join("");
-  return board(width, height, "#24363e", "#435a62") +
-    `<g transform="translate(${cx - 50 * scale} ${top}) scale(${scale})">${physical}</g>` +
-    terminals + captions;
+  return label(x, 10, "UNDERSIDE · MIRRORED", 7, "#334c55") +
+    rect(x - width / 2, y, width, height, 2, raytacFronts[family].color, "#40666b") +
+    `<g transform="translate(${x - width / 2} ${y}) scale(${width / 100})">${raytacAntenna(family, antenna, 100, 100 * body[1] / body[0] * .2)}</g>` +
+    terminals + label(x, component.height / 2 + 18, component.shortName, 8, "#c2d9d2");
 }
 
 // Land dimensions come from the Raytac Eagle or Protel libraries linked from each entry.
@@ -504,8 +476,8 @@ function ebyteDIP(model, body, headerInset, amplified) {
     id, name: `Ebyte ${model} nRF24L01+`, shortName: model, category: "Wireless modules", manufacturer: "Ebyte",
     subtitle: amplified ? "2.4 GHz SPI radio / PA + LNA / SMA" : "2.4 GHz SPI radio / PCB antenna",
     description: amplified
-      ? "nRF24L01+ SPI transceiver with 20 dBm PA/LNA and an SMA antenna connector. The illustrated header banks show the odd and even contacts. Allow for transmit current peaks when sizing the 3.3 V supply."
-      : "nRF24L01+ SPI transceiver with a printed antenna. The illustrated header banks show the odd and even contacts of the 2 × 4 connector.",
+      ? "nRF24L01+ SPI transceiver with 20 dBm PA/LNA and an SMA antenna connector. The contact points lie on the two rows of the physical header. Allow for transmit current peaks when sizing the 3.3 V supply."
+      : "nRF24L01+ SPI transceiver with a printed antenna. The contact points lie on the physical 2 × 4 connector.",
     tags: ["nordic", "nrf24", "nrf24l01", "spi", "radio", "2.4ghz", ...(amplified ? ["pa", "lna", "sma"] : [])],
     source: `https://www.cdebyte.com/products/${model}/2`, width, height, art: id, referencePrefix: "U",
     pins: [
@@ -526,12 +498,12 @@ function ebyteDIP(model, body, headerInset, amplified) {
       : [[0, -1, 6, 6, 1, "#293849"]],
     note: "Reference carrier for a 2.54 mm 2 × 4 header. Verify pin 1, mating orientation, connector location and antenna clearance against the module.",
   };
-  const art = (entry, labels) => {
-    const banks = board(entry.width, 78, amplified ? "#254137" : "#522e33", amplified ? "#4e7763" : "#8a5b59");
-    return `<g transform="translate(0 ${entry.height - 78})">${banks}</g>` +
-      ebyteFront(entry, model, amplified) + edgePads(entry, labels);
-  };
-  return { component, footprint, art };
+  const positions = new Map(radioHeader.map((pin, index) => [pin[0], [width / 2 - 25.5 + Math.floor(index / 2) * 17, amplified ? (index % 2 ? 178 : 192) : (index % 2 ? 116 : 130)]]));
+  const physical = physicalComponent(component, pin => positions.get(pin.id));
+  const art = (entry, labels) => ebyteFront(entry, model, amplified) + entry.pins.map(pin =>
+    circle(pin.x, pin.y, 4.3, "#bfa363", "#e2c788") + rect(pin.x - 1.7, pin.y - 1.7, 3.4, 3.4, .3, "#a5aab0", "#e4e6e3") +
+    (labels ? label(pin.x, pin.y - 6, pin.number, 5.5, "#f1e5ce") : "")).join("");
+  return { component: physical, footprint, art };
 }
 
 const nrf24Modules = [

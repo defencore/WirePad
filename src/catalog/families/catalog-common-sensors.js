@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { board, chip, circle, edgePads, label, line, mountingHole, path, pinRow, rect, smd } from "../shared/svg.js";
 
 const keyestudioDocs = model => `https://docs.keyestudio.com/projects/${model}/en/latest/docs/${model}.html`;
@@ -22,7 +23,11 @@ function sensor({
   const pinSpacing = canvasPitch ?? (vertical ? 15 : 18);
   const span = (contacts.length - 1) * pinSpacing;
   const start = ((vertical ? height : width) - span) / 2;
-  const pins = pinRow(side, width, height, start, pinSpacing, contacts);
+  const logical = pinRow(side, width, height, start, pinSpacing, contacts);
+  const centers = id === "dfrobot-dht22-sen0137" ? (_pin, index) => [38 + index * 9, 135]
+    : id === "dfrobot-capacitive-soil-sen0193" ? (_pin, index) => [53 - index * 9, 31]
+      : pin => [pin.x + (side === "left" ? 9 : side === "right" ? -9 : 0), pin.y + (side === "top" ? 9 : side === "bottom" ? -9 : 0)];
+  const pins = physicalComponent({ width, height, pins: logical }, centers).pins;
   const offset = -(contacts.length - 1) * pitch / 2;
   const header = vertical
     ? { axis: "y", x: (body[0] / 2 - inset) * (side === "left" ? -1 : 1), y: offset }
@@ -30,7 +35,7 @@ function sensor({
   return {
     component: {
       id, name, shortName, manufacturer, source, description, subtitle, tags,
-      category: "Sensors", referencePrefix: "U", art: id, width, height, pins,
+      category: "Sensors", referencePrefix: "U", art: id, width, height, pins, contactLayout: "physical",
     },
     art: (component, showLabels) => art(component) + drawPins(component, showLabels),
     footprint: {
@@ -59,7 +64,7 @@ function qtSocket(x, y) {
 
 function qtPins(component, showLabels) {
   return edgePads(component, false) + (showLabels ? component.pins.map((pin, index) =>
-    label(pin.x, pin.y - (component.pins.length > 4 && index % 2 ? 28 : 19), pin.label, 7.5)
+    label(pin.x, pin.y - (component.pins.length > 4 && index % 2 ? 19 : 10), pin.label, 7.5)
   ).join("") : "");
 }
 

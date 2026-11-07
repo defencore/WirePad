@@ -26,6 +26,12 @@ function rotateVector({ x, y }, rotation) {
   }
 }
 
+export function pointOnPart(part, point, component = componentForPart(part)) {
+  const cx = component.width / 2, cy = component.height / 2;
+  const offset = rotateVector({ x: point.x - cx, y: point.y - cy }, part.rotation);
+  return { x: part.x + cx + offset.x, y: part.y + cy + offset.y };
+}
+
 function pinVector(pin, component) {
   if (pin.x === 0) return { x: -1, y: 0 };
   if (pin.x === component.width) return { x: 1, y: 0 };
@@ -46,13 +52,10 @@ export function endpointPositions(project) {
     const part = parts.get(endpoint.partId);
     const component = componentForPart(part);
     const pin = pinById(component, endpoint.pinId);
-    const cx = component.width / 2;
-    const cy = component.height / 2;
-    const offset = rotateVector({ x: pin.x - cx, y: pin.y - cy }, part.rotation);
     const normal = pin.surface ? undefined : rotateVector(pinVector(pin, component), part.rotation);
     const bounds = partBounds(part, component);
     const point = {
-      x: part.x + cx + offset.x, y: part.y + cy + offset.y, normal,
+      ...pointOnPart(part, pin, component), normal,
       surfacePartId: pin.surface && component.contactLayout === 'physical' ? part.id : undefined,
       bounds: pin.surface ? undefined : {
         x: [bounds.left, bounds.right],

@@ -57,15 +57,15 @@ test('an existing wire with two protruding bends renders cleanly in the draft an
   const end = position(wire.to);
   const route = routeFor(wire, position);
   assertClean(route, start, end);
-  assert.ok(route.every(({ x, y }) => x >= 83 && y >= start.y));
+  assert.ok(route.every(({ x, y }) => x >= 83 && y >= 35));
 
   const preview = Object.assign(Object.create(DrawingCanvas.prototype), { draft: { innerHTML: '' }, position });
   preview.showDraft(wire, end, wire.color, wire.to);
-  const path = markup => markup.match(/<path d="([^"]+)"/)?.[1];
+  const path = markup => markup.match(new RegExp(`<path d="([^"]+)"[^>]*stroke="${wire.color}"`))?.[1];
   assert.ok(path(preview.draft.innerHTML));
   assert.equal(path(preview.draft.innerHTML), path(drawingMarkup(project)));
 
-  const { junction, before, after } = splitWire(wire, position, point(83, 155), 'branch', 'branch-wire');
+  const { junction, before, after } = splitWire(wire, position, point(end.x, 155), 'branch', 'branch-wire');
   project.junctions = [junction];
   const withJunction = endpointPositions(project);
   assertClean(routeFor(before, withJunction), start, junction);

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalEntry } from "../shared/physical-contacts.js";
 import { ads1220, drawAds1220, ads1220Footprint } from "../parts/ads1220.js";
 import { hw0519, drawHw0519 } from "../parts/hw0519.js";
 import { st3215, drawSt3215 } from "../parts/st3215.js";
@@ -300,8 +301,8 @@ const coreBasicComponents = [...passives, ...discrete, ...connectors, battery].m
 function rs485Art(component, showLabels) {
   const { width, height } = component;
   const logicHeader = rect(6, 15, 15, 111, 1.5, "#1d2936", "#81909c");
-  const pins = showLabels ? edgePads(component, true) : component.pins
-    .filter(pin => pin.x === 0).map(({ y }) => pad(9, y)).join("");
+  const pins = edgePads({ ...component, pins: component.pins.filter(pin => pin.edge === "left") }, showLabels) +
+    (showLabels ? component.pins.filter(pin => pin.edge === "right").map(pin => label(pin.x + 12, pin.y, pin.label, 7, "#f1f2ee", "start")).join("") : "");
   return board(width, height, "#205987", "#5388aa") +
     logicHeader + mountingHole(137, 20) + mountingHole(137, 116) +
     path("M40 43h13l14 13M38 98h15l14-13M91 56h17m-17 23h17", "none", "#3d7397", 1.3) +
@@ -331,13 +332,12 @@ function qtPort(x, y, angle = 0) {
     line(-9, -3, 9, -3, "#f7f3e8", 1.1) + "</g>";
 }
 
-function moduleHole(pin, x, y, showLeads, textX, textY, anchor = "middle") {
-  const lead = showLeads ? line(pin.x, pin.y, x, y, "#ac8550", 1.4) : "";
-  return lead + pad(x, y) + label(textX, textY, pin.label, 7, qtSilk, anchor);
+function moduleHole(pin, showLabels, textX, textY, anchor = "middle") {
+  return pad(pin.x, pin.y) + (showLabels ? label(textX, textY, pin.label, 7, qtSilk, anchor) : "");
 }
 
 function bmeArt({ pins }, showLabels) {
-  // Rotate the top view so the seven-pin header faces the existing canvas contacts.
+  // Component-side view, with the seven through-holes along the left edge.
   return qtBoard(15, 6, 94, 116) +
     mountingHole(26, 16) + mountingHole(98, 16) + mountingHole(26, 112) + mountingHole(98, 112) +
     qtPort(61, 14, 180) + qtPort(61, 114) +
@@ -346,7 +346,7 @@ function bmeArt({ pins }, showLabels) {
     rect(56, 56, 12, 13, 1, "#a3aaa3") + circle(64, 59, 2, "#444e4a") +
     smd(52, 40) + smd(52, 78) + smd(56, 91) + smd(67, 97) +
     `<g transform="rotate(90 96 64)">${label(96, 64, "BME280", 11, qtSilk)}</g>` +
-    pins.map((pin, index) => moduleHole(pin, 27, 25 + 13 * index, showLabels, 35, 25 + 13 * index, "start")).join("");
+    pins.map(pin => moduleHole(pin, showLabels, pin.x + 8, pin.y, "start")).join("");
 }
 
 function soilArt({ pins }) {
@@ -371,9 +371,7 @@ function soilArt({ pins }) {
 
 function adsArt({ pins }, showLabels) {
   const contacts = pins.map(pin => {
-    const top = pin.y === 0;
-    const x = 30 + (pin.x - 22) * 0.86;
-    return moduleHole(pin, x, top ? 17 : 106, showLabels, x, top ? 27 : 96);
+    return moduleHole(pin, showLabels, pin.x, pin.y + (pin.edge === "top" ? 10 : -10));
   }).join("");
   return qtBoard(5, 5, 140, 114) +
     mountingHole(16, 17) + mountingHole(134, 17) + mountingHole(16, 106) + mountingHole(134, 106) +
@@ -387,7 +385,7 @@ function adsArt({ pins }, showLabels) {
 function inaArt(component, showLabels) {
   const header = ["VIN", "GND", "SCL", "SDA", "VIN−", "VIN+"].map((caption, index) => {
     const x = 25 + index * 14;
-    return pad(x, 80) + label(x, index % 2 === 0 ? 90 : 70, caption, 6.5, qtSilk);
+    return pad(x, 80) + (showLabels ? label(x, index % 2 === 0 ? 90 : 70, caption, 6.5, qtSilk) : "");
   }).join("");
   const face = qtBoard(0, 0, 120, 96) +
     mountingHole(11, 11) + mountingHole(109, 11) + mountingHole(11, 84) + mountingHole(109, 84) +
@@ -400,13 +398,7 @@ function inaArt(component, showLabels) {
     label(60, 47, "R100", 7.4, qtSilk) +
     chip(50, 56, 19, 15, "", 4) + smd(26, 64) + smd(85, 60) +
     label(31, 33, "INA219", 7, qtSilk) + header;
-  if (!showLabels) return `<g transform="translate(12 2)">${face}</g>`;
-
-  // The diagram groups logic and shunt pins separately around the physical top view.
-  return `<g transform="translate(33 19) scale(0.65)">${face}</g>` +
-    rect(5, 15, 26, 74, 2, "#2c3944", "#60747d") +
-    rect(115, 31, 24, 37, 2, "#2c3944", "#60747d") +
-    edgePads(component, true);
+  return `<g transform="translate(12 2)">${face}</g>`;
 }
 
 function oledArt({ pins }, showLabels) {
@@ -419,7 +411,7 @@ function oledArt({ pins }, showLabels) {
     path("M31 34h76v3H31Z", "#26323f") +
     rect(48, 86, 42, 11, 0.7, "#8d6441", "#bd9262") +
     path("M52 86v8m5-8v8m5-8v8m5-8v8m5-8v8m5-8v8m5-8v8m5-8v8", "none", "#d0a46a", 0.7) +
-    pins.map((pin, index) => moduleHole(pin, 45 + 16 * index, 11, showLabels, 45 + 16 * index, 21)).join("");
+    pins.map(pin => moduleHole(pin, showLabels, pin.x, pin.y + 10)).join("");
 }
 
 function buckArt({ width, height, pins }, showLabels) {
@@ -429,10 +421,8 @@ function buckArt({ width, height, pins }, showLabels) {
     label(x, 46, index === 0 ? "100" : "220", 8, "#333839")
   ).join("");
   const contacts = pins.map(pin => {
-    const x = pin.x === 0 ? 14 : width - 14;
-    const y = pin.y < height / 2 ? 13 : height - 13;
-    const textX = pin.x === 0 ? x + 3 : x - 3;
-    return moduleHole(pin, x, y, showLabels, textX, y < height / 2 ? y + 10 : y - 10);
+    const textX = pin.x + (pin.edge === "left" ? 3 : -3);
+    return moduleHole(pin, showLabels, textX, pin.y < height / 2 ? pin.y + 10 : pin.y - 10);
   }).join("");
   const regulator = [53, 59, 65, 71, 77].map(x =>
     path(`M${x} 53v6l-1 2v4`, "none", "#bfc2ba", 2.8)
@@ -450,9 +440,8 @@ function buckArt({ width, height, pins }, showLabels) {
 }
 
 function connectorArt({ art, width, pins }, showLabels) {
-  const leads = pins.map(({ x, y }) => line(x, 49, x, y, "#a58f68", 2)).join("");
   if (art === "header") {
-    return leads + pins.map(({ x }) =>
+    return pins.map(({ x }) =>
       path(`M${x - 2} 29V15l2-4 2 4v14Z`, "#c1a26b", "#7b6548") +
       path(`M${x - 11} 31l3-3h16l3 3v15l-3 3h-16l-3-3Z`, "#292d35", "#131821") +
       line(x - 7, 31, x + 7, 31, "#626872", 1) +
@@ -461,16 +450,14 @@ function connectorArt({ art, width, pins }, showLabels) {
   }
   if (art === "jst") {
     const middle = width / 2;
-    return leads +
-      rect(13, 13, width - 26, 42, 3, "#c8c4b5", "#aaa698") +
+    return rect(13, 13, width - 26, 42, 3, "#c8c4b5", "#aaa698") +
       rect(13, 13, width - 26, 36, 3, "#f4efe0", "#b6b1a2") +
       path(`M19 19H${middle - 9}v5h18v-5H${width - 19}v23H19Z`, "#8c8676", "#b7af9d") +
       rect(21, 30, width - 42, 10, 1, "#b7af99") +
       pins.map(({ x }) => rect(x - 2, 26, 4, 12, 0.8, "#c7ad75", "#6e634d")).join("") +
       path("M16 16h5l-5 5Z", "#99917f");
   }
-  return leads +
-    rect(18, 12, width - 36, 45, 2, "#50765c", "#294c39") +
+  return rect(18, 12, width - 36, 45, 2, "#50765c", "#294c39") +
     rect(18, 12, width - 36, 27, 2, "#79a17d", "#4c7656") +
     pins.map(({ x, label: number }) =>
       screw(x, 25, 8) +
@@ -517,20 +504,15 @@ const led = () => path("M0 16H30l5 12h7v-4m12 0v6h7l5-14h30", "none", "#7c8c9a",
   path("M40 14a7 7 0 0 1 6-7", "none", "#f5a4a0", 1.6);
 
 function transistorArt({ art, pins }, showLabels) {
-  const [control, upper, lower] = pins;
   const leadColor = "#8090a0";
-  const leads = showLabels
-    ? path(`M${control.x} ${control.y}H17V55H39V38`, "none", leadColor, 2) +
-      path(`M${upper.x} ${upper.y}H79V49H60Q55 39 50 49H47V38`, "none", leadColor, 2) +
-      path(`M55 37V41.5M55 47V${lower.y}H${lower.x}`, "none", leadColor, 2)
-    : [39, 47, 55].map((x) => line(x, 38, x, 58, leadColor, 2.1)).join("");
+  const leads = pins.map(pin => line(pin.x, 38, pin.x, pin.y, leadColor, 2.1)).join("");
   return leads +
     path("M30 17Q30 8 47 8Q64 8 64 17V34L58 39H36L30 34Z", "#28333c", "#18232c") +
     path("M33 18Q33 11 47 11Q60 11 61 17L57 19H37Z", "#48545b") +
     rect(34, 18, 26, 20, 2, "#343f47", "#26323a") +
     label(47, 28, art === "npn" ? "NPN" : "MOS", 7.5) +
     (showLabels ? pins.map(({ x, y, label: pin }) =>
-      label(x === 0 ? 9 : 86, y - 6, pin, 7.5, "#40516a")).join("") : "");
+      label(x, y + 8, pin, 7.5, "#40516a")).join("") : "");
 }
 
 function buttonArt() {
@@ -690,5 +672,26 @@ const coreBasicModels = {
 };
 
 
-export const coreModulesFamily = defineFamily("core-modules", (coreModuleComponents).map(component => ({ component, render: (coreModuleArt)[component.art], footprint: (coreModuleFootprints)[component.id], model: coreModuleModels[component.id] })));
-export const coreBasicsFamily = defineFamily("core-basics", (coreBasicComponents).map(component => ({ component, render: (coreBasicArt)[component.art], footprint: (coreBasicFootprints)[component.id], model: coreBasicModels[component.id] })));
+const coreContactPositions = {
+  "esp32-s3": (component, pin) => [pin.x === 0 ? 9 : component.width - 9, pin.y],
+  max3485: (_component, pin) => [pin.x === 0 ? 9 : 122, pin.y],
+  hw0519: (component, pin) => [pin.x === 0 ? 10 : component.width - 10, pin.y],
+  bme280: (_component, _pin, index) => [27, 25 + index * 13],
+  "rs485-soil": (_component, pin) => [pin.x, pin.y],
+  ads1115: (_component, pin) => [30 + (pin.x - 22) * 0.86, pin.y === 0 ? 17 : 106],
+  ads1220: (component, pin) => [pin.x === 0 ? 15 : component.width - 15, pin.y],
+  ina219: (_component, pin) => [37 + ["vin", "gnd", "scl", "sda", "vin-minus", "vin-plus"].indexOf(pin.id) * 14, 82],
+  st3215: (_component, _pin, index) => [147.5, 37 + index * 7],
+  ssd1306: (_component, _pin, index) => [45 + index * 16, 11],
+  lm2596: (component, pin) => [pin.x === 0 ? 14 : component.width - 14, pin.y < component.height / 2 ? 13 : component.height - 13],
+};
+
+export const coreModulesFamily = defineFamily("core-modules", coreModuleComponents.map(component => physicalEntry({
+  component, render: coreModuleArt[component.art], footprint: coreModuleFootprints[component.id], model: coreModuleModels[component.id],
+}, (pin, index) => coreContactPositions[component.id](component, pin, index))));
+export const coreBasicsFamily = defineFamily("core-basics", coreBasicComponents.map(component => {
+  const entry = { component, render: coreBasicArt[component.art], footprint: coreBasicFootprints[component.id], model: coreBasicModels[component.id] };
+  if (["npn", "nmos"].includes(component.art)) return physicalEntry(entry, (_pin, index) => [39 + index * 8, 58]);
+  if (["terminal", "header", "jst"].includes(component.art)) return physicalEntry(entry, pin => [pin.x, component.art === "header" ? 17 : component.art === "jst" ? 32 : 25]);
+  return { ...entry, component: { ...component, contactLayout: "leads" } };
+}));

@@ -37,6 +37,10 @@ export function validateComponent(component) {
       throw new Error(`${contact} is outside the component drawing.`);
     }
     if (component.contactLayout === 'physical' && pin.surface !== true) throw new Error(`${contact} must be marked as a surface contact.`);
+    if (pin.symbolPlacement && (!['left', 'right'].includes(pin.symbolPlacement.side) ||
+        !Number.isFinite(pin.symbolPlacement.order) || pin.symbolPlacement.order < 0)) {
+      throw new Error(`${contact} has an invalid symbol placement.`);
+    }
   });
   for (const group of component.internalConnections ?? []) {
     if (!Array.isArray(group) || !group.length || group.some(id => !ids.has(id))) {

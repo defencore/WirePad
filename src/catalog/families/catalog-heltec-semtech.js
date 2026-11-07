@@ -1,3 +1,4 @@
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, line, path, pinRow, rect, smd } from "../shared/svg.js";
 
@@ -118,15 +119,19 @@ function heltecPins(width, height, controls, vextPin, auxiliary) {
 function heltecBoard({ id, revision, chipName, source, controls, vextPin = 36, auxiliary = true, details }) {
   const width = 142;
   const height = auxiliary ? 330 : 310;
-  return {
+  const component = {
     id, name: `Heltec WiFi LoRa 32 ${revision}`, shortName: `Heltec ${revision}`,
     category: "Microcontrollers", manufacturer: "Heltec Automation",
     description: `${chipName} development board with SX1262 LoRa, Wi-Fi, BLE and OLED. ${details}`,
     subtitle: `${chipName} / SX1262 / OLED`,
     tags: ["lora", "lorawan", "meshtastic", "wifi", "ble", "esp32", "semtech", "heltec"],
-    source, width, height, art: auxiliary ? "heltec-v4-board" : "heltec-v3-board", referencePrefix: "U",
+    source, width, height, contactLayout: "physical", art: auxiliary ? "heltec-v4-board" : "heltec-v3-board", referencePrefix: "U",
     pins: heltecPins(width, height, controls, vextPin, auxiliary),
   };
+  return physicalComponent(component, pin => ({
+    x: pin.number.startsWith("X") ? { X1: 42, X2: 54, X3: 88, X4: 100 }[pin.number] : pin.x === 0 ? 11 : width - 11,
+    y: pin.number.startsWith("X") ? 302 : pin.y,
+  }));
 }
 
 const heltecBoards = [
@@ -244,30 +249,20 @@ function heltecV4Body() {
     coax(71, 314);
 }
 
-function heltecPads({ width, height, pins }, labels, v3) {
+function heltecPads({ width, pins }, labels, v3) {
   const metal = v3 ? "#abb3b3" : "#e0b657";
   const captionColor = v3 ? "#243138" : "#eff1ed";
   const captionOutline = v3 ? "#e3e6e2" : "#232a29";
-  const endPads = { X1: 42, X2: 54, X3: 88, X4: 100 };
   return pins.map(pin => {
-    if (pin.y === height) {
-      // Preserve the saved canvas anchors while showing the tighter physical pad pairs.
-      const center = endPads[pin.number];
-      return path(`M${pin.x} ${height}V320L${center} 302`, "none", "#aa9255", 1.15) +
-        circle(center, 302, 3.7, metal) + circle(center, 302, 1.8, "#202626") +
-        (labels ? label(center, 295, pin.label, 6.5, captionColor) : "");
-    }
-    const left = pin.x === 0;
-    const center = left ? 11 : width - 11;
-    const first = pin.number.endsWith(".1");
-    const annulus = first && !v3
-      ? rect(center - 3.7, pin.y - 3.7, 7.4, 7.4, 0.5, metal, "#9f8036")
-      : circle(center, pin.y, 3.6, metal, v3 ? "#909999" : "#977a34");
-    const caption = labels
-      ? `<g paint-order="stroke fill" stroke="${captionOutline}" stroke-width="1">${label(left ? 17 : width - 17, pin.y, pin.label, 7.3, captionColor, left ? "start" : "end")}</g>`
-      : "";
-    return line(pin.x, pin.y, center, pin.y, v3 ? "#98a3a4" : "#aa9255", 1.15) +
-      annulus + circle(center, pin.y, 1.85, "#27302f") + caption;
+    const auxiliary = pin.number.startsWith("X");
+    const left = pin.edge === "left";
+    const annulus = pin.number.endsWith(".1") && !v3
+      ? rect(pin.x - 3.7, pin.y - 3.7, 7.4, 7.4, .5, metal, "#9f8036")
+      : circle(pin.x, pin.y, auxiliary ? 3.7 : 3.6, metal, v3 ? "#909999" : "#977a34");
+    const caption = labels ? `<g paint-order="stroke fill" stroke="${captionOutline}" stroke-width="1">` +
+      label(auxiliary ? pin.x : left ? 17 : width - 17, auxiliary ? pin.y - 7 : pin.y,
+        pin.label, auxiliary ? 6.5 : 7.3, captionColor, auxiliary ? "middle" : left ? "start" : "end") + "</g>" : "";
+    return annulus + circle(pin.x, pin.y, 1.85, "#27302f") + caption;
   }).join("");
 }
 

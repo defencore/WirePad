@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, edgePads, label, line, mountingHole, pad, path, pinRow, rect, screw, smd, usb } from "../shared/svg.js";
 
 const pitch = 2.54;
@@ -32,10 +33,20 @@ function module({ rows, face, footprint, model, drawPins = edgePads, ...definiti
     pins: rows.flatMap(({ side, start, spacing, header, contacts }) =>
       pinRow(side, width, height, start, spacing, contacts, `${header}.`)),
   };
-  return {
-    component, footprint, model,
-    art: (part, showLabels) => face(part) + drawPins(part, showLabels),
+  const inset = pin => [pin.x === 0 ? 9 : pin.x === width ? width - 9 : pin.x, pin.y === 0 ? 9 : pin.y === height ? height - 9 : pin.y];
+  const centers = {
+    "sunfounder-l298n-hw095": (pin, index) => index < 4 ? [index < 2 ? 44 : 211, 146 + (index % 2) * 23]
+      : index < 7 ? [51 + (index - 4) * 23, 196] : [pin.x, height - 9],
+    "adafruit-tmc2209-6121": pin => [pin.x, pin.y === 0 ? 39 : height - 9],
+    "keyestudio-ks0011-5v-relay": (pin, index) => index < 3 ? [36 + index * 26.5, 35] : [pin.x, height - 9],
+    "adafruit-pca9685-815": (pin, index) => index < 6 ? [9, pin.y] : index === 6 ? [201, 34] : [pin.x, 135],
+    "joyit-sbc-can01-mcp2515": (pin, index) => index < 8 ? [9, pin.y] : [158, 62 + (index - 8) * 24],
   };
+  const entry = physicalEntry({
+    component, footprint, model,
+    render: (part, showLabels) => face(part) + drawPins(part, showLabels),
+  }, centers[id] ?? inset);
+  return { ...entry, art: entry.render };
 }
 
 const pcb = ({ width, height }, color, rim) =>
@@ -433,11 +444,7 @@ const pwmBanks = Array.from({ length: 4 }, (_, bank) => Array.from({ length: 4 }
 const pcaArtStarts = [54, 136, 236, 318];
 const pcaPcbStarts = [-24.13, -11.43, 3.81, 16.51];
 function servoPins(component, showLabels) {
-  const headers = component.pins.filter(pin => pin.y !== component.height);
-  const pwm = component.pins.filter(pin => pin.y === component.height);
-  return edgePads({ ...component, pins: headers }, showLabels) +
-    pwm.map(({ x, y, label: channel }) => line(x, y, x, y - 6, "#ac8550", 1.5) +
-      (showLabels ? label(x, y - 14, channel, 7.5) : "")).join("");
+  return edgePads(component, showLabels);
 }
 const pca9685 = module({
   id: "adafruit-pca9685-815", name: "Adafruit PCA9685 16-Channel Servo Driver", shortName: "PCA9685 Servo Driver",

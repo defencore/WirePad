@@ -1,3 +1,4 @@
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
 import { board, chip, circle, label, line, path, rect, smd } from "../shared/svg.js";
 
@@ -56,19 +57,19 @@ function radio({
     const label = labels[Number(number) - 1];
     const [type, detail] = terminal[label] ?? ["bidirectional", `${label} is a software-configurable radio I/O. Check the mapping for your operating mode.`];
     return {
-      id, number, label, type,
+      id, number, label, type, edge: side,
       description: (label === "VCC" || label === "3V3") && supply ? supply : detail,
       x: side === "left" ? 0 : side === "right" ? width : Math.round(width * (0.5 + x / body[0])),
       y: side === "top" ? 0 : side === "bottom" ? height : Math.round(height * (0.5 + y / body[1])),
     };
   });
   return {
-    component: {
+    component: physicalComponent({
       id, name: `${name} LoRa Module`, shortName: name, category: "Wireless modules", manufacturer,
       subtitle: `${chipName ? `${chipName} / ` : ""}${band}`,
       description, tags: ["lora", "rf", "radio", "semtech", "spi", ...(chipName ? [chipName.toLowerCase()] : [])],
       source, width, height, pins, art, referencePrefix: "U",
-    },
+    }, pin => [pin.x === 0 ? 10 : pin.x === width ? width - 10 : pin.x, pin.y === 0 ? 10 : pin.y === height ? height - 10 : pin.y]),
     footprint: {
       body, smd: true, modelHeight: 0.8, color: art === "hoperf-radio" ? "#273c2b" : "#23313d",
       note: note ?? "Reference castellated SMD land pattern based on the manufacturer’s mechanical drawing. Verify assembly tolerances and RF layout before fabrication.",
@@ -215,11 +216,11 @@ function contacts(component, showLabels) {
   const { art, width, height } = component;
   const annular = art === "hoperf-radio";
   return component.pins.map((pin) => {
-    const horizontal = pin.x === 0 || pin.x === width;
-    const before = pin.x === 0 || pin.y === 0;
+    const horizontal = pin.edge === "left" || pin.edge === "right";
+    const before = pin.edge === "left" || pin.edge === "top";
     const delta = before ? 1 : -1;
-    const x = pin.x + (horizontal ? delta * 10 : 0);
-    const y = pin.y + (horizontal ? 0 : delta * 10);
+    const x = pin.x;
+    const y = pin.y;
     const w = horizontal ? 12 : 7;
     const h = horizontal ? (annular ? 10 : 7) : 12;
     const captionWidth = pin.label.length * 4.2 + 5;
@@ -230,8 +231,7 @@ function contacts(component, showLabels) {
         label(x, y + delta * 11, pin.label, 6.6);
     const cutout = annular ? circle(x + delta * 1.5, y, 3.3, "#f1e3c4", "#b28543")
       : circle(x - (horizontal ? delta * 4 : 0), y - (horizontal ? 0 : delta * 4), 2.2, "#463b2c");
-    return line(pin.x, pin.y, x, y, "#b38b52", 1.2) +
-      rect(x - w / 2, y - h / 2, w, h, annular ? 3 : 1, "#d9ae60", "#edcf86") +
+    return rect(x - w / 2, y - h / 2, w, h, annular ? 3 : 1, "#d9ae60", "#edcf86") +
       cutout + caption;
   }).join("");
 }

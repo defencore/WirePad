@@ -1,6 +1,6 @@
 import { defineFamily } from "../registry.js";
-import { chip, circle, edgePads, label, line, mountingHole, pad, path, rect, smd, tactile } from "../shared/svg.js";
-import { boardDefinition, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
+import { chip, circle, label, line, mountingHole, path, rect, smd, tactile } from "../shared/svg.js";
+import { boardDefinition, physicalHeaderArt, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
 
 const manufacturer = "Arduino";
 const docs = "https://docs.arduino.cc/hardware/";
@@ -64,7 +64,6 @@ const avrRoles = { 0: "UART RX.", 1: "UART TX.", 3: "PWM.", 5: "PWM.", 6: "PWM."
 const analogAvr = range(6).map(index => analog(index, `PC${index}`, ({ 4: "I²C SDA.", 5: "I²C SCL." })[index]));
 
 const pcbEdge = "#3e929a";
-const bankColor = "#20383f";
 const metal = "#bbc7ca";
 
 function usbPort(x, y, width, depth, kind) {
@@ -164,43 +163,24 @@ function shieldBoardArt({ shortName, art }) {
     barrelJack(9, 0, 36, 43) +
     (r3 ? usbPort(109, -4, 29, 47, "b") : usbPort(111, 0, 27, leonardo ? 23 : 25, leonardo ? "micro" : "c")) +
     tactile(157, 12) +
-    connector(7, 101, 1, 8) + connector(7, 171, 1, 6) +
-    connector(172, 64, 1, 10) + connector(172, 149, 1, 8) +
-    parts + connector(83, 218, 3, 2, { pitch: 7, male: true });
+    parts;
 }
 
-function diagramArt(component, showLabels, drawBoard, boardWidth, boardHeight) {
-  const { width, height, pins } = component;
-  const padding = showLabels ? 82 : 13;
-  const scale = Math.min((width - padding) / boardWidth, (height - 35) / boardHeight);
-  const x = (width - scale * boardWidth) / 2;
-  const y = (height - scale * boardHeight) / 2;
-  const artwork = `<g transform="translate(${x} ${y}) scale(${scale})">${drawBoard(component)}</g>`;
-  if (!showLabels) return artwork;
-
-  // The physical illustration and the logical banks have different spacing.
-  const sides = pins.filter(pin => pin.x === 0 || pin.x === width);
-  const ends = pins.filter(pin => pin.y === 0 || pin.y === height);
-  const rails = [0, width].map(edge => {
-    const row = sides.filter(pin => pin.x === edge);
-    const top = Math.min(...row.map(pin => pin.y)) - 7;
-    const bottom = Math.max(...row.map(pin => pin.y)) + 7;
-    return rect(edge === 0 ? 3 : width - 38, top, 35, bottom - top, 3, bankColor);
-  }).join("");
-  return artwork + rails + edgePads({ ...component, pins: sides }, true) +
-    ends.map(pin => {
-      const top = pin.y === 0;
-      const direction = top ? 1 : -1;
-      const padY = pin.y + 9 * direction;
-      return rect(pin.x - 7, top ? 3 : height - 38, 14, 35, 2, bankColor) +
-        line(pin.x, pin.y, pin.x, padY, "#ac8550", 1.5) + pad(pin.x, padY) +
-        `<g transform="translate(${pin.x} ${padY + 7 * direction}) rotate(${90 * direction})">${label(0, 0, pin.label, 7.7, "#e3e9f1", "start")}</g>`;
-    }).join("");
+function boardProjection(component, boardWidth, boardHeight) {
+  const scale = Math.min((component.width - 50) / boardWidth, (component.height - 35) / boardHeight);
+  return { scale, x: (component.width - scale * boardWidth) / 2, y: (component.height - scale * boardHeight) / 2 };
 }
 
 function arduinoBoard(component, headers, footprint, drawBoard, boardSize) {
-  const definition = boardDefinition(component, headers, footprint, drawBoard);
-  return { ...definition, art: (entry, showLabels) => diagramArt(entry, showLabels, drawBoard, ...boardSize) };
+  const [boardWidth, boardHeight] = boardSize;
+  const projection = boardProjection(component, boardWidth, boardHeight);
+  const projectContact = (pad) => ({
+    x: projection.x + (pad.x / footprint.body[0] + .5) * boardWidth * projection.scale,
+    y: projection.y + (pad.y / footprint.body[1] + .5) * boardHeight * projection.scale,
+  });
+  const definition = boardDefinition(component, headers, footprint, drawBoard, projectContact);
+  return { ...definition, art: (entry, showLabels) =>
+    `<g transform="translate(${projection.x} ${projection.y}) scale(${projection.scale})">${drawBoard(entry)}</g>` + physicalHeaderArt(entry, showLabels, { captionColor: "#e4f1e8" }) };
 }
 
 function unoDefinition(id, model, subtitle, description, configuration) {
@@ -311,9 +291,6 @@ const nanoArtVariants = {
   "arduino-micro": { usb: "micro", rows: 17, boardHeight: 244 },
 };
 
-function platedHole(x, y) {
-  return circle(x, y, 3.65, "#d2b374", "#f0dca3") + circle(x, y, 1.9, "#edf1eb", "#867d60");
-}
 
 function diamondQfp(x, y, size, name, pins) {
   const centerX = x + size / 2;
@@ -331,11 +308,7 @@ function wirelessModule(x, y, name, antennaColor) {
 }
 
 function nanoBodyArt({ art, shortName }) {
-  const { usb: type, rows, boardHeight } = nanoArtVariants[art];
-  const pads = range(rows).map(index => {
-    const y = 20 + index * (boardHeight - 40) / (rows - 1);
-    return platedHole(5, y) + platedHole(83, y);
-  }).join("");
+  const { usb: type, boardHeight } = nanoArtVariants[art];
   let parts;
   switch (art) {
     case "arduino-nano":
@@ -378,7 +351,7 @@ function nanoBodyArt({ art, shortName }) {
         label(44, 187, shortName, 9);
   }
   const [usbWidth, usbDepth] = { mini: [40, 39], micro: [35, 24], c: [45, 29] }[type];
-  return rect(1, 3, 86, boardHeight - 5, 2, arduinoBlue, pcbEdge) + pads +
+  return rect(1, 3, 86, boardHeight - 5, 2, arduinoBlue, pcbEdge) +
     [[5, 8], [83, 8], [5, boardHeight - 8], [83, boardHeight - 8]].map(([x, y]) => mountingHole(x, y)).join("") +
     usbPort((88 - usbWidth) / 2, 0, usbWidth, usbDepth, type) + parts;
 }
@@ -507,9 +480,6 @@ function megaBodyArt({ art, shortName }) {
 
   return path(outline, arduinoBlue, pcbEdge) + barrelJack(8, -1, 36, 42) +
     [[8, 52], [173, 59], [26, 246], [125, 246], [8, 338], [173, 322]].map(([x, y]) => mountingHole(x, y)).join("") +
-    connector(7, 111, 1, 8) + connector(7, 181, 1, 8) + connector(7, 252, 1, 8) +
-    connector(177, 80, 1, 10) + connector(177, 166, 1, 8) + connector(177, 237, 1, 8) +
-    connector(25, 331, 18, 2, { pitch: 8 }) +
     [65, 86].map(y => circle(30, y, 9, metal, "#829699") + line(26, y, 34, y, "#829699")).join("") +
     chip(49, 27, 17, 17, "", 3) +
     passives([[73, 32], [52, 50], [60, 60], [61, 75], [70, 95], [97, 90], [111, 101], [138, 89], [144, 124],
@@ -522,7 +492,7 @@ function megaDefinition(id, model, subtitle, description, { pins, analogPins, hi
   const digitalHigh = due ? "PWMH" : "JP6";
   return arduinoBoard({
     id, art: id, name: `Arduino ${model}`, shortName: model, manufacturer, subtitle, width: 332, height: 568,
-    description: description + " The two rows of the D22–D53 header are drawn on opposite ends.",
+    description: description + " The D22–D53 contacts are placed directly on their two-row header.",
     source: docs + id.slice("arduino-".length) + "/", tags: ["arduino", "shield", "development board"],
   }, [
     header("POWER", "left", 126, unoPower(reserved, "External VIN supply. Arduino recommends 7–12 V for normal operation.", logicVoltage),

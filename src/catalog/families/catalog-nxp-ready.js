@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pad, pinRow, rect, smd } from "../shared/svg.js";
 
 const width = 418;
@@ -26,7 +27,7 @@ const right = [
   ["int2-21002", "INT2_21002", "FXAS21002C configurable interrupt 2.", "output", "J2.9"],
 ];
 
-const imu = {
+const imu = physicalComponent({
   id: "nxp-brkt-stbc-agm01", art: "nxp-brkt-stbc-agm01",
   name: "NXP BRKT-STBC-AGM01 9-Axis Sensor Breakout", shortName: "BRKT-STBC-AGM01",
   manufacturer: "NXP", category: "Sensors", referencePrefix: "U",
@@ -36,16 +37,14 @@ const imu = {
   tags: ["nxp", "freescale", "imu", "9 axis", "gyroscope", "accelerometer", "magnetometer", "i2c", "spi", "sensor toolbox"],
   width, height,
   pins: [...pinRow("left", width, height, 25, 19, left), ...pinRow("right", width, height, 25, 19, right)],
-};
+}, pin => [pin.x === 0 ? 126 : 292, pin.y]);
 
 function drawImu({ pins }, showLabels) {
   const contacts = pins.map(pin => {
-    const onLeft = pin.x === 0;
+    const onLeft = pin.edge === "left";
     const holeX = onLeft ? 126 : 292;
-    const markX = onLeft ? 8 : width - 8;
-    const captionX = onLeft ? 15 : width - 15;
+    const captionX = holeX + (onLeft ? 13 : -13);
     return pad(holeX, pin.y) + rect(holeX + (onLeft ? 8 : -12), pin.y - 2.2, 4, 4.4, 0.5, "#d1ad65") +
-      line(pin.x, pin.y, markX, pin.y, "#a57f4e", 1.4) + circle(markX, pin.y, 2.7, "#ca9e5c") +
       (showLabels ? label(captionX, pin.y, pin.label, 7.5, "#34475a", onLeft ? "start" : "end") : "");
   }).join("");
   const passives = [147, 258].flatMap(x => Array.from({ length: 9 }, (_, index) =>

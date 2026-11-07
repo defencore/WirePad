@@ -1,3 +1,4 @@
+import { physicalEntry } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
 import { board, chip, circle, edgePads, label, line, pad, path, pinRow, rect, smd } from "../shared/svg.js";
 
@@ -101,12 +102,11 @@ const tdkFilter = {
   },
   art: (component, showLabels) => {
     const contacts = [
-      { x: 0, y: 52, nx: 28, ny: 52, labelX: 22, labelY: 39 },
-      { x: 148, y: 52, nx: 120, ny: 52, labelX: 126, labelY: 39 },
-      { x: 74, y: 104, nx: 74, ny: 75, labelX: 74, labelY: 92 },
+      { labelX: 22, labelY: 39 },
+      { labelX: 126, labelY: 39 },
+      { labelX: 74, labelY: 92 },
     ];
-    return contacts.map(({ x, y, nx, ny, labelX, labelY }, index) =>
-      line(x, y, nx, ny, "#899ba1", 2) +
+    return contacts.map(({ labelX, labelY }, index) =>
       (showLabels ? label(labelX, labelY, component.pins[index].label, 7.4, "#344450") : "")).join("") +
       rect(35, 28, 78, 48, 3, "#292e33", "#152228") +
       rect(29, 28, 19, 48, 2, "#b5b9b9", "#7a888c") +
@@ -128,12 +128,11 @@ function powerPart({ id, name, shortName, width, height, description, manufactur
 function packageLeads(component, showLabels, connections) {
   return component.pins.map((pin, index) => {
     const [x, y, endX, endY] = connections[index];
-    const before = pin.x === 0;
-    const caption = pin.y === component.height
+    const before = pin.edge === "left";
+    const caption = pin.edge === "bottom"
       ? label(pin.x, pin.y - 8, pin.label, 8, "#344450")
-      : label(before ? 4 : component.width - 4, pin.y - 9, pin.label, 8, "#344450", before ? "start" : "end");
-    return line(pin.x, pin.y, x, y, "#a5adb2", 2.2) +
-      line(x, y, endX, endY, "#b6bfc4", 6) + (showLabels ? caption : "");
+      : label(pin.x + (before ? -6 : 6), pin.y - 7, pin.label, 7.3, "#344450", before ? "end" : "start");
+    return line(x, y, endX, endY, "#b6bfc4", 6) + (showLabels ? caption : "");
   }).join("");
 }
 
@@ -313,8 +312,7 @@ function pololuBoard({ modelName, item, voltage, title, variant, body, pinSpecs,
         component.pins.map(pin => {
           const metal = pin.id === "gnd" ? rect(pin.x - 5, padY - 5, 10, 10, 0.6, "#d6b16f") : "";
           return metal + pad(pin.x, padY) + (showLabels
-            ? line(pin.x, padY + 3, pin.x, height, "#be965c", 1.7) +
-              label(pin.x, padY - 10, pin.label, 7, "#e7f0e8")
+            ? label(pin.x, padY - 10, pin.label, 7, "#e7f0e8")
             : "");
         }).join("");
     },
@@ -417,4 +415,15 @@ const powerModels = Object.fromEntries(
   powerParts.filter(({ model }) => model).map(({ component, model }) => [component.id, model]),
 );
 
-export default defineFamily("power", (powerComponents).map(component => ({ component, render: (powerArt)[component.art], footprint: (powerFootprints)[component.id], model: powerModels[component.id] })));
+function contactPosition(component, pin, index) {
+  if (component.id === "tdk-mem2012f75r0t001") return [[38.5, 52], [109.5, 52], [74, 72]][index];
+  if (component.id.startsWith("mcp170")) return [pin.x, 69];
+  if (component.id === "ap2112k-3-3" || component.id === "tlv75533pdbvr") return [pin.x === 0 ? 39 : 107, pin.y];
+  if (component.id.startsWith("lm1117")) return [43, pin.y];
+  if (component.id.startsWith("pololu-")) return [pin.x, component.height - 21.7];
+  if (component.id.startsWith("recom-")) return [pin.x, 97];
+  if (component.id.startsWith("murata-")) return [pin.x, 99];
+  return [pin.x === 0 ? 9 : component.width - 9, pin.y];
+}
+
+export default defineFamily("power", powerComponents.map(component => physicalEntry({ component, render: powerArt[component.art], footprint: powerFootprints[component.id], model: powerModels[component.id] }, (pin, index) => contactPosition(component, pin, index))));

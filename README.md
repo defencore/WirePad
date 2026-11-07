@@ -26,6 +26,8 @@ Open [WirePad on localhost](http://127.0.0.1:8080/). This development server dis
 
 WirePad autosaves the active project to browser storage. Use **Project → Save project file** to download a versioned `.wirepad.json` file you can back up, share, or reopen with **Open project file**. Browser storage is separate for each site origin.
 
+Connection points sit directly on the illustrated solder pads, through-holes or connector contacts. Hidden contacts use a labeled rear or mating-face view; dense headers show local terminal numbers with full functions on hover. Version-1 projects open automatically in the version-2 physical layout, retaining their part/pin identities and connections. Only obsolete endpoint lead waypoints are removed during import.
+
 ### Keyboard shortcuts
 
 | Shortcut | Action |

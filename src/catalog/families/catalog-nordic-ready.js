@@ -1,5 +1,6 @@
 import { defineFamily } from "../registry.js";
-import { chip, circle, label, line, mountingHole, path, pinRow, rect, smd, tactile, usb } from "../shared/svg.js";
+import { physicalEntry } from "../shared/physical-contacts.js";
+import { chip, circle, label, mountingHole, path, pinRow, rect, smd, usb } from "../shared/svg.js";
 
 const dongleCad = "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/nrf52840-dongle/nrf52840-usb-dongle---hardware-files-2_1_1.zip";
 const ppkCad = "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/power-profiler-kit-ii/pca63100-power-profiler-kit-ii---hw-files---1_0_1.zip";
@@ -23,7 +24,7 @@ const dongle = {
   name: "Nordic nRF52840 Dongle", shortName: "nRF52840 Dongle",
   manufacturer: "Nordic Semiconductor", category: "Microcontrollers", referencePrefix: "U",
   subtitle: "PCA10059 v2.1.1 / USB-A",
-  description: "Nordic PCA10059 v2.1.1 USB development board with 15 castellated GPIOs, two SWD contacts and nine additional GPIO test points on the underside. The separate left bank exposes the underside GPIOs. RESET and USB service contacts are in the right bank.",
+  description: "Nordic PCA10059 v2.1.1 USB development board with 15 castellated GPIOs, two SWD contacts and nine additional GPIO test points on the underside. The illustration shows the PCB underside with USB to the right; the castellated rows, GPIO test points, RESET and USB service pads are directly selectable.",
   source: "https://docs.nordicsemi.com/r/bundle/ug_nrf52840_dongle/page/ug/nrf52840_dongle/hw_external_connections.html",
   tags: ["nordic", "nrf52840", "pca10059", "bluetooth", "ble", "thread", "zigbee", "usb", "dongle"],
   width: 535, height: 280,
@@ -41,41 +42,38 @@ const dongle = {
   ],
 };
 
+// Underside locations follow Nordic's PCA10059 v2.1.1 assembly/PCB drawing.
+// The USB stays at the right; the board is flipped over its long axis.
+const dongleRearCenters = [
+  [204.001, 113.361], [311.801, 104.961], [311.801, 117.348],
+  [204.001, 150.694], [191.401, 150.694], [241.101, 163.081],
+  [191.401, 163.081], [204.001, 163.081], [228.967, 163.081],
+  [358.468, 180.629], [358.468, 96.162],
+  [261.401, 117.014], [356.834, 144.334], [356.834, 131.734],
+];
+
 function drawDongle({ pins }, showLabels) {
-  const top = pins.slice(0, 10);
-  const bottom = pins.slice(10, 20);
-  const contacts = [...top, ...bottom].map((pin, index) => {
-    const upper = index < 10;
-    const y = upper ? 76 : 202;
-    return rect(pin.x - 7, y - 4, 14, 8, 0.5, "#d2ae62", "#f0d38e") +
-      line(pin.x, pin.y, pin.x, y, "#b99559", 1.3) +
-      (showLabels ? label(pin.x, upper ? 60 : 220 + (index % 2) * 10, pin.label.replace("P", ""), pin.label === "VDD OUT" ? 6 : 6.8, "#34475a") : "");
+  const copper = "#d3b374";
+  const edgeContacts = pins.slice(0, 20).map((pin, index) => {
+    const lower = index < 10;
+    return rect(pin.x - 7, pin.y - 4, 14, 8, .5, copper, "#f0d38e") +
+      (showLabels ? label(pin.x, pin.y + (lower ? -12 : 12), pin.label.replace("P", ""), pin.label === "VDD OUT" ? 5 : 5.8, "#edf0e1") : "");
   }).join("");
-  const service = pins.slice(20, 29).map(pin =>
-    line(0, pin.y, 7, pin.y, "#ac874f", 1.3) + circle(7, pin.y, 2.6, "#cfa868") +
-    (showLabels ? label(14, pin.y, pin.label, 7.4, "#34475a", "start") : "")
+  const testPoints = pins.slice(20).map((pin, index) => circle(pin.x, pin.y, index < 9 ? 3.3 : 3.9, copper, "#f0d38e") +
+    circle(pin.x, pin.y, 1.5, "#204372") +
+    (showLabels ? label(pin.x + (index < 9 ? 0 : 8), pin.y + (index < 9 ? -7 : 0), pin.label.replace("P", ""), 4.3, "#edf0e1", index < 9 ? "middle" : "start") : "")
   ).join("");
-  const swd = pins.slice(29, 31).map(pin =>
-    line(396, pin.y, pin.x, pin.y, "#bb995c", 1.3) + rect(387, pin.y - 5, 18, 10, 1, "#d8b46c") +
-    (showLabels ? label(531, pin.y - 8, pin.label, 6.8, "#34475a", "end") : "")
-  ).join("");
-  const serviceBus = pins.slice(31).map(pin =>
-    line(528, pin.y, pin.x, pin.y, "#bb995c", 1.3) + circle(528, pin.y, 2.6, "#d8b46c") +
-    (showLabels ? label(519, pin.y, pin.label, 7, "#34475a", "end") : "")
-  ).join("");
+  const programPads = [0, 1, 2, 3, 4].flatMap(row => [0, 1].map(column =>
+    circle(255 + column * 12.6, 105 + row * 12.6, 2.6, copper)
+  )).join("");
   return path("M80 76H372L397 99H500V181H397L372 202H80Z", "#27569d", "#6892c7") +
-    rect(84, 80, 26, 118, 1, "#e0e8e7") +
-    label(96, 104, "N", 17, "#264c89") +
-    '<g transform="rotate(-90 97 159)">' + label(97, 159, "NORDIC", 10, "#264c89") + "</g>" +
-    tactile(128, 113) + rect(154, 105, 22, 23, 3, "#b0b8be", "#ecedef") +
-    circle(165, 116, 8, "#f2f0e7", "#b0b8be") + chip(203, 111, 53, 54, "nRF52840", 6) +
-    rect(177, 171, 16, 11, 2, "#c0b49d", "#f2ead5") +
-    rect(284, 164, 17, 12, 2, "#aaa89a", "#e8e5d0") +
-    smd(275, 110) + smd(278, 127) + smd(307, 120) + smd(308, 143) + smd(274, 183) +
-    circle(159, 174, 4.6, "#d1ac62") + circle(159, 174, 2.5, "#1c386d") +
-    rect(332, 108, 12, 7, 1, "#c2dca4") + rect(332, 120, 12, 7, 1, "#e8d3c2") +
-    [110, 130, 150, 170].map(y => rect(421, y, 70, 9, 1, "#d8b66b", "#f2d38c")).join("") +
-    label(452, 192, "USB-A", 7, "#edf0e1") + contacts + service + swd + serviceBus;
+    rect(84, 80, 26, 118, 1, "#e0e8e7") + label(96, 140, "N", 17, "#264c89") +
+    rect(289, 127, 37, 29, 2, "#a3b1a6", "#d8decf") +
+    [0, 1, 2].map(index => rect(291, 130 + index * 8, 33, 5, .5, copper)).join("") +
+    [110, 130, 150, 170].map(y => rect(421, y, 70, 9, 1, copper, "#f2d38c")).join("") +
+    label(452, 192, "USB-A", 7, "#edf0e1") + programPads + edgeContacts + testPoints +
+    label(239, 49, "PCA10059 · BACK / USB RIGHT", 9, "#34475a") +
+    label(145, 185, "nRF52840", 6, "#edf0e1");
 }
 
 const powerPins = [
@@ -106,7 +104,7 @@ const ppk = {
   name: "Nordic Power Profiler Kit II", shortName: "Power Profiler Kit II",
   manufacturer: "Nordic Semiconductor", category: "Tools", referencePrefix: "U",
   subtitle: "PCA63100 v1.0.1 / current measurement",
-  description: "nRF-PPK2 USB power profiler with P1 power connections and eight digital inputs on P2. Includes the unpopulated P3 programming header in a separate top bank. Select source or ampere-meter mode in the Power Profiler application.",
+  description: "nRF-PPK2 USB power profiler with P1 power connections and eight digital inputs on P2. Includes the unpopulated P3 programming header on the left side of the PCB. Select source or ampere-meter mode in the Power Profiler application.",
   source: "https://docs.nordicsemi.com/r/bundle/ug_ppk2/page/ug/ppk/ppk_user_guide_connectors.html",
   tags: ["nordic", "ppk2", "pca63100", "power", "current", "profiler", "logic analyzer", "usb", "measurement"],
   width: 440, height: 312,
@@ -119,19 +117,17 @@ const ppk = {
 
 function drawPpk({ pins }, showLabels) {
   const logic = pins.slice(0, 10).map(pin =>
-    line(pin.x, 275, pin.x, pin.y, "#c4a16a", 1.4) + rect(pin.x - 3, 265, 6, 18, 0.5, "#c8ad72") +
-    (showLabels ? label(pin.x, 292, pin.label, 7.5, "#34475a") : "")
+    rect(pin.x - 3, pin.y - 9, 6, 18, .5, "#c8ad72") +
+    (showLabels ? label(pin.x, pin.y + 18, pin.label, 6.5, "#34475a") : "")
   ).join("");
-  const power = pins.slice(10, 14).map((pin, index) =>
-    rect(315 + index * 22, 265, 6, 18, 0.5, "#c8ad72") +
-    line(433, pin.y, pin.x, pin.y, "#c4a16a", 1.4) + circle(433, pin.y, 2.6, "#c8ad72") +
-    (showLabels ? rect(399, pin.y - 7, 31, 14, 2, "#f1f5f4", "#d5dfdf") +
-      label(426, pin.y, pin.label, 7.5, "#34475a", "end") : "")
+  const power = pins.slice(10, 14).map(pin =>
+    rect(pin.x - 3, pin.y - 9, 6, 18, .5, "#c8ad72") +
+    (showLabels ? label(pin.x, pin.y + 18, pin.label, 6.5, "#34475a") : "")
   ).join("");
-  const debug = pins.slice(14).map(pin =>
-    line(pin.x, 0, pin.x, 6, "#c4a16a", 1.4) + circle(pin.x, 6, 2.4, "#c8ad72") +
-    (showLabels ? label(pin.x, 16 + (Number(pin.number.split(".")[1]) % 2) * 9, pin.label, 6.8, "#34475a") : "")
-  ).join("");
+  const debug = rect(39, 110, 27, 39, 1, "#263541", "#8b9caa") + pins.slice(14).map(pin =>
+    circle(pin.x, pin.y, 1.8, "#c8ad72") +
+    (showLabels ? label(pin.x + (Number(pin.number.split(".")[1]) % 2 ? -6 : 6), pin.y, pin.number.split(".")[1], 4.8, "#edf0e1") : "")
+  ).join("") + (showLabels ? label(52, 104, "P3", 6, "#edf0e1") : "");
   return rect(13, 39, 406, 234, 12, "#204d7b", "#668eb1") +
     [31, 400].flatMap(x => [58, 254].map(y => mountingHole(x, y))).join("") +
     usb(91, 36, 35) + usb(298, 36, 35) +
@@ -186,4 +182,12 @@ const nordicReadyModels = {
   [ppk.id]: { label: "Nordic PCA63100 v1.0.1 Altium CAD and production files", url: ppkCad },
 };
 
-export default defineFamily("nordic-ready", (nordicReadyComponents).map(component => ({ component, render: (nordicReadyArt)[component.art], footprint: (nordicReadyFootprints)[component.id], model: nordicReadyModels[component.id] })));
+const contactCenters = {
+  [dongle.id]: (pin, index) => index < 10 ? [pin.x, 202] : index < 20 ? [pin.x, 76] : dongleRearCenters[index - 20],
+  [ppk.id]: (pin, index) => index < 10 ? [pin.x, 274] : index < 14 ? [318 + (index - 10) * 22, 274]
+    : [45.5 + ((index - 14) % 2) * 12.5, 117 + Math.floor((index - 14) / 2) * 6.3],
+};
+
+export default defineFamily("nordic-ready", nordicReadyComponents.map(component => physicalEntry({
+  component, render: nordicReadyArt[component.art], footprint: nordicReadyFootprints[component.id], model: nordicReadyModels[component.id],
+}, contactCenters[component.id])));

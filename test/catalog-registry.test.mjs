@@ -74,12 +74,12 @@ test('footprint references reject missing contacts and support explicit custom r
   assert.equal(modelFor(custom), null);
 });
 
-test('published component IDs, pin IDs and canvas geometry remain compatible with saved projects', () => {
+test('published component IDs, pin IDs and versioned canvas geometry remain guarded for saved projects', () => {
   const baseline = JSON.parse(readFileSync(new URL('./fixtures/catalog-geometry.json', import.meta.url)));
-  for (const { id, geometry } of baseline) {
+  for (const { id, geometry, physicalGeometry } of baseline) {
     const component = componentById.get(id);
     assert.ok(component, id);
     const shape = { width: component.width, height: component.height, pins: component.pins.map(({ id, x, y }) => ({ id, x, y })) };
-    assert.equal(createHash('sha256').update(JSON.stringify(shape)).digest('hex'), geometry, id);
+    assert.equal(createHash('sha256').update(JSON.stringify(shape)).digest('hex'), physicalGeometry ?? geometry, id);
   }
 });

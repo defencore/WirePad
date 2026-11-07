@@ -1,6 +1,6 @@
 import { defineFamily } from "../registry.js";
-import { chip, circle, edgePads, label, line, pad, path, rect, smd } from "../shared/svg.js";
-import { boardDefinition, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
+import { chip, circle, label, line, path, rect, smd } from "../shared/svg.js";
+import { boardDefinition, physicalHeaderArt, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
 
 const manufacturer = "STMicroelectronics";
 const docs = "https://www.st.com/resource/en/user_manual/";
@@ -124,7 +124,6 @@ function shieldHeaders(g4, lastRow) {
 }
 
 const boardInk = "#245c8d";
-const pinRail = "#22383b";
 const pcbOutline = "#879da5";
 
 function connector(x, y, rows, { pitch = 10.2, columns = 1, male = false } = {}) {
@@ -201,10 +200,6 @@ function board64Pcb(component) {
     connector(12, 9, 2, { pitch: 7, male: true }) + connector(267, 9, 2, { pitch: 7, male: true }) +
     smd(235, 20, "#dbbc68") + label(241, 29, "COM", 6.5, boardInk) +
     [[42, 116], [236, 117], [175, 322]].map(([x, y]) => circle(x, y, 6.5, "#f9fcfb", "#acb8ba")).join("") +
-    connector(11, 126, 19, { columns: 2, male: true }) +
-    connector(257, 126, 19, { columns: 2, male: true }) +
-    connector(40, 164, 8) + connector(40, 255, 6) +
-    connector(235, 130, 10) + connector(235, 242, 8) +
     label(12, 115, "CN7", 7, boardInk) + label(269, 115, "CN10", 7, boardInk) +
     label(49, 156, "CN6", 6.5, boardInk, "start") + label(49, 251, "CN8", 6.5, boardInk, "start") +
     label(227, 143, "CN5", 6.5, boardInk, "end") + label(227, 251, "CN9", 6.5, boardInk, "end") +
@@ -219,26 +214,9 @@ function board64Pcb(component) {
 }
 
 function board64Art(component, showLabels) {
-  const { width, height, pins } = component;
-  const scale = showLabels ? 0.85 : 1.13;
-  const artwork = `<g transform="translate(${(width - 280 * scale) / 2} ${(height - 330 * scale) / 2}) scale(${scale})">${board64Pcb(component)}</g>`;
-  if (!showLabels) return artwork;
-
-  // The physical board is centered. Existing wire anchors stay in four diagram banks.
-  const sides = pins.filter(pin => pin.x === 0 || pin.x === width);
-  const ends = pins.filter(pin => pin.y === 0 || pin.y === height);
-  return artwork +
-    rect(4, 75, 48, 535, 4, pinRail) + rect(width - 52, 75, 48, 535, 4, pinRail) +
-    rect(48, 4, width - 96, 64, 4, pinRail) + rect(20, height - 68, width - 40, 64, 4, pinRail) +
-    label(113, 56, "CN6 · POWER", 8, "#bfd8df") + label(248, 56, "CN8 · ANALOG", 8, "#bfd8df") +
-    label(100, height - 56, "CN5 · DIGITAL", 8, "#bfd8df") + label(261, height - 56, "CN9 · DIGITAL", 8, "#bfd8df") +
-    edgePads({ ...component, pins: sides }, true) +
-    ends.map(pin => {
-      const direction = pin.y === 0 ? 1 : -1;
-      const y = pin.y + 9 * direction;
-      return line(pin.x, pin.y, pin.x, y, "#ac8550", 1.5) + pad(pin.x, y) +
-        `<g transform="translate(${pin.x} ${y + 7 * direction}) rotate(${90 * direction})">${label(0, 0, pin.label, 8, "#e3e9f1", "start")}</g>`;
-    }).join("");
+  const scale = 1.13;
+  return `<g transform="translate(${(component.width - 280 * scale) / 2} ${(component.height - 330 * scale) / 2}) scale(${scale})">${board64Pcb(component)}</g>` +
+    physicalHeaderArt(component, showLabels, { male: connector => connector === "CN7" || connector === "CN10" });
 }
 
 function nucleo64(model, boardId, core, left, right) {
@@ -250,7 +228,7 @@ function nucleo64(model, boardId, core, left, right) {
   const definition = boardDefinition({
     id, art: id, name: `STM32 NUCLEO-${model}`, shortName: `NUCLEO-${model}`, manufacturer,
     subtitle: `${core} · ${boardId}`, width: 344, height: 660,
-    description: `ST ${boardId} Nucleo-64 with STM32${model}, 3.3 V target I/O, on-board ST-LINK, two Morpho headers and Arduino UNO shield sockets. Morpho contacts are flattened by number on the sides, while the shield sockets are shown at the ends.`,
+    description: `ST ${boardId} Nucleo-64 with STM32${model}, 3.3 V target I/O, on-board ST-LINK, two Morpho headers and Arduino UNO shield sockets. Morpho contacts and shield sockets are shown at their physical positions on the board.`,
     source: g4 ? mb1367 : mb1136, tags: ["stm32", "st", "nucleo", "morpho", boardId.toLowerCase(), "shield", "development board"],
   }, [
     header("CN7", "left", 84, morphoSignals("CN7", left, g4 ? g4LeftNotes : f4LeftNotes), { x: -31.75, y: firstRow, columns: 2 }, 14),
@@ -259,7 +237,10 @@ function nucleo64(model, boardId, core, left, right) {
   ], {
     body: [70, 82.5], color: nucleoColor, note: carrierNote,
     details: [[0, -24, 13.5, 13.5, 2, "#273041"], [12, -36, 7.2, 5, 3.5, "#a6aeb9"], [0, 13, 12, 12, 1.5, "#273041"]],
-  }, board64Pcb);
+  }, board64Pcb, (pad) => ({
+    x: (344 - 280 * 1.13) / 2 + (pad.x + 35) * 4 * 1.13,
+    y: (660 - 330 * 1.13) / 2 + (pad.y + 41.25) * 4 * 1.13,
+  }));
   return { ...definition, art: board64Art };
 }
 
@@ -267,13 +248,12 @@ function board32Pcb({ shortName }) {
   const model = shortName.slice("NUCLEO-".length);
   const qfn = model === "L412KB" || model === "L432KC";
   const terminal = (x, y) => circle(x, y, 3.5, "#d3bd83", "#a99664") + circle(x, y, 1.7, "#f5f7f4", "#a3a99a");
-  const pads = range(15).map(index => terminal(9, 50 + index * 14.6) + terminal(101, 50 + index * 14.6)).join("");
   const debugPads = [[88, 21], [88, 36], [103, 7], [103, 21], [103, 36]]
     .map(([x, y]) => terminal(x, y)).join("");
   const passives = [[25, 28], [25, 35], [70, 45], [78, 60], [29, 69], [27, 98], [80, 110], [29, 126],
     [74, 133], [22, 150], [76, 150], [30, 214], [47, 213], [65, 215], [80, 221], [37, 238], [50, 240]];
   return rect(0, 0, 110, 286, 2, "#edf2f0", pcbOutline) +
-    pads + debugPads + usbSocket(34, -7, 43, 28) +
+    debugPads + usbSocket(34, -7, 43, 28) +
     rect(39, 8, 33, 9, 0.8, "#f4f5f3") + label(55.5, 12.5, model, 6.6, "#34424c") +
     smd(8, 17, "#d9bb64") + label(12, 27, "COM", 5.9, boardInk) +
     label(10, 42, "CN3", 6.5, boardInk) + label(100, 42, "CN4", 6.5, boardInk) +
@@ -292,14 +272,8 @@ function board32Pcb({ shortName }) {
 }
 
 function board32Art(component, showLabels) {
-  const { width, height } = component;
-  const scale = showLabels ? 0.79 : 0.96;
-  const artwork = `<g transform="translate(${(width - 110 * scale) / 2} ${(height - 286 * scale) / 2}) scale(${scale})">${board32Pcb(component)}</g>`;
-  if (!showLabels) return artwork;
-
-  return artwork +
-    rect(4, 24, 32, height - 48, 4, pinRail) + rect(width - 36, 24, 32, height - 48, 4, pinRail) +
-    edgePads(component, true);
+  const scale = .96;
+  return `<g transform="translate(${(component.width - 110 * scale) / 2} ${(component.height - 286 * scale) / 2}) scale(${scale})">${board32Pcb(component)}</g>` + physicalHeaderArt(component, showLabels);
 }
 
 function nucleo32(model, core, { uart = "USART1", clock = "PF", pwm, adc } = {}) {
@@ -340,7 +314,10 @@ function nucleo32(model, core, { uart = "USART1", clock = "PF", pwm, adc } = {})
   ], {
     body: [18.542, boardLength], color: nucleoColor, note: carrierNote,
     details: [[0, -20.5, 7, 5, 2.7, "#a6aeb9"], [0, -11, 6.5, 6.5, 1.1, "#273041"], [0, 9, 6.5, 6.5, 1.1, "#273041"]],
-  }, board32Pcb);
+  }, board32Pcb, (pad) => ({
+    x: (144 - 110 * .96) / 2 + (pad.x / 18.542 + .5) * 110 * .96,
+    y: (302 - 286 * .96) / 2 + (pad.y / boardLength + .5) * 286 * .96,
+  }));
   return { ...definition, art: board32Art };
 }
 

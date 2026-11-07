@@ -42,6 +42,20 @@ export function canvasTargets(canvas, svg) {
         }
       }
     }
+    if (hit.pin) {
+      const candidates = new Set(stack.filter(node => svg.contains(node)).map(node => node.closest('.canvas-pin')).filter(Boolean));
+      let minimum = Infinity;
+      for (const candidate of candidates) {
+        const pin = targetInfo(candidate, '.canvas-pin').pin;
+        const anchor = canvas.position(pin);
+        const distance = Math.hypot(point.x - anchor.x, point.y - anchor.y);
+        if (distance < minimum) {
+          hit.pin = pin;
+          hit.partId = pin.partId;
+          minimum = distance;
+        }
+      }
+    }
     if (hit.wireId) {
       const ids = stack.filter(node => node.matches('.wire-hit') && node.dataset.wire !== excludeWire).map(node => node.dataset.wire);
       if (ids.length > 1) hit.wireId = canvas.nearestWire(ids, point) ?? hit.wireId;

@@ -1,10 +1,11 @@
 import { configurationFor } from "../catalog/index.js";
 import { pinById } from "./component-pins.js";
 import { componentForPart } from "./part-component.js";
+import { migrateVersion1Contacts } from "./layout-migration.js";
 import { MAX_PARTS, MAX_WIRES, MAX_JUNCTIONS, MAX_PROJECT_ROUTE_POINTS, POSITION_LIMIT,
   MAX_POINTS_PER_WIRE, MAX_FIXED_ROUTE_POINTS } from "./limits.js";
 
-const VERSION = 1;
+const VERSION = 2;
 
 export const DEFAULT_PROJECT_TITLE = "Untitled project";
 
@@ -175,6 +176,10 @@ function checkEndpoint({ partId, pinId, junctionId }, parts, junctions, index, s
 
 function readProject(value, immutable) {
   record(value, "Project");
+  if (value.version === 1) {
+    const validated = readProject({ ...value, version: VERSION }, false);
+    return readProject(migrateVersion1Contacts(validated), immutable);
+  }
   if (value.version !== VERSION) {
     throw new Error("This WirePad project version is unsupported.");
   }

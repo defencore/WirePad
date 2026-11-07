@@ -1,5 +1,5 @@
 import { defineFamily } from "../registry.js";
-import { chip, circle, label, line, pad, pinRow, rect, smd, usb } from "../shared/svg.js";
+import { chip, circle, label, pad, pinRow, rect, smd, usb } from "../shared/svg.js";
 
 // The manufacturer prints the header legend on the underside. These rows follow the component-side view.
 const left = [
@@ -35,35 +35,38 @@ const cp2102n = {
   description: "Pololu #1317 (usb03b). USB-to-TTL UART adapter with 3.3 V logic and 5 V-tolerant signal inputs. The six-hole end header repeats contacts from the side rows. VIO is on the underside.",
   tags: ["usb uart", "usb serial", "uart", "cp2102n", "cp2102", "micro usb", "ttl", "1317", "rts", "cts", "dtr"],
   source: "https://www.pololu.com/product/1317",
-  width, height,
+  width, height, contactLayout: "physical",
   pins: [
     ...pinRow("left", width, height, 34, 21, left, "L"),
     ...pinRow("right", width, height, 34, 21, right, "R"),
     ...pinRow("bottom", width, height, 110, 0, [
       ["vio", "VIO", "Logic supply via on the reverse side. Cut the VDD jumper before connecting an external logic supply.", "power_in", "VIO"],
     ]),
-  ],
+  ].map(pin => ({ ...pin, surface: true, symbolPlacement: { side: pin.x <= width / 2 ? "left" : "right", order: pin.y * 1000 + pin.x },
+    ...(pin.id === "vio" ? { x: 194.6, y: 45.1 } : { x: pin.x === 0 ? 59 : 161 }),
+  })),
 };
 
 function cp2102nArt({ pins }, showLabels) {
   const banks = pins.filter(pin => pin.id !== "vio").map(pin => {
-    const onLeft = pin.x === 0;
-    const x = onLeft ? 59 : 161;
-    const bankX = onLeft ? 5 : 215;
-    const labelX = onLeft ? 8 : 212;
-    const textAnchor = onLeft ? "start" : "end";
-    return pad(x, pin.y) + (showLabels
-      ? line(pin.x, pin.y, bankX, pin.y, "#967445", 1.3) + circle(bankX, pin.y, 2.6, "#c69a57") +
-        label(labelX, pin.y, pin.label, 8.1, "#334450", textAnchor)
+    const onLeft = pin.x === 59;
+    return pad(pin.x, pin.y) + (showLabels
+      ? label(pin.x + (onLeft ? 7 : -7), pin.y, pin.label, 6.8, "#e0eedb", onLeft ? "start" : "end")
       : "");
   }).join("");
+  const vio = pins.find(pin => pin.id === "vio");
+  const rear = rect(177, 30, 33.5, 50.3, 1, "#2c6546", "#74a983") +
+    label(194, 22, "BACK", 5.7, "#344450") +
+    [180, 207].map(x => Array.from({ length: 9 }, (_, i) => circle(x, 33 + i * 5.3, 1.3, "#ceb46d"))).join("") +
+    circle(vio.x, vio.y, 2.7, "#d8b570", "#f3dfad") +
+    rect(vio.x + 3, vio.y - 1, 4, 2, .3, "#b7beb3") +
+    (showLabels ? label(vio.x, vio.y + 8, "VIO", 5.5) : "");
   return rect(49, 24, 122, 188, 1.5, "#2c6546", "#74a983") +
     usb(78, 15, 64) + rect(83, 31, 54, 22, 2, "#a6aeb9", "#dce2e8") +
     chip(96, 96, 34, 34, "CP2102N", 5) + circle(137, 78, 3.2, "#a1c38d", "#d7e5ba") +
     smd(75, 64) + smd(78, 76) + smd(74, 118) + smd(78, 145) + smd(78, 155) + smd(78, 165) +
     label(121, 170, "Pololu", 10, "#dce9d9") + label(121, 183, "1317", 8, "#dce9d9") +
-    [79.4, 99.8, 120.2, 140.6].map(x => pad(x, 202)).join("") + banks +
-    (showLabels ? line(110, 224, 110, 228, "#967445", 1.3) + label(110, 220, "VIO (BACK)", 7, "#334450") : "");
+    [79.4, 99.8, 120.2, 140.6].map(x => pad(x, 202)).join("") + banks + rear;
 }
 
 const usbUartComponents = [cp2102n];

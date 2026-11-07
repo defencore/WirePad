@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, path, pinRow, rect, screw, smd } from "../shared/svg.js";
 
 const charcoal = "#2b2b2d";
@@ -38,26 +39,25 @@ function breakout({
   const top = terminalContacts.length ? 22 : margin;
   const height = boardHeight + top + margin;
   const firstPin = width / 2 - (header.length - 1) * canvasPitch / 2;
-  const headerPins = pinRow("bottom", width, height, firstPin, canvasPitch, header);
-  const terminalPins = terminalContacts.map(({ x, spec }) => {
-    const position = Math.round(width / 2 + x * canvasPitch / pitch);
-    return pinRow("top", width, height, position, 0, [spec])[0];
-  });
+  const headerY = height - margin - canvasPitch;
+  const logicalHeader = pinRow("bottom", width, height, firstPin, canvasPitch, header);
+  const logicalTerminals = terminalContacts.map(({ x, spec }) => pinRow("top", width, height, Math.round(width / 2 + x * canvasPitch / pitch), 0, [spec])[0]);
+  const mappedPins = physicalComponent({ width, height, pins: [...logicalHeader, ...logicalTerminals] }, (pin, index) => index < header.length ? [pin.x, headerY] : terminalContacts[index - header.length].canvas).pins;
+  const headerPins = mappedPins.slice(0, header.length);
+  const terminalPins = mappedPins.slice(header.length);
 
   return {
     component: {
       id, name: `Adafruit ${name}`, shortName, source, description, subtitle, tags, manufacturer: "Adafruit",
-      category: "Sensors", referencePrefix: "U", art: id, width, height, pins: [...headerPins, ...terminalPins],
+      category: "Sensors", referencePrefix: "U", art: id, width, height, pins: [...headerPins, ...terminalPins], contactLayout: "physical",
     },
     art: (_component, labels) => {
-      const headerY = height - margin - canvasPitch;
       const outline = color === blue ? "#6a9ec6" : "#858185";
       return rect(margin, top + 2, boardWidth, boardHeight, 19, "#131d29") +
         rect(margin, top, boardWidth, boardHeight, 19, color, outline) +
         mounting.map(([x, y]) => mountingHole(x, y)).join("") + art() +
-        headerPins.map(pin => line(pin.x, headerY, pin.x, pin.y, "#ac8550", 1.5) + headerHole(pin.x, headerY) +
-          (labels ? label(pin.x, headerY - 12, pin.label, 7.5) : "")).join("") +
-        terminalPins.map(pin => line(pin.x, pin.y, pin.x, top + 3, "#ac8550", 1.5)).join("");
+        headerPins.map(pin => headerHole(pin.x, pin.y) +
+          (labels ? label(pin.x, headerY - 12, pin.label, 7.5) : "")).join("");
     },
     footprint: {
       body, color, details, note,
@@ -167,8 +167,8 @@ const entries = [
       ["drdy", "DRDY", "Active-low data-ready output.", "output", "1"],
     ],
     terminalContacts: [
-      { x: -1.8, y: -6.985, spec: ["therm-plus", "+", "Positive thermocouple lead at screw terminal X1.1.", "input", "X1.1"] },
-      { x: 1.7, y: -6.985, spec: ["therm-minus", "−", "Negative thermocouple lead at screw terminal X1.2.", "input", "X1.2"] },
+      { x: -1.8, y: -6.985, canvas: [87, 52], spec: ["therm-plus", "+", "Positive thermocouple lead at screw terminal X1.1.", "input", "X1.1"] },
+      { x: 1.7, y: -6.985, canvas: [114, 52], spec: ["therm-minus", "−", "Negative thermocouple lead at screw terminal X1.2.", "input", "X1.2"] },
     ],
     art: () => rect(72, 24, 57, 62, 2.5, "#51a78b", "#a1d2b5") +
       rect(75, 29, 51, 44, 2, "#75c2a3") + line(101, 30, 101, 73, "#4e9d81") +

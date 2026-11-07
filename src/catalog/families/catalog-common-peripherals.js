@@ -18,7 +18,19 @@ const carrierNote = "Reference carrier for the exposed header. Confirm the modul
 function peripheral(info, footprint, bodyArt, ...headers) {
   return boardDefinition({
     category: "Indicators", referencePrefix: "DS", art: info.id, ...info,
-  }, headers, footprint, bodyArt);
+  }, headers, footprint, bodyArt, (_point, pin, side, index) => {
+    const centers = {
+      "dfrobot-lcd1602-dfr0557": () => [219.5, 36.6 + index * 8.6],
+      "dfrobot-oled-dfr0647": () => [20, pin.y],
+      "dfrobot-st7735-dfr0847": () => [pin.x, 129],
+      "seeed-grove-tm1637": () => [17, 40 + index * 8],
+      "dfrobot-ws2812-dfr0459": () => [side === "left" ? 20 : info.width - 20, pin.y],
+      "adafruit-max98357a-i2s": () => [pin.x, side === "top" ? 33 : info.height - 9],
+    };
+    const center = centers[info.id]?.() ?? [pin.x === 0 ? 9 : pin.x === info.width ? info.width - 9 : pin.x,
+      pin.y === 0 ? 9 : pin.y === info.height ? info.height - 9 : pin.y];
+    return { x: center[0], y: center[1] };
+  });
 }
 
 function socket(x, y, width, height, count) {

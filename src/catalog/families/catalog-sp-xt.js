@@ -1,5 +1,5 @@
 import { defineFamily } from "../registry.js";
-import { circle, label, line, pad, path, pinRow, rect } from "../shared/svg.js";
+import { circle, label, line, path, rect } from "../shared/svg.js";
 
 const gold = "#cfa34b";
 const weipuStep = "https://www.weipuconnector.com/wp-content/uploads/";
@@ -65,15 +65,6 @@ function wirePads(count, pitch, drill, size, note) {
   };
 }
 
-function diagramTerminals(component, labels) {
-  return labels ? component.pins.map(({ x, y, label: number }) => {
-    const left = x === 0;
-    const direction = left ? 1 : -1;
-    const terminalX = x + direction * 11;
-    return line(x, y, terminalX, y, gold, 1.4) + pad(terminalX, y) +
-      label(x + direction * 21, y, number, 9, "#2a3842", left ? "start" : "end");
-  }).join("") : "";
-}
 
 function ribbedCollar(cx, cy, radius) {
   const points = Array.from({ length: 8 }, (_, index) => {
@@ -120,7 +111,7 @@ function spFace(component, labels, series, female, contactLayout) {
     circle(cx, cy, shellRadius - 15, female ? "#202a31" : "#163a50", female ? "#697983" : "#408cb1") +
     circle(cx, cy, insertRadius, "#1b2229", "#667986") + key + contacts +
     label(cx, 137, component.shortName, 9, "#253341") +
-    label(cx, 151, "MATING FACE", 7, "#536776") + diagramTerminals(component, labels);
+    label(cx, 151, "MATING FACE", 7, "#536776");
 }
 
 function spConnector(series, contactLayout, female) {
@@ -129,16 +120,17 @@ function spConnector(series, contactLayout, female) {
   const id = `weipu-${model.toLowerCase().replace("/", "-")}`;
   const width = 198;
   const height = 160;
-  const half = Math.ceil(count / 2);
   const mount = female ? "rear-nut panel receptacle" : "straight cable plug";
   const specs = contactLayout.map((_, index) => {
     const number = String(index + 1);
     return [`pin-${number}`, number, `Contact ${number} on the keyed mating face. Assign the signal or supply for your harness.`, "passive", number];
   });
-  const pins = [
-    ...pinRow("left", width, height, 70 - (half - 1) * 10, 20, specs.slice(0, half)),
-    ...pinRow("right", width, height, 70 - (count - half - 1) * 10, 20, specs.slice(half)),
-  ];
+  const pins = specs.map(([id, label, description, type, number], index) => ({
+    id, label, description, type, number, surface: true,
+    symbolPlacement: { side: index < Math.ceil(count / 2) ? "left" : "right", order: index },
+    x: width / 2 + contactLayout[index][0] * (female ? -1 : 1) * series.insertRadius,
+    y: 70 + contactLayout[index][1] * series.insertRadius,
+  }));
   const cad = female ? series.panelModel : series.cableModel;
   const wirePattern = series.size === 21 && count <= 5 ? [7.62, 2.6, 4.4]
     : series.size === 21 || count <= 3 ? [5.08, 1.8, 3.3] : [5.08, 1.3, 2.8];
@@ -149,7 +141,7 @@ function spConnector(series, contactLayout, female) {
       subtitle: `${count} contacts / ${female ? "female panel" : "male cable"}`,
       description: `${count}-position SP${series.size} threaded ${mount} with solder contacts. The drawing looks into the mating face with the key up. The wiring side is mirrored.`,
       tags: ["sp", `sp${series.size}`, "waterproof", "ip68", "circular", "solder", female ? "female" : "male"],
-      source: series.source, referencePrefix: "J", art: id, width, height, pins,
+      source: series.source, referencePrefix: "J", art: id, width, height, contactLayout: "physical", pins,
     },
     art: (component, labels) => spFace(component, labels, series, female, contactLayout),
     footprint: wirePads(count, ...wirePattern,
@@ -184,8 +176,7 @@ function xtFace(component, labels, { faceWidth, faceHeight, bulletRadius, female
     path(keyedShape(4), female ? "#ffcc66" : "#9d621c", "#ffda7a") +
     ridge + contacts + green +
     label(cx, bottom + 12, component.shortName, 9, "#253341") +
-    label(cx, bottom + 25, pcbBody ? "PCB · MATING FACE" : "MATING FACE", 7, "#536776") +
-    diagramTerminals(component, labels);
+    label(cx, bottom + 25, pcbBody ? "PCB · MATING FACE" : "MATING FACE", 7, "#536776");
 }
 
 function xtConnector(model, source, dimensions, [pitch, drill, copper], { antiSpark = false, bridge = false, pcbBody } = {}) {
@@ -195,8 +186,8 @@ function xtConnector(model, source, dimensions, [pitch, drill, copper], { antiSp
   const [faceWidth, faceHeight, bulletRadius] = dimensions;
   const height = faceHeight + 39;
   const pins = [
-    { id: "positive", label: "+", number: "1", description: "Positive contact at the square end of the keyed housing.", type: "passive", x: width, y: Math.round(7 + faceHeight * 0.73) },
-    { id: "negative", label: "−", number: "2", description: "Negative contact at the chamfered end of the keyed housing.", type: "passive", x: 0, y: Math.round(7 + faceHeight * 0.27) },
+    { id: "positive", label: "+", number: "1", description: "Positive contact at the square end of the keyed housing.", type: "passive", surface: true, symbolPlacement: { side: "right", order: 1 }, x: width / 2, y: 7 + faceHeight * 0.73 },
+    { id: "negative", label: "−", number: "2", description: "Negative contact at the chamfered end of the keyed housing.", type: "passive", surface: true, symbolPlacement: { side: "left", order: 0 }, x: width / 2, y: 7 + faceHeight * 0.27 },
   ];
   const type = pcbBody ? "vertical through-hole power connector"
     : antiSpark ? "anti-spark cable connector" : "solder-cup power connector";
@@ -208,7 +199,7 @@ function xtConnector(model, source, dimensions, [pitch, drill, copper], { antiSp
       subtitle: `2-pin ${type}`,
       description: `Polarized yellow ${female ? "female socket" : "male plug"} for ${placement}${antiSpark ? " with an anti-spark contact" : ""}. The drawing looks into the mating face with the chamfered end up. Confirm polarity on the fitted housing.`,
       tags: ["xt", model.match(/^XT\d+/)[0].toLowerCase(), "power", "battery", pcbBody ? "pcb" : "solder", female ? "female" : "male"],
-      source, referencePrefix: "J", art: id, width, height, pins,
+      source, referencePrefix: "J", art: id, width, height, contactLayout: "physical", pins,
     },
     art: (component, labels) => xtFace(component, labels, { faceWidth, faceHeight, bulletRadius, female, antiSpark, bridge, pcbBody }),
     footprint: pcbBody ? {

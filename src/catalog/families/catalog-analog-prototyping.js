@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pinRow, rect, screw, smd } from "../shared/svg.js";
 
 const scale = 7;
@@ -40,29 +41,27 @@ function board({ id, name, shortName, category, source, description, subtitle, t
     const [startX, startY] = point(x, y);
     const pins = pinRow(side, width, height, vertical ? startY : startX, spacing * scale, contacts, prefix);
     return pins.map((pin, index) => ({
-      pin, x: x + (vertical ? 0 : index * spacing), y: y + (vertical ? index * spacing : 0), diameter,
+      logical: pin, pin: { ...pin, x: startX + (vertical ? 0 : index * spacing * scale), y: startY + (vertical ? index * spacing * scale : 0), edge: side, surface: true }, x: x + (vertical ? 0 : index * spacing), y: y + (vertical ? index * spacing : 0), diameter,
       square: square && index === 0, terminal,
     }));
   });
-  const pins = contacts.map(({ pin }) => pin);
+  const pins = physicalComponent({ width, height, pins: contacts.map(({ logical }) => logical) }, (_pin, index) => contacts[index].pin).pins;
   return {
     component: {
       id, name: `Adafruit ${name}`, shortName, category, source, description, subtitle, tags,
-      manufacturer: "Adafruit", referencePrefix: "U", art: id, width, height, pins,
+      manufacturer: "Adafruit", referencePrefix: "U", art: id, width, height, pins, contactLayout: "physical",
     },
     art: (_component, showLabels) => rect(margin, margin + 2, width - margin * 2, height - margin * 2, 16, "#152235") +
       rect(margin, margin, width - margin * 2, height - margin * 2, 16, color, "#8c959c") +
       mounts.map(([x, y]) => mount(...point(x, y))).join("") + draw() +
       contacts.map(({ pin, x, y, diameter, terminal }) => {
         const [padX, padY] = point(x, y);
-        const horizontal = pin.x === 0 || pin.x === width;
-        const before = pin.x === 0 || pin.y === 0;
+        const horizontal = pin.edge === "left" || pin.edge === "right";
+        const before = pin.edge === "left" || pin.edge === "top";
         const captionX = horizontal ? padX + (before ? 13 : -13) : padX;
         const captionY = horizontal ? padY : padY + (before ? -11 : 11);
         const anchor = horizontal ? (before ? "start" : "end") : "middle";
-        const lead = terminal
-          ? line(pin.x, pin.y, margin + 2, padY, "#b99a5f", 1.5)
-          : line(pin.x, pin.y, padX, padY, "#b99a5f", 1.5) + hole(padX, padY, diameter);
+        const lead = terminal ? "" : hole(padX, padY, diameter);
         return lead +
           (showLabels ? label(captionX, captionY, pin.label, 7.3, "#eef0e6", anchor) : "");
       }).join("") + repeated.map(({ x, y, size }) => hole(...point(x, y), size)).join(""),

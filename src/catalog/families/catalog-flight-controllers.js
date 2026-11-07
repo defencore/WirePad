@@ -147,7 +147,7 @@ const matekBanks = {
   left: [
     ...[1, 2, 3, 4, 5, 6].map(matekSerialBank),
     bank("AUX", "AUX PADS", [input("Sbus", "Inverted SBUS input on UART2 RX."), rssi("Rssi"), power("3V3", "3.3 V peripheral regulator output, 200 mA maximum."), ground()]),
-    bank("USB", "USB SOLDER PADS", [["VBUS", "power_in", "5 V input from a USB host."], usbMinus, usbPlus, ground(), ground()]),
+    bank("USB", "USB-C CONTACTS", [["VBUS", "power_in", "5 V input from a USB host."], usbMinus, usbPlus, ground(), ground()]),
     bank("CURR", "CURRENT SENSE", [output("Curr", "Onboard battery current-sensor output, 0–3.3 V.")]),
   ],
   right: servoBanks(9, index => index < 4 ? matekVx : matekVx2),
@@ -165,6 +165,81 @@ const endPitch = 25;
 
 function bankSpan(banks, pitch, gap) {
   return banks.reduce((length, { pins, title }) => length + pins.length * pitch + (title ? gap : 3), 0);
+}
+
+function controllerViews(id, width, height, dimensions) {
+  if (id === "matek-f405-wing-v2") return {
+    front: { x: (width - dimensions[0] * 9) / 2, y: 48, sx: dimensions[0] * 9 / 150, sy: dimensions[1] * 9 / 218, label: "COMPONENT SIDE" },
+    usb: { x: 76, y: height - 122, sx: 2.5, sy: 2.5, label: "USB-C RECEPTACLE · MATING FACE" },
+  };
+  const w = dimensions[0] * 9.5, h = dimensions[1] * 9.5;
+  return {
+    front: { x: width / 2 - w - 24, y: 48, sx: w / 150, sy: h / 210, label: "FC FRONT" },
+    back: { x: width / 2 + 24, y: 48, sx: w / 150, sy: h / 210, label: "FC BACK · VIEWED FROM REAR" },
+    pdb: { x: width / 2 - 135, y: height - 115, sx: 1, sy: 1, label: "POWER BOARD" },
+    addon: { x: width / 2 + 20, y: height - 115, sx: 1, sy: 1, label: id.includes("mini") ? "USB EXTENDER" : "WIRELESS BOARD" },
+  };
+}
+
+function controllerContactLocations(id) {
+  const positions = new Map();
+  const bank = (name, view, points) => points.forEach(([x, y], index) => positions.set(`${name}.${index + 1}`, { view, x, y }));
+  const row = (count, x, y, dx, dy = 0) => Array.from({ length: count }, (_, index) => [x + index * dx, y + index * dy]);
+  if (id === "matek-f405-wing-v2") {
+    const field = (column, level) => [6 + column * 10.55, 191 + level * 10];
+    const uart = (port, level, column) => bank(`UART${port}`, "front", [0, 1, 2, 3].map(offset => field(column + offset, level)));
+    uart(1, 2, 4); uart(2, 0, 10); uart(3, 1, 4); uart(4, 1, 10); uart(5, 2, 10); uart(6, 0, 4);
+    for (let channel = 1; channel <= 9; channel++) bank(`S${channel}`, "front", [26, 16, 6].map(x => [x, 69 + (channel - 1) * 10.6]));
+    bank("BAT", "front", [[140, 13], [44.6, 10]]);
+    bank("ESC1", "front", [[72, 10], [10, 10]]); bank("ESC2", "front", [[89.3, 10], [27.3, 10]]);
+    bank("I2C1", "front", [field(8, 2), field(9, 2)]); bank("I2C2", "front", [field(8, 1), field(9, 1)]);
+    bank("GH", "front", row(4, 143.5, 106, 0, 4.1));
+    bank("AUX", "front", [field(9, 0), field(8, 0), [122, 179], [113, 179]]);
+    bank("CURR", "front", [[119, 61]]);
+    bank("CAM", "front", [field(2, 0), field(2, 1), field(2, 2)]);
+    bank("VTX", "front", [field(3, 0), field(3, 1), field(3, 2)]);
+    bank("BZ", "front", [field(1, 0), field(1, 1), field(1, 2)]);
+    bank("LED", "front", [field(0, 0), field(0, 1), field(0, 2)]);
+    // USB-C receptacle front view: A1→A12 above, B12→B1 below.
+    // ST AN4871 Fig. 3 / TDK USB Type-C receptacle interface (front view):
+    // https://product.tdk.com/en/techlibrary/applicationnote/tvs-signal-integrity-for-usb4-and-thunderbolt4.html
+    // These are socket contacts, not unverified PCB test-pad locations.
+    const usbContacts = [4, 7, 6, 1, 12];
+    bank("USB", "usb", usbContacts.map(number => [14 + (number - 1) * 6, 9]));
+    usbContacts.forEach((number, index) => { positions.get(`USB.${index + 1}`).contact = `A${number}`; });
+    return positions;
+  }
+  const mini = id === "speedybee-f405-wing-mini";
+  const count = mini ? 9 : 11, stride = 125 / count;
+  for (let channel = 1; channel <= count; channel++) bank(`S${channel}`, "front", row(3, 20 + stride / 2 + (channel - 1) * stride, 180, 0, 11));
+  bank("SBUS", "front", row(3, 10, 180, 0, 11));
+  bank("RX", "front", row(4, mini ? 71 : 24, 164, 9.2));
+  if (mini) {
+    bank("GPS", "front", row(6, 6, 9.5, 4.1)); bank("GPSPAD", "front", row(4, 40, 6, 9));
+    bank("CAMPAD", "front", row(6, 76, 6, 12.8)); bank("VTXPAD", "front", row(7, 60, 20, 11));
+    bank("TLPAD", "front", [[5, 66], [5, 74.5], [5, 83], [20, 83]]);
+    bank("AIRPAD", "front", row(5, 144, 92, 0, 10.7));
+    bank("CAM", "back", row(4, 8, 8, 9)); bank("VTX", "back", row(4, 54, 8, 9)); bank("DJI", "back", row(6, 100, 8, 9));
+    bank("TELEM", "back", row(6, 144, 73, 0, 9)); bank("USB", "back", row(8, 6, 69, 0, 9));
+    positions.set("AUX.1", { view: "front", x: 32, y: 149 });
+    [[39, 146], [27, 146], [15, 146], [57, 146]].forEach(([x, y], index) => positions.set(`AUX.${index + 2}`, { view: "back", x, y }));
+  } else {
+    bank("DJIPAD", "front", row(6, 5, 6, 8.1)); bank("GPSPAD", "front", row(6, 58, 6, 8.4));
+    bank("VTXPAD", "front", row(4, 108, 6, 12)); bank("CAMPAD", "front", row(3, 117, 20, 12));
+    bank("TLPAD", "front", row(4, 6, 65, 0, 7)); bank("TELEM", "front", row(6, 6.5, 96, 0, 4.1));
+    bank("AIR", "front", row(4, 143.5, 94, 0, 4.1)); bank("AR", "front", row(3, 143.5, 124, 0, 4.1));
+    bank("CAM", "back", row(4, 9, 9, 4.1)); bank("VTX", "back", row(4, 38, 9, 4.1));
+    bank("GPS", "back", row(6, 69, 9, 4.1)); bank("DJI", "back", row(6, 112, 9, 4.1));
+    bank("AIRPAD", "back", row(5, 6, 71, 0, 8)); bank("USB", "back", row(8, 6, 120, 0, 7.8));
+    positions.set("AUX.1", { view: "front", x: 32, y: 149 });
+    positions.set("AUX.2", { view: "back", x: 6, y: 185 }); positions.set("AUX.3", { view: "back", x: 18, y: 185 });
+    for (let channel = 1; channel <= 4; channel++) bank(`LED${channel}`, "addon", row(3, 10 + (channel - 1) * 22, 8.5, 6.3));
+    bank("WTELEM", "addon", row(6, 63, 78.5, 4.1));
+  }
+  bank("BAT", "pdb", mini ? [[20, 8], [95, 8]] : [[95, 80], [20, 80]]);
+  bank("ESC1", "pdb", mini ? [[35, 8], [80, 8]] : [[80, 80], [35, 80]]);
+  bank("ESC2", "pdb", mini ? [[50, 8], [65, 8]] : [[65, 80], [50, 80]]);
+  return positions;
 }
 
 function makeController(details, banks, dimensions, color) {
@@ -197,20 +272,32 @@ function makeController(details, banks, dimensions, color) {
     tags: ["fpv", "fixed wing", "autopilot", "inav", "ardupilot", "elrs", "crsf", "pwm", "esc"],
     width, height, pins: wiringBanks.flatMap(({ contacts }) => contacts),
   };
-  return { component, wiringBanks, dimensions, color };
+  const views = controllerViews(component.id, width, height, dimensions);
+  const positions = controllerContactLocations(component.id);
+  component.contactLayout = "physical";
+  component.pins = component.pins.map(pin => {
+    const location = positions.get(pin.number);
+    if (!location) throw new Error(`Missing physical contact ${component.id} ${pin.number}.`);
+    const view = views[location.view];
+    return { ...pin, surface: true, view: location.view, physicalContact: location.contact,
+      symbolPlacement: { side: pin.x <= width / 2 ? "left" : "right", order: pin.y * 1000 + pin.x },
+      description: `${pin.description} ${view.label} contact.${location.view === "usb" ? ` USB-C socket contact ${location.contact}, viewed into the receptacle. This is not a PCB solder-pad or test-point location.` : ""}`,
+      x: view.x + location.x * view.sx, y: view.y + location.y * view.sy };
+  });
+  return { component, wiringBanks, dimensions, color, views };
 }
 
 const mini = makeController({
   id: "speedybee-f405-wing-mini", name: "SpeedyBee F405 WING MINI", shortName: "F405 WING MINI",
   manufacturer: "SpeedyBee", subtitle: "2–6S fixed-wing flight controller",
-  description: "F405 WING MINI stack from the v1.2 manual, including the flight and power boards. Its nine servo headers and S10/S11 solder pads support PWM. The Vv camera/VTX rail is battery voltage by default. Wiring banks show the rear plugs and front solder alternatives separately.",
+  description: "F405 WING MINI stack from the v1.2 manual, including the flight and power boards. Its nine servo headers and S10/S11 solder pads support PWM. The Vv camera/VTX rail is battery voltage by default. Physical front and rear views locate the plugs and solder alternatives separately.",
   source: "https://www.speedybee.com/f405-wing-mini-download/",
 }, miniBanks, [26, 37, 14], "#292b30");
 
 const app = makeController({
   id: "speedybee-f405-wing-app", name: "SpeedyBee F405 WING APP", shortName: "F405 WING APP",
   manufacturer: "SpeedyBee", subtitle: "2–6S fixed-wing flight controller",
-  description: "Full-size F405 WING APP stack from the v1.1 manual. It has eleven servo/ESC headers, a default 9 V camera/VTX rail, and a wireless board with four addressable LED outputs. Wiring banks show the rear plugs and front solder alternatives separately.",
+  description: "Full-size F405 WING APP stack from the v1.1 manual. It has eleven servo/ESC headers, a default 9 V camera/VTX rail, and a wireless board with four addressable LED outputs. Physical front and rear views locate the plugs and solder alternatives separately.",
   source: "https://www.speedybee.com/f405-wing-app-download/",
 }, appBanks, [32, 52, 19], "#292b30");
 
@@ -262,31 +349,6 @@ const flightControllerFootprints = Object.fromEntries([mini, app, matek].map(con
   controller.component.id, referenceFootprint(controller),
 ]));
 
-function terminalBankArt({ title, kind, side, contacts }, showLabels) {
-  const first = contacts[0];
-  const last = contacts.at(-1);
-  const vertical = side === "left" || side === "right";
-  const near = side === "left" || side === "top";
-  const direction = near ? 1 : -1;
-  const color = kind === "power" ? "#8e5347" : kind === "servo" ? "#806435" : "#486071";
-  const fill = kind === "power" ? "#372522" : "#23313a";
-  const caption = "#e5e9e9";
-  const box = vertical
-    ? rect(near ? 6 : first.x - 66, first.y - (title ? 17 : 6), 60,
-      last.y - first.y + (title ? 23 : 12), 4, fill, color)
-    : rect(first.x - 11, near ? 6 : first.y - 41, last.x - first.x + 22, 35, 4, fill, color);
-  const titleLabel = !showLabels || !title ? "" : vertical
-    ? label(first.x + direction * 35, first.y - 11, title, 5.8, "#a5bfca")
-    : label((first.x + last.x) / 2, first.y + direction * 32, title, 6.7, "#a5bfca");
-  return box + titleLabel + contacts.map(pin => {
-    const x = pin.x + (vertical ? direction * 14 : 0);
-    const y = pin.y + (vertical ? 0 : direction * 12);
-    const fill = pin.type === "power_out" || kind === "power" ? "#e1ac63" : "#d4c299";
-    return line(pin.x, pin.y, x, y, color, 1.7) + circle(x, y, 2.8, fill, "#766343") +
-      (showLabels ? label(x + (vertical ? direction * 7 : 0), y + (vertical ? 0 : direction * 9),
-        pin.label, 8.4, caption, vertical ? (near ? "start" : "end") : "middle") : "");
-  }).join("");
-}
 
 function platedHole(x, y, radius, rim = "#d5b56d") {
   return circle(x, y, radius, rim, "#77694e") + circle(x, y, radius * 0.65, "#f4f0e7", "#706a57");
@@ -388,27 +450,43 @@ function speedyBeeAddon(isMini) {
     label(46, 29, "SpeedyBee", 7, "#eaece6") + label(45, 61, "F405 WING APP", 6, "#eaece6");
 }
 
-function speedyBeeArt({ component, dimensions, color }, isMini) {
-  const [w, h] = dimensions;
-  const frontWidth = w * 9.5;
-  const frontHeight = h * 9.5;
-  const x = (component.width - frontWidth) / 2;
-  const y = (component.height - frontHeight - 123) / 2;
-  const cx = component.width / 2;
-  const insetY = y + frontHeight + 20;
-  return label(cx, y - 14, component.shortName, 14, "#3d525e") +
-    `<g transform="translate(${x} ${y}) scale(${frontWidth / 150} ${frontHeight / 210})">${speedyBeeFront(isMini, color)}</g>` +
-    `<g transform="translate(${cx - 125} ${insetY})">${speedyBeePdb(isMini)}</g>` +
-    `<g transform="translate(${cx + 15} ${insetY})">${speedyBeeAddon(isMini)}</g>` +
-    label(cx - 67.5, insetY + 99, "POWER BOARD", 7, "#425863") +
-    label(cx + 69, insetY + 99, isMini ? "USB EXTENDER" : "WIRELESS BOARD", 7, "#425863");
+function viewArt(view, body) {
+  return `<g transform="translate(${view.x} ${view.y}) scale(${view.sx} ${view.sy})">${body}</g>`;
 }
 
-function matekArt({ component, dimensions, color }) {
+function speedyBeeBack(controller, isMini) {
+  const contacts = controller.component.pins.filter(pin => pin.view === "back");
+  const view = controller.views.back;
+  const groups = new Map();
+  for (const pin of contacts) {
+    const key = pin.number.split(".")[0];
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push({ x: (pin.x - view.x) / view.sx, y: (pin.y - view.y) / view.sy });
+  }
+  const sockets = [...groups].filter(([key]) => ["CAM", "VTX", "DJI", "GPS", "USB", "TELEM"].includes(key)).map(([, pins]) => {
+    const x = Math.min(...pins.map(pin => pin.x)) - 4, y = Math.min(...pins.map(pin => pin.y)) - 4;
+    const w = Math.max(...pins.map(pin => pin.x)) - x + 4, h = Math.max(...pins.map(pin => pin.y)) - y + 4;
+    return rect(x, y, w, h, 1.2, "#d2d2c5", "#ecebdc") + rect(x + 1, y + 1, w - 2, h - 2, .8, "#5f6b69");
+  }).join("");
+  return rect(0, 0, 150, 210, 2, controller.color, "#626967") +
+    [48, 161].map(y => platedHole(12, y, 8.5) + platedHole(138, y, 8.5)).join("") +
+    rect(34, 42, 83, 106, 1, "none", "#d2d5c7") +
+    label(76, 68, "F405 WING", 8, "#e7e9da") + label(76, 82, isMini ? "MINI" : "APP", 11, "#e7e9da") +
+    path("M60 116L75 102L90 116L75 112Z", "#e5e9db") +
+    [181, 192, 203].map(y => padRow(isMini ? 10 : 12, 9, y, 132 / (isMini ? 9 : 11), 0, 5, 5)).join("") + sockets;
+}
+
+function speedyBeeArt(controller, isMini) {
+  const { views, color } = controller;
+  return viewArt(views.front, speedyBeeFront(isMini, color)) +
+    viewArt(views.back, speedyBeeBack(controller, isMini)) +
+    viewArt(views.pdb, speedyBeePdb(isMini)) + viewArt(views.addon, speedyBeeAddon(isMini));
+}
+
+function matekArt({ dimensions, color, views }) {
   const frontWidth = dimensions[0] * 9;
   const frontHeight = dimensions[1] * 9;
-  const x = (component.width - frontWidth) / 2;
-  const y = (component.height - frontHeight) / 2;
+  const { x, y } = views.front;
   const holes = [48, 173].map(holeY => platedHole(10, holeY, 8.2, "#719baa") + platedHole(140, holeY, 8.2, "#719baa")).join("");
   const servoPads = [6, 16, 26].map(padX => padRow(9, padX, 69, 0, 10.6, 5, 5)).join("");
   const auxPads = [191, 201, 211].map(padY => padRow(14, 6, padY, 10.55, 0, 5.4, 5.4)).join("");
@@ -431,10 +509,30 @@ function matekArt({ component, dimensions, color }) {
 }
 
 function controllerArt(controller, drawBoard) {
-  return ({ width, height }, showLabels = true) =>
-    rect(4, 4, width - 8, height - 8, 8, "#eef3f4", "#ccdadd") +
-    drawBoard(controller) +
-    controller.wiringBanks.map(bank => terminalBankArt(bank, showLabels)).join("");
+  return (_component, showLabels = true) => {
+    const { component, views } = controller;
+    const usb = views.usb ? viewArt(views.usb,
+      rect(6, 0, 88, 34, 12, "#b3bab7", "#e4e7dd") + rect(9, 3, 82, 28, 10, "#344447") +
+      rect(11, 10, 76, 14, 5, "#172a31", "#75857f") +
+      Array.from({ length: 12 }, (_, index) => {
+        const x = 14 + index * 6;
+        const fitted = [0, 3, 4, 5, 6, 8, 11].includes(index);
+        return [9, 25].map(y => rect(x - 1.5, y - 2, 3, 4, .3, fitted ? "#c6a66b" : "#344447")).join("");
+      }).join("") +
+      label(4, 9, "A1", 2.7, "#344c5a", "end") + label(97, 9, "A12", 2.7, "#344c5a", "start") +
+      label(4, 25, "B12", 2.7, "#344c5a", "end") + label(97, 25, "B1", 2.7, "#344c5a", "start")) : "";
+    const titles = Object.entries(views).map(([key, view]) => label(view.x + (key === "pdb" || key === "addon" ? 55 : key === "usb" ? 42 * view.sx : 75 * view.sx),
+      view.y - 14, view.label, key === "pdb" || key === "addon" ? 7 : 8, "#344c5a")).join("");
+    const contacts = component.pins.map(pin => {
+      const dense = ["GPS", "CAM", "VTX", "DJI", "TELEM", "USB", "WTELEM", "AIR", "AR", "GH"].includes(pin.number.split(".")[0]);
+      const caption = pin.physicalContact ?? (dense ? pin.number.split(".").at(-1) : pin.label);
+      const font = dense ? 4.8 : 5.8;
+      const w = caption.length * font * .62 + 3;
+      return `<g data-physical-contact="${pin.id}">` + rect(pin.x - 2.7, pin.y - 2.2, 5.4, 4.4, .7, "#c6a66b", "#ede1b1") +
+        (showLabels ? rect(pin.x - w / 2, pin.y - 11.5, w, 7.3, 1, "#26343b") + label(pin.x, pin.y - 7.8, caption, font, "#f3f0dc") : "") + "</g>";
+    }).join("");
+    return drawBoard(controller) + usb + titles + contacts;
+  };
 }
 
 const flightControllerArt = {

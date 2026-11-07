@@ -13,16 +13,11 @@ function headerPad(x, y, fill = "#263344") {
 }
 
 function edgeContact(pin, x, y, showLabels, textX, textY, anchor = "middle", fill = silk) {
-  return line(pin.x, pin.y, x, y, gold, 1.35) +
-    (showLabels ? label(textX, textY, pin.label, 8, fill, anchor) : "");
+  return showLabels ? label(textX, textY, pin.label, 7.2, fill, anchor) : "";
 }
 
-function topContact(pin, y, showLabels, captionY = 11) {
-  return showLabels
-    ? line(pin.x, 0, pin.x, captionY - 5, gold, 1.35) +
-      line(pin.x, captionY + 5, pin.x, y, gold, 1.35) +
-      label(pin.x, captionY, pin.label, 8, externalLabel)
-    : line(pin.x, 0, pin.x, y, gold, 1.35);
+function topContact(pin, y, showLabels) {
+  return showLabels ? label(pin.x, y - 10, pin.label, 6.2, externalLabel) : "";
 }
 
 function terminal(x, y, count, pitch, fill = "#79a56c") {
@@ -35,7 +30,7 @@ function terminal(x, y, count, pitch, fill = "#79a56c") {
 
 function canArt({ pins }, showLabels) {
   const contacts = pins.map(pin => {
-    const left = pin.x === 0;
+    const left = pin.x === 23;
     return edgeContact(pin, left ? 23 : 186, pin.y, showLabels, left ? 31 : 151, pin.y, left ? "start" : "end") +
       (left ? headerPad(23, pin.y) : "");
   }).join("");
@@ -92,7 +87,7 @@ const pcfBusIds = ["vcc", "gnd", "sda", "scl"];
 
 function pcfArt({ pins }, showLabels) {
   const contacts = pins.map(pin => {
-    const io = pin.y === 0;
+    const io = !pcfBusIds.includes(pin.id);
     return io
       ? topContact(pin, 22, showLabels) + headerPad(pin.x, 23, "#c2a43d")
       : edgeContact(pin, 31, pin.y, showLabels, 39, pin.y, "start") + headerPad(31, pin.y);
@@ -105,7 +100,7 @@ function pcfArt({ pins }, showLabels) {
   return path("M23 17H244L249 22V88L245 92H23L18 87V22Z", blue, blueEdge) +
     rect(25, 34, 12, 50, 1.3, "#23272d", "#b3bdc5") +
     rect(213, 33, 35, 50, 1.3, "#22262c", "#8c96a0") +
-    pins.filter(pin => pin.x === 0).map(pin =>
+    pins.filter(pin => pcfBusIds.includes(pin.id)).map(pin =>
       line(205, pin.y, 217, pin.y, gold, 1.5) + pad(205, pin.y)
     ).join("") +
     chip(88, 34, 48, 53, "PCF8574", 8) +
@@ -157,8 +152,8 @@ const ftMainIds = ["cts", "rts", "rxd", "txd", "vcc", "gnd", "5v"];
 
 function ft232Art({ pins }, showLabels) {
   const contacts = pins.map(pin => {
-    const top = pin.y === 0;
-    const left = pin.x === 0;
+    const top = ftMainIds.includes(pin.id);
+    const left = ftSideIds.includes(pin.id);
     const x = top ? pin.x : left ? 46 : 166;
     const y = top ? 23 : pin.y;
     const lead = top
@@ -239,23 +234,20 @@ const paperPins = [
 ];
 
 function paperArt({ pins }, showLabels) {
-  const cable = showLabels ? pins.map((pin, index) =>
-    path("M" + pin.x + " " + pin.y + "H207L194 " + (69 + index * 4.4) + "H188", "none", gold, 1.35) +
-    label(212, pin.y - 5.5, pin.label, 7.5, externalLabel, "start")
-  ).join("") : "";
-  return rect(6, 26, 184, 126, 4, blue, blueEdge) +
-    rect(24, 28, 145, 122, 0.6, "#d3d5d0", "#f2f3ef") +
-    rect(48, 35, 111, 111, 2, "#aeb5b2", "#e5e8e0") +
-    rect(52, 39, 103, 103, 1, "#e8e7d9", "#718192") +
-    circle(124, 63, 12, "#d4ad42") +
-    path("M53 103L87 72L108 90L129 76L154 99V141H53Z", "#778c9c") +
-    path("M53 117L76 99L99 118L124 95L154 111V141H53Z", "#657d66") +
-    path("M53 131L82 119L107 130L134 120L154 130V141H53Z", "#a27764") +
-    rect(65, 49, 43, 16, 0.8, "#eeeee2") + label(86.5, 57, "1.54 E6", 7.7, "#485765") +
-    rect(6, 62, 24, 51, 1.4, "#a77141", "#dfad70") +
-    Array.from({ length: 9 }, (_, index) => line(8, 67 + index * 5, 26, 67 + index * 5, "#d5a273", 0.75)).join("") +
-    rect(32, 68, 3.5, 40, 1, "#a8afa9") +
-    [14, 180].map(x => screw(x, 34, 7.8) + screw(x, 144, 7.8)).join("") + cable;
+  // Rear component-side view follows the manufacturer's Module-E-4 gallery photo.
+  const contacts = pins.map(pin => rect(pin.x - 3, pin.y - 1.7, 6, 3.4, .5, "#c8c9b4", "#f2e7c5") +
+    (showLabels ? label(pin.x + 8, pin.y, pin.label, 5.4, silk, "start") : "")).join("");
+  return rect(6, 8, 231, 159, 5, blue, blueEdge) +
+    [17, 226].map(x => screw(x, 19, 8) + screw(x, 156, 8)).join("") +
+    label(120, 25, "1.54inch e-Paper Module (E)", 8, silk) + label(120, 36, "REAR · P1 CONNECTOR", 6.5, silk) +
+    rect(12, 49, 20, 70, 1.8, "#e6dfc9", "#f7f0df") + rect(15, 55, 8, 58, 1, "#a99d86") +
+    rect(201, 48, 21, 75, 1.5, "#e4e3d3", "#f5efdc") + rect(198, 53, 7, 65, .5, "#273540") +
+    rect(222, 57, 16, 57, .4, "#a67037", "#e1b36e") +
+    Array.from({ length: 18 }, (_, i) => line(225, 59 + i * 3, 237, 59 + i * 3, gold, .5)).join("") +
+    chip(117, 83, 41, 31, "", 6) + rect(100, 60, 27, 20, 2, "#b1b5ab", "#dce0d3") + label(113.5, 70, "470", 8, "#46504b") +
+    [[66, 54], [84, 51], [72, 68], [77, 82], [80, 96], [63, 109], [162, 54], [179, 71], [169, 96], [181, 112]].map(([x, y]) => smd(x, y)).join("") +
+    rect(82, 130, 18, 8, .6, "#202e36", "#a6b0ab") + label(91, 124, "BS", 6, silk) +
+    label(136, 143, "Waveshare", 10, silk) + contacts;
 }
 
 const paper = {
@@ -327,11 +319,11 @@ const rs485HatSpiIds = rs485HatControl.slice(0, 7).map(([id]) => id);
 const rs485HatUartIds = ["rse", "txd", "rxd", "gnd", "3v3"];
 
 function rs485HatArt({ pins, width }, showLabels) {
-  const controls = pins.filter(pin => pin.y === 0).map((pin, index) =>
+  const controls = pins.filter(pin => !rs485HatBusIds.includes(pin.id)).map((pin, index) =>
     topContact(pin, 29, showLabels, index % 2 ? 17 : 7) + pad(pin.x, 29)
   ).join("");
-  const bus = pins.filter(pin => pin.x === width).map(pin =>
-    edgeContact(pin, 309, pin.y, showLabels, 318, pin.y - 6, "start", externalLabel) + headerPad(259, pin.y, "#aa9342")
+  const bus = pins.filter(pin => rs485HatBusIds.includes(pin.id)).map(pin =>
+    edgeContact(pin, 290, pin.y, showLabels, 274, pin.y, "end", silk) + headerPad(259, pin.y, "#aa9342")
   ).join("");
   return hatBoard(8, 23, 306, 140) +
     hatHeader(47, 140, 12.1) +
@@ -406,9 +398,8 @@ const servoControl = [
 const servoX = index => 58 + (index + Math.floor(index / 4)) * 14.5;
 
 function servoHatArt({ pins, width }, showLabels) {
-  const top = pins.filter(pin => pin.y === 0);
+  const top = pins.filter(pin => /^s\d+$/.test(pin.id));
   const channels = top.map((pin, index) =>
-    topContact(pin, 20, showLabels, index % 2 ? 14 : 6) +
     line(pin.x, 19, pin.x, 38, gold, 2) +
     headerPad(pin.x, 38) + headerPad(pin.x, 51) + headerPad(pin.x, 64) +
     label(pin.x, 76, pin.label.slice(1), 6.5)
@@ -419,10 +410,10 @@ function servoHatArt({ pins, width }, showLabels) {
       rect(x - 6, 35, 55.5, 34, 0.8, "none", "#a0b4c9") +
       label(x + 57, 38, "G", 6.4) + label(x + 57, 51, "V", 6.4) + label(x + 57, 64, "S", 6.4);
   }).join("");
-  const controls = pins.filter(pin => pin.x === 0).map(pin =>
+  const controls = pins.filter(pin => servoControl.some(([id]) => id === pin.id)).map(pin =>
     edgeContact(pin, 22, pin.y, showLabels, 30, pin.y, "start") + pad(22, pin.y)
   ).join("");
-  const power = pins.filter(pin => pin.x === width).map(pin =>
+  const power = pins.filter(pin => ["vin", "vin-gnd"].includes(pin.id)).map(pin =>
     edgeContact(pin, 367, pin.y, showLabels, 371, pin.y - 7, "start")
   ).join("");
   const address = Array.from({ length: 5 }, (_, index) => {
@@ -490,8 +481,17 @@ const servoHat = {
 
 const modules = [canBoard, pcfExpansion, ft232, paper, rs485Hat, servoHat];
 
+const physicalPositions = {
+  [canBoard.id]: pin => ({ x: pin.x === 0 ? 23 : 174, y: pin.y }),
+  [pcfExpansion.id]: pin => ({ x: pin.x === 0 ? 31 : pin.x, y: pin.y === 0 ? 23 : pin.y }),
+  [ft232.id]: pin => ({ x: pin.y === 0 ? pin.x : pin.x === 0 ? 46 : 166, y: pin.y === 0 ? 23 : pin.y }),
+  [paper.id]: (pin, index) => ({ x: 34, y: 62 + index * 6 }),
+  [rs485Hat.id]: pin => ({ x: pin.y === 0 ? pin.x : 290, y: pin.y === 0 ? 29 : pin.y }),
+  [servoHat.id]: pin => ({ x: pin.y === 0 ? pin.x : pin.x === 0 ? 22 : 353, y: pin.y === 0 ? 64 : pin.y }),
+};
 const waveshareExpansionComponents = modules.map(({ draw, footprint, model, ...part }) => ({
-  ...part, art: part.id, manufacturer: "Waveshare", referencePrefix: "U",
+  ...part, art: part.id, manufacturer: "Waveshare", referencePrefix: "U", contactLayout: "physical",
+  pins: part.pins.map((pin, index) => ({ ...pin, ...physicalPositions[part.id](pin, index), surface: true, symbolPlacement: { side: pin.x <= part.width / 2 ? "left" : "right", order: pin.y * 1000 + pin.x } })),
 }));
 const waveshareExpansionArt = Object.fromEntries(modules.map(({ id, draw }) => [id, draw]));
 const waveshareExpansionFootprints = Object.fromEntries(modules.map(({ id, footprint }) => [id, footprint]));

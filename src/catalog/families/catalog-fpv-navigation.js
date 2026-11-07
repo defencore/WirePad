@@ -12,7 +12,7 @@ const gnss = {
   description: "M10Q-5883 V2 with a 15 mm ceramic patch antenna and a QMC5883L compass. The two JST GH sockets expose the same signals. The canvas shows one set of shared connections and the underside service pads.",
   tags: ["fpv", "gps", "gnss", "u-blox", "compass", "magnetometer", "uart", "i2c", "jst gh", "inav"],
   source: "https://www.mateksys.com/?portfolio=m10q-5883",
-  width, height,
+  width, height, contactLayout: "physical",
   pins: [
     // Viewed from the antenna side, the inverted socket puts pin 1 on the right.
     ...pinRow("bottom", width, height, 22, 26, [
@@ -27,21 +27,24 @@ const gnss = {
       ["3v3", "3.3", "Underside 3.3 V service test point.", "passive", "TP.1"],
       ["rst", "RST", "Underside service pad. Pull low for at least 100 ms at power-up to cold-start the GNSS receiver.", "input", "TP.2"],
     ]),
-  ],
+  ].map((pin, index) => ({ ...pin, surface: true, symbolPlacement: { side: pin.x <= width / 2 ? "left" : "right", order: pin.y * 1000 + pin.x },
+    ...(index < 6 ? { x: 54 + index * 13, y: 133 } :
+      pin.id === "3v3" ? { x: 17, y: 80 } : { x: 28, y: 77 }),
+  })),
 };
 
 function drawGnss({ pins }, showLabels) {
-  const colors = ["#5b5c5d", "#bfc3bd", "#6baa80", "#70a8ce", "#dfc961", "#cc6762"];
-  const cables = pins.slice(0, 6).map(({ x, y, label: name }, index) => {
-    const contactX = 54 + index * 13;
-    return line(contactX, 127, contactX, 139, "#c2ac76", 2.4) +
-      path(`M${contactX} 139V143L${x} 157V${y}`, "none", colors[index], 1.7) +
-      (showLabels ? label(x, 153, name, 7.6, "#344450") : "");
-  }).join("");
-  const service = showLabels ? pins.slice(6).map(({ x, label: name }) =>
-    line(x, 0, x, 6, "#a48051", 1.3) + circle(x, 6, 2.5, "#d6ad69") +
-    label(x, 14, name, 7.6, "#344450")
-  ).join("") : "";
+  const cables = pins.slice(0, 6).map(({ x, y, label: name }, index) =>
+    line(x, 127, x, 139, "#c2ac76", 2.4) +
+    (showLabels ? label(x, 148, name, 7, "#344450") : "")
+  ).join("");
+  const service = rect(2, 54, 32, 32, 3, "#204e82", "#6c94bc") +
+    rect(5, 55, 25, 5, .6, "#e4dfcd") + rect(5, 73, 19, 5, .6, "#e4dfcd") +
+    circle(12, 68, 5, "#bdbdab", "#e2dfc5") +
+    label(18, 47, "BACK", 5.6, "#344450") + pins.slice(6).map(pin =>
+      circle(pin.x, pin.y, 2.5, "#d6ad69") +
+      (showLabels ? label(pin.x, pin.id === "3v3" ? 93 : 68, pin.label, 4.8, "#344450") : "")
+    ).join("");
   return rect(47, 23, 80, 15, 1.8, "#c5bfac", "#aca792") +
     rect(47, 111, 80, 29, 2, "#e4dfcd", "#bcb5a2") +
     rect(50, 127, 74, 11, 1.4, "#7a705e", "#d7d0bc") + cables +

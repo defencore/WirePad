@@ -56,7 +56,6 @@ const gpioFunctions = {
 function headerPins(width, debugUart) {
   return header.map((terminal, index) => {
     const number = String(index + 1);
-    const outer = index % 2 === 1;
     const eeprom = terminal === "0" || terminal === "1";
     const signal = terminal === "0" ? "ID_SD" : "ID_SC";
     const serial = debugUart && (terminal === "14" || terminal === "15");
@@ -71,8 +70,9 @@ function headerPins(width, debugUart) {
     return {
       id: railSpecs[terminal] ? `${terminal}-${number}` : `gpio${terminal}`,
       number, label: pinLabel, type, description,
-      x: outer ? width : 0,
-      y: 17 + Math.floor(index / 2) * 14,
+      x: boardLeft + headerPosition(index)[0] * boardScale,
+      y: boardTop + headerPosition(index)[1] * boardScale, surface: true,
+      symbolPlacement: { side: index % 2 ? "right" : "left", order: index },
     };
   });
 }
@@ -198,7 +198,7 @@ const raspberryPiComponents = boards.map(({ id, model, shortName, revision, soc,
     subtitle: `${soc} / 40-pin GPIO`,
     description: `Board revision ${revision}. ${features} The 40-pin GPIO header is available for wiring.`,
     source, tags: ["raspberry", "rpi", "sbc", "linux", "gpio", "hat", soc.toLowerCase(), shortName.toLowerCase()],
-    width, height: canvasHeight, referencePrefix: "U", pins: headerPins(width, debugUart),
+    width, height: canvasHeight, contactLayout: "physical", referencePrefix: "U", pins: headerPins(width, debugUart),
   };
 });
 
@@ -288,21 +288,10 @@ function physicalHeader() {
     }).join("");
 }
 
-function gpioBanks({ pins, width, height }, showLabels) {
-  const terminalColor = { power_out: "#f0aa62", passive: "#f08b7f", power_in: "#a4b6b1", bidirectional: "#86cca9" };
-  const bankWidth = showLabels ? 61 : 13;
-  const rails = rect(2, 7, bankWidth, height - 14, 6, "#192a26", "#49625a") +
-    rect(width - bankWidth - 2, 7, bankWidth, height - 14, 6, "#192a26", "#49625a");
-  return rails + pins.map((pin) => {
-    const left = pin.x === 0;
-    const inward = left ? 1 : -1;
-    const color = terminalColor[pin.type];
-    const textX = pin.x + inward * 25;
-    return line(pin.x, pin.y, pin.x + inward * 8, pin.y, color, 1.4) +
-      circle(pin.x + inward * 8, pin.y, 2.2, color) +
-      (showLabels ? label(textX - inward * 9, pin.y, pin.number, 7, "#aabdb5") +
-        label(textX, pin.y, pin.label, 8.2, silk, left ? "start" : "end") : "");
-  }).join("");
+function gpioLabels({ pins }, showLabels) {
+  // Pin numbers stay beside the two physical rows; hover exposes the full GPIO function.
+  return showLabels ? pins.map((pin, index) => label(pin.x,
+    pin.y + (index % 2 ? -8 : 8), pin.number, 4.6, index % 2 ? "#344b47" : silk)).join("") : "";
 }
 
 function boardArt(board, component, showLabels) {
@@ -329,7 +318,7 @@ function boardArt(board, component, showLabels) {
     traces + discretes + hardware + platedHoles + pi5Holes + physicalHeader() + powerMarks + modelMark;
   return `<g transform="translate(${boardLeft} ${boardTop}) scale(${boardScale})">${pcb}</g>` +
     label(boardLeft + boardWidth * boardScale / 2, 267, "40-PIN GPIO HEADER", 8.4, "#849c92") +
-    gpioBanks(component, showLabels);
+    gpioLabels(component, showLabels);
 }
 
 const raspberryPiArt = Object.fromEntries(boards.map(board =>

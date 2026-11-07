@@ -1,5 +1,6 @@
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
-import { board, circle, edgePads, label, line, moduleArt, mountingHole, path, pinRow, rect, smd } from "../shared/svg.js";
+import { board, circle, label, line, moduleArt, mountingHole, path, pinRow, rect, smd } from "../shared/svg.js";
 
 const seeedDocs = "https://wiki.seeedstudio.com/XIAO_BLE/";
 const xiaoCad = {
@@ -89,20 +90,12 @@ function xiaoBody({ width, height, id }) {
   const c = width / 2;
   const plus = id.endsWith("-plus");
   const sense = id.includes("-sense");
-  const edgeContacts = Array.from({ length: 7 }, (_, index) => {
-    const y = 29 + index * 14.1;
-    return [c - 47, c + 47].map(x =>
-      rect(x - 6, y - 4.4, 12, 8.8, plus ? 2.8 : 3.8, "#c9a65c", "#f1d992") +
-      circle(x, y, 2.4, "#222621", "#edd9a5")).join("");
-  }).join("");
   const lower = sense
     ? rect(c + 18, 116, 17, 14, 1, "#202421", "#63695a") +
       circle(c + 26.5, 123, 2, "#c8ad71", "#f0ddaf") + smd(c + 11, 114)
     : [0, 1, 2].map(row => [c + 19, c + 30].map(x =>
       rect(x, 115 + 4.8 * row, 6.5, 3.4, 0.5, "#c4a066")).join("")).join("");
-  return board(width, height, "#25343a", "#475b60") +
-    rect(c - 52, 11, 104, 124, 10, "#272927", "#50584b") +
-    edgeContacts +
+  return rect(c - 52, 11, 104, 124, 10, "#272927", "#50584b") +
     usbShell(c - 25, 4, 50, 36) +
     tactSwitch(c - 40, 15, 9, 13) + label(c - 36, 31, "R", 6) +
     rect(c + 32, 14, 6, 5, 0.7, "#d9cf8e") + rect(c + 32, 24, 6, 5, 0.7, "#a4b5a0") +
@@ -114,34 +107,36 @@ function xiaoBody({ width, height, id }) {
     label(c, 96, [sense && "SENSE", plus && "PLUS"].filter(Boolean).join(" ") || "BLE", 7, "#444b41") +
     rect(c - 25, 118, 26, 9, 1.2, "#b7bdb0", "#d7c694") +
     rect(c - 20, 118, 17, 9, 0.8, "#34649a", "#809bb7") +
-    lower +
-    label(c, height - 49, "REAR CONTACTS", 8, "#bfd0d1") +
-    line(24, height - 43, width - 24, height - 43, "#58666a");
+    lower;
 }
 
 function xiaoArt(component, showLabels) {
-  const { height, width, pins } = component;
-  const front = [];
-  const rear = [];
-  for (const pin of pins) {
-    // Plus GPIO 11–19 are rear lands grouped in the side rows on the canvas.
-    (pin.y === height || /^d1[1-9]$/.test(pin.id) ? rear : front).push(pin);
-  }
-  const rearArt = rear.map(({ x, y, label: signal }) => {
-    if (y === height) {
-      const captionY = height - 17;
-      const caption = showLabels
-        ? `<g transform="rotate(-90 ${x} ${captionY})">${label(x, captionY, signal, 7, "#e1e9e8", "start")}</g>`
-        : "";
-      return line(x, y, x, height - 10, "#a78b5d", 1.4) +
-        rect(x - 2.5, height - 13, 5, 6, 0.7, "#d4aa65") + caption;
-    }
-    const left = x === 0;
-    const caption = showLabels ? label(left ? 16 : width - 16, y, signal, 8, "#d1dddf", left ? "start" : "end") : "";
-    return line(x, y, left ? 9 : width - 9, y, "#a78b5d", 1.4) +
-      rect(left ? 6 : width - 12, y - 2.4, 6, 4.8, 0.7, "#d4aa65") + caption;
-  }).join("");
-  return xiaoBody(component) + edgePads({ ...component, pins: front }, showLabels) + rearArt;
+  const scale = 3.8;
+  const frontX = 43, backX = 127, top = 40;
+  const sx = 17.8 * scale / 104, sy = 21 * scale / 124;
+  return `<g transform="translate(${frontX - component.width / 2 * sx} ${top - 11 * sy}) scale(${sx} ${sy})">${xiaoBody(component)}</g>` +
+    label(frontX, top - 9, "FRONT", 6.2, "#334c55") + label(backX, top - 9, "UNDERSIDE · MIRRORED", 5, "#334c55") +
+    rect(backX - 17.8 * scale / 2, top, 17.8 * scale, 21 * scale, 2, "#34423c", "#6b8276") +
+    component.pins.map(pin => {
+      const back = pin.face === "back";
+      return rect(pin.x - (back ? 2 : 3), pin.y - (back ? 2 : 3), back ? 4 : 6, back ? 4 : 6, 1, "#d3ad66", "#eed59b") +
+        (!back ? circle(pin.x, pin.y, 1.5, "#28372f") : "") +
+        (showLabels ? label(pin.x + (back ? 0 : pin.edge === "left" ? -4 : 4), pin.y + (back ? -4 : 0), back ? pin.number : pin.label, back ? 4.5 : 5,
+          back ? "#dce5d7" : "#334c55", back ? "middle" : pin.edge === "left" ? "end" : "start") : "");
+    }).join("");
+}
+
+function physicalXiao(component, footprint) {
+  const front = new Map(footprint.groups.slice(0, 2).flatMap(group => group.ids.map((id, index) => [id, {
+    x: 43 + group.x * 3.8, y: 40 + (group.y + index * 2.54 + 10.5) * 3.8, face: "front",
+  }])));
+  const rearPads = [...footprint.pads, ...footprint.groups.slice(2).flatMap(group => group.ids.map((id, index) => ({ id, x: group.x, y: group.y + index * 2.54 })))];
+  const rear = new Map(rearPads.map(pad => [pad.id, pad]));
+  return physicalComponent(component, pin => {
+    if (front.has(pin.id)) return front.get(pin.id);
+    const pad = rear.get(pin.id);
+    return { x: 127 - pad.x * 3.8, y: 40 + (pad.y + 10.5) * 3.8, face: "back" };
+  });
 }
 
 function xiaoBoard(plus, sense) {
@@ -161,7 +156,7 @@ function xiaoBoard(plus, sense) {
       id, art: id, name: `Seeed Studio XIAO nRF52840${sense ? " Sense" : ""}${plus ? " Plus" : ""}`,
       shortName, manufacturer: "Seeed Studio", category: "Microcontrollers", referencePrefix: "U",
       subtitle: `nRF52840 / Bluetooth LE${sense ? " / IMU and microphone" : ""}`,
-      description: `USB-C nRF52840 board with battery charging and 3.3 V GPIO. ${plus ? "The Plus has nine additional GPIO pads." : "NFC contacts are on the underside."} The bottom bank shows underside power and debug contacts.`,
+      description: `USB-C nRF52840 board with battery charging and 3.3 V GPIO. ${plus ? "The Plus has nine additional GPIO pads." : "NFC contacts are on the underside."} The separately labeled mirrored underside shows the power, debug and extra GPIO pads.`,
       source: seeedDocs, width, height, tags: ["nordic", "bluetooth", "nrf52", "xiao", "usb-c", "tiny"],
       pins: [
         ...pinRow("left", width, height, 30, pitch, left),
@@ -310,4 +305,7 @@ const nordicBoardArt = Object.fromEntries(entries.map(({ component, art }) => [c
 const nordicBoardFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
 const nordicBoardModels = Object.fromEntries(entries.filter(({ model }) => model).map(({ component, model }) => [component.id, model]));
 
-export default defineFamily("nordic-boards", (nordicBoardComponents).map(component => ({ component, render: (nordicBoardArt)[component.art], footprint: (nordicBoardFootprints)[component.id], model: nordicBoardModels[component.id] })));
+export default defineFamily("nordic-boards", nordicBoardComponents.map(component => ({
+  component: component.id.startsWith("xiao-") ? physicalXiao(component, nordicBoardFootprints[component.id]) : physicalComponent(component, pin => [pin.x === 0 ? 9 : component.width - 9, pin.y]),
+  render: nordicBoardArt[component.art], footprint: nordicBoardFootprints[component.id], model: nordicBoardModels[component.id],
+})));

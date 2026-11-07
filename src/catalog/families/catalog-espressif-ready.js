@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, moduleArt, path, pinRow, rect, smd, tactile } from "../shared/svg.js";
 
 const docs = "https://docs.espressif.com/projects/esp-dev-kits/en/latest/";
@@ -74,10 +75,12 @@ function makeDevKit(details, left, right, geometry, drawBoard, hasJumper = false
     ["j5-regulator", "J5.1", "Current-measurement jumper, regulator-side 3.3 V rail. Fit the jumper for normal operation.", "passive"],
     ["j5-module", "J5.2", "Current-measurement jumper, module-side 3.3 V rail. Insert an ammeter between the J5 contacts to measure module current.", "passive"],
   ], "J5."));
-  const component = {
+  const component = physicalComponent({
     ...details, width, height, pins, category: "Microcontrollers", manufacturer: "Espressif Systems", art: details.id, referencePrefix: "U",
     tags: ["espressif", "development board", ...details.tags],
-  };
+  }, pin => pin.number.startsWith("J5.")
+    ? [width / 2 - (pin.number === "J5.1" ? 35 : 17), (details.id.includes("c6") ? 160 : 139) + 20.5]
+    : [pin.x === 0 ? 13 : width - 13, pin.y]);
   return {
     component, art: moduleArt(entry => drawBoard(entry)),
     footprint: {

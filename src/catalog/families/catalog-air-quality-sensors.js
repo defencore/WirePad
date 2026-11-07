@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, mountingHole, pad, path, pinRow, rect, smd } from "../shared/svg.js";
 
 const pcbColor = "#282b2e";
@@ -22,15 +23,15 @@ function airSensor({ id, name, shortName, description, subtitle, source, tags, b
   const height = boardBottom + 11;
   const pitch = headerPitch * artworkScale;
   const start = (width - (contacts.length - 1) * pitch) / 2;
-  const pins = pinRow("bottom", width, height, start, pitch, contacts);
   const padY = boardBottom - pitch;
+  const pins = physicalComponent({ width, height, pins: pinRow("bottom", width, height, start, pitch, contacts) }, pin => [pin.x, padY]).pins;
   return {
     component: {
       id, name, shortName, description, subtitle, source, tags, width, height, pins,
-      category: "Sensors", manufacturer: "Adafruit", referencePrefix: "U", art: id,
+      category: "Sensors", manufacturer: "Adafruit", referencePrefix: "U", art: id, contactLayout: "physical",
     },
-    art: (component, showLabels) => draw(component) + component.pins.map(({ x, y, label: caption }, index) =>
-      line(x, padY, x, y, "#a28656", 1.2) + pad(x, padY) +
+    art: (component, showLabels) => draw(component) + component.pins.map(({ x, label: caption }, index) =>
+      pad(x, padY) +
       (showLabels ? rect(x - 7, padY + (index % 2 ? -12 : 4), 14, 8, 1, pcbColor) +
         label(x, padY + (index % 2 ? -8 : 8), caption, 6.8) : "")
     ).join(""),

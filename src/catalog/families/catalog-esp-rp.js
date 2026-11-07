@@ -1,5 +1,6 @@
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
-import { board, chip, circle, label, line, moduleArt, mountingHole, path, pinRow, rect, smd, tactile } from "../shared/svg.js";
+import { board, chip, circle, label, line, mountingHole, path, pinRow, rect, smd, tactile } from "../shared/svg.js";
 import { microUsb, espDevKitArt } from "../shared/esp-devkit-art.js";
 
 const espDocs = "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3";
@@ -42,17 +43,96 @@ function carrierRow(side, pins, x, y, options = {}) {
   return row(side, pins, { ...options, x, y });
 }
 
+function footprintContacts(footprint) {
+  return new Map([...(footprint.pads ?? []), ...(footprint.groups ?? []).flatMap(group => group.ids.map((id, index) => ({
+    id, x: group.x + (group.axis === "y" ? 0 : index * (group.pitch ?? 2.54)),
+    y: group.y + (group.axis === "y" ? index * (group.pitch ?? 2.54) : 0),
+  })))].map(pad => [pad.id, pad]));
+}
+
+function contactArt(component, labels) {
+  return component.pins.map(pin => {
+    const horizontal = pin.edge === "left" || pin.edge === "right";
+    const before = pin.edge === "left" || pin.edge === "top";
+    const delta = before ? 1 : -1;
+    const x = pin.labelX ?? pin.x + (horizontal ? delta * 7 : 0);
+    const y = pin.labelY ?? pin.y + (horizontal ? 0 : delta * 9);
+    const metal = pin.land === "smd" ? rect(pin.x - 2, pin.y - 2.5, 4, 5, .5, "#d6b377", "#f0d69c")
+      : circle(pin.x, pin.y, 4, "#d6b377") + circle(pin.x, pin.y, 1.8, "#263d38");
+    return metal + (labels ? label(x, y, pin.caption ?? pin.label, pin.dense ? 5 : 6.7, "#e7eddf", pin.labelAnchor ?? (horizontal ? before ? "start" : "end" : "middle")) : "");
+  }).join("");
+}
+
+function xiaoViews(component, footprint, draw) {
+  const plus = component.id.endsWith("-plus"), rearStart = plus ? 207 : 145;
+  const bottom = rearStart - (component.id.includes("esp32") ? 10 : 9);
+  const frontScale = Math.min((component.width - 14) / 17.8, (rearStart - 14) / 21);
+  const backScale = Math.min((component.width - 26) / 17.8, (component.height - rearStart - 12) / 21);
+  const pads = footprintContacts(footprint);
+  const frontIds = new Set(footprint.groups.slice(0, 2).flatMap(group => group.ids));
+  const physical = physicalComponent(component, pin => {
+    const pad = pads.get(pin.id), front = frontIds.has(pin.id), scale = front ? frontScale : backScale;
+    return { x: component.width / 2 + (front ? pad.x : -pad.x) * scale,
+      y: (front ? 7 : rearStart + 6) + (pad.y + 10.5) * scale,
+      face: front ? "front" : "back", land: "smd", dense: !front, caption: front ? pin.label : pin.number,
+      ...(!front ? { labelX: component.width / 2 - pad.x * scale, labelY: rearStart + 6 + (pad.y + 10.5) * scale - 4, labelAnchor: "middle" } : {}),
+    };
+  });
+  const sx = 17.8 * frontScale / (component.width - 14), sy = 21 * frontScale / (bottom - 14);
+  return { component: physical, art: (entry, labels) =>
+    `<g transform="translate(${entry.width / 2 - entry.width / 2 * sx} ${7 - 7 * sy}) scale(${sx} ${sy})">${draw(entry)}</g>` +
+    rect(entry.width / 2 - 17.8 * backScale / 2, rearStart + 6, 17.8 * backScale, 21 * backScale, 2, "#304139", "#6d8277") +
+    label(entry.width / 2, rearStart, "UNDERSIDE · MIRRORED", 5.5, "#334c55") + contactArt(entry, labels) };
+}
+
 function makeBoard(options, rows, draw, footprint) {
   const { id, width, height } = options;
-  const component = {
-    category: "Microcontrollers", art: id, referencePrefix: "U", ...options,
-    pins: rows.flatMap(({ side, start, gap, pins, prefix }) => pinRow(side, width, height, start, gap, pins, prefix)),
+  const component = { category: "Microcontrollers", art: id, referencePrefix: "U", ...options,
+    pins: rows.flatMap(({ side, start, gap, pins, prefix }) => pinRow(side, width, height, start, gap, pins, prefix)) };
+  const carrier = { ...footprint, groups: rows.map(row => row.footprint).filter(({ x, y }) => Number.isFinite(x) && Number.isFinite(y)) };
+  if (id.startsWith("seeed-xiao-")) return { ...xiaoViews(component, carrier, draw), footprint: carrier };
+  const pads = footprintContacts(carrier);
+  const physical = physicalComponent(component, pin => {
+    if (id === "esp32-s3-usb-otg") {
+      const pad = pads.get(pin.id), scale = 2.2;
+      return { x: 265 - pad.x * scale, y: 47 + (pad.y + 16) * scale, land: "smd", dense: true,
+        labelX: 265 - pad.x * scale, labelY: 47 + (pad.y + 16) * scale + (pin.number.startsWith("J5.") ? -6 : 7), caption: pin.number, labelAnchor: "middle" };
+    }
+    if (id.startsWith("raspberry-pi-pico") && pin.number.startsWith("SWD.")) {
+      const index = Number(pin.number.split(".")[1]) - 1, wireless = id.endsWith("-w");
+      return { x: (wireless ? [78, 94, 110] : [57, 73, 89])[index], y: wireless ? 204 : height - 29,
+        land: "smd", dense: true, labelX: (wireless ? [78, 94, 110] : [57, 73, 89])[index], labelY: wireless ? 214 : height - 20, labelAnchor: "middle" };
+    }
+    if (id === "waveshare-esp32-s3-zero" && /^[FB]\./.test(pin.number)) {
+      const front = pin.number.startsWith("F."), index = Number(pin.number.split(".")[1]) - 1, pad = pads.get(pin.id);
+      return { x: front ? 113 : 75 - pad.x * 3, y: front ? 129 + index * 10 : 159 + (pad.y + 11.75) * 3,
+        face: front ? "front" : "back", land: "smd", dense: true, labelX: front ? 121 : 75 - pad.x * 3 + 5,
+        labelY: front ? 129 + index * 10 : 159 + (pad.y + 11.75) * 3, labelAnchor: "start" };
+    }
+    if (id.startsWith("adafruit-qt-py-") && pin.number.startsWith("QT.")) {
+      const index = Number(pin.number.split(".")[1]) - 1, esp = id.endsWith("esp32-s3");
+      return { x: esp ? 85 + index * 9 : 50 + index * 10, y: esp ? 122 : 124, land: "smd", dense: true,
+        labelX: esp ? 85 + index * 9 : 50 + index * 10, labelY: esp ? 115 : 117, caption: String(index + 1), labelAnchor: "middle" };
+    }
+    if (id.startsWith("adafruit-qt-py-") && pin.number.startsWith("BAT.")) {
+      const x = pin.id === "bat-minus" ? 123 : 141;
+      return { x, y: 15, land: "smd", labelX: x, labelY: 23, caption: pin.id === "bat-minus" ? "−" : "+", labelAnchor: "middle" };
+    }
+    if (id === "adafruit-metro-esp32-s3" && pin.number.startsWith("JP2.")) return { x: pin.number.endsWith("1") ? 153 : 160, y: 92, land: "smd", dense: true };
+    if (id === "adafruit-metro-esp32-s3" && pin.number.startsWith("QT.")) {
+      const index = Number(pin.number.split(".")[1]) - 1;
+      return { x: 218, y: 41 + index * 4, land: "smd", dense: true, labelX: 227, labelY: 41 + index * 4, caption: String(index + 1), labelAnchor: "start" };
+    }
+    if (id === "adafruit-metro-esp32-s3" && pin.number.startsWith("X1.")) return { x: pin.id === "bat-minus" ? 170 : 183, y: 261, land: "smd", dense: true };
+    return [pin.x === 0 ? 9 : pin.x === width ? width - 9 : pin.x, pin.y === 0 ? 9 : pin.y === height ? height - 9 : pin.y];
+  });
+  const art = (entry, labels) => {
+    if (id === "esp32-s3-usb-otg") return `<g transform="translate(0 42) scale(.5)">${draw(entry)}</g>` +
+      label(89, 31, "FRONT", 7, "#334c55") + label(265, 31, "UNDERSIDE · MIRRORED", 7, "#334c55") +
+      rect(265 - 65 * 2.2 / 2, 47, 65 * 2.2, 32 * 2.2, 3, "#263b3c", "#6d8277") + contactArt(entry, labels);
+    return draw(entry) + (id === "adafruit-qt-py-esp32-s3" ? rect(113, 2, 38, 25, 1, "#34493f", "#7c9184") + label(132, 6, "REAR BAT", 4.7, "#dce7d5") : "") + contactArt(entry, labels);
   };
-  return {
-    component,
-    art: moduleArt(draw),
-    footprint: { ...footprint, groups: rows.map(r => r.footprint).filter(({ x, y }) => Number.isFinite(x) && Number.isFinite(y)) },
-  };
+  return { component: physical, art, footprint: carrier };
 }
 
 function topUsbC(x, y, width, height) {
@@ -125,10 +205,8 @@ const espZero = makeBoard({
   rect(34, 139, 58, 12, 1, "#e2d9c6", "#f3e9db") +
   rect(47, 139, 33, 12, 1, "#8f3433") + label(63, 145, "C3", 7) +
   [129, 139, 149].map(y => circle(113, y, 3, "#dcb16a")).join("") +
-  rect(7, 159, width - 14, height - 166, 5, "#193449", "#37769e") +
-  label(75, 176, "S3-ZERO", 8, "#d2ebf9") +
-  label(75, 196, "REAR PADS", 7, "#a9cee3") +
-  label(75, 213, "FRONT PADS", 7, "#a9cee3"), {
+  rect(48, 159, 54, 70.5, 2, "#193449", "#37769e") +
+  label(75, 155, "UNDERSIDE · MIRRORED", 5.5, "#334c55"), {
   body: [18, 23.5], color: "#174675", details: [[0, -8.4, 8.5, 5.5, 3.3, "#a8b2b9"], [0, 0, 7, 7, 1.5, "#273041"]],
   note: "Reference carrier for the 18 × 23.5 mm ESP32-S3-Zero. Side headers use 2.54 mm pitch and rear test-pad positions follow the drawing. The separate row outside the outline terminates individual wires to the three front solder pads. Verify clearances and leave the antenna exposed.",
 });
@@ -369,8 +447,7 @@ function xiaoS3Art({ width, height }, { plus, sense, rearStart }) {
     topUsbC(55, 2, 46, 42) +
     tactile(35, 9) + tactile(107, 9) + smd(39, 30, "#eee8c6") + smd(110, 30, "#dcd9b4") +
     camera +
-    rect(7, rearStart - 7, width - 14, height - rearStart, 5, "#252d34", "#5d6268") +
-    label(78, rearStart + 24, "REAR PADS", 8, "#c3c9cb");
+    "";
 }
 
 function xiaoRpArt({ width, height }, { plus, rearStart }) {
@@ -397,8 +474,7 @@ function xiaoRpArt({ width, height }, { plus, rearStart }) {
     label(38, ledY, "R", 6) + label(119, ledY, "B", 6) +
     rect(72, ledY - 5.5, 12, 11, 1, "#dcdccc", "#faf9e9") +
     circle(78, ledY, 2.6, "#aabfb9") +
-    rect(7, rearStart - 5, width - 14, height - rearStart + 2, 5, "#253039", "#5d6268") +
-    label(78, rearStart + 22, "REAR PADS", 8, "#b6c4cb");
+    "";
 }
 
 function xiaoBoard({ esp, plus, sense = false }) {

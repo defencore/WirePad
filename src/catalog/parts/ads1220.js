@@ -54,14 +54,13 @@ function passive(x, y, bodyWidth, bodyHeight, fill, marking = "") {
 }
 
 function headerPad(pin, showLabels) {
-  const left = pin.x === 0;
-  const x = left ? 15 : width - 15;
+  const left = pin.edge === "left";
+  const x = pin.x;
   const textX = left ? 28 : width - 28;
   const overbar = pin.id === "drdy" || pin.id === "cs"
     ? line(28, pin.y - 5.2, pin.id === "cs" ? 38 : 48, pin.y - 5.2, "#f5eaf6", 0.8)
     : "";
-  return line(pin.x, pin.y, x, pin.y, "#bdb9c5", 1.4) +
-    rect(x - 11, pin.y - 7.1, 22, 14.2, 6.4, "#b2aeb7", "#d3cbd7") +
+  return rect(x - 11, pin.y - 7.1, 22, 14.2, 6.4, "#b2aeb7", "#d3cbd7") +
     circle(x, pin.y, 5.25, "#2c1938", "#ede9eb") +
     (showLabels ? label(textX, pin.y, pin.label, 8.1, "#f5eaf6", left ? "start" : "end") + overbar : "");
 }

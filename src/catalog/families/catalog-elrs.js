@@ -16,7 +16,7 @@ const rp1 = {
   description: "RP1 V2 nano receiver with a single U.FL connector for the external T antenna. Use a full UART for CRSF.",
   tags: ["elrs", "expresslrs", "fpv", "rc", "receiver", "crsf", "uart", "2.4 ghz"],
   source: "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320",
-  width: 120, height: 145,
+  width: 120, height: 145, contactLayout: "physical",
   pins: [
     ...pinRow("bottom", 120, 145, 24, 24, crsf.map(pin =>
       pin[0] === "gnd" ? [pin[0], "G", ...pin.slice(2)] : pin
@@ -24,7 +24,7 @@ const rp1 = {
     ...pinRow("right", 120, 145, 100, 0, [
       ["boot", "BOOT", "Recovery pad. Short to ground at power-up to enter the serial bootloader.", "input", "B1"],
     ]),
-  ],
+  ].map(pin => ({ ...pin, symbolPlacement: { side: pin.x <= 60 ? "left" : "right", order: pin.y * 1000 + pin.x }, x: pin.id === "boot" ? 100 : pin.x, y: pin.id === "boot" ? 100 : 120, surface: true })),
 };
 
 const superD = {
@@ -35,8 +35,8 @@ const superD = {
   description: "SuperD 2.4 GHz true-diversity receiver with two U.FL antenna connectors. The illustration shows the RF side. The boot button is on the reverse side.",
   tags: ["elrs", "expresslrs", "diversity", "fpv", "rc", "receiver", "crsf", "uart", "2.4 ghz"],
   source: "https://betafpv.com/products/superd-elrs-2-4g-diversity-receiver",
-  width: 120, height: 199,
-  pins: pinRow("bottom", 120, 199, 24, 24, crsf),
+  width: 120, height: 199, contactLayout: "physical",
+  pins: pinRow("bottom", 120, 199, 24, 24, crsf).map(pin => ({ ...pin, symbolPlacement: { side: pin.x <= 60 ? "left" : "right", order: pin.y * 1000 + pin.x }, y: 158, surface: true })),
 };
 
 function servoChannel(channel, reversed = false) {
@@ -53,17 +53,24 @@ const er4 = {
   name: "RadioMaster ER4 ExpressLRS PWM Receiver", shortName: "ER4",
   manufacturer: "RadioMaster", category: "Radio Receivers", referencePrefix: "U",
   subtitle: "2.4 GHz ELRS / 4 PWM channels",
-  description: "Four servo outputs on a two-row 2.54 mm header. The top-side illustration uses separate wiring banks for the two rows. EXT-V is a separate battery telemetry pad on the reverse side.",
+  description: "Four servo outputs on a two-row 2.54 mm header. The keyed connector mating face shows both physical rows; the separate rear view locates the EXT-V battery telemetry pad.",
   tags: ["elrs", "expresslrs", "fpv", "rc", "receiver", "pwm", "servo", "2.4 ghz"],
   source: "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/ER4_User_Manual.pdf?v=1722224113",
-  width: 275, height: 140,
+  width: 275, height: 140, contactLayout: "physical",
   pins: [
     ...pinRow("left", 275, 140, 19, 20, [...servoChannel(1), ...servoChannel(3, true)]),
     ...pinRow("right", 275, 140, 19, 20, [...servoChannel(2), ...servoChannel(4, true)]),
     ...pinRow("bottom", 275, 140, 148, 0, [
       ["ext-v", "EXT-V", "Battery voltage sensing input, 4–35 V. Connect to the positive battery lead for telemetry.", "input", "EXT.1"],
     ]),
-  ],
+  ].map(original => {
+    const pin = { ...original, symbolPlacement: { side: original.x <= 137.5 ? "left" : "right", order: original.y * 1000 + original.x } };
+    if (pin.id === "ext-v") return { ...pin, x: 259, y: 36, surface: true };
+    const channel = Number(pin.id.match(/^ch(\d)/)[1]);
+    const second = channel >= 3;
+    const position = pin.id.endsWith("-gnd") ? 2 : pin.id.endsWith("-v+") ? 1 : 0;
+    return { ...pin, x: channel % 2 ? 44 : 24, y: 29 + (second ? 5 - position : position) * 15, surface: true };
+  }),
 };
 
 function ufl(x, y) {
@@ -76,10 +83,10 @@ function contact(x, y, drill) {
     (drill ? circle(x, y, 2.3, "#352e26") : "");
 }
 
-function bottomPads(component, y, showLabels, drill) {
-  return component.pins.filter(pin => pin.y === component.height).map(pin =>
-    line(pin.x, y, pin.x, pin.y, "#bb9156", 1.35) + contact(pin.x, y, drill) +
-    (showLabels ? label(pin.x, y - 10, pin.label, 7, "#f0e9df") : "")
+function bottomPads(component, showLabels, drill) {
+  return component.pins.filter(pin => pin.id !== "boot").map(pin =>
+    contact(pin.x, pin.y, drill) +
+    (showLabels ? label(pin.x, pin.y - 10, pin.label, 7, "#f0e9df") : "")
   ).join("");
 }
 
@@ -90,9 +97,9 @@ function rp1Art(component, showLabels) {
     chip(34, 75, 17, 14, "", 2) + smd(25, 92) + smd(54, 86) + smd(92, 57) +
     circle(91, 28, 2.5, "#6dbe83", "#bbbca5") +
     label(74, 24, "RP1 V2", 9, "#f1eade") +
-    line(100, 100, 120, 100, "#bb9156", 1.35) + contact(100, 100, false) +
+    contact(100, 100, false) +
     (showLabels ? label(106, 89, "BOOT", 5.5, "#f0e9df", "end") : "") +
-    bottomPads(component, 120, showLabels, false);
+    bottomPads(component, showLabels, false);
 }
 
 function superDArt(component, showLabels) {
@@ -103,7 +110,7 @@ function superDArt(component, showLabels) {
       smd(x - 5, 77) + smd(x - 10, 128) + smd(x + 3, 128)
     ).join("") + smd(56, 52) + smd(56, 67) + smd(56, 112) +
     label(60, 82, "SuperD 2.4G", 8, "#f1eade") +
-    bottomPads(component, 158, showLabels, true);
+    bottomPads(component, showLabels, true);
 }
 
 function er4Art(component, showLabels) {
@@ -111,17 +118,16 @@ function er4Art(component, showLabels) {
     const y = 29 + index * 15;
     return line(58, y, 82, y, "#c0a269", 3.4) + rect(80, y - 5.5, 13, 11, 1, "#363b41", "#53575c");
   }).join("");
-  const terminals = component.pins.map(pin => {
-    if (pin.id === "ext-v") {
-      return line(pin.x, pin.y, pin.x, pin.y - 5, "#a37d48", 1.3) +
-        (showLabels ? label(pin.x, pin.y - 12, "EXT-V (BACK)", 7, "#344450") : "");
-    }
-    const onLeft = pin.x === 0;
-    const x = onLeft ? 8 : component.width - 8;
-    const direction = onLeft ? 1 : -1;
-    return line(pin.x, pin.y, x, pin.y, "#a37d48", 1.3) + circle(x, pin.y, 3.1, "#c69c59", "#8b6f48") +
-      (showLabels ? label(x + direction * 7, pin.y, pin.label, 8, "#344450", onLeft ? "start" : "end") : "");
+  const terminals = rect(17, 22, 34, 90, 1, "#242a31", "#626c74") + component.pins.map(pin => {
+    if (pin.id === "ext-v") return rect(pin.x - 3, pin.y - 3, 6, 6, .5, "#d0af69") +
+      (showLabels ? label(246, 76, "EXT-V", 6.2) : "");
+    const left = pin.x === 24;
+    const caption = pin.label.startsWith("CH") ? pin.label.slice(2) : pin.label;
+    return rect(pin.x - 2.6, pin.y - 2.6, 5.2, 5.2, .3, "#c5a261") +
+      (showLabels ? label(left ? 14 : 54, pin.y, caption, 6, "#344450", left ? "end" : "start") : "");
   }).join("");
+  const rear = rect(226, 29, 40, 72, 2, "#25282a", "#78807a") +
+    rect(228, 31, 36, 68, 1, "none", "#d6d5c8") + label(246, 113, "BACK", 6, "#344450");
   return rect(79, 18, 130, 98, 4, "#222629", "#6c706f") +
     rect(93, 21, 113, 92, 2, "#252728", "#e4ded2") +
     rect(97, 23, 13, 88, 0, "#ba3f3e") +
@@ -131,7 +137,7 @@ function er4Art(component, showLabels) {
     label(151, 76, "ER4", 21, "#efece4") +
     rect(183, 94, 14, 12, 2, "#c1bdad") + circle(190, 100, 3, "#272b31") +
     label(176, 100, "BOOT", 6, "#efece4", "end") +
-    terminals;
+    rear + terminals + label(35, 126, "MATING FACE", 5.5, "#344450");
 }
 
 const elrsComponents = [rp1, superD, er4];

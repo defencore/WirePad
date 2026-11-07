@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, edgePads, label, line, mountingHole, pad, path, pinRow, rect, screw, smd } from "../shared/svg.js";
 
 const blue = "#14649b";
@@ -112,11 +113,9 @@ const drvMotor = [
 
 function drv2605Art(component, showLabels) {
   const header = component.pins.slice(0, 5).map((pin, index) =>
-    (showLabels ? line(pin.x, pin.y, pin.x, 108, "#ad8b56", 1.4) : "") +
     pad(pin.x, 108) + label(pin.x, index % 2 ? 95 : 118, pin.label, 7.5)
   ).join("");
   const motor = component.pins.slice(5).map(pin =>
-    (showLabels ? line(pin.x, pin.y, pin.x, 22, "#ad8b56", 1.4) : "") +
     rect(pin.x - 6.5, 15.5, 13, 13, 0.5, "#dfc893", "#f1e8cc") +
     label(pin.x, 37, pin.label, 12, silk)
   ).join("");
@@ -222,4 +221,13 @@ const audioPrototypingArt = Object.fromEntries(entries.map(({ component, art }) 
 const audioPrototypingFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
 const audioPrototypingModels = Object.fromEntries(entries.map(({ component, model }) => [component.id, model]));
 
-export default defineFamily("audio-prototyping", (audioPrototypingComponents).map(component => ({ component, render: (audioPrototypingArt)[component.art], footprint: (audioPrototypingFootprints)[component.id], model: audioPrototypingModels[component.id] })));
+const contactCenters = {
+  "adafruit-max9814-1713": pin => [15, pin.y],
+  "adafruit-sph0645-3421": pin => [15, pin.y],
+  "adafruit-drv2605l-2305-qt": (pin, index) => [pin.x, index < 5 ? 108 : 22],
+  "adafruit-pam8302-2130": (pin, index) => [index < 5 ? 31 : 168, pin.y],
+};
+
+export default defineFamily("audio-prototyping", audioPrototypingComponents.map(component => physicalEntry({
+  component, render: audioPrototypingArt[component.art], footprint: audioPrototypingFootprints[component.id], model: audioPrototypingModels[component.id],
+}, contactCenters[component.id])));

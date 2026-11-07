@@ -26,7 +26,7 @@ flowchart TD
 The model, geometry, catalog and native asset layers have no DOM dependencies. A family cannot import another family's implementation; shared board builders and contact layouts have separate owners. `test/architecture.test.mjs` checks import resolution, dependency cycles, these boundaries and that every shipped module is reachable from the browser entry.
 
 - `app/` owns startup, shared commands, persistence and preferences. It wires callbacks explicitly and coordinates destruction.
-- `model/` owns version-1 project records, limits, history snapshots, contact lookup, configuration resolution, names, endpoint identity and electrical continuity. Storage/recovery remains an application service.
+- `model/` owns project records, version-1 import migration, limits, history snapshots, contact lookup, configuration resolution, names, endpoint identity and electrical continuity. Storage/recovery remains an application service.
 - `editor/` commits atomic changes and owns selection/movement and wire transactions. It calls shared geometry rather than reimplementing rotation or endpoint transforms.
 - `geometry/` owns part transforms/bounds, endpoint positions, orthogonal routes and obstacle routing.
 - `canvas/scene.js` and `canvas/markup.js` produce pure scene geometry and SVG. `layers.js` reconciles DOM layers; `viewport.js` handles projection; `input.js`, `targets.js` and `keyboard.js` own gestures and input arbitration.
@@ -102,8 +102,12 @@ Interior face drags begin a marquee. Surface boards require full enclosure even 
 
 ## Compatibility and verification
 
-Saved projects retain version 1, component/pin IDs, storage and recovery keys, and default canvas geometry. `test/fixtures/catalog-geometry.json` guards the 502 previously published definitions. Adding a component does not require rewriting that fixture; moving a published anchor requires a deliberate migration.
+New saved projects use version 2. Version-1 files and browser workspaces are validated and migrated on import. Component/pin identities, part placement, wire identities/colors, junctions and storage/recovery keys remain stable. `catalog/data/contact-layout-v1.js` records the published anchors moved onto physical contacts. Migration removes only endpoint waypoints on an obsolete 15-unit bank lead; other route points remain intact. Version-2 saves and history never repeat that migration.
+
+`test/fixtures/catalog-geometry.json` retains the original 502 geometry fingerprints and records the reviewed physical layout fingerprints beside them. Tests reconstruct each version-1 geometry from its migration record, guard the current geometry, and preserve native files through `test/fixtures/native-geometry.json`. Moving a published anchor again requires another explicit versioned migration.
 
 The refactor was checked against before/after fingerprints for every component, both SVG modes, normalized footprints and native files. The authorized breadboard feature changes its description/configuration metadata; its default contact coordinates and artwork remain identical. The ESP32-S3 footprint now declares its header groups locally; its generated native geometry is unchanged.
+
+The physical-contact update aligns canvas anchors with the module's illustrated pads and connector contacts. Dense connectors use local numbers with full functions on hover. Hidden pads have a labeled rear or mating-face view. `physicalComponent()` records symbol-bank placement separately from canvas positions; `preserveFootprint()` makes inferred carrier pads explicit before the visual geometry changes. Native symbol/footprint geometry therefore remains independent of the drawing layout.
 
 The test suite covers import/history recovery, electrical nets, rotations, route edits, selection/containers, UI lifecycle, catalog validation, downloads and static packaging. Browser checks cover imports, filters, asset tabs, repeated mount/destroy, responsive/touch layouts and the requested breadboard interactions. Native KiCad checks are recorded separately from browser visual checks.

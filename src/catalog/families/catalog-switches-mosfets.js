@@ -1,5 +1,6 @@
+import { physicalEntry } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
-import { circle, edgePads, label, line, path, pinRow, rect } from "../shared/svg.js";
+import { circle, label, line, path, pinRow, rect } from "../shared/svg.js";
 
 const ckDatasheet = "https://www.littelfuse.com/assetdocs/littelfuse-ck-toggle-7000-series-datasheet?assetguid=fed01bc6-88d0-4bda-b896-13c98cf9e90e";
 const nkkProduct = "https://www.nkkswitches.com/wp-content/themes/impress-blank/search/inc/part.php?part_no=MN11SS4W03";
@@ -21,7 +22,7 @@ function togglePole(prefix, first, name = "") {
 }
 
 function toggleArt(component, showLabels) {
-  const { width, symbol } = component;
+  const { symbol } = component;
   const centerOff = symbol.endsWith("center-off");
   const doublePole = symbol.startsWith("toggle-dpdt");
   const nkk = symbol === "toggle-spst";
@@ -48,9 +49,8 @@ function toggleArt(component, showLabels) {
     path("M59 59L66 54H100L107 59V67H59Z", "#a4b1b6", "#687d84") +
     line(67, 56, 99, 56, "#dbe3e3") + lever +
     label(83, 88, nkk ? "NKK" : "C&K", 8, "#eee5de");
-  const groups = showLabels ? rect(4, 46, 39, 66, 4, "#243842") +
-    rect(width - 43, 46, 39, 66, 4, "#243842") + edgePads(component, true) : "";
-  return switchBody + groups + label(83, 133, component.shortName, 8, "#334451");
+  const captions = showLabels ? component.pins.map(pin => label(pin.x, pin.y + 8, pin.number, 7, "#334451")).join("") : "";
+  return switchBody + captions + label(83, 136, component.shortName, 7.5, "#334451");
 }
 
 function ckToggle(model, doublePole, centerOff) {
@@ -153,12 +153,7 @@ function fetPin(id, number, pChannel, tab) {
 }
 
 function fetLeads(component, showLabels) {
-  if (!showLabels) return "";
-  return component.pins.map(({ x, y, label: text }) => {
-    const direction = y === 0 ? 1 : -1;
-    return line(x, y, x, y + direction * 12, "#8e9ca5", 1.6) +
-      label(x + 12, y + direction * 6, text, 8, "#425560");
-  }).join("");
+  return showLabels ? component.pins.map(pin => label(pin.x + 8, pin.y, pin.label, 7.5, "#425560", "start")).join("") : "";
 }
 
 function sot23Art(component, showLabels) {
@@ -268,4 +263,15 @@ const switchMosfetArt = Object.fromEntries(entries.map(({ component, art }) => [
 const switchMosfetFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
 const switchMosfetModels = Object.fromEntries(entries.filter(({ model }) => model).map(({ component, model }) => [component.id, model]));
 
-export default defineFamily("switches-mosfets", (switchMosfetComponents).map(component => ({ component, render: (switchMosfetArt)[component.art], footprint: (switchMosfetFootprints)[component.id], model: switchMosfetModels[component.id] })));
+function contactPosition(component, pin) {
+  if (component.symbol.startsWith("toggle-")) {
+    if (component.symbol === "toggle-spst") return [pin.number === "2" ? 83 : 106, 114];
+    const number = Number(pin.number);
+    return number <= 3 ? [[61, 83, 105][number - 1], 114] : [[70.5, 92.5, 114.5][number - 4], 105];
+  }
+  if (component.subtitle.includes("TO-220")) return [pin.x, 187];
+  if (component.subtitle.includes("TO-252")) return [pin.x, pin.id === "d" ? 16 : 114];
+  return [pin.x, pin.id === "d" ? 18 : 84];
+}
+
+export default defineFamily("switches-mosfets", switchMosfetComponents.map(component => physicalEntry({ component, render: switchMosfetArt[component.art], footprint: switchMosfetFootprints[component.id], model: switchMosfetModels[component.id] }, pin => contactPosition(component, pin))));

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, path, rect, screw, smd, usb } from "../shared/svg.js";
 
 const manufacturer = "Waveshare";
@@ -154,15 +155,13 @@ const waveshareFootprints = {
 };
 
 function rs485BoardArt({ pins }, showLabels = true) {
-  const uart = pins.filter(pin => pin.x === 0).map(pin =>
-    line(1, pin.y, 31, pin.y, "#c0a074", 2.2) +
+  const uart = pins.filter(pin => pin.edge === "left").map(pin =>
     rect(24, pin.y - 5, 14, 10, 1.1, "#22272f", "#4b5867") +
     circle(37, pin.y, 3.15, "#b7b0a3", "#e0d8c5") +
     (showLabels ? label(43, pin.y, pin.label, 7.6, "#eef4f8", "start") : "")
   ).join("");
-  const bus = pins.filter(pin => pin.y === 0).map(pin =>
-    line(pin.x, pin.y, pin.x, 24, "#b9a477", 1.6) +
-    screw(pin.x, 41, 8) +
+  const bus = pins.filter(pin => pin.edge === "top").map(pin =>
+    screw(pin.x, pin.y, 8) +
     circle(pin.x, 56, 2.4, "#122542") +
     (showLabels ? label(pin.x, 16, pin.label, 8, "#eff5fa") : "")
   ).join("");
@@ -191,14 +190,12 @@ function servoAdapterArt({ pins }, showLabels = true) {
     path(`M${x - 7} 34V21l5-4h33l5 4v13Z`, "#8e806c", "#e1d7c0") +
     rect(x - 9, 35, 48, 5, 0.7, "#d8d0bb")
   ).join("");
-  const topPins = pins.filter(pin => pin.y === 0).map(pin =>
-    line(pin.x, 0, pin.x, 24, "#b5a17a", 1.65) +
-    circle(pin.x, 25, 2.8, "#d8c39b", "#8c8170") +
+  const topPins = pins.filter(pin => pin.edge === "top").map(pin =>
+    circle(pin.x, pin.y, 2.8, "#d8c39b", "#8c8170") +
     (showLabels ? label(pin.x, 45, pin.label, 8, "#e9edf0") : "")
   ).join("");
-  const powerPins = pins.filter(pin => pin.y !== 0).map(pin =>
-    line(pin.x, pin.y, pin.x, 151, "#a48d67", 1.7) +
-    screw(pin.x, 151, 7.8) +
+  const powerPins = pins.filter(pin => pin.edge === "bottom").map(pin =>
+    screw(pin.x, pin.y, 7.8) +
     (showLabels ? label(pin.x, 125, pin.label, 7.6) : "")
   ).join("");
   const modeJumper = [175, 189].map(x =>
@@ -232,20 +229,16 @@ function servoAdapterArt({ pins }, showLabels = true) {
 }
 
 function esp32Rs485CanArt({ pins, height }, showLabels = true) {
-  const terminals = pins.filter(pin => pin.x !== 0).map(pin => {
-    const top = pin.y === 0;
-    const screwY = top ? 35 : 294;
-    return line(pin.x, pin.y, pin.x, top ? 20 : 309, "#82947c", 1.5) +
-      circle(pin.x, screwY, 9.3, "#47544d", "#ececea") +
-      screw(pin.x, screwY, 7.6) +
+  const terminals = pins.filter(pin => pin.edge !== "left").map(pin => {
+    const top = pin.edge === "top";
+    return circle(pin.x, pin.y, 9.3, "#47544d", "#ececea") +
+      screw(pin.x, pin.y, 7.6) +
       circle(pin.x, top ? 100 : 244, 10, "#78b33d", "#a8cb76") +
       (showLabels ? label(pin.x, top ? 100 : 244, pin.label, top ? 6.6 : 8.2, "#ffffff") : "");
   }).join("");
-  const expansion = pins.filter(pin => pin.x === 0).map((pin, index) => {
-    const stripe = ["#515658", "#cf5650", "#e3974f", "#d5b84c"][index];
-    const rowY = 116 + index * 6;
-    return path(`M0 ${pin.y}H10L24 ${rowY}H44`, "none", stripe, 1.7) +
-      (showLabels ? label(8, pin.y - 4.8, pin.label, 6.2, "#344651", "start") : "");
+  const expansion = pins.filter(pin => pin.edge === "left").map((pin, index) => {
+    return circle(pin.x, pin.y, 1.8, "#b7aa85") +
+      (showLabels ? label(pin.x - 6, pin.y, String(index + 1), 4.8, "#f4f5e8", "end") : "");
   }).join("");
   const lights = [[32, "#967e68", "CAN"], [68, "#a08972", "RS485"], [103, "#a33b2d", "PWR"]].map(([x, fill, text]) =>
     circle(x, 143, 8, fill, "#d4c8b9") +
@@ -287,4 +280,14 @@ const coreWaveshareModels = {
   },
 };
 
-export default defineFamily("waveshare", (waveshareComponents).map(component => ({ component, render: (waveshareArt)[component.art], footprint: (waveshareFootprints)[component.id], model: coreWaveshareModels[component.id] })));
+const contactPositions = {
+  "waveshare-rs485-3v3": pin => [pin.x === 0 ? 37 : pin.x, pin.y === 0 ? 41 : pin.y],
+  "waveshare-bus-servo-adapter-a": pin => [pin.x, pin.y === 0 ? 25 : 151],
+  "waveshare-esp32-s3-rs485-can": (pin, index) => pin.x === 0
+    ? [46.5, 116 + (index - 2) * 6]
+    : [pin.x, pin.y === 0 ? 35 : 294],
+};
+
+export default defineFamily("waveshare", waveshareComponents.map(component => physicalEntry({
+  component, render: waveshareArt[component.art], footprint: waveshareFootprints[component.id], model: coreWaveshareModels[component.id],
+}, contactPositions[component.id])));

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent, physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pad, path, pinRow, rect, smd } from "../shared/svg.js";
 
 const scale = 6;
@@ -48,16 +49,8 @@ function qfn(x, y, size, marking, rotation = 0, pinsPerSide = 5) {
     label(0, 1, marking, 5, "#a7ac9c") + "</g>";
 }
 
-function logicalPins(component) {
-  return component.pins.map(({ x, y, label: caption }, index) => {
-    const direction = y === 0 ? 1 : -1;
-    const textY = y + direction * (index % 2 === 0 ? 8 : 18);
-    const textWidth = caption.length * 4.4 + 3;
-    return line(x, y, x, y + direction * 4, "#a18459", 1.2) +
-      line(x, textY + direction * 4, x, y + direction * verticalMargin, "#a18459", 1.2) +
-      rect(x - textWidth / 2, textY - 4.4, textWidth, 8.8, 1.6, "#2d3b47") +
-      label(x, textY, caption, 7.2, "#fff6df");
-  }).join("");
+function terminalLabels(component) {
+  return component.pins.map(pin => label(pin.x, pin.edge === "top" || pin.y + 10 > component.height - 5 ? pin.y - 10 : pin.y + 10, pin.label, 7.2, "#34475a")).join("");
 }
 
 function qtBreakout({ component, body, headers, socketsY, holes, artwork, details, cad, outline, note }) {
@@ -67,25 +60,26 @@ function qtBreakout({ component, body, headers, socketsY, holes, artwork, detail
   const boardX = (width - bodyWidth * scale) / 2;
   const boardY = (height - bodyHeight * scale) / 2;
   const pinGroups = headers.map(({ side, x, specs }) => pinRow(side, width, height, boardX + x * scale, 2.54 * scale, specs));
-  const part = {
+  const positions = headers.flatMap(({ x, y, specs }) => specs.map((_spec, index) => [boardX + (x + index * 2.54) * scale, boardY + y * scale]));
+  const part = physicalComponent({
     ...component, manufacturer: "Adafruit", category: "Interfaces", referencePrefix: "U",
-    width, height, pins: pinGroups.flat(), art: component.id,
+    width, height, pins: pinGroups.flat(), art: component.id, contactLayout: "physical",
     tags: [...component.tags, "stemma qt", "qwiic", "i2c"],
-  };
-  const headerArt = headers.map(({ side, x, y, specs, captionOffsets }) => specs.map((spec, index) => {
+  }, positions);
+  const headerArt = showLabels => headers.map(({ side, x, y, specs, captionOffsets }) => specs.map((spec, index) => {
     const padX = (x + 2.54 * index) * scale;
     const padY = y * scale;
     const captionY = padY + (captionOffsets?.[index] ?? (side === "top" ? 11 : 10));
-    return pad(padX, padY) + label(padX, captionY, spec[1], 6.4, silk);
+    return pad(padX, padY) + (showLabels ? label(padX, captionY, spec[1], 6.4, silk) : "");
   }).join("")).join("");
   return {
     component: part,
-    art: (definition, showLabels) => {
+    art: (_definition, showLabels) => {
       const pcb = outline ?? rect(0, 0, bodyWidth * scale, bodyHeight * scale, 15.24, pcbColor, "#8f9990");
       return `<g transform="translate(${boardX} ${boardY})">` + pcb +
         holes.map(([x, y]) => mountingRing(x * scale, y * scale)).join("") +
         qtSocket(0, socketsY * scale, 1) + qtSocket(bodyWidth * scale, socketsY * scale, -1) +
-        artwork() + headerArt + "</g>" + (showLabels ? logicalPins(definition) : "");
+        artwork() + headerArt(showLabels) + "</g>";
     },
     footprint: {
       body, color: pcbColor, modelHeight: 1.6, drill: 1, size: 1.778, shape: "circle",
@@ -248,8 +242,8 @@ const encoderComponent = {
 const encoder = {
   component: encoderComponent,
   art: (component, showLabels) => {
-    const terminals = path("M47 0V13L57 21V27M97 0V13L87 21V27", "none", "#a7b1b4", 2.2) +
-      path("M57 103V114L42 122V140M72 103V140M87 103V114L102 122V140", "none", "#a7b1b4", 2.2);
+    const terminals = [57, 87].map(x => rect(x - 1.2, 15, 2.4, 12, .2, "#a7b1b4")).join("") +
+      [57, 72, 87].map(x => rect(x - 1.2, 103, 2.4, 14, .2, "#a7b1b4")).join("");
     const housing = rect(33.5, 24, 77, 80, 2.4, "#272e30", "#9ba4a4") +
       rect(35.5, 25, 73, 77, 2, "#aab2b1", "#d9ded8") +
       [[38, 30], [105, 30], [38, 97], [105, 97]].map(([x, y]) => circle(x, y, 1.7, "#636d6c")).join("") +
@@ -257,7 +251,7 @@ const encoder = {
       circle(72, 63, 25, "#b9bfbb", "#6b7674") + circle(72, 63, 21, "#d9dcd2", "#747d79") +
       path("M84 49.58A18 18 0 1 0 84 76.42Z", "#919d9c", "#e3e7dd", 1.1) +
       line(83, 51, 83, 75, "#697777", 1.3) + line(57, 55, 61, 50, "#e5e7df", 1.1);
-    return terminals + housing + (showLabels ? logicalPins(component) : "");
+    return terminals + housing + (showLabels ? terminalLabels(component) : "");
   },
   footprint: {
     body: [12.5, 13.4], color: "#aab2b1", modelHeight: 7.5, drill: 1, size: 1.8,
@@ -278,7 +272,7 @@ const trimmerComponent = {
   id: "bourns-3296w-1-103lf", name: "Bourns 3296W-1-103LF 10 kΩ Trimmer", shortName: "3296W 10k",
   manufacturer: "Bourns", category: "Passives", referencePrefix: "RV", defaultValue: "10 kΩ",
   source: "https://www.bourns.com/docs/product-datasheets/3296.pdf",
-  description: "3296W-1-103LF sealed cermet trimmer with nominal 25-turn top adjustment, 10 kΩ resistance and ±10% tolerance. Terminal 2 is the wiper, 1 is the counterclockwise end and 3 is the clockwise end. The top view uses a separate logical terminal bank.",
+  description: "3296W-1-103LF sealed cermet trimmer with nominal 25-turn top adjustment, 10 kΩ resistance and ±10% tolerance. Terminal 2 is the wiper, 1 is the counterclockwise end and 3 is the clockwise end. The top view shows the inline physical lead ends.",
   subtitle: "10 kΩ / 25 turns / top adjustment",
   tags: ["bourns", "3296w", "3296w-1-103lf", "trimmer", "trimpot", "potentiometer", "10k", "adjustment", "variable resistor"],
   width: 124, height: 100, art: "bourns-3296w-1-103lf",
@@ -299,7 +293,7 @@ const trimmer = {
     circle(89.96, 55.16, 8.1, "#c7a15b", "#e5c577") +
     line(85.5, 59.6, 94.4, 50.7, "#715521", 2.1) +
     label(54, 44, "103", 10, "#a4b6c1") +
-    (showLabels ? logicalPins(component) : ""),
+    (showLabels ? terminalLabels(component) : ""),
   footprint: {
     body: [9.53, 4.83], color: "#2665a0", modelHeight: 10.03, drill: 0.8, size: 1.44,
     pads: [
@@ -314,7 +308,10 @@ const trimmer = {
   },
 };
 
-const entries = [mpr121, tca8418, qtRotary, encoder, trimmer];
+const entries = [mpr121, tca8418, qtRotary,
+  physicalEntry(encoder, (_pin, index) => index < 2 ? [57 + index * 30, 16] : [57 + (index - 2) * 15, 116]),
+  physicalEntry(trimmer, pin => [pin.x, pin.y]),
+];
 
 const inputPrototypingComponents = entries.map(({ component }) => component);
 const inputPrototypingArt = Object.fromEntries(entries.map(({ component, art }) => [component.id, art]));

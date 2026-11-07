@@ -1,0 +1,3014 @@
+[
+  {
+    "id": "breadboard",
+    "symbol": "5a17f50c4e7d29af0235249167d8c3d6ce7eb2331647df90dc07a4e3b352aa48",
+    "footprint": "106cd6db17073cc1663354dbbc5ec5cb17ea22af0d26ceafcf3d465a44dcad8c",
+    "model": "17560a4f31d6ef43ace17e6323581d0f3dd9954337be867daf1df20de78c265e"
+  },
+  {
+    "id": "esp32-s3",
+    "symbol": "13b7b9bf964d34ea2b83183faeabe4916b3ad5acddf5e70a9b49b8087d67c114",
+    "footprint": "a60668ee0c379c20b587d4d0b3d11e2c1c27a3873fd186c3fac4a7dcad79331d",
+    "model": "afc8abed657b358108e4fcce9649e210262d35dd5003e3edeef91b719ba7919d"
+  },
+  {
+    "id": "max3485",
+    "symbol": "53c5f552ec3ed2136be065b53187554226cd028827e338c876f50dbf380be14d",
+    "footprint": "01260d3e4d2a193a19b46142cecd175e75725eda426f02f8e18e2335e63ade82",
+    "model": "db15a738e523b4ad76556fad233b005447e99067d7593b590240d0f201e390f4"
+  },
+  {
+    "id": "hw0519",
+    "symbol": "7687e13fbd00308212f47a6eb4108b028adbdd9b4d6d6006c1fb50e9993d74ee",
+    "footprint": "ad05fb64fe936d043070ba6db30264168c64d32ea941a20ba12ede7ec2a75e4c",
+    "model": "99121b4df50a06a8e4764c9de9e58b7bfc8874f1e92455c2d48c0726502417f5"
+  },
+  {
+    "id": "bme280",
+    "symbol": "c21e52732535e7eb827a540c9fbd73a5bb043af84f03804d5cadd2e123fac1fe",
+    "footprint": "e13724f8660283c0e2bb698a661503f4dd87721556aad001cdfb77e746c47534",
+    "model": "ffc7f0821d00a42ae5b46dfda60e7bc5fd900d6b3e48eb1ffcaa88b2d0d03a8b"
+  },
+  {
+    "id": "rs485-soil",
+    "symbol": "a2c63bb3781c5fbeff17bd33148b68e93bed1c76926cff2533d183ee0d287693",
+    "footprint": "281f24484fc35e5d82898cdc0e933d89b055be0960044099023fc717fb933809",
+    "model": "e8d808f9def3a45bf33a71a0e57493426eca968bc4ef562e3f0d511bb7acbb62"
+  },
+  {
+    "id": "ads1115",
+    "symbol": "850410614f271afbe8e4f966be689e8eed91022b0fb86704264e492a8406c41d",
+    "footprint": "5d0d9bf4203b59d30314aa9cbd2a29242fc515c07cfbbc70080ec115d2c2c837",
+    "model": "d270f50b80ee6b2c089692a0ce4429f0c84c880671f831c2e66008e9c99fef6e"
+  },
+  {
+    "id": "ads1220",
+    "symbol": "fe24822cb2055179bf23ea2b1b982b34ad1610943e871be23b11f35eb4ee15d7",
+    "footprint": "a718b46260432d5c14d097f3a75ad609dbf960d1faa93199747ab02f864da22e",
+    "model": "88babfad7a671fdb17e38e351d73f62a8650a14d825bf2ba6898e20890b4e7fa"
+  },
+  {
+    "id": "ina219",
+    "symbol": "a9c290c3745af0f5786999b35e192a1d51ec48456bd5732432bb808dbf7af24b",
+    "footprint": "fcd1f44d5221c7dc877a09b57c7f09370d9e7ee2a59453612e50f63c6c396b0a",
+    "model": "2bc351b3e6241948d60f499e7a47fb3132427aef5638215b4cd6f84693b28ae5"
+  },
+  {
+    "id": "st3215",
+    "symbol": "33362ea5c74b96c0db417c8184979e818e16d292d7508bd9ba83d5730d5acfbc",
+    "footprint": "a9bfcf9772320a97533f6393db4c45fd2e2846b6c124f5f0eb275e0ec2f3b941",
+    "model": "33f67ad82505efc37ed33975f4cba85c11236da30afc9fdd54a8c6ebf2e71eb8"
+  },
+  {
+    "id": "ssd1306",
+    "symbol": "bc7f845babc7b474b22657e36bafe2ea24dfc0ff7d2f5a164b4c2bdf97262e72",
+    "footprint": "df47a47629dcaef190b1dd398af22ae573fad327abbccef02af021d5c0a32656",
+    "model": "94edd03582455f674e9ed74125d9171d093d27e2b11eda1eb26d473064b7b70f"
+  },
+  {
+    "id": "lm2596",
+    "symbol": "a5299bd17f010cad94fc86515be61e421122b1db4d7a22e00a90a34ab77467ff",
+    "footprint": "6ce34f1ffacef34f97d8d626c0b2ea24aca66a772798c5dcee5b7578daee779e",
+    "model": "3ea6ab1b3033951c4ec2f8a75bdabe0a56afc5e21deaacdb0dd2ec71b853ec07"
+  },
+  {
+    "id": "waveshare-rs485-3v3",
+    "symbol": "d8fc738debbf3c2188581a8d19ccbb4cc032bcda62dd22bf8adda357eb735d68",
+    "footprint": "05d0a9d1cb82da9f8f050a4326ebf0a8833e383d0d7f17e23221ad305cf0acfa",
+    "model": "e6be5da1fc32bb92a1cec192e6cd8ab9b0fcb99a2639c0fce3a2d45757cc26ef"
+  },
+  {
+    "id": "waveshare-bus-servo-adapter-a",
+    "symbol": "3d5ac34a33def44c30751f43a03bddc3efa7ecc2dc29c77af8edfaebc5bb5e2b",
+    "footprint": "8658b21ade4aead57734f99987220f3bdd932b5e2544d4307b6620fb1544896d",
+    "model": "2e51085f7ad3bfb9a711c44ddec6e7df15be12f158def435efdada5f455772c7"
+  },
+  {
+    "id": "waveshare-esp32-s3-rs485-can",
+    "symbol": "5a9c0516a105f1cc1fa511f7ce570e62be4194d19ba53c0604224e9e0db8a1c5",
+    "footprint": "c7a6340f57a6895e4d362ac22050e5597cf30e3bd6257b711bb331353eb10410",
+    "model": "d7c6fca47fbe92f5bf6158c80942023926282aa87752d145d815560f59fba352"
+  },
+  {
+    "id": "resistor",
+    "symbol": "e82c2b0c88ba2b4c24fdb3aba05430e5841757c2356b447105c1d44e66e470ba",
+    "footprint": "eab760fa09b29cfaa9f707d9af0a91a2a1058fb9500e9c2bba31db993074c502",
+    "model": "5d8a204494fe3e45a90c5124e14d41edcba1b2ef5b4019d3a074bbd6cfa631a4"
+  },
+  {
+    "id": "capacitor",
+    "symbol": "0763096dc1aeeb68587241f9013e924e6fdb497ef401cb81e23d05a2c3f8468d",
+    "footprint": "568281a3149a679810998b88356ad8babcda15e274dbc7da27b264d33a014050",
+    "model": "e008ed7cde472c9aea0249d86b20c269143372e8d8f1ca60da6702ced1ab2753"
+  },
+  {
+    "id": "electrolytic",
+    "symbol": "754a3fc24c9efebd4f1720ebb7d437a8cef1737cc462a30f0fd1f3180db2a91f",
+    "footprint": "6dbbd833ba51b0cb683800fca10d44e888e9a6bb67c4269fcfbc44aa35a54f42",
+    "model": "7554f5964600dcb4debfdfdc827e947fa7f599067699180b0ba160883067dd7b"
+  },
+  {
+    "id": "inductor",
+    "symbol": "bab8e5d1eafefa88ce675230b6bc1d30b5a1f5ab13617141bc93a095f703d011",
+    "footprint": "423b8323fe0580cae2269119afa9396c49522295170d4e394bda09e09c489d5b",
+    "model": "b66f704cbc2d11d2e808281abf5415db4911b053a1dc225a17d810e9c2e06607"
+  },
+  {
+    "id": "ferrite-bead",
+    "symbol": "5b59ea71a55e4e43995be68367e42ac7fc182b6d431df6261a6e9e8d1d568894",
+    "footprint": "30ba48a46e17277cc5c60cc9c4fb9bece4176ee149bdaff52c7f6b0524a68b19",
+    "model": "d0403e29e758662c7fc84baa0f5562d44cebf4daa6b63ab73b39db5f58ec2917"
+  },
+  {
+    "id": "diode",
+    "symbol": "7134c94aeb1bf55cbe8b3df886a46c88ed9e797e0b9f021f53ec5082f707ecaa",
+    "footprint": "0d91271aac987502cff6a6a427aa998da0e0cfd2838024551111c2938b152576",
+    "model": "fc864179dc7369818f60d0be27d2e2d3baf12562eae5a0da59a6e9159c426998"
+  },
+  {
+    "id": "led",
+    "symbol": "a228fa83701e627c8b50525731a819cb506bea2f692dbde46074686c2f2536b4",
+    "footprint": "948405fd641e6a2cbaae87746e5f89cc391c888d76ff545c7e50a934366309d6",
+    "model": "c7d1e50d6e915d18b71198d180744a47c0f83c7894ba8f3b84e524ac42902949"
+  },
+  {
+    "id": "npn",
+    "symbol": "d2536c029057b8911ec850c4664b708def47fe7da425b0b984e3c02db31ad7e7",
+    "footprint": "172a72bd6125675746f7c0a7bbd4437d6c6a036bc633ecf9f3a6f6eb8bf68cc2",
+    "model": "666a4673c459fa93c5dfc5cac24b5378d0a9417a5a8b0dba40db8f4f17cfa14b"
+  },
+  {
+    "id": "nmos",
+    "symbol": "4c948187f30a55b600d535c1151eb972222e0128668f89cf32e3dc03448e253e",
+    "footprint": "fc28397ddf804390015cd1bcb46946bde04107617cea724f89b8293c7f81a8a5",
+    "model": "666a4673c459fa93c5dfc5cac24b5378d0a9417a5a8b0dba40db8f4f17cfa14b"
+  },
+  {
+    "id": "button",
+    "symbol": "ad9cd48bad94f8815226f2205b8fecbc0bd17cec922c73d4d529dea648ab6548",
+    "footprint": "5019b4d0ca2f82d6918e5a13596e464c899514c35ad57efeb15e5888504b2b40",
+    "model": "1e5dde4f764340566e456f9ee49bc277fb7819f6936c236852b504f8e0a3a3d4"
+  },
+  {
+    "id": "terminal-2",
+    "symbol": "353c517d5cd333c6b43d6ded428cba2cc3a42d15ffcded898ba454671d87474e",
+    "footprint": "523a7dcb2b5e91d647d01b83a0595c47d6960479060cc451de281cd32646c4d5",
+    "model": "ab78c41e45ecf043b2253a671408352c63cc5517537e2fef55f545e87ceb72d4"
+  },
+  {
+    "id": "terminal-3",
+    "symbol": "3eea9c1972186b1ac74c43d3af77fd5f11ee53b4617947f908492ed0b201ca5b",
+    "footprint": "67495daffae72e53280a8968d74ab44fc4abf3ccd877a7156bc21961f62ff361",
+    "model": "e7462845372a6bf889f3e09f981a79d0e1774a154c9881b272472234f17e193b"
+  },
+  {
+    "id": "pin-header-4",
+    "symbol": "9dae6fc2483437c488e024232a19f12e902bf0b451b89b99e89e12101dc32d58",
+    "footprint": "eb40bd67f40e651caafc3655c89f34ff5f14022f4342a765d8d202c8a6b5758a",
+    "model": "d7ff22bbe9f72bcc72d86c81674ce8a7e302c3f42fe4c89e1d5cc9d46044978d"
+  },
+  {
+    "id": "jst-ph-2",
+    "symbol": "366b15be328c61f68aeeadae064913938d1569dbf8e684f5be84fc0ed8e2a72b",
+    "footprint": "aa809697a2560a4f1bdcb165f1811ba55ba858321cc94cf4b6db1dce29cfaf44",
+    "model": "a11d1a1b46fab60810caa5bad6371de9c95dc3249c1f54ca00ac93c9667da019"
+  },
+  {
+    "id": "battery",
+    "symbol": "35205bd358b0d1de13a30415ba863bd7c21e083f0ea044571deb70bb45f2754b",
+    "footprint": "c9438fd77bbe6214495a78c8dd40d52779b3edb60174f09cb56993dac2cf4b95",
+    "model": "452edeb769f7f0c54ec1a0a45de9be47bc0d532b87806dfbda940c7d28de63ea"
+  },
+  {
+    "id": "heltec-v4",
+    "symbol": "d89df9b812fbb5ce62fbbba0c371d121b9820871dc4e8e14748025f747f8ee57",
+    "footprint": "be075ef2699b94b3c63a4c19ec0f2fddd02c87bf34f457995cd944f36f1b5223",
+    "model": "57fcc0929ae99ad985b6ccaa55dee9c148ecc78e0f30faae27875f5652349f24"
+  },
+  {
+    "id": "heltec-v3",
+    "symbol": "2efccf6b653a382848ce9807e80ee372bb339480d032b13672d64b4f441c5789",
+    "footprint": "9bef5dddbc4d6a830b8fec071cba72d8ca384f13e7993a64ae408278e4d18f91",
+    "model": "1a18173c8d11d782b75cefabc83bd52eabb1beebabb0362a26e45e9b12cb3965"
+  },
+  {
+    "id": "heltec-v4-3-r2",
+    "symbol": "a86771ba733f9b3c5f1cfa54b00d6898101446f2725dd7920bc39b2b4945e4e0",
+    "footprint": "7cdc640938391a385d121d34d1572aee27d12dd51d0433f8f55825f083b37a3c",
+    "model": "57fcc0929ae99ad985b6ccaa55dee9c148ecc78e0f30faae27875f5652349f24"
+  },
+  {
+    "id": "heltec-v4-3-r8",
+    "symbol": "29d04b762b065a43790cc10334250ad4be9c7f5feecefc2f3e0c1e3c65bd3ad3",
+    "footprint": "d43b35c9813ad6e08890287f47fb2a19142f04858dff9ed2669a5237217cf226",
+    "model": "57fcc0929ae99ad985b6ccaa55dee9c148ecc78e0f30faae27875f5652349f24"
+  },
+  {
+    "id": "rfm95w",
+    "symbol": "fdfaaedfb7ba8ba37620b0f04f123300f39f5c73b9217e6ede51de364a2f062a",
+    "footprint": "2ce39ae6dceb4736ac21f5c61841c0ddcc81ad8851ae09607aba245a6a3f5fea",
+    "model": "98786c0a7aea1fad2c37ad726d22fd36d20d2eb90f500754c2f14b75407507bd"
+  },
+  {
+    "id": "rfm96w",
+    "symbol": "5aacdbc963d975b2c2219fd568ae4177fd0b7b7b7beccd9327e46aacdaf61c84",
+    "footprint": "b4914a8da795c5082bbc626e2ee7014f953dca78cc85b5829b1e9264378fc21b",
+    "model": "98786c0a7aea1fad2c37ad726d22fd36d20d2eb90f500754c2f14b75407507bd"
+  },
+  {
+    "id": "rfm98w",
+    "symbol": "344e0015235012c51c6f14b87fa87abc63142f0fdfc36a2204dd020a1f5a7b25",
+    "footprint": "2f6c9168a2d3630261580b03795b41c67185faf04429f41e68aa719e0aac9e39",
+    "model": "98786c0a7aea1fad2c37ad726d22fd36d20d2eb90f500754c2f14b75407507bd"
+  },
+  {
+    "id": "ra-01s",
+    "symbol": "8ef3d7972c2123653ce97b57d742f0518a906a4c0e4b5a49eeda8f93dd2a3f7f",
+    "footprint": "e6852fef6d9419c6e7ff9d8965e69a4d26a0e95b3adb7a4777765361ca893625",
+    "model": "84ab6790500c3a7bf3b4b7eae3d6cee508022ca5f2f1c79942a9edb566c236bd"
+  },
+  {
+    "id": "ra-01sh",
+    "symbol": "d8718c03e476290f3d2d47f3a424a95c2f81636e1673000961861d21a5127780",
+    "footprint": "a7bbd45a4a2a78bb39412300083442281681aa160954b70a25c085378028dbaa",
+    "model": "41201ba407465634a06aa7652224d1b0f80415514ed8cfe31dcf3679d84c323a"
+  },
+  {
+    "id": "ra-02",
+    "symbol": "63cf07a4395b39d1988ed26c4b40e5512924498d0822bbc1cba4e2378b7fd057",
+    "footprint": "f42f757c3065dbb1b7a473fd79f925b61325b59b18309a8689edce071d1668b9",
+    "model": "4f0dd2ee693aa31cc01634c29f645079f4f682f0cb8013c402a77f2aeb593086"
+  },
+  {
+    "id": "e22-400mm22s",
+    "symbol": "18225116926c69d9429cc029bd4ee556458ea4be99d8a16512774ebd9d58db28",
+    "footprint": "47553c07e36838427f8b7c61266284f8559cd26dff8b67bc809efb1e8cad1b56",
+    "model": "d70f4dee569bb5a4c0ec34bd007609eac47c14289f29a74df978b83c87eea851"
+  },
+  {
+    "id": "e22-900mm22s",
+    "symbol": "a9492fa73ccc6bd2641e03d66288b0843dca252b5c73258b413873934551f5ec",
+    "footprint": "ade0027db4b5df8c663cb19dcb895d04d5d787832a9181094b8a7f23463b3597",
+    "model": "d70f4dee569bb5a4c0ec34bd007609eac47c14289f29a74df978b83c87eea851"
+  },
+  {
+    "id": "e22-400m22s",
+    "symbol": "8172da51138a3e6182eef761b2ef3d02d89a2bdd7340771231c06a4fdd5bff69",
+    "footprint": "c0d736076d5ed18406139c3b53e5308d969e230d3e2a7073c9ecf314c745e25b",
+    "model": "439faaa83d12afec06a4b728fd9326ac0e4e9e5137e36395b01e5c3097392b48"
+  },
+  {
+    "id": "e22-900m22s",
+    "symbol": "99c4338ba3e0089bc51080930168445ea9f826245a5682cf8d8ffd7743040e94",
+    "footprint": "0089411897583135b11751ee7bf2242c4a49e06f8052cc2fc996398359fa5f65",
+    "model": "439faaa83d12afec06a4b728fd9326ac0e4e9e5137e36395b01e5c3097392b48"
+  },
+  {
+    "id": "e22-400m30s",
+    "symbol": "40e1f2096c500d4a016109809a78f7918a41f268e3c4bf3165a08f3d8ee83ac7",
+    "footprint": "453436c7626a084c86ea58063c23329e280a482f31f15db05d79c31f323bc36d",
+    "model": "4ac0890db726d92157970401ee6d2b27982356245950432c90019bc4e74cb170"
+  },
+  {
+    "id": "e22-900m30s",
+    "symbol": "097d45638247a59f90ac64d8fa6335f95bab9709bead1081b9e478c74c453fb4",
+    "footprint": "a6a75941d65d18e2eadd2c05dd5816de91f5f844ce14a9a65377adb33c8d29de",
+    "model": "4ac0890db726d92157970401ee6d2b27982356245950432c90019bc4e74cb170"
+  },
+  {
+    "id": "e22-900m33s",
+    "symbol": "0382e63192fbf470f8d62bae6c0264fbaef606cc8cc9e15935ac9a421e8a0743",
+    "footprint": "6dd6a302c5f5d97ae7b0e5b099496d4692d930c4064e1234b9e675917e25020b",
+    "model": "4ac0890db726d92157970401ee6d2b27982356245950432c90019bc4e74cb170"
+  },
+  {
+    "id": "e28-2g4m12s",
+    "symbol": "aeab15414af4677953302fa14d4532a446ae3553aee0230b44435590b386cf2f",
+    "footprint": "9388c8e18bc0a5f9207d7efe0b5b72702d57456b9f8e686f024aa251a96638c4",
+    "model": "5761be42af262ec6970e0c0f8ba5aa4151681dc4c83e3b2a0222655ee61dc7c9"
+  },
+  {
+    "id": "e28-2g4m12sx",
+    "symbol": "78adbf35742853ce77f2470c883818159e48573d72175929bad9a2f36b17389c",
+    "footprint": "dcebfc487ad536e17461e6788176718257183e8ba72f084986604e128550bbdc",
+    "model": "10129b88aa2c55fcec4938b1871e28eee3b3ab887df00399c8f512c9b28ebbe7"
+  },
+  {
+    "id": "esp32-s3-devkitm-1",
+    "symbol": "a6a4de4cf74de716a33f3633758c75d5a84ff5c2c33e6b2672795946b505c64c",
+    "footprint": "d5072ed5fbdfe32fa88e7c54912360dfd746935e7253f056f2254e017e3af171",
+    "model": "b3f523a970f35e5f93d78dfa980398443d3e1f17b851031652f129d1614b2372"
+  },
+  {
+    "id": "esp32-s3-usb-otg",
+    "symbol": "370564b987713d71b8350043a137f3118313162aef1414eb9fe1e914546882cc",
+    "footprint": "f785af36250009d15c0aa94e50399df068c7c5d26a999f5e7a096682f9a1b34e",
+    "model": "e66a6f79faaec4e567f67a78e1659f3c96d1da953edf5842db4b2253c6f7eee5"
+  },
+  {
+    "id": "adafruit-metro-esp32-s3",
+    "symbol": "00ddbd3beeaff58b97874777bfc97c1f01f0ac75b47bd5f435ccd97a8c6e51c0",
+    "footprint": "0e9ece098620394ee978fd85e95c9ad3ba72e9a6c442ffcdf35c00dfe7b78197",
+    "model": "4faf49a932f81c2346c9cf0ca0ec070107487635db385cc1d7ee6cc4b2283efd"
+  },
+  {
+    "id": "waveshare-esp32-s3-zero",
+    "symbol": "81bb12e5bcaef80d06f92f7fcc2cd8af461095aceb8290b871151fa4fcf51a17",
+    "footprint": "e2962b32199f2ad749a46fb8a34d0e18bd9296bc2ea118bad2c77e0a34bf49ac",
+    "model": "870f4f6853980296073c877c8b0738b679c44d44d4624f7b008be4116415d2d3"
+  },
+  {
+    "id": "seeed-xiao-esp32-s3",
+    "symbol": "f92e125a528c84a710480e9df98910937c4bd7c540218962236e567654c73bd7",
+    "footprint": "f5ebbbc98004cd795e1a0d3987886ba386b730a5b4320771499f16648aa7bbab",
+    "model": "cbb02e4d013d7f6496b4aafedf4d91871ef86ae80d573775aced83a4233a631f"
+  },
+  {
+    "id": "seeed-xiao-esp32-s3-sense",
+    "symbol": "27b3b2994c99d0e5f87859d3cc6b390a8e466d42ef191aa1a3929a7900954d58",
+    "footprint": "ea44666b1cd7a29363d8fe8a9875d525c22f48355992ae3e3403090ba5d40802",
+    "model": "cbb02e4d013d7f6496b4aafedf4d91871ef86ae80d573775aced83a4233a631f"
+  },
+  {
+    "id": "seeed-xiao-esp32-s3-plus",
+    "symbol": "5d1e6b31b34adac8e9b3c052e3d3c38801053f5351d47164174b800fd604960b",
+    "footprint": "3abaa5abbf863e5f01fb6b63505efca2a563940df5f65e472f302a60fe914620",
+    "model": "9a8e0fd79eb30fcc931bade28e66b7390425715c7b2ae30c2b95d00297580f65"
+  },
+  {
+    "id": "adafruit-qt-py-esp32-s3",
+    "symbol": "7b9d205530edc9282ac0e42761eb38818eb7f6dd7b79c096c2c9854d109090be",
+    "footprint": "f4fb9361c6ad2b7461ab6c0ff95f379062d502d23cd89884017f2c930c14a71c",
+    "model": "4a8bd87404596317047b207499372d4ff659e65783a764b6a13afbc53d9c4185"
+  },
+  {
+    "id": "adafruit-feather-esp32-s3",
+    "symbol": "713e6504f764d1eea9554f816bbde976009d469b66c2e59707dfb5c7d8fc589c",
+    "footprint": "f52ca7631fb72b8d01ca3a0d9ae47a3ec79069ad6ed51a944d58a0a737df3e8e",
+    "model": "a2b77234daf2bfb22f401369627e9352285a5d03341c62a2dc2357a754070cc7"
+  },
+  {
+    "id": "raspberry-pi-pico",
+    "symbol": "4ccc2b4332d77a97769a7eae1e06438a27303b9cf8d56bace73717ace89d2087",
+    "footprint": "a08916d374c395c60ac1016859d9ce5b2dca57705c495d175c39cc24090e49e4",
+    "model": "2f3542f028bea178d4c2f6608ce1eda1a7f70c0ac3b4d3d746a2fa6a64e7e4a9"
+  },
+  {
+    "id": "raspberry-pi-pico-w",
+    "symbol": "7fd2b28934595e01174011c4b0bad1eed20388c8d61013e4100ee06af2cf7afb",
+    "footprint": "d7c31252f31ecc01ba1ce05fa232593e5aac89308a49a80594b2929f86239f06",
+    "model": "722eb975ef18beaeeded924ee5069cc19564ab6f21b0f73df8957fdfeb195f9c"
+  },
+  {
+    "id": "seeed-xiao-rp2040",
+    "symbol": "8793de8ea94eda4047ec4f9b7e5e0f0657edbdecbdc69dc3c5f9f488adfc33f0",
+    "footprint": "dc183cf2edfca310c69d16cb3fc56b4e159e369d84433af05c11d6cf6a872129",
+    "model": "48bc2bf0ab2342060a2653c1f6140eb013733909cc05fb6b9d17d7a82ea64619"
+  },
+  {
+    "id": "seeed-xiao-rp2040-plus",
+    "symbol": "3e6763816e994f4002edc961aa1f867bf8a8cf61a26a635395c23a39fc0d4805",
+    "footprint": "518f01a5899d2f8cbc63784f280654865855b2afbafb947eff6fa7bc2cf0a074",
+    "model": "0d1da64bb7a9e5391f97338ec532d4c6a1ecd69995df5b5872cf2be0176f3331"
+  },
+  {
+    "id": "adafruit-qt-py-rp2040",
+    "symbol": "ef6d026705fa153aff80cda15799bc0bcb7def16b4b58abb752a2bc4317c1a24",
+    "footprint": "b15df0adda83f42e6abd590d6468bf814bd2406b746fd97d580068b15056099d",
+    "model": "a6bd334c668272619589bd107e83309c8ebacde14abba3b7f0c32cad07e14f25"
+  },
+  {
+    "id": "adafruit-feather-rp2040",
+    "symbol": "040bccb67ef5e5c02420937c0ab20db238e15d691b1680fa0229e7003da64b2d",
+    "footprint": "666be665fdbac50e1b202f596462ac6e66791097d6ad244745d96cbb3d31a829",
+    "model": "b8d7cdfb5cd6ef93596e910fa00533abeb2990eaa88b04507889005a3e1c144a"
+  },
+  {
+    "id": "arduino-uno-rev3",
+    "symbol": "25c9a58506d237a1891770b9e4b4acaf630d26bf2ab1f61d99ae72a7b88137e7",
+    "footprint": "245682763124be17afd7c6d36fa03c3e65e504ba5679cbdaf060f685fdd6802c",
+    "model": "b30ed7feed488d004f4af19b6064611cc587e2defc2a04ab825fcd00d246fdaa"
+  },
+  {
+    "id": "arduino-uno-r4-minima",
+    "symbol": "36b396e7a6477522b5fbefb13fac141cdc5edc59b78fb837e9cb279a6d1f58f3",
+    "footprint": "266721757a2a1bb3a1a5aa4ddfa9ff050cad901157e9efbd459ce17036cad9a6",
+    "model": "84e86d095eb46c4dcd39eed596e4d34a417c69821981f688fdf68fdcd2a3b135"
+  },
+  {
+    "id": "arduino-uno-r4-wifi",
+    "symbol": "ccbf6d6db84487e172bac7189e2b5b8e3e01f564eeb7a03e0f7fab046eb5c326",
+    "footprint": "e8a676d07994d42e14f0a5475f74545d1978618c416e1be143037e9e21fb2956",
+    "model": "7a4b3ee98443869c944f23b831da9dd1a8e1e76d106da45068eb821ef6aef0a3"
+  },
+  {
+    "id": "arduino-nano",
+    "symbol": "25d12f0dd3eb64e39c71b861aeb4380a98552b26705e9a3a53db985df50e4be3",
+    "footprint": "adba3a290dade99fc8a52bad5e22ea3301ba6358fb78b4f9f366dbf3bc138ab6",
+    "model": "0631a56a3d483f4553238ef138b1688d77993e0456873a6664ee450eddb43314"
+  },
+  {
+    "id": "arduino-nano-every",
+    "symbol": "c79577ba1126cd35a9f55794b83b7d8fe33524569a0ac81af09d6c1250e0e089",
+    "footprint": "8aa8cf527da5a6a4b89ada870ca018f34f06aed5cb8d793a9a551f9f4b567581",
+    "model": "7bb9fbc8cdf54876be673138bc4bdf3a71806d7f7e927fcc1816114da0a25513"
+  },
+  {
+    "id": "arduino-nano-esp32",
+    "symbol": "66dc44fa80d81850a31e68f262aa7a0312bf5ec280e4e2b74bdd8b32da294ca3",
+    "footprint": "564dd39b9abf73c0cb7c543548b848cc4b685bf00b2fb825e1ca07719da5d01c",
+    "model": "7bb9fbc8cdf54876be673138bc4bdf3a71806d7f7e927fcc1816114da0a25513"
+  },
+  {
+    "id": "arduino-nano-rp2040-connect",
+    "symbol": "2a65bfd6aa4aa8adcef54da94678be99143c63d58d92c583e73a0f2b961c3e84",
+    "footprint": "86c2c74a193dc6da433fd31c85fe33badee2cbc7379ec35a49d6666bcd086f67",
+    "model": "7bb9fbc8cdf54876be673138bc4bdf3a71806d7f7e927fcc1816114da0a25513"
+  },
+  {
+    "id": "arduino-nano-r4",
+    "symbol": "c6fca1960d6f9c8c7413b0257c5806a39244ef3984aae73e550cd43e56dc175e",
+    "footprint": "965de16430dadfe893ecf2a3310e080f23dc372badd48752418011f15d38a51d",
+    "model": "8f03a47fd758621eb714e174a14c5cb08fb18df63dc29673093372e8fc747733"
+  },
+  {
+    "id": "arduino-leonardo",
+    "symbol": "fee676f7f7a414a93a652198ea92e99e7cb2a5ac02651bee0677786d907909ce",
+    "footprint": "abe1673587d775d7dc9338d186fa7e82b64e8e9b129efe88b6c8151c13f87dcd",
+    "model": "b30ed7feed488d004f4af19b6064611cc587e2defc2a04ab825fcd00d246fdaa"
+  },
+  {
+    "id": "arduino-micro",
+    "symbol": "c1b8b6b1f74b98ae958c703111a25a29847d1941ec055f861a04e8e50d4bbd81",
+    "footprint": "3ed6ae0fdc6451a30324104936637cf3026e264befa1cac1416ddbb20684fbb1",
+    "model": "ac3fd0e6cb047e5bc40202ff7d9e3718d0189d19f500a774cb22ea04413b34ac"
+  },
+  {
+    "id": "arduino-mega-2560",
+    "symbol": "58cd1a21c55b2568f004608730318c7d3032c0955a7cb5a7f3b0cd1b122a62c4",
+    "footprint": "202ed38964e0a87e9ea91b7942e6a0e295c11fe1e96db5ed3cbb61f20cd9dd51",
+    "model": "d1e6b838e6391bae48a14361a620c970e5cc3d2f6dad4cdbc156da9ea56c8420"
+  },
+  {
+    "id": "arduino-due",
+    "symbol": "fbbfe325d54aa571d1c245f7a6b775d34ce58101dac66eb4bbbf0343df6b94f0",
+    "footprint": "5fa796399c8dda32be3545e2f01d6872e7ad62f56cc14733300c9448f277c986",
+    "model": "d1e6b838e6391bae48a14361a620c970e5cc3d2f6dad4cdbc156da9ea56c8420"
+  },
+  {
+    "id": "stm32-nucleo-f103rb",
+    "symbol": "5a724d9c1bdb2e317ed682e02428b9bcc44a0618cac7555f3eb6978777534b39",
+    "footprint": "b357de4cb667c3b369f5c7e2cf777a79f1940013ff744d615d47d82005fd0e83",
+    "model": "8ab512c344d3d93d8b57a46055b9237c001c7709174cc3f464b4b1d7ca79cfd0"
+  },
+  {
+    "id": "stm32-nucleo-f401re",
+    "symbol": "cc9cc242f01aa8ae00d2e22725cd37e68fc6b44c0cf404dfd24ed075f260651a",
+    "footprint": "0ae4fcba77f471160415f7a3acf2a16590c48730d00ee92aae9c3d26e6dd9140",
+    "model": "8ab512c344d3d93d8b57a46055b9237c001c7709174cc3f464b4b1d7ca79cfd0"
+  },
+  {
+    "id": "stm32-nucleo-f411re",
+    "symbol": "4541ac54f5e9c4abe578179631ff4a4bf43c96cf8664a0e12148776de0578312",
+    "footprint": "4174bca8de2a29063fd288b9e1c711ca9c41c2b56984596bf0e63b58b6e38f98",
+    "model": "8ab512c344d3d93d8b57a46055b9237c001c7709174cc3f464b4b1d7ca79cfd0"
+  },
+  {
+    "id": "stm32-nucleo-f446re",
+    "symbol": "63fe8597edb58301f03f335ef5fe914e9634307f5e8d3ac9deee36e257e425c5",
+    "footprint": "8167a20dc4e3256906a9a59ff24620c2604cd8ca3ca81803c380b90956e04af8",
+    "model": "8ab512c344d3d93d8b57a46055b9237c001c7709174cc3f464b4b1d7ca79cfd0"
+  },
+  {
+    "id": "stm32-nucleo-g431rb",
+    "symbol": "67784ca7fd245a8e5454dcebafa759a72731f643ecfe49f3b02545b11ecd07a5",
+    "footprint": "8c40edbc84c4f814aff8e44439d8ad4b10faa8bbb0db070403ad79fc2881cb1d",
+    "model": "60cd2e5ae11a4e0eec80889230040c77dcc58c6219b6f0f09ce1db1f3b25ee89"
+  },
+  {
+    "id": "stm32-nucleo-g474re",
+    "symbol": "c770fdda20bd30e43ffe85f72402a3ee9bb00ed60bf72d8f05a1e89e1cf19c67",
+    "footprint": "4ba5cf318e886dd63861cdd0016edd06de0a86d10f9f0b5486bd0c8bbb2fe431",
+    "model": "60cd2e5ae11a4e0eec80889230040c77dcc58c6219b6f0f09ce1db1f3b25ee89"
+  },
+  {
+    "id": "stm32-nucleo-g491re",
+    "symbol": "808f560f4005d806e12c9ce25a627e0f09d51f67eee499003e1996dacd0ac217",
+    "footprint": "a93a0f05b1b4ab2cd13c5556fea2b543a08cbfd0c344169fc7089a740bfde312",
+    "model": "60cd2e5ae11a4e0eec80889230040c77dcc58c6219b6f0f09ce1db1f3b25ee89"
+  },
+  {
+    "id": "stm32-nucleo-f042k6",
+    "symbol": "9a83587ebe64c3f363d11a0b6666c244c48efc391562199c00251230e630936e",
+    "footprint": "cc0028fb9d055716b9cdb8d031f3b4044aa0809eafaef6c23b52b57165f9828d",
+    "model": "2897ccf8514658942ecb79cd75be061084e152bf14a957b5f61f0e35117f51f8"
+  },
+  {
+    "id": "stm32-nucleo-f303k8",
+    "symbol": "88372df4c387127d5e64c24b31f9074dd02222a08531966f225ecba8eced9f8a",
+    "footprint": "902323595acf0f0c2e56fd2876e9fb89ed0ce54cd94d786fcd96f67dc0c202ab",
+    "model": "2897ccf8514658942ecb79cd75be061084e152bf14a957b5f61f0e35117f51f8"
+  },
+  {
+    "id": "stm32-nucleo-l031k6",
+    "symbol": "1ea35c0ed14b31c6ddfa183ee4c97969738cf1975fe96be7c43ffe5ed402c6ae",
+    "footprint": "f9a89edb4c296cdade841cac62cadd6202abd099785c7476ad559b8ff06a8589",
+    "model": "2897ccf8514658942ecb79cd75be061084e152bf14a957b5f61f0e35117f51f8"
+  },
+  {
+    "id": "stm32-nucleo-l412kb",
+    "symbol": "c19795943e16fce445a199e574b7ea45e741cc1ef38b628267d157f028814e3c",
+    "footprint": "87ebff573e166a3d4ad17c6d94a5cf566148e0901f478ef84fc13c40ab6c47da",
+    "model": "2897ccf8514658942ecb79cd75be061084e152bf14a957b5f61f0e35117f51f8"
+  },
+  {
+    "id": "stm32-nucleo-l432kc",
+    "symbol": "5a6751363f292ea3cf60aecbeb96e2afbeb20c5d9e166ae5eec7eeeb1b4a484d",
+    "footprint": "97cbeb77bc910457542afd6a66fe6f371c97f77be52ff5be62cae124f0e46653",
+    "model": "2897ccf8514658942ecb79cd75be061084e152bf14a957b5f61f0e35117f51f8"
+  },
+  {
+    "id": "xiao-nrf52840",
+    "symbol": "0a0704ddf4679946fb656df5f27e1f6e432daa4ad8a6b3f08c17814a242ed8f7",
+    "footprint": "a5acffaaed4c38bb78f0c03ebbc68802a86f8cb2f0764dd023cf6f14a68d66aa",
+    "model": "1d901a543818a547d6d65ca39a0692e495151757941bf84a1eedd260cb9a0e81"
+  },
+  {
+    "id": "xiao-nrf52840-sense",
+    "symbol": "3925c75b4005d3c705a23d0ab1de25016debc1c713bd109cf529e1dadbd72b73",
+    "footprint": "f8d4fd308c810eee15d386b0e578190a4bec1d72d6562ba09d88e0da75abcd63",
+    "model": "1d901a543818a547d6d65ca39a0692e495151757941bf84a1eedd260cb9a0e81"
+  },
+  {
+    "id": "xiao-nrf52840-plus",
+    "symbol": "06344e97055c2482c70bf7709b0c138a3b40279e08354199eb4c5c0186711518",
+    "footprint": "27377ecd46f1cb0e239fa5a93d3035a72486caea9457b59c24a16dba1a811e4b",
+    "model": "9c898a96eb8ef2e38bb854ea415985ab523b9b5c66d833eb8a6cf761e9964c41"
+  },
+  {
+    "id": "xiao-nrf52840-sense-plus",
+    "symbol": "2ecbe755b5730992da6fe9fb091856d248f79d842e0772e6aa959cc5954d981f",
+    "footprint": "c7c31c34e18a5b99f28b489a82458db85210ac62331c0d28833b01ad0736ddb3",
+    "model": "9c898a96eb8ef2e38bb854ea415985ab523b9b5c66d833eb8a6cf761e9964c41"
+  },
+  {
+    "id": "arduino-nano-33-ble-rev2",
+    "symbol": "ec732f284cdd410d42e03b4be4314876834ea99acc83d0312eb89d90b8f4098e",
+    "footprint": "445a4ea1ef22512dc4c2bf07404c02079d15caf7af6882cceeb4383f06b93c61",
+    "model": "b3fd6e088070fa8552183307ccc461081b1de1bb7daaff2764d76120fd825436"
+  },
+  {
+    "id": "arduino-nano-33-ble-sense-rev2",
+    "symbol": "4e651497cc8bef4a05e850db1525cc118276989365261bb5bfd3baff1098bce2",
+    "footprint": "bdeee70c649f846c398ab7fa37a87e8a0392f798b1b8fcef7033018765c3a3cb",
+    "model": "b3fd6e088070fa8552183307ccc461081b1de1bb7daaff2764d76120fd825436"
+  },
+  {
+    "id": "adafruit-feather-nrf52840-express",
+    "symbol": "5c47b604042b20897960a2eb17129b045526072bdf9f4c1825e9c49f033914f1",
+    "footprint": "8a12c2f14b8e17d09856f67e8186c84135d0b20f5bd6b1dd9a5bb7983788ce73",
+    "model": "d73af71ff7b19b4c796a1f4719e1d5d0fd22ddd12ddfc258a50ea92e65e27a2f"
+  },
+  {
+    "id": "raytac-mdbt42q-512kv2",
+    "symbol": "f3eb05cbdfc20bf51a5669f90526693420a80417dcc8066dd85867c4f3290dfe",
+    "footprint": "95432e5f7d2ce501695c78ff9e4473c570b32725e80f8cd0d15c93612286d23b",
+    "model": "ccebe45600e7b4e9d917628442fe3b10cec7ef9340284f4b6e67e0735b8c41ea"
+  },
+  {
+    "id": "raytac-mdbt42q-p512kv2",
+    "symbol": "6257f7187e4e6ba247e92ddb12db9c04bc325695203661ff4f6f7111a63fdc88",
+    "footprint": "c795cc3d341a7d9524b69371a4fbfd42b93e1b2ba515abfc3e4c46590d786fc3",
+    "model": "ccebe45600e7b4e9d917628442fe3b10cec7ef9340284f4b6e67e0735b8c41ea"
+  },
+  {
+    "id": "raytac-mdbt50q-1mv2",
+    "symbol": "6360d0629b8a34704ca3cc9262fb1738f2dda464ee060c2bd88c2fd16900344b",
+    "footprint": "f11069275dd46aea3bcd1669ca3be640fc6288b83b1950d42ec4800449d089ea",
+    "model": "dc635ad9972f896a3958ef7346e6bf325fd19574198735cfcca5b85555919108"
+  },
+  {
+    "id": "raytac-mdbt50q-p1mv2",
+    "symbol": "9d6c145b87942b369cdbc68dbae86bbf89f7e986eb2966c9f95618beaeb58313",
+    "footprint": "2bed0138cfac750949240c7f34e06ae262bb52379d7d023f413d3e81020fc6ad",
+    "model": "dc635ad9972f896a3958ef7346e6bf325fd19574198735cfcca5b85555919108"
+  },
+  {
+    "id": "raytac-mdbt53v-1m",
+    "symbol": "e2539372cc02a7b7838b62910c49ff7cdf6741afb0706c4daa72f5867bc78122",
+    "footprint": "46913f81779e4de3f3b0adfd3bc7901500d800535afb9259afb6d604e8340c60",
+    "model": "41fe24c493141d58aa51decc29a2e6adfa8b8ad9f9af7754c9510cff38ec528f"
+  },
+  {
+    "id": "raytac-mdbt53v-p1m",
+    "symbol": "2585a565dde15e826c763354679575cc0e21201a6a8f8b25cdd5a74e338310b2",
+    "footprint": "c393824292dd9cbe6a64990c5a7028b41c04ca635a85ce52cd9785eccddbe33d",
+    "model": "41fe24c493141d58aa51decc29a2e6adfa8b8ad9f9af7754c9510cff38ec528f"
+  },
+  {
+    "id": "raytac-an54lq-15",
+    "symbol": "a8bb1935805cde6e671d49d14382fdfb6457d39ab352d3a9052a8b6e44ffbfd0",
+    "footprint": "c86f34570bbef7ba19a06104ef22045eceb616442e828818d941b52f79057fb2",
+    "model": "b5c00357cf215a668310ff85710f5f0468b4bc1a431b2240ea156fa72c36c031"
+  },
+  {
+    "id": "ebyte-e01-ml01d",
+    "symbol": "f4e59b912ac12c505f05012565d5dd723715242dd8030afc3fa861e7a0b40a71",
+    "footprint": "d0182b0801f925c58bcd8271e5e084f87bd3c01a18a32873d37470ca3d6f8215",
+    "model": "a65f7d56b9abb3a387e6e61073dd6c5056274cad8be47be801937919df2d8767"
+  },
+  {
+    "id": "ebyte-e01-ml01dp5",
+    "symbol": "c25cba453bdaadc2db79b34a0a7d85d901e527ae354fe46f91df3d291fff577a",
+    "footprint": "cf1425bda83995af77068e633456f8559abcd1caf11f93e4ed6470fd87e22b98",
+    "model": "ba66f88281d97535cdd55f424b6d1f9a75550ab606f6f79a2df3029387e5fd40"
+  },
+  {
+    "id": "lc-filter",
+    "symbol": "1f51655c69ad8c72a36b7c7b04c625b706ac689683e037119a417021b9099fee",
+    "footprint": "f75aefe1b4eb3c3e257b6df94962e218a3364720f8d1e959c452cad7b4646bb3",
+    "model": "04105d2e9c68189e1bd222e74c9a1577f971afc789ad4041f1e7a98dfa4d1d8b"
+  },
+  {
+    "id": "pi-lc-filter",
+    "symbol": "ebc61c53ed7c62a6089f8b1a3e22408c23df92cc877d5db79a3d1e84723cf9fa",
+    "footprint": "e227bcf082545d6fc5c6e15ceb763f18ffeb435b8480cae535e1bf89316dc89d",
+    "model": "04105d2e9c68189e1bd222e74c9a1577f971afc789ad4041f1e7a98dfa4d1d8b"
+  },
+  {
+    "id": "tdk-mem2012f75r0t001",
+    "symbol": "6cf2ddb4597b4419f37cb975013d7fb12f51405390470261553534900d215589",
+    "footprint": "c25085360fbf977598339b403e4537ac40a46ad6e57fb4be6249216fb1385abe",
+    "model": "0f31aa5a6ad2230b02a82bdba90e3d620c09beec276f754c19f3dbc507d1d3ae"
+  },
+  {
+    "id": "mcp1700-3302-to92",
+    "symbol": "67d56ea1b8b95c3f2377be7a3dd6077e281989154c30b2e8864c3dc295baea0c",
+    "footprint": "8ad4ed1beb274665c381bfe5678a9292b0727504fb17a4c06c3219c9d0f0525d",
+    "model": "8c12873d1e91c14506c8944656ff0ad2f4b67c15f329310189ea1617d0615f6d"
+  },
+  {
+    "id": "mcp1702-5002-to92",
+    "symbol": "a762d4f7e7c05847623396480538a4845af2a523bd62ec376663ea6c4987bb0c",
+    "footprint": "40b23f3a12ca6678ef52d0a969c485e83566d833c85c11c47758e833c14f9a70",
+    "model": "8c12873d1e91c14506c8944656ff0ad2f4b67c15f329310189ea1617d0615f6d"
+  },
+  {
+    "id": "ap2112k-3-3",
+    "symbol": "d87313d34ccac28f73fbde8303153a8bff0689857448f47778e4b82c1874ca57",
+    "footprint": "56d47418e0a1f2e6a33a72d785b45966a316ecf339166889577aa6482adf0bd2",
+    "model": "c8322e6be1f27175ced940615db34b157aed17d3b0b0b6ec585dc6c73b9e4923"
+  },
+  {
+    "id": "tlv75533pdbvr",
+    "symbol": "c39f3a0cdb7644fc20a47f5b6dba8c2ef540ba029947f75c6e9d1b7aa61beba4",
+    "footprint": "42b61cd34e9c15886763940c3ff11dafb65ee2069c6a49eec627dd0ca58bed5d",
+    "model": "e054992ca02ff27850151f1e638b93c833e9edaff8265a23233055413162c6bb"
+  },
+  {
+    "id": "lm1117-3-3-sot223",
+    "symbol": "c9f7a3e5ee9ff2e4f23bb2a29632d4b7dbe3edf43f73862d12595558e370bf98",
+    "footprint": "8046eb31e384789db16dd7414de167b9eb7252b4aa2a233514b04c5d02f4043e",
+    "model": "96081a6835e1b648da2831e817c6cc10af1c5441b4d2d090a3de21a0bd340f19"
+  },
+  {
+    "id": "lm1117-5-0-sot223",
+    "symbol": "6fba5aff60aec937fccea226879d1579dd886f75309f99d47471a59209f36b9b",
+    "footprint": "ed122dd13049794b2e91e39d8cc874854d1780dc638369a0f93daa977e3d6e40",
+    "model": "96081a6835e1b648da2831e817c6cc10af1c5441b4d2d090a3de21a0bd340f19"
+  },
+  {
+    "id": "pololu-d24v10f3",
+    "symbol": "a518c8996febcaef90e0457b6f0bed317736474db1aa2b8ac8b1421a2d533ec5",
+    "footprint": "3c13462912eedf23c9bc1060e7183a0759b91dcbd5a49f10f993455c328d4400",
+    "model": "7bb5ec5d660feea818984b55f9401a6d166f93a37057d6af502d51cae94011ce"
+  },
+  {
+    "id": "pololu-d24v10f5",
+    "symbol": "908c3bb2db69477091ad0c8eb79ecca53d02f61668cce12da307ce56efe3d69a",
+    "footprint": "d1dc1477e3c459ff93b5c8ba0304597c7f987e962ff68b7c91f1f0bfec9fa66b",
+    "model": "7bb5ec5d660feea818984b55f9401a6d166f93a37057d6af502d51cae94011ce"
+  },
+  {
+    "id": "pololu-s13v10f5",
+    "symbol": "0b6c801658cfe1355eb7ca25b19201689b6fdf949f69669cdf5610185105dfb2",
+    "footprint": "c3749629c2c89ab4aefcc3fe374ebc4da482a6b674934b4887c14bd165c6cc8f",
+    "model": "b98a3b9c4fd753850c60a38fb93cf95f9d9ef92bd4dc11b9a216707f2fcbf36b"
+  },
+  {
+    "id": "pololu-s7v8f3",
+    "symbol": "94a51eeb0a180f2a367836804b4c231cd05db45cf17ddaca4a58ba008f999979",
+    "footprint": "1c0c7571c912d13676e8cc049b39e339cc1992c752ea0fd93b61611487764bca",
+    "model": "9d87fd171f99ebaf155e77d77c89d15dfee2b45ca17d303e50b1f6272f39070d"
+  },
+  {
+    "id": "pololu-u3v9f5",
+    "symbol": "536ee36eab417e3e421e2cefabd1440e0f4b42c837a5ffbee457ce0e7bf9192b",
+    "footprint": "95ec404792bf551f5cf0d3515514a710d3bd36a768b2d48a4444989a0f783465",
+    "model": "9d5ed02838bc1aa87ecaa38b19a5e124c37d1e685374311e2a6c851c2ae00228"
+  },
+  {
+    "id": "recom-r-78e5-0-0-5",
+    "symbol": "7b08351effc538ed12432b57ce5c1bb4a78c8477c7c1b2f01018489a0cbf31cb",
+    "footprint": "d31e8093b877215ecb4d4aae32321c7cc724724177976fc703add93be16b8f72",
+    "model": "256950b54dbd29d0221ce9fc3133fe2a1d982c69906d1b930c67a82b5b8fc841"
+  },
+  {
+    "id": "murata-oki-78sr-5",
+    "symbol": "2e3f1adade800982219189e50e0013595386bf907b2631fc6bb7a5f14278f330",
+    "footprint": "cd453e7ba8183176393e3729377eaea72daeffc37c9b9d78cb741c3b4d6b1b8d",
+    "model": "12bb30da816dcbb0a2417e3902dc4d609b79de4c41f3d355cca0171797fa0711"
+  },
+  {
+    "id": "weipu-sp1310-p2",
+    "symbol": "05041853ce49925ad4d403495e2a48bf1446cfb2cc069473c7c9da1580a65900",
+    "footprint": "fa7e46ece2a264a4491d108d3120156e1bbd66e59854b4c04316a7f425f6058f",
+    "model": "b2811a7cd55923681f3b14d4345b7def9f197b6143fd4406f8d66678191aaa1a"
+  },
+  {
+    "id": "weipu-sp1312-s2",
+    "symbol": "16083c51ae5c508ebbfe4f050d4090d357cdad1fb33e87aab5da10025a93e84d",
+    "footprint": "26809ebb1cc47f26122a35ea7800bd71089be1086c9f4420492bf4bb840a1054",
+    "model": "b2811a7cd55923681f3b14d4345b7def9f197b6143fd4406f8d66678191aaa1a"
+  },
+  {
+    "id": "weipu-sp1310-p3",
+    "symbol": "dc034941d9d97af6731a6f2c5088451045953e7791967821aea56b9863adb09d",
+    "footprint": "c1b967bd57687a705cdb446978c5ab2696e572f543d0af1ec86dbf870a31e07a",
+    "model": "8257301ad386f92a85ec0e858c5d805b3a7f445820cebd73246e9c936a3e681a"
+  },
+  {
+    "id": "weipu-sp1312-s3",
+    "symbol": "6d93df3d7b64928b5435d79cedb7e9b2b32b1d0e51c9fff95b6398f56e09374a",
+    "footprint": "d470805f9c883f84be0352c7483b535dd6988a5cf4ca9b45c239bb07fa24ff0b",
+    "model": "8257301ad386f92a85ec0e858c5d805b3a7f445820cebd73246e9c936a3e681a"
+  },
+  {
+    "id": "weipu-sp1310-p4",
+    "symbol": "6001085eda4ec2b79c2de2e591c4414f33931b0ceda9975c33adba14e1d21114",
+    "footprint": "1521227dca6c48daa257e88ffc50a515ffb48786e64b13e5ecd8ceb248cfb9e2",
+    "model": "f5bc3afde791417e1ad414a4605750494ffed17736d233b65dd628d6ed216b03"
+  },
+  {
+    "id": "weipu-sp1312-s4",
+    "symbol": "21ca22d21c1f1196d1ed74b4ebe48e8dc361a7cb4e4d4db018e6680b171c9a83",
+    "footprint": "f0ad1a914288495e6780cdc6e5640c16949e43850722fb8936683cf8da155567",
+    "model": "f5bc3afde791417e1ad414a4605750494ffed17736d233b65dd628d6ed216b03"
+  },
+  {
+    "id": "weipu-sp1310-p5",
+    "symbol": "4563b040abfcc3165051bc2a50f9cc820171be283ee7bf81342cbf0106b5dc71",
+    "footprint": "131887d820aee1c4dd632dbdd8e583bab27e9fdc16315f080271a335f6c19a1c",
+    "model": "43ba0506c629a37aade7ebb10d8d53c2323739de79bca0b390a55b95972ca9ad"
+  },
+  {
+    "id": "weipu-sp1312-s5",
+    "symbol": "176b3cb651e86153daed1aae04f41321e9cd7b0571f5f443da6440e63c29d1b4",
+    "footprint": "fedb0dea6c29d681f48d36d9082fa1f45fc0b98f3a37415d785df8eebb5cdb91",
+    "model": "43ba0506c629a37aade7ebb10d8d53c2323739de79bca0b390a55b95972ca9ad"
+  },
+  {
+    "id": "weipu-sp1310-p7",
+    "symbol": "ef228878dd9b493a83eae0c4321b3890b99541d90f5d5dad95f8ffabc7eb2d72",
+    "footprint": "b1daa9056117a6f1ec4ecf4ea317bc34b5b789571da176b0462b40a4a7f47d55",
+    "model": "b952d8fa1b975304cf70decef85532e737028230af9b0f8339cce66e9f0628eb"
+  },
+  {
+    "id": "weipu-sp1312-s7",
+    "symbol": "fa87d96e9c26ce91a975770b47e5863f22eea0a5dec11addf13a3ae654003388",
+    "footprint": "282ac2e19a41bc052d0ce0b00f59e6a693236bcd479f51b2e68c0666bb78ec95",
+    "model": "b952d8fa1b975304cf70decef85532e737028230af9b0f8339cce66e9f0628eb"
+  },
+  {
+    "id": "weipu-sp1710-p2",
+    "symbol": "f21ae72a5963de160b3cdde2b179602a5da5024b1d3d0a417a2dfd92b4ebb38a",
+    "footprint": "5bbb5c31dbd6774896b1903a16cef78f272c9a152794f5645dab4ab1db7a3f98",
+    "model": "b2811a7cd55923681f3b14d4345b7def9f197b6143fd4406f8d66678191aaa1a"
+  },
+  {
+    "id": "weipu-sp1712-s2",
+    "symbol": "f1d7cf19b448d984d7964e87d8bf24ba7b1bd4e1f3d78ef2dd7c69574017b38b",
+    "footprint": "1d92dd9f76d9997efcf75b237e2d22b5eb90be952d0d617a2d22f394c0ea1fe8",
+    "model": "b2811a7cd55923681f3b14d4345b7def9f197b6143fd4406f8d66678191aaa1a"
+  },
+  {
+    "id": "weipu-sp1710-p3",
+    "symbol": "149e940a117a997afcf050d9e68d76b6f09f16dbb3578e5b26220c7011184eec",
+    "footprint": "9c51f044f49bf8d4c54e30afcb0e0e789fdfc6de64eac82eeee09898d043440d",
+    "model": "8257301ad386f92a85ec0e858c5d805b3a7f445820cebd73246e9c936a3e681a"
+  },
+  {
+    "id": "weipu-sp1712-s3",
+    "symbol": "7a23de712c6f241b2e917e800cf8870a4e460e48beb259e08c999f24eece3a2b",
+    "footprint": "22cd5ed4f419fc5da113382660cecd5df5d3488e1a88a56f9c08431d41809c01",
+    "model": "8257301ad386f92a85ec0e858c5d805b3a7f445820cebd73246e9c936a3e681a"
+  },
+  {
+    "id": "weipu-sp1710-p4",
+    "symbol": "6992bdde3f3ce544beefc737033821026fb646a6f9d9a249e809f263fc5175c3",
+    "footprint": "cefaf53060eacf987a6be1faeb4159ee1465f3ea0f057f07ec189dfae6ef4eb2",
+    "model": "f5bc3afde791417e1ad414a4605750494ffed17736d233b65dd628d6ed216b03"
+  },
+  {
+    "id": "weipu-sp1712-s4",
+    "symbol": "c95846a939b0d860bd5c0d8493f91d6dc84943131e7b265e8a1aac073af7d2c3",
+    "footprint": "eaf33ce723bb3abe1730fe6416a64dfaec6f03ea6a4c54d1c06b47319cb86e76",
+    "model": "f5bc3afde791417e1ad414a4605750494ffed17736d233b65dd628d6ed216b03"
+  },
+  {
+    "id": "weipu-sp1710-p5",
+    "symbol": "a7103d1f26297f44986003d77b002c4be432b3daf74e778db1c6b8a75ad6424f",
+    "footprint": "a33cdcb4f543b0b48dd069ed6bec3f2f6b61de3c7de42e84a73fdab2dd4ccb3e",
+    "model": "43ba0506c629a37aade7ebb10d8d53c2323739de79bca0b390a55b95972ca9ad"
+  },
+  {
+    "id": "weipu-sp1712-s5",
+    "symbol": "661a4043362393da00ddc26d6c2d1b51b76adcba24610dc802de4777be051098",
+    "footprint": "3414c0e48d3ca12e44d2462abbdc16fedb9f78db0eb028c6d6b2c83c20355e9e",
+    "model": "43ba0506c629a37aade7ebb10d8d53c2323739de79bca0b390a55b95972ca9ad"
+  },
+  {
+    "id": "weipu-sp1710-p7",
+    "symbol": "8a0853303949b9e33ca7ffe8e34e36c7e5582751a54a6cab7aa3a9ebaeb7a81a",
+    "footprint": "8310fda68d447364d128032c6a483ff2827eed5def9e93095a0d2732db2b99e2",
+    "model": "b952d8fa1b975304cf70decef85532e737028230af9b0f8339cce66e9f0628eb"
+  },
+  {
+    "id": "weipu-sp1712-s7",
+    "symbol": "0cddce4b387fefe4810c1160d7c04063b09bac3ec2a6aed7f348b04fe16279be",
+    "footprint": "dbfd7e9fca78be33ab2c0f20b733d15d574b25af89df0090247c84fac1d572fe",
+    "model": "b952d8fa1b975304cf70decef85532e737028230af9b0f8339cce66e9f0628eb"
+  },
+  {
+    "id": "weipu-sp2110-p2",
+    "symbol": "5cbf366b00cf546d0a7e53ef56617ebfb9293c5ceb06ea606af6bb68e23de019",
+    "footprint": "13fb371446f261babb00044896fb32eedc3943865e9a8414cf0293d453dd62c2",
+    "model": "aedbbcd67e3aa00ba598f94d7ccd8a7e93863c58e176ad38389ada744c16c543"
+  },
+  {
+    "id": "weipu-sp2112-s2",
+    "symbol": "9529ce5121b329d8a34114abf93e691aa3a6fddfc3143fc0dea42ab5053e4931",
+    "footprint": "25d1d4f191ecd19793cd9c16c1ebbf8cf9a4de23b93c27620fa9326c58a098a5",
+    "model": "aedbbcd67e3aa00ba598f94d7ccd8a7e93863c58e176ad38389ada744c16c543"
+  },
+  {
+    "id": "weipu-sp2110-p3",
+    "symbol": "a200103d3ccc9b132118dc32a34d5adb82cf844ffe7fd339efbffca96188deae",
+    "footprint": "1a69d7ca79c482e2fae61446ca8410ffaaa437007f63a55fd0b06017467c3771",
+    "model": "40ea273a5d784bd7be45c3165c1cf1332947a2914f9b19215d705a71767ad2ba"
+  },
+  {
+    "id": "weipu-sp2112-s3",
+    "symbol": "b82ca01e87f08f260d7138a4f4a18de7d8e39e6a9d2ace6a875b91e183b520ac",
+    "footprint": "55c83a95ab62da6f3b17809317051ffe2f6927af1c8744ed6d159b6d8886abd5",
+    "model": "40ea273a5d784bd7be45c3165c1cf1332947a2914f9b19215d705a71767ad2ba"
+  },
+  {
+    "id": "weipu-sp2110-p4",
+    "symbol": "f795ff53e79e0fa254ddaa9925104bfd31bd47b536e5b4175934af41dfe705be",
+    "footprint": "abb6eabb402f827c29d4e0c3493c90fed6ab84347aef5eb9842ed6b6b475c359",
+    "model": "5c196f386f79e5a25f455d26554accdde867e9554836158a1e933c2aa36bed27"
+  },
+  {
+    "id": "weipu-sp2112-s4",
+    "symbol": "cc9c992f2f07ce01d467a806568be31c5ac9cf96232fd7684c1d1cdf73e3c28f",
+    "footprint": "61e2866c0cc70dd0875b50cd85d37d862ba9222e3fc812e25e1bf249e1d3ae2a",
+    "model": "5c196f386f79e5a25f455d26554accdde867e9554836158a1e933c2aa36bed27"
+  },
+  {
+    "id": "weipu-sp2110-p5",
+    "symbol": "6fe51ea9df74850ffa81447ac4bd4b936e5f69872a2059561c21c5b92ceb89f3",
+    "footprint": "95e06af2a254d29d792ce706dec630177a7951015a5b246d73a20b1e4c62ec0d",
+    "model": "9d0f67648f2ecbdbe2205b135d9f99f9477d21f9cb183f64f1266b11b6f317d3"
+  },
+  {
+    "id": "weipu-sp2112-s5",
+    "symbol": "b52a524f54f907a5d99c45226b1b2223b1b4c1cf704499a705a4e86325ac6a61",
+    "footprint": "4022a2472d1b5ef42dc26ef4e6c84020a41568d7077a2fb785686a765accfc19",
+    "model": "9d0f67648f2ecbdbe2205b135d9f99f9477d21f9cb183f64f1266b11b6f317d3"
+  },
+  {
+    "id": "weipu-sp2110-p7",
+    "symbol": "73930dc0db703a631dd4c1c87cf5640c68d34ccce4952938ffa5aa563559e3a1",
+    "footprint": "a7724bf4eb413d1e3c2b63cfac91533faaa34a3074f9ab4cc9a6bcbca4e33b94",
+    "model": "332b4ce40c53e230865c65ba3efccd00b3a03b6ace14cba170038e6573a673f3"
+  },
+  {
+    "id": "weipu-sp2112-s7",
+    "symbol": "bbfa4f7b2287b73e327ba08e21f758d6f105fba89e2f7fa8306f3577ab86f055",
+    "footprint": "ce1909bbed5c9ba0c0350bd34483e2c56c733b3ab1b783a52dab0b425741cb73",
+    "model": "332b4ce40c53e230865c65ba3efccd00b3a03b6ace14cba170038e6573a673f3"
+  },
+  {
+    "id": "amass-xt30u-f",
+    "symbol": "dd698c299742ae6630f3da5fd30bf2295578e9e68eeda68709296581331f4c4b",
+    "footprint": "c6f4b5b1d91bada5d2c8443fb50ac953af019c6d3901ea4351749ae8d0950269",
+    "model": "ebf040e1b9308426fdd3cb82376b0d50ca32464f4ea78ae55d1a7d188b88e620"
+  },
+  {
+    "id": "amass-xt30u-m",
+    "symbol": "09fbe057586fc24e54ed0bcb95ac106e45f885db5c878b15485e922a5b078baf",
+    "footprint": "ee2083a5777f10659bc8b8b39bf565223c435816e08c69e294e193313d06fe4e",
+    "model": "ebf040e1b9308426fdd3cb82376b0d50ca32464f4ea78ae55d1a7d188b88e620"
+  },
+  {
+    "id": "amass-xt60h-f",
+    "symbol": "b8cae22e7517d005528a029822d8bf3dbb21da59e0e0ba8b01e1e6069c1f0c61",
+    "footprint": "1655cf18ad9d1b459c7c56fddecaba010169f609bd40f07c8666b68c5033d831",
+    "model": "0d5cbe869bd6a7b709fa962f9af1be1bb65e945a669014630f87dc915921a305"
+  },
+  {
+    "id": "amass-xt60h-m",
+    "symbol": "72ca9ccbbbb28141d95d2910baf3a8befd50033b15d0d4faa58b0e3ce34b4c4d",
+    "footprint": "30ebee8e288d93e6af6f40ba82cd9f0ae69874f0dbaeacef7902316b9846b85a",
+    "model": "0d5cbe869bd6a7b709fa962f9af1be1bb65e945a669014630f87dc915921a305"
+  },
+  {
+    "id": "amass-xt60pb-f",
+    "symbol": "6ca600d008ee883ec4ed4d6efd6cfef6a1c3d6e9b09c94288c35ccf92e07054d",
+    "footprint": "08b52881e8606cd6078ae6261caf0fa30aa2930fb82d11cb3951b5394a7674e5",
+    "model": "11885764305a9e7a3ea5f07a8de80769a4b1d98635f93f7fd8fbe2cb59cac4c0"
+  },
+  {
+    "id": "amass-xt60pb-m",
+    "symbol": "87bd19d99898736541c7ec1a94656e2bef62d8d2abac8f1c2833563b7331b9f1",
+    "footprint": "a445d8f23d8daab3ea64f478e2ea873ee0dcc951f351f3d5db47d2afeaa1be7f",
+    "model": "b7695cd3cf74f9785e41c59d96a1055077b69db9980e2c31a536bbb2a7846c45"
+  },
+  {
+    "id": "amass-xt90h-f",
+    "symbol": "21c7e8bd0b200968e3449032526a69c3885017bf80a8b1ce8fb7d0c203161f05",
+    "footprint": "606d29ce3ccfdd36618ffb816fca95df697af896ff3f6e5fb164f917cc8f2218",
+    "model": "4ac15e6bd1cf88dffe5e57078e9d272fa825d69b5a35048fafed12cc6fb701fa"
+  },
+  {
+    "id": "amass-xt90h-m",
+    "symbol": "2d71836dbe06190816d08b0cd33b8f09f9ab60302b829878867142c1411f1b85",
+    "footprint": "2a3aa87d8f21832e7942d0b312f382c608edddb7532b728b29525a83513a8b17",
+    "model": "4ac15e6bd1cf88dffe5e57078e9d272fa825d69b5a35048fafed12cc6fb701fa"
+  },
+  {
+    "id": "amass-xt90s-f",
+    "symbol": "1f8da9b2861e07bf1f1000c19b9441aa90091b9f3a6bf25bdad6bb7dc04559d1",
+    "footprint": "7b587a1b6a1867c6f3130ceabbdacba8e3e60b9d00bd85ed05d8601352644d1b",
+    "model": "4ac15e6bd1cf88dffe5e57078e9d272fa825d69b5a35048fafed12cc6fb701fa"
+  },
+  {
+    "id": "nkk-mn11ss4w03",
+    "symbol": "8b3eb0db421491d8c975753cbf77b9ef4470e41379d10507de9693f122887c02",
+    "footprint": "a46cf8e29921e32a5ebf895182a8ea7ccee0b3c2c0aaaf4a1806c0ca7391ac6f",
+    "model": "8e048166568c6d757c0495a1adaf41c9aa5f34449c01d294a6aa07bb902a7ed3"
+  },
+  {
+    "id": "ck-7101sycqe",
+    "symbol": "17ab44a4421a391f505a0ddd853db37c82050baddaa36e463ad1ae9d904595c7",
+    "footprint": "bea25a79af723dec59000a8becf41e0f9ed56474a0ba5c93754ab824a9ee184b",
+    "model": "327ae8c7dc460bcf42d15132c81ee456fc16f80dfe73d402880969580575b8ec"
+  },
+  {
+    "id": "ck-7103sycqe",
+    "symbol": "2701a8583ce5ac2ed176fba01345a2805f91cd2df6119e635375ba6f8c0048a7",
+    "footprint": "7f10fde4146ab99c3d504a916cab01215738d35d33976bcffa2dca04abff1abb",
+    "model": "327ae8c7dc460bcf42d15132c81ee456fc16f80dfe73d402880969580575b8ec"
+  },
+  {
+    "id": "ck-7201sycqe",
+    "symbol": "edaf141c9488773057b91586f1da5dd22d86149ba1fce8245dbcc6a958665fb8",
+    "footprint": "011b91d08022ad452df20a7442a0601578672885514c1d4274ac56832dea2ef0",
+    "model": "130d9667da52294dfe6d2a36b10779e6b76afa54c88376e4370a99a005e9125c"
+  },
+  {
+    "id": "ck-7203sycqe",
+    "symbol": "0f38c4bf58c9fa4cecb6f38c95472777fd578e7d17eb5417f8f8d0e2e79d185e",
+    "footprint": "264ac2f45dee938c14fb7a24fb184e77d687c07f4b43d63ab7f9001ebe96fa10",
+    "model": "130d9667da52294dfe6d2a36b10779e6b76afa54c88376e4370a99a005e9125c"
+  },
+  {
+    "id": "ao3400a",
+    "symbol": "0b8fb4153efa76b79805e84f6fd53cdb43f9ce17dde0bd320b41e176df24fb9d",
+    "footprint": "a162727d9c92c39c1aa0cd63be50e4ab81548d9e954923098dc677e653fe8809",
+    "model": "34ac6f83b8e582c3f21e693fd4f1576534cf0dedaba92a0176b7b73c33d659ce"
+  },
+  {
+    "id": "ao3401a",
+    "symbol": "30e59839fa5880fd7dd4cd385f47b7234990f4a67fbd4810713522ea3feea714",
+    "footprint": "dc373c29d1d25e1af41ed3be508df0a71c82086a219111c27740a255070ac3d6",
+    "model": "34ac6f83b8e582c3f21e693fd4f1576534cf0dedaba92a0176b7b73c33d659ce"
+  },
+  {
+    "id": "aod4184a",
+    "symbol": "defa2e1ee980522fbdfe793af30a3cb1a5220bd0656b023d29baa9bdfa84a323",
+    "footprint": "6a86e530c0c6e9289d4a612dc94347120e0716decf2f699f9e7a0c6e79ef7428",
+    "model": "306ca7ad429031af30c1038c49f929206e5cf5869f2e4f47a5ebf5576aaaddf9"
+  },
+  {
+    "id": "aod4185",
+    "symbol": "5bd9e7dc75b1e4cc979033a94aed49a21bd8c5d605d967ceb03354a467144cbe",
+    "footprint": "3735506e723eac3b7ed0f4f8517d11940eb33b87f803b5f5df1811cfa1049c73",
+    "model": "306ca7ad429031af30c1038c49f929206e5cf5869f2e4f47a5ebf5576aaaddf9"
+  },
+  {
+    "id": "irlz44n",
+    "symbol": "07d3939930b8d3f089e79bebcb3bf888afb975e58ae2e63b3c6ed111cd96b153",
+    "footprint": "c6f008da210a412bd8debbe352705b46b245bf48ac9358b8dc6f33193873b096",
+    "model": "3aac208ea1b17fa97b4d090f0135a66e5a3e649fe1fecaca57e283422b7395cd"
+  },
+  {
+    "id": "irf4905",
+    "symbol": "cb3e575072587ab1be0f320697d3f1cbfa732ea973a5bc2e282340ce370b3ade",
+    "footprint": "a598132b5d3d24ca8be8c1352545a4831ed99b0af7092a547f4718d376f3e44a",
+    "model": "3aac208ea1b17fa97b4d090f0135a66e5a3e649fe1fecaca57e283422b7395cd"
+  },
+  {
+    "id": "pololu-a4988-1182",
+    "symbol": "fb9090774dcb6a2aa750dbd61326421d1a9e20d65a05b01ff7d03b6748ac36c9",
+    "footprint": "a6bd42c6bbcef7cec22048144275386dd6a457ae2786d386703c53ac397bea1b",
+    "model": "e049bebd7fd462c818744c22d8654cf84d2f52823f2215ae7ce4a989d9349530"
+  },
+  {
+    "id": "pololu-drv8825-2133",
+    "symbol": "36aecbee61282b6a80d6223bdfb8a29d78e0ba1cb763c6fe33aaf2168d512a9a",
+    "footprint": "55e17a200bbb687963c4a3d10b5ac73e4a861d92078e6af1bee28f925da98a93",
+    "model": "dceb8ca432d770ac1804fb914dbd895c893d079917c896133c078399eb4cfb64"
+  },
+  {
+    "id": "pololu-tb6612fng-713",
+    "symbol": "ec462a10f2c497ddc939652876801ebc1ba4758a8159db04b1a9df20c5248a10",
+    "footprint": "5e7f9b1800cbda12e476195338e577dc4eeb2e9b989e4746c8d6784215faff83",
+    "model": "b210692b2dcb7bf04e8b5a2453c2f0936bdfce88451013374ab84917dd3fd5d7"
+  },
+  {
+    "id": "pololu-drv8833-2130",
+    "symbol": "7aa5b1c199c8828db38ba1a39c1fc9e785109b871850627416d1d1d71c4d202a",
+    "footprint": "1a34aeeb815af81a0bb85022492f16598e2267d34ac79ca9b6c62ae631a7aa6b",
+    "model": "d3962d55f93c4c120454cc5ba39ca5656f71528540ba80b99a5da76580b6b88c"
+  },
+  {
+    "id": "sunfounder-l298n-hw095",
+    "symbol": "6761f42e255c6dfc912b53b8781159ce5d6012621087db0b59236d28b953c659",
+    "footprint": "15cb06f6f3eeaf7573a0faa48da4032c4205a08bd210961248da2f50e6f9d19e",
+    "model": "a74e32463c29ab87f8a21c633b622bac21e3b78dfd899bd369c4583a9216d331"
+  },
+  {
+    "id": "adafruit-tmc2209-6121",
+    "symbol": "ebda947ecf47143b6ded5180f42b38c23151139f7be38a8fd02d94e79924bcc0",
+    "footprint": "b2aee98ce516bba553187a1fb70e9f06b7c7c70f0ec1c9e579c6f6d2fa7612b2",
+    "model": "7cd249e26d50daeb0ad9c931acaa23a0a41e746bae95c58fed53279eda9becc5"
+  },
+  {
+    "id": "keyestudio-ks0011-5v-relay",
+    "symbol": "0a9b1c2cef0c11e6ab07f990c6845709c79f8afcb9b0c5ffbe48107a37053953",
+    "footprint": "62382ba2599089038a7b4a908aafeba935a2d3456db3ba4cfe5cfa134f6aa654",
+    "model": "5e885151abfabdbdf65563706f13e9206b6dda76a66a0dee6f9fc36692099fc2"
+  },
+  {
+    "id": "adafruit-pca9685-815",
+    "symbol": "99581cb75e95389e489b4ec6e8f08154ad708273d55ab20c5331a4e36de23411",
+    "footprint": "ed75d4891c52cfa7d35c91afced12c9a9fd80749bbad0976acbf97ddd91de9c9",
+    "model": "7629917b7947acc547819b12affef8e63ea4066b2da9822743cd53ab436fce4b"
+  },
+  {
+    "id": "sparkfun-bss138-level-shifter",
+    "symbol": "2f23c27e36ea9651e652d949af1d3c90c9a8197282064af8cd85ada318b74917",
+    "footprint": "797b28ffc502b45abba0fcccdc6f17bd1d57a6210365f4433b776678def475a0",
+    "model": "95cce8b253397f7496a178935a0872ed8fd7bc1678e0aeb034f7032dcd394213"
+  },
+  {
+    "id": "adafruit-tca9548a-2717",
+    "symbol": "cd5fa088eb9d49898468ea25eca00ac75ae38f05e1ae75994399b723ed2e80c5",
+    "footprint": "241a2b88221d7609780a952bb0b01ed4810a05f5b1f9597c7bdc530aea711cf9",
+    "model": "6d1583912172adfda049291e2bf7f0c381dff59be8b44d0989095b951286da1a"
+  },
+  {
+    "id": "adafruit-mcp23017-5346",
+    "symbol": "8cca0a4cf2eb5b3b4e7599b5c2ee4a7dfffb76a707f98a17ec0f6e4138407839",
+    "footprint": "a2a29a90ec6c088e1d5610b3dbb1fa08ccc04b2a6e427d8918a0faf7ee840230",
+    "model": "3c20d9ec2343406d81e0f8859a12731135f44757ead501af7b4b8e7414013120"
+  },
+  {
+    "id": "sparkfun-ch340c-serial-basic",
+    "symbol": "7d46f2c93be98e6a89dc4d618de77cb9eb01e842fc27cf579df8ef042f701ab2",
+    "footprint": "8dc61ece1b9943d5d10a91173ad8b9679f2e5a781123e5688f6e25140e721d91",
+    "model": "ea0429788fb11cd9ed96bf37042f53f4188e82fc7f46d95ec0c4eab47605c73f"
+  },
+  {
+    "id": "waveshare-cp2102-usb-uart-mini",
+    "symbol": "d8ea26543584159f0c8522d3dae6904fdffdbdff29f53ca9a11488b12ef1ffe1",
+    "footprint": "da5ab44bd49f8336b7331ae4841c6105677ae2bbe1883caa23a37aaa382f03c6",
+    "model": "63362285f99e177844c062a03175fe33e3943ae07da511cff1f58c3881165923"
+  },
+  {
+    "id": "adafruit-ft232h-usbc-2264",
+    "symbol": "8ceaed60c803d10f5d261422486b7161126ab69f6578ada0c957355d5a77b0a4",
+    "footprint": "7c1b8302cfcbfd47c91775635b6ee9b66f65618e4e751e86278a2613d6ab0528",
+    "model": "530fac0287d7b41ab14dbe3c02a1f787df794cb01efb8f26f16a219e84a5569c"
+  },
+  {
+    "id": "joyit-sbc-can01-mcp2515",
+    "symbol": "dc3eec19e5a6df8f7d281fb5a3d679708cff928394fdb2e1f17a357c71e95257",
+    "footprint": "f48af2f011e5ef5a6d6da9ea41b0b532c46a0c59bc048e90fc68a9f4597d8187",
+    "model": "2910598c00ed5354ff4012cec6eb6000966c21d9943a353c67b80821dd86282c"
+  },
+  {
+    "id": "dfrobot-lcd1602-dfr0557",
+    "symbol": "ac46c04aa9ef14295801b934e00e6d72d0ccd7411255f46f6867286208ad9baf",
+    "footprint": "30ec99f0d0ca4658c7720dedbe489672e4cde98a84f03e7d19092ada2827c215",
+    "model": "8c02efb295e93b54ba2fa748b42b1a197e69e713966964e7bc264e6791602bde"
+  },
+  {
+    "id": "dfrobot-oled-dfr0647",
+    "symbol": "12df96e9fd769210d2a17b7f5fbcd6d4f9c8aebfd46901f37627a1064ff2c55f",
+    "footprint": "669f54f403eeaa389054993182bf477c351500e477a4667bedd7f3000b6a7e47",
+    "model": "d3a2cb28025f596d1c7bd7e7c35326bcd6f131f21cee7450a86d41885c7c36f9"
+  },
+  {
+    "id": "dfrobot-st7735-dfr0847",
+    "symbol": "55981c57bbff517554e9704b954da305f37f0e882c017926a1d25913617c5353",
+    "footprint": "5de837f0a2d1ee0580180ed922c433da4422ef500906039a61c96dbe627e954c",
+    "model": "677f139b5930586fa19aa32544dc344036843c6a94a41f783328258c4a98b362"
+  },
+  {
+    "id": "waveshare-sh1106-oled-b",
+    "symbol": "2b67ca2e1e45e1d6c886103de83706e518e164ad0dd203f3e97469171bf61b43",
+    "footprint": "32f7a30671b636a1dadbdb52e03d8f6c79c8466eb79eb80d359abd81b3f5fa3a",
+    "model": "5868da8df3a535978b238581a3ac8852efa3c3b820201a26eef05fe79c36bf84"
+  },
+  {
+    "id": "seeed-grove-tm1637",
+    "symbol": "a3bc0d6f5c11266f788a2ac7f9110c60d0689f8a52775e9028cd4df218533965",
+    "footprint": "502af63729216c2e27d8b53cf5a77a985c9d97c099a68b6f99358ae20cb618d9",
+    "model": "b652ae8a9a76c3e34fa648ac27458f39de340ae8ff0c5c4ddf0e7b901b2c00cc"
+  },
+  {
+    "id": "dfrobot-ws2812-dfr0459",
+    "symbol": "cd557f676f23eff7f188119e7def0f016263fdb0a9b072b7f9ea7b55e22ea540",
+    "footprint": "a6d62158096beef9045e7c453a7a6714e4edec17aa9335fb58cafd9b7f317fdc",
+    "model": "f44bb1292005f3352ad5e63bd2280aef64465f43c47f093898d5ab6c33944fe9"
+  },
+  {
+    "id": "adafruit-ds3231-rtc",
+    "symbol": "c6ddc423b3b0f3773b1f896c1b94dadc4b88259b48a93000cd15e49eb7da0f6c",
+    "footprint": "8d32a20a9528e74ebedb50ef59c3c2df41a024ef117f817ebdfcb6363a1897e4",
+    "model": "764bb07c6fdc075a9afb9155cdd99fe6b6a11518a8378e2e3f7a28e63ed30929"
+  },
+  {
+    "id": "adafruit-microsd-spi-254",
+    "symbol": "673111c61614c5e03915c2deedf923c54ce2825a47c31831ee501dbdca07335c",
+    "footprint": "279c62bd888492f16da979e00ad63b9d969095023c250e0ebad50e2b0f9bcd12",
+    "model": "931fe8bd9b1386b7e7646416d4649b314faf51bbde1aeab699553c44a8c9dc26"
+  },
+  {
+    "id": "sparkfun-openlog-13712",
+    "symbol": "7239a5ca184e9a2b12b9208fe65bf1fb40a3b3ddfd7cca44ee1e327f54d31de6",
+    "footprint": "8610bb6317c38503c9de9d3cec11288c2485b52be3b61608fb3a9dc079edcb57",
+    "model": "10841228137a430628a0efe1dfbc9b1bcf4015b756134871ee9786b6912bc1ea"
+  },
+  {
+    "id": "adafruit-max98357a-i2s",
+    "symbol": "1ee85e6569b11bc21a53b22a320dbfd455b3940e2151f663727ee45efd8bc267",
+    "footprint": "adad11c162b2531c5bc7f6b4a6f2dde70a208f878e64d32d376ee9e06ce06361",
+    "model": "626c287ebf9ffd8c55c0e10298f799db3d734009081c054f74d8671e5c30a90d"
+  },
+  {
+    "id": "keyestudio-rc522-ks0067",
+    "symbol": "998479839de7f5f4ba32e05154daff0ae33d245052e2d463e3b84a0b5dbb8576",
+    "footprint": "4735c61a148361ac3b687d7490f5e623f59716e5e06c7b8de8046399468b6b5f",
+    "model": "ddf778d0ebd065a8fdcfca6696c7b354df8128cf626f780d9a27aebdd73be8d2"
+  },
+  {
+    "id": "waveshare-uart-gps-neo-6m",
+    "symbol": "0f6e8c7723319fcb10020447c07b28476b6020110c53bd3309f947c6b2211761",
+    "footprint": "aed0b7ef247142245a2b84aa97d803ba07d17f1ea4229dfff2b2a1c3091329da",
+    "model": "2523cbe1830fa772a68bbf9017427cc75cf540684cf25a88288053cc0e7620a3"
+  },
+  {
+    "id": "dfrobot-dfplayer-mini-dfr0299",
+    "symbol": "d2c89dcab2ff450a08620544cdafc40c3d5013e0c85015d92e46ac824cf114a5",
+    "footprint": "cb69f25c6c6ac770dc9ac1fafa3763ca4f2bc9affdd1cd0aac734ce370ef60b4",
+    "model": "e02f568d915832784c2321f7cee42d4ea80fb3232c271dc8f794656fcc686da3"
+  },
+  {
+    "id": "dfrobot-dfr0667",
+    "symbol": "a46a645f66801590151db4908fe29b40700c47cdc10163179dd95d4cccd8914c",
+    "footprint": "80accaaf3dde7bf43b82de7c81bec5c457e60ebc719e86bf6dab10e6e739ec5d",
+    "model": "b7168aace4ae3026c7ac9f7c9af4e1418c781cde7172dd9ce1ccccc9f0614356"
+  },
+  {
+    "id": "dfrobot-dfr0668",
+    "symbol": "968c1d90856d71600645488f68a1fd8fa05eaf681349a7d8b411fa604c9e3322",
+    "footprint": "a3e63e8b02ef35d800c8e96502ac70d70632aa0db26f7711e0a68ede02e5584b",
+    "model": "a93d254787e7d677b780b64b7e6cccc3cf99b67cc362cb9375458d790cc3417e"
+  },
+  {
+    "id": "beemong-fa2119-tp4056-usbc-protected",
+    "symbol": "23ee5992441f08c98d660626ad95eed5e0e78bf5b024b7deac6410dc56a24418",
+    "footprint": "1bd1ce898bcf3ff8cf5e3ccedd0d27c3aaba99b685f90a31cdcbe36ac5cc60e6",
+    "model": "47eddc2f35ba1818e85e653ce5c00cd83e2026bdc31c5dfa1f294210c21d50ac"
+  },
+  {
+    "id": "adafruit-powerboost-500c",
+    "symbol": "6e557e420735d3b1409b5dce5e144c8cf15891ac235f6446846257c24bd6cc98",
+    "footprint": "6ae100b51a41db8a9806c857b0417c6d52db19e1891ff76dcdecc6d2acc231aa",
+    "model": "33ab3d88a0d09dfa064ec427870589af5425cbdd9b478321840b82c5edb3e715"
+  },
+  {
+    "id": "adafruit-powerboost-1000c",
+    "symbol": "251df6a451c3c6810ed0d4b27ae9d5c951bfd48881aefb41ba75a8c0c3be751f",
+    "footprint": "6cefe5a1d449b6db89ed7e7286eef3ea229d9dd51dfdaa6dcbaaca909175d336",
+    "model": "9b157c49c5df1a688f1e1a5d70463a9b42a6fd6cafd89f0613ffb6b5468ef838"
+  },
+  {
+    "id": "keyestudio-ks0187-acs712",
+    "symbol": "881b9b55d06f49e89acfcfabf83e439fc3b0a602e64ae8057c6865e7cf299956",
+    "footprint": "e1785e672860799a4ff551a774f498833f1a384d64d175e3c84ea693f6e9f312",
+    "model": "55ac4ca304263bb3f8742f4e5840000011b7c1d0abe4998e2274e1e11f90fc33"
+  },
+  {
+    "id": "keyestudio-ks0186-acs712",
+    "symbol": "e5e18f3c987305ccee6f8fbdf3413b080602965cceca0c3db9ac37a328e8acc3",
+    "footprint": "2da3e67121437057c151e3f41badcec0cafcbd1ce8cf4b8f231570f34a179d65",
+    "model": "55ac4ca304263bb3f8742f4e5840000011b7c1d0abe4998e2274e1e11f90fc33"
+  },
+  {
+    "id": "keyestudio-ks0185-acs712",
+    "symbol": "a6c361d0ea25d91f34ee6f4f4ae3be1983a750406f1837139a54deb943d628a7",
+    "footprint": "ffae39952aab12f07deb6b19ad8c272d07a1a0d54275c33866fc1d032f944686",
+    "model": "55ac4ca304263bb3f8742f4e5840000011b7c1d0abe4998e2274e1e11f90fc33"
+  },
+  {
+    "id": "adafruit-5807-husb238",
+    "symbol": "0e2dc6f0467826ee733757f38fa45674d087c4bd9bf3ec13d5efcfd87032374a",
+    "footprint": "116e86d14ab4e1ee419333d9c322cbcb45630df03810b99789d0b2b66179a30b",
+    "model": "1e810814a7b151c8583ef1875518e25b4ad33f65b5713632b4f0c2467fd87920"
+  },
+  {
+    "id": "adafruit-5580-max17048",
+    "symbol": "3d0b1826973b9fa96a6ff8ccf3c9f81811da008f7e7ae10a32e6974390bf257f",
+    "footprint": "c17185a861cecba0f08a4e94e7f80c0913e52eec50a2e79d5876a962bb486596",
+    "model": "dc38a8df058d4d111d4e4b580e3a54d92d3de066433bdaa5a28af953968583cc"
+  },
+  {
+    "id": "adafruit-4226-ina260",
+    "symbol": "a26802452e4a4a69587ac38acdff3eb12cd476255072a799baee4e20f3054123",
+    "footprint": "8afef10913b81b2874bdf85ea3ae3319819e7c455bb48ae1356af608a05ba396",
+    "model": "6802358e8f4c99d7cfe5d3d7c95696eeff9d1a42f9a809d12fb41a93eb3b17b1"
+  },
+  {
+    "id": "adafruit-4410-microlipo-usbc",
+    "symbol": "b7737adbeee9ff860fc9e53cf8e5d43e60027efb1f19e50be82f9a66bf79b522",
+    "footprint": "c872fbd7ecddf76b78bcfafcc4c29fa45675edc5bf0b41e8fee5c2483d44ba09",
+    "model": "9656f9791c220c980ba2c6b20f4fad0c79399298c9e054776fb2f11945c70e5b"
+  },
+  {
+    "id": "makerfabs-mp1584en-mini",
+    "symbol": "95411521b693cd955c6d23b25eb11f076618e9be270a28ffc4dedc0377cf830d",
+    "footprint": "2f7555a5d934999d5f1d0ecdaa6a14c3449e6e13566e823cbb08e23ab01cb2ce",
+    "model": "79d7d0cff80b041e0348602a9efc474ea0db6bac89c2ca1de70d747c5b8d5e40"
+  },
+  {
+    "id": "dfrobot-dfr0559-solar-power-manager",
+    "symbol": "99b60a316ca52f2edabc9ce5b4a4656abce73fae37c647fb951b2c21a8f33554",
+    "footprint": "22009d0573ad047f424577405fa950a0d1bb0533d52989e2d78081c98f62f475",
+    "model": "5608d6ee4b41f62cccb0e5e90c8e07236d0aed0cb4b1d2e22890fa3a45ecd4be"
+  },
+  {
+    "id": "adafruit-aht20-4566",
+    "symbol": "db8efe332bacd5611d5c3ea3277501f99342895c0a00d6fd73fe2bd5d80df0d5",
+    "footprint": "cdd2b09951a0987fc148c94a3b480bf6096005bbb4d5229f5f0b737e8e64ce2a",
+    "model": "5ddfe82e56777b90919e4f5692f1798cd4383570fa5ad7bd006cf0aea57bf86b"
+  },
+  {
+    "id": "adafruit-sht31-2857",
+    "symbol": "e87c859d4192e0e86559c8874f5b5c87be190aaf33efaf4936c1d68348b85579",
+    "footprint": "d8cedca541abb2cfd714d6ee2338c62d81a6169361d4fa2084e1793a802dc68f",
+    "model": "4dc8b905ed58022868cc65231a34c1e090efb378a243c76b90f7618d74c27728"
+  },
+  {
+    "id": "adafruit-bmp280-2651",
+    "symbol": "4ee0a2d8d7c78906411fe3e0946738dfe47da76673c8777e66331af1bc007313",
+    "footprint": "f474f73017344b99b48f2229b098becba48ee52b48934555d5cb513252a3a283",
+    "model": "4dc8b905ed58022868cc65231a34c1e090efb378a243c76b90f7618d74c27728"
+  },
+  {
+    "id": "keyestudio-dht11-ks0034",
+    "symbol": "769191262f07211b5f7b765a2a73857a806a3ed07f8d37604eabb8e207a85ddf",
+    "footprint": "1ce188e81998878ae4291079aef415de5dec1f8d275754434cc16e00e91b3297",
+    "model": "ef47848826adb68ae254eb72f51a527ef98e1881d1e10befd1c01db8b92899ea"
+  },
+  {
+    "id": "keyestudio-ds18b20-ks0023",
+    "symbol": "aeeeff312c14834cd40ead120ae2e7eed5092e5e994b476819454e0f5feb557b",
+    "footprint": "9ef4ea1b8d54cd17ad08cea1bc86d52b5ca2a60296161f026e195b29874dfcca",
+    "model": "065acbb56dbb30108043c4298981399b2864b6cfe2f6263097f283acc816b64f"
+  },
+  {
+    "id": "keyestudio-bh1750-ks0278",
+    "symbol": "403dc0cf32b786271afe6489897f03ed269afafdc0946123a71d032b9daf635c",
+    "footprint": "3dfad48db5ad5c8f7e4e7f14d8c1def247e6a96ec562bdbb2a9e54cfa1bc56e6",
+    "model": "287bfc93cc9da1256c99f8012b5b0d62fa714b693da05f30ea8a8311059c3828"
+  },
+  {
+    "id": "keyestudio-mpu6050-ks0170",
+    "symbol": "392b8fc19dea98a99294c3879aaeb9caed79f21c57874de570f5280dfd39fec1",
+    "footprint": "e17e680c3da76fe7a04ba91a7e43b9782a9cafe43ae47712fdce1037f764382a",
+    "model": "6baec0c34ace565fe17d39567ea96f420f73418c2a26fddc5364225b1b7ef7c1"
+  },
+  {
+    "id": "keyestudio-pir-ks0052",
+    "symbol": "18771fe08ed753f48b0421a4476342fcf5f5cf8ff1b3aab12b764f5b55f199b4",
+    "footprint": "5c470ec5d8cca1ccb56186f9566d789eb6d2db91e643bd7fc53c4323c3b1b4f2",
+    "model": "a2ea0ac3c8767131c2caed90c4317e7e6ca506e5f45dad612aeeb33148759921"
+  },
+  {
+    "id": "keyestudio-touch-ks0031",
+    "symbol": "5cc36e463b4c442f7fe76a69b8b24baa2d7347ce99433ea0834abe5c45371ee0",
+    "footprint": "811a03d0e455c88707441c106ff4faaad9dc3113eda8d598293274e00ca9a76c",
+    "model": "238d610ae9048f4e84d76b45dfd5a8ab363eb36269e6a48c5dd4c8c54662dca0"
+  },
+  {
+    "id": "keyestudio-ir-obstacle-ks0051",
+    "symbol": "f8a46d6afb9997a96a253e662476be4f2e1797ae4af286421e01acce1bdc65cd",
+    "footprint": "1e45e2e645fe701504fec03e4095ee767873b8651717d004e8ea2edcc798be7e",
+    "model": "2a361e71e5f22aad7585d205037aff8116be5c72ba65acbdbf773f6e0df018fb"
+  },
+  {
+    "id": "hc-sr04-ks0328",
+    "symbol": "a5994bd9d0997ed182e34642fcd267cc9d3ef6b778d1ef09f92ee661b02ab606",
+    "footprint": "abb9ac6225aaceed1ec72a71cfbdc2c0baef6e91ceaed999557ebf2b86e55914",
+    "model": "dafdf206a72b8b11d989e7325a7730572e5dd0a55f04b7befa5c33d458565483"
+  },
+  {
+    "id": "pololu-vl53l0x-2490",
+    "symbol": "2c7140933e25d74249ec41e111c129833add9e7b8f72d9c7ad80677b1ffc163a",
+    "footprint": "c54ff2bde9532a5a20cb7911a06f677ef8da0f1363a056f65da338774a671c63",
+    "model": "d3d4d497fb7a506a791305fe1118eaa6a86eece755a621e1c07be3fb47334f40"
+  },
+  {
+    "id": "pololu-vl53l1x-3415",
+    "symbol": "e2e2892ba865122ea42421229462ec34e03d25cd4b962f358e04a0a1fe79f418",
+    "footprint": "1196976ee5493a28b408ffbdab1b8d12e7083ba8b2664869f154bf94bf26833f",
+    "model": "d3d4d497fb7a506a791305fe1118eaa6a86eece755a621e1c07be3fb47334f40"
+  },
+  {
+    "id": "dfrobot-dht22-sen0137",
+    "symbol": "98c905e6d9614a612f5797a16ca070e42367d890c929760c69bbb6cbe5a6b39d",
+    "footprint": "e96e54993672ed4eacd07cb0e0472daae026b2ccb8064fa52aedc2a3ce3ae1a6",
+    "model": "30dce94afbc910709b954cfb489edca0b1cf1ae01e348c1fe37ea7fb9fe14634"
+  },
+  {
+    "id": "dfrobot-capacitive-soil-sen0193",
+    "symbol": "faaa194266d0abe99b83303ad5445120fb1b6b44222ec2d16f5fddb8146a4523",
+    "footprint": "0f8dcc4282553b89bc3854e6d776e3b39c3454d60ced8194c8273d2c8fd9607f",
+    "model": "88421fd334260730964340b30253f7e53475ae4c0a3ddb6eb072f2b69c0a26f0"
+  },
+  {
+    "id": "hc-sr501-joy-it",
+    "symbol": "5836288805febbabdf1e481e357f9c12e344514f9b6397e77d43696c2ec7a3da",
+    "footprint": "aa2399f620651250ecfa93cd121379500f76e6fd434e3375827f33904d5a7571",
+    "model": "92d8965d5041a5b68044e55395b92e26feaf7b659ce81e3efbf772f3f757b9cb"
+  },
+  {
+    "id": "adafruit-scd40-5187",
+    "symbol": "7bcd9c30d9211db03ab5c2fe5c406bfd3fd34a2fe1d79044f70715937a09d04f",
+    "footprint": "be876c890ecff488605edf4c495e01503a206008ca8a79407063cc2d14bc28c5",
+    "model": "8df81c5d77342c383a6f0dc968bc7950e0e672e0931a6e1ebc7f67d3258e8470"
+  },
+  {
+    "id": "adafruit-pmsa003i-4632",
+    "symbol": "d3af772817fefeb313564fd3959daa115d6a3c6c22765f4cfd9b529a9f496fd2",
+    "footprint": "1c880bd2292a9234032c8fec4384eeed47052c7eeeea2fd8979022c4188ccf48",
+    "model": "3067a91abb5bcf114df042f77830deca96cd20a0d944de91475ff939070251a0"
+  },
+  {
+    "id": "adafruit-bmp390-4816",
+    "symbol": "c5ab10e7f9417e7f9d069e291e3d52eea835a8fdf5337491cf367a1b62938eb2",
+    "footprint": "da55c0c5a1962cbea6514850c90d37bd14eae76a3c73a1fb4127770d976cbaa2",
+    "model": "372dbedbece0190e9ec5bec9a53f3319a972b9ac18d964a6537fc5901edb1fcd"
+  },
+  {
+    "id": "adafruit-sht45-5665",
+    "symbol": "4c0239bc3234a8ea96f94a6e425c06d29512012e83aedf1205acd330f45fdac5",
+    "footprint": "9031f97c5a3cab132fc6726eee687b4487fc6f17ff45c5a4ab0dfb03829909d0",
+    "model": "7e4856f4f247930f74bab6b983ca1afff8dcc158588fbaa0a0127341adc0a126"
+  },
+  {
+    "id": "adafruit-mprls-3965",
+    "symbol": "e25345559062289e692747a3232ab6ecec1bcd6672e0b0e02db39213dc507154",
+    "footprint": "bcdf31a80864c8495c88453a0c3ed6bfdd3d4d1e355ad03511eb228859a18b29",
+    "model": "35d5f14c8920bb4362aadea7cd05684bc80c1b08023dd751ae4abf713ddfc985"
+  },
+  {
+    "id": "adafruit-max31856-3263",
+    "symbol": "06ffaf2a85c3204dfc7dd31002c06d999bb5374e9ad94453b83a3423b0bdf797",
+    "footprint": "942e48a0bba227e55fe3a0c44de89437e2273b3b14ed59e3c38c69321432cdc9",
+    "model": "7bbf2ac40f118d2300679e3b20acd9b9fea280453c7d062c5f0cf05be7fbfb66"
+  },
+  {
+    "id": "sparkfun-hx711-13879",
+    "symbol": "dfc479f487ac1fd5ed37d90ca51c58831ce5bf0a90e1cc90a8abbe5c38e35b4a",
+    "footprint": "82b80b8c529668e59c1d343069c33aa2549b50caede599a5907257aa2dc06386",
+    "model": "5d52138ffe34f21349a4cdecc78199c6cebfc7e16843b6e5f8374bfbddc0f24b"
+  },
+  {
+    "id": "sparkfun-tal220b-14729",
+    "symbol": "9ff3601a1b091817d8b22b81458b34c721fa323d19d3acd06c2efb0f3e9e63d2",
+    "footprint": "7bb16e0bbd2edaca857b7599dc2ef2f1a0f53d586c04a9d39ab378164c2f3f75",
+    "model": "7f2f8cc7769ff42997886b283c1d6bca9d8cf64c5d0ccee3860f43403eb0d30a"
+  },
+  {
+    "id": "seeed-sw420-101020586",
+    "symbol": "ecf94749962f4fd8936dea76b026fc639bb157fd59f89135779bb592cc979629",
+    "footprint": "3b430871305beb23b64fd9f82a3b9791fb8b7be7be7b8c76556de03e5c3903c7",
+    "model": "67f981d193c94d57ef99a4da377a9ba59f9257fa3d3a265014c734c5a9c4c2e5"
+  },
+  {
+    "id": "interlink-fsr402-44-29103",
+    "symbol": "8cc24c5a391fcff0fd4a825eeb2ad2c54c0545ec53ab019359e794061855cef4",
+    "footprint": "0324b9b65af5c57494d891a2aed1583e906dd0214f59046a3eb8e7c68ad3248c",
+    "model": "9e6d3b5a357c9d17b7c6a0d1e351a1ec835b2a57aeca1a0aafed90c05e524150"
+  },
+  {
+    "id": "adafruit-lis3dh-2809",
+    "symbol": "db7a332adb69597e415c1c5f52574dd9b8817fe179154974ae6188512a896604",
+    "footprint": "0eab634c04cf7dbc5c77d567568414f2d2d985adbe8fcee307b8ba8ca34da427",
+    "model": "923a8b76031343d82082597a52324eb31b74074a6e8e687692466582676db039"
+  },
+  {
+    "id": "adafruit-lis3mdl-4479",
+    "symbol": "1a1a6f5895af2f5960f54bb1d7be36f9edb2a9b8586772d158d9d8f4baffc4df",
+    "footprint": "c1324ead3988808a14d64073d7c030c5ed834a9bcb5e13b596133043f24651f3",
+    "model": "97242a24d630b4467d799fe4943e03333a75c6b8f05bdda55c0297307c2fbcfc"
+  },
+  {
+    "id": "adafruit-lsm6dsox-lis3mdl-4517",
+    "symbol": "deef6041882c1de0aeeed2f3b4311868e23bc53998023f60ef521f85063a7a2e",
+    "footprint": "4e84c928ff8ada535738802d212cbbfb7018554f6550111fb0f9f93b30aee651",
+    "model": "595989c40ebc7d5a3a78009c152f7245b669dd995d72826c03e978a0569c7ae9"
+  },
+  {
+    "id": "adafruit-bno085-4754",
+    "symbol": "f964f354d2309f3c09002367718495919a8be4208c616edb20c468b4fbe345d3",
+    "footprint": "cf4b1c777286e532aae81dc2915eccffc9c95b48a8ed46dde524fc832a872e03",
+    "model": "c3b07f6876c386aa6e80b6b4a2c9861fd4540bdd94c8ed3490f000401a775e83"
+  },
+  {
+    "id": "raspberry-pi-3-model-a-plus",
+    "symbol": "544db0482e94352f9c7ef2b636c3ea26dd3088f148df6e96f986b6e1dad2c60b",
+    "footprint": "d199cf43d391ca2ffddc3c89bacf9cd0384e1825d7ce6cea0266abb224f86bd6",
+    "model": "4ea3da128a89c2157fde5c59a4f85592c7cbaf745b5864cf396b174ccdfe92f3"
+  },
+  {
+    "id": "raspberry-pi-3-model-b",
+    "symbol": "6e103fedcf8e1e7bce28c5e32ab1b59fd4f484f32d8d64ff4b0cc29d20cf1180",
+    "footprint": "9c3996f3095582088828085e8899a2b0b9a4426f2d4dbd905dc49661d5f3dd87",
+    "model": "e4af7eaa7ce71233e4c029a008ed8a0bfe7eae3a7deb299c6d1ec48e651a4683"
+  },
+  {
+    "id": "raspberry-pi-3-model-b-plus",
+    "symbol": "03e6b803be377d773d6693aa96b8a475e825732f3736afa52d9f501e6d9a6783",
+    "footprint": "fbf12092ff67f6871abed4d40fe6aced3d97c196aea1de0d46fc5fb718dbcc7e",
+    "model": "edb133330721e4c15f54458ee91f214d15b77acbac21dc9eac86478738c141ca"
+  },
+  {
+    "id": "raspberry-pi-4-model-b",
+    "symbol": "4ab7f6a694fdda0d9958cf61277fd605e054e49eabd5308e2126fa8800cc4b30",
+    "footprint": "52a9949f9c22e41588c560f2361e0787de84baf8f83f4cbd8f43b4013a338e68",
+    "model": "1a559d25167d13aea8df7ed63e3f728712184d07a25086be6efa65132d2c1ba3"
+  },
+  {
+    "id": "raspberry-pi-5",
+    "symbol": "20ebf48e603cb2bb570723a8fa17abb3b5eb515ef254aa6f73a71a0f84a18ae9",
+    "footprint": "88e5936bdd6cc66ce47c71e7fbee5fa37bd2f1eb99cc793b361e63d85406303d",
+    "model": "d8616cbcc9e4b787855d4c650c19ac7e00bfba7e5b3ba6ae8fdc3061f42668cb"
+  },
+  {
+    "id": "towerpro-sg90",
+    "symbol": "bd63a13826b21d8e0d1a495255165a9180ec04ec9529ec72f1b76d934621bc21",
+    "footprint": "6fb7a14f4903f9667783da363d0de28c5c03d70b7dea21c561c4b6b00cb69b6d",
+    "model": "4ef2325745153a7e9372f59378ec4add3754b94ee4655fac18581c49158d8d9e"
+  },
+  {
+    "id": "towerpro-mg90s",
+    "symbol": "3846ce457c2da0490c726e082bdcfcb194a7479c764ca9faaac167f54b8a9503",
+    "footprint": "3566788fc2d70a87e53c60005ef66e01af229cc604d2b3241f519031466c386a",
+    "model": "4ef2325745153a7e9372f59378ec4add3754b94ee4655fac18581c49158d8d9e"
+  },
+  {
+    "id": "radiomaster-rp1-v2",
+    "symbol": "8004918e9c2dfc5bd3beb53718c8e95d1a5ec0dbcf8240258e4c939015e461f7",
+    "footprint": "5a6c064b2793f0bacad22e81d210835b02b9ee59e096cf42740e9d01e7505698",
+    "model": "035a4703997721824d11e389309583072b65b2303e778fbd0e5d8b92dd4683e6"
+  },
+  {
+    "id": "betafpv-superd-2-4ghz",
+    "symbol": "4c4bfe78e2dfced212284d6f82fa5fd4c9fd3f7fba25fef8b4fa32f19c4ae2fe",
+    "footprint": "3fc0cdad8c49b2ba52f0d3fdce770aa878f507b34b13ba8dba7bd2536525cf33",
+    "model": "aab2dc0adbc0bfeae47231887d98007d52c126f7f0c2fdc89cf7e005ba0b3774"
+  },
+  {
+    "id": "radiomaster-er4",
+    "symbol": "981be7708aad138a7ef022c4244a657912f44db2663af904fc4fc53aaed54e39",
+    "footprint": "4d43e797397ff93c33cb947f14bfa9f3282fab2843dec9e996bf694fe3724438",
+    "model": "89db6a4e512c94b16e6c8729fb34c73f0c11b1bf25ee51179d95963f01f1c89d"
+  },
+  {
+    "id": "pololu-cp2102n-usb-uart",
+    "symbol": "cc8a9a0ee8ac7bbfffeeddbc05c5de03cc57b1813d06e1ccfe7dd3c0450fa9db",
+    "footprint": "b62f37d6b3e92e382514d9453cd3714b2f82fd5d4e4219c6057237a667b362b5",
+    "model": "ba77d3a1a3bf7f6258fff9e29a8f06a771519810e570c2d45bf6dea2fabe531b"
+  },
+  {
+    "id": "speedybee-f405-wing-mini",
+    "symbol": "563b6c914bc68fd509cb65c791e9cc8011302654e19643f72e530001de4dea5e",
+    "footprint": "adabbdc7d4457422309e7e0e5807e7ea65233894c682ef8f17046804afd3ecf2",
+    "model": "fcfedf3fbb7b16385e9664dc7475783419acfc74cc3ae633a9e7941890161cef"
+  },
+  {
+    "id": "speedybee-f405-wing-app",
+    "symbol": "6d462d236f3db2e93a1182741e4ddb5a36d3dc3a15af63903b334c3e153d02ee",
+    "footprint": "8fcc928d2a937747746aeb50042811a5682e6bed8c7e5c2eddf4d91ca56355d8",
+    "model": "3b31f83bd0835a71d005c708332c296ec78b0573988e5aa1f9fb19b61e3dc90a"
+  },
+  {
+    "id": "matek-f405-wing-v2",
+    "symbol": "a1a61d999d926faf3530d54e8147619d08f0d9cbd23d63e81bea23fc0dfd7882",
+    "footprint": "c1dc6a8f3a34ef2b83897605f421a40bf0421b5e0bd81adb504c8b0cb5384913",
+    "model": "25b5f28951f681aa4438e530f3e21af8e346bf8c59f7d8b9315e802a25257262"
+  },
+  {
+    "id": "matek-m10q-5883",
+    "symbol": "cb1dfed286e729badfede7d5be8726e244e2b55611d7378f1b2c1ff784b52962",
+    "footprint": "a4161375fef2e911354f24cda60f036a7e72f46ec3cb9ba78ee8d4fa1bf367ca",
+    "model": "4e0e847afdb307e6f21cdc7dce0b5c6d218d766d7b40409e44e9e086230ecfda"
+  },
+  {
+    "id": "waveshare-sn65hvd230-can-board",
+    "symbol": "e0b4a473e7d80db45ae05fc57fa2dbd116b4d05e8476fa3c8b1fe18d7c1491d1",
+    "footprint": "3368208f35df7a9b6b2e49360940563ff374b5b9938f7d4c8b68ef9d6062b2e0",
+    "model": "5e09ebe025d6886440ffd2fe2b0a3cfb561faa8aa23f4b4e7617ddcdf096f6dc"
+  },
+  {
+    "id": "waveshare-pcf8574-io-expansion",
+    "symbol": "4201520ed6586ac282f9154b14678bbeeb72a1fcd77b13945ba90a039b7c8716",
+    "footprint": "195d909d40132cb23d759608df9a3e6e62882bea0cc648fb3c74506cc9318b16",
+    "model": "028e73614a0023acf9c9ca343823d8d35db0253d43c3e793e052bf0eeee17fb6"
+  },
+  {
+    "id": "waveshare-usb-to-ttl-ft232",
+    "symbol": "9ef67765d57aaa2d0e22eb5953a2349c6700971d291340e4ebfd49952f6cfe22",
+    "footprint": "8f2f7a5562139da8ab47157de21d96190db39b21aa5c052cebca25f72714b7c9",
+    "model": "99413d4ab4048dbf0b195c329a82372c4aa2428c27005ee759e162292adc6f11"
+  },
+  {
+    "id": "waveshare-1in54-epaper-e",
+    "symbol": "194895b7b811ec7ec81d00ef51e9656aa5793a82c1d4158133c69b4a8b774eb5",
+    "footprint": "9db8c982c1c098402a2a0c0ed5bd1e5ee6d673ad954b9779edc078e25697011e",
+    "model": "6c35c27d487436f3c19a9c4dd4d06c6afca15209c9f379bed648eff8975cd1d7"
+  },
+  {
+    "id": "waveshare-rs485-can-hat",
+    "symbol": "18c2d422b144e2497aeeb969f5eb57c805d78e15de47856b3bcfc5407ecddde3",
+    "footprint": "b2aaf99e617dd202fc1b2e50403887620e14d7b48046d9d143bd0fdd9fa72328",
+    "model": "cd4188856d498117d24916b8e50c92c8e2d94b5711d1c7ce8950103e646a4b18"
+  },
+  {
+    "id": "waveshare-servo-driver-hat-b",
+    "symbol": "6a98220440279d34f5acb1f2ed7165cecbb61d4b49c248cd2d98e0aefea2ffbf",
+    "footprint": "fc01f0b9d0661a5a181c9b819cec5b1080277e20d56eb14a7514c8016b942814",
+    "model": "bc625291e6e71c77ac7794aa56bd85d6b8b68482e2be11e43410ae66838e1a8d"
+  },
+  {
+    "id": "ti-sn74hc595n",
+    "symbol": "db728e1d975ae16e5385e7ba14e36ad16e6122f16ef1af2cd4f47d7c2cb5cf03",
+    "footprint": "d0b289227246b08b7b944d903c0a42fd3fa611ca7c0dc12773f004d89ef21454",
+    "model": "38f30e8c1ff8ca87394e49b266de585a43006edc505c366e57458b05e3dfb30a"
+  },
+  {
+    "id": "ti-sn74hc165n",
+    "symbol": "4225121f2e58bf670eb86ef2f71972b836b2f79e6df128be306b392582e9c24d",
+    "footprint": "a533ba0be614c1d0a1e65a2998be81ce65165301637f8c779e3ffd2c180729bc",
+    "model": "38f30e8c1ff8ca87394e49b266de585a43006edc505c366e57458b05e3dfb30a"
+  },
+  {
+    "id": "ti-sn74hc14n",
+    "symbol": "27258f7368d030130a61ee2804131b4f20ed337de312cc1e95cbe30b4bee6601",
+    "footprint": "a5bbf8c5f0084e3502307c5acd408480e369e412aeb581f2530846596a4afe5c",
+    "model": "1f0a9878e1b469c8069f16176f13f859ce21f3509dbb0bfd8b7ce076ace03a58"
+  },
+  {
+    "id": "ti-ne555p",
+    "symbol": "127e4f646822159a910ebd528627540badb2f71e0973ccc7ff8902f3a4ec8632",
+    "footprint": "42a7c4c2474e9200d69ca0ae7ca2f3087ee70e012d083333c24df2b3928c1473",
+    "model": "c4297fe89dbcbe46a4305948718bfed0f365242d12b3fd053799a2e42f7637fd"
+  },
+  {
+    "id": "ti-lm358p",
+    "symbol": "4026904ce6c0083c53ec307773dcd586ccefa454bff8dc6657c5f79faa87d922",
+    "footprint": "6d4bddcabf5d2e9e53d52eb4b573145519360b6dc6935fa8b46f72b50fb86907",
+    "model": "c4297fe89dbcbe46a4305948718bfed0f365242d12b3fd053799a2e42f7637fd"
+  },
+  {
+    "id": "ti-uln2003an",
+    "symbol": "e0e02d4302eb59717fe9a894ebb86d86e81fb7d57c9d2c305c672ab991170407",
+    "footprint": "dd8d8023c61a32bca35c26a1eab0cec068ae8d12f180a00fe4528ee03f018677",
+    "model": "38f30e8c1ff8ca87394e49b266de585a43006edc505c366e57458b05e3dfb30a"
+  },
+  {
+    "id": "adafruit-mcp4725-935",
+    "symbol": "78a9b4087e1c9a7bbed87008674cb6f386633582cf2e0cb21d84f388afc88b91",
+    "footprint": "005804a14bf29e1e8b89796dea420b29e77034f8b194b35b2cafc4aa238fbdf4",
+    "model": "eeb11cf4f4e6780641b56bc439d66bbc3eec59073d8447fb83e5326e5a8b1190"
+  },
+  {
+    "id": "adafruit-mcp4728-4470",
+    "symbol": "4e5d375c7870491afb09a105c78d73bbf9a183dddde8ded4aec62c774d84c1a6",
+    "footprint": "7565edbba49672e33a324f7d42b1ac89ce86f48681a6bac724d28de8eca1429a",
+    "model": "1a3d238e0fc2ee4719f91cb78363b051dbc4e6f47b8de4e49254e04848c236c7"
+  },
+  {
+    "id": "adafruit-ds3502-4286",
+    "symbol": "19528d312c03d0fc3f20eaa783062e5d19a7b4847f933148ef6a881eccf6e6fd",
+    "footprint": "7d79ab4e2bab0b520188148e6968e443346f25a60ef1b6e3223540df0036c4b0",
+    "model": "1d2355aaf8f982ad78f28680ea1cab298a519534175f9e7ede15005565db62f7"
+  },
+  {
+    "id": "adafruit-ad8495-1778",
+    "symbol": "ffbe9e5acb52bdf71a8c5706e1bf31c802fc947e54a7c0959eeb7f5a0249df61",
+    "footprint": "48c51fed753d5aa2e10c8884adf70f7055a4036aa5ff259e995581862b0f3663",
+    "model": "24a250185d3ebda43c06edb35dee15e8625dc073d0c83595ec7fe69b8ee6aa38"
+  },
+  {
+    "id": "adafruit-max9814-1713",
+    "symbol": "a03e6343a64be35137bfaa3033da278726cbca9fc9a741320a1d15f42e8c1b1d",
+    "footprint": "0427aefdf23f23e014eb5c727a66abf7f531f8680e09a2a08500bec9982a5f38",
+    "model": "8744265ff3742d60c902d886945322b8d1d7cb755470f77e6321e081a5a24777"
+  },
+  {
+    "id": "adafruit-sph0645-3421",
+    "symbol": "70c6d2ac18e61812dc6b1182f35170d72977174f5d65059cb03f42cf5eee7d96",
+    "footprint": "64bc304eedefbf644839bd1759db2e23632167b15f2bf0d1009d9feb882c4725",
+    "model": "4ca21bb02872b0a0091d5cc5c300f02d6d3f7beb5fc3258223dcca89a521067b"
+  },
+  {
+    "id": "adafruit-drv2605l-2305-qt",
+    "symbol": "04477e5c681f264167ad5f4ac4b313b947b57462d604511fa6bb1bbb44d03e61",
+    "footprint": "524737df695363e2d77f17c898d0928e3e7762a03286017f7fa92e6446252398",
+    "model": "1a401afb88f75ba67c946436b0867bc14df692de885232fac4ee9245cebd1462"
+  },
+  {
+    "id": "adafruit-pam8302-2130",
+    "symbol": "766b5e103e2c2aaa29d163daf2043ab18f11c857020d1ffa924de0f0e56572c5",
+    "footprint": "c10338a0695404875522a939335f398acb455f08d364ffe67a65b5b626c10c80",
+    "model": "b004c317a3b839e62325152689bdd853d4fa7e2c5b13631c4e8d62f18629bd09"
+  },
+  {
+    "id": "adafruit-mpr121-1982",
+    "symbol": "524c7b7f32c528bcddc05322ee4ff4d550d8f9967dffefffe3dc599bb57fe16c",
+    "footprint": "0c19c40edff558506055730777e2b6bf8abd7bff0b3d380416d95fea10081a06",
+    "model": "989826e679e566889e9f2c687372bd6851e13cef9d7190f5baeaf933b0f37bab"
+  },
+  {
+    "id": "adafruit-tca8418-4918",
+    "symbol": "c9c7fc2628c35248813a29d28d69b33089f64ab5aa3d2437356b1602597e78a3",
+    "footprint": "333aa3d36cef17daa3e32379d079f95400130944a72b2c8aeac75033cba09ff3",
+    "model": "f3380382b59dad8c7fda1f21f5f9ce6f58702ba462da95333b65ea2f53a753bd"
+  },
+  {
+    "id": "adafruit-qt-rotary-4991",
+    "symbol": "267bda1e25fd717d785b2ebdf1ea9b9e6f4bb0fe4504caca73fedc7d9058ea2c",
+    "footprint": "7f49956a6a7b3d8a8b837dfd9292ca27319980c9aac4bad03cae55332d79be12",
+    "model": "9f46e6883f7ecdb9611d5cf147a82c8277130b15f05d95730a711983e99281d3"
+  },
+  {
+    "id": "bourns-pec11r-4215f-s0024",
+    "symbol": "709fe9a3b81a48c784082569d01e59ba43750a4e9186b1350e89cce72367f2d7",
+    "footprint": "aabb73e19ae9fdc320f811920de7246eb81242f78f8bc3b2ffc741eac4c6a01a",
+    "model": "3de5f32d854319a7a311c8e1097fa37976e69afefa8b4773a4afd0b40710c46e"
+  },
+  {
+    "id": "bourns-3296w-1-103lf",
+    "symbol": "b642c8d0f05685778823bec37623408575248de760f8dc8f17a4b223b14a0e4c",
+    "footprint": "9a77134d72d72c05ca1513587b85bfcdaa85db824676ba53837668a5d6b77229",
+    "model": "1869561d194cd5ec98c0fec354d13cb363c22d0dff736aadb4b84d79868534f2"
+  },
+  {
+    "id": "adafruit-tca4307-5159",
+    "symbol": "fbf426ccae7a7b87bc7e174668eaf2025ff288fa38c6857bff564f52fe63a256",
+    "footprint": "700778cf12303e68115bcecd451e65b8e7c36e5fb220a9f49288bcf2b2a80d50",
+    "model": "a69ab4dbdbf8e366210fd3160e13f2502dc7debdea24251677c353dafab78c8f"
+  },
+  {
+    "id": "adafruit-ds2484-5976",
+    "symbol": "8abc4980a8b8a4d936a05d7d7bc2dd90b6361657f528e8dc7dba11d106615483",
+    "footprint": "48efd1ceb4743b7a8ebdfef6d4a96796ffa8dee4dfe5edd4021e83240bbadc6c",
+    "model": "27208a76a2010d9bbb2c16ab0cf8719a599dbcd13aad8800dbff344698e72896"
+  },
+  {
+    "id": "adafruit-pcm5102-6250",
+    "symbol": "6d795738ce0d7ebd398cc8b8254303197595d480725d65cb5c17e27256571f28",
+    "footprint": "23c4653c4cdf25db4eb351bed626ccc7b29df0cab33c16ef69dcbaa89c6b984c",
+    "model": "76970c10fad0e1ffc0c786005efe7d6b6e2f23dd6fb4f673829726495e80ce48"
+  },
+  {
+    "id": "adafruit-ultimate-gps-v3-746",
+    "symbol": "bbb8339e760a77bc5178c209eb90096f370bec082accb938bba7b2b3218d07f3",
+    "footprint": "1778993bc8cafaf03999bb1af44b0a3d4153e0221596cc36d3ec2e735fae852b",
+    "model": "6401ae276a11a68e34fc9183ba40c06782e43b805397ded1d2a5aeb6325abba6"
+  },
+  {
+    "id": "waveshare-pcf8563-rtc-board",
+    "symbol": "59ee3e88078e4c229121f7690d8bc623e70b776dc65925c2dec8cd3850607db2",
+    "footprint": "f52bed112f3bd5837b1ce409bdf5931cb0af160569c7cab6b55688aa17f346d4",
+    "model": "25a66e4bac67e3752b6ea61566c9f62e87abeac7e9145ff202cb8267ab217b91"
+  },
+  {
+    "id": "waveshare-rs232-board",
+    "symbol": "38eb9542b9a43f797db8da8deb1bf954ee9c686d07b47c46f7962c540f3fbab1",
+    "footprint": "0ce5ca73e56937a21fe286c4704d3b61f6e0eeee9587ed03f3bcda7e1d22bb0b",
+    "model": "b364690e2bf90fa59c8799c454f95dd1845deab3d5ce5b09c0ee15df6d3a57dc"
+  },
+  {
+    "id": "waveshare-l76k-gps-module",
+    "symbol": "ef0c25f7ecf28e2eb9d328437205a36820b839a06a7a09208d98fdea889abe96",
+    "footprint": "33cd305ada8ebf1213b7b8d84a872fc6053ade12010c1b80b133e98bf1f56102",
+    "model": "aff72db44e622f0ea513d257dfad3e12148344577d73a7f7973dea131f75b743"
+  },
+  {
+    "id": "waveshare-1in3-lcd-module",
+    "symbol": "1ae4e2acf9716dee16425f55908692e4045ff069f927e7e5401bd19a9de80b08",
+    "footprint": "125c91cc5802f515b57d28404fbf9899583a25de3cab6043e815b82da4a1a402",
+    "model": "4a0fc155a5df1ba82034658f9a618fa3c297936ba66a13d80222d48c6fcfc607"
+  },
+  {
+    "id": "waveshare-bmm150-magnetometer",
+    "symbol": "b21477542ec231d997b721d23617f7dd0d400a7c3738a9b6964ee0d86227a581",
+    "footprint": "6109298821027dc5213d86f42b417f06be611ae89b97a3d4a916e2203c95a4ea",
+    "model": "bf85e52b050006b0ad8fa354d89f9d312369b866205f28fdcea8603cb09c8288"
+  },
+  {
+    "id": "nordic-nrf52840-dongle",
+    "symbol": "05b13e9340cca5950ae58a8df33503702d3313c122679492e60928d14dd5e86e",
+    "footprint": "836553dac3fc563b4e51aaa4a79e4c1849f6cf96d9a29c8485330fc4cff5cea9",
+    "model": "a621a93d786d1d46bb14a1ac609179e9c1dbabe78b18ca92eb8ec8bcc7acd674"
+  },
+  {
+    "id": "nordic-power-profiler-kit-ii",
+    "symbol": "d405c5ec073902cc7f49ae843046d98029d72eaa482ac9d2449a1f66ab43f805",
+    "footprint": "ab9f27a87e392e206c7c409f123b457b4bd3fe866704c6ea9ac0d20b0f1332f5",
+    "model": "f21d979993a8fbf7e3518a0bee5d10194bbe8610ea3cf707b31e38eb1dd1f277"
+  },
+  {
+    "id": "nxp-brkt-stbc-agm01",
+    "symbol": "0caa6a2b0349b6747b2f7fd35767f5a54a1948ef37f58d01726ae0aa8d703c86",
+    "footprint": "382ef2f88429c6f6758f0dbbe4d15c1d70edc594b52570672d8def270c5d0f38",
+    "model": "fc38316a491e98ed3aeb9926b8bb858f2e8cf8b550432efd0dcc46310dc1a74c"
+  },
+  {
+    "id": "arduino-nano-33-iot",
+    "symbol": "6541b6b32fafa7579000892f37d03d4c1a04e54ef908bb815ebf39c4caf2e337",
+    "footprint": "30f6a9d8774f7cb3ae5ad459d691c9faa8a12aa3117d0c1ec7c6454df9d288dd",
+    "model": "64c1d453f121cf656fdae43d246f6a3571cd981669d6d43933ff2db474008ab4"
+  },
+  {
+    "id": "arduino-mkr-zero",
+    "symbol": "198e41a47bc17940d0b6ead991c73e85766c29f7762958b28a20e1f6c52ac4b7",
+    "footprint": "bd73d1af2f16e0e7d7d74e81a7df7aef4a5816ecdde66cd15c1039597a4d2249",
+    "model": "0de3d48245e8cbdd9276758cc948964fc9a504e57103dd2f68551f8560c5881e"
+  },
+  {
+    "id": "arduino-mkr-wifi-1010",
+    "symbol": "3a285c1d9eba694c46803a6a3f88f173934ccb3c72d7727bd8d6cefb1fb58f95",
+    "footprint": "977c7ef7019a6f4840e8d955f7e584bbb19595c85e820ccec9adc8312915386b",
+    "model": "fd67e7830d6539db4b5c4e4de54ad6227242841cb3f94de96bc4f0d7e832c990"
+  },
+  {
+    "id": "esp32-c3-devkitm-1",
+    "symbol": "375d8ca531295281dc53246c0af76060c9b3ea5abc4ba86445f27f8d2e1c3360",
+    "footprint": "92c9ae4049a2166398e27085051af2daad8ecfbfc605b326ee8d6a79647955c7",
+    "model": "3cba5c49b1727468bd5b2b1e7f64a854e9ddb70cdadc54f831d4975130f3139a"
+  },
+  {
+    "id": "esp32-c6-devkitc-1",
+    "symbol": "b13ab9cc9f0d7a8d48a23ed5610982aa66cf5244d408b82b414a13f6bf99ee29",
+    "footprint": "f82b67c2f628a9609612d253f6c25fffb131d47ee06b54bf1e3163fa308b41a4",
+    "model": "07e6b339e09adfe988c6e645f1cc9b26b7d528a1f8c501a1a602bc10ef6ae604"
+  },
+  {
+    "id": "esp32-h2-devkitm-1",
+    "symbol": "8e406bdf335c195c5f5a63f657b8088346cb82472eba533d57d3c1affbe1a33e",
+    "footprint": "b63b4bcdd43c7ccc9c22b6c37652ce257a969c4d6f03f278d32b31a7f4b2d9e6",
+    "model": "8bd234d3b8884168c40f9cc5d47d298154487d4046e11521bddeab70c43ebf3b"
+  },
+  {
+    "id": "semtech-sx1261mb2bas",
+    "symbol": "3f107910929ad2422559708029a759f1133654dee4c5405988c90044c27316e3",
+    "footprint": "107431c419b306e0758d0d8380bec00c7e9ee8bd71263396ff56798fbd0c6a6a",
+    "model": "58b47c2aec58cc9fb044ce67351ed56f392cfdb5d94b9cd50852f9f0145077c5"
+  },
+  {
+    "id": "semtech-sx1262mb2cas",
+    "symbol": "1bf13f09964bb6596aae44d53aa6b477f04d435d86a120ecfedcc2c7a0e5cdae",
+    "footprint": "c2a856cc813deeff349e1a973ff38a6274f0583b4c93e54a8ee35fba0ed9c8c0",
+    "model": "58b47c2aec58cc9fb044ce67351ed56f392cfdb5d94b9cd50852f9f0145077c5"
+  },
+  {
+    "id": "hlk-7688a",
+    "symbol": "ecf6d60d15456ea2858c520e8c1964ab28d6c99766a1cc1c5962b9725226d735",
+    "footprint": "c3b87434d9e930850c23f4cdd789292ff17d5b0da54c97ceebcd93bfdd7bb035",
+    "model": "d4fbd89db51c6290609f798e77f22f5ef6a16a606553822e0b51d8f08d3b498b"
+  },
+  {
+    "id": "hlk-7628n",
+    "symbol": "c575c1a603df4cb3eb5a8f7a32be74c17066192fb702121690a828cb174028b7",
+    "footprint": "da12ab83af22fe413bfc06e1fd99caf9bd7ca5e1781d35ab8c08b9aa4c3ac152",
+    "model": "a99c91e3e6ca7d66c6bc2b80c62db8a23e4d7ae33f173a26bfc371749d2d420e"
+  },
+  {
+    "id": "hlk-7621a",
+    "symbol": "ec5dcedd6efe06c14c57dff705a33af8f7c9a670fb643be7ded30e2e7f4847cd",
+    "footprint": "9ce2b4c1d41eb854dc1a5c60deb38ecd2a90cfc586fb0c47944fced15d2207c3",
+    "model": "2c1253364bcf68d0b4e308ee91e868b0b45487838f72b107f2028f833c7b353e"
+  },
+  {
+    "id": "hlk-rm08k",
+    "symbol": "2aa3d2300076b460c822885de6519b16d3a37ed4a7ae7e79449277c524a59a40",
+    "footprint": "020c6a26ba62a5d1b30360408927ded1032333df240eed684eaf0071430bc839",
+    "model": "af36690d826f06f23578b18ea872c479ab3c01508cf44dccc5fc2021fb8b665c"
+  },
+  {
+    "id": "simcom-sim7600g-h-m2",
+    "symbol": "b3484d347c2a2ca4bd159cab6aa6adf20c152a68e3caa1fa4c896a0507933c4d",
+    "footprint": "c87a1f7a22cd79021e9b083ddb5ec35d0325ef36e20a2dcca1b227a299dfea5a",
+    "model": "86fb449a5f91c7292b84376bf7b24078a7d49f859720b8d643a239b3fdd468c0"
+  },
+  {
+    "id": "simcom-sim800c",
+    "symbol": "ef8283dfd2b1a9eb6321df44c5944b8b5b93e1012a20b36f916dc9b4b7359d2f",
+    "footprint": "7e3ac5f49a8d55e471a0a09e3fbe43f472a641f547f4641ce49c14b6e86676a0",
+    "model": "9d23b3ff371413762748c31cc65b61b10697d2b8180e268c390c29c542bd4a4a"
+  },
+  {
+    "id": "simcom-sim7600e-minipcie",
+    "symbol": "4b7c6e3f540b45df4c6d59c0e47462e246be9e295c44a72d4a47bbc61842c5dd",
+    "footprint": "46a8505ffba269bf33ffbd3d6330c08fe270801d8528f35ef8de2c19ef905071",
+    "model": "0a7b7f6ddc801f26373231af1cc31e0f77c06ba45d16af3d1b299f07f30151b8"
+  },
+  {
+    "id": "quectel-ec25-e-minipcie",
+    "symbol": "a4305b20b83b52802c23017dd716a8aab5b69fefc77cc2d805a699a0a9b13494",
+    "footprint": "3d4e9e753e76b6d177c1b702d7586bbfbcb7030c1cf1725ce931eae17a124d14",
+    "model": "b79a4bfee32cad9eee7f6ec0454f1176c32788d01a98a67fc019cbd84551366d"
+  },
+  {
+    "id": "quectel-lc76g-ab",
+    "symbol": "dd17aa3b2bad233ac5f9f7d4a05705caf2e891be3c65012e05c3f39dc3fdf99e",
+    "footprint": "85080306c90b4bb471755701586d2116dc3d44cdbf7e3d6fbd76539faa7de1d3",
+    "model": "05ebf0857be26efac441015889ea0089daa19386709afce8525db7507a00104d"
+  },
+  {
+    "id": "quectel-lc76g-pa",
+    "symbol": "70ff02c29b8f477c19753b5264949c5dd5d9b4e859cf04b9aaba0628477c0a19",
+    "footprint": "8eb89b3c35ee191c8aa3d6df087f9d2a3fb9509a3453f8164c7cee5204453fb0",
+    "model": "05ebf0857be26efac441015889ea0089daa19386709afce8525db7507a00104d"
+  },
+  {
+    "id": "quectel-lc76g-pb",
+    "symbol": "0c9b4582bc4e15ddd4c940d9f8b7fa4be88ad68145507dc31acbc24f78b4f1f8",
+    "footprint": "444d481213fefa8e43e729ef4d433370cf089114e758e94f409bd05fa8d58fc9",
+    "model": "05ebf0857be26efac441015889ea0089daa19386709afce8525db7507a00104d"
+  },
+  {
+    "id": "weact-blackpill-stm32f401ceu6",
+    "symbol": "5215fd416b034a4fc3e0e9ea4e9688a8216f17f26d1ead1c9f41b28e4c136da7",
+    "footprint": "4e91bd15a91dbf3030351df4c3a3560a41c9864a37c1283d5a7840b53b056794",
+    "model": "a3a132933a9ae141e622317bbdfa4890cb7084be89e8a80f28c5128249ed03b1"
+  },
+  {
+    "id": "weact-blackpill-stm32f411ceu6",
+    "symbol": "5aafcf72d2e6ab50ebb1bf4e4b14d5777715114b74f769321378c3451923cda6",
+    "footprint": "a6bcb8dd08c9378617e9930e49e1189c999e9e8ec38a2fe352f499013165c330",
+    "model": "a3a132933a9ae141e622317bbdfa4890cb7084be89e8a80f28c5128249ed03b1"
+  },
+  {
+    "id": "weact-bluepill-plus-stm32f103c8t6",
+    "symbol": "97cac42f3be1fe532606464660ddc77ff8a945e6d3d63712412a78a81e4e50f4",
+    "footprint": "2bcf21f0dd59b7a3b288de7d3ad2606893c7c1eb4475459f16446deaa9ef5d1e",
+    "model": "0377717d564c074bf8e5964920213eaa2e118715c8338c94e672903dc14b6a91"
+  },
+  {
+    "id": "weact-bluepill-plus-gd32f303cct6",
+    "symbol": "dbfe765e4cb3659a1b3c7c0602dd9b4baab3527910c67fb5b61c69b31fe02ecf",
+    "footprint": "7326b386efa8c8ea8688c2a3631a0f56aa556fdf9d875b1cb8bd983450655295",
+    "model": "0377717d564c074bf8e5964920213eaa2e118715c8338c94e672903dc14b6a91"
+  },
+  {
+    "id": "bluepill-stm32f103c8t6",
+    "symbol": "9fce2731a2adb63f70da6ce889cc20327a6e00b559c470d315074965d2bcdc96",
+    "footprint": "921cf83283615b64a614127e20edf71408f0cb98f180e951b2f96f629fa850a8",
+    "model": "1dca725e00e165a795f08409a19678e11ff0f6e2befb44a700aad0ff28721d18"
+  },
+  {
+    "id": "friendlyelec-nanopi-m6",
+    "symbol": "7a0608555a441d950f361b008114a10258bafebc1e583bd402e3a58a561fd8b9",
+    "footprint": "029f66af7744523da091f5cf8d5b8109ee7f1b61dfe4e50d81f1afeb53a3ef40",
+    "model": "8d286fcd524c3b14bb1614e4e7b615f966aa8eab8034c4fd01aae57de269ae9b"
+  },
+  {
+    "id": "friendlyelec-nanopi-neo",
+    "symbol": "cb89bd269ad0b88c548474b48232a64a0874e3bfffa825c164b2ec31509fbcd6",
+    "footprint": "7161f5791650c0d5f4d5cf5750369d0271a953d9135b7d29454bada496c7a020",
+    "model": "cf4bbfe02db391fcfefc9ffea469a8bc92c25b66ac7a5eff181e7e5eaeea785b"
+  },
+  {
+    "id": "friendlyelec-nanopi-neo2",
+    "symbol": "de3b327697989ee4e95defbbf8c4f3f99f387d8243c2bc27d7580cbcc384f932",
+    "footprint": "f3c2e0fc5cacb8f59ca2900de77c4b244ca6be20c66cee6d45cc8db4f2501bf3",
+    "model": "473e10338088dae263092bdb0c45b08d86a429a8252859d9566aa199ec1124d8"
+  },
+  {
+    "id": "banana-pi-bpi-m2-zero",
+    "symbol": "93edc996e774f898f012ac8b8ac24832a9c4e70ad084c78d27dd8cf3df021076",
+    "footprint": "e0c08b27e43aac7394448f5ed8346f12d8f113635ae2727a4048f0e0759f5701",
+    "model": "532b7d24dabbd30cd31963b25657ffff7fee760dc57e9d8d310777b04a5fd427"
+  },
+  {
+    "id": "banana-pi-bpi-m5",
+    "symbol": "bad8483e287a735c33109e7263c9845d94862c15c95307a75deaebfbadbc1be3",
+    "footprint": "89266f6c068e040b852e7d1c4b6943e9e2ad8c9a5e20b4a3f73e088b942167e7",
+    "model": "89f39440e2c3e23c3a252f397918c183b97927dc771a6a3091587d66efaf3784"
+  },
+  {
+    "id": "banana-pi-bpi-m7",
+    "symbol": "0b9a5e1b6844ecdd296d95b53188435af112e30415a4be3b7c209fc956b4d34c",
+    "footprint": "df926cc6c17c8ab3ee41795cbf34fcf2f3390cf9af9fab11f4abb9230dde2338",
+    "model": "0770e1e1e71b0c4af7457de4fbca6cc5682d35695cc0e4debc931d88378d8339"
+  },
+  {
+    "id": "radxa-rock-5a",
+    "symbol": "b75e5843d648d81e5d059f2cff7984f2b783c8d36c95da0105a07951fcb3b99e",
+    "footprint": "ec8f4af77840c73ee547abcd6c52bada7ad2fc809a26c804a8f80d9179175826",
+    "model": "2ca01f7c5d4c83b569efcca31815a476bc712c1d47d5f6c1674e451cb06e6460"
+  },
+  {
+    "id": "radxa-rock-5b",
+    "symbol": "0c759abcbcb5dd557addedceec73c79c1b74ef8cf6ca7d557125ccaad00deb0c",
+    "footprint": "dc1a31ef037f183e732db9943108f8f72b2664248a899a59b68bad7b3f754b7b",
+    "model": "ba67195509b0a1b7cd2556913b54e85ee2623ae0dbfc3357625cb414efb59a9a"
+  },
+  {
+    "id": "radxa-rock-3a",
+    "symbol": "3d37f65b7495a77413da5116bcf10ee2792fb410b1b5eded943f46b170aca328",
+    "footprint": "3336760413c93d7fde2caff9b4773549f3b491ee1fcbaa4ca71b6c16c3a60dcb",
+    "model": "d30c24246547ef9992b292985b8bb57c1c2f8af6085161bf3ee144c64d256b04"
+  },
+  {
+    "id": "radxa-zero-3w",
+    "symbol": "4f419b9fb373b92e7f24ce9b616ed0a60c5c6fa61fe60ecc73a3eb37fd926d1f",
+    "footprint": "268f4ab0ee69ba038bdf80b5b4b6c53ba5d0a684fdbf12800d0046a84c41e5df",
+    "model": "e578ecb549f142249ebcf4dd18b80f5c91f579cfb7cc233cc6dbb99842c717ce"
+  },
+  {
+    "id": "lilygo-ttgo-t-display-v1-1",
+    "symbol": "ea8677a3b2e245a348f90e2a5368a65b1a6435610eeb7590766eb5f5c85d8767",
+    "footprint": "75541cedd9b8757f8f93d0924b97681ff50c205459a72832cd5d7bfe0eb3a54a",
+    "model": "dc1b3e483a5b2ec803330a8c25498b63c9b044f669893c21d6d98e8974eca255"
+  },
+  {
+    "id": "lilygo-t-display-s3",
+    "symbol": "f93bd0bf3b5b3d149f5bf411655c53bda0145fd2d6de318a9731d47dbde44e23",
+    "footprint": "ccde52b58e64ede59effd0d22537ea6bc45689ed1e38cad201c29c621a5d556f",
+    "model": "ad7dd26abcbf04cbd9a47860fd9c3af32536ad96dfef2abf1d581e1785050b46"
+  },
+  {
+    "id": "lilygo-t-display-s3-touch",
+    "symbol": "b6ff81c44918213c28d1fd15157992059af67903909ce1c5ca3e7c485bce5741",
+    "footprint": "6d4fb6336c2545e1f8fe2d6fd43ee4bdc69a39e93e182e6d866ea56d29ac909e",
+    "model": "ad7dd26abcbf04cbd9a47860fd9c3af32536ad96dfef2abf1d581e1785050b46"
+  },
+  {
+    "id": "luckfox-pico",
+    "symbol": "17cadb4d1720260c527d2a1e0c37e9074293d0fc05542cbd173f8f7292e68f22",
+    "footprint": "506dee49195564127b0df6e1a1ea9ab0ca5be9d06438014c0b0bb0c42cf510f2",
+    "model": "d1113add5fa68fde51e7ce0fdc8ced64bd6b5f7a30fec3659da8677b2be0075c"
+  },
+  {
+    "id": "luckfox-pico-mini-a",
+    "symbol": "42876ab7aa36607d7669e6999672975153290d0f99d5fb76a48a829ce6938751",
+    "footprint": "5d0c3777f4708465151a3ac77574ff715eb4e044670b7e7efa1aef9e7084ea0f",
+    "model": "2f25247b3a79c5587637d7db0184733bd656d5ae1257b92c7168715644ff1609"
+  },
+  {
+    "id": "luckfox-pico-mini-b",
+    "symbol": "9e0de64b824218def6667c8bc10f99d40a396575d3f14dc2070be0b279aa28b1",
+    "footprint": "584c0e5ad38b60dd0a2eca84ccb6257f6843dc72b14d0544d19a4e9f045b5afa",
+    "model": "2f25247b3a79c5587637d7db0184733bd656d5ae1257b92c7168715644ff1609"
+  },
+  {
+    "id": "luckfox-pico-plus",
+    "symbol": "63ee5d834a7ffd618b732d99e87c9b9dd38b4ba18a131e09df3a237265e11127",
+    "footprint": "cbbd49606c43cec5a6e609680c4e83456ae2bf5d80c471e8f7b8abc8962c12c4",
+    "model": "e2d70d2cb99fc32c5b5d9456a1f5cc06c82ba3e3650714599784b221abd04f7a"
+  },
+  {
+    "id": "luckfox-pico-pro",
+    "symbol": "af687ff400b18f8c585a8e60b261404910872068c2ae9270e0a1a86801f427b6",
+    "footprint": "5ad012e64b085acf749a047c81988195c698fc7f1d533ee0f24ac85e7994809c",
+    "model": "e2d70d2cb99fc32c5b5d9456a1f5cc06c82ba3e3650714599784b221abd04f7a"
+  },
+  {
+    "id": "luckfox-pico-max",
+    "symbol": "1359edbaba229f3743dc1c9f415fb14e119ccc0a6b832ab28111dfef2fd8830e",
+    "footprint": "34926675b89b3582db3abf2cb6debe95618348d71d010ac94e62b4ae943329b9",
+    "model": "e2d70d2cb99fc32c5b5d9456a1f5cc06c82ba3e3650714599784b221abd04f7a"
+  },
+  {
+    "id": "luckfox-pico-ultra",
+    "symbol": "a810466774357b05bcbb553bd637ddd61215153348d0c4cf11e962aa8f993ba3",
+    "footprint": "1c934372b97dac1eef6060955d378bc25bf80c5dab974b543c845cbf68988d7d",
+    "model": "d5f132108bef399037fb6ac1e941fa6697ad8d6f69cd87c7fc8bc6fab4252acc"
+  },
+  {
+    "id": "luckfox-pico-ultra-w",
+    "symbol": "b5a18a13012eff9251d98e4debfa613c1bc7b0ba1bf3e6e6fef3f3b26ecba036",
+    "footprint": "2c9eb59fbafa61095190a652def8c1e122b9f4af985c7614100784df14bb997c",
+    "model": "d5f132108bef399037fb6ac1e941fa6697ad8d6f69cd87c7fc8bc6fab4252acc"
+  },
+  {
+    "id": "luckfox-pico-ultra-b",
+    "symbol": "1919a4cbea7b66a7f50f5963ef3125833426793759ce95c82e50753620ddbf9b",
+    "footprint": "8d3122c13961d4e3c449588ef9673e900c155ac3c431ae2b5fec1938ad1bdd8f",
+    "model": "d5f132108bef399037fb6ac1e941fa6697ad8d6f69cd87c7fc8bc6fab4252acc"
+  },
+  {
+    "id": "luckfox-pico-ultra-bw",
+    "symbol": "3cf668cb7cacf7e130ac0ec99faf7aeb62d038186dcad3082f5b9112a868292d",
+    "footprint": "e5730dafa43440bff80be8f9986aa910ccbece06ba9729c3207a45daa3981fcd",
+    "model": "d5f132108bef399037fb6ac1e941fa6697ad8d6f69cd87c7fc8bc6fab4252acc"
+  },
+  {
+    "id": "luckfox-pico-pi-a",
+    "symbol": "38d6eccbabd275662b148dc05bfce0c217726e7fa41a09ad8fb1829a82faf02e",
+    "footprint": "6cb309e706a867b6a248fa0ac2cbcbc0b89d491b6065de137569417829b1246f",
+    "model": "0d06009bca3d2d4a4400adca032f92556d77cb751c801e9938c445cce96e69fa"
+  },
+  {
+    "id": "luckfox-pico-pi-a-w",
+    "symbol": "5baa0a4d01d0e7176a5e4c833b0c9bab4f575bea2f952950b5ae42223858b2b6",
+    "footprint": "0f64c344c490b058de235097099a691b710827c2c7ae5844ea6af64d1996404f",
+    "model": "0d06009bca3d2d4a4400adca032f92556d77cb751c801e9938c445cce96e69fa"
+  },
+  {
+    "id": "luckfox-pico-pi-b",
+    "symbol": "e3672cceaf4d9a1dc119788fbb0e3cd299d0e9bdbe5d5547912b0ede43ff4c62",
+    "footprint": "2d6d16809c0cafbafeda45b0967b8e9217c4e090ca42075432e654070914f036",
+    "model": "0d06009bca3d2d4a4400adca032f92556d77cb751c801e9938c445cce96e69fa"
+  },
+  {
+    "id": "luckfox-pico-pi-b-w",
+    "symbol": "4cba2e8127f1208fafe3a4db499398b9eb53c82fc9bfe2a72bea422def6620a4",
+    "footprint": "e0e4b0dd6d39af7f296f060655c68934c667c4f0894271d1768d596ce2ddb8f9",
+    "model": "0d06009bca3d2d4a4400adca032f92556d77cb751c801e9938c445cce96e69fa"
+  },
+  {
+    "id": "luckfox-pico-zero",
+    "symbol": "8563e10d2096048a084a4ae84eacc0e2034c63c1cced240b3ded90f35f2ec7a0",
+    "footprint": "39e406896cad58d5996f529ab86f6d94330397eef8878f8c47cfbf5c4673bad8",
+    "model": "61fae19c148cac4c1997d8179f09a06e0449c84a87cb90eaaa9da566cb367685"
+  },
+  {
+    "id": "luckfox-lyra",
+    "symbol": "fb9ba3ff3c571e34281209ed46ebb7a7d9583cbba8f947cdd07d87a067eb32dd",
+    "footprint": "ee2782acaeeb7987440d631063c922369a6aaeffdd3640991304fcc3fa224b15",
+    "model": "19eebc335b1cf840cec1ef7d51bd2ce7bc7c5ace85816e78540f2dd6fc92fad8"
+  },
+  {
+    "id": "luckfox-lyra-b",
+    "symbol": "53d72b57bd1b2321033e0cfadb20954a577f7c3888270b69ba3b76090cc095ba",
+    "footprint": "9aa7469f1bef088f0fdef013a2e63c510fcb664d49c81469313789a413673bdc",
+    "model": "19eebc335b1cf840cec1ef7d51bd2ce7bc7c5ace85816e78540f2dd6fc92fad8"
+  },
+  {
+    "id": "luckfox-lyra-plus",
+    "symbol": "b0e78ce95c5da69a713b2f25be703f9531cb298ac1d1b99c831bf57eb530fefa",
+    "footprint": "5d9a3634eb62de7498a78118cb45eb91186c9e758b10d7a27286dbc988d3c97d",
+    "model": "63925ac00a45c4b1e33a94d3557ec813a59340597c03c8f32e5d798302d12713"
+  },
+  {
+    "id": "luckfox-lyra-ultra",
+    "symbol": "59a47932fafdf62836eb51af46414b545ee40563cd92f85168cbd042b9b3f7b7",
+    "footprint": "f06593db903626eed9c2178807d33bdb83aa697742ab2c4d3bceba605d49a806",
+    "model": "c4f15c3ea9073f5ec3671e6dcc4b8cec81d01c2b64b4bc8dad8c17b52ccceafa"
+  },
+  {
+    "id": "luckfox-lyra-ultra-w",
+    "symbol": "dfbc0dbdd6b878e2ab7ff2b1fc7d1ee89e1bfe73b33c529da3457dc031bc1847",
+    "footprint": "b478a22a6917ccd6cf2b6ce8e803550601aeffe4d802fa263df37459784e0ec5",
+    "model": "c4f15c3ea9073f5ec3671e6dcc4b8cec81d01c2b64b4bc8dad8c17b52ccceafa"
+  },
+  {
+    "id": "luckfox-lyra-pi-a",
+    "symbol": "70f833def90be18d02798b6d0e5405ea5b2532bcb5e343b9b8c5adceb46e3ae8",
+    "footprint": "714d188a1c3ea063f652126464d1562b54b5ccefb3f58910d635d2574f114cd4",
+    "model": "f98142cc8160235989e7a06940738631c533752cf57f73c2a1b0cfdde641f137"
+  },
+  {
+    "id": "luckfox-lyra-pi-a-w",
+    "symbol": "abde5d3aaa6739d157d5bee2cd45cf29512facece1f45240de78b2c16e7a9890",
+    "footprint": "b659b1e9e64e5c64db3e0b7d44530067d59e12268ad54aa6e6579e3abf7fc9f4",
+    "model": "f98142cc8160235989e7a06940738631c533752cf57f73c2a1b0cfdde641f137"
+  },
+  {
+    "id": "luckfox-lyra-pi-b",
+    "symbol": "73d269766d2ab9f280040c57311c325c613148884f5dd91ead1367ff71cf1da0",
+    "footprint": "c4771d502a6ecbcd5c104a1b50f5d24576f153d8f7cfba3299dee96ac4b8a61b",
+    "model": "f98142cc8160235989e7a06940738631c533752cf57f73c2a1b0cfdde641f137"
+  },
+  {
+    "id": "luckfox-lyra-pi-b-w",
+    "symbol": "9408f7933a274cde638d79349b7d952957a456444b01617b6b8bba04e0229ed2",
+    "footprint": "400addd1136920c196e90163cf19d00c38eb0322a837ec726d7f2d7990b75235",
+    "model": "f98142cc8160235989e7a06940738631c533752cf57f73c2a1b0cfdde641f137"
+  },
+  {
+    "id": "luckfox-lyra-zero-w",
+    "symbol": "1e3b495af5c96f4abfa85862c038180083217e8b303cd4f02010e3bc2beaad39",
+    "footprint": "6878af8c871458a26c1ba59fbdd65b8e91240267b1cc802e562a168103943b1a",
+    "model": "7f4ebb11a135b8643db5e9203c9bc678c1e2e431f76797d1fc3adb83dd75cb4d"
+  },
+  {
+    "id": "luckfox-nova",
+    "symbol": "1817c7c9bd23c3a11ee2dc4cae5a7d10848c8e2227fc3eb7b850bfeb0cf4822b",
+    "footprint": "e9b076c76a3e7f1f816bab150d93c3788736c3d0c9ae32f4b6c24cc9f077ec04",
+    "model": "0ee0c7657ea617b4c986cc844362744a69810cedea1798057eb122aa6f47ba99"
+  },
+  {
+    "id": "luckfox-nova-w",
+    "symbol": "cf48ed3076ea90d37ce0f8462834c3de26cfe21ee5507aa6b86fec1d73c77332",
+    "footprint": "244bbf1c5571bea342d2bbe7ecf16e5ff0efbd24f3460354743e4b081590435a",
+    "model": "0ee0c7657ea617b4c986cc844362744a69810cedea1798057eb122aa6f47ba99"
+  },
+  {
+    "id": "luckfox-aura",
+    "symbol": "02506d21b0177871113e67baf184dc70ab9311b33326fcb0b2cf6bd0286e5e95",
+    "footprint": "1406b921e26b245c858ff1d35dbe388bfb766d64120bf0f2b9f8e82c2f7c06fb",
+    "model": "9046902761779b151a8804ffb4565796968dc85532267736b95dbda4e218f5b5"
+  },
+  {
+    "id": "luckfox-lume",
+    "symbol": "afa9695dae8bd5cc8104941ab7f70fffc80b80b24653c6ab5252f66baa88492f",
+    "footprint": "2e7efcea510b3807c4f14dc47e5a9c0032c5e87479dba2c3d76bb1638da7e03b",
+    "model": "496b99111323aa8f2f146e6cb86982bac6cba6508a4af75cfa1ca062a1743447"
+  },
+  {
+    "id": "luckfox-omni3576",
+    "symbol": "4c1ee349563a36dab5c294bcefca74f7f12ff4f69a22ba50325c701c24eb2dbc",
+    "footprint": "bed047c514dc6fb1813f6b355a02db001a5114459a768fb9ab396c7606dc65d5",
+    "model": "49935de315791a9ef9700739276127b186f0e8ec467630ecf7ab449428efc75c"
+  },
+  {
+    "id": "luckfox-cm5-io-board",
+    "symbol": "3ba77474fb9502acc5c8d007df2c3fc58ad2dc3b73b1c9b564df6af69f18d9b7",
+    "footprint": "a8252ed458672ff899fb782071bfce80cf5722667ed166a1caf05ae9e49ee641",
+    "model": "dfc2ab8bca4351f5e9ae208b4f2cbfa575b0921a1c92ef68ed69b471ab7e9278"
+  },
+  {
+    "id": "luckfox-pico2",
+    "symbol": "da7ea3a5802fadb1064a82e80438f0bb3ab8c942eec2fc2f55b999019d839303",
+    "footprint": "23e90ef23a635048534e07999dcc6db0d6a102fa0d400c7630180e184eaff9e9",
+    "model": "bd6e992252288f95301336ad55caeae094129e3456a7deffccd3a29232f4d671"
+  },
+  {
+    "id": "luckfox-webbee",
+    "symbol": "1fa024a63c8a71e20fcb11be635265dbc61d82e11f844d82bdc4df51eff54491",
+    "footprint": "c9ae7d642fdec1dfa1e077f6683b1630589cdbb8021409265503b2c372a624fd",
+    "model": "ce9219a7e2dbb584e6106752c50e1e527b0589251b1fc6bd7715b6f82f5b0ab4"
+  },
+  {
+    "id": "luckfox-pico-86-panel",
+    "symbol": "046da7f5279c15335e6ef86edfcf64f1ab8b2f8c82274cc59542dd862d5b9fa9",
+    "footprint": "d4634aec8ff0e057282e6a3b61157d08d26da9d3ff799a91d966fca2dea83763",
+    "model": "016a633a74528e54392e419e0dc958687f77d314f6cc8bf899bc71e07514652d"
+  },
+  {
+    "id": "luckfox-picokvm-base",
+    "symbol": "32210cad3d15d1dd2048ef50fc7550bc2c4c9d01641d292bbc6609e0f2e38df1",
+    "footprint": "b1cecfe3fd4d294fe203e46092b8cd8616b4fd9c7816622d3b03a27182d26d65",
+    "model": "1379a84b4611f4f079264bd2abf29f1344fc55f4ddee39b5121ad3b984193fff"
+  },
+  {
+    "id": "luckfox-picokvm",
+    "symbol": "bacd65f93f0575d9d6b390073617b22ce0b7003300b2d18e5e23832b59c44e99",
+    "footprint": "8f9378d02e2cd8ea8a560806bb63e1108ff43a6d11243e9e956819188960df75",
+    "model": "1379a84b4611f4f079264bd2abf29f1344fc55f4ddee39b5121ad3b984193fff"
+  },
+  {
+    "id": "luckfox-picokvm-ext",
+    "symbol": "edfa1dffb47cca0a6705cf8eeb39150fc1906727505259a556d714ca0fd0eaeb",
+    "footprint": "e49c81a836877d72db285ff92cfa442b61149b30dcfd8e8037ada2d74555b662",
+    "model": "1097634e52f6a15462a6a3d3bb18251cd4aec08c18d02868677cd4b99a268223"
+  },
+  {
+    "id": "luckfox-lyra-plc",
+    "symbol": "2c7425e6ac0843fa9d1aae8f5c79b372f90892d81d03c935ca0c235eaf4c7a3e",
+    "footprint": "edeccba9f0cc91642fdb769a840d0c60c2376a50cc1927ff93dd3f149f2c9f7a",
+    "model": "20aa6d30264730fb7311cd8421b604e676419a85bf368b208fedd036c736a79f"
+  },
+  {
+    "id": "luckfox-core1106",
+    "symbol": "0aded6472cebdec91405d7e72fc313f89f3673fd2ede34a680801779d19efe4f",
+    "footprint": "4bd76e8cc7e8362cedbdd797b7a81b3589a3c92c4efa9147ad3a84ef9e4572d9",
+    "model": "82831ebeeddcb3e85d29de6d2ffa83ededd319f71b770fd39c68df059e1885c9"
+  },
+  {
+    "id": "luckfox-core1106d",
+    "symbol": "a6ac870ee09059466f59ecb59d8e6ef43b6f362ce9f2077d96977e1fdbf82d12",
+    "footprint": "df78ddbe6c5e4628f5baca63b73cc2872d5a73bd613f58759178a26284b0f30d",
+    "model": "82831ebeeddcb3e85d29de6d2ffa83ededd319f71b770fd39c68df059e1885c9"
+  },
+  {
+    "id": "luckfox-core3506",
+    "symbol": "870980762767fcd02253a151ef90ff9a0628128c77034eb8a03b18bfb07563a5",
+    "footprint": "8647ad527ec7e6c9dce204cf0261c54609c4a8ef8fcbcda0a29a08a03daf1bc8",
+    "model": "af8aebe6961325ce6b4e06ff5a7d01dc6edf03bed249c35ef779c5cbf8380902"
+  },
+  {
+    "id": "luckfox-core3566",
+    "symbol": "d3e702a0f2110e1ae86d1e0d782d50242130cf23e329014eb58cb7301506dbf0",
+    "footprint": "e7d816910d2b8880d639f5c9c72d01f51269e1d36fbf167119bda541a9e28ac7",
+    "model": "7613c6fb898aa401f5adaea2254d4e8d92868edfc6336d34a7caa7d73020ee15"
+  },
+  {
+    "id": "luckfox-core3576",
+    "symbol": "2bc47441c37e056a80fbd2c23531786cf10352056cb9af4e47e5a541ec746e42",
+    "footprint": "1c95937816d8a35096ebeeaff06c97b82209116771167f4ed90c7f3c4627b265",
+    "model": "ebba02ba0c3ceef26723a506f50933735c17b482eef60433e896948506d60d48"
+  },
+  {
+    "id": "sipeed-tang-nano",
+    "symbol": "3127862205fa64270fc8c07f450afdd831c67654f6e763d2fc3e120e64ac55f2",
+    "footprint": "ad591804fdfd61a690cf7a671c6d6f96ef3dbca8e6d54766f3e8e4f113820468",
+    "model": "a956ca67a597bd31f97c4b29806e6fc6e4057b27a5296533ca186c5a5e94ed46"
+  },
+  {
+    "id": "sipeed-tang-nano-1k",
+    "symbol": "e0eb9517b8301c158caeda628ce957cb7f832f17ccf9f77935565c09a840c3ae",
+    "footprint": "0480dd932132518902c318e68896a7495fd658c6bc3fffe613dcd361a041f4b8",
+    "model": "f8597f653203af54e36a7d3603f61f9c4f5ba0b4287fb447c98b5856336de352"
+  },
+  {
+    "id": "sipeed-tang-nano-4k",
+    "symbol": "ebbcaed1958a6096812bdc9949c9b4862eac641894fb6ed9b24bd974d1a07deb",
+    "footprint": "a15f635ff7bec3cb4d87e231ad2d32939908d0bef75bfd9ac59f641e9c4d0dce",
+    "model": "374fec4bd76c1fd0411a44fd440db35cdae05f0b4bac19ffddf17264d666aabf"
+  },
+  {
+    "id": "sipeed-tang-nano-9k",
+    "symbol": "4c46a2c6349c726b17613d68a544a60ed69368b2dfcb0838f955215319845364",
+    "footprint": "74e635288fdf17ad39eac363ab0c1d0ecc1423c38af22b281466def924dd108e",
+    "model": "9fa527be8aa37940e676d0cc300187ecba8cdb158a88ab7d38576665523e9b91"
+  },
+  {
+    "id": "sipeed-tang-nano-20k",
+    "symbol": "59cfee3668ce6a85dc397ee5f1b03eeccc456de445112bbe8cff5cb7713868da",
+    "footprint": "f172da76112e0c6ad40fe2e4b8820bca3261f5f8d2de719636a2f49a156420f9",
+    "model": "dbe407a3cee6a4c99a0941f94e5b4503278970c0b4f2d144b0468118c1f65c72"
+  },
+  {
+    "id": "sipeed-tang-primer-20k-lite",
+    "symbol": "4c2fd3b8390bbc77c69643dcc4abab1e1cb32ecf99c4cb9fd391919fe1825c1a",
+    "footprint": "a6d6761bd2500763b8501535fb36cbfc40f0ddf3dfa9db5ac9df9b07d7ce7121",
+    "model": "8126ab03e3b5eef61658152896a5424936d4601c822d93c286f5e647a3938eaa"
+  },
+  {
+    "id": "sipeed-tang-primer-20k-dock",
+    "symbol": "71b7753ba2b68200dbd0ff5b85432b1c556159948e6a5e12609b32931f988a1b",
+    "footprint": "753bd18818adbb60ab393976e23fda08866b9c48aba2f770906c84b2ba02e189",
+    "model": "56732c6e274df5ce3982d9a3b8c8ef34434cb9aaca38b15aa19ad4891d5f4c3a"
+  },
+  {
+    "id": "sipeed-tang-primer-25k-som",
+    "symbol": "2bf372a19e0f552e478ce487853939f32b9a742703400a903d8eb26b59bc6d84",
+    "footprint": "fff7074ae4ffd29504f6451e7e6affaa52494802b6115ab2d5886ee7aec35faf",
+    "model": "9d2910b9ca3dffd172f9a98580c6f943c3abfaba1b84d7658986e939b480a19c"
+  },
+  {
+    "id": "sipeed-tang-primer-25k-dock",
+    "symbol": "a7f659b4c78ec335a6a11a59a6b3790a716d146042a235be51f5c12bda3c71f4",
+    "footprint": "910e485742664cf1610fe1ab713b9128bc5fed59412730593b56aa03c3248590",
+    "model": "aff51dbb0776cd3527782e28881faed639ebcb8d076717c9a243e6f07b3983cf"
+  },
+  {
+    "id": "sipeed-tang-mega-138k-neo",
+    "symbol": "79b87a981f8631a1da98a67ba380865bd154489545873b5a4c57a408b6813087",
+    "footprint": "bdf9c5fbb4dc7599746a756d9089471a259c79555f53ef69654aea91641dd21a",
+    "model": "f6fba7e20d2c4062ee549d3a1ea5ae56d0d945846becdc092e7350ce5072ed9b"
+  },
+  {
+    "id": "sipeed-tang-mega-60k-neo",
+    "symbol": "007671886492c2ee20930695059b18d93aeeb7d45f356130474101ffad2ba51e",
+    "footprint": "b504be0fa0fc871aae8a9e2f4ddb51d43f0da3e94e0e78c4fdcd289bc0a47044",
+    "model": "f6fba7e20d2c4062ee549d3a1ea5ae56d0d945846becdc092e7350ce5072ed9b"
+  },
+  {
+    "id": "sipeed-tang-console-138k",
+    "symbol": "6c4f1c04e170a56401041f8e5c8108d9a10892d3fcc29571cba1894e844dd621",
+    "footprint": "c21efb7f5a938429d9ed4f2b569f9f5419964b6d2f9cd1b81a76aeda34682f0a",
+    "model": "2641048c41cae06e20c57749bb77fb1554267d9293976b1ac65b255eefd07a0a"
+  },
+  {
+    "id": "sipeed-tang-console-60k",
+    "symbol": "3983b0bd306d5946305be152bf8332a405dfda8091c1201a2f05a999f8f1e06f",
+    "footprint": "a49e286709061d7b272e841afee6f60307c6f6811d7c13be61eb78e39a105201",
+    "model": "2641048c41cae06e20c57749bb77fb1554267d9293976b1ac65b255eefd07a0a"
+  },
+  {
+    "id": "sipeed-tang-mega-138k-pro-dock",
+    "symbol": "a874146dde0d59a7b000f2f8fb98943804d7e91db01fbf312741f70f717911d3",
+    "footprint": "dbc2cd675e155307aa788ea285df87a86bfc7e1bf3d813c2688ab842fe50da5f",
+    "model": "d26753bdac72c7130acdc73921aba372b59891bb9e650b94e70e48358fe06c77"
+  },
+  {
+    "id": "sipeed-tang-mega-60k-som",
+    "symbol": "21ce8ecd1723f220451c8af6b474b5973856a11ebc51fac650502bc4d68e948b",
+    "footprint": "34282e763e953a7369b761a52431e47bb9140f1816be7d97c131ea927d9a97dd",
+    "model": "38d29efdff12284a0c786caa2b3e3add8924db61d55a8aee201041f5a11f002c"
+  },
+  {
+    "id": "sipeed-tang-mega-138k-som",
+    "symbol": "9dbd27726cb7227444b8506e42ff64a11af0c56fcaf5a1d4786dbf9edb1547c3",
+    "footprint": "59ecadad3f1044f26f9a120fe0f0ad1dd29a425755aa79ecf4eeb82d542b60d7",
+    "model": "38d29efdff12284a0c786caa2b3e3add8924db61d55a8aee201041f5a11f002c"
+  },
+  {
+    "id": "sipeed-tang-mega-138k-pro-som",
+    "symbol": "fd9128df2fc849818a14a52a6511e767db13b14a347fb430ba4777c1bb87a6e7",
+    "footprint": "34a38e481444fad1d5df762214aa75ac8ff4df509c59c954a23264aa6078023a",
+    "model": "710ed1932388f38138ba3996cca0c402c39a786d10aa0e2c63a1bc903c5bfb71"
+  },
+  {
+    "id": "sipeed-tang-primer-20k-som",
+    "symbol": "d424996133f1b33cecb34729a12eb351e24f2c6d0e4787e5c85bfb7c1d684dc9",
+    "footprint": "b1f64d4ffd6eddc02e7d73b2fb2d67e0a97758727987ee993d0cd8da16cfb264",
+    "model": "ef9f0e983e75df2eebcb997f18009ce36a324121d295a8562c669a82ac4d62e4"
+  },
+  {
+    "id": "sipeed-tang-primer-eg4s20",
+    "symbol": "3fb3a11b525e3a07c5760e820498649cda13a3c87cf8f8f6e76d331523875db3",
+    "footprint": "533be523e353eaddd5442657a28040b857024cbc7624a946d41ba78c4560e64b",
+    "model": "d04f2b9d813acb2c0be33859f8fc5a8394fa8a2c77d6c4af4975dc853a3d2487"
+  },
+  {
+    "id": "sipeed-lichee-nano",
+    "symbol": "922aa8d0746f7f367f01d0b8ce8fbe4f0f043cad2bca4ac9508700d95f76827d",
+    "footprint": "5936fb7934cb98efb33dbf4e62e6fcba70edd41aecc9c9aceeeffedeed3f9b6f",
+    "model": "6f8f379e52fcd835a2c0d80cf69f0b4ad7271d8dbe5ab518fe917a87eda88b73"
+  },
+  {
+    "id": "sipeed-lichee-zero",
+    "symbol": "9fabb2732ad43b149b6234008b5f49cb6f4bccff51ce413318ecfd5323a61b41",
+    "footprint": "9c5a9ce634555e1e4d7b281efadb8518c812d297736476e5837fda1d1b29511b",
+    "model": "dbfaaaff7cdabf989c6b71dab3ec81b79408b35ffb8fa498f331d6d9bdee5193"
+  },
+  {
+    "id": "sipeed-lichee-rv-core",
+    "symbol": "78688c41335b64b7c3b07f4380f03b411504021c4add7457d9c2a00b51f84f2e",
+    "footprint": "c84764a3ca521c8faeb16d9167d799666a7934e5c64887949f5180be224a94e0",
+    "model": "b13a18b5fcfa5548fffd5e3a2f8dd69cd2a145861665236289ae8cbb73638324"
+  },
+  {
+    "id": "sipeed-lichee-rv-dock",
+    "symbol": "884b9e2a46b2830b601f01f6d50ff82c4243c20f576f94bfc5462b8984c2a3fe",
+    "footprint": "ca942c1a370ad43def683782cc7d5599096934ab0dd51f5712eae0cea45c170b",
+    "model": "8ea48f25983882d0cb2827c918b094903c40450c9bd01fd857bdea70e0dd6696"
+  },
+  {
+    "id": "sipeed-licheerv-nano-b",
+    "symbol": "31dd3d01093064ee37b2f365c3da67461f7548d6d3272e8a05267c5d4fb2900f",
+    "footprint": "4cccc76b617edf03b34af0b93b6474ced9bfb7777d23d2f28ccd60fa703ad0ae",
+    "model": "e7186fb59824c3147fc9d89dd6740efafcdcc905df322fdd67b751ed9cfcc533"
+  },
+  {
+    "id": "sipeed-licheerv-nano-w",
+    "symbol": "862bf3d9e26679586423d46b028d516e597bd24eade58279f76d6edc52a474a0",
+    "footprint": "2b575cf8ff8adb76cd90f61de65013373bf3aea2913b6ed592e64d65e1a8b58d",
+    "model": "e7186fb59824c3147fc9d89dd6740efafcdcc905df322fdd67b751ed9cfcc533"
+  },
+  {
+    "id": "sipeed-licheerv-nano-e",
+    "symbol": "6972717a31b4a2c2ad1db0bdcbd6886f6e0a25ac2cb881d3b7a4a6b07f11e66e",
+    "footprint": "f245f6ea0956f76ad96abe6c7fbc9455395cc7ddccf9b4128713bd1e6892bd80",
+    "model": "e7186fb59824c3147fc9d89dd6740efafcdcc905df322fdd67b751ed9cfcc533"
+  },
+  {
+    "id": "sipeed-licheerv-nano-we",
+    "symbol": "079b10c78591eff16f300b409860fb2a93c7f0b88055db007ab8b46fc03d6cc5",
+    "footprint": "5034b4b6b83b2df746bf0f9f25dbb5d2507daf5b7cc792ad87c26989d8dba49c",
+    "model": "e7186fb59824c3147fc9d89dd6740efafcdcc905df322fdd67b751ed9cfcc533"
+  },
+  {
+    "id": "sipeed-licheepi-3a",
+    "symbol": "9ed0425fccd7a45e5c7531bf115259a6b96473f4e7312b568dcc9337d24987a8",
+    "footprint": "48d0f9b97b5d2e2270761bfd1658e82a8fe473f1a4942033620bbdfc2c56a135",
+    "model": "394fe595734955f04edb96f283e0784db7731750cc79bae34c830e457f0d40f2"
+  },
+  {
+    "id": "sipeed-licheepi-4a",
+    "symbol": "08decb0bbc414ca45477972d6aa1d4380a76b1d50fe34f9666f468e7df1c2c88",
+    "footprint": "822e95598b4acb7b240a4a478182de091af9c7f3cc6e7a5895135541084d5196",
+    "model": "394fe595734955f04edb96f283e0784db7731750cc79bae34c830e457f0d40f2"
+  },
+  {
+    "id": "sipeed-lichee-module-3a",
+    "symbol": "fa927e9092ce6423920f9e0f4d156a998c7d26dd11be7f2519d334dbf0397e1b",
+    "footprint": "769d1371bd37f66c35b31117cf928fb71a7ff6be38f9d72b9e683ebf23af70a7",
+    "model": "8a561a802cbdf6b491452fadc739c18f868c6122872541afe6460d111ebfa7dc"
+  },
+  {
+    "id": "sipeed-lichee-module-4a",
+    "symbol": "64edaa506322fbb46f7636244bfa1d34a11bfe00e1b47a43e01bc0eb86c6aaf2",
+    "footprint": "97287cd08e09e37a751642dcd524f2f9963f77a6a1be6e98f30d62e790915cb1",
+    "model": "8a561a802cbdf6b491452fadc739c18f868c6122872541afe6460d111ebfa7dc"
+  },
+  {
+    "id": "gowin-dk-motor-gw2a-lv55pg484c8i7-v3-0",
+    "symbol": "4d8f79e739cc13a09ea22e67e3f4ba3cf8d43338daa31b42177c4c45a251066b",
+    "footprint": "e109d2263af8a3e50d6bb3499ca7d6b097e614e58b3cea868d0fd0e6eb160d8b",
+    "model": "ec61a1a1aa35332e8d6e3ac18b78fc0156cb9513e18a4e36948d13683bf46044"
+  },
+  {
+    "id": "gowin-dk-start-gw1n-lv4lq144c6i5-v1-1",
+    "symbol": "320895c9f704305e4ba963df1abd100f1a3472427175bb13412c3a2d23b5778a",
+    "footprint": "1ffede22453c5edd9da70911a46ec97c0fc2e0da506ae11f663c9356b8950931",
+    "model": "bcbea95a23317f67fbd8d26233bace07fc19a776a9fe0853511554455618d51e"
+  },
+  {
+    "id": "gowin-dk-start-gw1n-lv9eq144c6i5-v2-1",
+    "symbol": "a7ef943838c1bcc342944d2fb4629ebe97119e0a6954561c0f73c3c4f24df4f0",
+    "footprint": "48ae4e6d5d1d73da400c1583d24042a76c796590ac5f3cad5c7810c114676db2",
+    "model": "69d5efe03b99a3bdd95e6bf1e8b315d4141c83ce4b7bfc6450fd160392a6a778"
+  },
+  {
+    "id": "gowin-dk-start-gw1nr-lv9lq144pc6i5-v3-1",
+    "symbol": "28a184e614d8b7a4f99f2c11c0922d9bffa1c4116be3c4cb9a23b1ec3f769694",
+    "footprint": "a08f251b688513ae4382c2f607ddbeea7bb063464e4ea2bfea9cbe389ef6ba27",
+    "model": "69d5efe03b99a3bdd95e6bf1e8b315d4141c83ce4b7bfc6450fd160392a6a778"
+  },
+  {
+    "id": "gowin-dk-start-gw1ns-lv4cqn48c7i6-v1-1",
+    "symbol": "592a0477981744e8280db33e1ddd6c191d9320bbdc72d78e11353926e2676ab3",
+    "footprint": "2a8fff3138f817baf736114f3515ee868653649db9e767232ff4c4c6248a2b7c",
+    "model": "a37a8606869d3c94a29e110ffae41ae8c48eda15a6aabfd0693127343d8f3410"
+  },
+  {
+    "id": "gowin-dk-start-gw1nsr-lv4cqn48pc7i6-v1-1",
+    "symbol": "641a9e80e2cd4d8ceebf2e548fa767aed529d3b44844c90c44f34b224a621928",
+    "footprint": "1b2235a294be23e54cf1373ca9be78c972d2d6d91e7ad92a8767a3510de6db37",
+    "model": "a37a8606869d3c94a29e110ffae41ae8c48eda15a6aabfd0693127343d8f3410"
+  },
+  {
+    "id": "gowin-dk-start-gw1nz-lv1fn32c6i5-v3-1",
+    "symbol": "d261031e78e372f4c954221663429f2732097ff881a23f4905bc540ad3991072",
+    "footprint": "09cccad9511c36046f188b4b6c9bb49923b96dd38780b46e84bd4295380f542f",
+    "model": "a5f7a074e45f7f8863b478b0478240bc7b6a42f726d1ed2385e0012609fe04dc"
+  },
+  {
+    "id": "gowin-dk-start-gw2a-lv18pg256c8i7-v2-0",
+    "symbol": "338c493ae38fcc502d0b4b90c0f99111a16d87d8b9cf116e01caa25798704607",
+    "footprint": "996337b6e5fd8cde11742f97c6fd8a2cc815e9ed34c586ef205ef6a5cec22dbc",
+    "model": "974b200a00e676816619a2b60147f17fbc7060a33f58b0e9327cd0c38866c15c"
+  },
+  {
+    "id": "gowin-dk-start-gw2a-lv55pg484c8i7-v1-3",
+    "symbol": "561b8576ef1a0133bc172e5b5a558103258fe9dcc2be868d977c6c8ce3bc253e",
+    "footprint": "5239fe702366952b29e443eaa0372dc2cedb22e4cdad2cc59a25e4a68a5aab1e",
+    "model": "f3050c72857beba2ede7c1d85616712a100fe69ecf878c483aa5401f88464310"
+  },
+  {
+    "id": "gowin-dk-start-gw2an-uv9xug400c7i6-v1-0",
+    "symbol": "b09fbcd5733bf368789704267d53b218252aeebca2d37e63a2193f6aa9741151",
+    "footprint": "f92f73a044f717a566f4f97d40f0b772208144065a6e8b0f55269b7ea3643727",
+    "model": "94117d500f5631ff1e9e656ee72de6c3f0b9fa2e8dd4bf60e252e612fedfe369"
+  },
+  {
+    "id": "gowin-dk-start-gw2ar-lv18eq144pc8i7-v1-1",
+    "symbol": "554e98823e08bcbbf9cd056f09fccda6bcefc6bedf4f6c9f74ca63f58074fa2b",
+    "footprint": "3c1f0598d58aba48dfd4aebf291681c0d416afb11c9ef9e9c34d6a0c3800666d",
+    "model": "1a7c02b49bc2999b263be901aa84b2791227028365dfcf42904120a7fb63536e"
+  },
+  {
+    "id": "gowin-dk-start-gw1nsr-lv4cqn48gc7i6-v1-1",
+    "symbol": "acb9595e225f21abbf4f3f812779a9e098c13b62bb592dba115c3ed1abe1dd74",
+    "footprint": "3648b069050c465f53fe8f801ae488a148f72c68c507f1c8ef488826065c6ff7",
+    "model": "a37a8606869d3c94a29e110ffae41ae8c48eda15a6aabfd0693127343d8f3410"
+  },
+  {
+    "id": "gowin-dk-usb-gw5at-lv60ug225-v1-1",
+    "symbol": "b10dca356e3a8ce34fcdaa97fd00bbdb9a33b28d219647f0b9d5813908806f61",
+    "footprint": "4350927882982a0325689b60bf5eb5685191b3c01ba3c65a535d081bd65e5a0e",
+    "model": "618870c7e1e0e197e4c4ef61edd8e097059075f03ff4fd70d0bb51ba0900b842"
+  },
+  {
+    "id": "gowin-dk-usb-gw5at-lv60ug225-v1-0",
+    "symbol": "e87688fa08b73986276cc9f0652cd7a61809b35702f823478b970666c70dc822",
+    "footprint": "a02f190b2cf5fd412ecd465c42951d5e0d18712bf5139b378ea7756f528d05e4",
+    "model": "618870c7e1e0e197e4c4ef61edd8e097059075f03ff4fd70d0bb51ba0900b842"
+  },
+  {
+    "id": "gowin-dk-dp-gw5at-lv60ug225-v1-0",
+    "symbol": "ff37a0dcffdaf97434e5b3bd784d900182b7417d781e06d45b80f66d88e451e7",
+    "footprint": "48b4dc9e45f60cd10693b6a647c10dfc3c4bef09fcb63b98de77e1919409c055",
+    "model": "c15009488456cf9126173c3e13042c08dc2e329d9c4bbab66f545a10e1d148f2"
+  },
+  {
+    "id": "gowin-dk-edp-gw5at-lv15mg132-v1-0",
+    "symbol": "d7c5e54a65e98ef534cc7e8e822680af3fcfef4cd3ef281c2726d5ff3d549234",
+    "footprint": "58372e35881e83ebc9552e92573fda79a27034b0766417e81c7536ac9985d276",
+    "model": "76d5385cd39730c7c6e977ef688aad8c6d9e3b58aa8f1b116e24b405f58973a4"
+  },
+  {
+    "id": "gowin-dk-edp-gw5art-lv15mg132p-v1-0",
+    "symbol": "313c74035dd6685df03758dffc58fe35f1b98ed5dc1e81a393c6bf43bce87d8d",
+    "footprint": "c6ca9e247e3c904df6ae50f9355c3f75fe2f5294dfd5f60678dd90e80713f206",
+    "model": "d01b98d5f310e76470a7993bd03032e4d1944da404a19e3bfbca0bd329d98183"
+  },
+  {
+    "id": "gowin-dk-start-gw5ar-lv25ug256pc2i1-v1-0",
+    "symbol": "75a8255289c37456c20540ab97068683415a633f6a073400bcbf8137f9b4333f",
+    "footprint": "89b50209923a0ed25b2690dfc38969894c4876585b49324cfead275bc2f1bcad",
+    "model": "fb558bd67621a2d213d6272dbda9bd0b01a16be147efc2dc9b9faaee15218c93"
+  },
+  {
+    "id": "gowin-pl-usb-cable-v5-1",
+    "symbol": "1bd4e6e1f22ab717ca7178445b0f10385bece99ab66dfc652407a27a66bf8258",
+    "footprint": "978ff143bda1f8b15804707369f8a41e0d67698df82d3ace74c76b6cac057512",
+    "model": "51686a4363863dad8297347c6f07f875823a64a9aa3ac92a6e0a1f852db83c50"
+  },
+  {
+    "id": "gowin-op720-4",
+    "symbol": "74b5dd776b218e4fd92d73a11020c2f230ba14a696fa42fa01b1c03a85e1c8ba",
+    "footprint": "c0ef5e23ef5591f927cc9fd6ac6dc59f667594774770042b5094b9a58a88a13b",
+    "model": "b17deca91d0935e24f5b32ea6cfdf662c9e5e61f53d1753737f5c93f2dec9a7b"
+  },
+  {
+    "id": "gowin-b-op901-16",
+    "symbol": "1195b4b4e7ffc275b665e155ec9fe2700c9827352a83073bfd6cf4c5a8da936e",
+    "footprint": "438883df0ed3d27cd0e7eb22bdca4a5acc48b70cd9aa49e156d11107b8e61ba8",
+    "model": "31b6ce9590967eff4ba11e0753f243e1757334e1654cc5c629570f3cfbd90489"
+  },
+  {
+    "id": "gowin-dk-start-gw5ast-lv138fpg676a-v2-1",
+    "symbol": "ffb386e219f91ceff1dfcdc27fc7db4baa22c2d4e8c8ea289796ee580390d9af",
+    "footprint": "9a6e707aeed6ef9d868b5bad930dc1847af584a870a027b7d4fa9817c80ce18d",
+    "model": "a12a5412375eb3dcd4f51abe52eeea10e6ccec1319333b0f4b8d90cb2eb15fab"
+  },
+  {
+    "id": "gowin-dk-start-gw5ast-lv138fpg676a-v1-0",
+    "symbol": "9253c6ce7bf8609d3b1978fb716c2916cc298e9386dee5f40aaa6dd15c0df51e",
+    "footprint": "2be256c94379c26eb9b8ed307845cae734ef03bb8b82554fcc3f65dcdabc4d64",
+    "model": "e5a37e88066c3b8052f18608f93d1f0fdd59afa189cdb0b519591b672e4c8d48"
+  },
+  {
+    "id": "gowin-dk-uac2-gw1n-lv9lq144c7i6-v2-1",
+    "symbol": "b5012f0fc0b69f3e23648c8b57c2741bbf6493a0d47f9542e1765b63f35d8e64",
+    "footprint": "ba99647987d651ce480f3246b388454aa5645f1916be3f19fca7bb046809a854",
+    "model": "05a6613ea32e826f17e90089a4c469979ef162cf911d294c272f302f237a7359"
+  },
+  {
+    "id": "gowin-dk-usb2-0-gw2ar-lv18qn88pc8i7-gw1nsr-lv4cmg64pc7i6-v3-0",
+    "symbol": "24d80e26cc78331ffa55cfe18efc6f2b52e5dcdcc344f842f876e1e53a80f723",
+    "footprint": "d96a480d35560f9ed9e3e75332b53a5568f7eeb891af7584ff267769f6c89ac6",
+    "model": "c51d9e4ad358d28c8c48feb21fb13c5cf20f1312735f6abc3e8465d1ad09e47a"
+  },
+  {
+    "id": "gowin-dk-video-gw2a-lv18pg484c8i7-v1-2",
+    "symbol": "44172d1381501a879aefa432609663b6e7f086bb0c817b9c97b2600d23b08570",
+    "footprint": "c04c91a203acc8be2a785e1421c8363f6b84acba9be1aa22f7660bb71ad88ad2",
+    "model": "69ad69b113dc36fc33c74c31b6419f936e5fe464b4e000d920d1fcdfed3cfe5c"
+  },
+  {
+    "id": "gowin-dk-start-gw5a-lv25ug324-v2-0",
+    "symbol": "428e46a24e589a5b52f22f0a7667935cfb79670c30f28b0abe2ee571ce10e99c",
+    "footprint": "d33f303b669ebe6dc5828e478c3d7e7d7012be95a7777162429d4efd04518b4b",
+    "model": "407f3b7ffe1570fa389ab3675d55895070e9cb19fe3eda3b089f98124dae34db"
+  },
+  {
+    "id": "gowin-dk-led-rxcard-gw3a-lv20ug324s-v2-1",
+    "symbol": "7e9bcac14d4913e9c39802e118a850b85586c8e42f061b4eaa70a2714cb6bdde",
+    "footprint": "5bea842ff383b876832f6b0b0069e93438a7936987e54e430df5fdab796b6a07",
+    "model": "4d9cf5947f513067d947612087c6185d719bb71fef807453d85fea083b97f68d"
+  },
+  {
+    "id": "gowin-dk-pcie-gw5art-lv15mg132p-v1-1",
+    "symbol": "0ee3a23471c8c7739e36adec11c7cdc59ced6f40168d91192317e6bfe40261fd",
+    "footprint": "1e761603501b43f9018ba25c2692633bbef6eb0974a94614c7afc08f62aca476",
+    "model": "8632c72bcd7ef63e598092755d19664479c1861dab5de6d37f5684b2e6e80262"
+  },
+  {
+    "id": "gowin-dk-pcie-gw5at-lv60ug324-v1-1",
+    "symbol": "4e98028abf318ff10ba704bd9a272c02c94169ef327013d04bc2c3378ec566bf",
+    "footprint": "49db7a6c49302f1232f71177b0778b08bca21d4bbadbf3d2d9d7dca72c4612cd",
+    "model": "45d5fc4bb267936fea5fb07b5e8e4fa22ad644ae0daa5ca57a15b8c9e8a1bc7e"
+  },
+  {
+    "id": "gowin-dk-start-gw5a-lv25lq144-v1-0",
+    "symbol": "6186c04c00075c1bc13cf18c119e8b667f54bd17186c171c2b7a403327ae3476",
+    "footprint": "4c7006fff226331d544ca4afce33ab106967d29d8171a430d07d31a584f985e3",
+    "model": "bdedba484aab8a035588f48cedb367c47000a1411acb528705ac3fc19dae0c91"
+  },
+  {
+    "id": "gowin-dk-start-gw5at-lv60pg484a-v1-2",
+    "symbol": "1663730d17c2ed7537a4a729ef0acf2dcef31b9b53f5a6091fb8667695820f7e",
+    "footprint": "f8d9b891dad282bd6c4ecb8ca3e18eed228f759fb9e38cc19e44ddddae36b35c",
+    "model": "3b1af82d39d24b560fe42aa2c5c12853e201aac49c904e9b9e80b7f350a4808e"
+  },
+  {
+    "id": "gowin-dk-video-gw5at-lv60ug225-v1-0",
+    "symbol": "607ca1102c90a4062afa00946d388e08a0101770de4fb49b7dccfcb3fa7d5dff",
+    "footprint": "17234d50aa8f8043ea6f0dbe69fbf6bc1e94889c5a1e5a3df24e92375ec5e1b4",
+    "model": "5dff4ef115a8dc024ea7813d403f825118d65885466f7cde9afc767aeb889fe4"
+  },
+  {
+    "id": "gowin-dk-usb-gw5art-lv15mg132p-v1-1",
+    "symbol": "3b66326cba09c7591fdd176190a6a04d429df4ef428301991f078ebdad6e5114",
+    "footprint": "95f23ad2a9dbcdbdd1e74bf1ed9b1350ca1c2cb9197db13f4e709990f0efa83e",
+    "model": "63644fdfe9b3cea59b3bf490f6558a8164778b808562851df7bf38ce773ab033"
+  },
+  {
+    "id": "gowin-dk-start-gw5at-lv60pg484a-v1-1",
+    "symbol": "333611d6d7dc94dbdd57345b38436da97a9218ad5a11d2afda104b3af656032b",
+    "footprint": "0ddeedc59180611e9a85a4d2ca2b426435bc41690ace3d05d268f5c56619acbb",
+    "model": "57791354c8a5d2d03e7106a3f6424c1a0c5b0dee79563bafd420d73a55aeb0be"
+  },
+  {
+    "id": "brisbane-silicon-epm11",
+    "symbol": "b805c40bf6febae481821d4e2681c1699b675bcc3db7fb3913cab611e3ca8180",
+    "footprint": "7ab900f4cc4023bcb28bfbae62d4c416da2568f84758a1d9b5b86e68009f8b03",
+    "model": "0ee2ff6186f8d37b197b95393b30d32e3126d325e3df97380a0eb810704b1804"
+  },
+  {
+    "id": "brisbane-silicon-brs-100-gw1nr9",
+    "symbol": "021064d71df6fe675ae1cf6aba9c2927809c918c5111af7745179496c7e8fe4d",
+    "footprint": "e02a6a8292802ea90d24b5d79e69c65407a5063efa0177c4d8d4278f94d133bb",
+    "model": "9f35385f18926afcb2ba2ddc9a72d99325718207c7b163336d3c0ffaf7e01369"
+  },
+  {
+    "id": "onekiwi-kiwi-1p5",
+    "symbol": "0fe6e20d7ac34725e23857282420807be033c0f898c4c369064066be2db5d78e",
+    "footprint": "d1a9cecb34e377d52d4cdaa20923f80eb9891f77147eb344d63a11735deff7a9",
+    "model": "ef9ba1421c499223015aa98e4558377af18653031bc583941e86895dcea98788"
+  },
+  {
+    "id": "trenz-tec0117-01",
+    "symbol": "cc4369dd82396ae9c521c76286bd4d3c28de8dab06d05960045a84e36df2accf",
+    "footprint": "93d5836402ebb2818b66fc06d7d46b1dc412ef1f5daae395595ed20e2e1ca7e8",
+    "model": "919f6dc619807303bcf5a2912480d3228c633c7f7f002b0054c39205ace89155"
+  },
+  {
+    "id": "esp32-devkitc-v4-wroom-32e",
+    "symbol": "5faaafc1923a93544143484120b7ea15c0211bb6b03a5a88d3b6be831172cb3b",
+    "footprint": "e063c023e92e1710df0f0f64e526027e221b97faf52462130c1f90c0ae63fdce",
+    "model": "59a28f09cc7242c9579660772feb6499af12cad59f688b1ebf258a0b474cb828"
+  },
+  {
+    "id": "esp32-c3-devkitc-02",
+    "symbol": "ff9a9a92fbfe204ee88eb5b7073cc743bf02754f48eeba052a55470a584e96b0",
+    "footprint": "6d037e953a65c084452e1862bbea2742d57aef8932e8caa2c32b5e9547fd513e",
+    "model": "08e3dddffd66901654e0b79643261d75bbd66fc604679dde2cbdb16ae473f6d5"
+  },
+  {
+    "id": "esp32-c6-devkitm-1",
+    "symbol": "721870674007c53d085ccb3b17489a20993139fc8f95e3200c69d9375ba119c2",
+    "footprint": "631f43eb6c79d0769ab0d206d23e94a33917a512c55ed02649e0c3ad373c4e5a",
+    "model": "a97e548e76b92a7eb51e723f2a4604a5caa78e440702b445d1426598e2e0ff8b"
+  },
+  {
+    "id": "esp32-s2-saola-1-v1-2",
+    "symbol": "dea692269a8b802f36a5f26357bd2c4c885309c0ddb0421850c16e3c40fe1ed7",
+    "footprint": "ee34d73ed57490cc3817ff6bad397694489a97dbc9b54054831cf027c81e9340",
+    "model": "3f8a43bd205c808f6daab7a4470bc56c84327cb94b85e51ad1a3143cf85e5948"
+  },
+  {
+    "id": "esp32-s2-devkitm-1",
+    "symbol": "c51a9eb7ff666cc60f5b43819f1d70f5d3d7c0e2bb072eb02ef5e4aef826a12a",
+    "footprint": "9b890d3df1323253422224c3f1a460a6fbd0df4621c53f7b186fe1fee462d2a8",
+    "model": "f3eba6cb5566005b2164e54481c0e47cfb52bb9b70e58df1a63e1c92bbdc2259"
+  },
+  {
+    "id": "esp32-c5-devkitc-1-v1-2",
+    "symbol": "5cbf25e70d1f951d3cdef408f1c03f6705621618fda2bc12c26e7fe36ee3c203",
+    "footprint": "c1f70a5d8f270dbfde01d7ffb81137597f4224d459fa6effc94d87eaa03332dc",
+    "model": "06bc3b12502a821d4eb34ea772926fdf250e76d9f2cdf982220fbf060d03d333"
+  },
+  {
+    "id": "esp32-c61-devkitc-1-v2",
+    "symbol": "1b733f1fb71d3f909c0f50e3659082b2cbf4b0983b3b5f4bbf0823d2726b1896",
+    "footprint": "dbd9705bd2cae71a489f50d6567342221ed2c97253a83af56b173d82af61bd8a",
+    "model": "f3c2bce3e1c4df07da84d8bf71cf4f6df3039543802c3a0cc43c4fb858433fbd"
+  },
+  {
+    "id": "adafruit-feather-m0-basic-2772",
+    "symbol": "1d93ab60c8bdf5f9f66ce8c36f91403d1193dd49ef3012297b7d2cda43e758a3",
+    "footprint": "52924780ecbc4f6efe593c3742676d96a59e61c082880048c9ac967782574362",
+    "model": "4f2bd1febece9311587747ae7cad4943b1a5de6870253b9a911c84feff792090"
+  },
+  {
+    "id": "adafruit-feather-m4-3857",
+    "symbol": "46f1d93353ca58ed1898baa8536bcfe02272ae74d6c35ef06204698966365bdd",
+    "footprint": "1c0418a87478bea1c549e0a921497b05b6e2f478e6ad0c8fc194d4ada25e8112",
+    "model": "c4445a1fb82ecbbfc9a51367aefe8a17c6395d387b642f47b307262184fc61b4"
+  },
+  {
+    "id": "adafruit-feather-esp32-v2-5400",
+    "symbol": "8211b5b3bcc52af538f84524896b74db2330e871c8676f36203e0ff37d89ffab",
+    "footprint": "31791eedbb574ab51bb7cc518be5083efe8f8ef72db9cdc6f212fcac40c000de",
+    "model": "4d2be8a0c40ec1f61d339800c8d822d522a96310f813e7734d2971248189f64d"
+  },
+  {
+    "id": "adafruit-feather-rp2350-6000",
+    "symbol": "f7ab7755ae69c77adfda1506410894129fa7da5874962936b84b633e3dbbb16a",
+    "footprint": "bcafa77aa7bc8b2f5afb9e7b27f1eeb40144eba7f9695cb73ec090149fb4f51a",
+    "model": "b4d4458e16bbd535ba074880294529a628f45c95d39b7b26ba9c0baa5bf1924b"
+  },
+  {
+    "id": "adafruit-qtpy-samd21-4600",
+    "symbol": "c63cd556780b56e4508630f56892bd390ec222882762efa7e477bb5b110ce0a9",
+    "footprint": "4548425f6734ed2b4993a57531050702c058aef3f70f59172f7028e522d15282",
+    "model": "bfcbc064739d707ed01690debe13d78b5cf1aa3a1b51d726caf12f528f8bb0bb"
+  },
+  {
+    "id": "adafruit-itsy-m4-3800",
+    "symbol": "ebf3b04fde0f5151cae54dd4d002a0aa58065a658695ce30341073f8d2221f3e",
+    "footprint": "88cbd8feeb9f763c558be710d2fd02d37d3f364277f4a87c3cbd9cb6e0e2c013",
+    "model": "f560aec2108f30f4936d59946b8abac7568ea37803c9895e7625d714d9880a85"
+  },
+  {
+    "id": "adafruit-itsy-m0-3727",
+    "symbol": "b8d6fb940aace16b21aaffea90dbb15715ebd6e5e247b86725f2c9bb9f3f6480",
+    "footprint": "910c837fc88bb39cfad7369e6ea247bd22693393825cc91478bd17f20a9aed18",
+    "model": "2d2cb1e66354923e92919c5644701eec60ac930b5ba90883f648cfcfea7e4ccf"
+  },
+  {
+    "id": "adafruit-feather-f405-4382",
+    "symbol": "a8dc42000824df35179e4be01f9b4f99ff59c79c14921b564c2fac773dc3cb28",
+    "footprint": "166fd7a991431c525e4892fb3c367daf32c8e861683dd7273edfd30cc345b74f",
+    "model": "c699a958b7da7c16df8b9bf22f4621b035351489594586616c05877947f6b01c"
+  },
+  {
+    "id": "adafruit-feather-esp32s2-5000",
+    "symbol": "befe1485d1ac3a2baf170517c5c2c5d44d20c2b60b087703edcbb388f0adb15d",
+    "footprint": "f0323d25a0fd45bf7be655fc35c0b914fef0be4a4b62226367f870479c817cd0",
+    "model": "0ca4fa568c727c3c6cfe628d20825160b43687a47ad6f3db1630660e66fa9e48"
+  },
+  {
+    "id": "arduino-mkr-wan-1300",
+    "symbol": "b1caffd2289d8df6a365570ee9751b125e407d3449e5791edede4b41e317491d",
+    "footprint": "a6b5240959519e996a922cd92c9be9df01f8c656da71b10d4fc4dffc14c4505d",
+    "model": "2a0770a2024a8c50781f84e83f714c6a3e8c2d2dea3d7585f1f8006623bb5231"
+  },
+  {
+    "id": "arduino-mkr-wan-1310",
+    "symbol": "f83de13a8bc154968f6167e6de93ee77487044a08504bd123bbbcfc8aee8a28a",
+    "footprint": "61a35e474d62f895dc2d141c2c092ffecf6a113bd8721f4a909e21521e1d9d83",
+    "model": "75e243046c066204da3eca6181ea5070545235c4e0ee0103a03b4fe44833589e"
+  },
+  {
+    "id": "arduino-mkr-gsm-1400",
+    "symbol": "94cef09af1cdeca51be6ae7d658b217668a2d495f3736f705c709248c9a53a51",
+    "footprint": "a27ac435f81f49b95c8f371f2aa8fa6d12fa44ff19556d12a89cc456b2a6e703",
+    "model": "4404616ea0a885c6a5bb29ac8b3aa2f2bc4c6cc59bb376f39f5f8e6b8a77e233"
+  },
+  {
+    "id": "arduino-mkr-nb-1500",
+    "symbol": "ec423c9da0ae067d0411c4f9409a98e554758c8aefabd595006be2969540ec8e",
+    "footprint": "df606091b202f3e63eb8b1a5a1566b416726bc674d9ef212f14c8b509b49d0f7",
+    "model": "76ba262c25512a8bcdec154441251cb84af481dee9862bb16382ce8d94abd7af"
+  },
+  {
+    "id": "arduino-mkr-fox-1200",
+    "symbol": "67784f40e8f497813e6f466fbb455edb8ccc449860b80ffc48d8bccf120e9884",
+    "footprint": "865b8af4cfb218040ac8a66b87dcfb6c5cfbd78a863712d6ce0bdf15d38ce531",
+    "model": "cb20e127534b0f43b9f941e248d98864fd5b33d095f2db8087983cb1e254faa4"
+  },
+  {
+    "id": "sipeed-maix-bit-v2-0",
+    "symbol": "3c015bb84e1fe5b76f9f0070a448686f4eeccf658d89c4eee04e06ec87f9dd18",
+    "footprint": "8cbf5ebb0b8731ab6624386f1b29e7b1536b67c6aa9760aeb743b47fc8682b49",
+    "model": "18be4deefa9c8937102236ba1a2e05975f9c96d15e42a910a4b260d3781b491b"
+  },
+  {
+    "id": "sipeed-maixduino-2832-v1-5",
+    "symbol": "4c905f541e132e510e1a38cbc348ed50bf7965da43254b4e02b945976ad75b88",
+    "footprint": "01e7d5c82ef16cf17ed9d22e90a16a92a456e7258839d9e19ffabfb9b63f164f",
+    "model": "51076ae8754fc47dac0176c3783dfcccbe2e228b4fc1735b9cdf0fa6eabc2506"
+  },
+  {
+    "id": "sipeed-maix-m1s-module",
+    "symbol": "65da65312bd196c617614714cfa9c08b731ae2eadf3dd0ff52ff40c0bdd5b16c",
+    "footprint": "81a1bf761be996901693e85ef9887b6b86e96daecf7d21dd804dad93f5a9b625",
+    "model": "d0a644929cb3526b38d89321ecc42228a8c8567607ed3aaef5db3b26cf110637"
+  },
+  {
+    "id": "sipeed-maix-m1s-dock-3272",
+    "symbol": "19992f74d1ba7fff115c68efe848f3b35951ffda565f0cb3286da509ee167a10",
+    "footprint": "43bd3c975984b82c3bc5f8d18eda77a9ac10209ca99e9c6b493e9821d9c76509",
+    "model": "49c195a49cfc1dbb794b945c5efd97eb692532cb3ffd1179f68426978d7f59a1"
+  },
+  {
+    "id": "sipeed-maix-m0sense-30215",
+    "symbol": "59544baafacc3ba4c3c1772f7a7b62d04ffb53c26efd69d360306cc4fbefdfc2",
+    "footprint": "f8ff1bf0f1d5517bb7ddfd3ad57eff9ca7d346c00ea2c02069f97db0055a8cd2",
+    "model": "3d5ee1ee30d6811c91ad23f80d6cff70f109931f831f09fd580d1d1662cd1c8d"
+  },
+  {
+    "id": "sipeed-maix-ii-dock-3072",
+    "symbol": "97178faa769c578ee799bba6cb8e73a1c6635f3981a29905df05fa3ede47f7b2",
+    "footprint": "a9299b983cd9cd2ac22c20937e26d90ab2a4782f7d1848bebd052c7cf0aff3eb",
+    "model": "0f98f2666c2a8477f14e29a241c2f8841d67fc8a87d48c672edbb6859cb07a99"
+  },
+  {
+    "id": "sipeed-maixcam-pro-60174",
+    "symbol": "d44dfe3cbe7e2954d754dff390261cc97b7593c42ea5f0a2b5716d05c53477d9",
+    "footprint": "510c72cdcef3721b87fd7bd4064a8b728974ad94e7f59161fd8377f3482b8c5b",
+    "model": "8165b691e6b0e4242fcac49843aa1ebd30c0ae6cbff2d63cfcc2927a288a7b51"
+  },
+  {
+    "id": "lilygo-t-beam-v1-2-sx1276",
+    "symbol": "1b3f4232c717d598f8abdcafcafa9a02e6a3013cf19491ade5b6095c813aa239",
+    "footprint": "d5cb3437cea452813c0c173d369448c12d7d405d7be32f2b3a1001e952cff4f3",
+    "model": "d5f1155cb644d7282831c8f61a591518d1a298d250997324f9d58a5011c88d27"
+  },
+  {
+    "id": "lilygo-t-beam-s3-supreme-v3-1",
+    "symbol": "69f48d7617c946ca0ba00b32f054624fe5557e49e0b964b9e35fc9d4b527f3e1",
+    "footprint": "2fbb48d58bcfcdd6fe8ef1f6326f0bc235e1fa35eeb2e4a09a01265c3380f4b3",
+    "model": "5a39230da346a7e333c7b489b728919c423982bb35b695c3b7ef01932569b4a0"
+  },
+  {
+    "id": "lilygo-t3-lora32-v1-6-1-sx1276",
+    "symbol": "c02092b0e16b2adcf4d006f05bf002bcfe252c4e1be1d62c2c54cea757bf1bd0",
+    "footprint": "8e96945f671799df67b0423c31810f44de95899b19c7c0c02c2d78827eebfa5a",
+    "model": "d5f1155cb644d7282831c8f61a591518d1a298d250997324f9d58a5011c88d27"
+  },
+  {
+    "id": "lilygo-t3-s3-v1-3-sx1262",
+    "symbol": "a8e358388748c0f618226930c7a666f0fd7676e9a1a3a49743507ef72bcb87f1",
+    "footprint": "f8d24fe11c8b8bc5c973898c7411f18df75a5915cda253846bba0a79b9b75810",
+    "model": "a331fd13a34f05424b25558f42c6883cc0142a6b5300ddaccb0b73091e609107"
+  },
+  {
+    "id": "lilygo-t-echo-v1-0",
+    "symbol": "cd19eee2782c88ad566d6b19acacd909bb6ea016b629f65fd9f34171136361c0",
+    "footprint": "134cead1d0be3a189fad792af61c212e8286c1961317f124a94a0eb887db0f16",
+    "model": "f7e4e6f744134eef850090eee3cac1f0584090f6466184d8fa5e07c40ef850b5"
+  },
+  {
+    "id": "lilygo-t-sim7000g-20200415",
+    "symbol": "c43afdfe5c0dfaf385bf5b5928d2a5c52986cefca943bf28c54e5f9d7e73c100",
+    "footprint": "6323ec0e360b16bf90778a14c65b866bfb7a905051e9aae735d45e59a3f1c97a",
+    "model": "53c9a4e41326df91823d2de3df091f14563af4725e41d6fff83e377e1a7642b6"
+  },
+  {
+    "id": "lilygo-t-a7670x-v1-4",
+    "symbol": "ef29fc78f2e9feb4fb30de5ebe4d9f87ab43e3b2fd802e731be7a68bbe32473b",
+    "footprint": "f0a3adeebe9d3771d8fd01ad20587fc375226959b99d82daf261d8207ab6792a",
+    "model": "e8206fea05d3cfbe78d13e2fa410ebdbe92d4b87989979f6dc2a816d32ac7a93"
+  },
+  {
+    "id": "friendlyelec-nanopi-r2s",
+    "symbol": "921cb16290ee38499b43d44fc7ab1925f06feb64b1bb6a38426ff9f9730a1c5b",
+    "footprint": "b5229b7ba43f8d463cabc96fb6b151deb716a3b474add4e92a826a939da5fa6f",
+    "model": "6b5172818257d93f66ec7d5ed701bfede3f960c9cbf188ac0e3dcf4d8d793218"
+  },
+  {
+    "id": "friendlyelec-nanopi-r4s",
+    "symbol": "ca563306dc1e686b1f61730b9a826cfa11fb978bafcf12838da1675e16731551",
+    "footprint": "23bd7df6e23ff3cb06c326061a1b910e0d1dad6f686d302ebc086c40baffa8f4",
+    "model": "9e6c3771d3733c57cbc51b31709d1d1df699ca400ae177dcad7492719de10783"
+  },
+  {
+    "id": "friendlyelec-nanopi-r5s",
+    "symbol": "b37b30c8733bb19621f2ea8f7f0be414f23ed654af8b840f2023c5886b9c3b79",
+    "footprint": "95590f5d146d825c12996dd930f73c1147591c935d16dbead50acc40eaacc7e3",
+    "model": "acefdc8785d6dba0fddc41cd8ec592f9f85c30013efb08955a498ba4ed7ee1d6"
+  },
+  {
+    "id": "friendlyelec-nanopi-r6s",
+    "symbol": "d1224c00151aff26ed8875590c933dddd62009a9678220cc7510f44990f263a8",
+    "footprint": "e519fd088d4dc9d82a4a6c5baa88cda59a133ee0808236efd896f83c50a24985",
+    "model": "4af1d7fb05babbb9745f9a36975cd363b07a973394d467e9cabb2e3380cc5442"
+  },
+  {
+    "id": "friendlyelec-nanopi-m4",
+    "symbol": "7a4997aa60b69292d35c9a365b33737709f14449ab5a88602bb8f1f9cf3ea658",
+    "footprint": "e3d10a58f406f917541ce5f621d776d3a1f3b8701d47ded1a0f373d224801a23",
+    "model": "ef9dd3e2bf2b2bc2e04cc364a95f0c916640050d585d55e0b3cb76fbef2f62d4"
+  },
+  {
+    "id": "friendlyelec-nanopi-m5",
+    "symbol": "c55e40a8d1efaa49fef62887fea31b17b8f6b2af08a04cb772880da3bc44db6e",
+    "footprint": "905dfe7bb4df6a8755d3a8a53a531b10290b2a163845d4493c9860d717417bd6",
+    "model": "ac88f67b68e4e83325c5aba8bed6a79498001959098311ff543cd30f6c52a837"
+  },
+  {
+    "id": "banana-pi-bpi-m2-berry",
+    "symbol": "f8eeb7ef85e8abf8ac220db3c4a5008109e6f4b2dc600fe1a4fb27d6f0832553",
+    "footprint": "9bba535440cf634be5d3a8cb1503631b988f3964e04c1afcb31ac702fd904c60",
+    "model": "858e7519ae44e339348cf22828c0484037ebca051091514de73894167386d344"
+  },
+  {
+    "id": "banana-pi-bpi-m2s",
+    "symbol": "c7166ddef946d0f77ef2c109c5cdb7a49c4150a6247fedc0c5cbba8b516d67aa",
+    "footprint": "e5aead3c034296921f7c2e983aecd226d64bb94b56dd9bd25a657b03d59ad3db",
+    "model": "77817c5ffb860322b2e2c6074a8abb60f1234e187f55a5f9153337ab40c9a443"
+  },
+  {
+    "id": "banana-pi-bpi-m4-zero",
+    "symbol": "5d766bc7222f726e508f97b69fec86b5866e47a1425314193854127efc9e6666",
+    "footprint": "e3e315b7d5b6491750306a9dd8e655b82575406dd3889e3d8801532e095b28d2",
+    "model": "776c94401fcac0eb49b667042520868911e71fd6c8221e49d8d20465ac7ddbe4"
+  },
+  {
+    "id": "banana-pi-bpi-r3",
+    "symbol": "092ddec646fb576c44e24c480d8192b7c647895d14918dcf533aace28ebb29e9",
+    "footprint": "0d09043e7e7c183e3821720594fdc9815a9b29d459f307501e3f11222c4ea730",
+    "model": "5db544be2ec340f0138e20652779ccab1130737db5d0decc7831556f61d47dab"
+  },
+  {
+    "id": "banana-pi-bpi-r4",
+    "symbol": "5c2aaf4f487bff1a8ff8778c80a35be39cd24092c5b9726e737c63617336ee33",
+    "footprint": "8da4d2b8337ee7563afceb57bc2d3b36a82757cd5456afeb7a440b72749ca765",
+    "model": "04be3c65c7f6a529db9e5c72317bac7a5bf1b7985b1c9b31e75a55011740294c"
+  },
+  {
+    "id": "radxa-zero",
+    "symbol": "2eeff7903c3441ab751cb52bf78c762883e0b56af69f9495f356c266d27d6ed7",
+    "footprint": "7c28df4d0615c7b88b562f41de6fde8dbb12919250cf4dc6d7745e76d4176f43",
+    "model": "78f854168aa09679a342d80ab897d5e3c82ad8d0ffac9ef50414b7bae48f5915"
+  },
+  {
+    "id": "radxa-rock4se",
+    "symbol": "16d8438fa1e6ae8b7020ec255791d62523216b961b4e5f05388f9dc757b6efcf",
+    "footprint": "c302d9920744c2c0a36cbb9c31a594c2222c56b90df594ae88499d92bc88ca25",
+    "model": "c346fce14bcd4e1d04d09b34834378eb1ee30100fd0cb1cf5d95773e6968d9f0"
+  },
+  {
+    "id": "radxa-rock5c",
+    "symbol": "3a4cff005f5bb668cf7bcf37bd5c6714baf17030530227eea8efb646203cbed9",
+    "footprint": "b61da93c977e6493b8156cdc66bd288ee2202cafff7f30e239a694047efb1a65",
+    "model": "710d6d712f8cd098d6d7385ac24982df3a625f2c4942706ce920eab40138de07"
+  },
+  {
+    "id": "radxa-rock5t",
+    "symbol": "943f462feec4000f9180125ef619025e1b878143cfb7b59e9f92078e0841c835",
+    "footprint": "8ba6799ddd5ebcbfd656a171e36128aaf71eb1adbb811b8b56e0f5366b2d40a2",
+    "model": "b33ed6338673401ed70bb6d5b6fc5c06c2b3f524c3d96185c5656ef0151268f2"
+  },
+  {
+    "id": "radxa-rock3c",
+    "symbol": "9df7aa89dbcb37192de9d43ac0d0d5c9d4835fe3604ff4f39b410f8ffd19bfe6",
+    "footprint": "dd54af9951ae1a60fa5d70f8ee1b8882d8ec4c6fe9d44371034435fa7ac636ce",
+    "model": "f5aef44ec545ebbcb3fbbba72b3599c002a1d70e55967c812df4006b8713bf49"
+  },
+  {
+    "id": "nxp-frdm-kl25z-e",
+    "symbol": "373ee84c1a08a51ac06a024412d663a3c07b22e53db6f2afc4a430229afd3abc",
+    "footprint": "3c68b14d2ebd8e479beb891b90b43f1356f8ed0de19d84e591508f7053e7362d",
+    "model": "503acd630db21b571a59c6e079108f85d17e767cd056099a8e41a807a7a112cc"
+  },
+  {
+    "id": "nxp-frdm-k64f-e4",
+    "symbol": "905a32640f51adb42bb3b37a260d5fcb5cf91cb398cf3fa77630c6e194c13c06",
+    "footprint": "4e9d159b50c8d82d8ebf1f2ca38a52835981f591762aec4f3861afa1ab9d8dbb",
+    "model": "6d811c49f301dee94b00f55976348e117d08520d5a260abc219b803fcc7e2c1b"
+  },
+  {
+    "id": "waveshare-rp2040-zero",
+    "symbol": "7d2e1bc4861c4ed05293081995f6e4eb7489bff756e9f0801ab3850d3ef2a0b2",
+    "footprint": "fbaf801f004f004c49cfe859e46abbfab3d329c4f622df0ebd27582d428fe90d",
+    "model": "86ca76ac8a33f43776a9848da89b1ff7195e33ec6387d7e0af7b2accbbca184f"
+  },
+  {
+    "id": "waveshare-rp2350-zero",
+    "symbol": "13615a28a1a5ab76c6a31f3ee3b67799aaf7a563e78b879f5a2fcc4b40ab3050",
+    "footprint": "69cfd0b0e0463644fe84b24cb0bd5ee3ea46057c63b02c019f6c6ffd9e2a5363",
+    "model": "0759a543dfdb2de0a34adbadb891ebf8e950e9ec5806dd930f4cb10610432e1e"
+  },
+  {
+    "id": "waveshare-rp2350-plus",
+    "symbol": "a2bd867cec42eb92677235fa2e9989b5d3467e9e83f35af6707279030970f8ba",
+    "footprint": "e1efe622b4a0e9bd5e43ee56bb7732951383ec8ad170b320d6c8437aecc6506d",
+    "model": "76a693aebce4548c51c627c7927223995f8bdefb35aad9f62d09dfabd2c41855"
+  },
+  {
+    "id": "waveshare-esp32-c6-zero",
+    "symbol": "05482a0ea3d21d5bc876b5dd9734bed4d8741227cb15e7b5532dd4efab0e15ff",
+    "footprint": "2eb4a6eb6854e816e1f7f916f56f7de049355b0ba1a2d4ea9418755430d20498",
+    "model": "7ae57d73ab6a5e1cac6770ffc3a86b8a33aa753fc213185b3d0b856701d06b50"
+  },
+  {
+    "id": "waveshare-pico-relay-b",
+    "symbol": "67c49491ac0f71b39b1bce31d50fffed4cf1191f7cdd4b6acfc1a85f37bbe98f",
+    "footprint": "2ca19672bc3a2d242f005cf46295a8d30e1270d7250f09763ad16bbe07bca2ef",
+    "model": "0336aeb9011ad14c15760f5a408bf501d2502d2621035d5c03a21d853fe20480"
+  }
+]

@@ -146,7 +146,7 @@ function shield(revision, chipName, sku, band, cadUrl) {
     body, color: green,
     note: "Reference carrier for the four Arduino-format main headers, using the standard 2.54 mm pitch and offset digital bank. The 53.34 × 63.5 mm envelope and 2 mm sensor-header positions are reference approximations from the manufacturer photo. Auxiliary pads repeat the shared main-header electrical terminal numbers. Check the Semtech assembly drawing, stacking direction, SMA overhang and sensor connectors for the actual board.",
     details: [[2, -4, 4, 4, 1, "#26332d"], [0, -33, 7, 11, 8, "#b8a36c"]],
-  }, () => "");
+  }, () => "", physical => { const [x, y] = padPoint(physical); return { x, y }; });
   definition.footprint.pads.push(...sensorHeaders.flatMap(({ center, ids }) => ids.map((id, index) => ({
     id, x: center - 3 + index * 2 - body[0] / 2, y: 28.1, size: 1.6, drill: 0.8, shape: "circle",
   }))));
@@ -154,14 +154,12 @@ function shield(revision, chipName, sku, band, cadUrl) {
     const terminalBanks = component.pins.map((pin, index) => {
       const pad = definition.footprint.pads[index];
       const [px, py] = padPoint(pad);
-      const left = pin.x === 0;
-      const captionX = pin.x + (left ? 14 : -14);
-      return line(pin.x, pin.y, pin.x + (left ? 6 : -6), pin.y, copper, 1.4) +
-        circle(pin.x + (left ? 6 : -6), pin.y, 2.6, copper) +
-        rect(px - 3.8, py - 3.8, 7.6, 7.6, 0.9, "#244239", "#5f9070") +
+      const left = pin.edge === "left";
+      const captionX = px + (left ? 7 : -7);
+      return rect(px - 3.8, py - 3.8, 7.6, 7.6, 0.9, "#244239", "#5f9070") +
         circle(px, py, 2, "#d7c891") +
         circle(px, py, 0.9, "#18382c") +
-        (showLabels ? label(captionX, pin.y, pin.label, 7.5, "#344851", left ? "start" : "end") : "");
+        (showLabels ? label(captionX, py, pin.label, 6.2, silk, left ? "start" : "end") : "");
     }).join("");
     return shieldArtwork(revision, chipName, band) + terminalBanks;
   };

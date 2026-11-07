@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, mountingHole, pad, path, pinRow, rect, screw, smd } from "../shared/svg.js";
 
 const pcb = "#225289";
@@ -12,18 +13,16 @@ function headerContact(x, y) {
     rect(x - 1.5, y - 1.5, 3, 3, 0.3, copper);
 }
 
-function sideContact(pin, x, showLabels, textX, anchor = "start", color = silk) {
-  return line(pin.x, pin.y, x, pin.y, copper, 1.4) +
-    (showLabels ? label(textX, pin.y - 0.5, pin.label, 7.5, color, anchor) : "");
+function sideContact(pin, showLabels, textX, anchor = "start", color = silk) {
+  return (showLabels ? label(textX, pin.y - 0.5, pin.label, 7.5, color, anchor) : "");
 }
 
 function rtcArt({ pins }, showLabels) {
-  const bus = pins.filter(pin => pin.x === 0).map(pin =>
-    sideContact(pin, 29, showLabels, 37) + headerContact(29, pin.y) + headerContact(252, pin.y)
+  const bus = pins.filter(pin => pin.edge === "left").map(pin =>
+    sideContact(pin, showLabels, 37) + headerContact(29, pin.y) + headerContact(252, pin.y)
   ).join("");
-  const clock = pins.filter(pin => pin.y === 0).map(pin =>
-    line(pin.x, 0, pin.x, 6, copper, 1.4) + line(pin.x, 19, pin.x, 30, copper, 1.4) +
-    headerContact(pin.x, 30) + (showLabels ? label(pin.x, 13, pin.label, 7.4, ink) : "")
+  const clock = pins.filter(pin => pin.edge === "top").map(pin =>
+    headerContact(pin.x, pin.y) + (showLabels ? label(pin.x, 13, pin.label, 7.4, ink) : "")
   ).join("");
   return path("M26 23H269L277 31V93L271 101H25L19 95V30Z", pcb, pcbEdge) +
     rect(23, 33, 13, 57, 1, "#222a33", "#9daab3") +
@@ -100,13 +99,14 @@ const db9Specs = [
 ];
 
 function rs232Art({ pins }, showLabels) {
-  const ttl = pins.filter(pin => pin.x === 0).map(pin =>
-    sideContact(pin, 25, showLabels, 34) + headerContact(25, pin.y)
+  const ttl = pins.filter(pin => pin.edge === "left").map(pin =>
+    sideContact(pin, showLabels, 34) + headerContact(25, pin.y)
   ).join("");
-  const serial = showLabels ? pins.filter(pin => pin.x !== 0).map((pin, index) =>
-    path("M" + pin.x + " " + pin.y + "H266L248 " + (49 + index * 7.5), "none", copper, 1.1) +
-    label(273, pin.y - 5, pin.label, 7.2, ink, "start")
-  ).join("") : "";
+  const serial = rect(262, 48, 50, 48, 9, "#b9c3c2", "#526367") +
+    path("M267 56H307L302 87H272Z", "#283b43", "#e1e7df") +
+    pins.filter(pin => pin.edge === "right").map((pin, index) =>
+      circle(pin.x, pin.y, 2.1, "#d7d2b6") + circle(pin.x, pin.y, 1.3, "#18262d") + (showLabels ? label(pin.x, pin.y + (index < 5 ? -7 : 7), String(index + 1), 5.7, ink) : "")
+    ).join("") + label(286, 105, "DB9 socket face", 5.8, ink);
   return rect(18, 12, 204, 146, 6, pcb, pcbEdge) +
     [30, 168].map(x => screw(x, 25, 7) + screw(x, 145, 7)).join("") +
     label(96, 27, "RS232", 15) +
@@ -129,7 +129,7 @@ const rs232 = {
   shortName: "RS232 Board",
   category: "Interfaces",
   subtitle: "SP3232 / DB9 / RTS and CTS",
-  description: "Waveshare SKU 3965, marked 03271A-03, with a six-contact TTL header and a DB9 female socket. Numbered DB9 contacts are presented as a separate logical bank beside the component-side view.",
+  description: "Waveshare SKU 3965, marked 03271A-03, with a six-contact TTL header and a DB9 female socket. Numbered DB9 contacts sit directly on the separately labeled female socket mating face beside the component-side view.",
   tags: ["rs232", "rs-232", "uart", "serial", "sp3232", "db9", "rts", "cts", "3965"],
   source: "https://www.waveshare.com/wiki/RS232_Board",
   width: 319, height: 171,
@@ -170,7 +170,7 @@ const gpsPinSpecs = [
 
 function gpsArt({ pins }, showLabels) {
   const contacts = pins.map(pin =>
-    sideContact(pin, 26, showLabels, 52) + line(29, pin.y, 43, pin.y, "#b2b5a9", 3)
+    sideContact(pin, showLabels, 52) + line(29, pin.y, 43, pin.y, "#b2b5a9", 3)
   ).join("");
   const shieldPads = Array.from({ length: 8 }, (_, index) => {
     const y = 106 + index * 6.3;
@@ -235,7 +235,7 @@ const lcdSpecs = [
 ];
 
 function lcdArt({ pins }, showLabels) {
-  const contacts = pins.map(pin => sideContact(pin, 29, showLabels, 37) + pad(29, pin.y)).join("");
+  const contacts = pins.map(pin => sideContact(pin, showLabels, 37) + pad(29, pin.y)).join("");
   return rect(14, 9, 237, 163, 7, pcb, pcbEdge) +
     [29, 236].map(x => screw(x, 23, 8) + screw(x, 158, 8)).join("") +
     rect(63, 23, 156, 135, 1.2, "#161c23", "#8d969e") +
@@ -285,23 +285,22 @@ const magnetometerBottom = [
 ];
 const bmmBottomOrder = ["dry", "cs", "scl", "sda", "sdo", "gnd", "vcc"];
 
-function bmmArt({ pins, width, height }, showLabels) {
-  const left = pins.filter(pin => pin.x === 0).map(pin =>
-    sideContact(pin, 26, showLabels, 37) + pad(26, pin.y)
+function bmmArt({ pins }, showLabels) {
+  const left = pins.filter(pin => pin.edge === "left").map(pin =>
+    sideContact(pin, showLabels, 37) + pad(26, pin.y)
   ).join("");
   const bottomPads = bmmBottomOrder.map((id, index) => {
     const x = 57 + index * 18;
-    const pin = pins.find(pin => pin.id === id);
     const caption = ["DRY", "CS", "SCK", "SDI", "SDO", "GND", "VCC"][index];
     return pad(x, 152) +
       (showLabels ? label(x, 142, caption, 6.4) : "") +
-      (pin.y === height ? line(pin.x, pin.y, x, 157, copper, 1.4) : "");
+      "";
   }).join("");
   const whitePort = ["INT", "SCL", "SDA", "GND", "VCC"].map((caption, index) => {
     const y = 61 + index * 15;
     return line(198, y, 210, y, "#b7b7a5", 3) + (showLabels ? label(194, y, caption, 7, silk, "end") : "");
   }).join("");
-  const interrupt = pins.find(pin => pin.x === width);
+  const interrupt = pins.find(pin => pin.id === "int");
   return rect(13, 15, 232, 149, 6, pcb, pcbEdge) +
     mountingHole(27, 29) + mountingHole(27, 152) +
     label(135, 27, "BMM150 3-Axis Magnetometer", 7) +
@@ -319,8 +318,7 @@ function bmmArt({ pins, width, height }, showLabels) {
     rect(219, 52, 14, 77, 0.7, "#b8a98b") +
     rect(208, 44, 31, 11, 1, "#f0e6cd") + rect(208, 129, 31, 11, 1, "#f0e6cd") +
     whitePort + left + bottomPads +
-    line(interrupt.x, interrupt.y, 245, 61, copper, 1.4) +
-    (showLabels ? label(248, interrupt.y - 6, "INT", 7.6, ink, "start") : "");
+    (showLabels ? label(interrupt.x - 10, interrupt.y, "INT", 7, silk, "end") : "");
 }
 
 const bmm = {
@@ -366,4 +364,14 @@ const waveshareReadyArt = Object.fromEntries(modules.map(({ id, draw }) => [id, 
 const waveshareReadyFootprints = Object.fromEntries(modules.map(({ id, footprint }) => [id, footprint]));
 const waveshareReadyModels = Object.fromEntries(modules.filter(part => part.model).map(({ id, model }) => [id, model]));
 
-export default defineFamily("waveshare-ready", (waveshareReadyComponents).map(component => ({ component, render: (waveshareReadyArt)[component.art], footprint: (waveshareReadyFootprints)[component.id], model: waveshareReadyModels[component.id] })));
+const contactCenters = {
+  "waveshare-pcf8563-rtc-board": pin => [pin.x === 0 ? 29 : pin.x, pin.y === 0 ? 30 : pin.y],
+  "waveshare-rs232-board": (pin, index) => index < 6 ? [25, pin.y] : index < 11 ? [303 - (index - 6) * 8, 63] : [299 - (index - 11) * 8, 79],
+  "waveshare-l76k-gps-module": pin => [36, pin.y],
+  "waveshare-1in3-lcd-module": pin => [29, pin.y],
+  "waveshare-bmm150-magnetometer": pin => pin.id === "int" ? [204, 61] : pin.x === 0 ? [26, pin.y] : [57 + bmmBottomOrder.indexOf(pin.id) * 18, 152],
+};
+
+export default defineFamily("waveshare-ready", waveshareReadyComponents.map(component => physicalEntry({
+  component, render: waveshareReadyArt[component.art], footprint: waveshareReadyFootprints[component.id], model: waveshareReadyModels[component.id],
+}, contactCenters[component.id])));

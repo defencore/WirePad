@@ -25,18 +25,18 @@ export function pad(x, y) {
   return circle(x, y, 4.4, "#dcb16a") + circle(x, y, 2.65, "#564736") + circle(x, y, 1.7, "#131923");
 }
 
-export function edgePads(component, showLabels, offset = 9) {
+export function edgePads(component, showLabels) {
   const { width, height, pins } = component;
   return pins.map((pin) => {
-    const horizontal = pin.x === 0 || pin.x === width;
-    const before = pin.x === 0 || pin.y === 0;
+    const edge = pin.edge ?? (pin.x === 0 ? "left" : pin.x === width ? "right" : pin.y === 0 ? "top" : "bottom");
+    const horizontal = edge === "left" || edge === "right";
+    const before = edge === "left" || edge === "top";
     const delta = before ? 1 : -1;
-    const x = pin.x + (horizontal ? delta * offset : 0);
-    const y = pin.y + (horizontal ? 0 : delta * offset);
+    const { x, y } = pin;
     const caption = horizontal
       ? label(x + delta * 7, y, pin.label, 8, "#f1f2ee", before ? "start" : "end")
       : label(x, y + delta * 10, pin.label, 7.5);
-    return line(pin.x, pin.y, x, y, "#ac8550", 1.5) + pad(x, y) + (showLabels ? caption : "");
+    return `<g data-contact="${escapeText(pin.id)}">${pad(x, y)}${showLabels ? caption : ""}</g>`;
   }).join("");
 }
 

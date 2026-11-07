@@ -19,12 +19,7 @@ export const st3215 = {
 };
 
 export function drawSt3215({ pins }, showLabels = true) {
-  const leadColors = ["#46535f", "#c8544a", "#e6b653"];
-  const leads = pins.map((pin, index) => {
-    const startY = 37 + index * 7;
-    return path(`M150 ${startY}H158L170 ${pin.y}H${pin.x}`, "none", leadColors[index], 2) +
-      (showLabels ? label(181, pin.y - 6, pin.label, 7, "#344450", "end") : "");
-  }).join("");
+  const contactLabels = showLabels ? pins.map(pin => label(pin.x + 9, pin.y, pin.label, 6, "#344450", "start")).join("") : "";
   const frontScrews = [31, 89].map(y => screw(14, y, 3.8) + screw(130, y, 3.8)).join("");
   const mountingThreads = [32, 88].map(y =>
     circle(60, y, 3, "#151a21", "#525960") + circle(118, y, 3, "#151a21", "#525960")
@@ -39,8 +34,7 @@ export function drawSt3215({ pins }, showLabels = true) {
   ).join("");
 
   // The product's face shows the output disk. The two bus sockets are on the rear.
-  return leads +
-    rect(7, 25, 130, 72, 7, "#151b23", "#1b2229") +
+  return rect(7, 25, 130, 72, 7, "#151b23", "#1b2229") +
     rect(7, 24, 130, 71, 6, "#30353b", "#494f55") +
     rect(13, 35, 118, 50, 5, "#292e34", "#3c4249") +
     line(65, 35, 126, 35, "#565d63") + line(65, 85, 125, 85, "#161e25") +
@@ -54,5 +48,5 @@ export function drawSt3215({ pins }, showLabels = true) {
     label(101, 53, "WAVESHARE", 6.2, "#9bc757") +
     label(101, 66, "ST3215", 7, "#ebefeb") +
     rect(139, 30, 17, 60, 2, "#30363c", "#656d74") + rearSockets +
-    (showLabels ? label(147.5, 24, "REAR", 6.2, "#344450") : "");
+    contactLabels + (showLabels ? label(147.5, 24, "REAR", 6.2, "#344450") : "");
 }

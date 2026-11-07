@@ -34,12 +34,11 @@ function chip(x, y, bodyWidth, bodyHeight, pins) {
 }
 
 function castellatedPad(pin, showLabels) {
-  const left = pin.x === 0;
-  const center = left ? 10 : width - 10;
+  const left = pin.edge === "left";
+  const center = pin.x;
   const radius = left ? 4.9 : 6.2;
   const edge = left ? 4 : width - 4;
-  return line(pin.x, pin.y, edge, pin.y, "#adbec6", 1.6) +
-    rect(left ? edge : center - radius, pin.y - radius, radius + 6, radius * 2, radius - 1, "#b4c3c9", "#dfebef") +
+  return rect(left ? edge : center - radius, pin.y - radius, radius + 6, radius * 2, radius - 1, "#b4c3c9", "#dfebef") +
     circle(center, pin.y, radius - 2, "#263c49", "#f0f3f0") +
     (showLabels ? label(left ? 17 : width - 18, pin.y, pin.label, 7.4, "#edf5f8", left ? "start" : "end") : "");
 }

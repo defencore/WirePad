@@ -1,6 +1,7 @@
 import { defineFamily } from "../registry.js";
+import { physicalEntry } from "../shared/physical-contacts.js";
 import {
-  chip, circle, edgePads, label, line, mountingHole, pad, path, pinRow, rect, screw, smd,
+  chip, circle, label, line, mountingHole, pad, path, pinRow, rect, screw, smd,
 } from "../shared/svg.js";
 
 const hxBridge = [
@@ -26,16 +27,12 @@ const hxRed = "#b71e27";
 function hx711Art(component, showLabels) {
   const { pins, width } = component;
   const contacts = pins.slice(0, 10).map(pin => {
-    const left = pin.x === 0;
+    const left = pin.edge === "left";
     const x = left ? 20 : width - 20;
-    return (showLabels ? line(pin.x, pin.y, x, pin.y, "#bd9460", 1.4) : "") +
-      pad(x, pin.y) + label(left ? x + 8 : x - 8, pin.y, pin.label, 7.5, "#fff1e5", left ? "start" : "end");
+    return pad(pin.x, pin.y) + label(left ? x + 8 : x - 8, pin.y, pin.label, 7.5, "#fff1e5", left ? "start" : "end");
   }).join("");
   const amplifier = chip(-24, -13, 48, 26, "HX711", 8);
-  const auxiliary = showLabels
-    ? rect(117, 122, 48, 25, 3, "#39414c", "#687380") +
-      edgePads({ ...component, pins: pins.slice(10) }, true)
-    : "";
+  const auxiliary = pins.slice(10).map(pin => showLabels ? label(pin.x + 8, pin.y, pin.label, 7.5, "#fff1e5", "start") : "").join("");
   return rect(14, 9, 152, 114, 1, "#742028") +
     rect(14, 7, 152, 114, 1, hxRed, "#e25253") +
     [27, 153].flatMap(x => [20, 108].map(y => mountingHole(x, y))).join("") +
@@ -140,8 +137,7 @@ function sw420Art({ pins }, showLabels) {
   const contacts = pins.map((pin, index) => {
     const y = 43 + 8 * index;
     return line(57, y, 68, y, "#b8b6a9", 2) +
-      label(70, y, pin.label, 6.4, "#edf2ee", "start") +
-      (showLabels ? path(`M0 ${pin.y}H13L27 ${y}H40`, "none", "#ad8b56", 1.35) : "");
+      (showLabels ? label(70, y, pin.label, 6.4, "#edf2ee", "start") : "");
   }).join("");
   return path("M31 16H63Q70 3 77 16H130Q139 33 149 16H181Q185 16 185 20V48Q198 55 185 63V94Q185 98 181 98H149Q139 81 130 98H77Q70 111 63 98H31Q27 98 27 94V20Q27 16 31 16Z", "#14517a", "#4987a2", 1.2) +
     mountingHole(70, 13) + mountingHole(70, 100) + mountingHole(186, 55) +
@@ -202,8 +198,7 @@ function fsrArt({ pins }, showLabels) {
     `<g transform="rotate(90 41 108)">${label(41, 108, "FSR 402", 6.5, "#2a443d")}</g>` +
     (showLabels ? pins.map((pin, index) => {
       const x = 36 + 10 * index;
-      return path(`M${x} 170v4l${pin.x - x} 8v4`, "none", "#ad8b56", 1.4) +
-        label(pin.x + (index === 0 ? -6 : 6), 173, pin.label, 8, "#667888");
+      return label(x + (index === 0 ? -8 : 8), 164, pin.label, 8, "#667888");
     }).join("") : "");
 }
 
@@ -239,4 +234,13 @@ const forceSensorModels = Object.fromEntries(entries
   .filter(entry => entry.model)
   .map(({ component, model }) => [component.id, model]));
 
-export default defineFamily("force-sensors", (forceSensorComponents).map(component => ({ component, render: (forceSensorArt)[component.art], footprint: (forceSensorFootprints)[component.id], model: forceSensorModels[component.id] })));
+const contactCenters = {
+  "sparkfun-hx711-13879": (pin, index) => index < 10 ? [index < 5 ? 20 : 160, pin.y] : [122, index === 10 ? 77 : 90],
+  "sparkfun-tal220b-14729": pin => [pin.x, pin.y],
+  "seeed-sw420-101020586": (_pin, index) => [62.5, 43 + index * 8],
+  "interlink-fsr402-44-29103": (_pin, index) => [36 + index * 10, 163],
+};
+
+export default defineFamily("force-sensors", forceSensorComponents.map(component => physicalEntry({
+  component, render: forceSensorArt[component.art], footprint: forceSensorFootprints[component.id], model: forceSensorModels[component.id],
+}, contactCenters[component.id])));

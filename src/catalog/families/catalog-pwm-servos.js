@@ -25,8 +25,8 @@ const mg90s = {
 
 const pwmServoComponents = [sg90, mg90s].map(part => ({
   ...part, art: part.id, manufacturer: "TowerPro", category: "Actuators", referencePrefix: "M",
-  width, height, tags: ["servo", "pwm", "micro servo", "jr", "rc", "actuator"],
-  pins: pinRow("right", width, height, 45, 18, leads),
+  width, height, contactLayout: "physical", tags: ["servo", "pwm", "micro servo", "jr", "rc", "actuator"],
+  pins: pinRow("right", width, height, 45, 18, leads).map((pin, index) => ({ ...pin, x: 170, surface: true, symbolPlacement: { side: "right", order: index } })),
 }));
 
 function servoArt({ shortName, pins }, showLabels, colors) {
@@ -34,7 +34,7 @@ function servoArt({ shortName, pins }, showLabels, colors) {
   const wireColors = ["#855341", "#d95b52", "#e5a14d"];
   const cable = pins.map(({ x, y, label: name }, index) =>
     path(`M111 ${77 + index * 4}H121Q132 ${77 + index * 4} 142 ${y}H${x}`, "none", wireColors[index], 2) +
-    (showLabels ? label(187, y - 6, name, 7, "#344450", "end") : "")
+    (showLabels ? label(177, y, name, 7, "#344450", "start") : "")
   ).join("");
   return cable +
     rect(13, 45, 110, 6, 2, shell, shade) +

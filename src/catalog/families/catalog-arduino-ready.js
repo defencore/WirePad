@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pad, path, rect, smd } from "../shared/svg.js";
 import { boardDefinition, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
 
@@ -148,21 +149,35 @@ function mkrBody({ width }, wifi) {
     label(x + 72.5, y + 147, "ARDUINO", 7.6, silk);
 }
 
+// Backside service positions come from Arduino's exact Eagle revisions linked below.
+// The small rear PCB is mirrored across its short axis, keeping USB at the top.
+const nanoRear = { "1": [39.2684, 6.35], "2": [41.8084, 6.35], "3": [39.2684, 8.89], "5": [39.2684, 11.43], "6": [41.8084, 11.43] };
+const mkrRear = { "1": [27.39, 10.2775], "2": [27.39, 14.7225], "3": [24.85, 10.2775], "4": [24.85, 14.7225], "5": [22.31, 10.2775], "6": [22.31, 14.7225] };
+const ninaRear = { "JCLK.X": [50.5, 13.135], "JTMS.X": [50.5, 10.595], "JTDO.X": [50.5, 11.865], "JGND.X": [50.5, 9.325] };
+
+function rearPoint(component, physical) {
+  const nano = component.id === "arduino-nano-33-iot";
+  const scale = nano ? 2 : 1.6;
+  return { x: (nano ? 12 : 10) + ((nano ? 17.78 : 25) - physical[1]) * scale, y: (nano ? 196 : 170) + physical[0] * scale, view: "back" };
+}
+
 function wiringArt(component, body, showLabels) {
+  const nano = component.id === "arduino-nano-33-iot";
+  const rearX = nano ? 12 : 10, rearY = nano ? 196 : 170;
+  const rearWidth = nano ? 35.56 : 40, rearHeight = nano ? 88 : 98.4;
+  const rear = rect(rearX, rearY, rearWidth, rearHeight, 3, "#24696f", "#72a7a3") +
+    rect(rearX + rearWidth / 2 - 5, rearY - 2, 10, 8, 1, "#b3c0bf", "#d9e3dc") +
+    label(rearX + rearWidth / 2, rearY - 10, "BACK", 6.5, "#34475a");
   const terminals = component.pins.map(pin => {
-    const vertical = pin.x === 0 || pin.x === component.width;
-    const before = pin.x === 0 || pin.y === 0;
+    if (pin.view === "back") return circle(pin.x, pin.y, 1.6, "#d3bd78", "#eef0db") +
+      (showLabels ? label(pin.x + 3.5, pin.y, pin.number.split(".").at(-1), 3.5, "#e9f1ee", "start") : "");
+    const vertical = pin.edge === "left" || pin.edge === "right";
+    const before = pin.edge === "left" || pin.edge === "top";
     const direction = before ? 1 : -1;
-    const px = pin.x + (vertical ? direction * 9 : 0);
-    const py = pin.y + (vertical ? 0 : direction * 9);
-    return line(pin.x, pin.y, px, py, "#aa905b", 1.5) + pad(px, py) +
-      (showLabels ? label(px + (vertical ? direction * 8 : 0), py + (vertical ? 0 : direction * 12), pin.label, 7.7,
-        "#e9f1ee", vertical ? (before ? "start" : "end") : "middle") : "");
+    return pad(pin.x, pin.y) + (showLabels ? label(pin.x + (vertical ? direction * 7 : 0), pin.y + (vertical ? 0 : direction * 9), pin.label, 6.1,
+      "#e9f1ee", vertical ? (before ? "start" : "end") : "middle") : "");
   }).join("");
-  return rect(2, 34, 51, component.height - 68, 4, "#24494d") +
-    rect(component.width - 53, 34, 51, component.height - 68, 4, "#24494d") +
-    rect(23, component.height - 29, component.width - 46, 27, 4, "#24494d") +
-    (component.id.includes("mkr") ? rect(20, 2, component.width - 40, 27, 4, "#24494d") : "") + body(component) + terminals;
+  return body(component) + rear + terminals;
 }
 
 function readyBoard(options, headers, size, drawBody, details) {
@@ -173,7 +188,19 @@ function readyBoard(options, headers, size, drawBody, details) {
     body: size, color: blue, details,
     note: `${options.revision} reference carrier. Main header coordinates and numbering follow Arduino's Eagle CAD. Battery, ESLOV and backside SWD contacts use separate off-board cable terminations; their positions are a wiring reference. Check the selected connector, board clearances and 3.3 V logic before fabrication.`,
   }, drawBody);
-  return { ...definition, art: (component, showLabels = true) => wiringArt(component, drawBody, showLabels) };
+  const nano = options.id === "arduino-nano-33-iot";
+  const component = physicalComponent(definition.component, pin => {
+    const [connector, number] = pin.number.split(".");
+    const debug = nano ? connector === "J4" : connector === (options.id === "arduino-mkr-zero" ? "J8" : "J2");
+    if (debug) return rearPoint(definition.component, (nano ? nanoRear : mkrRear)[number]);
+    if (ninaRear[pin.number]) return rearPoint(definition.component, ninaRear[pin.number]);
+    if (nano) return [pin.edge === "left" ? (options.width - 106) / 2 + 6 : (options.width - 106) / 2 + 100, 64 + (Number(number) - (pin.edge === "left" ? 1 : 15)) * (pin.edge === "left" ? 15 : -15)];
+    const x = (options.width - 145) / 2;
+    if (pin.id === "battery" || pin.id === "battery-gnd") return [x + 28, pin.id === "battery" ? 119 : 129];
+    if (pin.id.startsWith("eslov-")) return [x + 128.5, 111.05 - (Number(number) - 1) * 5.7];
+    return [pin.edge === "left" ? x + 7 : x + 138, 158 + (pin.edge === "left" ? Number(number) - 1 : 14 - Number(number)) * 13.1];
+  });
+  return { ...definition, component, art: (component, showLabels = true) => wiringArt(component, drawBody, showLabels) };
 }
 
 const nano = readyBoard({

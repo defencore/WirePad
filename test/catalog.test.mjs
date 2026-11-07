@@ -5,6 +5,7 @@ import { componentArt, componentById, components } from '../src/catalog/index.js
 import { footprintLayout } from '../src/assets/footprint-layout.js';
 import { kicadFootprint, kicadModel, kicadSymbol } from '../src/assets/kicad.js';
 import { parseProject } from '../src/model/project.js';
+import { version1Contacts } from '../src/catalog/data/contact-layout-v1.js';
 
 test("each library component maps its canvas contacts to KiCad pads", () => {
   assert.equal(componentById.size, components.length);
@@ -104,7 +105,7 @@ test("LM1117 exports both VOUT lands under the same schematic terminal number", 
   assert.equal([...kicadFootprint(regulator).matchAll(/\(pad "2" smd /g)].length, 2);
 });
 
-test("the original Heltec V4 identifier still resolves saved V4.2 wire anchors", () => {
+test("the original Heltec V4 identifier migrates its saved V4.2 connections onto physical contacts", () => {
   const heltec = componentById.get("heltec-v4");
   const legacyHeaders = [
     ["J2.", 0, "gnd 5v ve ve-2 gpio44 gpio43 reset gpio0 gpio36 gpio35 gpio34 gpio33 gpio47 gpio48 gpio26 gpio21 gpio20 gpio19"],
@@ -116,11 +117,15 @@ test("the original Heltec V4 identifier still resolves saved V4.2 wire anchors",
   const auxiliaryPins = [18, 17, 16, 15].map((gpio, index) => ({
     id: `gpio${gpio}`, number: `X${index + 1}`, x: 26 + 30 * index, y: 330,
   }));
-  assert.deepEqual(heltec.pins.map(({ id, number, x, y }) => ({ id, number, x, y })), [...headerPins, ...auxiliaryPins]);
+  assert.deepEqual(heltec.pins.map(({ id, number, x, y }) => {
+    const prior = version1Contacts[heltec.id][id];
+    return { id, number, x: prior?.[0] ?? x, y: prior?.[1] ?? y };
+  }), [...headerPins, ...auxiliaryPins]);
+  assert.equal(heltec.contactLayout, 'physical');
   const project = {
     version: 1, title: "Saved Heltec diagram",
     parts: [{ id: "board", componentId: "heltec-v4", x: 10, y: 20 }],
     wires: [{ id: "wire", from: { partId: "board", pinId: "gpio18" }, to: { partId: "board", pinId: "gpio19" }, color: "#1177cc" }],
   };
-  assert.deepEqual(parseProject(JSON.stringify(project)), project);
+  assert.deepEqual(parseProject(JSON.stringify(project)), { ...project, version: 2 });
 });

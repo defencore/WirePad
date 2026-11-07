@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pad, pinRow, rect, smd } from "../shared/svg.js";
 
 const pitch = 2.54;
@@ -57,25 +58,12 @@ function axes(x, y, horizontal = "X", vertical = "Y", direction = 1) {
     label(direction * 16, 0, horizontal, 6, silk) + label(0, -16, vertical, 6, silk) + "</g>";
 }
 
-function pinBank(pins, height) {
-  return pins.map(({ x, y, label: name }, index) => {
-    const direction = y === 0 ? 1 : -1;
-    const captionY = y + direction * (index % 2 === 0 ? 16 : 7);
-    const leadColor = "#9f8359";
-    const captionWidth = name.length * 4.6 + 2.4;
-    return line(x, y, x, y + direction * 4, leadColor, 1.1) +
-      line(x, captionY + direction * 4.5, x, y === 0 ? marginY + 1 : height - marginY - 1, leadColor, 1.1) +
-      rect(x - captionWidth / 2, captionY - 4.2, captionWidth, 8.4, 2, "#2e3946") +
-      label(x, captionY, name, 7.2, "#fff8e7");
-  }).join("");
-}
-
 function topView({ pins, height }, color, artwork, topSilk, showLabels) {
   const boardHeight = height - marginY * 2;
   const padRow = pins.map(pin => {
     const x = pin.x - marginX;
-    const top = pin.y === 0;
-    const y = top ? drawnPitch : boardHeight - drawnPitch;
+    const top = pin.edge === "top";
+    const y = pin.y - marginY;
     const captionY = top ? 5.5 : ["3Vo", "SCL", "INT2"].includes(pin.label) ? y - 10 : y + 10;
     return pad(x, y) +
       (!top || topSilk ? label(x, captionY, pin.label, 6.4, silk) : "");
@@ -89,8 +77,7 @@ function topView({ pins, height }, color, artwork, topSilk, showLabels) {
     mounting +
     qtPort(0, boardHeight / 2, 1) + qtPort(boardWidth, boardHeight / 2, -1) +
     artwork() + padRow;
-  return `<g transform="translate(${marginX} ${marginY})">${face}</g>` +
-    (showLabels ? pinBank(pins, height) : "");
+  return `<g transform="translate(${marginX} ${marginY})">${face}</g>`;
 }
 
 function breakout({
@@ -102,11 +89,11 @@ function breakout({
   const lowerPins = pinRow("bottom", width, height, bottomStart, drawnPitch, lower, `${lowerHeader}.`);
   const upperPins = pinRow("top", width, height, bottomStart + topOffset * drawnPitch, drawnPitch, upper, `${upperHeader}.`);
   const halfSpacing = (boardDepth - 2) * pitch / 2;
-  const component = {
+  const component = physicalComponent({
     id, name, shortName, description, subtitle, source, tags: [...tags, "stemma qt", "qwiic", "i2c"],
     manufacturer: "Adafruit", category: "Sensors", referencePrefix: "U", art: id, width, height,
     pins: [...lowerPins, ...upperPins],
-  };
+  }, pin => [pin.x, pin.y === 0 ? marginY + drawnPitch : height - marginY - drawnPitch]);
 
   return {
     component,

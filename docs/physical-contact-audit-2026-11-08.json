@@ -1,0 +1,3893 @@
+{
+  "date": "2026-11-08",
+  "previousRelease": "0fe0514983d495b7001e2806b0c38640032aec0c",
+  "scope": "Align connection anchors with illustrated physical pads, terminals, connector contacts or metal lead ends. Existing physical families retain their geometry.",
+  "projectFormat": {
+    "current": 2,
+    "imports": [
+      1,
+      2
+    ],
+    "migration": "src/model/layout-migration.js",
+    "publishedAnchors": "src/catalog/data/contact-layout-v1.js"
+  },
+  "components": 502,
+  "physicalOrSurface": 493,
+  "leadTerminations": [
+    "resistor",
+    "capacitor",
+    "electrolytic",
+    "inductor",
+    "ferrite-bead",
+    "diode",
+    "led",
+    "button",
+    "battery"
+  ],
+  "movedComponents": 289,
+  "movedContacts": 5162,
+  "families": [
+    {
+      "id": "breadboard",
+      "entries": [
+        {
+          "id": "breadboard",
+          "source": "https://learn.adafruit.com/breadboards-for-beginners/breadboards",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "core-modules",
+      "entries": [
+        {
+          "id": "esp32-s3",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 44,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "max3485",
+          "source": "https://www.analog.com/en/products/max3485.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "hw0519",
+          "source": "https://tasmota.github.io/docs/SolaX-X1/#hw-0519",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "bme280",
+          "source": "https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "rs485-soil",
+          "source": "https://wiki.dfrobot.com/sen0600/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "ads1115",
+          "source": "https://learn.adafruit.com/adafruit-4-channel-adc-breakouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 12,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "ads1220",
+          "source": "https://www.ti.com/lit/ds/symlink/ads1220.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "ina219",
+          "source": "https://learn.adafruit.com/adafruit-ina219-current-sensor-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "st3215",
+          "source": "https://docs.waveshare.com/ST3215_Servo",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "ssd1306",
+          "source": null,
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "lm2596",
+          "source": "https://www.ti.com/product/LM2596",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "core-and-waveshare"
+        }
+      ]
+    },
+    {
+      "id": "waveshare",
+      "entries": [
+        {
+          "id": "waveshare-rs485-3v3",
+          "source": "https://www.waveshare.com/wiki/RS485_Board_%283.3V%29",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "waveshare-bus-servo-adapter-a",
+          "source": "https://docs.waveshare.com/Bus_Servo_Adapter_A",
+          "status": "aligned-and-migrated",
+          "movedContacts": 11,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "waveshare-esp32-s3-rs485-can",
+          "source": "https://docs.waveshare.com/ESP32-S3-RS485-CAN",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "core-and-waveshare"
+        }
+      ]
+    },
+    {
+      "id": "core-basics",
+      "entries": [
+        {
+          "id": "resistor",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "capacitor",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "electrolytic",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "inductor",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "ferrite-bead",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "diode",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "led",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "npn",
+          "source": null,
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "nmos",
+          "source": null,
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "button",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "terminal-2",
+          "source": null,
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "terminal-3",
+          "source": null,
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "pin-header-4",
+          "source": null,
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "jst-ph-2",
+          "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "core-and-waveshare"
+        },
+        {
+          "id": "battery",
+          "source": null,
+          "status": "illustrated-metal-lead-end",
+          "movedContacts": 0,
+          "checkedBy": "core-and-waveshare"
+        }
+      ]
+    },
+    {
+      "id": "heltec-semtech",
+      "entries": [
+        {
+          "id": "heltec-v4",
+          "source": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/Schematic/WiFi_LoRa_32_V4.2.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "heltec-v3",
+          "source": "https://heltec.org/project/wifi-lora-32-v3/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 36,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "heltec-v4-3-r2",
+          "source": "https://heltec.org/project/wifi-lora-32-v4/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "heltec-v4-3-r8",
+          "source": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4-R8/Schematic/HTIT-WBR8H_V4.3.2.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "semtech-radios",
+      "entries": [
+        {
+          "id": "rfm95w",
+          "source": "https://www.hoperf.com/uploads/RFM95W-V2.0_1695351437.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "rfm96w",
+          "source": "https://www.hoperf.com/uploads/RFM96W-V2.0_1695351477.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "rfm98w",
+          "source": "https://www.hoperf.com/uploads/RFM98W-V2_0_1702287607.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ra-01s",
+          "source": "https://docs.ai-thinker.com/en/Ra-01S/index.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ra-01sh",
+          "source": "https://docs.ai-thinker.com/en/Ra-01SH/index.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ra-02",
+          "source": "https://docs.ai-thinker.com/en/Ra-02/index.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e22-400mm22s",
+          "source": "https://www.cdebyte.com/products/E22-400MM22S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 20,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e22-900mm22s",
+          "source": "https://www.cdebyte.com/products/E22-900MM22S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 20,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e22-400m22s",
+          "source": "https://www.cdebyte.com/products/E22-400M22S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e22-900m22s",
+          "source": "https://www.cdebyte.com/products/E22-900M22S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e22-400m30s",
+          "source": "https://www.cdebyte.com/products/E22-400M30S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e22-900m30s",
+          "source": "https://www.cdebyte.com/products/E22-900M30S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e22-900m33s",
+          "source": "https://www.cdebyte.com/products/E22-900M33S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e28-2g4m12s",
+          "source": "https://www.cdebyte.com/products/E28-2G4M12S",
+          "status": "aligned-and-migrated",
+          "movedContacts": 14,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "e28-2g4m12sx",
+          "source": "https://www.cdebyte.com/products/E28-2G4M12SX",
+          "status": "aligned-and-migrated",
+          "movedContacts": 14,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "esp-rp",
+      "entries": [
+        {
+          "id": "esp32-s3-devkitm-1",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitm-1/user_guide.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 44,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "esp32-s3-usb-otg",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-usb-otg/user_guide.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "adafruit-metro-esp32-s3",
+          "source": "https://learn.adafruit.com/adafruit-metro-esp32-s3/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 41,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "waveshare-esp32-s3-zero",
+          "source": "https://docs.waveshare.com/ESP32-S3-Zero",
+          "status": "aligned-and-migrated",
+          "movedContacts": 29,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "seeed-xiao-esp32-s3",
+          "source": "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 25,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "seeed-xiao-esp32-s3-sense",
+          "source": "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 25,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "seeed-xiao-esp32-s3-plus",
+          "source": "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 34,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "adafruit-qt-py-esp32-s3",
+          "source": "https://learn.adafruit.com/adafruit-qt-py-esp32-s3/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 20,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "adafruit-feather-esp32-s3",
+          "source": "https://learn.adafruit.com/adafruit-esp32-s3-feather/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 28,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raspberry-pi-pico",
+          "source": "https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 43,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raspberry-pi-pico-w",
+          "source": "https://datasheets.raspberrypi.com/picow/PicoW-A4-Pinout.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 43,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "seeed-xiao-rp2040",
+          "source": "https://wiki.seeedstudio.com/XIAO-RP2040/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 20,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "seeed-xiao-rp2040-plus",
+          "source": "https://wiki.seeedstudio.com/XIAO-RP2040/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 41,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "adafruit-qt-py-rp2040",
+          "source": "https://learn.adafruit.com/adafruit-qt-py-2040/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 18,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "adafruit-feather-rp2040",
+          "source": "https://learn.adafruit.com/adafruit-feather-rp2040-pico/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 28,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "arduino",
+      "entries": [
+        {
+          "id": "arduino-uno-rev3",
+          "source": "https://docs.arduino.cc/hardware/uno-rev3/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 38,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-uno-r4-minima",
+          "source": "https://docs.arduino.cc/hardware/uno-r4-minima/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 48,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-uno-r4-wifi",
+          "source": "https://docs.arduino.cc/hardware/uno-r4-wifi/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 51,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-nano",
+          "source": "https://docs.arduino.cc/hardware/nano/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 36,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-nano-every",
+          "source": "https://docs.arduino.cc/hardware/nano-every/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-nano-esp32",
+          "source": "https://docs.arduino.cc/hardware/nano-esp32/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-nano-rp2040-connect",
+          "source": "https://docs.arduino.cc/hardware/nano-rp2040-connect/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-nano-r4",
+          "source": "https://docs.arduino.cc/hardware/nano-r4/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 34,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-leonardo",
+          "source": "https://docs.arduino.cc/hardware/leonardo/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 38,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-micro",
+          "source": "https://docs.arduino.cc/hardware/micro/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 34,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-mega-2560",
+          "source": "https://docs.arduino.cc/hardware/mega-2560/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 92,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-due",
+          "source": "https://docs.arduino.cc/hardware/due/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 92,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "stm32",
+      "entries": [
+        {
+          "id": "stm32-nucleo-f103rb",
+          "source": "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 108,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-f401re",
+          "source": "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 108,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-f411re",
+          "source": "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 108,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-f446re",
+          "source": "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 108,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-g431rb",
+          "source": "https://www.st.com/resource/en/user_manual/um2505-stm32g4-nucleo64-boards-mb1367-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 108,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-g474re",
+          "source": "https://www.st.com/resource/en/user_manual/um2505-stm32g4-nucleo64-boards-mb1367-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 108,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-g491re",
+          "source": "https://www.st.com/resource/en/user_manual/um2505-stm32g4-nucleo64-boards-mb1367-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 108,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-f042k6",
+          "source": "https://www.st.com/resource/en/user_manual/dm00231744-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-f303k8",
+          "source": "https://www.st.com/resource/en/user_manual/dm00231744-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-l031k6",
+          "source": "https://www.st.com/resource/en/user_manual/dm00231744-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-l412kb",
+          "source": "https://www.st.com/resource/en/user_manual/dm00231744-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "stm32-nucleo-l432kc",
+          "source": "https://www.st.com/resource/en/user_manual/dm00231744-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "nordic-boards",
+      "entries": [
+        {
+          "id": "xiao-nrf52840",
+          "source": "https://wiki.seeedstudio.com/XIAO_BLE/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "xiao-nrf52840-sense",
+          "source": "https://wiki.seeedstudio.com/XIAO_BLE/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "xiao-nrf52840-plus",
+          "source": "https://wiki.seeedstudio.com/XIAO_BLE/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 29,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "xiao-nrf52840-sense-plus",
+          "source": "https://wiki.seeedstudio.com/XIAO_BLE/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 29,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-nano-33-ble-rev2",
+          "source": "https://docs.arduino.cc/hardware/nano-33-ble-rev2/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "arduino-nano-33-ble-sense-rev2",
+          "source": "https://docs.arduino.cc/hardware/nano-33-ble-sense-rev2/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "adafruit-feather-nrf52840-express",
+          "source": "https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 28,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "nordic",
+      "entries": [
+        {
+          "id": "raytac-mdbt42q-512kv2",
+          "source": "https://www.raytac.com/document/act.php?act=1&index_id=24",
+          "status": "aligned-and-migrated",
+          "movedContacts": 41,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raytac-mdbt42q-p512kv2",
+          "source": "https://www.raytac.com/document/act.php?act=1&index_id=24",
+          "status": "aligned-and-migrated",
+          "movedContacts": 41,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raytac-mdbt50q-1mv2",
+          "source": "https://www.raytac.com/document/act.php?act=1&index_id=44",
+          "status": "aligned-and-migrated",
+          "movedContacts": 61,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raytac-mdbt50q-p1mv2",
+          "source": "https://www.raytac.com/document/act.php?act=1&index_id=44",
+          "status": "aligned-and-migrated",
+          "movedContacts": 61,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raytac-mdbt53v-1m",
+          "source": "https://www.raytac.com/document/act.php?act=1&index_id=80",
+          "status": "aligned-and-migrated",
+          "movedContacts": 39,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raytac-mdbt53v-p1m",
+          "source": "https://www.raytac.com/document/act.php?act=1&index_id=80",
+          "status": "aligned-and-migrated",
+          "movedContacts": 39,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "raytac-an54lq-15",
+          "source": "https://www.raytac.com/document/act.php?act=1&index_id=96",
+          "status": "aligned-and-migrated",
+          "movedContacts": 43,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ebyte-e01-ml01d",
+          "source": "https://www.cdebyte.com/products/E01-ML01D/2",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ebyte-e01-ml01dp5",
+          "source": "https://www.cdebyte.com/products/E01-ML01DP5/2",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "entries": [
+        {
+          "id": "lc-filter",
+          "source": null,
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "pi-lc-filter",
+          "source": "https://g.recomcdn.com/media/Datasheet/pdf/.fJG_EiEZ/.t3f3f38dadc5d6f54e118/Datasheet-261/R-78E-0_5.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "tdk-mem2012f75r0t001",
+          "source": "https://product.tdk.com/en/search/emc/emc/3tf/info?part_no=MEM2012F75R0T001",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "mcp1700-3302-to92",
+          "source": "https://www.microchip.com/content/dam/mchp/documents/APID/ProductDocuments/DataSheets/MCP1700-Data-Sheet-20001826F.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "mcp1702-5002-to92",
+          "source": "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP1702-Data-Sheet-DS20002008.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ap2112k-3-3",
+          "source": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "tlv75533pdbvr",
+          "source": "https://www.ti.com/lit/ds/symlink/tlv755p.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "lm1117-3-3-sot223",
+          "source": "https://www.ti.com/lit/ds/symlink/lm1117.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "lm1117-5-0-sot223",
+          "source": "https://www.ti.com/lit/ds/symlink/lm1117.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "pololu-d24v10f3",
+          "source": "https://www.pololu.com/product/2830",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "pololu-d24v10f5",
+          "source": "https://www.pololu.com/product/2831",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "pololu-s13v10f5",
+          "source": "https://www.pololu.com/product/4083",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "pololu-s7v8f3",
+          "source": "https://www.pololu.com/product/2122",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "pololu-u3v9f5",
+          "source": "https://www.pololu.com/product/5581",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "recom-r-78e5-0-0-5",
+          "source": "https://g.recomcdn.com/media/Datasheet/pdf/.fJG_EiEZ/.t3f3f38dadc5d6f54e118/Datasheet-261/R-78E-0_5.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "murata-oki-78sr-5",
+          "source": "https://www.murata.com/-/media/webrenewal/products/power/datasheet/oki-78sr.ashx?cvid=20200224052008000000&la=en-us",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "sp-xt",
+      "entries": [
+        {
+          "id": "weipu-sp1310-p2",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1312-s2",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1310-p3",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1312-s3",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1310-p4",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1312-s4",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1310-p5",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1312-s5",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1310-p7",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1312-s7",
+          "source": "https://www.weipuconnector.com/products/sp13/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1710-p2",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1712-s2",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1710-p3",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1712-s3",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1710-p4",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1712-s4",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1710-p5",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1712-s5",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1710-p7",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp1712-s7",
+          "source": "https://www.weipuconnector.com/products/sp17/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2110-p2",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2112-s2",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2110-p3",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2112-s3",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2110-p4",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2112-s4",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2110-p5",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2112-s5",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2110-p7",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "weipu-sp2112-s7",
+          "source": "https://www.weipuconnector.com/products/sp21-ip68/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt30u-f",
+          "source": "https://www.china-amass.com/public/upload/20240608/810c62b3f7ace2287989748538eb2a6b.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt30u-m",
+          "source": "https://www.china-amass.com/public/upload/20240608/810c62b3f7ace2287989748538eb2a6b.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt60h-f",
+          "source": "https://www.china-amass.com/public/upload/20240608/d64f202d7bbc62ab5ced2c87cd917d2e.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt60h-m",
+          "source": "https://www.china-amass.com/public/upload/20240608/d64f202d7bbc62ab5ced2c87cd917d2e.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt60pb-f",
+          "source": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=17",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt60pb-m",
+          "source": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=17",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt90h-f",
+          "source": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=23",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt90h-m",
+          "source": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=23",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "amass-xt90s-f",
+          "source": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=23",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "switches-mosfets",
+      "entries": [
+        {
+          "id": "nkk-mn11ss4w03",
+          "source": "https://www.nkkswitches.com/wp-content/themes/impress-blank/search/inc/part.php?part_no=MN11SS4W03",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ck-7101sycqe",
+          "source": "https://www.littelfuse.com/assetdocs/littelfuse-ck-toggle-7000-series-datasheet?assetguid=fed01bc6-88d0-4bda-b896-13c98cf9e90e",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ck-7103sycqe",
+          "source": "https://www.littelfuse.com/assetdocs/littelfuse-ck-toggle-7000-series-datasheet?assetguid=fed01bc6-88d0-4bda-b896-13c98cf9e90e",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ck-7201sycqe",
+          "source": "https://www.littelfuse.com/assetdocs/littelfuse-ck-toggle-7000-series-datasheet?assetguid=fed01bc6-88d0-4bda-b896-13c98cf9e90e",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ck-7203sycqe",
+          "source": "https://www.littelfuse.com/assetdocs/littelfuse-ck-toggle-7000-series-datasheet?assetguid=fed01bc6-88d0-4bda-b896-13c98cf9e90e",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ao3400a",
+          "source": "https://www.aosmd.com/res/data_sheets/AO3400A.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ao3401a",
+          "source": "https://www.aosmd.com/res/data_sheets/AO3401A.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "aod4184a",
+          "source": "https://www.aosmd.com/res/data_sheets/AOD4184A.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "aod4185",
+          "source": "https://www.aosmd.com/res/data_sheets/AOD4185.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "irlz44n",
+          "source": "https://www.infineon.com/assets/row/public/documents/24/49/infineon-irlz44n-datasheet-en.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "irf4905",
+          "source": "https://www.infineon.com/assets/row/public/documents/24/49/infineon-irf4905-datasheet-en.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "common-interfaces",
+      "entries": [
+        {
+          "id": "pololu-a4988-1182",
+          "source": "https://www.pololu.com/product/1182",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "pololu-drv8825-2133",
+          "source": "https://www.pololu.com/product/2133",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "pololu-tb6612fng-713",
+          "source": "https://www.pololu.com/product/713",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "pololu-drv8833-2130",
+          "source": "https://www.pololu.com/product/2130",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "sunfounder-l298n-hw095",
+          "source": "https://docs.sunfounder.com/projects/3in1-kit-r4/en/latest/components/component_l298n_module.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 13,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-tmc2209-6121",
+          "source": "https://learn.adafruit.com/adafruit-tmc2209-stepper-motor-driver-breakout-board/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-ks0011-5v-relay",
+          "source": "https://docs.keyestudio.com/projects/KS0011/en/latest/docs/KS0011.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-pca9685-815",
+          "source": "https://learn.adafruit.com/16-channel-pwm-servo-driver/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 23,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "sparkfun-bss138-level-shifter",
+          "source": "https://learn.sparkfun.com/tutorials/bi-directional-logic-level-converter-hookup-guide",
+          "status": "aligned-and-migrated",
+          "movedContacts": 12,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-tca9548a-2717",
+          "source": "https://learn.adafruit.com/adafruit-tca9548a-1-to-8-i2c-multiplexer-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 24,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-mcp23017-5346",
+          "source": "https://learn.adafruit.com/adafruit-mcp23017-i2c-gpio-expander/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 26,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "sparkfun-ch340c-serial-basic",
+          "source": "https://learn.sparkfun.com/tutorials/sparkfun-serial-basic-ch340c-hookup-guide",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "waveshare-cp2102-usb-uart-mini",
+          "source": "https://www.waveshare.com/product/cp2102-usb-uart-board-mini.htm",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-ft232h-usbc-2264",
+          "source": "https://learn.adafruit.com/circuitpython-on-any-computer-with-ft232h/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "joyit-sbc-can01-mcp2515",
+          "source": "https://www.joy-it.net/files/files/Produkte/SBC-CAN01/SBC-CAN01-Manual-20201021.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "common-peripherals",
+      "entries": [
+        {
+          "id": "dfrobot-lcd1602-dfr0557",
+          "source": "https://wiki.dfrobot.com/dfr0557/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-oled-dfr0647",
+          "source": "https://wiki.dfrobot.com/dfr0647/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-st7735-dfr0847",
+          "source": "https://wiki.dfrobot.com/dfr0847/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "waveshare-sh1106-oled-b",
+          "source": "https://www.waveshare.com/1.3inch-oled-b.htm",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "seeed-grove-tm1637",
+          "source": "https://wiki.seeedstudio.com/Grove-4-Digit_Display/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-ws2812-dfr0459",
+          "source": "https://wiki.dfrobot.com/dfr0459/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-ds3231-rtc",
+          "source": "https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-microsd-spi-254",
+          "source": "https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/arduino-wiring",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "sparkfun-openlog-13712",
+          "source": "https://learn.sparkfun.com/tutorials/openlog-hookup-guide/hardware-overview",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-max98357a-i2s",
+          "source": "https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 9,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-rc522-ks0067",
+          "source": "https://docs.keyestudio.com/projects/KS0067/en/latest/docs/KS0067.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "waveshare-uart-gps-neo-6m",
+          "source": "https://www.waveshare.com/wiki/UART_GPS_NEO-6M",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-dfplayer-mini-dfr0299",
+          "source": "https://wiki.dfrobot.com/dfr0299/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "common-power",
+      "entries": [
+        {
+          "id": "dfrobot-dfr0667",
+          "source": "https://wiki.dfrobot.com/dfr0667/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-dfr0668",
+          "source": "https://wiki.dfrobot.com/dfr0668/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "beemong-fa2119-tp4056-usbc-protected",
+          "source": "https://www.beemong.com/product/tp4056-1a-lipo-battery-charging-board-type-c-with-protection",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-powerboost-500c",
+          "source": "https://learn.adafruit.com/adafruit-powerboost-500-plus-charger/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-powerboost-1000c",
+          "source": "https://learn.adafruit.com/adafruit-powerboost-1000c-load-share-usb-charge-boost/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-ks0187-acs712",
+          "source": "https://docs.keyestudio.com/projects/KS0187/en/latest/docs/KS0187.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-ks0186-acs712",
+          "source": "https://docs.keyestudio.com/projects/KS0186/en/latest/docs/KS0186.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-ks0185-acs712",
+          "source": "https://docs.keyestudio.com/projects/KS0185/en/latest/docs/KS0185.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-5807-husb238",
+          "source": "https://learn.adafruit.com/adafruit-husb238-usb-type-c-power-delivery-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-5580-max17048",
+          "source": "https://learn.adafruit.com/adafruit-max17048-lipoly-liion-fuel-gauge-and-battery-monitor/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-4226-ina260",
+          "source": "https://learn.adafruit.com/adafruit-ina260-current-voltage-power-sensor-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-4410-microlipo-usbc",
+          "source": "https://learn.adafruit.com/adafruit-microlipo-and-minilipo-battery-chargers/usb-c-pinout",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "makerfabs-mp1584en-mini",
+          "source": "https://www.makerfabs.com/adjustable-mini-dc-dc-module-mp1584en.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-dfr0559-solar-power-manager",
+          "source": "https://wiki.dfrobot.com/dfr0559/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 9,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "common-sensors",
+      "entries": [
+        {
+          "id": "adafruit-aht20-4566",
+          "source": "https://learn.adafruit.com/adafruit-aht20/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-sht31-2857",
+          "source": "https://learn.adafruit.com/adafruit-sht31-d-temperature-and-humidity-sensor-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-bmp280-2651",
+          "source": "https://learn.adafruit.com/adafruit-bmp280-barometric-pressure-plus-temperature-sensor-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-dht11-ks0034",
+          "source": "https://docs.keyestudio.com/projects/KS0034/en/latest/docs/KS0034.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-ds18b20-ks0023",
+          "source": "https://docs.keyestudio.com/projects/KS0023/en/latest/docs/KS0023.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-bh1750-ks0278",
+          "source": "https://docs.keyestudio.com/projects/KS0278/en/latest/docs/KS0278.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-mpu6050-ks0170",
+          "source": "https://docs.keyestudio.com/projects/KS0170/en/latest/docs/KS0170.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-pir-ks0052",
+          "source": "https://docs.keyestudio.com/projects/KS0052/en/latest/docs/KS0052.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-touch-ks0031",
+          "source": "https://docs.keyestudio.com/projects/KS0031/en/latest/docs/KS0031.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "keyestudio-ir-obstacle-ks0051",
+          "source": "https://docs.keyestudio.com/projects/KS0051/en/latest/docs/KS0051.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "hc-sr04-ks0328",
+          "source": "https://docs.keyestudio.com/projects/KS0328/en/latest/docs/KS0328.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "pololu-vl53l0x-2490",
+          "source": "https://www.pololu.com/product/2490",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "pololu-vl53l1x-3415",
+          "source": "https://www.pololu.com/product/3415",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-dht22-sen0137",
+          "source": "https://wiki.dfrobot.com/sen0137/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "dfrobot-capacitive-soil-sen0193",
+          "source": "https://wiki.dfrobot.com/sen0193/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "hc-sr501-joy-it",
+          "source": "https://joy-it.net/en/products/SEN-HC-SR501",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "air-quality-sensors",
+      "entries": [
+        {
+          "id": "adafruit-scd40-5187",
+          "source": "https://learn.adafruit.com/adafruit-scd-40-and-scd-41/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-pmsa003i-4632",
+          "source": "https://learn.adafruit.com/pmsa003i/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "environment-sensors",
+      "entries": [
+        {
+          "id": "adafruit-bmp390-4816",
+          "source": "https://learn.adafruit.com/adafruit-bmp388-bmp390-bmp3xx/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-sht45-5665",
+          "source": "https://learn.adafruit.com/adafruit-sht40-temperature-humidity-sensor/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-mprls-3965",
+          "source": "https://learn.adafruit.com/adafruit-mprls-ported-pressure-sensor-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-max31856-3263",
+          "source": "https://learn.adafruit.com/adafruit-max31856-thermocouple-amplifier/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 11,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "force-sensors",
+      "entries": [
+        {
+          "id": "sparkfun-hx711-13879",
+          "source": "https://www.sparkfun.com/sparkfun-load-cell-amplifier-hx711.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 12,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "sparkfun-tal220b-14729",
+          "source": "https://www.sparkfun.com/load-cell-5kg-straight-bar-tal220b.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "seeed-sw420-101020586",
+          "source": "https://wiki.seeedstudio.com/Grove-Vibration_Sensor_SW-420/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "interlink-fsr402-44-29103",
+          "source": "https://www.interlinkelectronics.com/downloads/datasheets/fsr-400-series-datasheet.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 2,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "motion-sensors",
+      "entries": [
+        {
+          "id": "adafruit-lis3dh-2809",
+          "source": "https://learn.adafruit.com/adafruit-lis3dh-triple-axis-accelerometer-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 12,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-lis3mdl-4479",
+          "source": "https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-lsm6dsox-lis3mdl-4517",
+          "source": "https://learn.adafruit.com/st-9-dof-combo/lsm6dsox-lis3mdl-pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 11,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-bno085-4754",
+          "source": "https://learn.adafruit.com/adafruit-9-dof-orientation-imu-fusion-breakout-bno085/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 12,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "raspberry-pi",
+      "entries": [
+        {
+          "id": "raspberry-pi-3-model-a-plus",
+          "source": "https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "raspberry-pi-3-model-b",
+          "source": "https://www.raspberrypi.com/documentation/computers/sbcs.html#raspberry-pi-3-model-b",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "raspberry-pi-3-model-b-plus",
+          "source": "https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "raspberry-pi-4-model-b",
+          "source": "https://www.raspberrypi.com/documentation/computers/sbcs.html#raspberry-pi-4-model-b",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "raspberry-pi-5",
+          "source": "https://www.raspberrypi.com/documentation/computers/sbcs.html#raspberry-pi-5",
+          "status": "aligned-and-migrated",
+          "movedContacts": 40,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "pwm-servos",
+      "entries": [
+        {
+          "id": "towerpro-sg90",
+          "source": "https://torqpro.com/product/sg90-analog/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "towerpro-mg90s",
+          "source": "https://torqpro.com/product/mg90s-analog/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 3,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "elrs",
+      "entries": [
+        {
+          "id": "radiomaster-rp1-v2",
+          "source": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "betafpv-superd-2-4ghz",
+          "source": "https://betafpv.com/products/superd-elrs-2-4g-diversity-receiver",
+          "status": "aligned-and-migrated",
+          "movedContacts": 4,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "radiomaster-er4",
+          "source": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/ER4_User_Manual.pdf?v=1722224113",
+          "status": "aligned-and-migrated",
+          "movedContacts": 13,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "usb-uart",
+      "entries": [
+        {
+          "id": "pololu-cp2102n-usb-uart",
+          "source": "https://www.pololu.com/product/1317",
+          "status": "aligned-and-migrated",
+          "movedContacts": 19,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "flight-controllers",
+      "entries": [
+        {
+          "id": "speedybee-f405-wing-mini",
+          "source": "https://www.speedybee.com/f405-wing-mini-download/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 105,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "speedybee-f405-wing-app",
+          "source": "https://www.speedybee.com/f405-wing-app-download/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 136,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "matek-f405-wing-v2",
+          "source": "https://www.mateksys.com/?portfolio=f405-wing-v2",
+          "status": "aligned-and-migrated",
+          "movedContacts": 87,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "fpv-navigation",
+      "entries": [
+        {
+          "id": "matek-m10q-5883",
+          "source": "https://www.mateksys.com/?portfolio=m10q-5883",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "waveshare-expansion",
+      "entries": [
+        {
+          "id": "waveshare-sn65hvd230-can-board",
+          "source": "https://www.waveshare.net/wiki/SN65HVD230_CAN_Board",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "waveshare-pcf8574-io-expansion",
+          "source": "https://www.waveshare.net/wiki/PCF8574_IO_Expansion_Board",
+          "status": "aligned-and-migrated",
+          "movedContacts": 13,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "waveshare-usb-to-ttl-ft232",
+          "source": "https://www.waveshare.net/wiki/USB-TO-TTL-FT232",
+          "status": "aligned-and-migrated",
+          "movedContacts": 17,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "waveshare-1in54-epaper-e",
+          "source": "https://docs.waveshare.com/1.54inch_e-Paper_E",
+          "status": "aligned-and-migrated",
+          "movedContacts": 9,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "waveshare-rs485-can-hat",
+          "source": "https://www.waveshare.net/wiki/RS485_CAN_HAT",
+          "status": "aligned-and-migrated",
+          "movedContacts": 14,
+          "checkedBy": "flight-pi-and-connectors"
+        },
+        {
+          "id": "waveshare-servo-driver-hat-b",
+          "source": "https://www.waveshare.com/wiki/Servo_Driver_HAT_%28B%29",
+          "status": "aligned-and-migrated",
+          "movedContacts": 22,
+          "checkedBy": "flight-pi-and-connectors"
+        }
+      ]
+    },
+    {
+      "id": "prototyping-ics",
+      "entries": [
+        {
+          "id": "ti-sn74hc595n",
+          "source": "https://www.ti.com/lit/ds/symlink/sn74hc595.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ti-sn74hc165n",
+          "source": "https://www.ti.com/lit/ds/symlink/sn74hc165.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ti-sn74hc14n",
+          "source": "https://www.ti.com/lit/ds/symlink/sn74hc14.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 14,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ti-ne555p",
+          "source": "https://www.ti.com/lit/ds/symlink/ne555.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ti-lm358p",
+          "source": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "devboards-and-radio"
+        },
+        {
+          "id": "ti-uln2003an",
+          "source": "https://www.ti.com/lit/ds/symlink/uln2003a.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 16,
+          "checkedBy": "devboards-and-radio"
+        }
+      ]
+    },
+    {
+      "id": "analog-prototyping",
+      "entries": [
+        {
+          "id": "adafruit-mcp4725-935",
+          "source": "https://learn.adafruit.com/mcp4725-12-bit-dac-tutorial/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-mcp4728-4470",
+          "source": "https://learn.adafruit.com/adafruit-mcp4728-i2c-quad-dac/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 12,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-ds3502-4286",
+          "source": "https://learn.adafruit.com/ds3502-i2c-potentiometer/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-ad8495-1778",
+          "source": "https://learn.adafruit.com/ad8495-thermocouple-amplifier/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "audio-prototyping",
+      "entries": [
+        {
+          "id": "adafruit-max9814-1713",
+          "source": "https://learn.adafruit.com/adafruit-agc-electret-microphone-amplifier-max9814/wiring-and-test",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-sph0645-3421",
+          "source": "https://learn.adafruit.com/adafruit-i2s-mems-microphone-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-drv2605l-2305-qt",
+          "source": "https://learn.adafruit.com/adafruit-drv2605-haptic-controller-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-pam8302-2130",
+          "source": "https://learn.adafruit.com/adafruit-pam8302-mono-2-5w-class-d-audio-amplifier/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 7,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "input-prototyping",
+      "entries": [
+        {
+          "id": "adafruit-mpr121-1982",
+          "source": "https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 20,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-tca8418-4918",
+          "source": "https://learn.adafruit.com/adafruit-tca8418-keypad-matrix-and-gpio-expander-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 26,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-qt-rotary-4991",
+          "source": "https://learn.adafruit.com/adafruit-i2c-qt-rotary-encoder/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "bourns-pec11r-4215f-s0024",
+          "source": "https://www.bourns.com/docs/product-datasheets/pec11r.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "bourns-3296w-1-103lf",
+          "source": "https://www.bourns.com/docs/product-datasheets/3296.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "adafruit-ready",
+      "entries": [
+        {
+          "id": "adafruit-tca4307-5159",
+          "source": "https://learn.adafruit.com/adafruit-tca4307/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 10,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-ds2484-5976",
+          "source": "https://learn.adafruit.com/adafruit-ds2484-i2c-to-1-wire-bus-adapter-breakout/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 9,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-pcm5102-6250",
+          "source": "https://learn.adafruit.com/adafruit-pcm510x-i2s-dac/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 14,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "adafruit-ultimate-gps-v3-746",
+          "source": "https://learn.adafruit.com/adafruit-ultimate-gps/pinouts",
+          "status": "aligned-and-migrated",
+          "movedContacts": 9,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "waveshare-ready",
+      "entries": [
+        {
+          "id": "waveshare-pcf8563-rtc-board",
+          "source": "https://www.waveshare.com/wiki/PCF8563_RTC_Board",
+          "status": "aligned-and-migrated",
+          "movedContacts": 6,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "waveshare-rs232-board",
+          "source": "https://www.waveshare.com/wiki/RS232_Board",
+          "status": "aligned-and-migrated",
+          "movedContacts": 15,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "waveshare-l76k-gps-module",
+          "source": "https://www.waveshare.com/wiki/L76K_GPS_Module",
+          "status": "aligned-and-migrated",
+          "movedContacts": 5,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "waveshare-1in3-lcd-module",
+          "source": "https://www.waveshare.com/wiki/1.3inch_LCD_Module",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "waveshare-bmm150-magnetometer",
+          "source": "https://www.waveshare.com/wiki/BMM150_3-Axis_Magnetometer_Sensor",
+          "status": "aligned-and-migrated",
+          "movedContacts": 8,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "nordic-ready",
+      "entries": [
+        {
+          "id": "nordic-nrf52840-dongle",
+          "source": "https://docs.nordicsemi.com/r/bundle/ug_nrf52840_dongle/page/ug/nrf52840_dongle/hw_external_connections.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 34,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "nordic-power-profiler-kit-ii",
+          "source": "https://docs.nordicsemi.com/r/bundle/ug_ppk2/page/ug/ppk/ppk_user_guide_connectors.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 24,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "nxp-ready",
+      "entries": [
+        {
+          "id": "nxp-brkt-stbc-agm01",
+          "source": "https://www.nxp.com/docs/en/supporting-information/BRKT-STBC-AGM01-QRC.pdf",
+          "status": "aligned-and-migrated",
+          "movedContacts": 18,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "arduino-ready",
+      "entries": [
+        {
+          "id": "arduino-nano-33-iot",
+          "source": "https://docs.arduino.cc/hardware/nano-33-iot/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 35,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "arduino-mkr-zero",
+          "source": "https://docs.arduino.cc/hardware/mkr-zero/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 41,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "arduino-mkr-wifi-1010",
+          "source": "https://docs.arduino.cc/hardware/mkr-wifi-1010/",
+          "status": "aligned-and-migrated",
+          "movedContacts": 45,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "espressif-ready",
+      "entries": [
+        {
+          "id": "esp32-c3-devkitm-1",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkitm-1/user_guide.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 30,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "esp32-c6-devkitc-1",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitc-1/user_guide.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 34,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "esp32-h2-devkitm-1",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32h2/esp32-h2-devkitm-1/user_guide.html",
+          "status": "aligned-and-migrated",
+          "movedContacts": 32,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "semtech-ready",
+      "entries": [
+        {
+          "id": "semtech-sx1261mb2bas",
+          "source": "https://www.semtech.com/products/wireless-rf/lora-connect/sx1261mb2bas",
+          "status": "aligned-and-migrated",
+          "movedContacts": 32,
+          "checkedBy": "breakouts-and-tools"
+        },
+        {
+          "id": "semtech-sx1262mb2cas",
+          "source": "https://www.semtech.com/products/wireless-rf/lora-connect/sx1262mb2cas",
+          "status": "aligned-and-migrated",
+          "movedContacts": 32,
+          "checkedBy": "breakouts-and-tools"
+        }
+      ]
+    },
+    {
+      "id": "hilink",
+      "entries": [
+        {
+          "id": "hlk-7688a",
+          "source": "https://h.hlktech.com/download/HLK-7688A/1/HLK-7688A%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV1.4.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "hlk-7628n",
+          "source": "https://h.hlktech.com/download/HLK-7628N/1/HLK-7628N%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV2.6.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "hlk-7621a",
+          "source": "https://h.hlktech.com/download/HLK-7621/1/HLK-7621A%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_V1.5.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "hlk-rm08k",
+          "source": "https://h.hlktech.com/download/HLK-RM08K/1/HLK-RM08K--%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C--V1.6.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "cellular-gnss",
+      "entries": [
+        {
+          "id": "simcom-sim7600g-h-m2",
+          "source": "https://wiki.luckfox.com/SIM7600G-H-M.2",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "simcom-sim800c",
+          "source": "https://simcom.ee/documents/SIM800C/SIM800C_Hardware_Design_V1.05.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "simcom-sim7600e-minipcie",
+          "source": "https://simcom.ee/documents/SIM7600E/SIM7600%20Series_PCIE_Hardware%20Design_V1.01.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "quectel-ec25-e-minipcie",
+          "source": "https://quectel.com/content/uploads/2024/02/Quectel_EC25_Mini_PCIe_Hardware_Design_V2.4-2.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "quectel-lc76g-ab",
+          "source": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "quectel-lc76g-pa",
+          "source": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "quectel-lc76g-pb",
+          "source": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "weact-bluepill",
+      "entries": [
+        {
+          "id": "weact-blackpill-stm32f401ceu6",
+          "source": "https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/blob/master/Hardware/MiniF4x1Cx_V31%20SchDoc.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "weact-blackpill-stm32f411ceu6",
+          "source": "https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/blob/master/Hardware/MiniF4x1Cx_V31%20SchDoc.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "weact-bluepill-plus-stm32f103c8t6",
+          "source": "https://github.com/WeActStudio/BluePill-Plus/blob/master/HDK/BluePillPlus_V11_SchDoc.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "weact-bluepill-plus-gd32f303cct6",
+          "source": "https://github.com/WeActStudio/BluePill-Plus/blob/master/HDK/BluePillPlus_V11_SchDoc.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "bluepill-stm32f103c8t6",
+          "source": "https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "friendlyelec",
+      "entries": [
+        {
+          "id": "friendlyelec-nanopi-m6",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M6",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "friendlyelec-nanopi-neo",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_NEO",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "friendlyelec-nanopi-neo2",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_NEO2",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "bananapi",
+      "entries": [
+        {
+          "id": "banana-pi-bpi-m2-zero",
+          "source": "https://docs.banana-pi.org/en/BPI-M2_Zero/BananaPi_BPI-M2_Zero",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "banana-pi-bpi-m5",
+          "source": "https://docs.banana-pi.org/en/BPI-M5/BananaPi_BPI-M5",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "banana-pi-bpi-m7",
+          "source": "https://docs.banana-pi.org/en/BPI-M7/BananaPi_BPI-M7",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "radxa",
+      "entries": [
+        {
+          "id": "radxa-rock-5a",
+          "source": "https://docs.radxa.com/en/rock5/rock5a/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "radxa-rock-5b",
+          "source": "https://docs.radxa.com/en/rock5/rock5b/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "radxa-rock-3a",
+          "source": "https://docs.radxa.com/en/rock3/rock3a/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "radxa-zero-3w",
+          "source": "https://docs.radxa.com/en/zero/zero3/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "lilygo",
+      "entries": [
+        {
+          "id": "lilygo-ttgo-t-display-v1-1",
+          "source": "https://github.com/Xinyuan-LilyGO/TTGO-T-Display/blob/master/schematic/ESP32-TFT(6-26).pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t-display-s3",
+          "source": "https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/schematic/T_Display_S3.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t-display-s3-touch",
+          "source": "https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/schematic/T_Display_S3.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "luckfox",
+      "entries": [
+        {
+          "id": "luckfox-pico",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-mini-a",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-mini-b",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-plus",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-pro",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Pro-Max",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-max",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Pro-Max",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-ultra",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-ultra-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-ultra-b",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-ultra-bw",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Ultra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-pi-a",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-pi-a-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-pi-b",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-pi-b-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-zero",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-Zero",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-b",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-plus",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Plus",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-ultra",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Ultra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-ultra-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Ultra",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-pi-a",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-pi-a-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-pi-b",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-pi-b-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Pi",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-zero-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra/Luckfox-Lyra-Zero-W",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-nova",
+          "source": "https://wiki.luckfox.com/Luckfox-Nova",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-nova-w",
+          "source": "https://wiki.luckfox.com/Luckfox-Nova",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-aura",
+          "source": "https://wiki.luckfox.com/Luckfox-Aura/Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lume",
+          "source": "https://wiki.luckfox.com/Luckfox-Lume/Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-omni3576",
+          "source": "https://wiki.luckfox.com/Luckfox-Omni3576/Luckfox-Omni3576-Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-cm5-io-board",
+          "source": "https://wiki.luckfox.com/Luckfox-CM5-IO-Board",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico2",
+          "source": "https://wiki.luckfox.com/Pico2/Pinout",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-webbee",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico/Luckfox-Pico-RV1103",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-pico-86-panel",
+          "source": "https://wiki.luckfox.com/Luckfox-Pico-86-Panel",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-picokvm-base",
+          "source": "https://wiki.luckfox.com/Luckfox-PicoKVM/Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-picokvm",
+          "source": "https://wiki.luckfox.com/Luckfox-PicoKVM/Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-picokvm-ext",
+          "source": "https://wiki.luckfox.com/Luckfox-PicoKVM-Ext",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-lyra-plc",
+          "source": "https://wiki.luckfox.com/Luckfox-Lyra-PLC/OpenPLC-Pinout",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-core1106",
+          "source": "https://wiki.luckfox.com/Core1106/Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-core1106d",
+          "source": "https://wiki.luckfox.com/Core1106D/Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-core3506",
+          "source": "https://wiki.luckfox.com/Core3506",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-core3566",
+          "source": "https://wiki.luckfox.com/Core3566",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "luckfox-core3576",
+          "source": "https://wiki.luckfox.com/Luckfox-Omni3576/Luckfox-Omni3576-Introduction",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "sipeed-fpga",
+      "entries": [
+        {
+          "id": "sipeed-tang-nano",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano/Nano.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-nano-1k",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-1K/Nano-1k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-nano-4k",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-4K/Nano-4K.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-nano-9k",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-nano-20k",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-primer-20k-lite",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/primer-20k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-primer-20k-dock",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/primer-20k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-primer-25k-som",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-25k/primer-25k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-primer-25k-dock",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-25k/primer-25k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-mega-138k-neo",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-mega-60k-neo",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-60k/mega-60k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-console-138k",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-console/retro-console.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-console-60k",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-console/retro-console.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-mega-138k-pro-dock",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k-pro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-mega-60k-som",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-60k/mega-60k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-mega-138k-som",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-mega-138k-pro-som",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k-pro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-primer-20k-som",
+          "source": "https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/primer-20k.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-tang-primer-eg4s20",
+          "source": "https://tang.sipeed.com/en/hardware-overview/lichee-tang/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "sipeed-lichee",
+      "entries": [
+        {
+          "id": "sipeed-lichee-nano",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/Nano/Nano.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-lichee-zero",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/Zero/Zero.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-lichee-rv-core",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/RV/RV.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-lichee-rv-dock",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/RV/Dock.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-licheerv-nano-b",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-licheerv-nano-w",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-licheerv-nano-e",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-licheerv-nano-we",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-licheepi-3a",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/K1/lpi3a/1_intro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-licheepi-4a",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/th1520/lpi4a/1_intro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-lichee-module-3a",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/K1/lm3a.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-lichee-module-4a",
+          "source": "https://wiki.sipeed.com/hardware/en/lichee/th1520/lm4a.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "gowin-gw1-gw2",
+      "entries": [
+        {
+          "id": "gowin-dk-motor-gw2a-lv55pg484c8i7-v3-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/56/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw1n-lv4lq144c6i5-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/1/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw1n-lv9eq144c6i5-v2-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/5/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw1nr-lv9lq144pc6i5-v3-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/16/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw1ns-lv4cqn48c7i6-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/32/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw1nsr-lv4cqn48pc7i6-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/28/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw1nz-lv1fn32c6i5-v3-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/27/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw2a-lv18pg256c8i7-v2-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/31/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw2a-lv55pg484c8i7-v1-3",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/22/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw2an-uv9xug400c7i6-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/50/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw2ar-lv18eq144pc8i7-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/30/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw1nsr-lv4cqn48gc7i6-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/41/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "gowin-display-usb",
+      "entries": [
+        {
+          "id": "gowin-dk-usb-gw5at-lv60ug225-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/72/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-usb-gw5at-lv60ug225-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/66/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-dp-gw5at-lv60ug225-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/63/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-edp-gw5at-lv15mg132-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/64/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-edp-gw5art-lv15mg132p-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/65/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw5ar-lv25ug256pc2i1-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/62/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "gowin-programmers",
+      "entries": [
+        {
+          "id": "gowin-pl-usb-cable-v5-1",
+          "source": "https://www.gowinsemi.com/upload/database_doc/206/document/68b8a03ea0c3f.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-op720-4",
+          "source": "https://www.gowinsemi.com/upload/database_doc/701/document/687a756528856.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-b-op901-16",
+          "source": "https://www.gowinsemi.com/upload/database_doc/702/document/687a7593d5866.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "gowin-special",
+      "entries": [
+        {
+          "id": "gowin-dk-start-gw5ast-lv138fpg676a-v2-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/70/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw5ast-lv138fpg676a-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/58/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-uac2-gw1n-lv9lq144c7i6-v2-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/55/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-usb2-0-gw2ar-lv18qn88pc8i7-gw1nsr-lv4cmg64pc7i6-v3-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/45/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-video-gw2a-lv18pg484c8i7-v1-2",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/21/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw5a-lv25ug324-v2-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/57/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "gowin-modern",
+      "entries": [
+        {
+          "id": "gowin-dk-led-rxcard-gw3a-lv20ug324s-v2-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/79/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-pcie-gw5art-lv15mg132p-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/77/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-pcie-gw5at-lv60ug324-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/76/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw5a-lv25lq144-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/75/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw5at-lv60pg484a-v1-2",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/73/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-video-gw5at-lv60ug225-v1-0",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/69/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-usb-gw5art-lv15mg132p-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/68/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "gowin-dk-start-gw5at-lv60pg484a-v1-1",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/67/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "gowin-third-party",
+      "entries": [
+        {
+          "id": "brisbane-silicon-epm11",
+          "source": "https://brisbanesilicon.com.au/epm11/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "brisbane-silicon-brs-100-gw1nr9",
+          "source": "https://brisbanesilicon.com.au/brs-100-gw1nr9/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "onekiwi-kiwi-1p5",
+          "source": "https://www.gowinsemi.com/en/support/devkits_detail/71/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "trenz-tec0117-01",
+          "source": "https://wiki.trenz-electronic.de/display/PD/TEC0117+TRM",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "espressif-more",
+      "entries": [
+        {
+          "id": "esp32-devkitc-v4-wroom-32e",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "esp32-c3-devkitc-02",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkitc-02/user_guide.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "esp32-c6-devkitm-1",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitm-1/user_guide.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "esp32-s2-saola-1-v1-2",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-saola-1/user_guide_v1.2.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "esp32-s2-devkitm-1",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-devkitm-1/user_guide.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "esp32-c5-devkitc-1-v1-2",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "esp32-c61-devkitc-1-v2",
+          "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c61/esp32-c61-devkitc-1/user_guide.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "adafruit-more",
+      "entries": [
+        {
+          "id": "adafruit-feather-m0-basic-2772",
+          "source": "https://github.com/adafruit/Adafruit-Feather-M0-Basic-Proto-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-feather-m4-3857",
+          "source": "https://github.com/adafruit/Adafruit-Feather-M4-Express-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-feather-esp32-v2-5400",
+          "source": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-feather-rp2350-6000",
+          "source": "https://github.com/adafruit/Adafruit-Feather-RP2350-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-qtpy-samd21-4600",
+          "source": "https://github.com/adafruit/Adafruit-QT-Py-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-itsy-m4-3800",
+          "source": "https://github.com/adafruit/Adafruit-ItsyBitsy-M4-Express-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-itsy-m0-3727",
+          "source": "https://github.com/adafruit/Adafruit-ItsyBitsy-M0-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-feather-f405-4382",
+          "source": "https://github.com/adafruit/Adafruit-Feather-STM32F405-Express-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "adafruit-feather-esp32s2-5000",
+          "source": "https://github.com/adafruit/Adafruit-Feather-ESP32-S2-PCB",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "arduino-more",
+      "entries": [
+        {
+          "id": "arduino-mkr-wan-1300",
+          "source": "https://docs.arduino.cc/hardware/mkr-wan-1300/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "arduino-mkr-wan-1310",
+          "source": "https://docs.arduino.cc/hardware/mkr-wan-1310/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "arduino-mkr-gsm-1400",
+          "source": "https://docs.arduino.cc/hardware/mkr-gsm-1400/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "arduino-mkr-nb-1500",
+          "source": "https://docs.arduino.cc/hardware/mkr-nb-1500/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "arduino-mkr-fox-1200",
+          "source": "https://docs.arduino.cc/hardware/mkr-fox-1200/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "sipeed-maix",
+      "entries": [
+        {
+          "id": "sipeed-maix-bit-v2-0",
+          "source": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maix-Bit/Maix-Bit_V2.0_with_MEMS_microphone",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-maixduino-2832-v1-5",
+          "source": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maixduino/Maixduino_2832",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-maix-m1s-module",
+          "source": "https://wiki.sipeed.com/hardware/en/maix/m1s/m1s_module.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-maix-m1s-dock-3272",
+          "source": "https://wiki.sipeed.com/hardware/en/maix/m1s/m1s_dock.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-maix-m0sense-30215",
+          "source": "https://wiki.sipeed.com/hardware/en/maixzero/sense/maix_zero_sense.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-maix-ii-dock-3072",
+          "source": "https://wiki.sipeed.com/hardware/en/maixII/M2/resources.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "sipeed-maixcam-pro-60174",
+          "source": "https://wiki.sipeed.com/hardware/en/maixcam/maixcam_pro.html",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "lilygo-wireless",
+      "entries": [
+        {
+          "id": "lilygo-t-beam-v1-2-sx1276",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/LilyGo_TBeam_V1.2-lastest.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t-beam-s3-supreme-v3-1",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T-Beam-S3-Supreme/T-Beam-S3-Supreme-V3.1.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t3-lora32-v1-6-1-sx1276",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T3_V1.6.1.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t3-s3-v1-3-sx1262",
+          "source": "https://wiki.lilygo.cc/products/t3-series/t3-s3-v1.3/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t-echo-v1-0",
+          "source": "https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/schematic/T-Echo_Schematic.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t-sim7000g-20200415",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-SIM7000G/blob/master/schematic/SIM7000G_20200415.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "lilygo-t-a7670x-v1-4",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-A7670X/blob/main/schematic/esp32/T-A7670X-V1.4.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "friendlyelec-more",
+      "entries": [
+        {
+          "id": "friendlyelec-nanopi-r2s",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R2S",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "friendlyelec-nanopi-r4s",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R4S",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "friendlyelec-nanopi-r5s",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R5S",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "friendlyelec-nanopi-r6s",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R6S",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "friendlyelec-nanopi-m4",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M4",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "friendlyelec-nanopi-m5",
+          "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M5",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "bananapi-more",
+      "entries": [
+        {
+          "id": "banana-pi-bpi-m2-berry",
+          "source": "https://docs.banana-pi.org/en/BPI-M2_Berry/BananaPi_BPI-M2_Berry",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "banana-pi-bpi-m2s",
+          "source": "https://docs.banana-pi.org/en/BPI-M2_Super/BananaPi_BPI-M2_Super",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "banana-pi-bpi-m4-zero",
+          "source": "https://docs.banana-pi.org/en/BPI-M4_Zero/BananaPi_BPI-M4_Zero",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "banana-pi-bpi-r3",
+          "source": "https://docs.banana-pi.org/en/BPI-R3/BananaPi_BPI-R3",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "banana-pi-bpi-r4",
+          "source": "https://docs.banana-pi.org/en/BPI-R4/BananaPi_BPI-R4",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "radxa-more",
+      "entries": [
+        {
+          "id": "radxa-zero",
+          "source": "https://docs.radxa.com/en/zero/zero/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "radxa-rock4se",
+          "source": "https://docs.radxa.com/en/rock4/rock4ab-se/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "radxa-rock5c",
+          "source": "https://docs.radxa.com/en/rock5/rock5c/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "radxa-rock5t",
+          "source": "https://docs.radxa.com/en/rock5/rock5t/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "radxa-rock3c",
+          "source": "https://docs.radxa.com/en/rock3/rock3c/hardware-design/hardware-interface",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "nxp-more",
+      "entries": [
+        {
+          "id": "nxp-frdm-kl25z-e",
+          "source": "https://www.nxp.com/downloads/en/schematics/FRDM-KL25Z_SCH_REV_E.pdf",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "nxp-frdm-k64f-e4",
+          "source": "https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-K64F",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    },
+    {
+      "id": "waveshare-more",
+      "entries": [
+        {
+          "id": "waveshare-rp2040-zero",
+          "source": "https://www.waveshare.net/wiki/RP2040-Zero",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "waveshare-rp2350-zero",
+          "source": "https://www.waveshare.net/wiki/RP2350-Zero",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "waveshare-rp2350-plus",
+          "source": "https://www.waveshare.net/wiki/RP2350-Plus",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "waveshare-esp32-c6-zero",
+          "source": "https://docs.waveshare.net/ESP32-C6-Zero/",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        },
+        {
+          "id": "waveshare-pico-relay-b",
+          "source": "https://www.waveshare.net/wiki/Pico-Relay-B",
+          "status": "already-physical-or-unchanged-contact",
+          "movedContacts": 0,
+          "checkedBy": "unchanged-layout-structural-check"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "idsAndElectricalTerminals": "preserved",
+    "componentDimensions": "preserved",
+    "nativeAssetGeometry": "all 502 fixtures; Description copy may change",
+    "illustrations": "labeled and unlabeled modes reviewed",
+    "browser": "direct pad-to-pad creation, SVG and PNG commands",
+    "legacy": "version-1 import and version-2 idempotent round trip"
+  },
+  "additionalManufacturerReferences": [
+    "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/nrf52840-dongle/nrf52840-usb-dongle---hardware-files-2_1_1.zip",
+    "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/power-profiler-kit-ii/pca63100-power-profiler-kit-ii---hw-files---1_0_1.zip",
+    "https://www.st.com/resource/en/application_note/an4871-usb-typec-and-power-delivery-on-stm32-mcus-and-mpus-stmicroelectronics.pdf"
+  ],
+  "notes": [
+    "Pin IDs and terminal numbers remain stable. Hidden contacts use an identified rear or mating-face view.",
+    "Matek USB contacts use a standard USB-C receptacle mating-face detail, not invented PCB test pads.",
+    "Unbranded modules and reference carrier geometry retain their representative scope; no production land pattern is inferred from the illustration."
+  ]
+}

@@ -1,3 +1,4 @@
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
 import { circle, label, line, path, pinRow, rect } from "../shared/svg.js";
 
@@ -23,19 +24,18 @@ function dipArt(component, showLabels, mechanical) {
   const top = (component.height - bodyHeight) / 2;
   const center = component.width / 2;
   const leads = component.pins.map(pin => {
-    const isLeft = pin.x === 0;
+    const isLeft = pin.edge === "left";
     const shoulder = isLeft ? left - 9 : right + 9;
     const bodyEdge = isLeft ? left : right;
     return rect(Math.min(shoulder, bodyEdge), pin.y - 2.4, 9, 4.8, 0.5, "#a7afb4", "#6d777e") +
       line(shoulder, pin.y - 1.2, bodyEdge, pin.y - 1.2, "#e0e4e4", 0.9) +
-      (showLabels ? line(pin.x, pin.y, shoulder, pin.y, "#849198", 1.2) +
-        label(isLeft ? 7 : component.width - 7, pin.y - 6, pin.label, 8.5, "#405367", isLeft ? "start" : "end") : "");
+      (showLabels ? label(pin.x + (isLeft ? -6 : 6), pin.y, pin.label, 7.6, "#405367", isLeft ? "end" : "start") : "");
   }).join("");
   const outline = mechanical.notch
     ? path(`M${left + 3} ${top}H${center - 6}Q${center - 6} ${top + 7} ${center} ${top + 7}Q${center + 6} ${top + 7} ${center + 6} ${top}H${right - 3}Q${right} ${top} ${right} ${top + 3}V${top + bodyHeight - 3}Q${right} ${top + bodyHeight} ${right - 3} ${top + bodyHeight}H${left + 3}Q${left} ${top + bodyHeight} ${left} ${top + bodyHeight - 3}V${top + 3}Q${left} ${top} ${left + 3} ${top}Z`, "#252a2f", "#111820")
     : rect(left, top, bodyWidth, bodyHeight, 3, "#252a2f", "#111820");
   const numbers = showLabels ? component.pins.map(pin => label(
-    pin.x === 0 ? left + 6 : right - 6, pin.y, pin.number, 7, "#b9c1c8",
+    pin.edge === "left" ? left + 6 : right - 6, pin.y, pin.number, 7, "#b9c1c8",
   )).join("") : "";
   return leads + outline + line(left + 2, top + 12, left + 2, top + bodyHeight - 5, "#4d555c", 1) +
     circle(left + 8, top + 9, 2, "#121920", "#535d64") +
@@ -58,13 +58,13 @@ function dip({ id, part, family, packageId, name, description, subtitle, tags, c
     id, art: id, name, shortName: part, description, subtitle, tags,
     category: "Semiconductors", referencePrefix: "U", manufacturer: "Texas Instruments",
     source: `https://www.ti.com/lit/ds/symlink/${family.toLowerCase()}.pdf`,
-    width, height,
+    width, height, contactLayout: "physical",
     pins: [...pinRow("left", width, height, start, canvasPitch, left),
       ...pinRow("right", width, height, start, canvasPitch, right)],
   };
   const y = -(count - 1) * 2.54 / 2;
   return {
-    component,
+    component: physicalComponent(component, pin => [pin.x === 0 ? (width - mechanical.body[0] * 7.5) / 2 - 9 : (width + mechanical.body[0] * 7.5) / 2 + 9, pin.y]),
     art: (part, showLabels) => dipArt(part, showLabels, mechanical),
     footprint: {
       body: mechanical.body, color: "#252a2f", modelHeight: 3.5,

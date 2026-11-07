@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { board, chip, circle, edgePads, label, line, mountingHole, pad, path, pinRow, rect, screw, smd, usb } from "../shared/svg.js";
 
 const black = "#22282a";
@@ -27,11 +28,17 @@ function row(ids, x, y, axis = "x", pitch = 2.54, drill = 1, size = 1.778) {
 function module({ id, name, shortName, manufacturer, subtitle, description, source, model,
   tags, width, height, color, rows, footprint, illustration, outline, padOffset = 9 }) {
   let number = 1;
-  const pins = rows.flatMap(([side, start, gap, specs]) =>
+  const logicalPins = rows.flatMap(([side, start, gap, specs]) =>
     pinRow(side, width, height, start, gap, specs.map(spec => [...spec, String(number++)])));
+  const inset = pin => [pin.x === 0 ? padOffset : pin.x === width ? width - padOffset : pin.x, pin.y === 0 ? padOffset : pin.y === height ? height - padOffset : pin.y];
+  const centers = id.startsWith("keyestudio-ks018") ? (pin, index) => index < 2 ? [45, 37 + index * 34] : inset(pin)
+    : id === "adafruit-4226-ina260" ? (pin, index) => index < 8 ? inset(pin) : [115, 68 + (index - 8) * 36]
+      : id === "dfrobot-dfr0559-solar-power-manager" ? (pin, index) => index < 2 ? [109 + index * 20, 26] : index < 4 ? [39, 44 + (index - 2) * 17] : inset(pin)
+        : inset;
+  const pins = physicalComponent({ width, height, pins: logicalPins }, centers).pins;
   return {
     component: { id, name, shortName, manufacturer, subtitle, description, source, tags, width, height,
-      pins, art: id, category: "Power", referencePrefix: "U" },
+      pins, art: id, category: "Power", referencePrefix: "U", contactLayout: "physical" },
     art: (component, showLabels) => (outline ? path(outline, color, colors[color]) : board(width, height, color, colors[color])) +
       illustration(component) + edgePads(component, showLabels, padOffset),
     footprint: { color, ...footprint },

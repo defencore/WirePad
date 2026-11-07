@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { physicalComponent } from "../shared/physical-contacts.js";
 import { circle, label, line, path, rect } from "../shared/svg.js";
 
 const learn = "https://learn.adafruit.com/";
@@ -58,22 +59,22 @@ function readyBoard({ id, name, shortName, subtitle, description, category = "In
   tags, body, color = charcoal, contacts, mounting, draw, details, cad }) {
   const width = body[0] * scale + insetX * 2;
   const height = body[1] * scale + insetY * 2;
-  const pins = contacts.map(([id, caption, type, description, number, x, y]) => ({
+  const logicalPins = contacts.map(([id, caption, type, description, number, x, y]) => ({
     id, label: caption, type, description, number,
     x: insetX + x * scale,
     y: y < body[1] / 2 ? 0 : height,
   }));
+  const pins = physicalComponent({ width, height, pins: logicalPins }, (pin, index) => [pin.x, insetY + contacts[index][6] * scale]).pins;
   const art = (component, showLabels = true) => {
     const pcb = rect(0, 0.4, ...body, 2.54, "#18232b") + rect(0, 0, ...body, 2.54, color, "#8d9894") +
       mounting.map(([x, y]) => mountingHole(x, y)).join("") + draw();
     const leads = component.pins.map((pin, index) => {
       const [, , , , , physicalX, physicalY, terminalBlock] = contacts[index];
-      const top = pin.y === 0;
+      const top = pin.edge === "top";
       const padY = insetY + physicalY * scale;
-      const captionY = top ? (index % 2 === 0 ? 9 : 21) : height - (index % 2 === 0 ? 9 : 21);
+      const captionY = padY + (top ? -1 : 1) * (index % 2 === 0 ? 9 : 17);
       const textWidth = pin.label.length * 4.4 + 5;
-      return line(pin.x, pin.y, pin.x, padY, gold, 1.05) +
-        (showLabels ? rect(pin.x - textWidth / 2, captionY - 4.4, textWidth, 8.8, 2, "#253440") +
+      return (showLabels ? rect(pin.x - textWidth / 2, captionY - 4.4, textWidth, 8.8, 2, "#253440") +
           label(pin.x, captionY, pin.label, 7.1, "#fff4d9") : "") +
         (terminalBlock ? "" :
           circle(insetX + physicalX * scale, padY, 5.1, gold, "#ebe3c8") +
@@ -84,7 +85,7 @@ function readyBoard({ id, name, shortName, subtitle, description, category = "In
   return {
     component: {
       id, art: id, name: `Adafruit ${name}`, shortName, manufacturer: "Adafruit", category, referencePrefix: "U",
-      subtitle, description, source: learn + source + "/pinouts", tags, width, height, pins,
+      subtitle, description, source: learn + source + "/pinouts", tags, width, height, pins, contactLayout: "physical",
     },
     art,
     footprint: {

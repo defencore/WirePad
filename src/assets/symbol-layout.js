@@ -195,7 +195,7 @@ function filterLayout(component, pi) {
 function blockLayout(component) {
   const groups = [[], []];
   component.pins.forEach((pin, index) => {
-    const side = pin.x <= component.width / 2 ? 0 : 1;
+    const side = pin.symbolPlacement ? Number(pin.symbolPlacement.side === "right") : Number(pin.x > component.width / 2);
     groups[side].push({ ...pin, number: terminalNumber(pin, index) });
   });
   const longest = groups.map((group) => Math.max(0, ...group.map(({ label }) => label.length)));
@@ -204,7 +204,7 @@ function blockLayout(component) {
   const halfHeight = GRID * (Math.ceil((rows - 1) / 2) + 1);
   const pins = groups.flatMap((group, index) => {
     const direction = index === 0 ? -1 : 1;
-    return group.sort((a, b) => a.y - b.y || a.x - b.x).map((pin, row) => ({
+    return group.sort((a, b) => (a.symbolPlacement?.order ?? a.y) - (b.symbolPlacement?.order ?? b.y) || a.x - b.x).map((pin, row) => ({
       ...pin,
       x: direction * (halfWidth + PIN_LENGTH),
       y: GRID * (row - Math.floor((rows - 1) / 2)),

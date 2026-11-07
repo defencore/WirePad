@@ -5,19 +5,23 @@
   },
   {
     "id": "esp32-s3",
-    "geometry": "efe49b79da62f3d4ef10345e5068a69eed28a9c7a4a4c7ea4ac3e700e6740852"
+    "geometry": "efe49b79da62f3d4ef10345e5068a69eed28a9c7a4a4c7ea4ac3e700e6740852",
+    "physicalGeometry": "3c30bef19cd21e257342f33307670cacbd46bf3f62a78e1dc5f74f2a81a67462"
   },
   {
     "id": "max3485",
-    "geometry": "d278fe468974e2874e0b5c5b604c4eae0557d9fd2526d77fdc385aa7fdb6e189"
+    "geometry": "d278fe468974e2874e0b5c5b604c4eae0557d9fd2526d77fdc385aa7fdb6e189",
+    "physicalGeometry": "dc5c1647321f20466b8faaa864a75eeaad171674840a8fd0fddadd001d9c2ff4"
   },
   {
     "id": "hw0519",
-    "geometry": "874db5b97b8f584742f531efd088a6124ea988ba7a70643c2c9820137821c6f1"
+    "geometry": "874db5b97b8f584742f531efd088a6124ea988ba7a70643c2c9820137821c6f1",
+    "physicalGeometry": "b50e07a63416dee4b7f148700e3422b2e14707be3d2fda60f1655212385fb68a"
   },
   {
     "id": "bme280",
-    "geometry": "81130156ec1398fae09a6998e5876abbe785c0b01a8a35b432271d6d6940ac2a"
+    "geometry": "81130156ec1398fae09a6998e5876abbe785c0b01a8a35b432271d6d6940ac2a",
+    "physicalGeometry": "6b41c87f0690447a993d564639745b5645e54b631950b26785475092592a7c3e"
   },
   {
     "id": "rs485-soil",
@@ -25,39 +29,48 @@
   },
   {
     "id": "ads1115",
-    "geometry": "3efacf194553abee867c9f844acf968b1d2363b4332b3c92f2a10a6288ecb03f"
+    "geometry": "3efacf194553abee867c9f844acf968b1d2363b4332b3c92f2a10a6288ecb03f",
+    "physicalGeometry": "4716c5265c0343ad4f25777521a2604bab8dcae1903f296513e31103fc9b9a11"
   },
   {
     "id": "ads1220",
-    "geometry": "2b5f27399b2731690c404bb37eb38566a07bfbfd4ccd02968fb5739d1bef0913"
+    "geometry": "2b5f27399b2731690c404bb37eb38566a07bfbfd4ccd02968fb5739d1bef0913",
+    "physicalGeometry": "83c4201b6a51e786d8f486dcbebd9bd03d461be3600873e6d99e95d0d11bf3e9"
   },
   {
     "id": "ina219",
-    "geometry": "d23e83ec8c900788df154c84775dbc5dbd47ff73a8e72e46a5ac9ed0208f236d"
+    "geometry": "d23e83ec8c900788df154c84775dbc5dbd47ff73a8e72e46a5ac9ed0208f236d",
+    "physicalGeometry": "cf12bf9bdfc8fcce4308ddc765822bef2283dd4f3d95f957330103e6d4a53872"
   },
   {
     "id": "st3215",
-    "geometry": "4c638044baf607a3f6b47fc12953d3d2806a44623dd915c33d92aefc20108bee"
+    "geometry": "4c638044baf607a3f6b47fc12953d3d2806a44623dd915c33d92aefc20108bee",
+    "physicalGeometry": "ed6244a5da2e01cd8dc5ef549a3149dae1ec8dcb44526def095530bc29918ecd"
   },
   {
     "id": "ssd1306",
-    "geometry": "bf3ef88a3796142dbdf0001d93ea68edef9e4adb7e6e61a71122c684fc96eee9"
+    "geometry": "bf3ef88a3796142dbdf0001d93ea68edef9e4adb7e6e61a71122c684fc96eee9",
+    "physicalGeometry": "2f606cde1bb34661eb02476b4b127bf1c144616bc7bb07efa37300cbc8011b84"
   },
   {
     "id": "lm2596",
-    "geometry": "7bb5d58c548e8976ec32291e06bc6eb01b1ba6095a870d2e5ef783d57a0d2cf4"
+    "geometry": "7bb5d58c548e8976ec32291e06bc6eb01b1ba6095a870d2e5ef783d57a0d2cf4",
+    "physicalGeometry": "304789fc0112c88649d968887a15afdc9385cfb1bb1bca255ea6ba0615030ac4"
   },
   {
     "id": "waveshare-rs485-3v3",
-    "geometry": "4b8a66cb57187bc537d32e5a28fba6f41f7703409b5f126f217eaf7bcb457bfc"
+    "geometry": "4b8a66cb57187bc537d32e5a28fba6f41f7703409b5f126f217eaf7bcb457bfc",
+    "physicalGeometry": "a26200afbad0b614a4aab4764594dbd8f35693b66d7d23dbf73bb892d4283d17"
   },
   {
     "id": "waveshare-bus-servo-adapter-a",
-    "geometry": "0c3c5742d71fb3a362dabf3dbf87ff72b4a4d164efe6131b4cd96e596b10da8d"
+    "geometry": "0c3c5742d71fb3a362dabf3dbf87ff72b4a4d164efe6131b4cd96e596b10da8d",
+    "physicalGeometry": "449f70fa838bdbb066021444744db041e51d7f43e8af9faa9fac67ade0d7642d"
   },
   {
     "id": "waveshare-esp32-s3-rs485-can",
-    "geometry": "8296aae36e1a5853b1375476484edd724a36e406ec7ebba0ec7c97dfa2fffbf9"
+    "geometry": "8296aae36e1a5853b1375476484edd724a36e406ec7ebba0ec7c97dfa2fffbf9",
+    "physicalGeometry": "eb2f46786b79b92741b0f52d54ffc2f3ec2d3d88939230bc24da32b15a1140bd"
   },
   {
     "id": "resistor",
@@ -89,11 +102,13 @@
   },
   {
     "id": "npn",
-    "geometry": "70bfaf2fcff0c82d9b548e4b6b09339a649192116bce555120332cfd1641e492"
+    "geometry": "70bfaf2fcff0c82d9b548e4b6b09339a649192116bce555120332cfd1641e492",
+    "physicalGeometry": "379bc504d024cabd8cd9421725133888863de42acc8759d24539654379636097"
   },
   {
     "id": "nmos",
-    "geometry": "765940f9ad70ba5079271508b6c26ff95f887e1c5d86c603e231e47dc46d1326"
+    "geometry": "765940f9ad70ba5079271508b6c26ff95f887e1c5d86c603e231e47dc46d1326",
+    "physicalGeometry": "7a129237dd19ecee3c4b36022226ac5dde80cfc95e36443ef6f5b434ff42ac70"
   },
   {
     "id": "button",
@@ -101,19 +116,23 @@
   },
   {
     "id": "terminal-2",
-    "geometry": "635dc1a7faa835da3fb637ce78cfd07e73066282d90b078942af9f2761277a5d"
+    "geometry": "635dc1a7faa835da3fb637ce78cfd07e73066282d90b078942af9f2761277a5d",
+    "physicalGeometry": "2c81b310950b429fb0aa36b6d07c1ffb5a35698f20f7bb37cff6bda9308831d5"
   },
   {
     "id": "terminal-3",
-    "geometry": "d32f447551b33f9db4135fea40b6c4fe4712daea7bf9da0029a87bc56120dfda"
+    "geometry": "d32f447551b33f9db4135fea40b6c4fe4712daea7bf9da0029a87bc56120dfda",
+    "physicalGeometry": "174740cb59e113be92acb11aae9611336fc2b44efb2aaed1acb92a41ae0e25b7"
   },
   {
     "id": "pin-header-4",
-    "geometry": "5bd7cc0ed6c173305ae01240ed48bfe5f69a113b39fa2f0a05c453bd1c350004"
+    "geometry": "5bd7cc0ed6c173305ae01240ed48bfe5f69a113b39fa2f0a05c453bd1c350004",
+    "physicalGeometry": "bb50e9ebad4277778533ca3ed449534a358099534a4c804a6df374593f0193d0"
   },
   {
     "id": "jst-ph-2",
-    "geometry": "635dc1a7faa835da3fb637ce78cfd07e73066282d90b078942af9f2761277a5d"
+    "geometry": "635dc1a7faa835da3fb637ce78cfd07e73066282d90b078942af9f2761277a5d",
+    "physicalGeometry": "be8c617f4a0fd549b01dd17713e4ac089feb7157afc0e3f18b89731182185baa"
   },
   {
     "id": "battery",
@@ -121,823 +140,1028 @@
   },
   {
     "id": "heltec-v4",
-    "geometry": "0c77986b3c5f7993d43e7e641259159d29f6e6e5dc0a213d0168c114f2fd777c"
+    "geometry": "0c77986b3c5f7993d43e7e641259159d29f6e6e5dc0a213d0168c114f2fd777c",
+    "physicalGeometry": "58ef4307444a340ba2f2ddc6f9c0d494133798c92fefbc0b344df02091a673a8"
   },
   {
     "id": "heltec-v3",
-    "geometry": "ce36caae2af35c97b4aa8f7991326c619165ef941476cf1a9c0a4b5b9e73681b"
+    "geometry": "ce36caae2af35c97b4aa8f7991326c619165ef941476cf1a9c0a4b5b9e73681b",
+    "physicalGeometry": "59ad9c4070344104bcc3c9a5d819a106d6164996d6c59344984b6e0f89ba25ed"
   },
   {
     "id": "heltec-v4-3-r2",
-    "geometry": "0c77986b3c5f7993d43e7e641259159d29f6e6e5dc0a213d0168c114f2fd777c"
+    "geometry": "0c77986b3c5f7993d43e7e641259159d29f6e6e5dc0a213d0168c114f2fd777c",
+    "physicalGeometry": "58ef4307444a340ba2f2ddc6f9c0d494133798c92fefbc0b344df02091a673a8"
   },
   {
     "id": "heltec-v4-3-r8",
-    "geometry": "0c77986b3c5f7993d43e7e641259159d29f6e6e5dc0a213d0168c114f2fd777c"
+    "geometry": "0c77986b3c5f7993d43e7e641259159d29f6e6e5dc0a213d0168c114f2fd777c",
+    "physicalGeometry": "58ef4307444a340ba2f2ddc6f9c0d494133798c92fefbc0b344df02091a673a8"
   },
   {
     "id": "rfm95w",
-    "geometry": "0709db71559a61c29ecfca4486d72a31d114a24aeaadb365c0d6bc519e3e888c"
+    "geometry": "0709db71559a61c29ecfca4486d72a31d114a24aeaadb365c0d6bc519e3e888c",
+    "physicalGeometry": "5246547e686f31369ab05df7bb3367ff50149f6da76994fa24f00254584ec3e0"
   },
   {
     "id": "rfm96w",
-    "geometry": "0709db71559a61c29ecfca4486d72a31d114a24aeaadb365c0d6bc519e3e888c"
+    "geometry": "0709db71559a61c29ecfca4486d72a31d114a24aeaadb365c0d6bc519e3e888c",
+    "physicalGeometry": "5246547e686f31369ab05df7bb3367ff50149f6da76994fa24f00254584ec3e0"
   },
   {
     "id": "rfm98w",
-    "geometry": "0709db71559a61c29ecfca4486d72a31d114a24aeaadb365c0d6bc519e3e888c"
+    "geometry": "0709db71559a61c29ecfca4486d72a31d114a24aeaadb365c0d6bc519e3e888c",
+    "physicalGeometry": "5246547e686f31369ab05df7bb3367ff50149f6da76994fa24f00254584ec3e0"
   },
   {
     "id": "ra-01s",
-    "geometry": "a219718d4590c745fc1d5819c0c2d7cd59d4438ae44fee3cd88e95c1cac2a188"
+    "geometry": "a219718d4590c745fc1d5819c0c2d7cd59d4438ae44fee3cd88e95c1cac2a188",
+    "physicalGeometry": "b26990c2910f92c4a82d80ee8367caad8ae989092baad23d3c09e13154ee3d89"
   },
   {
     "id": "ra-01sh",
-    "geometry": "a219718d4590c745fc1d5819c0c2d7cd59d4438ae44fee3cd88e95c1cac2a188"
+    "geometry": "a219718d4590c745fc1d5819c0c2d7cd59d4438ae44fee3cd88e95c1cac2a188",
+    "physicalGeometry": "b26990c2910f92c4a82d80ee8367caad8ae989092baad23d3c09e13154ee3d89"
   },
   {
     "id": "ra-02",
-    "geometry": "a219718d4590c745fc1d5819c0c2d7cd59d4438ae44fee3cd88e95c1cac2a188"
+    "geometry": "a219718d4590c745fc1d5819c0c2d7cd59d4438ae44fee3cd88e95c1cac2a188",
+    "physicalGeometry": "b26990c2910f92c4a82d80ee8367caad8ae989092baad23d3c09e13154ee3d89"
   },
   {
     "id": "e22-400mm22s",
-    "geometry": "343489fdb856d745c2276bcf8e38a4dfcd74fb6d9439d0c0dd4c72512b097202"
+    "geometry": "343489fdb856d745c2276bcf8e38a4dfcd74fb6d9439d0c0dd4c72512b097202",
+    "physicalGeometry": "1fdb4257f702ee2abafd8c9198ee931bd2a2e10a84b3d91434acf7109a96b407"
   },
   {
     "id": "e22-900mm22s",
-    "geometry": "343489fdb856d745c2276bcf8e38a4dfcd74fb6d9439d0c0dd4c72512b097202"
+    "geometry": "343489fdb856d745c2276bcf8e38a4dfcd74fb6d9439d0c0dd4c72512b097202",
+    "physicalGeometry": "1fdb4257f702ee2abafd8c9198ee931bd2a2e10a84b3d91434acf7109a96b407"
   },
   {
     "id": "e22-400m22s",
-    "geometry": "9b1b30e1c310af14e6257cb9da47bd86864baaa0661752b9d82f009fdaed2e23"
+    "geometry": "9b1b30e1c310af14e6257cb9da47bd86864baaa0661752b9d82f009fdaed2e23",
+    "physicalGeometry": "c71be1b99f50490a44d1e797ae3c8c4ed3a5e45d4b478ac2257db07e7be33222"
   },
   {
     "id": "e22-900m22s",
-    "geometry": "9b1b30e1c310af14e6257cb9da47bd86864baaa0661752b9d82f009fdaed2e23"
+    "geometry": "9b1b30e1c310af14e6257cb9da47bd86864baaa0661752b9d82f009fdaed2e23",
+    "physicalGeometry": "c71be1b99f50490a44d1e797ae3c8c4ed3a5e45d4b478ac2257db07e7be33222"
   },
   {
     "id": "e22-400m30s",
-    "geometry": "59df84140fc74a547653412e3c38f3d1ff846a3497258ff454db012a8b922d11"
+    "geometry": "59df84140fc74a547653412e3c38f3d1ff846a3497258ff454db012a8b922d11",
+    "physicalGeometry": "918e386b7b0cda2303052869b72281b22973fe6194143d7a7820b7f5c2427942"
   },
   {
     "id": "e22-900m30s",
-    "geometry": "59df84140fc74a547653412e3c38f3d1ff846a3497258ff454db012a8b922d11"
+    "geometry": "59df84140fc74a547653412e3c38f3d1ff846a3497258ff454db012a8b922d11",
+    "physicalGeometry": "918e386b7b0cda2303052869b72281b22973fe6194143d7a7820b7f5c2427942"
   },
   {
     "id": "e22-900m33s",
-    "geometry": "59df84140fc74a547653412e3c38f3d1ff846a3497258ff454db012a8b922d11"
+    "geometry": "59df84140fc74a547653412e3c38f3d1ff846a3497258ff454db012a8b922d11",
+    "physicalGeometry": "918e386b7b0cda2303052869b72281b22973fe6194143d7a7820b7f5c2427942"
   },
   {
     "id": "e28-2g4m12s",
-    "geometry": "446e2a10e896af4411479f67010ee312b647123fa5be29b1854955b27a7a1723"
+    "geometry": "446e2a10e896af4411479f67010ee312b647123fa5be29b1854955b27a7a1723",
+    "physicalGeometry": "ee05e474a2a82a28075fa237a89c6b9ea7cf144bb337b66899f2db3949d9339f"
   },
   {
     "id": "e28-2g4m12sx",
-    "geometry": "a94779e96b2a82e0cf77ea9f119c8ba4d17d8255e4932c130146b7c4df77a882"
+    "geometry": "a94779e96b2a82e0cf77ea9f119c8ba4d17d8255e4932c130146b7c4df77a882",
+    "physicalGeometry": "75085dbf94332c2f5448c911a5c5f195465de87a21855289e873d395dcac0fa0"
   },
   {
     "id": "esp32-s3-devkitm-1",
-    "geometry": "2e67dff9be076dbee4138ca0a0412598a71e284ba25a2a4999dab248b6298154"
+    "geometry": "2e67dff9be076dbee4138ca0a0412598a71e284ba25a2a4999dab248b6298154",
+    "physicalGeometry": "f6565d092e4212427fdd7ded59f5627b144f83834a376e622cc66d6a7f6cb772"
   },
   {
     "id": "esp32-s3-usb-otg",
-    "geometry": "ef60ebdcfd52ac0f8ab0507853969de227f651f2ea777c7c8d3b3ff804912607"
+    "geometry": "ef60ebdcfd52ac0f8ab0507853969de227f651f2ea777c7c8d3b3ff804912607",
+    "physicalGeometry": "8fa626a1cc7888db80ecadc335b72bf7567a964d3ef103e01c918e8dac2b157a"
   },
   {
     "id": "adafruit-metro-esp32-s3",
-    "geometry": "99eb2521bfc440ba1a6c448961a61d6440e0f2d4c5269aefa76a9c709dac3d25"
+    "geometry": "99eb2521bfc440ba1a6c448961a61d6440e0f2d4c5269aefa76a9c709dac3d25",
+    "physicalGeometry": "5ce1db5d2fd6ca851682a7bd2c68dbbb79dc29791a4b91be012fccc723748350"
   },
   {
     "id": "waveshare-esp32-s3-zero",
-    "geometry": "43ca0b9eb7d8f864a2a187599e1b0660d610bbfd87b04b5d735a539e953a3ac3"
+    "geometry": "43ca0b9eb7d8f864a2a187599e1b0660d610bbfd87b04b5d735a539e953a3ac3",
+    "physicalGeometry": "854da437b325af1d4f31f0bcaea070405196b9e07ff2f819717feb2344c65ab6"
   },
   {
     "id": "seeed-xiao-esp32-s3",
-    "geometry": "d813957d8bbd7087b431049ee3efdeeca6dc604f84c494322c44ae8016bc8f57"
+    "geometry": "d813957d8bbd7087b431049ee3efdeeca6dc604f84c494322c44ae8016bc8f57",
+    "physicalGeometry": "3eb2fb7b13ca509dbd3f0aaf3ad035caee4e6ee19b66741a465ea4cf4b1493ee"
   },
   {
     "id": "seeed-xiao-esp32-s3-sense",
-    "geometry": "d813957d8bbd7087b431049ee3efdeeca6dc604f84c494322c44ae8016bc8f57"
+    "geometry": "d813957d8bbd7087b431049ee3efdeeca6dc604f84c494322c44ae8016bc8f57",
+    "physicalGeometry": "3eb2fb7b13ca509dbd3f0aaf3ad035caee4e6ee19b66741a465ea4cf4b1493ee"
   },
   {
     "id": "seeed-xiao-esp32-s3-plus",
-    "geometry": "1108262a1dc2500ebe9949bbeb80ada0f4de4127c4b18f898248cbd7df25ebe8"
+    "geometry": "1108262a1dc2500ebe9949bbeb80ada0f4de4127c4b18f898248cbd7df25ebe8",
+    "physicalGeometry": "f00148c0a9027635aaa5dfe1a8b5293f4d799130f1a9a8cce20d5474d4dfad27"
   },
   {
     "id": "adafruit-qt-py-esp32-s3",
-    "geometry": "9b67be084b26152c13cdf9732276e19b315a67e571e6687485f99d6accc3e3fa"
+    "geometry": "9b67be084b26152c13cdf9732276e19b315a67e571e6687485f99d6accc3e3fa",
+    "physicalGeometry": "1adfc0cc765908818d08641dac39fc5b07950d77ff97be8add0193e00b46b673"
   },
   {
     "id": "adafruit-feather-esp32-s3",
-    "geometry": "1e450ef98aeb4819edf3ab00e2cb6e175299e99e42904c86325ddc4c7e105d6e"
+    "geometry": "1e450ef98aeb4819edf3ab00e2cb6e175299e99e42904c86325ddc4c7e105d6e",
+    "physicalGeometry": "75889b24a8d3a9b463112d148fa86b50dd68495dd2abccc1ae24a5900459505f"
   },
   {
     "id": "raspberry-pi-pico",
-    "geometry": "293dc877bb633f3eedead6d96affc2d1a85f29279f5c1b497c82a46e94434673"
+    "geometry": "293dc877bb633f3eedead6d96affc2d1a85f29279f5c1b497c82a46e94434673",
+    "physicalGeometry": "db15fe179ff419d0138160db0d7b83ee7e40b7e57a2e921cdcc1bc58b588ecf9"
   },
   {
     "id": "raspberry-pi-pico-w",
-    "geometry": "293dc877bb633f3eedead6d96affc2d1a85f29279f5c1b497c82a46e94434673"
+    "geometry": "293dc877bb633f3eedead6d96affc2d1a85f29279f5c1b497c82a46e94434673",
+    "physicalGeometry": "a49b1af08a87824209c28d0ccaf62654114dfa94f15118af3f2606ab6796444e"
   },
   {
     "id": "seeed-xiao-rp2040",
-    "geometry": "16cd23682f33f671493256a340cefcb8694a9c1a1505bad928b60f73afa8282f"
+    "geometry": "16cd23682f33f671493256a340cefcb8694a9c1a1505bad928b60f73afa8282f",
+    "physicalGeometry": "c8d779e54d501dc43b6c2b000d87c235381d2a57529ef1e7cdc0997eb295f029"
   },
   {
     "id": "seeed-xiao-rp2040-plus",
-    "geometry": "f8273387a6612858b4b0bd64769584867a20dfb536b57d646fbc2a5d6b4b5385"
+    "geometry": "f8273387a6612858b4b0bd64769584867a20dfb536b57d646fbc2a5d6b4b5385",
+    "physicalGeometry": "b25c7567796322625a62413027a33e79ce9146b79fe3702b473aa7dabb37d9a3"
   },
   {
     "id": "adafruit-qt-py-rp2040",
-    "geometry": "2a7c7b1870c6ed6de92cbc4133838ed685246e21d61e4f303394e998ef6263eb"
+    "geometry": "2a7c7b1870c6ed6de92cbc4133838ed685246e21d61e4f303394e998ef6263eb",
+    "physicalGeometry": "49ee226dd37a90f59b861ef722395860024c7ae0699a196eb906c737f406e81f"
   },
   {
     "id": "adafruit-feather-rp2040",
-    "geometry": "c659bfb65f6bca42fc49a69da847eec41e8df894ae2245491d2919d8c5032fe6"
+    "geometry": "c659bfb65f6bca42fc49a69da847eec41e8df894ae2245491d2919d8c5032fe6",
+    "physicalGeometry": "1822c0faa7c9d88fe356d912169045dab7d180a442cc387493376ca6f8b283c1"
   },
   {
     "id": "arduino-uno-rev3",
-    "geometry": "42b9bb040e4e3c8491f15c97c72cd15844089354a7326eccbbc926f5ad4359e7"
+    "geometry": "42b9bb040e4e3c8491f15c97c72cd15844089354a7326eccbbc926f5ad4359e7",
+    "physicalGeometry": "5352076382c61e8e92db5da2a342edf8a0a0a34493c04955caa576f8624e45c7"
   },
   {
     "id": "arduino-uno-r4-minima",
-    "geometry": "ef863dc3875b3f10cc2865cc2d0b9b81f892b057986119a3f4e1c6dafc414bdd"
+    "geometry": "ef863dc3875b3f10cc2865cc2d0b9b81f892b057986119a3f4e1c6dafc414bdd",
+    "physicalGeometry": "ce6b933d5bda46ad6a3aeabe500e061e2e0dddbe91b1f7df718607ae556d8672"
   },
   {
     "id": "arduino-uno-r4-wifi",
-    "geometry": "8c0f3a03a8bda63278ea6f16fba4cc3c335454536e6c1dbace8af1e65b82a71d"
+    "geometry": "8c0f3a03a8bda63278ea6f16fba4cc3c335454536e6c1dbace8af1e65b82a71d",
+    "physicalGeometry": "07287d7378ef6f1c492e292682b33e6deae4c0fc8a2a49b1165be58fd2fd8f49"
   },
   {
     "id": "arduino-nano",
-    "geometry": "63498bb38c828c48c1d29d37614cb126c228f0a2ce79feb14c0379eda56d74ad"
+    "geometry": "63498bb38c828c48c1d29d37614cb126c228f0a2ce79feb14c0379eda56d74ad",
+    "physicalGeometry": "8fe83fa8ae9f5afa7be0ebeeb9453ffc1f9b955439a75884eb2112be658ec3ef"
   },
   {
     "id": "arduino-nano-every",
-    "geometry": "aca4f32dda4590d095a32421241168468640f3cfce246deba32b352fdac8d9fe"
+    "geometry": "aca4f32dda4590d095a32421241168468640f3cfce246deba32b352fdac8d9fe",
+    "physicalGeometry": "99519a58bc1bf5747195648bf078aa34af0da78c6f7a363fe0d8164491cb1ce6"
   },
   {
     "id": "arduino-nano-esp32",
-    "geometry": "9bff7ef37751e98434ceefcbb0988536efcfca0ce412013def6d8db53bed4b2f"
+    "geometry": "9bff7ef37751e98434ceefcbb0988536efcfca0ce412013def6d8db53bed4b2f",
+    "physicalGeometry": "2b4295ed4e8e73cc14d8adf80c11a4277685ef735437c8f6716853c6b8155c62"
   },
   {
     "id": "arduino-nano-rp2040-connect",
-    "geometry": "74e31903db9cd4086d3e1b4b96e13fd9fa56d5608d9f328bf14c156b5c58c2f4"
+    "geometry": "74e31903db9cd4086d3e1b4b96e13fd9fa56d5608d9f328bf14c156b5c58c2f4",
+    "physicalGeometry": "f81673e193faf65ccc1c99b33eb3e524f4a46c3b493b7394590887b75018f548"
   },
   {
     "id": "arduino-nano-r4",
-    "geometry": "d6f438a923189a47c32ae952a5b29dcbd51ffd68320d12a8abbea9ad78a23dca"
+    "geometry": "d6f438a923189a47c32ae952a5b29dcbd51ffd68320d12a8abbea9ad78a23dca",
+    "physicalGeometry": "156026a66c14c87011826a6e8b4f92d06991bba14b6fee580dddfab3d0466973"
   },
   {
     "id": "arduino-leonardo",
-    "geometry": "42b9bb040e4e3c8491f15c97c72cd15844089354a7326eccbbc926f5ad4359e7"
+    "geometry": "42b9bb040e4e3c8491f15c97c72cd15844089354a7326eccbbc926f5ad4359e7",
+    "physicalGeometry": "5352076382c61e8e92db5da2a342edf8a0a0a34493c04955caa576f8624e45c7"
   },
   {
     "id": "arduino-micro",
-    "geometry": "76a9f39d6abcf3d8bd170f1823890c1c9177acca180cc6e436c00618a7b8e4cb"
+    "geometry": "76a9f39d6abcf3d8bd170f1823890c1c9177acca180cc6e436c00618a7b8e4cb",
+    "physicalGeometry": "600475b078287872b503ab279af7122ca4236019fb65f6e514cb97ae7fe3fa49"
   },
   {
     "id": "arduino-mega-2560",
-    "geometry": "f9e9b66f543153af8d23b4f58299513976ec90d9c44ea607cf8f478df0815073"
+    "geometry": "f9e9b66f543153af8d23b4f58299513976ec90d9c44ea607cf8f478df0815073",
+    "physicalGeometry": "e11b137a2d6b3be92047d416b6b1a2c0ac762174440e9d60ac85e4f27c7a8de0"
   },
   {
     "id": "arduino-due",
-    "geometry": "62f1e26fb1242beb2c1959044b0ec9120e0cec4382dd2361295a3291772e06e2"
+    "geometry": "62f1e26fb1242beb2c1959044b0ec9120e0cec4382dd2361295a3291772e06e2",
+    "physicalGeometry": "7c875abc1d687210eaf94ea3a05d5645d069cc0c757babcc9b1603db37779a27"
   },
   {
     "id": "stm32-nucleo-f103rb",
-    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268"
+    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268",
+    "physicalGeometry": "bfda7e6ce686c252ba1c688162624baf2350e0ef70360a386986ef7a5f24a856"
   },
   {
     "id": "stm32-nucleo-f401re",
-    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268"
+    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268",
+    "physicalGeometry": "bfda7e6ce686c252ba1c688162624baf2350e0ef70360a386986ef7a5f24a856"
   },
   {
     "id": "stm32-nucleo-f411re",
-    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268"
+    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268",
+    "physicalGeometry": "bfda7e6ce686c252ba1c688162624baf2350e0ef70360a386986ef7a5f24a856"
   },
   {
     "id": "stm32-nucleo-f446re",
-    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268"
+    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268",
+    "physicalGeometry": "bfda7e6ce686c252ba1c688162624baf2350e0ef70360a386986ef7a5f24a856"
   },
   {
     "id": "stm32-nucleo-g431rb",
-    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268"
+    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268",
+    "physicalGeometry": "420b8ac30abeaaa2378e79e649e86824e9567db74145452770755ec5463aeefa"
   },
   {
     "id": "stm32-nucleo-g474re",
-    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268"
+    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268",
+    "physicalGeometry": "420b8ac30abeaaa2378e79e649e86824e9567db74145452770755ec5463aeefa"
   },
   {
     "id": "stm32-nucleo-g491re",
-    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268"
+    "geometry": "2654081c7756870275239b4b17223786d79d1620ffee51ef6d26906dea2e6268",
+    "physicalGeometry": "420b8ac30abeaaa2378e79e649e86824e9567db74145452770755ec5463aeefa"
   },
   {
     "id": "stm32-nucleo-f042k6",
-    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831"
+    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831",
+    "physicalGeometry": "c26dd0e082a16b686b066774c8d92fb674d557e3e604ff87bc4fa79572df86e8"
   },
   {
     "id": "stm32-nucleo-f303k8",
-    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831"
+    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831",
+    "physicalGeometry": "c26dd0e082a16b686b066774c8d92fb674d557e3e604ff87bc4fa79572df86e8"
   },
   {
     "id": "stm32-nucleo-l031k6",
-    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831"
+    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831",
+    "physicalGeometry": "c26dd0e082a16b686b066774c8d92fb674d557e3e604ff87bc4fa79572df86e8"
   },
   {
     "id": "stm32-nucleo-l412kb",
-    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831"
+    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831",
+    "physicalGeometry": "c26dd0e082a16b686b066774c8d92fb674d557e3e604ff87bc4fa79572df86e8"
   },
   {
     "id": "stm32-nucleo-l432kc",
-    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831"
+    "geometry": "32a228ce1b42d33a25269ef92eb7218402b4c2a692e43f7be4f8989a956e4831",
+    "physicalGeometry": "c26dd0e082a16b686b066774c8d92fb674d557e3e604ff87bc4fa79572df86e8"
   },
   {
     "id": "xiao-nrf52840",
-    "geometry": "d857b16254b87e16a370ec7072467692bfcae20b4d1356a3200f9cb17a7586eb"
+    "geometry": "d857b16254b87e16a370ec7072467692bfcae20b4d1356a3200f9cb17a7586eb",
+    "physicalGeometry": "2aeffdf11a9cfd8988bb6e00a1dcb11330c670ae23cf96bedb342866c4d68c8c"
   },
   {
     "id": "xiao-nrf52840-sense",
-    "geometry": "d857b16254b87e16a370ec7072467692bfcae20b4d1356a3200f9cb17a7586eb"
+    "geometry": "d857b16254b87e16a370ec7072467692bfcae20b4d1356a3200f9cb17a7586eb",
+    "physicalGeometry": "2aeffdf11a9cfd8988bb6e00a1dcb11330c670ae23cf96bedb342866c4d68c8c"
   },
   {
     "id": "xiao-nrf52840-plus",
-    "geometry": "ebd8671653eb864b94450caa6dfbea15760692ea5b2ff57761ea4ed21a19bbaf"
+    "geometry": "ebd8671653eb864b94450caa6dfbea15760692ea5b2ff57761ea4ed21a19bbaf",
+    "physicalGeometry": "a7717f8c7b99d754cca052ad2e7ff778544ee67ee545536d5f3b83544dc81d30"
   },
   {
     "id": "xiao-nrf52840-sense-plus",
-    "geometry": "ebd8671653eb864b94450caa6dfbea15760692ea5b2ff57761ea4ed21a19bbaf"
+    "geometry": "ebd8671653eb864b94450caa6dfbea15760692ea5b2ff57761ea4ed21a19bbaf",
+    "physicalGeometry": "a7717f8c7b99d754cca052ad2e7ff778544ee67ee545536d5f3b83544dc81d30"
   },
   {
     "id": "arduino-nano-33-ble-rev2",
-    "geometry": "954e9abe784f154b7d2543377ddb651ca80896d95eb4c4a19943b10a6ff61c93"
+    "geometry": "954e9abe784f154b7d2543377ddb651ca80896d95eb4c4a19943b10a6ff61c93",
+    "physicalGeometry": "bef63350338a6936c5fa71e5ef444e00848cee0102ee6966622db4ea58e53b02"
   },
   {
     "id": "arduino-nano-33-ble-sense-rev2",
-    "geometry": "954e9abe784f154b7d2543377ddb651ca80896d95eb4c4a19943b10a6ff61c93"
+    "geometry": "954e9abe784f154b7d2543377ddb651ca80896d95eb4c4a19943b10a6ff61c93",
+    "physicalGeometry": "bef63350338a6936c5fa71e5ef444e00848cee0102ee6966622db4ea58e53b02"
   },
   {
     "id": "adafruit-feather-nrf52840-express",
-    "geometry": "d9ef607b50485f43dc77d635b199519be151af20f7417d5b3d45641486392f22"
+    "geometry": "d9ef607b50485f43dc77d635b199519be151af20f7417d5b3d45641486392f22",
+    "physicalGeometry": "8771eda282711800b5acf7b79d6153ef7bf654178184a23623179e8bdfe8b2ab"
   },
   {
     "id": "raytac-mdbt42q-512kv2",
-    "geometry": "62fb77f9dfdd76c9dabb15d269b6ba514a137e97875a8ad9d473731bcc5e65ea"
+    "geometry": "62fb77f9dfdd76c9dabb15d269b6ba514a137e97875a8ad9d473731bcc5e65ea",
+    "physicalGeometry": "0cfb9b13c8766359e74f9c53e78306e73ae0cef092cf203ce3ee67e7e8d87098"
   },
   {
     "id": "raytac-mdbt42q-p512kv2",
-    "geometry": "62fb77f9dfdd76c9dabb15d269b6ba514a137e97875a8ad9d473731bcc5e65ea"
+    "geometry": "62fb77f9dfdd76c9dabb15d269b6ba514a137e97875a8ad9d473731bcc5e65ea",
+    "physicalGeometry": "0cfb9b13c8766359e74f9c53e78306e73ae0cef092cf203ce3ee67e7e8d87098"
   },
   {
     "id": "raytac-mdbt50q-1mv2",
-    "geometry": "118b0533efa036a38ca281802b555fa79c93c8983f2fa913fd2273083e65310d"
+    "geometry": "118b0533efa036a38ca281802b555fa79c93c8983f2fa913fd2273083e65310d",
+    "physicalGeometry": "8e2a0bc0fd1987f772ef8c9501ae8cda775c6578f7da566247a8bfc693ac0241"
   },
   {
     "id": "raytac-mdbt50q-p1mv2",
-    "geometry": "118b0533efa036a38ca281802b555fa79c93c8983f2fa913fd2273083e65310d"
+    "geometry": "118b0533efa036a38ca281802b555fa79c93c8983f2fa913fd2273083e65310d",
+    "physicalGeometry": "8e2a0bc0fd1987f772ef8c9501ae8cda775c6578f7da566247a8bfc693ac0241"
   },
   {
     "id": "raytac-mdbt53v-1m",
-    "geometry": "1c756fc1eee43fc8b67d4d84c529c31a8e2e06669b73a3cf86bcb2d820e80b48"
+    "geometry": "1c756fc1eee43fc8b67d4d84c529c31a8e2e06669b73a3cf86bcb2d820e80b48",
+    "physicalGeometry": "d6281e9df5da28f438baefa697fca1034d6b058e138b67114ed5bf000d32ce5f"
   },
   {
     "id": "raytac-mdbt53v-p1m",
-    "geometry": "1c756fc1eee43fc8b67d4d84c529c31a8e2e06669b73a3cf86bcb2d820e80b48"
+    "geometry": "1c756fc1eee43fc8b67d4d84c529c31a8e2e06669b73a3cf86bcb2d820e80b48",
+    "physicalGeometry": "d6281e9df5da28f438baefa697fca1034d6b058e138b67114ed5bf000d32ce5f"
   },
   {
     "id": "raytac-an54lq-15",
-    "geometry": "a307bc727021123ded735787c1d11ccf71bd3f6bb2e67296a324544cc7b776d8"
+    "geometry": "a307bc727021123ded735787c1d11ccf71bd3f6bb2e67296a324544cc7b776d8",
+    "physicalGeometry": "744d5027f35c587c0558cff8a746ef21e8fed50bf6768fcf53437b88d689ba09"
   },
   {
     "id": "ebyte-e01-ml01d",
-    "geometry": "a3a68e00acc623248af7c6869a3d6f45d005d4df5426a4564de29795917123ce"
+    "geometry": "a3a68e00acc623248af7c6869a3d6f45d005d4df5426a4564de29795917123ce",
+    "physicalGeometry": "a7e44fc41b5dbb8cb9e8c4c06f6ca2ce4fc8760d9684e7d737ec96790eece5da"
   },
   {
     "id": "ebyte-e01-ml01dp5",
-    "geometry": "2892cf64fb887a4547dd023c7e2bdad86c5efa0baa587a62affe17bd5c9b6aba"
+    "geometry": "2892cf64fb887a4547dd023c7e2bdad86c5efa0baa587a62affe17bd5c9b6aba",
+    "physicalGeometry": "5310eeb584fe32a256cd7f2a713a2c4fbaddf55e71f0118b43f572407e581329"
   },
   {
     "id": "lc-filter",
-    "geometry": "02c0e1f6052fabb3c20904bb681ed5fac7d06082d38466c61f6798fdf05c9c3e"
+    "geometry": "02c0e1f6052fabb3c20904bb681ed5fac7d06082d38466c61f6798fdf05c9c3e",
+    "physicalGeometry": "4c1774bac698eac97cf98045031631a18ec82d97000a66d0a28810a08ba9c582"
   },
   {
     "id": "pi-lc-filter",
-    "geometry": "02c0e1f6052fabb3c20904bb681ed5fac7d06082d38466c61f6798fdf05c9c3e"
+    "geometry": "02c0e1f6052fabb3c20904bb681ed5fac7d06082d38466c61f6798fdf05c9c3e",
+    "physicalGeometry": "4c1774bac698eac97cf98045031631a18ec82d97000a66d0a28810a08ba9c582"
   },
   {
     "id": "tdk-mem2012f75r0t001",
-    "geometry": "85f32022164c91c089cf1faca5e9bc19b211a950d615abd5de7695776079e6a6"
+    "geometry": "85f32022164c91c089cf1faca5e9bc19b211a950d615abd5de7695776079e6a6",
+    "physicalGeometry": "6260ca5b3665956bc5e1de58ca4cd1465297128abd4a625b600b0da1191f41c3"
   },
   {
     "id": "mcp1700-3302-to92",
-    "geometry": "3e508974be0cc6555beae75ba7719037b453d4fb50398a21e771f3d649e95851"
+    "geometry": "3e508974be0cc6555beae75ba7719037b453d4fb50398a21e771f3d649e95851",
+    "physicalGeometry": "6f33b3e632613556fcb2d1f40fba8a6a06ae682c5a79c04c732b1900263ada55"
   },
   {
     "id": "mcp1702-5002-to92",
-    "geometry": "3e508974be0cc6555beae75ba7719037b453d4fb50398a21e771f3d649e95851"
+    "geometry": "3e508974be0cc6555beae75ba7719037b453d4fb50398a21e771f3d649e95851",
+    "physicalGeometry": "6f33b3e632613556fcb2d1f40fba8a6a06ae682c5a79c04c732b1900263ada55"
   },
   {
     "id": "ap2112k-3-3",
-    "geometry": "e756d5525e6ed135ef99457614ef5daedf44805c025d158af8fc72e3c5f2890b"
+    "geometry": "e756d5525e6ed135ef99457614ef5daedf44805c025d158af8fc72e3c5f2890b",
+    "physicalGeometry": "ce3568bbabe471a61a8c8b8b65365ccbe34bd20c7cae14cbd80d866d189f0c89"
   },
   {
     "id": "tlv75533pdbvr",
-    "geometry": "e756d5525e6ed135ef99457614ef5daedf44805c025d158af8fc72e3c5f2890b"
+    "geometry": "e756d5525e6ed135ef99457614ef5daedf44805c025d158af8fc72e3c5f2890b",
+    "physicalGeometry": "ce3568bbabe471a61a8c8b8b65365ccbe34bd20c7cae14cbd80d866d189f0c89"
   },
   {
     "id": "lm1117-3-3-sot223",
-    "geometry": "6614a17e9b36d6bf11dab7ba127aca02e680074c5e24a5721a4ca26eb91b47b0"
+    "geometry": "6614a17e9b36d6bf11dab7ba127aca02e680074c5e24a5721a4ca26eb91b47b0",
+    "physicalGeometry": "1e44678d20e1b6cb51fd6c693c8922ed060872b05ea461e6ac75704f4b0dfcee"
   },
   {
     "id": "lm1117-5-0-sot223",
-    "geometry": "6614a17e9b36d6bf11dab7ba127aca02e680074c5e24a5721a4ca26eb91b47b0"
+    "geometry": "6614a17e9b36d6bf11dab7ba127aca02e680074c5e24a5721a4ca26eb91b47b0",
+    "physicalGeometry": "1e44678d20e1b6cb51fd6c693c8922ed060872b05ea461e6ac75704f4b0dfcee"
   },
   {
     "id": "pololu-d24v10f3",
-    "geometry": "bee62f3fa7d05d7722a5ec4bdbf628f40237168ecf4659753f7f358482fd9877"
+    "geometry": "bee62f3fa7d05d7722a5ec4bdbf628f40237168ecf4659753f7f358482fd9877",
+    "physicalGeometry": "1c1ee0115f8fbeeee2878e5f443137018b23997642864355f5deb2d0f4c54b93"
   },
   {
     "id": "pololu-d24v10f5",
-    "geometry": "bee62f3fa7d05d7722a5ec4bdbf628f40237168ecf4659753f7f358482fd9877"
+    "geometry": "bee62f3fa7d05d7722a5ec4bdbf628f40237168ecf4659753f7f358482fd9877",
+    "physicalGeometry": "1c1ee0115f8fbeeee2878e5f443137018b23997642864355f5deb2d0f4c54b93"
   },
   {
     "id": "pololu-s13v10f5",
-    "geometry": "8774b0c14979e765d4c8ec524efd2d759548a28375833084d82a1323acf2fd23"
+    "geometry": "8774b0c14979e765d4c8ec524efd2d759548a28375833084d82a1323acf2fd23",
+    "physicalGeometry": "da988143d5e63c2efa163f31ca19094d7cafa683b56a7994fadf00efef19ea87"
   },
   {
     "id": "pololu-s7v8f3",
-    "geometry": "d18c288ea45519e5ac16fb1ab55c4a49220bd9d4981dfa1a5297df37e7a7e4fc"
+    "geometry": "d18c288ea45519e5ac16fb1ab55c4a49220bd9d4981dfa1a5297df37e7a7e4fc",
+    "physicalGeometry": "117b9bb2a42db7a806ca6caeb452891a707371b0fc221d66b3fbf7b1231cf19e"
   },
   {
     "id": "pololu-u3v9f5",
-    "geometry": "42da631d7f778cfb7ec516fd30c9f79b2a7c0b4128cffa14eabb1de95372f39e"
+    "geometry": "42da631d7f778cfb7ec516fd30c9f79b2a7c0b4128cffa14eabb1de95372f39e",
+    "physicalGeometry": "84210828b7c4b18cd9b02fe34b863a8d3de4778a9fb88bd05a68b33ca9c80e68"
   },
   {
     "id": "recom-r-78e5-0-0-5",
-    "geometry": "34eb5c1e9770b3a9bfd971356315f65f8a3e7687c7f481a30cffc7dba5b36308"
+    "geometry": "34eb5c1e9770b3a9bfd971356315f65f8a3e7687c7f481a30cffc7dba5b36308",
+    "physicalGeometry": "36f5c2b5b4b5797665c12fa6d32d71e1fb630277fce293154ac328a32d0c2a4d"
   },
   {
     "id": "murata-oki-78sr-5",
-    "geometry": "34eb5c1e9770b3a9bfd971356315f65f8a3e7687c7f481a30cffc7dba5b36308"
+    "geometry": "34eb5c1e9770b3a9bfd971356315f65f8a3e7687c7f481a30cffc7dba5b36308",
+    "physicalGeometry": "613023a24b241f09c3ddd736cf9aab4e7c0678bd38d3d07d03458774a0d332d7"
   },
   {
     "id": "weipu-sp1310-p2",
-    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684"
+    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684",
+    "physicalGeometry": "0e20bcbf1df77c4882cde3e021f2202229004c314664f4a02d701eb27dd9d51c"
   },
   {
     "id": "weipu-sp1312-s2",
-    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684"
+    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684",
+    "physicalGeometry": "7c79a6eb250fbd9f70c8d25d407f98b7adbfe236fe58bced59c6b909cb1f6684"
   },
   {
     "id": "weipu-sp1310-p3",
-    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269"
+    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269",
+    "physicalGeometry": "f609af10d6ecf4841652a83cc65170b25c29533ac6d004b4ab68f446d151ebcc"
   },
   {
     "id": "weipu-sp1312-s3",
-    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269"
+    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269",
+    "physicalGeometry": "6b6bc8a49594d4aabf2122406245896def95470bf5587efd08be38dce41a6a79"
   },
   {
     "id": "weipu-sp1310-p4",
-    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b"
+    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b",
+    "physicalGeometry": "03a4652c37bb543303503cb46119ef25953e33d6c6a28d198b783211cc5e75f5"
   },
   {
     "id": "weipu-sp1312-s4",
-    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b"
+    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b",
+    "physicalGeometry": "a553a18f0da72a7634a94f6b1a920fefd1b4d5dd20a5e900b6be387f92198165"
   },
   {
     "id": "weipu-sp1310-p5",
-    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef"
+    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef",
+    "physicalGeometry": "c4f600c5aa85b4b08d3db02c3d8ac50ca4c7076f868b81af2e1845a7af089e9b"
   },
   {
     "id": "weipu-sp1312-s5",
-    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef"
+    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef",
+    "physicalGeometry": "bdbb8217936b1248383042f65a8fd31055eab0017e1b08922a4ab46f2e20062e"
   },
   {
     "id": "weipu-sp1310-p7",
-    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027"
+    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027",
+    "physicalGeometry": "49de5650276279d9e0aa6e3410ad245efd7ffc4c76eaf0bf208cc241fe1c6fc9"
   },
   {
     "id": "weipu-sp1312-s7",
-    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027"
+    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027",
+    "physicalGeometry": "fd2401adc254f85dd473c167804e1c3c328d5cc76b3261325f334dd8e10fe442"
   },
   {
     "id": "weipu-sp1710-p2",
-    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684"
+    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684",
+    "physicalGeometry": "ab01af280628120fbfe880647983d3765179c0a8cd8f2ceba609fa1bed51ab79"
   },
   {
     "id": "weipu-sp1712-s2",
-    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684"
+    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684",
+    "physicalGeometry": "bb1dd829cde19074532eb713be8c439da940e50aaa115971b5b9c782f30a010f"
   },
   {
     "id": "weipu-sp1710-p3",
-    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269"
+    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269",
+    "physicalGeometry": "824a62876cf23a73ffeb83478f65b5ded8bf47da110f7a6f4a1d3fe72a21c4ce"
   },
   {
     "id": "weipu-sp1712-s3",
-    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269"
+    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269",
+    "physicalGeometry": "a08f30033999cf5b64327b81da0f55c4a9d74e1da031356dcd07052977d00aff"
   },
   {
     "id": "weipu-sp1710-p4",
-    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b"
+    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b",
+    "physicalGeometry": "f5264ef2fda492c5077831bc0b7ce59ec4c49365659064e6a0dc6293c0458ea9"
   },
   {
     "id": "weipu-sp1712-s4",
-    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b"
+    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b",
+    "physicalGeometry": "947695510e603577803374fe62d0512b4c9ea9fd5f41a32487a9217a85483aea"
   },
   {
     "id": "weipu-sp1710-p5",
-    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef"
+    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef",
+    "physicalGeometry": "e4e4fe9a3826946fdd70252ad0898f0c34836ea06c862b5da94c8421e2bf90f6"
   },
   {
     "id": "weipu-sp1712-s5",
-    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef"
+    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef",
+    "physicalGeometry": "7d9f6fac28fc10753777a9d8360ff4b2c432b4326867a569ffd4be705777eaa0"
   },
   {
     "id": "weipu-sp1710-p7",
-    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027"
+    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027",
+    "physicalGeometry": "499874025a8f57310a0336f40c679af7ab1c1c125488318c467ebb29d6cb85a3"
   },
   {
     "id": "weipu-sp1712-s7",
-    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027"
+    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027",
+    "physicalGeometry": "bd9fe7b20f5e2b963dd8e563e96711e03bcc6ef755910ef9fc76b2eeb76e8c39"
   },
   {
     "id": "weipu-sp2110-p2",
-    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684"
+    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684",
+    "physicalGeometry": "125c455a6ad282e9cd266e96378f3f54aac62d5fcb35f9cd250c2a19ca04e691"
   },
   {
     "id": "weipu-sp2112-s2",
-    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684"
+    "geometry": "2ce2fd760b62d1bfeda37239e377a718a08ab2f0e72c46b9e2cc83cb93472684",
+    "physicalGeometry": "125c455a6ad282e9cd266e96378f3f54aac62d5fcb35f9cd250c2a19ca04e691"
   },
   {
     "id": "weipu-sp2110-p3",
-    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269"
+    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269",
+    "physicalGeometry": "418a4b800fa98b4c8682a7b59999d29c1beb667a1f93c0a4cb43699af6a9d5af"
   },
   {
     "id": "weipu-sp2112-s3",
-    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269"
+    "geometry": "c22c74440374cec9f35024ce18a9c5e475f802a59a2246b4b30cc5a16b2ae269",
+    "physicalGeometry": "92daa7a2903a43f371b8e6c8d99cc6da4855489245cc6ea47d77e0f50881c456"
   },
   {
     "id": "weipu-sp2110-p4",
-    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b"
+    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b",
+    "physicalGeometry": "93f8f83c5d314ccf8da3ae5d60a5309ff079b78bd5e877990b9baa50703e0e50"
   },
   {
     "id": "weipu-sp2112-s4",
-    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b"
+    "geometry": "e56ff5053881a2ff22714392410fffabf2b5e9658ea6bfa0ac877df2a716b74b",
+    "physicalGeometry": "5bf470bd5416975d71dd970c7f9a0936130a20e576326685a207bea843a92e76"
   },
   {
     "id": "weipu-sp2110-p5",
-    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef"
+    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef",
+    "physicalGeometry": "577f97b83d96788a0906fabd14e3fe4916f4a94839b42095cd0da203cafa293d"
   },
   {
     "id": "weipu-sp2112-s5",
-    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef"
+    "geometry": "8f605a0a21498eab2893621b5045fa7f57c9328b3cb6e322c244e30fb2f136ef",
+    "physicalGeometry": "bb54070acc8cc5650daa0bb015c5d356c96834484adb81d025ed39c480cc8c72"
   },
   {
     "id": "weipu-sp2110-p7",
-    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027"
+    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027",
+    "physicalGeometry": "09b90fcc59a5300f0223bf58940fc84139d000e299e8015f607bcb2592433727"
   },
   {
     "id": "weipu-sp2112-s7",
-    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027"
+    "geometry": "52f5ae98d8aa2826f1e094e9429a905dacaa3f18ae843acfe30f01df9691a027",
+    "physicalGeometry": "bdacb2e701a3db4a4334c4abb8b4ef53ab3855067f0a132748a786ab3a2dc8c4"
   },
   {
     "id": "amass-xt30u-f",
-    "geometry": "fd26ccf32191877b497544f616bc6e074b26e061cd1cf619c644bbcba2a740bd"
+    "geometry": "fd26ccf32191877b497544f616bc6e074b26e061cd1cf619c644bbcba2a740bd",
+    "physicalGeometry": "9ee56ea50347a94a47c0dbd243c664b9309ec8d9b028a84f54dcc65b4ac9c771"
   },
   {
     "id": "amass-xt30u-m",
-    "geometry": "fd26ccf32191877b497544f616bc6e074b26e061cd1cf619c644bbcba2a740bd"
+    "geometry": "fd26ccf32191877b497544f616bc6e074b26e061cd1cf619c644bbcba2a740bd",
+    "physicalGeometry": "9ee56ea50347a94a47c0dbd243c664b9309ec8d9b028a84f54dcc65b4ac9c771"
   },
   {
     "id": "amass-xt60h-f",
-    "geometry": "8dabe8f2bb84e69d783a16404f0ecf40b40e5d23893ee4c0a11285dbfd696384"
+    "geometry": "8dabe8f2bb84e69d783a16404f0ecf40b40e5d23893ee4c0a11285dbfd696384",
+    "physicalGeometry": "6016edea07440ff22cdbb28ec08ca650f70fb1c26d7215bdaa9ef578c51ed95b"
   },
   {
     "id": "amass-xt60h-m",
-    "geometry": "8dabe8f2bb84e69d783a16404f0ecf40b40e5d23893ee4c0a11285dbfd696384"
+    "geometry": "8dabe8f2bb84e69d783a16404f0ecf40b40e5d23893ee4c0a11285dbfd696384",
+    "physicalGeometry": "6016edea07440ff22cdbb28ec08ca650f70fb1c26d7215bdaa9ef578c51ed95b"
   },
   {
     "id": "amass-xt60pb-f",
-    "geometry": "8dabe8f2bb84e69d783a16404f0ecf40b40e5d23893ee4c0a11285dbfd696384"
+    "geometry": "8dabe8f2bb84e69d783a16404f0ecf40b40e5d23893ee4c0a11285dbfd696384",
+    "physicalGeometry": "6016edea07440ff22cdbb28ec08ca650f70fb1c26d7215bdaa9ef578c51ed95b"
   },
   {
     "id": "amass-xt60pb-m",
-    "geometry": "5c3e9294203e855e8d29670fb7dc7ddee4e051f493e508d11be253509e18ca81"
+    "geometry": "5c3e9294203e855e8d29670fb7dc7ddee4e051f493e508d11be253509e18ca81",
+    "physicalGeometry": "8de3f2d0c5ca1e7acd2d6210f6fe4cfefbb331b496714ee46b85a2848935d6dd"
   },
   {
     "id": "amass-xt90h-f",
-    "geometry": "9689a6198b179c59cdd0d5f6b28ec9655ece2ae334c196d7eb7ab8d3d626305e"
+    "geometry": "9689a6198b179c59cdd0d5f6b28ec9655ece2ae334c196d7eb7ab8d3d626305e",
+    "physicalGeometry": "d197190c0bf1a711e7e6f67cfb8cabc4451d25fb5cf1fd4185c479dd1d15a811"
   },
   {
     "id": "amass-xt90h-m",
-    "geometry": "9689a6198b179c59cdd0d5f6b28ec9655ece2ae334c196d7eb7ab8d3d626305e"
+    "geometry": "9689a6198b179c59cdd0d5f6b28ec9655ece2ae334c196d7eb7ab8d3d626305e",
+    "physicalGeometry": "d197190c0bf1a711e7e6f67cfb8cabc4451d25fb5cf1fd4185c479dd1d15a811"
   },
   {
     "id": "amass-xt90s-f",
-    "geometry": "9689a6198b179c59cdd0d5f6b28ec9655ece2ae334c196d7eb7ab8d3d626305e"
+    "geometry": "9689a6198b179c59cdd0d5f6b28ec9655ece2ae334c196d7eb7ab8d3d626305e",
+    "physicalGeometry": "d197190c0bf1a711e7e6f67cfb8cabc4451d25fb5cf1fd4185c479dd1d15a811"
   },
   {
     "id": "nkk-mn11ss4w03",
-    "geometry": "11814914f5f6e5913eb9a7e20c785053be468ddd79b087a3771a05ff62f00ce5"
+    "geometry": "11814914f5f6e5913eb9a7e20c785053be468ddd79b087a3771a05ff62f00ce5",
+    "physicalGeometry": "54f3533f66de38ac0b15195abec3343d52804a7f5375fb7d501c02ba8796aecc"
   },
   {
     "id": "ck-7101sycqe",
-    "geometry": "ca138a7af880da3d28d2dfc7861f14ff7a74b9df2631f082502c263590216777"
+    "geometry": "ca138a7af880da3d28d2dfc7861f14ff7a74b9df2631f082502c263590216777",
+    "physicalGeometry": "d4a0f688039a112f95f430b48b6a622ee15d0ea5977ec807b43c8cacacc20856"
   },
   {
     "id": "ck-7103sycqe",
-    "geometry": "ca138a7af880da3d28d2dfc7861f14ff7a74b9df2631f082502c263590216777"
+    "geometry": "ca138a7af880da3d28d2dfc7861f14ff7a74b9df2631f082502c263590216777",
+    "physicalGeometry": "d4a0f688039a112f95f430b48b6a622ee15d0ea5977ec807b43c8cacacc20856"
   },
   {
     "id": "ck-7201sycqe",
-    "geometry": "b1f4ddaa8ae41ea7fa7176dd3a553e3f992d7575ce45b7a470a82b4cb5fd064b"
+    "geometry": "b1f4ddaa8ae41ea7fa7176dd3a553e3f992d7575ce45b7a470a82b4cb5fd064b",
+    "physicalGeometry": "881671ca659a3ffa739b4386cd738b6c88545494f882f231eeb853f8b920ea2a"
   },
   {
     "id": "ck-7203sycqe",
-    "geometry": "b1f4ddaa8ae41ea7fa7176dd3a553e3f992d7575ce45b7a470a82b4cb5fd064b"
+    "geometry": "b1f4ddaa8ae41ea7fa7176dd3a553e3f992d7575ce45b7a470a82b4cb5fd064b",
+    "physicalGeometry": "881671ca659a3ffa739b4386cd738b6c88545494f882f231eeb853f8b920ea2a"
   },
   {
     "id": "ao3400a",
-    "geometry": "42fdad0f303471bf92f61cb0290e4823f721b216f3f43c770d1c6c3726d6b3de"
+    "geometry": "42fdad0f303471bf92f61cb0290e4823f721b216f3f43c770d1c6c3726d6b3de",
+    "physicalGeometry": "80f337f62b7f8832122d0134ae769ade054805c6a8f13531f30636870d64456c"
   },
   {
     "id": "ao3401a",
-    "geometry": "42fdad0f303471bf92f61cb0290e4823f721b216f3f43c770d1c6c3726d6b3de"
+    "geometry": "42fdad0f303471bf92f61cb0290e4823f721b216f3f43c770d1c6c3726d6b3de",
+    "physicalGeometry": "80f337f62b7f8832122d0134ae769ade054805c6a8f13531f30636870d64456c"
   },
   {
     "id": "aod4184a",
-    "geometry": "8e501ca8eb29a38f9b743eee9a017f0601c523c31a72247eea383181c29631d4"
+    "geometry": "8e501ca8eb29a38f9b743eee9a017f0601c523c31a72247eea383181c29631d4",
+    "physicalGeometry": "5a9dcdc9df8bc29ae6de96836f900a2a59c926edb066b6fea230fcaf9a12a4ea"
   },
   {
     "id": "aod4185",
-    "geometry": "8e501ca8eb29a38f9b743eee9a017f0601c523c31a72247eea383181c29631d4"
+    "geometry": "8e501ca8eb29a38f9b743eee9a017f0601c523c31a72247eea383181c29631d4",
+    "physicalGeometry": "5a9dcdc9df8bc29ae6de96836f900a2a59c926edb066b6fea230fcaf9a12a4ea"
   },
   {
     "id": "irlz44n",
-    "geometry": "b54aaba80d816f503f1e98f05a5805a8599d51c3df6d788ae40b3b01c23d9a1b"
+    "geometry": "b54aaba80d816f503f1e98f05a5805a8599d51c3df6d788ae40b3b01c23d9a1b",
+    "physicalGeometry": "8f2c489c803d648960cb8eae821dccb65d855cdcb7d78b21e6bcfa160b517706"
   },
   {
     "id": "irf4905",
-    "geometry": "b54aaba80d816f503f1e98f05a5805a8599d51c3df6d788ae40b3b01c23d9a1b"
+    "geometry": "b54aaba80d816f503f1e98f05a5805a8599d51c3df6d788ae40b3b01c23d9a1b",
+    "physicalGeometry": "8f2c489c803d648960cb8eae821dccb65d855cdcb7d78b21e6bcfa160b517706"
   },
   {
     "id": "pololu-a4988-1182",
-    "geometry": "a146688efc8faa549b32b0a32a4428864b780650c5c9dd43cfb966596fb1945a"
+    "geometry": "a146688efc8faa549b32b0a32a4428864b780650c5c9dd43cfb966596fb1945a",
+    "physicalGeometry": "d9181343f8a446823ce4c830ed58d16d60c21628174c34cf104090ffa95f732f"
   },
   {
     "id": "pololu-drv8825-2133",
-    "geometry": "d6ca31a5a5b7ff29d677b77ab307c6ea6c904145d89c9d712b0c55c869b54d90"
+    "geometry": "d6ca31a5a5b7ff29d677b77ab307c6ea6c904145d89c9d712b0c55c869b54d90",
+    "physicalGeometry": "39507efce70258ab73924294f24bcae382e48e2d76bcc1bbf04b20d64b86a338"
   },
   {
     "id": "pololu-tb6612fng-713",
-    "geometry": "d348706cdd511a4ddfdf7034b7f2c65e1cd3f368666a0949a4bf4bf579a0c38a"
+    "geometry": "d348706cdd511a4ddfdf7034b7f2c65e1cd3f368666a0949a4bf4bf579a0c38a",
+    "physicalGeometry": "bebee30d81706282344f1533c41bc43906458e36f10436350d2febca5cd0fa1f"
   },
   {
     "id": "pololu-drv8833-2130",
-    "geometry": "859912baeb40df5b40344a3040d34b096d14220e9f062ade5d8c5f9f9f95f4fb"
+    "geometry": "859912baeb40df5b40344a3040d34b096d14220e9f062ade5d8c5f9f9f95f4fb",
+    "physicalGeometry": "1a031bbc0ed38c6cd2d6d24e8d3c83e06b83589e6e280ee862e6a94be9ff4650"
   },
   {
     "id": "sunfounder-l298n-hw095",
-    "geometry": "92c36d585a438a9230cb8e7899ae998fd8c0f54d0807a6695d7ccd1a658b2fa2"
+    "geometry": "92c36d585a438a9230cb8e7899ae998fd8c0f54d0807a6695d7ccd1a658b2fa2",
+    "physicalGeometry": "54dd3b5ba379c0ff01286cc34d26f33c54cb6852614d7f9552df72d52ec71301"
   },
   {
     "id": "adafruit-tmc2209-6121",
-    "geometry": "6f75aade81f3911a7cf8e439634b9aeb9481c3f86c7d55031c872796e74ea800"
+    "geometry": "6f75aade81f3911a7cf8e439634b9aeb9481c3f86c7d55031c872796e74ea800",
+    "physicalGeometry": "e41a18be28a3a33d09906b6e9fac368044caef0b7aa509f0b1642a8c58be1fae"
   },
   {
     "id": "keyestudio-ks0011-5v-relay",
-    "geometry": "fe74f31ae15566262021fc22fdfd7cdddbd6a6aa1aa372479e349f5c31810509"
+    "geometry": "fe74f31ae15566262021fc22fdfd7cdddbd6a6aa1aa372479e349f5c31810509",
+    "physicalGeometry": "ce421ce84ec1e428a466764d56901e1cf78897b75652f16335f05be721919a28"
   },
   {
     "id": "adafruit-pca9685-815",
-    "geometry": "ad39dd4592a8bfc00db9972e7c312544c213eaac546947433f2a71557f217f0c"
+    "geometry": "ad39dd4592a8bfc00db9972e7c312544c213eaac546947433f2a71557f217f0c",
+    "physicalGeometry": "c7f97d143a5847e30903d4ecde2012c85a79492253668cadfc396a62f9b93090"
   },
   {
     "id": "sparkfun-bss138-level-shifter",
-    "geometry": "a4a05195a2f5e09fa7fd2be88b6b100000eb1139d4da879d38af005bf693a8f5"
+    "geometry": "a4a05195a2f5e09fa7fd2be88b6b100000eb1139d4da879d38af005bf693a8f5",
+    "physicalGeometry": "cd5acca972bd85d09bc3840b133bc6869b01cdb7e103fb4afe95f4ec02858fe2"
   },
   {
     "id": "adafruit-tca9548a-2717",
-    "geometry": "f889f382a216373ca338ae6a9dd86452143e94bb7e3ceb94cd3ff9c013295f12"
+    "geometry": "f889f382a216373ca338ae6a9dd86452143e94bb7e3ceb94cd3ff9c013295f12",
+    "physicalGeometry": "81841d08e0c9fb22a801624e299269ca19549b61578f845ae105f2ce14d3c853"
   },
   {
     "id": "adafruit-mcp23017-5346",
-    "geometry": "e0e15a020f2a8c9c96a17f204872c1c868043c92281a8c24a2eb360319cd4356"
+    "geometry": "e0e15a020f2a8c9c96a17f204872c1c868043c92281a8c24a2eb360319cd4356",
+    "physicalGeometry": "b38765c53a74fe1899c7faf7daf7fb8de98fb669887ed362f3926631c9d91bd4"
   },
   {
     "id": "sparkfun-ch340c-serial-basic",
-    "geometry": "68b561cc10cc405f2ffa25afbfdc424d26193de485b6b366933c123052bc68d7"
+    "geometry": "68b561cc10cc405f2ffa25afbfdc424d26193de485b6b366933c123052bc68d7",
+    "physicalGeometry": "5c6242114216c3db1bcd6bc6c55f97f61265cf23bf2b7cd31653b917d64c5c8f"
   },
   {
     "id": "waveshare-cp2102-usb-uart-mini",
-    "geometry": "4945e6c84b31e80b400be69c979eafbdab8c9693238af77e48b99bdd9837b7aa"
+    "geometry": "4945e6c84b31e80b400be69c979eafbdab8c9693238af77e48b99bdd9837b7aa",
+    "physicalGeometry": "bb0f4756608b817356a9c1ced6c2a472a3505e154aba8e18de362b280684d1e4"
   },
   {
     "id": "adafruit-ft232h-usbc-2264",
-    "geometry": "68b8abd4876a3d1453d2d751040e68b3f9fdaf5ffb543a8244cb380a794bd7df"
+    "geometry": "68b8abd4876a3d1453d2d751040e68b3f9fdaf5ffb543a8244cb380a794bd7df",
+    "physicalGeometry": "9f12778bea61587ea90d7ecbe497a0df2ffc80b028c3a6dc5880c6c1e5ff295b"
   },
   {
     "id": "joyit-sbc-can01-mcp2515",
-    "geometry": "36f7784d35498be39f8c07f4a9dc5160a2a5083b422f59e051dd12223b15ca24"
+    "geometry": "36f7784d35498be39f8c07f4a9dc5160a2a5083b422f59e051dd12223b15ca24",
+    "physicalGeometry": "4b0e8143e4a585cdc0cba64bc8964ed583fd00533c65c6a03bcd0da20f397707"
   },
   {
     "id": "dfrobot-lcd1602-dfr0557",
-    "geometry": "253000133ef4adff19201ff7324ce0e6afedab609889aa9cf9bbd03f02e3b23c"
+    "geometry": "253000133ef4adff19201ff7324ce0e6afedab609889aa9cf9bbd03f02e3b23c",
+    "physicalGeometry": "ad81b6a2818e5d0424603a1b4835ec8e9d7cc737c5f6ddaba5f1ed16aa56f18f"
   },
   {
     "id": "dfrobot-oled-dfr0647",
-    "geometry": "be1d59dc9c93801d4b796c41233e84f4f4d2076a4a4927a8daabff3ce174f9ad"
+    "geometry": "be1d59dc9c93801d4b796c41233e84f4f4d2076a4a4927a8daabff3ce174f9ad",
+    "physicalGeometry": "96abc740cbe684e93a2d70b08dbbce6d82fed6728f6555e2385a178c2d3841a4"
   },
   {
     "id": "dfrobot-st7735-dfr0847",
-    "geometry": "f645f952b3ab1dc49d8b7ba4bc66d213b1c7c86ef963eeb342a8c55df4dad9e3"
+    "geometry": "f645f952b3ab1dc49d8b7ba4bc66d213b1c7c86ef963eeb342a8c55df4dad9e3",
+    "physicalGeometry": "7f9abead2e9d575b1e8ea7d5cb3c8bbe336a89e336cf39893b5b3a88946e8840"
   },
   {
     "id": "waveshare-sh1106-oled-b",
-    "geometry": "9d460cb7854e47d92d22b5456dae3c6a145dc248496bb01dd8b44eb78af6ec99"
+    "geometry": "9d460cb7854e47d92d22b5456dae3c6a145dc248496bb01dd8b44eb78af6ec99",
+    "physicalGeometry": "c348645eae05295a02c46665772e3f0aab13b5334231337cf28058d2c13fb7be"
   },
   {
     "id": "seeed-grove-tm1637",
-    "geometry": "51263f2649d54c0bec93e730d2f92a40ed0c7e71bd2d80d4f919e05a30a01cd4"
+    "geometry": "51263f2649d54c0bec93e730d2f92a40ed0c7e71bd2d80d4f919e05a30a01cd4",
+    "physicalGeometry": "c6cca12bd49916e8b8edeb067bfa857ce1647dfb68e0f84cba605f9e9a0ee435"
   },
   {
     "id": "dfrobot-ws2812-dfr0459",
-    "geometry": "9d03178beb98e153e1b6a39e5adcb4862f7f15655103f7a3adbdeb46f58026b2"
+    "geometry": "9d03178beb98e153e1b6a39e5adcb4862f7f15655103f7a3adbdeb46f58026b2",
+    "physicalGeometry": "aa589663ae0454c361fd7939d464727d68ffd4960f07241237b9d4b84493b917"
   },
   {
     "id": "adafruit-ds3231-rtc",
-    "geometry": "112bc5bac5b233a70894bce2c43d7833756278a02beaba105f99503c13e06920"
+    "geometry": "112bc5bac5b233a70894bce2c43d7833756278a02beaba105f99503c13e06920",
+    "physicalGeometry": "e82f83252c5dcacee4c87078e6a6ee6d4fce24d00c38bef86bb15010f4b78cfb"
   },
   {
     "id": "adafruit-microsd-spi-254",
-    "geometry": "ade0d61588ad6f43ab7dbbe33ece96993845ee9de311dff1e2daf12c981155b3"
+    "geometry": "ade0d61588ad6f43ab7dbbe33ece96993845ee9de311dff1e2daf12c981155b3",
+    "physicalGeometry": "614285f478305d1a740767e79f7866b2917fb8e5901430ee139f39428d9f2d1d"
   },
   {
     "id": "sparkfun-openlog-13712",
-    "geometry": "7480fb44b4b74f776a81dfb1bc5aebe7eb3282e62efee997d65e135661d03c4e"
+    "geometry": "7480fb44b4b74f776a81dfb1bc5aebe7eb3282e62efee997d65e135661d03c4e",
+    "physicalGeometry": "1511b812cd1d28d94fd8ce9cce31a448c79189c4ab9a28250060dc59dd52cc09"
   },
   {
     "id": "adafruit-max98357a-i2s",
-    "geometry": "fbc99e14c7cbabbee98a79cbe65fa895cf32cb64102d0f23ec1c1b300ce64ff6"
+    "geometry": "fbc99e14c7cbabbee98a79cbe65fa895cf32cb64102d0f23ec1c1b300ce64ff6",
+    "physicalGeometry": "fccef521a725f0397179e074c62af5cc9562eb24b5b1ffe559cc0404ad094656"
   },
   {
     "id": "keyestudio-rc522-ks0067",
-    "geometry": "926a95eea9cf4658ef8a9f0cc3982ff2dda27813c925da123b525adf87c2af19"
+    "geometry": "926a95eea9cf4658ef8a9f0cc3982ff2dda27813c925da123b525adf87c2af19",
+    "physicalGeometry": "31d589023a2a9097e7d7a6560c7d75de9150823467defdec7ba558a37561a5de"
   },
   {
     "id": "waveshare-uart-gps-neo-6m",
-    "geometry": "e1ade716e495e8aabc50ca49c2edc4857d974c13135df0e67cf4650a1cdc92d5"
+    "geometry": "e1ade716e495e8aabc50ca49c2edc4857d974c13135df0e67cf4650a1cdc92d5",
+    "physicalGeometry": "b42cb414bd6d3c0807ac70a0db7a408f0c356f3f87f0f5d4bb63d3f66c0d4924"
   },
   {
     "id": "dfrobot-dfplayer-mini-dfr0299",
-    "geometry": "21eec2c5a98f2722a9212a1130d079f1ddf76cf3508d784c627e66916b54eb9b"
+    "geometry": "21eec2c5a98f2722a9212a1130d079f1ddf76cf3508d784c627e66916b54eb9b",
+    "physicalGeometry": "93084320d8dcaac01dfd6a4c4bb23afc1cfe1fe95361b71e763b94e764bec486"
   },
   {
     "id": "dfrobot-dfr0667",
-    "geometry": "4a6417fff922e086d2e4b710aee5b7160e62855951d22c572ac9e2a0cec951ce"
+    "geometry": "4a6417fff922e086d2e4b710aee5b7160e62855951d22c572ac9e2a0cec951ce",
+    "physicalGeometry": "8afcb39b5f418513bc8db44da1a47c1ea9806b1da6fa18a02645ba207a20428d"
   },
   {
     "id": "dfrobot-dfr0668",
-    "geometry": "4a6417fff922e086d2e4b710aee5b7160e62855951d22c572ac9e2a0cec951ce"
+    "geometry": "4a6417fff922e086d2e4b710aee5b7160e62855951d22c572ac9e2a0cec951ce",
+    "physicalGeometry": "8afcb39b5f418513bc8db44da1a47c1ea9806b1da6fa18a02645ba207a20428d"
   },
   {
     "id": "beemong-fa2119-tp4056-usbc-protected",
-    "geometry": "d314dcdab0b755fdf7fd5870c2600f01feb8de529d0b90dc5717f0e72df9ea7d"
+    "geometry": "d314dcdab0b755fdf7fd5870c2600f01feb8de529d0b90dc5717f0e72df9ea7d",
+    "physicalGeometry": "880f87db13bb037593114d23b61735a77fcfb763d2507053d21efb1f216fb064"
   },
   {
     "id": "adafruit-powerboost-500c",
-    "geometry": "bf3474f67ea04cffa1657cfa941b9dad8e87954ce189e34f5ee49897b8126b94"
+    "geometry": "bf3474f67ea04cffa1657cfa941b9dad8e87954ce189e34f5ee49897b8126b94",
+    "physicalGeometry": "844ed49528086d89c51d23e0705adde2e96ba8d2cb30ca92fee844fc2a9c300f"
   },
   {
     "id": "adafruit-powerboost-1000c",
-    "geometry": "2bab189d12c2fb2d65848fcdc3f1e2d60dc951ecbc00d6638919be9882c55074"
+    "geometry": "2bab189d12c2fb2d65848fcdc3f1e2d60dc951ecbc00d6638919be9882c55074",
+    "physicalGeometry": "c1be97b5a48f88379a678ed53f1c5c7f9727f5e65b31c01aabd308dcc42327f0"
   },
   {
     "id": "keyestudio-ks0187-acs712",
-    "geometry": "a269edc26c26e5c284f5c8b7a0441b3a8e747dd9b711b1c1fc67b5c01ff8af2c"
+    "geometry": "a269edc26c26e5c284f5c8b7a0441b3a8e747dd9b711b1c1fc67b5c01ff8af2c",
+    "physicalGeometry": "cece8afc40e78684ee8ca6468ef932ba29f65f425a1b593520929b4cd0ef32ba"
   },
   {
     "id": "keyestudio-ks0186-acs712",
-    "geometry": "a269edc26c26e5c284f5c8b7a0441b3a8e747dd9b711b1c1fc67b5c01ff8af2c"
+    "geometry": "a269edc26c26e5c284f5c8b7a0441b3a8e747dd9b711b1c1fc67b5c01ff8af2c",
+    "physicalGeometry": "cece8afc40e78684ee8ca6468ef932ba29f65f425a1b593520929b4cd0ef32ba"
   },
   {
     "id": "keyestudio-ks0185-acs712",
-    "geometry": "a269edc26c26e5c284f5c8b7a0441b3a8e747dd9b711b1c1fc67b5c01ff8af2c"
+    "geometry": "a269edc26c26e5c284f5c8b7a0441b3a8e747dd9b711b1c1fc67b5c01ff8af2c",
+    "physicalGeometry": "cece8afc40e78684ee8ca6468ef932ba29f65f425a1b593520929b4cd0ef32ba"
   },
   {
     "id": "adafruit-5807-husb238",
-    "geometry": "6ff4aa2130778783a7e9e7d006c16a7abc4cdcdde449a32cc684e216985f168d"
+    "geometry": "6ff4aa2130778783a7e9e7d006c16a7abc4cdcdde449a32cc684e216985f168d",
+    "physicalGeometry": "4dd81129179825f2b55d61fdf18889ae59e9e8dfdeb64c154f6d3354779c50fb"
   },
   {
     "id": "adafruit-5580-max17048",
-    "geometry": "64330d9125b1a56944e714d75ee7f7bf241bc86b5819ca42ba84eacbf46408c6"
+    "geometry": "64330d9125b1a56944e714d75ee7f7bf241bc86b5819ca42ba84eacbf46408c6",
+    "physicalGeometry": "7708db5ef6e8173f77e2b028e9424f5c2b6d02fef30c96bc301d927a80343e83"
   },
   {
     "id": "adafruit-4226-ina260",
-    "geometry": "0b2488519773c9e3aaf10712575b1e566dba8abc089899a7d8af09f42aff8fec"
+    "geometry": "0b2488519773c9e3aaf10712575b1e566dba8abc089899a7d8af09f42aff8fec",
+    "physicalGeometry": "cf8a9b015a01fbf80c5692e4dfcd4051a10738bc07d1c0fb4b2feb9e0c61c3b7"
   },
   {
     "id": "adafruit-4410-microlipo-usbc",
-    "geometry": "15618907f86115fb7e2b5c7e264277e39eaa777837470b623aaf0d82ea2a9b3d"
+    "geometry": "15618907f86115fb7e2b5c7e264277e39eaa777837470b623aaf0d82ea2a9b3d",
+    "physicalGeometry": "a773c08cbbc675785bb35b642b2ef0f604efa94d0ff16129ef8d79bf3334a2d4"
   },
   {
     "id": "makerfabs-mp1584en-mini",
-    "geometry": "c8a0700fdebb8c6786ea14345bc4489b5ae23827ff8ed0ae75cca70de273f5c7"
+    "geometry": "c8a0700fdebb8c6786ea14345bc4489b5ae23827ff8ed0ae75cca70de273f5c7",
+    "physicalGeometry": "d02eec5eda9fc2c7c1eb5b525fc6763df09d9ca5aff49d51ce4925cbe56bb384"
   },
   {
     "id": "dfrobot-dfr0559-solar-power-manager",
-    "geometry": "109ab2d6ccde9d919bb3598940392c8ac5cd6a55bbb9fccfa6a081cfcc8cbf01"
+    "geometry": "109ab2d6ccde9d919bb3598940392c8ac5cd6a55bbb9fccfa6a081cfcc8cbf01",
+    "physicalGeometry": "d1d4862f1d3fc9f1164ecbdd71d537cf9cc6584e38633f6cb1e2c2e2f9cc2e23"
   },
   {
     "id": "adafruit-aht20-4566",
-    "geometry": "3052e04d39f5713c5e282fd381f21e302e1e016fe20bdb3946fa4356359edce8"
+    "geometry": "3052e04d39f5713c5e282fd381f21e302e1e016fe20bdb3946fa4356359edce8",
+    "physicalGeometry": "5ed6da6a71a0a686d7ebe88a2b37eaddad78a2a09811c368ac1ee0fa8d697f30"
   },
   {
     "id": "adafruit-sht31-2857",
-    "geometry": "2a0fde5ebe407e84f21dac80e923ba8ba8ad2508da83a52ee3cf6b48b50484d6"
+    "geometry": "2a0fde5ebe407e84f21dac80e923ba8ba8ad2508da83a52ee3cf6b48b50484d6",
+    "physicalGeometry": "8ea7fdab06505b8f7e2ba7dca7e99bcd7ccf812b61ee90e0b40be2c420636a7e"
   },
   {
     "id": "adafruit-bmp280-2651",
-    "geometry": "a37918bab612e2689143d97d530104a6a7c0d76d156879d437483413fe36894e"
+    "geometry": "a37918bab612e2689143d97d530104a6a7c0d76d156879d437483413fe36894e",
+    "physicalGeometry": "6ae7dd6ea84615565fc3035229f75a55f86823db899e3b2409ef19d6554795ec"
   },
   {
     "id": "keyestudio-dht11-ks0034",
-    "geometry": "7c03519b6c13417d4c9960dfa1e0f523b24ebb9be77f4c7625726384cd599b52"
+    "geometry": "7c03519b6c13417d4c9960dfa1e0f523b24ebb9be77f4c7625726384cd599b52",
+    "physicalGeometry": "92219420650e7e00d5dcb5626f24dc1b983c5a62789cd0919d00ebdd10248aee"
   },
   {
     "id": "keyestudio-ds18b20-ks0023",
-    "geometry": "51943bac327ef0b0bf261e5445237fbdd7961c74a4e562a02f6564066a20a96a"
+    "geometry": "51943bac327ef0b0bf261e5445237fbdd7961c74a4e562a02f6564066a20a96a",
+    "physicalGeometry": "88242e8cf74d9615e1a79ed1e7c3a57c196db91c2584bdf1b886b0adf72aa152"
   },
   {
     "id": "keyestudio-bh1750-ks0278",
-    "geometry": "791167c0ea41197f189e6f4b1daaba63be8e49bdc4e13728640596f1fec59a49"
+    "geometry": "791167c0ea41197f189e6f4b1daaba63be8e49bdc4e13728640596f1fec59a49",
+    "physicalGeometry": "d1cbb43d6670a7bc023972dff43d522ff26b3e2044e3b9941c1d67265bfe1ed5"
   },
   {
     "id": "keyestudio-mpu6050-ks0170",
-    "geometry": "57de792bceeb4f1901c0d761ae6df37086fb9360afe20eee82eb4d5da667c031"
+    "geometry": "57de792bceeb4f1901c0d761ae6df37086fb9360afe20eee82eb4d5da667c031",
+    "physicalGeometry": "93f1388846c234dccfdd8fd7cef0efedd502a1cac79f7e72a22a7c32fbf950f7"
   },
   {
     "id": "keyestudio-pir-ks0052",
-    "geometry": "5273f11c672c4dd1d3892da1ceb707ad12aa052dbfa2f99b6fa81b157d078630"
+    "geometry": "5273f11c672c4dd1d3892da1ceb707ad12aa052dbfa2f99b6fa81b157d078630",
+    "physicalGeometry": "07beef5c8d38f71ef81b4167beed87e2c455b40c3e384df3f2f3ab90cd61f48a"
   },
   {
     "id": "keyestudio-touch-ks0031",
-    "geometry": "6718f73baef2efbd1c8678c71a2decc4d72be4bfd133075675c60e9d5249c9af"
+    "geometry": "6718f73baef2efbd1c8678c71a2decc4d72be4bfd133075675c60e9d5249c9af",
+    "physicalGeometry": "dbac6aeca8ba7b973809277c17f927be56989f36cfba0e5c518a3cc768748ef2"
   },
   {
     "id": "keyestudio-ir-obstacle-ks0051",
-    "geometry": "7b5fad02df0c15087a37ee27ae00ac032e64ec0d365a33e5bc827ca5c448c0a1"
+    "geometry": "7b5fad02df0c15087a37ee27ae00ac032e64ec0d365a33e5bc827ca5c448c0a1",
+    "physicalGeometry": "d1acf475c8869bbb11a04b7e77326f28ce2b6b94e52b20171b8fd6ca5450b29c"
   },
   {
     "id": "hc-sr04-ks0328",
-    "geometry": "8324b530e5583dd82d01e42dcb3959286903a6ec8ead34b14292c73481c005e6"
+    "geometry": "8324b530e5583dd82d01e42dcb3959286903a6ec8ead34b14292c73481c005e6",
+    "physicalGeometry": "d728b08f2fd9dbc4587a7708903ab9225da1b901cec26cb2ef46cd8c94473f8c"
   },
   {
     "id": "pololu-vl53l0x-2490",
-    "geometry": "84195d32663b09ef913e058509285a58a0d0c10314001f6c6f110885deb504fb"
+    "geometry": "84195d32663b09ef913e058509285a58a0d0c10314001f6c6f110885deb504fb",
+    "physicalGeometry": "3ad14e89351025c7ccd919f5f7cd7e1571ec1cacde2ccd59759db4c493fe53fb"
   },
   {
     "id": "pololu-vl53l1x-3415",
-    "geometry": "84195d32663b09ef913e058509285a58a0d0c10314001f6c6f110885deb504fb"
+    "geometry": "84195d32663b09ef913e058509285a58a0d0c10314001f6c6f110885deb504fb",
+    "physicalGeometry": "3ad14e89351025c7ccd919f5f7cd7e1571ec1cacde2ccd59759db4c493fe53fb"
   },
   {
     "id": "dfrobot-dht22-sen0137",
-    "geometry": "298276cdf19ed75194ca081e8385aa97db616b5dceae6d2c67148efdce82934d"
+    "geometry": "298276cdf19ed75194ca081e8385aa97db616b5dceae6d2c67148efdce82934d",
+    "physicalGeometry": "2526728c08ba82b1a9216359601d13a4eb3f03ac6e309fc716403cdeb7054dbb"
   },
   {
     "id": "dfrobot-capacitive-soil-sen0193",
-    "geometry": "629fdbbba5fffb29e8f9a46f91696f40d3bb4b35014b372b40d6d97866ee4a6a"
+    "geometry": "629fdbbba5fffb29e8f9a46f91696f40d3bb4b35014b372b40d6d97866ee4a6a",
+    "physicalGeometry": "8cfbcb473b8640f9ad06b203b82fe9a0e16c4119e5255aac52e2d634ea9b9922"
   },
   {
     "id": "hc-sr501-joy-it",
-    "geometry": "927a3260da93c718e314c013e48ff76afda017b9130c7c59bd9005555464ce04"
+    "geometry": "927a3260da93c718e314c013e48ff76afda017b9130c7c59bd9005555464ce04",
+    "physicalGeometry": "a55da225debbafa4d11d1db13818df36f35de7f3c28d09988e264ae037623936"
   },
   {
     "id": "adafruit-scd40-5187",
-    "geometry": "5f71c43419b73d280f442a76d25c0a13cb7dc1915a5f42be14f9635bc0e76ed0"
+    "geometry": "5f71c43419b73d280f442a76d25c0a13cb7dc1915a5f42be14f9635bc0e76ed0",
+    "physicalGeometry": "dcac5756345a945efc17fa716f6fd3ab478c28a44ee731a4be69874cd8ddbb6f"
   },
   {
     "id": "adafruit-pmsa003i-4632",
-    "geometry": "b6a3112e09f72879daddbf481867b60ce26f89f01dec2954578079b1faae5703"
+    "geometry": "b6a3112e09f72879daddbf481867b60ce26f89f01dec2954578079b1faae5703",
+    "physicalGeometry": "f93a64597733c268c6366b2728cdfc7e0001d775b71a06fc5a61c6a92ea66bd4"
   },
   {
     "id": "adafruit-bmp390-4816",
-    "geometry": "982a5ff85050d55a1e0a8bd748c39102e74a7f6be2a5db33ae7705394df37d99"
+    "geometry": "982a5ff85050d55a1e0a8bd748c39102e74a7f6be2a5db33ae7705394df37d99",
+    "physicalGeometry": "846068093c522700e59cc4d94f25e34228f008e47fcc585d06345b06b296b694"
   },
   {
     "id": "adafruit-sht45-5665",
-    "geometry": "ecd8ee585c1933919d11c52a73882e70707419b60c9534190ee1ca2782077ce6"
+    "geometry": "ecd8ee585c1933919d11c52a73882e70707419b60c9534190ee1ca2782077ce6",
+    "physicalGeometry": "0164a1fee930dd25bcaca49ff04760ecc90055b3b13120a07aaec23de49a1ef5"
   },
   {
     "id": "adafruit-mprls-3965",
-    "geometry": "0edb6b2e91d09f88e96fc3777a0b9dc816f60030f70f9c9cc9f3d25dada96bdc"
+    "geometry": "0edb6b2e91d09f88e96fc3777a0b9dc816f60030f70f9c9cc9f3d25dada96bdc",
+    "physicalGeometry": "4b6f2b357fbcafbb57d14ba0c87d87a67ecf763a979afb784efeac2884415b3d"
   },
   {
     "id": "adafruit-max31856-3263",
-    "geometry": "2aabfda71e54a1488f567d48e5503504d09ae40f37e7847705bc3693ded95d4a"
+    "geometry": "2aabfda71e54a1488f567d48e5503504d09ae40f37e7847705bc3693ded95d4a",
+    "physicalGeometry": "dd3a2b98fbd27835f156515ecd51f678d58eb75b6dd02e220c3a857d5863e93c"
   },
   {
     "id": "sparkfun-hx711-13879",
-    "geometry": "a5ef6c2bc325ffad4f18cb61147757d266a2a645685f1a461a2ace79ffb00395"
+    "geometry": "a5ef6c2bc325ffad4f18cb61147757d266a2a645685f1a461a2ace79ffb00395",
+    "physicalGeometry": "4e80a0343d16b604c25fd81b633ef4dcd2b8307b09742bf9fb7ee37cd85186de"
   },
   {
     "id": "sparkfun-tal220b-14729",
@@ -945,183 +1169,228 @@
   },
   {
     "id": "seeed-sw420-101020586",
-    "geometry": "0e34d36419310424803aeeb9e0f8923e1233db8fdd1edf37e11db59f82083319"
+    "geometry": "0e34d36419310424803aeeb9e0f8923e1233db8fdd1edf37e11db59f82083319",
+    "physicalGeometry": "87b4145466deae52a9ec24efaa51d8aafe5a1e15264fe71720517630d5b248dc"
   },
   {
     "id": "interlink-fsr402-44-29103",
-    "geometry": "4aff6b37ef999d5a79e1748efc79f3661ad964e007903c595273cbbed58da274"
+    "geometry": "4aff6b37ef999d5a79e1748efc79f3661ad964e007903c595273cbbed58da274",
+    "physicalGeometry": "a0aa46270d3e6f2219970a3ea00ddacaccc9b2d45fcad293836354082e92e991"
   },
   {
     "id": "adafruit-lis3dh-2809",
-    "geometry": "11c1a0acc5e5a55edf9fd87d490e7a675fd047f477196c60b3b7c001003635fa"
+    "geometry": "11c1a0acc5e5a55edf9fd87d490e7a675fd047f477196c60b3b7c001003635fa",
+    "physicalGeometry": "70e6cb127f661e576eebd8880c48ee021556a9663a79f1af9309503c35ac5bb5"
   },
   {
     "id": "adafruit-lis3mdl-4479",
-    "geometry": "a7f39ab9d3f7da7cc8159bceb26f05696b0a9c90fc7b3acbcc55815c8316d0a0"
+    "geometry": "a7f39ab9d3f7da7cc8159bceb26f05696b0a9c90fc7b3acbcc55815c8316d0a0",
+    "physicalGeometry": "f68492296f34748417aa52454041547448a406d4b6ca78a89dcff75a90b4a37e"
   },
   {
     "id": "adafruit-lsm6dsox-lis3mdl-4517",
-    "geometry": "67e856d2236880f162d1833d59c9329d87d54cba410307015e7070f1d3afc00f"
+    "geometry": "67e856d2236880f162d1833d59c9329d87d54cba410307015e7070f1d3afc00f",
+    "physicalGeometry": "2269f667ed6a543e808132aa621086112449c581173305b1d2c2a1f9e4cd4f11"
   },
   {
     "id": "adafruit-bno085-4754",
-    "geometry": "3d2d20d1f9519f3867e1daa3157f45bb1c3115cade382d4794cbd51cc61d2900"
+    "geometry": "3d2d20d1f9519f3867e1daa3157f45bb1c3115cade382d4794cbd51cc61d2900",
+    "physicalGeometry": "1b225ddcd342b23795838e544c50843f9999e48ef009651cfa62f87f7134f8da"
   },
   {
     "id": "raspberry-pi-3-model-a-plus",
-    "geometry": "5c8b8962a35b23b35c4c494bed662b9d36e37930dd68fba2dd7cbe0b0d9e4e57"
+    "geometry": "5c8b8962a35b23b35c4c494bed662b9d36e37930dd68fba2dd7cbe0b0d9e4e57",
+    "physicalGeometry": "1ca9a1dfc73ce61d6a0755b8736148174b1ba533f1a5cfbf785908f9ca2dedf9"
   },
   {
     "id": "raspberry-pi-3-model-b",
-    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213"
+    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213",
+    "physicalGeometry": "59166d1b71a3c02c53adcbb9e419786ce57bf37250c1e24c2cb32704f59cd2ea"
   },
   {
     "id": "raspberry-pi-3-model-b-plus",
-    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213"
+    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213",
+    "physicalGeometry": "59166d1b71a3c02c53adcbb9e419786ce57bf37250c1e24c2cb32704f59cd2ea"
   },
   {
     "id": "raspberry-pi-4-model-b",
-    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213"
+    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213",
+    "physicalGeometry": "59166d1b71a3c02c53adcbb9e419786ce57bf37250c1e24c2cb32704f59cd2ea"
   },
   {
     "id": "raspberry-pi-5",
-    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213"
+    "geometry": "c1030f6632da359d8f863a1b770a73afd707b0fb51bd7a29384750617b0ee213",
+    "physicalGeometry": "59166d1b71a3c02c53adcbb9e419786ce57bf37250c1e24c2cb32704f59cd2ea"
   },
   {
     "id": "towerpro-sg90",
-    "geometry": "b1f2260ff48736cdff96eb701a666ec9e8fe3dc7fb03cb46c197386662a34500"
+    "geometry": "b1f2260ff48736cdff96eb701a666ec9e8fe3dc7fb03cb46c197386662a34500",
+    "physicalGeometry": "09168205733a1c3f972830991d2766e982d7ba6500b8bbdd7fbfa814ff96df07"
   },
   {
     "id": "towerpro-mg90s",
-    "geometry": "b1f2260ff48736cdff96eb701a666ec9e8fe3dc7fb03cb46c197386662a34500"
+    "geometry": "b1f2260ff48736cdff96eb701a666ec9e8fe3dc7fb03cb46c197386662a34500",
+    "physicalGeometry": "09168205733a1c3f972830991d2766e982d7ba6500b8bbdd7fbfa814ff96df07"
   },
   {
     "id": "radiomaster-rp1-v2",
-    "geometry": "8ea301097d5cd388332c6dfe5a4b371439ce4203404aa8866baafe47e8aaf4c8"
+    "geometry": "8ea301097d5cd388332c6dfe5a4b371439ce4203404aa8866baafe47e8aaf4c8",
+    "physicalGeometry": "8bbd9277c6a0ea1f0667a127284163fc3c08b28658c03d0c5e6d4b02639c3521"
   },
   {
     "id": "betafpv-superd-2-4ghz",
-    "geometry": "8a88364281d36bab67b412373272bfaee5fce58da45ab45ffad36f0a26c7bd7d"
+    "geometry": "8a88364281d36bab67b412373272bfaee5fce58da45ab45ffad36f0a26c7bd7d",
+    "physicalGeometry": "b467b5130fc29c55cd7dd4e1f7c0621a434a11c852bab70e4d3a852d571ae80f"
   },
   {
     "id": "radiomaster-er4",
-    "geometry": "1257ac6199d57745a87d4b536921180b700395a0ffe59ad2d93f5c8bd67668d7"
+    "geometry": "1257ac6199d57745a87d4b536921180b700395a0ffe59ad2d93f5c8bd67668d7",
+    "physicalGeometry": "e51f77eccd22610810e204f59276438994541753046c5cf25751779fcd185d24"
   },
   {
     "id": "pololu-cp2102n-usb-uart",
-    "geometry": "1d8c94ec89ee9a18078ed576b466199c758caf2b1c7c1f6bb6ca85d019e9c8cd"
+    "geometry": "1d8c94ec89ee9a18078ed576b466199c758caf2b1c7c1f6bb6ca85d019e9c8cd",
+    "physicalGeometry": "7dbb6726567dd77593ac15d53febb19d47723bf29788c8813afd4448888f2fc8"
   },
   {
     "id": "speedybee-f405-wing-mini",
-    "geometry": "bd5b9ff9d5b19c6da1ac94f46e6707572cd6e9249482abfa93d6ca68e0462b55"
+    "geometry": "bd5b9ff9d5b19c6da1ac94f46e6707572cd6e9249482abfa93d6ca68e0462b55",
+    "physicalGeometry": "0ba27cf1e43ec7ce179ec2aec2d67d20c156f49aefb26502d055e15fbe73f08a"
   },
   {
     "id": "speedybee-f405-wing-app",
-    "geometry": "1b9f5345d935fc441b8c153b2670da72a2011a9ad71c5da0c00fc21a9a699a84"
+    "geometry": "1b9f5345d935fc441b8c153b2670da72a2011a9ad71c5da0c00fc21a9a699a84",
+    "physicalGeometry": "65cba6f5612740d3d227868d411e82cbbb11e0cf6798e02aa9a9ac4c0c6ba4c6"
   },
   {
     "id": "matek-f405-wing-v2",
-    "geometry": "46beae84d79a29d8b27f049093bbd043863878f494ca7450133016e510d51fdd"
+    "geometry": "46beae84d79a29d8b27f049093bbd043863878f494ca7450133016e510d51fdd",
+    "physicalGeometry": "fd2407f56057f538e9967e3c5b5c1f29072f4eb1fa34d8cefe4716cf5b600007"
   },
   {
     "id": "matek-m10q-5883",
-    "geometry": "c0bb25633f52262f60eaf207f6c8fd0dd79af9add1249c53bd0a11326b5eb5a3"
+    "geometry": "c0bb25633f52262f60eaf207f6c8fd0dd79af9add1249c53bd0a11326b5eb5a3",
+    "physicalGeometry": "15f9b7892e08927cd2c3964ce1ada8bdd0a5a9a74f4bf48b93ead8fea61e8661"
   },
   {
     "id": "waveshare-sn65hvd230-can-board",
-    "geometry": "e0063553b12291d88bb8113d98532838fc9efe2819f42daf3d81eea63157b846"
+    "geometry": "e0063553b12291d88bb8113d98532838fc9efe2819f42daf3d81eea63157b846",
+    "physicalGeometry": "7c1705b60c958474b005243815a92ce8f3ec49362b7dad2006449f84925b04e8"
   },
   {
     "id": "waveshare-pcf8574-io-expansion",
-    "geometry": "5b0d0284f5f3e4e7dfe67d900bef77973f9adab7ca4e77dd122a67b1e3271743"
+    "geometry": "5b0d0284f5f3e4e7dfe67d900bef77973f9adab7ca4e77dd122a67b1e3271743",
+    "physicalGeometry": "c1d466525af5a022e308fcdd45221408fcd2221e13a8718933dbf40bc23a188b"
   },
   {
     "id": "waveshare-usb-to-ttl-ft232",
-    "geometry": "fd465a16cac8fa74cc1773a16eb63b51268722835f1908fa1c4f5d159ed71d05"
+    "geometry": "fd465a16cac8fa74cc1773a16eb63b51268722835f1908fa1c4f5d159ed71d05",
+    "physicalGeometry": "77f3720194754a635621cf3220b8372ccc83e767a3d29a1f99971eb9a496c51f"
   },
   {
     "id": "waveshare-1in54-epaper-e",
-    "geometry": "cb9d3185cc864c5435022f3630e5d0b377068bb7e1c25c9df32177c00c149074"
+    "geometry": "cb9d3185cc864c5435022f3630e5d0b377068bb7e1c25c9df32177c00c149074",
+    "physicalGeometry": "6a4e203441e47677305796c09064f43f3e5c80f5c2914f3353faee128f4722aa"
   },
   {
     "id": "waveshare-rs485-can-hat",
-    "geometry": "585c0109cc31e915c12a83a7b2cf32d488749a1f0987237bb7c44977319bb464"
+    "geometry": "585c0109cc31e915c12a83a7b2cf32d488749a1f0987237bb7c44977319bb464",
+    "physicalGeometry": "24bc3e9a11cf4c7ea7a497efc6de1e5326ade1cb4834fb6b1be5d12cdbbce70a"
   },
   {
     "id": "waveshare-servo-driver-hat-b",
-    "geometry": "167886004d9228c1a7b88d793f706505f390be87d4c7f00c3f4bab807b2fdfe3"
+    "geometry": "167886004d9228c1a7b88d793f706505f390be87d4c7f00c3f4bab807b2fdfe3",
+    "physicalGeometry": "8100f05d290d34ff039d482fac0cfca0eea158336aa9ee5fc75388e566646e7d"
   },
   {
     "id": "ti-sn74hc595n",
-    "geometry": "3bc6e09812b90de67f966cf5ae2183e8b4e8d7c5d700e95579f804f2bb176d04"
+    "geometry": "3bc6e09812b90de67f966cf5ae2183e8b4e8d7c5d700e95579f804f2bb176d04",
+    "physicalGeometry": "797444d9d8f9093d3ebb167591a5abb9e2e03b65081e326913711d1c194b7fcd"
   },
   {
     "id": "ti-sn74hc165n",
-    "geometry": "a8792ee9cf522cd9b37cca718ef8ba623f8bf5c0d2856fe26fed773887097c27"
+    "geometry": "a8792ee9cf522cd9b37cca718ef8ba623f8bf5c0d2856fe26fed773887097c27",
+    "physicalGeometry": "bd75100ca979931012c5efe4a44febe2bfd531df647223ad60af5ffb2af1d0b4"
   },
   {
     "id": "ti-sn74hc14n",
-    "geometry": "6a98773ed73c89a66a5eb4ec21e73114f4372557138cc8068a4da485000aeac2"
+    "geometry": "6a98773ed73c89a66a5eb4ec21e73114f4372557138cc8068a4da485000aeac2",
+    "physicalGeometry": "3e2bb8e85893a5b6536159954134c58ce38a88bddc23c7478c8615eaa8a386f5"
   },
   {
     "id": "ti-ne555p",
-    "geometry": "12a0893569f739f316a83136ca1485708b85e7967a815e7d4c336cf00ffd7bd5"
+    "geometry": "12a0893569f739f316a83136ca1485708b85e7967a815e7d4c336cf00ffd7bd5",
+    "physicalGeometry": "26886bc8d5063c155afc5e9ec8f814543c0bfe87b64f62d10bae035c688d8b3d"
   },
   {
     "id": "ti-lm358p",
-    "geometry": "11f756ce7fc4129a7fc1428609c5090ac6902db2fd9a09c5726084d452e0feef"
+    "geometry": "11f756ce7fc4129a7fc1428609c5090ac6902db2fd9a09c5726084d452e0feef",
+    "physicalGeometry": "74a918383c74ff233efc5f79a318e6be8a3b31e9c25725a6fd37cc93819144ca"
   },
   {
     "id": "ti-uln2003an",
-    "geometry": "aa337f10dad4d3e8b03621b3b401fe21007ce558ebb6bb776283aabc7cb0c8de"
+    "geometry": "aa337f10dad4d3e8b03621b3b401fe21007ce558ebb6bb776283aabc7cb0c8de",
+    "physicalGeometry": "bcad80371455fc129fca76948272d77337a3e1ac27c8e0ba1862c1c8183a1f48"
   },
   {
     "id": "adafruit-mcp4725-935",
-    "geometry": "fbed1a964345d346ef8f6949f6f183eee1a2de20ba0f04bdcacac73d74697aa6"
+    "geometry": "fbed1a964345d346ef8f6949f6f183eee1a2de20ba0f04bdcacac73d74697aa6",
+    "physicalGeometry": "a89742708b564b9668465e887658a97242af7479f98c98ba17d4f1bdb10e6ab4"
   },
   {
     "id": "adafruit-mcp4728-4470",
-    "geometry": "c540490e620e26c6d46e15896a5350c7d13804f1b8bb80a6206d05bf2ee4a945"
+    "geometry": "c540490e620e26c6d46e15896a5350c7d13804f1b8bb80a6206d05bf2ee4a945",
+    "physicalGeometry": "8c6d29cb8832a09f4864696148537c19c41f87dc59fbb2d7fa403baa624b5f5c"
   },
   {
     "id": "adafruit-ds3502-4286",
-    "geometry": "e44372ebfa4f3df078e1694e148d09b8a0e2d70feda12d76d3073831e70855ec"
+    "geometry": "e44372ebfa4f3df078e1694e148d09b8a0e2d70feda12d76d3073831e70855ec",
+    "physicalGeometry": "a27b30c070b4afed37c823bfe70b00dbe043efdb80a6e3c38cd77951e1138aa2"
   },
   {
     "id": "adafruit-ad8495-1778",
-    "geometry": "9a8bfb51829d607cff34ea5fd5fc6e9c81ce928dfa7913481c99046ca524ca64"
+    "geometry": "9a8bfb51829d607cff34ea5fd5fc6e9c81ce928dfa7913481c99046ca524ca64",
+    "physicalGeometry": "6088f9c9ca4f09a67d470a20da98898b4127b0017a0c2d585d01d86fb7f6c2b6"
   },
   {
     "id": "adafruit-max9814-1713",
-    "geometry": "d711583728079201a3c89eb77d84589e16ede09b59552849860a59230d975564"
+    "geometry": "d711583728079201a3c89eb77d84589e16ede09b59552849860a59230d975564",
+    "physicalGeometry": "8eb6d08b17d9335c39a58f3b24827242d8de360ee5d080a741a19fa5865b1427"
   },
   {
     "id": "adafruit-sph0645-3421",
-    "geometry": "48f9a2edb2c47cf2844cddc307b7561431622f723d80554fb2932ed0bf7ca95e"
+    "geometry": "48f9a2edb2c47cf2844cddc307b7561431622f723d80554fb2932ed0bf7ca95e",
+    "physicalGeometry": "ad566169d849c7f2c1c751977834d5c008593362ba06643fbfebe2d5c3e7272d"
   },
   {
     "id": "adafruit-drv2605l-2305-qt",
-    "geometry": "082c0a1bce26a1e0cac3e824e8cb59802ce9c475a378cca83c880f1c4062b271"
+    "geometry": "082c0a1bce26a1e0cac3e824e8cb59802ce9c475a378cca83c880f1c4062b271",
+    "physicalGeometry": "667ed19cfe1eb4ffa8660d1ef7eb5ef9a83fa35e775845a35449a45ad8108e39"
   },
   {
     "id": "adafruit-pam8302-2130",
-    "geometry": "1df0716d02e3d8b7b31267a690746943e6886d9ae180d18c85a1bf5ad18ac3bb"
+    "geometry": "1df0716d02e3d8b7b31267a690746943e6886d9ae180d18c85a1bf5ad18ac3bb",
+    "physicalGeometry": "fa5726d50539064ea5d6e9450789a20537ab6f95526a6acc8255a0fdba90c636"
   },
   {
     "id": "adafruit-mpr121-1982",
-    "geometry": "d438d1ef16c94c7cbc4c64caf2fbd82d8926e25fd0993618685ef3288f881a00"
+    "geometry": "d438d1ef16c94c7cbc4c64caf2fbd82d8926e25fd0993618685ef3288f881a00",
+    "physicalGeometry": "7d9a54cad64c9bd6b5fa3ef525b949058d0d94bbaf5fc0d0fecfc064fc5290c6"
   },
   {
     "id": "adafruit-tca8418-4918",
-    "geometry": "e06a8e0fe890b2ae2574bffd87b089fc8dac7d3959540920591933a5b6fe38ae"
+    "geometry": "e06a8e0fe890b2ae2574bffd87b089fc8dac7d3959540920591933a5b6fe38ae",
+    "physicalGeometry": "b59eb7d1672b7e0af24e90fcd7e17354b7225116d6cef82a18ee2bc61c35d68b"
   },
   {
     "id": "adafruit-qt-rotary-4991",
-    "geometry": "186adaecc5ea2ca8c1c13f5ec978d607e0c566f97019b03034301cfd0d02de18"
+    "geometry": "186adaecc5ea2ca8c1c13f5ec978d607e0c566f97019b03034301cfd0d02de18",
+    "physicalGeometry": "9d6f8ccc578bb127dc51d566f8ba0a24af68ce48ba60a8c57f154a7a54e4c4f5"
   },
   {
     "id": "bourns-pec11r-4215f-s0024",
-    "geometry": "ae88f5b7d58d7b63f165bac1d4fddfe552849731669bb9194a17406be6e84922"
+    "geometry": "ae88f5b7d58d7b63f165bac1d4fddfe552849731669bb9194a17406be6e84922",
+    "physicalGeometry": "895c666d947bccc6c4c87976de7835cdca082b509e044e9a9ddbcb2badb00a4d"
   },
   {
     "id": "bourns-3296w-1-103lf",
@@ -1129,83 +1398,103 @@
   },
   {
     "id": "adafruit-tca4307-5159",
-    "geometry": "80b764d983ec0bc69dc730c3ec482aea0ec966f073dfd7c63e068c1cd167eb03"
+    "geometry": "80b764d983ec0bc69dc730c3ec482aea0ec966f073dfd7c63e068c1cd167eb03",
+    "physicalGeometry": "722d9b660257417816a8ad56961d11a002149db399b1930024ec9b891a645b16"
   },
   {
     "id": "adafruit-ds2484-5976",
-    "geometry": "f5b96453697b6aaa2da5ec289f2318ddcd3972b978548f79f8f5b047fdb8c9fd"
+    "geometry": "f5b96453697b6aaa2da5ec289f2318ddcd3972b978548f79f8f5b047fdb8c9fd",
+    "physicalGeometry": "ba0bd2d36ec75130fa05fd0eec8540edc9d6a93cfe5ea401371e277879287d41"
   },
   {
     "id": "adafruit-pcm5102-6250",
-    "geometry": "e369f10907cb42fe3d38cf9b389c0e760a5dd6e161715062172b5ebc25a9d8f5"
+    "geometry": "e369f10907cb42fe3d38cf9b389c0e760a5dd6e161715062172b5ebc25a9d8f5",
+    "physicalGeometry": "1c4670cd4f8043c4fafb1bb3c08adfaafb29f192c6a772d017e689083c3464d8"
   },
   {
     "id": "adafruit-ultimate-gps-v3-746",
-    "geometry": "dd2b2c54638562280dd05dcfee029b989b07a18266446a02d508d9aebd96d091"
+    "geometry": "dd2b2c54638562280dd05dcfee029b989b07a18266446a02d508d9aebd96d091",
+    "physicalGeometry": "d60633101b7541b571c86471e7341921eb7bd0ea794415f3a08a8fdba4133ac0"
   },
   {
     "id": "waveshare-pcf8563-rtc-board",
-    "geometry": "8de13ed77b8322181c70c4d578a1a00cf63b98e268fd3e1e1d5c5d041a0a48c6"
+    "geometry": "8de13ed77b8322181c70c4d578a1a00cf63b98e268fd3e1e1d5c5d041a0a48c6",
+    "physicalGeometry": "0a29bad8eeb807905d2c88b499c1b018279e861b29e67df7b2e4168a46b5be4f"
   },
   {
     "id": "waveshare-rs232-board",
-    "geometry": "67040d17bfa199d7a81e8f32126fa755601b8c3f2784d2e3a14e73172386a5ee"
+    "geometry": "67040d17bfa199d7a81e8f32126fa755601b8c3f2784d2e3a14e73172386a5ee",
+    "physicalGeometry": "31816cec6c8097dc1decaa2b28de7d5fb214d37491e61e8d97e16120ed1cb364"
   },
   {
     "id": "waveshare-l76k-gps-module",
-    "geometry": "46755a18a3fd414315605c939c9b6185b8b4358ace812ad1e658a089ac863797"
+    "geometry": "46755a18a3fd414315605c939c9b6185b8b4358ace812ad1e658a089ac863797",
+    "physicalGeometry": "c0397f7a1df42bdd74550d743a68eb699230793528600d2e516aeca059d72ef7"
   },
   {
     "id": "waveshare-1in3-lcd-module",
-    "geometry": "28549ccd42637e1079b989350bcab865d7493a553587943f617e197ddf2bd303"
+    "geometry": "28549ccd42637e1079b989350bcab865d7493a553587943f617e197ddf2bd303",
+    "physicalGeometry": "c0434f01563affee3e76d22685d2679bb3ebfccb38b69a6e743d665f04b9029c"
   },
   {
     "id": "waveshare-bmm150-magnetometer",
-    "geometry": "f30f7f2b2910c93609961abf634f4672a6d8baef6fda14ee990554a27ceefe0f"
+    "geometry": "f30f7f2b2910c93609961abf634f4672a6d8baef6fda14ee990554a27ceefe0f",
+    "physicalGeometry": "69a32d1d56c81e28a503f7249ee204449d641bc9b36069cd9e2fe84c7e999b17"
   },
   {
     "id": "nordic-nrf52840-dongle",
-    "geometry": "9253be35d077748c51f3ce07f644b2800994e144ae5232336f7bffa40e659e68"
+    "geometry": "9253be35d077748c51f3ce07f644b2800994e144ae5232336f7bffa40e659e68",
+    "physicalGeometry": "4669fca2f769e906efcfe50cf098d2874ae6f59fac3036c2d573489a2612086e"
   },
   {
     "id": "nordic-power-profiler-kit-ii",
-    "geometry": "20e69355974fde152d517fd47217d8cf174d3194e26944707ac713554e821342"
+    "geometry": "20e69355974fde152d517fd47217d8cf174d3194e26944707ac713554e821342",
+    "physicalGeometry": "ae3bc5b17e96521ff32bcb52a216f4733cdbe9701b90a07a8a055d98953717af"
   },
   {
     "id": "nxp-brkt-stbc-agm01",
-    "geometry": "c134a0b93122fa05fc725036996bf566aab9cc6f5c2f83a9524d778009c56c46"
+    "geometry": "c134a0b93122fa05fc725036996bf566aab9cc6f5c2f83a9524d778009c56c46",
+    "physicalGeometry": "b18f76a6e25ca4fdf0caf2ca911bacc0ecf060401629ceb696585fd3820c91d3"
   },
   {
     "id": "arduino-nano-33-iot",
-    "geometry": "cc4373e4849421c7082e9e2b215ddf718ef8cdaa19efd714844f7ff4d4e20784"
+    "geometry": "cc4373e4849421c7082e9e2b215ddf718ef8cdaa19efd714844f7ff4d4e20784",
+    "physicalGeometry": "b9e94a5251b1d4ad7540889df99bcb6662358e124440cff19c1fe53a4f897682"
   },
   {
     "id": "arduino-mkr-zero",
-    "geometry": "06af928d6f9fc771ca58ee5a62a554b28816ed9fc95036470d9047ef7a14a6ca"
+    "geometry": "06af928d6f9fc771ca58ee5a62a554b28816ed9fc95036470d9047ef7a14a6ca",
+    "physicalGeometry": "54f30422cbe206100903b2346604d73234f373efc7729e7911ee366cf2578eb3"
   },
   {
     "id": "arduino-mkr-wifi-1010",
-    "geometry": "ed2d887eb99cb2ca3e428fe0c2bc9548eef99b42bcdbf70e6800f3565459096b"
+    "geometry": "ed2d887eb99cb2ca3e428fe0c2bc9548eef99b42bcdbf70e6800f3565459096b",
+    "physicalGeometry": "9cfa84959c74425677a4590d856ecf8215c9b8cc0c94378406156d259863da95"
   },
   {
     "id": "esp32-c3-devkitm-1",
-    "geometry": "fa3e79185882d830a079d3a6937185f724c27eade4789691ab41ee342c9eeb13"
+    "geometry": "fa3e79185882d830a079d3a6937185f724c27eade4789691ab41ee342c9eeb13",
+    "physicalGeometry": "1eedccecde32abc81e1de543d6fc33dddb2d81a8933048a4d77731e443e2c686"
   },
   {
     "id": "esp32-c6-devkitc-1",
-    "geometry": "429a1a6d7f0636986f72da5b63902f8d394e77a4f526ef9e0819e954dc51662a"
+    "geometry": "429a1a6d7f0636986f72da5b63902f8d394e77a4f526ef9e0819e954dc51662a",
+    "physicalGeometry": "af7471ed43adf704e7c52922c1a6a140d0036c0ccf92fafde3fd162c49b89282"
   },
   {
     "id": "esp32-h2-devkitm-1",
-    "geometry": "e1f49a4fbf0a0064f399fa986f8b0cf4b5ed626aa65f7414905e20883bc126d3"
+    "geometry": "e1f49a4fbf0a0064f399fa986f8b0cf4b5ed626aa65f7414905e20883bc126d3",
+    "physicalGeometry": "ad0ddd9c06c3f5493a6464718ba884092adccac8f296674beb6ea7e0a1338f7d"
   },
   {
     "id": "semtech-sx1261mb2bas",
-    "geometry": "93c05aa184b49e8c691f0ccfa82dd1fae06dcc4d163e9ac73db06579d44d079c"
+    "geometry": "93c05aa184b49e8c691f0ccfa82dd1fae06dcc4d163e9ac73db06579d44d079c",
+    "physicalGeometry": "f846a7918319df17cbcc3d9c3b4efa3c923f5234018109aaa6d69e150ddf2e42"
   },
   {
     "id": "semtech-sx1262mb2cas",
-    "geometry": "93c05aa184b49e8c691f0ccfa82dd1fae06dcc4d163e9ac73db06579d44d079c"
+    "geometry": "93c05aa184b49e8c691f0ccfa82dd1fae06dcc4d163e9ac73db06579d44d079c",
+    "physicalGeometry": "f846a7918319df17cbcc3d9c3b4efa3c923f5234018109aaa6d69e150ddf2e42"
   },
   {
     "id": "hlk-7688a",
