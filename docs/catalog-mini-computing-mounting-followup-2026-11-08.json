@@ -1,0 +1,4652 @@
+{
+  "reviewedDate": "2026-11-08",
+  "baselineRevision": "dd3fb5c3da7aef333524274eebc225258af46a5b",
+  "scope": "All 12 previously deferred Luckfox/Sipeed/Brisbane/Trenz mini-computing entries; targeted follow-up of the 85-entry mini-computing audit, not a second whole-catalog audit.",
+  "checkedEntries": 12,
+  "newSupportedProfiles": 7,
+  "resolvedAdapterExclusions": 1,
+  "remainingSourceGaps": 4,
+  "policy": "Preserve every published component ID, pin ID, electrical definition, native SVG and KiCad output. Source-reviewed coordinates activate only on new explicitly fitted breadboard-view instances. A source gap is distinct from an incompatible physical pattern. Nominal-post inference and stale CAD metadata are recorded explicitly; no global fit tolerance was changed.",
+  "canonicalPreservation": {
+    "sipeed-tang-nano": {
+      "definition": "133c79e4d777f1cef09a81c0201923628178eca14b64f1c50f801d27275d45eb",
+      "art": [
+        "e1d3a634ea6a51437c1e6042340e5dab4c6b5fc4f1f52438537b2c42dba230ba",
+        "97e61ba9ba66887ff0e1266b5ec697f8c8542ba17ec399a46f7e61ef0f6be846"
+      ],
+      "native": [
+        "3aff2f2aea24dabcb60e2a9980e9f1161de3c17530e6c51628d4688fa43c1620",
+        "ad591804fdfd61a690cf7a671c6d6f96ef3dbca8e6d54766f3e8e4f113820468",
+        "a956ca67a597bd31f97c4b29806e6fc6e4057b27a5296533ca186c5a5e94ed46"
+      ]
+    },
+    "sipeed-tang-nano-1k": {
+      "definition": "33b5a532f07ef83e4bf700d0d77c4ac70c2fa16b9b5796c632364a90da3c1b14",
+      "art": [
+        "297d37395c9d2f8a570d15ef4c84718808b83d0debe3faf7f7d60fc2dff4355f",
+        "671b5a5d7223c2971deb688b7d6313dffd519b0869c13b05ba5afe5a0b8ba5df"
+      ],
+      "native": [
+        "a5322661c067c6e0c8dfaf2a5428066f26dd4f7c84d39b97f01fce7171b59478",
+        "0480dd932132518902c318e68896a7495fd658c6bc3fffe613dcd361a041f4b8",
+        "f8597f653203af54e36a7d3603f61f9c4f5ba0b4287fb447c98b5856336de352"
+      ]
+    },
+    "sipeed-tang-nano-9k": {
+      "definition": "243eff32efdaa26144ee1df78c92cdc20358400609533bbe0f95fa98d0fe363b",
+      "art": [
+        "2ab17269b9ab58f9f7a6872e0464fe952ba06c81560755c46bcb901b3cdef9cc",
+        "313327e87eb405aaacac939980a9710f09f3b2254ff31655ad00632aecbb949d"
+      ],
+      "native": [
+        "2e98467ff4c5aa09e2bf00dad57cfa52c2b5c29a9a6f8d20320c1b25c15c176f",
+        "74e635288fdf17ad39eac363ab0c1d0ecc1423c38af22b281466def924dd108e",
+        "9fa527be8aa37940e676d0cc300187ecba8cdb158a88ab7d38576665523e9b91"
+      ]
+    },
+    "sipeed-tang-nano-20k": {
+      "definition": "ad5b149bfe14210ff08591614e4788c305057c2876c2ae04a9c18952e7e4e90c",
+      "art": [
+        "30f4b301c64579d604d78ffe3f942a995e621e657cc605d0be3dcf66cd66c33b",
+        "7eee67b4f97699606484732791f4ed248bed7c35755dd76f8357f88c08931378"
+      ],
+      "native": [
+        "cba9296342cb91d340302e6746c08044129811e332aa9ffe00afa1352d242727",
+        "f172da76112e0c6ad40fe2e4b8820bca3261f5f8d2de719636a2f49a156420f9",
+        "dbe407a3cee6a4c99a0941f94e5b4503278970c0b4f2d144b0468118c1f65c72"
+      ]
+    },
+    "sipeed-maix-bit-v2-0": {
+      "definition": "815e792bae0fc4cfba75003601723da7232dc6e5464a0fd25c4f4f77644a1d19",
+      "art": [
+        "052b609eb3546a9cf522db1aa995d348f6717c0982f761c9b97f41d5bf6d0068",
+        "75a192ea186854d2aadd325c08afef6e6c7a4c3954582a6256423d15c15e1952"
+      ],
+      "native": [
+        "6cec42041d002f1405ca38f7390d3feb7ee403b8ccd704d4b2c36970b7691e83",
+        "8cbf5ebb0b8731ab6624386f1b29e7b1536b67c6aa9760aeb743b47fc8682b49",
+        "18be4deefa9c8937102236ba1a2e05975f9c96d15e42a910a4b260d3781b491b"
+      ]
+    },
+    "sipeed-maix-ii-dock-3072": {
+      "definition": "d5990e0078634adb27464955be537bf399eee2cebcbb90db9a893cc3afc17ad4",
+      "art": [
+        "719a110530cf2cc7fb3169979abf90a9c872225af0ff06f41a83f880c5a54cb2",
+        "724dc12b78464ec3014e73377ef3a5364e579c4d3dcd75910764f5fbbba1e2fe"
+      ],
+      "native": [
+        "ddc0bf91550bc414f30cc646eacdfbce6547e0069913bad58168ef48d267fea4",
+        "a9299b983cd9cd2ac22c20937e26d90ab2a4782f7d1848bebd052c7cf0aff3eb",
+        "0f98f2666c2a8477f14e29a241c2f8841d67fc8a87d48c672edbb6859cb07a99"
+      ]
+    },
+    "luckfox-pico2": {
+      "definition": "383720995dd78dcfca2b7ded2e174e62a431f48cc0422679af467143a5a7a994",
+      "art": [
+        "010413ab44b9d0f700b79ba523151d8670bbb5c940ff8eff8172b6d294853c1b",
+        "fa1e7c7a13f4673bbc9ee2d59a3bde0c05c6d8609d7c53dc0a64fad231dd84e9"
+      ],
+      "native": [
+        "bf6b868b5dfd2c8efe3cf2cfcb0dd0b02dcd2be22ec5dfa77126e17731ef52b7",
+        "23e90ef23a635048534e07999dcc6db0d6a102fa0d400c7630180e184eaff9e9",
+        "bd6e992252288f95301336ad55caeae094129e3456a7deffccd3a29232f4d671"
+      ]
+    },
+    "trenz-tec0117-01": {
+      "definition": "56e460b6425f50714e1718b5c7fda8bac658eca1ccb0d928a84d2fda6f0099fa",
+      "art": [
+        "50111b65b2339511f7204ae10b873171eff458757117511764b20ae926cc2d7a",
+        "f78b04391ba47dc482fbe72af5edeb740d7badd0aaf12a2675e007165d18aa1a"
+      ],
+      "native": [
+        "fbe06797a2bfa6608d91c71825255d8244b4f87e2a5f0430ed41d7e13d065eec",
+        "93d5836402ebb2818b66fc06d7d46b1dc412ef1f5daae395595ed20e2e1ca7e8",
+        "919f6dc619807303bcf5a2912480d3228c633c7f7f002b0054c39205ace89155"
+      ]
+    },
+    "sipeed-lichee-zero": {
+      "definition": "d684bccb7347d4afca70d1d243bf091b33c809f0d4df5bdd5d8b8b64c19681c8",
+      "art": [
+        "a8f3af99e711a89236b5bc182d308b3a32c7d4c291d5730ff5613f3d58270552",
+        "29dc7a802140a7070a27d68be5df726be82e5fea4f7fe832001e2cdcc3e99835"
+      ],
+      "native": [
+        "b4e4e7f68c431a4ea586d25e970f1930f99d1866de6699a4b188f0bb808e1512",
+        "9c5a9ce634555e1e4d7b281efadb8518c812d297736476e5837fda1d1b29511b",
+        "dbfaaaff7cdabf989c6b71dab3ec81b79408b35ffb8fa498f331d6d9bdee5193"
+      ]
+    },
+    "sipeed-tang-primer-eg4s20": {
+      "definition": "e74bcde10431d524b8de5475a2c7364c3755a7ff4712e30dcd5fedb1fcb3e8fa",
+      "art": [
+        "1c5f3b18757ef74fd3afafc414dd6339e293ab5d9a97405b14ebf39b88a5c1d8",
+        "ca3159cd3655dc63cdbe4e11047dc674e314c0efae371e0d5936bb7f95419524"
+      ],
+      "native": [
+        "eaba836e02e5d5d50d5748e55b0c7f8d9ca4ea08859119438e139e61f9a93153",
+        "533be523e353eaddd5442657a28040b857024cbc7624a946d41ba78c4560e64b",
+        "d04f2b9d813acb2c0be33859f8fc5a8394fa8a2c77d6c4af4975dc853a3d2487"
+      ]
+    }
+  },
+  "entries": [
+    {
+      "id": "luckfox-pico2",
+      "family": "luckfox",
+      "manufacturer": "Luckfox",
+      "revision": "RP2350A / USB-C / dual-core MCU",
+      "source": "https://wiki.luckfox.com/Pico2/Pinout",
+      "decision": "deferred",
+      "reason": "Source identity mismatch, not a pitch exclusion: the catalog explicitly describes a distinct Luckfox USB-C/microSD board. Luckfox current Pico2 pinout and its linked Hardware/Schematic/Pico-2-schematic.pdf and Docs/datesheet/Pico-2-datasheet.pdf actually identify the official Raspberry Pi Pico 2 (micro-USB, no microSD). That PDF explicitly confirms 40 main 2.54 mm breadboard-compatible contacts, but it does not establish the different physical board currently represented by this published entry. Do not silently substitute a Raspberry Pi PCB or invent its auxiliary centers; the exact catalog hardware identity must first be corrected/reconciled.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "previousDecision": "deferred",
+      "sources": [
+        {
+          "label": "Luckfox current Pico2 pinout",
+          "url": "https://wiki.luckfox.com/Pico2/Pinout"
+        },
+        {
+          "label": "Luckfox-linked Pico 2 datasheet (Raspberry Pi PCB)",
+          "url": "https://github.com/Luckfox-eng51/Luckfox-Pico2-docs/blob/main/Docs/datesheet/Pico-2-datasheet.pdf"
+        },
+        {
+          "label": "Luckfox-linked Pico 2 schematic",
+          "url": "https://github.com/Luckfox-eng51/Luckfox-Pico2-docs/blob/main/Hardware/Schematic/Pico-2-schematic.pdf"
+        }
+      ],
+      "completePublishedPinCount": 43
+    },
+    {
+      "id": "sipeed-tang-nano",
+      "family": "sipeed-fpga",
+      "manufacturer": "Sipeed",
+      "revision": "GW1N-LV1QN48 / CH552",
+      "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano/Nano.html",
+      "previousDecision": "deferred",
+      "decision": "supported",
+      "reason": "Manufacturer 2704 DXF INSERT blocks HN1X20_B_2/_3 contain all 40 main holes at X=-8.7884/8.9916 and Y=-29.718+i*2.54 mm. HN1X2_4/_5 supply all four JTAG holes. Tang-Nano-Pin.jpg maps TCK/TDO to the left pair and TMS/TDI to the right with USB at the bottom. PCB outline is X=-10.54100762..10.74420254, Y=-31.72460254..26.6192 mm. Main post-row separation is 17.78 mm.",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano/HDK/Tang-NANO-2704-size.DXF"
+      },
+      "sources": [
+        {
+          "label": "Sipeed manufacturer mechanical and pinout reference",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano/HDK/Tang-NANO-2704-size.DXF"
+        },
+        {
+          "label": "Manufacturer original Nano component-side pinout",
+          "url": "https://wiki.sipeed.com/hardware/assets/Tang/Nano/Tang-Nano-Pin.jpg"
+        },
+        {
+          "label": "Manufacturer 2704 schematic",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano/HDK/Tang-NANO-2704(Schematic).pdf"
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 20-contact rows with downward straight male headers. Keep the four separate JTAG pads unpopulated or upward-facing. USB and LCD FPC remain cable interfaces.",
+      "selectedContactIds": [
+        "left-38",
+        "left-39",
+        "left-40",
+        "left-41",
+        "left-42",
+        "left-43",
+        "left-44",
+        "left-45",
+        "left-11",
+        "left-10",
+        "left-46",
+        "left-5",
+        "left-8",
+        "left-9",
+        "left-13",
+        "left-V1",
+        "left-V2",
+        "left-G1",
+        "left-G2",
+        "left-14",
+        "right-27",
+        "right-28",
+        "right-29",
+        "right-30",
+        "right-31",
+        "right-32",
+        "right-33",
+        "right-34",
+        "right-16",
+        "right-17",
+        "right-18",
+        "right-20",
+        "right-21",
+        "right-22",
+        "right-24",
+        "right-19",
+        "right-23",
+        "right-V1",
+        "right-V2",
+        "right-15"
+      ],
+      "completePublishedPinCount": 44,
+      "completeViewPinCount": 44,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "left-38",
+          "x": 1.752607620000001,
+          "y": 2.0066025399999994
+        },
+        {
+          "pinId": "left-39",
+          "x": 1.752607620000001,
+          "y": 4.546602539999999
+        },
+        {
+          "pinId": "left-40",
+          "x": 1.752607620000001,
+          "y": 7.0866025399999995
+        },
+        {
+          "pinId": "left-41",
+          "x": 1.752607620000001,
+          "y": 9.62660254
+        },
+        {
+          "pinId": "left-42",
+          "x": 1.752607620000001,
+          "y": 12.16660254
+        },
+        {
+          "pinId": "left-43",
+          "x": 1.752607620000001,
+          "y": 14.706602539999999
+        },
+        {
+          "pinId": "left-44",
+          "x": 1.752607620000001,
+          "y": 17.246602539999998
+        },
+        {
+          "pinId": "left-45",
+          "x": 1.752607620000001,
+          "y": 19.78660254
+        },
+        {
+          "pinId": "left-11",
+          "x": 1.752607620000001,
+          "y": 22.32660254
+        },
+        {
+          "pinId": "left-10",
+          "x": 1.752607620000001,
+          "y": 24.86660254
+        },
+        {
+          "pinId": "left-46",
+          "x": 1.752607620000001,
+          "y": 27.406602539999998
+        },
+        {
+          "pinId": "left-5",
+          "x": 1.752607620000001,
+          "y": 29.94660254
+        },
+        {
+          "pinId": "left-8",
+          "x": 1.752607620000001,
+          "y": 32.48660254
+        },
+        {
+          "pinId": "left-9",
+          "x": 1.752607620000001,
+          "y": 35.02660254
+        },
+        {
+          "pinId": "left-13",
+          "x": 1.752607620000001,
+          "y": 37.566602540000005
+        },
+        {
+          "pinId": "left-V1",
+          "x": 1.752607620000001,
+          "y": 40.10660254
+        },
+        {
+          "pinId": "left-V2",
+          "x": 1.752607620000001,
+          "y": 42.64660254
+        },
+        {
+          "pinId": "left-G1",
+          "x": 1.752607620000001,
+          "y": 45.186602539999996
+        },
+        {
+          "pinId": "left-G2",
+          "x": 1.752607620000001,
+          "y": 47.72660254
+        },
+        {
+          "pinId": "left-14",
+          "x": 1.752607620000001,
+          "y": 50.266602539999994
+        },
+        {
+          "pinId": "right-27",
+          "x": 19.53260762,
+          "y": 2.0066025399999994
+        },
+        {
+          "pinId": "right-28",
+          "x": 19.53260762,
+          "y": 4.546602539999999
+        },
+        {
+          "pinId": "right-29",
+          "x": 19.53260762,
+          "y": 7.0866025399999995
+        },
+        {
+          "pinId": "right-30",
+          "x": 19.53260762,
+          "y": 9.62660254
+        },
+        {
+          "pinId": "right-31",
+          "x": 19.53260762,
+          "y": 12.16660254
+        },
+        {
+          "pinId": "right-32",
+          "x": 19.53260762,
+          "y": 14.706602539999999
+        },
+        {
+          "pinId": "right-33",
+          "x": 19.53260762,
+          "y": 17.246602539999998
+        },
+        {
+          "pinId": "right-34",
+          "x": 19.53260762,
+          "y": 19.78660254
+        },
+        {
+          "pinId": "right-16",
+          "x": 19.53260762,
+          "y": 22.32660254
+        },
+        {
+          "pinId": "right-17",
+          "x": 19.53260762,
+          "y": 24.86660254
+        },
+        {
+          "pinId": "right-18",
+          "x": 19.53260762,
+          "y": 27.406602539999998
+        },
+        {
+          "pinId": "right-20",
+          "x": 19.53260762,
+          "y": 29.94660254
+        },
+        {
+          "pinId": "right-21",
+          "x": 19.53260762,
+          "y": 32.48660254
+        },
+        {
+          "pinId": "right-22",
+          "x": 19.53260762,
+          "y": 35.02660254
+        },
+        {
+          "pinId": "right-24",
+          "x": 19.53260762,
+          "y": 37.566602540000005
+        },
+        {
+          "pinId": "right-19",
+          "x": 19.53260762,
+          "y": 40.10660254
+        },
+        {
+          "pinId": "right-23",
+          "x": 19.53260762,
+          "y": 42.64660254
+        },
+        {
+          "pinId": "right-V1",
+          "x": 19.53260762,
+          "y": 45.186602539999996
+        },
+        {
+          "pinId": "right-V2",
+          "x": 19.53260762,
+          "y": 47.72660254
+        },
+        {
+          "pinId": "right-15",
+          "x": 19.53260762,
+          "y": 50.266602539999994
+        }
+      ],
+      "allPhysicalViewContactsMm": [
+        {
+          "pinId": "left-38",
+          "x": 1.7526076200000005,
+          "y": 2.0066025399999994,
+          "face": "front",
+          "description": "LEFT.38. 3.3 V I/O. FPGA package pin 38. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-39",
+          "x": 1.7526076200000005,
+          "y": 4.546602539999999,
+          "face": "front",
+          "description": "LEFT.39. 3.3 V I/O. FPGA package pin 39. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-40",
+          "x": 1.7526076200000005,
+          "y": 7.0866025399999995,
+          "face": "front",
+          "description": "LEFT.40. 3.3 V I/O. FPGA package pin 40. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-41",
+          "x": 1.7526076200000005,
+          "y": 9.62660254,
+          "face": "front",
+          "description": "LEFT.41. 3.3 V I/O. FPGA package pin 41. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-42",
+          "x": 1.7526076200000005,
+          "y": 12.16660254,
+          "face": "front",
+          "description": "LEFT.42. 3.3 V I/O. FPGA package pin 42. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-43",
+          "x": 1.7526076200000005,
+          "y": 14.70660254,
+          "face": "front",
+          "description": "LEFT.43. 3.3 V I/O. FPGA package pin 43. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-44",
+          "x": 1.7526076200000005,
+          "y": 17.246602539999998,
+          "face": "front",
+          "description": "LEFT.44. 3.3 V I/O. FPGA package pin 44. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-45",
+          "x": 1.7526076200000005,
+          "y": 19.78660254,
+          "face": "front",
+          "description": "LEFT.45. 3.3 V I/O. FPGA package pin 45. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-11",
+          "x": 1.7526076200000005,
+          "y": 22.32660254,
+          "face": "front",
+          "description": "LEFT.11. 3.3 V I/O. FPGA package pin 11. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-10",
+          "x": 1.7526076200000005,
+          "y": 24.866602539999995,
+          "face": "front",
+          "description": "LEFT.10. 3.3 V I/O. FPGA package pin 10. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-46",
+          "x": 1.7526076200000005,
+          "y": 27.40660254,
+          "face": "front",
+          "description": "LEFT.46. 3.3 V I/O. FPGA package pin 46. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-5",
+          "x": 1.7526076200000005,
+          "y": 29.946602540000004,
+          "face": "front",
+          "description": "LEFT.5. 3.3 V I/O. FPGA package pin 5. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-8",
+          "x": 1.7526076200000005,
+          "y": 32.48660254,
+          "face": "front",
+          "description": "LEFT.8. 3.3 V I/O. FPGA package pin 8. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-9",
+          "x": 1.7526076200000005,
+          "y": 35.02660254,
+          "face": "front",
+          "description": "LEFT.9. 3.3 V I/O. FPGA package pin 9. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-13",
+          "x": 1.7526076200000005,
+          "y": 37.566602540000005,
+          "face": "front",
+          "description": "LEFT.13. 3.3 V I/O. FPGA package pin 13. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-V1",
+          "x": 1.7526076200000005,
+          "y": 40.10660254,
+          "face": "front",
+          "description": "LEFT.V1. 3V3 supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-V2",
+          "x": 1.7526076200000005,
+          "y": 42.64660254,
+          "face": "front",
+          "description": "LEFT.V2. 3V3 supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-G1",
+          "x": 1.7526076200000005,
+          "y": 45.186602539999996,
+          "face": "front",
+          "description": "LEFT.G1. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-G2",
+          "x": 1.7526076200000005,
+          "y": 47.72660254,
+          "face": "front",
+          "description": "LEFT.G2. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "left-14",
+          "x": 1.7526076200000005,
+          "y": 50.266602539999994,
+          "face": "front",
+          "description": "LEFT.14. 3.3 V I/O. FPGA package pin 14. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-27",
+          "x": 19.53260762,
+          "y": 2.0066025399999994,
+          "face": "front",
+          "description": "RIGHT.27. 3.3 V I/O. FPGA package pin 27. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-28",
+          "x": 19.53260762,
+          "y": 4.546602539999999,
+          "face": "front",
+          "description": "RIGHT.28. 3.3 V I/O. FPGA package pin 28. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-29",
+          "x": 19.53260762,
+          "y": 7.0866025399999995,
+          "face": "front",
+          "description": "RIGHT.29. 3.3 V I/O. FPGA package pin 29. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-30",
+          "x": 19.53260762,
+          "y": 9.62660254,
+          "face": "front",
+          "description": "RIGHT.30. 3.3 V I/O. FPGA package pin 30. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-31",
+          "x": 19.53260762,
+          "y": 12.16660254,
+          "face": "front",
+          "description": "RIGHT.31. 3.3 V I/O. FPGA package pin 31. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-32",
+          "x": 19.53260762,
+          "y": 14.70660254,
+          "face": "front",
+          "description": "RIGHT.32. 3.3 V I/O. FPGA package pin 32. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-33",
+          "x": 19.53260762,
+          "y": 17.246602539999998,
+          "face": "front",
+          "description": "RIGHT.33. 3.3 V I/O. FPGA package pin 33. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-34",
+          "x": 19.53260762,
+          "y": 19.78660254,
+          "face": "front",
+          "description": "RIGHT.34. 3.3 V I/O. FPGA package pin 34. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-16",
+          "x": 19.53260762,
+          "y": 22.32660254,
+          "face": "front",
+          "description": "RIGHT.16. 3.3 V I/O. FPGA package pin 16. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-17",
+          "x": 19.53260762,
+          "y": 24.866602539999995,
+          "face": "front",
+          "description": "RIGHT.17. 3.3 V I/O. FPGA package pin 17. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-18",
+          "x": 19.53260762,
+          "y": 27.40660254,
+          "face": "front",
+          "description": "RIGHT.18. 3.3 V I/O. FPGA package pin 18. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-20",
+          "x": 19.53260762,
+          "y": 29.946602540000004,
+          "face": "front",
+          "description": "RIGHT.20. 3.3 V I/O. FPGA package pin 20. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-21",
+          "x": 19.53260762,
+          "y": 32.48660254,
+          "face": "front",
+          "description": "RIGHT.21. 3.3 V I/O. FPGA package pin 21. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-22",
+          "x": 19.53260762,
+          "y": 35.02660254,
+          "face": "front",
+          "description": "RIGHT.22. 3.3 V I/O. FPGA package pin 22. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-24",
+          "x": 19.53260762,
+          "y": 37.566602540000005,
+          "face": "front",
+          "description": "RIGHT.24. 3.3 V I/O. FPGA package pin 24. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-19",
+          "x": 19.53260762,
+          "y": 40.10660254,
+          "face": "front",
+          "description": "RIGHT.19. 3.3 V I/O. FPGA package pin 19. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-23",
+          "x": 19.53260762,
+          "y": 42.64660254,
+          "face": "front",
+          "description": "RIGHT.23. 3.3 V I/O. FPGA package pin 23. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-V1",
+          "x": 19.53260762,
+          "y": 45.186602539999996,
+          "face": "front",
+          "description": "RIGHT.V1. 5V supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-V2",
+          "x": 19.53260762,
+          "y": 47.72660254,
+          "face": "front",
+          "description": "RIGHT.V2. 5V supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "right-15",
+          "x": 19.53260762,
+          "y": 50.266602539999994,
+          "face": "front",
+          "description": "RIGHT.15. 3.3 V I/O. FPGA package pin 15. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "jtag-4",
+          "x": 1.6383076200000004,
+          "y": 52.9209,
+          "face": "front",
+          "description": "Manufacturer 2704 JTAG plated hole, component side. Leave this optional pair unpopulated or fit an upward header; it is not a downward insertion lead."
+        },
+        {
+          "pinId": "jtag-7",
+          "x": 4.17830762,
+          "y": 52.9209,
+          "face": "front",
+          "description": "Manufacturer 2704 JTAG plated hole, component side. Leave this optional pair unpopulated or fit an upward header; it is not a downward insertion lead."
+        },
+        {
+          "pinId": "jtag-3",
+          "x": 16.99260762,
+          "y": 52.80660253999999,
+          "face": "front",
+          "description": "Manufacturer 2704 JTAG plated hole, component side. Leave this optional pair unpopulated or fit an upward header; it is not a downward insertion lead."
+        },
+        {
+          "pinId": "jtag-6",
+          "x": 19.53260762,
+          "y": 52.80660253999999,
+          "face": "front",
+          "description": "Manufacturer 2704 JTAG plated hole, component side. Leave this optional pair unpopulated or fit an upward header; it is not a downward insertion lead."
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 21.28521016,
+          "height": 58.34380254
+        },
+        {
+          "x": 7.449823556,
+          "y": 53.238719817749995,
+          "width": 6.385563047999999,
+          "height": 5.469731488124999
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null,
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+    },
+    {
+      "id": "sipeed-tang-nano-1k",
+      "family": "sipeed-fpga",
+      "manufacturer": "Sipeed",
+      "revision": "6100 / GW1NZ-LV1QN48",
+      "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-1K/Nano-1k.html",
+      "previousDecision": "deferred",
+      "decision": "supported",
+      "reason": "Manufacturer 6100 DXF represents its drilled holes as two-vertex bulged polylines, not CIRCLE entities. Both complete 20-hole rows have X=95.4786/113.2586, Y=51.054+i*2.54 mm and 17.78 mm separation. The PCB outline is X=93.72599238..115.01120254, Y=49.0474..107.3912 mm. Manufacturer front/back photos and the 6100 schematic identify all four optional JTAG holes; stable TDI/TDO IDs are positioned by electrical function despite their historical connector-group mismatch. USB is at the top.",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano%201K/4_Dimensional_drawing/Tang_Nano_6100.dxf"
+      },
+      "sources": [
+        {
+          "label": "Sipeed manufacturer mechanical and pinout reference",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano%201K/4_Dimensional_drawing/Tang_Nano_6100.dxf"
+        },
+        {
+          "label": "Manufacturer 6100 schematic, JTAG P2/P3",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano%201K/2_Schematic/Tang_Nano_6100-SCH(1).pdf"
+        },
+        {
+          "label": "Manufacturer front/back photographs and pin diagram",
+          "url": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-1K/Nano-1k.html"
+        },
+        {
+          "label": "Manufacturer 6100 assembly drawing",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano%201K/3_Bit_number_map/Tang_Nano_1K_6100(Designator%20Drawing).pdf"
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate all P4/P5 main contacts with downward straight male headers. Leave the two JTAG pairs unpopulated or fit them upward; their separate source positions and electrical functions remain visible.",
+      "selectedContactIds": [
+        "p4-20",
+        "p4-19",
+        "p4-18",
+        "p4-17",
+        "p4-16",
+        "p4-15",
+        "p4-14",
+        "p4-13",
+        "p4-12",
+        "p4-11",
+        "p4-10",
+        "p4-9",
+        "p4-8",
+        "p4-7",
+        "p4-6",
+        "p4-5",
+        "p4-4",
+        "p4-3",
+        "p4-2",
+        "p4-1",
+        "p5-20",
+        "p5-19",
+        "p5-18",
+        "p5-17",
+        "p5-16",
+        "p5-15",
+        "p5-14",
+        "p5-13",
+        "p5-12",
+        "p5-11",
+        "p5-10",
+        "p5-9",
+        "p5-8",
+        "p5-7",
+        "p5-6",
+        "p5-5",
+        "p5-4",
+        "p5-3",
+        "p5-2",
+        "p5-1"
+      ],
+      "completePublishedPinCount": 44,
+      "completeViewPinCount": 44,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "p4-20",
+          "x": 1.7526076200000062,
+          "y": 8.077200000000005
+        },
+        {
+          "pinId": "p4-19",
+          "x": 1.7526076200000062,
+          "y": 10.617199999999997
+        },
+        {
+          "pinId": "p4-18",
+          "x": 1.7526076200000062,
+          "y": 13.157199999999989
+        },
+        {
+          "pinId": "p4-17",
+          "x": 1.7526076200000062,
+          "y": 15.697199999999995
+        },
+        {
+          "pinId": "p4-16",
+          "x": 1.7526076200000062,
+          "y": 18.2372
+        },
+        {
+          "pinId": "p4-15",
+          "x": 1.7526076200000062,
+          "y": 20.777199999999993
+        },
+        {
+          "pinId": "p4-14",
+          "x": 1.7526076200000062,
+          "y": 23.317199999999985
+        },
+        {
+          "pinId": "p4-13",
+          "x": 1.7526076200000062,
+          "y": 25.85719999999999
+        },
+        {
+          "pinId": "p4-12",
+          "x": 1.7526076200000062,
+          "y": 28.397199999999998
+        },
+        {
+          "pinId": "p4-11",
+          "x": 1.7526076200000062,
+          "y": 30.93719999999999
+        },
+        {
+          "pinId": "p4-10",
+          "x": 1.7526076200000062,
+          "y": 33.477199999999996
+        },
+        {
+          "pinId": "p4-9",
+          "x": 1.7526076200000062,
+          "y": 36.0172
+        },
+        {
+          "pinId": "p4-8",
+          "x": 1.7526076200000062,
+          "y": 38.557199999999995
+        },
+        {
+          "pinId": "p4-7",
+          "x": 1.7526076200000062,
+          "y": 41.0972
+        },
+        {
+          "pinId": "p4-6",
+          "x": 1.7526076200000062,
+          "y": 43.63719999999999
+        },
+        {
+          "pinId": "p4-5",
+          "x": 1.7526076200000062,
+          "y": 46.1772
+        },
+        {
+          "pinId": "p4-4",
+          "x": 1.7526076200000062,
+          "y": 48.7172
+        },
+        {
+          "pinId": "p4-3",
+          "x": 1.7526076200000062,
+          "y": 51.2572
+        },
+        {
+          "pinId": "p4-2",
+          "x": 1.7526076200000062,
+          "y": 53.7972
+        },
+        {
+          "pinId": "p4-1",
+          "x": 1.7526076200000062,
+          "y": 56.337199999999996
+        },
+        {
+          "pinId": "p5-20",
+          "x": 19.532607620000007,
+          "y": 8.077200000000005
+        },
+        {
+          "pinId": "p5-19",
+          "x": 19.532607620000007,
+          "y": 10.617199999999997
+        },
+        {
+          "pinId": "p5-18",
+          "x": 19.532607620000007,
+          "y": 13.157199999999989
+        },
+        {
+          "pinId": "p5-17",
+          "x": 19.532607620000007,
+          "y": 15.697199999999995
+        },
+        {
+          "pinId": "p5-16",
+          "x": 19.532607620000007,
+          "y": 18.2372
+        },
+        {
+          "pinId": "p5-15",
+          "x": 19.532607620000007,
+          "y": 20.777199999999993
+        },
+        {
+          "pinId": "p5-14",
+          "x": 19.532607620000007,
+          "y": 23.317199999999985
+        },
+        {
+          "pinId": "p5-13",
+          "x": 19.532607620000007,
+          "y": 25.85719999999999
+        },
+        {
+          "pinId": "p5-12",
+          "x": 19.532607620000007,
+          "y": 28.397199999999998
+        },
+        {
+          "pinId": "p5-11",
+          "x": 19.532607620000007,
+          "y": 30.93719999999999
+        },
+        {
+          "pinId": "p5-10",
+          "x": 19.532607620000007,
+          "y": 33.477199999999996
+        },
+        {
+          "pinId": "p5-9",
+          "x": 19.532607620000007,
+          "y": 36.0172
+        },
+        {
+          "pinId": "p5-8",
+          "x": 19.532607620000007,
+          "y": 38.557199999999995
+        },
+        {
+          "pinId": "p5-7",
+          "x": 19.532607620000007,
+          "y": 41.0972
+        },
+        {
+          "pinId": "p5-6",
+          "x": 19.532607620000007,
+          "y": 43.63719999999999
+        },
+        {
+          "pinId": "p5-5",
+          "x": 19.532607620000007,
+          "y": 46.1772
+        },
+        {
+          "pinId": "p5-4",
+          "x": 19.532607620000007,
+          "y": 48.7172
+        },
+        {
+          "pinId": "p5-3",
+          "x": 19.532607620000007,
+          "y": 51.2572
+        },
+        {
+          "pinId": "p5-2",
+          "x": 19.532607620000007,
+          "y": 53.7972
+        },
+        {
+          "pinId": "p5-1",
+          "x": 19.532607620000007,
+          "y": 56.337199999999996
+        }
+      ],
+      "allPhysicalViewContactsMm": [
+        {
+          "pinId": "p4-20",
+          "x": 1.7526076200000062,
+          "y": 8.077200000000005,
+          "face": "front",
+          "description": "P4.20. 3.3 V I/O. FPGA package pin 13. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-19",
+          "x": 1.7526076200000062,
+          "y": 10.617199999999997,
+          "face": "front",
+          "description": "P4.19. 5V supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-18",
+          "x": 1.7526076200000062,
+          "y": 13.157199999999989,
+          "face": "front",
+          "description": "P4.18. 5V supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-17",
+          "x": 1.7526076200000062,
+          "y": 15.697199999999995,
+          "face": "front",
+          "description": "P4.17. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-16",
+          "x": 1.7526076200000062,
+          "y": 18.2372,
+          "face": "front",
+          "description": "P4.16. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-15",
+          "x": 1.7526076200000062,
+          "y": 20.777199999999993,
+          "face": "front",
+          "description": "P4.15. 3.3 V I/O. FPGA package pin 47. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-14",
+          "x": 1.7526076200000062,
+          "y": 23.317199999999985,
+          "face": "front",
+          "description": "P4.14. 3.3 V I/O. FPGA package pin 45. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-13",
+          "x": 1.7526076200000062,
+          "y": 25.857199999999988,
+          "face": "front",
+          "description": "P4.13. 3.3 V I/O. FPGA package pin 46. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-12",
+          "x": 1.7526076200000062,
+          "y": 28.397199999999998,
+          "face": "front",
+          "description": "P4.12. 3.3 V I/O. FPGA package pin 11. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-11",
+          "x": 1.7526076200000062,
+          "y": 30.93719999999999,
+          "face": "front",
+          "description": "P4.11. 3.3 V I/O. FPGA package pin 9. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-10",
+          "x": 1.7526076200000062,
+          "y": 33.477199999999996,
+          "face": "front",
+          "description": "P4.10. 3.3 V I/O. FPGA package pin 10. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-9",
+          "x": 1.7526076200000062,
+          "y": 36.0172,
+          "face": "front",
+          "description": "P4.9. 3.3 V I/O. FPGA package pin 24. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-8",
+          "x": 1.7526076200000062,
+          "y": 38.557199999999995,
+          "face": "front",
+          "description": "P4.8. 3.3 V I/O. FPGA package pin 23. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-7",
+          "x": 1.7526076200000062,
+          "y": 41.0972,
+          "face": "front",
+          "description": "P4.7. 3.3 V I/O. FPGA package pin 22. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-6",
+          "x": 1.7526076200000062,
+          "y": 43.63719999999999,
+          "face": "front",
+          "description": "P4.6. 3.3 V I/O. FPGA package pin 18. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-5",
+          "x": 1.7526076200000062,
+          "y": 46.1772,
+          "face": "front",
+          "description": "P4.5. 3.3 V I/O. FPGA package pin 17. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-4",
+          "x": 1.7526076200000062,
+          "y": 48.7172,
+          "face": "front",
+          "description": "P4.4. 3.3 V I/O. FPGA package pin 16. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-3",
+          "x": 1.7526076200000062,
+          "y": 51.2572,
+          "face": "front",
+          "description": "P4.3. 3.3 V I/O. FPGA package pin 15. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-2",
+          "x": 1.7526076200000062,
+          "y": 53.7972,
+          "face": "front",
+          "description": "P4.2. 3.3 V I/O. FPGA package pin 27. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p4-1",
+          "x": 1.7526076200000062,
+          "y": 56.337199999999996,
+          "face": "front",
+          "description": "P4.1. 3.3 V I/O. FPGA package pin 28. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-20",
+          "x": 19.532607620000007,
+          "y": 8.077200000000005,
+          "face": "front",
+          "description": "P5.20. 3.3 V I/O. FPGA package pin 44. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-19",
+          "x": 19.532607620000007,
+          "y": 10.617199999999997,
+          "face": "front",
+          "description": "P5.19. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-18",
+          "x": 19.532607620000007,
+          "y": 13.157199999999989,
+          "face": "front",
+          "description": "P5.18. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-17",
+          "x": 19.532607620000007,
+          "y": 15.697199999999995,
+          "face": "front",
+          "description": "P5.17. 3V3 supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-16",
+          "x": 19.532607620000007,
+          "y": 18.2372,
+          "face": "front",
+          "description": "P5.16. 3V3 supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-15",
+          "x": 19.532607620000007,
+          "y": 20.777199999999993,
+          "face": "front",
+          "description": "P5.15. 3.3 V I/O. Application function is selected by the FPGA design or operating-system pin configuration. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-14",
+          "x": 19.532607620000007,
+          "y": 23.317199999999985,
+          "face": "front",
+          "description": "P5.14. 3.3 V I/O. Application function is selected by the FPGA design or operating-system pin configuration. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-13",
+          "x": 19.532607620000007,
+          "y": 25.857199999999988,
+          "face": "front",
+          "description": "P5.13. 3.3 V I/O. Application function is selected by the FPGA design or operating-system pin configuration. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-12",
+          "x": 19.532607620000007,
+          "y": 28.397199999999998,
+          "face": "front",
+          "description": "P5.12. 3.3 V I/O. FPGA package pin 40. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-11",
+          "x": 19.532607620000007,
+          "y": 30.93719999999999,
+          "face": "front",
+          "description": "P5.11. 3.3 V I/O. FPGA package pin 41. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-10",
+          "x": 19.532607620000007,
+          "y": 33.477199999999996,
+          "face": "front",
+          "description": "P5.10. 3.3 V I/O. FPGA package pin 38. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-9",
+          "x": 19.532607620000007,
+          "y": 36.0172,
+          "face": "front",
+          "description": "P5.9. 3.3 V I/O. FPGA package pin 39. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-8",
+          "x": 19.532607620000007,
+          "y": 38.557199999999995,
+          "face": "front",
+          "description": "P5.8. 3.3 V I/O. FPGA package pin 42. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-7",
+          "x": 19.532607620000007,
+          "y": 41.0972,
+          "face": "front",
+          "description": "P5.7. 3.3 V I/O. FPGA package pin 35. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-6",
+          "x": 19.532607620000007,
+          "y": 43.63719999999999,
+          "face": "front",
+          "description": "P5.6. 3.3 V I/O. FPGA package pin 34. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-5",
+          "x": 19.532607620000007,
+          "y": 46.1772,
+          "face": "front",
+          "description": "P5.5. 3.3 V I/O. FPGA package pin 20. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-4",
+          "x": 19.532607620000007,
+          "y": 48.7172,
+          "face": "front",
+          "description": "P5.4. 3.3 V I/O. FPGA package pin 19. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-3",
+          "x": 19.532607620000007,
+          "y": 51.2572,
+          "face": "front",
+          "description": "P5.3. 3.3 V I/O. FPGA package pin 29. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-2",
+          "x": 19.532607620000007,
+          "y": 53.7972,
+          "face": "front",
+          "description": "P5.2. 3.3 V I/O. FPGA package pin 30. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p5-1",
+          "x": 19.532607620000007,
+          "y": 56.337199999999996,
+          "face": "front",
+          "description": "P5.1. 3.3 V I/O. FPGA package pin 31. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "p2-1",
+          "x": 1.6383076200000062,
+          "y": 5.4228999999999985,
+          "face": "front",
+          "description": "Manufacturer 6100 physical terminal P2.1 / TMS. The published canvas ID and electrical label are retained. Leave this optional pair unpopulated or upward-facing."
+        },
+        {
+          "pinId": "p2-2",
+          "x": 16.99260762,
+          "y": 5.537199999999999,
+          "face": "front",
+          "description": "Manufacturer 6100 physical terminal P3.2 / TDI. The published canvas ID and electrical label are retained. Leave this optional pair unpopulated or upward-facing."
+        },
+        {
+          "pinId": "p3-1",
+          "x": 19.532607620000007,
+          "y": 5.537199999999999,
+          "face": "front",
+          "description": "Manufacturer 6100 physical terminal P3.1 / TCK. The published canvas ID and electrical label are retained. Leave this optional pair unpopulated or upward-facing."
+        },
+        {
+          "pinId": "p3-2",
+          "x": 4.178307620000012,
+          "y": 5.4228999999999985,
+          "face": "front",
+          "description": "Manufacturer 6100 physical terminal P2.2 / TDO. The published canvas ID and electrical label are retained. Leave this optional pair unpopulated or upward-facing."
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 21.28521016,
+          "height": 58.3438
+        },
+        {
+          "x": 7.449823556,
+          "y": -0.7292975,
+          "width": 6.385563047999999,
+          "height": 5.469731250000001
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null,
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+    },
+    {
+      "id": "sipeed-tang-nano-9k",
+      "family": "sipeed-fpga",
+      "manufacturer": "Sipeed",
+      "revision": "3672 / GW1NR-LV9QN88P",
+      "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K.html",
+      "previousDecision": "deferred",
+      "decision": "supported",
+      "reason": "Exact manufacturer Tang_Nano_9K_3672 iBOM (2022-02-25) provides J5/J6 complete 24-hole rows at source Y=100.374602/77.514602 mm, separation exactly 22.86 mm, and X=101.989204+i*2.54 mm. The source PCB edge centreline is X=99.459046..169.503019 and Y=75.950225..101.974198 mm. Rotate the physical plane with USB at the top. The earlier dimension PDF label 22.8169 mm disagrees with these production pad coordinates; the source iBOM resolves that false exclusion without widening fitting tolerance.",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano%209K/3_Bit_number_map/Tang_Nano_9K_3672_ibom.html"
+      },
+      "sources": [
+        {
+          "label": "Sipeed manufacturer mechanical and pinout reference",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano%209K/3_Bit_number_map/Tang_Nano_9K_3672_ibom.html"
+        },
+        {
+          "label": "Manufacturer 3672 product pinout and component-side photographs",
+          "url": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K.html"
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate all 48 J5/J6 contacts with downward straight male headers. The upper right I/O bank remains 1.8 V. HDMI, USB, microSD and FPC ports keep their original cable/card interfaces.",
+      "selectedContactIds": [
+        "j5-1",
+        "j5-2",
+        "j5-3",
+        "j5-4",
+        "j5-5",
+        "j5-6",
+        "j5-7",
+        "j5-8",
+        "j5-9",
+        "j5-10",
+        "j5-11",
+        "j5-12",
+        "j5-13",
+        "j5-14",
+        "j5-15",
+        "j5-16",
+        "j5-17",
+        "j5-18",
+        "j5-19",
+        "j5-20",
+        "j5-21",
+        "j5-22",
+        "j5-23",
+        "j5-24",
+        "j6-1",
+        "j6-2",
+        "j6-3",
+        "j6-4",
+        "j6-5",
+        "j6-6",
+        "j6-7",
+        "j6-8",
+        "j6-9",
+        "j6-10",
+        "j6-11",
+        "j6-12",
+        "j6-13",
+        "j6-14",
+        "j6-15",
+        "j6-16",
+        "j6-17",
+        "j6-18",
+        "j6-19",
+        "j6-20",
+        "j6-21",
+        "j6-22",
+        "j6-23",
+        "j6-24"
+      ],
+      "completePublishedPinCount": 48,
+      "completeViewPinCount": 48,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j5-1",
+          "x": 1.5995960000000053,
+          "y": 2.530158
+        },
+        {
+          "pinId": "j5-2",
+          "x": 1.5995960000000053,
+          "y": 5.070158
+        },
+        {
+          "pinId": "j5-3",
+          "x": 1.5995960000000053,
+          "y": 7.610158
+        },
+        {
+          "pinId": "j5-4",
+          "x": 1.5995960000000053,
+          "y": 10.150158000000001
+        },
+        {
+          "pinId": "j5-5",
+          "x": 1.5995960000000053,
+          "y": 12.690158
+        },
+        {
+          "pinId": "j5-6",
+          "x": 1.5995960000000053,
+          "y": 15.230158
+        },
+        {
+          "pinId": "j5-7",
+          "x": 1.5995960000000053,
+          "y": 17.770158000000002
+        },
+        {
+          "pinId": "j5-8",
+          "x": 1.5995960000000053,
+          "y": 20.310158
+        },
+        {
+          "pinId": "j5-9",
+          "x": 1.5995960000000053,
+          "y": 22.850158
+        },
+        {
+          "pinId": "j5-10",
+          "x": 1.5995960000000053,
+          "y": 25.390158
+        },
+        {
+          "pinId": "j5-11",
+          "x": 1.5995960000000053,
+          "y": 27.930158
+        },
+        {
+          "pinId": "j5-12",
+          "x": 1.5995960000000053,
+          "y": 30.470158
+        },
+        {
+          "pinId": "j5-13",
+          "x": 1.5995960000000053,
+          "y": 33.010158000000004
+        },
+        {
+          "pinId": "j5-14",
+          "x": 1.5995960000000053,
+          "y": 35.550158
+        },
+        {
+          "pinId": "j5-15",
+          "x": 1.5995960000000053,
+          "y": 38.090158
+        },
+        {
+          "pinId": "j5-16",
+          "x": 1.5995960000000053,
+          "y": 40.630158
+        },
+        {
+          "pinId": "j5-17",
+          "x": 1.5995960000000053,
+          "y": 43.170158
+        },
+        {
+          "pinId": "j5-18",
+          "x": 1.5995960000000053,
+          "y": 45.710158
+        },
+        {
+          "pinId": "j5-19",
+          "x": 1.5995960000000053,
+          "y": 48.250158
+        },
+        {
+          "pinId": "j5-20",
+          "x": 1.5995960000000053,
+          "y": 50.790158
+        },
+        {
+          "pinId": "j5-21",
+          "x": 1.5995960000000053,
+          "y": 53.330158
+        },
+        {
+          "pinId": "j5-22",
+          "x": 1.5995960000000053,
+          "y": 55.870158
+        },
+        {
+          "pinId": "j5-23",
+          "x": 1.5995960000000053,
+          "y": 58.410158
+        },
+        {
+          "pinId": "j5-24",
+          "x": 1.5995960000000053,
+          "y": 60.950158
+        },
+        {
+          "pinId": "j6-1",
+          "x": 24.459596000000005,
+          "y": 2.530158
+        },
+        {
+          "pinId": "j6-2",
+          "x": 24.459596000000005,
+          "y": 5.070158
+        },
+        {
+          "pinId": "j6-3",
+          "x": 24.459596000000005,
+          "y": 7.610158
+        },
+        {
+          "pinId": "j6-4",
+          "x": 24.459596000000005,
+          "y": 10.150158000000001
+        },
+        {
+          "pinId": "j6-5",
+          "x": 24.459596000000005,
+          "y": 12.690158
+        },
+        {
+          "pinId": "j6-6",
+          "x": 24.459596000000005,
+          "y": 15.230158
+        },
+        {
+          "pinId": "j6-7",
+          "x": 24.459596000000005,
+          "y": 17.770158000000002
+        },
+        {
+          "pinId": "j6-8",
+          "x": 24.459596000000005,
+          "y": 20.310158
+        },
+        {
+          "pinId": "j6-9",
+          "x": 24.459596000000005,
+          "y": 22.850158
+        },
+        {
+          "pinId": "j6-10",
+          "x": 24.459596000000005,
+          "y": 25.390158
+        },
+        {
+          "pinId": "j6-11",
+          "x": 24.459596000000005,
+          "y": 27.930158
+        },
+        {
+          "pinId": "j6-12",
+          "x": 24.459596000000005,
+          "y": 30.470158
+        },
+        {
+          "pinId": "j6-13",
+          "x": 24.459596000000005,
+          "y": 33.010158000000004
+        },
+        {
+          "pinId": "j6-14",
+          "x": 24.459596000000005,
+          "y": 35.550158
+        },
+        {
+          "pinId": "j6-15",
+          "x": 24.459596000000005,
+          "y": 38.090158
+        },
+        {
+          "pinId": "j6-16",
+          "x": 24.459596000000005,
+          "y": 40.630158
+        },
+        {
+          "pinId": "j6-17",
+          "x": 24.459596000000005,
+          "y": 43.170158
+        },
+        {
+          "pinId": "j6-18",
+          "x": 24.459596000000005,
+          "y": 45.710158
+        },
+        {
+          "pinId": "j6-19",
+          "x": 24.459596000000005,
+          "y": 48.250158
+        },
+        {
+          "pinId": "j6-20",
+          "x": 24.459596000000005,
+          "y": 50.790158
+        },
+        {
+          "pinId": "j6-21",
+          "x": 24.459596000000005,
+          "y": 53.330158
+        },
+        {
+          "pinId": "j6-22",
+          "x": 24.459596000000005,
+          "y": 55.870158
+        },
+        {
+          "pinId": "j6-23",
+          "x": 24.459596000000005,
+          "y": 58.410158
+        },
+        {
+          "pinId": "j6-24",
+          "x": 24.459596000000005,
+          "y": 60.950158
+        }
+      ],
+      "allPhysicalViewContactsMm": [
+        {
+          "pinId": "j5-1",
+          "x": 1.5995960000000053,
+          "y": 2.530158,
+          "face": "front",
+          "description": "J5.1. 3.3 V I/O. FPGA package pin 38. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-2",
+          "x": 1.5995960000000053,
+          "y": 5.070158000000001,
+          "face": "front",
+          "description": "J5.2. 3.3 V I/O. FPGA package pin 37. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-3",
+          "x": 1.5995960000000053,
+          "y": 7.610158,
+          "face": "front",
+          "description": "J5.3. 3.3 V I/O. FPGA package pin 36. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-4",
+          "x": 1.5995960000000053,
+          "y": 10.150158000000001,
+          "face": "front",
+          "description": "J5.4. 3.3 V I/O. FPGA package pin 39. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-5",
+          "x": 1.5995960000000053,
+          "y": 12.690158,
+          "face": "front",
+          "description": "J5.5. 3.3 V I/O. FPGA package pin 25. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-6",
+          "x": 1.5995960000000053,
+          "y": 15.230158,
+          "face": "front",
+          "description": "J5.6. 3.3 V I/O. FPGA package pin 26. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-7",
+          "x": 1.5995960000000053,
+          "y": 17.770158000000002,
+          "face": "front",
+          "description": "J5.7. 3.3 V I/O. FPGA package pin 27. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-8",
+          "x": 1.5995960000000053,
+          "y": 20.310158,
+          "face": "front",
+          "description": "J5.8. 3.3 V I/O. FPGA package pin 28. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-9",
+          "x": 1.5995960000000053,
+          "y": 22.850158,
+          "face": "front",
+          "description": "J5.9. 3.3 V I/O. FPGA package pin 29. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-10",
+          "x": 1.5995960000000053,
+          "y": 25.390157999999996,
+          "face": "front",
+          "description": "J5.10. 3.3 V I/O. FPGA package pin 30. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-11",
+          "x": 1.5995960000000053,
+          "y": 27.930158,
+          "face": "front",
+          "description": "J5.11. 3.3 V I/O. FPGA package pin 33. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-12",
+          "x": 1.5995960000000053,
+          "y": 30.470158000000005,
+          "face": "front",
+          "description": "J5.12. 3.3 V I/O. FPGA package pin 34. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-13",
+          "x": 1.5995960000000053,
+          "y": 33.010158000000004,
+          "face": "front",
+          "description": "J5.13. 3.3 V I/O. FPGA package pin 40. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-14",
+          "x": 1.5995960000000053,
+          "y": 35.550158,
+          "face": "front",
+          "description": "J5.14. 3.3 V I/O. FPGA package pin 35. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-15",
+          "x": 1.5995960000000053,
+          "y": 38.090158,
+          "face": "front",
+          "description": "J5.15. 3.3 V I/O. FPGA package pin 41. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-16",
+          "x": 1.5995960000000053,
+          "y": 40.630158,
+          "face": "front",
+          "description": "J5.16. 3.3 V I/O. FPGA package pin 42. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-17",
+          "x": 1.5995960000000053,
+          "y": 43.170158,
+          "face": "front",
+          "description": "J5.17. 3.3 V I/O. FPGA package pin 51. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-18",
+          "x": 1.5995960000000053,
+          "y": 45.710158,
+          "face": "front",
+          "description": "J5.18. 3.3 V I/O. FPGA package pin 53. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-19",
+          "x": 1.5995960000000053,
+          "y": 48.250158,
+          "face": "front",
+          "description": "J5.19. 3.3 V I/O. FPGA package pin 54. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-20",
+          "x": 1.5995960000000053,
+          "y": 50.790158,
+          "face": "front",
+          "description": "J5.20. 3.3 V I/O. FPGA package pin 55. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-21",
+          "x": 1.5995960000000053,
+          "y": 53.330158,
+          "face": "front",
+          "description": "J5.21. 3.3 V I/O. FPGA package pin 56. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-22",
+          "x": 1.5995960000000053,
+          "y": 55.870158,
+          "face": "front",
+          "description": "J5.22. 3.3 V I/O. FPGA package pin 57. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-23",
+          "x": 1.5995960000000053,
+          "y": 58.410158,
+          "face": "front",
+          "description": "J5.23. 3.3 V I/O. FPGA package pin 68. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-24",
+          "x": 1.5995960000000053,
+          "y": 60.950158,
+          "face": "front",
+          "description": "J5.24. 3.3 V I/O. FPGA package pin 69. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-1",
+          "x": 24.459596000000005,
+          "y": 2.530158,
+          "face": "front",
+          "description": "J6.1. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 63. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-2",
+          "x": 24.459596000000005,
+          "y": 5.070158000000001,
+          "face": "front",
+          "description": "J6.2. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 86. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-3",
+          "x": 24.459596000000005,
+          "y": 7.610158,
+          "face": "front",
+          "description": "J6.3. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 85. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-4",
+          "x": 24.459596000000005,
+          "y": 10.150158000000001,
+          "face": "front",
+          "description": "J6.4. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 84. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-5",
+          "x": 24.459596000000005,
+          "y": 12.690158,
+          "face": "front",
+          "description": "J6.5. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 83. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-6",
+          "x": 24.459596000000005,
+          "y": 15.230158,
+          "face": "front",
+          "description": "J6.6. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 82. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-7",
+          "x": 24.459596000000005,
+          "y": 17.770158000000002,
+          "face": "front",
+          "description": "J6.7. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 81. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-8",
+          "x": 24.459596000000005,
+          "y": 20.310158,
+          "face": "front",
+          "description": "J6.8. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 80. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-9",
+          "x": 24.459596000000005,
+          "y": 22.850158,
+          "face": "front",
+          "description": "J6.9. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 79. 1.8 V bank. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-10",
+          "x": 24.459596000000005,
+          "y": 25.390157999999996,
+          "face": "front",
+          "description": "J6.10. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 77. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-11",
+          "x": 24.459596000000005,
+          "y": 27.930158,
+          "face": "front",
+          "description": "J6.11. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 76. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-12",
+          "x": 24.459596000000005,
+          "y": 30.470158000000005,
+          "face": "front",
+          "description": "J6.12. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 75. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-13",
+          "x": 24.459596000000005,
+          "y": 33.010158000000004,
+          "face": "front",
+          "description": "J6.13. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 74. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-14",
+          "x": 24.459596000000005,
+          "y": 35.550158,
+          "face": "front",
+          "description": "J6.14. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 73. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-15",
+          "x": 24.459596000000005,
+          "y": 38.090158,
+          "face": "front",
+          "description": "J6.15. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 72. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-16",
+          "x": 24.459596000000005,
+          "y": 40.630158,
+          "face": "front",
+          "description": "J6.16. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 71. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-17",
+          "x": 24.459596000000005,
+          "y": 43.170158,
+          "face": "front",
+          "description": "J6.17. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 70. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-18",
+          "x": 24.459596000000005,
+          "y": 45.710158,
+          "face": "front",
+          "description": "J6.18. 5V supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-19",
+          "x": 24.459596000000005,
+          "y": 48.250158,
+          "face": "front",
+          "description": "J6.19. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 48. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-20",
+          "x": 24.459596000000005,
+          "y": 50.790158,
+          "face": "front",
+          "description": "J6.20. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 49. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-21",
+          "x": 24.459596000000005,
+          "y": 53.330158,
+          "face": "front",
+          "description": "J6.21. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 31. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-22",
+          "x": 24.459596000000005,
+          "y": 55.870158,
+          "face": "front",
+          "description": "J6.22. Bank-specific voltage; contacts J6.2 through J6.9 use 1.8 V I/O. FPGA package pin 32. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-23",
+          "x": 24.459596000000005,
+          "y": 58.410158,
+          "face": "front",
+          "description": "J6.23. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-24",
+          "x": 24.459596000000005,
+          "y": 60.950158,
+          "face": "front",
+          "description": "J6.24. 3V3 supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 26.023973,
+          "height": 70.043973
+        },
+        {
+          "x": 9.10839055,
+          "y": -0.8755496624999999,
+          "width": 7.807191900000001,
+          "height": 6.566622468749999
+        },
+        {
+          "x": 6.50599325,
+          "y": 63.477350531249996,
+          "width": 13.0119865,
+          "height": 7.879946962499998
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null,
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+    },
+    {
+      "id": "sipeed-tang-nano-20k",
+      "family": "sipeed-fpga",
+      "manufacturer": "Sipeed",
+      "revision": "3923 / GW2AR-LV18QN88C8",
+      "source": "https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html",
+      "previousDecision": "deferred",
+      "decision": "supported",
+      "reason": "Manufacturer v3923 download directory pairs the 3923 assembly drawing with an iBOM whose filename/title retains 3920 although its BOM contains BL616. Its complete J6/J5 20-hole rows are at X=128.92+i*2.54 and Y=108.53998/88.22 mm, with 20.31998 mm exported drill separation. Straight posts use nominal 20.32 mm, a 0.00002 mm export-rounding correction. PCB edge centreline is X=126.313046..180.355019, Y=87.111027..109.665 mm. The 3923 assembly and manufacturer 3921 dimension drawing corroborate the unchanged 40-hole, 20.32 mm mechanical family. This is a documented compatible-family nominal-header inference, not a claim that the stale 3920 title is exact revision-3923 production CAD.",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano_20K/3_Bit_number_map/v3923/Tang_Nano_20K_3920_ibom.html"
+      },
+      "sources": [
+        {
+          "label": "Sipeed manufacturer mechanical and pinout reference",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano_20K/3_Bit_number_map/v3923/Tang_Nano_20K_3920_ibom.html"
+        },
+        {
+          "label": "Revision 3923 component-side assembly drawing",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano_20K/3_Bit_number_map/v3923/Tang_Nano_20K_3923-Assembly.pdf"
+        },
+        {
+          "label": "Mechanical family dimension drawing (3921; not exact 3923 production CAD)",
+          "url": "https://dl.sipeed.com/fileList/TANG/Nano_20K/4_Dimension/Tang_Nano_20K_3921-Dimensions.dxf"
+        },
+        {
+          "label": "Current manufacturer 3923 description and board photographs",
+          "url": "https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html"
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 20-contact expansion rows with downward straight male headers. USB, HDMI, microSD, display FPC and the speaker connector remain cable/card interfaces.",
+      "selectedContactIds": [
+        "j6-1",
+        "j6-2",
+        "j6-3",
+        "j6-4",
+        "j6-5",
+        "j6-6",
+        "j6-7",
+        "j6-8",
+        "j6-9",
+        "j6-10",
+        "j6-11",
+        "j6-12",
+        "j6-13",
+        "j6-14",
+        "j6-15",
+        "j6-16",
+        "j6-17",
+        "j6-18",
+        "j6-19",
+        "j6-20",
+        "j5-1",
+        "j5-2",
+        "j5-3",
+        "j5-4",
+        "j5-5",
+        "j5-6",
+        "j5-7",
+        "j5-8",
+        "j5-9",
+        "j5-10",
+        "j5-11",
+        "j5-12",
+        "j5-13",
+        "j5-14",
+        "j5-15",
+        "j5-16",
+        "j5-17",
+        "j5-18",
+        "j5-19",
+        "j5-20"
+      ],
+      "completePublishedPinCount": 40,
+      "completeViewPinCount": 40,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j6-1",
+          "x": 1.1250200000000063,
+          "y": 2.6069539999999876
+        },
+        {
+          "pinId": "j6-2",
+          "x": 1.1250200000000063,
+          "y": 5.146953999999988
+        },
+        {
+          "pinId": "j6-3",
+          "x": 1.1250200000000063,
+          "y": 7.686953999999988
+        },
+        {
+          "pinId": "j6-4",
+          "x": 1.1250200000000063,
+          "y": 10.226953999999989
+        },
+        {
+          "pinId": "j6-5",
+          "x": 1.1250200000000063,
+          "y": 12.766953999999988
+        },
+        {
+          "pinId": "j6-6",
+          "x": 1.1250200000000063,
+          "y": 15.306953999999987
+        },
+        {
+          "pinId": "j6-7",
+          "x": 1.1250200000000063,
+          "y": 17.84695399999999
+        },
+        {
+          "pinId": "j6-8",
+          "x": 1.1250200000000063,
+          "y": 20.38695399999999
+        },
+        {
+          "pinId": "j6-9",
+          "x": 1.1250200000000063,
+          "y": 22.926953999999988
+        },
+        {
+          "pinId": "j6-10",
+          "x": 1.1250200000000063,
+          "y": 25.466953999999987
+        },
+        {
+          "pinId": "j6-11",
+          "x": 1.1250200000000063,
+          "y": 28.006953999999986
+        },
+        {
+          "pinId": "j6-12",
+          "x": 1.1250200000000063,
+          "y": 30.54695399999999
+        },
+        {
+          "pinId": "j6-13",
+          "x": 1.1250200000000063,
+          "y": 33.08695399999999
+        },
+        {
+          "pinId": "j6-14",
+          "x": 1.1250200000000063,
+          "y": 35.62695399999999
+        },
+        {
+          "pinId": "j6-15",
+          "x": 1.1250200000000063,
+          "y": 38.16695399999999
+        },
+        {
+          "pinId": "j6-16",
+          "x": 1.1250200000000063,
+          "y": 40.70695399999999
+        },
+        {
+          "pinId": "j6-17",
+          "x": 1.1250200000000063,
+          "y": 43.24695399999999
+        },
+        {
+          "pinId": "j6-18",
+          "x": 1.1250200000000063,
+          "y": 45.78695399999999
+        },
+        {
+          "pinId": "j6-19",
+          "x": 1.1250200000000063,
+          "y": 48.326953999999986
+        },
+        {
+          "pinId": "j6-20",
+          "x": 1.1250200000000063,
+          "y": 50.866953999999986
+        },
+        {
+          "pinId": "j5-1",
+          "x": 21.445020000000007,
+          "y": 2.6069539999999876
+        },
+        {
+          "pinId": "j5-2",
+          "x": 21.445020000000007,
+          "y": 5.146953999999988
+        },
+        {
+          "pinId": "j5-3",
+          "x": 21.445020000000007,
+          "y": 7.686953999999988
+        },
+        {
+          "pinId": "j5-4",
+          "x": 21.445020000000007,
+          "y": 10.226953999999989
+        },
+        {
+          "pinId": "j5-5",
+          "x": 21.445020000000007,
+          "y": 12.766953999999988
+        },
+        {
+          "pinId": "j5-6",
+          "x": 21.445020000000007,
+          "y": 15.306953999999987
+        },
+        {
+          "pinId": "j5-7",
+          "x": 21.445020000000007,
+          "y": 17.84695399999999
+        },
+        {
+          "pinId": "j5-8",
+          "x": 21.445020000000007,
+          "y": 20.38695399999999
+        },
+        {
+          "pinId": "j5-9",
+          "x": 21.445020000000007,
+          "y": 22.926953999999988
+        },
+        {
+          "pinId": "j5-10",
+          "x": 21.445020000000007,
+          "y": 25.466953999999987
+        },
+        {
+          "pinId": "j5-11",
+          "x": 21.445020000000007,
+          "y": 28.006953999999986
+        },
+        {
+          "pinId": "j5-12",
+          "x": 21.445020000000007,
+          "y": 30.54695399999999
+        },
+        {
+          "pinId": "j5-13",
+          "x": 21.445020000000007,
+          "y": 33.08695399999999
+        },
+        {
+          "pinId": "j5-14",
+          "x": 21.445020000000007,
+          "y": 35.62695399999999
+        },
+        {
+          "pinId": "j5-15",
+          "x": 21.445020000000007,
+          "y": 38.16695399999999
+        },
+        {
+          "pinId": "j5-16",
+          "x": 21.445020000000007,
+          "y": 40.70695399999999
+        },
+        {
+          "pinId": "j5-17",
+          "x": 21.445020000000007,
+          "y": 43.24695399999999
+        },
+        {
+          "pinId": "j5-18",
+          "x": 21.445020000000007,
+          "y": 45.78695399999999
+        },
+        {
+          "pinId": "j5-19",
+          "x": 21.445020000000007,
+          "y": 48.326953999999986
+        },
+        {
+          "pinId": "j5-20",
+          "x": 21.445020000000007,
+          "y": 50.866953999999986
+        }
+      ],
+      "allPhysicalViewContactsMm": [
+        {
+          "pinId": "j6-1",
+          "x": 1.1250200000000063,
+          "y": 2.6069539999999876,
+          "face": "front",
+          "description": "J6.1. 3.3 V I/O. FPGA package pin 73. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-2",
+          "x": 1.1250200000000063,
+          "y": 5.1469539999999885,
+          "face": "front",
+          "description": "J6.2. 3.3 V I/O. FPGA package pin 74. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-3",
+          "x": 1.1250200000000063,
+          "y": 7.686953999999988,
+          "face": "front",
+          "description": "J6.3. 3.3 V I/O. FPGA package pin 75. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-4",
+          "x": 1.1250200000000063,
+          "y": 10.226953999999989,
+          "face": "front",
+          "description": "J6.4. 3.3 V I/O. FPGA package pin 85. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-5",
+          "x": 1.1250200000000063,
+          "y": 12.766953999999988,
+          "face": "front",
+          "description": "J6.5. 3.3 V I/O. FPGA package pin 77. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-6",
+          "x": 1.1250200000000063,
+          "y": 15.306953999999987,
+          "face": "front",
+          "description": "J6.6. 3.3 V I/O. FPGA package pin 15. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-7",
+          "x": 1.1250200000000063,
+          "y": 17.84695399999999,
+          "face": "front",
+          "description": "J6.7. 3.3 V I/O. FPGA package pin 16. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-8",
+          "x": 1.1250200000000063,
+          "y": 20.38695399999999,
+          "face": "front",
+          "description": "J6.8. 3.3 V I/O. FPGA package pin 27. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-9",
+          "x": 1.1250200000000063,
+          "y": 22.926953999999988,
+          "face": "front",
+          "description": "J6.9. 3.3 V I/O. FPGA package pin 28. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-10",
+          "x": 1.1250200000000063,
+          "y": 25.466953999999987,
+          "face": "front",
+          "description": "J6.10. 3.3 V I/O. FPGA package pin 25. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-11",
+          "x": 1.1250200000000063,
+          "y": 28.006953999999986,
+          "face": "front",
+          "description": "J6.11. 3.3 V I/O. FPGA package pin 26. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-12",
+          "x": 1.1250200000000063,
+          "y": 30.54695399999999,
+          "face": "front",
+          "description": "J6.12. 3.3 V I/O. FPGA package pin 29. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-13",
+          "x": 1.1250200000000063,
+          "y": 33.08695399999999,
+          "face": "front",
+          "description": "J6.13. 3.3 V I/O. FPGA package pin 30. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-14",
+          "x": 1.1250200000000063,
+          "y": 35.62695399999999,
+          "face": "front",
+          "description": "J6.14. 3.3 V I/O. FPGA package pin 31. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-15",
+          "x": 1.1250200000000063,
+          "y": 38.16695399999999,
+          "face": "front",
+          "description": "J6.15. 3.3 V I/O. FPGA package pin 17. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-16",
+          "x": 1.1250200000000063,
+          "y": 40.70695399999999,
+          "face": "front",
+          "description": "J6.16. 3.3 V I/O. FPGA package pin 20. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-17",
+          "x": 1.1250200000000063,
+          "y": 43.24695399999999,
+          "face": "front",
+          "description": "J6.17. 3.3 V I/O. FPGA package pin 19. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-18",
+          "x": 1.1250200000000063,
+          "y": 45.78695399999999,
+          "face": "front",
+          "description": "J6.18. 3.3 V I/O. FPGA package pin 18. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-19",
+          "x": 1.1250200000000063,
+          "y": 48.326953999999986,
+          "face": "front",
+          "description": "J6.19. 3V3 supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j6-20",
+          "x": 1.1250200000000063,
+          "y": 50.866953999999986,
+          "face": "front",
+          "description": "J6.20. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-1",
+          "x": 21.445020000000007,
+          "y": 2.6069539999999876,
+          "face": "front",
+          "description": "J5.1. 5V supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-2",
+          "x": 21.445020000000007,
+          "y": 5.1469539999999885,
+          "face": "front",
+          "description": "J5.2. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-3",
+          "x": 21.445020000000007,
+          "y": 7.686953999999988,
+          "face": "front",
+          "description": "J5.3. 3.3 V I/O. FPGA package pin 76. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-4",
+          "x": 21.445020000000007,
+          "y": 10.226953999999989,
+          "face": "front",
+          "description": "J5.4. 3.3 V I/O. FPGA package pin 80. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-5",
+          "x": 21.445020000000007,
+          "y": 12.766953999999988,
+          "face": "front",
+          "description": "J5.5. 3.3 V I/O. FPGA package pin 42. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-6",
+          "x": 21.445020000000007,
+          "y": 15.306953999999987,
+          "face": "front",
+          "description": "J5.6. 3.3 V I/O. FPGA package pin 41. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-7",
+          "x": 21.445020000000007,
+          "y": 17.84695399999999,
+          "face": "front",
+          "description": "J5.7. 3.3 V I/O. FPGA package pin 56. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-8",
+          "x": 21.445020000000007,
+          "y": 20.38695399999999,
+          "face": "front",
+          "description": "J5.8. 3.3 V I/O. FPGA package pin 54. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-9",
+          "x": 21.445020000000007,
+          "y": 22.926953999999988,
+          "face": "front",
+          "description": "J5.9. 3.3 V I/O. FPGA package pin 51. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-10",
+          "x": 21.445020000000007,
+          "y": 25.466953999999987,
+          "face": "front",
+          "description": "J5.10. 3.3 V I/O. FPGA package pin 48. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-11",
+          "x": 21.445020000000007,
+          "y": 28.006953999999986,
+          "face": "front",
+          "description": "J5.11. 3.3 V I/O. FPGA package pin 55. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-12",
+          "x": 21.445020000000007,
+          "y": 30.54695399999999,
+          "face": "front",
+          "description": "J5.12. 3.3 V I/O. FPGA package pin 49. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-13",
+          "x": 21.445020000000007,
+          "y": 33.08695399999999,
+          "face": "front",
+          "description": "J5.13. 3.3 V I/O. FPGA package pin 86. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-14",
+          "x": 21.445020000000007,
+          "y": 35.62695399999999,
+          "face": "front",
+          "description": "J5.14. 3.3 V I/O. FPGA package pin 79. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-15",
+          "x": 21.445020000000007,
+          "y": 38.16695399999999,
+          "face": "front",
+          "description": "J5.15. Power and signal ground. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-16",
+          "x": 21.445020000000007,
+          "y": 40.70695399999999,
+          "face": "front",
+          "description": "J5.16. 3V3 supply rail. Follow the board's documented power configuration.  Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-17",
+          "x": 21.445020000000007,
+          "y": 43.24695399999999,
+          "face": "front",
+          "description": "J5.17. 3.3 V I/O. FPGA package pin 72. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-18",
+          "x": 21.445020000000007,
+          "y": 45.78695399999999,
+          "face": "front",
+          "description": "J5.18. 3.3 V I/O. FPGA package pin 71. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-19",
+          "x": 21.445020000000007,
+          "y": 48.326953999999986,
+          "face": "front",
+          "description": "J5.19. 3.3 V I/O. FPGA package pin 53. Component-side/front view; physical contact on the illustrated connector."
+        },
+        {
+          "pinId": "j5-20",
+          "x": 21.445020000000007,
+          "y": 50.866953999999986,
+          "face": "front",
+          "description": "J5.20. 3.3 V I/O. FPGA package pin 52. Component-side/front view; physical contact on the illustrated connector."
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 22.553973,
+          "height": 54.041973
+        },
+        {
+          "x": 7.893890549999999,
+          "y": -0.6755246625,
+          "width": 6.7661919,
+          "height": 5.06643496875
+        },
+        {
+          "x": 5.187413789999999,
+          "y": 48.6377757,
+          "width": 12.179145420000001,
+          "height": 6.0797219625
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null,
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+    },
+    {
+      "id": "sipeed-tang-primer-eg4s20",
+      "family": "sipeed-fpga",
+      "manufacturer": "Sipeed",
+      "revision": "EG4S20BG256 / GD32F150 debugger",
+      "source": "https://tang.sipeed.com/en/hardware-overview/lichee-tang/",
+      "decision": "deferred",
+      "reason": "Manufacturer explicitly specifies 900 mil (22.86 mm) header-row separation and breadboard compatibility, plus 40 additional castellated IOs. This confirms that the real original Primer can be inserted. The complete 80-endpoint electrical assignment is now reconciled: even LEFT/RIGHT reference positions are the 40 main through-holes and odd positions are 40 separate castellated IOs. However the exact PCB outline, first-post offsets and all castellated pad coordinates remain unreconciled across the old/new hardware photographs, the manufacturer assembly PDF (no header copper/drill layer) and the published 25.4 x 56.0 mm v1.0 specification. The manufacturer PCB-library directory is currently empty. No measured primary CAD pattern is available to resolve this geometry/revision mismatch; the representative 45 x 55 mm catalog carrier must not be reused as evidence. This remains an exact physical-view geometry gap, not a claim of incompatibility, and no partial 40-contact-only view was enabled.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "previousDecision": "deferred",
+      "sources": [
+        {
+          "label": "Manufacturer original Anlogic Primer description, 900 mil row separation, old/new pinouts",
+          "url": "https://wiki.sipeed.com/hardware/zh/tang/Tang-primer/index.html"
+        },
+        {
+          "label": "Manufacturer-linked original hardware resource folder",
+          "url": "https://dl.sipeed.com/shareURL/TANG/Primer/HDK"
+        }
+      ],
+      "completePublishedPinCount": 80
+    },
+    {
+      "id": "sipeed-lichee-zero",
+      "family": "sipeed-lichee",
+      "manufacturer": "Sipeed",
+      "revision": "2017-03-05 / Allwinner V3s",
+      "source": "https://wiki.sipeed.com/hardware/en/lichee/Zero/Zero.html",
+      "previousDecision": "deferred",
+      "decision": "supported",
+      "reason": "Manufacturer lichee_zero_Schematic.pdf page 2 embeds the component-side board photograph with all numbered U3/U8/J3 contacts. It explicitly marks even U3/U8 contacts as Dip hole and Stamp hole and odd contacts as Stamp hole only; J3.1 is the rightmost top LCD pad. The DXF SIP30_15_1_27 blocks supply complete 15-hole inner rows at source Y=59.436/82.296 mm and X=52.07+i*2.54 mm, separation exactly 22.86 mm. Outer 1.27 mm contacts use X=50.8+i*1.27 and Y=58.166/83.566. PCB Mechanical1 outline is X=44.4999999..89.154, Y=58.166..83.693 mm. J3 and both J2/J12 supply pairs are independently projected from their source pad blocks and numbered photograph. All 84 published logical endpoints remain present; the 30 selected even IDs use their real inner taps instead of inventing J8/J9 duplicate IDs. MicroSD placement confirms the component-side handedness. Non-contact hardware remains illustrative.",
+      "mountingSource": {
+        "label": "Sipeed Lichee Zero manufacturer DXF and numbered component-side interface schematic",
+        "url": "https://dl.sipeed.com/fileList/LICHEE/Zero/HDK/lichee_zero.DXF"
+      },
+      "sources": [
+        {
+          "label": "Sipeed Lichee Zero manufacturer DXF and numbered component-side interface schematic",
+          "url": "https://dl.sipeed.com/fileList/LICHEE/Zero/HDK/lichee_zero.DXF"
+        },
+        {
+          "label": "Manufacturer numbered interface schematic page 2, embedded component-side photo and Dip/Stamp designation",
+          "url": "https://dl.sipeed.com/fileList/LICHEE/Zero/HDK/lichee_zero_Schematic.pdf"
+        },
+        {
+          "label": "Manufacturer front/back photos and breadboard tap pin diagram",
+          "url": "https://wiki.sipeed.com/hardware/en/lichee/Zero/Zero.html"
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Install both complete 15-contact inner U8/U3 rows with downward straight male headers. The 30 selected contacts are the manufacturer breadboard taps of the existing even-number logical terminals. Leave 1.27 mm stamp-only/LCD contacts and auxiliary J2/J12 supply pairs unpopulated downward. Fine contacts show physical terminal numbers with full functions on hover; the rear FPC remains a cable interface.",
+      "selectedContactIds": [
+        "u3-2",
+        "u3-4",
+        "u3-6",
+        "u3-8",
+        "u3-10",
+        "u3-12",
+        "u3-14",
+        "u3-16",
+        "u3-18",
+        "u3-20",
+        "u3-22",
+        "u3-24",
+        "u3-26",
+        "u3-28",
+        "u3-30",
+        "u8-2",
+        "u8-4",
+        "u8-6",
+        "u8-8",
+        "u8-10",
+        "u8-12",
+        "u8-14",
+        "u8-16",
+        "u8-18",
+        "u8-20",
+        "u8-22",
+        "u8-24",
+        "u8-26",
+        "u8-28",
+        "u8-30"
+      ],
+      "completePublishedPinCount": 84,
+      "completeViewPinCount": 84,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "u3-2",
+          "x": 24.13000000000001,
+          "y": 7.5700001000000015
+        },
+        {
+          "pinId": "u3-4",
+          "x": 24.13000000000001,
+          "y": 10.1100001
+        },
+        {
+          "pinId": "u3-6",
+          "x": 24.13000000000001,
+          "y": 12.6500001
+        },
+        {
+          "pinId": "u3-8",
+          "x": 24.13000000000001,
+          "y": 15.190000099999999
+        },
+        {
+          "pinId": "u3-10",
+          "x": 24.13000000000001,
+          "y": 17.730000099999998
+        },
+        {
+          "pinId": "u3-12",
+          "x": 24.13000000000001,
+          "y": 20.270000099999997
+        },
+        {
+          "pinId": "u3-14",
+          "x": 24.13000000000001,
+          "y": 22.810000100000003
+        },
+        {
+          "pinId": "u3-16",
+          "x": 24.13000000000001,
+          "y": 25.350000099999995
+        },
+        {
+          "pinId": "u3-18",
+          "x": 24.13000000000001,
+          "y": 27.8900001
+        },
+        {
+          "pinId": "u3-20",
+          "x": 24.13000000000001,
+          "y": 30.430000099999994
+        },
+        {
+          "pinId": "u3-22",
+          "x": 24.13000000000001,
+          "y": 32.9700001
+        },
+        {
+          "pinId": "u3-24",
+          "x": 24.13000000000001,
+          "y": 35.51000009999999
+        },
+        {
+          "pinId": "u3-26",
+          "x": 24.13000000000001,
+          "y": 38.0500001
+        },
+        {
+          "pinId": "u3-28",
+          "x": 24.13000000000001,
+          "y": 40.590000100000005
+        },
+        {
+          "pinId": "u3-30",
+          "x": 24.13000000000001,
+          "y": 43.1300001
+        },
+        {
+          "pinId": "u8-2",
+          "x": 1.2700000000000031,
+          "y": 7.5700001000000015
+        },
+        {
+          "pinId": "u8-4",
+          "x": 1.2700000000000031,
+          "y": 10.1100001
+        },
+        {
+          "pinId": "u8-6",
+          "x": 1.2700000000000031,
+          "y": 12.6500001
+        },
+        {
+          "pinId": "u8-8",
+          "x": 1.2700000000000031,
+          "y": 15.190000099999999
+        },
+        {
+          "pinId": "u8-10",
+          "x": 1.2700000000000031,
+          "y": 17.730000099999998
+        },
+        {
+          "pinId": "u8-12",
+          "x": 1.2700000000000031,
+          "y": 20.270000099999997
+        },
+        {
+          "pinId": "u8-14",
+          "x": 1.2700000000000031,
+          "y": 22.810000100000003
+        },
+        {
+          "pinId": "u8-16",
+          "x": 1.2700000000000031,
+          "y": 25.350000099999995
+        },
+        {
+          "pinId": "u8-18",
+          "x": 1.2700000000000031,
+          "y": 27.8900001
+        },
+        {
+          "pinId": "u8-20",
+          "x": 1.2700000000000031,
+          "y": 30.430000099999994
+        },
+        {
+          "pinId": "u8-22",
+          "x": 1.2700000000000031,
+          "y": 32.9700001
+        },
+        {
+          "pinId": "u8-24",
+          "x": 1.2700000000000031,
+          "y": 35.51000009999999
+        },
+        {
+          "pinId": "u8-26",
+          "x": 1.2700000000000031,
+          "y": 38.0500001
+        },
+        {
+          "pinId": "u8-28",
+          "x": 1.2700000000000031,
+          "y": 40.590000100000005
+        },
+        {
+          "pinId": "u8-30",
+          "x": 1.2700000000000031,
+          "y": 43.1300001
+        }
+      ],
+      "allPhysicalViewContactsMm": [
+        {
+          "pinId": "u3-1",
+          "x": 25.400000000000006,
+          "y": 6.300000099999998,
+          "face": "front",
+          "description": "U3.1: HP_COM. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-2",
+          "x": 24.130000000000006,
+          "y": 7.5700001000000015,
+          "face": "front",
+          "description": "U3.2: PG0. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-3",
+          "x": 25.400000000000006,
+          "y": 8.840000099999997,
+          "face": "front",
+          "description": "U3.3: HP_COMFB. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-4",
+          "x": 24.130000000000006,
+          "y": 10.1100001,
+          "face": "front",
+          "description": "U3.4: PG1. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-5",
+          "x": 25.400000000000006,
+          "y": 11.380000099999995,
+          "face": "front",
+          "description": "U3.5: HP_L. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-6",
+          "x": 24.130000000000006,
+          "y": 12.6500001,
+          "face": "front",
+          "description": "U3.6: PG2. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-7",
+          "x": 25.400000000000006,
+          "y": 13.920000099999996,
+          "face": "front",
+          "description": "U3.7: HP_R. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-8",
+          "x": 24.130000000000006,
+          "y": 15.190000099999997,
+          "face": "front",
+          "description": "U3.8: PG3. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-9",
+          "x": 25.400000000000006,
+          "y": 16.460000099999995,
+          "face": "front",
+          "description": "U3.9: HBIAS. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-10",
+          "x": 24.130000000000006,
+          "y": 17.730000099999998,
+          "face": "front",
+          "description": "U3.10: PG4. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-11",
+          "x": 25.400000000000006,
+          "y": 19.0000001,
+          "face": "front",
+          "description": "U3.11: MIC_N. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-12",
+          "x": 24.130000000000006,
+          "y": 20.270000099999997,
+          "face": "front",
+          "description": "U3.12: PG5. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-13",
+          "x": 25.400000000000006,
+          "y": 21.540000099999993,
+          "face": "front",
+          "description": "U3.13: MIC_P. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-14",
+          "x": 24.130000000000006,
+          "y": 22.810000100000003,
+          "face": "front",
+          "description": "U3.14: GND. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-15",
+          "x": 25.400000000000006,
+          "y": 24.0800001,
+          "face": "front",
+          "description": "U3.15: USB_DP. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-16",
+          "x": 24.130000000000006,
+          "y": 25.350000099999995,
+          "face": "front",
+          "description": "U3.16: 3V3. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-17",
+          "x": 25.400000000000006,
+          "y": 26.620000100000006,
+          "face": "front",
+          "description": "U3.17: USB_DM. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-18",
+          "x": 24.130000000000006,
+          "y": 27.8900001,
+          "face": "front",
+          "description": "U3.18: LRADC. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-19",
+          "x": 25.400000000000006,
+          "y": 29.160000099999998,
+          "face": "front",
+          "description": "U3.19: USB_ID. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-20",
+          "x": 24.130000000000006,
+          "y": 30.430000099999994,
+          "face": "front",
+          "description": "U3.20: PF0. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-21",
+          "x": 25.400000000000006,
+          "y": 31.70000009999999,
+          "face": "front",
+          "description": "U3.21: ETH_TX+. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-22",
+          "x": 24.130000000000006,
+          "y": 32.9700001,
+          "face": "front",
+          "description": "U3.22: PF1. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-23",
+          "x": 25.400000000000006,
+          "y": 34.240000099999996,
+          "face": "front",
+          "description": "U3.23: ETH_TX-. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-24",
+          "x": 24.130000000000006,
+          "y": 35.51000009999999,
+          "face": "front",
+          "description": "U3.24: PF2. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-25",
+          "x": 25.400000000000006,
+          "y": 36.7800001,
+          "face": "front",
+          "description": "U3.25: ETH_RX+. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-26",
+          "x": 24.130000000000006,
+          "y": 38.0500001,
+          "face": "front",
+          "description": "U3.26: PF3. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-27",
+          "x": 25.400000000000006,
+          "y": 39.320000099999994,
+          "face": "front",
+          "description": "U3.27: ETH_RX-. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-28",
+          "x": 24.130000000000006,
+          "y": 40.590000100000005,
+          "face": "front",
+          "description": "U3.28: PF4. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u3-29",
+          "x": 25.400000000000006,
+          "y": 41.8600001,
+          "face": "front",
+          "description": "U3.29: 3V0. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u3-30",
+          "x": 24.130000000000006,
+          "y": 43.1300001,
+          "face": "front",
+          "description": "U3.30: PF5. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-1",
+          "x": 0,
+          "y": 6.300000099999998,
+          "face": "front",
+          "description": "U8.1: LCD_DE. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-2",
+          "x": 1.2700000000000031,
+          "y": 7.5700001000000015,
+          "face": "front",
+          "description": "U8.2: PE21. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-3",
+          "x": 0,
+          "y": 8.840000099999997,
+          "face": "front",
+          "description": "U8.3: LCD_CLK. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-4",
+          "x": 1.2700000000000031,
+          "y": 10.1100001,
+          "face": "front",
+          "description": "U8.4: PE22. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-5",
+          "x": 0,
+          "y": 11.380000099999995,
+          "face": "front",
+          "description": "U8.5: PE20. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-6",
+          "x": 1.2700000000000031,
+          "y": 12.6500001,
+          "face": "front",
+          "description": "U8.6: PB0. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-7",
+          "x": 0,
+          "y": 13.920000099999996,
+          "face": "front",
+          "description": "U8.7: PB2. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-8",
+          "x": 1.2700000000000031,
+          "y": 15.190000099999997,
+          "face": "front",
+          "description": "U8.8: PB1. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-9",
+          "x": 0,
+          "y": 16.460000099999995,
+          "face": "front",
+          "description": "U8.9: PB3. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-10",
+          "x": 1.2700000000000031,
+          "y": 17.730000099999998,
+          "face": "front",
+          "description": "U8.10: PB4. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-11",
+          "x": 0,
+          "y": 19.0000001,
+          "face": "front",
+          "description": "U8.11: 1V2. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-12",
+          "x": 1.2700000000000031,
+          "y": 20.270000099999997,
+          "face": "front",
+          "description": "U8.12: PB5. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-13",
+          "x": 0,
+          "y": 21.540000099999993,
+          "face": "front",
+          "description": "U8.13: 1V8. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-14",
+          "x": 1.2700000000000031,
+          "y": 22.810000100000003,
+          "face": "front",
+          "description": "U8.14: PB6. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-15",
+          "x": 0,
+          "y": 24.0800001,
+          "face": "front",
+          "description": "U8.15: 3V3. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-16",
+          "x": 1.2700000000000031,
+          "y": 25.350000099999995,
+          "face": "front",
+          "description": "U8.16: PB7. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-17",
+          "x": 0,
+          "y": 26.620000100000006,
+          "face": "front",
+          "description": "U8.17: MIPI_D0+. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-18",
+          "x": 1.2700000000000031,
+          "y": 27.8900001,
+          "face": "front",
+          "description": "U8.18: PB8. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-19",
+          "x": 0,
+          "y": 29.160000099999998,
+          "face": "front",
+          "description": "U8.19: MIPI_D0-. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-20",
+          "x": 1.2700000000000031,
+          "y": 30.430000099999994,
+          "face": "front",
+          "description": "U8.20: PB9. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-21",
+          "x": 0,
+          "y": 31.70000009999999,
+          "face": "front",
+          "description": "U8.21: MIPI_D1+. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-22",
+          "x": 1.2700000000000031,
+          "y": 32.9700001,
+          "face": "front",
+          "description": "U8.22: PC1. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-23",
+          "x": 0,
+          "y": 34.240000099999996,
+          "face": "front",
+          "description": "U8.23: MIPI_D1-. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-24",
+          "x": 1.2700000000000031,
+          "y": 35.51000009999999,
+          "face": "front",
+          "description": "U8.24: PC3. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-25",
+          "x": 0,
+          "y": 36.7800001,
+          "face": "front",
+          "description": "U8.25: MIPI_CK+. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-26",
+          "x": 1.2700000000000031,
+          "y": 38.0500001,
+          "face": "front",
+          "description": "U8.26: PC0. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-27",
+          "x": 0,
+          "y": 39.320000099999994,
+          "face": "front",
+          "description": "U8.27: MIPI_CK-. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-28",
+          "x": 1.2700000000000031,
+          "y": 40.590000100000005,
+          "face": "front",
+          "description": "U8.28: PC2. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "u8-29",
+          "x": 0,
+          "y": 41.8600001,
+          "face": "front",
+          "description": "U8.29: GND. Actual component-side stamp-only castellated pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "u8-30",
+          "x": 1.2700000000000031,
+          "y": 43.1300001,
+          "face": "front",
+          "description": "U8.30: 5V. Actual inner 2.54 mm drilled tap, electrically identical to this manufacturer's same-number castellated terminal. Downward straight-header post center."
+        },
+        {
+          "pinId": "j3-1",
+          "x": 24.8339991,
+          "y": 0,
+          "face": "front",
+          "description": "J3.1: LCD_D23. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-2",
+          "x": 23.563999100000004,
+          "y": 0,
+          "face": "front",
+          "description": "J3.2: LCD_D22. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-3",
+          "x": 22.293999099999994,
+          "y": 0,
+          "face": "front",
+          "description": "J3.3: LCD_D21. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-4",
+          "x": 21.023999099999997,
+          "y": 0,
+          "face": "front",
+          "description": "J3.4: LCD_D20. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-5",
+          "x": 19.7539991,
+          "y": 0,
+          "face": "front",
+          "description": "J3.5: LCD_D19. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-6",
+          "x": 18.483999100000005,
+          "y": 0,
+          "face": "front",
+          "description": "J3.6: LCD_D18. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-7",
+          "x": 17.213999099999995,
+          "y": 0,
+          "face": "front",
+          "description": "J3.7: LCD_D7. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-8",
+          "x": 15.9439991,
+          "y": 0,
+          "face": "front",
+          "description": "J3.8: LCD_D6. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-9",
+          "x": 14.673999100000003,
+          "y": 0,
+          "face": "front",
+          "description": "J3.9: LCD_D5. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-10",
+          "x": 13.403999099999993,
+          "y": 0,
+          "face": "front",
+          "description": "J3.10: LCD_D4. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-11",
+          "x": 12.133999099999997,
+          "y": 0,
+          "face": "front",
+          "description": "J3.11: LCD_D3. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-12",
+          "x": 10.863999100000001,
+          "y": 0,
+          "face": "front",
+          "description": "J3.12: LCD_D2. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-13",
+          "x": 9.593999100000005,
+          "y": 0,
+          "face": "front",
+          "description": "J3.13: LCD_D15. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-14",
+          "x": 8.323999099999995,
+          "y": 0,
+          "face": "front",
+          "description": "J3.14: LCD_D14. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-15",
+          "x": 7.053999099999999,
+          "y": 0,
+          "face": "front",
+          "description": "J3.15: LCD_D13. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-16",
+          "x": 5.783999100000003,
+          "y": 0,
+          "face": "front",
+          "description": "J3.16: LCD_D12. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-17",
+          "x": 4.5139990999999995,
+          "y": 0,
+          "face": "front",
+          "description": "J3.17: LCD_D11. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-18",
+          "x": 3.2439990999999964,
+          "y": 0,
+          "face": "front",
+          "description": "J3.18: LCD_D10. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-19",
+          "x": 1.9739991000000003,
+          "y": 0,
+          "face": "front",
+          "description": "J3.19: LCD_VSYNC. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j3-20",
+          "x": 0.7039991000000043,
+          "y": 0,
+          "face": "front",
+          "description": "J3.20: LCD_HSYNC. Actual component-side 1.27 mm top edge LCD pad. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j2-1",
+          "x": 4.133999860000003,
+          "y": 43.19999996000001,
+          "face": "front",
+          "description": "J2.1: 5V. Actual component-side auxiliary supply through-hole. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j2-2",
+          "x": 4.133999860000003,
+          "y": 40.65999996,
+          "face": "front",
+          "description": "J2.2: GND. Actual component-side auxiliary supply through-hole. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j12-1",
+          "x": 21.334001020000002,
+          "y": 43.10000016,
+          "face": "front",
+          "description": "J12.1: VRTC. Actual component-side auxiliary supply through-hole. This contact is preserved for separate wiring and does not enter the breadboard."
+        },
+        {
+          "pinId": "j12-2",
+          "x": 21.334001020000002,
+          "y": 40.560000159999994,
+          "face": "front",
+          "description": "J12.2: GND. Actual component-side auxiliary supply through-hole. This contact is preserved for separate wiring and does not enter the breadboard."
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 25.527,
+          "height": 44.6540001
+        },
+        {
+          "x": 7.874,
+          "y": 39.95200036,
+          "width": 9.72600036,
+          "height": 5
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null,
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+    },
+    {
+      "id": "sipeed-maix-bit-v2-0",
+      "family": "sipeed-maix",
+      "manufacturer": "Sipeed",
+      "revision": "K210 / 2020-01-18 / USB-C",
+      "source": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maix-Bit/Maix-Bit_V2.0_with_MEMS_microphone",
+      "previousDecision": "deferred",
+      "decision": "supported",
+      "reason": "Manufacturer Maix-BIT Specifications v2.0 explicitly specifies 2.54 mm GPIO contacts, a 53.3 x 25.4 mm PCB and direct breadboard insertion. The V2.0 component-side photographs and assembly identify both complete 18-contact rows with connector positions 10/11 replaced by the central mounting annulus. The nominal straight-header assembly uses 22.86 mm row separation and 2.54 mm longitudinal post centres. Row separation and the 2.54 mm first-post offset are a documented nominal assembly inference corroborated by the manufacturer direct-insertion statement and the same-side photographs; these are not claimed to be extracted production STEP drill coordinates. Non-contact hardware remains representative.",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/MAIX/HDK/Sipeed-Maix-Bit/Specifications/Sipeed%20Maix-Bit%20Specifications_EN%20V2.0.pdf"
+      },
+      "sources": [
+        {
+          "label": "Sipeed manufacturer mechanical and pinout reference",
+          "url": "https://dl.sipeed.com/fileList/MAIX/HDK/Sipeed-Maix-Bit/Specifications/Sipeed%20Maix-Bit%20Specifications_EN%20V2.0.pdf"
+        },
+        {
+          "label": "Manufacturer V2.0 dimensions, component-side photographs and GPIO pitch specification",
+          "url": "https://dl.sipeed.com/fileList/MAIX/HDK/Sipeed-Maix-Bit/Specifications/Sipeed%20Maix-Bit%20规格书%20V2.0.pdf"
+        },
+        {
+          "label": "Exact V2.0 hardware assembly folder",
+          "url": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maix-Bit/Maix-Bit_V2.0_with_MEMS_microphone"
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Fit both complete 18-contact row segments with downward straight 2.54 mm male headers, retaining the two-position gap around each central mounting hole. Camera/LCD FPCs, USB-C and microSD remain cable/card ports. RST remains a 1.8 V-domain input.",
+      "selectedContactIds": [
+        "j13-1",
+        "j13-2",
+        "j13-3",
+        "j13-4",
+        "j13-5",
+        "j13-6",
+        "j13-7",
+        "j13-8",
+        "j13-9",
+        "j13-12",
+        "j13-13",
+        "j13-14",
+        "j13-15",
+        "j13-16",
+        "j13-17",
+        "j13-18",
+        "j13-19",
+        "j13-20",
+        "j14-1",
+        "j14-2",
+        "j14-3",
+        "j14-4",
+        "j14-5",
+        "j14-6",
+        "j14-7",
+        "j14-8",
+        "j14-9",
+        "j14-12",
+        "j14-13",
+        "j14-14",
+        "j14-15",
+        "j14-16",
+        "j14-17",
+        "j14-18",
+        "j14-19",
+        "j14-20"
+      ],
+      "completePublishedPinCount": 36,
+      "completeViewPinCount": 36,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j13-1",
+          "x": 2.54,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-2",
+          "x": 5.08,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-3",
+          "x": 7.62,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-4",
+          "x": 10.16,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-5",
+          "x": 12.7,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-6",
+          "x": 15.239999999999998,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-7",
+          "x": 17.78,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-8",
+          "x": 20.32,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-9",
+          "x": 22.86,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-12",
+          "x": 30.48,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-13",
+          "x": 33.02,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-14",
+          "x": 35.56,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-15",
+          "x": 38.1,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-16",
+          "x": 40.64,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-17",
+          "x": 43.18,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-18",
+          "x": 45.72,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-19",
+          "x": 48.26,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-20",
+          "x": 50.8,
+          "y": 1.27
+        },
+        {
+          "pinId": "j14-1",
+          "x": 2.54,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-2",
+          "x": 5.08,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-3",
+          "x": 7.62,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-4",
+          "x": 10.16,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-5",
+          "x": 12.7,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-6",
+          "x": 15.239999999999998,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-7",
+          "x": 17.78,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-8",
+          "x": 20.32,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-9",
+          "x": 22.86,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-12",
+          "x": 30.48,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-13",
+          "x": 33.02,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-14",
+          "x": 35.56,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-15",
+          "x": 38.1,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-16",
+          "x": 40.64,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-17",
+          "x": 43.18,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-18",
+          "x": 45.72,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-19",
+          "x": 48.26,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-20",
+          "x": 50.8,
+          "y": 24.13
+        }
+      ],
+      "allPhysicalViewContactsMm": [
+        {
+          "pinId": "j13-1",
+          "x": 2.54,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.1 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-2",
+          "x": 5.08,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.2 — 3.3 V signal. Select the required alternate function in firmware. Shared MEMS microphone data."
+        },
+        {
+          "pinId": "j13-3",
+          "x": 7.62,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.3 — 3.3 V signal. Select the required alternate function in firmware. Shared MEMS microphone WS."
+        },
+        {
+          "pinId": "j13-4",
+          "x": 10.16,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.4 — 3.3 V signal. Select the required alternate function in firmware. Shared MEMS microphone BCK."
+        },
+        {
+          "pinId": "j13-5",
+          "x": 12.7,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.5 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-6",
+          "x": 15.239999999999998,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.6 — 3.3 V signal. Select the required alternate function in firmware. BOOT: pull low for ISP boot."
+        },
+        {
+          "pinId": "j13-7",
+          "x": 17.78,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.7 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-8",
+          "x": 20.32,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.8 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-9",
+          "x": 22.86,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.9 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-12",
+          "x": 30.48,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.12 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-13",
+          "x": 33.02,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.13 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-14",
+          "x": 35.56,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.14 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-15",
+          "x": 38.1,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.15 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-16",
+          "x": 40.64,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.16 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-17",
+          "x": 43.18,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.17 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-18",
+          "x": 45.72,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.18 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-19",
+          "x": 48.26,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.19 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j13-20",
+          "x": 50.8,
+          "y": 1.2700000000000002,
+          "face": "front",
+          "description": "J13.20 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-1",
+          "x": 2.54,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.1 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-2",
+          "x": 5.08,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.2 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-3",
+          "x": 7.62,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.3 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-4",
+          "x": 10.16,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.4 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-5",
+          "x": 12.7,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.5 — Common ground."
+        },
+        {
+          "pinId": "j14-6",
+          "x": 15.239999999999998,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.6 — USB 5 V power rail. Follow the board power-path schematic before combining supplies."
+        },
+        {
+          "pinId": "j14-7",
+          "x": 17.78,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.7 — Regulated 3.3 V output. Do not short independent power sources together."
+        },
+        {
+          "pinId": "j14-8",
+          "x": 20.32,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.8 — Active-low reset/chip enable. Reset belongs to the 1.8 V domain; do not apply 5 V."
+        },
+        {
+          "pinId": "j14-9",
+          "x": 22.86,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.9 — 3.3 V signal. Select the required alternate function in firmware. Shared microSD MISO."
+        },
+        {
+          "pinId": "j14-12",
+          "x": 30.48,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.12 — 3.3 V signal. Select the required alternate function in firmware. Shared microSD clock."
+        },
+        {
+          "pinId": "j14-13",
+          "x": 33.02,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.13 — 3.3 V signal. Select the required alternate function in firmware. Shared microSD MOSI."
+        },
+        {
+          "pinId": "j14-14",
+          "x": 35.56,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.14 — 3.3 V signal. Select the required alternate function in firmware. Shared microSD CS."
+        },
+        {
+          "pinId": "j14-15",
+          "x": 38.1,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.15 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-16",
+          "x": 40.64,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.16 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-17",
+          "x": 43.18,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.17 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-18",
+          "x": 45.72,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.18 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-19",
+          "x": 48.26,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.19 — 3.3 V signal. Select the required alternate function in firmware."
+        },
+        {
+          "pinId": "j14-20",
+          "x": 50.8,
+          "y": 24.129999999999995,
+          "face": "front",
+          "description": "J14.20 — 3.3 V signal. Select the required alternate function in firmware."
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 53.3,
+          "height": 25.4
+        },
+        {
+          "x": -2.3,
+          "y": 8,
+          "width": 9.5,
+          "height": 9.2
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null,
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+    },
+    {
+      "id": "sipeed-maix-ii-dock-3072",
+      "family": "sipeed-maix",
+      "manufacturer": "Sipeed",
+      "revision": "Allwinner V831 / 3072 rev0.01",
+      "source": "https://wiki.sipeed.com/hardware/en/maixII/M2/resources.html",
+      "decision": "requires-adapter",
+      "reason": "Resolved against exact manufacturer 3072 TOP DXF. Its two complete HN1X10 header blocks have X=-14.49999894/+14.49999894 mm, separation 28.99999788 mm; Y=-14.13499586+i*2.54 mm, ten positions. Longitudinal pitch is compatible, but 29 mm row separation is not an integer multiple of 2.54 mm (nearest 27.94/30.48 mm). This is a genuine full-pattern mismatch; scaling the PCB or widening the fit tolerance would misrepresent the hardware. Use an adapter or jumpers.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "previousDecision": "deferred",
+      "sources": [
+        {
+          "label": "Exact Maix II Dock V831 3072 TOP mechanical DXF",
+          "url": "https://dl.sipeed.com/fileList/MaixII/MaixII-Dock/HDK/Sipeed_MaixII_Dock_V831/MaixII_Dock_V831_v3072/5.V831_Dock_3072-TOP.dxf"
+        },
+        {
+          "label": "Exact 3072 assembly drawing",
+          "url": "https://dl.sipeed.com/fileList/MaixII/MaixII-Dock/HDK/Sipeed_MaixII_Dock_V831/MaixII_Dock_V831_v3072/3.Maix-II-Dock-3072(Reference_Designator).pdf"
+        }
+      ],
+      "primaryRowsMm": {
+        "x": [
+          -14.49999894,
+          14.49999894
+        ],
+        "firstY": -14.13499586,
+        "pitch": 2.54,
+        "positionsPerRow": 10,
+        "separation": 28.99999788
+      },
+      "completePublishedPinCount": 20
+    },
+    {
+      "id": "brisbane-silicon-epm11",
+      "family": "gowin-third-party",
+      "manufacturer": "Brisbane Silicon",
+      "revision": "RP2350 + GW1NR-9 / representative signal map",
+      "source": "https://brisbanesilicon.com.au/epm11/",
+      "decision": "deferred",
+      "reason": "Current published entry is explicitly a representative 30-signal map with unreviewed power contacts and exact PCB revision. A genuine complete installed primary-header geometry cannot be reconstructed from the partial signal-only carrier. No contact was invented and no partial installation was activated.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "previousDecision": "deferred",
+      "sources": [
+        {
+          "label": "Manufacturer EPM11 product reference",
+          "url": "https://brisbanesilicon.com.au/epm11/"
+        }
+      ],
+      "completePublishedPinCount": 30
+    },
+    {
+      "id": "brisbane-silicon-brs-100-gw1nr9",
+      "family": "gowin-third-party",
+      "manufacturer": "Brisbane Silicon",
+      "revision": "GW1NR-9 / representative 32-GPIO pinout edition",
+      "source": "https://brisbanesilicon.com.au/brs-100-gw1nr9/",
+      "decision": "deferred",
+      "reason": "Current published entry is explicitly a representative 32-GPIO edition without a verified complete power/header layout or identified PCB revision. The limited logical map cannot prove a full physical downward-post installation. No missing power contact or board dimension was guessed.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "previousDecision": "deferred",
+      "sources": [
+        {
+          "label": "Manufacturer BRS-100 product reference",
+          "url": "https://brisbanesilicon.com.au/brs-100-gw1nr9/"
+        }
+      ],
+      "completePublishedPinCount": 32
+    },
+    {
+      "id": "trenz-tec0117-01",
+      "family": "gowin-third-party",
+      "manufacturer": "Trenz Electronic",
+      "revision": "GW1NR-9 / MKR-style + Pmod + JTAG",
+      "source": "https://wiki.trenz-electronic.de/display/PD/TEC0117+TRM",
+      "previousDecision": "deferred",
+      "decision": "supported",
+      "reason": "Manufacturer revision-01 STEP supplies PCB, micro-USB and switch body bounds, all 46 plated-hole centers, and 2.54 mm main pitch. Trenz/Gowin explicitly declare Arduino MKR compatibility; the MKR breadboard grid establishes nominal 20.32 mm installed-post separation. Exported main drill columns are X=.23899876/20.56026622 mm, separation 20.32126746; the nominal right posts differ by only .00126746 mm within 1 mm drills. No global fitting tolerance is widened. Exact front/back photographs identify both main pin-1 markers, all six J4 holes and both J6 rows. The declared configuration matches the source photographs with J4/J6 bodies unpopulated, so their actual plated holes are exposed; the optional right-angle Pmod socket in STEP is not fitted. All 46 endpoints remain present, with no substituted cable landings or hidden auxiliary terminals.",
+      "mountingSource": {
+        "label": "Trenz TEC0117 revision 01 mechanical STEP and unpopulated assembly",
+        "url": "https://www.trenz-electronic.de/trenzdownloads/Trenz_Electronic/Modules_and_Module_Carriers/2.5x6.15/TEC0117/REV01/HW_Design/STP-TEC0117-01.zip"
+      },
+      "sources": [
+        {
+          "label": "Trenz TEC0117 revision 01 mechanical STEP and unpopulated assembly",
+          "url": "https://www.trenz-electronic.de/trenzdownloads/Trenz_Electronic/Modules_and_Module_Carriers/2.5x6.15/TEC0117/REV01/HW_Design/STP-TEC0117-01.zip"
+        },
+        {
+          "label": "Trenz exact revision-01 component-side photograph; unpopulated auxiliary holes",
+          "url": "https://www.trenz-electronic.de/trenzdownloads/Trenz_Electronic/Modules_and_Module_Carriers/2.5x6.15/TEC0117/REV01/Pictures/TEC0117-01_top.jpg"
+        },
+        {
+          "label": "Trenz exact revision-01 bottom photo and physical pin-1 markers",
+          "url": "https://www.trenz-electronic.de/trenzdownloads/Trenz_Electronic/Modules_and_Module_Carriers/2.5x6.15/TEC0117/REV01/Pictures/TEC0117-01_bottom.jpg"
+        },
+        {
+          "label": "Trenz 01-A same PCB, MKR compatibility, flash-only variant declaration",
+          "url": "https://shop.trenz-electronic.de/en/TEC0117-01-A-FPGA-Module-with-GOWIN-LittleBee-and-8-MByte-internal-SDRAM"
+        },
+        {
+          "label": "Gowin exact TEC0117 MKR-compatible assembly declaration",
+          "url": "https://www.gowinsemi.com/en/support/devkits_detail/44/"
+        },
+        {
+          "label": "Arduino MKR standard breadboard-compatible 100 mil grid",
+          "url": "https://docs.arduino.cc/resources/datasheets/ABX00023-datasheet.pdf"
+        },
+        {
+          "label": "Trenz revision-01 schematic, auxiliary header functions",
+          "url": "https://www.trenz-electronic.de/trenzdownloads/Trenz_Electronic/Modules_and_Module_Carriers/2.5x6.15/TEC0117/REV01/Documents/SCH-TEC0117-01.PDF"
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 14-contact main J1/J2 rows with downward straight male headers in the nominal MKR pattern. Leave optional J4 JTAG and J6 Pmod bodies unpopulated or fit upward headers. This profile is not for an assembled right-angle Pmod socket. Pmod contact numbers have full functions on hover; MKR AIN/AREF are digital FPGA signals, not analog inputs.",
+      "selectedContactIds": [
+        "j1-1",
+        "j1-2",
+        "j1-3",
+        "j1-4",
+        "j1-5",
+        "j1-6",
+        "j1-7",
+        "j1-8",
+        "j1-9",
+        "j1-10",
+        "j1-11",
+        "j1-12",
+        "j1-13",
+        "j1-14",
+        "j2-1",
+        "j2-2",
+        "j2-3",
+        "j2-4",
+        "j2-5",
+        "j2-6",
+        "j2-7",
+        "j2-8",
+        "j2-9",
+        "j2-10",
+        "j2-11",
+        "j2-12",
+        "j2-13",
+        "j2-14"
+      ],
+      "completePublishedPinCount": 46,
+      "completeViewPinCount": 46,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j1-1",
+          "x": 2.32504234,
+          "y": 22.296376539999997
+        },
+        {
+          "pinId": "j1-2",
+          "x": 2.32504234,
+          "y": 24.836376539999996
+        },
+        {
+          "pinId": "j1-3",
+          "x": 2.32504234,
+          "y": 27.376376539999995
+        },
+        {
+          "pinId": "j1-4",
+          "x": 2.32504234,
+          "y": 29.916376539999998
+        },
+        {
+          "pinId": "j1-5",
+          "x": 2.32504234,
+          "y": 32.456376539999994
+        },
+        {
+          "pinId": "j1-6",
+          "x": 2.32504234,
+          "y": 34.99637654
+        },
+        {
+          "pinId": "j1-7",
+          "x": 2.32504234,
+          "y": 37.53637654
+        },
+        {
+          "pinId": "j1-8",
+          "x": 2.32504234,
+          "y": 40.07637654
+        },
+        {
+          "pinId": "j1-9",
+          "x": 2.32504234,
+          "y": 42.61637654
+        },
+        {
+          "pinId": "j1-10",
+          "x": 2.32504234,
+          "y": 45.15637654
+        },
+        {
+          "pinId": "j1-11",
+          "x": 2.32504234,
+          "y": 47.696376539999996
+        },
+        {
+          "pinId": "j1-12",
+          "x": 2.32504234,
+          "y": 50.236376539999995
+        },
+        {
+          "pinId": "j1-13",
+          "x": 2.32504234,
+          "y": 52.77637654
+        },
+        {
+          "pinId": "j1-14",
+          "x": 2.32504234,
+          "y": 55.31637654
+        },
+        {
+          "pinId": "j2-1",
+          "x": 22.64504234,
+          "y": 55.31637654
+        },
+        {
+          "pinId": "j2-2",
+          "x": 22.64504234,
+          "y": 52.77637654
+        },
+        {
+          "pinId": "j2-3",
+          "x": 22.64504234,
+          "y": 50.236376539999995
+        },
+        {
+          "pinId": "j2-4",
+          "x": 22.64504234,
+          "y": 47.69637654
+        },
+        {
+          "pinId": "j2-5",
+          "x": 22.64504234,
+          "y": 45.15637654
+        },
+        {
+          "pinId": "j2-6",
+          "x": 22.64504234,
+          "y": 42.616376540000005
+        },
+        {
+          "pinId": "j2-7",
+          "x": 22.64504234,
+          "y": 40.07637654
+        },
+        {
+          "pinId": "j2-8",
+          "x": 22.64504234,
+          "y": 37.53637654
+        },
+        {
+          "pinId": "j2-9",
+          "x": 22.64504234,
+          "y": 34.99637654
+        },
+        {
+          "pinId": "j2-10",
+          "x": 22.64504234,
+          "y": 32.45637654
+        },
+        {
+          "pinId": "j2-11",
+          "x": 22.64504234,
+          "y": 29.91637654
+        },
+        {
+          "pinId": "j2-12",
+          "x": 22.64504234,
+          "y": 27.376376539999995
+        },
+        {
+          "pinId": "j2-13",
+          "x": 22.64504234,
+          "y": 24.836376539999996
+        },
+        {
+          "pinId": "j2-14",
+          "x": 22.64504234,
+          "y": 22.296376539999997
+        }
+      ],
+      "allPhysicalViewContactsMm": [
+        {
+          "pinId": "j1-1",
+          "x": 2.3250423400000004,
+          "y": 22.296376539999997,
+          "face": "front",
+          "description": "J1 1: AREF. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-2",
+          "x": 2.3250423400000004,
+          "y": 24.836376539999996,
+          "face": "front",
+          "description": "J1 2: AIN0. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-3",
+          "x": 2.3250423400000004,
+          "y": 27.376376539999995,
+          "face": "front",
+          "description": "J1 3: AIN1. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-4",
+          "x": 2.3250423400000004,
+          "y": 29.916376539999998,
+          "face": "front",
+          "description": "J1 4: AIN2. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-5",
+          "x": 2.3250423400000004,
+          "y": 32.456376539999994,
+          "face": "front",
+          "description": "J1 5: AIN3. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-6",
+          "x": 2.3250423400000004,
+          "y": 34.99637654,
+          "face": "front",
+          "description": "J1 6: AIN4. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-7",
+          "x": 2.3250423400000004,
+          "y": 37.53637654,
+          "face": "front",
+          "description": "J1 7: AIN5. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-8",
+          "x": 2.3250423400000004,
+          "y": 40.07637654,
+          "face": "front",
+          "description": "J1 8: AIN6. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-9",
+          "x": 2.3250423400000004,
+          "y": 42.61637654,
+          "face": "front",
+          "description": "J1 9: D0. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-10",
+          "x": 2.3250423400000004,
+          "y": 45.15637654,
+          "face": "front",
+          "description": "J1 10: D1. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-11",
+          "x": 2.3250423400000004,
+          "y": 47.696376539999996,
+          "face": "front",
+          "description": "J1 11: D2. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-12",
+          "x": 2.3250423400000004,
+          "y": 50.236376539999995,
+          "face": "front",
+          "description": "J1 12: D3. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-13",
+          "x": 2.3250423400000004,
+          "y": 52.77637654,
+          "face": "front",
+          "description": "J1 13: D4. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j1-14",
+          "x": 2.3250423400000004,
+          "y": 55.31637654,
+          "face": "front",
+          "description": "J1 14: D5. MKR-style printed label; this is 3.3 V FPGA digital I/O, not an ADC or analog reference circuit."
+        },
+        {
+          "pinId": "j2-1",
+          "x": 22.64504234,
+          "y": 55.31637654,
+          "face": "front",
+          "description": "J2 1: D6. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-2",
+          "x": 22.64504234,
+          "y": 52.77637654,
+          "face": "front",
+          "description": "J2 2: D7. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-3",
+          "x": 22.64504234,
+          "y": 50.236376539999995,
+          "face": "front",
+          "description": "J2 3: D8. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-4",
+          "x": 22.64504234,
+          "y": 47.69637654,
+          "face": "front",
+          "description": "J2 4: D9. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-5",
+          "x": 22.64504234,
+          "y": 45.15637654,
+          "face": "front",
+          "description": "J2 5: D10. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-6",
+          "x": 22.64504234,
+          "y": 42.616376540000005,
+          "face": "front",
+          "description": "J2 6: D11. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-7",
+          "x": 22.64504234,
+          "y": 40.07637654,
+          "face": "front",
+          "description": "J2 7: D12. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-8",
+          "x": 22.64504234,
+          "y": 37.53637654,
+          "face": "front",
+          "description": "J2 8: D13. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-9",
+          "x": 22.64504234,
+          "y": 34.99637654,
+          "face": "front",
+          "description": "J2 9: D14. 3.3 V digital I/O."
+        },
+        {
+          "pinId": "j2-10",
+          "x": 22.64504234,
+          "y": 32.45637654,
+          "face": "front",
+          "description": "J2 10: RESET. Active-low board reset."
+        },
+        {
+          "pinId": "j2-11",
+          "x": 22.64504234,
+          "y": 29.916376539999998,
+          "face": "front",
+          "description": "J2 11: GND. Power/signal return."
+        },
+        {
+          "pinId": "j2-12",
+          "x": 22.64504234,
+          "y": 27.376376539999995,
+          "face": "front",
+          "description": "J2 12: 3V3. Regulated 3.3 V board rail."
+        },
+        {
+          "pinId": "j2-13",
+          "x": 22.64504234,
+          "y": 24.836376539999996,
+          "face": "front",
+          "description": "J2 13: VIN. Nominal 5 V external board supply through the power-selection circuit."
+        },
+        {
+          "pinId": "j2-14",
+          "x": 22.64504234,
+          "y": 22.296376539999997,
+          "face": "front",
+          "description": "J2 14: 5V. Shared 5 V system rail."
+        },
+        {
+          "pinId": "j4-1",
+          "x": 20.1063098,
+          "y": 22.296374,
+          "face": "front",
+          "description": "J4.1: GND. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j4-2",
+          "x": 20.1063098,
+          "y": 24.836374,
+          "face": "front",
+          "description": "J4.2: JTAGEN. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j4-3",
+          "x": 20.1063098,
+          "y": 27.376374,
+          "face": "front",
+          "description": "J4.3: TCK. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j4-4",
+          "x": 20.1063098,
+          "y": 29.916374,
+          "face": "front",
+          "description": "J4.4: TDO. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j4-5",
+          "x": 20.1063098,
+          "y": 32.456374,
+          "face": "front",
+          "description": "J4.5: TDI. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j4-6",
+          "x": 20.1063098,
+          "y": 34.996374,
+          "face": "front",
+          "description": "J4.6: TMS. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-1",
+          "x": 18.836043099999998,
+          "y": 57.855591679999996,
+          "face": "front",
+          "description": "J6.1: PIO_01. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-2",
+          "x": 16.2960431,
+          "y": 57.855591679999996,
+          "face": "front",
+          "description": "J6.2: PIO_02. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-3",
+          "x": 13.7560431,
+          "y": 57.855591679999996,
+          "face": "front",
+          "description": "J6.3: PIO_03. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-4",
+          "x": 11.216043099999998,
+          "y": 57.855591679999996,
+          "face": "front",
+          "description": "J6.4: PIO_04. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-5",
+          "x": 8.6760431,
+          "y": 57.855591679999996,
+          "face": "front",
+          "description": "J6.5: GND. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-6",
+          "x": 6.1360431,
+          "y": 57.855591679999996,
+          "face": "front",
+          "description": "J6.6: 3V3. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-7",
+          "x": 18.836043099999998,
+          "y": 60.39559168000001,
+          "face": "front",
+          "description": "J6.7: PIO_05. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-8",
+          "x": 16.2960431,
+          "y": 60.39559168000001,
+          "face": "front",
+          "description": "J6.8: PIO_06. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-9",
+          "x": 13.7560431,
+          "y": 60.39559168000001,
+          "face": "front",
+          "description": "J6.9: PIO_07. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-10",
+          "x": 11.216043099999998,
+          "y": 60.39559168000001,
+          "face": "front",
+          "description": "J6.10: PIO_08. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-11",
+          "x": 8.6760431,
+          "y": 60.39559168000001,
+          "face": "front",
+          "description": "J6.11: GND. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        },
+        {
+          "pinId": "j6-12",
+          "x": 6.1360431,
+          "y": 60.39559168000001,
+          "face": "front",
+          "description": "J6.12: 3V3. Source-identified front plated hole in the manufacturer unpopulated-header assembly. Leave this optional connector unpopulated or install it upward; it is not a breadboard insertion lead."
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 25.000458,
+          "height": 61.502302699999994
+        },
+        {
+          "x": 8.405666403683966,
+          "y": -1.0977029621447372,
+          "width": 8.199999999999969,
+          "height": 5.400000686825109
+        },
+        {
+          "x": -0.5928655573209142,
+          "y": 4.7032037656326295,
+          "width": 3.550000092877453,
+          "height": 4.6000000262347385
+        },
+        {
+          "x": 22.030532265341073,
+          "y": 4.702990107620472,
+          "width": 3.5500001866476474,
+          "height": 4.600000096165047
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null,
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+    }
+  ],
+  "verification": {
+    "focusedAndIntegrationTests": 13,
+    "testFiles": [
+      "test/catalog-mini-computing-mounting-followup.test.mjs",
+      "test/catalog-mini-computing-mounting.test.mjs",
+      "test/breadboard-module-scale.test.mjs"
+    ],
+    "unchangedTrackedDefinitions": 10,
+    "unchangedDefaultSvgViews": 20,
+    "unchangedNativeAssets": 30,
+    "sourceHeaderFit": "All newly enabled complete header maps passed real electrically safe fitting, calibrated contact matching and saved-project round trips in breadboard-module-scale.test.mjs; transformed host and detachment checks also passed.",
+    "visualReview": "All seven new physical views were rendered and inspected with contact labels enabled and disabled. Dense Trenz Pmod and Lichee Zero surface-pad labels retain numbered physical contacts and full functions on hover. Source-side handedness, visible hardware envelope and original/1K auxiliary endpoints were reviewed.",
+    "diffCheck": "git diff --check passed"
+  }
+}

@@ -1,0 +1,1469 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-11-08",
+  "scope": "Twenty-three legacy modules and sensors outside the previous named module audits. Three additional measurement-sensor entries are reviewed separately in catalog-measurement-sensors-mounting-2026-11-08.json.",
+  "rules": [
+    "Preserve canonical component data, all published pin IDs/anchors and native assets. Activate complete source-projected views only on newly fitted instances.",
+    "Pending source mapping is a documented candidate, not a claim that a module with 2.54 mm headers is incompatible.",
+    "A cable, stacking socket or flexible printed tail is not a downward male post. Header replacements must be explicit whole-bank assembly conditions.",
+    "KiCad/CAD accuracy classifications are unchanged; insertion sources do not upgrade approximate native carriers."
+  ],
+  "summary": {
+    "entries": 23,
+    "enabled": 6,
+    "statuses": {
+      "pending-complete-source-map": 6,
+      "cable-connector": 5,
+      "enabled": 6,
+      "pending-auxiliary-source-map": 2,
+      "flex-tail-connector": 1,
+      "pending-revision-mechanics": 1,
+      "requires-adapter": 2
+    }
+  },
+  "reviewedArchives": [
+    {
+      "file": "buzz.zip",
+      "url": "https://download.mikroe.com/documents/2d-3d-files/BUZZ_Click_2d_3d_files.zip",
+      "bytes": 23072,
+      "sha256": "01975a1692753d77fda50aec599451efb15944692c764f401c2f8ae3755aa90f"
+    },
+    {
+      "file": "button-r.zip",
+      "url": "https://download.mikroe.com/documents/2d-3d-files/Button_R_Click_2d_3d_files.zip",
+      "bytes": 269503,
+      "sha256": "22b3b4014c5e5c3bc199b1a11dbeabeca42466985ac619908ab45530867040bc"
+    },
+    {
+      "file": "light.zip",
+      "url": "https://download.mikroe.com/documents/2d-3d-files/Light_Click_2d_3d_files.zip",
+      "bytes": 546716,
+      "sha256": "7e9e87288681ddc43b042a5fde5f58e2afa3533f5cce8c05d30f4c377a7d6ff6"
+    },
+    {
+      "file": "modulino-knob.zip",
+      "url": "https://docs.arduino.cc/static/9168eb936d4d6df4ab93d355b49a6fdb/ABX00107-cad-files.zip",
+      "bytes": 5566775,
+      "sha256": "a7839efec74e4ec8ebacfc4b872194ec9a921f6c8ce5ebdda4658151425c9d62"
+    },
+    {
+      "file": "modulino-buttons.zip",
+      "url": "https://docs.arduino.cc/static/3e769f41c2bdc1dc397975eb2c2e83e4/ABX00110-cad-files.zip",
+      "bytes": 4548453,
+      "sha256": "ca41b4695a54f99fd6a56bf600f6e84f7c420f7d04b563e122108cff2e30eb93"
+    }
+  ],
+  "entries": [
+    {
+      "id": "waveshare-rs485-3v3",
+      "family": "waveshare",
+      "name": "Waveshare RS485 Board (3.3V)",
+      "source": "https://www.waveshare.com/wiki/RS485_Board_%283.3V%29",
+      "status": "pending-complete-source-map",
+      "reason": "The manufacturer schematic, manual and dimension image identify the TTL strip and RS485 terminal block. The published reference carrier explicitly approximates their offsets. Exact post centers, complete terminal projection and a straight downward assembly have not yet been established; the 3.3 V transceiver itself is not a reason to reject fitting.",
+      "canonicalPinCount": 7
+    },
+    {
+      "id": "waveshare-bus-servo-adapter-a",
+      "family": "waveshare",
+      "name": "Waveshare Bus Servo Adapter (A)",
+      "source": "https://docs.waveshare.com/Bus_Servo_Adapter_A",
+      "status": "cable-connector",
+      "reason": "The fitted adapter uses USB, screw power and three-contact servo cable sockets. The representative TTL/service contacts are not a reviewed complete downward male-header assembly. Preserve those wireable contacts rather than treating the servo sockets as breadboard posts.",
+      "canonicalPinCount": 11
+    },
+    {
+      "id": "waveshare-esp32-s3-rs485-can",
+      "family": "waveshare",
+      "name": "Waveshare ESP32-S3-RS485-CAN",
+      "source": "https://docs.waveshare.com/ESP32-S3-RS485-CAN",
+      "status": "pending-complete-source-map",
+      "reason": "The exact industrial board has pluggable power/RS485/CAN terminals and an auxiliary pin-header interface. A whole-header mounting view must include every exposed terminal and establish the auxiliary strip post coordinates and underside clearance. Its industrial enclosure and terminal carriers do not establish that assembly.",
+      "canonicalPinCount": 10
+    },
+    {
+      "id": "mikroe-buzz-click-945",
+      "family": "mikroe-click",
+      "name": "MIKROE BUZZ Click MIKROE-945",
+      "source": "https://download.mikroe.com/documents/add-on-boards/click/buzz/BUZZ_click_Schematic_v100.pdf",
+      "status": "enabled",
+      "reason": "Manufacturer BUZZ_click_v100 DXF confirms all sixteen mikroBUS apertures at 2.54 mm pitch and 22.86 mm row separation. Both complete straight downward strips are required; the source orientation notch excludes nonmaterial cells.",
+      "mountingSource": {
+        "label": "MIKROE-945 manufacturer DXF: complete mikroBUS header matrix and PCB contour",
+        "url": "https://download.mikroe.com/documents/2d-3d-files/BUZZ_Click_2d_3d_files.zip"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete eight-contact mikroBUS strips with straight downward male headers, including the printed NC terminals.",
+      "contacts": [
+        {
+          "pinId": "p1",
+          "x": -11.43,
+          "y": -7.3025
+        },
+        {
+          "pinId": "p2",
+          "x": -11.43,
+          "y": -4.7625
+        },
+        {
+          "pinId": "p3",
+          "x": -11.43,
+          "y": -2.2225
+        },
+        {
+          "pinId": "p4",
+          "x": -11.43,
+          "y": 0.3174999999999999
+        },
+        {
+          "pinId": "p5",
+          "x": -11.43,
+          "y": 2.8575
+        },
+        {
+          "pinId": "p6",
+          "x": -11.43,
+          "y": 5.397499999999999
+        },
+        {
+          "pinId": "p7",
+          "x": -11.43,
+          "y": 7.9375
+        },
+        {
+          "pinId": "p8",
+          "x": -11.43,
+          "y": 10.477500000000001
+        },
+        {
+          "pinId": "p9",
+          "x": 11.43,
+          "y": 10.477500000000001
+        },
+        {
+          "pinId": "p10",
+          "x": 11.43,
+          "y": 7.9375
+        },
+        {
+          "pinId": "p11",
+          "x": 11.43,
+          "y": 5.397499999999999
+        },
+        {
+          "pinId": "p12",
+          "x": 11.43,
+          "y": 2.8575
+        },
+        {
+          "pinId": "p13",
+          "x": 11.43,
+          "y": 0.3174999999999999
+        },
+        {
+          "pinId": "p14",
+          "x": 11.43,
+          "y": -2.2225
+        },
+        {
+          "pinId": "p15",
+          "x": 11.43,
+          "y": -4.7625
+        },
+        {
+          "pinId": "p16",
+          "x": 11.43,
+          "y": -7.3025
+        }
+      ],
+      "completeViewPinCount": 16,
+      "bodyRegions": [
+        {
+          "x": 27.913550000000015,
+          "y": 18.176399999999987,
+          "width": 177.884,
+          "height": 182.07
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 200.2464,
+          "width": 160.10399999999998,
+          "height": 17.78
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 200.2464,
+          "width": 175.6615,
+          "height": 2.2225
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 202.4689,
+          "width": 173.439,
+          "height": 2.2225
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 204.6914,
+          "width": 171.2165,
+          "height": 2.2225
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 206.9139,
+          "width": 168.994,
+          "height": 2.2225
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 209.13639999999998,
+          "width": 166.7715,
+          "height": 2.2225
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 211.3589,
+          "width": 164.54899999999998,
+          "height": 2.2225
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 213.58139999999997,
+          "width": 162.32649999999998,
+          "height": 2.2225
+        },
+        {
+          "x": 27.913550000000015,
+          "y": 215.8039,
+          "width": 160.10399999999998,
+          "height": 2.2225
+        }
+      ],
+      "bodyEvidence": "All sixteen source header apertures were reviewed in the DXF, including INSERT block contents. The contact matrix is 22.86 \u00d7 17.78 mm with 2.54 mm longitudinal pitch. Source outline vertices are retained to 0.001 mm; header centers use the exact nominal matrix. Small hardware artwork remains representative. The lower-right orientation notch is excluded from the material mask. The Button R upper shoulders use conservative source-contour regions; no annotation margin or decorative shadow reserves a socket.",
+      "canonicalPinCount": 16
+    },
+    {
+      "id": "mikroe-button-r-click-1901",
+      "family": "mikroe-click",
+      "name": "MIKROE Button R Click MIKROE-1901",
+      "source": "https://download.mikroe.com/documents/add-on-boards/click/button-r/Button_R_click_v100_Schematic.PDF",
+      "status": "enabled",
+      "reason": "Manufacturer Button_R_click_v100 DXF confirms all sixteen contacts, the 22.86 mm row separation and the shaped button PCB. The explicit mounted view keeps the existing contact IDs and representative controls while reserving source-contour material only.",
+      "mountingSource": {
+        "label": "MIKROE-1901 manufacturer DXF: complete mikroBUS header matrix and PCB contour",
+        "url": "https://download.mikroe.com/documents/2d-3d-files/Button_R_Click_2d_3d_files.zip"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete eight-contact mikroBUS strips with straight downward male headers, including the printed NC terminals.",
+      "contacts": [
+        {
+          "pinId": "p1",
+          "x": -11.43,
+          "y": -7.3025
+        },
+        {
+          "pinId": "p2",
+          "x": -11.43,
+          "y": -4.7625
+        },
+        {
+          "pinId": "p3",
+          "x": -11.43,
+          "y": -2.2225
+        },
+        {
+          "pinId": "p4",
+          "x": -11.43,
+          "y": 0.3174999999999999
+        },
+        {
+          "pinId": "p5",
+          "x": -11.43,
+          "y": 2.8575
+        },
+        {
+          "pinId": "p6",
+          "x": -11.43,
+          "y": 5.397499999999999
+        },
+        {
+          "pinId": "p7",
+          "x": -11.43,
+          "y": 7.9375
+        },
+        {
+          "pinId": "p8",
+          "x": -11.43,
+          "y": 10.477500000000001
+        },
+        {
+          "pinId": "p9",
+          "x": 11.43,
+          "y": 10.477500000000001
+        },
+        {
+          "pinId": "p10",
+          "x": 11.43,
+          "y": 7.9375
+        },
+        {
+          "pinId": "p11",
+          "x": 11.43,
+          "y": 5.397499999999999
+        },
+        {
+          "pinId": "p12",
+          "x": 11.43,
+          "y": 2.8575
+        },
+        {
+          "pinId": "p13",
+          "x": 11.43,
+          "y": 0.3174999999999999
+        },
+        {
+          "pinId": "p14",
+          "x": 11.43,
+          "y": -2.2225
+        },
+        {
+          "pinId": "p15",
+          "x": 11.43,
+          "y": -4.7625
+        },
+        {
+          "pinId": "p16",
+          "x": 11.43,
+          "y": -7.3025
+        }
+      ],
+      "completeViewPinCount": 16,
+      "bodyRegions": [
+        {
+          "x": 28,
+          "y": 44.67,
+          "width": 177.79999999999998,
+          "height": 155.5715
+        },
+        {
+          "x": 76.89500000000001,
+          "y": 18.003500000000003,
+          "width": 80.00999999999999,
+          "height": 26.666500000000013
+        },
+        {
+          "x": 68.005,
+          "y": 26.89,
+          "width": 97.79,
+          "height": 17.78
+        },
+        {
+          "x": 28,
+          "y": 200.2415,
+          "width": 160.01999999999998,
+          "height": 17.78
+        },
+        {
+          "x": 28,
+          "y": 200.2415,
+          "width": 175.5775,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 202.464,
+          "width": 173.355,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 204.6865,
+          "width": 171.1325,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 206.909,
+          "width": 168.91,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 209.13150000000002,
+          "width": 166.6875,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 211.35399999999998,
+          "width": 164.46499999999997,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 213.5765,
+          "width": 162.24249999999998,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 215.799,
+          "width": 160.01999999999998,
+          "height": 2.2225
+        }
+      ],
+      "bodyEvidence": "All sixteen source header apertures were reviewed in the DXF, including INSERT block contents. The contact matrix is 22.86 \u00d7 17.78 mm with 2.54 mm longitudinal pitch. Source outline vertices are retained to 0.001 mm; header centers use the exact nominal matrix. Small hardware artwork remains representative. The lower-right orientation notch is excluded from the material mask. The Button R upper shoulders use conservative source-contour regions; no annotation margin or decorative shadow reserves a socket.",
+      "canonicalPinCount": 16
+    },
+    {
+      "id": "mikroe-light-click-1424",
+      "family": "mikroe-click",
+      "name": "MIKROE Light Click MIKROE-1424",
+      "source": "https://download.mikroe.com/documents/add-on-boards/click/light_click/Light_click_v101_Schematic.PDF",
+      "status": "enabled",
+      "reason": "Manufacturer light_click_v101 DXF confirms all sixteen contacts at 2.54 mm pitch and 22.86 mm row separation. The physical mounted view removes annotation margins and retains the exact source orientation notch.",
+      "mountingSource": {
+        "label": "MIKROE-1424 manufacturer DXF: complete mikroBUS header matrix and PCB contour",
+        "url": "https://download.mikroe.com/documents/2d-3d-files/Light_Click_2d_3d_files.zip"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete eight-contact mikroBUS strips with straight downward male headers, including the printed NC terminals.",
+      "contacts": [
+        {
+          "pinId": "p1",
+          "x": -11.43,
+          "y": -7.3025
+        },
+        {
+          "pinId": "p2",
+          "x": -11.43,
+          "y": -4.7625
+        },
+        {
+          "pinId": "p3",
+          "x": -11.43,
+          "y": -2.2225
+        },
+        {
+          "pinId": "p4",
+          "x": -11.43,
+          "y": 0.3174999999999999
+        },
+        {
+          "pinId": "p5",
+          "x": -11.43,
+          "y": 2.8575
+        },
+        {
+          "pinId": "p6",
+          "x": -11.43,
+          "y": 5.397499999999999
+        },
+        {
+          "pinId": "p7",
+          "x": -11.43,
+          "y": 7.9375
+        },
+        {
+          "pinId": "p8",
+          "x": -11.43,
+          "y": 10.477500000000001
+        },
+        {
+          "pinId": "p9",
+          "x": 11.43,
+          "y": 10.477500000000001
+        },
+        {
+          "pinId": "p10",
+          "x": 11.43,
+          "y": 7.9375
+        },
+        {
+          "pinId": "p11",
+          "x": 11.43,
+          "y": 5.397499999999999
+        },
+        {
+          "pinId": "p12",
+          "x": 11.43,
+          "y": 2.8575
+        },
+        {
+          "pinId": "p13",
+          "x": 11.43,
+          "y": 0.3174999999999999
+        },
+        {
+          "pinId": "p14",
+          "x": 11.43,
+          "y": -2.2225
+        },
+        {
+          "pinId": "p15",
+          "x": 11.43,
+          "y": -4.7625
+        },
+        {
+          "pinId": "p16",
+          "x": 11.43,
+          "y": -7.3025
+        }
+      ],
+      "completeViewPinCount": 16,
+      "bodyRegions": [
+        {
+          "x": 28,
+          "y": 18.003500000000003,
+          "width": 177.79999999999998,
+          "height": 182.238
+        },
+        {
+          "x": 28,
+          "y": 200.2415,
+          "width": 160.01999999999998,
+          "height": 17.78
+        },
+        {
+          "x": 28,
+          "y": 200.2415,
+          "width": 175.5775,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 202.464,
+          "width": 173.355,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 204.6865,
+          "width": 171.1325,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 206.909,
+          "width": 168.91,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 209.13150000000002,
+          "width": 166.6875,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 211.35399999999998,
+          "width": 164.46499999999997,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 213.5765,
+          "width": 162.24249999999998,
+          "height": 2.2225
+        },
+        {
+          "x": 28,
+          "y": 215.799,
+          "width": 160.01999999999998,
+          "height": 2.2225
+        }
+      ],
+      "bodyEvidence": "All sixteen source header apertures were reviewed in the DXF, including INSERT block contents. The contact matrix is 22.86 \u00d7 17.78 mm with 2.54 mm longitudinal pitch. Source outline vertices are retained to 0.001 mm; header centers use the exact nominal matrix. Small hardware artwork remains representative. The lower-right orientation notch is excluded from the material mask. The Button R upper shoulders use conservative source-contour regions; no annotation margin or decorative shadow reserves a socket.",
+      "canonicalPinCount": 16
+    },
+    {
+      "id": "arduino-modulino-knob-abx00107",
+      "family": "arduino-more-boards",
+      "name": "Arduino Modulino Knob",
+      "source": "https://docs.arduino.cc/hardware/modulino-knob/",
+      "status": "enabled",
+      "reason": "Arduino V0.3 Altium, STEP and NC-drill files confirm 14 plated J3/J4 contacts: ten plus four, 2.54 mm pitch, 22.86 mm row separation and 7.62 mm stagger. The 25.36\u00d741 mm PCB has nominal R4.5 corners (STEP R4.499933 mm). All 37 existing endpoints remain; fifteen rear fixture pads are B projections.",
+      "mountingSource": {
+        "label": "Arduino Modulino Knob V0.3 manufacturer Altium/Gerber/drill archive",
+        "url": "https://docs.arduino.cc/static/9168eb936d4d6df4ab93d355b49a6fdb/ABX00107-cad-files.zip"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Install all ten J3 and all four J4 contacts as straight downward male headers. Qwiic sockets remain cable interfaces; the fifteen rear fixture pads are not inserted leads.",
+      "contacts": [
+        {
+          "pinId": "j3-1",
+          "x": -11.43,
+          "y": -11.43
+        },
+        {
+          "pinId": "j3-2",
+          "x": -11.43,
+          "y": -8.89
+        },
+        {
+          "pinId": "j3-3",
+          "x": -11.43,
+          "y": -6.35
+        },
+        {
+          "pinId": "j3-4",
+          "x": -11.43,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "j3-5",
+          "x": -11.43,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "j3-6",
+          "x": -11.43,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "j3-7",
+          "x": -11.43,
+          "y": 3.8100000000000023
+        },
+        {
+          "pinId": "j3-8",
+          "x": -11.43,
+          "y": 6.350000000000001
+        },
+        {
+          "pinId": "j3-9",
+          "x": -11.43,
+          "y": 8.89
+        },
+        {
+          "pinId": "j3-10",
+          "x": -11.43,
+          "y": 11.43
+        },
+        {
+          "pinId": "j4-1",
+          "x": 11.43,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "j4-2",
+          "x": 11.43,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "j4-3",
+          "x": 11.43,
+          "y": 1.2700000000000031
+        },
+        {
+          "pinId": "j4-4",
+          "x": 11.43,
+          "y": 3.8100000000000023
+        }
+      ],
+      "completeViewPinCount": 37,
+      "bodyRegions": [
+        {
+          "x": 64,
+          "y": 55.5,
+          "width": 177.51999999999998,
+          "height": 224
+        },
+        {
+          "x": 95.5,
+          "y": 24,
+          "width": 114.52,
+          "height": 287
+        },
+        {
+          "x": 95.5,
+          "y": 24,
+          "width": 114.52,
+          "height": 2.625
+        },
+        {
+          "x": 95.5,
+          "y": 308.375,
+          "width": 114.52,
+          "height": 2.625
+        },
+        {
+          "x": 82.9109422513041,
+          "y": 26.625,
+          "width": 139.69811549739177,
+          "height": 2.625
+        },
+        {
+          "x": 82.9109422513041,
+          "y": 305.75,
+          "width": 139.69811549739177,
+          "height": 2.625
+        },
+        {
+          "x": 78.08771985063416,
+          "y": 29.25,
+          "width": 149.3445602987317,
+          "height": 2.625
+        },
+        {
+          "x": 78.08771985063416,
+          "y": 303.125,
+          "width": 149.3445602987317,
+          "height": 2.625
+        },
+        {
+          "x": 74.66470842536634,
+          "y": 31.875,
+          "width": 156.1905831492673,
+          "height": 2.2049999999999996
+        },
+        {
+          "x": 74.66470842536634,
+          "y": 300.92,
+          "width": 156.1905831492673,
+          "height": 2.2049999999999996
+        },
+        {
+          "x": 72.40381849742256,
+          "y": 34.08,
+          "width": 160.71236300515486,
+          "height": 0.4200000000000004
+        },
+        {
+          "x": 72.40381849742256,
+          "y": 300.5,
+          "width": 160.71236300515486,
+          "height": 0.4200000000000004
+        },
+        {
+          "x": 72.02128623625221,
+          "y": 34.5,
+          "width": 161.4774275274956,
+          "height": 2.625
+        },
+        {
+          "x": 72.02128623625221,
+          "y": 297.875,
+          "width": 161.4774275274956,
+          "height": 2.625
+        },
+        {
+          "x": 69.91466484487647,
+          "y": 37.125,
+          "width": 165.69067031024704,
+          "height": 2.625
+        },
+        {
+          "x": 69.91466484487647,
+          "y": 295.25,
+          "width": 165.69067031024704,
+          "height": 2.625
+        },
+        {
+          "x": 68.22019978079018,
+          "y": 39.75,
+          "width": 169.07960043841962,
+          "height": 2.625
+        },
+        {
+          "x": 68.22019978079018,
+          "y": 292.625,
+          "width": 169.07960043841962,
+          "height": 2.625
+        },
+        {
+          "x": 66.86463069908125,
+          "y": 42.375,
+          "width": 171.7907386018375,
+          "height": 2.625
+        },
+        {
+          "x": 66.86463069908125,
+          "y": 290,
+          "width": 171.7907386018375,
+          "height": 2.625
+        },
+        {
+          "x": 65.801515190165,
+          "y": 45,
+          "width": 173.91696961966997,
+          "height": 2.625
+        },
+        {
+          "x": 65.801515190165,
+          "y": 287.375,
+          "width": 173.91696961966997,
+          "height": 2.625
+        },
+        {
+          "x": 65.0002561486166,
+          "y": 47.625,
+          "width": 175.5194877027668,
+          "height": 2.625
+        },
+        {
+          "x": 65.0002561486166,
+          "y": 284.75,
+          "width": 175.5194877027668,
+          "height": 2.625
+        },
+        {
+          "x": 64.44058113872701,
+          "y": 50.25,
+          "width": 176.63883772254596,
+          "height": 1.6099999999999999
+        },
+        {
+          "x": 64.44058113872701,
+          "y": 283.14000000000004,
+          "width": 176.63883772254596,
+          "height": 1.6099999999999999
+        },
+        {
+          "x": 64.2110179136489,
+          "y": 51.86,
+          "width": 177.0979641727022,
+          "height": 1.0150000000000001
+        },
+        {
+          "x": 64.2110179136489,
+          "y": 282.125,
+          "width": 177.0979641727022,
+          "height": 1.0150000000000001
+        },
+        {
+          "x": 64.10956554935883,
+          "y": 52.875,
+          "width": 177.30086890128234,
+          "height": 2.625
+        },
+        {
+          "x": 64.10956554935883,
+          "y": 279.5,
+          "width": 177.30086890128234,
+          "height": 2.625
+        }
+      ],
+      "bodyEvidence": "Arduino V0.3 CAD and 1 mm plated NC-drill contacts confirm complete J3/J4 rows at 2.54 mm pitch, 22.86 mm apart, with a 7.62 mm longitudinal offset. Native millimeter coordinates establish the 25.36 \u00d7 41 mm PCB envelope; the manufacturing outline uses 4.5 mm corner arcs. The fitted drawing is clipped to that contour. Controls and small hardware remain representative. Qwiic solder tails and all fifteen bottom fixture pads retain their IDs.",
+      "canonicalPinCount": 37
+    },
+    {
+      "id": "arduino-modulino-buttons-abx00110",
+      "family": "arduino-more-boards",
+      "name": "Arduino Modulino Buttons",
+      "source": "https://docs.arduino.cc/hardware/modulino-buttons/",
+      "status": "enabled",
+      "reason": "Arduino V0.3 Altium, outline Gerber and NC-drill files confirm all 14 J3/J4 plated contacts with 22.86 mm row separation and 7.62 mm stagger. The R4.5 manufacturing outline and complete rear fixture-pad map establish a tight explicit view without altering the separate default front/back drawing.",
+      "mountingSource": {
+        "label": "Arduino Modulino Buttons V0.3 manufacturer Altium/Gerber/drill archive",
+        "url": "https://docs.arduino.cc/static/3e769f41c2bdc1dc397975eb2c2e83e4/ABX00110-cad-files.zip"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Install all ten J3 and all four J4 contacts as straight downward male headers. Qwiic sockets remain cable interfaces; the fifteen rear fixture pads are not inserted leads.",
+      "contacts": [
+        {
+          "pinId": "j3-1",
+          "x": -11.43,
+          "y": -11.43
+        },
+        {
+          "pinId": "j3-2",
+          "x": -11.43,
+          "y": -8.89
+        },
+        {
+          "pinId": "j3-3",
+          "x": -11.43,
+          "y": -6.35
+        },
+        {
+          "pinId": "j3-4",
+          "x": -11.43,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "j3-5",
+          "x": -11.43,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "j3-6",
+          "x": -11.43,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "j3-7",
+          "x": -11.43,
+          "y": 3.8100000000000023
+        },
+        {
+          "pinId": "j3-8",
+          "x": -11.43,
+          "y": 6.350000000000001
+        },
+        {
+          "pinId": "j3-9",
+          "x": -11.43,
+          "y": 8.89
+        },
+        {
+          "pinId": "j3-10",
+          "x": -11.43,
+          "y": 11.43
+        },
+        {
+          "pinId": "j4-1",
+          "x": 11.43,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "j4-2",
+          "x": 11.43,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "j4-3",
+          "x": 11.43,
+          "y": 1.2700000000000031
+        },
+        {
+          "pinId": "j4-4",
+          "x": 11.43,
+          "y": 3.8100000000000023
+        }
+      ],
+      "completeViewPinCount": 37,
+      "bodyRegions": [
+        {
+          "x": 64,
+          "y": 55.5,
+          "width": 177.51999999999998,
+          "height": 224
+        },
+        {
+          "x": 95.5,
+          "y": 24,
+          "width": 114.52,
+          "height": 287
+        },
+        {
+          "x": 95.5,
+          "y": 24,
+          "width": 114.52,
+          "height": 2.625
+        },
+        {
+          "x": 95.5,
+          "y": 308.375,
+          "width": 114.52,
+          "height": 2.625
+        },
+        {
+          "x": 82.9109422513041,
+          "y": 26.625,
+          "width": 139.69811549739177,
+          "height": 2.625
+        },
+        {
+          "x": 82.9109422513041,
+          "y": 305.75,
+          "width": 139.69811549739177,
+          "height": 2.625
+        },
+        {
+          "x": 78.08771985063416,
+          "y": 29.25,
+          "width": 149.3445602987317,
+          "height": 2.625
+        },
+        {
+          "x": 78.08771985063416,
+          "y": 303.125,
+          "width": 149.3445602987317,
+          "height": 2.625
+        },
+        {
+          "x": 74.66470842536634,
+          "y": 31.875,
+          "width": 156.1905831492673,
+          "height": 2.2049999999999996
+        },
+        {
+          "x": 74.66470842536634,
+          "y": 300.92,
+          "width": 156.1905831492673,
+          "height": 2.2049999999999996
+        },
+        {
+          "x": 72.40381849742256,
+          "y": 34.08,
+          "width": 160.71236300515486,
+          "height": 0.4200000000000004
+        },
+        {
+          "x": 72.40381849742256,
+          "y": 300.5,
+          "width": 160.71236300515486,
+          "height": 0.4200000000000004
+        },
+        {
+          "x": 72.02128623625221,
+          "y": 34.5,
+          "width": 161.4774275274956,
+          "height": 2.625
+        },
+        {
+          "x": 72.02128623625221,
+          "y": 297.875,
+          "width": 161.4774275274956,
+          "height": 2.625
+        },
+        {
+          "x": 69.91466484487647,
+          "y": 37.125,
+          "width": 165.69067031024704,
+          "height": 2.625
+        },
+        {
+          "x": 69.91466484487647,
+          "y": 295.25,
+          "width": 165.69067031024704,
+          "height": 2.625
+        },
+        {
+          "x": 68.22019978079018,
+          "y": 39.75,
+          "width": 169.07960043841962,
+          "height": 2.625
+        },
+        {
+          "x": 68.22019978079018,
+          "y": 292.625,
+          "width": 169.07960043841962,
+          "height": 2.625
+        },
+        {
+          "x": 66.86463069908125,
+          "y": 42.375,
+          "width": 171.7907386018375,
+          "height": 2.625
+        },
+        {
+          "x": 66.86463069908125,
+          "y": 290,
+          "width": 171.7907386018375,
+          "height": 2.625
+        },
+        {
+          "x": 65.801515190165,
+          "y": 45,
+          "width": 173.91696961966997,
+          "height": 2.625
+        },
+        {
+          "x": 65.801515190165,
+          "y": 287.375,
+          "width": 173.91696961966997,
+          "height": 2.625
+        },
+        {
+          "x": 65.0002561486166,
+          "y": 47.625,
+          "width": 175.5194877027668,
+          "height": 2.625
+        },
+        {
+          "x": 65.0002561486166,
+          "y": 284.75,
+          "width": 175.5194877027668,
+          "height": 2.625
+        },
+        {
+          "x": 64.44058113872701,
+          "y": 50.25,
+          "width": 176.63883772254596,
+          "height": 1.6099999999999999
+        },
+        {
+          "x": 64.44058113872701,
+          "y": 283.14000000000004,
+          "width": 176.63883772254596,
+          "height": 1.6099999999999999
+        },
+        {
+          "x": 64.2110179136489,
+          "y": 51.86,
+          "width": 177.0979641727022,
+          "height": 1.0150000000000001
+        },
+        {
+          "x": 64.2110179136489,
+          "y": 282.125,
+          "width": 177.0979641727022,
+          "height": 1.0150000000000001
+        },
+        {
+          "x": 64.10956554935883,
+          "y": 52.875,
+          "width": 177.30086890128234,
+          "height": 2.625
+        },
+        {
+          "x": 64.10956554935883,
+          "y": 279.5,
+          "width": 177.30086890128234,
+          "height": 2.625
+        }
+      ],
+      "bodyEvidence": "Arduino V0.3 CAD and 1 mm plated NC-drill contacts confirm complete J3/J4 rows at 2.54 mm pitch, 22.86 mm apart, with a 7.62 mm longitudinal offset. Native millimeter coordinates establish the 25.36 \u00d7 41 mm PCB envelope; the manufacturing outline uses 4.5 mm corner arcs. The fitted drawing is clipped to that contour. Controls and small hardware remain representative. Qwiic solder tails and all fifteen bottom fixture pads retain their IDs.",
+      "canonicalPinCount": 37
+    },
+    {
+      "id": "raspberry-pi-debug-probe-rev2",
+      "family": "raspberry-pi-more",
+      "name": "Raspberry Pi Debug Probe",
+      "source": "https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html",
+      "status": "pending-auxiliary-source-map",
+      "reason": "The factory UART/debug ports are JST-SH cable sockets; the supplied 0.1-inch male cable is intended for breadboards, but it is not a direct probe mounting profile. The separate unpopulated J4 auxiliary header is a plausible 2.54 mm candidate. Its exact source-side coordinates, all rear service pads and the installed downward assembly need a complete reviewed view; the current contact carrier is photo-based.",
+      "canonicalPinCount": 35
+    },
+    {
+      "id": "sparkfun-tal220b-14729",
+      "family": "force-sensors",
+      "name": "TAL220B 5 kg Load Cell",
+      "source": "https://www.sparkfun.com/load-cell-5kg-straight-bar-tal220b.html",
+      "status": "cable-connector",
+      "reason": "The exact TAL220B is a metal strain-gauge load cell with four external bridge wires. There are no rigid downward male-header posts on the sensor body. Its four cable endpoints remain wireable; an HX711 amplifier is a separate insertable component.",
+      "canonicalPinCount": 4
+    },
+    {
+      "id": "seeed-sw420-101020586",
+      "family": "force-sensors",
+      "name": "Seeed Grove SW-420 Vibration Sensor",
+      "source": "https://wiki.seeedstudio.com/Grove-Vibration_Sensor_SW-420/",
+      "status": "cable-connector",
+      "reason": "The exact Grove SW-420 board is supplied with the Grove four-contact cable socket, not a downward 2.54 mm male strip. A separate Grove-to-breadboard adapter can carry the signals.",
+      "canonicalPinCount": 4
+    },
+    {
+      "id": "interlink-fsr402-44-29103",
+      "family": "force-sensors",
+      "name": "Interlink FSR 402 Force-Sensing Resistor",
+      "source": "https://www.interlinkelectronics.com/downloads/datasheets/fsr-400-series-datasheet.pdf",
+      "status": "flex-tail-connector",
+      "reason": "Manufacturer PDS-10004-C page 6 explicitly identifies part 44-29103 as FSR402 without contacts or solder tabs. Do not substitute the distinct 30-81794 solder-tab variant. This flexible printed tail needs a suitable connector and is not an ordinary two-post breadboard component.",
+      "canonicalPinCount": 2
+    },
+    {
+      "id": "waveshare-sn65hvd230-can-board",
+      "family": "waveshare-expansion",
+      "name": "Waveshare SN65HVD230 CAN Board",
+      "source": "https://www.waveshare.net/wiki/SN65HVD230_CAN_Board",
+      "status": "pending-complete-source-map",
+      "reason": "The official schematic identifies P1 only as Header 4. The hosted hand-modeled CAN Transiver v4 STEP has right-angle legs at 2.52 mm pitch, no individual plated header bores, and screw axes 4.73901673 mm apart. It is representative assembly geometry, not an exact land pattern. A straight 2.54 mm replacement is plausible but neither its nominal post pitch nor its PCB-hole/clearance map is established by this source. Do not round those modeled posts or widen the fit tolerance.",
+      "canonicalPinCount": 6
+    },
+    {
+      "id": "waveshare-pcf8574-io-expansion",
+      "family": "waveshare-expansion",
+      "name": "Waveshare PCF8574 IO Expansion Board",
+      "source": "https://www.waveshare.net/wiki/PCF8574_IO_Expansion_Board",
+      "status": "pending-complete-source-map",
+      "reason": "The exact PCF8574 board has two parallel I2C banks, a nine-contact IO/INT strip and address jumpers. The schematic identifies signals, but no reviewed complete post-coordinate/assembly map is available for the three physical banks. Fit must not silently omit the IO strip or infer its phase from the reference footprint.",
+      "canonicalPinCount": 13
+    },
+    {
+      "id": "waveshare-usb-to-ttl-ft232",
+      "family": "waveshare-expansion",
+      "name": "Waveshare USB-TO-TTL-FT232",
+      "source": "https://www.waveshare.net/wiki/USB-TO-TTL-FT232",
+      "status": "pending-complete-source-map",
+      "reason": "The exact FT232 board exposes the main UART/power bank plus DTR/DSR/DCD/RI/reset and CBUS contacts. The manufacturer reference covers electrical functions but does not yet supply a reviewed complete source-side map and downward-header assembly for all selected contacts. The logical carrier is not a board mechanical reference.",
+      "canonicalPinCount": 17
+    },
+    {
+      "id": "waveshare-1in54-epaper-e",
+      "family": "waveshare-expansion",
+      "name": "Waveshare 1.54-inch e-Paper Module (E)",
+      "source": "https://docs.waveshare.com/1.54inch_e-Paper_E",
+      "status": "pending-revision-mechanics",
+      "reason": "The current manufacturer page identifies the E6 240\u00d7240 panel and a 48\u00d733 mm carrier, but the complete nine-contact source board post map and underside assembly are unreviewed. The panel pixel pitch is unrelated to header-post pitch. Do not substitute an older black/white carrier revision.",
+      "canonicalPinCount": 9
+    },
+    {
+      "id": "waveshare-rs485-can-hat",
+      "family": "waveshare-expansion",
+      "name": "Waveshare RS485 CAN HAT",
+      "source": "https://www.waveshare.net/wiki/RS485_CAN_HAT",
+      "status": "requires-adapter",
+      "reason": "The factory interface is a Raspberry Pi 40-contact 2\u00d720 stacking connector. Its two 2.54 mm rows do not straddle the breadboard center trench and would share independent nets on ordinary five-socket strips. A separate auxiliary-header-only variant needs its own complete map and assembly; the HAT socket is adapter-only.",
+      "canonicalPinCount": 14
+    },
+    {
+      "id": "waveshare-servo-driver-hat-b",
+      "family": "waveshare-expansion",
+      "name": "Waveshare Servo Driver HAT (B)",
+      "source": "https://www.waveshare.com/wiki/Servo_Driver_HAT_%28B%29",
+      "status": "requires-adapter",
+      "reason": "The factory Raspberry Pi stacking socket and sixteen 3-row servo banks are not a complete direct downward breadboard assembly. Adjacent power/signal rows would share breadboard strips. Use the cable/header interfaces or a HAT adapter; no selection of logical pins is presented as whole-board insertion.",
+      "canonicalPinCount": 22
+    },
+    {
+      "id": "waveshare-pcf8563-rtc-board",
+      "family": "waveshare-ready",
+      "name": "Waveshare PCF8563 RTC Board",
+      "source": "https://www.waveshare.com/wiki/PCF8563_RTC_Board",
+      "status": "pending-complete-source-map",
+      "reason": "Both I2C banks repeat four electrical terminals and the separate clock/interrupt bank must remain accessible. The existing photo carrier explicitly marks all locations approximate. Manufacturer schematic and product photographs establish function, but not the complete source-coordinate relation of those banks and the CR1220 holder clearance.",
+      "canonicalPinCount": 6
+    },
+    {
+      "id": "waveshare-rs232-board",
+      "family": "waveshare-ready",
+      "name": "Waveshare RS232 Board",
+      "source": "https://www.waveshare.com/wiki/RS232_Board",
+      "status": "pending-auxiliary-source-map",
+      "reason": "The manufacturer explicitly confirms 2.54 mm TTL pitch and provides a STEP model. The six-contact TTL bank is a real candidate. A full mounted view still needs the exact H3 coordinates, actual DB9 body envelope and all nine separately published DB9 endpoints projected to the correct solder/mating side. The separate enlarged socket face must not be mistaken for PCB material or insertion leads.",
+      "canonicalPinCount": 15
+    },
+    {
+      "id": "waveshare-l76k-gps-module",
+      "family": "waveshare-ready",
+      "name": "Waveshare L76K GPS Module",
+      "source": "https://www.waveshare.com/wiki/L76K_GPS_Module",
+      "status": "cable-connector",
+      "reason": "The exact L76K module uses a five-contact PH2.0 cable socket for power, UART and PPS. Its 2 mm connector is not a 2.54 mm downward header. The linked shared L76X carrier does not change the fitted cable interface.",
+      "canonicalPinCount": 5
+    },
+    {
+      "id": "waveshare-1in3-lcd-module",
+      "family": "waveshare-ready",
+      "name": "Waveshare 1.3-inch LCD Module",
+      "source": "https://www.waveshare.com/wiki/1.3inch_LCD_Module",
+      "status": "cable-connector",
+      "reason": "The manufacturer wiring instructions explicitly identify the 1.3-inch model as a PH2.0 eight-contact cable interface. References to other LCDs with ordinary pin headers are not evidence for this exact module. Its display and cable endpoints remain available without automatic insertion.",
+      "canonicalPinCount": 8
+    },
+    {
+      "id": "waveshare-bmm150-magnetometer",
+      "family": "waveshare-ready",
+      "name": "Waveshare BMM150 3-Axis Magnetometer Sensor",
+      "source": "https://www.waveshare.com/wiki/BMM150_3-Axis_Magnetometer_Sensor",
+      "status": "enabled",
+      "reason": "Manufacturer STEP confirms the seven complete H2 contacts at X=3.175+i\u00d72.54 mm and Y=-0.45709586 mm. All eight existing signal IDs remain in the explicit view; INT uses its actual cable-socket solder tail and is not inserted. Duplicate I2C contacts retain their existing grouped signal IDs.",
+      "mountingSource": {
+        "label": "Waveshare BMM150 SKU 24657 manufacturer STEP and header drawing",
+        "url": "https://files.waveshare.com/wiki/BMM150-3-Axis-Magnetometer-Sensor/BMM150%203-Axis%20Magnetometer%20Sensor.step"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Install the full seven-contact H2 bank as straight downward male headers. Leave the parallel four-contact I\u00b2C header unpopulated or upward. INT uses the fitted cable socket. Select the I\u00b2C/SPI solder strap for the intended interface.",
+      "contacts": [
+        {
+          "pinId": "dry",
+          "x": -9.304193990000002,
+          "y": 8.563750970000001
+        },
+        {
+          "pinId": "cs",
+          "x": -6.764193990000001,
+          "y": 8.563750970000001
+        },
+        {
+          "pinId": "scl",
+          "x": -4.224193990000002,
+          "y": 8.563750970000001
+        },
+        {
+          "pinId": "sda",
+          "x": -1.6841939900000007,
+          "y": 8.563750970000001
+        },
+        {
+          "pinId": "sdo",
+          "x": 0.8558060100000002,
+          "y": 8.563750970000001
+        },
+        {
+          "pinId": "gnd",
+          "x": 3.3958060099999994,
+          "y": 8.563750970000001
+        },
+        {
+          "pinId": "vcc",
+          "x": 5.9358060099999985,
+          "y": 8.563750970000001
+        }
+      ],
+      "completeViewPinCount": 8,
+      "bodyRegions": [
+        {
+          "x": 20,
+          "y": 32.5,
+          "width": 290.138993,
+          "height": 175.1401382
+        },
+        {
+          "x": 32.5,
+          "y": 20,
+          "width": 265.138993,
+          "height": 200.1401382
+        },
+        {
+          "x": 32.5,
+          "y": 20,
+          "width": 265.138993,
+          "height": 1.5625
+        },
+        {
+          "x": 32.5,
+          "y": 218.5776382,
+          "width": 265.138993,
+          "height": 1.5625
+        },
+        {
+          "x": 26.448463521550913,
+          "y": 21.5625,
+          "width": 277.2420659568982,
+          "height": 1.5625
+        },
+        {
+          "x": 26.448463521550913,
+          "y": 217.0151382,
+          "width": 277.2420659568982,
+          "height": 1.5625
+        },
+        {
+          "x": 24.232027152923152,
+          "y": 23.125,
+          "width": 281.6749386941537,
+          "height": 1.5625
+        },
+        {
+          "x": 24.232027152923152,
+          "y": 215.4526382,
+          "width": 281.6749386941537,
+          "height": 1.5625
+        },
+        {
+          "x": 22.742190627502502,
+          "y": 24.6875,
+          "width": 284.654611744995,
+          "height": 1.5625
+        },
+        {
+          "x": 22.742190627502502,
+          "y": 213.8901382,
+          "width": 284.654611744995,
+          "height": 1.5625
+        },
+        {
+          "x": 21.67468245269452,
+          "y": 26.25,
+          "width": 286.789628094611,
+          "height": 1.5625
+        },
+        {
+          "x": 21.67468245269452,
+          "y": 212.3276382,
+          "width": 286.789628094611,
+          "height": 1.5625
+        },
+        {
+          "x": 20.912189863913028,
+          "y": 27.8125,
+          "width": 288.314613272174,
+          "height": 1.5625
+        },
+        {
+          "x": 20.912189863913028,
+          "y": 210.7651382,
+          "width": 288.314613272174,
+          "height": 1.5625
+        },
+        {
+          "x": 20.396927043101822,
+          "y": 29.375,
+          "width": 289.3451389137964,
+          "height": 1.5625
+        },
+        {
+          "x": 20.396927043101822,
+          "y": 209.2026382,
+          "width": 289.3451389137964,
+          "height": 1.5625
+        },
+        {
+          "x": 20.09804072938473,
+          "y": 30.9375,
+          "width": 289.94291154123056,
+          "height": 1.5625
+        },
+        {
+          "x": 20.09804072938473,
+          "y": 207.6401382,
+          "width": 289.94291154123056,
+          "height": 1.5625
+        }
+      ],
+      "bodyEvidence": "The manufacturer STEP supplies seven complete H2 drill centers at X=3.175+i\u00d72.54 mm, Y=-0.45709586 mm, and the actual PCB envelope. The 29 \u00d7 20 mm manufacturer drawing independently confirms the outline. Existing signal IDs intentionally group duplicate H1/I\u00b2C and H2/SPI terminals; H2 carries every inserted signal, while INT remains on its normal cable interface. The fitted illustration retains the source-side orientation; small hardware is representative.",
+      "canonicalPinCount": 8
+    }
+  ],
+  "additionalMechanicalEvidence": {
+    "bmm150Step": {
+      "url": "https://files.waveshare.com/wiki/BMM150-3-Axis-Magnetometer-Sensor/BMM150%203-Axis%20Magnetometer%20Sensor.step",
+      "sha256": "adba4b3b904450051bb1f329860fdd13eb978670904537513889abffadedf15d",
+      "nominalHeaderPitchMm": 2.54,
+      "insertedHeaderContacts": 7
+    },
+    "modulinoKnobStep": {
+      "sourceArchive": "modulino-knob.zip",
+      "pcbEnvelopeMm": [
+        41,
+        25.36
+      ],
+      "cornerRadiusMm": 4.499933476887,
+      "nominalCornerRadiusMm": 4.5
+    },
+    "canRepresentativeAssembly": {
+      "checked": "2026-11-08",
+      "componentId": "waveshare-sn65hvd230-can-board",
+      "sourceUrl": "https://files.waveshare.com/upload/c/ca/CAN%20Transiver%20SN65HVD230.step",
+      "sha256": "39bc5651d891b2399dfc4fd3bb64b300a4143495c9920c08b152e8312cf5bd47",
+      "stepTimestamp": "2021-11-02T11:38:01+03:00",
+      "stepProductName": "CAN Transiver v4",
+      "stepOriginatingSystem": "Autodesk Translation Framework v10.10.0.1391",
+      "pcb": {
+        "xMin": 1.5,
+        "xMax": 28.68,
+        "zMin": -13,
+        "zMax": -2.92,
+        "yBottom": 0,
+        "yTop": 1.61,
+        "width": 27.18,
+        "height": 10.08
+      },
+      "modeledHeader": {
+        "shape": "Right-angle male; exposed tails point along X, parallel to the PCB plane",
+        "solderLegCenterX": 2.76,
+        "solderLegCenterZ": [
+          -4.18,
+          -6.7,
+          -9.22,
+          -11.74
+        ],
+        "modeledPitch": 2.52,
+        "postWidth": 0.63,
+        "boardBoreEvidence": "The PCB plane contains a long header-region rectangle and no separate cylindrical P1 bores; this model does not establish exact production hole centers or bore diameters."
+      },
+      "modeledCanScrewCenters": [
+        [
+          24.757562502095432,
+          -9.975604392053471
+        ],
+        [
+          24.757562502095475,
+          -5.23658766012047
+        ]
+      ],
+      "modeledCanScrewPitch": 4.739016731933001,
+      "electricalSource": "https://www.waveshare.net/w/upload/c/c5/SN65HVD230-CAN-Board-Schematic.pdf",
+      "schematicStatement": "P1 is labeled Header 4; P1.4=3.3V, P1.3=GND, P1.2=CAN_RX, P1.1=CAN_TX. There is no mechanical pitch or footprint dimension in the schematic.",
+      "decision": "Keep automatic insertion disabled. Factory modeled right-angle posts do not point downward. A straight 2.54 mm replacement is plausible, but neither the uploaded approximate assembly nor the schematic establishes the production bores and replacement geometry. Do not round actual modeled 2.52 mm posts to 2.54 mm or widen insertion tolerance."
+    }
+  }
+}

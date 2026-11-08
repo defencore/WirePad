@@ -1,6 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, mountingHole, pad, path, pinRow, rect, screw, smd } from "../shared/svg.js";
+import { waveshareBmmMounting } from "../shared/waveshare-bmm-mounting.js";
 
 const pcb = "#225289";
 const pcbEdge = "#5787af";
@@ -374,4 +375,5 @@ const contactCenters = {
 
 export default defineFamily("waveshare-ready", waveshareReadyComponents.map(component => physicalEntry({
   component, render: waveshareReadyArt[component.art], footprint: waveshareReadyFootprints[component.id], model: waveshareReadyModels[component.id],
+  ...(component.id === bmm.id ? { mounting: waveshareBmmMounting(component) } : {}),
 }, contactCenters[component.id])));

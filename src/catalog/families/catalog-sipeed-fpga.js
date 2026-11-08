@@ -3,6 +3,7 @@ import { defineFamily } from "../registry.js";
 import { chip, circle, label, line, path, rect } from "../shared/svg.js";
 import { sipeedBoard } from "../shared/sipeed-board.js";
 import { miniComputingMounting } from "../shared/mini-computing-mounting.js";
+import { miniComputingFollowupMounting } from "../shared/mini-computing-followup-mounting.js";
 
 const wiki = "https://wiki.sipeed.com/hardware/en/";
 
@@ -261,4 +262,6 @@ const nano4kInsertion = miniComputingMounting(nano4k.component, {
     [[5, 7], [16.5, 12], [5, 19], [17, 20], [5, 45], [17, 48]].map(([x, y]) => rect(x, y, 1.4, .6, .1, '#a7afa4')).join('') +
     label(11.43, 51.1, 'Tang Nano 4K', 1.1, '#d5e2df') + '</g>',
 });
-export default defineFamily("sipeed-fpga", (sipeedFpgaComponents).map(component => ({ component, render: (sipeedFpgaArt)[component.art], footprint: (sipeedFpgaFootprints)[component.id], model: sipeedFpgaModels[component.id], ...(component.id === nano4k.component.id ? { mounting: nano4kInsertion } : {}) })));
+const insertionProfiles = Object.fromEntries(entries.map(entry => [entry.component.id,
+  entry === nano4k ? nano4kInsertion : miniComputingFollowupMounting(entry)]));
+export default defineFamily("sipeed-fpga", (sipeedFpgaComponents).map(component => ({ component, render: (sipeedFpgaArt)[component.art], footprint: (sipeedFpgaFootprints)[component.id], model: sipeedFpgaModels[component.id], ...(insertionProfiles[component.id] ? { mounting: insertionProfiles[component.id] } : {}) })));

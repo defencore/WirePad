@@ -38,11 +38,12 @@ export function miniComputingMounting(component, review) {
       const pads = points.filter(point => point.face !== 'rear').map(point => {
         const pin = pins.get(point.pinId), insideLeft = point.x < margin + review.size[0] * units / 2;
         const horizontal = review.labelAxis === 'y';
-        const text = pin.label.replace(/^GPIO|^IO(?=\d)/, '');
+        const text = review.captions?.[pin.id] ?? pin.label.replace(/^GPIO|^IO(?=\d)/, '');
         const dx = horizontal ? 0 : insideLeft ? 11 : -11;
         const dy = horizontal ? point.y < margin + review.size[1] * units / 2 ? 11 : -11 : 0;
-        return `<g><title>${escapeText(`${pin.number} — ${pin.label}. ${point.description}`)}</title>` +
-          circle(point.x, point.y, 7.5, '#bfaa6b', '#e3d7a8') + circle(point.x, point.y, 3.9, '#1b2a29') +
+        const copper = review.renderPad?.(pin, point) ??
+          circle(point.x, point.y, 7.5, '#bfaa6b', '#e3d7a8') + circle(point.x, point.y, 3.9, '#1b2a29');
+        return `<g><title>${escapeText(`${pin.number} — ${pin.label}. ${point.description}`)}</title>` + copper +
           (showLabels ? label(point.x + dx, point.y + dy, text.length > 9 ? pin.number : text, 7.4, '#e4eadd', horizontal ? 'middle' : insideLeft ? 'start' : 'end') : '') + '</g>';
       }).join('');
       const clipId = `${component.id}-insertion-material`;

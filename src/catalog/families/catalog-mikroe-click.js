@@ -1,5 +1,6 @@
 import { defineFamily } from '../registry.js';
 import { chip, circle, label, line, path, rect, smd } from '../shared/svg.js';
+import { legacyClickMounting } from '../shared/legacy-click-mounting.js';
 
 const scale = 7;
 const mechanical = 'https://download.mikroe.com/documents/standards/mikrobus/mikrobus-standard-specification-v200.pdf';
@@ -32,7 +33,7 @@ function click(spec) {
       surface: true, edge: Number(c.number) <= 8 ? 'left' : 'right' })),
     internalConnections: [['p8', 'p9'], ...(spec.connections ?? [])],
   };
-  return {
+  const entry = {
     component,
     render: (part, labels = true) => {
       const outline = spec.button
@@ -57,6 +58,7 @@ function click(spec) {
     },
     model: { label: spec.cadLabel ?? `${spec.sku} manufacturer DXF + STEP archive`, url: spec.cad },
   };
+  return { ...entry, mounting: legacyClickMounting(entry, spec) };
 }
 
 const common = { 7: supply3, 8: ground, 9: ground, 10: supply5 };

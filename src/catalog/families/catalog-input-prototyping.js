@@ -1,3 +1,4 @@
+import { followupRadioMounting } from "../shared/followup-radio-mounting.js";
 import { defineFamily } from "../registry.js";
 import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
 import { physicalComponent, physicalEntry } from "../shared/physical-contacts.js";
@@ -332,4 +333,4 @@ const entries = [mpr121, tca8418, qtRotary,
   physicalEntry(trimmer, pin => [pin.x, pin.y]),
 ];
 
-export default defineFamily("input-prototyping", entries.map(({ art: render, ...entry }) => ({ ...entry, render })));
+export default defineFamily("input-prototyping", entries.map(({ art: render, ...entry }) => ({ ...entry, render, mounting: entry.mounting ?? followupRadioMounting(entry.component) })));

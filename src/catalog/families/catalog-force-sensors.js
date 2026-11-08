@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { followupSensorMounting } from "../shared/followup-sensor-mounting.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
 import {
   chip, circle, label, line, mountingHole, pad, path, pinRow, rect, screw, smd,
@@ -243,4 +244,5 @@ const contactCenters = {
 
 export default defineFamily("force-sensors", forceSensorComponents.map(component => physicalEntry({
   component, render: forceSensorArt[component.art], footprint: forceSensorFootprints[component.id], model: forceSensorModels[component.id],
+  mounting: followupSensorMounting(component),
 }, contactCenters[component.id])));

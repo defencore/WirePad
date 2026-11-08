@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { lilygoFollowupMounting } from "../shared/lilygo-followup-mounting.js";
 import { chip, circle, label, line, path, rect, tactile, usb } from "../shared/svg.js";
 import { readyAntenna, readyBoard, readyRow, readySocket } from "../shared/wire-board.js";
 import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
@@ -75,7 +76,9 @@ function entry(spec) {
       description: printedLabel !== pin.label && /^GPIO\d+$/.test(pin.label)
         ? `${pin.description} MCU contact: ${pin.label}.` : pin.description };
   });
-  return { component: definition.component, render: definition.art, footprint: definition.footprint, model: definition.model };
+  const mounting = lilygoFollowupMounting(definition, spec.boardBounds[0]);
+  return { component: definition.component, render: definition.art, footprint: definition.footprint, model: definition.model,
+    ...(mounting ? { mounting } : {}) };
 }
 
 // These contacts use the component-side centers in the manufacturer's S3 DXF.

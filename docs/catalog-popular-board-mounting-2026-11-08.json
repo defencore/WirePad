@@ -4,10 +4,10 @@
   "assembly": "Straight downward male-header posts are the insertion contacts. PCB drill centers, outer castellations, face-up optional headers and cable sockets are distinct. New physical views are activated explicitly on instances; default anchors, SVGs, pin IDs and native geometry stay unchanged.",
   "summary": {
     "checked": 121,
-    "enabled": 70,
+    "enabled": 75,
     "previouslyEnabled": 14,
-    "pending": 17,
-    "ineligibleAsFitted": 20
+    "pending": 3,
+    "ineligibleAsFitted": 29
   },
   "families": [
     {
@@ -21,7 +21,7 @@
     {
       "id": "lilygo-more",
       "checked": 4,
-      "enabled": 0,
+      "enabled": 1,
       "ids": [
         "lilygo-t-qt-pro-v1-3",
         "lilygo-t7-s3-v1-1",
@@ -43,7 +43,7 @@
     {
       "id": "lilygo-interactive",
       "checked": 5,
-      "enabled": 0,
+      "enabled": 2,
       "ids": [
         "lilygo-t-deck-sx1262-20230601",
         "lilygo-t-embed-cc1101-v1-0",
@@ -55,7 +55,7 @@
     {
       "id": "lilygo-connectivity",
       "checked": 5,
-      "enabled": 1,
+      "enabled": 2,
       "ids": [
         "lilygo-t-eth-lite-s3-v1-0",
         "lilygo-t-eth-lite-esp32-v1-0",
@@ -255,7 +255,7 @@
     {
       "id": "lilygo-wireless",
       "checked": 7,
-      "enabled": 0,
+      "enabled": 1,
       "ids": [
         "lilygo-t-beam-v1-2-sx1276",
         "lilygo-t-beam-s3-supreme-v3-1",
@@ -617,29 +617,109 @@
       "name": "LILYGO T-QT Pro V1.3",
       "family": "lilygo-more",
       "revision": "ESP32-S3 / 0.85-inch GC9107 / PCB 22-11-15",
-      "status": "pending-source-review",
+      "status": "enabled-reviewed",
       "contactCount": 20,
-      "insertionContactCount": 0,
+      "insertionContactCount": 14,
       "evidence": [
         {
-          "url": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/schematic/T-QT-Pro.pdf",
-          "label": "Exact component/revision pinout or source guide"
-        },
-        {
-          "label": "LILYGO T-QT Pro V1.3 manufacturer CAD / mechanical reference",
+          "label": "LILYGO T-QT Pro manufacturer STEP, DXF and Pro pinmap",
           "url": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/3D_file/T_QT_Pro.stp"
         }
       ],
-      "decision": "Main 2.54 mm-style expansion holes require revision-specific row span, full population and underside connector/vertical-clearance review against the linked STEP. The wire-termination carrier is not mechanical evidence.",
+      "decision": "Populate all fourteen main P1/P2 downward male posts. CNC1 and the battery solder lands are projected underside wiring contacts, not extra breadboard leads. Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "contacts": [
+        {
+          "pinId": "p1-1",
+          "x": 1.259383,
+          "y": 7.8486
+        },
+        {
+          "pinId": "p1-2",
+          "x": 1.259383,
+          "y": 10.3886
+        },
+        {
+          "pinId": "p1-3",
+          "x": 1.259383,
+          "y": 12.9286
+        },
+        {
+          "pinId": "p1-4",
+          "x": 1.259383,
+          "y": 15.4686
+        },
+        {
+          "pinId": "p1-5",
+          "x": 1.259383,
+          "y": 18.0086
+        },
+        {
+          "pinId": "p1-6",
+          "x": 1.259383,
+          "y": 20.5486
+        },
+        {
+          "pinId": "p1-7",
+          "x": 1.259383,
+          "y": 23.0886
+        },
+        {
+          "pinId": "p2-1",
+          "x": 16.499383,
+          "y": 7.8486
+        },
+        {
+          "pinId": "p2-2",
+          "x": 16.499383,
+          "y": 10.3886
+        },
+        {
+          "pinId": "p2-3",
+          "x": 16.499383,
+          "y": 12.9286
+        },
+        {
+          "pinId": "p2-4",
+          "x": 16.499383,
+          "y": 15.4686
+        },
+        {
+          "pinId": "p2-5",
+          "x": 16.499383,
+          "y": 18.0086
+        },
+        {
+          "pinId": "p2-6",
+          "x": 16.499383,
+          "y": 20.5486
+        },
+        {
+          "pinId": "p2-7",
+          "x": 16.499383,
+          "y": 23.0886
+        }
+      ],
+      "pitchMm": 2.54,
+      "calibration": {
+        "origin": {
+          "x": 20,
+          "y": 20
+        },
+        "unitsPerMm": 10
+      },
+      "physicalView": "breadboard",
+      "bodyGeometryEvidence": "Pro STEP gives all fourteen through-hole centers on two 2.54 mm rows, 15.24 mm apart. The 0.0002 mm DXF row offset is export rounding; installed straight posts are the nominal common grid. STEP metal faces and battery cylinders locate all six projected rear contacts. PCB and USB material exclude the composite rear inset and its caption.",
+      "bodyGeometryScope": "New explicit source-projected assembly view; canonical/default/native geometry is unchanged.",
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t7-s3-v1-1",
       "name": "LILYGO T7-S3 V1.1",
       "family": "lilygo-more",
       "revision": "ESP32-S3-WROOM-1-N16R8 / PCB 22-07-28",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 44,
       "insertionContactCount": 0,
       "evidence": [
@@ -652,9 +732,10 @@
           "url": "https://github.com/Xinyuan-LilyGO/T7-S3/blob/main/3D_File/T7S3-V1.2.stp"
         }
       ],
-      "decision": "V1.1 has four physical header rows. The linked STEP is V1.2, not this V1.1 revision. Need V1.1 row centers and an explicit two-row male population; populating all four independent rows can short breadboard strips.",
+      "decision": "The exact V1.1 pinmap shows all forty independent expansion contacts in four ten-contact rows. Each adjacent two-row group would bridge common breadboard strips; enabling only an arbitrary inner or outer subset would omit exposed installed posts. The supplied V1.2 STEP is a later revision and does not establish a manufacturer V1.1 two-strip assembly. Use an adapter or a specifically documented reduced-header assembly.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-picoc3-v1-1",
@@ -674,9 +755,10 @@
           "url": "https://github.com/Xinyuan-LilyGO/T-PicoC3/blob/main/Schematic/T-PicoC3.pdf"
         }
       ],
-      "decision": "The 15+12 main-header contacts are physically plausible 2.54 mm rows, but their exact row span and offset were not established by the current pinout/schematic. Rear service contacts need a complete single-board physical view.",
+      "decision": "The exact V1.1 pinmap verifies all 27 asymmetric main contacts plus ten rear contacts. The manufacturer repository contains the electrical schematic and photos but no matched dimensioned mechanical drawing or PCB CAD. A generic RP2040/Pico carrier cannot establish the row gap, asymmetric starting offsets, complete projected rear-contact map and fitted underside clearance. No claim is made that its row pitch is incompatible.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-encoder-pro-v1-0",
@@ -692,9 +774,10 @@
           "label": "Exact component/revision pinout or source guide"
         }
       ],
-      "decision": "The only external contacts are two fitted rear four-pin keyed sockets. They need their original cables and are not downward breadboard male-header leads.",
+      "decision": "The assembled knob exposes two keyed four-contact rear sockets. These are cable mating contacts, not downward 2.54 mm male strips.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "adafruit-bluefruit-le-spi-friend-2633",
@@ -1205,7 +1288,7 @@
       "name": "LILYGO T-Deck SX1262 (2023 design)",
       "family": "lilygo-interactive",
       "revision": "ESP32-S3 / SX1262 / keyboard + trackball / 2023-06-01 schematic",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 10,
       "insertionContactCount": 0,
       "evidence": [
@@ -1218,9 +1301,10 @@
           "url": "https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/shell/T-Deck-PCB-3D.stp"
         }
       ],
-      "decision": "External contacts are fitted keyed rear UART/service sockets; no reviewed direct downward breadboard assembly is established by the pinout.",
+      "decision": "The original assembled keyboard has the keyed P8 UART cable socket and J1 keyboard programming pads, not a downward breadboard header assembly. The 2.54 mm-looking service pad arrangement is not evidence for exposed male insertion posts.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-embed-cc1101-v1-0",
@@ -1240,53 +1324,354 @@
           "url": "https://github.com/Xinyuan-LilyGO/T-Embed-CC1101/blob/master/3D_files/T-Embed%20CC1101.stp"
         }
       ],
-      "decision": "External contacts are fitted small-pitch keyed I2C/UART sockets. Use cables; no reviewed straight downward 2.54 mm header population.",
+      "decision": "Its two external four-contact UART/I2C interfaces are keyed fine-pitch cable sockets. Enclosed rotary/display hardware has no downward breadboard-compatible lead population.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-display-s3-amoled-original",
       "name": "LILYGO T-Display S3 AMOLED (original)",
       "family": "lilygo-interactive",
       "revision": "ESP32-S3 / 1.91-inch RM67162 / original green-LED design",
-      "status": "pending-source-review",
+      "status": "enabled-reviewed",
       "contactCount": 34,
-      "insertionContactCount": 0,
+      "insertionContactCount": 28,
       "evidence": [
         {
-          "url": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/schematic/T-DISPLAY-S3-AMOLED.pdf",
-          "label": "Exact component/revision pinout or source guide"
-        },
-        {
-          "label": "Later AMOLED Touch manufacturer STEP archive / mechanical reference",
-          "url": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T-Display-S3-AMOLED-Touch-PCB-3D.7z"
+          "label": "LILYGO original non-touch AMOLED own DXF, STEP and original pinmap",
+          "url": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/DXF_file/T-DISPLAY-S3-AMOLED.dxf"
         }
       ],
-      "decision": "Both 12-contact expansion rows need exact revision-specific row span and hole positions from manufacturer mechanical CAD, plus a review of lower battery/UART connectors. Existing carrier geometry is representative.",
+      "decision": "Populate both complete fourteen-post rows downward. Retain original P5.12/.13 3V3 and P6.12/.13 VSYS assignments. The six fitted socket contacts use cables and do not participate in breadboard fitting. Original photo projection and original CAD package placements; explicitly approximate. This does not calibrate inserted leads.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "contacts": [
+        {
+          "pinId": "p6-1",
+          "x": 1.28865884,
+          "y": 6.8385944
+        },
+        {
+          "pinId": "p6-2",
+          "x": 1.28865884,
+          "y": 9.3785944
+        },
+        {
+          "pinId": "p6-3",
+          "x": 1.28865884,
+          "y": 11.9185944
+        },
+        {
+          "pinId": "p6-4",
+          "x": 1.28865884,
+          "y": 14.458594399999999
+        },
+        {
+          "pinId": "p6-5",
+          "x": 1.28865884,
+          "y": 16.9985944
+        },
+        {
+          "pinId": "p6-6",
+          "x": 1.28865884,
+          "y": 19.5385944
+        },
+        {
+          "pinId": "p6-7",
+          "x": 1.28865884,
+          "y": 22.0785944
+        },
+        {
+          "pinId": "p6-8",
+          "x": 1.28865884,
+          "y": 24.6185944
+        },
+        {
+          "pinId": "p6-9",
+          "x": 1.28865884,
+          "y": 27.1585944
+        },
+        {
+          "pinId": "p6-10",
+          "x": 1.28865884,
+          "y": 29.698594399999998
+        },
+        {
+          "pinId": "p6-11",
+          "x": 1.28865884,
+          "y": 32.2385944
+        },
+        {
+          "pinId": "p6-12",
+          "x": 1.28865884,
+          "y": 34.7785944
+        },
+        {
+          "pinId": "p6-13",
+          "x": 1.28865884,
+          "y": 37.3185944
+        },
+        {
+          "pinId": "p6-14",
+          "x": 1.28865884,
+          "y": 39.8585944
+        },
+        {
+          "pinId": "p5-1",
+          "x": 24.14865884,
+          "y": 6.8385944
+        },
+        {
+          "pinId": "p5-2",
+          "x": 24.14865884,
+          "y": 9.3785944
+        },
+        {
+          "pinId": "p5-3",
+          "x": 24.14865884,
+          "y": 11.9185944
+        },
+        {
+          "pinId": "p5-4",
+          "x": 24.14865884,
+          "y": 14.458594399999999
+        },
+        {
+          "pinId": "p5-5",
+          "x": 24.14865884,
+          "y": 16.9985944
+        },
+        {
+          "pinId": "p5-6",
+          "x": 24.14865884,
+          "y": 19.5385944
+        },
+        {
+          "pinId": "p5-7",
+          "x": 24.14865884,
+          "y": 22.0785944
+        },
+        {
+          "pinId": "p5-8",
+          "x": 24.14865884,
+          "y": 24.6185944
+        },
+        {
+          "pinId": "p5-9",
+          "x": 24.14865884,
+          "y": 27.1585944
+        },
+        {
+          "pinId": "p5-10",
+          "x": 24.14865884,
+          "y": 29.698594399999998
+        },
+        {
+          "pinId": "p5-11",
+          "x": 24.14865884,
+          "y": 32.2385944
+        },
+        {
+          "pinId": "p5-12",
+          "x": 24.14865884,
+          "y": 34.7785944
+        },
+        {
+          "pinId": "p5-13",
+          "x": 24.14865884,
+          "y": 37.3185944
+        },
+        {
+          "pinId": "p5-14",
+          "x": 24.14865884,
+          "y": 39.8585944
+        }
+      ],
+      "pitchMm": 2.54,
+      "calibration": {
+        "origin": {
+          "x": 20,
+          "y": 20
+        },
+        "unitsPerMm": 10
+      },
+      "physicalView": "breadboard",
+      "bodyGeometryEvidence": "The original non-touch board has its own manufacturer DXF and STEP; no later Touch assembly is substituted. Both fourteen-post rows have 2.54 mm pitch and 22.86 mm spacing. The source DXF 0.00039878 mm Y-row deviation is export precision; straight installed headers share the nominal grid. Original keyed UART/battery tail locations use CAD package placements and the original photo, with explicitly approximate photo-projected placement; they are not insertion leads.",
+      "bodyGeometryScope": "New explicit source-projected assembly view; canonical/default/native geometry is unchanged.",
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-display-s3-amoled-plus-v1-0",
       "name": "LILYGO T-Display S3 AMOLED Plus V1.0",
       "family": "lilygo-interactive",
       "revision": "ESP32-S3 / PMIC / PCF85063 RTC / 2024-10-21 schematic",
-      "status": "pending-source-review",
+      "status": "enabled-reviewed",
       "contactCount": 36,
-      "insertionContactCount": 0,
+      "insertionContactCount": 28,
       "evidence": [
         {
-          "url": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/schematic/T-Display-S3-AMOLED-Plus.pdf",
-          "label": "Exact component/revision pinout or source guide"
-        },
-        {
-          "label": "LILYGO T-Display S3 AMOLED Plus V1.0 manufacturer CAD / mechanical reference",
+          "label": "LILYGO AMOLED Plus manufacturer DXF and assembled STEP",
           "url": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T-Display-S3-AMOLED-Plus.7z"
         }
       ],
-      "decision": "The expanded main rows need exact V1.0 mechanical centers and complete downward population verification. Do not copy the original AMOLED or LCD T-Display row geometry.",
+      "decision": "Populate both fourteen-post P4/P5 strips downward. CN1/CN2 remain fitted cable sockets and are not breadboard leads. Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "contacts": [
+        {
+          "pinId": "p5-1",
+          "x": 1.27065824,
+          "y": 4.849998347578
+        },
+        {
+          "pinId": "p5-2",
+          "x": 1.27065824,
+          "y": 7.3899983475780004
+        },
+        {
+          "pinId": "p5-3",
+          "x": 1.27065824,
+          "y": 9.929998347578
+        },
+        {
+          "pinId": "p5-4",
+          "x": 1.27065824,
+          "y": 12.469998347578
+        },
+        {
+          "pinId": "p5-5",
+          "x": 1.27065824,
+          "y": 15.009998347578001
+        },
+        {
+          "pinId": "p5-6",
+          "x": 1.27065824,
+          "y": 17.549998347578
+        },
+        {
+          "pinId": "p5-7",
+          "x": 1.27065824,
+          "y": 20.089998347578
+        },
+        {
+          "pinId": "p5-8",
+          "x": 1.27065824,
+          "y": 22.629998347578002
+        },
+        {
+          "pinId": "p5-9",
+          "x": 1.27065824,
+          "y": 25.169998347578
+        },
+        {
+          "pinId": "p5-10",
+          "x": 1.27065824,
+          "y": 27.709998347578
+        },
+        {
+          "pinId": "p5-11",
+          "x": 1.27065824,
+          "y": 30.249998347578
+        },
+        {
+          "pinId": "p5-12",
+          "x": 1.27065824,
+          "y": 32.789998347578
+        },
+        {
+          "pinId": "p5-13",
+          "x": 1.27065824,
+          "y": 35.329998347578
+        },
+        {
+          "pinId": "p5-14",
+          "x": 1.27065824,
+          "y": 37.869998347578004
+        },
+        {
+          "pinId": "p4-1",
+          "x": 24.13065824,
+          "y": 4.849998347578
+        },
+        {
+          "pinId": "p4-2",
+          "x": 24.13065824,
+          "y": 7.3899983475780004
+        },
+        {
+          "pinId": "p4-3",
+          "x": 24.13065824,
+          "y": 9.929998347578
+        },
+        {
+          "pinId": "p4-4",
+          "x": 24.13065824,
+          "y": 12.469998347578
+        },
+        {
+          "pinId": "p4-5",
+          "x": 24.13065824,
+          "y": 15.009998347578001
+        },
+        {
+          "pinId": "p4-6",
+          "x": 24.13065824,
+          "y": 17.549998347578
+        },
+        {
+          "pinId": "p4-7",
+          "x": 24.13065824,
+          "y": 20.089998347578
+        },
+        {
+          "pinId": "p4-8",
+          "x": 24.13065824,
+          "y": 22.629998347578002
+        },
+        {
+          "pinId": "p4-9",
+          "x": 24.13065824,
+          "y": 25.169998347578
+        },
+        {
+          "pinId": "p4-10",
+          "x": 24.13065824,
+          "y": 27.709998347578
+        },
+        {
+          "pinId": "p4-11",
+          "x": 24.13065824,
+          "y": 30.249998347578
+        },
+        {
+          "pinId": "p4-12",
+          "x": 24.13065824,
+          "y": 32.789998347578
+        },
+        {
+          "pinId": "p4-13",
+          "x": 24.13065824,
+          "y": 35.329998347578
+        },
+        {
+          "pinId": "p4-14",
+          "x": 24.13065824,
+          "y": 37.869998347578004
+        }
+      ],
+      "pitchMm": 2.54,
+      "calibration": {
+        "origin": {
+          "x": 20,
+          "y": 20
+        },
+        "unitsPerMm": 10
+      },
+      "physicalView": "breadboard",
+      "bodyGeometryEvidence": "Plus-specific DXF and assembled STEP establish two complete fourteen-post 2.54 mm rows, 22.86 mm apart, and the 25.49 x 53.871 mm PCB. STEP solids 292/293 locate all eight 1.0 mm socket metal tails. Main-header contact numbers follow the Plus schematic and component-side pinmap, not the original AMOLED rail assignments.",
+      "bodyGeometryScope": "New explicit source-projected assembly view; canonical/default/native geometry is unchanged.",
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t4-s3-v1-0",
@@ -1306,9 +1691,10 @@
           "url": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T4-S3-AMOLED-PCB.7z"
         }
       ],
-      "decision": "The principal P5 interface is a dense two-row 30-contact connector, with additional keyed sockets. A pitch-looking two-row array is not sufficient proof of electrically safe breadboard insertion.",
+      "decision": "The actual P5 interface is a 2x15 1.27 mm matrix, not a 2.54 mm header. The other two external interfaces are keyed four-contact cable sockets.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-eth-lite-s3-v1-0",
@@ -1510,29 +1896,189 @@
       "name": "LILYGO T-ETH-Lite ESP32 V1.0",
       "family": "lilygo-connectivity",
       "revision": "ESP32-WROVER-E / RTL8201 / 16 MB flash / 8 MB PSRAM",
-      "status": "pending-source-review",
+      "status": "enabled-reviewed",
       "contactCount": 38,
-      "insertionContactCount": 0,
+      "insertionContactCount": 30,
       "evidence": [
         {
-          "url": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/schematic/T-ETH-Lite-ESP32.pdf",
-          "label": "Exact component/revision pinout or source guide"
-        },
-        {
-          "label": "LILYGO T-ETH-Lite ESP32 V1.0 manufacturer CAD / mechanical reference",
+          "label": "LILYGO original ESP32 T-ETH-Lite manufacturer DXF",
           "url": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-Lite-ESP32.DXF"
         }
       ],
-      "decision": "P2/P3 are likely 2.54 mm male-header rows. The ESP32-specific DXF was retrieved, but its non-CIRCLE contour geometry has not yet been resolved into a complete source-coordinate row map. Do not inherit the S3 DXF map.",
+      "decision": "Populate both complete fifteen-post main strips downward. Keep the optional two-row P1 PoE connector upward-facing or unfitted; a downward-populated P1 variant needs an adapter and is not this assembly. Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "contacts": [
+        {
+          "pinId": "p2-15",
+          "x": 1.26654814,
+          "y": 7.29054676
+        },
+        {
+          "pinId": "p2-14",
+          "x": 1.26654814,
+          "y": 9.83054676
+        },
+        {
+          "pinId": "p2-13",
+          "x": 1.26654814,
+          "y": 12.37054676
+        },
+        {
+          "pinId": "p2-12",
+          "x": 1.26654814,
+          "y": 14.910546759999999
+        },
+        {
+          "pinId": "p2-11",
+          "x": 1.26654814,
+          "y": 17.45054676
+        },
+        {
+          "pinId": "p2-10",
+          "x": 1.26654814,
+          "y": 19.99054676
+        },
+        {
+          "pinId": "p2-9",
+          "x": 1.26654814,
+          "y": 22.53054676
+        },
+        {
+          "pinId": "p2-8",
+          "x": 1.26654814,
+          "y": 25.07054676
+        },
+        {
+          "pinId": "p2-7",
+          "x": 1.26654814,
+          "y": 27.61054676
+        },
+        {
+          "pinId": "p2-6",
+          "x": 1.26654814,
+          "y": 30.150546759999997
+        },
+        {
+          "pinId": "p2-5",
+          "x": 1.26654814,
+          "y": 32.69054676
+        },
+        {
+          "pinId": "p2-4",
+          "x": 1.26654814,
+          "y": 35.23054676
+        },
+        {
+          "pinId": "p2-3",
+          "x": 1.26654814,
+          "y": 37.77054676
+        },
+        {
+          "pinId": "p2-2",
+          "x": 1.26654814,
+          "y": 40.31054676
+        },
+        {
+          "pinId": "p2-1",
+          "x": 1.26654814,
+          "y": 42.85054676
+        },
+        {
+          "pinId": "p3-15",
+          "x": 26.66654814,
+          "y": 7.29054676
+        },
+        {
+          "pinId": "p3-14",
+          "x": 26.66654814,
+          "y": 9.83054676
+        },
+        {
+          "pinId": "p3-13",
+          "x": 26.66654814,
+          "y": 12.37054676
+        },
+        {
+          "pinId": "p3-12",
+          "x": 26.66654814,
+          "y": 14.910546759999999
+        },
+        {
+          "pinId": "p3-11",
+          "x": 26.66654814,
+          "y": 17.45054676
+        },
+        {
+          "pinId": "p3-10",
+          "x": 26.66654814,
+          "y": 19.99054676
+        },
+        {
+          "pinId": "p3-9",
+          "x": 26.66654814,
+          "y": 22.53054676
+        },
+        {
+          "pinId": "p3-8",
+          "x": 26.66654814,
+          "y": 25.07054676
+        },
+        {
+          "pinId": "p3-7",
+          "x": 26.66654814,
+          "y": 27.61054676
+        },
+        {
+          "pinId": "p3-6",
+          "x": 26.66654814,
+          "y": 30.150546759999997
+        },
+        {
+          "pinId": "p3-5",
+          "x": 26.66654814,
+          "y": 32.69054676
+        },
+        {
+          "pinId": "p3-4",
+          "x": 26.66654814,
+          "y": 35.23054676
+        },
+        {
+          "pinId": "p3-3",
+          "x": 26.66654814,
+          "y": 37.77054676
+        },
+        {
+          "pinId": "p3-2",
+          "x": 26.66654814,
+          "y": 40.31054676
+        },
+        {
+          "pinId": "p3-1",
+          "x": 26.66654814,
+          "y": 42.85054676
+        }
+      ],
+      "pitchMm": 2.54,
+      "calibration": {
+        "origin": {
+          "x": 20,
+          "y": 20
+        },
+        "unitsPerMm": 10
+      },
+      "physicalView": "breadboard",
+      "bodyGeometryEvidence": "Exact original ESP32 DXF HDR1X15 drill centers are x=1.27/26.67 and y=15.95000112 through 51.51000112: thirty 2.54 mm leads with 25.4 mm row spacing. KeepOut PCB centerlines define physical material. The eight optional PoE contacts are mapped at their separate source centers; they are not downward leads.",
+      "bodyGeometryScope": "New explicit source-projected assembly view; canonical/default/native geometry is unchanged.",
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-eth-elite-2421",
       "name": "LILYGO T-ETH-ELite ESP32-S3 (2421)",
       "family": "lilygo-connectivity",
       "revision": "ESP32-S3 N16R8 / W5500 / IEEE 802.3af PoE / Rev 2421",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 40,
       "insertionContactCount": 0,
       "evidence": [
@@ -1545,16 +2091,17 @@
           "url": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-ELite.dxf"
         }
       ],
-      "decision": "The 40-contact expansion interface is a two-row assembly with adjacent independent signals and PoE hardware. Need an electrically safe complete header population and exact source contact map, not apparent 2.54 mm spacing.",
+      "decision": "The complete J1 is a 40-contact 2x20 matrix with adjacent 2.54 mm rows, not two independent distant edge strips. Direct seating would join separate signals on breadboard strips. Its Raspberry Pi header shape does not establish breadboard compatibility.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-internet-poe-v1-0",
       "name": "LILYGO T-Internet-POE V1.0",
       "family": "lilygo-connectivity",
       "revision": "ESP32-WROOM-32 / LAN8720 / XY_Internet_POE V1.0",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 22,
       "insertionContactCount": 0,
       "evidence": [
@@ -1567,16 +2114,17 @@
           "url": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-POE.DXF"
         }
       ],
-      "decision": "Need exact manufacturer main-header centers, connector population and PoE/USB material-clearance review; the representative carrier does not establish those dimensions.",
+      "decision": "The exact manufacturer CAD has the 16-contact 2x8 adjacent-row connector. Its complete independent signal population would short on common breadboard strips. RJ45 and PoE power hardware are assembled ports, not alternative insertion leads.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-sim7080g-s3-v1-0",
       "name": "LILYGO T-SIM7080G-S3 V1.0",
       "family": "lilygo-connectivity",
       "revision": "ESP32-S3 N16R8 / SIM7080G / AXP2101 / Cat-M + NB-IoT",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 45,
       "insertionContactCount": 0,
       "evidence": [
@@ -1589,9 +2137,10 @@
           "url": "https://github.com/Xinyuan-LilyGO/LilyGo-T-SIM7080G/blob/master/dwg/T-SIM7080G.DXF"
         }
       ],
-      "decision": "Need exact source row spacing and population with the fitted modem/battery hardware, plus compact source-based projection of the service contacts. Current geometry is a wiring reconstruction.",
+      "decision": "The actual source row-center spacing is 30.20000056 mm, not the 30.48 mm breadboard grid. Straight 2.54 mm pitch along each row alone is insufficient; the fitted rear 18650 holder is a second obstruction. Do not widen geometric tolerance or rescale the two axes differently to force a fit.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "esp8684-devkitm-1-v1-1",
@@ -3223,9 +3772,10 @@
           "url": "https://pip.raspberrypi.com/documents/RP-008192-DS"
         }
       ],
-      "decision": "The fitted JST-SH SWD/UART ports are cable connectors. Optional J4 has 2.54 mm through-holes, but its complete exact insertion map and PCB/USB clearance have not been verified for a direct-downward assembly. Do not confuse the supplied breadboard adapter cable with whole-module insertion.",
+      "decision": "The factory UART/debug ports are JST-SH cable sockets; the supplied 0.1-inch male cable is intended for breadboards, but it is not a direct probe mounting profile. The separate unpopulated J4 auxiliary header is a plausible 2.54 mm candidate. Its exact source-side coordinates, all rear service pads and the installed downward assembly need a complete reviewed view; the current contact carrier is photo-based.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-legacy-module-mounting-followup-2026-11-08.json"
     },
     {
       "id": "esp32-s3-devkitm-1",
@@ -15424,7 +15974,7 @@
       "name": "LILYGO T-Beam V1.2 SX1276",
       "family": "lilygo-wireless",
       "revision": "ESP32 / AXP2101 / NEO-6M / SX1276",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 28,
       "insertionContactCount": 0,
       "evidence": [
@@ -15433,16 +15983,17 @@
           "label": "Exact component/revision pinout or source guide"
         }
       ],
-      "decision": "Two 13-contact rows may be compatible with sufficiently long straight headers, but their exact V1.2 row span and the rear 18650-holder clearance are not verified. Pinout pitch alone does not establish a seatable downward assembly.",
+      "decision": "The factory assembly has a rear 18650 holder occupying the breadboard seating space. Ordinary downward male headers are not a reviewed clear insertion assembly. The V1X CAD is not sufficient evidence for a source-approved long-header V1.2 variant. Use a raised carrier or adapter.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-beam-s3-supreme-v3-1",
       "name": "LILYGO T-Beam S3 Supreme V3.1",
       "family": "lilygo-wireless",
       "revision": "ESP32-S3 Core / SX1262 / MAX-M10S",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 32,
       "insertionContactCount": 0,
       "evidence": [
@@ -15455,9 +16006,10 @@
           "url": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/dimensions/T-BEAM-SUPREME-V3.0.DXF"
         }
       ],
-      "decision": "Current V3.1 pinout uses a V3.0 mechanical reference and an assembled M.2 core/18650 holder. Need exact V3.1 header centers and verified vertical clearance for a complete downward population.",
+      "decision": "The complete Supreme battery-holder/baseboard/core assembly has material below the main PCB and inter-board contacts. A bare PCB header grid does not establish clearance for the factory 18650 assembly; use a raised carrier or adapter.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t3-lora32-v1-6-1-sx1276",
@@ -15473,31 +16025,182 @@
           "label": "Exact component/revision pinout or source guide"
         }
       ],
-      "decision": "Two 13-contact rows are plausible 2.54 mm headers, but their exact 20210104 row span and complete source mechanical map have not been established. Existing termination carrier is not insertion evidence.",
+      "decision": "The manufacturer general T3 V1.6 STEP establishes 26 main centers at 2.54 mm pitch and 22.86 mm spacing, and the 27.1272 x 64.4652 mm PCB. The separately published mechanical DWG is V1.6.2, while this catalog entry follows exact V1.6.1/20210104 electrical and photo evidence. The V1.6 STEP omits the fitted battery socket contact metal. A complete exact-revision auxiliary map and the side/orientation agreement between this assembled STEP and the component-side V1.6.1 photo are not established. The board is not rejected for its nominal header pitch; this remains a mechanical-source gap.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t3-s3-v1-3-sx1262",
       "name": "LILYGO T3-S3 V1.3 SX1262",
       "family": "lilygo-wireless",
       "revision": "ESP32-S3FH4R2 / SX1262 / PCB 20250110",
-      "status": "pending-source-review",
+      "status": "enabled-reviewed",
       "contactCount": 40,
-      "insertionContactCount": 0,
+      "insertionContactCount": 28,
       "evidence": [
         {
-          "url": "https://wiki.lilygo.cc/products/t3-series/t3-s3-v1.3/",
-          "label": "Exact component/revision pinout or source guide"
-        },
-        {
-          "label": "LILYGO T3-S3 V1.3 SX1262 manufacturer CAD / mechanical reference",
+          "label": "LILYGO T3-S3 exact V1.3 manufacturer PADS DXF and 20250110 pinout",
           "url": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/dimensions/T3S3%20V1.3.dxf"
         }
       ],
-      "decision": "The V1.3 DXF and production pinout need a complete same-revision 14+14 header-center review. Do not copy T3 V1.6.1 spacing or use the older schematic’s different GPIO order.",
+      "decision": "Populate both complete fourteen-post JP1/JP2 strips downward. Leave OLED/display cables disconnected or folded within the assembly footprint without material below the header seating plane. The four fitted power/auxiliary sockets are cable contacts, not insertion leads. Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "contacts": [
+        {
+          "pinId": "jp2-io16",
+          "x": 2.2606,
+          "y": 6.4262
+        },
+        {
+          "pinId": "jp2-io15",
+          "x": 2.2606,
+          "y": 8.9662
+        },
+        {
+          "pinId": "jp2-rst",
+          "x": 2.2606,
+          "y": 11.5062
+        },
+        {
+          "pinId": "jp2-io8",
+          "x": 2.2606,
+          "y": 14.046199999999999
+        },
+        {
+          "pinId": "jp2-io12",
+          "x": 2.2606,
+          "y": 16.586199999999998
+        },
+        {
+          "pinId": "jp2-io48",
+          "x": 2.2606,
+          "y": 19.126199999999997
+        },
+        {
+          "pinId": "jp2-io47",
+          "x": 2.2606,
+          "y": 21.6662
+        },
+        {
+          "pinId": "jp2-io33",
+          "x": 2.2606,
+          "y": 24.206200000000003
+        },
+        {
+          "pinId": "jp2-io34",
+          "x": 2.2606,
+          "y": 26.7462
+        },
+        {
+          "pinId": "jp2-io35",
+          "x": 2.2606,
+          "y": 29.2862
+        },
+        {
+          "pinId": "jp2-io0",
+          "x": 2.2606,
+          "y": 31.8262
+        },
+        {
+          "pinId": "jp2-io36",
+          "x": 2.2606,
+          "y": 34.3662
+        },
+        {
+          "pinId": "jp2-io37",
+          "x": 2.2606,
+          "y": 36.9062
+        },
+        {
+          "pinId": "jp2-gnd",
+          "x": 2.2606,
+          "y": 39.446200000000005
+        },
+        {
+          "pinId": "jp1-io38",
+          "x": 25.1206,
+          "y": 6.4262
+        },
+        {
+          "pinId": "jp1-io43",
+          "x": 25.1206,
+          "y": 8.9662
+        },
+        {
+          "pinId": "jp1-io44",
+          "x": 25.1206,
+          "y": 11.5062
+        },
+        {
+          "pinId": "jp1-io39",
+          "x": 25.1206,
+          "y": 14.046199999999999
+        },
+        {
+          "pinId": "jp1-io40",
+          "x": 25.1206,
+          "y": 16.586199999999998
+        },
+        {
+          "pinId": "jp1-io41",
+          "x": 25.1206,
+          "y": 19.126199999999997
+        },
+        {
+          "pinId": "jp1-io45",
+          "x": 25.1206,
+          "y": 21.6662
+        },
+        {
+          "pinId": "jp1-io46",
+          "x": 25.1206,
+          "y": 24.206200000000003
+        },
+        {
+          "pinId": "jp1-io42",
+          "x": 25.1206,
+          "y": 26.7462
+        },
+        {
+          "pinId": "jp1-gnd1",
+          "x": 25.1206,
+          "y": 29.2862
+        },
+        {
+          "pinId": "jp1-3v3",
+          "x": 25.1206,
+          "y": 31.8262
+        },
+        {
+          "pinId": "jp1-gnd2",
+          "x": 25.1206,
+          "y": 34.3662
+        },
+        {
+          "pinId": "jp1-vbus",
+          "x": 25.1206,
+          "y": 36.9062
+        },
+        {
+          "pinId": "jp1-vbat",
+          "x": 25.1206,
+          "y": 39.446200000000005
+        }
+      ],
+      "pitchMm": 2.54,
+      "calibration": {
+        "origin": {
+          "x": 20,
+          "y": 20
+        },
+        "unitsPerMm": 10
+      },
+      "physicalView": "breadboard",
+      "bodyGeometryEvidence": "V1.3 DXF BOARD_OUTLINE_00 establishes the 27.1272 x 64.4652 mm PCB. DRIL_SYMBOL centers place all twenty-eight main leads at 2.54 mm pitch and 22.86 mm row spacing. Physical 1.0 mm auxiliary solder pads, P2 battery tails and 2.0 mm J3 solar drills are read from package artwork, not logical SYM_TERMINAL text. The matching 20250110 photo establishes functions and polarities. Stable U4 battery IDs are retained even though CAD calls that socket P2.",
+      "bodyGeometryScope": "New explicit source-projected assembly view; canonical/default/native geometry is unchanged.",
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-echo-v1-0",
@@ -15517,16 +16220,17 @@
           "url": "https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/dimensions/t-echo_3d.stl"
         }
       ],
-      "decision": "No general-purpose expansion header; only four SWD service pads and fitted battery contacts. Exact SWD pad layout and an installed straight-header assembly were not published/verified.",
+      "decision": "The enclosed display/radio assembly exposes four programming service pads and two battery contacts. It has no manufacturer downward 2.54 mm male strip assembly.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-sim7000g-20200415",
       "name": "LILYGO T-SIM7000G 20200415",
       "family": "lilygo-wireless",
       "revision": "ESP32-WROVER / SIM7000G / PCB 2020-04-15",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 36,
       "insertionContactCount": 0,
       "evidence": [
@@ -15539,16 +16243,17 @@
           "url": "https://github.com/Xinyuan-LilyGO/LilyGO-T-SIM7000G/blob/master/3D_file"
         }
       ],
-      "decision": "Need exact dated-revision main-header row map and proof that installed long headers clear the rear battery assembly. Current carrier is a wiring reference.",
+      "decision": "The manufacturer STEP establishes 2.54 mm edge-row pitch and 30.48 mm row spacing, but the rear battery-holder assembly extends 16.2 mm below the PCB plane. The factory assembly cannot seat on ordinary headers. No manufacturer assembly evidence was found for a downward extended-header variant with that clearance; use a raised carrier or adapter.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "lilygo-t-a7670x-v1-4",
       "name": "LILYGO T-A7670X V1.4 (ESP32)",
       "family": "lilygo-wireless",
       "revision": "ESP32-WROVER / A7670 cellular carrier / 2024-05-23",
-      "status": "pending-source-review",
+      "status": "ineligible-as-fitted",
       "contactCount": 32,
       "insertionContactCount": 0,
       "evidence": [
@@ -15561,9 +16266,10 @@
           "url": "https://github.com/Xinyuan-LilyGO/LilyGO-T-A7670X/blob/main/dimensions/esp32/T-A7670X-Board-3D.stp"
         }
       ],
-      "decision": "Need V1.4 complete header center and below-PCB connector/battery clearance review before claiming a direct downward assembly.",
+      "decision": "V1.4 DXF establishes both complete 16-contact rows at 2.54 mm pitch and 30.48 mm spacing. Native STEP confirms the factory rear battery holder extends 16.2 mm below the PCB plane. A hypothetical taller header is not a manufacturer-reviewed assembly. No source-approved downward-post assembly with the required clearance was found; use a raised carrier or adapter.",
       "defaultGeometryPreserved": true,
-      "nativeAccuracyChanged": false
+      "nativeAccuracyChanged": false,
+      "followup": "catalog-lilygo-mounting-followup-2026-11-08.json"
     },
     {
       "id": "waveshare-rp2040-zero",

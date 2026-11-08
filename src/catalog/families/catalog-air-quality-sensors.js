@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { followupSensorMounting } from "../shared/followup-sensor-mounting.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, mountingHole, pad, path, pinRow, rect, smd } from "../shared/svg.js";
 
@@ -122,4 +123,4 @@ const airQualitySensorArt = Object.fromEntries(parts.map(({ component, art }) =>
 const airQualitySensorFootprints = Object.fromEntries(parts.map(({ component, footprint }) => [component.id, footprint]));
 const airQualitySensorModels = Object.fromEntries(parts.map(({ component, model }) => [component.id, model]));
 
-export default defineFamily("air-quality-sensors", (airQualitySensorComponents).map(component => ({ component, render: (airQualitySensorArt)[component.art], footprint: (airQualitySensorFootprints)[component.id], model: airQualitySensorModels[component.id] })));
+export default defineFamily("air-quality-sensors", (airQualitySensorComponents).map(component => ({ component, render: (airQualitySensorArt)[component.art], footprint: (airQualitySensorFootprints)[component.id], model: airQualitySensorModels[component.id], mounting: followupSensorMounting(component) })));

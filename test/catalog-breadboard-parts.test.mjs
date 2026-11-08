@@ -71,7 +71,7 @@ test('all formed views have finite self-contained metal/body output in either la
 
 test('breadboard-compatible filtering exposes reviewed guests without admitting the host or SMD parts', () => {
   const index = createLibraryIndex(components), filtered = filterLibrary(index, { mountable: true });
-  assert.equal(filtered.length, 1217);
+  assert.equal(filtered.length, 1243);
   assert.equal(filtered.some(entry => entry.component.id === 'breadboard'), false);
   assert.equal(filterLibrary(index, { mountable: true, query: 'resistor' }).some(entry => entry.component.id === 'resistor'), true);
   assert.equal(filterLibrary(index, { mountable: true, query: '1N4148W-7-F' }).length, 0);

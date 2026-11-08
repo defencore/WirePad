@@ -4,9 +4,9 @@
   "policy": "Existing component definitions, pin IDs, default SVGs and native assets remain unchanged. Newly inserted instances explicitly activate a complete source-projected physical view. Pitch is established from the manufacturer headers and assembly, never from approximate off-board carrier footprints. Unselected cable/optional service contacts remain visible and wireable.",
   "checkedCount": 85,
   "summary": {
-    "supported": 17,
-    "deferred": 12,
-    "requires-adapter": 56
+    "supported": 24,
+    "requires-adapter": 57,
+    "deferred": 4
   },
   "manufacturerStepModels": [
     {
@@ -2523,7 +2523,8 @@
       "revision": "RP2350A / USB-C / dual-core MCU",
       "source": "https://wiki.luckfox.com/Pico2/Pinout",
       "decision": "deferred",
-      "reason": "The Luckfox RP2350A board is distinct from Raspberry Pi Pico 2. Its Pico-style 40-contact pinout is known, but exact Luckfox board-revision mechanical header/auxiliary geometry has not been source-reviewed; do not copy another manufacturer profile."
+      "reason": "Source identity mismatch, not a pitch exclusion: the catalog explicitly describes a distinct Luckfox USB-C/microSD board. Luckfox current Pico2 pinout and its linked Hardware/Schematic/Pico-2-schematic.pdf and Docs/datesheet/Pico-2-datasheet.pdf actually identify the official Raspberry Pi Pico 2 (micro-USB, no microSD). That PDF explicitly confirms 40 main 2.54 mm breadboard-compatible contacts, but it does not establish the different physical board currently represented by this published entry. Do not silently substitute a Raspberry Pi PCB or invent its auxiliary centers; the exact catalog hardware identity must first be corrected/reconciled.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json"
     },
     {
       "id": "luckfox-webbee",
@@ -2630,8 +2631,275 @@
       "manufacturer": "Sipeed",
       "revision": "GW1N-LV1QN48 / CH552",
       "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano/Nano.html",
-      "decision": "deferred",
-      "reason": "Manufacturer 2704 DXF confirms 17.78 mm main-row separation and 2.54 mm pitch, but the four additional JTAG contact IDs still need an unambiguous complete component-side coordinate map. The old picture is not that map."
+      "decision": "supported",
+      "reason": "Manufacturer 2704 DXF INSERT blocks HN1X20_B_2/_3 contain all 40 main holes at X=-8.7884/8.9916 and Y=-29.718+i*2.54 mm. HN1X2_4/_5 supply all four JTAG holes. Tang-Nano-Pin.jpg maps TCK/TDO to the left pair and TMS/TDI to the right with USB at the bottom. PCB outline is X=-10.54100762..10.74420254, Y=-31.72460254..26.6192 mm. Main post-row separation is 17.78 mm.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano/HDK/Tang-NANO-2704-size.DXF"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 20-contact rows with downward straight male headers. Keep the four separate JTAG pads unpopulated or upward-facing. USB and LCD FPC remain cable interfaces.",
+      "selectedContactIds": [
+        "left-38",
+        "left-39",
+        "left-40",
+        "left-41",
+        "left-42",
+        "left-43",
+        "left-44",
+        "left-45",
+        "left-11",
+        "left-10",
+        "left-46",
+        "left-5",
+        "left-8",
+        "left-9",
+        "left-13",
+        "left-V1",
+        "left-V2",
+        "left-G1",
+        "left-G2",
+        "left-14",
+        "right-27",
+        "right-28",
+        "right-29",
+        "right-30",
+        "right-31",
+        "right-32",
+        "right-33",
+        "right-34",
+        "right-16",
+        "right-17",
+        "right-18",
+        "right-20",
+        "right-21",
+        "right-22",
+        "right-24",
+        "right-19",
+        "right-23",
+        "right-V1",
+        "right-V2",
+        "right-15"
+      ],
+      "completeViewPinCount": 44,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "left-38",
+          "x": 1.752607620000001,
+          "y": 2.0066025399999994
+        },
+        {
+          "pinId": "left-39",
+          "x": 1.752607620000001,
+          "y": 4.546602539999999
+        },
+        {
+          "pinId": "left-40",
+          "x": 1.752607620000001,
+          "y": 7.0866025399999995
+        },
+        {
+          "pinId": "left-41",
+          "x": 1.752607620000001,
+          "y": 9.62660254
+        },
+        {
+          "pinId": "left-42",
+          "x": 1.752607620000001,
+          "y": 12.16660254
+        },
+        {
+          "pinId": "left-43",
+          "x": 1.752607620000001,
+          "y": 14.706602539999999
+        },
+        {
+          "pinId": "left-44",
+          "x": 1.752607620000001,
+          "y": 17.246602539999998
+        },
+        {
+          "pinId": "left-45",
+          "x": 1.752607620000001,
+          "y": 19.78660254
+        },
+        {
+          "pinId": "left-11",
+          "x": 1.752607620000001,
+          "y": 22.32660254
+        },
+        {
+          "pinId": "left-10",
+          "x": 1.752607620000001,
+          "y": 24.86660254
+        },
+        {
+          "pinId": "left-46",
+          "x": 1.752607620000001,
+          "y": 27.406602539999998
+        },
+        {
+          "pinId": "left-5",
+          "x": 1.752607620000001,
+          "y": 29.94660254
+        },
+        {
+          "pinId": "left-8",
+          "x": 1.752607620000001,
+          "y": 32.48660254
+        },
+        {
+          "pinId": "left-9",
+          "x": 1.752607620000001,
+          "y": 35.02660254
+        },
+        {
+          "pinId": "left-13",
+          "x": 1.752607620000001,
+          "y": 37.566602540000005
+        },
+        {
+          "pinId": "left-V1",
+          "x": 1.752607620000001,
+          "y": 40.10660254
+        },
+        {
+          "pinId": "left-V2",
+          "x": 1.752607620000001,
+          "y": 42.64660254
+        },
+        {
+          "pinId": "left-G1",
+          "x": 1.752607620000001,
+          "y": 45.186602539999996
+        },
+        {
+          "pinId": "left-G2",
+          "x": 1.752607620000001,
+          "y": 47.72660254
+        },
+        {
+          "pinId": "left-14",
+          "x": 1.752607620000001,
+          "y": 50.266602539999994
+        },
+        {
+          "pinId": "right-27",
+          "x": 19.53260762,
+          "y": 2.0066025399999994
+        },
+        {
+          "pinId": "right-28",
+          "x": 19.53260762,
+          "y": 4.546602539999999
+        },
+        {
+          "pinId": "right-29",
+          "x": 19.53260762,
+          "y": 7.0866025399999995
+        },
+        {
+          "pinId": "right-30",
+          "x": 19.53260762,
+          "y": 9.62660254
+        },
+        {
+          "pinId": "right-31",
+          "x": 19.53260762,
+          "y": 12.16660254
+        },
+        {
+          "pinId": "right-32",
+          "x": 19.53260762,
+          "y": 14.706602539999999
+        },
+        {
+          "pinId": "right-33",
+          "x": 19.53260762,
+          "y": 17.246602539999998
+        },
+        {
+          "pinId": "right-34",
+          "x": 19.53260762,
+          "y": 19.78660254
+        },
+        {
+          "pinId": "right-16",
+          "x": 19.53260762,
+          "y": 22.32660254
+        },
+        {
+          "pinId": "right-17",
+          "x": 19.53260762,
+          "y": 24.86660254
+        },
+        {
+          "pinId": "right-18",
+          "x": 19.53260762,
+          "y": 27.406602539999998
+        },
+        {
+          "pinId": "right-20",
+          "x": 19.53260762,
+          "y": 29.94660254
+        },
+        {
+          "pinId": "right-21",
+          "x": 19.53260762,
+          "y": 32.48660254
+        },
+        {
+          "pinId": "right-22",
+          "x": 19.53260762,
+          "y": 35.02660254
+        },
+        {
+          "pinId": "right-24",
+          "x": 19.53260762,
+          "y": 37.566602540000005
+        },
+        {
+          "pinId": "right-19",
+          "x": 19.53260762,
+          "y": 40.10660254
+        },
+        {
+          "pinId": "right-23",
+          "x": 19.53260762,
+          "y": 42.64660254
+        },
+        {
+          "pinId": "right-V1",
+          "x": 19.53260762,
+          "y": 45.186602539999996
+        },
+        {
+          "pinId": "right-V2",
+          "x": 19.53260762,
+          "y": 47.72660254
+        },
+        {
+          "pinId": "right-15",
+          "x": 19.53260762,
+          "y": 50.266602539999994
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 21.28521016,
+          "height": 58.34380254
+        },
+        {
+          "x": 7.449823556,
+          "y": 53.238719817749995,
+          "width": 6.385563047999999,
+          "height": 5.469731488124999
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null
     },
     {
       "id": "sipeed-tang-nano-1k",
@@ -2639,8 +2907,275 @@
       "manufacturer": "Sipeed",
       "revision": "6100 / GW1NZ-LV1QN48",
       "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-1K/Nano-1k.html",
-      "decision": "deferred",
-      "reason": "Manufacturer 6100 DXF confirms 17.78 mm main-row separation and 2.54 mm pitch. The complete P2/P3 JTAG pad map and source PCB boundary must still be reconciled with the component-side view; no auxiliary endpoint is hidden or guessed."
+      "decision": "supported",
+      "reason": "Manufacturer 6100 DXF represents its drilled holes as two-vertex bulged polylines, not CIRCLE entities. Both complete 20-hole rows have X=95.4786/113.2586, Y=51.054+i*2.54 mm and 17.78 mm separation. The PCB outline is X=93.72599238..115.01120254, Y=49.0474..107.3912 mm. Manufacturer front/back photos and the 6100 schematic identify all four optional JTAG holes; stable TDI/TDO IDs are positioned by electrical function despite their historical connector-group mismatch. USB is at the top.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano%201K/4_Dimensional_drawing/Tang_Nano_6100.dxf"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate all P4/P5 main contacts with downward straight male headers. Leave the two JTAG pairs unpopulated or fit them upward; their separate source positions and electrical functions remain visible.",
+      "selectedContactIds": [
+        "p4-20",
+        "p4-19",
+        "p4-18",
+        "p4-17",
+        "p4-16",
+        "p4-15",
+        "p4-14",
+        "p4-13",
+        "p4-12",
+        "p4-11",
+        "p4-10",
+        "p4-9",
+        "p4-8",
+        "p4-7",
+        "p4-6",
+        "p4-5",
+        "p4-4",
+        "p4-3",
+        "p4-2",
+        "p4-1",
+        "p5-20",
+        "p5-19",
+        "p5-18",
+        "p5-17",
+        "p5-16",
+        "p5-15",
+        "p5-14",
+        "p5-13",
+        "p5-12",
+        "p5-11",
+        "p5-10",
+        "p5-9",
+        "p5-8",
+        "p5-7",
+        "p5-6",
+        "p5-5",
+        "p5-4",
+        "p5-3",
+        "p5-2",
+        "p5-1"
+      ],
+      "completeViewPinCount": 44,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "p4-20",
+          "x": 1.7526076200000062,
+          "y": 8.077200000000005
+        },
+        {
+          "pinId": "p4-19",
+          "x": 1.7526076200000062,
+          "y": 10.617199999999997
+        },
+        {
+          "pinId": "p4-18",
+          "x": 1.7526076200000062,
+          "y": 13.157199999999989
+        },
+        {
+          "pinId": "p4-17",
+          "x": 1.7526076200000062,
+          "y": 15.697199999999995
+        },
+        {
+          "pinId": "p4-16",
+          "x": 1.7526076200000062,
+          "y": 18.2372
+        },
+        {
+          "pinId": "p4-15",
+          "x": 1.7526076200000062,
+          "y": 20.777199999999993
+        },
+        {
+          "pinId": "p4-14",
+          "x": 1.7526076200000062,
+          "y": 23.317199999999985
+        },
+        {
+          "pinId": "p4-13",
+          "x": 1.7526076200000062,
+          "y": 25.85719999999999
+        },
+        {
+          "pinId": "p4-12",
+          "x": 1.7526076200000062,
+          "y": 28.397199999999998
+        },
+        {
+          "pinId": "p4-11",
+          "x": 1.7526076200000062,
+          "y": 30.93719999999999
+        },
+        {
+          "pinId": "p4-10",
+          "x": 1.7526076200000062,
+          "y": 33.477199999999996
+        },
+        {
+          "pinId": "p4-9",
+          "x": 1.7526076200000062,
+          "y": 36.0172
+        },
+        {
+          "pinId": "p4-8",
+          "x": 1.7526076200000062,
+          "y": 38.557199999999995
+        },
+        {
+          "pinId": "p4-7",
+          "x": 1.7526076200000062,
+          "y": 41.0972
+        },
+        {
+          "pinId": "p4-6",
+          "x": 1.7526076200000062,
+          "y": 43.63719999999999
+        },
+        {
+          "pinId": "p4-5",
+          "x": 1.7526076200000062,
+          "y": 46.1772
+        },
+        {
+          "pinId": "p4-4",
+          "x": 1.7526076200000062,
+          "y": 48.7172
+        },
+        {
+          "pinId": "p4-3",
+          "x": 1.7526076200000062,
+          "y": 51.2572
+        },
+        {
+          "pinId": "p4-2",
+          "x": 1.7526076200000062,
+          "y": 53.7972
+        },
+        {
+          "pinId": "p4-1",
+          "x": 1.7526076200000062,
+          "y": 56.337199999999996
+        },
+        {
+          "pinId": "p5-20",
+          "x": 19.532607620000007,
+          "y": 8.077200000000005
+        },
+        {
+          "pinId": "p5-19",
+          "x": 19.532607620000007,
+          "y": 10.617199999999997
+        },
+        {
+          "pinId": "p5-18",
+          "x": 19.532607620000007,
+          "y": 13.157199999999989
+        },
+        {
+          "pinId": "p5-17",
+          "x": 19.532607620000007,
+          "y": 15.697199999999995
+        },
+        {
+          "pinId": "p5-16",
+          "x": 19.532607620000007,
+          "y": 18.2372
+        },
+        {
+          "pinId": "p5-15",
+          "x": 19.532607620000007,
+          "y": 20.777199999999993
+        },
+        {
+          "pinId": "p5-14",
+          "x": 19.532607620000007,
+          "y": 23.317199999999985
+        },
+        {
+          "pinId": "p5-13",
+          "x": 19.532607620000007,
+          "y": 25.85719999999999
+        },
+        {
+          "pinId": "p5-12",
+          "x": 19.532607620000007,
+          "y": 28.397199999999998
+        },
+        {
+          "pinId": "p5-11",
+          "x": 19.532607620000007,
+          "y": 30.93719999999999
+        },
+        {
+          "pinId": "p5-10",
+          "x": 19.532607620000007,
+          "y": 33.477199999999996
+        },
+        {
+          "pinId": "p5-9",
+          "x": 19.532607620000007,
+          "y": 36.0172
+        },
+        {
+          "pinId": "p5-8",
+          "x": 19.532607620000007,
+          "y": 38.557199999999995
+        },
+        {
+          "pinId": "p5-7",
+          "x": 19.532607620000007,
+          "y": 41.0972
+        },
+        {
+          "pinId": "p5-6",
+          "x": 19.532607620000007,
+          "y": 43.63719999999999
+        },
+        {
+          "pinId": "p5-5",
+          "x": 19.532607620000007,
+          "y": 46.1772
+        },
+        {
+          "pinId": "p5-4",
+          "x": 19.532607620000007,
+          "y": 48.7172
+        },
+        {
+          "pinId": "p5-3",
+          "x": 19.532607620000007,
+          "y": 51.2572
+        },
+        {
+          "pinId": "p5-2",
+          "x": 19.532607620000007,
+          "y": 53.7972
+        },
+        {
+          "pinId": "p5-1",
+          "x": 19.532607620000007,
+          "y": 56.337199999999996
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 21.28521016,
+          "height": 58.3438
+        },
+        {
+          "x": 7.449823556,
+          "y": -0.7292975,
+          "width": 6.385563047999999,
+          "height": 5.469731250000001
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null
     },
     {
       "id": "sipeed-tang-nano-4k",
@@ -2953,10 +3488,331 @@
       "manufacturer": "Sipeed",
       "revision": "3672 / GW1NR-LV9QN88P",
       "source": "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K.html",
-      "decision": "deferred",
-      "reason": "Manufacturer 3672 dimension PDF specifies 2.54 mm longitudinal pitch and 22.8169 mm PCB-hole row separation. A source-confirmed nominal male-post assembly is needed before mapping these holes to a 22.86 mm breadboard row gap; do not warp the PCB or enlarge global fitting tolerance.",
+      "decision": "supported",
+      "reason": "Exact manufacturer Tang_Nano_9K_3672 iBOM (2022-02-25) provides J5/J6 complete 24-hole rows at source Y=100.374602/77.514602 mm, separation exactly 22.86 mm, and X=101.989204+i*2.54 mm. The source PCB edge centreline is X=99.459046..169.503019 and Y=75.950225..101.974198 mm. Rotate the physical plane with USB at the top. The earlier dimension PDF label 22.8169 mm disagrees with these production pad coordinates; the source iBOM resolves that false exclusion without widening fitting tolerance.",
       "manufacturerDrillRowSeparationMm": 22.8169,
-      "unverifiedNominalPostSeparationMm": 22.86
+      "unverifiedNominalPostSeparationMm": 22.86,
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano%209K/3_Bit_number_map/Tang_Nano_9K_3672_ibom.html"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate all 48 J5/J6 contacts with downward straight male headers. The upper right I/O bank remains 1.8 V. HDMI, USB, microSD and FPC ports keep their original cable/card interfaces.",
+      "selectedContactIds": [
+        "j5-1",
+        "j5-2",
+        "j5-3",
+        "j5-4",
+        "j5-5",
+        "j5-6",
+        "j5-7",
+        "j5-8",
+        "j5-9",
+        "j5-10",
+        "j5-11",
+        "j5-12",
+        "j5-13",
+        "j5-14",
+        "j5-15",
+        "j5-16",
+        "j5-17",
+        "j5-18",
+        "j5-19",
+        "j5-20",
+        "j5-21",
+        "j5-22",
+        "j5-23",
+        "j5-24",
+        "j6-1",
+        "j6-2",
+        "j6-3",
+        "j6-4",
+        "j6-5",
+        "j6-6",
+        "j6-7",
+        "j6-8",
+        "j6-9",
+        "j6-10",
+        "j6-11",
+        "j6-12",
+        "j6-13",
+        "j6-14",
+        "j6-15",
+        "j6-16",
+        "j6-17",
+        "j6-18",
+        "j6-19",
+        "j6-20",
+        "j6-21",
+        "j6-22",
+        "j6-23",
+        "j6-24"
+      ],
+      "completeViewPinCount": 48,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j5-1",
+          "x": 1.5995960000000053,
+          "y": 2.530158
+        },
+        {
+          "pinId": "j5-2",
+          "x": 1.5995960000000053,
+          "y": 5.070158
+        },
+        {
+          "pinId": "j5-3",
+          "x": 1.5995960000000053,
+          "y": 7.610158
+        },
+        {
+          "pinId": "j5-4",
+          "x": 1.5995960000000053,
+          "y": 10.150158000000001
+        },
+        {
+          "pinId": "j5-5",
+          "x": 1.5995960000000053,
+          "y": 12.690158
+        },
+        {
+          "pinId": "j5-6",
+          "x": 1.5995960000000053,
+          "y": 15.230158
+        },
+        {
+          "pinId": "j5-7",
+          "x": 1.5995960000000053,
+          "y": 17.770158000000002
+        },
+        {
+          "pinId": "j5-8",
+          "x": 1.5995960000000053,
+          "y": 20.310158
+        },
+        {
+          "pinId": "j5-9",
+          "x": 1.5995960000000053,
+          "y": 22.850158
+        },
+        {
+          "pinId": "j5-10",
+          "x": 1.5995960000000053,
+          "y": 25.390158
+        },
+        {
+          "pinId": "j5-11",
+          "x": 1.5995960000000053,
+          "y": 27.930158
+        },
+        {
+          "pinId": "j5-12",
+          "x": 1.5995960000000053,
+          "y": 30.470158
+        },
+        {
+          "pinId": "j5-13",
+          "x": 1.5995960000000053,
+          "y": 33.010158000000004
+        },
+        {
+          "pinId": "j5-14",
+          "x": 1.5995960000000053,
+          "y": 35.550158
+        },
+        {
+          "pinId": "j5-15",
+          "x": 1.5995960000000053,
+          "y": 38.090158
+        },
+        {
+          "pinId": "j5-16",
+          "x": 1.5995960000000053,
+          "y": 40.630158
+        },
+        {
+          "pinId": "j5-17",
+          "x": 1.5995960000000053,
+          "y": 43.170158
+        },
+        {
+          "pinId": "j5-18",
+          "x": 1.5995960000000053,
+          "y": 45.710158
+        },
+        {
+          "pinId": "j5-19",
+          "x": 1.5995960000000053,
+          "y": 48.250158
+        },
+        {
+          "pinId": "j5-20",
+          "x": 1.5995960000000053,
+          "y": 50.790158
+        },
+        {
+          "pinId": "j5-21",
+          "x": 1.5995960000000053,
+          "y": 53.330158
+        },
+        {
+          "pinId": "j5-22",
+          "x": 1.5995960000000053,
+          "y": 55.870158
+        },
+        {
+          "pinId": "j5-23",
+          "x": 1.5995960000000053,
+          "y": 58.410158
+        },
+        {
+          "pinId": "j5-24",
+          "x": 1.5995960000000053,
+          "y": 60.950158
+        },
+        {
+          "pinId": "j6-1",
+          "x": 24.459596000000005,
+          "y": 2.530158
+        },
+        {
+          "pinId": "j6-2",
+          "x": 24.459596000000005,
+          "y": 5.070158
+        },
+        {
+          "pinId": "j6-3",
+          "x": 24.459596000000005,
+          "y": 7.610158
+        },
+        {
+          "pinId": "j6-4",
+          "x": 24.459596000000005,
+          "y": 10.150158000000001
+        },
+        {
+          "pinId": "j6-5",
+          "x": 24.459596000000005,
+          "y": 12.690158
+        },
+        {
+          "pinId": "j6-6",
+          "x": 24.459596000000005,
+          "y": 15.230158
+        },
+        {
+          "pinId": "j6-7",
+          "x": 24.459596000000005,
+          "y": 17.770158000000002
+        },
+        {
+          "pinId": "j6-8",
+          "x": 24.459596000000005,
+          "y": 20.310158
+        },
+        {
+          "pinId": "j6-9",
+          "x": 24.459596000000005,
+          "y": 22.850158
+        },
+        {
+          "pinId": "j6-10",
+          "x": 24.459596000000005,
+          "y": 25.390158
+        },
+        {
+          "pinId": "j6-11",
+          "x": 24.459596000000005,
+          "y": 27.930158
+        },
+        {
+          "pinId": "j6-12",
+          "x": 24.459596000000005,
+          "y": 30.470158
+        },
+        {
+          "pinId": "j6-13",
+          "x": 24.459596000000005,
+          "y": 33.010158000000004
+        },
+        {
+          "pinId": "j6-14",
+          "x": 24.459596000000005,
+          "y": 35.550158
+        },
+        {
+          "pinId": "j6-15",
+          "x": 24.459596000000005,
+          "y": 38.090158
+        },
+        {
+          "pinId": "j6-16",
+          "x": 24.459596000000005,
+          "y": 40.630158
+        },
+        {
+          "pinId": "j6-17",
+          "x": 24.459596000000005,
+          "y": 43.170158
+        },
+        {
+          "pinId": "j6-18",
+          "x": 24.459596000000005,
+          "y": 45.710158
+        },
+        {
+          "pinId": "j6-19",
+          "x": 24.459596000000005,
+          "y": 48.250158
+        },
+        {
+          "pinId": "j6-20",
+          "x": 24.459596000000005,
+          "y": 50.790158
+        },
+        {
+          "pinId": "j6-21",
+          "x": 24.459596000000005,
+          "y": 53.330158
+        },
+        {
+          "pinId": "j6-22",
+          "x": 24.459596000000005,
+          "y": 55.870158
+        },
+        {
+          "pinId": "j6-23",
+          "x": 24.459596000000005,
+          "y": 58.410158
+        },
+        {
+          "pinId": "j6-24",
+          "x": 24.459596000000005,
+          "y": 60.950158
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 26.023973,
+          "height": 70.043973
+        },
+        {
+          "x": 9.10839055,
+          "y": -0.8755496624999999,
+          "width": 7.807191900000001,
+          "height": 6.566622468749999
+        },
+        {
+          "x": 6.50599325,
+          "y": 63.477350531249996,
+          "width": 13.0119865,
+          "height": 7.879946962499998
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null
     },
     {
       "id": "sipeed-tang-nano-20k",
@@ -2964,8 +3820,281 @@
       "manufacturer": "Sipeed",
       "revision": "3923 / GW2AR-LV18QN88C8",
       "source": "https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html",
-      "decision": "deferred",
-      "reason": "Manufacturer 3921 dimension drawing confirms 2.54 mm headers with 20.32 mm separation and a 54.04 x22.55 mm PCB. This catalog entry explicitly represents newer 3923 rev1.31; its exact primary/auxiliary physical map still needs revision matching instead of silently reusing 3921 geometry."
+      "decision": "supported",
+      "reason": "Manufacturer v3923 download directory pairs the 3923 assembly drawing with an iBOM whose filename/title retains 3920 although its BOM contains BL616. Its complete J6/J5 20-hole rows are at X=128.92+i*2.54 and Y=108.53998/88.22 mm, with 20.31998 mm exported drill separation. Straight posts use nominal 20.32 mm, a 0.00002 mm export-rounding correction. PCB edge centreline is X=126.313046..180.355019, Y=87.111027..109.665 mm. The 3923 assembly and manufacturer 3921 dimension drawing corroborate the unchanged 40-hole, 20.32 mm mechanical family. This is a documented compatible-family nominal-header inference, not a claim that the stale 3920 title is exact revision-3923 production CAD.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/TANG/Nano_20K/3_Bit_number_map/v3923/Tang_Nano_20K_3920_ibom.html"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 20-contact expansion rows with downward straight male headers. USB, HDMI, microSD, display FPC and the speaker connector remain cable/card interfaces.",
+      "selectedContactIds": [
+        "j6-1",
+        "j6-2",
+        "j6-3",
+        "j6-4",
+        "j6-5",
+        "j6-6",
+        "j6-7",
+        "j6-8",
+        "j6-9",
+        "j6-10",
+        "j6-11",
+        "j6-12",
+        "j6-13",
+        "j6-14",
+        "j6-15",
+        "j6-16",
+        "j6-17",
+        "j6-18",
+        "j6-19",
+        "j6-20",
+        "j5-1",
+        "j5-2",
+        "j5-3",
+        "j5-4",
+        "j5-5",
+        "j5-6",
+        "j5-7",
+        "j5-8",
+        "j5-9",
+        "j5-10",
+        "j5-11",
+        "j5-12",
+        "j5-13",
+        "j5-14",
+        "j5-15",
+        "j5-16",
+        "j5-17",
+        "j5-18",
+        "j5-19",
+        "j5-20"
+      ],
+      "completeViewPinCount": 40,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j6-1",
+          "x": 1.1250200000000063,
+          "y": 2.6069539999999876
+        },
+        {
+          "pinId": "j6-2",
+          "x": 1.1250200000000063,
+          "y": 5.146953999999988
+        },
+        {
+          "pinId": "j6-3",
+          "x": 1.1250200000000063,
+          "y": 7.686953999999988
+        },
+        {
+          "pinId": "j6-4",
+          "x": 1.1250200000000063,
+          "y": 10.226953999999989
+        },
+        {
+          "pinId": "j6-5",
+          "x": 1.1250200000000063,
+          "y": 12.766953999999988
+        },
+        {
+          "pinId": "j6-6",
+          "x": 1.1250200000000063,
+          "y": 15.306953999999987
+        },
+        {
+          "pinId": "j6-7",
+          "x": 1.1250200000000063,
+          "y": 17.84695399999999
+        },
+        {
+          "pinId": "j6-8",
+          "x": 1.1250200000000063,
+          "y": 20.38695399999999
+        },
+        {
+          "pinId": "j6-9",
+          "x": 1.1250200000000063,
+          "y": 22.926953999999988
+        },
+        {
+          "pinId": "j6-10",
+          "x": 1.1250200000000063,
+          "y": 25.466953999999987
+        },
+        {
+          "pinId": "j6-11",
+          "x": 1.1250200000000063,
+          "y": 28.006953999999986
+        },
+        {
+          "pinId": "j6-12",
+          "x": 1.1250200000000063,
+          "y": 30.54695399999999
+        },
+        {
+          "pinId": "j6-13",
+          "x": 1.1250200000000063,
+          "y": 33.08695399999999
+        },
+        {
+          "pinId": "j6-14",
+          "x": 1.1250200000000063,
+          "y": 35.62695399999999
+        },
+        {
+          "pinId": "j6-15",
+          "x": 1.1250200000000063,
+          "y": 38.16695399999999
+        },
+        {
+          "pinId": "j6-16",
+          "x": 1.1250200000000063,
+          "y": 40.70695399999999
+        },
+        {
+          "pinId": "j6-17",
+          "x": 1.1250200000000063,
+          "y": 43.24695399999999
+        },
+        {
+          "pinId": "j6-18",
+          "x": 1.1250200000000063,
+          "y": 45.78695399999999
+        },
+        {
+          "pinId": "j6-19",
+          "x": 1.1250200000000063,
+          "y": 48.326953999999986
+        },
+        {
+          "pinId": "j6-20",
+          "x": 1.1250200000000063,
+          "y": 50.866953999999986
+        },
+        {
+          "pinId": "j5-1",
+          "x": 21.445020000000007,
+          "y": 2.6069539999999876
+        },
+        {
+          "pinId": "j5-2",
+          "x": 21.445020000000007,
+          "y": 5.146953999999988
+        },
+        {
+          "pinId": "j5-3",
+          "x": 21.445020000000007,
+          "y": 7.686953999999988
+        },
+        {
+          "pinId": "j5-4",
+          "x": 21.445020000000007,
+          "y": 10.226953999999989
+        },
+        {
+          "pinId": "j5-5",
+          "x": 21.445020000000007,
+          "y": 12.766953999999988
+        },
+        {
+          "pinId": "j5-6",
+          "x": 21.445020000000007,
+          "y": 15.306953999999987
+        },
+        {
+          "pinId": "j5-7",
+          "x": 21.445020000000007,
+          "y": 17.84695399999999
+        },
+        {
+          "pinId": "j5-8",
+          "x": 21.445020000000007,
+          "y": 20.38695399999999
+        },
+        {
+          "pinId": "j5-9",
+          "x": 21.445020000000007,
+          "y": 22.926953999999988
+        },
+        {
+          "pinId": "j5-10",
+          "x": 21.445020000000007,
+          "y": 25.466953999999987
+        },
+        {
+          "pinId": "j5-11",
+          "x": 21.445020000000007,
+          "y": 28.006953999999986
+        },
+        {
+          "pinId": "j5-12",
+          "x": 21.445020000000007,
+          "y": 30.54695399999999
+        },
+        {
+          "pinId": "j5-13",
+          "x": 21.445020000000007,
+          "y": 33.08695399999999
+        },
+        {
+          "pinId": "j5-14",
+          "x": 21.445020000000007,
+          "y": 35.62695399999999
+        },
+        {
+          "pinId": "j5-15",
+          "x": 21.445020000000007,
+          "y": 38.16695399999999
+        },
+        {
+          "pinId": "j5-16",
+          "x": 21.445020000000007,
+          "y": 40.70695399999999
+        },
+        {
+          "pinId": "j5-17",
+          "x": 21.445020000000007,
+          "y": 43.24695399999999
+        },
+        {
+          "pinId": "j5-18",
+          "x": 21.445020000000007,
+          "y": 45.78695399999999
+        },
+        {
+          "pinId": "j5-19",
+          "x": 21.445020000000007,
+          "y": 48.326953999999986
+        },
+        {
+          "pinId": "j5-20",
+          "x": 21.445020000000007,
+          "y": 50.866953999999986
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 22.553973,
+          "height": 54.041973
+        },
+        {
+          "x": 7.893890549999999,
+          "y": -0.6755246625,
+          "width": 6.7661919,
+          "height": 5.06643496875
+        },
+        {
+          "x": 5.187413789999999,
+          "y": 48.6377757,
+          "width": 12.179145420000001,
+          "height": 6.0797219625
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null
     },
     {
       "id": "sipeed-tang-primer-20k-lite",
@@ -3091,7 +4220,8 @@
       "revision": "EG4S20BG256 / GD32F150 debugger",
       "source": "https://tang.sipeed.com/en/hardware-overview/lichee-tang/",
       "decision": "deferred",
-      "reason": "The old original-Anlogic board uses reference row-position IDs in a pinout supplement, rather than a complete source-measured male-header mechanical pattern. Review the complete actual 80-contact assembly before enabling a direct fit."
+      "reason": "Manufacturer explicitly specifies 900 mil (22.86 mm) header-row separation and breadboard compatibility, plus 40 additional castellated IOs. This confirms that the real original Primer can be inserted. The complete 80-endpoint electrical assignment is now reconciled: even LEFT/RIGHT reference positions are the 40 main through-holes and odd positions are 40 separate castellated IOs. However the exact PCB outline, first-post offsets and all castellated pad coordinates remain unreconciled across the old/new hardware photographs, the manufacturer assembly PDF (no header copper/drill layer) and the published 25.4 x 56.0 mm v1.0 specification. The manufacturer PCB-library directory is currently empty. No measured primary CAD pattern is available to resolve this geometry/revision mismatch; the representative 45 x 55 mm catalog carrier must not be reused as evidence. This remains an exact physical-view geometry gap, not a claim of incompatibility, and no partial 40-contact-only view was enabled.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json"
     },
     {
       "id": "sipeed-lichee-nano",
@@ -3108,8 +4238,215 @@
       "manufacturer": "Sipeed",
       "revision": "2017-03-05 / Allwinner V3s",
       "source": "https://wiki.sipeed.com/hardware/en/lichee/Zero/Zero.html",
-      "decision": "deferred",
-      "reason": "Manufacturer documentation distinguishes 2.54 mm breadboard taps from 1.27 mm castellations. The catalog merges duplicate J8/J9 taps into U3/U8 logical terminals; the actual tap-to-terminal map and all other physical endpoints must be reconciled before selecting a complete safe insertion. The generic reference footprint is not proof."
+      "decision": "supported",
+      "reason": "Manufacturer lichee_zero_Schematic.pdf page 2 embeds the component-side board photograph with all numbered U3/U8/J3 contacts. It explicitly marks even U3/U8 contacts as Dip hole and Stamp hole and odd contacts as Stamp hole only; J3.1 is the rightmost top LCD pad. The DXF SIP30_15_1_27 blocks supply complete 15-hole inner rows at source Y=59.436/82.296 mm and X=52.07+i*2.54 mm, separation exactly 22.86 mm. Outer 1.27 mm contacts use X=50.8+i*1.27 and Y=58.166/83.566. PCB Mechanical1 outline is X=44.4999999..89.154, Y=58.166..83.693 mm. J3 and both J2/J12 supply pairs are independently projected from their source pad blocks and numbered photograph. All 84 published logical endpoints remain present; the 30 selected even IDs use their real inner taps instead of inventing J8/J9 duplicate IDs. MicroSD placement confirms the component-side handedness. Non-contact hardware remains illustrative.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "mountingSource": {
+        "label": "Sipeed Lichee Zero manufacturer DXF and numbered component-side interface schematic",
+        "url": "https://dl.sipeed.com/fileList/LICHEE/Zero/HDK/lichee_zero.DXF"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Install both complete 15-contact inner U8/U3 rows with downward straight male headers. The 30 selected contacts are the manufacturer breadboard taps of the existing even-number logical terminals. Leave 1.27 mm stamp-only/LCD contacts and auxiliary J2/J12 supply pairs unpopulated downward. Fine contacts show physical terminal numbers with full functions on hover; the rear FPC remains a cable interface.",
+      "selectedContactIds": [
+        "u3-2",
+        "u3-4",
+        "u3-6",
+        "u3-8",
+        "u3-10",
+        "u3-12",
+        "u3-14",
+        "u3-16",
+        "u3-18",
+        "u3-20",
+        "u3-22",
+        "u3-24",
+        "u3-26",
+        "u3-28",
+        "u3-30",
+        "u8-2",
+        "u8-4",
+        "u8-6",
+        "u8-8",
+        "u8-10",
+        "u8-12",
+        "u8-14",
+        "u8-16",
+        "u8-18",
+        "u8-20",
+        "u8-22",
+        "u8-24",
+        "u8-26",
+        "u8-28",
+        "u8-30"
+      ],
+      "completeViewPinCount": 84,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "u3-2",
+          "x": 24.13000000000001,
+          "y": 7.5700001000000015
+        },
+        {
+          "pinId": "u3-4",
+          "x": 24.13000000000001,
+          "y": 10.1100001
+        },
+        {
+          "pinId": "u3-6",
+          "x": 24.13000000000001,
+          "y": 12.6500001
+        },
+        {
+          "pinId": "u3-8",
+          "x": 24.13000000000001,
+          "y": 15.190000099999999
+        },
+        {
+          "pinId": "u3-10",
+          "x": 24.13000000000001,
+          "y": 17.730000099999998
+        },
+        {
+          "pinId": "u3-12",
+          "x": 24.13000000000001,
+          "y": 20.270000099999997
+        },
+        {
+          "pinId": "u3-14",
+          "x": 24.13000000000001,
+          "y": 22.810000100000003
+        },
+        {
+          "pinId": "u3-16",
+          "x": 24.13000000000001,
+          "y": 25.350000099999995
+        },
+        {
+          "pinId": "u3-18",
+          "x": 24.13000000000001,
+          "y": 27.8900001
+        },
+        {
+          "pinId": "u3-20",
+          "x": 24.13000000000001,
+          "y": 30.430000099999994
+        },
+        {
+          "pinId": "u3-22",
+          "x": 24.13000000000001,
+          "y": 32.9700001
+        },
+        {
+          "pinId": "u3-24",
+          "x": 24.13000000000001,
+          "y": 35.51000009999999
+        },
+        {
+          "pinId": "u3-26",
+          "x": 24.13000000000001,
+          "y": 38.0500001
+        },
+        {
+          "pinId": "u3-28",
+          "x": 24.13000000000001,
+          "y": 40.590000100000005
+        },
+        {
+          "pinId": "u3-30",
+          "x": 24.13000000000001,
+          "y": 43.1300001
+        },
+        {
+          "pinId": "u8-2",
+          "x": 1.2700000000000031,
+          "y": 7.5700001000000015
+        },
+        {
+          "pinId": "u8-4",
+          "x": 1.2700000000000031,
+          "y": 10.1100001
+        },
+        {
+          "pinId": "u8-6",
+          "x": 1.2700000000000031,
+          "y": 12.6500001
+        },
+        {
+          "pinId": "u8-8",
+          "x": 1.2700000000000031,
+          "y": 15.190000099999999
+        },
+        {
+          "pinId": "u8-10",
+          "x": 1.2700000000000031,
+          "y": 17.730000099999998
+        },
+        {
+          "pinId": "u8-12",
+          "x": 1.2700000000000031,
+          "y": 20.270000099999997
+        },
+        {
+          "pinId": "u8-14",
+          "x": 1.2700000000000031,
+          "y": 22.810000100000003
+        },
+        {
+          "pinId": "u8-16",
+          "x": 1.2700000000000031,
+          "y": 25.350000099999995
+        },
+        {
+          "pinId": "u8-18",
+          "x": 1.2700000000000031,
+          "y": 27.8900001
+        },
+        {
+          "pinId": "u8-20",
+          "x": 1.2700000000000031,
+          "y": 30.430000099999994
+        },
+        {
+          "pinId": "u8-22",
+          "x": 1.2700000000000031,
+          "y": 32.9700001
+        },
+        {
+          "pinId": "u8-24",
+          "x": 1.2700000000000031,
+          "y": 35.51000009999999
+        },
+        {
+          "pinId": "u8-26",
+          "x": 1.2700000000000031,
+          "y": 38.0500001
+        },
+        {
+          "pinId": "u8-28",
+          "x": 1.2700000000000031,
+          "y": 40.590000100000005
+        },
+        {
+          "pinId": "u8-30",
+          "x": 1.2700000000000031,
+          "y": 43.1300001
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 25.527,
+          "height": 44.6540001
+        },
+        {
+          "x": 7.874,
+          "y": 39.95200036,
+          "width": 9.72600036,
+          "height": 5
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null
     },
     {
       "id": "sipeed-lichee-rv-core",
@@ -3995,8 +5332,251 @@
       "manufacturer": "Sipeed",
       "revision": "K210 / 2020-01-18 / USB-C",
       "source": "https://dl.sipeed.com/shareURL/MAIX/HDK/Sipeed-Maix-Bit/Maix-Bit_V2.0_with_MEMS_microphone",
-      "decision": "deferred",
-      "reason": "Manufacturer V2.0 datasheet explicitly states 2.54 mm GPIO headers and direct breadboard support; the source photo shows the two edge rows and central mounting gaps. The exact nominal row separation and source-projected positions still require review; the existing artwork is approximate. Official 13 MB STEP download requires a verification code."
+      "decision": "supported",
+      "reason": "Manufacturer Maix-BIT Specifications v2.0 explicitly specifies 2.54 mm GPIO contacts, a 53.3 x 25.4 mm PCB and direct breadboard insertion. The V2.0 component-side photographs and assembly identify both complete 18-contact rows with connector positions 10/11 replaced by the central mounting annulus. The nominal straight-header assembly uses 22.86 mm row separation and 2.54 mm longitudinal post centres. Row separation and the 2.54 mm first-post offset are a documented nominal assembly inference corroborated by the manufacturer direct-insertion statement and the same-side photographs; these are not claimed to be extracted production STEP drill coordinates. Non-contact hardware remains representative.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "mountingSource": {
+        "label": "Sipeed manufacturer mechanical and pinout reference",
+        "url": "https://dl.sipeed.com/fileList/MAIX/HDK/Sipeed-Maix-Bit/Specifications/Sipeed%20Maix-Bit%20Specifications_EN%20V2.0.pdf"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Fit both complete 18-contact row segments with downward straight 2.54 mm male headers, retaining the two-position gap around each central mounting hole. Camera/LCD FPCs, USB-C and microSD remain cable/card ports. RST remains a 1.8 V-domain input.",
+      "selectedContactIds": [
+        "j13-1",
+        "j13-2",
+        "j13-3",
+        "j13-4",
+        "j13-5",
+        "j13-6",
+        "j13-7",
+        "j13-8",
+        "j13-9",
+        "j13-12",
+        "j13-13",
+        "j13-14",
+        "j13-15",
+        "j13-16",
+        "j13-17",
+        "j13-18",
+        "j13-19",
+        "j13-20",
+        "j14-1",
+        "j14-2",
+        "j14-3",
+        "j14-4",
+        "j14-5",
+        "j14-6",
+        "j14-7",
+        "j14-8",
+        "j14-9",
+        "j14-12",
+        "j14-13",
+        "j14-14",
+        "j14-15",
+        "j14-16",
+        "j14-17",
+        "j14-18",
+        "j14-19",
+        "j14-20"
+      ],
+      "completeViewPinCount": 36,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j13-1",
+          "x": 2.54,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-2",
+          "x": 5.08,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-3",
+          "x": 7.62,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-4",
+          "x": 10.16,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-5",
+          "x": 12.7,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-6",
+          "x": 15.239999999999998,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-7",
+          "x": 17.78,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-8",
+          "x": 20.32,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-9",
+          "x": 22.86,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-12",
+          "x": 30.48,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-13",
+          "x": 33.02,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-14",
+          "x": 35.56,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-15",
+          "x": 38.1,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-16",
+          "x": 40.64,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-17",
+          "x": 43.18,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-18",
+          "x": 45.72,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-19",
+          "x": 48.26,
+          "y": 1.27
+        },
+        {
+          "pinId": "j13-20",
+          "x": 50.8,
+          "y": 1.27
+        },
+        {
+          "pinId": "j14-1",
+          "x": 2.54,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-2",
+          "x": 5.08,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-3",
+          "x": 7.62,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-4",
+          "x": 10.16,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-5",
+          "x": 12.7,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-6",
+          "x": 15.239999999999998,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-7",
+          "x": 17.78,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-8",
+          "x": 20.32,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-9",
+          "x": 22.86,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-12",
+          "x": 30.48,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-13",
+          "x": 33.02,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-14",
+          "x": 35.56,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-15",
+          "x": 38.1,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-16",
+          "x": 40.64,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-17",
+          "x": 43.18,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-18",
+          "x": 45.72,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-19",
+          "x": 48.26,
+          "y": 24.13
+        },
+        {
+          "pinId": "j14-20",
+          "x": 50.8,
+          "y": 24.13
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 53.3,
+          "height": 25.4
+        },
+        {
+          "x": -2.3,
+          "y": 8,
+          "width": 9.5,
+          "height": 9.2
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null
     },
     {
       "id": "sipeed-maixduino-2832-v1-5",
@@ -4413,8 +5993,9 @@
       "manufacturer": "Sipeed",
       "revision": "Allwinner V831 / 3072 rev0.01",
       "source": "https://wiki.sipeed.com/hardware/en/maixII/M2/resources.html",
-      "decision": "deferred",
-      "reason": "The 3072 schematic confirms both ten-contact expansion rows, but a revision-matched mechanical row-spacing and full male-header installation map has not yet been reviewed; the native cable carrier cannot establish insertion geometry."
+      "decision": "requires-adapter",
+      "reason": "Resolved against exact manufacturer 3072 TOP DXF. Its two complete HN1X10 header blocks have X=-14.49999894/+14.49999894 mm, separation 28.99999788 mm; Y=-14.13499586+i*2.54 mm, ten positions. Longitudinal pitch is compatible, but 29 mm row separation is not an integer multiple of 2.54 mm (nearest 27.94/30.48 mm). This is a genuine full-pattern mismatch; scaling the PCB or widening the fit tolerance would misrepresent the hardware. Use an adapter or jumpers.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json"
     },
     {
       "id": "sipeed-maixcam-pro-60174",
@@ -4432,7 +6013,8 @@
       "revision": "RP2350 + GW1NR-9 / representative signal map",
       "source": "https://brisbanesilicon.com.au/epm11/",
       "decision": "deferred",
-      "reason": "The current entry is explicitly representative and has a partial signal map; mechanical header/power-pad locations and PCB revision are unverified. It cannot establish a real complete breadboard installation."
+      "reason": "Current published entry is explicitly a representative 30-signal map with unreviewed power contacts and exact PCB revision. A genuine complete installed primary-header geometry cannot be reconstructed from the partial signal-only carrier. No contact was invented and no partial installation was activated.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json"
     },
     {
       "id": "brisbane-silicon-brs-100-gw1nr9",
@@ -4441,7 +6023,8 @@
       "revision": "GW1NR-9 / representative 32-GPIO pinout edition",
       "source": "https://brisbanesilicon.com.au/brs-100-gw1nr9/",
       "decision": "deferred",
-      "reason": "The current entry is explicitly representative and has a partial 32-GPIO signal map; no reviewed complete power/header mechanical pattern is available. No guessed pins or dimensions were added."
+      "reason": "Current published entry is explicitly a representative 32-GPIO edition without a verified complete power/header layout or identified PCB revision. The limited logical map cannot prove a full physical downward-post installation. No missing power contact or board dimension was guessed.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json"
     },
     {
       "id": "onekiwi-kiwi-1p5",
@@ -4778,8 +6361,215 @@
       "manufacturer": "Trenz Electronic",
       "revision": "GW1NR-9 / MKR-style + Pmod + JTAG",
       "source": "https://wiki.trenz-electronic.de/display/PD/TEC0117+TRM",
-      "decision": "deferred",
-      "reason": "Manufacturer STEP confirms two complete 14-contact main rows, plus Pmod/JTAG headers. Exported main drill centres differ by20.3213 mm. Source confirmation of the nominal 20.32 mm post assembly, full auxiliary mating-face projection and which factory headers are downward is still required; do not infer compatibility from the MKR-style label."
+      "decision": "supported",
+      "reason": "Manufacturer revision-01 STEP supplies PCB, micro-USB and switch body bounds, all 46 plated-hole centers, and 2.54 mm main pitch. Trenz/Gowin explicitly declare Arduino MKR compatibility; the MKR breadboard grid establishes nominal 20.32 mm installed-post separation. Exported main drill columns are X=.23899876/20.56026622 mm, separation 20.32126746; the nominal right posts differ by only .00126746 mm within 1 mm drills. No global fitting tolerance is widened. Exact front/back photographs identify both main pin-1 markers, all six J4 holes and both J6 rows. The declared configuration matches the source photographs with J4/J6 bodies unpopulated, so their actual plated holes are exposed; the optional right-angle Pmod socket in STEP is not fitted. All 46 endpoints remain present, with no substituted cable landings or hidden auxiliary terminals.",
+      "followup": "catalog-mini-computing-mounting-followup-2026-11-08.json",
+      "mountingSource": {
+        "label": "Trenz TEC0117 revision 01 mechanical STEP and unpopulated assembly",
+        "url": "https://www.trenz-electronic.de/trenzdownloads/Trenz_Electronic/Modules_and_Module_Carriers/2.5x6.15/TEC0117/REV01/HW_Design/STP-TEC0117-01.zip"
+      },
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 14-contact main J1/J2 rows with downward straight male headers in the nominal MKR pattern. Leave optional J4 JTAG and J6 Pmod bodies unpopulated or fit upward headers. This profile is not for an assembled right-angle Pmod socket. Pmod contact numbers have full functions on hover; MKR AIN/AREF are digital FPGA signals, not analog inputs.",
+      "selectedContactIds": [
+        "j1-1",
+        "j1-2",
+        "j1-3",
+        "j1-4",
+        "j1-5",
+        "j1-6",
+        "j1-7",
+        "j1-8",
+        "j1-9",
+        "j1-10",
+        "j1-11",
+        "j1-12",
+        "j1-13",
+        "j1-14",
+        "j2-1",
+        "j2-2",
+        "j2-3",
+        "j2-4",
+        "j2-5",
+        "j2-6",
+        "j2-7",
+        "j2-8",
+        "j2-9",
+        "j2-10",
+        "j2-11",
+        "j2-12",
+        "j2-13",
+        "j2-14"
+      ],
+      "completeViewPinCount": 46,
+      "primaryContactCentresMm": [
+        {
+          "pinId": "j1-1",
+          "x": 2.32504234,
+          "y": 22.296376539999997
+        },
+        {
+          "pinId": "j1-2",
+          "x": 2.32504234,
+          "y": 24.836376539999996
+        },
+        {
+          "pinId": "j1-3",
+          "x": 2.32504234,
+          "y": 27.376376539999995
+        },
+        {
+          "pinId": "j1-4",
+          "x": 2.32504234,
+          "y": 29.916376539999998
+        },
+        {
+          "pinId": "j1-5",
+          "x": 2.32504234,
+          "y": 32.456376539999994
+        },
+        {
+          "pinId": "j1-6",
+          "x": 2.32504234,
+          "y": 34.99637654
+        },
+        {
+          "pinId": "j1-7",
+          "x": 2.32504234,
+          "y": 37.53637654
+        },
+        {
+          "pinId": "j1-8",
+          "x": 2.32504234,
+          "y": 40.07637654
+        },
+        {
+          "pinId": "j1-9",
+          "x": 2.32504234,
+          "y": 42.61637654
+        },
+        {
+          "pinId": "j1-10",
+          "x": 2.32504234,
+          "y": 45.15637654
+        },
+        {
+          "pinId": "j1-11",
+          "x": 2.32504234,
+          "y": 47.696376539999996
+        },
+        {
+          "pinId": "j1-12",
+          "x": 2.32504234,
+          "y": 50.236376539999995
+        },
+        {
+          "pinId": "j1-13",
+          "x": 2.32504234,
+          "y": 52.77637654
+        },
+        {
+          "pinId": "j1-14",
+          "x": 2.32504234,
+          "y": 55.31637654
+        },
+        {
+          "pinId": "j2-1",
+          "x": 22.64504234,
+          "y": 55.31637654
+        },
+        {
+          "pinId": "j2-2",
+          "x": 22.64504234,
+          "y": 52.77637654
+        },
+        {
+          "pinId": "j2-3",
+          "x": 22.64504234,
+          "y": 50.236376539999995
+        },
+        {
+          "pinId": "j2-4",
+          "x": 22.64504234,
+          "y": 47.69637654
+        },
+        {
+          "pinId": "j2-5",
+          "x": 22.64504234,
+          "y": 45.15637654
+        },
+        {
+          "pinId": "j2-6",
+          "x": 22.64504234,
+          "y": 42.616376540000005
+        },
+        {
+          "pinId": "j2-7",
+          "x": 22.64504234,
+          "y": 40.07637654
+        },
+        {
+          "pinId": "j2-8",
+          "x": 22.64504234,
+          "y": 37.53637654
+        },
+        {
+          "pinId": "j2-9",
+          "x": 22.64504234,
+          "y": 34.99637654
+        },
+        {
+          "pinId": "j2-10",
+          "x": 22.64504234,
+          "y": 32.45637654
+        },
+        {
+          "pinId": "j2-11",
+          "x": 22.64504234,
+          "y": 29.91637654
+        },
+        {
+          "pinId": "j2-12",
+          "x": 22.64504234,
+          "y": 27.376376539999995
+        },
+        {
+          "pinId": "j2-13",
+          "x": 22.64504234,
+          "y": 24.836376539999996
+        },
+        {
+          "pinId": "j2-14",
+          "x": 22.64504234,
+          "y": 22.296376539999997
+        }
+      ],
+      "pcbAndHardwareRegions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 25.000458,
+          "height": 61.502302699999994
+        },
+        {
+          "x": 8.405666403683966,
+          "y": -1.0977029621447372,
+          "width": 8.199999999999969,
+          "height": 5.400000686825109
+        },
+        {
+          "x": -0.5928655573209142,
+          "y": 4.7032037656326295,
+          "width": 3.550000092877453,
+          "height": 4.6000000262347385
+        },
+        {
+          "x": 22.030532265341073,
+          "y": 4.702990107620472,
+          "width": 3.5500001866476474,
+          "height": 4.600000096165047
+        }
+      ],
+      "sourceConnections": [],
+      "connectionSource": null
     }
   ]
 }

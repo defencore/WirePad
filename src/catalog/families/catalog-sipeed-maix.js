@@ -2,6 +2,7 @@ import { defineFamily } from "../registry.js";
 import { chip, circle, label, path, rect, tactile, usb } from "../shared/svg.js";
 import { readyRow, readyBoard, readySocket, readyAntenna } from "../shared/wire-board.js";
 import { miniComputingMounting, projectMiniHardware } from "../shared/mini-computing-mounting.js";
+import { miniComputingFollowupMounting } from "../shared/mini-computing-followup-mounting.js";
 
 const wiki = "https://wiki.sipeed.com/hardware/en/";
 const download = "https://dl.sipeed.com/shareURL/";
@@ -185,5 +186,6 @@ const m1sDockInsertion = miniComputingMounting(m1sDock.component, {
     { x: 16.06, y: 53.9, width: 10.58, height: 1.69 }],
   renderHardware: () => projectMiniHardware(m1sDock.renderHardware, m1sDock.component, [75, 30, 290, 590], [27.4, 55.4]),
 });
-const sipeedMaixMounting = { [m0.component.id]: m0Insertion, [m1sDock.component.id]: m1sDockInsertion };
+const sipeedMaixMounting = { [m0.component.id]: m0Insertion, [m1sDock.component.id]: m1sDockInsertion,
+  [bit.component.id]: miniComputingFollowupMounting(bit) };
 export default defineFamily("sipeed-maix", (sipeedMaixComponents).map(component => ({ component, render: (sipeedMaixArt)[component.art], footprint: (sipeedMaixFootprints)[component.id], model: sipeedMaixModels[component.id], ...(sipeedMaixMounting[component.id] ? { mounting: sipeedMaixMounting[component.id] } : {}) })));

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { lilygoFollowupMounting } from "../shared/lilygo-followup-mounting.js";
 import { chip, circle, label, line, path, rect, tactile, usb } from "../shared/svg.js";
 import { readyAntenna, readyBoard, readyRow, readySocket } from "../shared/wire-board.js";
 
@@ -24,7 +25,9 @@ function entry(spec) {
     nets.get(pin.label).push(pin.id);
   }
   result.component.internalConnections = [...nets.values()].filter(ids => ids.length > 1);
-  return { component: result.component, render: result.art, footprint: result.footprint, model: result.model };
+  const mounting = lilygoFollowupMounting(result, spec.boardBounds[0]);
+  return { component: result.component, render: result.art, footprint: result.footprint, model: result.model,
+    ...(mounting ? { mounting } : {}) };
 }
 
 const deckSource = github("T-Deck", "schematic/schematic.pdf");

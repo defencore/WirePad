@@ -1,3 +1,4 @@
+import { followupRadioMounting } from "../shared/followup-radio-mounting.js";
 import { defineFamily } from "../registry.js";
 import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
@@ -263,5 +264,5 @@ const sourceInsertions = {
 export default defineFamily("audio-prototyping", entries.map(({ art: render, ...definition }) => {
   const entry = physicalEntry({ ...definition, render }, contactCenters[definition.component.id]);
   const insertion = sourceInsertions[entry.component.id];
-  return insertion ? { ...entry, mounting: audioInsertion(entry, insertion) } : entry;
+  return insertion ? { ...entry, mounting: audioInsertion(entry, insertion) } : { ...entry, mounting: followupRadioMounting(entry.component) };
 }));

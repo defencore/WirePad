@@ -9,7 +9,7 @@ const audit = JSON.parse(fs.readFileSync(new URL('../docs/catalog-popular-board-
 const close = (a, b, message) => assert.ok(Math.abs(a - b) < 1e-7, `${message}: ${a} != ${b}`);
 
 test('popular-board audit explicitly covers every owned family entry and each eligibility decision', () => {
-  assert.deepEqual(audit.summary, { checked: 121, enabled: 70, previouslyEnabled: 14, pending: 17, ineligibleAsFitted: 20 });
+  assert.deepEqual(audit.summary, { checked: 121, enabled: 75, previouslyEnabled: 14, pending: 3, ineligibleAsFitted: 29 });
   const ids = audit.entries.map(entry => entry.id);
   assert.equal(new Set(ids).size, ids.length);
   for (const entry of audit.entries) {

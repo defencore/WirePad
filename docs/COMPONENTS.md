@@ -27,9 +27,9 @@ Explicit per-component assessments and their evidence are maintained in [catalog
 
 | Mark | Meaning | Components |
 | --- | --- | ---: |
-| BB:+ | Reviewed direct insertion profile; fit checks every declared lead, physical pitch and electrical strip. | 1217 |
+| BB:+ | Reviewed direct insertion profile; fit checks every declared lead, physical pitch and electrical strip. | 1243 |
 | BB:H | Configurable breadboard host. | 1 |
-| BB:- | No reviewed direct insertion profile. | 785 |
+| BB:- | No reviewed direct insertion profile. | 759 |
 
 Breadboard marks come only from explicit catalog mounting descriptors. A 2.54 mm product tag, a reference footprint or matching visual overlap does not create a profile. `BB:-` does not mean that the part has no 2.54 mm contacts: it can require a different header population, an adapter, or further source review. Insertion marks do not upgrade KiCad accuracy. See [BREADBOARD_MOUNTING.md](BREADBOARD_MOUNTING.md) and its per-component source audits.
 
@@ -42,8 +42,8 @@ WirePad (2003)
 │   │   ├── audio-prototyping (1)
 │   │   │   └── Adafruit DRV2605L Haptic Motor Controller [adafruit-drv2605l-2305-qt] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   └── common-interfaces (2)
-│   │       ├── Adafruit PCA9685 16-Channel Servo Driver [adafruit-pca9685-815] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │       └── Adafruit TMC2209 Stepper Motor Driver [adafruit-tmc2209-6121] [FP:?] [3D:A] [CAD:+] [BB:-]
+│   │       ├── Adafruit PCA9685 16-Channel Servo Driver [adafruit-pca9685-815] [FP:R] [3D:A] [CAD:+] [BB:+]
+│   │       └── Adafruit TMC2209 Stepper Motor Driver [adafruit-tmc2209-6121] [FP:?] [3D:A] [CAD:+] [BB:+]
 │   ├── Keyestudio (2)
 │   │   ├── common-interfaces (1)
 │   │   │   └── Keyestudio KS0011 Single 5V Relay [keyestudio-ks0011-5v-relay] [FP:R] [3D:A] [CAD:-] [BB:-]
@@ -116,7 +116,7 @@ WirePad (2003)
 │   │       └── VS1053 Codec + MicroSD Breakout - MP3/WAV/MIDI/OGG Play + Record [adafruit-module-1381] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   ├── MIKROE (1)
 │   │   └── mikroe-click (1)
-│   │       └── MIKROE BUZZ Click MIKROE-945 [mikroe-buzz-click-945] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │       └── MIKROE BUZZ Click MIKROE-945 [mikroe-buzz-click-945] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   ├── Seeed Studio (2)
 │   │   └── modules-seeed-extended-display-audio (2)
 │   │       ├── Seeed Grove - MP3 v4.0 [seeed-module-107020129] [FP:R] [3D:A] [CAD:+] [BB:-]
@@ -295,11 +295,11 @@ WirePad (2003)
 │   │       ├── Sipeed Tang Mega 138K SOM [sipeed-tang-mega-138k-som] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │       ├── Sipeed Tang Mega 60K + NEO Dock [sipeed-tang-mega-60k-neo] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │       ├── Sipeed Tang Mega 60K SOM [sipeed-tang-mega-60k-som] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │       ├── Sipeed Tang Nano (original) [sipeed-tang-nano] [FP:R] [3D:A] [CAD:-] [BB:-]
-│   │       ├── Sipeed Tang Nano 1K [sipeed-tang-nano-1k] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │       ├── Sipeed Tang Nano 20K [sipeed-tang-nano-20k] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │       ├── Sipeed Tang Nano (original) [sipeed-tang-nano] [FP:R] [3D:A] [CAD:-] [BB:+]
+│   │       ├── Sipeed Tang Nano 1K [sipeed-tang-nano-1k] [FP:R] [3D:A] [CAD:+] [BB:+]
+│   │       ├── Sipeed Tang Nano 20K [sipeed-tang-nano-20k] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │       ├── Sipeed Tang Nano 4K [sipeed-tang-nano-4k] [FP:R] [3D:A] [CAD:+] [BB:+]
-│   │       ├── Sipeed Tang Nano 9K [sipeed-tang-nano-9k] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │       ├── Sipeed Tang Nano 9K [sipeed-tang-nano-9k] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │       ├── Sipeed Tang Primer 20K + Dock [sipeed-tang-primer-20k-dock] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │       ├── Sipeed Tang Primer 20K + Lite Dock [sipeed-tang-primer-20k-lite] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │       ├── Sipeed Tang Primer 20K SOM [sipeed-tang-primer-20k-som] [FP:R] [3D:A] [CAD:+] [BB:-]
@@ -308,7 +308,7 @@ WirePad (2003)
 │   │       └── Sipeed Tang Primer EG4S20 (original) [sipeed-tang-primer-eg4s20] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   └── Trenz Electronic (1)
 │       └── gowin-third-party (1)
-│           └── Trenz Electronic TEC0117-01 [trenz-tec0117-01] [FP:R] [3D:A] [CAD:+] [BB:-]
+│           └── Trenz Electronic TEC0117-01 [trenz-tec0117-01] [FP:R] [3D:A] [CAD:+] [BB:+]
 ├── Indicators (68)
 │   ├── Adafruit (43)
 │   │   ├── modules-adafruit-additional-indicators-inputs (22)
@@ -431,8 +431,8 @@ WirePad (2003)
 │   │       └── Resistive Touch Screen to USB Mouse Controller - AR1100 [adafruit-module-1580] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   ├── Arduino (2)
 │   │   └── arduino-more-boards (2)
-│   │       ├── Arduino Modulino Buttons [arduino-modulino-buttons-abx00110] [FP:C] [3D:A] [CAD:+] [BB:-]
-│   │       └── Arduino Modulino Knob [arduino-modulino-knob-abx00107] [FP:C] [3D:A] [CAD:+] [BB:-]
+│   │       ├── Arduino Modulino Buttons [arduino-modulino-buttons-abx00110] [FP:C] [3D:A] [CAD:+] [BB:+]
+│   │       └── Arduino Modulino Knob [arduino-modulino-knob-abx00107] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   ├── DFRobot (2)
 │   │   ├── modules-dfrobot-buttons (1)
 │   │   │   └── Gravity: I2C RGB LED Colorful Button Module [dfrobot-gravity-rgb-button-dfr0991] [FP:R] [3D:A] [CAD:+] [BB:-]
@@ -475,7 +475,7 @@ WirePad (2003)
 │   │   │   ├── Adafruit MAX98357A I²S Mono Amplifier [adafruit-max98357a-i2s] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │   │   └── Adafruit SPI microSD Breakout #254 [adafruit-microsd-spi-254] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │   ├── input-prototyping (3)
-│   │   │   ├── Adafruit I²C QT Rotary Encoder Breakout [adafruit-qt-rotary-4991] [FP:C] [3D:A] [CAD:+] [BB:-]
+│   │   │   ├── Adafruit I²C QT Rotary Encoder Breakout [adafruit-qt-rotary-4991] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   │   ├── Adafruit MPR121 12-Key Capacitive Touch Breakout [adafruit-mpr121-1982] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   │   └── Adafruit TCA8418 8×10 Keypad Matrix Breakout [adafruit-tca8418-4918] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   ├── modules-adafruit-additional-interfaces (20)
@@ -584,7 +584,7 @@ WirePad (2003)
 │   │   │   ├── SparkFun BSS138 Bi-Directional Logic Level Converter [sparkfun-bss138-level-shifter] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │   │   └── SparkFun CH340C Serial Basic USB-C [sparkfun-ch340c-serial-basic] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │   ├── common-peripherals (1)
-│   │   │   └── SparkFun OpenLog Serial Logger [sparkfun-openlog-13712] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │   │   └── SparkFun OpenLog Serial Logger [sparkfun-openlog-13712] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │   ├── modules-sparkfun-additional-interfaces (14)
 │   │   │   ├── SparkFun FT231X Breakout [sparkfun-module-bob13263] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │   │   ├── SparkFun MicroMod Update Tool [sparkfun-module-dev17725] [FP:R] [3D:A] [CAD:-] [BB:-]
@@ -758,20 +758,20 @@ WirePad (2003)
 │   │   │   └── LILYGO TTGO T-Display V1.1 [lilygo-ttgo-t-display-v1-1] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │   ├── lilygo-connectivity (5)
 │   │   │   ├── LILYGO T-ETH-ELite ESP32-S3 (2421) [lilygo-t-eth-elite-2421] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │   │   ├── LILYGO T-ETH-Lite ESP32 V1.0 [lilygo-t-eth-lite-esp32-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │   │   ├── LILYGO T-ETH-Lite ESP32 V1.0 [lilygo-t-eth-lite-esp32-v1-0] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │   │   ├── LILYGO T-ETH-Lite ESP32-S3 V1.0 [lilygo-t-eth-lite-s3-v1-0] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   │   ├── LILYGO T-Internet-POE V1.0 [lilygo-t-internet-poe-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │   │   └── LILYGO T-SIM7080G-S3 V1.0 [lilygo-t-sim7080g-s3-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │   ├── lilygo-interactive (5)
 │   │   │   ├── LILYGO T-Deck SX1262 (2023 design) [lilygo-t-deck-sx1262-20230601] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │   │   ├── LILYGO T-Display S3 AMOLED (original) [lilygo-t-display-s3-amoled-original] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │   │   ├── LILYGO T-Display S3 AMOLED Plus V1.0 [lilygo-t-display-s3-amoled-plus-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │   │   ├── LILYGO T-Display S3 AMOLED (original) [lilygo-t-display-s3-amoled-original] [FP:R] [3D:A] [CAD:+] [BB:+]
+│   │   │   ├── LILYGO T-Display S3 AMOLED Plus V1.0 [lilygo-t-display-s3-amoled-plus-v1-0] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │   │   ├── LILYGO T-Embed CC1101 V1.0 [lilygo-t-embed-cc1101-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │   │   └── LILYGO T4-S3 V1.0 [lilygo-t4-s3-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │   ├── lilygo-more (4)
 │   │   │   ├── LILYGO T-Encoder Pro V1.0 [lilygo-t-encoder-pro-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │   │   ├── LILYGO T-PicoC3 V1.1 [lilygo-t-picoc3-v1-1] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │   │   ├── LILYGO T-QT Pro V1.3 [lilygo-t-qt-pro-v1-3] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │   │   ├── LILYGO T-QT Pro V1.3 [lilygo-t-qt-pro-v1-3] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │   │   └── LILYGO T7-S3 V1.1 [lilygo-t7-s3-v1-1] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │   └── lilygo-wireless (7)
 │   │       ├── LILYGO T-A7670X V1.4 (ESP32) [lilygo-t-a7670x-v1-4] [FP:R] [3D:A] [CAD:+] [BB:-]
@@ -780,7 +780,7 @@ WirePad (2003)
 │   │       ├── LILYGO T-Echo V1.0 [lilygo-t-echo-v1-0] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │       ├── LILYGO T-SIM7000G 20200415 [lilygo-t-sim7000g-20200415] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │       ├── LILYGO T3 LoRa32 V1.6.1 SX1276 [lilygo-t3-lora32-v1-6-1-sx1276] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │       └── LILYGO T3-S3 V1.3 SX1262 [lilygo-t3-s3-v1-3-sx1262] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │       └── LILYGO T3-S3 V1.3 SX1262 [lilygo-t3-s3-v1-3-sx1262] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   ├── Nordic Semiconductor (1)
 │   │   └── nordic-ready (1)
 │   │       └── Nordic nRF52840 Dongle [nordic-nrf52840-dongle] [FP:R] [3D:A] [CAD:+] [BB:-]
@@ -817,7 +817,7 @@ WirePad (2003)
 │   │       └── Seeed Studio XIAO nRF52840 Sense Plus [xiao-nrf52840-sense-plus] [FP:M] [3D:A] [CAD:-] [BB:+]
 │   ├── Sipeed (7)
 │   │   └── sipeed-maix (7)
-│   │       ├── Sipeed Maix Bit V2.0 (MEMS microphone) [sipeed-maix-bit-v2-0] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │       ├── Sipeed Maix Bit V2.0 (MEMS microphone) [sipeed-maix-bit-v2-0] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │       ├── Sipeed Maix II Dock 3072 [sipeed-maix-ii-dock-3072] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   │       ├── Sipeed Maix M0sense 30215 [sipeed-maix-m0sense-30215] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │       ├── Sipeed Maix M1s Dock 3272 [sipeed-maix-m1s-dock-3272] [FP:R] [3D:A] [CAD:+] [BB:+]
@@ -1901,8 +1901,8 @@ WirePad (2003)
 │   │   ├── adafruit-ready (1)
 │   │   │   └── Adafruit Ultimate GPS Breakout v3 [adafruit-ultimate-gps-v3-746] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   ├── air-quality-sensors (2)
-│   │   │   ├── Adafruit PMSA003I Particulate Matter Sensor [adafruit-pmsa003i-4632] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │   │   └── Adafruit SCD-40 CO₂, Temperature & Humidity Sensor [adafruit-scd40-5187] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │   │   ├── Adafruit PMSA003I Particulate Matter Sensor [adafruit-pmsa003i-4632] [FP:R] [3D:A] [CAD:+] [BB:+]
+│   │   │   └── Adafruit SCD-40 CO₂, Temperature & Humidity Sensor [adafruit-scd40-5187] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │   ├── analog-devices (5)
 │   │   │   ├── Adafruit ADT7410 Precision Temperature Sensor (QT) [adafruit-adt7410-4089-qt] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   │   ├── Adafruit ADXL345 Triple-axis Accelerometer (QT) [adafruit-adxl345-1231-qt] [FP:C] [3D:A] [CAD:+] [BB:+]
@@ -1910,7 +1910,7 @@ WirePad (2003)
 │   │   │   ├── Adafruit MAX31855K Thermocouple Amplifier [adafruit-max31855-269] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   │   └── Adafruit MAX31865 PT100 RTD Amplifier [adafruit-max31865-3328] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   ├── audio-prototyping (2)
-│   │   │   ├── Adafruit MAX9814 AGC Microphone Amplifier [adafruit-max9814-1713] [FP:C] [3D:A] [CAD:+] [BB:-]
+│   │   │   ├── Adafruit MAX9814 AGC Microphone Amplifier [adafruit-max9814-1713] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   │   └── Adafruit SPH0645LM4H I²S MEMS Microphone [adafruit-sph0645-3421] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   ├── common-sensors (3)
 │   │   │   ├── Adafruit AHT20 Temperature & Humidity [adafruit-aht20-4566] [FP:R] [3D:A] [CAD:+] [BB:+]
@@ -2153,7 +2153,7 @@ WirePad (2003)
 │   │       └── MCP9808-E/MS I2C temperature sensor [mcp9808-e-ms] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   ├── MIKROE (1)
 │   │   └── mikroe-click (1)
-│   │       └── MIKROE Light Click MIKROE-1424 [mikroe-light-click-1424] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │       └── MIKROE Light Click MIKROE-1424 [mikroe-light-click-1424] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   ├── NXP (1)
 │   │   └── nxp-ready (1)
 │   │       └── NXP BRKT-STBC-AGM01 9-Axis Sensor Breakout [nxp-brkt-stbc-agm01] [FP:R] [3D:A] [CAD:+] [BB:-]
@@ -2239,7 +2239,7 @@ WirePad (2003)
 │   │   ├── analog-devices (1)
 │   │   │   └── SparkFun AD8232 Single-lead Heart Rate Monitor [sparkfun-ad8232-sen12650] [FP:C] [3D:A] [CAD:+] [BB:+]
 │   │   ├── force-sensors (1)
-│   │   │   └── SparkFun HX711 Load Cell Amplifier [sparkfun-hx711-13879] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │   │   └── SparkFun HX711 Load Cell Amplifier [sparkfun-hx711-13879] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   │   ├── modules-sparkfun-additional-sensors (7)
 │   │   │   ├── SparkFun 6DoF IMU Breakout - LSM6DSV16X (Qwiic) [sparkfun-module-sen21325] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │   │   ├── SparkFun Absolute Digital Barometer - LPS28DFW (Qwiic) [sparkfun-module-sen21221] [FP:R] [3D:A] [CAD:-] [BB:+]
@@ -2325,7 +2325,7 @@ WirePad (2003)
 │   │       └── VEML7700-TT Ambient light sensor [veml7700-tt-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   └── Waveshare (1)
 │       └── waveshare-ready (1)
-│           └── Waveshare BMM150 3-Axis Magnetometer Sensor [waveshare-bmm150-magnetometer] [FP:R] [3D:A] [CAD:+] [BB:-]
+│           └── Waveshare BMM150 3-Axis Magnetometer Sensor [waveshare-bmm150-magnetometer] [FP:R] [3D:A] [CAD:+] [BB:+]
 ├── Single-board computers (81)
 │   ├── Banana Pi (8)
 │   │   ├── bananapi (3)
@@ -2416,7 +2416,7 @@ WirePad (2003)
 │           ├── Sipeed Lichee Nano [sipeed-lichee-nano] [FP:R] [3D:A] [CAD:+] [BB:-]
 │           ├── Sipeed Lichee RV + Dock [sipeed-lichee-rv-dock] [FP:R] [3D:A] [CAD:+] [BB:-]
 │           ├── Sipeed Lichee RV Core [sipeed-lichee-rv-core] [FP:R] [3D:A] [CAD:+] [BB:-]
-│           ├── Sipeed Lichee Zero [sipeed-lichee-zero] [FP:R] [3D:A] [CAD:+] [BB:-]
+│           ├── Sipeed Lichee Zero [sipeed-lichee-zero] [FP:R] [3D:A] [CAD:+] [BB:+]
 │           ├── Sipeed LicheePi 3A [sipeed-licheepi-3a] [FP:R] [3D:A] [CAD:-] [BB:-]
 │           ├── Sipeed LicheePi 4A [sipeed-licheepi-4a] [FP:R] [3D:A] [CAD:+] [BB:-]
 │           ├── Sipeed LicheeRV Nano B [sipeed-licheerv-nano-b] [FP:R] [3D:A] [CAD:+] [BB:+]
@@ -2441,7 +2441,7 @@ WirePad (2003)
 │   │       └── Keyestudio KS0038 Reed Switch Module [keyestudio-ks0038-reed] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   ├── MIKROE (1)
 │   │   └── mikroe-click (1)
-│   │       └── MIKROE Button R Click MIKROE-1901 [mikroe-button-r-click-1901] [FP:R] [3D:A] [CAD:+] [BB:-]
+│   │       └── MIKROE Button R Click MIKROE-1901 [mikroe-button-r-click-1901] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   ├── NKK Switches (1)
 │   │   └── switches-mosfets (1)
 │   │       └── NKK MN11SS4W03 SPST Toggle [nkk-mn11ss4w03] [FP:?] [3D:A] [CAD:+] [BB:-]

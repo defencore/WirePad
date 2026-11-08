@@ -1,0 +1,227 @@
+{
+  "checked": "2026-11-08",
+  "scope": "Follow-up of all twenty remaining LILYGO entries in the popular-board audit: sixteen formerly pending entries and four previously cable/fine-pitch ineligible entries. Previously supported LILYGO entries are not recounted.",
+  "assembly": "Downward straight installed male posts are distinct from PCB drills, face-up optional shield headers, socket solder tails, projected rear contacts and factory battery holders. No generic footprint or product tag is used as mechanical evidence.",
+  "summary": {
+    "checked": 20,
+    "enabled": 5,
+    "insertionLeadsAdded": 128,
+    "completeViewEndpoints": 168,
+    "requiresAdapterAsFitted": 13,
+    "sourceReviewRequired": 2
+  },
+  "verification": {
+    "focusedTests": "test/catalog-lilygo-mounting-followup.test.mjs",
+    "visualReview": "/tmp/lilygo-followup-render.png",
+    "defaultPreservation": {
+      "baseline": "dd3fb5c3da7aef333524274eebc225258af46a5b",
+      "definitions": 2003,
+      "anchors": 48146,
+      "defaultSvgViews": 4006,
+      "nativeAssets": 6009,
+      "changes": 0
+    },
+    "kicadAccuracy": "Unchanged. The new optional breadboard geometry does not upgrade existing representative native footprints or approximate 3D models."
+  },
+  "entries": [
+    {
+      "id": "lilygo-t-qt-pro-v1-3",
+      "status": "enabled",
+      "insertionLeads": 14,
+      "pitchMm": 2.54,
+      "rowSpacingMm": 15.240000000000002,
+      "source": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/3D_file/T_QT_Pro.stp",
+      "evidence": "Pro STEP gives all fourteen through-hole centers on two 2.54 mm rows, 15.24 mm apart. The 0.0002 mm DXF row offset is export rounding; installed straight posts are the nominal common grid. STEP metal faces and battery cylinders locate all six projected rear contacts. PCB and USB material exclude the composite rear inset and its caption.",
+      "assembly": "Populate all fourteen main P1/P2 downward male posts. CNC1 and the battery solder lands are projected underside wiring contacts, not extra breadboard leads.",
+      "auxiliaryPlacement": "Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
+      "sourceArtifacts": [
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/3D_file/T_QT_Pro.stp",
+          "sha256": "628a593d4c508e09a1c0fc001afae97277dea1010c2c8539f63e15475ed6b37f"
+        },
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/3D_file/T_QT.DXF",
+          "sha256": "cce5a6d43db66464f6ebce2ecb90292c0d18eec29a3c1dda533905e8c997a81a"
+        },
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/image/pinmap_en.jpg",
+          "sha256": "4f6a2b8e2392c5a7cf449f1e1390dc5cab40017b3de671dfb4c7777f2e63dd40"
+        }
+      ]
+    },
+    {
+      "id": "lilygo-t-eth-lite-esp32-v1-0",
+      "status": "enabled",
+      "insertionLeads": 30,
+      "pitchMm": 2.54,
+      "rowSpacingMm": 25.4,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-Lite-ESP32.DXF",
+      "evidence": "Exact original ESP32 DXF HDR1X15 drill centers are x=1.27/26.67 and y=15.95000112 through 51.51000112: thirty 2.54 mm leads with 25.4 mm row spacing. KeepOut PCB centerlines define physical material. The eight optional PoE contacts are mapped at their separate source centers; they are not downward leads.",
+      "assembly": "Populate both complete fifteen-post main strips downward. Keep the optional two-row P1 PoE connector upward-facing or unfitted; a downward-populated P1 variant needs an adapter and is not this assembly.",
+      "auxiliaryPlacement": "Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
+      "sourceArtifacts": [
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-Lite-ESP32.DXF",
+          "sha256": "c30d3a96f719925afaf47300b41640689c5423d430efad87c35fb3a4c0040bb7"
+        }
+      ]
+    },
+    {
+      "id": "lilygo-t-display-s3-amoled-original",
+      "status": "enabled",
+      "insertionLeads": 28,
+      "pitchMm": 2.54,
+      "rowSpacingMm": 22.86,
+      "source": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/DXF_file/T-DISPLAY-S3-AMOLED.dxf",
+      "evidence": "The original non-touch board has its own manufacturer DXF and STEP; no later Touch assembly is substituted. Both fourteen-post rows have 2.54 mm pitch and 22.86 mm spacing. The source DXF 0.00039878 mm Y-row deviation is export precision; straight installed headers share the nominal grid. Original keyed UART/battery tail locations use CAD package placements and the original photo, with explicitly approximate photo-projected placement; they are not insertion leads.",
+      "assembly": "Populate both complete fourteen-post rows downward. Retain original P5.12/.13 3V3 and P6.12/.13 VSYS assignments. The six fitted socket contacts use cables and do not participate in breadboard fitting.",
+      "auxiliaryPlacement": "Original photo projection and original CAD package placements; explicitly approximate. This does not calibrate inserted leads.",
+      "sourceArtifacts": [
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/DXF_file/T-DISPLAY-S3-AMOLED.dxf",
+          "sha256": "3ec9314f6249580b465aa47e233788ff3c8717982808b69c510b393a8944dbd1"
+        },
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/3D_File/t-display-s3-amoled.stp",
+          "sha256": "91fd973fdc678ae9a3d2e5e0815e693db196fe5f67a8ac727a5dbb0edcf57b6b"
+        },
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/image/T-Display-S3-AMOLED.jpg",
+          "sha256": "dca6612e978bc0786872f8a0b820be497ca38e84ce8bccf31e050ce095f030b1"
+        }
+      ]
+    },
+    {
+      "id": "lilygo-t-display-s3-amoled-plus-v1-0",
+      "status": "enabled",
+      "insertionLeads": 28,
+      "pitchMm": 2.54,
+      "rowSpacingMm": 22.86,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T-Display-S3-AMOLED-Plus.7z",
+      "evidence": "Plus-specific DXF and assembled STEP establish two complete fourteen-post 2.54 mm rows, 22.86 mm apart, and the 25.49 x 53.871 mm PCB. STEP solids 292/293 locate all eight 1.0 mm socket metal tails. Main-header contact numbers follow the Plus schematic and component-side pinmap, not the original AMOLED rail assignments.",
+      "assembly": "Populate both fourteen-post P4/P5 strips downward. CN1/CN2 remain fitted cable sockets and are not breadboard leads.",
+      "auxiliaryPlacement": "Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
+      "sourceArtifacts": [
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T-Display-S3-AMOLED-Plus.DXF",
+          "sha256": "876abf04e0214f8be2cc098bf2d3763cbc5005420b576f8ce175605169b57eb2"
+        },
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T-Display-S3-AMOLED-Plus.7z",
+          "sha256": "31cf1648857363b9c57db33cf49e20f72046240a57c34936b62338dac07cce71"
+        }
+      ]
+    },
+    {
+      "id": "lilygo-t3-s3-v1-3-sx1262",
+      "status": "enabled",
+      "insertionLeads": 28,
+      "pitchMm": 2.54,
+      "rowSpacingMm": 22.86,
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/dimensions/T3S3%20V1.3.dxf",
+      "evidence": "V1.3 DXF BOARD_OUTLINE_00 establishes the 27.1272 x 64.4652 mm PCB. DRIL_SYMBOL centers place all twenty-eight main leads at 2.54 mm pitch and 22.86 mm row spacing. Physical 1.0 mm auxiliary solder pads, P2 battery tails and 2.0 mm J3 solar drills are read from package artwork, not logical SYM_TERMINAL text. The matching 20250110 photo establishes functions and polarities. Stable U4 battery IDs are retained even though CAD calls that socket P2.",
+      "assembly": "Populate both complete fourteen-post JP1/JP2 strips downward. Leave OLED/display cables disconnected or folded within the assembly footprint without material below the header seating plane. The four fitted power/auxiliary sockets are cable contacts, not insertion leads.",
+      "auxiliaryPlacement": "Source CAD contact centers; non-header sockets, optional face-up headers and underside solder lands remain wiring endpoints.",
+      "sourceArtifacts": [
+        {
+          "url": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/dimensions/T3S3%20V1.3.dxf",
+          "sha256": "2ed1fac184cde2baaf12fbda7cbb369fae752b5ca34e36040cd21a4aa0398f49"
+        },
+        {
+          "url": "https://wiki.lilygo.cc/products/t3-series/t3-s3-v1.3/index/image/t3-s3-v1.3-pinout.jpg",
+          "sha256": "48f676d5cad2f43748be073866e0afe245e29c9e0e05be44ab1d396c4780fcd8"
+        }
+      ]
+    },
+    {
+      "id": "lilygo-t7-s3-v1-1",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/T7-S3/blob/main/assets/image/t7-s3_v1.1_pinmap.jpg",
+      "reason": "The exact V1.1 pinmap shows all forty independent expansion contacts in four ten-contact rows. Each adjacent two-row group would bridge common breadboard strips; enabling only an arbitrary inner or outer subset would omit exposed installed posts. The supplied V1.2 STEP is a later revision and does not establish a manufacturer V1.1 two-strip assembly. Use an adapter or a specifically documented reduced-header assembly."
+    },
+    {
+      "id": "lilygo-t-encoder-pro-v1-0",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/T-Encoder-Pro/blob/arduino-esp32-libs_V3.0.7/project/%5BSCH%5D%5BT-Encoder-Pro_V1.0%5D.pdf",
+      "reason": "The assembled knob exposes two keyed four-contact rear sockets. These are cable mating contacts, not downward 2.54 mm male strips."
+    },
+    {
+      "id": "lilygo-t-deck-sx1262-20230601",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf",
+      "reason": "The original assembled keyboard has the keyed P8 UART cable socket and J1 keyboard programming pads, not a downward breadboard header assembly. The 2.54 mm-looking service pad arrangement is not evidence for exposed male insertion posts."
+    },
+    {
+      "id": "lilygo-t-embed-cc1101-v1-0",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/T-Embed-CC1101/blob/master/hardware/T-Embed-CC1101%20V1.0%2024-07-29.pdf",
+      "reason": "Its two external four-contact UART/I2C interfaces are keyed fine-pitch cable sockets. Enclosed rotary/display hardware has no downward breadboard-compatible lead population."
+    },
+    {
+      "id": "lilygo-t4-s3-v1-0",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/schematic/T4-S3-240719.pdf",
+      "reason": "The actual P5 interface is a 2x15 1.27 mm matrix, not a 2.54 mm header. The other two external interfaces are keyed four-contact cable sockets."
+    },
+    {
+      "id": "lilygo-t-eth-elite-2421",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-ELite.dxf",
+      "reason": "The complete J1 is a 40-contact 2x20 matrix with adjacent 2.54 mm rows, not two independent distant edge strips. Direct seating would join separate signals on breadboard strips. Its Raspberry Pi header shape does not establish breadboard compatibility."
+    },
+    {
+      "id": "lilygo-t-internet-poe-v1-0",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-POE.DXF",
+      "reason": "The exact manufacturer CAD has the 16-contact 2x8 adjacent-row connector. Its complete independent signal population would short on common breadboard strips. RJ45 and PoE power hardware are assembled ports, not alternative insertion leads."
+    },
+    {
+      "id": "lilygo-t-sim7080g-s3-v1-0",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-T-SIM7080G/blob/master/dwg/T-SIM7080G.DXF",
+      "reason": "The actual source row-center spacing is 30.20000056 mm, not the 30.48 mm breadboard grid. Straight 2.54 mm pitch along each row alone is insufficient; the fitted rear 18650 holder is a second obstruction. Do not widen geometric tolerance or rescale the two axes differently to force a fit."
+    },
+    {
+      "id": "lilygo-t-beam-v1-2-sx1276",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/LilyGo_TBeam_V1.2-lastest.pdf",
+      "reason": "The factory assembly has a rear 18650 holder occupying the breadboard seating space. Ordinary downward male headers are not a reviewed clear insertion assembly. The V1X CAD is not sufficient evidence for a source-approved long-header V1.2 variant. Use a raised carrier or adapter."
+    },
+    {
+      "id": "lilygo-t-beam-s3-supreme-v3-1",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T-Beam-S3-Supreme/T-Beam-S3-Supreme-V3.1.pdf",
+      "reason": "The complete Supreme battery-holder/baseboard/core assembly has material below the main PCB and inter-board contacts. A bare PCB header grid does not establish clearance for the factory 18650 assembly; use a raised carrier or adapter."
+    },
+    {
+      "id": "lilygo-t-echo-v1-0",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/schematic/T-Echo_Schematic.pdf",
+      "reason": "The enclosed display/radio assembly exposes four programming service pads and two battery contacts. It has no manufacturer downward 2.54 mm male strip assembly."
+    },
+    {
+      "id": "lilygo-t-sim7000g-20200415",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-SIM7000G/blob/master/3D_file/T-SIM7000G%286.08%29.stp",
+      "reason": "The manufacturer STEP establishes 2.54 mm edge-row pitch and 30.48 mm row spacing, but the rear battery-holder assembly extends 16.2 mm below the PCB plane. The factory assembly cannot seat on ordinary headers. No manufacturer assembly evidence was found for a downward extended-header variant with that clearance; use a raised carrier or adapter."
+    },
+    {
+      "id": "lilygo-t-a7670x-v1-4",
+      "status": "requires-adapter-as-fitted",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-A7670X/blob/main/dimensions/esp32/T-A7670X-Board-3D.stp",
+      "reason": "V1.4 DXF establishes both complete 16-contact rows at 2.54 mm pitch and 30.48 mm spacing. Native STEP confirms the factory rear battery holder extends 16.2 mm below the PCB plane. A hypothetical taller header is not a manufacturer-reviewed assembly. No source-approved downward-post assembly with the required clearance was found; use a raised carrier or adapter."
+    },
+    {
+      "id": "lilygo-t-picoc3-v1-1",
+      "status": "source-review-required",
+      "source": "https://github.com/Xinyuan-LilyGO/T-PicoC3/blob/main/image/T-PicoC3_en.jpg",
+      "reason": "The exact V1.1 pinmap verifies all 27 asymmetric main contacts plus ten rear contacts. The manufacturer repository contains the electrical schematic and photos but no matched dimensioned mechanical drawing or PCB CAD. A generic RP2040/Pico carrier cannot establish the row gap, asymmetric starting offsets, complete projected rear-contact map and fitted underside clearance. No claim is made that its row pitch is incompatible."
+    },
+    {
+      "id": "lilygo-t3-lora32-v1-6-1-sx1276",
+      "status": "source-review-required",
+      "source": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/dimensions/T3_V1.6_3D.7z",
+      "reason": "The manufacturer general T3 V1.6 STEP establishes 26 main centers at 2.54 mm pitch and 22.86 mm spacing, and the 27.1272 x 64.4652 mm PCB. The separately published mechanical DWG is V1.6.2, while this catalog entry follows exact V1.6.1/20210104 electrical and photo evidence. The V1.6 STEP omits the fitted battery socket contact metal. A complete exact-revision auxiliary map and the side/orientation agreement between this assembled STEP and the component-side V1.6.1 photo are not established. The board is not rejected for its nominal header pitch; this remains a mechanical-source gap."
+    }
+  ]
+}

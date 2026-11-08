@@ -1,6 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, rect, smd } from "../shared/svg.js";
+import { modulinoMounting } from "../shared/modulino-mounting.js";
 
 // Arduino V0.3 schematic + Gerber source (2024-06-27). Coordinates are native
 // manufacturing mm, rotated into portrait. Rear contacts are mirrored in artwork.
@@ -58,7 +59,7 @@ function boardEntry(kind, sku, cadPath) {
     subtitle: `${sku} / V0.3 / 3.3 V I²C`, tags: ["diy", "starter kit", "arduino", "modulino", kind, sku.toLowerCase(), "i2c", "qwiic", "stm32c011", ...(knob ? ["rotary encoder", "knob", "quadrature"] : ["buttons", "push button", "led"])],
     referencePrefix: "U", art: id, width: 516, height: 354, pins, internalConnections: [...nets.values()].filter(group => group.length > 1),
   }, pins.map(pin => [pin.x, pin.y]));
-  return {
+  const entry = {
     component,
     render: (part, showLabels) => {
       const bw = widthMm * scale, bh = heightMm * scale, cx = frontX + bw / 2;
@@ -102,6 +103,7 @@ function boardEntry(kind, sku, cadPath) {
     },
     model: { label: `Arduino ${sku} V0.3 Altium, Gerber, DXF and STEP CAD`, url: `https://docs.arduino.cc/static/${cadPath}/${sku}-cad-files.zip` },
   };
+  return { ...entry, mounting: modulinoMounting(entry) };
 }
 
 export default defineFamily("arduino-more-boards", [

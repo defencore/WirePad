@@ -1,6 +1,6 @@
 # Breadboard mounting
 
-Build directly on a configurable breadboard with **1217 reviewed insertable parts**: 999 boards/modules, 177 rigid through-hole parts and 41 parts with bendable leads. The catalog contains 2003 components in 146 families. Every seated lead joins the actual breadboard conductor; coincident drawings alone never create a connection.
+Build directly on a configurable breadboard with **1243 reviewed insertable parts**: 1025 boards/modules, 177 rigid through-hole parts and 41 parts with bendable leads. The catalog contains 2003 components in 146 families. Every seated lead joins the actual breadboard conductor; coincident drawings alone never create a connection.
 
 ## Assemble a circuit
 
@@ -32,6 +32,10 @@ The generic two-contact schematic pushbutton is not treated as a four-tail switc
 ## Supported profiles
 
 The 2026-11-08 expansion enables **399 additional boards/modules**: 207 source modules, 70 popular devboards, 105 radio/DIY/sensor modules and 17 miniature computing/FPGA boards. Examples include Pico 2/2 W, Nano 33 BLE/Sense, Arduino Micro and MKR, Teensy, XIAO, Blue Pill/WeAct, Nucleo32, additional LILYGO boards, EBYTE UART radios, BME280/ADS1115/INA219, motor drivers, Luckfox Pico and Lichee RV Nano. The complete [component tree](COMPONENTS.md) marks each reviewed insertable entry with `[BB:+]`, hosts with `[BB:H]` and entries without a reviewed insertion profile with `[BB:-]`. These marks are independent of KiCad accuracy.
+
+A subsequent follow-up reviews **91 previously unsupported candidates** and enables **26 additional modules**: five LILYGO boards, seven miniature computing/FPGA boards, five radio/DIY boards, three measurement sensors, three legacy Click boards, two Modulino boards and the Waveshare BMM150. The new views retain all **720 published endpoints** and insert **528 complete header leads**. Canonical definitions, default illustrations and native KiCad/CAD assets are unchanged. Sources and per-entry decisions are recorded in the [LILYGO follow-up](catalog-lilygo-mounting-followup-2026-11-08.json), [computing follow-up](catalog-mini-computing-mounting-followup-2026-11-08.json), [radio/DIY follow-up](catalog-radio-diy-mounting-followup-2026-11-08.json), [measurement-sensor review](catalog-measurement-sensors-mounting-2026-11-08.json) and [legacy-module review](catalog-legacy-module-mounting-followup-2026-11-08.json).
+
+The source review distinguishes unresolved candidates from genuinely different interfaces. A matching 2.54 mm strip can be supported even when its old illustration is out of scale or includes a separate rear view. A complete map and declared assembly still matter: the QT Rotary view uses the bare breakout without a fitted encoder, the MAX9814 microphone and OpenLog card face upward, and the PMSA003I capsule remains above the PCB. Optional service headers, cable contacts and projected rear pads remain wireable without being counted as inserted leads. Dense stacking sockets, two-millimeter cable connectors and genuinely off-grid rows require another assembly or an adapter. The exact FSR402 part 44-29103 has no metal contacts; the distinct solder-tab variant is not silently substituted.
 
 The following table retains the original fourteen devboard reference profiles. The linked audits enumerate all current profiles.
 

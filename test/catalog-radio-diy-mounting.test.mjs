@@ -182,9 +182,13 @@ test('rear wire references, mirrored motor-driver banks and genuine pitch except
   const drv = mountingFor('pololu-drv8838-2990');
   close(drv.contacts.find(contact => contact.pinId === 'l-vin').x, 3.81);
   close(drv.contacts.find(contact => contact.pinId === 'r-vcc').x, -3.81);
-  for (const id of ['ra-01h', 'ra-05', 'ebyte-e01-ml01d', 'ti-launchxl-cc1352r1', 'dfrobot-dfplayer-mini-dfr0299']) {
+  for (const id of ['ra-01h', 'ra-05', 'ebyte-e01-ml01d', 'ti-launchxl-cc1352r1']) {
     assert.equal(mountingFor(id), undefined, id);
     assert.ok(reviewed.find(entry => entry.id === id && !entry.status.startsWith('pending')), id);
   }
+  assert.equal(mountingFor('dfrobot-dfplayer-mini-dfr0299'), undefined);
+  const dfplayer = reviewed.find(entry => entry.id === 'dfrobot-dfplayer-mini-dfr0299');
+  assert.equal(dfplayer.status, 'pending-nominal-post-evidence');
+  assert.match(dfplayer.reason, /18\.03 mm/);
   assert.equal(components.length, 2003);
 });

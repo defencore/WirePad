@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { licheeZeroMounting } from "../shared/lichee-zero-mounting.js";
 import { chip, circle, label, line, rect } from "../shared/svg.js";
 import { sipeedBoard } from "../shared/sipeed-board.js";
 import { miniComputingMounting, projectMiniHardware } from "../shared/mini-computing-mounting.js";
@@ -679,4 +680,5 @@ const rvNanoMounting = Object.fromEntries([rvNanoB, rvNanoW, rvNanoE, rvNanoWE].
     renderHardware: () => projectMiniHardware(entry.renderHardware, component, [42, 42, size[0] * 11, size[1] * 11], size),
   })];
 }));
-export default defineFamily("sipeed-lichee", (sipeedLicheeComponents).map(component => ({ component, render: (sipeedLicheeArt)[component.art], footprint: (sipeedLicheeFootprints)[component.id], model: sipeedLicheeModels[component.id], ...(rvNanoMounting[component.id] ? { mounting: rvNanoMounting[component.id] } : {}) })));
+const insertionProfiles = { ...rvNanoMounting, [zero.component.id]: licheeZeroMounting(zero.component) };
+export default defineFamily("sipeed-lichee", (sipeedLicheeComponents).map(component => ({ component, render: (sipeedLicheeArt)[component.art], footprint: (sipeedLicheeFootprints)[component.id], model: sipeedLicheeModels[component.id], ...(insertionProfiles[component.id] ? { mounting: insertionProfiles[component.id] } : {}) })));

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { lilygoFollowupMounting } from "../shared/lilygo-followup-mounting.js";
 import { chip, circle, label, line, path, rect, tactile, usb } from "../shared/svg.js";
 import { readyAntenna, readyBoard, readyRow, readySocket } from "../shared/wire-board.js";
 
@@ -123,7 +124,8 @@ const entries = [qt, t7, pico, encoder].map(entry => {
     nets.get(pin.label).push(pin.id);
   }
   entry.component.internalConnections = [...nets.values()].filter(ids => ids.length > 1);
-  return { component: entry.component, render: entry.art, footprint: entry.footprint, model: entry.model };
+  return { component: entry.component, render: entry.art, footprint: entry.footprint, model: entry.model,
+    ...(entry === qt ? { mounting: lilygoFollowupMounting(entry, [92, 36, 228, 365]) } : {}) };
 });
 
 export default defineFamily("lilygo-more", entries);

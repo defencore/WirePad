@@ -1,3 +1,4 @@
+import { followupRadioMounting } from "../shared/followup-radio-mounting.js";
 import { sourceReferenceMounting } from "../shared/source-reference-mounting.js";
 import physicalReferences from "../data/popular-mounting/common-peripherals.js";
 import { defineFamily } from "../registry.js";
@@ -366,6 +367,6 @@ header("J2", "right", 21, numbered([
 const entries = [lcd1602, oled091, tft096, sh1106, tm1637, matrix, rtc, microSd, openLog, max98357, rfid, gps, dfPlayer];
 
 export default defineFamily("common-peripherals", entries.map(({ art: render, ...entry }) => {
-  const mounting = sourceReferenceMounting(entry.component, physicalReferences[entry.component.id]);
+  const mounting = sourceReferenceMounting(entry.component, physicalReferences[entry.component.id]) ?? followupRadioMounting(entry.component);
   return { ...entry, render, ...(mounting ? { mounting } : {}) };
 }));

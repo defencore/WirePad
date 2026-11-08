@@ -11,7 +11,7 @@ const close = (a, b) => assert.ok(Math.abs(a - b) < 1e-7, `${a} != ${b}`);
 test('mini-computing audit checks every family entry and registers only complete reviewed source views', () => {
   assert.equal(audit.entries.length, 85);
   assert.equal(new Set(audit.entries.map(entry => entry.id)).size, 85);
-  assert.equal(supported.length, 17);
+  assert.equal(supported.length, 24);
   for (const entry of audit.entries) {
     const component = componentById.get(entry.id), profile = mountingFor(entry.id);
     assert.ok(component, entry.id);

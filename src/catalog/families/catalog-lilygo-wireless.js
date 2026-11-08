@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { lilygoFollowupMounting } from "../shared/lilygo-followup-mounting.js";
 import { chip, circle, label, line, path, rect, tactile, usb } from "../shared/svg.js";
 import { readyAntenna, readyBoard, readyRow, readySocket } from "../shared/wire-board.js";
 
@@ -165,5 +166,8 @@ const lilygoWirelessComponents = entries.map(entry => entry.component);
 const lilygoWirelessArt = Object.fromEntries(entries.map(entry => [entry.component.id, entry.art]));
 const lilygoWirelessFootprints = Object.fromEntries(entries.map(entry => [entry.component.id, entry.footprint]));
 const lilygoWirelessModels = Object.fromEntries(entries.map(entry => [entry.component.id, entry.model]));
+const lilygoWirelessMountings = Object.fromEntries(entries.map(entry => [entry.component.id,
+  lilygoFollowupMounting(entry, [80, 43, 316, 636])]));
 
-export default defineFamily("lilygo-wireless", (lilygoWirelessComponents).map(component => ({ component, render: (lilygoWirelessArt)[component.art], footprint: (lilygoWirelessFootprints)[component.id], model: lilygoWirelessModels[component.id] })));
+export default defineFamily("lilygo-wireless", (lilygoWirelessComponents).map(component => ({ component, render: (lilygoWirelessArt)[component.art], footprint: (lilygoWirelessFootprints)[component.id], model: lilygoWirelessModels[component.id],
+  ...(lilygoWirelessMountings[component.id] ? { mounting: lilygoWirelessMountings[component.id] } : {}) })));

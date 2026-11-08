@@ -1,3 +1,4 @@
+import { followupRadioMounting } from "../shared/followup-radio-mounting.js";
 import { defineFamily } from "../registry.js";
 import { reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
@@ -635,4 +636,4 @@ const ft232h = module({
 const entries = [a4988, drv8825, tb6612, drv8833, l298n, tmc2209, relay, pca9685,
   levelShifter, tca9548a, mcp23017, ch340c, cp2102, ft232h, canModule];
 
-export default defineFamily("common-interfaces", entries.map(({ art, ...entry }) => entry));
+export default defineFamily("common-interfaces", entries.map(({ art, ...entry }) => ({ ...entry, mounting: entry.mounting ?? followupRadioMounting(entry.component) })));

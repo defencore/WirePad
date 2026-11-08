@@ -1,5 +1,6 @@
 import { defineFamily } from "../registry.js";
 import { miniComputingMounting } from "../shared/mini-computing-mounting.js";
+import { trenzMounting } from "../shared/trenz-mounting.js";
 import { circle, label, line, rect } from "../shared/svg.js";
 
 // Contact tables retain each published connector identity; representative scopes are explicit.
@@ -1204,4 +1205,6 @@ const kiwiInsertion = miniComputingMounting(kiwiComponent, {
     { x: -1, y: 9, width: 8, height: 8 }, { x: 63, y: 9, width: 8, height: 8 }],
   renderHardware: () => bodyArt(kiwiBoard),
 });
-export default defineFamily("gowin-third-party", (gowinThirdPartyComponents).map(component => ({ component, render: (gowinThirdPartyArt)[component.art], footprint: (gowinThirdPartyFootprints)[component.id], model: gowinThirdPartyModels[component.id], ...(component.id === kiwiComponent.id ? { mounting: kiwiInsertion } : {}) })));
+const trenzComponent = gowinThirdPartyComponents.find(component => component.id === 'trenz-tec0117-01');
+const insertionProfiles = { [kiwiComponent.id]: kiwiInsertion, [trenzComponent.id]: trenzMounting(trenzComponent) };
+export default defineFamily("gowin-third-party", (gowinThirdPartyComponents).map(component => ({ component, render: (gowinThirdPartyArt)[component.art], footprint: (gowinThirdPartyFootprints)[component.id], model: gowinThirdPartyModels[component.id], ...(insertionProfiles[component.id] ? { mounting: insertionProfiles[component.id] } : {}) })));

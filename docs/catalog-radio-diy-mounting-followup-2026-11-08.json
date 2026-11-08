@@ -1,0 +1,1304 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-11-08",
+  "scope": "All 33 previously pending standalone radio/DIY entries, excluding separately owned LILYGO/computing families. This follow-up resolves exact source CAD and assembly variants without changing canonical component geometry or native assets.",
+  "rules": [
+    "A 2.54 mm chip/tag/reference-carrier value is not installed-header assembly evidence.",
+    "Pending source/assembly entries are unresolved candidates, not assertions that their actual 2.54 mm headers cannot fit.",
+    "All 56 existing contact IDs in the five enabled boards are retained; only complete reviewed strips are inserted.",
+    "Mounting views activate only on newly fitted parts; raw and old scale-only instances preserve prior definitions/artwork/native exports."
+  ],
+  "summary": {
+    "families": 11,
+    "entries": 33,
+    "enabled": 5,
+    "statuses": {
+      "pending-source-dimensions": 5,
+      "pending-straight-header-assembly": 8,
+      "pending-source-identification": 9,
+      "enabled": 5,
+      "cable-connector": 3,
+      "pending-full-header-review": 2,
+      "pending-opposite-face-clearance": 1
+    }
+  },
+  "additionalEvidence": {
+    "oledDimension": "https://files.waveshare.com/wiki/1.3inch_OLED_B/1.3inch-OLED-Size.jpg",
+    "oledSchematic": "https://files.waveshare.com/upload/a/af/1.3inch-OLED-Schematic.pdf",
+    "oledManual": "https://files.waveshare.com/upload/7/76/1.3inch_OLED_UserManual.pdf",
+    "solarDimension": "https://dfimg.dfrobot.com/wiki/21115/DFR0559_cn3165-solar-power-manager-module_dimension_V1.1.pdf",
+    "solarLayout": "https://dfimg.dfrobot.com/wiki/21115/DFR0559_cn3165-solar-power-manager-module_layout_V1.1.pdf",
+    "nxpDesignIndex": "https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-STBC-AGM01?fpsp=1&lang_cd=en&tab=Design_Tools_Tab&uc=true"
+  },
+  "families": [
+    {
+      "entries": [
+        {
+          "id": "haljia-max7219-8x8-dip",
+          "name": "HALJIA MAX7219 8×8 LED Matrix",
+          "status": "pending-source-dimensions",
+          "source": "https://www.haljia.com/products/haljia-max7219-dot-matrix-mcu-led-display-control-module-kit-compatible-with-arduino-with-dupont-cable",
+          "reason": "The named HALJIA MAX7219 kit has no reviewed manufacturer board revision, complete physical contact map or dimensioned header-post centers in the available product reference. Neither its representative artwork nor its native carrier establishes a particular assembled module. Verify the exact PCB and both daisy-chain banks before enabling a straight-header replacement assembly.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.haljia.com/products/haljia-max7219-dot-matrix-mcu-led-display-control-module-kit-compatible-with-arduino-with-dupont-cable"
+            }
+          ]
+        },
+        {
+          "id": "keyestudio-ks0327-uln2003-stepper",
+          "name": "Keyestudio KS0327 ULN2003 + 28BYJ-48",
+          "status": "pending-straight-header-assembly",
+          "source": "https://docs.keyestudio.com/projects/KS0327/en/latest/docs/KS0327.html",
+          "reason": "The manufacturer describes the six-position VCC/GND/IN1–IN4 strip and separate keyed five-wire motor connector, and shows the kit board with an accompanying motor. The current drawing is a composite reference, not a calibrated board face. A complete driver-only physical view needs actual straight downward-post centers, PCB material bounds and the keyed socket contacts; the motor must remain a separate off-board accessory.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.keyestudio.com/projects/KS0327/en/latest/docs/KS0327.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "robotdyn-25v-voltage-sensor",
+          "name": "RobotDyn 25 V DC Voltage Sensor",
+          "status": "pending-source-dimensions",
+          "source": "https://github.com/RobotDynOfficial/Documentation/wiki/Simple-DC-Voltage-Sensor%2C-VDC-25V",
+          "reason": "The exact manufacturer wiki identifies the divider and electrical schematic, but gives no mechanical center coordinates for both input/output banks. A generic 2.54 mm carrier cannot establish their separation or which connector assembly faces downward.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://github.com/RobotDynOfficial/Documentation/wiki/Simple-DC-Voltage-Sensor%2C-VDC-25V"
+            }
+          ]
+        },
+        {
+          "id": "robotdyn-ams1117-3-3v-module",
+          "name": "RobotDyn AMS1117 3.3 V Regulator",
+          "status": "pending-source-identification",
+          "source": "https://github.com/RobotDynOfficial/Documentation/wiki/Voltage-regulator-Module-LDO-(3.3%20V)",
+          "reason": "The published manufacturer wiki URL currently returns the wiki Home content rather than this LDO page. The catalog includes the input/output connector pairs and four corner solder contacts. Their complete source-coordinate relation and duplicate-net proof are unresolved; do not infer all eight posts from an AMS1117 chip or the reference carrier.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://github.com/RobotDynOfficial/Documentation/wiki/Voltage-regulator-Module-LDO-(3.3%20V)"
+            }
+          ]
+        },
+        {
+          "id": "robotdyn-ams1117-5v-module",
+          "name": "RobotDyn AMS1117 5 V Regulator",
+          "status": "pending-source-identification",
+          "source": "https://github.com/RobotDynOfficial/Documentation/wiki/Voltage-regulator-Module-LDO-(5%20V)",
+          "reason": "The published manufacturer wiki URL currently returns the wiki Home content rather than this LDO page. The catalog includes the input/output connector pairs and four corner solder contacts. Their complete source-coordinate relation and duplicate-net proof are unresolved; do not infer all eight posts from an AMS1117 chip or the reference carrier.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://github.com/RobotDynOfficial/Documentation/wiki/Voltage-regulator-Module-LDO-(5%20V)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "lc-filter",
+          "name": "LC Low-Pass Filter",
+          "status": "pending-source-identification",
+          "source": null,
+          "reason": "This generic four-terminal LC board has no exact manufacturer reference. Its representative contact banks need a matching PCB revision and measured or manufacturer post centers; it is not classified as electrically or mechanically incompatible merely because that evidence is missing.",
+          "sourceReferences": []
+        },
+        {
+          "id": "pi-lc-filter",
+          "name": "CLC Pi Low-Pass Filter",
+          "status": "pending-source-identification",
+          "source": "https://g.recomcdn.com/media/Datasheet/pdf/.fJG_EiEZ/.t3f3f38dadc5d6f54e118/Datasheet-261/R-78E-0_5.pdf",
+          "reason": "The entry links a RECOM R-78E regulator datasheet, which does not identify or dimension this four-terminal pi-filter PCB. The native carrier and approximate artwork cannot substitute for exact filter-module assembly evidence.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://g.recomcdn.com/media/Datasheet/pdf/.fJG_EiEZ/.t3f3f38dadc5d6f54e118/Datasheet-261/R-78E-0_5.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "sunfounder-l298n-hw095",
+          "name": "SunFounder L298N Dual Motor Driver (HW-095)",
+          "status": "pending-straight-header-assembly",
+          "source": "https://docs.sunfounder.com/projects/3in1-kit-r4/en/latest/components/component_l298n_module.html",
+          "reason": "The HW-095 wiring reference confirms the power/motor screw terminals and enable/input jumper banks. It does not establish a complete flat downward-header replacement assembly, all post centers and clearance below the heat-sink/power board. The screw openings must remain cable terminals, not phantom breadboard leads.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.sunfounder.com/projects/3in1-kit-r4/en/latest/components/component_l298n_module.html"
+            }
+          ]
+        },
+        {
+          "id": "adafruit-tmc2209-6121",
+          "name": "Adafruit TMC2209 Stepper Motor Driver",
+          "status": "enabled",
+          "source": {
+            "label": "Adafruit TMC2209 Stepper Motor Driver exact manufacturer EAGLE header and assembly reference",
+            "url": "https://github.com/adafruit/Adafruit-TMC2209-Breakout-PCB/blob/main/Adafruit%20TMC2209%20Stepper%20Motor%20Driver.brd"
+          },
+          "sourceReferences": [
+            {
+              "label": "Existing exact product and pinout reference",
+              "url": "https://learn.adafruit.com/adafruit-tmc2209-stepper-motor-driver-breakout-board/pinouts"
+            },
+            {
+              "label": "Adafruit TMC2209 Stepper Motor Driver exact manufacturer EAGLE header and assembly reference",
+              "url": "https://github.com/adafruit/Adafruit-TMC2209-Breakout-PCB/blob/main/Adafruit%20TMC2209%20Stepper%20Motor%20Driver.brd"
+            }
+          ],
+          "reason": "Exact JP4 ten-position 2.54 mm package, motor/power terminal coordinates and complete source net map reviewed. Mount JP4 only; all six screw terminals remain projected rear references, with the independently verified motor/logic ground pair connected only in the explicit view.",
+          "assembly": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate the complete ten-pin JP4 logic strip downward. The six motor/power screw terminals remain above the PCB; dashed B markers show their underside solder-tail projections, not extra insertion leads.",
+          "physicalView": "breadboard",
+          "retainedPinCount": 16,
+          "contacts": [
+            {
+              "pinId": "vdd",
+              "x": -11.43,
+              "y": 9.525
+            },
+            {
+              "pinId": "logic-ground",
+              "x": -8.89,
+              "y": 9.525
+            },
+            {
+              "pinId": "dir",
+              "x": -6.35,
+              "y": 9.525
+            },
+            {
+              "pinId": "step",
+              "x": -3.81,
+              "y": 9.525
+            },
+            {
+              "pinId": "ms1",
+              "x": -1.27,
+              "y": 9.525
+            },
+            {
+              "pinId": "ms2",
+              "x": 1.27,
+              "y": 9.525
+            },
+            {
+              "pinId": "diag",
+              "x": 3.81,
+              "y": 9.525
+            },
+            {
+              "pinId": "index",
+              "x": 6.35,
+              "y": 9.525
+            },
+            {
+              "pinId": "uart",
+              "x": 8.89,
+              "y": 9.525
+            },
+            {
+              "pinId": "enable",
+              "x": 11.43,
+              "y": 9.525
+            }
+          ],
+          "viewPins": [
+            {
+              "pinId": "vm",
+              "x": 89.85000000000002,
+              "y": 58.099999999999966,
+              "face": "rear",
+              "description": "5–29 V motor supply input. Underside solder-tail projection beneath the fitted terminal housing; use the terminal's cable opening. This pad is not an inserted lead."
+            },
+            {
+              "pinId": "motor-ground",
+              "x": 115.25000000000003,
+              "y": 58.099999999999966,
+              "face": "rear",
+              "description": "Common supply and signal return. Underside solder-tail projection beneath the fitted terminal housing; use the terminal's cable opening. This pad is not an inserted lead."
+            },
+            {
+              "pinId": "b2",
+              "x": 140.65000000000003,
+              "y": 58.099999999999966,
+              "face": "rear",
+              "description": "Motor winding 2, terminal B. Underside solder-tail projection beneath the fitted terminal housing; use the terminal's cable opening. This pad is not an inserted lead."
+            },
+            {
+              "pinId": "a2",
+              "x": 166.05,
+              "y": 58.099999999999966,
+              "face": "rear",
+              "description": "Motor winding 2, terminal A. Underside solder-tail projection beneath the fitted terminal housing; use the terminal's cable opening. This pad is not an inserted lead."
+            },
+            {
+              "pinId": "a1",
+              "x": 191.45000000000002,
+              "y": 58.099999999999966,
+              "face": "rear",
+              "description": "Motor winding 1, terminal A. Underside solder-tail projection beneath the fitted terminal housing; use the terminal's cable opening. This pad is not an inserted lead."
+            },
+            {
+              "pinId": "b1",
+              "x": 216.85000000000002,
+              "y": 58.099999999999966,
+              "face": "rear",
+              "description": "Motor winding 1, terminal B. Underside solder-tail projection beneath the fitted terminal housing; use the terminal's cable opening. This pad is not an inserted lead."
+            },
+            {
+              "pinId": "vdd",
+              "x": 39.050000000000026,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "3.3–5 V logic supply."
+            },
+            {
+              "pinId": "logic-ground",
+              "x": 64.45000000000002,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Common supply and signal return."
+            },
+            {
+              "pinId": "dir",
+              "x": 89.85000000000002,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Direction control input."
+            },
+            {
+              "pinId": "step",
+              "x": 115.25000000000003,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "A rising edge advances one microstep."
+            },
+            {
+              "pinId": "ms1",
+              "x": 140.65000000000003,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Microstep select input 1. Also sets the UART address."
+            },
+            {
+              "pinId": "ms2",
+              "x": 166.05,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Microstep select input 2. Also sets the UART address."
+            },
+            {
+              "pinId": "diag",
+              "x": 191.45000000000002,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Diagnostic output. Can indicate a fault or configured stall event."
+            },
+            {
+              "pinId": "index",
+              "x": 216.85000000000002,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Microstep index pulse output."
+            },
+            {
+              "pinId": "uart",
+              "x": 242.25000000000003,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Single-wire UART configuration and diagnostics."
+            },
+            {
+              "pinId": "enable",
+              "x": 267.65000000000003,
+              "y": 235.89999999999998,
+              "face": "front",
+              "description": "Active-low output enable. Drive high to disable the motor outputs."
+            }
+          ],
+          "connections": [
+            [
+              "motor-ground",
+              "logic-ground"
+            ]
+          ],
+          "bodyRegions": [
+            {
+              "x": 20,
+              "y": 19.999999999999986,
+              "width": 266.70000000000005,
+              "height": 241.29999999999998
+            }
+          ],
+          "bodyEvidence": "Exact manufacturer EAGLE dimension-layer outline, complete named header package and projecting source package envelopes. Small component bodies remain representative. The mounted face and connector population are explicit assembly choices; neither the old drawing frame nor a reference carrier establishes compatibility.",
+          "provenance": {
+            "format": "EAGLE XML",
+            "boardFile": "Adafruit TMC2209 Stepper Motor Driver.brd",
+            "boardSha256": "f8a2ecc77d44b62e8cba84cd3d71dd8687c66b013cdde7c47c1fa578e9d2685b",
+            "sourceBounds": [
+              0,
+              0,
+              26.67,
+              24.13
+            ],
+            "selectedConnectors": [
+              "JP1",
+              "JP4"
+            ],
+            "reviewWarnings": []
+          }
+        },
+        {
+          "id": "keyestudio-ks0011-5v-relay",
+          "name": "Keyestudio KS0011 Single 5V Relay",
+          "status": "pending-straight-header-assembly",
+          "source": "https://docs.keyestudio.com/projects/KS0011/en/latest/docs/KS0011.html",
+          "reason": "The manufacturer component-side photo shows the three S/+/− contacts on a right-angle side-facing header and three screw terminals. Replacing that complete strip with downward straight posts is a plausible 2.54 mm assembly, but no dimensioned installed-post and body map is supplied. The screw terminals are not insertion leads.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.keyestudio.com/projects/KS0011/en/latest/docs/KS0011.html"
+            }
+          ]
+        },
+        {
+          "id": "adafruit-pca9685-815",
+          "name": "Adafruit PCA9685 16-Channel Servo Driver",
+          "status": "enabled",
+          "source": {
+            "label": "Adafruit PCA9685 16-Channel Servo Driver exact manufacturer EAGLE header and assembly reference",
+            "url": "https://github.com/adafruit/Adafruit-16-Channel-PWM-Servo-Driver-PCB/blob/master/Adafruit%20PCA9685.brd"
+          },
+          "sourceReferences": [
+            {
+              "label": "Existing exact product and pinout reference",
+              "url": "https://learn.adafruit.com/16-channel-pwm-servo-driver/pinouts"
+            },
+            {
+              "label": "Adafruit PCA9685 16-Channel Servo Driver exact manufacturer EAGLE header and assembly reference",
+              "url": "https://github.com/adafruit/Adafruit-16-Channel-PWM-Servo-Driver-PCB/blob/master/Adafruit%20PCA9685.brd"
+            }
+          ],
+          "reason": "Original Adafruit PCA9685 board, not rev C: exact JP3 six-position package and full 23-ID map reviewed. Populate JP3 downward, keep JP4 and all sixteen servo banks upward or unpopulated downward. Preserve separate reverse-polarity PWRIN and source-traced PWM resistor endpoints.",
+          "assembly": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate only the complete six-pin JP3 host strip downward. Leave the duplicate JP4 and all servo banks unpopulated downward, or populate them upward for servo cables. All sixteen PWM signals remain available; repeated supply holes share the single modeled supply endpoints.",
+          "physicalView": "breadboard",
+          "retainedPinCount": 23,
+          "contacts": [
+            {
+              "pinId": "gnd",
+              "x": -29.21,
+              "y": -6.477
+            },
+            {
+              "pinId": "oe",
+              "x": -29.21,
+              "y": -3.937
+            },
+            {
+              "pinId": "scl",
+              "x": -29.21,
+              "y": -1.397
+            },
+            {
+              "pinId": "sda",
+              "x": -29.21,
+              "y": 1.143
+            },
+            {
+              "pinId": "vcc",
+              "x": -29.21,
+              "y": 3.683
+            },
+            {
+              "pinId": "vplus",
+              "x": -29.21,
+              "y": 6.223
+            }
+          ],
+          "viewPins": [
+            {
+              "pinId": "gnd",
+              "x": 39.049999999999955,
+              "y": 82.22999999999999,
+              "face": "front",
+              "description": "Common supply and signal return."
+            },
+            {
+              "pinId": "oe",
+              "x": 39.049999999999955,
+              "y": 107.63,
+              "face": "front",
+              "description": "Active-low output enable. Pulled low on the board."
+            },
+            {
+              "pinId": "scl",
+              "x": 39.049999999999955,
+              "y": 133.03,
+              "face": "front",
+              "description": "I²C clock. Use pull-ups appropriate for this bus."
+            },
+            {
+              "pinId": "sda",
+              "x": 39.049999999999955,
+              "y": 158.43,
+              "face": "front",
+              "description": "I²C data. Use pull-ups appropriate for this bus."
+            },
+            {
+              "pinId": "vcc",
+              "x": 39.049999999999955,
+              "y": 183.82999999999998,
+              "face": "front",
+              "description": "Logic supply, 3.3–5 V. Match the host I²C logic level."
+            },
+            {
+              "pinId": "vplus",
+              "x": 39.049999999999955,
+              "y": 209.23,
+              "face": "front",
+              "description": "Servo supply rail shared by both side headers and all 16 servo connectors. Match the attached servos."
+            },
+            {
+              "pinId": "pwrin",
+              "x": 313.15,
+              "y": 58.099999999999994,
+              "face": "rear",
+              "description": "Positive screw terminal. Feeds the servo supply rail through the reverse-polarity protection MOSFET. Underside solder-tail projection beneath the fitted terminal housing; use the terminal's cable opening. This pad is not an inserted lead."
+            },
+            {
+              "pinId": "pwm0",
+              "x": 89.85,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 0. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm1",
+              "x": 115.24999999999997,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 1. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm2",
+              "x": 140.64999999999998,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 2. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm3",
+              "x": 166.04999999999995,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 3. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm4",
+              "x": 216.84999999999997,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 4. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm5",
+              "x": 242.24999999999997,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 5. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm6",
+              "x": 267.65,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 6. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm7",
+              "x": 293.04999999999995,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 7. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm8",
+              "x": 369.25,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 8. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm9",
+              "x": 394.65,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 9. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm10",
+              "x": 420.04999999999995,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 10. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm11",
+              "x": 445.45,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 11. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm12",
+              "x": 496.25,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 12. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm13",
+              "x": 521.65,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 13. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm14",
+              "x": 547.05,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 14. The companion V+ and GND contacts share the board's servo rails."
+            },
+            {
+              "pinId": "pwm15",
+              "x": 572.4499999999999,
+              "y": 209.23,
+              "face": "front",
+              "description": "12-bit PWM signal for servo channel 15. The companion V+ and GND contacts share the board's servo rails."
+            }
+          ],
+          "connections": [],
+          "bodyRegions": [
+            {
+              "x": 20,
+              "y": 20,
+              "width": 622.3,
+              "height": 254
+            }
+          ],
+          "bodyEvidence": "Exact manufacturer EAGLE dimension-layer outline, complete named header package and projecting source package envelopes. Small component bodies remain representative. The mounted face and connector population are explicit assembly choices; neither the old drawing frame nor a reference carrier establishes compatibility.",
+          "provenance": {
+            "format": "EAGLE XML",
+            "boardFile": "Adafruit PCA9685.brd",
+            "boardSha256": "23450939ba27614243a1dacab0cea22af5d8514872fcb8e63a0863a8102a309c",
+            "sourceBounds": [
+              -31.115,
+              -1.7763568394002505e-15,
+              31.115,
+              25.4
+            ],
+            "selectedConnectors": [
+              "J1",
+              "JP1",
+              "JP2",
+              "JP3",
+              "JP4",
+              "JP5",
+              "JP6"
+            ],
+            "reviewWarnings": [
+              "JP1.1: autogenerated net N$3 requires printed/function label review.",
+              "JP1.4: autogenerated net N$2 requires printed/function label review.",
+              "JP1.7: autogenerated net N$4 requires printed/function label review.",
+              "JP1.10: autogenerated net N$5 requires printed/function label review.",
+              "JP2.1: autogenerated net N$6 requires printed/function label review.",
+              "JP2.4: autogenerated net N$7 requires printed/function label review.",
+              "JP2.7: autogenerated net N$8 requires printed/function label review.",
+              "JP2.10: autogenerated net N$9 requires printed/function label review.",
+              "JP5.1: autogenerated net N$17 requires printed/function label review.",
+              "JP5.4: autogenerated net N$16 requires printed/function label review.",
+              "JP5.7: autogenerated net N$15 requires printed/function label review.",
+              "JP5.10: autogenerated net N$14 requires printed/function label review.",
+              "JP6.1: autogenerated net N$13 requires printed/function label review.",
+              "JP6.4: autogenerated net N$12 requires printed/function label review.",
+              "JP6.7: autogenerated net N$11 requires printed/function label review.",
+              "JP6.10: autogenerated net N$10 requires printed/function label review."
+            ]
+          }
+        },
+        {
+          "id": "joyit-sbc-can01-mcp2515",
+          "name": "Joy-IT MCP2515 CAN Bus Module (SBC-CAN01)",
+          "status": "pending-straight-header-assembly",
+          "source": "https://www.joy-it.net/files/files/Produkte/SBC-CAN01/SBC-CAN01-Manual-20201021.pdf",
+          "reason": "The exact Joy-IT SBC-CAN01 manual confirms eight SPI/supply terminals, the two CAN screw terminals and P2 duplicate CAN connection. It does not provide dimensional post centers or a complete downward male replacement assembly. Preserve all ten modeled terminals and source-proven P2 aliases when that assembly is reviewed.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.joy-it.net/files/files/Produkte/SBC-CAN01/SBC-CAN01-Manual-20201021.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "waveshare-sh1106-oled-b",
+          "name": "Waveshare 1.3-inch SH1106 OLED (B)",
+          "status": "pending-source-dimensions",
+          "source": "https://www.waveshare.com/1.3inch-oled-b.htm",
+          "reason": "The manufacturer ordering table explicitly identifies B as straight/vertical and A as curved/horizontal, while both use a shared A-style dimension illustration. The current dimension drawing establishes the 40.5 ×37.5 mm PCB and mounting-hole inset, but neither it, the manual nor H2 in the schematic specifies numerical installed-post pitch/offset. The full eight-ID pinout matches. This is a credible straight-header candidate awaiting a complete source-coordinate post/body map, not a rejection of B because the shared illustration has a bent header.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.waveshare.com/1.3inch-oled-b.htm"
+            }
+          ]
+        },
+        {
+          "id": "dfrobot-ws2812-dfr0459",
+          "name": "DFRobot WS2812 8×8 RGB LED Matrix",
+          "status": "cable-connector",
+          "source": "https://wiki.dfrobot.com/dfr0459/",
+          "reason": "The current exact manufacturer specification identifies XH2.54 three-pin cable interfaces on the 65 mm panel. A 2.54 mm keyed cable connector is not a downward male header. Retain DIN/5V/GND and DOUT/5V/GND as cable contacts; no fitted breadboard profile is claimed.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://wiki.dfrobot.com/dfr0459/"
+            }
+          ]
+        },
+        {
+          "id": "sparkfun-openlog-13712",
+          "name": "SparkFun OpenLog Serial Logger",
+          "status": "enabled",
+          "source": {
+            "label": "SparkFun OpenLog Serial Logger exact manufacturer EAGLE header and assembly reference",
+            "url": "https://github.com/sparkfun/OpenLog/blob/master/hardware/OpenLog.brd"
+          },
+          "sourceReferences": [
+            {
+              "label": "Existing exact product and pinout reference",
+              "url": "https://learn.sparkfun.com/tutorials/openlog-hookup-guide/hardware-overview"
+            },
+            {
+              "label": "SparkFun OpenLog Serial Logger exact manufacturer EAGLE header and assembly reference",
+              "url": "https://github.com/sparkfun/OpenLog/blob/master/hardware/OpenLog.brd"
+            }
+          ],
+          "reason": "Exact DEV-13712 EAGLE layout and schematic identify all six JP2 posts and the duplicate GND/BLK net. A complete mirrored card-side view puts the U3 microSD socket above the PCB, retaining its source housing envelope and leaving the optional card path empty.",
+          "assembly": "Install straight 2.54 mm male headers with insertion leads below the PCB. Mount with the microSD socket facing up and all six JP2 pins downward. The original electronics-side source is mirrored to the card-side assembly; this keeps the fitted socket and card path above the breadboard.",
+          "physicalView": "breadboard",
+          "retainedPinCount": 6,
+          "contacts": [
+            {
+              "pinId": "grn",
+              "x": 6.35,
+              "y": 8.255
+            },
+            {
+              "pinId": "rxi",
+              "x": 3.81,
+              "y": 8.255
+            },
+            {
+              "pinId": "txo",
+              "x": 1.27,
+              "y": 8.255
+            },
+            {
+              "pinId": "vin",
+              "x": -1.27,
+              "y": 8.255
+            },
+            {
+              "pinId": "gnd",
+              "x": -3.81,
+              "y": 8.255
+            },
+            {
+              "pinId": "blk",
+              "x": -6.35,
+              "y": 8.255
+            }
+          ],
+          "viewPins": [
+            {
+              "pinId": "grn",
+              "x": 159.7,
+              "y": 197.8,
+              "face": "front",
+              "description": "1 — Auto-reset from the serial adapter DTR output through the reset capacitor."
+            },
+            {
+              "pinId": "rxi",
+              "x": 134.3,
+              "y": 197.8,
+              "face": "front",
+              "description": "2 — UART receive, 3.3 V logic. Connect to host TX."
+            },
+            {
+              "pinId": "txo",
+              "x": 108.9,
+              "y": 197.8,
+              "face": "front",
+              "description": "3 — UART transmit, 3.3 V logic. Connect to host RX."
+            },
+            {
+              "pinId": "vin",
+              "x": 83.5,
+              "y": 197.8,
+              "face": "front",
+              "description": "4 — Module power input, 3.3–12 V, with 3.3–5 V recommended."
+            },
+            {
+              "pinId": "gnd",
+              "x": 58.1,
+              "y": 197.8,
+              "face": "front",
+              "description": "5 — Ground reference."
+            },
+            {
+              "pinId": "blk",
+              "x": 32.7,
+              "y": 197.8,
+              "face": "front",
+              "description": "6 — Ground reference."
+            }
+          ],
+          "connections": [
+            [
+              "gnd",
+              "blk"
+            ]
+          ],
+          "bodyRegions": [
+            {
+              "x": 20,
+              "y": 20,
+              "width": 152.4,
+              "height": 190.5
+            }
+          ],
+          "bodyEvidence": "Exact manufacturer EAGLE dimension-layer outline, complete named header package and projecting source package envelopes. Small component bodies remain representative. The mounted face and connector population are explicit assembly choices; neither the old drawing frame nor a reference carrier establishes compatibility.",
+          "provenance": {
+            "format": "EAGLE XML",
+            "boardFile": "OpenLog.brd",
+            "boardSha256": "ba5821b42f633c255d0b6d4cfe7b4d8b0d477664aff0063dff59ae38f8ba480d",
+            "sourceBounds": [
+              0,
+              0,
+              15.24,
+              19.05
+            ],
+            "selectedConnectors": [
+              "JP2"
+            ],
+            "reviewWarnings": []
+          }
+        },
+        {
+          "id": "keyestudio-rc522-ks0067",
+          "name": "Keyestudio RC522 RFID Module",
+          "status": "pending-full-header-review",
+          "source": "https://docs.keyestudio.com/projects/KS0067/en/latest/docs/KS0067.html",
+          "reason": "The exact black KS0067 manufacturer image shows an eight-position side-facing header including IRQ, while the published component models seven stable contact IDs and omits IRQ. Its full header coverage and pinout need review against that exact board. A replacement straight header remains possible, but a partial seven-lead fit must not claim to validate all installed posts.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.keyestudio.com/projects/KS0067/en/latest/docs/KS0067.html"
+            }
+          ]
+        },
+        {
+          "id": "waveshare-uart-gps-neo-6m",
+          "name": "Waveshare UART GPS NEO-6M",
+          "status": "pending-straight-header-assembly",
+          "source": "https://www.waveshare.com/wiki/UART_GPS_NEO-6M",
+          "reason": "The manufacturer distinguishes the original curved/right-angle header from the separate B variant with a straight/vertical header. The named non-B entry also has a remote antenna. Its current drawing is not a dimensioned main-PCB view. A complete matching main-board/post/antenna assembly map is required before sharing a B-style fitted view; the small native wire carrier is not that PCB.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.waveshare.com/wiki/UART_GPS_NEO-6M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "keyestudio-ks0187-acs712",
+          "name": "Keyestudio ACS712 5 A Current Module",
+          "status": "pending-straight-header-assembly",
+          "source": "https://docs.keyestudio.com/projects/KS0187/en/latest/docs/KS0187.html",
+          "reason": "The exact 5 A manufacturer photo shows a side-facing bent three-pin 5V/OUT/GND strip and a two-position current screw terminal. A straight downward strip is plausible, but post/body coordinates for that assembly are not dimensioned. The high-current terminals remain cable connections.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.keyestudio.com/projects/KS0187/en/latest/docs/KS0187.html"
+            }
+          ]
+        },
+        {
+          "id": "keyestudio-ks0186-acs712",
+          "name": "Keyestudio ACS712 20 A Current Module",
+          "status": "pending-straight-header-assembly",
+          "source": "https://docs.keyestudio.com/projects/KS0186/en/latest/docs/KS0186.html",
+          "reason": "The exact 20 A manufacturer photo shows a side-facing bent three-pin 5V/OUT/GND strip and a two-position current screw terminal. A straight downward strip is plausible, but post/body coordinates for that assembly are not dimensioned. The high-current terminals remain cable connections.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.keyestudio.com/projects/KS0186/en/latest/docs/KS0186.html"
+            }
+          ]
+        },
+        {
+          "id": "keyestudio-ks0185-acs712",
+          "name": "Keyestudio ACS712 30 A Current Module",
+          "status": "pending-straight-header-assembly",
+          "source": "https://docs.keyestudio.com/projects/KS0185/en/latest/docs/KS0185.html",
+          "reason": "The exact 30 A manufacturer reference identifies the same five electrical terminals, but a straight downward signal-header assembly still needs its own complete post/body map. Do not inherit the dimensional assessment of the 5 A or 20 A PCB or count the screw-terminal openings as insertion leads.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.keyestudio.com/projects/KS0185/en/latest/docs/KS0185.html"
+            }
+          ]
+        },
+        {
+          "id": "makerfabs-mp1584en-mini",
+          "name": "Makerfabs MP1584EN Mini Buck Module",
+          "status": "pending-source-dimensions",
+          "source": "https://www.makerfabs.com/adjustable-mini-dc-dc-module-mp1584en.html",
+          "reason": "The exact product identifies the green D-SUN MPC1518EN module with four separated corner solder contacts. Those are wire lands, not one reviewed straight 2.54 mm header strip. Full four-post row/column spacing and underbody clearance must be verified for a soldered-post assembly; no generic MP1584 chip footprint is substituted.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.makerfabs.com/adjustable-mini-dc-dc-module-mp1584en.html"
+            }
+          ]
+        },
+        {
+          "id": "dfrobot-dfr0559-solar-power-manager",
+          "name": "DFRobot Solar Power Manager 5V V1.1",
+          "status": "pending-full-header-review",
+          "source": "https://wiki.dfrobot.com/dfr0559/",
+          "reason": "The exact V1.1 manufacturer layout/dimension drawings establish the 63 ×33 mm board and P3/P4/P5 power/control banks. They do not dimension the installed posts or independently establish a complete downward population, the P5 GND/EN/BAT relationships and retained cable contacts. The 3×3-looking area must not be seated in a way that shorts control and supply nets.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://wiki.dfrobot.com/dfr0559/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "hc-sr501-joy-it",
+          "name": "HC-SR501 Adjustable PIR Motion Sensor",
+          "status": "pending-opposite-face-clearance",
+          "source": "https://joy-it.net/en/products/SEN-HC-SR501",
+          "reason": "The Joy-IT lens-side and connector-side photos show that the lens-up assembly has electrolytic capacitors, the two trimmers and mode jumper below the PCB alongside the three supply/output contacts. A simple mirrored three-pin view would hide this real underside material. Exact downward-post pitch, lead protrusion and adequate standoff clearance remain unverified; lens diameter or a generic three-pin carrier is insufficient.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://joy-it.net/en/products/SEN-HC-SR501"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "adafruit-max9814-1713",
+          "name": "Adafruit MAX9814 AGC Microphone Amplifier",
+          "status": "enabled",
+          "source": {
+            "label": "Adafruit MAX9814 AGC Microphone Amplifier exact manufacturer EAGLE header and assembly reference",
+            "url": "https://github.com/adafruit/Adafruit-MAX9814-AGC-Microphone-PCB/blob/master/Adafruit%20MAX9814.brd"
+          },
+          "sourceReferences": [
+            {
+              "label": "Existing exact product and pinout reference",
+              "url": "https://learn.adafruit.com/adafruit-agc-electret-microphone-amplifier-max9814/wiring-and-test"
+            },
+            {
+              "label": "Adafruit MAX9814 AGC Microphone Amplifier exact manufacturer EAGLE header and assembly reference",
+              "url": "https://github.com/adafruit/Adafruit-MAX9814-AGC-Microphone-PCB/blob/master/Adafruit%20MAX9814.brd"
+            }
+          ],
+          "reason": "The source-defined five-position J2 header and 9.7 mm capsule establish an explicit capsule-up mirrored face. Every retained pin is projected once, while the capsule is above the board rather than hidden below it.",
+          "assembly": "Install straight 2.54 mm male headers with insertion leads below the PCB. Mount with the microphone capsule facing up and all five J2 pins below the PCB. The source electronics-side coordinates are mirrored into this capsule-side view so the capsule never occupies the space between PCB and breadboard.",
+          "physicalView": "breadboard",
+          "retainedPinCount": 5,
+          "contacts": [
+            {
+              "pinId": "gnd",
+              "x": 11.303,
+              "y": -4.8895
+            },
+            {
+              "pinId": "vdd",
+              "x": 11.303,
+              "y": -2.3495
+            },
+            {
+              "pinId": "gain",
+              "x": 11.303,
+              "y": 0.1905
+            },
+            {
+              "pinId": "out",
+              "x": 11.303,
+              "y": 2.7305
+            },
+            {
+              "pinId": "ar",
+              "x": 11.303,
+              "y": 5.2705
+            }
+          ],
+          "viewPins": [
+            {
+              "pinId": "gnd",
+              "x": 260.03,
+              "y": 41.59,
+              "face": "front",
+              "description": "Common supply and analog ground."
+            },
+            {
+              "pinId": "vdd",
+              "x": 260.03,
+              "y": 66.99000000000001,
+              "face": "front",
+              "description": "2.7–5.5 V supply input through the onboard ferrite filter."
+            },
+            {
+              "pinId": "gain",
+              "x": 260.03,
+              "y": 92.39,
+              "face": "front",
+              "description": "Maximum gain select. Floating selects 60 dB, GND selects 50 dB, and V+ selects 40 dB."
+            },
+            {
+              "pinId": "out",
+              "x": 260.03,
+              "y": 117.78999999999999,
+              "face": "front",
+              "description": "Amplified analog microphone output with approximately 1.25 V DC bias and up to 2 V peak-to-peak swing."
+            },
+            {
+              "pinId": "ar",
+              "x": 260.03,
+              "y": 143.19,
+              "face": "front",
+              "description": "Attack/release ratio select. Floating selects 1:4000, V+ selects 1:2000, and GND selects 1:500."
+            }
+          ],
+          "connections": [],
+          "bodyRegions": [
+            {
+              "x": 20,
+              "y": 20,
+              "width": 254,
+              "height": 140.97
+            }
+          ],
+          "bodyEvidence": "Exact manufacturer EAGLE dimension-layer outline, complete named header package and projecting source package envelopes. Small component bodies remain representative. The mounted face and connector population are explicit assembly choices; neither the old drawing frame nor a reference carrier establishes compatibility.",
+          "provenance": {
+            "format": "EAGLE XML",
+            "boardFile": "Adafruit MAX9814.brd",
+            "boardSha256": "0f4d3918b70b92574e25a7539a521718f188e42f9cfb584ca04dbff8aa2db830",
+            "sourceBounds": [
+              0,
+              0,
+              25.4,
+              14.097000000000003
+            ],
+            "selectedConnectors": [
+              "J2"
+            ],
+            "reviewWarnings": []
+          }
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "adafruit-qt-rotary-4991",
+          "name": "Adafruit I²C QT Rotary Encoder Breakout",
+          "status": "enabled",
+          "source": {
+            "label": "Adafruit I²C QT Rotary Encoder Breakout exact manufacturer EAGLE header and assembly reference",
+            "url": "https://github.com/adafruit/Adafruit-I2C-QT-Rotary-Encoder-PCB/blob/main/Adafruit%20I2C%20QT%20Rotary%20Encoder.brd"
+          },
+          "sourceReferences": [
+            {
+              "label": "Existing exact product and pinout reference",
+              "url": "https://learn.adafruit.com/adafruit-i2c-qt-rotary-encoder/pinouts"
+            },
+            {
+              "label": "Adafruit I²C QT Rotary Encoder Breakout exact manufacturer EAGLE header and assembly reference",
+              "url": "https://github.com/adafruit/Adafruit-I2C-QT-Rotary-Encoder-PCB/blob/main/Adafruit%20I2C%20QT%20Rotary%20Encoder.brd"
+            },
+            {
+              "label": "Manufacturer assembly and breadboard statement",
+              "url": "https://github.com/adafruit/Adafruit-I2C-QT-Rotary-Encoder-PCB/blob/main/README.md"
+            }
+          ],
+          "reason": "The manufacturer states that exact #4991 is sold bare without an encoder and explicitly supports the six 0.1-inch pads on breadboard. Complete JP2 source geometry is reviewed. The new view shows the bare encoder footprint with electronics/QT face up; a fitted underside encoder is a separate assembly requiring clearance review.",
+          "assembly": "Install straight 2.54 mm male headers with insertion leads below the PCB. This is the bare #4991 board, as sold without an encoder. Populate the entire six-pin JP2 strip downward with the electronics/QT face up. An encoder fitted underneath is a different assembly and requires a new clearance review.",
+          "physicalView": "breadboard",
+          "retainedPinCount": 6,
+          "contacts": [
+            {
+              "pinId": "int",
+              "x": -6.35,
+              "y": 10.16
+            },
+            {
+              "pinId": "sda",
+              "x": -3.81,
+              "y": 10.16
+            },
+            {
+              "pinId": "scl",
+              "x": -1.27,
+              "y": 10.16
+            },
+            {
+              "pinId": "gnd",
+              "x": 1.27,
+              "y": 10.16
+            },
+            {
+              "pinId": "3vo",
+              "x": 3.81,
+              "y": 10.16
+            },
+            {
+              "pinId": "vin",
+              "x": 6.35,
+              "y": 10.16
+            }
+          ],
+          "viewPins": [
+            {
+              "pinId": "int",
+              "x": 83.5,
+              "y": 248.6,
+              "face": "front",
+              "description": "Configurable active-low interrupt output for encoder and switch events."
+            },
+            {
+              "pinId": "sda",
+              "x": 108.9,
+              "y": 248.6,
+              "face": "front",
+              "description": "Level-shifted bidirectional I²C data for 3–5 V host logic."
+            },
+            {
+              "pinId": "scl",
+              "x": 134.3,
+              "y": 248.6,
+              "face": "front",
+              "description": "Level-shifted I²C clock input for 3–5 V host logic."
+            },
+            {
+              "pinId": "gnd",
+              "x": 159.7,
+              "y": 248.6,
+              "face": "front",
+              "description": "Common ground for power and logic."
+            },
+            {
+              "pinId": "3vo",
+              "x": 185.1,
+              "y": 248.6,
+              "face": "front",
+              "description": "Regulated 3.3 V output."
+            },
+            {
+              "pinId": "vin",
+              "x": 210.5,
+              "y": 248.6,
+              "face": "front",
+              "description": "3–5 V board supply. Match VIN to the host logic voltage."
+            }
+          ],
+          "connections": [],
+          "bodyRegions": [
+            {
+              "x": 20,
+              "y": 20,
+              "width": 254,
+              "height": 254
+            }
+          ],
+          "bodyEvidence": "Exact manufacturer EAGLE dimension-layer outline, complete named header package and projecting source package envelopes. Small component bodies remain representative. The mounted face and connector population are explicit assembly choices; neither the old drawing frame nor a reference carrier establishes compatibility.",
+          "provenance": {
+            "format": "EAGLE XML",
+            "boardFile": "Adafruit I2C QT Rotary Encoder.brd",
+            "boardSha256": "483f2206f4e19127362d340a6546160befb9e214d98e3efa5e9222d502139ab2",
+            "sourceBounds": [
+              0,
+              0,
+              25.4,
+              25.4
+            ],
+            "selectedConnectors": [
+              "JP2",
+              "SW1"
+            ],
+            "reviewWarnings": [
+              "SW1.P$GND1: non-orthogonal pad rotation needs an explicit native pattern.",
+              "SW1.P$GND2: non-orthogonal pad rotation needs an explicit native pattern."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "nxp-brkt-stbc-agm01",
+          "name": "NXP BRKT-STBC-AGM01 9-Axis Sensor Breakout",
+          "status": "pending-source-dimensions",
+          "source": "https://www.nxp.com/docs/en/supporting-information/BRKT-STBC-AGM01-QRC.pdf",
+          "reason": "The NXP Rev C quick-reference card identifies the two nine-position through-hole banks and adjacent test points, but does not establish installed-header row separation or material outline dimensions. The official design-files index lists BRKT-STBC-AGM01-BOM behind an account download. The existing native carrier explicitly calls row separation approximate, so its 25.4 mm value must not activate insertion.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.nxp.com/docs/en/supporting-information/BRKT-STBC-AGM01-QRC.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": "max3485",
+          "name": "MAX3485 RS-485 Breakout",
+          "status": "pending-source-identification",
+          "source": "https://www.analog.com/en/products/max3485.html",
+          "reason": "The linked Analog Devices page identifies the MAX3485 chip, not the anonymous eight-contact RS485 breakout PCB. A matching manufacturer module or supplied variant photo with complete TTL/RS485 connector geometry is required; the chip datasheet cannot establish board header centers.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.analog.com/en/products/max3485.html"
+            }
+          ]
+        },
+        {
+          "id": "hw0519",
+          "name": "RS-485 to UART (HW-0519)",
+          "status": "pending-source-identification",
+          "source": "https://tasmota.github.io/docs/SolaX-X1/#hw-0519",
+          "reason": "The linked Tasmota integration page is a third-party HW-0519 wiring reference rather than manufacturer board CAD. It identifies a TTL bank and RS485 terminal block but not exact downward post centers, physical body/terminal projections and board revision. Keep it available for wire connections without inventing a fitted geometry.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://tasmota.github.io/docs/SolaX-X1/#hw-0519"
+            }
+          ]
+        },
+        {
+          "id": "rs485-soil",
+          "name": "RS-485 Soil Sensor",
+          "status": "cable-connector",
+          "source": "https://wiki.dfrobot.com/sen0600/",
+          "reason": "The exact DFRobot SEN0600 reference describes a sealed soil probe with four external supply/RS485 cable conductors. There is no downward male pin-header assembly on this component; its four cable endpoints remain usable.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://wiki.dfrobot.com/sen0600/"
+            }
+          ]
+        },
+        {
+          "id": "ads1220",
+          "name": "ADS1220 24-bit ADC Breakout",
+          "status": "pending-source-identification",
+          "source": "https://www.ti.com/lit/ds/symlink/ads1220.pdf",
+          "reason": "The TI ADS1220 datasheet identifies the ADC silicon, not this generic sixteen-contact breakout PCB. A manufacturer/equivalent exact board revision is required for its two physical banks and inter-row spacing; neither the bare IC package nor a reference carrier is module evidence.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.ti.com/lit/ds/symlink/ads1220.pdf"
+            }
+          ]
+        },
+        {
+          "id": "st3215",
+          "name": "ST3215 Serial Bus Servo",
+          "status": "cable-connector",
+          "source": "https://docs.waveshare.com/ST3215_Servo",
+          "reason": "The Waveshare ST3215 is an enclosed serial-bus servo with a three-conductor supply/data cable interface, not a module with downward breadboard posts. The servo body and cable contacts remain separate from breadboard insertion.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://docs.waveshare.com/ST3215_Servo"
+            }
+          ]
+        },
+        {
+          "id": "ssd1306",
+          "name": "SSD1306 OLED Display",
+          "status": "pending-source-identification",
+          "source": null,
+          "reason": "The generic four-pin SSD1306 board has no manufacturer source. Several common OLED boards reverse GND/VCC or change their pin count, pitch/offset and header orientation. An exact matching GND/VCC/SCL/SDA board revision or supplied photo is needed before creating a physical insertion view.",
+          "sourceReferences": []
+        },
+        {
+          "id": "lm2596",
+          "name": "LM2596 Buck Converter",
+          "status": "pending-source-identification",
+          "source": "https://www.ti.com/product/LM2596",
+          "reason": "The TI source identifies the LM2596 regulator silicon; it does not identify the generic buck PCB or dimension its four separated wire lands. Exact board/contact dimensions and a complete downward-post assembly remain unresolved. A common chip name is not evidence for a particular module spacing.",
+          "sourceReferences": [
+            {
+              "label": "Reviewed published product/technical reference",
+              "url": "https://www.ti.com/product/LM2596"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reconsideredExclusions": [
+    {
+      "id": "dfrobot-dfplayer-mini-dfr0299",
+      "status": "pending-nominal-post-evidence",
+      "source": "https://wiki.dfrobot.com/dfr0299/",
+      "evidence": [
+        "https://dfimg.dfrobot.com/wiki/20532/DFR0299_mp3-player-module_dimension_v1.1.jpg",
+        "https://dfimg.dfrobot.com/wiki/20532/DFR0299_mp3-player-module_svg_1.0.zip"
+      ],
+      "reason": "Rechecked the official dimension image and newly supplied SVG. The 18.03 mm drill-row dimension is not proof of nominal installed-header-post spacing. The uncalibrated illustrative SVG is not manufacturer installed-post CAD and supplies no 17.78 mm assembly datum. Keep insertion disabled pending a real straight-post assembly reference; do not call its 2.54 mm within-row pitch itself incompatible."
+    }
+  ]
+}
