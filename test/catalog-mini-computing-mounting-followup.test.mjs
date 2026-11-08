@@ -69,6 +69,12 @@ test('original and 1K Nano retain all four source-mapped optional JTAG pads and 
   const pins = new Map(one.view.pins.map(pin => [pin.pinId, pin]));
   assert.match(pins.get('p2-2').description, /P3\.2 \/ TDI/);
   assert.match(pins.get('p3-2').description, /P2\.2 \/ TDO/);
+  assert.equal(pins.get('p2-2').number, 'P3.2');
+  assert.equal(pins.get('p3-2').number, 'P2.2');
+  const instance = new Map(instancePins({ componentId: 'sipeed-tang-nano-1k', view: 'breadboard' },
+    componentById.get('sipeed-tang-nano-1k')).map(pin => [pin.id, pin]));
+  assert.equal(instance.get('p2-2').number, 'P3.2');
+  assert.equal(instance.get('p3-2').number, 'P2.2');
   assert.ok(pins.get('p2-2').x > pins.get('p3-2').x);
   assert.ok(one.contacts.every(pin => !/^p[23]-/.test(pin.pinId)));
   const oldPins = new Map(original.view.pins.map(pin => [pin.pinId, pin]));

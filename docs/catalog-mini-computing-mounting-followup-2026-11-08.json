@@ -1362,7 +1362,12 @@
       ],
       "sourceConnections": [],
       "connectionSource": null,
-      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding."
+      "nonContactHardware": "Illustrative source-side hardware; the source-reviewed header centers and PCB outline are independent. USB/HDMI port envelopes contain visible hardware only, with no old face labels, component title or drawing-frame padding.",
+      "physicalTerminalNumberCorrections": {
+        "p2-2": "P3.2",
+        "p3-2": "P2.2"
+      },
+      "physicalNumberScope": "Only the new breadboard view shows these manufacturer terminal numbers. Published IDs, electrical functions, default artwork and native symbols remain unchanged."
     },
     {
       "id": "sipeed-tang-nano-9k",

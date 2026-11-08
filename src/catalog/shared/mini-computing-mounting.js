@@ -11,7 +11,8 @@ export function miniComputingMounting(component, review) {
     const point = review.pins[pin.id];
     if (!point) throw new Error(`${component.id}: missing reviewed physical contact ${pin.id}`);
     return { pinId: pin.id, x: margin + point.x * units, y: margin + point.y * units,
-      face: point.face ?? 'front', description: point.description ?? pin.description };
+      face: point.face ?? 'front', description: point.description ?? pin.description,
+      ...(point.number ? { number: point.number } : {}) };
   });
   const selected = new Set(review.contacts);
   const contacts = points.filter(point => selected.has(point.pinId)).map(point => ({
@@ -43,8 +44,8 @@ export function miniComputingMounting(component, review) {
         const dy = horizontal ? point.y < margin + review.size[1] * units / 2 ? 11 : -11 : 0;
         const copper = review.renderPad?.(pin, point) ??
           circle(point.x, point.y, 7.5, '#bfaa6b', '#e3d7a8') + circle(point.x, point.y, 3.9, '#1b2a29');
-        return `<g><title>${escapeText(`${pin.number} — ${pin.label}. ${point.description}`)}</title>` + copper +
-          (showLabels ? label(point.x + dx, point.y + dy, text.length > 9 ? pin.number : text, 7.4, '#e4eadd', horizontal ? 'middle' : insideLeft ? 'start' : 'end') : '') + '</g>';
+        return `<g><title>${escapeText(`${point.number ?? pin.number} — ${pin.label}. ${point.description}`)}</title>` + copper +
+          (showLabels ? label(point.x + dx, point.y + dy, text.length > 9 ? point.number ?? pin.number : text, 7.4, '#e4eadd', horizontal ? 'middle' : insideLeft ? 'start' : 'end') : '') + '</g>';
       }).join('');
       const clipId = `${component.id}-insertion-material`;
       const mask = sourceRegions.map(region => rect(region.x, region.y, region.width, region.height, 0, '#fff')).join('');

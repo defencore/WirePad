@@ -25,7 +25,7 @@
       },
       {
         "path": "docs/catalog-mini-computing-mounting-followup-2026-11-08.json",
-        "sha256": "c15acf3d27e6924e380645ab4f11a73457f7cce7714f8d0e6f57761d5b771799"
+        "sha256": "0fe2782fd2a41d9956575e77fc70415e34c5d2d02b261fcbfab35e4ebe56c8a8"
       },
       {
         "path": "docs/catalog-radio-diy-mounting-followup-2026-11-08.json",
@@ -219,13 +219,13 @@
     "errors": [],
     "consoleErrors": [],
     "networkDesktop": {
-      "revision": "mounting-followup-20261108",
+      "revision": "mounting-followup-20261108-final",
       "scripts": 619,
       "styles": 10,
       "failures": []
     },
     "networkTouch": {
-      "revision": "mounting-followup-20261108",
+      "revision": "mounting-followup-20261108-final",
       "scripts": 619,
       "styles": 10,
       "failures": []
@@ -235,7 +235,7 @@
     "labelsVerified": 1056
   },
   "buildEquivalence": {
-    "revision": "mounting-followup-20261108",
+    "revision": "mounting-followup-20261108-final",
     "sourceAssets": 634,
     "javaScriptModules": 619,
     "stylesheets": 10,
@@ -243,6 +243,6 @@
   },
   "artifactScope": "Local review sheets, screenshots, exported images and build output are verification artifacts; application sources and source audits are shipped separately.",
   "versionedBrowserProof": {
-    "sha256": "e8e8a18075c831751f7da8d9aaad5e37ecfb76cad54cdece6fb0e230f59c7589"
+    "sha256": "69ba18c261007bb41963221b9e9150ce9dbb0da12726432dfc1773b2e8116c4d"
   }
 }

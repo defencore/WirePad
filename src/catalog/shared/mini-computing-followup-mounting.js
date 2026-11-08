@@ -57,6 +57,7 @@ function nanoReview(component) {
     const jtag = { 'p2-1': [95.3643, 101.9683, 'P2.1 / TMS'], 'p3-2': [97.9043, 101.9683, 'P2.2 / TDO'],
       'p2-2': [110.7186, 101.854, 'P3.2 / TDI'], 'p3-1': [113.2586, 101.854, 'P3.1 / TCK'] };
     for (const [id, [x, y, terminal]] of Object.entries(jtag)) pins[id] = { x: x - xmin, y: ymax - y,
+      number: terminal.split(' / ')[0],
       description: `Manufacturer 6100 physical terminal ${terminal}. The published canvas ID and electrical label are retained. Leave this optional pair unpopulated or upward-facing.` };
     return { size: [21.28521016, 58.3438], pins, contacts: main.map(pin => pin.id), source: sources.one,
       evidence: 'Manufacturer 6100 DXF represents its drilled holes as two-vertex bulged polylines, not CIRCLE entities. Both complete 20-hole rows have X=95.4786/113.2586, Y=51.054+i*2.54 mm and 17.78 mm separation. The PCB outline is X=93.72599238..115.01120254, Y=49.0474..107.3912 mm. Manufacturer front/back photos and the 6100 schematic identify all four optional JTAG holes; stable TDI/TDO IDs are positioned by electrical function despite their historical connector-group mismatch. USB is at the top.',
