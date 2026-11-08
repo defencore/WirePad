@@ -79,7 +79,7 @@ function workspace(t) {
   const commit = history.commit.bind(history);
   history.commit = project => { commits++; return commit(project); };
   const editor = new DiagramEditor(history, () => {}, message => assert.fail(message));
-  const calls = { pan: [], zoom: [], boxes: [], boxQueries: [], paint: [], placement: [] };
+  const calls = { pan: [], zoom: [], boxes: [], boxQueries: [], paint: [], placement: [], refresh: [] };
   const canvas = {
     center: point(0, 0), scale: 1, boxSelection: [selection('a'), selection('b')],
     point(x, y) { return point(this.center.x + x / this.scale, this.center.y + y / this.scale); },
@@ -94,7 +94,7 @@ function workspace(t) {
   };
   let controls;
   controls = bindCanvas({
-    canvas, svg, editor, paint: project => calls.paint.push(project), refresh() { controls.renderDraft(); },
+    canvas, svg, editor, paint: project => calls.paint.push(project), refresh() { calls.refresh.push(controls.gesturing); controls.renderDraft(); },
     openPinPicker() { assert.fail('Selection must not open the pin picker.'); }, dismissInspector() {},
   });
   function send(type, target = svg, properties = {}) {
@@ -126,6 +126,29 @@ test('plain pointer down/up without movement selects the clicked component and b
   assert.equal(editor.project, original);
   assert.equal(history.canUndo, false);
   assert.equal(commits(), 0);
+});
+
+test('gesture boundaries refresh contextual visibility immediately for selection, marquee and pinch', t => {
+  const { editor, controls, canvas, calls, a, svg, send } = workspace(t);
+  canvas.zoomAt = () => {};
+  editor.select('part', 'a');
+  for (const target of [a, svg]) {
+    calls.refresh.length = 0;
+    send('pointerdown', target);
+    assert.deepEqual(calls.refresh, [true], 'The context hides before any drag frame or project edit.');
+    send('pointercancel', target);
+    assert.equal(calls.refresh.at(-1), false, 'Cancellation restores the selected context.');
+  }
+  calls.refresh.length = 0;
+  send('pointerdown', svg, { pointerType: 'touch', pointerId: 1 });
+  assert.deepEqual(calls.refresh, [true]);
+  send('pointerdown', svg, { pointerType: 'touch', pointerId: 2, clientX: 40 });
+  assert.deepEqual(calls.refresh, [true, true], 'A pinch also refreshes before any view movement.');
+  send('pointerup', svg, { pointerType: 'touch', pointerId: 1 });
+  assert.equal(calls.refresh.at(-1), true);
+  send('pointerup', svg, { pointerType: 'touch', pointerId: 2, clientX: 40 });
+  assert.equal(calls.refresh.at(-1), false);
+  assert.equal(controls.gesturing, false);
 });
 
 function formedWorkspace(t) {

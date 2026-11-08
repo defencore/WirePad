@@ -107,6 +107,21 @@
             </div>
           </div>
         </div>
+        <div id="selection-controls" class="selection-controls" role="group" aria-label="Selection controls" hidden>
+          <div class="selection-actions" role="toolbar" aria-label="Selection actions">
+            <button type="button" id="rotate-selection" class="button" data-icon="rotate" title="Rotate clockwise (R)" aria-label="Rotate selected component clockwise" hidden>Rotate <span id="selection-angle" class="selection-angle" aria-hidden="true">0°</span></button>
+            <button type="button" id="toggle-move" class="button" data-icon="sliders" aria-controls="move-controls" aria-expanded="false" hidden>Nudge</button>
+            <button type="button" id="fit-selection" class="button compact" data-icon="selection" title="Fit selection (Shift+F)" aria-label="Fit selection" disabled></button>
+            <button type="button" id="delete-selection" class="button danger" data-icon="trash" aria-label="Delete selection" title="Delete selection (Delete)" hidden>Delete</button>
+          </div>
+          <div id="move-controls" class="move-controls" role="group" aria-label="Move selection" hidden>
+            <span class="move-controls-label">Move</span>
+            <button type="button" class="button" data-nudge-x="-1" data-nudge-y="0" aria-label="Move left" title="Move left">←</button>
+            <button type="button" class="button" data-nudge-x="0" data-nudge-y="-1" aria-label="Move up" title="Move up">↑</button>
+            <button type="button" class="button" data-nudge-x="0" data-nudge-y="1" aria-label="Move down" title="Move down">↓</button>
+            <button type="button" class="button" data-nudge-x="1" data-nudge-y="0" aria-label="Move right" title="Move right">→</button>
+          </div>
+        </div>
         <div class="board-bottom">
           <div class="canvas-guide" data-active="false">
             <span id="canvas-hint" class="canvas-hint canvas-tip" data-icon="info"><span id="canvas-hint-text"></span></span>
@@ -114,19 +129,11 @@
               <button type="button" id="cancel-wire" class="button canvas-action" data-icon="close" hidden><span id="cancel-wire-label">Cancel wire</span></button>
               <button type="button" id="add-bend" class="button canvas-action" data-icon="plus" aria-pressed="false" hidden>Add bend</button>
               <button type="button" id="remove-bend" class="button canvas-action" data-icon="minus" hidden>Remove bend</button>
-              <button type="button" id="toggle-move" class="button canvas-action" data-icon="sliders" aria-controls="move-controls" aria-expanded="false" hidden>Nudge</button>
               <button type="button" id="branch-wire" class="button canvas-action" data-icon="wire" aria-label="Add a branch from the selected wire" hidden>Add branch</button>
               <button type="button" id="inspect-wire" class="button canvas-action" data-icon="sliders" aria-label="Show wire details" hidden>Details</button>
-              <button type="button" id="delete-selection" class="button canvas-action danger" data-icon="trash" aria-label="Delete selection" title="Delete selection (Delete)" hidden>Delete</button>
               <button type="button" id="clear-trace" class="button canvas-action" data-icon="close" hidden>Clear trace</button>
             </div>
-            <div id="move-controls" class="move-controls" role="group" aria-label="Move selection" hidden>
-              <span class="move-controls-label">Move</span>
-              <button type="button" class="button" data-nudge-x="-1" data-nudge-y="0" aria-label="Move left" title="Move left">←</button>
-              <button type="button" class="button" data-nudge-x="0" data-nudge-y="-1" aria-label="Move up" title="Move up">↑</button>
-              <button type="button" class="button" data-nudge-x="0" data-nudge-y="1" aria-label="Move down" title="Move down">↓</button>
-              <button type="button" class="button" data-nudge-x="1" data-nudge-y="0" aria-label="Move right" title="Move right">→</button>
-            </div>
+
           </div>
           <div class="zoom" role="group" aria-label="Canvas navigation">
             <button type="button" class="button compact bare" id="zoom-out" data-icon="minus" aria-label="Zoom out" title="Zoom out"></button>
@@ -134,7 +141,6 @@
             <button type="button" class="button compact bare" id="zoom-in" data-icon="plus" aria-label="Zoom in" title="Zoom in"></button>
             <span class="toolbar-divider" aria-hidden="true"></span>
             <button type="button" id="fit" class="button compact bare fit" data-icon="fit" title="Fit drawing (F / Home)" aria-label="Fit view"></button>
-            <button type="button" id="fit-selection" class="button compact bare fit" data-icon="selection" title="Fit selection (Shift+F)" aria-label="Fit selection" disabled></button>
           </div>
         </div>
         <div id="empty-board" class="empty-board" hidden>
@@ -226,7 +232,7 @@
     <div class="help-section"><h3>Edit your diagram</h3>
       <p>In <strong>Select</strong>, pick a wire to reveal its blue handles. Drag a segment to shift it, or move an end to a new pin, junction or wire. Use <strong>Add bend</strong>, <strong>Remove bend</strong> or <strong>Auto route</strong> to adjust its path.</p>
       <p>Click to select a component, wire or junction. Drag empty canvas to select a group: left to right selects fully enclosed items; right to left selects anything the box touches. Hold <strong>Ctrl/⌘</strong> to toggle items, or <strong>Ctrl/⌘ + Shift</strong> to subtract.</p>
-      <p>Drag a selected component to move the group. Arrow keys move the selection; hold <strong>Shift</strong> for larger steps. <strong>Nudge</strong> provides arrow buttons. Select one component to change its label or orientation in the Inspector.</p>
+      <p>Select a component to show <strong>Rotate</strong>, <strong>Nudge</strong>, <strong>Fit selection</strong> and <strong>Delete</strong> beside it. Rotate turns the component clockwise by 90°. Nudge opens arrow buttons in the same panel. Drag a selected component to move a group. Arrow keys move the selection; hold <strong>Shift</strong> for larger steps. The Inspector contains its label and exact orientation.</p>
       <p>New power connections use red for supply and black for ground. Choose a wire color in the Inspector to override the automatic choice.</p>
     </div>
     <div class="help-section"><h3>Explore and share</h3>

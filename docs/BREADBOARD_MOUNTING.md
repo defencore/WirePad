@@ -13,6 +13,8 @@ Build directly on a configurable breadboard with **814 reviewed insertable parts
 7. Move or rotate the breadboard to carry its seated parts. Undo/Redo restores a complete placement or lead edit in one step. Saved projects and SVG/PNG exports retain the formed geometry and electrical contact positions.
 8. In the breadboard Inspector, set either terminal bank to **1–50 cells per row** and use **Apply layout**. Seated parts move to accessible holes on their original conductors when a complete arrangement is possible. Their physical scale stays fixed. A removed wired contact, a changed wired conductor or an impossible fit rejects the whole edit; Undo/Redo restores the layout and all mounted placements together.
 
+Selecting a part displays one nearby action panel with **Rotate**, **Nudge**, **Fit selection** and **Delete**. Rotate advances 90°; Nudge expands arrows inside that panel. The selection frame follows the visible body with a small outline clearance. Breadboards use their actual plastic outline instead of the SVG's empty border. Module contact functions stay labeled inside the PCB; dense auxiliary contacts may use terminal numbers with full functions on hover. These annotations do not cover adjacent breadboard holes and remain readable through quarter-turns and image export.
+
 The ordinary-part source maps, package facts and eligibility exclusions are recorded in [catalog-breadboard-parts-2026-11-08.json](catalog-breadboard-parts-2026-11-08.json). Devboard references and precise physical body regions are in [catalog-breadboard-mounting-2026-11-08.json](catalog-breadboard-mounting-2026-11-08.json). The additional module review is in [catalog-source-module-mounting-2026-11-08.json](catalog-source-module-mounting-2026-11-08.json).
 
 ## Ordinary through-hole parts
@@ -70,6 +72,8 @@ The focused tests cover source profiles, fixed pitch, complete and partial inser
 All 2003 published component geometries, 4006 default SVG views and generated native geometry remain unchanged. Only the breadboard description and its symbol description update the supported cell range from 10 to 50. Mounting profiles do not change the per-component KiCad accuracy assessments; a successful insertion or native import does not establish production accuracy.
 
 The earlier five-part workbench validation is recorded in [breadboard-workbench-validation-2026-11-08.json](breadboard-workbench-validation-2026-11-08.json). The body/scale and 50-cell correction validation is recorded in [breadboard-scale-validation-2026-11-08.json](breadboard-scale-validation-2026-11-08.json). Focused checks include the pictured C6 placement at every quarter-turn, whole-header insertion and saved-project round trips for all 582 additional modules, rotated/scaled hosts, front-view rotation centers, conductor-preserving reflow, desktop and touch interaction, and SVG/PNG export.
+
+Tight outlines, restored module labels and the consolidated action panel are covered in [contextual-controls-validation-2026-11-08.json](contextual-controls-validation-2026-11-08.json).
 
 The interaction design draws on Fritzing's documented [confirmed breadboard connections and equipotential highlighting](https://fritzing.org/learning/tutorials/building-circuit) and [independent bendable legs](https://blog.fritzing.org/2011/08/18/fritzing-gets-the-bends). WirePad's code and artwork implement these behaviors within its own component and project model.
 

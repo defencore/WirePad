@@ -27,16 +27,19 @@ function workspace(data) {
 
 test('moving a breadboard carries enclosed parts, junctions and full internal routes in one undo step', () => {
   const { editor, history, original } = workspace({
-    parts: [board(), resistor('child', 40, 40), resistor('overhang', 350, 40), resistor('outside', 500, 40)],
+    parts: [board(), resistor('child', 100, 100), resistor('overhang', 350, 40), resistor('outside', 500, 40),
+      resistor('padding', 40, 40)],
     junctions: [{ id: 'a', x: 100, y: 180 }, { id: 'b', x: 280, y: 240 }],
     wires: [wire('inside', joint('a'), joint('b'), [point(150, 180), point(150, 240)]),
-      wire('child-wire', pin('child', '2'), joint('a'), [point(160, 56), point(160, 180)])],
+      wire('child-wire', pin('child', '2'), joint('a'), [point(200, 116), point(200, 180)])],
   });
   const before = original.wires.map(wire => route(original, wire.id));
   const preview = editor.selectionProject(40, 25, original);
   assert.equal(editor.project, original);
   assert.equal(history.canUndo, false);
-  assert.deepEqual(preview.parts.map(({ x, y }) => point(x, y)), [point(40, 25), point(80, 65), point(350, 40), point(500, 40)]);
+  assert.deepEqual(preview.parts.map(({ x, y }) => point(x, y)),
+    [point(40, 25), point(140, 125), point(350, 40), point(500, 40), point(40, 40)]);
+  assert.equal(preview.parts[4], original.parts[4], 'Blank SVG padding does not contain a physical component.');
   assert.deepEqual(preview.junctions.map(({ x, y }) => point(x, y)), [point(140, 205), point(320, 265)]);
   for (const [index, wire] of original.wires.entries()) {
     assert.deepEqual(route(preview, wire.id), before[index].map(p => point(p.x + 40, p.y + 25)));

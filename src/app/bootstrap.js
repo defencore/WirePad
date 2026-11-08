@@ -53,6 +53,7 @@ export function createApplication({ root = document, storage = new ProjectStorag
     const canvas = new DrawingCanvas({
       svg, scene: element('scene'), draft: element('draft'), signal: scope.signal,
       viewInsets: () => workspaceInsets(root, svg),
+      onSelectionViewChange: () => { if (ready && !scope.destroyed) view.positionSelection(); },
       onZoom: zoom => { element('zoom-value').textContent = `${Math.max(1, Math.round(zoom * 100))}%`; },
     });
     scope.cleanup(() => canvas.destroy());
@@ -87,6 +88,7 @@ export function createApplication({ root = document, storage = new ProjectStorag
       root, signal: scope.signal });
     scope.cleanup(library.destroy);
     const view = createWorkspaceView({ editor, history, canvas, controls, panels, persistence, root });
+    scope.cleanup(view.destroy);
     const actions = bindWorkspaceActions({ editor, controls, commands, preferences, view, projectControls,
       library, panels, svg, render, notify, focusCanvas, root, signal: scope.signal });
     scope.cleanup(actions.destroy);

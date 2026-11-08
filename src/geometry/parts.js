@@ -14,7 +14,8 @@ export function partRotation(part, component) {
 }
 
 export function labelPosition(part, component) {
-  if (part.leads || part.scale && mountingFor(component.id)?.viewBounds) {
+  const profile = mountingFor(component.id);
+  if (part.leads || profile?.bodyFor || profile?.type === 'breadboard-module' && (part.scale || part.attachment)) {
     const bounds = partBounds(part, component);
     return translation((bounds.left + bounds.right) / 2 - part.x, bounds.bottom - part.y + 8);
   }
@@ -35,15 +36,34 @@ export function partBounds(part, component = componentForPart(part)) {
       .map(point => pointOnPart(part, { x: point.x, y: point.y }, component));
     return boundsForPoints(points);
   }
-  const view = part.scale && mountingFor(component.id)?.viewBounds;
+  const profile = mountingFor(component.id);
+  const view = profile?.bodyFor?.(component) ??
+    (profile?.type === 'breadboard-module' && (part.scale || part.attachment) && (profile.viewBounds ?? profile.body));
   if (view) return boundsForPoints(rectanglePoints(view).map(point => pointOnPart(part, point, component)));
   return defaultPartBounds(part, component);
 }
 
 export function partViewCenter(component) {
-  const view = mountingFor(component.id)?.viewBounds;
+  const profile = mountingFor(component.id);
+  const view = profile?.viewBounds ?? profile?.bodyFor?.(component);
   return view ? { x: view.x + view.width / 2, y: view.y + view.height / 2 }
     : { x: component.width / 2, y: component.height / 2 };
+}
+
+export function partOutlineLocalBounds(part, component = componentForPart(part)) {
+  if (part.leads) {
+    const bounds = partBounds({ ...part, x: 0, y: 0, rotation: 0, scale: { x: 1, y: 1 } }, component);
+    return { x: bounds.left, y: bounds.top, width: bounds.right - bounds.left, height: bounds.bottom - bounds.top };
+  }
+  const profile = mountingFor(component.id);
+  if (profile?.renderMounted && !part.scale && !part.attachment) {
+    return { x: 0, y: 0, width: component.width, height: component.height };
+  }
+  return profile?.bodyFor?.(component) ?? profile?.body ?? { x: 0, y: 0, width: component.width, height: component.height };
+}
+
+export function partOutlineBounds(part, component = componentForPart(part)) {
+  return boundsForPoints(rectanglePoints(partOutlineLocalBounds(part, component)).map(point => pointOnPart(part, point, component)));
 }
 
 function defaultPartBounds(part, component) {
@@ -73,7 +93,8 @@ export function partBodyBounds(part, component = componentForPart(part)) {
 
 export function partBodyRegions(part, component = componentForPart(part)) {
   const profile = mountingFor(component.id);
-  const regions = profile?.bodyRegions ?? (profile?.body ? [profile.body] : null);
+  const body = profile?.bodyFor?.(component) ?? profile?.body;
+  const regions = profile?.bodyRegions ?? (body ? [body] : null);
   return regions ? regions.map(region => boundsForPoints(rectanglePoints(region)
     .map(point => pointOnPart(part, point, component)))) : [defaultPartBounds(part, component)];
 }

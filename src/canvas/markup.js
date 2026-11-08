@@ -2,10 +2,10 @@ import { mountingFor } from '../catalog/index.js';
 import { partName } from '../model/names.js';
 import { componentForPart } from '../model/part-component.js';
 import { instancePins } from '../model/part-pins.js';
-import { translation, partRotation, labelPosition } from '../geometry/parts.js';
+import { translation, partRotation, labelPosition, partOutlineLocalBounds } from '../geometry/parts.js';
 import { escapeText } from '../shared/text.js';
 import { resolveDrawing, foregroundParts } from './scene.js';
-import { partArt, usesMountedView } from './part-art.js';
+import { partArt, usesCompactBoardView } from './part-art.js';
 
 const SVG_FONT = 'Arial, sans-serif';
 
@@ -18,16 +18,14 @@ export function wireMarkup(wire, d, editing) {
 }
 
 export function partMarkup(part, component, wired, editing, { bodyOnly = false, contactsOnly = false, covered = new Set() } = {}) {
-  const { width, height } = component;
   const profile = mountingFor(component.id);
-  const frontView = usesMountedView(part, component);
-  const mountedBoard = profile?.type === 'breadboard-module' && Boolean(part.attachment || frontView);
-  const bodyBounds = (part.leads || mountedBoard) && (profile?.body ?? profile?.viewBounds);
+  const mountedBoard = usesCompactBoardView(part, component);
+  const bodyBounds = partOutlineLocalBounds(part, component);
   const name = partName(part, component);
   const compact = profile?.type === 'breadboard-part' && Boolean(part.leads || part.attachment);
   const defaultLabel = component.defaultValue && `${component.shortName ?? component.name} · ${component.defaultValue}`;
   const custom = part.label && part.label !== defaultLabel;
-  const hideCaption = mountedBoard && !custom;
+  const hideCaption = (mountedBoard || profile?.type === 'breadboard') && !custom;
   const caption = compact && !custom
     ? component.defaultValue ? `${component.referencePrefix ?? ''} · ${component.defaultValue}` : component.shortName ?? component.name
     : name;
@@ -51,7 +49,7 @@ export function partMarkup(part, component, wired, editing, { bodyOnly = false, 
   }).join('');
   const body = contactsOnly ? '' : editing
     ? `<g class="part-body" data-part="${part.id}" data-part-region="body" role="button" tabindex="0" aria-label="Select ${escapeText(name)}">
-        <rect class="part-focus" x="${bodyBounds ? bodyBounds.x - 8 : -8}" y="${bodyBounds ? bodyBounds.y - 8 : -8}" width="${(bodyBounds?.width ?? width) + 16}" height="${(bodyBounds?.height ?? height) + 16}" rx="9" fill="transparent" stroke="transparent" stroke-width="1.3" stroke-dasharray="4 4"/>
+        <rect class="part-focus" x="${bodyBounds.x - 1.5}" y="${bodyBounds.y - 1.5}" width="${bodyBounds.width + 3}" height="${bodyBounds.height + 3}" rx="5" fill="transparent" stroke="transparent" stroke-width="1.3" stroke-dasharray="4 4"/>
         ${partArt(part, component)}
       </g>`
     : partArt(part, component);

@@ -1,6 +1,5 @@
 const targetSelector = '.canvas-pin, .canvas-junction, .wire-hit, .part-body';
 export const handleSelector = '.wire-handle';
-export const rotationSelector = '.part-rotation-button';
 export const selectionOptions = event => ({
   additive: event.shiftKey && !event.ctrlKey && !event.metaKey,
   toggle: (event.ctrlKey || event.metaKey) && !event.shiftKey,

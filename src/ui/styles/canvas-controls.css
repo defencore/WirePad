@@ -1,18 +1,17 @@
-/* Upright orientation controls stay the same size as the canvas zoom changes. */
-.part-rotation-controls { font-family: Arial, sans-serif; user-select: none; touch-action: none; }
-.part-rotation-panel { fill: #fff; stroke: #c6d7d5; stroke-width: 1; }
-.part-rotation-button { cursor: pointer; outline: none; touch-action: none; }
-.part-rotation-button > rect { fill: #f3f7f7; stroke: #d9e4e2; stroke-width: 1; }
-.part-rotation-button > text { fill: #334d57; font-size: 12px; font-weight: 700; pointer-events: none; }
-.part-rotation-button[aria-pressed="true"] > rect { fill: #d7eee7; stroke: #258a75; stroke-width: 1.5; }
-.part-rotation-button[aria-pressed="true"] > text { fill: #075e50; }
-.part-rotation-button:focus-visible > rect { stroke: #2563eb; stroke-width: 2.5; }
-@media (hover: hover) {
-  .part-rotation-button:hover > rect { fill: #e4f2ee; stroke: #83b5aa; }
+/* Selection actions stay beside the selected hardware at a readable screen size. */
+.selection-controls { position: absolute; z-index: 4; display: flex; flex-direction: column; align-items: stretch; gap: 5px; max-width: calc(100% - 16px); padding: 5px; border: 1px solid #b9cfca; border-radius: 10px; background: #fffffffa; box-shadow: 0 4px 18px #26313d1c; pointer-events: auto; }
+.selection-actions { display: flex; align-items: center; gap: 2px; }
+.selection-actions .button { min-height: 36px; gap: 5px; padding: 0 8px; border-color: transparent; background: transparent; font-size: 11px; white-space: nowrap; }
+.selection-actions .button .icon { width: 15px; height: 15px; }
+.selection-actions .compact { width: 36px; padding: 0; }
+.selection-actions .button:not(:disabled):hover, .selection-actions .button[aria-expanded="true"] { background: #e9f5f0; color: var(--accent-dark); }
+.selection-angle { min-width: 24px; padding: 2px 4px; border-radius: 4px; background: #edf5f2; color: var(--accent-dark); font-size: 10px; font-variant-numeric: tabular-nums; }
+.selection-controls .move-controls { justify-content: center; border: 0; border-top: 1px solid #dce8e5; border-radius: 0; padding: 5px 0 0; box-shadow: none; }
+@media (max-width: 620px), (pointer: coarse) {
+  .selection-actions .button { min-height: 44px; padding-inline: 7px; }
+  .selection-actions .compact, .selection-controls .move-controls .button { width: 44px; min-height: 44px; }
 }
 @media (forced-colors: active) {
-  .part-rotation-panel, .part-rotation-button > rect { fill: Canvas; stroke: ButtonText; }
-  .part-rotation-button > text { fill: ButtonText; }
-  .part-rotation-button[aria-pressed="true"] > rect, .part-rotation-button:focus-visible > rect { stroke: Highlight; stroke-width: 2.5; }
-  .part-rotation-button[aria-pressed="true"] > text { fill: Highlight; }
+  .selection-controls { background: Canvas; border-color: ButtonText; }
+  .selection-angle { color: ButtonText; background: Canvas; }
 }

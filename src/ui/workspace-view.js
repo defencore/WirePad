@@ -2,14 +2,17 @@ import { icon } from './icons.js';
 import { endpointName } from '../model/names.js';
 import { componentForPart } from '../model/part-component.js';
 import { requireElement } from './dom.js';
+import { positionSelectionToolbar } from './selection-toolbar.js';
 
 export function workspaceInsets(root, svg) {
   const frame = svg.getBoundingClientRect();
   if (!frame.height) return {};
   const top = root.querySelector('.canvas-toolbar').getBoundingClientRect();
   const bottom = root.querySelector('.board-bottom').getBoundingClientRect();
+  const selection = root.querySelector('#selection-controls');
+  const selectionHeight = selection && !selection.hidden ? selection.getBoundingClientRect().height + 10 : 0;
   const ratio = svg.clientHeight / frame.height;
-  return { top: Math.max(0, top.bottom - frame.top + 12) * ratio,
+  return { top: (Math.max(0, top.bottom - frame.top + 12) + selectionHeight) * ratio,
     bottom: Math.max(0, frame.bottom - bottom.top + 12) * ratio };
 }
 
@@ -32,6 +35,10 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
   const redo = element('redo');
   const fitSelection = element('fit-selection');
   const deleteSelection = element('delete-selection');
+  const selectionControls = element('selection-controls');
+  const rotateSelection = element('rotate-selection');
+  const selectionAngle = element('selection-angle');
+  const selectionButtons = [...selectionControls.querySelectorAll('.selection-actions button')];
   const guidePanel = root.querySelector('.canvas-guide');
   const moveToggle = element('toggle-move');
   const moveControls = element('move-controls');
@@ -39,6 +46,17 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
   const warningText = element('workspace-warning-text');
   const modes = [...root.querySelectorAll('.tool-group [data-mode]')];
   let moveOpen = false;
+  let moveSelection;
+
+  function selectionVisible() {
+    return editor.selections.length > 0 && controls.mode === 'select' && !editor.pending &&
+      !['from', 'to', 'add'].includes(controls.wireTool?.kind) && !controls.gesturing;
+  }
+
+  function positionSelection() {
+    selectionControls.hidden = !selectionVisible();
+    if (!selectionControls.hidden) positionSelectionToolbar({ toolbar: selectionControls, canvas, selections: editor.selections, root });
+  }
 
   function canvasHint() {
     if (controls.mode === 'pan') return controls.temporaryPan
@@ -104,7 +122,9 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
     const editableWire = selectedWire && editor.mode === 'select';
     const selected = editor.selections.length > 0;
     const movable = controls.movable;
-    if (!movable) moveOpen = false;
+    const selectionKey = editor.selections.map(item => `${item.type}/${item.id}`).sort().join('|');
+    if (!movable || !selectionVisible() || moveSelection !== selectionKey) moveOpen = false;
+    moveSelection = selectionKey;
     moveToggle.hidden = !movable;
     moveToggle.setAttribute('aria-expanded', String(moveOpen));
     moveControls.hidden = !moveOpen;
@@ -123,6 +143,17 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
     redo.disabled = !history.canRedo;
     fitSelection.disabled = !selected || Boolean(editor.pending || editingWire);
     deleteSelection.hidden = !selected || routing || editingWire || tool === 'bend' || controls.mode === 'pan';
+    rotateSelection.hidden = editor.selections.length !== 1 || !editor.part;
+    if (editor.part) {
+      const angle = editor.part.rotation ?? 0;
+      selectionAngle.textContent = `${angle}°`;
+      rotateSelection.title = `Rotate clockwise · Current orientation ${angle}° (R)`;
+    }
+    const available = selectionButtons.filter(button => !button.hidden && !button.disabled);
+    const tabStop = available.includes(document.activeElement) ? document.activeElement
+      : available.find(button => button.tabIndex === 0) ?? available[0];
+    for (const button of selectionButtons) button.tabIndex = button === tabStop ? 0 : -1;
+    positionSelection();
     guidePanel.dataset.active = String(routing || editingWire);
     cancelWire.hidden = !routing && !editingWire;
     cancelWireLabel.textContent = editingWire ? 'Cancel edit' : 'Cancel wire';
@@ -139,8 +170,11 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
 
   return {
     render,
-    closeMove() { moveOpen = false; },
+    positionSelection,
+    destroy() { selectionControls.hidden = moveControls.hidden = true; },
+    closeMove() { const wasOpen = moveOpen; moveOpen = false; return wasOpen; },
     toggleMove() {
+      if (!controls.movable || !selectionVisible()) return;
       moveOpen = !moveOpen;
       render();
       if (moveOpen) moveControls.querySelector('button:not(:disabled)').focus({ preventScroll: true });

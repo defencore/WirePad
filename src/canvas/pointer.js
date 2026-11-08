@@ -1,4 +1,4 @@
-import { rotationSelector, modifiesSelection, selectionOptions } from './targets.js';
+import { modifiesSelection, selectionOptions } from './targets.js';
 import { updateItem } from '../model/items.js';
 import { componentForPart } from '../model/part-component.js';
 import { mountingFor } from '../catalog/index.js';
@@ -21,7 +21,7 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
   const { currentTool, clearWireTool, panWithShift, moveCursor, renderDraft, connectionPreview, dropConnection, tap } = actions;
   const touches = new Map();
   const captures = new Set();
-  let gesture, frame, frameAction, pinch, multipleTouches = false, rotationPress;
+  let gesture, frame, frameAction, pinch, multipleTouches = false;
 
   function capture(id) {
     svg.setPointerCapture(id);
@@ -69,13 +69,7 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     const { x, y, distance } = touchPair(...touches.values());
     pinch = { ids, distance: Math.max(1, distance), scale: canvas.scale, anchor: canvas.point(x, y) };
     svg.classList.add('dragging');
-  }
-
-  function rotateFromControl(button, partId = button.closest('.part-rotation-controls').dataset.rotationPart) {
-    if (gesture || rotationPress || multipleTouches || touches.size || currentMode() !== 'select' || editor.pending) return;
-    if (editor.part?.id === partId && button.closest('.part-rotation-controls').dataset.rotationPart === partId) {
-      editor.rotatePart(Number(button.dataset.partRotation));
-    }
+    actions.refresh?.();
   }
 
   function surfaceInterior(hit) {
@@ -92,19 +86,6 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     if (event.pointerType !== 'touch') {
       if (event.ctrlKey || event.metaKey) panWithShift(false);
       else if (event.shiftKey) panWithShift(true);
-    }
-    const rotationButton = event.target.closest(rotationSelector);
-    if ((event.button === 0 && !temporaryPan() && event.target.closest('.part-rotation-controls')) || rotationPress) {
-      event.preventDefault();
-      event.stopPropagation();
-      if (rotationPress || !rotationButton || event.button !== 0 || gesture || multipleTouches || touches.size) return;
-      rotationButton.focus({ preventScroll: true });
-      rotationPress = {
-        id: event.pointerId, button: rotationButton, partId: rotationButton.closest('.part-rotation-controls').dataset.rotationPart,
-        ...clientPoint(event), touch: event.pointerType === 'touch',
-      };
-      capture(event.pointerId);
-      return;
     }
     if (![0, 1, 2].includes(event.button)) return;
     const touch = event.pointerType === 'touch';
@@ -182,6 +163,7 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     capture(event.pointerId);
     if (pin) actions.hoverAt?.(hit, { net: true });
     else actions.clearHover?.();
+    actions.refresh?.();
   });
 
   function move(action, event) {
@@ -259,7 +241,6 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
   }
 
   scope.on(svg, 'pointermove', event => {
-    if (rotationPress) return;
     if (touches.has(event.pointerId)) touches.set(event.pointerId, clientPoint(event));
     if (pinch) {
       schedule(() => applyPinch());
@@ -293,18 +274,6 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
   });
 
   function finishGesture(event) {
-    if (rotationPress?.id === event.pointerId) {
-      const press = rotationPress;
-      rotationPress = null;
-      event.preventDefault();
-      event.stopPropagation();
-      const target = document.elementFromPoint(event.clientX, event.clientY)?.closest(rotationSelector);
-      if (event.type === 'pointerup' && target === press.button &&
-        Math.hypot(event.clientX - press.x, event.clientY - press.y) <= (press.touch ? 7 : 3)) {
-        rotateFromControl(press.button, press.partId);
-      }
-      return;
-    }
     const wasTouch = touches.has(event.pointerId);
     if (wasTouch && pinch?.ids.includes(event.pointerId)) {
       if (event.type === 'pointerup') {
@@ -352,21 +321,17 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
   }
 
   function finish(event) {
+    const active = Boolean(gesture || multipleTouches);
     try { finishGesture(event); }
-    finally { release(event.pointerId); }
+    finally {
+      release(event.pointerId);
+      if (active) actions.refresh?.();
+    }
   }
 
   for (const event of ['pointerup', 'pointercancel', 'lostpointercapture']) scope.on(svg, event, finish);
   scope.on(svg, 'contextmenu', event => event.preventDefault());
   scope.on(svg, 'auxclick', event => event.preventDefault());
-
-  scope.on(svg, 'click', event => {
-    const button = event.target.closest(rotationSelector);
-    if (!event.target.closest('.part-rotation-controls')) return;
-    event.preventDefault();
-    event.stopPropagation();
-    if (button && event.detail === 0) rotateFromControl(button);
-  });
 
   scope.on(svg, 'wheel', event => {
     event.preventDefault();
@@ -383,8 +348,9 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
 
   function cancel() {
     cancelFrame();
+    const active = Boolean(gesture || multipleTouches);
     const preview = gesture?.next;
-    gesture = rotationPress = pinch = null;
+    gesture = pinch = null;
     multipleTouches = false;
     touches.clear();
     for (const id of [...captures]) release(id);
@@ -394,6 +360,7 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     canvas.showPlacementPreview();
     actions.clearHover?.();
     if (preview) paint(editor.project);
+    if (active) actions.refresh?.();
   }
 
   scope.on(document, 'keydown', event => {
@@ -404,9 +371,9 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
   scope.cleanup(cancel);
 
   return {
-    cancel, rotate: rotateFromControl,
+    cancel,
     get busy() { return Boolean(gesture || multipleTouches); },
-    get gesturing() { return Boolean(gesture || multipleTouches || rotationPress); },
+    get gesturing() { return Boolean(gesture || multipleTouches); },
     get connecting() { return ['connect', 'reconnect'].includes(gesture?.type); },
     get activeHandle() {
       return gesture?.handle && gesture.moved

@@ -1,12 +1,16 @@
 import { componentArt, mountingFor } from '../catalog/index.js';
+import { contactLabels } from './contact-labels.js';
 
-export function usesMountedView(part, component) {
-  return Boolean(part.scale && mountingFor(component.id)?.renderMounted);
+export function usesCompactBoardView(part, component) {
+  return Boolean((part.scale || part.attachment) && mountingFor(component.id)?.type === 'breadboard-module');
 }
 
 export function partArt(part, component, { labels = true } = {}) {
   const profile = mountingFor(component.id);
-  if (usesMountedView(part, component)) return svgFrame(component, profile.renderMounted(component, false));
+  if (usesCompactBoardView(part, component)) {
+    const graphic = profile.renderMounted ? profile.renderMounted(component, false) : componentArt(component, { labels: false });
+    return svgFrame(component, graphic + (labels ? contactLabels(component, profile, part.rotation ?? 0) : ''));
+  }
   if (!part.leads) return componentArt(component, { labels: labels && !(part.attachment &&
     (profile?.type === 'breadboard-module' || profile?.type === 'breadboard-part' && profile.mode === 'rigid')) });
   return svgFrame(component, profile.render(component, part.leads, labels));

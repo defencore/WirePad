@@ -2,7 +2,7 @@ import { componentForPart } from '../model/part-component.js';
 import { partScale } from '../model/part-placement.js';
 import { translation, partRotation, labelPosition } from '../geometry/parts.js';
 import { wireMarkup, partMarkup, junctionDot } from './markup.js';
-import { usesMountedView } from './part-art.js';
+import { usesCompactBoardView } from './part-art.js';
 
 export const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
@@ -109,9 +109,10 @@ export function updatePart(layer, entry, { part, connected, covered = new Set() 
   const { label, x, y, rotation } = part;
   const scale = partScale(part);
   const component = componentForPart(part);
-  const mountedView = usesMountedView(part, component);
+  const mountedView = usesCompactBoardView(part, component);
   if (!entry || entry.component !== component || entry.label !== label || entry.leads !== part.leads ||
-      Boolean(entry.seated) !== Boolean(part.attachment) || Boolean(entry.mountedView) !== mountedView) {
+      Boolean(entry.seated) !== Boolean(part.attachment) || Boolean(entry.mountedView) !== mountedView ||
+      mountedView && entry.rotation !== rotation) {
     const node = entry?.node ?? group(layer);
     entry?.background?.remove();
     node.innerHTML = partMarkup(part, component, connected, true);

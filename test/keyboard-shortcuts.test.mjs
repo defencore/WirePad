@@ -44,7 +44,7 @@ test('workspace shortcuts respect text entry, canvas focus and the shortcut pref
     panels: { switchRegion: backwards => calls.push(['region', backwards]) },
     cancel: () => calls.push('cancel'),
     enabled: () => enabled,
-    svg, moveControls: { contains: () => false }, modeButtons,
+    svg, selectionControls: { contains: target => Boolean(target.selectionControls) }, moveControls: { contains: () => false }, modeButtons,
   });
   function press(key, options = {}) {
     const event = {
@@ -59,6 +59,8 @@ test('workspace shortcuts respect text entry, canvas focus and the shortcut pref
   press('Delete');
   assert.deepEqual(calls, []);
   press('Delete', { target: { ...target, canvas: true } });
+  assert.deepEqual(calls.splice(0), ['delete']);
+  press('Delete', { target: { ...target, selectionControls: true } });
   assert.deepEqual(calls.splice(0), ['delete']);
 
   const input = { ...target, matches: () => true };

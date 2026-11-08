@@ -11,6 +11,8 @@ class Element extends EventTarget {
   hidden = false;
   disabled = false;
   children = [];
+  style = {};
+  getBoundingClientRect() { return { left: 0, top: 0, right: 800, bottom: 600, width: 800, height: 600 }; }
   setAttribute(name, value) { this.attributes.set(name, String(value)); }
   removeAttribute(name) { this.attributes.delete(name); }
   getAttribute(name) { return this.attributes.get(name) ?? null; }
@@ -20,7 +22,7 @@ class Element extends EventTarget {
     return this.children.find(child => !child.disabled) ?? null;
   }
   contains(target) { return target === this || this.children.includes(target); }
-  focus() {}
+  focus() { globalThis.document.activeElement = this; }
   close() { this.open = false; }
 }
 
@@ -32,9 +34,13 @@ function workspace(t) {
     'remove-bend', 'branch-wire', 'inspect-wire', 'clear-trace', 'editor-status-text', 'save-state', 'empty-board',
     'undo', 'redo', 'fit-selection', 'delete-selection', 'toggle-move', 'move-controls', 'workspace-warning',
     'workspace-warning-text', 'single-key-shortcuts', 'help', 'help-dialog', 'fit', 'zoom-in', 'zoom-out',
-    'zoom-value', 'browse-components', 'skip-to-canvas', 'download-unsaved'];
+    'zoom-value', 'browse-components', 'skip-to-canvas', 'download-unsaved', 'selection-controls', 'rotate-selection', 'selection-angle'];
   const nodes = Object.fromEntries(ids.map(id => [id, new Element()]));
-  const guide = new Element(), toolbar = new Element();
+  const guide = new Element(), toolbar = new Element(), selectionToolbar = new Element(), bottom = new Element();
+  nodes['selection-controls'].children = selectionToolbar.children = ['rotate-selection', 'toggle-move', 'fit-selection', 'delete-selection'].map(id => nodes[id]);
+  nodes['selection-controls'].parentElement = new Element();
+  nodes['selection-controls'].getBoundingClientRect = () => ({ width: 300, height: 48 });
+  bottom.getBoundingClientRect = () => ({ left: 0, top: 540, right: 800, bottom: 600, width: 800, height: 60 });
   const modes = ['select', 'wire', 'trace', 'pan'].map(mode => {
     const button = new Element();
     button.dataset.mode = mode;
@@ -44,13 +50,15 @@ function workspace(t) {
   });
   toolbar.children = modes;
   const root = new Element();
-  root.querySelector = selector => selector === '.canvas-guide' ? guide : selector === '.tool-group' ? toolbar : nodes[selector.slice(1)] ?? null;
+  root.querySelector = selector => selector === '.canvas-guide' ? guide : selector === '.tool-group' ? toolbar : selector === '.selection-actions' ? selectionToolbar : selector === '.canvas-toolbar' ? toolbar : selector === '.board-bottom' ? bottom : nodes[selector.slice(1)] ?? null;
   root.querySelectorAll = () => modes;
   const editor = { project: { title: 'Existing wiring', parts: [], wires: [] }, selections: [], mode: 'select',
     pending: null, wire: null, part: null, trace: null, traceSeed: null, hasDrawing: false, canMoveSelection: false };
   const history = { canUndo: false, canRedo: false };
   const controls = { mode: 'select', wireTool: null, temporaryPan: false, movable: null, gesturing: false };
-  const canvas = { tracedNet: null, controls: { coarsePointer: { matches: false } } };
+  const svg = Object.assign(new Element(), { clientWidth: 800, clientHeight: 600 });
+  const geometry = { parts: new Map(['one', 'two'].map((id, index) => [id, { part: { id, componentId: 'arduino-nano', x: index * 200, y: 0 } }])), junctions: new Map() };
+  const canvas = { svg, geometry, center: { x: 150, y: 150 }, scale: 1, wireRoute: () => [{ x: 0, y: 0 }, { x: 100, y: 100 }], tracedNet: null, controls: { coarsePointer: { matches: false } } };
   const panels = { isCompact: () => false };
   const persistence = { status: 'saved', message: '' };
   const view = createWorkspaceView({ editor, history, controls, canvas, panels, persistence, root });
@@ -60,6 +68,7 @@ function workspace(t) {
 test('floating selection controls follow selection, temporary pan and history without changing the project', t => {
   const { view, editor, history, controls, nodes, modes, guide } = workspace(t);
   view.render();
+  assert.equal(nodes['selection-controls'].hidden, true);
   assert.equal(nodes['fit-selection'].disabled, true);
   assert.equal(nodes['delete-selection'].hidden, true);
   assert.equal(nodes.undo.disabled, true);
@@ -72,6 +81,7 @@ test('floating selection controls follow selection, temporary pan and history wi
   history.canUndo = true;
   const before = JSON.stringify(editor.project);
   view.render();
+  assert.equal(nodes['selection-controls'].hidden, false);
   assert.equal(nodes['fit-selection'].disabled, false);
   assert.equal(nodes['delete-selection'].hidden, false);
   assert.equal(nodes.undo.disabled, false);
@@ -82,6 +92,7 @@ test('floating selection controls follow selection, temporary pan and history wi
   controls.mode = 'pan';
   controls.temporaryPan = true;
   view.render();
+  assert.equal(nodes['selection-controls'].hidden, true);
   assert.equal(nodes['delete-selection'].hidden, true);
   assert.equal(nodes['fit-selection'].disabled, false);
   assert.equal(nodes['editor-status-text'].textContent, 'Panning');
@@ -99,6 +110,38 @@ test('floating selection controls follow selection, temporary pan and history wi
   assert.equal(nodes.undo.disabled, true);
   assert.equal(nodes.redo.disabled, false);
   assert.equal(JSON.stringify(editor.project), before);
+});
+
+test('selected component actions keep one angle display and attach the nudge panel to the same context', t => {
+  const { view, editor, controls, nodes, canvas } = workspace(t);
+  editor.part = canvas.geometry.parts.get('one').part;
+  editor.selections = [{ type: 'part', id: 'one' }];
+  controls.movable = { kind: 'part', label: 'component' };
+  const arrow = new Element(); nodes['move-controls'].children = [arrow];
+  view.render();
+  assert.equal(nodes['rotate-selection'].hidden, false);
+  assert.equal(nodes['selection-angle'].textContent, '0°');
+  view.toggleMove();
+  assert.equal(nodes['move-controls'].hidden, false);
+  assert.equal(nodes['toggle-move'].getAttribute('aria-expanded'), 'true');
+  assert.equal(globalThis.document.activeElement, arrow);
+  editor.part.rotation = 90;
+  view.render();
+  assert.equal(nodes['selection-angle'].textContent, '90°');
+  assert.equal(nodes['move-controls'].hidden, false, 'An edit on the same selection keeps the panel open.');
+  controls.gesturing = true;
+  view.positionSelection();
+  assert.equal(nodes['selection-controls'].hidden, true);
+  controls.gesturing = false;
+  view.positionSelection();
+  assert.equal(nodes['selection-controls'].hidden, false);
+  editor.selections.push({ type: 'part', id: 'two' });
+  editor.part = null;
+  view.render();
+  assert.equal(nodes['rotate-selection'].hidden, true);
+  assert.equal(nodes['move-controls'].hidden, true);
+  view.destroy();
+  assert.equal(nodes['selection-controls'].hidden, true);
 });
 
 test('routing and reconnecting keep the active hint visible and suppress selection-wide actions', t => {
@@ -137,7 +180,7 @@ test('floating Fit selection and Delete actions reuse commands, restore focus, a
   const calls = [];
   const binding = bindWorkspaceActions({
     editor, controls, panels, view, root, svg: new Element(),
-    commands: { fit: selection => calls.push(['fit', Boolean(selection)]), deleteSelection: () => calls.push(['delete']),
+    commands: { rotate: () => calls.push(['rotate']), fit: selection => calls.push(['fit', Boolean(selection)]), deleteSelection: () => calls.push(['delete']),
       undo() {}, redo() {}, cancelWire() {}, addBend() {}, removeBend() {}, branchWire() {}, clearTrace() {} },
     preferences: { singleKeyShortcuts: true }, projectControls: { saveFile() {} }, library: { browse() {} },
     render() {}, notify() {}, focusCanvas: () => calls.push(['focus']),
@@ -148,17 +191,25 @@ test('floating Fit selection and Delete actions reuse commands, restore focus, a
   Object.defineProperty(fitSelected, 'shiftKey', { value: true });
   nodes.fit.dispatchEvent(fitSelected);
   nodes['delete-selection'].dispatchEvent(new Event('click'));
-  assert.deepEqual(calls, [['fit', true], ['fit', false], ['fit', true], ['delete'], ['focus']]);
+  nodes['rotate-selection'].dispatchEvent(new Event('click'));
+  assert.deepEqual(calls, [['fit', true], ['focus'], ['fit', false], ['fit', true], ['delete'], ['focus'], ['rotate'], ['focus']]);
   binding.destroy();
   nodes['fit-selection'].dispatchEvent(new Event('click'));
   nodes['delete-selection'].dispatchEvent(new Event('click'));
-  assert.equal(calls.length, 5);
+  nodes['rotate-selection'].dispatchEvent(new Event('click'));
+  assert.equal(calls.length, 8);
 });
 
 test('fit insets use the visible floating controls and normalize CSS-scaled canvas coordinates', () => {
-  const root = { querySelector: selector => ({ getBoundingClientRect: () => selector === '.canvas-toolbar' ? { bottom: 180 } : { top: 700 } }) };
+  const selection = { hidden: true, height: 54, getBoundingClientRect() { return { height: this.height }; } };
+  const root = { querySelector: selector => selector === '#selection-controls' ? selection
+    : ({ getBoundingClientRect: () => selector === '.canvas-toolbar' ? { bottom: 180 } : { top: 700 } }) };
   const svg = { clientHeight: 1000, getBoundingClientRect: () => ({ top: 100, bottom: 900, height: 800 }) };
   assert.deepEqual(workspaceInsets(root, svg), { top: 115, bottom: 265 });
+  selection.hidden = false;
+  assert.deepEqual(workspaceInsets(root, svg), { top: 195, bottom: 265 });
+  selection.height = 105;
+  assert.deepEqual(workspaceInsets(root, svg), { top: 258.75, bottom: 265 });
   svg.getBoundingClientRect = () => ({ height: 0 });
   assert.deepEqual(workspaceInsets(root, svg), {});
 });

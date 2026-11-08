@@ -5,6 +5,7 @@ import { DrawingCanvas } from '../src/canvas/canvas.js';
 test('destroy and remount remove generated SVG layers and disconnect each observer once', t => {
   class Node extends EventTarget {
     children = [];
+    dataset = {};
     constructor(document) { super(); this.ownerDocument = document; }
     setAttribute() {}
     append(...nodes) {
@@ -35,16 +36,20 @@ test('destroy and remount remove generated SVG layers and disconnect each observ
     Object.defineProperty(globalThis, key, { configurable: true, value });
     t.after(() => previous ? Object.defineProperty(globalThis, key, previous) : delete globalThis[key]);
   }
-  const first = new DrawingCanvas({ svg, scene, draft, onZoom() {} });
+  let selectionUpdates = 0;
+  const first = new DrawingCanvas({ svg, scene, draft, onZoom() {}, onSelectionViewChange() { selectionUpdates++; } });
   assert.equal(scene.children.length, 5);
-  assert.equal(svg.children.length, 10);
+  assert.equal(svg.children.length, 9);
+  first.onViewChange();
+  assert.equal(selectionUpdates, 1);
   first.destroy(); first.destroy();
+  assert.equal(first.selectionViewChanged, undefined);
   assert.equal(scene.children.length, 0);
   assert.deepEqual(svg.children, [scene, draft]);
   assert.equal(observers[0].disconnected, 1);
   const second = new DrawingCanvas({ svg, scene, draft, onZoom() {} });
   assert.equal(scene.children.length, 5);
-  assert.equal(svg.children.length, 10);
+  assert.equal(svg.children.length, 9);
   second.destroy();
   assert.equal(observers[1].disconnected, 1);
   assert.deepEqual(svg.children, [scene, draft]);

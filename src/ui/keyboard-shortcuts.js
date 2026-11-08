@@ -2,7 +2,7 @@ import { createScope } from '../shared/lifecycle.js';
 const modeKeys = { select: 'V', wire: 'W', trace: 'T', pan: 'H' };
 
 export function bindKeyboardShortcuts({ commands, controls, library, projectControls, panels,
-  cancel, enabled, svg, moveControls, modeButtons, root = document, signal }) {
+  cancel, enabled, svg, selectionControls, moveControls, modeButtons, root = document, signal }) {
   const scope = createScope({ signal });
   function updateHints() {
     for (const button of modeButtons) {
@@ -64,7 +64,8 @@ export function bindKeyboardShortcuts({ commands, controls, library, projectCont
     }
     if (event.ctrlKey || event.metaKey || event.altKey) return;
     if (!enabled() && key.length === 1 && key !== ' ') return;
-    if (['delete', 'backspace'].includes(key) && !svg.contains(event.target) && event.target !== svg && !moveControls.contains(event.target)) return;
+    if (['delete', 'backspace'].includes(key) && !svg.contains(event.target) && event.target !== svg &&
+        !selectionControls.contains(event.target) && !moveControls.contains(event.target)) return;
     if (key === ' ' && !event.target.closest('button, a, summary')) {
       event.preventDefault();
       controls.panWithSpace(true);

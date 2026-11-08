@@ -180,7 +180,7 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
 
   const pointer = bindCanvasPointer({
     scope, svg, canvas, editor, paint, targets, mode: currentMode, temporaryPan,
-    actions: { currentTool, clearWireTool, panWithShift, renderDraft, connectionPreview, dropConnection, tap,
+    actions: { currentTool, clearWireTool, panWithShift, renderDraft, connectionPreview, dropConnection, tap, refresh,
       clearHover, hoverAt, keepLeadPositions: () => keepLeadPositions,
       moveCursor(point, endpoint = null) { cursor = point; hover = endpoint; },
     },
@@ -225,11 +225,11 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     return moved;
   }
 
-  const keyboard = bindCanvasKeyboard({
+  bindCanvasKeyboard({
     scope, svg, canvas, editor, targets,
     mode: currentMode, busy: () => Boolean(pointer.busy),
     actions: {
-      rotate: pointer.rotate, movementTarget, nudge, removeBend, tap,
+      movementTarget, nudge, removeBend, tap,
       focusEndpoint(endpoint) {
         hover = endpoint;
         cursor = position(endpoint);
@@ -250,7 +250,7 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     refresh();
   }
   function syncShift(event, active) {
-    const editing = event.target.matches('input, select, textarea, [contenteditable]');
+    const editing = event.target.matches('input, select, textarea, [contenteditable]') || event.target.closest('.selection-controls');
     panWithShift(Boolean(active && !event.ctrlKey && !event.metaKey && !event.isComposing &&
       !editing && !document.querySelector('dialog[open]')));
   }
@@ -263,7 +263,6 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
   });
   scope.on(window, 'blur', () => {
     pointer.cancel();
-    keyboard.reset();
     svg.classList.remove('dragging', 'selecting');
     canvas.showSelectionBox();
     clearHover();
@@ -286,7 +285,6 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     pointer.cancel();
     wireTool = pendingNudge = cursor = hover = null;
     holdingSpace = holdingShift = false;
-    keyboard.reset();
     canvas.showDraft(null);
     clearHover();
   });

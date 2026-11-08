@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { componentArt, componentById, configurationFor, mountingFor } from '../src/catalog/index.js';
 import { configurationMarkup } from '../src/ui/inspector/configuration.js';
 import { partMarkup } from '../src/canvas/markup.js';
-import { partArt, usesMountedView } from '../src/canvas/part-art.js';
+import { partArt, usesCompactBoardView } from '../src/canvas/part-art.js';
 import { resolveDrawing } from '../src/canvas/scene.js';
 import { breadboardFeedback } from '../src/canvas/breadboard-feedback.js';
 import { pointOnPart } from '../src/geometry/parts.js';
@@ -49,19 +49,20 @@ test('breadboard Inspector uses the catalog configuration bounds, including fift
   }
 });
 
-test('seated devboard captions and pin legends clear nearby holes while custom labels stay visible', () => {
+test('compact devboard labels remain on the PCB while automatic captions clear nearby holes', () => {
   const { component, profile, part } = fixture();
   const markup = partMarkup(part, component, new Set(), true);
   assert.match(markup, /display="none" aria-hidden="true"[^>]*data-part-region="caption"/);
-  assert.ok(markup.includes(`class="part-focus" x="${profile.body.x - 8}" y="${profile.body.y - 8}" width="${profile.body.width + 16}"`));
-  assert.equal(partArt(part, component), componentArt(component, { labels: false }));
+  assert.ok(markup.includes(`class="part-focus" x="${profile.body.x - 1.5}" y="${profile.body.y - 1.5}" width="${profile.body.width + 3}"`));
+  assert.match(partArt(part, component), /class="contact-labels" pointer-events="none"/);
+  assert.match(partArt(part, component), /data-contact-label="j1-1"/);
   const custom = partMarkup({ ...part, label: 'Sensor controller' }, component, new Set(), true);
   assert.doesNotMatch(custom, /display="none" aria-hidden="true"/);
   assert.match(custom, /class="part-body breadboard-part-caption"/);
   assert.match(custom, />Sensor controller<\/text>/);
   const { attachment, ...loose } = part;
-  assert.equal(partArt(loose, component), componentArt(component));
-  assert.doesNotMatch(partMarkup(loose, component, new Set(), true), /display="none" aria-hidden="true"/);
+  assert.equal(partArt(loose, component), partArt(part, component));
+  assert.match(partMarkup(loose, component, new Set(), true), /display="none" aria-hidden="true"[^>]*data-part-region="caption"/);
 });
 
 test('seated C6 hides its actual PCB and USB sockets while annotation margins and antenna wings remain free', () => {
@@ -92,8 +93,8 @@ test('scaled source modules use their physical front view through seating, detac
   const mounted = { ...scaled, attachment: { hostPartId: 'host', contacts: [] } };
   assert.match(componentArt(component), /UNDERSIDE BELOW · MIRRORED/);
   assert.equal(partArt(raw, component), componentArt(component));
-  assert.equal(usesMountedView(raw, component), false);
-  assert.equal(usesMountedView(scaled, component), true);
+  assert.equal(usesCompactBoardView(raw, component), false);
+  assert.equal(usesCompactBoardView(scaled, component), true);
   const art = partArt(scaled, component);
   assert.ok(art.includes(profile.renderMounted(component, false)));
   assert.doesNotMatch(art, /UNDERSIDE BELOW · MIRRORED|COMPONENT-SIDE CONTACT VIEW|SEPARATE MIRRORED UNDERSIDE/);

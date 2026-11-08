@@ -1,7 +1,13 @@
 import { mountingFor } from '../catalog/index.js';
-import { partScale, partSize } from '../model/part-placement.js';
+import { partSize } from '../model/part-placement.js';
 import { componentForPart } from '../model/part-component.js';
-import { partCenter, poseAtCenter } from '../geometry/breadboard-targets.js';
+import { partBounds, partOutlineBounds } from '../geometry/parts.js';
+
+function rotationCenter(part) {
+  const profile = mountingFor(part.componentId);
+  const bounds = part.scale && profile?.viewBounds ? partBounds(part) : partOutlineBounds(part);
+  return { x: (bounds.left + bounds.right) / 2, y: (bounds.top + bounds.bottom) / 2 };
+}
 
 export function attachedPartIds(project, hostIds) {
   const ids = new Set(hostIds);
@@ -16,15 +22,15 @@ export function detachPart(part) {
 }
 
 export function rotateWithAttachments(project, part, rotation) {
-  const size = partSize(part, componentForPart(part));
-  const center = { x: part.x + size.width / 2, y: part.y + size.height / 2 };
+  const center = rotationCenter(part);
   const delta = (rotation - (part.rotation ?? 0) + 360) % 360;
   return {
     ...project,
     parts: project.parts.map(item => {
       if (item.id === part.id) {
-        if (!item.scale || !mountingFor(item.componentId)?.viewBounds) return { ...detachPart(item), rotation };
-        return poseAtCenter(detachPart(item), componentForPart(item), partCenter(item), partScale(item), rotation);
+        const rotated = { ...detachPart(item), rotation };
+        const nextCenter = rotationCenter(rotated);
+        return { ...rotated, x: rotated.x + center.x - nextCenter.x, y: rotated.y + center.y - nextCenter.y };
       }
       if (item.attachment?.hostPartId !== part.id) return item;
       const child = partSize(item, componentForPart(item));

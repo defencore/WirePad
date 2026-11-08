@@ -96,6 +96,7 @@ function validateMounting(mounting, component, context) {
   }
   const validBodyRectangle = value => value && ['x', 'y', 'width', 'height'].every(key => Number.isFinite(value[key])) && value.width > 0 && value.height > 0;
   if (mounting.body !== undefined && !validBodyRectangle(mounting.body)) throw new Error(`${context} mounting body has invalid bounds.`);
+  if (mounting.bodyFor !== undefined && (typeof mounting.bodyFor !== 'function' || !validBodyRectangle(mounting.bodyFor(component)))) throw new Error(`${context} mounting body resolver must return finite positive bounds.`);
   if (mounting.viewBounds !== undefined && !validBodyRectangle(mounting.viewBounds)) throw new Error(`${context} mounted view has invalid bounds.`);
   if (mounting.renderMounted !== undefined && typeof mounting.renderMounted !== 'function') throw new Error(`${context} mounted view renderer must be a function.`);
   if (mounting.calibration !== undefined) {

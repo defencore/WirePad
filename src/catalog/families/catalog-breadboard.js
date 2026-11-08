@@ -240,6 +240,10 @@ export default defineFamily("breadboard", [{
   configuration: { key: "breadboard", normalize: normalizeBreadboardConfig, create: createBreadboard, limits: BREADBOARD_LIMITS },
   mounting: {
     type: "breadboard", pitch: MILLIMETRE_PITCH, canvasPitch: PITCH,
+    bodyFor: component => {
+      const bounds = boardBounds(component.breadboard);
+      return { x: bounds.left, y: bounds.top, width: bounds.right - bounds.left, height: bounds.bottom - bounds.top + 3 };
+    },
     contacts: component => {
       const pins = new Map(component.pins.map(pin => [pin.id, pin]));
       return component.internalConnections.filter(ids => !ids[0].includes("-")).flatMap(ids =>

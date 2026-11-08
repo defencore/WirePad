@@ -10,12 +10,13 @@ export function bindWorkspaceActions({ editor, controls, commands, preferences, 
   const click = (id, action) => scope.on(element(id), 'click', action);
   const title = element('project-title');
   const moveControls = element('move-controls');
+  const selectionControls = element('selection-controls');
   const singleKeyToggle = element('single-key-shortcuts');
   const modeButtons = [...root.querySelectorAll('.tool-group [data-mode]')];
   singleKeyToggle.checked = preferences.singleKeyShortcuts;
 
   function cancel() {
-    view.closeMove();
+    if (view.closeMove()) { render(); focusCanvas(); return; }
     commands.cancel();
     panels.close();
     projectControls.closeMenus();
@@ -34,9 +35,12 @@ export function bindWorkspaceActions({ editor, controls, commands, preferences, 
   for (const button of modeButtons) scope.on(button, 'click', () => commands.changeMode(button.dataset.mode));
   const toolbar = bindToolbar(requireElement(root, '.tool-group'), { signal: scope.signal });
   scope.cleanup(toolbar.destroy);
+  const selectionToolbar = bindToolbar(requireElement(root, '.selection-actions'), { signal: scope.signal });
+  scope.cleanup(selectionToolbar.destroy);
   click('help', () => element('help-dialog').showModal());
   click('fit', event => commands.fit(event.shiftKey));
-  click('fit-selection', () => commands.fit(true));
+  click('fit-selection', () => { commands.fit(true); focusCanvas(); });
+  click('rotate-selection', () => { commands.rotate(); focusCanvas(); });
   click('zoom-in', () => commands.zoom(1.25));
   click('zoom-out', () => commands.zoom(.8));
   click('zoom-value', () => commands.zoom(1));
@@ -47,6 +51,13 @@ export function bindWorkspaceActions({ editor, controls, commands, preferences, 
   scope.on(moveControls, 'click', event => {
     const button = event.target.closest('[data-nudge-x]');
     if (button && !button.disabled) controls.nudge(Number(button.dataset.nudgeX), Number(button.dataset.nudgeY));
+  });
+  scope.on(moveControls, 'keydown', event => {
+    const direction = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
+    if (!direction || event.altKey || event.ctrlKey || event.metaKey) return;
+    event.preventDefault();
+    event.stopPropagation();
+    controls.nudge(...direction, event.shiftKey ? 10 : 1);
   });
   click('undo', commands.undo);
   click('redo', commands.redo);
@@ -60,7 +71,7 @@ export function bindWorkspaceActions({ editor, controls, commands, preferences, 
 
   const shortcuts = bindKeyboardShortcuts({
     commands, controls, library, projectControls, panels, cancel,
-    enabled: () => preferences.singleKeyShortcuts, svg, moveControls, modeButtons, root, signal: scope.signal,
+    enabled: () => preferences.singleKeyShortcuts, svg, selectionControls, moveControls, modeButtons, root, signal: scope.signal,
   });
   scope.cleanup(shortcuts.destroy);
   scope.on(singleKeyToggle, 'change', () => {

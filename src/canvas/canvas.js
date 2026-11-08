@@ -14,9 +14,11 @@ import { PlacementPreview } from './placement-preview.js';
 import { BreadboardFeedback } from './breadboard-feedback.js';
 
 export class DrawingCanvas extends CanvasViewport {
-  constructor({ svg, scene, draft, onZoom, viewInsets, signal }) {
+  constructor({ svg, scene, draft, onZoom, viewInsets, onSelectionViewChange, signal }) {
     super({ svg, onZoom, viewInsets });
     this.scope = createScope({ signal });
+    this.selectionViewChanged = onSelectionViewChange;
+    this.scope.cleanup(() => { this.selectionViewChanged = undefined; });
     this.scene = scene;
     this.draft = draft;
     this.surfaceParts = new SceneLayer(scene);
@@ -69,6 +71,7 @@ export class DrawingCanvas extends CanvasViewport {
     this.controls.update();
     this.placementPreview.render();
     this.breadboardFeedback.render();
+    this.selectionViewChanged?.();
   }
 
   showPlacementPreview(options) {
@@ -124,6 +127,7 @@ export class DrawingCanvas extends CanvasViewport {
     this.wireControls = wireControls;
     this.controls.update();
     this.breadboardFeedback.render();
+    this.selectionViewChanged?.();
   }
 
   position(endpoint) {
