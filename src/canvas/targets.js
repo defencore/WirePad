@@ -20,6 +20,7 @@ function targetInfo(target, selector) {
 }
 
 export function canvasTargets(canvas, svg) {
+  const document = svg.ownerDocument;
   function hitAt(event, { handles = true, excludeWire, selecting = false } = {}) {
     const point = canvas.point(event.clientX, event.clientY);
     const stack = document.elementsFromPoint(event.clientX, event.clientY);

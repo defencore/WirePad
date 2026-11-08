@@ -7,6 +7,7 @@ import { DEFAULT_PROJECT_TITLE, newProject, parseProject } from '../model/projec
 import { PROJECT_FILE_LIMIT } from '../model/limits.js';
 import { createScope } from '../shared/lifecycle.js';
 import { requireElement } from './dom.js';
+import { nextImportTurn } from './import-turn.js';
 
 export function bindProjectControls({ editor, canvas, savedProject, storage, notify, focusCanvas, canExport, root = document, signal }) {
   const scope = createScope({ signal });
@@ -186,11 +187,8 @@ export function bindProjectControls({ editor, canvas, savedProject, storage, not
     try {
       if (file.size > PROJECT_FILE_LIMIT) throw new Error(`This project file exceeds ${PROJECT_FILE_LIMIT / 1024 ** 2} MB.`);
       const text = await file.text();
-      await new Promise(resolve => {
-        if (document.visibilityState === 'hidden') setTimeout(resolve, 0);
-        else requestAnimationFrame(() => setTimeout(resolve, 0));
-      });
-      if (stillOpening()) offerProject(parseProject(text));
+      const ready = await nextImportTurn({ document: fileInput.ownerDocument, signal: scope.signal });
+      if (ready && stillOpening()) offerProject(parseProject(text));
     } catch (error) {
       if (!stillOpening()) return;
       if (fromStartup) {

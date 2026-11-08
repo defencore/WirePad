@@ -1,0 +1,528 @@
+{
+  "reviewed": "2026-11-08",
+  "family": "diy-kit-inputs",
+  "componentCount": 8,
+  "contactCount": 29,
+  "scope": "Eight new starter-kit input/control boards; no existing component IDs or geometry modified.",
+  "validation": {
+    "sourceReview": "Manufacturer photos compared with same-side wiring diagrams; contact labels, order and functions reviewed. Grove J1 signals also checked against the manufacturer Eagle board XML and schematic.",
+    "standalone": "Family imports and registry validation pass. Both SVG modes render. Every contact has a physical anchor and matching illustrated metal contact. Footprint terminal map contains all 29 contacts exactly once.",
+    "visualArtifacts": "/tmp/wirepad-diy-inputs/inputs-labels.svg.png and inputs-plain.svg.png",
+    "nativeKiCad": "Pending registration by integrating agent; format acceptance does not establish geometry accuracy."
+  },
+  "entries": [
+    {
+      "id": "keyestudio-ks0008-joystick",
+      "manufacturer": "Keyestudio",
+      "variant": "Manufacturer-pictured black-PCB / yellow-header SKU, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://docs.keyestudio.com/projects/KS0008/en/latest/docs/KS0008.html"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://docs.keyestudio.com/projects/KS0008/en/latest/_images/wps1.jpg"
+        },
+        {
+          "kind": "manufacturer same-side wiring diagram",
+          "url": "https://docs.keyestudio.com/projects/KS0008/en/latest/_images/wps2.png"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/ks0008-photo.jpg",
+      "physicalView": "Component side with control above and male-header mating tips below. Pins numbered left to right for this catalog; source boards print signal labels rather than numeric pin IDs.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "1",
+          "label": "−",
+          "type": "power_in",
+          "x": 53.519999999999996,
+          "y": 244,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "2",
+          "label": "+",
+          "type": "power_in",
+          "x": 68.76,
+          "y": 244,
+          "surface": true
+        },
+        {
+          "id": "button",
+          "number": "3",
+          "label": "B",
+          "type": "passive",
+          "x": 84,
+          "y": 244,
+          "surface": true
+        },
+        {
+          "id": "x",
+          "number": "4",
+          "label": "X",
+          "type": "output",
+          "x": 99.24,
+          "y": 244,
+          "surface": true
+        },
+        {
+          "id": "y",
+          "number": "5",
+          "label": "Y",
+          "type": "output",
+          "x": 114.48,
+          "y": 244,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Reference 2.54 mm cable/header carrier. Header order follows the maker's component-side wiring view; board outline, connector offset and control clearance are approximate. This is not a production module land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The 2.54 mm host header carrier is representative. Native PCB dimensions, connector offsets and control clearances were not verified from a mechanical drawing.",
+        "Joystick B is the printed button label; manufacturer example code calls this signal Z. Axis resistance and switch pull-up details are not established by the source.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link.",
+        "Enlarged maker wiring image confirms left-to-right −,+,B,X,Y: B goes to Arduino D3, X to A0, Y to A1."
+      ]
+    },
+    {
+      "id": "keyestudio-ks0013-encoder",
+      "manufacturer": "Keyestudio",
+      "variant": "Manufacturer-pictured black-PCB / yellow-header SKU, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://docs.keyestudio.com/projects/KS0013/en/latest/docs/KS0013.html"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://docs.keyestudio.com/projects/KS0013/en/latest/_images/wps1.jpg"
+        },
+        {
+          "kind": "manufacturer same-side wiring diagram",
+          "url": "https://docs.keyestudio.com/projects/KS0013/en/latest/_images/wps2.png"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/ks0013-photo.jpg",
+      "physicalView": "Component side with control above and male-header mating tips below. Pins numbered left to right for this catalog; source boards print signal labels rather than numeric pin IDs.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "1",
+          "label": "−",
+          "type": "power_in",
+          "x": 41.519999999999996,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "2",
+          "label": "+",
+          "type": "power_in",
+          "x": 56.76,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "sw",
+          "number": "3",
+          "label": "SW",
+          "type": "passive",
+          "x": 72,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "dt",
+          "number": "4",
+          "label": "DT",
+          "type": "passive",
+          "x": 87.24,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "clk",
+          "number": "5",
+          "label": "CLK",
+          "type": "passive",
+          "x": 102.48,
+          "y": 210,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Reference 2.54 mm cable/header carrier. Header order follows the maker's component-side wiring view; board outline, connector offset and control clearance are approximate. This is not a production module land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The 2.54 mm host header carrier is representative. Native PCB dimensions, connector offsets and control clearances were not verified from a mechanical drawing.",
+        "DT is the printed label; the maker example code calls it DAT. Nominal maker supply is 5 V; do not assume universal 3.3 V compatibility.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link."
+      ]
+    },
+    {
+      "id": "keyestudio-ks0014-rotation",
+      "manufacturer": "Keyestudio",
+      "variant": "Manufacturer-pictured black-PCB / yellow-header SKU, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://docs.keyestudio.com/projects/KS0014/en/latest/docs/KS0014.html"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://docs.keyestudio.com/projects/KS0014/en/latest/_images/image-20251225143948141.png"
+        },
+        {
+          "kind": "manufacturer same-side wiring diagram",
+          "url": "https://docs.keyestudio.com/projects/KS0014/en/latest/_images/image-20251225144144872.png"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/ks0014-photo.png",
+      "physicalView": "Component side with control above and male-header mating tips below. Pins numbered left to right for this catalog; source boards print signal labels rather than numeric pin IDs.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "1",
+          "label": "−",
+          "type": "power_in",
+          "x": 56.76,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "2",
+          "label": "+",
+          "type": "power_in",
+          "x": 72,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "signal",
+          "number": "3",
+          "label": "S",
+          "type": "output",
+          "x": 87.24,
+          "y": 210,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Reference 2.54 mm cable/header carrier. Header order follows the maker's component-side wiring view; board outline, connector offset and control clearance are approximate. This is not a production module land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The 2.54 mm host header carrier is representative. Native PCB dimensions, connector offsets and control clearances were not verified from a mechanical drawing.",
+        "Manufacturer page does not establish a nominal potentiometer resistance; no value is invented.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link."
+      ]
+    },
+    {
+      "id": "keyestudio-ks0021-collision",
+      "manufacturer": "Keyestudio",
+      "variant": "Manufacturer-pictured black-PCB / yellow-header SKU, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://docs.keyestudio.com/projects/KS0021/en/latest/docs/KS0021.html"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://raw.githubusercontent.com/keyestudio/KS0021-keyestudio-Collision-Sensor/master/docs/media/image-20251225153705020.png"
+        },
+        {
+          "kind": "manufacturer same-side wiring diagram",
+          "url": "https://raw.githubusercontent.com/keyestudio/KS0021-keyestudio-Collision-Sensor/master/docs/media/image-20251225153806838.png"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/ks0021-photo.png",
+      "physicalView": "Component side with control above and male-header mating tips below. Pins numbered left to right for this catalog; source boards print signal labels rather than numeric pin IDs.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "1",
+          "label": "−",
+          "type": "power_in",
+          "x": 60.76,
+          "y": 258,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "2",
+          "label": "+",
+          "type": "power_in",
+          "x": 76,
+          "y": 258,
+          "surface": true
+        },
+        {
+          "id": "signal",
+          "number": "3",
+          "label": "S",
+          "type": "output",
+          "x": 91.24,
+          "y": 258,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Reference 2.54 mm cable/header carrier. Header order follows the maker's component-side wiring view; board outline, connector offset and control clearance are approximate. This is not a production module land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The 2.54 mm host header carrier is representative. Native PCB dimensions, connector offsets and control clearances were not verified from a mechanical drawing.",
+        "Maker documentation editions disagree on 5 V versus 12 V maximum supply; entry deliberately specifies conservative 3.3–5 V starter-kit use.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link."
+      ]
+    },
+    {
+      "id": "keyestudio-ks0025-tilt",
+      "manufacturer": "Keyestudio",
+      "variant": "Manufacturer-pictured black-PCB / yellow-header SKU, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://docs.keyestudio.com/projects/KS0025/en/latest/docs/KS0025.html"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://docs.keyestudio.com/projects/KS0025/en/latest/_images/image-20251225162528199.png"
+        },
+        {
+          "kind": "manufacturer same-side wiring diagram",
+          "url": "https://docs.keyestudio.com/projects/KS0025/en/latest/_images/image-20251225162609576.png"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/ks0025-photo.png",
+      "physicalView": "Component side with control above and male-header mating tips below. Pins numbered left to right for this catalog; source boards print signal labels rather than numeric pin IDs.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "1",
+          "label": "−",
+          "type": "power_in",
+          "x": 56.76,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "2",
+          "label": "+",
+          "type": "power_in",
+          "x": 72,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "signal",
+          "number": "3",
+          "label": "S",
+          "type": "output",
+          "x": 87.24,
+          "y": 210,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Reference 2.54 mm cable/header carrier. Header order follows the maker's component-side wiring view; board outline, connector offset and control clearance are approximate. This is not a production module land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The 2.54 mm host header carrier is representative. Native PCB dimensions, connector offsets and control clearances were not verified from a mechanical drawing.",
+        "Tilt threshold is mechanical and orientation-dependent; this is not a calibrated angle sensor.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link."
+      ]
+    },
+    {
+      "id": "keyestudio-ks0029-button",
+      "manufacturer": "Keyestudio",
+      "variant": "Manufacturer-pictured black-PCB / yellow-header SKU, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://docs.keyestudio.com/projects/KS0029/en/latest/docs/KS0029.html"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://docs.keyestudio.com/projects/KS0029/en/latest/_images/wps1.jpg"
+        },
+        {
+          "kind": "manufacturer same-side wiring diagram",
+          "url": "https://docs.keyestudio.com/projects/KS0029/en/latest/_images/wps2.png"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/ks0029-photo.jpg",
+      "physicalView": "Component side with control above and male-header mating tips below. Pins numbered left to right for this catalog; source boards print signal labels rather than numeric pin IDs.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "1",
+          "label": "−",
+          "type": "power_in",
+          "x": 56.76,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "2",
+          "label": "+",
+          "type": "power_in",
+          "x": 72,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "signal",
+          "number": "3",
+          "label": "S",
+          "type": "output",
+          "x": 87.24,
+          "y": 210,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Reference 2.54 mm cable/header carrier. Header order follows the maker's component-side wiring view; board outline, connector offset and control clearance are approximate. This is not a production module land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The 2.54 mm host header carrier is representative. Native PCB dimensions, connector offsets and control clearances were not verified from a mechanical drawing.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link."
+      ]
+    },
+    {
+      "id": "keyestudio-ks0038-reed",
+      "manufacturer": "Keyestudio",
+      "variant": "Manufacturer-pictured black-PCB / yellow-header SKU, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://docs.keyestudio.com/projects/KS0038/en/latest/docs/KS0038.html"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://docs.keyestudio.com/projects/KS0038/en/latest/_images/image-20260108100404924.png"
+        },
+        {
+          "kind": "manufacturer same-side wiring diagram",
+          "url": "https://docs.keyestudio.com/projects/KS0038/en/latest/_images/image-20260108100603223.png"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/ks0038-photo.png",
+      "physicalView": "Component side with control above and male-header mating tips below. Pins numbered left to right for this catalog; source boards print signal labels rather than numeric pin IDs.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "1",
+          "label": "−",
+          "type": "power_in",
+          "x": 56.76,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "2",
+          "label": "+",
+          "type": "power_in",
+          "x": 72,
+          "y": 210,
+          "surface": true
+        },
+        {
+          "id": "signal",
+          "number": "3",
+          "label": "S",
+          "type": "output",
+          "x": 87.24,
+          "y": 210,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Reference 2.54 mm cable/header carrier. Header order follows the maker's component-side wiring view; board outline, connector offset and control clearance are approximate. This is not a production module land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The 2.54 mm host header carrier is representative. Native PCB dimensions, connector offsets and control clearances were not verified from a mechanical drawing.",
+        "Reed output is described as low near a magnet from the maker result; generic reed variants can differ.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link."
+      ]
+    },
+    {
+      "id": "seeed-grove-slide-101020036",
+      "manufacturer": "Seeed Studio",
+      "variant": "Legacy blue-PCB Grove SKU 101020036, unmarked PCB revision.",
+      "references": [
+        {
+          "kind": "manufacturer documentation",
+          "url": "https://wiki.seeedstudio.com/Grove-Slide_Potentiometer/"
+        },
+        {
+          "kind": "manufacturer photo",
+          "url": "https://files.seeedstudio.com/wiki/Grove-Slide_Potentiometer/img/Sliding1.JPG"
+        },
+        {
+          "kind": "manufacturer schematic",
+          "url": "https://files.seeedstudio.com/wiki/Grove-Slide_Potentiometer/res/Sliding_protentiometer_sch.pdf"
+        },
+        {
+          "kind": "manufacturer Eagle CAD, downloaded and parsed",
+          "url": "https://files.seeedstudio.com/wiki/Grove-Slide_Potentiometer/res/Sliding_Potentiometer.rar"
+        }
+      ],
+      "sourcePhotoLocal": "/tmp/wirepad-diy-inputs/seeed-photo.JPG",
+      "physicalView": "Component-side module overview plus one enlarged J1 mating face, PCB below face. Hidden top-view connector contacts are not replaced by exposed solder tails. Inset pin1 left through pin4 right follows Eagle connector geometry.",
+      "contacts": [
+        {
+          "id": "out",
+          "number": "1",
+          "label": "OUT",
+          "type": "output",
+          "x": 156,
+          "y": 219,
+          "surface": true
+        },
+        {
+          "id": "led",
+          "number": "2",
+          "label": "LED",
+          "type": "input",
+          "x": 176,
+          "y": 219,
+          "surface": true
+        },
+        {
+          "id": "vcc",
+          "number": "3",
+          "label": "VCC",
+          "type": "power_in",
+          "x": 196,
+          "y": 219,
+          "surface": true
+        },
+        {
+          "id": "gnd",
+          "number": "4",
+          "label": "GND",
+          "type": "power_in",
+          "x": 216,
+          "y": 219,
+          "surface": true
+        }
+      ],
+      "footprintAssessment": "R",
+      "footprintEvidence": "Off-board Grove cable termination carrier, 2.00 mm pitch. Pad numbers and electrical functions are verified against the maker's Eagle J1 netlist and schematic. This reference carrier is not the module PCB, a socket production footprint or a verified host-board mating land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "limitations": [
+        "The host carrier uses a four-pad 2.00 mm cable termination and does not reproduce the native module PCB or qualify a production connector footprint.",
+        "Grove pin2 is a separately driven LED input through a 1 kΩ resistor to an LED returning to ground, not NC. Native Eagle contact references: J1.1→OUT/R1.2; J1.2→LED/R2.1; J1.3→VCC/R1.3; J1.4→GND/R1.1.",
+        "Generated WRL consists of approximate boxes, independent of any external vendor CAD link."
+      ]
+    }
+  ]
+}

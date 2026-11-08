@@ -1,0 +1,378 @@
+{
+  "checked": "2026-11-08",
+  "family": "diy-kit-sensors",
+  "added": 8,
+  "contacts": 27,
+  "scope": "Eight common starter-kit sensor modules, external wiring header contacts only; no existing entries or geometry modified.",
+  "verification": {
+    "moduleImport": "Eight entries validated by defineFamily; both SVG modes generate without non-finite values.",
+    "visual": "All 16 labeled and unlabeled views reviewed in headless Chrome. Physical header order compared with the linked manufacturer photographs and wiring diagrams.",
+    "nativeKiCad": "All eight symbols and eight footprints loaded and plotted successfully with native kicad-cli. Native GUI was not available.",
+    "focusedTests": "11 catalog and catalog-tool checks passed; pin-to-pad mappings, terminal numbers, both SVG modes and native export generation validated."
+  },
+  "limitations": [
+    "PCB revisions are not marked in the cited manufacturer module photos; exact shown SKUs/variants are selected.",
+    "All native footprints are explicitly reference carriers: approximate envelopes/header origin; selected 1.0 mm drill and 1.8 mm copper are not manufacturer land patterns.",
+    "Generated WRL 3D models are approximate; no manufacturer STEP import is claimed.",
+    "Header pad numbers retain printed terminal names because the source boards do not print numerical connector contact numbers.",
+    "Fitted sensor legs, comparator pins and unused alternative sensor-placement holes are not external wiring-header contacts.",
+    "Conductive water/rain outputs depend on the wetting and liquid; no calibrated depth, humidity or rainfall units are claimed."
+  ],
+  "entries": [
+    {
+      "id": "keyestudio-ks0036-flame",
+      "name": "Keyestudio KS0036 Flame Sensor",
+      "manufacturer": "Keyestudio",
+      "source": "https://docs.keyestudio.com/projects/KS0036/en/latest/docs/KS0036.html",
+      "references": [
+        "https://docs.keyestudio.com/projects/KS0036/en/latest/_images/image-20251226155333010.png",
+        "https://docs.keyestudio.com/projects/KS0036/en/latest/_images/3.png"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Official four-contact wiring diagram, photodetector up: VCC,GND,D0,A0 left-to-right. Tutorial uses D0 and leaves A0 unconnected; Digital prose describes that example, not the full physical contact count.",
+      "contacts": [
+        {
+          "id": "vcc",
+          "number": "VCC",
+          "label": "VCC",
+          "type": "power_in",
+          "x": 90.235,
+          "y": 278.49
+        },
+        {
+          "id": "gnd",
+          "number": "GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 106.745,
+          "y": 278.49
+        },
+        {
+          "id": "digital",
+          "number": "D0",
+          "label": "D0",
+          "type": "output",
+          "x": 123.255,
+          "y": 278.49
+        },
+        {
+          "id": "analog",
+          "number": "A0",
+          "label": "A0",
+          "type": "output",
+          "x": 139.765,
+          "y": 278.49
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Keyestudio KS0036 Flame Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    },
+    {
+      "id": "keyestudio-ks0040-mq2",
+      "name": "Keyestudio KS0040 MQ-2 Gas Sensor",
+      "manufacturer": "Keyestudio",
+      "source": "https://docs.keyestudio.com/projects/KS0040/en/latest/docs/KS0040.html",
+      "references": [
+        "https://docs.keyestudio.com/projects/KS0040/en/latest/_images/wps1.jpg",
+        "https://docs.keyestudio.com/projects/KS0040/en/latest/_images/wps2.png",
+        "https://docs.keyestudio.com/projects/KS4009-KS4010/en/latest/KS4009-KS4010.html"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Official KS0040 wiring diagram, sensing can up: GND,VCC,D0,A0 left-to-right; black GND lead on first, red 5V on second, blue ADC on fourth. KS4009/KS4010 manufacturer tutorial confirms both A0 and D0 threshold functions. Do not reuse KS0036 supply order.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 91.378,
+          "y": 329.252
+        },
+        {
+          "id": "vcc",
+          "number": "VCC",
+          "label": "VCC",
+          "type": "power_in",
+          "x": 107.126,
+          "y": 329.252
+        },
+        {
+          "id": "digital",
+          "number": "D0",
+          "label": "D0",
+          "type": "output",
+          "x": 122.874,
+          "y": 329.252
+        },
+        {
+          "id": "analog",
+          "number": "A0",
+          "label": "A0",
+          "type": "output",
+          "x": 138.622,
+          "y": 329.252
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Keyestudio KS0040 MQ-2 Gas Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    },
+    {
+      "id": "keyestudio-ks0048-water-level",
+      "name": "Keyestudio KS0048 Water Level Sensor",
+      "manufacturer": "Keyestudio",
+      "source": "https://docs.keyestudio.com/projects/KS0048/en/latest/docs/KS0048.html",
+      "references": [
+        "https://docs.keyestudio.com/projects/KS0048/en/latest/_images/wps1.png",
+        "https://docs.keyestudio.com/projects/KS0048/en/latest/_images/wps2.png"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Manufacturer photo and wiring diagram rotated to traces up: -, +, S left-to-right. Traces form the liquid sensing area; S wires to analog A0.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "-",
+          "label": "-",
+          "type": "power_in",
+          "x": 101.284,
+          "y": 372.284
+        },
+        {
+          "id": "vcc",
+          "number": "+",
+          "label": "+",
+          "type": "power_in",
+          "x": 115,
+          "y": 372.284
+        },
+        {
+          "id": "analog",
+          "number": "S",
+          "label": "S",
+          "type": "output",
+          "x": 128.716,
+          "y": 372.284
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Keyestudio KS0048 Water Level Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    },
+    {
+      "id": "keyestudio-ks0203-rain-steam",
+      "name": "Keyestudio KS0203 Rain / Steam Sensor",
+      "manufacturer": "Keyestudio",
+      "source": "https://docs.keyestudio.com/projects/KS0203/en/latest/docs/KS0203.html",
+      "references": [
+        "https://docs.keyestudio.com/projects/KS0203/en/latest/_images/wps1.png",
+        "https://docs.keyestudio.com/projects/KS0203/en/latest/_images/wps2.jpg"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Component photo rotated clockwise: header -, +, S left-to-right. Text defines S output, + supply, - ground and specifically documents simple rainwater detection; output increases as sensing face becomes wet.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "-",
+          "label": "-",
+          "type": "power_in",
+          "x": 97.22,
+          "y": 227.22
+        },
+        {
+          "id": "vcc",
+          "number": "+",
+          "label": "+",
+          "type": "power_in",
+          "x": 115,
+          "y": 227.22
+        },
+        {
+          "id": "analog",
+          "number": "S",
+          "label": "S",
+          "type": "output",
+          "x": 132.78,
+          "y": 227.22
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Keyestudio KS0203 Rain / Steam Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    },
+    {
+      "id": "joyit-ky037-sound-threshold",
+      "name": "Joy-IT KY-037 Microphone Threshold Sensor",
+      "manufacturer": "Joy-IT",
+      "source": "https://sensorkit.joy-it.net/en/sensors/ky-037",
+      "references": [
+        "https://sensorkit.joy-it.net/files/files/sensors/KY-037/KY-037.png",
+        "https://sensorkit.joy-it.net/files/files/sensors/KY-037/KY-037.svg",
+        "https://www.ti.com/lit/ds/symlink/lm393.pdf"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Joy-IT KY-037.svg component-side pin-assignment drawing explicitly labels A0,G,+,D0 left-to-right with microphone up. Text identifies LM393 comparator and inverted analog response; TI LM393 datasheet identifies open-collector output.",
+      "contacts": [
+        {
+          "id": "analog",
+          "number": "A0",
+          "label": "A0",
+          "type": "output",
+          "x": 88.33,
+          "y": 269.22
+        },
+        {
+          "id": "gnd",
+          "number": "G",
+          "label": "G",
+          "type": "power_in",
+          "x": 106.11,
+          "y": 269.22
+        },
+        {
+          "id": "vcc",
+          "number": "+",
+          "label": "+",
+          "type": "power_in",
+          "x": 123.89,
+          "y": 269.22
+        },
+        {
+          "id": "digital",
+          "number": "D0",
+          "label": "D0",
+          "type": "open_collector",
+          "x": 141.67,
+          "y": 269.22
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Joy-IT KY-037 Microphone Threshold Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    },
+    {
+      "id": "keyestudio-ks0022-lm35",
+      "name": "Keyestudio KS0022 LM35 Temperature Sensor",
+      "manufacturer": "Keyestudio",
+      "source": "https://docs.keyestudio.com/projects/KS0022/en/latest/docs/KS0022.html",
+      "references": [
+        "https://docs.keyestudio.com/projects/KS0022/en/latest/_images/image-20251225154818420.png",
+        "https://docs.keyestudio.com/projects/KS0022/en/latest/_images/image-20251225155007551.png"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Current official component photo has S,+,- top-to-bottom on right. Rotate clockwise to header-down -, +, S; official wiring diagram independently confirms this order and 5V/ADC connections. Module has LM35 10mV/degreeC output, not a thermistor.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "-",
+          "label": "-",
+          "type": "power_in",
+          "x": 97.22,
+          "y": 227.22
+        },
+        {
+          "id": "vcc",
+          "number": "+",
+          "label": "+",
+          "type": "power_in",
+          "x": 115,
+          "y": 227.22
+        },
+        {
+          "id": "analog",
+          "number": "S",
+          "label": "S",
+          "type": "output",
+          "x": 132.78,
+          "y": 227.22
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Keyestudio KS0022 LM35 Temperature Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    },
+    {
+      "id": "keyestudio-ks0028-photocell",
+      "name": "Keyestudio KS0028 Photocell Sensor",
+      "manufacturer": "Keyestudio",
+      "source": "https://docs.keyestudio.com/projects/KS0028/en/latest/docs/KS0028.html",
+      "references": [
+        "https://docs.keyestudio.com/projects/KS0028/en/latest/_images/image-20251225164242434.png",
+        "https://docs.keyestudio.com/projects/KS0028/en/latest/_images/image-20251225164331107.png"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Official wiring drawing, photoresistor up: -, +, S left-to-right. Manufacturer specifies 5V analog interface and lower readings when covered.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "-",
+          "label": "-",
+          "type": "power_in",
+          "x": 97.22,
+          "y": 227.22
+        },
+        {
+          "id": "vcc",
+          "number": "+",
+          "label": "+",
+          "type": "power_in",
+          "x": 115,
+          "y": 227.22
+        },
+        {
+          "id": "analog",
+          "number": "S",
+          "label": "S",
+          "type": "output",
+          "x": 132.78,
+          "y": 227.22
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Keyestudio KS0028 Photocell Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    },
+    {
+      "id": "joyit-ky003-hall",
+      "name": "Joy-IT KY-003 A3144 Hall Sensor",
+      "manufacturer": "Joy-IT",
+      "source": "https://sensorkit.joy-it.net/en/sensors/ky-003",
+      "references": [
+        "https://sensorkit.joy-it.net/files/files/sensors/KY-003/KY-003.png",
+        "https://sensorkit.joy-it.net/files/files/sensors/KY-003/KY-003.svg",
+        "https://www.joy-it.net/en/products/SEN-KY003HMS"
+      ],
+      "view": "Component side; header at bottom; photo rotations preserve same-side contact order",
+      "contactEvidence": "Joy-IT KY-003.svg explicitly labels GND,+V,Signal left-to-right (board silk -, +, S), sensor up. A3144 chipset and open-collector active-low behavior are documented. SensorKit guide specifies 5V due to fitted LED; product page wider IC voltage range is not used as board rating.",
+      "contacts": [
+        {
+          "id": "gnd",
+          "number": "-",
+          "label": "-",
+          "type": "power_in",
+          "x": 97.22,
+          "y": 242.22
+        },
+        {
+          "id": "vcc",
+          "number": "+",
+          "label": "+",
+          "type": "power_in",
+          "x": 115,
+          "y": 242.22
+        },
+        {
+          "id": "digital",
+          "number": "S",
+          "label": "S",
+          "type": "open_collector",
+          "x": 132.78,
+          "y": 242.22
+        }
+      ],
+      "footprintRecommendation": "R \u2014 reference carrier / approximate geometry",
+      "generated3DRecommendation": "Approximate",
+      "footprintNote": "Reference carrier for Joy-IT KY-003 A3144 Hall Sensor; approximate board envelope and header origin, 2.54 mm reference contact pitch, 1.0 mm selected drill and 1.8 mm selected copper. This is not a manufacturer land pattern. Pad identifiers match the printed terminal names and component-side order. Mounting holes, sensor leads and unused component-placement pads are not carrier contacts. Verify the exact supplied module before fabrication. Generated 3D body is approximate."
+    }
+  ]
+}

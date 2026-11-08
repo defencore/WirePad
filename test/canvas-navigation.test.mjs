@@ -37,7 +37,7 @@ function viewport(cssScale) {
   };
   const canvas = Object.assign(Object.create(DrawingCanvas.prototype), {
     svg, center: { x: 125, y: -90 }, scale: .75, autoFit: true,
-    updateWireHandles() {}, updatePartControls() {}, onZoom() {},
+    controls: { update() {} }, onZoom() {},
   });
   canvas.applyView();
   return { canvas, clientFor: point => svg.getScreenCTM().transformPoint(point) };

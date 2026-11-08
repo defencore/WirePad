@@ -1,0 +1,931 @@
+{
+  "checked": "2026-11-08",
+  "added": 9,
+  "contacts": 90,
+  "scope": "Three new modules each for DFRobot, SparkFun Electronics and Seeed Studio; existing catalog entries untouched.",
+  "verification": {
+    "moduleImport": "All nine entries validate with defineFamily, with 90 distinct physical anchors and valid artwork in both label modes.",
+    "visual": "All 18 labeled and unlabeled views reviewed in headless Chrome. Source photographs, pinouts and board CAD used to check connector order and reverse-side test lands.",
+    "nativeKiCad": "All nine symbols and nine footprints loaded and plotted successfully with native kicad-cli. Native GUI was not available.",
+    "focusedTests": "11 catalog and catalog-tool checks passed, including all registered component-to-footprint mappings."
+  },
+  "limitations": [
+    "All footprints are reference off-board cable/contact carriers, not manufacturer PCB or socket land patterns.",
+    "Generated WRL 3D models are approximate. Linked manufacturer assembly, schematic and CAD resources do not upgrade the accuracy of generated models.",
+    "Small artwork bodies and front PCB envelopes are representative; source contact numbering, order and relevant voltage domains are retained.",
+    "Fitted component pins, housing anchors, fiducials and configuration solder jumpers are outside the external signal-contact scope.",
+    "DFRobot pH and TDS probe ports are analog electrode interfaces, not generic supply connectors.",
+    "AS7343 GPIO and INT remain in the 1.8 V domain. The Seeed atomizer output is approximately 65 V peak; its output and service contacts are not ordinary GPIOs."
+  ],
+  "families": [
+    {
+      "id": "dfrobot-more",
+      "entries": [
+        {
+          "id": "dfrobot-sen0161-v2-ph",
+          "name": "DFRobot Gravity pH Sensor V2 SEN0161-V2",
+          "source": "https://wiki.dfrobot.com/sen0161-v2/",
+          "references": [
+            "https://wiki.dfrobot.com/sen0161-v2/",
+            "https://dfimg.dfrobot.com/wiki/20520/SEN0161-V2_analog-ph-sensor-v2_layout_V1.0.pdf",
+            "https://dfimg.dfrobot.com/wiki/20520/SEN0161-V2_analog-ph-sensor-v2_svg_V1.0.svg"
+          ],
+          "cad": {
+            "label": "DFRobot SEN0161-V2 manufacturer assembly layout (not a 3D model)",
+            "url": "https://dfimg.dfrobot.com/wiki/20520/SEN0161-V2_analog-ph-sensor-v2_layout_V1.0.pdf"
+          },
+          "contactEvidence": "The official V2.0 pinout identifies Gravity contacts 1 = -, 2 = +, 3 = A, shown top-to-bottom at the right. The BNC center and outer electrode reference are shown in a separate mating-face view. No unsupported connection between the probe reference and power ground is claimed.",
+          "contacts": [
+            {
+              "id": "gravity-1",
+              "number": "GRAVITY.1",
+              "label": "-",
+              "type": "power_in",
+              "x": 371,
+              "y": 139
+            },
+            {
+              "id": "gravity-2",
+              "number": "GRAVITY.2",
+              "label": "+",
+              "type": "power_in",
+              "x": 371,
+              "y": 159
+            },
+            {
+              "id": "gravity-3",
+              "number": "GRAVITY.3",
+              "label": "A",
+              "type": "output",
+              "x": 371,
+              "y": 179
+            },
+            {
+              "id": "bnc-center",
+              "number": "BNC.CENTER",
+              "label": "ELECTRODE",
+              "type": "input",
+              "x": 155,
+              "y": 336
+            },
+            {
+              "id": "bnc-shield",
+              "number": "BNC.SHIELD",
+              "label": "PROBE_REF",
+              "type": "passive",
+              "x": 139,
+              "y": 320
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for DFRobot Gravity pH Sensor V2 SEN0161-V2. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "dfrobot-sen0244-tds",
+          "name": "DFRobot Gravity TDS Sensor SEN0244",
+          "source": "https://wiki.dfrobot.com/sen0244/",
+          "references": [
+            "https://wiki.dfrobot.com/sen0244/",
+            "https://dfimg.dfrobot.com/wiki/20205/SEN0244_analog-tds-sensor_schematics_V1.0.pdf",
+            "https://dfimg.dfrobot.com/wiki/20205/SEN0244_analog-tds-sensor_svg_V1.0.svg"
+          ],
+          "cad": {
+            "label": "DFRobot SEN0244 manufacturer schematic (not a 3D model)",
+            "url": "https://dfimg.dfrobot.com/wiki/20205/SEN0244_analog-tds-sensor_schematics_V1.0.pdf"
+          },
+          "contactEvidence": "The official V1.0 pinout identifies the right Gravity contacts as 1 = -, 2 = +, 3 = A. The two left probe contacts are described positionally as TOP and BOTTOM because the user pinout does not define electrode polarity. The schematic confirms an alternating excitation and measurement circuit.",
+          "contacts": [
+            {
+              "id": "gravity-1",
+              "number": "GRAVITY.1",
+              "label": "-",
+              "type": "power_in",
+              "x": 366,
+              "y": 139
+            },
+            {
+              "id": "gravity-2",
+              "number": "GRAVITY.2",
+              "label": "+",
+              "type": "power_in",
+              "x": 366,
+              "y": 159
+            },
+            {
+              "id": "gravity-3",
+              "number": "GRAVITY.3",
+              "label": "A",
+              "type": "output",
+              "x": 366,
+              "y": 179
+            },
+            {
+              "id": "probe-top",
+              "number": "PROBE.TOP",
+              "label": "PROBE_TOP",
+              "type": "passive",
+              "x": 151,
+              "y": 143
+            },
+            {
+              "id": "probe-bottom",
+              "number": "PROBE.BOTTOM",
+              "label": "PROBE_BOTTOM",
+              "type": "passive",
+              "x": 151,
+              "y": 166
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for DFRobot Gravity TDS Sensor SEN0244. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "dfrobot-sen0315-paj7620u2",
+          "name": "DFRobot Gravity PAJ7620U2 Gesture Sensor SEN0315",
+          "source": "https://wiki.dfrobot.com/sen0315/",
+          "references": [
+            "https://wiki.dfrobot.com/sen0315/",
+            "https://dfimg.dfrobot.com/wiki/20496/SEN0315_paj7620u2_schematics_1.0.pdf",
+            "https://dfimg.dfrobot.com/wiki/20496/SEN0315_paj7620u2_dimension_1.0.pdf"
+          ],
+          "cad": {
+            "label": "DFRobot SEN0315 manufacturer schematic and pin reference (not a 3D model)",
+            "url": "https://dfimg.dfrobot.com/wiki/20496/SEN0315_paj7620u2_schematics_1.0.pdf"
+          },
+          "contactEvidence": "The V1.0 front photograph has four connector holes on the right; the rear photograph has the socket on the left, labeled D, C, -, + from top to bottom. The vertical order is preserved across the two views. The manufacturer pinout and schematic identify D as SDA and C as SCL.",
+          "contacts": [
+            {
+              "id": "gravity-1",
+              "number": "GRAVITY.1",
+              "label": "D",
+              "type": "bidirectional",
+              "x": 310,
+              "y": 114
+            },
+            {
+              "id": "gravity-2",
+              "number": "GRAVITY.2",
+              "label": "C",
+              "type": "input",
+              "x": 310,
+              "y": 134
+            },
+            {
+              "id": "gravity-3",
+              "number": "GRAVITY.3",
+              "label": "-",
+              "type": "power_in",
+              "x": 310,
+              "y": 154
+            },
+            {
+              "id": "gravity-4",
+              "number": "GRAVITY.4",
+              "label": "+",
+              "type": "power_in",
+              "x": 310,
+              "y": 174
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for DFRobot Gravity PAJ7620U2 Gesture Sensor SEN0315. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        }
+      ]
+    },
+    {
+      "id": "sparkfun-more",
+      "entries": [
+        {
+          "id": "sparkfun-sths34pf80-sen22494",
+          "name": "SparkFun STHS34PF80 Human Presence Sensor SEN-22494",
+          "source": "https://docs.sparkfun.com/SparkFun_Qwiic_Human_Presence_Sensor-STHS34PF80/hardware_overview/",
+          "references": [
+            "https://docs.sparkfun.com/SparkFun_Qwiic_Human_Presence_Sensor-STHS34PF80/assets/board_files/schematic.pdf",
+            "https://docs.sparkfun.com/SparkFun_Qwiic_Human_Presence_Sensor-STHS34PF80/assets/img/hookup_guide/dimensions-1x1.png"
+          ],
+          "cad": {
+            "label": "SparkFun STHS34PF80 Human Presence Sensor SEN-22494 manufacturer CAD / mechanical reference",
+            "url": "https://docs.sparkfun.com/SparkFun_Qwiic_Human_Presence_Sensor-STHS34PF80/assets/board_files/eagle_files.zip"
+          },
+          "contactEvidence": "The full-size v1.0 EAGLE board gives J3.1\u20136 as GND, 3.3 V, SDA, SCL, CS and INT. The left J2 socket is rotated 270 degrees, giving contacts 1\u20134 downward; the right J1 socket is rotated 90 degrees, giving 4\u20131 downward. Anchors lie on exposed solder tails. Housing mounting tabs and jumper pads are outside the signal-contact scope.",
+          "contacts": [
+            {
+              "id": "j3-1",
+              "number": "J3.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 103.5,
+              "y": 281.3
+            },
+            {
+              "id": "j3-2",
+              "number": "J3.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 128.9,
+              "y": 281.3
+            },
+            {
+              "id": "j3-3",
+              "number": "J3.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 154.3,
+              "y": 281.3
+            },
+            {
+              "id": "j3-4",
+              "number": "J3.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 179.7,
+              "y": 281.3
+            },
+            {
+              "id": "j3-5",
+              "number": "J3.5",
+              "label": "CS",
+              "type": "input",
+              "x": 205.1,
+              "y": 281.3
+            },
+            {
+              "id": "j3-6",
+              "number": "J3.6",
+              "label": "INT",
+              "type": "output",
+              "x": 230.5,
+              "y": 281.3
+            },
+            {
+              "id": "j2-1",
+              "number": "J2.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 90.8,
+              "y": 152
+            },
+            {
+              "id": "j2-2",
+              "number": "J2.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 90.8,
+              "y": 162
+            },
+            {
+              "id": "j2-3",
+              "number": "J2.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 90.8,
+              "y": 172
+            },
+            {
+              "id": "j2-4",
+              "number": "J2.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 90.8,
+              "y": 182
+            },
+            {
+              "id": "j1-4",
+              "number": "J1.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 243.2,
+              "y": 152
+            },
+            {
+              "id": "j1-3",
+              "number": "J1.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 243.2,
+              "y": 162
+            },
+            {
+              "id": "j1-2",
+              "number": "J1.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 243.2,
+              "y": 172
+            },
+            {
+              "id": "j1-1",
+              "number": "J1.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 243.2,
+              "y": 182
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for SparkFun STHS34PF80 Human Presence Sensor SEN-22494. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "sparkfun-as7343-sen23220",
+          "name": "SparkFun AS7343 Spectral Sensor SEN-23220",
+          "source": "https://docs.sparkfun.com/SparkFun_Spectral_Sensor_Breakout_AS7343_Qwiic/hardware_overview/",
+          "references": [
+            "https://docs.sparkfun.com/SparkFun_Spectral_Sensor_Breakout_AS7343_Qwiic/assets/board_files/SparkFun_AS7343_Qwiic.pdf",
+            "https://docs.sparkfun.com/SparkFun_Spectral_Sensor_Breakout_AS7343_Qwiic/assets/img/AS7343_Annotated.jpg"
+          ],
+          "cad": {
+            "label": "SparkFun AS7343 Spectral Sensor SEN-23220 manufacturer CAD / mechanical reference",
+            "url": "https://docs.sparkfun.com/SparkFun_Spectral_Sensor_Breakout_AS7343_Qwiic/assets/board_files/SparkFun_AS7343_Qwiic.zip"
+          },
+          "contactEvidence": "The v1.0 KiCad board gives J3.1\u20136 as GND, 3.3 V, SDA, SCL, GPIO and INT. J1 and J2 solder tails follow the opposite socket rotations. D3.2 is the left LED anode at 3.3 V; D3.1 is the right current-sink cathode. The schematic level-shifts only SDA and SCL; GPIO and INT remain at 1.8 V.",
+          "contacts": [
+            {
+              "id": "j3-1",
+              "number": "J3.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 103.5,
+              "y": 281.3
+            },
+            {
+              "id": "j3-2",
+              "number": "J3.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 128.9,
+              "y": 281.3
+            },
+            {
+              "id": "j3-3",
+              "number": "J3.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 154.3,
+              "y": 281.3
+            },
+            {
+              "id": "j3-4",
+              "number": "J3.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 179.7,
+              "y": 281.3
+            },
+            {
+              "id": "j3-5",
+              "number": "J3.5",
+              "label": "GPIO",
+              "type": "bidirectional",
+              "x": 205.1,
+              "y": 281.3
+            },
+            {
+              "id": "j3-6",
+              "number": "J3.6",
+              "label": "INT",
+              "type": "output",
+              "x": 230.5,
+              "y": 281.3
+            },
+            {
+              "id": "j2-1",
+              "number": "J2.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 90.8,
+              "y": 152
+            },
+            {
+              "id": "j2-2",
+              "number": "J2.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 90.8,
+              "y": 162
+            },
+            {
+              "id": "j2-3",
+              "number": "J2.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 90.8,
+              "y": 172
+            },
+            {
+              "id": "j2-4",
+              "number": "J2.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 90.8,
+              "y": 182
+            },
+            {
+              "id": "j1-4",
+              "number": "J1.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 243.2,
+              "y": 152
+            },
+            {
+              "id": "j1-3",
+              "number": "J1.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 243.2,
+              "y": 162
+            },
+            {
+              "id": "j1-2",
+              "number": "J1.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 243.2,
+              "y": 172
+            },
+            {
+              "id": "j1-1",
+              "number": "J1.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 243.2,
+              "y": 182
+            },
+            {
+              "id": "d3-2",
+              "number": "D3.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 65.4,
+              "y": 116.2
+            },
+            {
+              "id": "d3-1",
+              "number": "D3.1",
+              "label": "LED_K",
+              "type": "open_collector",
+              "x": 90.8,
+              "y": 116.2
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for SparkFun AS7343 Spectral Sensor SEN-23220. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "sparkfun-as7331-sen23517",
+          "name": "SparkFun AS7331 Spectral UV Sensor SEN-23517",
+          "source": "https://docs.sparkfun.com/SparkFun_Spectral_UV_Sensor_AS7331/single_page/",
+          "references": [
+            "https://docs.sparkfun.com/SparkFun_Spectral_UV_Sensor_AS7331/assets/board_files/SparkFun_Qwiic_UV_Sensor_AS7331.pdf",
+            "https://docs.sparkfun.com/SparkFun_Spectral_UV_Sensor_AS7331/assets/img/Spectral_UV_Sensor-Connections.jpg"
+          ],
+          "cad": {
+            "label": "SparkFun AS7331 Spectral UV Sensor SEN-23517 manufacturer CAD / mechanical reference",
+            "url": "https://docs.sparkfun.com/SparkFun_Spectral_UV_Sensor_AS7331/assets/board_files/SparkFun_Qwiic_UV_Sensor_AS7331.zip"
+          },
+          "contactEvidence": "The full-size v1.0 EAGLE board rotates J3 by 180 degrees. Its visible left-to-right order is 6 SCL, 5 SDA, 4 3.3 V, 3 GND, 2 READY/INT, 1 SYNC (silk SYN). Both Qwiic socket rotations and contact order were checked against the board. Supply is 2.7\u20133.6 V, with default I\u00b2C address 0x74.",
+          "contacts": [
+            {
+              "id": "j3-6",
+              "number": "J3.6",
+              "label": "SCL",
+              "type": "input",
+              "x": 103.5,
+              "y": 281.3
+            },
+            {
+              "id": "j3-5",
+              "number": "J3.5",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 128.9,
+              "y": 281.3
+            },
+            {
+              "id": "j3-4",
+              "number": "J3.4",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 154.3,
+              "y": 281.3
+            },
+            {
+              "id": "j3-3",
+              "number": "J3.3",
+              "label": "GND",
+              "type": "power_in",
+              "x": 179.7,
+              "y": 281.3
+            },
+            {
+              "id": "j3-2",
+              "number": "J3.2",
+              "label": "INT",
+              "type": "output",
+              "x": 205.1,
+              "y": 281.3
+            },
+            {
+              "id": "j3-1",
+              "number": "J3.1",
+              "label": "SYN",
+              "type": "input",
+              "x": 230.5,
+              "y": 281.3
+            },
+            {
+              "id": "j2-1",
+              "number": "J2.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 90.8,
+              "y": 152
+            },
+            {
+              "id": "j2-2",
+              "number": "J2.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 90.8,
+              "y": 162
+            },
+            {
+              "id": "j2-3",
+              "number": "J2.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 90.8,
+              "y": 172
+            },
+            {
+              "id": "j2-4",
+              "number": "J2.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 90.8,
+              "y": 182
+            },
+            {
+              "id": "j1-4",
+              "number": "J1.4",
+              "label": "SCL",
+              "type": "input",
+              "x": 243.2,
+              "y": 152
+            },
+            {
+              "id": "j1-3",
+              "number": "J1.3",
+              "label": "SDA",
+              "type": "bidirectional",
+              "x": 243.2,
+              "y": 162
+            },
+            {
+              "id": "j1-2",
+              "number": "J1.2",
+              "label": "3V3",
+              "type": "power_in",
+              "x": 243.2,
+              "y": 172
+            },
+            {
+              "id": "j1-1",
+              "number": "J1.1",
+              "label": "GND",
+              "type": "power_in",
+              "x": 243.2,
+              "y": 182
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for SparkFun AS7331 Spectral UV Sensor SEN-23517. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        }
+      ]
+    },
+    {
+      "id": "seeed-more",
+      "entries": [
+        {
+          "id": "seeed-grove-hcho-101020001",
+          "name": "Seeed Grove HCHO Sensor 101020001",
+          "source": "https://wiki.seeedstudio.com/Grove-HCHO_Sensor/",
+          "references": [
+            "https://wiki.seeedstudio.com/Grove-HCHO_Sensor/",
+            "https://files.seeedstudio.com/wiki/Grove-HCHO_Sensor/res/Grove%20-%20HCHO%20Sensor.pdf"
+          ],
+          "cad": {
+            "label": "Seeed Grove HCHO Sensor 101020001 manufacturer CAD / mechanical reference",
+            "url": "https://files.seeedstudio.com/wiki/Grove-HCHO_Sensor/res/Grove-HCHO_Sensor_Eagle_File.zip"
+          },
+          "contactEvidence": "The V1.0 EAGLE board identifies J1.1 as SIG, J1.2 as NC, J1.3 as VCC and J1.4 as GND. The front photograph shows the top socket ordered GND, VCC, NC, SIG from left to right. The source specifies 5 V \u00b10.3 V and the WSP2110 sensing element. No service test lands occur on this board.",
+          "contacts": [
+            {
+              "id": "j1-4",
+              "number": "J1.4",
+              "label": "GND",
+              "type": "power_in",
+              "x": 180,
+              "y": 98
+            },
+            {
+              "id": "j1-3",
+              "number": "J1.3",
+              "label": "VCC",
+              "type": "power_in",
+              "x": 200,
+              "y": 98
+            },
+            {
+              "id": "j1-2",
+              "number": "J1.2",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 220,
+              "y": 98
+            },
+            {
+              "id": "j1-1",
+              "number": "J1.1",
+              "label": "SIG",
+              "type": "output",
+              "x": 240,
+              "y": 98
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for Seeed Grove HCHO Sensor 101020001. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "seeed-grove-electromagnet-101020073",
+          "name": "Seeed Grove Electromagnet 101020073",
+          "source": "https://wiki.seeedstudio.com/Grove-Electromagnet/",
+          "references": [
+            "https://wiki.seeedstudio.com/Grove-Electromagnet/",
+            "https://files.seeedstudio.com/wiki/Grove-Electromagnet/img/Grove_Electromagnet_02.jpg"
+          ],
+          "cad": {
+            "label": "Seeed Grove Electromagnet 101020073 manufacturer CAD / mechanical reference",
+            "url": "https://files.seeedstudio.com/wiki/Grove-Electromagnet/res/Grove_Electromagnet_v1.0_SCH_PCB.zip"
+          },
+          "contactEvidence": "The V1.0 EAGLE board identifies J1.1 SIG, J1.2 unconnected, J1.3 VCC, J1.4 GND, J2.1 switched return and J2.2 VCC. Eight reverse test lands are retained: TP1 GND, TP2 VCC, TP3 NC, TP4 SIG, TP5 switched return and TP6\u20138 NC. Their view mirrors the source x centers at \u00b118.415 mm, with source y offsets \u00b16.35 mm and \u00b13.81 mm.",
+          "contacts": [
+            {
+              "id": "j1-4",
+              "number": "J1.4",
+              "label": "GND",
+              "type": "power_in",
+              "x": 144,
+              "y": 95
+            },
+            {
+              "id": "j1-3",
+              "number": "J1.3",
+              "label": "VCC",
+              "type": "power_in",
+              "x": 144,
+              "y": 115
+            },
+            {
+              "id": "j1-2",
+              "number": "J1.2",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 144,
+              "y": 135
+            },
+            {
+              "id": "j1-1",
+              "number": "J1.1",
+              "label": "SIG",
+              "type": "input",
+              "x": 144,
+              "y": 155
+            },
+            {
+              "id": "j2-2",
+              "number": "J2.2",
+              "label": "VCC",
+              "type": "power_in",
+              "x": 184,
+              "y": 69
+            },
+            {
+              "id": "j2-1",
+              "number": "J2.1",
+              "label": "COIL-",
+              "type": "open_collector",
+              "x": 208,
+              "y": 69
+            },
+            {
+              "id": "tp1-t",
+              "number": "TP1.T",
+              "label": "GND",
+              "type": "power_in",
+              "x": 425.735,
+              "y": 367.85
+            },
+            {
+              "id": "tp2-t",
+              "number": "TP2.T",
+              "label": "VCC",
+              "type": "power_in",
+              "x": 425.735,
+              "y": 390.71
+            },
+            {
+              "id": "tp3-t",
+              "number": "TP3.T",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 425.735,
+              "y": 459.29
+            },
+            {
+              "id": "tp4-t",
+              "number": "TP4.T",
+              "label": "SIG",
+              "type": "input",
+              "x": 425.735,
+              "y": 482.15
+            },
+            {
+              "id": "tp5-t",
+              "number": "TP5.T",
+              "label": "COIL-",
+              "type": "open_collector",
+              "x": 94.265,
+              "y": 367.85
+            },
+            {
+              "id": "tp6-t",
+              "number": "TP6.T",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 94.265,
+              "y": 390.71
+            },
+            {
+              "id": "tp7-t",
+              "number": "TP7.T",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 94.265,
+              "y": 459.29
+            },
+            {
+              "id": "tp8-t",
+              "number": "TP8.T",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 94.265,
+              "y": 482.15
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for Seeed Grove Electromagnet 101020073. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "seeed-grove-water-atomization-101020090",
+          "name": "Seeed Grove Water Atomization 101020090",
+          "source": "https://wiki.seeedstudio.com/Grove-Water_Atomization/",
+          "references": [
+            "https://wiki.seeedstudio.com/Grove-Water_Atomization/",
+            "https://files.seeedstudio.com/wiki/Grove-Water_Atomization/res/Schematic_file_in_PDF.zip"
+          ],
+          "cad": {
+            "label": "Seeed Grove Water Atomization 101020090 manufacturer CAD / mechanical reference",
+            "url": "https://files.seeedstudio.com/wiki/Grove-Water_Atomization/res/Schematic_file_in_Eagle.zip"
+          },
+          "contactEvidence": "The V1.0 EAGLE board identifies J1.1 EN, J1.2 NC, J1.3 VCC_5V, J1.4 GND, J2.- GND and J2.+ high-voltage drive. Eight reverse test lands are retained: GND, switched VCC after Q1, PWM from NE555 pin 3, EN, OUT+, NC1, NC2 and OUT-. The VCC service point and external VCC_5V input are separate nets. The official wiki identifies SKU 101020090.",
+          "contacts": [
+            {
+              "id": "j1-4",
+              "number": "J1.4",
+              "label": "GND",
+              "type": "power_in",
+              "x": 111.3875,
+              "y": 98
+            },
+            {
+              "id": "j1-3",
+              "number": "J1.3",
+              "label": "VCC",
+              "type": "power_in",
+              "x": 111.3875,
+              "y": 116
+            },
+            {
+              "id": "j1-2",
+              "number": "J1.2",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 111.3875,
+              "y": 134
+            },
+            {
+              "id": "j1-1",
+              "number": "J1.1",
+              "label": "EN",
+              "type": "input",
+              "x": 111.3875,
+              "y": 152
+            },
+            {
+              "id": "j2-negative-",
+              "number": "J2.-",
+              "label": "GND",
+              "type": "power_in",
+              "x": 401.8175,
+              "y": 116
+            },
+            {
+              "id": "j2-positive-",
+              "number": "J2.+",
+              "label": "HV",
+              "type": "output",
+              "x": 401.8175,
+              "y": 134
+            },
+            {
+              "id": "gnd-t",
+              "number": "GND.T",
+              "label": "GND",
+              "type": "power_in",
+              "x": 425.7575,
+              "y": 367.85
+            },
+            {
+              "id": "vcc-t",
+              "number": "VCC.T",
+              "label": "VCC_SW",
+              "type": "power_out",
+              "x": 425.7575,
+              "y": 390.71
+            },
+            {
+              "id": "pwm-t",
+              "number": "PWM.T",
+              "label": "PWM",
+              "type": "output",
+              "x": 425.7575,
+              "y": 459.29
+            },
+            {
+              "id": "en-t",
+              "number": "EN.T",
+              "label": "EN",
+              "type": "input",
+              "x": 425.7575,
+              "y": 482.15
+            },
+            {
+              "id": "out-positive-t",
+              "number": "OUT+.T",
+              "label": "HV",
+              "type": "output",
+              "x": 94.2875,
+              "y": 367.85
+            },
+            {
+              "id": "nc2-t",
+              "number": "NC2.T",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 94.2875,
+              "y": 390.71
+            },
+            {
+              "id": "nc1-t",
+              "number": "NC1.T",
+              "label": "NC",
+              "type": "no_connect",
+              "x": 94.2875,
+              "y": 459.29
+            },
+            {
+              "id": "out-negative-t",
+              "number": "OUT-.T",
+              "label": "GND",
+              "type": "power_in",
+              "x": 94.2875,
+              "y": 482.15
+            }
+          ],
+          "footprintRecommendation": "R \u2014 reference/off-board contact carrier",
+          "generated3DRecommendation": "Approximate",
+          "footprintNote": "Reference off-board cable-termination carrier for Seeed Grove Water Atomization 101020090. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        }
+      ]
+    }
+  ]
+}

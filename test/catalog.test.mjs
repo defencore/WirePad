@@ -5,7 +5,7 @@ import { componentArt, componentById, components } from '../src/catalog/index.js
 import { footprintLayout } from '../src/assets/footprint-layout.js';
 import { kicadFootprint, kicadModel, kicadSymbol } from '../src/assets/kicad.js';
 import { parseProject } from '../src/model/project.js';
-import { version1Contacts } from '../src/catalog/data/contact-layout-v1.js';
+import { version1Contacts } from '../src/model/data/contact-layout-v1.js';
 
 test("each library component maps its canvas contacts to KiCad pads", () => {
   assert.equal(componentById.size, components.length);

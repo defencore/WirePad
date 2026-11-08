@@ -1,0 +1,655 @@
+{
+  "checked": "2026-11-08",
+  "baseline": 552,
+  "added": 56,
+  "total": 608,
+  "diyKitElements": 24,
+  "manufacturerExpansion": 32,
+  "manufacturerCounts": {
+    "M5Stack": 3,
+    "MIKROE": 3,
+    "DFRobot": 3,
+    "SparkFun Electronics": 3,
+    "Seeed Studio": 3,
+    "Espressif Systems": 3,
+    "Pololu": 3,
+    "RobotDyn": 3,
+    "Arduino": 2,
+    "PJRC": 3,
+    "Raspberry Pi": 3
+  },
+  "newContacts": 726,
+  "newFootprintPads": 742,
+  "unchangedExistingDefinitionsArtworkAnchorsAndNativeAssets": 552,
+  "verification": {
+    "catalog": "608 components, 89 families, 22460 contacts, 22735 physical pads; both SVG modes validated.",
+    "artwork": "All 112 new labeled/unlabeled SVG views inspected against source photos/diagrams. Hidden contacts use labeled rear or mating-face views. Final RP2350 package drawing clears the Pico 2 W SWD contacts.",
+    "nativeKiCad": "Native KiCad 10 CLI loaded and plotted all 56 new symbols and 56 footprints. Source-specific geometry assessments remain separate from parsing validity.",
+    "browser": {
+      "newEntries": 56,
+      "manufacturerFilters": 11,
+      "placedThroughLibrary": 11,
+      "importedGallery": 56,
+      "physicalContacts": 726,
+      "exports": [
+        "SVG",
+        "PNG"
+      ],
+      "pageErrors": []
+    },
+    "tests": "208 passed; zero failures or skips.",
+    "packaging": "Versioned diy-maker-20261108 output built; module/CSS paths checked and all 608 components import.",
+    "geometry": "All 552 pre-expansion definitions, both SVG modes and native assets match the saved fingerprints. Fixtures now guard 608 canvas layouts and native asset sets.",
+    "documentation": "Generated COMPONENTS.md is current. Every new component has an explicit footprint assessment and approximate generated 3D mark."
+  },
+  "limitations": [
+    "All generated WirePad WRL models remain approximate. Linked manufacturer STEP/STL/CAD files are separate resources, not imported into WRL output.",
+    "FP:R exports are approximate or off-board wire/contact carriers. FP:C exports retain reviewed source coordinates but do not claim complete production/mating footprints; consult each footprint note.",
+    "The HALJIA DIP matrix is a representative photographed variant. Input labels and output orientation are source-supported; the middle DOUT route is partly hidden and its assignment is explicitly inferred.",
+    "RobotDyn entries use the original manufacturer documentation archive and exact photographed regulator markings; copied specification/schematic discrepancies are recorded per entry."
+  ],
+  "families": [
+    {
+      "id": "diy-kit-inputs",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-diy-kit-inputs-2026-11-08.json",
+      "entries": [
+        {
+          "id": "keyestudio-ks0008-joystick",
+          "name": "Keyestudio KS0008 Thumb Joystick Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 5,
+          "pads": 5,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0013-encoder",
+          "name": "Keyestudio KS0013 Rotary Encoder Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 5,
+          "pads": 5,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0014-rotation",
+          "name": "Keyestudio KS0014 Rotary Potentiometer Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0021-collision",
+          "name": "Keyestudio KS0021 Collision Switch Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0025-tilt",
+          "name": "Keyestudio KS0025 Ball Tilt Switch Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0029-button",
+          "name": "Keyestudio KS0029 Push Button Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0038-reed",
+          "name": "Keyestudio KS0038 Reed Switch Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "seeed-grove-slide-101020036",
+          "name": "Seeed Grove Slide Potentiometer",
+          "manufacturer": "Seeed Studio",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "diy-kit-sensors",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-diy-kit-sensors-2026-11-08.json",
+      "entries": [
+        {
+          "id": "keyestudio-ks0036-flame",
+          "name": "Keyestudio KS0036 Flame Sensor",
+          "manufacturer": "Keyestudio",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0040-mq2",
+          "name": "Keyestudio KS0040 MQ-2 Gas Sensor",
+          "manufacturer": "Keyestudio",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0048-water-level",
+          "name": "Keyestudio KS0048 Water Level Sensor",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0203-rain-steam",
+          "name": "Keyestudio KS0203 Rain / Steam Sensor",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "joyit-ky037-sound-threshold",
+          "name": "Joy-IT KY-037 Microphone Threshold Sensor",
+          "manufacturer": "Joy-IT",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0022-lm35",
+          "name": "Keyestudio KS0022 LM35 Temperature Sensor",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0028-photocell",
+          "name": "Keyestudio KS0028 Photocell Sensor",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "joyit-ky003-hall",
+          "name": "Joy-IT KY-003 A3144 Hall Sensor",
+          "manufacturer": "Joy-IT",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "diy-kit-outputs",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-diy-kit-outputs-2026-11-08.json",
+      "entries": [
+        {
+          "id": "keyestudio-ks0018-active-buzzer",
+          "name": "Keyestudio KS0018 Active Buzzer",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0019-passive-buzzer",
+          "name": "Keyestudio KS0019 Passive Buzzer",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0032-rgb-led",
+          "name": "Keyestudio KS0032 RGB LED Module",
+          "manufacturer": "Keyestudio",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0310-traffic-light",
+          "name": "Keyestudio KS0310 Traffic Light",
+          "manufacturer": "Keyestudio",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0027-ir-transmitter",
+          "name": "Keyestudio KS0027 IR Transmitter",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0026-ir-receiver",
+          "name": "Keyestudio KS0026 IR Receiver",
+          "manufacturer": "Keyestudio",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "haljia-max7219-8x8-dip",
+          "name": "HALJIA MAX7219 8×8 LED Matrix",
+          "manufacturer": "HALJIA",
+          "contacts": 10,
+          "pads": 10,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "keyestudio-ks0327-uln2003-stepper",
+          "name": "Keyestudio KS0327 ULN2003 + 28BYJ-48",
+          "manufacturer": "Keyestudio",
+          "contacts": 11,
+          "pads": 11,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "m5stack-units",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-m5stack-mikroe-2026-11-08.json",
+      "entries": [
+        {
+          "id": "m5stack-unit-light-u021",
+          "name": "M5Stack Unit Light U021",
+          "manufacturer": "M5Stack",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "m5stack-unit-pir-u004",
+          "name": "M5Stack Unit PIR U004",
+          "manufacturer": "M5Stack",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "m5stack-unit-relay-u023",
+          "name": "M5Stack Unit Relay U023",
+          "manufacturer": "M5Stack",
+          "contacts": 7,
+          "pads": 7,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "mikroe-click",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-m5stack-mikroe-2026-11-08.json",
+      "entries": [
+        {
+          "id": "mikroe-buzz-click-945",
+          "name": "MIKROE BUZZ Click MIKROE-945",
+          "manufacturer": "MIKROE",
+          "contacts": 16,
+          "pads": 16,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "mikroe-button-r-click-1901",
+          "name": "MIKROE Button R Click MIKROE-1901",
+          "manufacturer": "MIKROE",
+          "contacts": 16,
+          "pads": 16,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "mikroe-light-click-1424",
+          "name": "MIKROE Light Click MIKROE-1424",
+          "manufacturer": "MIKROE",
+          "contacts": 16,
+          "pads": 16,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "dfrobot-more",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-sensors-2026-11-08.json",
+      "entries": [
+        {
+          "id": "dfrobot-sen0161-v2-ph",
+          "name": "DFRobot Gravity pH Sensor V2 SEN0161-V2",
+          "manufacturer": "DFRobot",
+          "contacts": 5,
+          "pads": 5,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "dfrobot-sen0244-tds",
+          "name": "DFRobot Gravity TDS Sensor SEN0244",
+          "manufacturer": "DFRobot",
+          "contacts": 5,
+          "pads": 5,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "dfrobot-sen0315-paj7620u2",
+          "name": "DFRobot Gravity PAJ7620U2 Gesture Sensor SEN0315",
+          "manufacturer": "DFRobot",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "sparkfun-more",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-sensors-2026-11-08.json",
+      "entries": [
+        {
+          "id": "sparkfun-sths34pf80-sen22494",
+          "name": "SparkFun STHS34PF80 Human Presence Sensor SEN-22494",
+          "manufacturer": "SparkFun Electronics",
+          "contacts": 14,
+          "pads": 14,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "sparkfun-as7343-sen23220",
+          "name": "SparkFun AS7343 Spectral Sensor SEN-23220",
+          "manufacturer": "SparkFun Electronics",
+          "contacts": 16,
+          "pads": 16,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "sparkfun-as7331-sen23517",
+          "name": "SparkFun AS7331 Spectral UV Sensor SEN-23517",
+          "manufacturer": "SparkFun Electronics",
+          "contacts": 14,
+          "pads": 14,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "seeed-more",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-sensors-2026-11-08.json",
+      "entries": [
+        {
+          "id": "seeed-grove-hcho-101020001",
+          "name": "Seeed Grove HCHO Sensor 101020001",
+          "manufacturer": "Seeed Studio",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "seeed-grove-electromagnet-101020073",
+          "name": "Seeed Grove Electromagnet 101020073",
+          "manufacturer": "Seeed Studio",
+          "contacts": 14,
+          "pads": 14,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "seeed-grove-water-atomization-101020090",
+          "name": "Seeed Grove Water Atomization 101020090",
+          "manufacturer": "Seeed Studio",
+          "contacts": 14,
+          "pads": 14,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "espressif-more-boards",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-boards-2026-11-08.json",
+      "entries": [
+        {
+          "id": "esp8684-devkitm-1-v1-1",
+          "name": "Espressif ESP8684-DevKitM-1",
+          "manufacturer": "Espressif Systems",
+          "contacts": 30,
+          "pads": 30,
+          "footprintAccuracy": "C",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "esp8684-devkitc-02-v1-0",
+          "name": "Espressif ESP8684-DevKitC-02",
+          "manufacturer": "Espressif Systems",
+          "contacts": 30,
+          "pads": 30,
+          "footprintAccuracy": "C",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "esp32-devkitm-1-mini-v1",
+          "name": "Espressif ESP32-DevKitM-1",
+          "manufacturer": "Espressif Systems",
+          "contacts": 34,
+          "pads": 34,
+          "footprintAccuracy": "C",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "pololu-more",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-motion-2026-11-08.json",
+      "entries": [
+        {
+          "id": "pololu-qtr-1a-958",
+          "name": "Pololu QTR-1A Reflectance Sensor",
+          "manufacturer": "Pololu",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "pololu-qtr-1rc-959",
+          "name": "Pololu QTR-1RC Reflectance Sensor",
+          "manufacturer": "Pololu",
+          "contacts": 3,
+          "pads": 3,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "pololu-drv8838-2990",
+          "name": "Pololu DRV8838 Single Motor Driver",
+          "manufacturer": "Pololu",
+          "contacts": 10,
+          "pads": 10,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "robotdyn-more",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-motion-2026-11-08.json",
+      "entries": [
+        {
+          "id": "robotdyn-25v-voltage-sensor",
+          "name": "RobotDyn 25 V DC Voltage Sensor",
+          "manufacturer": "RobotDyn",
+          "contacts": 4,
+          "pads": 4,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "robotdyn-ams1117-3-3v-module",
+          "name": "RobotDyn AMS1117 3.3 V Regulator",
+          "manufacturer": "RobotDyn",
+          "contacts": 8,
+          "pads": 8,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "robotdyn-ams1117-5v-module",
+          "name": "RobotDyn AMS1117 5 V Regulator",
+          "manufacturer": "RobotDyn",
+          "contacts": 8,
+          "pads": 8,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "arduino-more-boards",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-boards-2026-11-08.json",
+      "entries": [
+        {
+          "id": "arduino-modulino-knob-abx00107",
+          "name": "Arduino Modulino Knob",
+          "manufacturer": "Arduino",
+          "contacts": 37,
+          "pads": 41,
+          "footprintAccuracy": "C",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "arduino-modulino-buttons-abx00110",
+          "name": "Arduino Modulino Buttons",
+          "manufacturer": "Arduino",
+          "contacts": 37,
+          "pads": 41,
+          "footprintAccuracy": "C",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "teensy-more",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-motion-2026-11-08.json",
+      "entries": [
+        {
+          "id": "pjrc-teensy-4-0",
+          "name": "PJRC Teensy 4.0",
+          "manufacturer": "PJRC",
+          "contacts": 66,
+          "pads": 66,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "pjrc-teensy-lc",
+          "name": "PJRC Teensy LC",
+          "manufacturer": "PJRC",
+          "contacts": 41,
+          "pads": 41,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "pjrc-teensy-2-0",
+          "name": "PJRC Teensy 2.0",
+          "manufacturer": "PJRC",
+          "contacts": 31,
+          "pads": 31,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    },
+    {
+      "id": "raspberry-pi-more",
+      "checkedBy": "Named family source audit plus root validation/visual review",
+      "sourceAudit": "docs/catalog-maker-boards-2026-11-08.json",
+      "entries": [
+        {
+          "id": "raspberry-pi-pico-2",
+          "name": "Raspberry Pi Pico 2",
+          "manufacturer": "Raspberry Pi",
+          "contacts": 50,
+          "pads": 54,
+          "footprintAccuracy": "C",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "raspberry-pi-pico-2-w",
+          "name": "Raspberry Pi Pico 2 W",
+          "manufacturer": "Raspberry Pi",
+          "contacts": 49,
+          "pads": 53,
+          "footprintAccuracy": "C",
+          "generated3DAccuracy": "A"
+        },
+        {
+          "id": "raspberry-pi-debug-probe-rev2",
+          "name": "Raspberry Pi Debug Probe",
+          "manufacturer": "Raspberry Pi",
+          "contacts": 35,
+          "pads": 35,
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A"
+        }
+      ]
+    }
+  ]
+}

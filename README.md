@@ -65,6 +65,10 @@ Connection points sit directly on the illustrated solder pads, through-holes or 
 
 [Architecture and extension contracts](docs/ARCHITECTURE.md) describe ownership, dependency boundaries, component records, configurable instances and cleanup. The browser entry creates one application; `application.destroy()` releases its listeners, observers, timers and canvas layers before a remount.
 
+[Refactor audit](docs/REFACTOR_AUDIT.md) records the source organization, corrected defects and compatibility checks.
+
+[Component library tree](docs/COMPONENTS.md) lists every part by category, manufacturer and source family, with separate footprint and generated 3D accuracy marks. Manufacturer CAD links are identified separately; every current generated WRL is approximate.
+
 ## Configure and move a breadboard
 
 Select the board to set **Terminal rows**, **Left terminal cells** and **Right terminal cells** independently. Each terminal bank supports 1–10 cells per row; the default is five on each side. Power rails are configured separately. Existing contact identities remain stable as a bank is resized, and a layout change cannot remove a contact that has a wire attached.
@@ -76,10 +80,11 @@ Drag the board border or its caption to move it together with contained componen
 ```sh
 node --test
 node scripts/catalog.mjs
+node scripts/catalog-tree.mjs --check
 node scripts/build-site.mjs /tmp/wirepad-site local
 ```
 
-The catalog check validates entries, both illustration modes, contact coordinates and pin-to-pad numbering, including repeated physical lands. The tests also guard published contact geometry, module dependency boundaries and static-site asset resolution.
+The catalog check validates entries, both illustration modes, contact coordinates and pin-to-pad numbering, including repeated physical lands, and automatically regenerates `docs/COMPONENTS.md`. Update `docs/catalog-kicad-accuracy.json` with explicit accuracy evidence when adding or reviewing parts. The read-only tree check and tests reject stale documentation. Tests also guard published contact geometry, module dependency boundaries and static-site asset resolution.
 
 ## Use the KiCad assets
 
@@ -151,7 +156,7 @@ For future native-asset downloads, a per-component asset record should identify 
 4. Reuse shared drawing/board builders from `src/catalog/shared/`. Large CAD illustrations can live in `artwork/` with their readable component data and attribution in `data/`. Keep source references, scope and CAD links with the entry.
 5. Run `node scripts/catalog.mjs`, `node --test` and `git diff --check`. Review both SVG modes, connect the part on the canvas, export an image and open the native assets in KiCad.
 
-See the [extension example](docs/ARCHITECTURE.md#adding-a-family) and the [latest module audit](docs/catalog-module-expansion-2026-11-07.json).
+See the [extension example](docs/ARCHITECTURE.md#adding-a-family) and the [latest module audit](docs/catalog-modules-integration-2026-11-08.json).
 
 ## Publish with GitHub Pages
 

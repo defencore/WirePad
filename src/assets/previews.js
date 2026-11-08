@@ -45,8 +45,9 @@ export function footprintPreview(component) {
   const { width, height, halfWidth, halfHeight } = layout;
   const bounds = [-halfWidth - 2.1, -halfHeight - 2.1, halfWidth + 2.1, halfHeight + 2.1];
   const pads = layout.pads.map(({ number, x, y, width, height, drill, shape, cornerRatio }) => {
-    const round = shape === "circle" || shape === "oval";
-    const radius = shape === "roundrect" ? Math.min(width, height) * cornerRatio : 0.08;
+    const round = shape === "circle";
+    const radius = shape === "oval" ? Math.min(width, height) / 2
+      : shape === "roundrect" ? Math.min(width, height) * cornerRatio : 0.08;
     const copper = round
       ? `<ellipse cx="${x}" cy="${y}" rx="${width / 2}" ry="${height / 2}"/>`
       : `<rect x="${x - width / 2}" y="${y - height / 2}" width="${width}" height="${height}" rx="${radius}"/>`;

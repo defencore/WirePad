@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { request } from 'node:http';
-import { access, mkdir, mkdtemp, readFile, readdir, rm, symlink, writeFile } from 'node:fs/promises';
+import { access, mkdir, mkdtemp, readFile, readdir, realpath, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -104,6 +104,33 @@ test('builder rejects unsafe revisions and source destinations before changing f
   await assert.rejects(access(output), { code: 'ENOENT' });
   await buildSite(output, 'test', { root });
   assert.deepEqual((await readdir(output)).sort(), ['assets', 'index.html']);
+});
+
+test('builder resolves source and output aliases before writing through a symlink', async t => {
+  const directory = await temporary(t), root = join(directory, 'source');
+  const sourceOutput = join(root, 'src/empty');
+  await mkdir(sourceOutput, { recursive: true });
+  await writeFile(join(root, 'index.html'), '<script src="./src/main.js"></script>');
+  await writeFile(join(root, 'src/main.js'), 'export const fixture = true;');
+  await writeFile(join(root, 'style.css'), 'body {}');
+  await writeFile(join(root, 'favicon.svg'), '<svg/>');
+  const sourceAlias = join(directory, 'source-alias');
+  const outputAlias = join(directory, 'output-alias');
+  await symlink(root, sourceAlias, 'dir');
+  await symlink(sourceOutput, outputAlias, 'dir');
+  for (const output of [outputAlias, join(outputAlias, 'nested'), join(root, 'src/new')]) {
+    await assert.rejects(buildSite(output, 'test', { root: sourceAlias }), /separate from the source tree/);
+  }
+  assert.deepEqual(await readdir(sourceOutput), [], 'A rejected build must leave the source directory empty');
+  await assert.rejects(access(join(root, 'src/new')), { code: 'ENOENT' });
+
+  const outside = join(directory, 'outside');
+  const outsideAlias = join(directory, 'outside-alias');
+  await mkdir(outside);
+  await symlink(outside, outsideAlias, 'dir');
+  const built = await buildSite(outsideAlias, 'test', { root: sourceAlias });
+  assert.equal(built.outdir, await realpath(outside));
+  assert.deepEqual((await readdir(outside)).sort(), ['assets', 'index.html']);
 });
 
 test('development HTTP server shares rewriting, serves uncached imports/CSS and blocks path escapes', async t => {

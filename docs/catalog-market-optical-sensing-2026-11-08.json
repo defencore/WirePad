@@ -1,0 +1,1015 @@
+{
+  "date": "2026-11-08",
+  "family": "market-optical-sensing",
+  "counts": {
+    "components": 5,
+    "contacts": 38,
+    "svgViews": 10
+  },
+  "scope": "Five exact optical sensing IC ordering codes, transferred from the sensor expansion. Read-only reuse of market-sensor-packages.js; bottom-view native X mirroring is local to this family.",
+  "checks": {
+    "imports": "pass",
+    "physicalContactCounts": "pass",
+    "uniqueAnchors": "pass",
+    "explicitBottomMirrors": "pass",
+    "artwork": "10 SVG views generated; parent integrates browser/native QA"
+  },
+  "limitations": [
+    "All footprints use selected reference lands (FP:R), and generated 3D is approximate (3D:A).",
+    "Manufacturer optical top or explicitly identified bottom views; underside contacts shown from top are transparent projections.",
+    "LTR-390UV uses the reviewed author-original Mouser datasheet mirror; its manufacturer-hosted current document URL is retained as an additional reference, with access restricted during review."
+  ],
+  "entries": [
+    {
+      "id": "market-bh1750fvi-tr",
+      "part": "BH1750FVI-TR",
+      "source": "https://www.mouser.com/datasheet/2/348/bh1750fvi-e-186247.pdf",
+      "sourceArtifact": {
+        "path": "/tmp/wirepad-market-discretes/bh1750fvi.pdf",
+        "sha256": "aa7dfcb9f97a0a3a9e7298fd17a69f1a587188ac96a78d1a95d1849cae10b80c"
+      },
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/C78960.html",
+        "status": "Exact manufacturer and ordering-code commercial listing reported in stock; availability is time-dependent."
+      },
+      "view": "Digital 16-bit ambient-light sensor with I²C address 0x23 or 0x5C. VCC 2.4–3.6 V; DVI is the serial-interface reference and asynchronous reset input. Source: ROHM No.11046EDT01, Rev. D, 2011-11, terminal table p.13 and outline p.14. Component-side view follows the top outline: bottom 1–2–3 left to right, top 6–5–4 left to right. Molded body is 1.6 × 2.6 mm; total lead span is 3.0 mm. Exact package: WSOF6I. Component-side top view with all six functional leads. Underside metal details without assigned terminal numbers are not promoted to extra signal pins. Package markings are representative. The native carrier uses reference copper lands; generated 3D geometry is approximate.",
+      "pins": [
+        {
+          "id": "p1",
+          "number": "1",
+          "label": "VCC",
+          "type": "power_in",
+          "description": "1 — Sensor supply input, 2.4–3.6 V.",
+          "canvas": [
+            49,
+            211.8
+          ]
+        },
+        {
+          "id": "p2",
+          "number": "2",
+          "label": "ADDR",
+          "type": "input",
+          "description": "2 — Address selection: LOW gives 7-bit address 0x23, HIGH gives 0x5C; follow the source supply-sequencing requirements.",
+          "canvas": [
+            80,
+            211.8
+          ]
+        },
+        {
+          "id": "p3",
+          "number": "3",
+          "label": "GND",
+          "type": "power_in",
+          "description": "3 — Supply and signal ground.",
+          "canvas": [
+            111,
+            211.8
+          ]
+        },
+        {
+          "id": "p4",
+          "number": "4",
+          "label": "SDA",
+          "type": "bidirectional",
+          "description": "4 — Open-drain I²C serial data; use a pull-up to the permitted DVI reference voltage.",
+          "canvas": [
+            111,
+            38.2
+          ]
+        },
+        {
+          "id": "p5",
+          "number": "5",
+          "label": "DVI",
+          "type": "power_in",
+          "description": "5 — SDA/SCL reference and asynchronous reset input. Hold below 0.4 V for at least 1 µs after VCC is applied, then follow the cited supply circuit.",
+          "canvas": [
+            80,
+            38.2
+          ]
+        },
+        {
+          "id": "p6",
+          "number": "6",
+          "label": "SCL",
+          "type": "input",
+          "description": "6 — I²C serial clock input, up to 400 kHz.",
+          "canvas": [
+            49,
+            38.2
+          ]
+        }
+      ],
+      "footprint": {
+        "status": "R",
+        "note": "Reference WSOF6I carrier for BH1750FVI-TR. Body dimensions and contact-center positions are derived from the cited package drawing; copper sizes are selected reference values and are not a qualified production land pattern.  View coordinates follow the component side of the PCB, x right and y down. Verify the source, solder clearances and assembly tolerances before manufacture. Generated WRL package body is approximate.",
+        "body": [
+          1.6,
+          2.6
+        ],
+        "pads": [
+          {
+            "id": "p1",
+            "x": -0.5,
+            "y": 1.4,
+            "size": [
+              0.27,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p2",
+            "x": 0,
+            "y": 1.4,
+            "size": [
+              0.27,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p3",
+            "x": 0.5,
+            "y": 1.4,
+            "size": [
+              0.27,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p4",
+            "x": 0.5,
+            "y": -1.4,
+            "size": [
+              0.27,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p5",
+            "x": 0,
+            "y": -1.4,
+            "size": [
+              0.27,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p6",
+            "x": -0.5,
+            "y": -1.4,
+            "size": [
+              0.27,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          }
+        ]
+      },
+      "model": {
+        "status": "A",
+        "note": "Generated 3D geometry is approximate; no manufacturer CAD URL is asserted."
+      }
+    },
+    {
+      "id": "market-as7341-dlgm",
+      "part": "AS7341-DLGM",
+      "source": "https://look.ams-osram.com/m/24266a3e584de4db/original/AS7341-DS000504.pdf",
+      "sourceArtifact": {
+        "path": "/tmp/wirepad-market-discretes/as7341.pdf",
+        "sha256": "6036d333ca526e1a28dc47401cf8350d47156c2a9614e5620c617a8bf39a23f0"
+      },
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS7341-DLGM/9996230",
+        "status": "Exact manufacturer and ordering-code commercial listing reported in stock; availability is time-dependent."
+      },
+      "view": "Eleven-channel spectral sensor with eight visible bands plus clear, near-IR and flicker measurement. Requires 1.8 V supply (1.7–2.0 V); I²C address 0x39. DS000504 v3-00, 2020-06-25, pin table p.6 and OLGA8 outline p.62. The bottom view shows pin 1 at the lower-right chamfered contact, 1–4 running right to left along the bottom and 5–8 left to right along the top. The optical aperture is on the hidden upper face. Exact package: OLGA8. Explicit manufacturer bottom contact view. The native footprint mirrors X to component-side coordinates; no bottom-view coordinates are silently reused as a top-view pattern. Package markings are representative. The native carrier uses reference copper lands; generated 3D geometry is approximate.",
+      "pins": [
+        {
+          "id": "p1",
+          "number": "1",
+          "label": "VDD",
+          "type": "power_in",
+          "description": "1 — Positive supply input, 1.7–2.0 V; nominal 1.8 V.",
+          "canvas": [
+            200.89999999999998,
+            145.525
+          ]
+        },
+        {
+          "id": "p2",
+          "number": "2",
+          "label": "SCL",
+          "type": "input",
+          "description": "2 — I²C serial clock input; use the permitted 1.8 V logic interface.",
+          "canvas": [
+            151.3,
+            145.525
+          ]
+        },
+        {
+          "id": "p3",
+          "number": "3",
+          "label": "GND",
+          "type": "power_in",
+          "description": "3 — Sensor ground reference.",
+          "canvas": [
+            101.7,
+            145.525
+          ]
+        },
+        {
+          "id": "p4",
+          "number": "4",
+          "label": "LDR",
+          "type": "open_collector",
+          "description": "4 — Programmable external LED current-sink connection; this is a sink, not a voltage source.",
+          "canvas": [
+            52.10000000000001,
+            145.525
+          ]
+        },
+        {
+          "id": "p5",
+          "number": "5",
+          "label": "PGND",
+          "type": "power_in",
+          "description": "5 — LED-driver/power ground; connect to system ground as shown in the application circuit.",
+          "canvas": [
+            52.10000000000001,
+            66.475
+          ]
+        },
+        {
+          "id": "p6",
+          "number": "6",
+          "label": "GPIO",
+          "type": "bidirectional",
+          "description": "6 — Multipurpose digital input/output; source pin table identifies the digital input use and device modes assign its function.",
+          "canvas": [
+            101.7,
+            66.475
+          ]
+        },
+        {
+          "id": "p7",
+          "number": "7",
+          "label": "INT",
+          "type": "open_collector",
+          "description": "7 — Active-low open-drain interrupt output; external pull-up to 1.8 V.",
+          "canvas": [
+            151.3,
+            66.475
+          ]
+        },
+        {
+          "id": "p8",
+          "number": "8",
+          "label": "SDA",
+          "type": "bidirectional",
+          "description": "8 — Open-drain I²C serial data; external pull-up to 1.8 V.",
+          "canvas": [
+            200.89999999999998,
+            66.475
+          ]
+        }
+      ],
+      "footprint": {
+        "status": "R",
+        "note": "Reference OLGA8 carrier for AS7341-DLGM. Body dimensions and contact-center positions are derived from the cited package drawing; copper sizes are selected reference values and are not a qualified production land pattern.  View coordinates follow the component side of the PCB, x right and y down. Verify the source, solder clearances and assembly tolerances before manufacture. Generated WRL package body is approximate. Artwork is a bottom view; native contact X coordinates are explicitly mirrored. The selected lands remain FP:R.",
+        "body": [
+          3.1,
+          2
+        ],
+        "pads": [
+          {
+            "id": "p1",
+            "x": -1.2,
+            "y": 0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p2",
+            "x": -0.4,
+            "y": 0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p3",
+            "x": 0.4,
+            "y": 0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p4",
+            "x": 1.2,
+            "y": 0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p5",
+            "x": 1.2,
+            "y": -0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p6",
+            "x": 0.4,
+            "y": -0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p7",
+            "x": -0.4,
+            "y": -0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p8",
+            "x": -1.2,
+            "y": -0.6375,
+            "size": [
+              0.488,
+              0.575
+            ],
+            "smd": true,
+            "shape": "rect"
+          }
+        ]
+      },
+      "model": {
+        "status": "A",
+        "note": "Generated 3D geometry is approximate; no manufacturer CAD URL is asserted."
+      }
+    },
+    {
+      "id": "market-ltr-390uv-01",
+      "part": "LTR-390UV-01",
+      "source": "https://www.mouser.com/datasheet/2/239/LTR_390UV_Final__DS_V1_1-1145336.pdf",
+      "sourceArtifact": {
+        "path": "/tmp/wirepad-market-discretes/ltr390.pdf",
+        "sha256": "1ead91733b35347b6992ccc4d829b6ba2649cbf9500157961e7b9de877138ddb"
+      },
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/C492374.html",
+        "status": "Exact manufacturer and ordering-code commercial listing reported in stock; availability is time-dependent."
+      },
+      "view": "Combined UV and ambient-light sensor with 13–20 bit conversion, I²C address 0x53, 1.7–3.6 V operating supply and a programmable interrupt. Author-original source DS86-2015-0004, mechanical outline pp.1–2 and I/O table p.4; the retained Mouser PDF mirror contains the same six-terminal function map and outline. Component-side view: bottom VDD1/NC2/GND3 left to right; top SDA6/INT5/SCL4 left to right. Exact package: 6-pin ChipLED. Component-side top view. The source bottom contact drawing is mirrored in X to match the marked top-view pin-1 corner. Package markings are representative. The native carrier uses reference copper lands; generated 3D geometry is approximate.",
+      "pins": [
+        {
+          "id": "p1",
+          "number": "1",
+          "label": "VDD",
+          "type": "power_in",
+          "description": "1 — Operating supply input, 1.7–3.6 V.",
+          "canvas": [
+            51.699999999999996,
+            154.05
+          ]
+        },
+        {
+          "id": "p2",
+          "number": "2",
+          "label": "NC",
+          "type": "no_connect",
+          "description": "2 — No connection; leave this physical pad open.",
+          "canvas": [
+            92,
+            154.05
+          ]
+        },
+        {
+          "id": "p3",
+          "number": "3",
+          "label": "GND",
+          "type": "power_in",
+          "description": "3 — Supply and signal ground.",
+          "canvas": [
+            132.3,
+            154.05
+          ]
+        },
+        {
+          "id": "p4",
+          "number": "4",
+          "label": "SCL",
+          "type": "input",
+          "description": "4 — Open-drain I²C clock input; use an external pull-up.",
+          "canvas": [
+            132.3,
+            57.949999999999996
+          ]
+        },
+        {
+          "id": "p5",
+          "number": "5",
+          "label": "INT",
+          "type": "open_collector",
+          "description": "5 — Open-drain programmable level interrupt output; use an external pull-up.",
+          "canvas": [
+            92,
+            57.949999999999996
+          ]
+        },
+        {
+          "id": "p6",
+          "number": "6",
+          "label": "SDA",
+          "type": "bidirectional",
+          "description": "6 — Open-drain I²C serial data; use an external pull-up.",
+          "canvas": [
+            51.699999999999996,
+            57.949999999999996
+          ]
+        }
+      ],
+      "footprint": {
+        "status": "R",
+        "note": "Reference 6-pin ChipLED carrier for LTR-390UV-01. Body dimensions and contact-center positions are derived from the cited package drawing; copper sizes are selected reference values and are not a qualified production land pattern.  View coordinates follow the component side of the PCB, x right and y down. Verify the source, solder clearances and assembly tolerances before manufacture. Generated WRL package body is approximate.",
+        "body": [
+          2,
+          2
+        ],
+        "pads": [
+          {
+            "id": "p1",
+            "x": -0.65,
+            "y": 0.775,
+            "size": [
+              0.3,
+              0.4
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p2",
+            "x": 0,
+            "y": 0.775,
+            "size": [
+              0.3,
+              0.4
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p3",
+            "x": 0.65,
+            "y": 0.775,
+            "size": [
+              0.3,
+              0.4
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p4",
+            "x": 0.65,
+            "y": -0.775,
+            "size": [
+              0.3,
+              0.4
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p5",
+            "x": 0,
+            "y": -0.775,
+            "size": [
+              0.3,
+              0.4
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p6",
+            "x": -0.65,
+            "y": -0.775,
+            "size": [
+              0.3,
+              0.4
+            ],
+            "smd": true,
+            "shape": "rect"
+          }
+        ]
+      },
+      "model": {
+        "status": "A",
+        "note": "Generated 3D geometry is approximate; no manufacturer CAD URL is asserted."
+      }
+    },
+    {
+      "id": "market-tsl25911fn",
+      "part": "TSL25911FN",
+      "source": "https://look.ams-osram.com/m/c901de8e97608f8/original/TSL2591-DS000338.pdf",
+      "sourceArtifact": {
+        "path": "/tmp/wirepad-market-discretes/tsl2591-current.pdf",
+        "sha256": "0bf334ce6497dcd1afac2fdc86e6ffbd098a0c1044a92db39ecc7d321b226667"
+      },
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/ams-osram-usa-inc/TSL25911FN/4162547",
+        "status": "Exact manufacturer and ordering-code commercial listing reported in stock; availability is time-dependent."
+      },
+      "view": "High-dynamic-range dual-channel ambient-light sensor with broadband and IR channels, programmable integration/gain and I²C address 0x29. Supply 2.7–3.6 V; this 11 variant uses I²C bus levels referenced to VDD. DS000338 v3-00, 2023-02-08, top pin map p.4 and clear FN package drawing p.24. Component-side left column 1 SCL / 2 INT / 3 GND; right column 6 SDA / 5 VDD / 4 NC, top to bottom. Exact package: ODFN-6 (FN). Transparent optical component-side top view, following the explicit TOP VIEW pin map. The package bottom view is not used directly as a native top-view pattern. Package markings are representative. The native carrier uses reference copper lands; generated 3D geometry is approximate.",
+      "pins": [
+        {
+          "id": "p1",
+          "number": "1",
+          "label": "SCL",
+          "type": "input",
+          "description": "1 — I²C serial clock input; use a pull-up to the allowed VDD bus voltage.",
+          "canvas": [
+            53.25,
+            78.19999999999999
+          ]
+        },
+        {
+          "id": "p2",
+          "number": "2",
+          "label": "INT",
+          "type": "open_collector",
+          "description": "2 — Active-low open-drain interrupt output; external pull-up required.",
+          "canvas": [
+            53.25,
+            118.5
+          ]
+        },
+        {
+          "id": "p3",
+          "number": "3",
+          "label": "GND",
+          "type": "power_in",
+          "description": "3 — Supply and signal ground.",
+          "canvas": [
+            53.25,
+            158.8
+          ]
+        },
+        {
+          "id": "p4",
+          "number": "4",
+          "label": "NC",
+          "type": "no_connect",
+          "description": "4 — Do not connect this physical pad.",
+          "canvas": [
+            130.75,
+            158.8
+          ]
+        },
+        {
+          "id": "p5",
+          "number": "5",
+          "label": "VDD",
+          "type": "power_in",
+          "description": "5 — Operating supply input, 2.7–3.6 V.",
+          "canvas": [
+            130.75,
+            118.5
+          ]
+        },
+        {
+          "id": "p6",
+          "number": "6",
+          "label": "SDA",
+          "type": "bidirectional",
+          "description": "6 — Open-drain I²C serial data; external pull-up required.",
+          "canvas": [
+            130.75,
+            78.19999999999999
+          ]
+        }
+      ],
+      "footprint": {
+        "status": "R",
+        "note": "Reference ODFN-6 (FN) carrier for TSL25911FN. Body dimensions and contact-center positions are derived from the cited package drawing; copper sizes are selected reference values and are not a qualified production land pattern.  View coordinates follow the component side of the PCB, x right and y down. Verify the source, solder clearances and assembly tolerances before manufacture. Generated WRL package body is approximate.",
+        "body": [
+          2,
+          2.4
+        ],
+        "pads": [
+          {
+            "id": "p1",
+            "x": -0.625,
+            "y": -0.65,
+            "size": [
+              0.75,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p2",
+            "x": -0.625,
+            "y": 0,
+            "size": [
+              0.75,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p3",
+            "x": -0.625,
+            "y": 0.65,
+            "size": [
+              0.75,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p4",
+            "x": 0.625,
+            "y": 0.65,
+            "size": [
+              0.75,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p5",
+            "x": 0.625,
+            "y": 0,
+            "size": [
+              0.75,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p6",
+            "x": 0.625,
+            "y": -0.65,
+            "size": [
+              0.75,
+              0.3
+            ],
+            "smd": true,
+            "shape": "rect"
+          }
+        ]
+      },
+      "model": {
+        "status": "A",
+        "note": "Generated 3D geometry is approximate; no manufacturer CAD URL is asserted."
+      }
+    },
+    {
+      "id": "market-vl53l0cxv0dh-1",
+      "part": "VL53L0CXV0DH/1",
+      "source": "https://www.st.com/resource/en/datasheet/vl53l0x.pdf",
+      "sourceArtifact": {
+        "path": "/tmp/wirepad-market-discretes/vl53l0x.pdf",
+        "sha256": "f0ae51414474d311bc24c60cd77bfff968ea5c2b3765b2fb2a390b3078dd49be"
+      },
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.co.uk/en/products/detail/stmicroelectronics/VL53L0CXV0DH-1/6023691",
+        "status": "Exact manufacturer and ordering-code commercial listing reported in stock; availability is time-dependent."
+      },
+      "view": "Time-of-Flight laser ranging sensor for distances up to 2 m, with I²C address 0x29, active-low shutdown and open-drain interrupt. Supply 2.6–3.5 V; follow the selected I/O-voltage mode. This is the current C ordering code with protective liner, covered by DS11555 Rev.6. Manufacturer bottom view, p.4 and drawing p.25: right column 1–5 bottom to top, top-center 6, left column 7–11 top to bottom and bottom-center 12. The two optical apertures are on the hidden top face. Exact package: Optical LGA12 with liner. Explicit bottom contact view from the manufacturer. The native component-side carrier mirrors X relative to this drawing. The top-face optical apertures are hidden in this view. Package markings are representative. The native carrier uses reference copper lands; generated 3D geometry is approximate.",
+      "pins": [
+        {
+          "id": "p1",
+          "number": "1",
+          "label": "AVDDVCSEL",
+          "type": "power_in",
+          "description": "1 — VCSEL supply input; connect to the main 2.6–3.5 V rail with the recommended local bypassing.",
+          "canvas": [
+            154.1,
+            279.7
+          ]
+        },
+        {
+          "id": "p2",
+          "number": "2",
+          "label": "AVSSVCSEL",
+          "type": "power_in",
+          "description": "2 — VCSEL ground; connect to main ground.",
+          "canvas": [
+            154.1,
+            230.1
+          ]
+        },
+        {
+          "id": "p3",
+          "number": "3",
+          "label": "GND",
+          "type": "power_in",
+          "description": "3 — Main ground.",
+          "canvas": [
+            154.1,
+            180.5
+          ]
+        },
+        {
+          "id": "p4",
+          "number": "4",
+          "label": "GND2",
+          "type": "power_in",
+          "description": "4 — Mandatory ground-domain connection; tie to main ground as shown in the source application circuit.",
+          "canvas": [
+            154.1,
+            130.9
+          ]
+        },
+        {
+          "id": "p5",
+          "number": "5",
+          "label": "XSHUT",
+          "type": "input",
+          "description": "5 — Active-low hardware shutdown. This pin must always be driven or pulled to a valid state.",
+          "canvas": [
+            154.1,
+            81.3
+          ]
+        },
+        {
+          "id": "p6",
+          "number": "6",
+          "label": "GND3",
+          "type": "power_in",
+          "description": "6 — Mandatory ground-domain connection; tie to main ground.",
+          "canvas": [
+            104.5,
+            81.3
+          ]
+        },
+        {
+          "id": "p7",
+          "number": "7",
+          "label": "GPIO1",
+          "type": "open_collector",
+          "description": "7 — Open-drain interrupt output; external pull-up required.",
+          "canvas": [
+            54.9,
+            81.3
+          ]
+        },
+        {
+          "id": "p8",
+          "number": "8",
+          "label": "DNC",
+          "type": "no_connect",
+          "description": "8 — Do not connect; must be left floating.",
+          "canvas": [
+            54.9,
+            130.9
+          ]
+        },
+        {
+          "id": "p9",
+          "number": "9",
+          "label": "SDA",
+          "type": "bidirectional",
+          "description": "9 — Open-drain I²C serial data; comply with the configured I/O-voltage mode.",
+          "canvas": [
+            54.9,
+            180.5
+          ]
+        },
+        {
+          "id": "p10",
+          "number": "10",
+          "label": "SCL",
+          "type": "input",
+          "description": "10 — I²C serial clock input; comply with the configured I/O-voltage mode.",
+          "canvas": [
+            54.9,
+            230.1
+          ]
+        },
+        {
+          "id": "p11",
+          "number": "11",
+          "label": "AVDD",
+          "type": "power_in",
+          "description": "11 — Main supply input; connect to the same main rail as AVDDVCSEL.",
+          "canvas": [
+            54.9,
+            279.7
+          ]
+        },
+        {
+          "id": "p12",
+          "number": "12",
+          "label": "GND4",
+          "type": "power_in",
+          "description": "12 — Mandatory ground-domain connection; tie to main ground.",
+          "canvas": [
+            104.5,
+            279.7
+          ]
+        }
+      ],
+      "footprint": {
+        "status": "R",
+        "note": "Reference Optical LGA12 with liner carrier for VL53L0CXV0DH/1. Body dimensions and contact-center positions are derived from the cited package drawing; copper sizes are selected reference values and are not a qualified production land pattern.  View coordinates follow the component side of the PCB, x right and y down. Verify the source, solder clearances and assembly tolerances before manufacture. Generated WRL package body is approximate. Artwork is a bottom view; native contact X coordinates are explicitly mirrored. The selected lands remain FP:R.",
+        "body": [
+          2.4,
+          4.4
+        ],
+        "pads": [
+          {
+            "id": "p1",
+            "x": -0.8,
+            "y": 1.6,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p2",
+            "x": -0.8,
+            "y": 0.8,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p3",
+            "x": -0.8,
+            "y": 0,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p4",
+            "x": -0.8,
+            "y": -0.8,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p5",
+            "x": -0.8,
+            "y": -1.6,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p6",
+            "x": 0,
+            "y": -1.6,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p7",
+            "x": 0.8,
+            "y": -1.6,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p8",
+            "x": 0.8,
+            "y": -0.8,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p9",
+            "x": 0.8,
+            "y": 0,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p10",
+            "x": 0.8,
+            "y": 0.8,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p11",
+            "x": 0.8,
+            "y": 1.6,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          },
+          {
+            "id": "p12",
+            "x": 0,
+            "y": 1.6,
+            "size": [
+              0.5,
+              0.5
+            ],
+            "smd": true,
+            "shape": "rect"
+          }
+        ]
+      },
+      "model": {
+        "status": "A",
+        "note": "Generated 3D geometry is approximate; no manufacturer CAD URL is asserted."
+      }
+    }
+  ]
+}

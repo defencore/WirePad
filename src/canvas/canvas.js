@@ -1,16 +1,15 @@
 import { createAutoRouter } from '../geometry/autoroute.js';
 import { traceNet } from '../model/continuity.js';
 import { endpointKey } from '../model/endpoints.js';
-import { partName } from '../model/names.js';
-import { componentForPart } from '../model/part-component.js';
-import { partBounds, translation } from '../geometry/parts.js';
+import { partBounds } from '../geometry/parts.js';
 import { nearestSegment, wireAnchor, wireRoute } from '../geometry/routing.js';
 import { selectionInBox as itemsInBox, selectionRect } from '../editor/selection.js';
 import { createScope } from '../shared/lifecycle.js';
-import { pathFrom, samePosition, resolveDrawing, foregroundParts, wireHandleLayout } from './scene.js';
+import { pathFrom, samePosition, resolveDrawing, foregroundParts } from './scene.js';
 import { traceMarkup } from './markup.js';
-import { group, SceneLayer, SVG_NAMESPACE, updateWireHandle, updateWire, updatePart, updateJunction } from './layers.js';
+import { group, SceneLayer, SVG_NAMESPACE, updateWire, updatePart, updateJunction } from './layers.js';
 import { CanvasViewport } from './viewport.js';
+import { CanvasControls } from './controls.js';
 
 export class DrawingCanvas extends CanvasViewport {
   constructor({ svg, scene, draft, onZoom, viewInsets, signal }) {
@@ -35,26 +34,15 @@ export class DrawingCanvas extends CanvasViewport {
     this.reconnectLayer.setAttribute('aria-hidden', 'true');
     this.reconnectLayer.setAttribute('pointer-events', 'none');
     svg.insertBefore(this.reconnectLayer, draft);
-    this.wireHandles = new SceneLayer(svg);
-    this.wireHandles.node.setAttribute('class', 'wire-handle-layer');
-    this.wireHandles.node.setAttribute('role', 'group');
-    this.wireHandles.node.setAttribute('aria-label', 'Wire editing handles');
-    this.partControls = group(svg);
-    this.partControls.setAttribute('class', 'part-rotation-controls');
-    this.partControls.setAttribute('role', 'group');
-    this.partControls.setAttribute('display', 'none');
-    this.partControls.setAttribute('aria-hidden', 'true');
-    svg.append(this.partControls);
+    this.controls = new CanvasControls({ svg, scope: this.scope, getState: () => ({
+      selection: this.selection, selections: this.selections, geometry: this.geometry,
+      wireControls: this.wireControls, scale: this.scale, center: this.center,
+    }) });
     this.selectionLayer = group(svg);
     this.selectionLayer.setAttribute('class', 'selection-box-layer');
     this.selectionLayer.setAttribute('aria-hidden', 'true');
     this.selectionLayer.setAttribute('pointer-events', 'none');
     svg.append(this.selectionLayer);
-    this.coarsePointer = matchMedia('(pointer: coarse)');
-    this.scope.on(this.coarsePointer, 'change', () => {
-      this.updateWireHandles();
-      this.updatePartControls();
-    });
     this.draftMarkup = '';
     const observer = new ResizeObserver(() => {
       if (!this.scope.destroyed) this.autoFit ? this.fit() : this.applyView();
@@ -63,8 +51,7 @@ export class DrawingCanvas extends CanvasViewport {
     this.scope.cleanup(() => observer.disconnect());
     this.scope.cleanup(() => {
       for (const node of [this.surfaceParts.node, this.wires.node, this.branches, this.parts.node,
-        this.junctions.node, this.traceLayer, this.reconnectLayer, this.wireHandles.node,
-        this.partControls, this.selectionLayer]) node.remove();
+        this.junctions.node, this.traceLayer, this.reconnectLayer, this.selectionLayer]) node.remove();
       this.draft.replaceChildren();
     });
   }
@@ -74,8 +61,7 @@ export class DrawingCanvas extends CanvasViewport {
   }
 
   onViewChange() {
-    this.updateWireHandles();
-    this.updatePartControls();
+    this.controls.update();
   }
 
   draw(project, selection, active, trace, wireControls, selections = selection ? [selection] : []) {
@@ -121,83 +107,7 @@ export class DrawingCanvas extends CanvasViewport {
       this.branches.setAttribute('opacity', dim ? '.26' : '1');
     }
     this.wireControls = wireControls;
-    this.updateWireHandles();
-    this.updatePartControls();
-  }
-
-  setPartControls(enabled) {
-    this.partControlsEnabled = enabled;
-    this.updatePartControls();
-  }
-
-  updatePartControls() {
-    const part = this.selection?.type === 'part' && this.geometry?.parts.get(this.selection.id)?.part;
-    const visible = Boolean(this.partControlsEnabled && part && this.selections?.length === 1);
-    const controls = this.partControls;
-    const touch = this.coarsePointer.matches || this.svg.dataset.input === 'touch';
-    const panelWidth = touch ? 200 : 136;
-    const panelHeight = touch ? 56 : 34;
-    const buttonWidth = touch ? 44 : 31;
-    const buttonHeight = touch ? 44 : 28;
-    const padding = touch ? 6 : 3;
-    const stride = touch ? 48 : 33;
-    if (this.partControlTouch !== touch) {
-      this.partControlTouch = touch;
-      controls.innerHTML = `<rect class="part-rotation-panel" width="${panelWidth}" height="${panelHeight}" rx="6"/>` +
-        [0, 90, 180, 270].map((angle, index) => `<g class="part-rotation-button" data-part-rotation="${angle}" transform="translate(${padding + stride * index} ${padding})" role="button" tabindex="-1" aria-label="Set orientation to ${angle} degrees" aria-pressed="false">
-          <title>Set orientation to ${angle}°</title><rect width="${buttonWidth}" height="${buttonHeight}" rx="4"/>
-          <text x="${buttonWidth / 2}" y="${buttonHeight / 2 + 4}" text-anchor="middle">${angle}°</text>
-        </g>`).join('');
-    }
-    const buttons = [...controls.querySelectorAll('.part-rotation-button')];
-    controls.setAttribute('display', visible ? 'inline' : 'none');
-    controls.setAttribute('aria-hidden', String(!visible));
-    for (const button of buttons) button.setAttribute('tabindex', visible ? '0' : '-1');
-    if (!visible) return;
-
-    const component = componentForPart(part);
-    const { width } = component;
-    const bounds = partBounds(part, component);
-    const centerX = part.x + width / 2;
-    const viewWidth = this.svg.clientWidth;
-    const viewHeight = this.svg.clientHeight;
-    const screenX = viewWidth / 2 + (centerX - this.center.x) * this.scale;
-    const top = viewHeight / 2 + (bounds.top - this.center.y) * this.scale;
-    const bottom = viewHeight / 2 + (bounds.bottom - this.center.y) * this.scale;
-    const left = viewWidth / 2 + (bounds.left - this.center.x) * this.scale;
-    const right = viewWidth / 2 + (bounds.right - this.center.x) * this.scale;
-    let x = screenX - panelWidth / 2;
-    let y = top - panelHeight - 10;
-    if (y < 8) {
-      y = bottom + 29 * this.scale + 14;
-      if (y + panelHeight > viewHeight - 8) {
-        x = right + 14;
-        y = (top + bottom) / 2 - panelHeight / 2;
-        if (x + panelWidth > viewWidth - 8) x = left - panelWidth - 14;
-      }
-    }
-    x = Math.max(8, Math.min(Math.max(8, viewWidth - panelWidth - 8), x));
-    y = Math.max(8, Math.min(Math.max(8, viewHeight - panelHeight - 8), y));
-    const worldX = this.center.x + (x - viewWidth / 2) / this.scale;
-    const worldY = this.center.y + (y - viewHeight / 2) / this.scale;
-    controls.setAttribute('transform', `${translation(worldX, worldY)} scale(${1 / this.scale})`);
-    controls.dataset.rotationPart = part.id;
-    controls.setAttribute('aria-label', `Orientation of ${partName(part, component)}`);
-    for (const button of buttons) {
-      button.setAttribute('aria-pressed', String(Number(button.dataset.partRotation) === (part.rotation ?? 0)));
-    }
-  }
-
-  updateWireHandles() {
-    const { wireId, active } = this.wireControls ?? {};
-    const geometry = this.geometry?.wires.get(wireId)?.geometry;
-    const { scale } = this;
-    const spacing = (this.coarsePointer.matches || this.svg.dataset.input === 'touch' ? 36 : 24) / scale;
-    const state = [wireId, geometry, scale, spacing, active?.kind, active?.index, active?.axis, active?.point?.x, active?.point?.y];
-    if (state.every((value, index) => value === this.handleState?.[index])) return;
-    this.handleState = state;
-    const items = geometry ? wireHandleLayout(wireId, geometry, active, spacing) : new Map();
-    this.wireHandles.update(items, (item, entry) => updateWireHandle(this.wireHandles.node, entry, item, scale));
+    this.controls.update();
   }
 
   position(endpoint) {

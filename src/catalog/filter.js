@@ -1,6 +1,7 @@
 const manufacturerAliases = new Map([
   ['espressif', 'Espressif Systems'],
   ['espressif systems', 'Espressif Systems'],
+  ['ebyte', 'EBYTE'],
   ['gowin', 'Gowin Semiconductor'],
   ['gowin semiconductor', 'Gowin Semiconductor'],
   ['friendlyarm', 'FriendlyElec'],
@@ -10,6 +11,14 @@ const manufacturerAliases = new Map([
   ['hilink', 'Hi-Link'],
   ['simcom', 'SIMCom'],
   ['lilygo', 'LILYGO'],
+  ['sparkfun', 'SparkFun Electronics'],
+  ['sparkfun electronics', 'SparkFun Electronics'],
+  ['raspberry pi', 'Raspberry Pi'],
+  ['raspberry pi foundation', 'Raspberry Pi'],
+  ['pjrc', 'PJRC'],
+  ['teensy', 'PJRC'],
+  ['mikroe', 'MIKROE'],
+  ['mikroelektronika', 'MIKROE'],
   ['weact studio', 'WeAct Studio'],
 ]);
 

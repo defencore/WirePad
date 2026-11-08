@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "family": "diy-kit-outputs",
+  "owner": "lilygo_nordic",
+  "sourceArtifactsDirectory": "/tmp/wirepad-diy-outputs",
+  "allEntries": {
+    "footprintStatus": "reference",
+    "recommendedMark": "FP:R",
+    "modelStatus": "approximate",
+    "recommended3DMark": "3D:A",
+    "limits": "No manufacturer land pattern or STEP was verified. Native footprints are explicit off-board2.54mm wire-termination carriers; no board/mechanical-production accuracy claim. All source PCB revisions are unmarked. Native symbol terminal identifiers use signal marks plus scope prefixes for groups, not invented manufacturer connector numbering."
+  },
+  "entries": [
+    {
+      "id": "keyestudio-ks0018-active-buzzer",
+      "manufacturer": "Keyestudio",
+      "sku": "KS0018",
+      "pcbRevision": "unmarked in primary photo",
+      "source": "https://docs.keyestudio.com/projects/KS0018/en/latest/docs/KS0018.html",
+      "repository": "https://github.com/keyestudio/KS0018-keyestudio-Digital-Buzzer-Module",
+      "sourceCommit": "6ea2ef0f095658714cec2382758abc8716230a62",
+      "photo": "https://raw.githubusercontent.com/keyestudio/KS0018-keyestudio-Digital-Buzzer-Module/6ea2ef0f095658714cec2382758abc8716230a62/docs/media/wps1.jpg",
+      "localPhoto": "/tmp/wirepad-diy-outputs/ks0018-wps1.jpg",
+      "view": "component side; no rear connection banks",
+      "contacts": [
+        "S",
+        "+",
+        "-"
+      ],
+      "evidence": "Right header top to bottom; active buzzer body has the removable seal in the product photo.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null
+    },
+    {
+      "id": "keyestudio-ks0019-passive-buzzer",
+      "manufacturer": "Keyestudio",
+      "sku": "KS0019",
+      "pcbRevision": "unmarked in primary photo",
+      "source": "https://docs.keyestudio.com/projects/KS0019/en/latest/docs/KS0019.html",
+      "repository": "https://github.com/keyestudio/KS0019-keyestudio-Passive-Buzzer-module",
+      "sourceCommit": null,
+      "photo": "https://raw.githubusercontent.com/keyestudio/KS0019-keyestudio-Passive-Buzzer-module/HEAD/docs/media/wps1.jpg",
+      "localPhoto": "/tmp/wirepad-diy-outputs/ks0019-wps1.jpg",
+      "view": "component side; no rear connection banks",
+      "contacts": [
+        "S",
+        "+",
+        "-"
+      ],
+      "evidence": "Right header top to bottom; passive buzzer requires external pulse frequencies.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null
+    },
+    {
+      "id": "keyestudio-ks0032-rgb-led",
+      "manufacturer": "Keyestudio",
+      "sku": "KS0032",
+      "pcbRevision": "unmarked in primary photo",
+      "source": "https://docs.keyestudio.com/projects/KS0032/en/latest/docs/KS0032.html",
+      "repository": "https://github.com/keyestudio/KS0032-keyestudio-RGB-LED-Module",
+      "sourceCommit": "aa4c6948a3981715becfb16f8bad8481a77254ff",
+      "photo": "https://raw.githubusercontent.com/keyestudio/KS0032-keyestudio-RGB-LED-Module/aa4c6948a3981715becfb16f8bad8481a77254ff/docs/media/wps1.png",
+      "localPhoto": "/tmp/wirepad-diy-outputs/ks0032-wps1.png",
+      "view": "component side; no rear connection banks",
+      "contacts": [
+        "G",
+        "R",
+        "B",
+        "V"
+      ],
+      "evidence": "Right header top to bottom. Manufacturer wiring connects V to UNO5V and channel pins to PWM outputs; common anode, no GND contact.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null
+    },
+    {
+      "id": "keyestudio-ks0310-traffic-light",
+      "manufacturer": "Keyestudio",
+      "sku": "KS0310",
+      "pcbRevision": "unmarked in primary photo",
+      "source": "https://docs.keyestudio.com/projects/KS0310/en/latest/docs/KS0310.html",
+      "repository": "https://github.com/keyestudio/KS0310-Keyestudio-Traffic-Light-Module",
+      "sourceCommit": "45056b63d7997b8dfae953a9957c383a15ce71be",
+      "photo": "https://raw.githubusercontent.com/keyestudio/KS0310-Keyestudio-Traffic-Light-Module/45056b63d7997b8dfae953a9957c383a15ce71be/docs/media/image-20260113091912576.png",
+      "localPhoto": "/tmp/wirepad-diy-outputs/ks0310-image-20260113091912576.png",
+      "view": "component side; no rear connection banks",
+      "contacts": [
+        "R",
+        "Y",
+        "G",
+        "GND"
+      ],
+      "evidence": "Left header top to bottom with LEDs at right. Code HIGH illuminates selected LED. 3.3–5V.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null
+    },
+    {
+      "id": "keyestudio-ks0027-ir-transmitter",
+      "manufacturer": "Keyestudio",
+      "sku": "KS0027",
+      "pcbRevision": "unmarked in primary photo",
+      "source": "https://docs.keyestudio.com/projects/KS0027/en/latest/docs/KS0027.html",
+      "repository": "https://github.com/keyestudio/KS0027-keyestudio-Digital-IR-Transmitter-Module",
+      "sourceCommit": "4fef3502a1dc9ee3ecf11802116b79dc2d671e40",
+      "photo": "https://raw.githubusercontent.com/keyestudio/KS0027-keyestudio-Digital-IR-Transmitter-Module/4fef3502a1dc9ee3ecf11802116b79dc2d671e40/docs/media/wps1.jpg",
+      "localPhoto": "/tmp/wirepad-diy-outputs/ks0027-wps1.jpg",
+      "view": "component side; no rear connection banks",
+      "contacts": [
+        "S",
+        "+",
+        "-"
+      ],
+      "evidence": "Right header top to bottom with IR LED pointing left. Carrier/protocol generated by host. 3–5V.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null
+    },
+    {
+      "id": "keyestudio-ks0026-ir-receiver",
+      "manufacturer": "Keyestudio",
+      "sku": "KS0026",
+      "pcbRevision": "unmarked in primary photo",
+      "source": "https://docs.keyestudio.com/projects/KS0026/en/latest/docs/KS0026.html",
+      "repository": "https://github.com/keyestudio/KS0026-keyestudio-Digital-IR-Receiver-Module",
+      "sourceCommit": "55f1ec6206412f2fda69e243354542355ac434f8",
+      "photo": "https://raw.githubusercontent.com/keyestudio/KS0026-keyestudio-Digital-IR-Receiver-Module/55f1ec6206412f2fda69e243354542355ac434f8/docs/media/wps1.jpg",
+      "localPhoto": "/tmp/wirepad-diy-outputs/ks0026-wps1.jpg",
+      "view": "component side; no rear connection banks",
+      "contacts": [
+        "S",
+        "+",
+        "-"
+      ],
+      "evidence": "Rotate component-side manufacturer photo so header is at right; do not mirror. Output is demodulated 38kHz IR receive signal. Manufacturer specifies5V.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null
+    },
+    {
+      "id": "keyestudio-ks0327-uln2003-stepper",
+      "manufacturer": "Keyestudio",
+      "sku": "KS0327",
+      "pcbRevision": "unmarked in primary photo",
+      "source": "https://docs.keyestudio.com/projects/KS0327/en/latest/docs/KS0327.html",
+      "repository": "https://github.com/keyestudio/KS0327-Keyestudio-Stepper-Motor-Drive-Board",
+      "sourceCommit": "d102715e69470a188f9908726843ffe356d1ad68",
+      "photo": "https://raw.githubusercontent.com/keyestudio/KS0327-Keyestudio-Stepper-Motor-Drive-Board/d102715e69470a188f9908726843ffe356d1ad68/docs/media/wps3.png",
+      "localPhoto": "/tmp/wirepad-diy-outputs/ks0327-wps3.png",
+      "view": "component side; no rear connection banks",
+      "contacts": [
+        "J1.VCC",
+        "J1.GND",
+        "J1.IN1",
+        "J1.IN2",
+        "J1.IN3",
+        "J1.IN4",
+        "MOTOR.OUT1",
+        "MOTOR.OUT2",
+        "MOTOR.OUT3",
+        "MOTOR.OUT4",
+        "MOTOR.VCC"
+      ],
+      "evidence": "Component-side view motor connector at top. J1 left→right VCC,GND,IN1,IN2,IN3,IN4. Motor socket left→right OUT1blue,OUT2pink,OUT3yellow,OUT4orange,VCCred. Rear wps2 image is mirrored in X relative to this front view; its J1 reads IN4,IN3,IN2,IN1,GND,VCC and motor row VCC,OUT4,OUT3,OUT2,OUT1. All11 exposed board contacts represented. Motor is an accompanying accessory.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null
+    },
+    {
+      "id": "haljia-max7219-8x8-dip",
+      "manufacturer": "HALJIA",
+      "sku": "50×32mm DIP MAX7219 single8×8 product listing; no numericSKU supplied",
+      "pcbRevision": "unmarked; representative photographed variant",
+      "source": "https://www.haljia.com/products/haljia-max7219-dot-matrix-mcu-led-display-control-module-kit-compatible-with-arduino-with-dupont-cable",
+      "photos": [
+        "https://www.haljia.com/cdn/shop/products/1_74ee764f-5d95-45ad-8cee-4bec2204d154.jpg",
+        "https://www.haljia.com/cdn/shop/products/2_5d225f8d-51ff-4009-8525-b6dd359e41ab.jpg",
+        "https://www.haljia.com/cdn/shop/products/3_01befb19-2c33-42ab-a08a-2661ccc7b426.jpg",
+        "https://www.haljia.com/cdn/shop/products/4_7af85a89-b719-453c-a7f0-36afa99ab1b2.jpg"
+      ],
+      "localPhotos": [
+        "/tmp/wirepad-diy-outputs/haljia-dip.jpg",
+        "/tmp/wirepad-diy-outputs/haljia-dip2.jpg",
+        "/tmp/wirepad-diy-outputs/haljia-dip3.jpg",
+        "/tmp/wirepad-diy-outputs/haljia-dip4.jpg"
+      ],
+      "view": "component-side view with DIP driver left and matrix right; output header extends from below right matrix edge",
+      "contacts": [
+        "IN.VCC",
+        "IN.GND",
+        "IN.DIN",
+        "IN.CS",
+        "IN.CLK",
+        "OUT.VCC",
+        "OUT.GND",
+        "OUT.DOUT",
+        "OUT.CS",
+        "OUT.CLK"
+      ],
+      "evidence": "Input VCC/GND/DIN/CS/CLK silkscreen is legible. Rear routing supports the corresponding output orientation, including the CLK path toward MAX7219 pin 13. The middle DOUT assignment is inferred from the remaining routing and pin 24 function; its full copper path is partly hidden below the LED assembly. The part is explicitly representative. Internal connections join only VCC, GND, CS and CLK across the two headers. All ten external header contacts are included; fitted display and DIP solder pins are internal assembly contacts. Nominal supply is 5 V and the listing specifies a 50 × 32 × 15 mm assembly.",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "independentReview": "Rear routing supports canonical front VCC/GND/DOUT/CS/CLK order: CLK heads to MAX7219 pin 13, supply/ground routing supports the opposite end. Middle DOUT is consistent with pin 24 and remaining topology, but the complete trace is partly hidden under the LED assembly. This is an explicitly representative variant, not a fully trace-verified production board."
+    }
+  ]
+}

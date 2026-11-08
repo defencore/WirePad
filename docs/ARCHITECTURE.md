@@ -23,15 +23,15 @@ flowchart TD
   Catalog --> Shared[shared: text and lifecycle utilities]
 ```
 
-The model, geometry, catalog and native asset layers have no DOM dependencies. A family cannot import another family's implementation; shared board builders and contact layouts have separate owners. `test/architecture.test.mjs` checks import resolution, dependency cycles, these boundaries and that every shipped module is reachable from the browser entry.
+The model, geometry, catalog and native asset layers have no DOM dependencies. A family cannot import another family's implementation; shared board builders and contact layouts have separate owners. Consumers outside the catalog use `catalog/index.js`, including library filtering. `test/architecture.test.mjs` checks import resolution, dependency cycles, these boundaries and that every shipped module is reachable from the browser entry.
 
 - `app/` owns startup, shared commands, persistence and preferences. It wires callbacks explicitly and coordinates destruction.
 - `model/` owns project records, version-1 import migration, limits, history snapshots, contact lookup, configuration resolution, names, endpoint identity and electrical continuity. Storage/recovery remains an application service.
 - `editor/` commits atomic changes and owns selection/movement and wire transactions. It calls shared geometry rather than reimplementing rotation or endpoint transforms.
 - `geometry/` owns part transforms/bounds, endpoint positions, orthogonal routes and obstacle routing.
-- `canvas/scene.js` and `canvas/markup.js` produce pure scene geometry and SVG. `layers.js` reconciles DOM layers; `viewport.js` handles projection; `input.js`, `targets.js` and `keyboard.js` own gestures and input arbitration.
-- `ui/` owns library cards, Inspector providers, dialogs, keyboard/toolbar actions and workspace presentation. Names come from the model rather than a renderer. Feature styles are under `ui/styles/`; root `style.css` preserves their cascade order.
-- `assets/` owns symbol, footprint and model geometry. `previews.js` and `kicad.js` consume those same layouts. No asset generator switches on a board's component ID.
+- `canvas/scene.js` and `canvas/markup.js` produce pure scene geometry and SVG. `layers.js` reconciles DOM layers; `viewport.js` handles projection. `input.js` coordinates input, `pointer.js` owns pointer capture, touch/pinch, rotation and queued frames, and `targets.js`/`keyboard.js` resolve targets and keyboard actions. `controls.js` owns the screen-space wire and rotation controls; `canvas.js` composes these controllers.
+- `ui/` owns library cards, Inspector providers, dialogs, keyboard/toolbar actions and workspace presentation. `import-turn.js` gives deferred file imports a cancellable, lifecycle-owned frame/timer boundary. Names come from the model rather than a renderer. Feature styles are under `ui/styles/`; root `style.css` preserves their cascade order.
+- `assets/` owns symbol, footprint and model geometry. `symbol-graphics.js` holds static symbol primitives, while `symbol-layout.js` places pins and resolves layouts. `previews.js` and `kicad.js` consume those same layouts. No asset generator switches on a board's component ID.
 - `export/drawing.js` creates SVG and raster dimensions without browser APIs. `export/browser.js` owns downloads, rasterization, object URLs and clipboard timing.
 
 Workspace tool, history and navigation cards are HTML overlays outside the SVG drawing/export tree. Only their buttons intercept pointer events; gaps remain canvas. The application supplies measured overlay insets to the viewport's fit operation, while user zoom/pan retains its existing behavior. At narrow widths the Inspector occupies a separate grid row below the canvas.
@@ -58,7 +58,7 @@ export default defineFamily('my-family', [{
 }]);
 ```
 
-Add its default import and one list entry to `src/catalog/catalog-families.js`. Ordering there controls library ordering. Consumers import `components`, `componentById`, `componentArt`, `footprintDefinitionFor`, `modelFor` and `configurationFor` from `src/catalog/index.js`.
+Add its default import and one list entry to `src/catalog/catalog-families.js`. Ordering there controls library ordering. Consumers import `components`, `componentById`, `componentArt`, `footprintDefinitionFor`, `modelFor`, `configurationFor` and the library filtering helpers from `src/catalog/index.js`.
 
 `defineFamily()` checks identities, dimensions, contact positions/types, internal connections, footprint references and CAD metadata. `createCatalog()` indexes entries by stable component ID. Artwork keys can be reused; renderer ownership is per entry. The component's existing `art` metadata remains stable.
 
@@ -66,7 +66,9 @@ Define pads and canvas anchors from the same physical coordinates. Interior cont
 
 Use builders in `catalog/shared/` for related boards. `catalog/parts/` holds individual definitions used by a family. Large generated vector assets belong in `catalog/artwork/`, with readable part data, original CAD references and licensing in `catalog/data/`. The importing family keeps the definition, artwork and footprint together as one entry.
 
-Run `node scripts/catalog.mjs` to check all registered entries, both art modes and exact contact-to-footprint coverage. Use `--json` for a machine-readable report. Then review the rendered part, connect it on the canvas, export an image and inspect its native KiCad files. A scaffold does not establish a verified hardware pinout.
+Large data collections use a local `manifest.js` with functional sections, such as `data/modules-mikroe/memory/eeprom.js` and `static-ram.js`. A section's physical contact tables, original SVG and provenance live in adjacent `*-assets.js` files. `shared/specification-sections.js` resolves the explicit published component order and rejects missing, repeated or unlisted specifications. Family registration and ordering remain independent of how the source files are divided. Large immutable source geometry can remain in an adjacent asset file rather than being mixed into readable specifications or controller logic.
+
+Run `node scripts/catalog.mjs` to check all registered entries, both art modes, valid copper/drill dimensions and exact contact-to-footprint coverage. It also regenerates `docs/COMPONENTS.md` from the explicit assessments in `docs/catalog-kicad-accuracy.json`. Use `--json` to validate and check documentation without writing; `node scripts/catalog-tree.mjs --check` checks tree freshness directly. Then review the rendered part, connect it on the canvas, export an image and inspect its native KiCad files. A scaffold does not establish a verified hardware pinout.
 
 ## Configurable parts
 
@@ -94,21 +96,25 @@ Interior face drags begin a marquee. Surface boards require full enclosure even 
 
 ## Lifecycle
 
-`createScope()` owns event subscriptions, cleanups and timers. Each mounted UI/canvas controller returns `destroy()`. The application destroys scopes and controllers, disconnects observers and removes its SVG layers/icons before remounting. Queued imports and clipboard operations cannot update a destroyed controller. Remount tests and browser checks ensure a single action still creates one edit.
+`createScope()` owns event subscriptions, cleanups and timers. Each mounted UI/canvas controller returns `destroy()`. The application destroys scopes and controllers, disconnects observers and removes its SVG layers/icons before remounting. Pointer cleanup releases every captured touch, including both contacts of an active pinch, and cancels queued viewport work. File reads and the deferred import turn are checked against the mounted scope before updating the editor. Queued imports and clipboard operations cannot update a destroyed controller. Remount tests and browser checks ensure a single action still creates one edit.
 
 ## Static assets and serving
 
 `node scripts/serve.mjs [port]` serves only the static application locally, disables caching and rewrites asset URLs into `/assets/local/` so the HTML, styles and modules reload together.
 
-`node scripts/build-site.mjs <outdir> <revision>` packages one versioned asset namespace. The GitHub Pages workflow uses this same builder. Browser module imports and CSS imports remain relative inside that namespace. Static-site tests check the packaged dependency graph and URL mapping.
+`node scripts/build-site.mjs <outdir> <revision>` packages one versioned asset namespace. The GitHub Pages workflow uses this same builder. The builder resolves physical source/output paths before writing, including a not-yet-created output's nearest existing ancestor, so a symbolic link cannot redirect the build into its own source tree. Browser module imports and CSS imports remain relative inside that namespace. Static-site tests check the packaged dependency graph and URL mapping.
+
+`scripts/import-module-eagle.py` and `import-module-dxf.py` are optional, offline CAD preparation tools. EAGLE contour transforms and arc extrema belong to `scripts/eagle_geometry.py`; electrical mapping and command-line orchestration remain in the importer. The DXF importer validates reviewed unit scales, bounds, dimensions and endpoint-grid overrides before extracting geometry. These tools do not add browser or build dependencies and their drafts still require source/contact review.
 
 ## Compatibility and verification
 
-New saved projects use version 2. Version-1 files and browser workspaces are validated and migrated on import. Component/pin identities, part placement, wire identities/colors, junctions and storage/recovery keys remain stable. `catalog/data/contact-layout-v1.js` records the published anchors moved onto physical contacts. Migration removes only endpoint waypoints on an obsolete 15-unit bank lead; other route points remain intact. Version-2 saves and history never repeat that migration.
+New saved projects use version 2. Version-1 files and browser workspaces are validated and migrated on import. Component/pin identities, part placement, wire identities/colors, junctions and storage/recovery keys remain stable. `model/data/contact-layout-v1.js` records the published anchors moved onto physical contacts; this immutable migration data belongs to the model and retains its original bytes. Migration removes only endpoint waypoints on an obsolete 15-unit bank lead; other route points remain intact. Version-2 saves and history never repeat that migration.
 
 `test/fixtures/catalog-geometry.json` retains the original 502 geometry fingerprints and records the reviewed physical layout fingerprints beside them. Tests reconstruct each version-1 geometry from its migration record, guard the current geometry, and preserve native files through `test/fixtures/native-geometry.json`. Moving a published anchor again requires another explicit versioned migration.
 
 The refactor was checked against before/after fingerprints for every component, both SVG modes, normalized footprints and native files. The authorized breadboard feature changes its description/configuration metadata; its default contact coordinates and artwork remain identical. The ESP32-S3 footprint now declares its header groups locally; its generated native geometry is unchanged.
+
+The subsequent November 8 refactor preserves all 2002 catalog entries, all 145 families and their order: component definitions, canvas geometry, 4004 SVG views and 6006 generated KiCad/model files match the pre-refactor output exactly. Its scope, concrete fixes and final checks are recorded in [REFACTOR_AUDIT.md](REFACTOR_AUDIT.md). The catalog remains eagerly loaded; splitting source files improves ownership and readability rather than reducing the shipped payload.
 
 The physical-contact update aligns canvas anchors with the module's illustrated pads and connector contacts. Dense connectors use local numbers with full functions on hover. Hidden pads have a labeled rear or mating-face view. `physicalComponent()` records symbol-bank placement separately from canvas positions; `preserveFootprint()` makes inferred carrier pads explicit before the visual geometry changes. Native symbol/footprint geometry therefore remains independent of the drawing layout.
 

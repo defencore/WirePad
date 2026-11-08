@@ -1,4 +1,4 @@
-import { componentArt } from '../catalog/art.js';
+import { componentArt } from '../catalog/index.js';
 import { partName } from '../model/names.js';
 import { componentForPart } from '../model/part-component.js';
 import { translation, partRotation, labelPosition } from '../geometry/parts.js';

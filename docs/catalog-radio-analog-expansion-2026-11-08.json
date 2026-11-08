@@ -1,0 +1,464 @@
+{
+  "checked": "2026-11-08",
+  "baseline": 502,
+  "added": 33,
+  "total": 535,
+  "contacts": 687,
+  "pads": 707,
+  "unchangedExistingAnchors": 502,
+  "unchangedExistingNativeAssets": 502,
+  "projectFormatsPreserved": [
+    1,
+    2
+  ],
+  "verification": {
+    "tests": "174 tests passed, zero failures or skips; includes all existing and new canvas/native geometry guards",
+    "catalog": "Both SVG label modes, unique physical anchors and every contact-to-pad map validated",
+    "browser": "One representative from each new family added through library cards; PNG and SVG downloads checked without page errors",
+    "nativeKiCad": "All 33 symbols and all 33 footprints loaded and plotted with kicad-cli; GUI computer access unavailable",
+    "packaging": "Versioned static build checked locally; no publication performed"
+  },
+  "limitations": [
+    "Reference carriers, off-board cable terminations and approximate board outlines are identified per entry; use original manufacturer CAD for fabrication.",
+    "EBYTE UART mechanical fixing holes are drawn without electrical terminals. E90-DTU exposes only its verified power/RS485 terminal block; DB9 pin functions are not inferred.",
+    "T7-S3 V1.1 battery socket is illustrated without anchors because its polarity was not verified against the exact V1.1 source photo.",
+    "LILYGO reference carriers are cable terminations rather than mating PCB land patterns. T7-S3 V1.2 STEP is explicitly identified as a later mechanical reference.",
+    "Native RFICs show mirrored underside contacts and require the complete manufacturer reference circuit. All generated 3D bodies are approximate."
+  ],
+  "families": [
+    {
+      "id": "ti-wireless",
+      "count": 6,
+      "checkedBy": "ti-wireless + independent radio review",
+      "entries": [
+        {
+          "id": "ti-cc1101-rgp20",
+          "name": "TI CC1101 RGP0020C",
+          "manufacturer": "Texas Instruments",
+          "variant": "Sub-1 GHz / 4 × 4 mm VQFN",
+          "source": "https://www.ti.com/lit/ds/symlink/cc1101.pdf",
+          "contacts": 21,
+          "footprintPads": 21,
+          "cad": "https://www.ti.com/product/CC1101#cad-cae-symbols",
+          "description": "Bare CC1101RGPR radio IC, RGP0020C package. The canvas shows the underside, mirrored horizontally from TI's top-view pin diagram, including the exposed ground pad. Requires an external reference, decoupling and RF matching; this is not a ready-to-wire radio module.",
+          "footprintNote": "TI RGP0020C example land pattern: 0.5 mm pitch, 0.55 mm perimeter land length and 2.4 mm square exposed pad. The footprint is a component-side projection; the canvas underside is mirrored. Add the manufacturer's solder-paste segmentation, thermal vias and RF layout before fabrication."
+        },
+        {
+          "id": "ti-cc2500-rgp20",
+          "name": "TI CC2500 RGP0020C",
+          "manufacturer": "Texas Instruments",
+          "variant": "2.4 GHz / 4 × 4 mm VQFN",
+          "source": "https://www.ti.com/lit/ds/symlink/cc2500.pdf",
+          "contacts": 21,
+          "footprintPads": 21,
+          "cad": "https://www.ti.com/product/CC2500#cad-cae-symbols",
+          "description": "Bare CC2500RGPR radio IC, RGP0020C package. The canvas shows the underside, mirrored horizontally from TI's top-view pin diagram, including the exposed ground pad. Requires an external reference, decoupling and RF matching; this is not a ready-to-wire radio module.",
+          "footprintNote": "TI RGP0020C example land pattern: 0.5 mm pitch, 0.55 mm perimeter land length and 2.4 mm square exposed pad. The footprint is a component-side projection; the canvas underside is mirrored. Add the manufacturer's solder-paste segmentation, thermal vias and RF layout before fabrication."
+        },
+        {
+          "id": "ti-cc1120-rhb32",
+          "name": "TI CC1120 RHB0032E",
+          "manufacturer": "Texas Instruments",
+          "variant": "Sub-1 GHz narrowband / 5 × 5 mm VQFN",
+          "source": "https://www.ti.com/lit/ds/symlink/cc1120.pdf",
+          "contacts": 33,
+          "footprintPads": 33,
+          "cad": "https://www.ti.com/product/CC1120#cad-cae-symbols",
+          "description": "Bare CC1120RHBR radio IC, RHB0032E package. The canvas shows the underside, mirrored horizontally from TI's top-view pin diagram, including the exposed ground pad. Requires an external reference, decoupling and RF matching; this is not a ready-to-wire radio module.",
+          "footprintNote": "TI RHB0032E example land pattern: 0.5 mm pitch, 0.6 mm perimeter land length and 3.45 mm square exposed pad. The footprint is a component-side projection; the canvas underside is mirrored. Add the manufacturer's solder-paste segmentation, thermal vias and RF layout before fabrication."
+        },
+        {
+          "id": "ti-cc1200-rhb32",
+          "name": "TI CC1200 RHB0032E",
+          "manufacturer": "Texas Instruments",
+          "variant": "Sub-1 GHz / 5 × 5 mm VQFN",
+          "source": "https://www.ti.com/lit/ds/symlink/cc1200.pdf",
+          "contacts": 33,
+          "footprintPads": 33,
+          "cad": "https://www.ti.com/product/CC1200#cad-cae-symbols",
+          "description": "Bare CC1200RHBR radio IC, RHB0032E package. The canvas shows the underside, mirrored horizontally from TI's top-view pin diagram, including the exposed ground pad. Requires an external reference, decoupling and RF matching; this is not a ready-to-wire radio module.",
+          "footprintNote": "TI RHB0032E example land pattern: 0.5 mm pitch, 0.6 mm perimeter land length and 3.45 mm square exposed pad. The footprint is a component-side projection; the canvas underside is mirrored. Add the manufacturer's solder-paste segmentation, thermal vias and RF layout before fabrication."
+        },
+        {
+          "id": "ti-launchxl-cc1352r1",
+          "name": "TI LAUNCHXL-CC1352R1 LaunchPad",
+          "manufacturer": "Texas Instruments",
+          "variant": "CC1352R / 40-pin BoosterPack",
+          "source": "https://www.ti.com/lit/pdf/swru525",
+          "contacts": 40,
+          "footprintPads": 40,
+          "cad": "https://www.ti.com/tool/LAUNCHXL-CC1352R1#design-files",
+          "description": "Texas Instruments CC1352R wireless LaunchPad, matching the SWRU525E quick-start pinout. Exposes all 40 BoosterPack positions, including unused contacts. The view faces the component side with USB at the top. Board dimensions, header origin and small-part placement are representative; the 2.54 mm header pitch and 45.72 mm outer-row spacing follow the BoosterPack interface. Debugger/isolation connectors are illustrated but are not part of this expansion-interface footprint.",
+          "footprintNote": "Reference BoosterPack carrier interface for LAUNCHXL-CC1352R1; numbers follow TI's SWRU525E quick-start chart. Four 1×10 rows at 2.54 mm pitch, adjacent rows 2.54 mm apart, outer rows 45.72 mm apart. Board outline and header origin are approximate. USB, RF, debugger, isolation jumpers and mounting holes are not fabricated by this footprint."
+        },
+        {
+          "id": "ti-lp-cc1312r7",
+          "name": "TI LP-CC1312R7 LaunchPad",
+          "manufacturer": "Texas Instruments",
+          "variant": "CC1312R7 / 40-pin BoosterPack",
+          "source": "https://www.ti.com/lit/pdf/swru571",
+          "contacts": 40,
+          "footprintPads": 40,
+          "cad": "https://www.ti.com/tool/LP-CC1312R7#design-files",
+          "description": "Texas Instruments CC1312R7 wireless LaunchPad, matching the SWRU571 (2021) quick-start pinout. Exposes all 40 BoosterPack positions, including unused contacts. The view faces the component side with USB at the top. Board dimensions, header origin and small-part placement are representative; the 2.54 mm header pitch and 45.72 mm outer-row spacing follow the BoosterPack interface. Debugger/isolation connectors are illustrated but are not part of this expansion-interface footprint.",
+          "footprintNote": "Reference BoosterPack carrier interface for LP-CC1312R7; numbers follow TI's SWRU571 (2021) quick-start chart. Four 1×10 rows at 2.54 mm pitch, adjacent rows 2.54 mm apart, outer rows 45.72 mm apart. Board outline and header origin are approximate. USB, RF, debugger, isolation jumpers and mounting holes are not fabricated by this footprint. Position 35 is a configurable RESET/DIO15 connection, disconnected by default; check the board resistors before use."
+        }
+      ]
+    },
+    {
+      "id": "ebyte",
+      "count": 8,
+      "checkedBy": "ebyte-semtech",
+      "entries": [
+        {
+          "id": "e22-400t22d",
+          "name": "EBYTE E22-400T22D UART LoRa Module",
+          "manufacturer": "EBYTE",
+          "variant": "SX1268 / 410–493 MHz / SMA-K / DIP",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=4217",
+          "contacts": 7,
+          "footprintPads": 7,
+          "cad": "https://www.cdebyte.com/Uploadfiles/Files/2023-8-17/2023817940222605.zip",
+          "description": "E22-400T22D UART modem in EBYTE's 21 × 36 mm shielded DIP package with a seven-contact 2.54 mm header and SMA-K antenna connector. Shield-side top view; pin 7 is on the left. The three lower holes (8–10) are mechanical fixing positions in the cited 2026 manual and are not exposed as signal terminals. Board revision is not specified by EBYTE; small markings are representative.",
+          "footprintNote": "Manufacturer E22-400T22D DIP contact positions, viewed from the shield side: 2.54 mm pitch, pin 1 at (+7.62, -16.5) mm. Seven electrical pads only; mechanical fixing holes 8–10 and the SMA connector are not host signal pads. Pad sizes and drill follow the module drawing; assembly tolerance and connector clearance require checking. Reference: https://www.cdebyte.com/pdf-down.aspx?id=4217"
+        },
+        {
+          "id": "e22-900t22d",
+          "name": "EBYTE E22-900T22D UART LoRa Module",
+          "manufacturer": "EBYTE",
+          "variant": "SX1262 / 850–930 MHz / SMA-K / DIP",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=4217",
+          "contacts": 7,
+          "footprintPads": 7,
+          "cad": "https://www.cdebyte.com/Uploadfiles/Files/2023-8-17/2023817940222605.zip",
+          "description": "E22-900T22D UART modem in EBYTE's 21 × 36 mm shielded DIP package with a seven-contact 2.54 mm header and SMA-K antenna connector. Shield-side top view; pin 7 is on the left. The three lower holes (8–10) are mechanical fixing positions in the cited 2026 manual and are not exposed as signal terminals. Board revision is not specified by EBYTE; small markings are representative.",
+          "footprintNote": "Manufacturer E22-900T22D DIP contact positions, viewed from the shield side: 2.54 mm pitch, pin 1 at (+7.62, -16.5) mm. Seven electrical pads only; mechanical fixing holes 8–10 and the SMA connector are not host signal pads. Pad sizes and drill follow the module drawing; assembly tolerance and connector clearance require checking. Reference: https://www.cdebyte.com/pdf-down.aspx?id=4217"
+        },
+        {
+          "id": "e32-433t20d",
+          "name": "EBYTE E32-433T20D UART LoRa Module",
+          "manufacturer": "EBYTE",
+          "variant": "SX1278 / 410–441 MHz / SMA-K / DIP",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=4218",
+          "contacts": 7,
+          "footprintPads": 7,
+          "cad": "https://www.cdebyte.com/Uploadfiles/Files/2023-8-17/2023817940567383.zip",
+          "description": "E32-433T20D UART modem in EBYTE's 21 × 36 mm shielded DIP package with a seven-contact 2.54 mm header and SMA-K antenna connector. Shield-side top view; pin 7 is on the left. The three lower holes (8–10) are mechanical fixing positions in the cited 2026 manual and are not exposed as signal terminals. Board revision is not specified by EBYTE; small markings are representative.",
+          "footprintNote": "Manufacturer E32-433T20D DIP contact positions, viewed from the shield side: 2.54 mm pitch, pin 1 at (+7.62, -16.5) mm. Seven electrical pads only; mechanical fixing holes 8–10 and the SMA connector are not host signal pads. Pad sizes and drill follow the module drawing; assembly tolerance and connector clearance require checking. Reference: https://www.cdebyte.com/pdf-down.aspx?id=4218"
+        },
+        {
+          "id": "e32-900t20d",
+          "name": "EBYTE E32-900T20D UART LoRa Module",
+          "manufacturer": "EBYTE",
+          "variant": "SX1276 / 862–930 MHz / SMA-K / DIP",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=4218",
+          "contacts": 7,
+          "footprintPads": 7,
+          "cad": "https://www.cdebyte.com/Uploadfiles/Files/2023-8-17/2023817940567383.zip",
+          "description": "E32-900T20D UART modem in EBYTE's 21 × 36 mm shielded DIP package with a seven-contact 2.54 mm header and SMA-K antenna connector. Shield-side top view; pin 7 is on the left. The three lower holes (8–10) are mechanical fixing positions in the cited 2026 manual and are not exposed as signal terminals. Board revision is not specified by EBYTE; small markings are representative.",
+          "footprintNote": "Manufacturer E32-900T20D DIP contact positions, viewed from the shield side: 2.54 mm pitch, pin 1 at (+7.62, -16.5) mm. Seven electrical pads only; mechanical fixing holes 8–10 and the SMA connector are not host signal pads. Pad sizes and drill follow the module drawing; assembly tolerance and connector clearance require checking. Reference: https://www.cdebyte.com/pdf-down.aspx?id=4218"
+        },
+        {
+          "id": "e220-400t22d",
+          "name": "EBYTE E220-400T22D UART LoRa Module",
+          "manufacturer": "EBYTE",
+          "variant": "LLCC68 / 410–493 MHz / SMA-K / DIP",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=4221",
+          "contacts": 7,
+          "footprintPads": 7,
+          "cad": "https://www.cdebyte.com/Uploadfiles/Files/2023-8-17/2023817941188606.zip",
+          "description": "E220-400T22D UART modem in EBYTE's 21 × 36 mm shielded DIP package with a seven-contact 2.54 mm header and SMA-K antenna connector. Shield-side top view; pin 7 is on the left. The three lower holes (8–10) are mechanical fixing positions in the cited 2026 manual and are not exposed as signal terminals. Board revision is not specified by EBYTE; small markings are representative.",
+          "footprintNote": "Manufacturer E220-400T22D DIP contact positions, viewed from the shield side: 2.54 mm pitch, pin 1 at (+7.62, -16.5) mm. Seven electrical pads only; mechanical fixing holes 8–10 and the SMA connector are not host signal pads. Pad sizes and drill follow the module drawing; assembly tolerance and connector clearance require checking. Reference: https://www.cdebyte.com/pdf-down.aspx?id=4221"
+        },
+        {
+          "id": "e220-900t22d",
+          "name": "EBYTE E220-900T22D UART LoRa Module",
+          "manufacturer": "EBYTE",
+          "variant": "LLCC68 / 850–930 MHz / SMA-K / DIP",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=4221",
+          "contacts": 7,
+          "footprintPads": 7,
+          "cad": "https://www.cdebyte.com/Uploadfiles/Files/2023-8-17/2023817941188606.zip",
+          "description": "E220-900T22D UART modem in EBYTE's 21 × 36 mm shielded DIP package with a seven-contact 2.54 mm header and SMA-K antenna connector. Shield-side top view; pin 7 is on the left. The three lower holes (8–10) are mechanical fixing positions in the cited 2026 manual and are not exposed as signal terminals. Board revision is not specified by EBYTE; small markings are representative.",
+          "footprintNote": "Manufacturer E220-900T22D DIP contact positions, viewed from the shield side: 2.54 mm pitch, pin 1 at (+7.62, -16.5) mm. Seven electrical pads only; mechanical fixing holes 8–10 and the SMA connector are not host signal pads. Pad sizes and drill follow the module drawing; assembly tolerance and connector clearance require checking. Reference: https://www.cdebyte.com/pdf-down.aspx?id=4221"
+        },
+        {
+          "id": "e07-900m10s",
+          "name": "EBYTE E07-900M10S CC1101 Module",
+          "manufacturer": "EBYTE",
+          "variant": "TI CC1101 / 855–925 MHz / SPI / SMD-22",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=1332",
+          "contacts": 22,
+          "footprintPads": 22,
+          "cad": "https://www.cdebyte.com/Uploadfiles/Files/2022-1-12/20221121052271951.zip",
+          "description": "Shielded 14 × 20 mm CC1101 radio module with a 26 MHz crystal and IPEX / castellated antenna connection. All 22 contacts follow the 2021 EBYTE manual, viewed from the shield side. GDO labels normalize the manual's GD0 typography to TI GDO names. Markings are representative; no PCB revision is specified.",
+          "footprintNote": "Reference 22-pad castellated land pattern from the EBYTE E07-900M10S 2021 mechanical drawing. 1.27 mm pitch with a 5.57 mm gap between banks; 0.8 mm pad height. The 1.4 mm host land width combines the 0.9 mm underside pad and 0.5 mm outside extension. Verify solder process and RF clearance."
+        },
+        {
+          "id": "ebyte-e90-dtu-900sl22-rs485",
+          "name": "EBYTE E90-DTU(900SL22) RS485 LoRa Modem",
+          "manufacturer": "EBYTE",
+          "variant": "850–930 MHz / 22 dBm / power + RS485 terminal view",
+          "source": "https://www.cdebyte.com/pdf-down.aspx?id=1293",
+          "contacts": 4,
+          "footprintPads": 4,
+          "description": "Enclosed E90-DTU(900SL22), 2021 SL manual, shown from the DB9 / RS485 connector face. The four numbered anchors are the verified power/RS485 terminal block, ordered A, B, GND, VCC from left to right. The DB9 RS232 socket is shown for identification only; its individual functions are not specified by this manual and are not modeled. Opposite-face DC barrel, mode switches and SMA antenna connector are hidden. Enclosure and socket placement are representative.",
+          "footprintNote": "Off-board cable termination reference only, not a PCB mounting footprint for the enclosed modem. Four host cable pads use the verified 3.81 mm terminal sequence 4=A, 3=B, 2=GND, 1=VCC. The 82 × 62 × 25 mm enclosure is approximate. DB9, barrel and SMA connections are not included in this RS485 terminal-view entry."
+        }
+      ]
+    },
+    {
+      "id": "semtech-more",
+      "count": 3,
+      "checkedBy": "ebyte-semtech",
+      "entries": [
+        {
+          "id": "semtech-sx1261imltrt",
+          "name": "Semtech SX1261IMLTRT LoRa Transceiver",
+          "manufacturer": "Semtech",
+          "variant": "QFN-24 4 × 4 mm / 150–960 MHz / +15 dBm",
+          "source": "https://www.semtech.com/products/wireless-rf/lora-connect/sx1261",
+          "contacts": 25,
+          "footprintPads": 25,
+          "description": "Native SX1261IMLTRT RFIC in the 4 × 4 mm, 24-lead QFN package with exposed ground pad 0. Bottom view: the canvas is mirrored relative to the top-layer footprint so all 25 physical contacts, including the exposed pad, remain visible. Requires an external 32 MHz reference, RF matching, supply network and host controller. Pinout and land pattern checked against DS.SX1261-2.W.APP rev. 2.1 (December 2021).",
+          "footprintNote": "Semtech QFN 4 × 4 mm reference land pattern from DS.SX1261-2.W.APP rev. 2.1 (December 2021): 0.50 mm pitch, 0.30 × 0.80 mm perimeter lands, 2.70 × 2.70 mm exposed ground pad 0. Native footprint uses top-layer orientation; canvas intentionally shows the mirrored underside. Add thermal vias and RF layout per the reference design; vias and paste segmentation are not generated."
+        },
+        {
+          "id": "semtech-sx1262imltrt",
+          "name": "Semtech SX1262IMLTRT LoRa Transceiver",
+          "manufacturer": "Semtech",
+          "variant": "QFN-24 4 × 4 mm / 150–960 MHz / +22 dBm",
+          "source": "https://www.semtech.com/products/wireless-rf/lora-connect/sx1262",
+          "contacts": 25,
+          "footprintPads": 25,
+          "description": "Native SX1262IMLTRT RFIC in the 4 × 4 mm, 24-lead QFN package with exposed ground pad 0. Bottom view: the canvas is mirrored relative to the top-layer footprint so all 25 physical contacts, including the exposed pad, remain visible. Requires an external 32 MHz reference, RF matching, supply network and host controller. Pinout and land pattern checked against DS.SX1261-2.W.APP rev. 2.1 (December 2021).",
+          "footprintNote": "Semtech QFN 4 × 4 mm reference land pattern from DS.SX1261-2.W.APP rev. 2.1 (December 2021): 0.50 mm pitch, 0.30 × 0.80 mm perimeter lands, 2.70 × 2.70 mm exposed ground pad 0. Native footprint uses top-layer orientation; canvas intentionally shows the mirrored underside. Add thermal vias and RF layout per the reference design; vias and paste segmentation are not generated."
+        },
+        {
+          "id": "semtech-sx1268imltrt",
+          "name": "Semtech SX1268IMLTRT LoRa Transceiver",
+          "manufacturer": "Semtech",
+          "variant": "QFN-24 4 × 4 mm / 410–810 MHz / +22 dBm",
+          "source": "https://www.semtech.com/products/wireless-rf/lora-connect/sx1268",
+          "contacts": 25,
+          "footprintPads": 25,
+          "description": "Native SX1268IMLTRT RFIC in the 4 × 4 mm, 24-lead QFN package with exposed ground pad 0. Bottom view: the canvas is mirrored relative to the top-layer footprint so all 25 physical contacts, including the exposed pad, remain visible. Requires an external 32 MHz reference, RF matching, supply network and host controller. Pinout and land pattern checked against DS.SX1268.W.APP rev. 1.1 (June 2019).",
+          "footprintNote": "Semtech QFN 4 × 4 mm reference land pattern from DS.SX1268.W.APP rev. 1.1 (June 2019): 0.50 mm pitch, 0.30 × 0.80 mm perimeter lands, 2.70 × 2.70 mm exposed ground pad 0. Native footprint uses top-layer orientation; canvas intentionally shows the mirrored underside. Add thermal vias and RF layout per the reference design; vias and paste segmentation are not generated."
+        }
+      ]
+    },
+    {
+      "id": "analog-devices",
+      "count": 8,
+      "checkedBy": "analog-devices",
+      "entries": [
+        {
+          "id": "adafruit-ad5693r-5811",
+          "name": "Adafruit AD5693R 16-bit DAC Breakout",
+          "manufacturer": "Adafruit",
+          "variant": "I²C / 16-bit DAC / 2.5 V reference",
+          "source": "https://learn.adafruit.com/adafruit-ad5693r-16-bit-dac-breakout-board/pinouts",
+          "contacts": 20,
+          "footprintPads": 24,
+          "cad": "https://github.com/adafruit/Adafruit-AD5693R-Breakout-Board-PCB/blob/main/Adafruit%20AD5693R%20Breakout%20Board.brd",
+          "description": "Adafruit #5811 Rev B STEMMA QT board with an Analog Devices AD5693R in MSOP-10. Single 16-bit DAC with a 2.5 V internal reference and selectable 1×/2× gain; the output remains limited by the supply. I²C address 0x4C or 0x4E. Includes every header, optional terminal and QT solder-tail contact in component-side view.",
+          "footprintNote": "Component-side electrical-contact reference from Adafruit's published PCB CAD; board revision B. Header holes and connector solder tails use their native coordinates. Grounded JST retaining tabs repeat terminal 1. X1 is an unpopulated optional 3.5 mm terminal footprint.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        },
+        {
+          "id": "adafruit-adg728-5899",
+          "name": "Adafruit ADG728 1-to-8 Analog Matrix Switch",
+          "manufacturer": "Adafruit",
+          "variant": "I²C / eight bidirectional analog switches",
+          "source": "https://learn.adafruit.com/adafruit-adg728-1-to-8-analog-matrix-switch/pinouts",
+          "contacts": 24,
+          "footprintPads": 28,
+          "cad": "https://github.com/adafruit/Adafruit-ADG728-1-to-8-Analog-Matrix-Switch-PCB/blob/main/Adafruit%20ADG728%201-to-8%20Analog%20Matrix%20Switch.brd",
+          "description": "Adafruit #5899 Rev A STEMMA QT board using the Analog Devices ADG728 in TSSOP-16. Eight independently controlled bidirectional analog switches connect S1–S8 to common D. Signal voltages must stay between ground and VIN. I²C address 0x4C–0x4F; RESET opens every switch. Header numbering follows the published board, including the reversed top row.",
+          "footprintNote": "Component-side electrical-contact reference from Adafruit's published PCB CAD; board revision A. Header holes and connector solder tails use their native coordinates. Grounded JST retaining tabs repeat terminal 1.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        },
+        {
+          "id": "adafruit-adxl345-1231-qt",
+          "name": "Adafruit ADXL345 Triple-axis Accelerometer (QT)",
+          "manufacturer": "Adafruit",
+          "variant": "I²C / SPI / ±2–16 g / Rev C QT",
+          "source": "https://learn.adafruit.com/adxl345-digital-accelerometer/pinouts",
+          "contacts": 18,
+          "footprintPads": 22,
+          "cad": "https://github.com/adafruit/Adafruit_ADXL345_PCB/blob/master/ADXL345%20STEMMA%20QT.brd",
+          "description": "Adafruit #1231 Rev C STEMMA QT layout for the Analog Devices ADXL345, a 14-lead LGA accelerometer with ±2/4/8/16 g ranges. I²C/SPI and two interrupt outputs. The published PCB reuses the ADXL343 CAD device name; this entry represents the ADXL345 sold as #1231. SCL and SDA are level shifted, while CS, SDO and interrupts remain 3.3 V signals.",
+          "footprintNote": "Component-side electrical-contact reference from Adafruit's published PCB CAD; board revision C. Header holes and connector solder tails use their native coordinates. Grounded JST retaining tabs repeat terminal 1.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        },
+        {
+          "id": "adafruit-adxl375-5374",
+          "name": "Adafruit ADXL375 High-g Accelerometer",
+          "manufacturer": "Adafruit",
+          "variant": "I²C / SPI / ±200 g / high-impact sensing",
+          "source": "https://learn.adafruit.com/adafruit-adxl375/pinouts",
+          "contacts": 18,
+          "footprintPads": 22,
+          "cad": "https://github.com/adafruit/Adafruit_ADXL375_PCB/blob/main/Adafruit%20ADXL375.brd",
+          "description": "Adafruit #5374 Rev A STEMMA QT board for the Analog Devices ADXL375 ±200 g accelerometer in LGA-14. Supports I²C/SPI and two interrupt outputs. Uses the maker's ADXL343-compatible CAD land pattern. SCL and SDA are level shifted to VIN; CS, SDO and interrupts use the sensor's 3.3 V logic level. Default I²C address 0x53.",
+          "footprintNote": "Component-side electrical-contact reference from Adafruit's published PCB CAD; board revision A. Header holes and connector solder tails use their native coordinates. Grounded JST retaining tabs repeat terminal 1.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        },
+        {
+          "id": "adafruit-adt7410-4089-qt",
+          "name": "Adafruit ADT7410 Precision Temperature Sensor (QT)",
+          "manufacturer": "Adafruit",
+          "variant": "I²C / precision temperature / INT and CT",
+          "source": "https://learn.adafruit.com/adt7410-breakout/pinouts",
+          "contacts": 14,
+          "footprintPads": 18,
+          "cad": "https://github.com/adafruit/Adafruit-ADT7410-PCB/blob/master/Adafruit%20ADT7410%20STEMMA%20QT.brd",
+          "description": "Adafruit #4089 Rev C STEMMA QT board with an Analog Devices ADT7410 in SOIC-8. Provides 13-bit or 16-bit I²C temperature readings, plus interrupt and critical-temperature outputs. The QT revision exposes VIN, GND, SCL, SDA, INT and CT; A0/A1 are rear solder jumpers. Default address 0x48, configurable through 0x4B.",
+          "footprintNote": "Component-side electrical-contact reference from Adafruit's published PCB CAD; board revision C. Header holes and connector solder tails use their native coordinates. Grounded JST retaining tabs repeat terminal 1.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        },
+        {
+          "id": "adafruit-max31865-3328",
+          "name": "Adafruit MAX31865 PT100 RTD Amplifier",
+          "manufacturer": "Adafruit",
+          "variant": "SPI / PT100 RTD / 2-, 3- or 4-wire",
+          "source": "https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/pinouts",
+          "contacts": 12,
+          "footprintPads": 12,
+          "cad": "https://github.com/adafruit/Adafruit-MAX31865-PCB/blob/master/Adafruit%20MAX31865.brd",
+          "description": "Adafruit #3328 Rev B platinum RTD interface with a Maxim/Analog Devices MAX31865 in TQFN-20 and a 430 Ω reference resistor for PT100 sensors. Supports 2-, 3- and 4-wire RTDs through the documented jumper settings. Includes four physically positioned terminal contacts and the eight-pin SPI host header. The PT1000 #3648 variant uses a different reference resistor.",
+          "footprintNote": "Component-side electrical-contact reference from Adafruit's published PCB CAD; board revision B. Header holes and connector solder tails use their native coordinates. Terminal numbers follow X2 then X1 from left to right in this component-side view.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        },
+        {
+          "id": "adafruit-max31855-269",
+          "name": "Adafruit MAX31855K Thermocouple Amplifier",
+          "manufacturer": "Adafruit",
+          "variant": "SPI / K-type thermocouple / cold junction",
+          "source": "https://learn.adafruit.com/thermocouple?view=all",
+          "contacts": 8,
+          "footprintPads": 8,
+          "cad": "https://github.com/adafruit/Adafruit-MAX31855-breakout-board/blob/master/Adafruit_MAX31855%20v2.brd",
+          "description": "Adafruit #269 v2 CAD layout with a Maxim/Analog Devices MAX31855K in SOIC-8, regulator and input level shifting. Reads a K-type thermocouple over read-only SPI with cold-junction compensation and fault reporting. Do not tie either thermocouple input to board ground; J1.1 is positive and J1.2 is negative. The published v2 board file has no silkscreen revision identifier.",
+          "footprintNote": "Component-side electrical-contact reference from Adafruit's published PCB CAD; board revision v2 CAD file, unmarked. Header holes and connector solder tails use their native coordinates.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        },
+        {
+          "id": "sparkfun-ad8232-sen12650",
+          "name": "SparkFun AD8232 Single-lead Heart Rate Monitor",
+          "manufacturer": "SparkFun",
+          "variant": "3.3 V / analog biopotential front end",
+          "source": "https://learn.sparkfun.com/tutorials/ad8232-heart-rate-monitor-hookup-guide",
+          "contacts": 12,
+          "footprintPads": 12,
+          "cad": "https://github.com/sparkfun/AD8232_Heart_Rate_Monitor/blob/master/Hardware/AD8232_Heart_Rate_Monitor.brd",
+          "description": "SparkFun SEN-12650 v1.0 board with an Analog Devices AD8232 in LFCSP-20. Provides an analog biopotential output, two leads-off flags and shutdown control. Electrode pads and the 3.5 mm jack solder tails share RA, LA and RL nets. Intended for battery-powered educational experiments; this board is not a medical diagnostic device.",
+          "footprintNote": "Component-side electrical-contact reference from SparkFun's published PCB CAD; board revision v1.0. Header holes and connector solder tails use their native coordinates. The jack is shown from the component side; TIP, RING and SLEEVE anchors are its exposed solder tails, not a mirrored mating-face drawing.  Mounting holes are visual only. This is a reference module/contact pattern; the generated 3D body is approximate."
+        }
+      ]
+    },
+    {
+      "id": "lilygo-more",
+      "count": 4,
+      "checkedBy": "lilygo-nordic + independent radio review",
+      "entries": [
+        {
+          "id": "lilygo-t-qt-pro-v1-3",
+          "name": "LILYGO T-QT Pro V1.3",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 / 0.85-inch GC9107 / PCB 22-11-15",
+          "source": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/schematic/T-QT-Pro.pdf",
+          "contacts": 20,
+          "footprintPads": 20,
+          "cad": "https://github.com/Xinyuan-LilyGO/T-QT/blob/main/3D_file/T_QT_Pro.stp",
+          "description": "V1.3 PCB shown in the manufacturer T-QT-Pro schematic and pinmap; N4R2 and N8 memory variants share these contacts. Front display-side view with USB at the bottom; the separate rear view exposes the four-contact CNC1 UART socket and named BAT/GND solder lands. All 14 through-header contacts, four UART contacts and two battery lands are present. P1/P2/CNC1 terminal numbers follow the schematic; BAT.VBAT/BAT.GND identify the printed battery lands, which have no published pad numbers. Display and RF ports are fitted interfaces. Outline and small-part geometry are representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-QT Pro V1.3. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t7-s3-v1-1",
+          "name": "LILYGO T7-S3 V1.1",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3-WROOM-1-N16R8 / PCB 22-07-28",
+          "source": "https://github.com/Xinyuan-LilyGO/T7-S3/blob/main/assets/image/t7-s3_v1.1_pinmap.jpg",
+          "contacts": 44,
+          "footprintPads": 44,
+          "cad": "https://github.com/Xinyuan-LilyGO/T7-S3/blob/main/3D_File/T7S3-V1.2.stp",
+          "description": "V1.1 component-side view, antenna at the top and USB at the bottom, matched to the official V1.1 pinmap. All 40 two-row expansion contacts and the four-contact rear I²C socket are represented. The battery socket is illustrated as a fitted port; its polarity is not established by the V1.1 pinmap. HLI/HLO/HRI/HRO are WirePad row references using printed signal names, not manufacturer header sequence numbers. GPIO3 and GPIO12 appear twice; the inner positions are printed 3-1 and 12-1. TCK/TDO/TDI/TMS correspond to GPIO39/40/41/42. The linked V1.2 STEP is a later mechanical reference, not a verified V1.1 mating land pattern. Canvas and termination-carrier geometry are representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T7-S3 V1.1. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-picoc3-v1-1",
+          "name": "LILYGO T-PicoC3 V1.1",
+          "manufacturer": "LILYGO",
+          "variant": "RP2040 + ESP32-C3 / ST7789V / PCB 2022-02-22 V1.1",
+          "source": "https://github.com/Xinyuan-LilyGO/T-PicoC3/blob/main/image/T-PicoC3_en.jpg",
+          "contacts": 37,
+          "footprintPads": 37,
+          "cad": "https://github.com/Xinyuan-LilyGO/T-PicoC3/blob/main/Schematic/T-PicoC3.pdf",
+          "description": "Front display-side view of the V1.1 board in the official pinmap; rear inset locates the RP2040 debug header, ESP32-C3 UART header and battery socket. All 27 main-header contacts and ten rear contacts are represented. P3/P4 numbering follows the physical top-to-bottom order in the schematic. The production photo prints GND at P3.5/P3.6 where the early schematic shows GPIO11/GPIO10; this entry follows that exact V1.1 photo. RP2040 and ESP32-C3 signal names are kept distinct. USB-C orientation selects which MCU is connected. Fitted display/RF/USB ports are outside the jumper-wire scope. Header/socket placement and outline are representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-PicoC3 V1.1. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-encoder-pro-v1-0",
+          "name": "LILYGO T-Encoder Pro V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3R8 / AMOLED touch / rotary encoder / 2024-02-02",
+          "source": "https://github.com/Xinyuan-LilyGO/T-Encoder-Pro/blob/arduino-esp32-libs_V3.0.7/project/%5BSCH%5D%5BT-Encoder-Pro_V1.0%5D.pdf",
+          "contacts": 8,
+          "footprintPads": 8,
+          "cad": "https://github.com/Xinyuan-LilyGO/T-Encoder-Pro/blob/arduino-esp32-libs_V3.0.7/project/%5BSCH%5D%5BT-Encoder-Pro_V1.0%5D.pdf",
+          "description": "Assembled knob front and a separate rear view matching the manufacturer photo. All eight electrical contacts in the two rear four-pin sockets are represented. CN1 is I²C: 1 GND, 2 3.3 V, 3 SDA/GPIO16, 4 SCL/GPIO15. CN2 is UART: 1 GND, 2 5 V, 3 TX/GPIO43, 4 RX/GPIO44. Socket shell mounting pads are not independent wiring contacts. Pin numbers appear beside the socket contacts; full functions are available on hover. Display revision may be SH8601/CHSC5816 or CO5300/CST816, with the same external socket wiring. Enclosure and socket geometry are representative; use the keyed original cables.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Encoder Pro V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        }
+      ]
+    },
+    {
+      "id": "nordic-more",
+      "count": 4,
+      "checkedBy": "lilygo-nordic + independent radio review",
+      "entries": [
+        {
+          "id": "adafruit-bluefruit-le-spi-friend-2633",
+          "name": "Adafruit Bluefruit LE SPI Friend",
+          "manufacturer": "Adafruit",
+          "variant": "nRF51822 / Raytac MDBT40 / product 2633",
+          "source": "https://github.com/adafruit/Adafruit-Bluefruit-LE-SPI-Friend-PCB/blob/8891795d7776b7203f25237db4f25ad5692758d4/Adafruit%20Bluefruit%20LE%20SPI%20Friend.brd",
+          "contacts": 13,
+          "footprintPads": 13,
+          "cad": "https://github.com/adafruit/Adafruit-Bluefruit-LE-SPI-Friend-PCB/blob/8891795d7776b7203f25237db4f25ad5692758d4/Adafruit%20Bluefruit%20LE%20SPI%20Friend.brd",
+          "description": "Adafruit Bluefruit LE SPI Friend, unmarked CAD revision; source commit 8891795d7776b7203f25237db4f25ad5692758d4. All 13 documented header, power and service contacts are represented. Front view keeps the component-side contact order; the separate reverse view is mirrored and labels the hidden contacts. Nordic nRF51822 BLE coprocessor with AT-command firmware and a Raytac MDBT40 ceramic-antenna module.  Board envelope and contact centers use the CAD; component body details are representative.",
+          "footprintNote": "Reference carrier using exact Adafruit published EAGLE pad centers and drill sizes. Exposed service contacts on the reverse retain their source-board coordinates; verify the access side before making a fixture. The bare-PCB outline excludes module and connector overhang. This is not a complete PCB reproduction. Use the linked original CAD for fitted connector and enclosure clearances."
+        },
+        {
+          "id": "adafruit-bluefruit-le-uart-friend-2479",
+          "name": "Adafruit Bluefruit LE UART Friend",
+          "manufacturer": "Adafruit",
+          "variant": "nRF51822 / Raytac MDBT40 / product 2479",
+          "source": "https://github.com/adafruit/Adafruit-Bluefruit-LE-UART-Friend-PCB/blob/c4c1e41ac42f744587e5f3dfef258113a2126342/Adafruit%20Bluefruit%20LE%20UART%20Friend.brd",
+          "contacts": 14,
+          "footprintPads": 14,
+          "cad": "https://github.com/adafruit/Adafruit-Bluefruit-LE-UART-Friend-PCB/blob/c4c1e41ac42f744587e5f3dfef258113a2126342/Adafruit%20Bluefruit%20LE%20UART%20Friend.brd",
+          "description": "Adafruit Bluefruit LE UART Friend, unmarked CAD revision; source commit c4c1e41ac42f744587e5f3dfef258113a2126342. All 14 documented header, power and service contacts are represented. Front view keeps the component-side contact order; the separate reverse view is mirrored and labels the hidden contacts. Nordic nRF51822 BLE coprocessor with AT-command firmware and a Raytac MDBT40 ceramic-antenna module.  Board envelope and contact centers use the CAD; component body details are representative.",
+          "footprintNote": "Reference carrier using exact Adafruit published EAGLE pad centers and drill sizes. Exposed service contacts on the reverse retain their source-board coordinates; verify the access side before making a fixture. The bare-PCB outline excludes module and connector overhang. This is not a complete PCB reproduction. Use the linked original CAD for fitted connector and enclosure clearances."
+        },
+        {
+          "id": "adafruit-itsybitsy-nrf52840-express-4481",
+          "name": "Adafruit ItsyBitsy nRF52840 Express",
+          "manufacturer": "Adafruit",
+          "variant": "nRF52840 / Raytac MDBT50 / product 4481",
+          "source": "https://github.com/adafruit/Adafruit-ItsyBitsy-nRF52840-Express-PCB/blob/3a3a478c8059b5ab06fbf25c2583ac7d3a8ca3eb/Adafruit%20ItsyBitsy%20nRF52840%20Express.brd",
+          "contacts": 32,
+          "footprintPads": 32,
+          "cad": "https://github.com/adafruit/Adafruit-ItsyBitsy-nRF52840-Express-PCB/blob/3a3a478c8059b5ab06fbf25c2583ac7d3a8ca3eb/Adafruit%20ItsyBitsy%20nRF52840%20Express.brd",
+          "description": "Adafruit ItsyBitsy nRF52840 Express, unmarked CAD revision; source commit 3a3a478c8059b5ab06fbf25c2583ac7d3a8ca3eb. All 32 documented header, power and service contacts are represented. Front view keeps the component-side contact order; the separate reverse view is mirrored and labels the hidden contacts. Nordic nRF52840 programmable BLE/802.15.4 board with a Raytac radio module. BAT input is 3.5–6 V and the board has no charger. The 5! pin is a VHI-level output, not a bidirectional GPIO. Board envelope and contact centers use the CAD; component body details are representative.",
+          "footprintNote": "Reference carrier using exact Adafruit published EAGLE pad centers and drill sizes. Exposed service contacts on the reverse retain their source-board coordinates; verify the access side before making a fixture. The bare-PCB outline excludes module and connector overhang. This is not a complete PCB reproduction. Use the linked original CAD for fitted connector and enclosure clearances."
+        },
+        {
+          "id": "sparkfun-pro-nrf52840-mini-15025",
+          "name": "SparkFun Pro nRF52840 Mini",
+          "manufacturer": "SparkFun",
+          "variant": "nRF52840 / Raytac MDBT50Q / DEV-15025",
+          "source": "https://github.com/sparkfun/nRF52840_Breakout_MDBT50Q/blob/46f154b42a57c1eed5dd1d212e41cef3c25b264b/Hardware/nrf52840-breakout-mdbt50q.brd",
+          "contacts": 62,
+          "footprintPads": 62,
+          "cad": "https://github.com/sparkfun/nRF52840_Breakout_MDBT50Q/blob/46f154b42a57c1eed5dd1d212e41cef3c25b264b/Hardware/nrf52840-breakout-mdbt50q.brd",
+          "description": "SparkFun Pro nRF52840 Mini, v1.0; source commit 46f154b42a57c1eed5dd1d212e41cef3c25b264b. All 62 documented header, power and service contacts are represented. Front view keeps the component-side contact order; the separate reverse view is mirrored and labels the hidden contacts. Nordic nRF52840 programmable BLE/802.15.4 board with a Raytac radio module.  Board envelope and contact centers use the CAD; component body details are representative.",
+          "footprintNote": "Reference carrier using exact SparkFun published EAGLE pad centers and drill sizes. Exposed service contacts on the reverse retain their source-board coordinates; verify the access side before making a fixture. The bare-PCB outline excludes module and connector overhang. This is not a complete PCB reproduction. Use the linked original CAD for fitted connector and enclosure clearances."
+        }
+      ]
+    }
+  ]
+}

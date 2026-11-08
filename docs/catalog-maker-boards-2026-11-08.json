@@ -1,0 +1,3315 @@
+{
+  "reviewed": "2026-11-08",
+  "scope": "Eight complete new maker entries: Arduino2,Espressif3,RaspberryPi3. No existing entries edited.",
+  "families": [
+    "arduino-more-boards",
+    "espressif-more-boards",
+    "raspberry-pi-more"
+  ],
+  "componentCount": 8,
+  "contactCount": 302,
+  "nativePadCount": 318,
+  "validation": {
+    "standalone": "All three families import and pass registry validation; every contact has a nonempty description, unique stable ID/terminal, physical surface anchor and matching metal contact. Both SVG modes reviewed locally.",
+    "nativeKiCad": "Integrating agent verified all eight generated symbols and footprints through native KiCad CLI parsing and SVG export. Successful native export establishes format consistency, not production geometric accuracy.",
+    "sourceArtifacts": "/tmp/wirepad-maker-boards",
+    "visualArtifacts": [
+      "arduino-labels.svg.png",
+      "arduino-plain.svg.png",
+      "espressif-labels.svg.png",
+      "espressif-plain.svg.png",
+      "rpi-labels.svg.png",
+      "rpi-plain.svg.png"
+    ],
+    "geometry": "New pin anchors stable after initial importable definitions; old catalog geometry is owned and checked by integrating agent.",
+    "sourceCADImport": "Native KiCad import of the manufacturer Altium files failed on source layer mapping. Manufacturer Gerber/drill data and schematic diagrams were used directly for the recorded contacts; no failed import output was used as evidence.",
+    "integration": "Integrating agent reports final catalog608, all208 tests passed, all56 additions native KiCad checks passed, all112 SVG modes rendered, browser filters and PNG/SVG export checked, versioned build imports608. Existing552 entries remain unchanged."
+  },
+  "entries": [
+    {
+      "id": "arduino-modulino-knob-abx00107",
+      "family": "arduino-more-boards",
+      "manufacturer": "Arduino",
+      "revision": "ABX00107 V0.3, schematic/CAD date 2024-06-27",
+      "references": [
+        "https://docs.arduino.cc/resources/datasheets/ABX00107-datasheet.pdf",
+        "https://docs.arduino.cc/resources/schematics/ABX00107-schematics.pdf"
+      ],
+      "artifacts": [
+        "ABX00107-pinview.png",
+        "ABX00107-schematic.png",
+        "ABX00107-cad-files.zip"
+      ],
+      "notes": [
+        "Manufacturer V0.3 Gerbers parsed for 14 header drill positions, 8 Qwiic solder-tail centers, 15 rear fixture pads and 4 grounded Qwiic retainers. Header J3.1…10 is PA2,GND,3V3,PF2,SWCLK,SWDIO,TX1,RX1,PA0,PA1; J4.1…4 GND,3V3,SDA,SCL.",
+        "Rear fixture pads have no printed numeric terminal IDs. Catalog TP.1…15 assign stable IDs; 7 wired and8 NC. Actual rear pads were paired with the mirrored source schematic test-point view.",
+        "Qwiic source solder tails are used as physical endpoints and labelled as such, not drawn as mating contacts. J1 opens toward native−X and pin1 is nativeY14.18; J2 opens toward+X and pin1 is nativeY11.18.",
+        "I²C address expressed as 7-bit0x3A; old datasheet also prints shifted value0x76."
+      ],
+      "source": "https://docs.arduino.cc/hardware/modulino-knob/",
+      "externalCAD": {
+        "label": "Arduino ABX00107 V0.3 Altium, Gerber, DXF and STEP CAD",
+        "url": "https://docs.arduino.cc/static/9168eb936d4d6df4ab93d355b49a6fdb/ABX00107-cad-files.zip"
+      },
+      "footprintAssessment": "C",
+      "footprintEvidence": "Source-coordinate contact reference from the Arduino V0.3 Gerbers and drill files. Includes J1/J2 solder tails, J3/J4 through headers and all 15 bottom fixture pads; four grounded Qwiic retaining lands repeat the corresponding GND terminal. Both-side contact coordinates are represented on the carrier top layer. This is not a production or host-mating land pattern; clearances and illustration details are representative. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 37,
+      "nativePadCount": 41,
+      "physicalView": "Component-side drawing plus separately labelled horizontally mirrored rear contacts, with explicit mating or solder-tail views where applicable.",
+      "contacts": [
+        {
+          "id": "j3-1",
+          "number": "J3.1",
+          "label": "PA2",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 87.49000000000001,
+          "description": "Encoder push switch shared with the STM32C011. The factory firmware enables internal pull-ups. This is a direct 3.3 V GPIO/contact signal; avoid driving against the onboard MCU.",
+          "surface": true
+        },
+        {
+          "id": "j3-2",
+          "number": "J3.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 72.75,
+          "y": 105.27,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-3",
+          "number": "J3.3",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 72.75,
+          "y": 123.05,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j3-4",
+          "number": "J3.4",
+          "label": "PF2",
+          "type": "input",
+          "x": 72.75,
+          "y": 140.83,
+          "description": "STM32C011 PF2/NRST reset signal. Pull low to reset the onboard microcontroller.",
+          "surface": true
+        },
+        {
+          "id": "j3-5",
+          "number": "J3.5",
+          "label": "SWCLK",
+          "type": "input",
+          "x": 72.75,
+          "y": 158.61,
+          "description": "STM32C011 PA14/SWCLK/BOOT0 debug clock and boot configuration signal. Used to reprogram the module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-6",
+          "number": "J3.6",
+          "label": "SWDIO",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 176.39,
+          "description": "STM32C011 PA13 SWD debug data. Used with SWCLK and GND to reprogram the module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-7",
+          "number": "J3.7",
+          "label": "TX1",
+          "type": "output",
+          "x": 72.75,
+          "y": 194.17000000000002,
+          "description": "STM32C011 PA9/PA11 alternate-function USART1 transmit signal. Available for custom module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-8",
+          "number": "J3.8",
+          "label": "RX1",
+          "type": "input",
+          "x": 72.75,
+          "y": 211.95000000000002,
+          "description": "STM32C011 PA10/PA12 alternate-function USART1 receive signal. Available for custom module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-9",
+          "number": "J3.9",
+          "label": "PA0",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 229.73000000000002,
+          "description": "Encoder A phase shared with the STM32C011. The factory firmware enables internal pull-ups. This is a direct 3.3 V GPIO/contact signal; avoid driving against the onboard MCU.",
+          "surface": true
+        },
+        {
+          "id": "j3-10",
+          "number": "J3.10",
+          "label": "PA1",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 247.51,
+          "description": "Encoder B phase shared with the STM32C011. The factory firmware enables internal pull-ups. This is a direct 3.3 V GPIO/contact signal; avoid driving against the onboard MCU.",
+          "surface": true
+        },
+        {
+          "id": "j4-1",
+          "number": "J4.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 232.76999999999998,
+          "y": 140.83,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j4-2",
+          "number": "J4.2",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 232.76999999999998,
+          "y": 158.61,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j4-3",
+          "number": "J4.3",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 232.76999999999998,
+          "y": 176.39000000000001,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "j4-4",
+          "number": "J4.4",
+          "label": "SCL",
+          "type": "input",
+          "x": 232.76999999999998,
+          "y": 194.17000000000002,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "j1-1",
+          "number": "J1.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 163.26,
+          "y": 60.921499999999995,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j2-1",
+          "number": "J2.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 142.26,
+          "y": 274.07849999999996,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-2",
+          "number": "J1.2",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 156.26,
+          "y": 60.921499999999995,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j2-2",
+          "number": "J2.2",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 149.26,
+          "y": 274.07849999999996,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j1-3",
+          "number": "J1.3",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 149.26,
+          "y": 60.921499999999995,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "j2-3",
+          "number": "J2.3",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 156.26,
+          "y": 274.07849999999996,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "j1-4",
+          "number": "J1.4",
+          "label": "SCL",
+          "type": "input",
+          "x": 142.26,
+          "y": 60.921499999999995,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "j2-4",
+          "number": "J2.4",
+          "label": "SCL",
+          "type": "input",
+          "x": 163.26,
+          "y": 274.07849999999996,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "tp-1",
+          "number": "TP.1",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 378.09000000000003,
+          "y": 48.5,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "tp-2",
+          "number": "TP.2",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 395.87,
+          "y": 48.5,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "tp-3",
+          "number": "TP.3",
+          "label": "SCL",
+          "type": "input",
+          "x": 413.65,
+          "y": 48.5,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "tp-4",
+          "number": "TP.4",
+          "label": "GND",
+          "type": "power_in",
+          "x": 431.43,
+          "y": 48.5,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "tp-5",
+          "number": "TP.5",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 378.09000000000003,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-6",
+          "number": "TP.6",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 395.87,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-7",
+          "number": "TP.7",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 413.65,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-8",
+          "number": "TP.8",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 431.43,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-9",
+          "number": "TP.9",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 378.09000000000003,
+          "y": 272.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-10",
+          "number": "TP.10",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 395.87,
+          "y": 272.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-11",
+          "number": "TP.11",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 413.65,
+          "y": 272.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-12",
+          "number": "TP.12",
+          "label": "PF2",
+          "type": "input",
+          "x": 431.43,
+          "y": 272.5,
+          "description": "STM32C011 PF2/NRST reset signal. Pull low to reset the onboard microcontroller.",
+          "surface": true
+        },
+        {
+          "id": "tp-13",
+          "number": "TP.13",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 395.87,
+          "y": 286.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-14",
+          "number": "TP.14",
+          "label": "SWCLK",
+          "type": "input",
+          "x": 413.65,
+          "y": 286.5,
+          "description": "STM32C011 PA14/SWCLK/BOOT0 debug clock and boot configuration signal. Used to reprogram the module firmware.",
+          "surface": true
+        },
+        {
+          "id": "tp-15",
+          "number": "TP.15",
+          "label": "SWDIO",
+          "type": "bidirectional",
+          "x": 431.43,
+          "y": 286.5,
+          "description": "STM32C011 PA13 SWD debug data. Used with SWCLK and GND to reprogram the module firmware.",
+          "surface": true
+        }
+      ]
+    },
+    {
+      "id": "arduino-modulino-buttons-abx00110",
+      "family": "arduino-more-boards",
+      "manufacturer": "Arduino",
+      "revision": "ABX00110 V0.3, schematic/CAD date2024-06-27",
+      "references": [
+        "https://docs.arduino.cc/resources/datasheets/ABX00110-datasheet.pdf",
+        "https://docs.arduino.cc/resources/schematics/ABX00110-schematics.pdf",
+        "https://docs.arduino.cc/tutorials/modulino-light/how-general/"
+      ],
+      "artifacts": [
+        "ABX00110-pinview.png",
+        "ABX00110-cad-files.zip"
+      ],
+      "notes": [
+        "Manufacturer V0.3 Gerbers parsed for14 header drill positions,8 Qwiic solder-tail centers,15 rear fixture pads and4 grounded Qwiic retainers. J3.1…10 A,GND,3V3,PF2,SWCLK,SWDIO,TX1,RX1,B,C; J4.1…4 GND,3V3,SDA,SCL.",
+        "Rear fixture contacts identical pattern to Knob:7 wired and8 NC. Catalog-assigned TP.1…15 identify source unnumbered pads.",
+        "Address is7-bit0x3E per consolidated manufacturer addressing guide; shifted0x7C in old datasheet is not advertised as a7-bit I²C address."
+      ],
+      "source": "https://docs.arduino.cc/hardware/modulino-buttons/",
+      "externalCAD": {
+        "label": "Arduino ABX00110 V0.3 Altium, Gerber, DXF and STEP CAD",
+        "url": "https://docs.arduino.cc/static/3e769f41c2bdc1dc397975eb2c2e83e4/ABX00110-cad-files.zip"
+      },
+      "footprintAssessment": "C",
+      "footprintEvidence": "Source-coordinate contact reference from the Arduino V0.3 Gerbers and drill files. Includes J1/J2 solder tails, J3/J4 through headers and all 15 bottom fixture pads; four grounded Qwiic retaining lands repeat the corresponding GND terminal. Both-side contact coordinates are represented on the carrier top layer. This is not a production or host-mating land pattern; clearances and illustration details are representative. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 37,
+      "nativePadCount": 41,
+      "physicalView": "Component-side drawing plus separately labelled horizontally mirrored rear contacts, with explicit mating or solder-tail views where applicable.",
+      "contacts": [
+        {
+          "id": "j3-1",
+          "number": "J3.1",
+          "label": "A",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 87.49000000000001,
+          "description": "Button A contact shared with the STM32C011. Read through the module's I²C firmware, or use this direct 3.3 V GPIO/contact signal with suitable custom firmware. Avoid driving against the onboard MCU.",
+          "surface": true
+        },
+        {
+          "id": "j3-2",
+          "number": "J3.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 72.75,
+          "y": 105.27,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-3",
+          "number": "J3.3",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 72.75,
+          "y": 123.05,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j3-4",
+          "number": "J3.4",
+          "label": "PF2",
+          "type": "input",
+          "x": 72.75,
+          "y": 140.83,
+          "description": "STM32C011 PF2/NRST reset signal. Pull low to reset the onboard microcontroller.",
+          "surface": true
+        },
+        {
+          "id": "j3-5",
+          "number": "J3.5",
+          "label": "SWCLK",
+          "type": "input",
+          "x": 72.75,
+          "y": 158.61,
+          "description": "STM32C011 PA14/SWCLK/BOOT0 debug clock and boot configuration signal. Used to reprogram the module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-6",
+          "number": "J3.6",
+          "label": "SWDIO",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 176.39,
+          "description": "STM32C011 PA13 SWD debug data. Used with SWCLK and GND to reprogram the module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-7",
+          "number": "J3.7",
+          "label": "TX1",
+          "type": "output",
+          "x": 72.75,
+          "y": 194.17000000000002,
+          "description": "STM32C011 PA9/PA11 alternate-function USART1 transmit signal. Available for custom module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-8",
+          "number": "J3.8",
+          "label": "RX1",
+          "type": "input",
+          "x": 72.75,
+          "y": 211.95000000000002,
+          "description": "STM32C011 PA10/PA12 alternate-function USART1 receive signal. Available for custom module firmware.",
+          "surface": true
+        },
+        {
+          "id": "j3-9",
+          "number": "J3.9",
+          "label": "B",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 229.73000000000002,
+          "description": "Button B contact shared with the STM32C011. Read through the module's I²C firmware, or use this direct 3.3 V GPIO/contact signal with suitable custom firmware. Avoid driving against the onboard MCU.",
+          "surface": true
+        },
+        {
+          "id": "j3-10",
+          "number": "J3.10",
+          "label": "C",
+          "type": "bidirectional",
+          "x": 72.75,
+          "y": 247.51,
+          "description": "Button C contact shared with the STM32C011. Read through the module's I²C firmware, or use this direct 3.3 V GPIO/contact signal with suitable custom firmware. Avoid driving against the onboard MCU.",
+          "surface": true
+        },
+        {
+          "id": "j4-1",
+          "number": "J4.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 232.76999999999998,
+          "y": 140.83,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j4-2",
+          "number": "J4.2",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 232.76999999999998,
+          "y": 158.61,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j4-3",
+          "number": "J4.3",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 232.76999999999998,
+          "y": 176.39000000000001,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "j4-4",
+          "number": "J4.4",
+          "label": "SCL",
+          "type": "input",
+          "x": 232.76999999999998,
+          "y": 194.17000000000002,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "j1-1",
+          "number": "J1.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 163.26,
+          "y": 60.921499999999995,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j2-1",
+          "number": "J2.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 142.26,
+          "y": 274.07849999999996,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-2",
+          "number": "J1.2",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 156.26,
+          "y": 60.921499999999995,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j2-2",
+          "number": "J2.2",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 149.26,
+          "y": 274.07849999999996,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "j1-3",
+          "number": "J1.3",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 149.26,
+          "y": 60.921499999999995,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "j2-3",
+          "number": "J2.3",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 156.26,
+          "y": 274.07849999999996,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "j1-4",
+          "number": "J1.4",
+          "label": "SCL",
+          "type": "input",
+          "x": 142.26,
+          "y": 60.921499999999995,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "j2-4",
+          "number": "J2.4",
+          "label": "SCL",
+          "type": "input",
+          "x": 163.26,
+          "y": 274.07849999999996,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "tp-1",
+          "number": "TP.1",
+          "label": "3V3",
+          "type": "power_in",
+          "x": 378.09000000000003,
+          "y": 48.5,
+          "description": "Regulated 3.3 V module supply input; shared by both Qwiic sockets and the solder headers.",
+          "surface": true
+        },
+        {
+          "id": "tp-2",
+          "number": "TP.2",
+          "label": "SDA",
+          "type": "bidirectional",
+          "x": 395.87,
+          "y": 48.5,
+          "description": "3.3 V I²C data shared by both Qwiic sockets, J4 and the rear test pad. The module operates as an I²C peripheral by default.",
+          "surface": true
+        },
+        {
+          "id": "tp-3",
+          "number": "TP.3",
+          "label": "SCL",
+          "type": "input",
+          "x": 413.65,
+          "y": 48.5,
+          "description": "3.3 V I²C clock shared by both Qwiic sockets, J4 and the rear test pad. Provide external bus pull-ups; optional 4.7 kΩ pull-up footprints are not fitted by default.",
+          "surface": true
+        },
+        {
+          "id": "tp-4",
+          "number": "TP.4",
+          "label": "GND",
+          "type": "power_in",
+          "x": 431.43,
+          "y": 48.5,
+          "description": "Common supply and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "tp-5",
+          "number": "TP.5",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 378.09000000000003,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-6",
+          "number": "TP.6",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 395.87,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-7",
+          "number": "TP.7",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 413.65,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-8",
+          "number": "TP.8",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 431.43,
+          "y": 62.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-9",
+          "number": "TP.9",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 378.09000000000003,
+          "y": 272.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-10",
+          "number": "TP.10",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 395.87,
+          "y": 272.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-11",
+          "number": "TP.11",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 413.65,
+          "y": 272.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-12",
+          "number": "TP.12",
+          "label": "PF2",
+          "type": "input",
+          "x": 431.43,
+          "y": 272.5,
+          "description": "STM32C011 PF2/NRST reset signal. Pull low to reset the onboard microcontroller.",
+          "surface": true
+        },
+        {
+          "id": "tp-13",
+          "number": "TP.13",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 395.87,
+          "y": 286.5,
+          "description": "Unconnected rear fixture pad in the manufacturer V0.3 schematic. It is exposed copper but has no assigned electrical function.",
+          "surface": true
+        },
+        {
+          "id": "tp-14",
+          "number": "TP.14",
+          "label": "SWCLK",
+          "type": "input",
+          "x": 413.65,
+          "y": 286.5,
+          "description": "STM32C011 PA14/SWCLK/BOOT0 debug clock and boot configuration signal. Used to reprogram the module firmware.",
+          "surface": true
+        },
+        {
+          "id": "tp-15",
+          "number": "TP.15",
+          "label": "SWDIO",
+          "type": "bidirectional",
+          "x": 431.43,
+          "y": 286.5,
+          "description": "STM32C011 PA13 SWD debug data. Used with SWCLK and GND to reprogram the module firmware.",
+          "surface": true
+        }
+      ]
+    },
+    {
+      "id": "esp8684-devkitm-1-v1-1",
+      "family": "espressif-more-boards",
+      "manufacturer": "Espressif Systems",
+      "revision": "ESP8684-DevKitM-1 v1.1 / ESP8684-MINI-1",
+      "references": [
+        "https://dl.espressif.com/dl/schematics/esp8684-devkitm-1-schematics_V1.1.pdf",
+        "https://dl.espressif.com/dl/schematics/esp8684-devkitm-1-dimensions_V1.1.pdf",
+        "https://documentation.espressif.com/esp8684_datasheet_en.html"
+      ],
+      "artifacts": [
+        "8684m-esp8684-devkitm-1-pinout_v1.1.png",
+        "8684m-ESP8684-DevKitM-1-v1.1-annotated-photo.png",
+        "8684m-esp8684-devkitm-1-dimensions_source_V1.1.dxf"
+      ],
+      "notes": [
+        "15 contacts per J1/J3, numbered top to bottom in component-side view. Native row x1.27/24.13 mm, pitch2.54 mm, top coordinate2.0628 mm on38.9128 mm PCB, from source DXF.",
+        "Revised discrete RGB LED shares GPIO0/1/8. Source guide incorrectly lists ADC2_CH0 for GPIO5; this was omitted after checking ESP8684 datasheet (five ADC channels onGPIO0–4). GPIO8/9 boot straps identified."
+      ],
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c2/esp8684-devkitm-1/user_guide.html",
+      "externalCAD": {
+        "label": "Espressif ESP8684-DevKitM-1 v1.1 mechanical DXF",
+        "url": "https://dl.espressif.com/dl/schematics/esp8684-devkitm-1-dimensions_source_V1.1.dxf"
+      },
+      "footprintAssessment": "C",
+      "footprintEvidence": "Source-coordinate header contact reference from the linked Espressif mechanical DXF. 2.54 mm pitch, 22.86 mm row spacing. Header drill/pad sizes, control/USB details and clearance are representative carrier geometry, not a complete production or validated mating land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 30,
+      "nativePadCount": 30,
+      "physicalView": "Component side, antenna above and USB below; actual header sockets/contacts.",
+      "contacts": [
+        {
+          "id": "j1-1",
+          "number": "J1.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 60.3768,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-2",
+          "number": "J1.2",
+          "label": "3V3",
+          "type": "passive",
+          "x": 21.62,
+          "y": 75.6168,
+          "description": "3.3 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-3",
+          "number": "J1.3",
+          "label": "3V3",
+          "type": "passive",
+          "x": 21.62,
+          "y": 90.85679999999999,
+          "description": "3.3 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-4",
+          "number": "J1.4",
+          "label": "2",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 106.0968,
+          "description": "3.3 V logic. GPIO2, ADC1_CH2, FSPIQ.",
+          "surface": true
+        },
+        {
+          "id": "j1-5",
+          "number": "J1.5",
+          "label": "3",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 121.3368,
+          "description": "3.3 V logic. GPIO3, ADC1_CH3.",
+          "surface": true
+        },
+        {
+          "id": "j1-6",
+          "number": "J1.6",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 136.5768,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-7",
+          "number": "J1.7",
+          "label": "RST",
+          "type": "input",
+          "x": 21.62,
+          "y": 151.8168,
+          "description": "CHIP_PU enable/reset input. High enables the module; pull low to reset or power it down.",
+          "surface": true
+        },
+        {
+          "id": "j1-8",
+          "number": "J1.8",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 167.0568,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-9",
+          "number": "J1.9",
+          "label": "0",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 182.2968,
+          "description": "3.3 V logic. GPIO0, ADC1_CH0, LED Red.",
+          "surface": true
+        },
+        {
+          "id": "j1-10",
+          "number": "J1.10",
+          "label": "1",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 197.5368,
+          "description": "3.3 V logic. GPIO1, ADC1_CH1, LED Green.",
+          "surface": true
+        },
+        {
+          "id": "j1-11",
+          "number": "J1.11",
+          "label": "10",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 212.77679999999998,
+          "description": "3.3 V logic. GPIO10, FSPICS0.",
+          "surface": true
+        },
+        {
+          "id": "j1-12",
+          "number": "J1.12",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 228.0168,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-13",
+          "number": "J1.13",
+          "label": "5V",
+          "type": "passive",
+          "x": 21.62,
+          "y": 243.2568,
+          "description": "5 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-14",
+          "number": "J1.14",
+          "label": "5V",
+          "type": "passive",
+          "x": 21.62,
+          "y": 258.4968,
+          "description": "5 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-15",
+          "number": "J1.15",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 273.7368,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-1",
+          "number": "J3.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 60.3768,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-2",
+          "number": "J3.2",
+          "label": "TX",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 75.6168,
+          "description": "3.3 V logic. GPIO20, U0TXD.",
+          "surface": true
+        },
+        {
+          "id": "j3-3",
+          "number": "J3.3",
+          "label": "RX",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 90.85679999999999,
+          "description": "3.3 V logic. GPIO19, U0RXD.",
+          "surface": true
+        },
+        {
+          "id": "j3-4",
+          "number": "J3.4",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 106.0968,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-5",
+          "number": "J3.5",
+          "label": "9",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 121.3368,
+          "description": "3.3 V logic. GPIO9. Boot strapping signal: external loading affects reset-time configuration.",
+          "surface": true
+        },
+        {
+          "id": "j3-6",
+          "number": "J3.6",
+          "label": "8",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 136.5768,
+          "description": "3.3 V logic. GPIO8, LED Blue. Boot strapping signal: external loading affects reset-time configuration.",
+          "surface": true
+        },
+        {
+          "id": "j3-7",
+          "number": "J3.7",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 151.8168,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-8",
+          "number": "J3.8",
+          "label": "7",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 167.0568,
+          "description": "3.3 V logic. GPIO7, FSPID, MTDO.",
+          "surface": true
+        },
+        {
+          "id": "j3-9",
+          "number": "J3.9",
+          "label": "6",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 182.2968,
+          "description": "3.3 V logic. GPIO6, FSPICLK, MTCK.",
+          "surface": true
+        },
+        {
+          "id": "j3-10",
+          "number": "J3.10",
+          "label": "5",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 197.5368,
+          "description": "3.3 V logic. GPIO5, FSPIWP ,MTDI.",
+          "surface": true
+        },
+        {
+          "id": "j3-11",
+          "number": "J3.11",
+          "label": "4",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 212.77679999999998,
+          "description": "3.3 V logic. GPIO4, ADC1_CH4, FSPIHD ,MTMS.",
+          "surface": true
+        },
+        {
+          "id": "j3-12",
+          "number": "J3.12",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 228.0168,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-13",
+          "number": "J3.13",
+          "label": "18",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 243.2568,
+          "description": "3.3 V logic. GPIO18.",
+          "surface": true
+        },
+        {
+          "id": "j3-14",
+          "number": "J3.14",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 258.4968,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-15",
+          "number": "J3.15",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 273.7368,
+          "description": "Power and signal ground.",
+          "surface": true
+        }
+      ]
+    },
+    {
+      "id": "esp8684-devkitc-02-v1-0",
+      "family": "espressif-more-boards",
+      "manufacturer": "Espressif Systems",
+      "revision": "ESP8684-DevKitC-02 v1.0 / ESP8684-WROOM-02C",
+      "references": [
+        "https://dl.espressif.com/dl/schematics/esp8684-devkitc-02-schematics_V1.0.pdf",
+        "https://dl.espressif.com/dl/schematics/esp8684-devkitc-02-dimensions_V1.0.pdf"
+      ],
+      "artifacts": [
+        "8684c-esp8684-devkitc-02-pinout_v1.0.png",
+        "8684c-ESP8684-DevKitC-02-v1.0-annotated-photo.png",
+        "8684c-esp8684-devkitc-02-dimensions_source_V1.0.dxf"
+      ],
+      "notes": [
+        "15 contacts per J1/J3, numbered top to bottom. J3.13 is physically present NC. Row spacing22.86 mm, pitch2.54 mm, top coordinate2.06 mm on38.91 mm PCB.",
+        "GPIO8/9 are boot straps; discrete RGB LED shares GPIO0/1/8."
+      ],
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c2/esp8684-devkitc-02/user_guide.html",
+      "externalCAD": {
+        "label": "Espressif ESP8684-DevKitC-02 v1.0 mechanical DXF",
+        "url": "https://dl.espressif.com/dl/schematics/esp8684-devkitc-02-dimensions_source_V1.0.dxf"
+      },
+      "footprintAssessment": "C",
+      "footprintEvidence": "Source-coordinate header contact reference from the linked Espressif mechanical DXF. 2.54 mm pitch, 22.86 mm row spacing. Header drill/pad sizes, control/USB details and clearance are representative carrier geometry, not a complete production or validated mating land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 30,
+      "nativePadCount": 30,
+      "physicalView": "Component side, antenna above and USB below; actual header sockets/contacts.",
+      "contacts": [
+        {
+          "id": "j1-1",
+          "number": "J1.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 60.36,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-2",
+          "number": "J1.2",
+          "label": "3V3",
+          "type": "passive",
+          "x": 21.62,
+          "y": 75.6,
+          "description": "3.3 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-3",
+          "number": "J1.3",
+          "label": "3V3",
+          "type": "passive",
+          "x": 21.62,
+          "y": 90.84,
+          "description": "3.3 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-4",
+          "number": "J1.4",
+          "label": "RST",
+          "type": "input",
+          "x": 21.62,
+          "y": 106.08,
+          "description": "CHIP_PU enable/reset input. High enables the module; pull low to reset or power it down.",
+          "surface": true
+        },
+        {
+          "id": "j1-5",
+          "number": "J1.5",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 121.32000000000001,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-6",
+          "number": "J1.6",
+          "label": "4",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 136.56,
+          "description": "3.3 V logic. GPIO4, ADC1_CH4, FSPIHD, MTMS.",
+          "surface": true
+        },
+        {
+          "id": "j1-7",
+          "number": "J1.7",
+          "label": "5",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 151.8,
+          "description": "3.3 V logic. GPIO5, FSPIWP, MTDI.",
+          "surface": true
+        },
+        {
+          "id": "j1-8",
+          "number": "J1.8",
+          "label": "6",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 167.04,
+          "description": "3.3 V logic. GPIO6, FSPICLK, MTCK.",
+          "surface": true
+        },
+        {
+          "id": "j1-9",
+          "number": "J1.9",
+          "label": "7",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 182.28,
+          "description": "3.3 V logic. GPIO7, FSPID , MTDO.",
+          "surface": true
+        },
+        {
+          "id": "j1-10",
+          "number": "J1.10",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 197.51999999999998,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-11",
+          "number": "J1.11",
+          "label": "8",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 212.76,
+          "description": "3.3 V logic. GPIO8, LED Blue. Boot strapping signal: external loading affects reset-time configuration.",
+          "surface": true
+        },
+        {
+          "id": "j1-12",
+          "number": "J1.12",
+          "label": "9",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 228,
+          "description": "3.3 V logic. GPIO9. Boot strapping signal: external loading affects reset-time configuration.",
+          "surface": true
+        },
+        {
+          "id": "j1-13",
+          "number": "J1.13",
+          "label": "5V",
+          "type": "passive",
+          "x": 21.62,
+          "y": 243.24,
+          "description": "5 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-14",
+          "number": "J1.14",
+          "label": "5V",
+          "type": "passive",
+          "x": 21.62,
+          "y": 258.48,
+          "description": "5 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-15",
+          "number": "J1.15",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 273.72,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-1",
+          "number": "J3.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 60.36,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-2",
+          "number": "J3.2",
+          "label": "0",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 75.6,
+          "description": "3.3 V logic. GPIO0, ADC1_CH0, LED Red.",
+          "surface": true
+        },
+        {
+          "id": "j3-3",
+          "number": "J3.3",
+          "label": "1",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 90.84,
+          "description": "3.3 V logic. GPIO1, ADC1_CH1, LED Green.",
+          "surface": true
+        },
+        {
+          "id": "j3-4",
+          "number": "J3.4",
+          "label": "2",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 106.08,
+          "description": "3.3 V logic. GPIO2, ADC1_CH2, FSPIQ.",
+          "surface": true
+        },
+        {
+          "id": "j3-5",
+          "number": "J3.5",
+          "label": "3",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 121.32000000000001,
+          "description": "3.3 V logic. GPIO3, ADC1_CH3.",
+          "surface": true
+        },
+        {
+          "id": "j3-6",
+          "number": "J3.6",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 136.56,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-7",
+          "number": "J3.7",
+          "label": "10",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 151.8,
+          "description": "3.3 V logic. GPIO10, FSPICS0.",
+          "surface": true
+        },
+        {
+          "id": "j3-8",
+          "number": "J3.8",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 167.04,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-9",
+          "number": "J3.9",
+          "label": "RX",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 182.28,
+          "description": "3.3 V logic. GPIO19, U0RXD.",
+          "surface": true
+        },
+        {
+          "id": "j3-10",
+          "number": "J3.10",
+          "label": "TX",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 197.51999999999998,
+          "description": "3.3 V logic. GPIO20, U0TXD.",
+          "surface": true
+        },
+        {
+          "id": "j3-11",
+          "number": "J3.11",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 212.76,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-12",
+          "number": "J3.12",
+          "label": "18",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 228,
+          "description": "3.3 V logic. GPIO18.",
+          "surface": true
+        },
+        {
+          "id": "j3-13",
+          "number": "J3.13",
+          "label": "NC",
+          "type": "no_connect",
+          "x": 158.78,
+          "y": 243.24,
+          "description": "Not connected on this board revision.",
+          "surface": true
+        },
+        {
+          "id": "j3-14",
+          "number": "J3.14",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 258.48,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-15",
+          "number": "J3.15",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 273.72,
+          "description": "Power and signal ground.",
+          "surface": true
+        }
+      ]
+    },
+    {
+      "id": "esp32-devkitm-1-mini-v1",
+      "family": "espressif-more-boards",
+      "manufacturer": "Espressif Systems",
+      "revision": "ESP32-DevKitM-1 v1.0 / ESP32-MINI-1",
+      "references": [
+        "https://dl.espressif.com/dl/schematics/SCH_ESP32-DEVKITM-1_V1_20200910A.pdf"
+      ],
+      "artifacts": [
+        "esp32m-ESP32_DevKitM-1_pinlayout.png",
+        "esp32m-esp32-DevKitM-1-front.png",
+        "esp32m-ESP32-DevKitM-1_V1.dxf"
+      ],
+      "notes": [
+        "17 contacts per J1/J3. Guide global numbering18…34 is converted to actual J3.17…1; top-right GND is J3.1, bottom-right GPIO12 is J3.17. Native row centers x1.27/24.13 mm; top coordinate1.575 mm on43.815 mm PCB.",
+        "GPIO34–39 input-only. 0/2/5/12/15 boot straps; RX/TX also share the USB-UART bridge. Early modules before2021-12-02 may be single-core; description preserves this manufacturer warning."
+      ],
+      "source": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitm-1/user_guide.html",
+      "externalCAD": {
+        "label": "Espressif ESP32-DevKitM-1 v1.0 mechanical DXF",
+        "url": "https://dl.espressif.com/dl/schematics/ESP32-DevKitM-1_V1.dxf"
+      },
+      "footprintAssessment": "C",
+      "footprintEvidence": "Source-coordinate header contact reference from the linked Espressif mechanical DXF. 2.54 mm pitch, 22.86 mm row spacing. Header drill/pad sizes, control/USB details and clearance are representative carrier geometry, not a complete production or validated mating land pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 34,
+      "nativePadCount": 34,
+      "physicalView": "Component side, antenna above and USB below; actual header sockets/contacts.",
+      "contacts": [
+        {
+          "id": "j1-1",
+          "number": "J1.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 57.45,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j1-2",
+          "number": "J1.2",
+          "label": "3V3",
+          "type": "passive",
+          "x": 21.62,
+          "y": 72.69,
+          "description": "3.3 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-3",
+          "number": "J1.3",
+          "label": "36",
+          "type": "input",
+          "x": 21.62,
+          "y": 87.93,
+          "description": "3.3 V logic. GPIO36, ADC1_CH0, RTC_GPIO0. Input-only GPIO; it cannot drive an output.",
+          "surface": true
+        },
+        {
+          "id": "j1-4",
+          "number": "J1.4",
+          "label": "37",
+          "type": "input",
+          "x": 21.62,
+          "y": 103.17,
+          "description": "3.3 V logic. GPIO37, ADC1_CH1, RTC_GPIO1. Input-only GPIO; it cannot drive an output.",
+          "surface": true
+        },
+        {
+          "id": "j1-5",
+          "number": "J1.5",
+          "label": "38",
+          "type": "input",
+          "x": 21.62,
+          "y": 118.41,
+          "description": "3.3 V logic. GPIO38, ADC1_CH2, RTC_GPIO2. Input-only GPIO; it cannot drive an output.",
+          "surface": true
+        },
+        {
+          "id": "j1-6",
+          "number": "J1.6",
+          "label": "39",
+          "type": "input",
+          "x": 21.62,
+          "y": 133.64999999999998,
+          "description": "3.3 V logic. GPIO39, ADC1_CH3, RTC_GPIO3. Input-only GPIO; it cannot drive an output.",
+          "surface": true
+        },
+        {
+          "id": "j1-7",
+          "number": "J1.7",
+          "label": "RST",
+          "type": "input",
+          "x": 21.62,
+          "y": 148.89000000000001,
+          "description": "CHIP_PU enable/reset input. High enables the module; pull low to reset or power it down.",
+          "surface": true
+        },
+        {
+          "id": "j1-8",
+          "number": "J1.8",
+          "label": "34",
+          "type": "input",
+          "x": 21.62,
+          "y": 164.13,
+          "description": "3.3 V logic. GPIO34, ADC1_CH6, RTC_GPIO4. Input-only GPIO; it cannot drive an output.",
+          "surface": true
+        },
+        {
+          "id": "j1-9",
+          "number": "J1.9",
+          "label": "35",
+          "type": "input",
+          "x": 21.62,
+          "y": 179.37,
+          "description": "3.3 V logic. GPIO35, ADC1_CH7, RTC_GPIO5. Input-only GPIO; it cannot drive an output.",
+          "surface": true
+        },
+        {
+          "id": "j1-10",
+          "number": "J1.10",
+          "label": "32",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 194.60999999999999,
+          "description": "3.3 V logic. GPIO32, XTAL_32K_P (32.768 kHz crystal oscillator input), ADC1_CH4, TOUCH9, RTC_GPIO9.",
+          "surface": true
+        },
+        {
+          "id": "j1-11",
+          "number": "J1.11",
+          "label": "33",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 209.85,
+          "description": "3.3 V logic. GPIO33, XTAL_32K_N (32.768 kHz crystal oscillator output), ADC1_CH5, TOUCH8, RTC_GPIO8.",
+          "surface": true
+        },
+        {
+          "id": "j1-12",
+          "number": "J1.12",
+          "label": "25",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 225.09,
+          "description": "3.3 V logic. GPIO25, DAC_1, ADC2_CH8, RTC_GPIO6, EMAC_RXD0.",
+          "surface": true
+        },
+        {
+          "id": "j1-13",
+          "number": "J1.13",
+          "label": "26",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 240.32999999999998,
+          "description": "3.3 V logic. GPIO26, DAC_2, ADC2_CH9, RTC_GPIO7, EMAC_RXD1.",
+          "surface": true
+        },
+        {
+          "id": "j1-14",
+          "number": "J1.14",
+          "label": "27",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 255.57000000000005,
+          "description": "3.3 V logic. GPIO27, ADC2_CH7, TOUCH7, RTC_GPIO17, EMAC_RX_DV.",
+          "surface": true
+        },
+        {
+          "id": "j1-15",
+          "number": "J1.15",
+          "label": "14",
+          "type": "bidirectional",
+          "x": 21.62,
+          "y": 270.81000000000006,
+          "description": "3.3 V logic. GPIO14, ADC2_CH6, TOUCH6, RTC_GPIO16, MTMS, HSPICLK, HS2_CLK, SD_CLK, EMAC_TXD2.",
+          "surface": true
+        },
+        {
+          "id": "j1-16",
+          "number": "J1.16",
+          "label": "5V",
+          "type": "passive",
+          "x": 21.62,
+          "y": 286.05,
+          "description": "5 V board supply rail. USB, 5V/GND and 3V3/GND are alternative supply paths; use one source at a time.",
+          "surface": true
+        },
+        {
+          "id": "j1-17",
+          "number": "J1.17",
+          "label": "GND",
+          "type": "power_in",
+          "x": 21.62,
+          "y": 301.29,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-1",
+          "number": "J3.1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 158.78,
+          "y": 57.45,
+          "description": "Power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-2",
+          "number": "J3.2",
+          "label": "TX",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 72.69,
+          "description": "3.3 V logic. GPIO1, U0TXD, CLK_OUT3, EMAC_RXD2. Also connected to the onboard USB-to-UART bridge.",
+          "surface": true
+        },
+        {
+          "id": "j3-3",
+          "number": "J3.3",
+          "label": "RX",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 87.93,
+          "description": "3.3 V logic. GPIO3, U0RXD, CLK_OUT2. Also connected to the onboard USB-to-UART bridge.",
+          "surface": true
+        },
+        {
+          "id": "j3-4",
+          "number": "J3.4",
+          "label": "21",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 103.17,
+          "description": "3.3 V logic. GPIO21, VSPIHD, EMAC_TX_EN.",
+          "surface": true
+        },
+        {
+          "id": "j3-5",
+          "number": "J3.5",
+          "label": "22",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 118.41,
+          "description": "3.3 V logic. GPIO22, VSPIWP, U0RTS, EMAC_TXD1.",
+          "surface": true
+        },
+        {
+          "id": "j3-6",
+          "number": "J3.6",
+          "label": "19",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 133.64999999999998,
+          "description": "3.3 V logic. GPIO19, VSPIQ, U0CTS, EMAC_TXD0.",
+          "surface": true
+        },
+        {
+          "id": "j3-7",
+          "number": "J3.7",
+          "label": "23",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 148.89000000000001,
+          "description": "3.3 V logic. GPIO23, HS1_STROBE, VSPID.",
+          "surface": true
+        },
+        {
+          "id": "j3-8",
+          "number": "J3.8",
+          "label": "18",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 164.13,
+          "description": "3.3 V logic. GPIO18, HS1_DATA7, VSPICLK.",
+          "surface": true
+        },
+        {
+          "id": "j3-9",
+          "number": "J3.9",
+          "label": "5",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 179.37,
+          "description": "3.3 V logic. GPIO5, HS1_DATA6, VSPICS0, EMAC_RX_CLK. Boot strapping signal: preserve reset-time levels.",
+          "surface": true
+        },
+        {
+          "id": "j3-10",
+          "number": "J3.10",
+          "label": "10",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 194.60999999999999,
+          "description": "3.3 V logic. GPIO10, HS1_DATA3, U1TXD, SD_DATA3.",
+          "surface": true
+        },
+        {
+          "id": "j3-11",
+          "number": "J3.11",
+          "label": "9",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 209.85,
+          "description": "3.3 V logic. GPIO9, HS1_DATA2, U1RXD, SD_DATA2.",
+          "surface": true
+        },
+        {
+          "id": "j3-12",
+          "number": "J3.12",
+          "label": "4",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 225.09,
+          "description": "3.3 V logic. GPIO4, ADC2_CH0, TOUCH0, RTC_GPIO10, HSPIHD, HS2_DATA1, SD_DATA1, EMAC_TX_ER.",
+          "surface": true
+        },
+        {
+          "id": "j3-13",
+          "number": "J3.13",
+          "label": "0",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 240.32999999999998,
+          "description": "3.3 V logic. GPIO0, ADC2_CH1, TOUCH1, RTC_GPIO11, CLK_OUT1, EMAC_TX_CLK. Boot strapping signal: preserve reset-time levels.",
+          "surface": true
+        },
+        {
+          "id": "j3-14",
+          "number": "J3.14",
+          "label": "2",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 255.57000000000005,
+          "description": "3.3 V logic. GPIO2, ADC2_CH2, TOUCH2, RTC_GPIO12, HSPIWP, HS2_DATA0, SD_DATA0. Boot strapping signal: preserve reset-time levels.",
+          "surface": true
+        },
+        {
+          "id": "j3-15",
+          "number": "J3.15",
+          "label": "15",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 270.81000000000006,
+          "description": "3.3 V logic. GPIO15, ADC2_CH3, TOUCH3, RTC_GPIO13, MTDO, HSPICS0, HS2_CMD, SD_CMD, EMAC_RXD3. Boot strapping signal: preserve reset-time levels.",
+          "surface": true
+        },
+        {
+          "id": "j3-16",
+          "number": "J3.16",
+          "label": "13",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 286.05,
+          "description": "3.3 V logic. GPIO13, ADC2_CH4, TOUCH4, RTC_GPIO14, MTCK, HSPID, HS2_DATA3, SD_DATA3, EMAC_RX_ER.",
+          "surface": true
+        },
+        {
+          "id": "j3-17",
+          "number": "J3.17",
+          "label": "12",
+          "type": "bidirectional",
+          "x": 158.78,
+          "y": 301.29,
+          "description": "3.3 V logic. GPIO12, ADC2_CH5, TOUCH5, RTC_GPIO15, MTDI, HSPIQ, HS2_DATA2, SD_DATA2, EMAC_TXD3. Boot strapping signal: preserve reset-time levels.",
+          "surface": true
+        }
+      ]
+    },
+    {
+      "id": "raspberry-pi-pico-2",
+      "family": "raspberry-pi-more",
+      "manufacturer": "Raspberry Pi",
+      "revision": "SC1631 bare-header variant, manufacturer Pico2 datasheet; PCB revision not established beyond published drawings",
+      "references": [
+        "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html",
+        "https://www.raspberrypi.com/products/raspberry-pi-pico-2/"
+      ],
+      "artifacts": [
+        "pico2-contacts.png",
+        "pico2-land.png",
+        "pico2-components.png",
+        "pico2-source-pinout.svg"
+      ],
+      "notes": [
+        "50 contacts=40 main+3 SWD+7 TP;4 USB shell pads repeat TP1 ground in native footprint. Main hole centers x1.61/19.39 mm with1.37 mm top offset and2.54 mm pitch. SWD bottom contacts x7.96,10.5,13.04 mm at49.63 mm from top.",
+        "Manufacturer Fig4 verifies TP3 left andTP2 right in component-side projection. Bottom-origin points: TP1(10.5,46.5), TP2(11.5,49.8), TP3(9.5,49.8), TP4(8,43), TP5(8,40.5), TP6(8,38), TP7(11.5,30.5). Artwork rear mirrorsX.",
+        "TP4 SMPS_PS andTP7 internal1V1 not for external use; TP5 loaded LED node not3.3 Vlogic; TP6 BOOTSEL shared with flash.",
+        "Vendor STEP archive is linked from manufacturer resource page; direct download returned403, so file contents were not audited. External CAD does not upgrade generatedWRL."
+      ],
+      "source": "https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf",
+      "externalCAD": {
+        "label": "Raspberry Pi Pico 2 vendor STEP archive",
+        "url": "https://pip.raspberrypi.com/documents/RP-009061-CA"
+      },
+      "footprintAssessment": "C",
+      "footprintEvidence": "Source-coordinate contact reference: 40 header holes, three SWD contacts, all rear test points and four USB shell lands. Centers follow the manufacturer's dimension and SMT-reference drawings. Header/SWD lands are representative through-hole carrier pads; test and shell pads use source center locations. This is not the manufacturer's asymmetric SMT footprint or paste stencil, and is not a qualified production mating pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 50,
+      "nativePadCount": 54,
+      "physicalView": "Component-side drawing plus separately labelled horizontally mirrored rear contacts, with explicit mating or solder-tail views where applicable.",
+      "contacts": [
+        {
+          "id": "pin1",
+          "number": "1",
+          "label": "GP0",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 34.22,
+          "description": "3.3 V GPIO0; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin2",
+          "number": "2",
+          "label": "GP1",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 49.46,
+          "description": "3.3 V GPIO1; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART0 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin3",
+          "number": "3",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 64.7,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin4",
+          "number": "4",
+          "label": "GP2",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 79.94,
+          "description": "3.3 V GPIO2; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin5",
+          "number": "5",
+          "label": "GP3",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 95.18,
+          "description": "3.3 V GPIO3; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin6",
+          "number": "6",
+          "label": "GP4",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 110.42,
+          "description": "3.3 V GPIO4; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin7",
+          "number": "7",
+          "label": "GP5",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 125.66,
+          "description": "3.3 V GPIO5; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART1 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin8",
+          "number": "8",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 140.9,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin9",
+          "number": "9",
+          "label": "GP6",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 156.14000000000001,
+          "description": "3.3 V GPIO6; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin10",
+          "number": "10",
+          "label": "GP7",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 171.38,
+          "description": "3.3 V GPIO7; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin11",
+          "number": "11",
+          "label": "GP8",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 186.62,
+          "description": "3.3 V GPIO8; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI1 RX, UART1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin12",
+          "number": "12",
+          "label": "GP9",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 201.86,
+          "description": "3.3 V GPIO9; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI1 CSn, UART1 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin13",
+          "number": "13",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 217.10000000000002,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin14",
+          "number": "14",
+          "label": "GP10",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 232.34,
+          "description": "3.3 V GPIO10; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI1 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin15",
+          "number": "15",
+          "label": "GP11",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 247.57999999999998,
+          "description": "3.3 V GPIO11; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin16",
+          "number": "16",
+          "label": "GP12",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 262.82,
+          "description": "3.3 V GPIO12; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI1 RX, UART0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin17",
+          "number": "17",
+          "label": "GP13",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 278.06,
+          "description": "3.3 V GPIO13; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI1 CSn, UART0 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin18",
+          "number": "18",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 293.29999999999995,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin19",
+          "number": "19",
+          "label": "GP14",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 308.53999999999996,
+          "description": "3.3 V GPIO14; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI1 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin20",
+          "number": "20",
+          "label": "GP15",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 323.78,
+          "description": "3.3 V GPIO15; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin21",
+          "number": "21",
+          "label": "GP16",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 323.78,
+          "description": "3.3 V GPIO16; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin22",
+          "number": "22",
+          "label": "GP17",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 308.53999999999996,
+          "description": "3.3 V GPIO17; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART0 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin23",
+          "number": "23",
+          "label": "GND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 293.29999999999995,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin24",
+          "number": "24",
+          "label": "GP18",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 278.06,
+          "description": "3.3 V GPIO18; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin25",
+          "number": "25",
+          "label": "GP19",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 262.82,
+          "description": "3.3 V GPIO19; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin26",
+          "number": "26",
+          "label": "GP20",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 247.57999999999998,
+          "description": "3.3 V GPIO20; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin27",
+          "number": "27",
+          "label": "GP21",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 232.34,
+          "description": "3.3 V GPIO21; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART1 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin28",
+          "number": "28",
+          "label": "GND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 217.10000000000002,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin29",
+          "number": "29",
+          "label": "GP22",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 201.86,
+          "description": "3.3 V GPIO22; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin30",
+          "number": "30",
+          "label": "RUN",
+          "type": "input",
+          "x": 191.34,
+          "y": 186.62,
+          "description": "RP2350 enable/reset input, with an internal pull-up to 3.3 V. Pull low to reset the microcontroller.",
+          "surface": true
+        },
+        {
+          "id": "pin31",
+          "number": "31",
+          "label": "GP26",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 171.38,
+          "description": "3.3 V GPIO26; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI1 SCK. ADC0 analog input. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin32",
+          "number": "32",
+          "label": "GP27",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 156.14000000000001,
+          "description": "3.3 V GPIO27; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI1 TX. ADC1 analog input. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin33",
+          "number": "33",
+          "label": "AGND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 140.9,
+          "description": "Analog ground reference for the ADC inputs; the board routes its analog return separately from the digital signals.",
+          "surface": true
+        },
+        {
+          "id": "pin34",
+          "number": "34",
+          "label": "GP28",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 125.66,
+          "description": "3.3 V GPIO28; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI1 RX. ADC2 analog input. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin35",
+          "number": "35",
+          "label": "ADC_VREF",
+          "type": "passive",
+          "x": 191.34,
+          "y": 110.42,
+          "description": "Filtered ADC supply/reference derived from 3.3 V. Can be used with an external reference following the manufacturer circuit guidance; this is a separate filtered net.",
+          "surface": true
+        },
+        {
+          "id": "pin36",
+          "number": "36",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 191.34,
+          "y": 95.18,
+          "description": "Regulated 3.3 V output supplying the RP2350 and GPIO. Available external current depends on board load; the maker recommends keeping external load below 300 mA.",
+          "surface": true
+        },
+        {
+          "id": "pin37",
+          "number": "37",
+          "label": "3V3_EN",
+          "type": "input",
+          "x": 191.34,
+          "y": 79.94,
+          "description": "SMPS enable, pulled up to VSYS through 100 kΩ. Short to GND to turn off the board's 3.3 V rail.",
+          "surface": true
+        },
+        {
+          "id": "pin38",
+          "number": "38",
+          "label": "GND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 64.7,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin39",
+          "number": "39",
+          "label": "VSYS",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 49.46,
+          "description": "Main 1.8–5.5 V system supply input to the onboard buck-boost regulator. USB VBUS reaches this net through a Schottky diode; VBUS and VSYS are not directly joined.",
+          "surface": true
+        },
+        {
+          "id": "pin40",
+          "number": "40",
+          "label": "VBUS",
+          "type": "passive",
+          "x": 191.34,
+          "y": 34.22,
+          "description": "Nominal 5 V rail directly connected to Micro-USB VBUS. It is present when USB power is supplied; it feeds VSYS through a Schottky diode.",
+          "surface": true
+        },
+        {
+          "id": "swd-1",
+          "number": "SWD.1",
+          "label": "SWCLK",
+          "type": "input",
+          "x": 122.75999999999999,
+          "y": 323.78000000000003,
+          "description": "3.3 V Serial Wire Debug clock input to the RP2350.",
+          "surface": true
+        },
+        {
+          "id": "swd-2",
+          "number": "SWD.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 138,
+          "y": 323.78000000000003,
+          "description": "Serial Wire Debug ground. This interface does not supply target power.",
+          "surface": true
+        },
+        {
+          "id": "swd-3",
+          "number": "SWD.3",
+          "label": "SWDIO",
+          "type": "bidirectional",
+          "x": 153.24,
+          "y": 323.78000000000003,
+          "description": "3.3 V Serial Wire Debug data to and from the RP2350.",
+          "surface": true
+        },
+        {
+          "id": "tp1",
+          "number": "TP1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 353,
+          "y": 53,
+          "description": "Close-coupled ground test point for the differential USB pair.",
+          "surface": true
+        },
+        {
+          "id": "tp2",
+          "number": "TP2",
+          "label": "USB_DM",
+          "type": "bidirectional",
+          "x": 347,
+          "y": 33.20000000000002,
+          "description": "USB D− test point, on the connector side of the USB interface. This is USB data, not a GPIO.",
+          "surface": true
+        },
+        {
+          "id": "tp3",
+          "number": "TP3",
+          "label": "USB_DP",
+          "type": "bidirectional",
+          "x": 359,
+          "y": 33.20000000000002,
+          "description": "USB D+ test point, on the connector side of the USB interface. This is USB data, not a GPIO.",
+          "surface": true
+        },
+        {
+          "id": "tp4",
+          "number": "TP4",
+          "label": "SMPS_PS",
+          "type": "passive",
+          "x": 368,
+          "y": 74,
+          "description": "GPIO23 controls the onboard SMPS power-save mode. The manufacturer says not to use this point externally; changing it affects regulator behavior.",
+          "surface": true
+        },
+        {
+          "id": "tp5",
+          "number": "TP5",
+          "label": "LED",
+          "type": "output",
+          "x": 368,
+          "y": 89,
+          "description": "GPIO25 LED drive node. External use is not recommended: this node swings only from ground to the LED forward voltage, not a full 3.3 V logic high.",
+          "surface": true
+        },
+        {
+          "id": "tp6",
+          "number": "TP6",
+          "label": "BOOTSEL",
+          "type": "passive",
+          "x": 368,
+          "y": 104,
+          "description": "QSPI chip-select / BOOTSEL test point. Short low during power-up to enter USB mass-storage boot mode; it is shared with flash operation.",
+          "surface": true
+        },
+        {
+          "id": "tp7",
+          "number": "TP7",
+          "label": "1V1",
+          "type": "power_out",
+          "x": 347,
+          "y": 149,
+          "description": "Internal nominal 1.1 V core-regulator test point. The manufacturer says not to use this point externally; it is not a peripheral supply.",
+          "surface": true
+        }
+      ]
+    },
+    {
+      "id": "raspberry-pi-pico-2-w",
+      "family": "raspberry-pi-more",
+      "manufacturer": "Raspberry Pi",
+      "revision": "SC1633 bare-header variant, Pico2W published mechanical/pin-numbering drawings",
+      "references": [
+        "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html",
+        "https://datasheets.raspberrypi.com/picow/pico-2-w-schematic.pdf"
+      ],
+      "artifacts": [
+        "pico2w-contacts.png",
+        "pico2w-land.png",
+        "pico2w-source-pinout.svg"
+      ],
+      "notes": [
+        "49 contacts=40 main+3 SWD+6 TP;4 USB shell pads repeat TP1 ground in native footprint. Main header centers and pitch match Pico2. SWD centers from manufacturer Fig5: bottom-origin (11.0841,19.8),(13.6241,19.8),(16.1641,19.8).",
+        "TP1/2/3 coordinates match Pico2. TP4/5/6 bottom-origin(8,41.5),(8,39),(8,36.5), labels verified Fig4; rear mirrorsX.",
+        "TP4 is WL_GPIO1/SMPS_PS; TP5 is WL_GPIO0 LED node with only LED-forward-voltage swing; neither is presented as an ordinary RP2350 GPIO. Separate power rails VBUS,VSYS,ADC_VREF retained.",
+        "No vendor STEP/CAD model was verified for Pico2W; no unrelated PicoW model link is attached."
+      ],
+      "source": "https://datasheets.raspberrypi.com/picow/pico-2-w-datasheet.pdf",
+      "externalCAD": null,
+      "footprintAssessment": "C",
+      "footprintEvidence": "Source-coordinate contact reference: 40 header holes, three SWD contacts, all rear test points and four USB shell lands. Centers follow the manufacturer's dimension and SMT-reference drawings. Header/SWD lands are representative through-hole carrier pads; test and shell pads use source center locations. This is not the manufacturer's asymmetric SMT footprint or paste stencil, and is not a qualified production mating pattern. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 49,
+      "nativePadCount": 53,
+      "physicalView": "Component-side drawing plus separately labelled horizontally mirrored rear contacts, with explicit mating or solder-tail views where applicable.",
+      "contacts": [
+        {
+          "id": "pin1",
+          "number": "1",
+          "label": "GP0",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 34.22,
+          "description": "3.3 V GPIO0; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin2",
+          "number": "2",
+          "label": "GP1",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 49.46,
+          "description": "3.3 V GPIO1; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART0 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin3",
+          "number": "3",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 64.7,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin4",
+          "number": "4",
+          "label": "GP2",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 79.94,
+          "description": "3.3 V GPIO2; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin5",
+          "number": "5",
+          "label": "GP3",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 95.18,
+          "description": "3.3 V GPIO3; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin6",
+          "number": "6",
+          "label": "GP4",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 110.42,
+          "description": "3.3 V GPIO4; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin7",
+          "number": "7",
+          "label": "GP5",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 125.66,
+          "description": "3.3 V GPIO5; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART1 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin8",
+          "number": "8",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 140.9,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin9",
+          "number": "9",
+          "label": "GP6",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 156.14000000000001,
+          "description": "3.3 V GPIO6; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin10",
+          "number": "10",
+          "label": "GP7",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 171.38,
+          "description": "3.3 V GPIO7; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin11",
+          "number": "11",
+          "label": "GP8",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 186.62,
+          "description": "3.3 V GPIO8; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI1 RX, UART1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin12",
+          "number": "12",
+          "label": "GP9",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 201.86,
+          "description": "3.3 V GPIO9; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI1 CSn, UART1 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin13",
+          "number": "13",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 217.10000000000002,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin14",
+          "number": "14",
+          "label": "GP10",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 232.34,
+          "description": "3.3 V GPIO10; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI1 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin15",
+          "number": "15",
+          "label": "GP11",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 247.57999999999998,
+          "description": "3.3 V GPIO11; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin16",
+          "number": "16",
+          "label": "GP12",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 262.82,
+          "description": "3.3 V GPIO12; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI1 RX, UART0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin17",
+          "number": "17",
+          "label": "GP13",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 278.06,
+          "description": "3.3 V GPIO13; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI1 CSn, UART0 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin18",
+          "number": "18",
+          "label": "GND",
+          "type": "power_in",
+          "x": 84.66,
+          "y": 293.29999999999995,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin19",
+          "number": "19",
+          "label": "GP14",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 308.53999999999996,
+          "description": "3.3 V GPIO14; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI1 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin20",
+          "number": "20",
+          "label": "GP15",
+          "type": "bidirectional",
+          "x": 84.66,
+          "y": 323.78,
+          "description": "3.3 V GPIO15; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin21",
+          "number": "21",
+          "label": "GP16",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 323.78,
+          "description": "3.3 V GPIO16; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin22",
+          "number": "22",
+          "label": "GP17",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 308.53999999999996,
+          "description": "3.3 V GPIO17; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART0 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin23",
+          "number": "23",
+          "label": "GND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 293.29999999999995,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin24",
+          "number": "24",
+          "label": "GP18",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 278.06,
+          "description": "3.3 V GPIO18; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin25",
+          "number": "25",
+          "label": "GP19",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 262.82,
+          "description": "3.3 V GPIO19; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI0 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin26",
+          "number": "26",
+          "label": "GP20",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 247.57999999999998,
+          "description": "3.3 V GPIO20; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI0 RX, UART1 TX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin27",
+          "number": "27",
+          "label": "GP21",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 232.34,
+          "description": "3.3 V GPIO21; digital I/O, PIO and PWM. Alternate functions include I²C0 SCL and SPI0 CSn, UART1 RX. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin28",
+          "number": "28",
+          "label": "GND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 217.10000000000002,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin29",
+          "number": "29",
+          "label": "GP22",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 201.86,
+          "description": "3.3 V GPIO22; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI0 SCK. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin30",
+          "number": "30",
+          "label": "RUN",
+          "type": "input",
+          "x": 191.34,
+          "y": 186.62,
+          "description": "RP2350 enable/reset input, with an internal pull-up to 3.3 V. Pull low to reset the microcontroller.",
+          "surface": true
+        },
+        {
+          "id": "pin31",
+          "number": "31",
+          "label": "GP26",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 171.38,
+          "description": "3.3 V GPIO26; digital I/O, PIO and PWM. Alternate functions include I²C1 SDA and SPI1 SCK. ADC0 analog input. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin32",
+          "number": "32",
+          "label": "GP27",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 156.14000000000001,
+          "description": "3.3 V GPIO27; digital I/O, PIO and PWM. Alternate functions include I²C1 SCL and SPI1 TX. ADC1 analog input. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin33",
+          "number": "33",
+          "label": "AGND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 140.9,
+          "description": "Analog ground reference for the ADC inputs; the board routes its analog return separately from the digital signals.",
+          "surface": true
+        },
+        {
+          "id": "pin34",
+          "number": "34",
+          "label": "GP28",
+          "type": "bidirectional",
+          "x": 191.34,
+          "y": 125.66,
+          "description": "3.3 V GPIO28; digital I/O, PIO and PWM. Alternate functions include I²C0 SDA and SPI1 RX. ADC2 analog input. Configure the required function in firmware.",
+          "surface": true
+        },
+        {
+          "id": "pin35",
+          "number": "35",
+          "label": "ADC_VREF",
+          "type": "passive",
+          "x": 191.34,
+          "y": 110.42,
+          "description": "Filtered ADC supply/reference derived from 3.3 V. Can be used with an external reference following the manufacturer circuit guidance; this is a separate filtered net.",
+          "surface": true
+        },
+        {
+          "id": "pin36",
+          "number": "36",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 191.34,
+          "y": 95.18,
+          "description": "Regulated 3.3 V output supplying the RP2350 and GPIO. Available external current depends on board load; the maker recommends keeping external load below 300 mA.",
+          "surface": true
+        },
+        {
+          "id": "pin37",
+          "number": "37",
+          "label": "3V3_EN",
+          "type": "input",
+          "x": 191.34,
+          "y": 79.94,
+          "description": "SMPS enable, pulled up to VSYS through 100 kΩ. Short to GND to turn off the board's 3.3 V rail.",
+          "surface": true
+        },
+        {
+          "id": "pin38",
+          "number": "38",
+          "label": "GND",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 64.7,
+          "description": "Common power and signal ground.",
+          "surface": true
+        },
+        {
+          "id": "pin39",
+          "number": "39",
+          "label": "VSYS",
+          "type": "power_in",
+          "x": 191.34,
+          "y": 49.46,
+          "description": "Main 1.8–5.5 V system supply input to the onboard buck-boost regulator. USB VBUS reaches this net through a Schottky diode; VBUS and VSYS are not directly joined.",
+          "surface": true
+        },
+        {
+          "id": "pin40",
+          "number": "40",
+          "label": "VBUS",
+          "type": "passive",
+          "x": 191.34,
+          "y": 34.22,
+          "description": "Nominal 5 V rail directly connected to Micro-USB VBUS. It is present when USB power is supplied; it feeds VSYS through a Schottky diode.",
+          "surface": true
+        },
+        {
+          "id": "swd-1",
+          "number": "SWD.1",
+          "label": "SWCLK",
+          "type": "input",
+          "x": 141.50459999999998,
+          "y": 213.2,
+          "description": "3.3 V Serial Wire Debug clock input to the RP2350.",
+          "surface": true
+        },
+        {
+          "id": "swd-2",
+          "number": "SWD.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 156.7446,
+          "y": 213.2,
+          "description": "Serial Wire Debug ground. This interface does not supply target power.",
+          "surface": true
+        },
+        {
+          "id": "swd-3",
+          "number": "SWD.3",
+          "label": "SWDIO",
+          "type": "bidirectional",
+          "x": 171.9846,
+          "y": 213.2,
+          "description": "3.3 V Serial Wire Debug data to and from the RP2350.",
+          "surface": true
+        },
+        {
+          "id": "tp1",
+          "number": "TP1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 353,
+          "y": 53,
+          "description": "Close-coupled ground test point for the differential USB pair.",
+          "surface": true
+        },
+        {
+          "id": "tp2",
+          "number": "TP2",
+          "label": "USB_DM",
+          "type": "bidirectional",
+          "x": 347,
+          "y": 33.20000000000002,
+          "description": "USB D− test point, on the connector side of the USB interface. This is USB data, not a GPIO.",
+          "surface": true
+        },
+        {
+          "id": "tp3",
+          "number": "TP3",
+          "label": "USB_DP",
+          "type": "bidirectional",
+          "x": 359,
+          "y": 33.20000000000002,
+          "description": "USB D+ test point, on the connector side of the USB interface. This is USB data, not a GPIO.",
+          "surface": true
+        },
+        {
+          "id": "tp4",
+          "number": "TP4",
+          "label": "SMPS_PS",
+          "type": "passive",
+          "x": 368,
+          "y": 83,
+          "description": "WL_GPIO1 controls the onboard SMPS power-save mode. The manufacturer says not to use this point externally; changing it affects regulator behavior.",
+          "surface": true
+        },
+        {
+          "id": "tp5",
+          "number": "TP5",
+          "label": "LED",
+          "type": "output",
+          "x": 368,
+          "y": 98,
+          "description": "WL_GPIO0 LED drive node. External use is not recommended: this node swings only from ground to the LED forward voltage, not a full 3.3 V logic high.",
+          "surface": true
+        },
+        {
+          "id": "tp6",
+          "number": "TP6",
+          "label": "BOOTSEL",
+          "type": "passive",
+          "x": 368,
+          "y": 113,
+          "description": "QSPI chip-select / BOOTSEL test point. Short low during power-up to enter USB mass-storage boot mode; it is shared with flash operation.",
+          "surface": true
+        }
+      ]
+    },
+    {
+      "id": "raspberry-pi-debug-probe-rev2",
+      "family": "raspberry-pi-more",
+      "manufacturer": "Raspberry Pi",
+      "revision": "RPI-PICODEBUG rev2, manufacturer schematic2023-02-20",
+      "references": [
+        "https://pip.raspberrypi.com/documents/RP-008194-DS",
+        "https://pip.raspberrypi.com/documents/RP-008192-DS",
+        "https://www.raspberrypi.com/documentation/microcontrollers/images/debug-probe-tps.jpg"
+      ],
+      "artifacts": [
+        "debug-schematic.png",
+        "debug-dimensions.png",
+        "debug-tps.jpg",
+        "debug-photo.png"
+      ],
+      "notes": [
+        "35 contacts=26 TP+J4.1…3+J2.1…3+J3.1…3. TP4 is absent from source schematic and location diagram; no fabricated TP4. J4 GPIO0,GND,GPIO1; J2 TX,GND,RX; J3 CLK,GND,DIO.",
+        "Actual two target-port mating faces shown as enlarged insets, PCB below. Own RP2040 SWCLK/SWDIO are TP13/14 and remain separate from target-facing CLK/DIO. Target sockets have no power pin.",
+        "TP5/17/18/21/22 are loaded LED anode nodes after470 ohm resistors, not rawGPIO outputs. TP19 is5VVBUS, TP26 regulated3V3, TP27internal1V1. Boot/QSPI signal distinguished.",
+        "Rear coordinates scaled from manufacturer labelled raster source using22×32 mm mechanical outline; numerical precision does not establish CAD accuracy. J4/socket offsets and land shapes are representative. FP:R. Vendor mechanical PDF is linked explicitly as a drawing, not a3D STEP model."
+      ],
+      "source": "https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html",
+      "externalCAD": {
+        "label": "Raspberry Pi Debug Probe manufacturer mechanical drawing (PDF)",
+        "url": "https://pip.raspberrypi.com/documents/RP-008192-DS"
+      },
+      "footprintAssessment": "R",
+      "footprintEvidence": "Approximate reference contact/cable carrier. The 22×32 mm outline follows the maker mechanical drawing; service-pad positions are scaled from the labelled manufacturer photo. Includes 26 TP contacts, three J4 auxiliary contacts and six target-port cable contacts. It is not a production PCB, socket land pattern or qualified host-mating footprint. Generated 3D geometry is approximate.",
+      "generated3dAssessment": "A",
+      "contactCount": 35,
+      "nativePadCount": 35,
+      "physicalView": "Component-side drawing plus separately labelled horizontally mirrored rear contacts, with explicit mating or solder-tail views where applicable.",
+      "contacts": [
+        {
+          "id": "tp1",
+          "number": "TP1",
+          "label": "GND",
+          "type": "power_in",
+          "x": 360.2,
+          "y": 51.68,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "tp2",
+          "number": "TP2",
+          "label": "USB_DM",
+          "type": "bidirectional",
+          "x": 349.94,
+          "y": 35.42,
+          "description": "USB D− test point on the connector side of a 27 Ω series resistor. USB data, not GPIO.",
+          "surface": true
+        },
+        {
+          "id": "tp3",
+          "number": "TP3",
+          "label": "USB_DP",
+          "type": "bidirectional",
+          "x": 362,
+          "y": 35.42,
+          "description": "USB D+ test point on the connector side of a 27 Ω series resistor. USB data, not GPIO.",
+          "surface": true
+        },
+        {
+          "id": "tp5",
+          "number": "TP5",
+          "label": "LED_RED",
+          "type": "passive",
+          "x": 388.88,
+          "y": 37.82,
+          "description": "LED RED indicator anode, after a 470 Ω series resistor from RP2040 GPIO2. This is a loaded LED node, not a full logic-level GPIO output.",
+          "surface": true
+        },
+        {
+          "id": "tp6",
+          "number": "TP6",
+          "label": "BOOTSEL",
+          "type": "passive",
+          "x": 365,
+          "y": 67.64,
+          "description": "QSPI chip-select/BOOTSEL node. Short low while plugging in USB to boot the probe into USB mass-storage programming mode; shared with flash operation.",
+          "surface": true
+        },
+        {
+          "id": "tp7",
+          "number": "TP7",
+          "label": "TX",
+          "type": "output",
+          "x": 390.8,
+          "y": 203.78,
+          "description": "3.3 V UART transmit to the target, driven from probe GPIO4 through 100 Ω. Connect to the target UART RX.",
+          "surface": true
+        },
+        {
+          "id": "tp8",
+          "number": "TP8",
+          "label": "GND",
+          "type": "power_in",
+          "x": 378.8,
+          "y": 203.78,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "tp9",
+          "number": "TP9",
+          "label": "RX",
+          "type": "input",
+          "x": 366.8,
+          "y": 203.78,
+          "description": "3.3 V UART receive from the target. This node feeds GPIO6 through 100 Ω and a Schmitt buffer to GPIO5; connect to target UART TX.",
+          "surface": true
+        },
+        {
+          "id": "tp10",
+          "number": "TP10",
+          "label": "CLK",
+          "type": "output",
+          "x": 345.2,
+          "y": 203.78,
+          "description": "3.3 V target SWD clock output, driven from probe GPIO12 through 100 Ω. This is the target-facing port, not the probe's own SWCLK test point.",
+          "surface": true
+        },
+        {
+          "id": "tp11",
+          "number": "TP11",
+          "label": "GND",
+          "type": "power_in",
+          "x": 333.14,
+          "y": 203.78,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "tp12",
+          "number": "TP12",
+          "label": "DIO",
+          "type": "bidirectional",
+          "x": 321.32,
+          "y": 203.78,
+          "description": "3.3 V target SWD data. GPIO14 drives through 100 Ω and the return signal is buffered to GPIO13. This is the target-facing port, not the probe's own SWDIO test point.",
+          "surface": true
+        },
+        {
+          "id": "tp13",
+          "number": "TP13",
+          "label": "PROBE_SWCLK",
+          "type": "input",
+          "x": 308.06,
+          "y": 109.76,
+          "description": "SWCLK input for debugging or programming the probe's own RP2040. Separate from the target-facing CLK output.",
+          "surface": true
+        },
+        {
+          "id": "tp14",
+          "number": "TP14",
+          "label": "PROBE_SWDIO",
+          "type": "bidirectional",
+          "x": 308.06,
+          "y": 124.82,
+          "description": "SWDIO for debugging or programming the probe's own RP2040. Separate from the target-facing DIO port.",
+          "surface": true
+        },
+        {
+          "id": "tp15",
+          "number": "TP15",
+          "label": "RUN",
+          "type": "input",
+          "x": 308.06,
+          "y": 154.88,
+          "description": "Enable/reset input of the probe's own RP2040. Pull low to reset the probe.",
+          "surface": true
+        },
+        {
+          "id": "tp16",
+          "number": "TP16",
+          "label": "GND",
+          "type": "power_in",
+          "x": 308.06,
+          "y": 139.82,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "tp17",
+          "number": "TP17",
+          "label": "LED_UART_TX",
+          "type": "passive",
+          "x": 410.18,
+          "y": 169.88,
+          "description": "LED UART TX indicator anode, after a 470 Ω series resistor from RP2040 GPIO7. This is a loaded LED node, not a full logic-level GPIO output.",
+          "surface": true
+        },
+        {
+          "id": "tp18",
+          "number": "TP18",
+          "label": "LED_DEBUG_TX",
+          "type": "passive",
+          "x": 356,
+          "y": 181.76,
+          "description": "LED DEBUG TX indicator anode, after a 470 Ω series resistor from RP2040 GPIO15. This is a loaded LED node, not a full logic-level GPIO output.",
+          "surface": true
+        },
+        {
+          "id": "tp19",
+          "number": "TP19",
+          "label": "VBUS",
+          "type": "passive",
+          "x": 322.88,
+          "y": 37.82,
+          "description": "USB nominal 5 V VBUS test point. This is not a 3.3 V signal.",
+          "surface": true
+        },
+        {
+          "id": "tp20",
+          "number": "TP20",
+          "label": "GND",
+          "type": "power_in",
+          "x": 322.88,
+          "y": 55.64,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "tp21",
+          "number": "TP21",
+          "label": "LED_UART_RX",
+          "type": "passive",
+          "x": 356,
+          "y": 193.76,
+          "description": "LED UART RX indicator anode, after a 470 Ω series resistor from RP2040 GPIO8. This is a loaded LED node, not a full logic-level GPIO output.",
+          "surface": true
+        },
+        {
+          "id": "tp22",
+          "number": "TP22",
+          "label": "LED_DEBUG_RX",
+          "type": "passive",
+          "x": 308.06,
+          "y": 169.88,
+          "description": "LED DEBUG RX indicator anode, after a 470 Ω series resistor from RP2040 GPIO16. This is a loaded LED node, not a full logic-level GPIO output.",
+          "surface": true
+        },
+        {
+          "id": "tp23",
+          "number": "TP23",
+          "label": "GPIO0",
+          "type": "bidirectional",
+          "x": 398.12,
+          "y": 76.69999999999999,
+          "description": "Probe RP2040 GPIO0 / UART0 TX auxiliary signal. Separate from the USB-to-target UART TX port.",
+          "surface": true
+        },
+        {
+          "id": "tp24",
+          "number": "TP24",
+          "label": "GND",
+          "type": "power_in",
+          "x": 398.12,
+          "y": 91.76,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "tp25",
+          "number": "TP25",
+          "label": "GPIO1",
+          "type": "bidirectional",
+          "x": 410.18,
+          "y": 115.76,
+          "description": "Probe RP2040 GPIO1 / UART0 RX auxiliary signal. Separate from the USB-to-target UART RX port.",
+          "surface": true
+        },
+        {
+          "id": "tp26",
+          "number": "TP26",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 322.88,
+          "y": 88.76,
+          "description": "Regulated 3.3 V probe supply test point; not a target-voltage sensing input.",
+          "surface": true
+        },
+        {
+          "id": "tp27",
+          "number": "TP27",
+          "label": "1V1",
+          "type": "power_out",
+          "x": 334.94,
+          "y": 100.76,
+          "description": "Internal nominal 1.1 V RP2040 core-regulator output test point. Do not use it as an external peripheral supply.",
+          "surface": true
+        },
+        {
+          "id": "j4-1",
+          "number": "J4.1",
+          "label": "GPIO0",
+          "type": "bidirectional",
+          "x": 87,
+          "y": 74,
+          "description": "Probe RP2040 GPIO0 / UART0 TX auxiliary signal. Separate from the USB-to-target UART TX port.",
+          "surface": true
+        },
+        {
+          "id": "j4-2",
+          "number": "J4.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 87,
+          "y": 89.24,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "j4-3",
+          "number": "J4.3",
+          "label": "GPIO1",
+          "type": "bidirectional",
+          "x": 87,
+          "y": 104.48,
+          "description": "Probe RP2040 GPIO1 / UART0 RX auxiliary signal. Separate from the USB-to-target UART RX port.",
+          "surface": true
+        },
+        {
+          "id": "j2-1",
+          "number": "J2.1",
+          "label": "TX",
+          "type": "output",
+          "x": 108,
+          "y": 277,
+          "description": "3.3 V UART transmit to the target, driven from probe GPIO4 through 100 Ω. Connect to the target UART RX.",
+          "surface": true
+        },
+        {
+          "id": "j2-2",
+          "number": "J2.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 123,
+          "y": 277,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "j2-3",
+          "number": "J2.3",
+          "label": "RX",
+          "type": "input",
+          "x": 138,
+          "y": 277,
+          "description": "3.3 V UART receive from the target. This node feeds GPIO6 through 100 Ω and a Schmitt buffer to GPIO5; connect to target UART TX.",
+          "surface": true
+        },
+        {
+          "id": "j3-1",
+          "number": "J3.1",
+          "label": "CLK",
+          "type": "output",
+          "x": 211,
+          "y": 277,
+          "description": "3.3 V target SWD clock output, driven from probe GPIO12 through 100 Ω. This is the target-facing port, not the probe's own SWCLK test point.",
+          "surface": true
+        },
+        {
+          "id": "j3-2",
+          "number": "J3.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 226,
+          "y": 277,
+          "description": "Common signal and supply ground.",
+          "surface": true
+        },
+        {
+          "id": "j3-3",
+          "number": "J3.3",
+          "label": "DIO",
+          "type": "bidirectional",
+          "x": 241,
+          "y": 277,
+          "description": "3.3 V target SWD data. GPIO14 drives through 100 Ω and the return signal is buffered to GPIO13. This is the target-facing port, not the probe's own SWDIO test point.",
+          "surface": true
+        }
+      ]
+    }
+  ]
+}

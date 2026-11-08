@@ -9,6 +9,8 @@ function scaffold(id) {
   return `import { defineFamily } from '../registry.js';
 
 // Unregistered scaffold. Fill source-verified entries before importing this family.
+// Record explicit KiCad accuracy evidence in docs/catalog-kicad-accuracy.json.
+// After registration, node scripts/catalog.mjs refreshes docs/COMPONENTS.md.
 // Keep each component, illustration, footprint and CAD reference together:
 // {
 //   component: {
@@ -68,7 +70,7 @@ async function main(args) {
     throw new Error('Usage: node scripts/new-family.mjs <family-id> [--root <destination>]');
   }
   const result = await createFamilyScaffold(args[0], args.length === 3 ? { root: resolve(args[2]) } : {});
-  console.log(`Created ${result.filename}\nThe family is unregistered and contains no hardware entries.\nFill its verified component/source/pin/artwork/footprint data first; importing the empty scaffold intentionally fails.\n\nThen add exactly one import to src/catalog/catalog-families.js:\n${result.importStatement}\n\nAdd exactly one item inside its catalogFamilies list:\n${result.listEntry}\n\nCheck the registered family with:\nnode scripts/catalog.mjs`);
+  console.log(`Created ${result.filename}\nThe family is unregistered and contains no hardware entries.\nFill its verified component/source/pin/artwork/footprint data first; importing the empty scaffold intentionally fails.\n\nThen add exactly one import to src/catalog/catalog-families.js:\n${result.importStatement}\n\nAdd exactly one item inside its catalogFamilies list:\n${result.listEntry}\n\nRecord its KiCad accuracy assessment and evidence in docs/catalog-kicad-accuracy.json.\nValidate the registered family and automatically refresh docs/COMPONENTS.md with:\nnode scripts/catalog.mjs`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

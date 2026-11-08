@@ -2295,5 +2295,6005 @@
   {
     "id": "waveshare-pico-relay-b",
     "geometry": "7eb077c0bc6ce2412944c76eb12aa01082b4e1e0f3090741ffde230926c75587"
+  },
+  {
+    "id": "ti-cc1101-rgp20",
+    "geometry": "03792ae600b5b869bd312927bd72ea6ea46ab46e1a388f609ca47a548f8c1901"
+  },
+  {
+    "id": "ti-cc2500-rgp20",
+    "geometry": "03792ae600b5b869bd312927bd72ea6ea46ab46e1a388f609ca47a548f8c1901"
+  },
+  {
+    "id": "ti-cc1120-rhb32",
+    "geometry": "2fca4535abcd79c1f0888631244690adf384df32081c1776a9c4c28d6800bb1c"
+  },
+  {
+    "id": "ti-cc1200-rhb32",
+    "geometry": "2fca4535abcd79c1f0888631244690adf384df32081c1776a9c4c28d6800bb1c"
+  },
+  {
+    "id": "ti-launchxl-cc1352r1",
+    "geometry": "c47ea2286e22c372ae365433ac6ce67077426cf366ceb6fbcb0ea64c6900a765"
+  },
+  {
+    "id": "ti-lp-cc1312r7",
+    "geometry": "c47ea2286e22c372ae365433ac6ce67077426cf366ceb6fbcb0ea64c6900a765"
+  },
+  {
+    "id": "e22-400t22d",
+    "geometry": "bca943f248262a47bd0b7bfebc9de4131ea808aa0c8a0d4d21f324c02733afdd"
+  },
+  {
+    "id": "e22-900t22d",
+    "geometry": "bca943f248262a47bd0b7bfebc9de4131ea808aa0c8a0d4d21f324c02733afdd"
+  },
+  {
+    "id": "e32-433t20d",
+    "geometry": "bca943f248262a47bd0b7bfebc9de4131ea808aa0c8a0d4d21f324c02733afdd"
+  },
+  {
+    "id": "e32-900t20d",
+    "geometry": "bca943f248262a47bd0b7bfebc9de4131ea808aa0c8a0d4d21f324c02733afdd"
+  },
+  {
+    "id": "e220-400t22d",
+    "geometry": "bca943f248262a47bd0b7bfebc9de4131ea808aa0c8a0d4d21f324c02733afdd"
+  },
+  {
+    "id": "e220-900t22d",
+    "geometry": "bca943f248262a47bd0b7bfebc9de4131ea808aa0c8a0d4d21f324c02733afdd"
+  },
+  {
+    "id": "e07-900m10s",
+    "geometry": "1c3a5cb122ee99fb5d188639817a625e56accbad79e653dbebb0dfa66c454084"
+  },
+  {
+    "id": "ebyte-e90-dtu-900sl22-rs485",
+    "geometry": "a0c24c50d8d8c238a6634cb6832c8efc7603eb08576baef34c0795b7eb374f58"
+  },
+  {
+    "id": "semtech-sx1261imltrt",
+    "geometry": "c801234ff019bbe63ca752c5c1dfb74a97445fbb60a22e5d36bcb865e3e3eb2f"
+  },
+  {
+    "id": "semtech-sx1262imltrt",
+    "geometry": "c801234ff019bbe63ca752c5c1dfb74a97445fbb60a22e5d36bcb865e3e3eb2f"
+  },
+  {
+    "id": "semtech-sx1268imltrt",
+    "geometry": "c801234ff019bbe63ca752c5c1dfb74a97445fbb60a22e5d36bcb865e3e3eb2f"
+  },
+  {
+    "id": "adafruit-ad5693r-5811",
+    "geometry": "15299da26adaf33984bc2b3a8f659688edf5e1d11fcc711eeab2bb11bb9fce8c"
+  },
+  {
+    "id": "adafruit-adg728-5899",
+    "geometry": "d28f00769d99803652ef6e950361d9c400f462f158a4f37c37199e9d17000468"
+  },
+  {
+    "id": "adafruit-adxl345-1231-qt",
+    "geometry": "cf928495ec9465682e9da5aea15910a20a5d757a5be54ccf8be194d712757528"
+  },
+  {
+    "id": "adafruit-adxl375-5374",
+    "geometry": "cf928495ec9465682e9da5aea15910a20a5d757a5be54ccf8be194d712757528"
+  },
+  {
+    "id": "adafruit-adt7410-4089-qt",
+    "geometry": "c075defa8ec7095a8e50413d2fd1c21bf232210a437a8f7ac05798e825276c6e"
+  },
+  {
+    "id": "adafruit-max31865-3328",
+    "geometry": "9ac1ecbded47eec13ed73d7640f905db73ac010059c5430b170ffd69a25ce088"
+  },
+  {
+    "id": "adafruit-max31855-269",
+    "geometry": "44b0f142c81de2158229e1446aac6a4f754ecfbda9fc73708d67f0b60de02481"
+  },
+  {
+    "id": "sparkfun-ad8232-sen12650",
+    "geometry": "615129f89efd22b4dff0633289db5a6d18c2763ae66252060eb8944f1b19b8c5"
+  },
+  {
+    "id": "lilygo-t-qt-pro-v1-3",
+    "geometry": "938be5c5dc1d572b374561d3de9b9d0696c11fa6d7d7fb8ef6b2dc77355b0fc4"
+  },
+  {
+    "id": "lilygo-t7-s3-v1-1",
+    "geometry": "d961c343c00d85d00ec2658db5e061ac5ca94858607cb8647a38fdac4b865894"
+  },
+  {
+    "id": "lilygo-t-picoc3-v1-1",
+    "geometry": "26d404dd3061d655adb697797706bed5b3a8f9a4d49e2b2021959980d3c7984e"
+  },
+  {
+    "id": "lilygo-t-encoder-pro-v1-0",
+    "geometry": "660b096e497d06bb510bc7728e31037d1a3c37bc13c90ade3ffd0727b415f227"
+  },
+  {
+    "id": "adafruit-bluefruit-le-spi-friend-2633",
+    "geometry": "cb62eebc0b3f0ca9f2f8b785d86abf2c238a95a281c2be68e174b5eba6ec3ad0"
+  },
+  {
+    "id": "adafruit-bluefruit-le-uart-friend-2479",
+    "geometry": "9a26d5cbd7295f9e71e13b912cca07519e6b1829f3ff41676e17f61dd06c61a6"
+  },
+  {
+    "id": "adafruit-itsybitsy-nrf52840-express-4481",
+    "geometry": "9579f33156ecc7a4dd93ffa66a6d3a22f27e93afe2031f0e9a18441f6afe2e84"
+  },
+  {
+    "id": "sparkfun-pro-nrf52840-mini-15025",
+    "geometry": "a9abd6ed1bf8347897414018edb1c7a9a3cd05705e67f81d2ee39e44c80ef855"
+  },
+  {
+    "id": "ra-01h",
+    "geometry": "87136d220a89074f06cdade3b0301a152ac4dbacb2f260958967c89aa6e6e717"
+  },
+  {
+    "id": "ra-01",
+    "geometry": "87136d220a89074f06cdade3b0301a152ac4dbacb2f260958967c89aa6e6e717"
+  },
+  {
+    "id": "ra-01sc",
+    "geometry": "87136d220a89074f06cdade3b0301a152ac4dbacb2f260958967c89aa6e6e717"
+  },
+  {
+    "id": "ra-01sch",
+    "geometry": "87136d220a89074f06cdade3b0301a152ac4dbacb2f260958967c89aa6e6e717"
+  },
+  {
+    "id": "ra-03sch",
+    "geometry": "4dc0f498d3b7269d938ba295d4fe1a124fe127719db5d59fca38a09e7c7b678e"
+  },
+  {
+    "id": "ra-05",
+    "geometry": "d9a21c58f37da9abc017cbbce9702ac884b16901468e17f0e49a385384451662"
+  },
+  {
+    "id": "ra-05u",
+    "geometry": "5da69fb380910aac08930226cbc243fce45655f528b6450b2de9cfc0f5000192"
+  },
+  {
+    "id": "lilygo-t-deck-sx1262-20230601",
+    "geometry": "c5675ce64d5829ecd89a70eac18b65cbac16515386c084f1e68d14d0f76efff5"
+  },
+  {
+    "id": "lilygo-t-embed-cc1101-v1-0",
+    "geometry": "5fa390cf9cebebdd09f4ec0cec7694d70a46834e78656d22c7645e70d40c6a9e"
+  },
+  {
+    "id": "lilygo-t-display-s3-amoled-original",
+    "geometry": "1ed4912c8114dabfadd55e747aa85f7745b69dd79417b6d54174b90ac59664b1"
+  },
+  {
+    "id": "lilygo-t-display-s3-amoled-plus-v1-0",
+    "geometry": "112ff9e597923f81e33b92e2bbc562dee3649a57e8df481d3c85f7bc96591f4a"
+  },
+  {
+    "id": "lilygo-t4-s3-v1-0",
+    "geometry": "8a7ecf295f2f97d9060336ddf83bf07c80129997602a0bb986ebe4ab86b56c79"
+  },
+  {
+    "id": "lilygo-t-eth-lite-s3-v1-0",
+    "geometry": "752e8e5c2e29b072c86785f153bf3695087f0bb94cb51755a63fe60e3e7dccd7"
+  },
+  {
+    "id": "lilygo-t-eth-lite-esp32-v1-0",
+    "geometry": "ed445068c666ad7610f48e09db59311b28b0bcf13a09fbb20344426204aa92a4"
+  },
+  {
+    "id": "lilygo-t-eth-elite-2421",
+    "geometry": "a16c7677319df53a68a0da49219ba8f275f953643ffd67abe49b6ff228942dd5"
+  },
+  {
+    "id": "lilygo-t-internet-poe-v1-0",
+    "geometry": "4cf00bc92b508be5aba007961368a4b802bd068900f5dc5547f8baa7b27fe988"
+  },
+  {
+    "id": "lilygo-t-sim7080g-s3-v1-0",
+    "geometry": "a8559d307c09a1798af9878386dc4b0ae36ce6d0ba89140d7230463909199197"
+  },
+  {
+    "id": "keyestudio-ks0008-joystick",
+    "geometry": "579dae13a910bb6b2028864c2126302d840c723b849b98b0bb2a3e3816b4beb6"
+  },
+  {
+    "id": "keyestudio-ks0013-encoder",
+    "geometry": "cc906a5e32a7decf5b9c982b86784c549a16f643fcea86fd4c5d3e6bb73e8e83"
+  },
+  {
+    "id": "keyestudio-ks0014-rotation",
+    "geometry": "fa39047037f00aadda76b73ff84d38bd4d47aa1f308824d1792c1ac3974e4cb5"
+  },
+  {
+    "id": "keyestudio-ks0021-collision",
+    "geometry": "5b11961fbd9168577d90543a60553d0e2356dde8f3b6f4089a5cbf64c362a2a0"
+  },
+  {
+    "id": "keyestudio-ks0025-tilt",
+    "geometry": "fa39047037f00aadda76b73ff84d38bd4d47aa1f308824d1792c1ac3974e4cb5"
+  },
+  {
+    "id": "keyestudio-ks0029-button",
+    "geometry": "fa39047037f00aadda76b73ff84d38bd4d47aa1f308824d1792c1ac3974e4cb5"
+  },
+  {
+    "id": "keyestudio-ks0038-reed",
+    "geometry": "fa39047037f00aadda76b73ff84d38bd4d47aa1f308824d1792c1ac3974e4cb5"
+  },
+  {
+    "id": "seeed-grove-slide-101020036",
+    "geometry": "524a6c92ac1e17889b984f55a6cc815c2cc7a9b159fe2a6a0600e6249278dd15"
+  },
+  {
+    "id": "keyestudio-ks0036-flame",
+    "geometry": "7c4c6a1a93e7af57c4367d13d889872e3b027513978dce7e52c890e3353cea34"
+  },
+  {
+    "id": "keyestudio-ks0040-mq2",
+    "geometry": "276c83d7019c2c1dc0b53deec04ac8b0d76862bff649901c7cd00b2f4cdc7fce"
+  },
+  {
+    "id": "keyestudio-ks0048-water-level",
+    "geometry": "899dbdafb07d0c1ad399545f6e6aaf0e148783ef21aaf63d2bf50a9df368dbde"
+  },
+  {
+    "id": "keyestudio-ks0203-rain-steam",
+    "geometry": "d3cc442f3db0a9c60821809818c9a4134f64a38855c4d87d25da5126704ada9c"
+  },
+  {
+    "id": "joyit-ky037-sound-threshold",
+    "geometry": "f3252ecf6267b94f295d56f1b2c4e3824af31ba519872c9a052e75a0ce7f8ae1"
+  },
+  {
+    "id": "keyestudio-ks0022-lm35",
+    "geometry": "d3cc442f3db0a9c60821809818c9a4134f64a38855c4d87d25da5126704ada9c"
+  },
+  {
+    "id": "keyestudio-ks0028-photocell",
+    "geometry": "d3cc442f3db0a9c60821809818c9a4134f64a38855c4d87d25da5126704ada9c"
+  },
+  {
+    "id": "joyit-ky003-hall",
+    "geometry": "5a30b307fcc62a6e59ce862df8b607da2286c7a1807f69845de516cdda512345"
+  },
+  {
+    "id": "keyestudio-ks0018-active-buzzer",
+    "geometry": "67e994c0d1617fa531534fccbe666014929b6e2849974a1122c052568fe8b916"
+  },
+  {
+    "id": "keyestudio-ks0019-passive-buzzer",
+    "geometry": "67e994c0d1617fa531534fccbe666014929b6e2849974a1122c052568fe8b916"
+  },
+  {
+    "id": "keyestudio-ks0032-rgb-led",
+    "geometry": "037ea18ebd58bef9a5c0fd24587984eab791f50bda7da8865c20888a7442d9f1"
+  },
+  {
+    "id": "keyestudio-ks0310-traffic-light",
+    "geometry": "68d43ed31e7a3a3ffbb48a6cf78434ad1ceb1555e62aaa48812e33c1226d4f32"
+  },
+  {
+    "id": "keyestudio-ks0027-ir-transmitter",
+    "geometry": "67e994c0d1617fa531534fccbe666014929b6e2849974a1122c052568fe8b916"
+  },
+  {
+    "id": "keyestudio-ks0026-ir-receiver",
+    "geometry": "67e994c0d1617fa531534fccbe666014929b6e2849974a1122c052568fe8b916"
+  },
+  {
+    "id": "haljia-max7219-8x8-dip",
+    "geometry": "15f84f7832e8f73b9059c3114f912756b38fd675acd7313ed95e7ddf6f3438d8"
+  },
+  {
+    "id": "keyestudio-ks0327-uln2003-stepper",
+    "geometry": "fd272b0f761b38abccf90f21c014461875b3a4eac4cc7f93a070a51cfc735572"
+  },
+  {
+    "id": "m5stack-unit-light-u021",
+    "geometry": "d80225e5ee7c8e859072dc6098fbeb784f52990e94923647a70cfa2a449c8e84"
+  },
+  {
+    "id": "m5stack-unit-pir-u004",
+    "geometry": "8fd6842ff39bc849722334f928b19cc1c7d04683cc67f3f5f2290e483919ba54"
+  },
+  {
+    "id": "m5stack-unit-relay-u023",
+    "geometry": "9e3e4d4cc58f0dab7321ff14e067c848ba0a0fb4abe5e134b564876feac93cbe"
+  },
+  {
+    "id": "mikroe-buzz-click-945",
+    "geometry": "fb3e228e9cbd4e305a3bf0763c046b7b8614562726755dd6fa7965326a0f9676"
+  },
+  {
+    "id": "mikroe-button-r-click-1901",
+    "geometry": "fb3e228e9cbd4e305a3bf0763c046b7b8614562726755dd6fa7965326a0f9676"
+  },
+  {
+    "id": "mikroe-light-click-1424",
+    "geometry": "fb3e228e9cbd4e305a3bf0763c046b7b8614562726755dd6fa7965326a0f9676"
+  },
+  {
+    "id": "dfrobot-sen0161-v2-ph",
+    "geometry": "48c69a46ff4078bc9aa3c998a96192234743913586e842a58e759b8008e2fbae"
+  },
+  {
+    "id": "dfrobot-sen0244-tds",
+    "geometry": "b1108d5c4e8a64da31b289641c9e0cc476234d54cf6aad9d49901a79fbe0d166"
+  },
+  {
+    "id": "dfrobot-sen0315-paj7620u2",
+    "geometry": "88a3139a7132bf87a59dcb3a08ee441d18144194dd4e0716c9dd3a3b5a72083f"
+  },
+  {
+    "id": "sparkfun-sths34pf80-sen22494",
+    "geometry": "a22dc4e553d7c1f0b5e924e7fbdbf93d0dc0ae619ed21edf3b885bcd708f8376"
+  },
+  {
+    "id": "sparkfun-as7343-sen23220",
+    "geometry": "a2dea3d684f94a7c51dabf3b8b9c49209bbfae78ae31ae02f00f26ef9d599359"
+  },
+  {
+    "id": "sparkfun-as7331-sen23517",
+    "geometry": "e4b978461aae8d900c3c34013b0a7a9cd19240cd2924d209160889faa97e45c5"
+  },
+  {
+    "id": "seeed-grove-hcho-101020001",
+    "geometry": "36f857d9619b827e8ce4af793f0545da6fa64359d6ad37846bad8ccae1fb5208"
+  },
+  {
+    "id": "seeed-grove-electromagnet-101020073",
+    "geometry": "6620ac673ffa32c65918f9b94491510c2042d1ca7b02adfd9f7e554c8168e010"
+  },
+  {
+    "id": "seeed-grove-water-atomization-101020090",
+    "geometry": "3df7f9aef4a07f14d76afb8910f022fb8ca5e40517c2177bf4f876396a1179e7"
+  },
+  {
+    "id": "esp8684-devkitm-1-v1-1",
+    "geometry": "17f29dd9bf6c32ec13181988aac5be3b3f6d25ceabb103b9b52c945696c1b240"
+  },
+  {
+    "id": "esp8684-devkitc-02-v1-0",
+    "geometry": "f49a2302eb67ef4837f24cd3890642fa13636fcbd643740f1818b8deacfa997c"
+  },
+  {
+    "id": "esp32-devkitm-1-mini-v1",
+    "geometry": "76d11c47c539c88ceda64d986e1094cbe90b78854bb786b939f8477713d18d1a"
+  },
+  {
+    "id": "pololu-qtr-1a-958",
+    "geometry": "aa20eedb0b55b3609f9100a3ec36637fcf7f458e8789102a0fa02f3d9d1b9d19"
+  },
+  {
+    "id": "pololu-qtr-1rc-959",
+    "geometry": "aa20eedb0b55b3609f9100a3ec36637fcf7f458e8789102a0fa02f3d9d1b9d19"
+  },
+  {
+    "id": "pololu-drv8838-2990",
+    "geometry": "191d7b0a409c3c3f8615101439613c7addf3e71ae503f2d318dfe9944f14663b"
+  },
+  {
+    "id": "robotdyn-25v-voltage-sensor",
+    "geometry": "00b99910556d74bf56e3d9ef4a576c19faab5fb4f66d942d188335717f6d2897"
+  },
+  {
+    "id": "robotdyn-ams1117-3-3v-module",
+    "geometry": "fbe285fe31699e0a8eeab707e6d9cec2774b58b9d3df8886035eaf0e4bee5c40"
+  },
+  {
+    "id": "robotdyn-ams1117-5v-module",
+    "geometry": "fbe285fe31699e0a8eeab707e6d9cec2774b58b9d3df8886035eaf0e4bee5c40"
+  },
+  {
+    "id": "arduino-modulino-knob-abx00107",
+    "geometry": "1fd85f2483fa0eb7b1874cda5ac020f6ab75e5e42474c1bc745c9886a0538931"
+  },
+  {
+    "id": "arduino-modulino-buttons-abx00110",
+    "geometry": "1fd85f2483fa0eb7b1874cda5ac020f6ab75e5e42474c1bc745c9886a0538931"
+  },
+  {
+    "id": "pjrc-teensy-4-0",
+    "geometry": "1ee7be8d7f51568d7e0f515db0ec9555779011f6631c0ae8801a28bdbfcd1b06"
+  },
+  {
+    "id": "pjrc-teensy-lc",
+    "geometry": "04a75e905e17b5f5ce6aa26a6fe74ba8373b6bcd3f8593f75cbcd25f2a97865c"
+  },
+  {
+    "id": "pjrc-teensy-2-0",
+    "geometry": "e86277a826b65b9c57b0c78e3a63cd71ca210cda79662aca1a60b4a4dad8e3c6"
+  },
+  {
+    "id": "raspberry-pi-pico-2",
+    "geometry": "d9509df06c9b27c354204ac7787b6b48a7f456dea5c1ef9db0730cc6892bc4b6"
+  },
+  {
+    "id": "raspberry-pi-pico-2-w",
+    "geometry": "01ae9cebf77dac869606402562355eeabccc053bc0894a828c7533c02617cb43"
+  },
+  {
+    "id": "raspberry-pi-debug-probe-rev2",
+    "geometry": "5f1d2d7c198f31909b8d86a50f70a311c90f3b17379be7cc386ee82dff247fd9"
+  },
+  {
+    "id": "max485esa",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "max3485esa",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "max3232ese",
+    "geometry": "c86504fd378e62ad551576ae6e97f35232fa08a990e8e1e795c4622fa7623f3a"
+  },
+  {
+    "id": "mcp2562-e-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "sn65hvd230dr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "mcp2515-i-p",
+    "geometry": "ba307b0e1891db547c5e8bfa579eba705009d03cbebf1a491b40b134b9f89948"
+  },
+  {
+    "id": "sc16is752ipw",
+    "geometry": "5c8677256a50f8b68dd6151dfd310bff72a499693505f8a0c145ffbbf6d4329a"
+  },
+  {
+    "id": "max3100eee",
+    "geometry": "936a3941ffaeddb3309c0b8cb37b2fd7983c58f655e7a17c2f1b421656d59ac9"
+  },
+  {
+    "id": "mcp23008-e-p",
+    "geometry": "f9b678b14d6ab16e08ad326bb6b27f6ba6e5fcf484da6a1d3b524f466547c838"
+  },
+  {
+    "id": "mcp23s08-e-p",
+    "geometry": "f9b678b14d6ab16e08ad326bb6b27f6ba6e5fcf484da6a1d3b524f466547c838"
+  },
+  {
+    "id": "mcp23017-e-sp",
+    "geometry": "6f4787415922912d702b4744a3bba82fa75dc217dce0208a073e5fe61d24d9f0"
+  },
+  {
+    "id": "mcp23s17-e-sp",
+    "geometry": "6f4787415922912d702b4744a3bba82fa75dc217dce0208a073e5fe61d24d9f0"
+  },
+  {
+    "id": "pcf8574t",
+    "geometry": "30242c8e72b87eccac5b2e05fe1276c1d8513e84f878e80dd4f377bf4bb4042b"
+  },
+  {
+    "id": "pcf8575dbr",
+    "geometry": "9f273eb6814db3515dc9a7378b5a73dfd86af4260f4cb0f13516c79377722b8b"
+  },
+  {
+    "id": "pca9536d",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "tca9554dwr",
+    "geometry": "30242c8e72b87eccac5b2e05fe1276c1d8513e84f878e80dd4f377bf4bb4042b"
+  },
+  {
+    "id": "ds2482s-100",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ds2482s-800",
+    "geometry": "c86504fd378e62ad551576ae6e97f35232fa08a990e8e1e795c4622fa7623f3a"
+  },
+  {
+    "id": "ds2408s",
+    "geometry": "c86504fd378e62ad551576ae6e97f35232fa08a990e8e1e795c4622fa7623f3a"
+  },
+  {
+    "id": "ch340g-ic",
+    "geometry": "c86504fd378e62ad551576ae6e97f35232fa08a990e8e1e795c4622fa7623f3a"
+  },
+  {
+    "id": "sn74hc00n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc02n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc04n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc08n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc10n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc11n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc20n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc21n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc27n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc32n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc42n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc74n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc86n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc109n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc112n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc125n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc126n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc132n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc138n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc139n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc148n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc151n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc153n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc157n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc158n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc161n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc163n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc164n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc166n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc174n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc175n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc191n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc193n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc240n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc241n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc244n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc245n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc251n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc253n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc257n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc258n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc259n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc273n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc365n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc367n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc368n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc373n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc374n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc377n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc393n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hc541n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc574n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hc594n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "sn74hc688n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hct14n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hct125n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hct245n",
+    "geometry": "a7df407739897fef584c0a31d482f0f928231fb4ffab513a980b94e71a8c021c"
+  },
+  {
+    "id": "sn74hct00n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hct08n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hct74n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "sn74hct138n",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4001be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4002be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd40106be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4011be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4012be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4013be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4017be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4020be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4021be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4022be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4023be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4027be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4028be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4029be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4040be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4046be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4047be",
+    "geometry": "95939bb83d37b2337e1c488172d319ca65942796d90e3c36a6d778d031d063c7"
+  },
+  {
+    "id": "cd4049ube",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4050be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4060be",
+    "geometry": "3259e8d1cff03c7d219417a50f03f7363655612c6ca721722b02b5c734df3609"
+  },
+  {
+    "id": "cd4069ube",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4070be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4071be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4072be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4073be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4075be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4077be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4081be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4504be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4518be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4520be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4543be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4093be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "cd4094be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "cd4511be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "24lc02b-i-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "24lc16b-i-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "24lc64-i-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "24lc256-i-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "24lc512-i-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "24lc1025-i-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "25lc256-i-p",
+    "geometry": "5c461527177e7b59a9a73945b38441acf7ae2f9a4cff4a4a071bcfb3f5dbca04"
+  },
+  {
+    "id": "23lc1024-i-p",
+    "geometry": "e7d92bd6da507d58b65c712bea1f231da71ddc650c2d2f3afcbcd7540e4a2005"
+  },
+  {
+    "id": "max7219cng",
+    "geometry": "4564e083321bc34b85a277f02c832b7a2beb26ac963a0071a30acebd381179e3"
+  },
+  {
+    "id": "max7221cng",
+    "geometry": "4564e083321bc34b85a277f02c832b7a2beb26ac963a0071a30acebd381179e3"
+  },
+  {
+    "id": "market-2n3904ta",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-2n3906ta",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-pn2222ata",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-pn2907ata",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-bc547bta",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-bc557bta",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-bc33725ta",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-bc32725ta",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-mpsa42",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-mpsa92",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-mpsa06",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-mpsa56",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-mpsa13-pbfree",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-mpsa63-pbfree",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-mmbt3904lt1g",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-mmbt3906lt1g",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-mmbt2222alt1g",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-mmbt2907alt1g",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-bc847blt1g",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-bc857blt1g",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-bc817-40-215",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-bc807-40-215",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-tip31c",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-tip32c",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-tip41c",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-tip42c",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-tip120",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-tip127",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-bd139",
+    "geometry": "d304f334a8c77c71029979430bd4b8622c4191af06e85498e101c27ddbb2b24c"
+  },
+  {
+    "id": "market-bd140",
+    "geometry": "d304f334a8c77c71029979430bd4b8622c4191af06e85498e101c27ddbb2b24c"
+  },
+  {
+    "id": "market-mje340",
+    "geometry": "d304f334a8c77c71029979430bd4b8622c4191af06e85498e101c27ddbb2b24c"
+  },
+  {
+    "id": "market-mje350",
+    "geometry": "d304f334a8c77c71029979430bd4b8622c4191af06e85498e101c27ddbb2b24c"
+  },
+  {
+    "id": "market-fqp27p06",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-irfz44npbf",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-irf540npbf",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-irf9540npbf",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-stp55nf06l",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-stp10nk60z",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-2n7000",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-bs170",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-bss138lt1g",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-stgw40h120df2",
+    "geometry": "22d85abe31f20f388f1e4eb0a42a7f7a5e5020d74f909e0b2ee6b4232e159aa8"
+  },
+  {
+    "id": "market-j111",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-j175",
+    "geometry": "47a7989110e46ea845fd32b6b68afb05d8daa64242c334c04fcbafa3addf3091"
+  },
+  {
+    "id": "lm35dz-ic",
+    "geometry": "faf094a25cea32e4c7c766317d7682a2567c0eb5621dc3e5faf3a044b58d9cd9"
+  },
+  {
+    "id": "lm335z-ic",
+    "geometry": "faf094a25cea32e4c7c766317d7682a2567c0eb5621dc3e5faf3a044b58d9cd9"
+  },
+  {
+    "id": "tmp36gt9z-ic",
+    "geometry": "0daefeab5366989757e7c181c9519234cd6bb0648abf5150aa022a099ba1d277"
+  },
+  {
+    "id": "lm75bd-ic",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adt7410trz-ic",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adt7310trz-ic",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "mcp9808-e-ms",
+    "geometry": "d44a498e9bad2fb6e0194cee5e099b813ae93333abb1e483d658ee22e74f19b7"
+  },
+  {
+    "id": "mcp9700at-e-tt",
+    "geometry": "a156d9d11688145293a6b37a36bb532f33a05d2e3a4e05ffebb456fb4a9cefda"
+  },
+  {
+    "id": "tmp102aidrlr",
+    "geometry": "4243bd08c67fa69dbfe7cc67d81f4832f1cbadd138a621e16723d55f77590e9e"
+  },
+  {
+    "id": "tmp117aidrvr",
+    "geometry": "870fcb269ba6a7dc7b96038e37a2d2c6b9de0e5a03cf40609d0e368b78ebe5f7"
+  },
+  {
+    "id": "stts22htr",
+    "geometry": "26c69f9f6410aaddf4db9d52fb178a119d5d2e672a87865bef22f49e6d5232d1"
+  },
+  {
+    "id": "ds18b20-ic",
+    "geometry": "50d987974a8400038f46ab2367aeb6d7853b257b0a93cb3e9b9c82272a62f08b"
+  },
+  {
+    "id": "sht20-ic",
+    "geometry": "39fc5ade0a8eeceda6b1f946c76958b514bb4c57667be715a9cf174163816305"
+  },
+  {
+    "id": "sht31-dis-ic",
+    "geometry": "5c66ec816e2dabfddc73d25495ca49401379ca16fb5ea65b7fc7c03d5e70aaa4"
+  },
+  {
+    "id": "shtc3-ic",
+    "geometry": "5ff8df81aff0ee1473da9b2a73aa04601d166dbc1a2c30a419bfda592f34bc3e"
+  },
+  {
+    "id": "sht45-ad1b-ic",
+    "geometry": "028fae74d969d1ab5661d0347fecc38317d56662a31729cd727d0bb13d7beac4"
+  },
+  {
+    "id": "hdc1080dmbr",
+    "geometry": "54e43e6b1ae62e81db1dca0c0a6e056dcade2d2654698c64bdab79f621f67587"
+  },
+  {
+    "id": "hdc2080dmbr",
+    "geometry": "54e43e6b1ae62e81db1dca0c0a6e056dcade2d2654698c64bdab79f621f67587"
+  },
+  {
+    "id": "max31855kasa-ic",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "max6675isa-ic",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adxl335bcpz-ic",
+    "geometry": "a1e96af8bf355725364968c2e7e648f2aabe9b9c42f818114b5a537682ffdb0d"
+  },
+  {
+    "id": "adxl345bccz-ic",
+    "geometry": "2b8bb1ef52387d1b9cbe7808624a5dc39455b8c76f340facf4be11f59fef76ac"
+  },
+  {
+    "id": "adxl362bccz-ic",
+    "geometry": "c5e5e72265bdf9f3ec4c77ba9be757fb8e194273503b7226c2ba427f68e3905c"
+  },
+  {
+    "id": "adxl372bccz-ic",
+    "geometry": "c5e5e72265bdf9f3ec4c77ba9be757fb8e194273503b7226c2ba427f68e3905c"
+  },
+  {
+    "id": "lis3dhtr-ic",
+    "geometry": "d1b53a091746d7e9f4d265029f5a6b6451ab947a6ff491ea6feaf8d13bb869de"
+  },
+  {
+    "id": "lis2dw12tr-ic",
+    "geometry": "e2ca69b1398a2f734ebf6c6a751942804bdb951afda615608930d84d355b274e"
+  },
+  {
+    "id": "bmp581-ic",
+    "geometry": "63fb8181cba968a50b0769d40fac76eeaf58e9281869e3a700f1ea8895724c83"
+  },
+  {
+    "id": "bme680-ic",
+    "geometry": "1683b7db6b7b2d0567d7f00e336aff26f306d7c7fc694e87d5bc8c9b34ccd2c6"
+  },
+  {
+    "id": "lps22hhtr-ic",
+    "geometry": "63fb8181cba968a50b0769d40fac76eeaf58e9281869e3a700f1ea8895724c83"
+  },
+  {
+    "id": "lps28dfwtr-ic",
+    "geometry": "104eda8dccc9dde50b2c51bd69000377d3fb4b4609dba033bac6db4f31679d39"
+  },
+  {
+    "id": "bma400-ic",
+    "geometry": "d88c45aed4f7becb39d8ae79a37a701703dc03f0f2f4ca73492c5b98fa52c249"
+  },
+  {
+    "id": "bmi270-ic",
+    "geometry": "9448622813cc1950c945a6c6c4ad53fb432fc699a87a056cfec122c2495e21d0"
+  },
+  {
+    "id": "lsm6dsotr-ic",
+    "geometry": "9448622813cc1950c945a6c6c4ad53fb432fc699a87a056cfec122c2495e21d0"
+  },
+  {
+    "id": "lsm6dsoxtr-ic",
+    "geometry": "9448622813cc1950c945a6c6c4ad53fb432fc699a87a056cfec122c2495e21d0"
+  },
+  {
+    "id": "lis2mdltr-ic",
+    "geometry": "e2ca69b1398a2f734ebf6c6a751942804bdb951afda615608930d84d355b274e"
+  },
+  {
+    "id": "lsm303agrtr-ic",
+    "geometry": "e2ca69b1398a2f734ebf6c6a751942804bdb951afda615608930d84d355b274e"
+  },
+  {
+    "id": "cap1188-1-cp-tr",
+    "geometry": "e831112176e5bdb7a1fe55455cf34cd8d7a7a9f899ac9343eca390ed6d42ac19"
+  },
+  {
+    "id": "cap1203-1-sn-tr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "at42qt1010-tshr",
+    "geometry": "ded2d2472f5ead393ab8e57f0842468d892c1ea77cb29702cb060bd7232db3ef"
+  },
+  {
+    "id": "at42qt1070-ssur",
+    "geometry": "d5d62c763f006b22ffe3a880e930df3dd55b6f8603f338b94f729ca8e530299f"
+  },
+  {
+    "id": "sgp40-ic",
+    "geometry": "921a4adb71e89d8e10c92699360c08f4eaf862046619c55a7992e1730f746446"
+  },
+  {
+    "id": "sgp41-ic",
+    "geometry": "921a4adb71e89d8e10c92699360c08f4eaf862046619c55a7992e1730f746446"
+  },
+  {
+    "id": "ens160-bglt-ic",
+    "geometry": "ec9765f60a48e4b21ac139293fdb8d467661429f7c18459f30160d30f4e2ba87"
+  },
+  {
+    "id": "bme688-ic",
+    "geometry": "1683b7db6b7b2d0567d7f00e336aff26f306d7c7fc694e87d5bc8c9b34ccd2c6"
+  },
+  {
+    "id": "ti-lm324n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "ti-lm393p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-lm339n",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "ti-lm311p",
+    "geometry": "b881b65555ed1f9aae7d6ec28ca562be8120045b0998d32e546ed653adc8221f"
+  },
+  {
+    "id": "ti-lmv358idr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-lmv324idr",
+    "geometry": "cfc5c103bc802416349867d245b5daacac27ec7311a520cfb5a985f4bc46d5d7"
+  },
+  {
+    "id": "ti-lmv393mx-nopb",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-tl071cp",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-tl072cp",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-tl074hidr",
+    "geometry": "cfc5c103bc802416349867d245b5daacac27ec7311a520cfb5a985f4bc46d5d7"
+  },
+  {
+    "id": "ti-tl081cp",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-tl082cp",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-tl084cn",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "ti-ne5532p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-ne5534p",
+    "geometry": "b881b65555ed1f9aae7d6ec28ca562be8120045b0998d32e546ed653adc8221f"
+  },
+  {
+    "id": "ti-opa2134pa",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-opa134pa",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-opa1642aidr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa1612aidr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa1656idr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa197idr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa192idr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa2333aid",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa350ua",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa2350ua",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa2320aidr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-tlv2372id",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-tlv9002idr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-tlv9062idr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-opa1688id",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-tlc2272cp",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-tlc272cp",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "st-ts922idt",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "microchip-mcp6002-i-p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "microchip-mcp6004-i-p",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "microchip-mcp6022-i-p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "microchip-mcp602-i-p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "microchip-mcp6542-i-p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "microchip-mcp6562-e-sn",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adi-ad8606arz",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adi-ad8532arz",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adi-ad822anz",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "adi-ad620anz",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "adi-ad623anz",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-ina128p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-ina126ua-2k5",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adi-ad8421arz",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-ina114ap",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-ina219aidcnr",
+    "geometry": "7449f17376b3cc5948ae98d0cfaec8df74e1fc37d391a15dde4c9f14f19d3f06"
+  },
+  {
+    "id": "ti-ina226aidgsr",
+    "geometry": "da472c4bdf2502318d7e6b3866b7c8c58079bf9c8a767231f785d2a6edfd204e"
+  },
+  {
+    "id": "ti-ina169na-3k",
+    "geometry": "71a6968ea26baee81444f706bd057f991728ac3049b4e684757af34138a83d96"
+  },
+  {
+    "id": "ti-ina180a2idbvr",
+    "geometry": "71a6968ea26baee81444f706bd057f991728ac3049b4e684757af34138a83d96"
+  },
+  {
+    "id": "microchip-mcp3008-i-p",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "microchip-mcp3208-ci-p",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "microchip-mcp3304-bi-p",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "ti-ads1115idgsr",
+    "geometry": "7a1b2db42e7cb446f4a36e2f268ee261586995001c9a8ac856a2900b47bcb88b"
+  },
+  {
+    "id": "ti-ads1015idgsr",
+    "geometry": "7a1b2db42e7cb446f4a36e2f268ee261586995001c9a8ac856a2900b47bcb88b"
+  },
+  {
+    "id": "ti-ads1110a0idbvr",
+    "geometry": "d6d9b4d17d2f2f51648e8641f10fee17031fd9dc66ad865d1a04665689b7c59e"
+  },
+  {
+    "id": "ti-ads1220ipwr",
+    "geometry": "e7a9a941740d602bc2208405f2958439dd2f68deb52d1daf630c6b3d98c51bb6"
+  },
+  {
+    "id": "microchip-mcp4921-e-p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "microchip-mcp4922-e-p",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "microchip-mcp4822-e-p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "microchip-mcp4725a0t-e-ch",
+    "geometry": "d6d9b4d17d2f2f51648e8641f10fee17031fd9dc66ad865d1a04665689b7c59e"
+  },
+  {
+    "id": "microchip-mcp4728-e-un",
+    "geometry": "da472c4bdf2502318d7e6b3866b7c8c58079bf9c8a767231f785d2a6edfd204e"
+  },
+  {
+    "id": "adi-ad9833brmz",
+    "geometry": "ad063c01efcdcde789dbce071c981a3691761baabb646dd414c40c3d3a8f6c9c"
+  },
+  {
+    "id": "adi-ad9834bruz",
+    "geometry": "fcd567dde8eb1d87008134677f98f261038bb79cb5459101043eca63a5919bda"
+  },
+  {
+    "id": "adi-ad8400arz10",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "microchip-mcp4131-103e-p",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-cd4051be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "ti-cd4052be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "ti-cd4053be",
+    "geometry": "d1e6d668a434cec54d92a2256f39c0288a46c82d9d17e75b259294f9617f387b"
+  },
+  {
+    "id": "ti-cd4066be",
+    "geometry": "925e85792e3b616cf63415fef03a2922be157150bb54fbaf5341364d29cbdbf8"
+  },
+  {
+    "id": "adi-adg704brmz",
+    "geometry": "da472c4bdf2502318d7e6b3866b7c8c58079bf9c8a767231f785d2a6edfd204e"
+  },
+  {
+    "id": "adi-adg884brmz",
+    "geometry": "da472c4bdf2502318d7e6b3866b7c8c58079bf9c8a767231f785d2a6edfd204e"
+  },
+  {
+    "id": "ti-ts5a3159dckr",
+    "geometry": "68ab414eb28d1979771ee78f8cd0e7586ae3d78aab591f017e276962644ede94"
+  },
+  {
+    "id": "ti-cd4067bm96",
+    "geometry": "a180452a0fbce902fa14a46abc4e11c499a97d1d3c664df85c07c1aaade4f44a"
+  },
+  {
+    "id": "onsemi-mc34063ap1g",
+    "geometry": "a62b2420d4121f7ca3a0b8c7979302fd59de19f814fff07a1f2804ecbb1e9560"
+  },
+  {
+    "id": "ti-lm2675m-adj-nopb",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-lm5007mm-nopb",
+    "geometry": "acf53da50f2e0bee9a2f9366e136d15351261eedf991fa9bae687d791e5d71c8"
+  },
+  {
+    "id": "ti-max660mx-nopb",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-lt1054cp",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-lm2662mx-nopb",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "st-lm317t",
+    "geometry": "25d26970582cf8143a39a88483efa80d1ebfd8e6d99542623a6a4a5ddfead4c1"
+  },
+  {
+    "id": "ti-lm337t-nopb",
+    "geometry": "25d26970582cf8143a39a88483efa80d1ebfd8e6d99542623a6a4a5ddfead4c1"
+  },
+  {
+    "id": "ti-tl431aidbzr",
+    "geometry": "24e00903af23590bbffe5b7ef58734632b48e810570250993c3b1081ad07d5a8"
+  },
+  {
+    "id": "adi-max1044cpa-plus",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "adi-lt1763cs8-3-3-pbf",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "adi-ad584jnz",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "adi-ref02cpz",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "adi-ad587jrz",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-uc3842an",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "ti-ucc28c43dgkr",
+    "geometry": "acf53da50f2e0bee9a2f9366e136d15351261eedf991fa9bae687d791e5d71c8"
+  },
+  {
+    "id": "ti-tl494cn",
+    "geometry": "b1b8ed1db73c3bfd17f645a285bd0818f674ea65e91a24df4cb79a6147af95e8"
+  },
+  {
+    "id": "ti-lm723cn-nopb",
+    "geometry": "15c05e61fe2cec97efd268a8bc42dbdf2c290b33974b7a3bb3cb155f17ad0c7d"
+  },
+  {
+    "id": "ti-ucc27524adr",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-lm5109bma-nopb",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "ti-tps2113apw",
+    "geometry": "cd15e379dafff496b667ac288e91f350ff1569556ef8b71b4ba632ea623ea3f5"
+  },
+  {
+    "id": "st-sg3525an",
+    "geometry": "50b99f7f9289c080373659e72e62839025cabdf5fe3f715098c13b4b1611943a"
+  },
+  {
+    "id": "microchip-tc4420cpa",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "microchip-tc4427cpa",
+    "geometry": "59a317bb5a7721cf8c4e588031f7591a1716d3bbb4dce12ba2f2ee50524f1ef2"
+  },
+  {
+    "id": "infineon-irs2110strpbf",
+    "geometry": "75ca960dd7cfb9b5d1c216b94526c9a46ea9f02870b2dc0d34a93b541eca9faf"
+  },
+  {
+    "id": "infineon-irs2104strpbf",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "infineon-irs21844strpbf",
+    "geometry": "cfc5c103bc802416349867d245b5daacac27ec7311a520cfb5a985f4bc46d5d7"
+  },
+  {
+    "id": "renesas-hip4081aipz",
+    "geometry": "f7754386ece888bb82f886845d2f4ed3d1c5e96a0f20be0fa7d550a0c2969446"
+  },
+  {
+    "id": "market-ltv-817",
+    "geometry": "8bcc135f691c359e4b74a3ccfdbaae5f679c02c16e91f2eab492a7c26f7f16c7"
+  },
+  {
+    "id": "market-4n35m",
+    "geometry": "f3f1f362ab4fc5d5d0d0bfc7cdf8c62d5d820f0fabb773ca7370ca57aa2ec53a"
+  },
+  {
+    "id": "market-h11aa1m",
+    "geometry": "f3f1f362ab4fc5d5d0d0bfc7cdf8c62d5d820f0fabb773ca7370ca57aa2ec53a"
+  },
+  {
+    "id": "market-h11l1m",
+    "geometry": "f3f1f362ab4fc5d5d0d0bfc7cdf8c62d5d820f0fabb773ca7370ca57aa2ec53a"
+  },
+  {
+    "id": "market-6n137m",
+    "geometry": "81ad916ecda89b06162b0498eb26b94d657a9a732526e266b786ef9163e0a9ce"
+  },
+  {
+    "id": "market-6n138m",
+    "geometry": "81ad916ecda89b06162b0498eb26b94d657a9a732526e266b786ef9163e0a9ce"
+  },
+  {
+    "id": "market-moc3021m",
+    "geometry": "f3f1f362ab4fc5d5d0d0bfc7cdf8c62d5d820f0fabb773ca7370ca57aa2ec53a"
+  },
+  {
+    "id": "market-moc3063m",
+    "geometry": "f3f1f362ab4fc5d5d0d0bfc7cdf8c62d5d820f0fabb773ca7370ca57aa2ec53a"
+  },
+  {
+    "id": "market-tlp241a-f",
+    "geometry": "8bcc135f691c359e4b74a3ccfdbaae5f679c02c16e91f2eab492a7c26f7f16c7"
+  },
+  {
+    "id": "market-aqy214eh",
+    "geometry": "7e0a61de8c9a7b16dc5bd45e154d474ea8b5ec225c19bda68c7b81efffd7a382"
+  },
+  {
+    "id": "market-bta16-600brg",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-bta06-600trg",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-t405-600t",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-tn1215-600b",
+    "geometry": "8d8bea9de013a0d40801d6c8a4598ebdf809eaf4925b8c5970d8fac95a58973b"
+  },
+  {
+    "id": "market-ts420-600t",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-bt169d-116",
+    "geometry": "3047b13260094d73698f552f2c6404bd38912fb9b2ae74de1cfa6652ef39042a"
+  },
+  {
+    "id": "market-bpw34",
+    "geometry": "afead7e8d55cbb99eae94fc7aedb369bbd4b67313362e865a5649fc39d0826a8"
+  },
+  {
+    "id": "market-tept4400",
+    "geometry": "4d69ab1bad900b60da5c0d924fa02913b021bc067aa234ca9bebe62c34344f16"
+  },
+  {
+    "id": "market-tsal6200",
+    "geometry": "77bbeaf9e743185f0981697420b0e8a2cdfd82b0676a1188811451cc6124220f"
+  },
+  {
+    "id": "market-tlcr5800",
+    "geometry": "77bbeaf9e743185f0981697420b0e8a2cdfd82b0676a1188811451cc6124220f"
+  },
+  {
+    "id": "market-1n4148w-7-f",
+    "geometry": "9671a287cff191079497148b4fb011edde304159ee6a3de1e31fc35fcde5f331"
+  },
+  {
+    "id": "market-bav99-7-f",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-bav70-13-f",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-baw56-7-f",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-bas16-7-f",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-1n4448tap",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-bav21-tap",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-bas70-7-f",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-1n4007",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-1n5408",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-uf4007",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-uf5408",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-ba159",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-mur460g",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-mur1560g",
+    "geometry": "78e256e64a238e9894efe43b7687106f55f3c90620717d13a3224fdc02ca59ce"
+  },
+  {
+    "id": "market-es1j-13-f",
+    "geometry": "00cf11e8c5e399bfb806d91f338333154e316b30c3b860dd7e488737c7583f0f"
+  },
+  {
+    "id": "market-1n5819",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-1n5822",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-ss14-e3-61t",
+    "geometry": "00cf11e8c5e399bfb806d91f338333154e316b30c3b860dd7e488737c7583f0f"
+  },
+  {
+    "id": "market-ss34-e3-57t",
+    "geometry": "a0e98818ed786ba92a471e16171fca6c72a250af00b8ee8a955b1fac8d9e0ef6"
+  },
+  {
+    "id": "market-sb560-3g",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-stps20100ct",
+    "geometry": "3902e11b2cabeb9b9f8778fe207eaa8426edfa27b9a6a953d38fcbde48fc6c0a"
+  },
+  {
+    "id": "market-bat54s-7-f",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-bat54c-7-f",
+    "geometry": "9b4565a171d8276afb7a1e677f4f0e4d098c87610d1efe446aeca9b5fa54cb31"
+  },
+  {
+    "id": "market-smbj5-0a-e3-52",
+    "geometry": "de29b5998037b83d4fc1e6dc90c1d50ae5bc53c3cb2b32bdb60eda5d4078faa5"
+  },
+  {
+    "id": "market-smbj12ca-e3-52",
+    "geometry": "de29b5998037b83d4fc1e6dc90c1d50ae5bc53c3cb2b32bdb60eda5d4078faa5"
+  },
+  {
+    "id": "market-smbj33a-e3-52",
+    "geometry": "de29b5998037b83d4fc1e6dc90c1d50ae5bc53c3cb2b32bdb60eda5d4078faa5"
+  },
+  {
+    "id": "market-smbj58ca-e3-52",
+    "geometry": "de29b5998037b83d4fc1e6dc90c1d50ae5bc53c3cb2b32bdb60eda5d4078faa5"
+  },
+  {
+    "id": "market-bzx55c3v3-tap",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-bzx55c5v1-tap",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-1n4733a-tap",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-1n4742a-tap",
+    "geometry": "01ad3afa242d5a28c3f856e0e295b1280b6af569f9bef01be117a0c98f24b960"
+  },
+  {
+    "id": "market-db107",
+    "geometry": "19fb74bb289ee011c2bd515cfef99ceb9b76f1720fb8fc38f85e5a0627e80d02"
+  },
+  {
+    "id": "market-mb6s-e3-45",
+    "geometry": "19fb74bb289ee011c2bd515cfef99ceb9b76f1720fb8fc38f85e5a0627e80d02"
+  },
+  {
+    "id": "market-kbp206g",
+    "geometry": "1a7c1dbbcbbcff08e8aa47ba2133e63340699729487ea52712ac3d1cd90d75cf"
+  },
+  {
+    "id": "market-kbl406",
+    "geometry": "1a7c1dbbcbbcff08e8aa47ba2133e63340699729487ea52712ac3d1cd90d75cf"
+  },
+  {
+    "id": "market-gbu6j-e3-45",
+    "geometry": "1a7c1dbbcbbcff08e8aa47ba2133e63340699729487ea52712ac3d1cd90d75cf"
+  },
+  {
+    "id": "market-gbj2510-f",
+    "geometry": "3c9261653ff756bce90bfc3f3ab8198b3a896c82cb4f262cffaa593bcc711b08"
+  },
+  {
+    "id": "market-w10g-e4-51",
+    "geometry": "540d667d77946c9aeaaf056349581c2158b45295976f4815dd64ced4c942f6b0"
+  },
+  {
+    "id": "market-gbpc3508-e4-51",
+    "geometry": "8e2966f231fe490923f35b8a0a886809efc70833d0278ce7de2fc9024cade991"
+  },
+  {
+    "id": "infineon-as5600-asom-soic8",
+    "geometry": "df9ac1fd31b321e85b1188f6380bad1cb021babfd77224422456cddeed1ddda3"
+  },
+  {
+    "id": "infineon-as5048a-htsp-tssop14-02",
+    "geometry": "3046130e33b4b66d9114a16d931d83613befc7fba9e1d767af39c8d3683140b8"
+  },
+  {
+    "id": "ti-drv5055a1qdbzr",
+    "geometry": "24e00903af23590bbffe5b7ef58734632b48e810570250993c3b1081ad07d5a8"
+  },
+  {
+    "id": "ti-drv5032fadbzr",
+    "geometry": "24e00903af23590bbffe5b7ef58734632b48e810570250993c3b1081ad07d5a8"
+  },
+  {
+    "id": "ti-tmag5273a2qdbvr",
+    "geometry": "7f889b6fad7381c83fb3a507020fc83350606173a4724813c295d454d2c35ec5"
+  },
+  {
+    "id": "ti-drv5053vaqdbzrq1",
+    "geometry": "24e00903af23590bbffe5b7ef58734632b48e810570250993c3b1081ad07d5a8"
+  },
+  {
+    "id": "opt3001dnpr-ic",
+    "geometry": "8a24d4effab50831017a9a6615c6c3b2991154301b2c73fb26a02cbd2994d817"
+  },
+  {
+    "id": "opt101p-ic",
+    "geometry": "993d3fa74d4aa54410efb39c3bedb3f8c7d8b9a5ace5ec67b13c0b7bfb28d3d1"
+  },
+  {
+    "id": "veml7700-tt-ic",
+    "geometry": "e5c6f3530b866dcaeed0b803b0f53d0c4f7825922a2a65a1daa3a17399d22c5b"
+  },
+  {
+    "id": "veml3328-ic",
+    "geometry": "611735a8fb3a2c53188f08ef983eb1ee75fffd77e2e2ca5537794a777d287848"
+  },
+  {
+    "id": "vcnl4040m3oe-ic",
+    "geometry": "8e826290dca9f1a50246bd124badb8da28a0440c58733cdc905ec79da09267ae"
+  },
+  {
+    "id": "market-bh1750fvi-tr",
+    "geometry": "8e21a548bb71a0537b9098eba0d8b147cc4324c468908b722ef11f4c18d06245"
+  },
+  {
+    "id": "market-as7341-dlgm",
+    "geometry": "348e3e0ed534bb83f37f2fce23c72ef711a2e718826ad6f5ac9f64596f18e19d"
+  },
+  {
+    "id": "market-ltr-390uv-01",
+    "geometry": "3201cc4fcc0b2b3942cf0417ba56fff0c7f121f91b93a6bd2c59fb9e8615c318"
+  },
+  {
+    "id": "market-tsl25911fn",
+    "geometry": "3e085b421737ea7c22c59c0302594d487cfd9c561a060e02f3fe395b046e2554"
+  },
+  {
+    "id": "market-vl53l0cxv0dh-1",
+    "geometry": "3eeb652990a3165173f7a35ee879f3ebe59dda877c00543820403afbd8dfc7af"
+  },
+  {
+    "id": "adafruit-module-5325",
+    "geometry": "3c9134efff33c69dbc7b3eca472541742015cf57910d5cfff46233135d4c12d3"
+  },
+  {
+    "id": "adafruit-module-4500",
+    "geometry": "3afac983b5ae985c6f64233c281b330ee93ca2012b0a8233596d2e831c7e76de"
+  },
+  {
+    "id": "adafruit-module-5786",
+    "geometry": "9ec8be22c4c0f7c00b314f0bdaf42c2cf18263ac2a001c7e73a55bdc475db368"
+  },
+  {
+    "id": "adafruit-module-3405",
+    "geometry": "712f648dba8efb71f436dbcea61e5e4fb5507257d41a4ec99a7c1b9aab0c26e5"
+  },
+  {
+    "id": "adafruit-module-3458",
+    "geometry": "712f648dba8efb71f436dbcea61e5e4fb5507257d41a4ec99a7c1b9aab0c26e5"
+  },
+  {
+    "id": "adafruit-module-2771",
+    "geometry": "20026178bc60f0c4f9b5b03b2f01ea01ecc8b69dfd220db7c828bbc769d50162"
+  },
+  {
+    "id": "adafruit-module-3403",
+    "geometry": "9550498d8cb059da3607935120d34eaccd537c252d40dcdba6a51c471781e628"
+  },
+  {
+    "id": "adafruit-module-2829",
+    "geometry": "05be4b87299115c083d3e265aa086ea65bfffe5ca448aff1b5ec2dc8e650ae97"
+  },
+  {
+    "id": "adafruit-module-2995",
+    "geometry": "8ade00371e8bb0abbbfa9ce8c42dc610b2f3a6f8b1d0b2259b91ecb1e5ea4c49"
+  },
+  {
+    "id": "adafruit-module-3178",
+    "geometry": "d547ea31f8c53b7ed3c894ddd7b1185711e78b8888104c109554bc4a113383d1"
+  },
+  {
+    "id": "adafruit-module-2795",
+    "geometry": "84416c4402f45d365ea3a4733958a907a5ae4bcebcfae9e2f50c3eb92e7264a7"
+  },
+  {
+    "id": "adafruit-module-1463",
+    "geometry": "fbf0131930c01c348dfc9533d576a64f15c339385b01d0997a32cfea7162615f"
+  },
+  {
+    "id": "adafruit-module-1426",
+    "geometry": "6e3e301f0928dd33ead8cc7c9f13edf1e2c3a1d17b9b32dc567a5586f06d046e"
+  },
+  {
+    "id": "adafruit-module-326",
+    "geometry": "0a94625bec087f822bb5e2e9fab3d11757003478b0d3dba7044d76d31b137db9"
+  },
+  {
+    "id": "adafruit-module-938",
+    "geometry": "8bf04d0ab2b7c605f048a3862136029072e963dac3f95f1c66db413c47f59f93"
+  },
+  {
+    "id": "adafruit-module-1487",
+    "geometry": "e1e09937a4aee5c47a41dc291fdc8041c32a0d374bc5c0e1c654fae9d9002cae"
+  },
+  {
+    "id": "adafruit-module-2315",
+    "geometry": "0f378cad268bf9339a6d013c168f73525d178563ce9fd27968a369a90541928a"
+  },
+  {
+    "id": "adafruit-module-3088",
+    "geometry": "eab6d8cd1f91c0c72df0428a723ae53608f07e9230d1f6e3b247341839a53d3d"
+  },
+  {
+    "id": "adafruit-module-2946",
+    "geometry": "c52058801e8b6ef7b740b7f99968c856b9d7a524e291d6f9226d57ae79c373a1"
+  },
+  {
+    "id": "adafruit-module-684",
+    "geometry": "779a420d5db5ffb3d8d3e1c9a3728a2a23f44e5801f55ec64c822b1ae561973d"
+  },
+  {
+    "id": "adafruit-module-4311",
+    "geometry": "6e444e995fcb2438652a390d5c61e77e2c1ef1f445cb98e0a5695457192e2ae2"
+  },
+  {
+    "id": "adafruit-module-2088",
+    "geometry": "478a6935ff9f3ea86899b8c09294d1146be080021b8f7257118c61365e6c4991"
+  },
+  {
+    "id": "adafruit-module-3787",
+    "geometry": "3e5cf741207cc47a247bde04abbd56216c9b1eae39952c8503284515942db063"
+  },
+  {
+    "id": "adafruit-module-4313",
+    "geometry": "a7ed2ab9c76ad8d1907b04e3e1594c51d777da3872a839ef8c42b7e1629cbcb9"
+  },
+  {
+    "id": "adafruit-module-2050",
+    "geometry": "e72548e9836f716b087d4ccb7045fde060875d0c529f7a8bd7a186837167fe60"
+  },
+  {
+    "id": "adafruit-module-2900",
+    "geometry": "34629da7f121f63d52021db657c9b6ea5bffd1d05d3c39ea680e254d85d5b8f8"
+  },
+  {
+    "id": "adafruit-module-2024",
+    "geometry": "4ce30fa67a1b2b9bd9a3e89046d48b974f0ccd40edfa557213c06bc0593cebdf"
+  },
+  {
+    "id": "adafruit-module-3249",
+    "geometry": "3605e7a07b877c52097f3c603aeb1454a12b07c21632126d89ed058888055e77"
+  },
+  {
+    "id": "adafruit-module-3315",
+    "geometry": "a7ce7eafa345771d50378eba1791c390716c9be451ff3e2d96627e8fd3fce88a"
+  },
+  {
+    "id": "adafruit-module-3651",
+    "geometry": "e870ebfe15c950062f17d10553524ae86a33da93f7c837934b20b60409048510"
+  },
+  {
+    "id": "adafruit-module-2945",
+    "geometry": "a6befe00c3e451a3ae8b3cec8b08a3f29bede0d1a09eb2d3096129b7a32c910e"
+  },
+  {
+    "id": "adafruit-module-2340",
+    "geometry": "1e9408e34b692aa32b17fb365ebbe08c5bc829c815f3dd0db69e67f6817101cd"
+  },
+  {
+    "id": "adafruit-module-4567",
+    "geometry": "931ecc51719cac6c650a195060169d63eefc1d029a700f9acad6dbed27b54557"
+  },
+  {
+    "id": "adafruit-module-5778",
+    "geometry": "34c3b810220b6204c7ba99bf13677ffccd4cc1b5c045e69877cdcf381e61d65f"
+  },
+  {
+    "id": "adafruit-module-3531",
+    "geometry": "628a86d1233c0c8d7b4acaeb2e07c7dff629ce5b7eb5311b36d87fe1ba9d82d2"
+  },
+  {
+    "id": "adafruit-module-3467",
+    "geometry": "07aa93948234ecbe337fb3c7dc4289b30a2dec67de3962de39a951644b0852e4"
+  },
+  {
+    "id": "adafruit-module-4506",
+    "geometry": "49e0aee554d35bc18bdf7263f17c469bb2120da650cd46d1e098d04ad38b9d01"
+  },
+  {
+    "id": "adafruit-module-5957",
+    "geometry": "314d89c96d8bb8b17fc1006440ae01691bbd7b715cf6cb5b5f18e8389eb9f994"
+  },
+  {
+    "id": "adafruit-module-3305",
+    "geometry": "7dbf53958db6c6ff15f71d4e063851eba9a32d65302bb0758bef9e45d8af93f3"
+  },
+  {
+    "id": "adafruit-module-5745",
+    "geometry": "e6a702384aa7d076efd91bd506a81a18a0e1199ff08b8101a90d782b3a781381"
+  },
+  {
+    "id": "adafruit-module-5783",
+    "geometry": "1b2448e47832adc7fbd9d911da04837ded780d749b1d299073a3a1a7aaecc55c"
+  },
+  {
+    "id": "adafruit-module-2267",
+    "geometry": "f543a557a75003f413a969cc3a651a793635337ee3ceab9d19dd879aa0e5ae7c"
+  },
+  {
+    "id": "adafruit-module-292",
+    "geometry": "486d0ea0eec7c35588f1768870478fc7f1abb9f042ad3521e6de8e3917b92270"
+  },
+  {
+    "id": "adafruit-module-5420",
+    "geometry": "03a5a3cef7e7b6b36a8a4776e51d33d87f676657a329440ab47636e1dc08b0d8"
+  },
+  {
+    "id": "adafruit-module-1272",
+    "geometry": "5357f1a3a275b7cf9e66f7ca78e6de4e85564f1b3f517f3c9e587b7be7784523"
+  },
+  {
+    "id": "adafruit-module-2324",
+    "geometry": "b07e8491c618fb71a81b95135de042b24069e1a0a414e0afa94cafc052152d02"
+  },
+  {
+    "id": "adafruit-module-3632",
+    "geometry": "5627a68374261f1fc9a98fafb049166771a96c5c5dfc2cfa381bec648a8dd2f0"
+  },
+  {
+    "id": "adafruit-module-6001",
+    "geometry": "945101aa6e03179bf5779e3b3dd199ec9e2a3cd267957b93f0364532593dc708"
+  },
+  {
+    "id": "adafruit-module-6323",
+    "geometry": "e85ec645615d3e6557befbc75d7d338853ff78cce3719cb99e21f43e78a95073"
+  },
+  {
+    "id": "adafruit-module-5993",
+    "geometry": "263ed21c38dcb76c6f8b418b090a31dc469179467e9004068061c82b27bbb31f"
+  },
+  {
+    "id": "adafruit-module-6014",
+    "geometry": "c922b3814ee75cd904c29efca819db61805388ab088c5c0a63b8917fe6b6afd9"
+  },
+  {
+    "id": "adafruit-module-4687",
+    "geometry": "1667159368b812631cae3c8351947325dd3eddacb37894b76b5268a814e04bff"
+  },
+  {
+    "id": "adafruit-module-3133",
+    "geometry": "9da1ad09d4366639475da144f94475dfd8a056730c1c9b9a82d29e373ea29f10"
+  },
+  {
+    "id": "adafruit-module-5945",
+    "geometry": "0a15bddedbd28a6c5c12c08473aa60c2ac18d4016d47a1fbe7e09d997024b5c3"
+  },
+  {
+    "id": "adafruit-module-5858",
+    "geometry": "12f58465a1b68c822d4ba4c52d9e1d1fd2fad145d6bc8e736c28e7b68105ce53"
+  },
+  {
+    "id": "adafruit-module-3229",
+    "geometry": "1dbfc9306cf5372ff302c371a31ecc54d0a2749766156cf0d116a6d34deb9715"
+  },
+  {
+    "id": "adafruit-module-4569",
+    "geometry": "22a7bb4e02029187adca550d0c5c48dd7b3e9a78ea7e0fd2e9aa289ecf1adcf9"
+  },
+  {
+    "id": "adafruit-module-2746",
+    "geometry": "c5c961e866cdf09a20bffd4a8e67038d474f529ef0337a1da0bff73eb0ae2d83"
+  },
+  {
+    "id": "adafruit-module-4300",
+    "geometry": "1afe8ddd75ad8b0f3371fa85e0ab63d5bb7ad078b9e65942d84d45346fe190b9"
+  },
+  {
+    "id": "adafruit-module-3654",
+    "geometry": "0616dd85d4238b50d046d02a603d9eee8be73abffbe24eac2f62c8dc48838513"
+  },
+  {
+    "id": "adafruit-module-5728",
+    "geometry": "2d692f60c38bc70a272bd44c78e686323c95bd525737d3d1b2b971e217bc2d61"
+  },
+  {
+    "id": "adafruit-module-5679",
+    "geometry": "80c7e7fd30cb819aa8af90c3a683947b93ce9426e4425bc19ff9a2fbc902e093"
+  },
+  {
+    "id": "adafruit-module-5862",
+    "geometry": "31a65d5bd3a1ef2fe068d20f2d99d02c327d5f258dd383b45146b70d08189762"
+  },
+  {
+    "id": "adafruit-module-2601",
+    "geometry": "369917aebc5decadc16dcf71b456088d35fd6ce968631f3a8af119c9338c11f8"
+  },
+  {
+    "id": "adafruit-module-3422",
+    "geometry": "8d2fde8915c98ebb8af518b858e198a36b43fd122787890917a91a757d7b05cc"
+  },
+  {
+    "id": "adafruit-module-5397",
+    "geometry": "588008767d55d7cc71299e805c9f0a31ad031a0ac1722a120acac4597243c8ae"
+  },
+  {
+    "id": "adafruit-module-3357",
+    "geometry": "df21443fa2afce582ba27cb2c7cdb4ce36bc48917e35f43beed939662bd005cc"
+  },
+  {
+    "id": "adafruit-module-3346",
+    "geometry": "54f415af1cbf44a0ea788be48b0f2c9ffaa1bc7f51df56471476112c7c44df0a"
+  },
+  {
+    "id": "adafruit-module-4740",
+    "geometry": "06377bf656683742954fa2730e660664b0e2ae3ee748d121e21946c64112e446"
+  },
+  {
+    "id": "adafruit-module-3191",
+    "geometry": "712114ee0453f61129a6618f2cbe360e140c748213cff1e038fbec096e001b48"
+  },
+  {
+    "id": "adafruit-module-4800",
+    "geometry": "259bf45e0241bb924174991313a43cbc74b9e6d7803573c8d0ee15bdb0a30b57"
+  },
+  {
+    "id": "adafruit-module-4870",
+    "geometry": "c4e086a0b299c2dc5021b04026e18a399f3c47d97bcbca2c1dc846c0a64e1e96"
+  },
+  {
+    "id": "adafruit-module-5020",
+    "geometry": "5151be9e58d21c2089ca8760ea49b5333a6b8ee9b21398a6dff6e7d469295651"
+  },
+  {
+    "id": "adafruit-module-4964",
+    "geometry": "04cde941afdfe72d1a06b9fcdc6db24f3649afc9a8b4b26ab8a608d25ba48196"
+  },
+  {
+    "id": "adafruit-module-5056",
+    "geometry": "cfb9f79e39d04412dcf1a1ca17bfa7b131737e1fc173b6e125a65524490cf77b"
+  },
+  {
+    "id": "adafruit-module-5954",
+    "geometry": "4fde77cf0860b678bd7c7f8a6bdf12f2e1ae33a96592da13837bd0491b7cb90c"
+  },
+  {
+    "id": "adafruit-module-5953",
+    "geometry": "12296ff073eb4e86e65ec96311987c17b75a22eacccd659a5f175a98bca68a74"
+  },
+  {
+    "id": "adafruit-module-2471",
+    "geometry": "831e6f1a939b2041b89ee06364a9425826d21d10139446b911c8f0e54520cf82"
+  },
+  {
+    "id": "adafruit-module-4172",
+    "geometry": "5317e8e416e7011be2de23c3208b5af8097cac764bcd7d8da6d92c5c1d55f4e3"
+  },
+  {
+    "id": "adafruit-module-5395",
+    "geometry": "6b91f75d12c9d78c9db7a335b490972cf675c7de3c860d923b2a214fb65de4e9"
+  },
+  {
+    "id": "adafruit-module-5996",
+    "geometry": "1bac8dcc707e964fe1b80714d10006b96d63067ca7e0aae3ed76755b904920cf"
+  },
+  {
+    "id": "adafruit-module-4759",
+    "geometry": "3bf25610da6e956cb05a9bb103dc07683c5f74812e2fdbad9617ee1eecff69c0"
+  },
+  {
+    "id": "adafruit-module-5727",
+    "geometry": "1c594205e460a3df4e106a245585f25b3ced64529f8079d96a593570d2cebf26"
+  },
+  {
+    "id": "adafruit-module-5724",
+    "geometry": "5a805d05cb6c88a532c3ae74ce5ec2d89f83d39920a7fbddaaad83a156ff2317"
+  },
+  {
+    "id": "adafruit-module-1500",
+    "geometry": "fc0d388bf70e5498de4c349053b300aded02e48569efe45e8d427ae45480e6e7"
+  },
+  {
+    "id": "adafruit-module-1312",
+    "geometry": "f643f568982c6652ceef55cdc313e43c15300fd1e5dfb0baddf4161bacdb2462"
+  },
+  {
+    "id": "adafruit-module-5764",
+    "geometry": "74490d5daa1442ae036d6563927ae743cca4d6e9c85728cc12f6c73cab59325c"
+  },
+  {
+    "id": "adafruit-module-661",
+    "geometry": "1f7485b671b1326d4b26f7dfcaa375cff4c6d02825059a4462f042d5ed442cd6"
+  },
+  {
+    "id": "adafruit-module-3246",
+    "geometry": "f077ec93851aa48b1de52c2eb6c46511f3a6564affeab97f0e5b1f9e809678f4"
+  },
+  {
+    "id": "adafruit-module-5221",
+    "geometry": "9d7cd1e40ada6170bb7dbea124c7d38a5282d427bfc23160404c3bedda61f691"
+  },
+  {
+    "id": "adafruit-module-5206",
+    "geometry": "c5c0b0625eddc3a48eaed3056a1ddadd8eea6b2356274684b0062225d73b6cf2"
+  },
+  {
+    "id": "adafruit-module-5394",
+    "geometry": "41cae287a6053cb2c81974590a6e16cb6e7af8cfca3695336afdc9ca4c55be21"
+  },
+  {
+    "id": "adafruit-module-5393",
+    "geometry": "f191e96019b8aa16ceb125f25313a668f6726fbe5b9c5304f86c656bbbbcb458"
+  },
+  {
+    "id": "adafruit-module-3527",
+    "geometry": "1a0f0ab13e0e663c0a77d3b9cc8be791121d0a33b91caa2e54aed9bde1f8226a"
+  },
+  {
+    "id": "adafruit-module-4836",
+    "geometry": "20a1abcf6a5ca261cc73141c8c39076ad1f0aadb8cd112c69b32d6b0fba22c2d"
+  },
+  {
+    "id": "adafruit-module-5740",
+    "geometry": "1cdac0752b174a72b4d78a31861c8713941218d499deb8f92460261beaea8259"
+  },
+  {
+    "id": "adafruit-module-5753",
+    "geometry": "5bf04e4aa81297f5bae796b6a15ece12c89d6dd8ba71de80d6b450c1423992b4"
+  },
+  {
+    "id": "adafruit-module-5201",
+    "geometry": "58b60f2f1bea0ce6a5dfd43c41197f3ffdf01e2edadfdc71dfb4e7a88bad75cd"
+  },
+  {
+    "id": "adafruit-module-5297",
+    "geometry": "03df3a1ce9657e875e52e7e8fd6e2c66d772af53faf8c4d0ce5f5c1f075fc3da"
+  },
+  {
+    "id": "adafruit-module-5767",
+    "geometry": "ec3d8fb77dbf0e0b31879aa05722752b7dabcf446c9a466f0f7b68966a19b888"
+  },
+  {
+    "id": "adafruit-module-5752",
+    "geometry": "b19243b74519b3952e83db6f8a6eed6edf9b7b41514a7a40f88c6037996947c3"
+  },
+  {
+    "id": "adafruit-module-5295",
+    "geometry": "5cbf88810560d59e773de827c829ad71e4f507a4b0b76861a0dd465827cafd42"
+  },
+  {
+    "id": "adafruit-module-1580",
+    "geometry": "fef5ce4f96c92ab12560e637a246780bce83480688413dfa499b4c410a7213f5"
+  },
+  {
+    "id": "adafruit-module-6178",
+    "geometry": "85e7767f4922d470b20489b3ed5528804b3da0169c442d4b2ea7885d24182c37"
+  },
+  {
+    "id": "adafruit-module-5423",
+    "geometry": "92b6a77ab5fc6a42d1a611ed51d561b1e867add8bab8cb369fa32e1dc859a2a4"
+  },
+  {
+    "id": "adafruit-module-6113",
+    "geometry": "475b3771a4491edebfbca78a7d799dc80532a7a5dc403090452ce4eb197a6af7"
+  },
+  {
+    "id": "adafruit-module-3134",
+    "geometry": "c21fd6a4ce34b1b2f5d6ff5004a470343a949e9f28791b7f806687e831c2f5ff"
+  },
+  {
+    "id": "adafruit-module-3954",
+    "geometry": "1c1b5d31ff128063510c010c09a418e5aa794486d1e2848ae242f055414e4a14"
+  },
+  {
+    "id": "adafruit-module-5296",
+    "geometry": "8366d42de7157181826e8030bf066bc48d54e2780df9b7d154eadfa839557c3d"
+  },
+  {
+    "id": "adafruit-module-4886",
+    "geometry": "8f048e40994f7ed2cd5a5673447ca2501e5bedd5a62941f55e60752ec6856eca"
+  },
+  {
+    "id": "adafruit-module-1590",
+    "geometry": "e9778fc42a45cf4f738b95914b980b8ea3a7333212bc682e304d579ff0751b1d"
+  },
+  {
+    "id": "adafruit-module-4978",
+    "geometry": "e3dd1599d52102eab9a54cbc1d036b55331bf0af0cbc4bfdcb681eb3c81ab82f"
+  },
+  {
+    "id": "adafruit-module-3533",
+    "geometry": "4e079b86ecc601363139a6bd7e8e5de674eeb918af33c86aa521556d11ffcef2"
+  },
+  {
+    "id": "adafruit-module-1673",
+    "geometry": "9f7e341112ae5c6c1db34d5a90929fa0db77fabc91010204c2463aa9415a19be"
+  },
+  {
+    "id": "adafruit-module-4383",
+    "geometry": "4e079b86ecc601363139a6bd7e8e5de674eeb918af33c86aa521556d11ffcef2"
+  },
+  {
+    "id": "adafruit-module-5766",
+    "geometry": "61440e7f0d70900609e32d8b077ccbb34a0b3a77e6c75a4e2edf2791ef9e2c2b"
+  },
+  {
+    "id": "adafruit-module-5666",
+    "geometry": "10415b9543abce60343dd1400c74e9b301c7376853c18ba50bffa645a82239da"
+  },
+  {
+    "id": "adafruit-module-5646",
+    "geometry": "6176470084fb1456d3cbe6c994dbd89beab908524020621df90b85cedf1a4dd0"
+  },
+  {
+    "id": "adafruit-module-5645",
+    "geometry": "79f43385e909ef118b2def22391158ef7d68193ae80bfb5aaed38aa2c93a7215"
+  },
+  {
+    "id": "adafruit-module-5695",
+    "geometry": "f6e7128854c97a1eb3cecc98e4fa54b043bbdd4ed2d0a675623889ae2efde99d"
+  },
+  {
+    "id": "adafruit-module-2478",
+    "geometry": "b76c8479770765e58a87c276bbdeb05776caea1618998b5a8f65beb261a4dde3"
+  },
+  {
+    "id": "adafruit-module-1743",
+    "geometry": "3a2233ced56965aacde1a2faf841f4314229f56c06cf0efa4365a262ae5af2af"
+  },
+  {
+    "id": "adafruit-module-3296",
+    "geometry": "0c437550e92ca608fab2f77584e3979b6c584b56c4bfe872e4a828a6a3dafef9"
+  },
+  {
+    "id": "adafruit-module-1551",
+    "geometry": "b2abe40d3ae6408691ee07da5ddd44c161a6ca31ec98b98e6f8a34ff8549958a"
+  },
+  {
+    "id": "adafruit-module-5830",
+    "geometry": "118cf8ae9fa04beb820846ed298417e8985dfc2ee0817cc22485cd8272a66ac5"
+  },
+  {
+    "id": "adafruit-module-5635",
+    "geometry": "5c342979e02f064ed9a8f372b56b7fbdb82fa897f5d70ebbbb2c0f45a435b0ea"
+  },
+  {
+    "id": "adafruit-module-6066",
+    "geometry": "5e91e71bfabb9b7e0e88f9e17f051851f1097124b630e476c4a523a0386a797d"
+  },
+  {
+    "id": "adafruit-module-5970",
+    "geometry": "2b545213149f6a0559410f9266936caf1038f1b3d6ca89242f9f184e45ed2e9a"
+  },
+  {
+    "id": "adafruit-module-5940",
+    "geometry": "2b545213149f6a0559410f9266936caf1038f1b3d6ca89242f9f184e45ed2e9a"
+  },
+  {
+    "id": "adafruit-module-2045",
+    "geometry": "d1fda7a3386aed0701fdb6faf73ef99b125b2c1480c6636cba0931e7cc645eb6"
+  },
+  {
+    "id": "adafruit-module-5743",
+    "geometry": "5382b7946b979ef973d7685185ebabde4652b3991c323d33e70fd4cf9630f4b6"
+  },
+  {
+    "id": "adafruit-module-5708",
+    "geometry": "c334f7abcdd4b08bbfb49026c3dcdfe3c787c28df59b6b78ea494cca001de1e1"
+  },
+  {
+    "id": "adafruit-module-5939",
+    "geometry": "d8699a85d7e72f4679e9d5a4e7544e3a5649ee520311e8ca069eea8d59a32f26"
+  },
+  {
+    "id": "adafruit-module-1875",
+    "geometry": "c8bdaba5c833cbfa9b863fc9da0d052bbe6ed39ce423e8c63af0a476548837e5"
+  },
+  {
+    "id": "adafruit-module-3386",
+    "geometry": "6cca58bd52f3b3fc37c962f95323af8b3ec07c0d0f21edd9c80a30859b2d4522"
+  },
+  {
+    "id": "adafruit-module-4201",
+    "geometry": "e7332e006089558d65977e8978212762c0d8236a0e36bab93e9290269fbfc3f8"
+  },
+  {
+    "id": "adafruit-module-4314",
+    "geometry": "6506665b9336415fb56d08b63be1ccad1895712403a436198e8e0a5e77afd720"
+  },
+  {
+    "id": "adafruit-module-5988",
+    "geometry": "c4a5ac3dc8d45c83302a063c97b033734275706b5a76fcc9a18403b824b7089b"
+  },
+  {
+    "id": "adafruit-module-5987",
+    "geometry": "8abbf4a2f4992eb62a85c3ab9067a11e6ef03fc75d14d665d2c3bf8fe0a0e651"
+  },
+  {
+    "id": "adafruit-module-4756",
+    "geometry": "2e899bb44e324d38c347f0ff01f7f0075951dfbe3abe0e7df2596da934c0edf5"
+  },
+  {
+    "id": "adafruit-module-4351",
+    "geometry": "5645372f8c0cdfd2a25e22f2bb353b348e1d10abea52b26e5d7342e70894fe58"
+  },
+  {
+    "id": "adafruit-module-5791",
+    "geometry": "c86f1327ac22892e17d0f64d354267b6f67d2f2b1472e398f9e40260413dcb03"
+  },
+  {
+    "id": "adafruit-module-2999",
+    "geometry": "476b246f9d355a5fd9d9454eea2e5bf0a329b65abad0cb1d24ca2db344af656d"
+  },
+  {
+    "id": "adafruit-module-4282",
+    "geometry": "f539a5b584e1a9cd12016f2ab5d23873e838a0d3e38370ba8db8c3f191200963"
+  },
+  {
+    "id": "adafruit-module-5892",
+    "geometry": "1ba773dc7f750fc20496c13445f0c0fc91cb43fb9a9d5abce6c7a68975529a30"
+  },
+  {
+    "id": "adafruit-module-3070",
+    "geometry": "1474e95e2637c65c43ba8705cfb6e7a54c3e9d526e157eee23a7afe57beaea68"
+  },
+  {
+    "id": "adafruit-module-5870",
+    "geometry": "8de47440906a9bfc33602a94bc55aa23a3c4452a7c44b691fa860c0be2857021"
+  },
+  {
+    "id": "adafruit-module-5914",
+    "geometry": "b5030d51b16f879b62688a3b556ae5dc00aa6cbb82b39990c6adfcf9326accf8"
+  },
+  {
+    "id": "adafruit-module-6365",
+    "geometry": "1c854655cb9a3359554ae0e559c95ae006fb681128ae6a789092c8b9a4ff5134"
+  },
+  {
+    "id": "adafruit-module-6538",
+    "geometry": "9e31a59f63985f63150ecaeafa5a19ccc74d7bc00e9593c84d5e7c1864cb6d23"
+  },
+  {
+    "id": "adafruit-module-5613",
+    "geometry": "760d1581285a1b5505a3a05c1ea43dbee64455cd5139843226b578a4e8dbe63f"
+  },
+  {
+    "id": "adafruit-module-5637",
+    "geometry": "f531ff7bf68c477713e93ef398ae2ce331718d13457d5ba93eefbf3c8e9116ec"
+  },
+  {
+    "id": "adafruit-module-4570",
+    "geometry": "8f1ed78640952dd50e387af52dd5af70c026ce4b84cedef734df90e23dd261bc"
+  },
+  {
+    "id": "adafruit-module-5146",
+    "geometry": "e2cca299fc1261aea58ccd67cc20e3b1da916399e0a22c2ead656a5b85c1331f"
+  },
+  {
+    "id": "adafruit-module-4682",
+    "geometry": "142c5278c0d62e2d45ca5ee5d05f6f0cad1848f0576b44dafb2ce0a872cab6ee"
+  },
+  {
+    "id": "adafruit-module-5640",
+    "geometry": "afcdd83d9bb2069c46350da996e792d7b1b56dba37ced6f763a6933e2368f3dd"
+  },
+  {
+    "id": "adafruit-module-4415",
+    "geometry": "0a482a2b554c23df00fac5173176cfeff71263c4834aa27e7891823562f2e89e"
+  },
+  {
+    "id": "adafruit-module-6495",
+    "geometry": "7a8136f68eab452bc7dd5f8fb8e2a1200bb67f76c5336de254767851866c97ce"
+  },
+  {
+    "id": "adafruit-module-5964",
+    "geometry": "e1c4a3cd023ae27dfdc54d0a26c74542cb152c699f41e3abd038e86da1aad583"
+  },
+  {
+    "id": "adafruit-module-6432",
+    "geometry": "a6078c9de4e80f59f6659d49c0f96cca9b542666a13907d0fdddb51df698dfc0"
+  },
+  {
+    "id": "adafruit-module-6331",
+    "geometry": "46bd2a59d79662c590b3cea69f9bdcffdf9f95511a16308090229a39398fbd6a"
+  },
+  {
+    "id": "adafruit-module-5879",
+    "geometry": "bb0226947e2baf2b172f120e469cc94af9aa57e2f2fc462047c957e58c384a3c"
+  },
+  {
+    "id": "adafruit-module-5545",
+    "geometry": "71eb5b6ee0e9d4b8fc3255842c7c16b4dafafd6e12e89e58b15975a8cf9b2fef"
+  },
+  {
+    "id": "adafruit-module-5836",
+    "geometry": "bccaaf9e71a09fb46eeaa38dd58aaaab9816aff38a2d99a8bd3eaacf4c050193"
+  },
+  {
+    "id": "adafruit-module-5932",
+    "geometry": "8b5159edd4f373b07bed3ea8f7f781520f8708994163b77cd790579692c9f5f1"
+  },
+  {
+    "id": "adafruit-module-5973",
+    "geometry": "5a377ce9d05f4578606a785b1e2f2491ed796dab737eb145221afebaecbbb48f"
+  },
+  {
+    "id": "adafruit-module-5703",
+    "geometry": "35afd7070de824901aa5d10f53cc56fec3547af9c103f07b9eeed8c4304c76fc"
+  },
+  {
+    "id": "adafruit-module-5772",
+    "geometry": "ab217a6698a97ac0e56a2d2f64be9853d93810ce89401be2f2bd55e9ab5663f4"
+  },
+  {
+    "id": "adafruit-module-6027",
+    "geometry": "ad55086a132a431f3aa12431d83fd40fe770afa4f9cf9a08725d0bac27de0fc0"
+  },
+  {
+    "id": "adafruit-module-5611",
+    "geometry": "62b42f77bf49e3284e3964517466d750f50ed731807cad2f6b08d8126ca1b429"
+  },
+  {
+    "id": "adafruit-module-5626",
+    "geometry": "c986f6e0876f9069860678498e050ed0fce342e052192d22b06af18955a44bc1"
+  },
+  {
+    "id": "adafruit-module-5978",
+    "geometry": "1b1ac83ba6ea58806ed5be72d1fca6eba1fdc5f3c445505b1b4576575152c9f6"
+  },
+  {
+    "id": "adafruit-module-4090",
+    "geometry": "e58f4c9d40de509e0bbf1ad2d8b29a8848def25b03d668c8bac678372a0b6483"
+  },
+  {
+    "id": "adafruit-module-6050",
+    "geometry": "91624ab5648b8d84800e2cea066340dbc98a0dd7e8ce9e0835adcfeac7cbb268"
+  },
+  {
+    "id": "adafruit-module-6494",
+    "geometry": "bccaaf9e71a09fb46eeaa38dd58aaaab9816aff38a2d99a8bd3eaacf4c050193"
+  },
+  {
+    "id": "adafruit-module-5625",
+    "geometry": "593b2342cd12ee1affb064c7f4c7d3d6eaed65581567fc0d417298b0f220698d"
+  },
+  {
+    "id": "adafruit-module-5937",
+    "geometry": "caf0b44c8b2422a5148eb59e78bcbce6f8609de276f17c05b8a7a8789223a221"
+  },
+  {
+    "id": "adafruit-module-5683",
+    "geometry": "8705d31f7f7966ad7c928f0d5c4bd1397fff2c18ca9766863279a3c71b96d7ad"
+  },
+  {
+    "id": "adafruit-module-5877",
+    "geometry": "be99cfe8889740f7fc6c7bd4e722146bf284ddda8edbf3023529f060b26ce76e"
+  },
+  {
+    "id": "adafruit-module-5956",
+    "geometry": "5371f8675551abda6efba78245ac7ed420669168441141be4ccd3564ec212ae8"
+  },
+  {
+    "id": "adafruit-module-3464",
+    "geometry": "d5d97903c8423552b1dbacf0bf9374c65fdaeb973aeab9ae640625ae97b5abec"
+  },
+  {
+    "id": "adafruit-module-6534",
+    "geometry": "b37ebba33a5e9142f27a79324a9e82edcadd9aa89aeb8cbae8ed49c27d3234d0"
+  },
+  {
+    "id": "adafruit-module-4363",
+    "geometry": "e7c2e2ad03ad69463ee9be3482e5e2fa59210d3bd86a7b2984de70c841183e9f"
+  },
+  {
+    "id": "adafruit-module-5302",
+    "geometry": "70728cbdaf4a229c4de239bab9f595e5e4a803052fe98dd6ca708b9846783063"
+  },
+  {
+    "id": "adafruit-module-1895",
+    "geometry": "1928b4098a4532ea617dd259d0f650de0e9cc9320d519f279bd8a3e01fe2a41f"
+  },
+  {
+    "id": "adafruit-module-5189",
+    "geometry": "84db1ea0a7013d80f09ef328f8f33adb688d1debaf1b9bd92a2d41fc7a05584d"
+  },
+  {
+    "id": "adafruit-module-3538",
+    "geometry": "e8599666207d2df6391312ce384293664b41d866063ffd911846e71410d58545"
+  },
+  {
+    "id": "adafruit-module-3387",
+    "geometry": "0578247377c9d0dc407821f7d9798affc69937092df213db26123932e20cfb38"
+  },
+  {
+    "id": "adafruit-module-5663",
+    "geometry": "2be2cdec558b08788e25d194812180e6b53b0a87b6ba52b0711e3c40bdfa39de"
+  },
+  {
+    "id": "adafruit-module-1465",
+    "geometry": "2c9f5f5743491c81f05009ea02df21b2442d1145e49d076a61988c37a021250a"
+  },
+  {
+    "id": "adafruit-module-4683",
+    "geometry": "5b2384d47e583d42319256d032872461738fb73d9fce291639d9b666f2effdbd"
+  },
+  {
+    "id": "adafruit-module-4654",
+    "geometry": "e60d152f795df8a58dc9cd9a32d8fcc42e16a9e35a95a554e79fd91c2e425fbd"
+  },
+  {
+    "id": "adafruit-module-2200",
+    "geometry": "e9a08d1f88b24a56d5df26baca68e3f05baa869bec96e85abf4dac69e59319d5"
+  },
+  {
+    "id": "adafruit-module-5644",
+    "geometry": "fc391b283832b5c1a0e28338905d7521a5b80dcf65dcbafe860b28b1e06f8d1b"
+  },
+  {
+    "id": "adafruit-module-4920",
+    "geometry": "17b5094750ac11b0fa56209c8e6e29209e93756ef2fc9a6c33f7eec9e78093c0"
+  },
+  {
+    "id": "adafruit-module-2745",
+    "geometry": "fc391b283832b5c1a0e28338905d7521a5b80dcf65dcbafe860b28b1e06f8d1b"
+  },
+  {
+    "id": "adafruit-module-3661",
+    "geometry": "fc391b283832b5c1a0e28338905d7521a5b80dcf65dcbafe860b28b1e06f8d1b"
+  },
+  {
+    "id": "adafruit-module-3435",
+    "geometry": "29ebe0ee27138bde698d3e4bcaea3c23dd9d56ab3b955709ea696a3844a95aae"
+  },
+  {
+    "id": "adafruit-module-6049",
+    "geometry": "4b618ff724cf90009eb7017ddfecdaec66ee78427fd88d08878c343a5c75d650"
+  },
+  {
+    "id": "adafruit-module-3885",
+    "geometry": "ca43179a21c71be2493e7f329a51d5b7ce44ed4a7d7c6b9dbbff75dbd9dcde23"
+  },
+  {
+    "id": "adafruit-module-6280",
+    "geometry": "ca289a4e387befab4601b46ce25c18aa606e3150c571238568959e22684fb1e6"
+  },
+  {
+    "id": "adafruit-module-3573",
+    "geometry": "ac84c5a1229f50f47938a5910b4f48013102315254febd87cca4d6b1050d0f9b"
+  },
+  {
+    "id": "adafruit-module-1400",
+    "geometry": "67e2e350f19f12ac4cee71cf74c6e148f18acaf195a70fc69543c1d852cf362e"
+  },
+  {
+    "id": "adafruit-module-5639",
+    "geometry": "2b545213149f6a0559410f9266936caf1038f1b3d6ca89242f9f184e45ed2e9a"
+  },
+  {
+    "id": "adafruit-module-4409",
+    "geometry": "fd0a0570b69809228a7224431d636f3f5d16d740ca6c1377a0224d9aab9097eb"
+  },
+  {
+    "id": "adafruit-module-6354",
+    "geometry": "d9c3b98217f8a6fef50085daab1cf980e78c365ef353169e404cbca44b6dc4c8"
+  },
+  {
+    "id": "adafruit-module-5648",
+    "geometry": "ef5f847ff30dbd4325809dd11b84acb0daec652418b4d0bc0a909f8650d57721"
+  },
+  {
+    "id": "adafruit-module-5647",
+    "geometry": "c86f1327ac22892e17d0f64d354267b6f67d2f2b1472e398f9e40260413dcb03"
+  },
+  {
+    "id": "adafruit-module-6359",
+    "geometry": "f7b97933144cde0de2f762179e513c7ad6b82291b7d820015e4bdef62017c2de"
+  },
+  {
+    "id": "adafruit-module-1712",
+    "geometry": "4e0b03cde76caefadb41a0ca1acf2ef4af6119155f9e54988556180883e78b00"
+  },
+  {
+    "id": "adafruit-module-1552",
+    "geometry": "bd867909cd9b72cc27de4b73788fe49b18cd4b89c0800a71ab2fdca2fded77f0"
+  },
+  {
+    "id": "adafruit-module-5959",
+    "geometry": "bf5f6c5c79dc9099a253a3a9e183d2169ab8f21db8991080e8dcbb7c5f832d35"
+  },
+  {
+    "id": "adafruit-module-6109",
+    "geometry": "b3e88851d797a9c7d57eed6f60b327654ea02ca9a8f0ff901d01e1c90ae3a99c"
+  },
+  {
+    "id": "adafruit-module-2448",
+    "geometry": "a60b141e63057d4af2fabe7b8af7de32de37b58b07adbd8d37be99be7ffd22c0"
+  },
+  {
+    "id": "adafruit-module-5649",
+    "geometry": "6c90007c26578b4696e8689f167bcb5cdd64b8c5a9d7003c0b207ba5f88d533b"
+  },
+  {
+    "id": "adafruit-module-6516",
+    "geometry": "4540515f995b9ffae00908b199ee401f91281a64a3cc97e6e0ba5ece3fce1ed1"
+  },
+  {
+    "id": "adafruit-module-4648",
+    "geometry": "98768bfd44a79d4bba53584958247c7bb5db047b9e67148eed0f082cfb612367"
+  },
+  {
+    "id": "adafruit-module-3678",
+    "geometry": "0bba20f678734406f5514567b82d4dd1d30bbc055a6bea9215424e18f82b5954"
+  },
+  {
+    "id": "adafruit-module-6421",
+    "geometry": "d62ac693f5011a1707a249f486e0b9499d0cebd23fc4c05d05c24c33ee9c7010"
+  },
+  {
+    "id": "adafruit-module-259",
+    "geometry": "101d8aa08f0e2bacf69e150c93dd82cf47eabb647fd01e8d9a6ac54b48c406fc"
+  },
+  {
+    "id": "adafruit-module-5335",
+    "geometry": "99f432ec9e9bf270ad039964a8cd5181f4217e30f679631c263d72664b47b45b"
+  },
+  {
+    "id": "adafruit-module-5568",
+    "geometry": "fd86a130c13c27a5272ed80e18cf7b485c8980e33596a6b1e0b81cd43436222b"
+  },
+  {
+    "id": "adafruit-module-3190",
+    "geometry": "41d335f1e9f04c286510cda92be33164ce256deefccb8ffc1959b37eff70f432"
+  },
+  {
+    "id": "adafruit-module-6353",
+    "geometry": "84dc81069cb355cb116c19d3b3658ce06a3cedf3e1dc7a85dbb66b5256dbb803"
+  },
+  {
+    "id": "adafruit-module-3297",
+    "geometry": "738734acda5495c3a1569ebe0674656fc8d85c52353614e3e0fb019f6d28a7d2"
+  },
+  {
+    "id": "adafruit-module-5882",
+    "geometry": "06fefa15c449da09a69aad984061e553a360512741b315275c36672c7e0ef315"
+  },
+  {
+    "id": "adafruit-module-6223",
+    "geometry": "3c5dc5f815dea4c5b248abb37f625fd60f99b8792675f9477587730727053103"
+  },
+  {
+    "id": "adafruit-module-6106",
+    "geometry": "56b8741100e8fa81cdf39bb1a81e9b223422ca227c54ca873bfb006659b530c3"
+  },
+  {
+    "id": "adafruit-module-5769",
+    "geometry": "5a7387209d4f02cf19c303e479c237d763b8f6e1cce3d5b764c6a62ca935b0b5"
+  },
+  {
+    "id": "adafruit-module-6092",
+    "geometry": "dc694ee3bb7c8822f3e04eafee39a1395c87fa2cec67994c99c8b026c8ee190a"
+  },
+  {
+    "id": "adafruit-module-5770",
+    "geometry": "08e02d3bad2e6ea72806406b56919059dabf73d1713d323baaa08373de61c7a5"
+  },
+  {
+    "id": "adafruit-module-1381",
+    "geometry": "10fc74c61ac5d373d4fb27b55a5d5a4664d75d03d6b27e8b9cbacd74d972bbc4"
+  },
+  {
+    "id": "adafruit-module-5768",
+    "geometry": "99cb50c95768a957e40522135bf08e4f53b6433845efdc0b76d2f77dd2522249"
+  },
+  {
+    "id": "adafruit-module-1893",
+    "geometry": "d36fd76298c940f201f1d68c2fc741b3569846692aece8ba8ecf145219d3010e"
+  },
+  {
+    "id": "adafruit-module-4026",
+    "geometry": "64b06eb19ec52cca7fa0b8998029e62c7051c6d1c5655407fdbef57d2b52953d"
+  },
+  {
+    "id": "adafruit-module-4636",
+    "geometry": "8cf3cd28ba25e387b22ab55fecf9cce95622023b4d772726b1ec6d91d127d8d6"
+  },
+  {
+    "id": "adafruit-module-4681",
+    "geometry": "6e70c12b4a3e9709e42bee42806e0b375051e9e4eec59e45b348aaccad7c6345"
+  },
+  {
+    "id": "adafruit-module-4821",
+    "geometry": "4f02a5cd226da9f221f03e4ebc5d85b63eff470f71c8de1edbb00c09ebe6f62e"
+  },
+  {
+    "id": "adafruit-module-4831",
+    "geometry": "879e69984046826cb8676d391da5e6e6d8462858f5666c82d83e9eb24bb41ddc"
+  },
+  {
+    "id": "adafruit-module-6357",
+    "geometry": "0fad71f286dc6462bfa896218c1935a443d94ae5bc668603c37791e24d1b2aad"
+  },
+  {
+    "id": "adafruit-module-4369",
+    "geometry": "755c59094148726ccacab923de27d18b7f9141373a228cddf0cc3901c173665b"
+  },
+  {
+    "id": "adafruit-module-5832",
+    "geometry": "69e14203b7625e3fc38e5e7e654093c0d71d3ef976193f564324c990b0f4738f"
+  },
+  {
+    "id": "adafruit-module-4698",
+    "geometry": "d9a0e1b19136a1d934b49dd85fbed41eaf44a80e7797bc1672e6dae2ed32c4b5"
+  },
+  {
+    "id": "adafruit-module-1918",
+    "geometry": "670e0df3b875ac17c9c52abd7e8af1e2ab4a07a156611cd4011b1b4ed34e05b5"
+  },
+  {
+    "id": "adafruit-module-2748",
+    "geometry": "26880866ff6c0404736bf867333f565feee3cf83badbf6528d9bc6c864d2b355"
+  },
+  {
+    "id": "adafruit-module-3199",
+    "geometry": "ff0dafe2ce2824ba96d98ce1e6cfab108a2fa36d869ee065e5d8aa3135a03230"
+  },
+  {
+    "id": "adafruit-module-992",
+    "geometry": "ed6ff724180b8733ef39b613dd46e4024bb98832393df138e527b6e34c615822"
+  },
+  {
+    "id": "adafruit-module-4686",
+    "geometry": "0fcb079eba2272a26a82c109475cf543746f7c3944301f7e981fd8c2c4aeaa5b"
+  },
+  {
+    "id": "adafruit-module-1164",
+    "geometry": "21bd5a204d5146f61e572142b1e12c66afbf6c39d8aa479ead1fe1af42dc58fa"
+  },
+  {
+    "id": "adafruit-module-5022",
+    "geometry": "08e0df7fbe88c768c6313c7476c90284fca43d67dd329fa5bbd7c63d4b3e9035"
+  },
+  {
+    "id": "adafruit-module-2019",
+    "geometry": "8b490d4bcee8d79a1b0f22cb6643386e4bca0a25087e0b6686abdd1ac55eca8a"
+  },
+  {
+    "id": "adafruit-module-6362",
+    "geometry": "b8e1c6004a065e3be60e7735de56c304bb4c76b7f98b70e783c13f5cf3848b38"
+  },
+  {
+    "id": "adafruit-module-1032",
+    "geometry": "4e7b4600133ca994cc1c4889844ced2361189b72144da876b72b1aa2d3291f00"
+  },
+  {
+    "id": "adafruit-module-5913",
+    "geometry": "2b545213149f6a0559410f9266936caf1038f1b3d6ca89242f9f184e45ed2e9a"
+  },
+  {
+    "id": "adafruit-module-1727",
+    "geometry": "b25d160e4aa23735db6c8436b629f56ebc8b256573fb120f37aa55e5abaa454f"
+  },
+  {
+    "id": "adafruit-module-4716",
+    "geometry": "935b66e60da04ce4a7a8b21c165fe673aae205b913d694aadd455aa849ee1460"
+  },
+  {
+    "id": "adafruit-module-4366",
+    "geometry": "2ab086310f906e08f99f4dea0c1726b1a0da0507255cba7d28fddc8f2781d99c"
+  },
+  {
+    "id": "adafruit-module-5579",
+    "geometry": "08ac9cb79be399ddf6ccbdb0fec5542ac107eca905e23e26012f928ae8430f52"
+  },
+  {
+    "id": "adafruit-module-6455",
+    "geometry": "36001526b77e292242b61b5c5a05731f9b7e05da7ed7aa93906daf0dfcbafecb"
+  },
+  {
+    "id": "adafruit-module-4829",
+    "geometry": "36001526b77e292242b61b5c5a05731f9b7e05da7ed7aa93906daf0dfcbafecb"
+  },
+  {
+    "id": "adafruit-module-6388",
+    "geometry": "d7fd7c491cb1e59aac5eb166b554b37d6fabedce02c454a85be77ac29b535376"
+  },
+  {
+    "id": "adafruit-module-3967",
+    "geometry": "7b2b83ec8c5877b223b18961aa2403a95e27d0bf65d27df92eb3cabc30bf9d10"
+  },
+  {
+    "id": "adafruit-module-5309",
+    "geometry": "533af3e26e12719d1939d3dc43eeecfc0a88cca8b5077aa494bea9e04b4ed9be"
+  },
+  {
+    "id": "adafruit-module-4867",
+    "geometry": "09f7a57f713f8b4ca7f44ff63d3d29e36a7e2c4eca3882f0011919d75fa1c1ad"
+  },
+  {
+    "id": "adafruit-module-6064",
+    "geometry": "73a4dbf079f89c5624bad7253486a158594dd85b32e31cc3813e91acceb9c7ef"
+  },
+  {
+    "id": "adafruit-module-5396",
+    "geometry": "7b2b83ec8c5877b223b18961aa2403a95e27d0bf65d27df92eb3cabc30bf9d10"
+  },
+  {
+    "id": "adafruit-module-5425",
+    "geometry": "7b2b83ec8c5877b223b18961aa2403a95e27d0bf65d27df92eb3cabc30bf9d10"
+  },
+  {
+    "id": "adafruit-module-4161",
+    "geometry": "533af3e26e12719d1939d3dc43eeecfc0a88cca8b5077aa494bea9e04b4ed9be"
+  },
+  {
+    "id": "adafruit-module-4832",
+    "geometry": "70bc8dd97d2579ec7f45a9b3876c7bcd021e25442bc2b943a99d4a22757a510c"
+  },
+  {
+    "id": "adafruit-module-6482",
+    "geometry": "4f02a5cd226da9f221f03e4ebc5d85b63eff470f71c8de1edbb00c09ebe6f62e"
+  },
+  {
+    "id": "adafruit-module-6067",
+    "geometry": "73a4dbf079f89c5624bad7253486a158594dd85b32e31cc3813e91acceb9c7ef"
+  },
+  {
+    "id": "adafruit-module-6498",
+    "geometry": "73a4dbf079f89c5624bad7253486a158594dd85b32e31cc3813e91acceb9c7ef"
+  },
+  {
+    "id": "adafruit-module-6491",
+    "geometry": "73a4dbf079f89c5624bad7253486a158594dd85b32e31cc3813e91acceb9c7ef"
+  },
+  {
+    "id": "adafruit-module-6479",
+    "geometry": "6755df670e4a446c6d303cfc7d425393457eb6f932b7100eb8ce9b7b12889d9e"
+  },
+  {
+    "id": "adafruit-module-6403",
+    "geometry": "4f02a5cd226da9f221f03e4ebc5d85b63eff470f71c8de1edbb00c09ebe6f62e"
+  },
+  {
+    "id": "adafruit-module-6461",
+    "geometry": "73a4dbf079f89c5624bad7253486a158594dd85b32e31cc3813e91acceb9c7ef"
+  },
+  {
+    "id": "adafruit-module-6426",
+    "geometry": "4f02a5cd226da9f221f03e4ebc5d85b63eff470f71c8de1edbb00c09ebe6f62e"
+  },
+  {
+    "id": "adafruit-module-6478",
+    "geometry": "4f02a5cd226da9f221f03e4ebc5d85b63eff470f71c8de1edbb00c09ebe6f62e"
+  },
+  {
+    "id": "adafruit-module-4488",
+    "geometry": "48ff7d9f9b1e30f62d851495f6389e2e4a379a88d55473a08e0e1bb65cecaff6"
+  },
+  {
+    "id": "adafruit-module-5810",
+    "geometry": "139146e1282a39a2a28d18c405197acddbf47878a2d042f726bface92fcea6db"
+  },
+  {
+    "id": "adafruit-module-6420",
+    "geometry": "e76963afffa5fbfb2d687e3cffa695738344cec34d50d0816440eccc65373687"
+  },
+  {
+    "id": "adafruit-module-4741",
+    "geometry": "82b7af3bdfb7a113249ccc56286f655d6a24d05a2f6bee96e1b6f01aeafb9e3e"
+  },
+  {
+    "id": "adafruit-module-5606",
+    "geometry": "808c51368a974802bc4db53168e5ce508f840ec0579568cbd42809fb50ec17cb"
+  },
+  {
+    "id": "adafruit-module-6431",
+    "geometry": "808c51368a974802bc4db53168e5ce508f840ec0579568cbd42809fb50ec17cb"
+  },
+  {
+    "id": "adafruit-module-6501",
+    "geometry": "85c6a5bf625e8e7e4e542d6bdc3a6443c85a940522c3f728db266a8da0ebac70"
+  },
+  {
+    "id": "adafruit-module-4712",
+    "geometry": "231b504d6435dad507c535e18d9d53c9f161cfe1fbdc3bf7fe04fecff402fe06"
+  },
+  {
+    "id": "adafruit-module-4808",
+    "geometry": "085ec0557fac1f27af5274a2a31c0ca5bfa5cf9058084431aa1d19f0d51d7743"
+  },
+  {
+    "id": "adafruit-module-4413",
+    "geometry": "8be54224a123cd9cca4ea6e90d2e448bb725afc5d30ffb034c47cd374331b44c"
+  },
+  {
+    "id": "adafruit-module-5543",
+    "geometry": "08c5e66c07ad8dbca5c64152c4003ad0a3ac9d45dd7c7511b9152fb8bf9ca110"
+  },
+  {
+    "id": "adafruit-module-5165",
+    "geometry": "d751a28d45b7609b128bedb0183ba6fb6698f9a951a85f9fd1d3d5d981c0b9c7"
+  },
+  {
+    "id": "adafruit-module-6340",
+    "geometry": "69e14203b7625e3fc38e5e7e654093c0d71d3ef976193f564324c990b0f4738f"
+  },
+  {
+    "id": "adafruit-module-3779",
+    "geometry": "05173efee9f2766fd83ad2f84bd591b1bc0e2184a084e5e7e62e779c2115fd91"
+  },
+  {
+    "id": "adafruit-module-4626",
+    "geometry": "9cbc30bbb6d5a8edfa322d687b1135c0fb3bbe59c1ec82dce35f54e86a1d181d"
+  },
+  {
+    "id": "adafruit-module-4438",
+    "geometry": "40e047bf7c61d0220a72d37e0a97a5c3be5f091a0e51da563059106556a952e8"
+  },
+  {
+    "id": "adafruit-module-4503",
+    "geometry": "40e047bf7c61d0220a72d37e0a97a5c3be5f091a0e51da563059106556a952e8"
+  },
+  {
+    "id": "adafruit-module-1602",
+    "geometry": "1615ac9de8d87f000934942a05520ac3d25d5fdad42521a39449c6162771f062"
+  },
+  {
+    "id": "adafruit-module-6062",
+    "geometry": "07cf17eac01edcbe62cd1364caa67129f070224ac1c0de75f834fc7d49246304"
+  },
+  {
+    "id": "adafruit-module-5974",
+    "geometry": "7b1df902b62e628a4258c17b3089c33aa29ebb4a0ed9dba0332d9f6c8c190811"
+  },
+  {
+    "id": "adafruit-module-6477",
+    "geometry": "73a4dbf079f89c5624bad7253486a158594dd85b32e31cc3813e91acceb9c7ef"
+  },
+  {
+    "id": "adafruit-module-3251",
+    "geometry": "eddbbafb284cda657fff6b6ced822e10ccf2d0f711b171335d4d007fc4e7ef41"
+  },
+  {
+    "id": "adafruit-module-3709",
+    "geometry": "36001526b77e292242b61b5c5a05731f9b7e05da7ed7aa93906daf0dfcbafecb"
+  },
+  {
+    "id": "adafruit-module-5190",
+    "geometry": "c70bb4c857f426c739fd107406f35b210e1e9d625943487d22d08663db918c6b"
+  },
+  {
+    "id": "adafruit-module-1899",
+    "geometry": "eddbbafb284cda657fff6b6ced822e10ccf2d0f711b171335d4d007fc4e7ef41"
+  },
+  {
+    "id": "adafruit-module-5591",
+    "geometry": "d7fd7c491cb1e59aac5eb166b554b37d6fabedce02c454a85be77ac29b535376"
+  },
+  {
+    "id": "adafruit-module-1980",
+    "geometry": "879e69984046826cb8676d391da5e6e6d8462858f5666c82d83e9eb24bb41ddc"
+  },
+  {
+    "id": "adafruit-module-3317",
+    "geometry": "fb797298982505ca7badac4a89d48b852949e8815945d6777d77effb020de8a4"
+  },
+  {
+    "id": "adafruit-module-5027",
+    "geometry": "4f02a5cd226da9f221f03e4ebc5d85b63eff470f71c8de1edbb00c09ebe6f62e"
+  },
+  {
+    "id": "adafruit-module-3595",
+    "geometry": "533af3e26e12719d1939d3dc43eeecfc0a88cca8b5077aa494bea9e04b4ed9be"
+  },
+  {
+    "id": "adafruit-module-6489",
+    "geometry": "2d6aadd92b968829da5d4c58e42acda70bfa154aea684d62b14d186cd82db19d"
+  },
+  {
+    "id": "adafruit-module-3660",
+    "geometry": "e76963afffa5fbfb2d687e3cffa695738344cec34d50d0816440eccc65373687"
+  },
+  {
+    "id": "adafruit-module-2472",
+    "geometry": "ddf20a28a1b00ac5b3fc71b204dd9592a86b2b0a634f6278b62f2672ba86b174"
+  },
+  {
+    "id": "adafruit-module-4097",
+    "geometry": "9d3a0b38bde9030bb24471453a757ea316b1f3ec91b6b5c0edabd42c02b63855"
+  },
+  {
+    "id": "adafruit-module-4022",
+    "geometry": "695443bb4c85354ce94bde9c86a82f6dc2b7aa7622db4024cdc5c9b5ab15b861"
+  },
+  {
+    "id": "dfrobot-gravity-rgb-button-dfr0991",
+    "geometry": "de1968912ba2b2d6a3ab9ac7b68f79564259524cae8a4143dae75380a250d663"
+  },
+  {
+    "id": "dfrobot-gravity-gp8403-dfr0971",
+    "geometry": "d09b0e368133426c31c7b1bbe9ad925239b7688bd022a26a36dde9ef6085e905"
+  },
+  {
+    "id": "dfrobot-gravity-gp8302-dfr0972",
+    "geometry": "49c5fbe8e5b3422aefb01cd0c50702acd0de85d3df298a6112a4828f99e665e5"
+  },
+  {
+    "id": "dfrobot-gravity-gp8512-dfr1035",
+    "geometry": "06f5827206d501aab5358a8bdb6c6374d9b866cd863492ffb442d2b8097dfab8"
+  },
+  {
+    "id": "dfrobot-gravity-gp8101s-dfr1036",
+    "geometry": "42fff1307a475c7e0ed2117ec68976a7d2ff3b49c3f91587f8588200102db0e1"
+  },
+  {
+    "id": "dfrobot-gravity-gp8501-dfr1037",
+    "geometry": "9ff26115357ba510ea8b59566fc25653dee36a14f81a861f17d35dc8f51ca393"
+  },
+  {
+    "id": "dfrobot-gravity-gp8211s-dfr1071",
+    "geometry": "71be0ff223591d79320e1ba6b1f47e532604adf0b111887bfde66ff84bdf88a9"
+  },
+  {
+    "id": "dfrobot-gravity-ads1115-0-10v-dfr1184",
+    "geometry": "96b10cff2968fdb024e60e111f65fcc2540ea9f95b6db36ad03e817aaad4c256"
+  },
+  {
+    "id": "dfrobot-gravity-gp8600-dfr1229",
+    "geometry": "46f6e8f121d9adfe6693cb1c26ebdfeaa6ad6b50af60a96a365499f33a8c84d5"
+  },
+  {
+    "id": "dfrobot-gravity-gp8630n-dfr1230",
+    "geometry": "fd4be3d221d27219bdbfe57c3da72d7f3cf57df615febfcbb7e8ca1c1f29939c"
+  },
+  {
+    "id": "dfrobot-max98357a-dfr0954",
+    "geometry": "f02d354109ca3f80c6523921448a5ff1798d61e43474843d66f636097e29c8c5"
+  },
+  {
+    "id": "dfrobot-fermion-sht31-f-sen0332",
+    "geometry": "ba90595cacadb27a10f8848b135cbcec20b709650f7ce077cad6c7a0bbbcc0fe"
+  },
+  {
+    "id": "dfrobot-fermion-lwlp5000-sen0343",
+    "geometry": "920d165e2ac5ee07132605c9c59a71ef362f36ebd54cf647e94ffeb564cb8a97"
+  },
+  {
+    "id": "dfrobot-fermion-as7341-sen0365",
+    "geometry": "efcb235f144ca4946a6038ffe6a84b2cd4861cf8ca307e6e9f75c81f745239e6"
+  },
+  {
+    "id": "dfrobot-fermion-vl53l3cx-sen0378",
+    "geometry": "4a86eaef7184d89b8dd622366a9e6c4e4a8594ee4f128551ff8f62c1f8422ab3"
+  },
+  {
+    "id": "dfrobot-fermion-sgp40-sen0392",
+    "geometry": "c687101c6130d428f2e29b989637ed78b827055e5bdd702222033072d6bbb491"
+  },
+  {
+    "id": "dfrobot-fermion-tcs3430-sen0403",
+    "geometry": "82eee1ff68ec261ddb42a112918a3796b8d089370573268ea59b05eb440a68af"
+  },
+  {
+    "id": "dfrobot-fermion-lis2dw12-sen0405",
+    "geometry": "89373a638f3cc84639f80021d7481432c029d2716a9b4a7bdb2dc360e12419da"
+  },
+  {
+    "id": "dfrobot-fermion-h3lis200dl-sen0408",
+    "geometry": "89373a638f3cc84639f80021d7481432c029d2716a9b4a7bdb2dc360e12419da"
+  },
+  {
+    "id": "dfrobot-fermion-vl6180x-sen0427",
+    "geometry": "d62e32fb7af992ed1cfbdc7bde7ae6f255f9668296731b87b63a76f2a51dc186"
+  },
+  {
+    "id": "dfrobot-fermion-tmf8801-sen0430",
+    "geometry": "0e4d7774f5eacb315641d7b8913b30b6728fac4eff1312d02f88f6a472e5d51e"
+  },
+  {
+    "id": "dfrobot-fermion-sts35-sen0434",
+    "geometry": "463ff280f1ba8c37e5cf310e9e52e7f29a74a4fcd82583b720b4165742818b8a"
+  },
+  {
+    "id": "dfrobot-fermion-mcp9808-sen0435",
+    "geometry": "f5c958f35986c8cf317c88ac64f38cb05efbbcf44f6fc75a49049d47867dc7b9"
+  },
+  {
+    "id": "dfrobot-fermion-mics5524-sen0440",
+    "geometry": "3ab571678c02e89a767264a02ff5e4b33131236fa66ad6f6f4dd485550ab96d9"
+  },
+  {
+    "id": "dfrobot-fermion-mics2714-sen0441",
+    "geometry": "a05ad822960286ea5f42fa096a03281498e9fae3ec6473dc1ff299a9b2131a7f"
+  },
+  {
+    "id": "dfrobot-fermion-s15ot421-sen0487",
+    "geometry": "fb045a143f15d216596b225624c3d87030cf348f7584f21686abe6f58fbfe8b8"
+  },
+  {
+    "id": "dfrobot-fermion-bmm350-sen0622",
+    "geometry": "4dabead9c1d82e0bc1903ed38c5f1e70cff9ed46cf8d1b8e44a33f0cefbd781f"
+  },
+  {
+    "id": "dfrobot-fermion-hcho-sen0563",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-co-sen0564",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-ch4-sen0565",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-voc-sen0566",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-nh3-sen0567",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-h2s-sen0568",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-ethanol-sen0569",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-smoke-sen0570",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-odor-sen0571",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-h2-sen0572",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-fermion-no2-sen0574",
+    "geometry": "29011978c53af8cc207b574f9ea061dd14b341d787b187132936dd7a761df58f"
+  },
+  {
+    "id": "dfrobot-icp10111-sen0516",
+    "geometry": "a8926ab5585acbf0aae0455e47339a7aad0cc8f19adb28f9df166516120fae1b"
+  },
+  {
+    "id": "dfrobot-gravity-6dof-sen0692",
+    "geometry": "de60b7226443339ee4478efb1210d005e60213837563919ea4441e6f82b605ff"
+  },
+  {
+    "id": "dfrobot-gravity-9dof-sen0694",
+    "geometry": "5b22126e5add3d300bc35c5dd228273fab102de03668e81fb166089587bc5905"
+  },
+  {
+    "id": "dfrobot-gravity-10dof-sen0696",
+    "geometry": "ee6d2751054c5d2bc26bed9952dd4231f2b687f4ace3e94826d7f756bb593ba8"
+  },
+  {
+    "id": "dfrobot-fermion-9dof-sen0695",
+    "geometry": "9043f98ac1934493ebcb748c80ae93c8c6baec3f80e9752f28abac2da6f9fce8"
+  },
+  {
+    "id": "dfrobot-fermion-10dof-sen0697",
+    "geometry": "7c2d37b229a1d8156776d174d3168128b1f078a0b6171e6bbb54d27390983f16"
+  },
+  {
+    "id": "dfrobot-bmv080-sen0663",
+    "geometry": "801ee0eb6f3aa47cad857b86f4911a76b1ebe86eaf0f17fc2284b4c6f05679ab"
+  },
+  {
+    "id": "dfrobot-transparent-relay-dfr0989",
+    "geometry": "b0a3e682557d82074143fafca22ba0c188640c5add05675126aab89e9ff42eab"
+  },
+  {
+    "id": "dfrobot-magnetic-latching-relay-dfr0996",
+    "geometry": "de0730cdc07d55c75c84dd713e186e05370dd73a0b084332d4cb351b958f5807"
+  },
+  {
+    "id": "dfrobot-uv-index-240-370-sen0636",
+    "geometry": "e36748f6a54172d6994daa7d92cb8e06a27e2a86557341228853de0e5eb65d16"
+  },
+  {
+    "id": "dfrobot-fermion-bmm150-sen0419",
+    "geometry": "98987005b5ce43045c1f6cbfb524e6b44afd19545d1ea493a27e0ab3db6fb425"
+  },
+  {
+    "id": "dfrobot-fermion-gr10-30-sen0543",
+    "geometry": "b5f4e990672009a7d634c29f1cea20ebe22f5efae65946fa7495657e4ac02138"
+  },
+  {
+    "id": "dfrobot-txs0108e-dfr0844",
+    "geometry": "90082734815d493bd5b243c7434d4c827ee2412be1e9a1c863a1baa17909cfc7"
+  },
+  {
+    "id": "dfrobot-ltc4316-dfr1185",
+    "geometry": "162616cbc0d6e7d492822774bc87858abc547fbaa7cd22033ce4a3f9cb76e02a"
+  },
+  {
+    "id": "dfrobot-ec11-sen0235",
+    "geometry": "2230f1e6c2a16872e47fb0b03525aa23e2db3ca8d294a062624f0b3888da9939"
+  },
+  {
+    "id": "dfrobot-max30102-v2-sen0344",
+    "geometry": "6efdd5a55f45ee0c49bdb9953d75a29991c601b949fe74e81bce5f936a130c60"
+  },
+  {
+    "id": "dfrobot-bno055-sen0374",
+    "geometry": "d7ddaa88dd0a7eeb83f93413784310684681edc46c5777513192ade008ae83ee"
+  },
+  {
+    "id": "dfrobot-mcp4725-dfr0552",
+    "geometry": "88a4c5f13463535e34006d6cfa36d562e6dd9005f016cb5e9c1089e4cf372f60"
+  },
+  {
+    "id": "dfrobot-adum1250-isolator-dfr0565",
+    "geometry": "bdb509f348313ffc353342b3dbaec56753ef80e22bfa043c85bc966fa66fcd48"
+  },
+  {
+    "id": "dfrobot-isolated-rs485-uart-dfr0845",
+    "geometry": "d4e7b9b71e39b997cdc3e6e3576a190fb81eaaf2c47e1d3e99b16c77f71fb879"
+  },
+  {
+    "id": "dfrobot-in100-beacon-tel0168",
+    "geometry": "15b19e49c7a97bc8488980c5d2dd93ebacfb65996fdec3f3bb401ec25eaec2c3"
+  },
+  {
+    "id": "dfrobot-bmp280-sen0372",
+    "geometry": "29b8bfcb9d0bd26cae08961ec3c210a91f37ff8d007ec96cadd10617a1a503d9"
+  },
+  {
+    "id": "dfrobot-ens160-sen0515",
+    "geometry": "68afddc3d0b2f53b0c87d3cdadb747a8afc38bbb62dbdf0666a19ce86a8ccb27"
+  },
+  {
+    "id": "dfrobot-aht20-fermion-sen0527",
+    "geometry": "68fc6f073d4d436a3945ff36566722827bcc25eaba9d38516f8e0ebcc92443f1"
+  },
+  {
+    "id": "dfrobot-aht20-gravity-sen0528",
+    "geometry": "824fb74307d02cecfbbd9bffdb25f80365b46ce946f53c83922f8c52e932088c"
+  },
+  {
+    "id": "dfrobot-ltr390-sen0540",
+    "geometry": "e0488d830dc454b855d33236e17473cdb6464c0785b7a1b069b8ae7d214c1024"
+  },
+  {
+    "id": "dfrobot-bmp585-gravity-sen0664",
+    "geometry": "5f9f190de598e779e47902c7d1b3ffa88c9726e6b1d7c006b0bbc20a1077b25f"
+  },
+  {
+    "id": "dfrobot-bmp581-gravity-sen0665",
+    "geometry": "2f6250e868504777d98c08692e4c630522aa8fcc4c3510b0e7a92105846e0f46"
+  },
+  {
+    "id": "dfrobot-bmp585-fermion-sen0666",
+    "geometry": "5b8d690bc113ac87812d61f65280efff4e3a667a644d9c7f12333c0ab73509de"
+  },
+  {
+    "id": "dfrobot-bmp581-fermion-sen0667",
+    "geometry": "5b8d690bc113ac87812d61f65280efff4e3a667a644d9c7f12333c0ab73509de"
+  },
+  {
+    "id": "dfrobot-bmi323-fermion-sen0693",
+    "geometry": "678fbdc2aa793e41d2508805d8adbb0d5a2337d964fe41a54c87b65ad108b9f5"
+  },
+  {
+    "id": "mikroe-mikroe-2758-16x12",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-5917-2x2rgb",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4771-8800retro",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-5903-alphanumg2",
+    "geometry": "14b2b0b63cb9b66ff77c241bcc91543cc73bed8811dbf735dc5e9f012ed91c60"
+  },
+  {
+    "id": "mikroe-mikroe-3204-capslider2",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-6645-capslider3",
+    "geometry": "f3fc4e379bef7d9cef1f1b6458c97f8cfa1076c8fa2f2a483b8849e5b929f710"
+  },
+  {
+    "id": "mikroe-mikroe-2888-captouch",
+    "geometry": "6c864a8dfd4102bd943c6d1f6f0062fe766fd0951044d8bcea3548dc617cb984"
+  },
+  {
+    "id": "mikroe-mikroe-2964-captouch2",
+    "geometry": "f3fc4e379bef7d9cef1f1b6458c97f8cfa1076c8fa2f2a483b8849e5b929f710"
+  },
+  {
+    "id": "mikroe-mikroe-3786-captouch5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3677-capwheel2",
+    "geometry": "f3fc4e379bef7d9cef1f1b6458c97f8cfa1076c8fa2f2a483b8849e5b929f710"
+  },
+  {
+    "id": "mikroe-mikroe-2950-leddriver3",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5634-ledring2",
+    "geometry": "c55016d57ababc49622e3f71451bae7a8a98476e09720463e63a63a4abd07830"
+  },
+  {
+    "id": "mikroe-mikroe-4469-proxfusion3",
+    "geometry": "f3fc4e379bef7d9cef1f1b6458c97f8cfa1076c8fa2f2a483b8849e5b929f710"
+  },
+  {
+    "id": "mikroe-mikroe-2891-touchkey3",
+    "geometry": "8ad9f1d67e5689b8d0ff3f338fdd1732a6e1f2958596f17d42a1db573c2372a8"
+  },
+  {
+    "id": "mikroe-mikroe-1995-touchpad",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4382-touchpad3",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-4752-touchpad4",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-5912-uts7segb2",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-2840-uts7segr",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-6078-ipsdisplay2",
+    "geometry": "dc76cbe59392fd4b1e18c889cd3a5886973af5b6b061da0229a65879e85d3403"
+  },
+  {
+    "id": "mikroe-mikroe-6542-ipsdisplay3",
+    "geometry": "d77dd11bb24da707d64a66f9c6ef12f7ac21a87bcd29ff01ff035d1ae9dc9776"
+  },
+  {
+    "id": "mikroe-mikroe-3789-lcdmono",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-6793-oledw2",
+    "geometry": "14ffdb6829df335f2b7b185bb93b673cf28059d965033fdd3db00270f767a379"
+  },
+  {
+    "id": "mikroe-mikroe-2920-proxfusion",
+    "geometry": "e2e03f75699283c832d371378f31aef6e593f0e57a7930b60f635df08abfd3f9"
+  },
+  {
+    "id": "mikroe-mikroe-4782-bargraph4",
+    "geometry": "d1bc35cdf0b93a1c2b368bc5c46bd1b1cd8160c48ebb2d104605317802b936e6"
+  },
+  {
+    "id": "mikroe-mikroe-4727-digipot9",
+    "geometry": "d2b34c44116acf1931195093c2bd1f62f2410ffdb2fdf2b5703a7e471789f0fd"
+  },
+  {
+    "id": "mikroe-mikroe-5204-ldctouch",
+    "geometry": "d1bc35cdf0b93a1c2b368bc5c46bd1b1cd8160c48ebb2d104605317802b936e6"
+  },
+  {
+    "id": "mikroe-mikroe-4996-leddriver14",
+    "geometry": "50f5dcfe8d881ec051e01ef464f5b0f2fae426072d5a3cbec5c2bdb83ecaba9f"
+  },
+  {
+    "id": "mikroe-mikroe-1650-oledb",
+    "geometry": "f75b03f8888d8b7364082378cca5343dcf4def495363128d9d74cef192651317"
+  },
+  {
+    "id": "mikroe-mikroe-1307-8x8b",
+    "geometry": "e90f99897fc0cca01c083c5033ad3e41be301e509fbdaf2eaf3e3432a697fae3"
+  },
+  {
+    "id": "mikroe-mikroe-1864-alphanumr",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-1423-bargraph",
+    "geometry": "6b30185228995b92746661b807b9a951490067d99b68335439ce29627f04a06e"
+  },
+  {
+    "id": "mikroe-mikroe-1881-4x4rgb",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-3045-ibutton",
+    "geometry": "0734f0a1b47976d98e30c42169d5d569eef766ec9190df340d0dd4017d906f4d"
+  },
+  {
+    "id": "mikroe-mikroe-1506-joystick",
+    "geometry": "16b3aac78c9d047d6cba29c84b6e6c28f366f5037332e9d7448b16d9853312b8"
+  },
+  {
+    "id": "mikroe-mikroe-5378-joystick3",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5583-leddriver15",
+    "geometry": "065debbe67292ef9fef61feb0004e418b21f9a3029c47680ce11c1d8112a25a0"
+  },
+  {
+    "id": "mikroe-mikroe-1585-oledc",
+    "geometry": "77263a8fa5bbc7a249134ec76bc1b3b7002a77d31cb7116a6ffd745ff3ff3eff"
+  },
+  {
+    "id": "mikroe-mikroe-5517-captouch6",
+    "geometry": "f3fc4e379bef7d9cef1f1b6458c97f8cfa1076c8fa2f2a483b8849e5b929f710"
+  },
+  {
+    "id": "mikroe-mikroe-6926-hodcap2",
+    "geometry": "2dfa782229ff5098005d92e207818ed908a251321073fb74963e3b253ee46f07"
+  },
+  {
+    "id": "mikroe-mikroe-4757-leddriver11",
+    "geometry": "7620d43e98e1e1cccd9b456d2a7584c46401b0b4ea1f79907aeb7b2e084bb56f"
+  },
+  {
+    "id": "mikroe-mikroe-5565-leddriver17",
+    "geometry": "c3d601e29935527ae44d4d6466567f3296405a5eef4074ea7d426cce2735d76a"
+  },
+  {
+    "id": "mikroe-mikroe-2807-leddriver2",
+    "geometry": "dd0f329007ed7e4a4443511167127af30b176752587c21e25ea29f4d32ff47bb"
+  },
+  {
+    "id": "mikroe-mikroe-3037-leddriver4",
+    "geometry": "8aecff6bf69273a7d6f26dbe4d79956fd35fa0a63fe59e63f5d994437418abb1"
+  },
+  {
+    "id": "mikroe-mikroe-3743-i2ctospi",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-2924-miwi",
+    "geometry": "0b632083d7e8969a88cdbf9d87ac06e8a873237e6adceb7e02811625457f872a"
+  },
+  {
+    "id": "mikroe-mikroe-2925-miwi2",
+    "geometry": "0b632083d7e8969a88cdbf9d87ac06e8a873237e6adceb7e02811625457f872a"
+  },
+  {
+    "id": "mikroe-mikroe-2903-ooktx",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-2545-rn4678",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4199-uwb",
+    "geometry": "3606bd66ed63a44f3ed85c8d64e425ba6132b2cc5797321b43b173a22fe97f73"
+  },
+  {
+    "id": "mikroe-mikroe-2583-spiisolator",
+    "geometry": "c630f4523aa06d3559fa5b078013775050f4768d62afea9af2f7e15ed6388565"
+  },
+  {
+    "id": "mikroe-mikroe-4166-isoadc2",
+    "geometry": "0cd6d8d971395f02fcff90bceee5d246f0c48f0cc521ce3b8783a062907ec0b5"
+  },
+  {
+    "id": "mikroe-mikroe-3993-rs4856",
+    "geometry": "c43a5f097897a60c9df33fa566a593ef6b5a1ca5f66b2e11eca85444d2320e73"
+  },
+  {
+    "id": "mikroe-mikroe-4675-i2cisolator4",
+    "geometry": "95a05821e9e1b15832a8b54573482320456c24272a6a4c7c43aec8bf8d8575a5"
+  },
+  {
+    "id": "mikroe-mikroe-5603-i2cisolator6",
+    "geometry": "21bccf67fa10b5f32697160c79b1f87253a1a400abee9848a55be9742bd16be0"
+  },
+  {
+    "id": "mikroe-mikroe-5943-i2cisolator7",
+    "geometry": "87121a30b2d6e3a730ff4dfb99b4c769492c366dd4f3963746ccd7dc5430614b"
+  },
+  {
+    "id": "mikroe-mikroe-4331-iso9141",
+    "geometry": "ce1cd693af5e5d1221ed7a8f0cace9de67afd54b078b2989e91f03b514eccf99"
+  },
+  {
+    "id": "mikroe-mikroe-3395-rs4854",
+    "geometry": "416574d4e872136619cb92fc6739dfcb1ab14d5559407df45483af6b620bc8c5"
+  },
+  {
+    "id": "mikroe-mikroe-4225-singlewirecan",
+    "geometry": "9d6c00be8cac05c947e7b11911bca3318abc71e0a26bf68d00ccc0ca10177a1a"
+  },
+  {
+    "id": "mikroe-mikroe-3870-duallin",
+    "geometry": "adb5141fbb7c6b1b4b4a549ac614eb4ca5a72e21eae4cb03123a8e1f426dcaaa"
+  },
+  {
+    "id": "mikroe-mikroe-3298-llcspi",
+    "geometry": "6b762fa6b72b4a6621404d36c94d57f3493c161da71f4f4c995e6a5cc3efb2a8"
+  },
+  {
+    "id": "mikroe-mikroe-6767-rs2324",
+    "geometry": "9383796336536e454a646e64432a73fd0bb96dbc48450e2205aa9882a87d61f1"
+  },
+  {
+    "id": "mikroe-mikroe-2821-rs4853",
+    "geometry": "104d7353769bf232a9fd721e4aa551faee537481b858278839edbf3a779dc7c3"
+  },
+  {
+    "id": "mikroe-mikroe-5659-rs4857",
+    "geometry": "9d96b8e9a365d7d9253962371101738c01e5444f1cb69237c037a3ba06a77775"
+  },
+  {
+    "id": "mikroe-mikroe-5752-rs4858",
+    "geometry": "cdb034cd1f5be2d87a383b1164bfab6594b5aeea83183016d15e28b61b926ce6"
+  },
+  {
+    "id": "mikroe-mikroe-6316-rs485isolator4",
+    "geometry": "9f2bfab1724e2e5ead5f5b3e2d5f5294969a7ff22dfd24366739f2818d0253a5"
+  },
+  {
+    "id": "mikroe-mikroe-1200-eeprom",
+    "geometry": "24a3fce30c4e7d3b62196dfc88f640170d759491a4a0e56b44cd5fa1c874c4e4"
+  },
+  {
+    "id": "mikroe-mikroe-5889-eeprom11",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5885-eeprom13",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2536-eeprom4",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4422-eeprom5",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4421-eeprom7",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5681-eeprom9",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2729-eeram5v",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3104-excelonlp",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5740-flash11",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6036-flash12",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2374-flash3",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-3780-flash5",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4440-flash7",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-2768-fram2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5119-fram5",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2914-mram",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-5838-mram4",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4423-nvsram2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5915-rng2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4028-semperflash2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2828-sqiflash",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4178-sram2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4293-sram3",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4835-sram4",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4521-swieeprom",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4416-watchdog",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-1909-eeprom2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-1989-eeprom3",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4698-excelonultra",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-4067-flash6",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-5191-mram3",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-1902-sram",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-5922-ledflash3",
+    "geometry": "585684f9a424b4aebb69f6f747dc5ae92dcd8bf37b6460c726779cf8184ee906"
+  },
+  {
+    "id": "mikroe-mikroe-2976-rtc7",
+    "geometry": "2693f6e10bd68475f986e291543760bfdb37baef5999a6dba7631cb63b69dfba"
+  },
+  {
+    "id": "mikroe-mikroe-5125-3dhall10",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3197-3dhall5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4330-6dofimu15",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5591-6dofimu18",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5606-6dofimu20",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6037-6dofimu21",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5999-6dofimu23",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6420-6dofimu24",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-3410-6dofimu4",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3447-6dofimu8",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3827-6dofimu9",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-1194-accel",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4112-accel10",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4855-accel17",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4949-accel19",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5336-accel24",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5602-accel25",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5671-accel29",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5550-accel30",
+    "geometry": "6de13e3a8eee9c3881776caad1911a206f088d00bb1fdcd19fced143a7f6f623"
+  },
+  {
+    "id": "mikroe-mikroe-3149-accel5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3075-accel6",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5524-airmotion",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4561-amrangle",
+    "geometry": "d37c3c2570dbd6516e933916eea957afda939bbe53a7667a5d4a2ae4a92e5872"
+  },
+  {
+    "id": "mikroe-mikroe-4981-amrangle2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4366-compass5",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5145-gyro7",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6017-hallswitch3",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6050-inclinometer3",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2086-irgesture",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-5146-irgesture2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5742-irgesture3",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5190-compass7",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-5932-linhall2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6027-magaccel",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3274-magneticlinear",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-3275-magneticrotary",
+    "geometry": "914bcddec3674d6f6143beb2ebc252c6cc55b91cd338542255a17a25e154d797"
+  },
+  {
+    "id": "mikroe-mikroe-4991-magneto12",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5643-magneto13",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3050-magneto5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4139-magneto6",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3657-magneto7",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4888-accel20",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-5773-microwave6",
+    "geometry": "77263a8fa5bbc7a249134ec76bc1b3b7002a77d31cb7116a6ffd745ff3ff3eff"
+  },
+  {
+    "id": "mikroe-mikroe-6470-mlvibrosens",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-1719-mpu9dof",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4498-3dhall8",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-4896-accel22",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-6056-optoencoder5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4559-piezoaccel",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-1998-reed",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4788-hallswitch2",
+    "geometry": "d1bc35cdf0b93a1c2b368bc5c46bd1b1cd8160c48ebb2d104605317802b936e6"
+  },
+  {
+    "id": "mikroe-mikroe-4753-inclinometer",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-4355-vibrasense2",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-4779-tilt3",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-5203-magneticrotary3",
+    "geometry": "3883d3cb69ce017b70fbfd384e22d6c7b0510e3a12ba7ea643465d184e53a7e0"
+  },
+  {
+    "id": "mikroe-mikroe-4049-motion3",
+    "geometry": "0edc58bc77eecb5c709144ef94aae57001e2e4dbf9ba923f7c9a74a04db899e5"
+  },
+  {
+    "id": "mikroe-mikroe-5207-smartsens2",
+    "geometry": "a328eec3cc20370b26148315807d2ce9dffb32d1efb87fd1f4718b1d1159752e"
+  },
+  {
+    "id": "mikroe-mikroe-6421-6dofimu25",
+    "geometry": "af394794eac98e0499c7b59921dfed24b8c687e1f76ed2c1b74a36023e57e474"
+  },
+  {
+    "id": "mikroe-mikroe-1905-accel2",
+    "geometry": "71adbedcbe700d88fd51fd76bba4e8a01eeed5e2f4904ef6d50e187c5dcbf568"
+  },
+  {
+    "id": "mikroe-mikroe-6464-hallcurrent20",
+    "geometry": "83cac721ca3a8ba51e89b53dea239f512b0b5bb3f7fc339ede40c47e59556834"
+  },
+  {
+    "id": "mikroe-mikroe-3443-hallcurrent6",
+    "geometry": "dfaa5269b5d2c06e54cd5111ab87d261e745e275abb067012391ebe0d42ccab6"
+  },
+  {
+    "id": "mikroe-mikroe-1648-linhall",
+    "geometry": "84049873ca5192cf2a4535cefd955b14936badaa7debf5e242657ddfe8b8b082"
+  },
+  {
+    "id": "mikroe-mikroe-1886-magneto",
+    "geometry": "cd11161f07339d2c43d7ff8e9e5e0aad4de9d2df334414e2bcbf90f4c4266d13"
+  },
+  {
+    "id": "mikroe-mikroe-5979-optoencoder4",
+    "geometry": "ddd0ab8790d5c828b19c491ecc72072099f18423308c4266256e80c44a2a807f"
+  },
+  {
+    "id": "mikroe-mikroe-5977-speedsense",
+    "geometry": "c881b5697fc918bd810d36b8e274efdc5e695963cb6bd0366c3ecad720bd80d6"
+  },
+  {
+    "id": "mikroe-mikroe-6369-smartdof4",
+    "geometry": "55b334baa5c567cb2b33f390570748e0c87d834df4762f4423e010bbc8880a1d"
+  },
+  {
+    "id": "mikroe-mikroe-2338-angle2",
+    "geometry": "7a172be72d5014bdad8a16017098f15cb761176f42ac8757057b5a76073ebb90"
+  },
+  {
+    "id": "mikroe-mikroe-5734-smartdof3",
+    "geometry": "62c372784bab7c94880378061152af2c06173ac2777d5ad3cced0c01a83ab043"
+  },
+  {
+    "id": "mikroe-mikroe-6255-ambient14",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4967-ambient15",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5245-ambient19",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-1903-ambient2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5469-ambient20",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5647-ambient22",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3199-ambient4",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3444-ambient6",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3601-ambient7",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-3452-ambient8",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4197-ambient9",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4777-ambient10",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-5421-color16",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5702-color17",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-1988-color2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4781-ambient12",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-6047-ireclipse2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3607-irsense3",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-5952-irsense4",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3686-ambient3",
+    "geometry": "831979906dcf7d38e2920b35305005616fb95559014b6e4f7d356ab42ff39459"
+  },
+  {
+    "id": "mikroe-mikroe-6105-light4",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4148-lightmixsens",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6465-lightranger12",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4592-lightranger5",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4492-lightranger8",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3689-proximity11",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4822-proximity15",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5286-proximity16",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5084-proximity17",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3330-proximity7",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3439-proximity8",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-2560-smoke",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-5167-spectrometer2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2989-uv4",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5535-uv5",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4943-ambient18",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3194-irgrid2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4165-spectrometer",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5237-lightranger9",
+    "geometry": "f75b03f8888d8b7364082378cca5343dcf4def495363128d9d74cef192651317"
+  },
+  {
+    "id": "mikroe-mikroe-4145-uvb",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-2871-irda3",
+    "geometry": "499044d0f9333adf6feb8a31d8963f613d08968023524d7c1479fe3836a39f39"
+  },
+  {
+    "id": "mikroe-mikroe-3048-proximity6",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4974-tfmini",
+    "geometry": "e666f0a6a167eddf2726e0653360f6526cff8c4fefb75622be463c39c54f49d7"
+  },
+  {
+    "id": "mikroe-mikroe-4177-uvclight",
+    "geometry": "ab0e83364fd0faac07cec42bfd24b582d84c3583c255f09dca8f3526c0bf52a6"
+  },
+  {
+    "id": "mikroe-mikroe-1939-irbeacon",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-4144-uvc",
+    "geometry": "f75b03f8888d8b7364082378cca5343dcf4def495363128d9d74cef192651317"
+  },
+  {
+    "id": "mikroe-mikroe-1377-ir",
+    "geometry": "96d0fdf6ab6151a25e91c283f91659a3db086f03094bd9ca84ab1f15c6f122ab"
+  },
+  {
+    "id": "mikroe-mikroe-1445-proximity",
+    "geometry": "5b6bbb137cddf72f5a8211710dd124fe0fcb78b4a375db61b6701b8918e7b12c"
+  },
+  {
+    "id": "mikroe-mikroe-3399-lighttemp",
+    "geometry": "d9ad966b7c04c02ee68f1864e67bb6a637fd0de099216a13317ed8439a0b44ee"
+  },
+  {
+    "id": "mikroe-mikroe-4575-powermux2",
+    "geometry": "2984426b5ae5e48e84e07ac9ef6fa7a33e66ffc50fad187ba7116e82b214a720"
+  },
+  {
+    "id": "mikroe-mikroe-3847-buck14",
+    "geometry": "b3427f53bef8ef252be27d5adc51b7b5b23d91dcbfbdf597cb5645b54e5c8d47"
+  },
+  {
+    "id": "mikroe-mikroe-4786-dcmotor18",
+    "geometry": "fcf53550be0f73587e0955cdff44931c125a0ddc4520cc4009702d6d5a0fc612"
+  },
+  {
+    "id": "mikroe-mikroe-4884-dcmotor20",
+    "geometry": "3e8169ce36de6d762dfe64026249c857f8836f745ae9bdb9bdb6349a8bb0adc0"
+  },
+  {
+    "id": "mikroe-mikroe-5189-dcmotor22",
+    "geometry": "e369326062822bb27aeb2d5713eba3703c4231130c2a580c61bb5907bc46d1d6"
+  },
+  {
+    "id": "mikroe-mikroe-4114-dcmotor6",
+    "geometry": "1a3821f28b87053e490f42a7a36dcd33aa6cfa02589b4f68aa30d150c839e5f3"
+  },
+  {
+    "id": "mikroe-mikroe-4810-powermonitor",
+    "geometry": "853218d26db4c5749f72c01cb0781e5aeb4f0bfd0b7a4af0dee1e3526ab6365e"
+  },
+  {
+    "id": "mikroe-mikroe-4821-hbridge9",
+    "geometry": "0a019ddfcf7af0aa686c516d788b03f15ed66428c0698757d2818079428111f4"
+  },
+  {
+    "id": "mikroe-mikroe-4696-hbridgedriver",
+    "geometry": "c0b6f72051de61b6a4fd188651a3d8abe07b098762c88a0ca32cf3faa6b5933d"
+  },
+  {
+    "id": "mikroe-mikroe-4356-vibromotor3",
+    "geometry": "a71a4cdc9f12d36cc49867f4d75b4cf5951423f5676825f955da9454ce6d46e9"
+  },
+  {
+    "id": "mikroe-mikroe-3812-amrcurrent",
+    "geometry": "ead6b25cb0797368207e57efda154d9b085b86cc26bc9713089795f4a8446aef"
+  },
+  {
+    "id": "mikroe-mikroe-2848-charger5",
+    "geometry": "201d52aa59f7aac60703cee428cc3dd2d60b88d503e70014e14ad89e0d50ad5b"
+  },
+  {
+    "id": "mikroe-mikroe-6068-cooler",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-6166-current11",
+    "geometry": "93fe8e29c0cc7c3b8a784780dde8934df2219b1f1585f6edb98ea80a2f9befc5"
+  },
+  {
+    "id": "mikroe-mikroe-4755-current4",
+    "geometry": "89b7a0e3664a477a7515ce35d6a6dd5fd81b9204becd4c0973b19e00447f070a"
+  },
+  {
+    "id": "mikroe-mikroe-4452-haptic2",
+    "geometry": "6b26cb09aa09c94f419a6c62a8d3da1090db03dab309b33b28a1ba230e5ea54c"
+  },
+  {
+    "id": "mikroe-mikroe-6045-haptic4",
+    "geometry": "2f220932ba2177f4595f255449ef6e92bddc367dcd04e1b627b633ff53ca9f7a"
+  },
+  {
+    "id": "mikroe-mikroe-6576-haptic5",
+    "geometry": "a87d9419ab29ece4c9ace37d613d4803577b4accf6f3ab25f6bb85dd6973ed6a"
+  },
+  {
+    "id": "mikroe-mikroe-4479-ups3",
+    "geometry": "5ce4c67cf9dd241bf30154842237d1ad4939ef2b16bdfd1b6a256e9103444af1"
+  },
+  {
+    "id": "mikroe-mikroe-3787-hbridge4",
+    "geometry": "dc882c10ae0b095b5a836df887ec2326bea197b5455c565822702a1288766ecd"
+  },
+  {
+    "id": "mikroe-mikroe-2780-boost",
+    "geometry": "aaba789e0cb602f7967a1f2bfaa75d52bf6af29bf38ead7d02773a9bb425de9a"
+  },
+  {
+    "id": "mikroe-mikroe-5478-brushless24",
+    "geometry": "66969e3a8e98786480fcf632615a7458257b24693ee4b6dc23a1fa3a1436b319"
+  },
+  {
+    "id": "mikroe-mikroe-1592-buck",
+    "geometry": "13c26fb4137375fa1c6c9365da89e3e4c727307f2f9e259702aac367975f3492"
+  },
+  {
+    "id": "mikroe-mikroe-2911-buck2",
+    "geometry": "abcc4f657eef12d2e40d651c226d1871d4fed44a493ab151517e4751d859da9e"
+  },
+  {
+    "id": "mikroe-mikroe-5446-buck22",
+    "geometry": "50ef56f7caee830379a4a6da5d65b9f002aca0e0d4bbaa120564f11f960b0807"
+  },
+  {
+    "id": "mikroe-mikroe-5536-buck23",
+    "geometry": "9c69025465309adce133fee85ff972a688846b55a4dec1d64291263d7ddd6b48"
+  },
+  {
+    "id": "mikroe-mikroe-2971-buck3",
+    "geometry": "4b6be7442aa9e7610e07021dc68b84527059f1671165c1fdacb5e30b065dea79"
+  },
+  {
+    "id": "mikroe-mikroe-2957-buck6",
+    "geometry": "adcd2bc7c6dee440a8906aa75c0b5c394f61d39536e400d16ad2181ed3798ef3"
+  },
+  {
+    "id": "mikroe-mikroe-3094-buck7",
+    "geometry": "db89a0cc9a25919694f409b5bce4690932e617c958f004dc9747a3487f7e7e7c"
+  },
+  {
+    "id": "mikroe-mikroe-2963-buckboost2",
+    "geometry": "220891437545496caf28ced1357e32f05d2ae1b0842abb0bbb497d3be1f16ff6"
+  },
+  {
+    "id": "mikroe-mikroe-3277-buckboost3",
+    "geometry": "68131dc5ad0d9cde4dfa1cd105ab34605cae674a7b07a3b5021952e5069983f8"
+  },
+  {
+    "id": "mikroe-mikroe-5924-buckboost4",
+    "geometry": "df3bd2853f8ad93ad846772f2c1dd4acd3d26cdebfe6df16e659d68a229bac84"
+  },
+  {
+    "id": "mikroe-mikroe-3650-charger11",
+    "geometry": "746a233d78cecb9096161a059307dd688f6d97450720b145809e79698083a652"
+  },
+  {
+    "id": "mikroe-mikroe-3744-charger12",
+    "geometry": "76de8130960ba8d64f2cfd811e97bc31cccd0f5d9d522b94a002982464815fd3"
+  },
+  {
+    "id": "mikroe-mikroe-5960-charger27",
+    "geometry": "8602ba10f2c54f84d6625767486b4e36393c94bea275139a7cba35ed4ad53af2"
+  },
+  {
+    "id": "mikroe-mikroe-4915-currentlimit6",
+    "geometry": "0fd67998ab9f3ff40654c0ae830131a305f52f2cf16382c93349cc01fc1a49b4"
+  },
+  {
+    "id": "mikroe-mikroe-3649-dcmotor11",
+    "geometry": "c589ffb9f6af61709021b7cafda997b2612d7fca2eb5473991d227688998a2ea"
+  },
+  {
+    "id": "mikroe-mikroe-5537-dcmotor24",
+    "geometry": "97a7e2a0d50572ccb001d718902fb33a57a6eedee61ebc3ecdb4d91fb111dd61"
+  },
+  {
+    "id": "mikroe-mikroe-2699-dcmotor5",
+    "geometry": "f4ddf8e0a9b55a027724fe09c553b3c60c3285405bcc69d0a055ec613d03cdce"
+  },
+  {
+    "id": "mikroe-mikroe-2893-dcmotor8",
+    "geometry": "abc739d0353b8b20d1bb8b8c45df2de3e0a2e44180c1ba826b7f9b0c80950c89"
+  },
+  {
+    "id": "mikroe-mikroe-4335-efuse2",
+    "geometry": "592c9de40aabf67ad3851dfb6380cedecc42563c7ffad766cbc0e0473cab4e8e"
+  },
+  {
+    "id": "mikroe-mikroe-5738-efuse7",
+    "geometry": "111e1428040237e4676cf36f6f3dfd253b29fab2dca5c853c249769c03f9dd67"
+  },
+  {
+    "id": "mikroe-mikroe-2004-fan",
+    "geometry": "7464b38006cd45c32164216febc831241fe1dbd9a8324c1e8c85ecb8fda3d6d8"
+  },
+  {
+    "id": "mikroe-mikroe-2841-fan3",
+    "geometry": "98e8f0418e43f57b62fce86a74d6032ac71a18f59a4c73e3af0c8209a0e2c906"
+  },
+  {
+    "id": "mikroe-mikroe-3613-hbridge3",
+    "geometry": "38ce8ce53b5b54e84a065c2c1a57fa236c5cd0e8e45d25bda8ef17c507a744c5"
+  },
+  {
+    "id": "mikroe-mikroe-4143-hbridge7",
+    "geometry": "01f1094e2032a44576e99b88321f25c813b9e2d4bd9a1e52c431b7e2e2098da3"
+  },
+  {
+    "id": "mikroe-mikroe-4775-hbridge8",
+    "geometry": "20ee0504a97416b84d201e63501d044cf75bb0352c39e388b028300036ae098d"
+  },
+  {
+    "id": "mikroe-mikroe-6314-ipd2",
+    "geometry": "69a84d0e08eccac55566557d9800982820374a344ec8dec2beb3879f8193f0e4"
+  },
+  {
+    "id": "mikroe-mikroe-2887-mic33153",
+    "geometry": "418ba437bb5714e49ee5f13b5477821bbef7f095c2679d22cbba1646f7f67f49"
+  },
+  {
+    "id": "mikroe-mikroe-3035-nanopower",
+    "geometry": "9abc71e31a578141b9cca523e067d6e8acd406aa6adfd3aa2d265f522e64abbe"
+  },
+  {
+    "id": "mikroe-mikroe-3844-singlecell",
+    "geometry": "4cdc932964654eb3ae70bc8d96f1e91a505fa058e0b55c736d3435a904aea4fb"
+  },
+  {
+    "id": "mikroe-mikroe-5741-smartbuck3",
+    "geometry": "1d180b40397c04a3fd2c62400b39b01a82590e26c32ab67b46e8530079a339d3"
+  },
+  {
+    "id": "mikroe-mikroe-6126-stepdown12",
+    "geometry": "a05e205e300bba254964d3b19bdeba2b0304a3b582250f76ac7f6d8e3e121dc3"
+  },
+  {
+    "id": "mikroe-mikroe-6846-stepdown13",
+    "geometry": "bc1d229ab2a5bd11e52b09c073b952ad36165997fa943384cf1a884e0550099d"
+  },
+  {
+    "id": "mikroe-mikroe-5572-stepdown5",
+    "geometry": "1acb8634cd29219d408610b0c55b23a57846c4c2b795104e3bed77a81be08b59"
+  },
+  {
+    "id": "mikroe-mikroe-5754-stepdown7",
+    "geometry": "4d50ff36c568c592c46a1fae5c5b5f3cd8fd2921760dac433fddaba2f533c3fc"
+  },
+  {
+    "id": "mikroe-mikroe-5844-stepdown9",
+    "geometry": "5c7ab416ba57a91e5cca098161573e3f79210fe861aebf637eaea3e31d887326"
+  },
+  {
+    "id": "mikroe-mikroe-6076-stepup2",
+    "geometry": "5c1ad6e10d1e4b75dfe9d686f9cf9b48588a6767bd7bdfd933dd01cf18f892d3"
+  },
+  {
+    "id": "mikroe-mikroe-3713-vibromotor2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3036-nanopower2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4353-vctmonitor",
+    "geometry": "0387d76b1b9f499a64be2ac436b8e7f19b9459e7b17864386d22e48fe384bbb8"
+  },
+  {
+    "id": "mikroe-mikroe-6065-current12",
+    "geometry": "9dcf1cca717659dc46c31fc67b9f066ab52ae724456c0c6ae765d0de6149507b"
+  },
+  {
+    "id": "mikroe-mikroe-4271-currentlimit",
+    "geometry": "80b846379420c293683ecc7613c1123e599b89dfc6e9707b6e9c17009b2bf543"
+  },
+  {
+    "id": "mikroe-mikroe-5938-currentlimit10",
+    "geometry": "3077c3270e6c08a4f774fa52f48a0cad30e7533d57bec0d33bcd8d68c2b42f28"
+  },
+  {
+    "id": "mikroe-mikroe-5900-currentlimit4",
+    "geometry": "434f878b400481909197ebffd345e73e176451a7e57fc2d09236c69a39bd3d30"
+  },
+  {
+    "id": "mikroe-mikroe-5737-accel28",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6022-light2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6063-airquality11",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3990-ambient11",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5724-color12",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2467-environment",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4827-gyro6",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6418-airquality12",
+    "geometry": "b65e0edae6f6c34ff5bd5f323b58ff1f2fd1b632384f4e045c064df3b9f30ea6"
+  },
+  {
+    "id": "mikroe-mikroe-4142-pressure10",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3056-airquality5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4904-airquality8",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5060-airquality9",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3030-altitude2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4875-altitude5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4903-altitude6",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5601-barometer10",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4978-barometer6",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4913-barometer7",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2818-dht222",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4894-diffpress2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5771-diffpress3",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-5868-diffpress4",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-6527-diffpress5",
+    "geometry": "41ff1484b4d2ecefc4147165bddd52db3add058bff70bfee2a583c04cd265e38"
+  },
+  {
+    "id": "mikroe-mikroe-4558-environment2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-2554-fever",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4305-force5",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-6490-heartrate13",
+    "geometry": "13e3510306f95c4762a700ad758f6a558287d065ff99086306c024547d780ee1"
+  },
+  {
+    "id": "mikroe-mikroe-2036-heartrate3",
+    "geometry": "cf35e92cd3059d79120f068469e93b71e311f36df8497936d6ba68c3ad2855bb"
+  },
+  {
+    "id": "mikroe-mikroe-2998-heartrate7",
+    "geometry": "36a2f054b346f71837a00dbd9e75b785782d3f4fec386ff76c63d67465fafa21"
+  },
+  {
+    "id": "mikroe-mikroe-3218-heartrate8",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4131-hydroprobe",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-6135-irthermo4",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3098-no2",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-3700-no22",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4986-oximeter5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4348-pht",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3466-pressure12",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4424-pressure14",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4747-pressure15",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4765-pressure16",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4944-pressure17",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3020-pressure4",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3216-pressure6",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3246-pressure7",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-2101-sht",
+    "geometry": "44106e5e9602d0769e9b347b98931a8c2064a205d30a4cbca061e073b0584f54"
+  },
+  {
+    "id": "mikroe-mikroe-3436-temphum12",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3635-temphum13",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4306-temphum14",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4733-temphum16",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4892-temphum18",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4922-temphum19",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-3085-temphum2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4907-temphum20",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5310-temphum22",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5301-temphum23",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2886-templog",
+    "geometry": "7e463a40bf2a5dfd0e69589cd8762109b428cb0a9ba9a8d2d2861db08ba16daa"
+  },
+  {
+    "id": "mikroe-mikroe-3004-templog2",
+    "geometry": "6a3cfe7a0343b44ef7ec8a70b4868f0ac2a0a033e76b64aaa0a5adce5a4bd437"
+  },
+  {
+    "id": "mikroe-mikroe-3442-templog5",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3688-thermo13",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3662-thermo16",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-4829-thermo18",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4316-thermo20",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4879-thermo21",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5068-thermo22",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-5335-thermo25",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-1885-thermo3",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-2979-thermo7",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3097-alcohol2",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-6985-mcurrentsens",
+    "geometry": "04e08096d043db59ea358f0c73f2f7eec199212bbadaba6888c66a027a83273d"
+  },
+  {
+    "id": "mikroe-mikroe-4997-adc19",
+    "geometry": "c29bd2fa10704e021ea8e4ce2875230e7091869e5730429e595b3a3f7f5d4336"
+  },
+  {
+    "id": "mikroe-mikroe-4105-adc9",
+    "geometry": "bda81d2224b4960e713ef7d6cc35336b8000f6f10bf65282b19d8e250dc29ee2"
+  },
+  {
+    "id": "mikroe-mikroe-4111-analogmux",
+    "geometry": "3c664713828d21452dee9f3b7b5f5dbe141f00627a54c7f49db9fb454e679972"
+  },
+  {
+    "id": "mikroe-mikroe-4767-dac11",
+    "geometry": "bd62b5f95ba3581cac9c5a7b48e3919392b7502a957da20a2ee6bfff23c37272"
+  },
+  {
+    "id": "mikroe-mikroe-4724-heartrate10",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-4783-ldc2",
+    "geometry": "1872ed421114566c5db18110f02e0d253758a2400ce833f8c7fa0d8e216ac82c"
+  },
+  {
+    "id": "mikroe-mikroe-3877-oneshot",
+    "geometry": "ed84c8c653e093b9afef158fe45e436ab5897cc40dfec4b67ff3c4409010616e"
+  },
+  {
+    "id": "mikroe-mikroe-4476-opto5",
+    "geometry": "5fe7b75fe11356208544aa14a74946eae4a5b00d338be1fbf08e4ba2fe22648a"
+  },
+  {
+    "id": "mikroe-mikroe-4654-ozone3",
+    "geometry": "d1bc35cdf0b93a1c2b368bc5c46bd1b1cd8160c48ebb2d104605317802b936e6"
+  },
+  {
+    "id": "mikroe-mikroe-2516-pollution",
+    "geometry": "5a43428d423d9b0db5a351d6e1a03e96d0ba648039d2951ce4a13d9e41391ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4702-temphum17",
+    "geometry": "379c7df1804d58ecc85db9a818de805d8c9afae5c188de887340b096254c7dfb"
+  },
+  {
+    "id": "mikroe-mikroe-4951-terminal2",
+    "geometry": "55cb9e1fc87ea10113ec77b14e72d7f7fd93d6c0c414c3648bf3bba58f0d161e"
+  },
+  {
+    "id": "mikroe-mikroe-4763-vcpmonitor4",
+    "geometry": "bda27090e9380d09500b8877a2a8d99e9e18ce6a3a30a4d5810f397a5a70d048"
+  },
+  {
+    "id": "mikroe-mikroe-3115-adc7",
+    "geometry": "257f3c9e9f30a6790e274804ec3e14640fd4a92ed129d487b88b0e8e49b3c90f"
+  },
+  {
+    "id": "mikroe-mikroe-1489-altitude",
+    "geometry": "71adbedcbe700d88fd51fd76bba4e8a01eeed5e2f4904ef6d50e187c5dcbf568"
+  },
+  {
+    "id": "mikroe-mikroe-4221-antopwm2",
+    "geometry": "12ed5b021e857c4140520455861153a741d7a61c31399b8ce7243d8123b50495"
+  },
+  {
+    "id": "mikroe-mikroe-1362-irthermo5v",
+    "geometry": "7cfc28e7bd89c652b3a8410b9b71be398fe2b2c9ca348e0b7d23b89754b42d5a"
+  },
+  {
+    "id": "mikroe-mikroe-6574-solenoiddriver",
+    "geometry": "df57b11238394234b36ebdc135b8ed594e5a0a6d8bf33d95fd9a3d947598e9ba"
+  },
+  {
+    "id": "mikroe-mikroe-1880-pressure2",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-4036-radiation",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-6064-solidswitch8",
+    "geometry": "ead160139fdf43565389d5fbc64e406c80618cd0d7daa93ea42b6e07b98cc6f9"
+  },
+  {
+    "id": "mikroe-mikroe-4205-surfacetemp",
+    "geometry": "04bf97ae6da1c86d1e2b0cae69a9c08fd32f8f0ef32db55ea4f2bbe5157a9486"
+  },
+  {
+    "id": "mikroe-mikroe-4266-surfacetemp2",
+    "geometry": "04bf97ae6da1c86d1e2b0cae69a9c08fd32f8f0ef32db55ea4f2bbe5157a9486"
+  },
+  {
+    "id": "mikroe-mikroe-1840-thermo2",
+    "geometry": "91b2393f5193a29afa125307ad6265a9fbc366826f2810e39c5e6fba8871671b"
+  },
+  {
+    "id": "mikroe-mikroe-5466-thermo28",
+    "geometry": "16ce7ba4298b3123a942f5eb446963a278e6f247f8a86eb3d1ba3270eaef5ea7"
+  },
+  {
+    "id": "mikroe-mikroe-1444-thunder",
+    "geometry": "cf73e9c17700b0e23cb9449a5c9f7a64bf3db9e7920a22e641a8a4cc30a20917"
+  },
+  {
+    "id": "mikroe-mikroe-1819-uniqueid",
+    "geometry": "6de13e3a8eee9c3881776caad1911a206f088d00bb1fdcd19fced143a7f6f623"
+  },
+  {
+    "id": "mikroe-mikroe-4966-adc17",
+    "geometry": "31a55a86c61fad67b55a428d31c40b3b0b07eb5bdb7bb4ba21ad5346c2a9d583"
+  },
+  {
+    "id": "mikroe-mikroe-1893-adc2",
+    "geometry": "14dd0bb2401bcb13bf680f094a4a6d874ec5baf6bdcf809a3f42edc0c9bc19bd"
+  },
+  {
+    "id": "mikroe-mikroe-2720-buzz2",
+    "geometry": "a5577da05d438c9fd4cceec21b41c2ed9796d44392dfdb0c1e4f0bcd1a76c512"
+  },
+  {
+    "id": "mikroe-mikroe-4732-dac10",
+    "geometry": "4636568831811c8680dfe69960362ce04d8ff7fccd2d7f8b82e203f4c85233a7"
+  },
+  {
+    "id": "mikroe-mikroe-1918-dac2",
+    "geometry": "8fc65dee13281e5f212542f5cf850c77fcb32ca94413d84d11c5056321a6961a"
+  },
+  {
+    "id": "mikroe-mikroe-4458-loadcell4",
+    "geometry": "e755634c2f2a030b0b766d1f3e232aa5aab5595154f5fb826bea374e8f8e5d3e"
+  },
+  {
+    "id": "mikroe-mikroe-2767-ozone2",
+    "geometry": "9ddbef657410dd91a2eae992ea0579c8cc5c0bd6c70f874271c0344444cf5589"
+  },
+  {
+    "id": "mikroe-mikroe-5821-rmstodc2",
+    "geometry": "ead1a2644b5536255c3f7c28009d86fb414cf18229041474ac16e2e86a94c482"
+  },
+  {
+    "id": "mikroe-mikroe-2815-rtd",
+    "geometry": "70029de64ce2c642c5744db576cb41c4f817b2a5608cb051d1816264921b6dc8"
+  },
+  {
+    "id": "mikroe-mikroe-4301-tempprobe",
+    "geometry": "1bac6afe935df74bf089373b2547a3b26800b89ec8c2bb2177ae904533662bb9"
+  },
+  {
+    "id": "mikroe-mikroe-2571-thermo5",
+    "geometry": "1e3b23c4cbac4e4f3b73bd6e9db1b845cffd3b5991568f145c5fdd923995a17d"
+  },
+  {
+    "id": "mikroe-mikroe-5820-waterdetect2",
+    "geometry": "6ade3b0d79475e78ef300573eba135e23f4d47241f1809fb2e1df1e2714a483a"
+  },
+  {
+    "id": "mikroe-mikroe-2529-airquality2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-3445-mic2",
+    "geometry": "22d45d97b854b74a268f1b8a4c4e94e94d0849ae1a51f50e23d53ff397d31aaa"
+  },
+  {
+    "id": "mikroe-mikroe-4222-vcpmonitor3",
+    "geometry": "741ef7ece7425a3bb9f0eab70ad916151f32c05fb0877f3c3ed04d87e1ea47ee"
+  },
+  {
+    "id": "mikroe-mikroe-6101-vcpmonitor6",
+    "geometry": "c8e02e4b76e73b7f74747afb7e93e798b2e03feb14e9d271b08c86a71c283e71"
+  },
+  {
+    "id": "mikroe-mikroe-3394-adc8",
+    "geometry": "c0a0607584f1750c35b7cd7390105ca749a4e9d57b7cf82bf201481b7fb71711"
+  },
+  {
+    "id": "mikroe-mikroe-5525-dac14",
+    "geometry": "28881dbf7b6b5210bbd9f65b2050eb7b0774ccd940bd3c27be9b85c32761e6c7"
+  },
+  {
+    "id": "mikroe-mikroe-3886-dac7",
+    "geometry": "62b7415aca8e9169fd33b98c9c60b605667ae83685083965dea72631fcfe5a56"
+  },
+  {
+    "id": "mikroe-mikroe-3168-loadcell",
+    "geometry": "b9e7f8a11264422cb28b11cc729784c1e087a8225bfac87878c1c87643b352bd"
+  },
+  {
+    "id": "mikroe-mikroe-4658-loadcell3",
+    "geometry": "41cd4a709b4223019c52ff6cc93f17f60001244190eba61d32afcfb35d73ed5b"
+  },
+  {
+    "id": "seeed-module-104020130",
+    "geometry": "bfc2534f86f28fc06ecda79480d2131833d5c16a425ca799667ee317fea89654"
+  },
+  {
+    "id": "seeed-module-104020132",
+    "geometry": "b5c43a25382644bd51e4c4fd81e7ac1935ecea254ff43268ae0aa9211c069700"
+  },
+  {
+    "id": "seeed-module-107020129",
+    "geometry": "ca92aa468c59b699a9e99ef0d33db845ff5cccec9423838a0a06291da7a4c4ca"
+  },
+  {
+    "id": "seeed-module-104020248",
+    "geometry": "96311355aea2eb2f72907e08a734235b76d5192328f9d5945e81a7474432f59c"
+  },
+  {
+    "id": "seeed-module-104020133",
+    "geometry": "9dd63d85f76e1e9c782f059057c3fec9296bdf89d29f6a7ddc45a446f5ab681f"
+  },
+  {
+    "id": "seeed-module-104020208",
+    "geometry": "d5aa8ba4c7942ed58b4dd31561aa4e32a05c98a6fea43456a7b1d13a3b77b784"
+  },
+  {
+    "id": "seeed-module-107020007",
+    "geometry": "934f8a2a30259ef44b4eb0af004228b43d9e66f5b6a802d2bf28a8544b1a1d5e"
+  },
+  {
+    "id": "seeed-module-113020006",
+    "geometry": "8c715a677c962be535348c30c490741530f9b1847b6dff114fb4715a1e3d19f6"
+  },
+  {
+    "id": "seeed-module-103020013",
+    "geometry": "58a0bf9c3ee7dc2d048c88ebf69952e9bb62f2c27e6e329b1e074e430affefce"
+  },
+  {
+    "id": "seeed-module-103020193",
+    "geometry": "5416161de9eedac7d1b221606c686eca29c1ef22504c5368ee46ce4a2154caa1"
+  },
+  {
+    "id": "seeed-module-103020293",
+    "geometry": "9e01c60f6305753ccd0e40f103eba05b406b60f8829d925740e1c93e64e26e98"
+  },
+  {
+    "id": "seeed-module-109020041",
+    "geometry": "270218161ca355b60d006c67af2fc607174dbaa2ce12678d7bf9c612ac46ce6f"
+  },
+  {
+    "id": "seeed-module-101020636",
+    "geometry": "34521e942bd5369c4a8ac29a0861c5b7fe8debbad16bff92ac353d83cb879328"
+  },
+  {
+    "id": "seeed-module-111020048",
+    "geometry": "19c4317d31bd8ca09b557dfb1aa16435df644dfaa75bdbbacb501c820b75829e"
+  },
+  {
+    "id": "seeed-module-113020007",
+    "geometry": "2f90011e42533174d678fcdf7211cbe0cc799f916a613e9cb1e6e5d3aec5fd58"
+  },
+  {
+    "id": "seeed-module-103020002",
+    "geometry": "1794e5dde7895886b86e5b344737affbcff441bef1ce087d912cc5370d1de78c"
+  },
+  {
+    "id": "seeed-module-108020103",
+    "geometry": "a557bf3ac2b1aab9d4d3774a5a697e385099e34cccebb184d64469bf5c47302b"
+  },
+  {
+    "id": "seeed-module-105020001",
+    "geometry": "2aeb205fb3162a1484d8d06bc0ec72257a09e056de7dfd488c40cced211b773b"
+  },
+  {
+    "id": "seeed-module-108020102",
+    "geometry": "45d582b09c97cdde4455585f7d6fa03648de97438ead5f823fdc8a5f0e7d7912"
+  },
+  {
+    "id": "seeed-module-101020852",
+    "geometry": "447724b04e4c7918fe1da402f6478a88ccc0c8a700b1c5499863d625a24a33a8"
+  },
+  {
+    "id": "seeed-module-101991067",
+    "geometry": "f794349bd3610b54d7468d90ffec970aa09ccb7e2fa35bcf189ef34eba75e917"
+  },
+  {
+    "id": "seeed-module-105020074",
+    "geometry": "167010ec4cc882030e8afa1bea89c9b2034b1b26d870ec59646a9b08885fa14b"
+  },
+  {
+    "id": "seeed-module-101020615",
+    "geometry": "ff7749abab721f00674ba779dbcfd7883c88cc72147f4e4c0827e6af4a15fe63"
+  },
+  {
+    "id": "seeed-module-110020248",
+    "geometry": "da9688213aa6b13d0df1d5746d13450cd662b86b00a45cd4e671730213cfca8e"
+  },
+  {
+    "id": "seeed-module-110020291",
+    "geometry": "f4898379cfab96858816e420f6ca139d8fd0abec05e48091697e221e41991480"
+  },
+  {
+    "id": "seeed-module-101020058",
+    "geometry": "02a62bfab332853c5697570b63a26c1da38f415a604f74c829bd910308f5884a"
+  },
+  {
+    "id": "seeed-module-101020753",
+    "geometry": "122cca317a2b1b7514ae59371e383b2543384821a1a4cbdd35e59243b92ed8e1"
+  },
+  {
+    "id": "seeed-module-110020370",
+    "geometry": "8bf3dd72e9e66a1ab4a9579b89fe07facd613ddb4db09c01597583fa7b08bf5c"
+  },
+  {
+    "id": "seeed-module-103020024",
+    "geometry": "91872afe80eb27a2e18e66f0215e9d8d442cb3168c2d801e019381baaf60ee08"
+  },
+  {
+    "id": "seeed-module-101020512",
+    "geometry": "c670a5b226cc0389210cffba495270098dfa02510d42b94853a2b4c400611382"
+  },
+  {
+    "id": "seeed-module-101020635",
+    "geometry": "fd86713e7062f98644f964a3e399c8e6818b3f9a48f574acc4d0eaba78e4b490"
+  },
+  {
+    "id": "seeed-module-101020592",
+    "geometry": "34917d992b2fddfd790e06f39cd6dc9ae20af2278b1010764b44e42b7e01a844"
+  },
+  {
+    "id": "seeed-module-101020587",
+    "geometry": "6bd337c3bdcdd2f8ef6fd4dd10d34b9187898714152990f69cec7f8d421834b5"
+  },
+  {
+    "id": "seeed-module-101020584",
+    "geometry": "3befe68ead4441dc689b1898573351d4bb5398aead06351eadfd4b19096eeb55"
+  },
+  {
+    "id": "seeed-module-101020583",
+    "geometry": "3878e127287c713acbdc435dedf4ff3299d42d929d4d385840b2bf91b4938509"
+  },
+  {
+    "id": "seeed-grove-latching-relay-103020010",
+    "geometry": "2a5904222e9dc1357d1bbe86bf0188bdad2a4b079f70bdd187412b06cab390ec"
+  },
+  {
+    "id": "seeed-grove-pcf85063-rtc-102020083",
+    "geometry": "3bc2d01a4c11843bffeaf931b30d4c6717789b234f8ec4b8a25986778c485714"
+  },
+  {
+    "id": "seeed-grove-ds1307-rtc-101020013",
+    "geometry": "3a40b2fd0f0a069b6b4627186dcb66f5d46085c4e984a8f97f27a2096d09710d"
+  },
+  {
+    "id": "seeed-grove-mosfet-103020008",
+    "geometry": "113a4ca4f0c644e5161da3e157aaf427a8929e3c80de549a97ce60d7777761e7"
+  },
+  {
+    "id": "seeed-grove-encoder-111020001",
+    "geometry": "db55c275ab9e809c201b2e1ab3d9af820afb7a434935c4bcd4fd356128a08602"
+  },
+  {
+    "id": "seeed-grove-dual-button-111020103",
+    "geometry": "9655bc1f3db8a48fcfd4a111b430567dc98290c6c0f006581032df57e7f0cb95"
+  },
+  {
+    "id": "seeed-grove-mech-keycap-111020049",
+    "geometry": "028a1bb4896698ef8e957c0a8726d89f1d87b3599f55e444d7a87ec0ceae037f"
+  },
+  {
+    "id": "seeed-grove-passive-buzzer-107020109",
+    "geometry": "491de3172551636b9870703802a4650f3617aa70f2103a1cbcbde7091622aee1"
+  },
+  {
+    "id": "seeed-grove-relay-103020005",
+    "geometry": "754d8f82fe308ff49d1e155d9dfb30847ea440a9d6a0224f5da2b708134bbec2"
+  },
+  {
+    "id": "seeed-grove-m281-relay-101020603",
+    "geometry": "f473ed15e86ce6d464e491272d7ca496c68dc144cca41b3b94301c85d70dee64"
+  },
+  {
+    "id": "seeed-grove-spdt-relay-2ch-103020132",
+    "geometry": "952f432076bbe73f5da0829708ac62bafc1a8b9df2760c7f571b6a4b83e15b9d"
+  },
+  {
+    "id": "seeed-grove-spdt-relay-4ch-103020133",
+    "geometry": "5d6a14060df10f156f3ad27c9e61f28aefcb9f227f72e176aa22f07803e32e72"
+  },
+  {
+    "id": "seeed-grove-ssr-4ch-103020135",
+    "geometry": "dc83d559e938cb20154c564a88a576b921f185567176c25338ef40731917e13f"
+  },
+  {
+    "id": "seeed-grove-ssr-8ch-103020136",
+    "geometry": "8ca5b09d3623d4bf511871f6707445b926c8f6b8140ae0f8cccd84b5b2dda576"
+  },
+  {
+    "id": "seeed-grove-infrared-emitter-101020026",
+    "geometry": "a85de85002cd72a48f550c3b5e98f748560c0dc9565ab38e2ea55db3054dd3c4"
+  },
+  {
+    "id": "seeed-grove-speaker-107020001",
+    "geometry": "b97f85b1750f51586142a220a93276505be3989c4b4998dff37a98b697bc2044"
+  },
+  {
+    "id": "seeed-grove-speaker-plus-101020853",
+    "geometry": "64bebbb96c8278c6c7b68ccff83c263999a6b60efc030848e45edacc8ffa3353"
+  },
+  {
+    "id": "seeed-grove-piezo-vibration-101020031",
+    "geometry": "7276a01062d8aea108d8cdb24c1939ba5796b0681951eea461f561217fdb2c77"
+  },
+  {
+    "id": "seeed-grove-collision-101020005",
+    "geometry": "a1b2d14450017e403145551688447b9119e1a95648cc3ddea188bd6a142c5585"
+  },
+  {
+    "id": "seeed-grove-air-quality-101020078",
+    "geometry": "71a8c42ac32e7952f5e7c42c102da269fa692ebd7a2269d68dbfa79e9808ee7a"
+  },
+  {
+    "id": "seeed-grove-mq2-101020055",
+    "geometry": "7ebc073e08c6515ea4575b4db20f4acfb4cc1b294e97a1ee9f7c4dc33c602ef5"
+  },
+  {
+    "id": "seeed-grove-mq5-101020056",
+    "geometry": "7ebc073e08c6515ea4575b4db20f4acfb4cc1b294e97a1ee9f7c4dc33c602ef5"
+  },
+  {
+    "id": "seeed-grove-high-temperature-111020002",
+    "geometry": "c4bb8850e2c4a4578dbbcfac95210bc0a7fd333baaa7705ca15fa7ddd18ce66d"
+  },
+  {
+    "id": "seeed-grove-max31850k-101020555",
+    "geometry": "dc0661898a4f13a3225e05a489399f4b0a4ad3a6834c3d29f1d0e758401e2fc0"
+  },
+  {
+    "id": "seeed-grove-bme280-101020193",
+    "geometry": "eb5d16c3ab2e834e78b078b4da9d016b3a5019489f04d9cf01fddc97e9e9d420"
+  },
+  {
+    "id": "seeed-grove-bme680-101020513",
+    "geometry": "b221eef5e9f390534e80ab564926b6ccc708e67c939587c5ed4083a235ead621"
+  },
+  {
+    "id": "seeed-grove-bmp280-101020192",
+    "geometry": "eb5d16c3ab2e834e78b078b4da9d016b3a5019489f04d9cf01fddc97e9e9d420"
+  },
+  {
+    "id": "seeed-grove-digital-ir-temperature-101020077",
+    "geometry": "05838f79b3916b0810d4401a91a410b547ae7b64bf989e07bf79c3e3043b9e40"
+  },
+  {
+    "id": "seeed-grove-hp206c-101020068",
+    "geometry": "333b9db42f916148867f51e0c86e8ebcd73e3468725e9c38e41a48839ba729dc"
+  },
+  {
+    "id": "seeed-grove-scd30-101020634",
+    "geometry": "ee60c0cf1922045761a289cd1b9b2ab72ec558c8952264bcde2c3adc8e0d1ab1"
+  },
+  {
+    "id": "seeed-grove-scd41-101020952",
+    "geometry": "634c48754c11ec62f6d9297fade5aac444136e8422e3dbbf213298efea488f2e"
+  },
+  {
+    "id": "seeed-grove-fsr402-101020553",
+    "geometry": "db4341a371de43b57cf1df02f7f06ee767368b1739384ad5aa76d9ab31664532"
+  },
+  {
+    "id": "seeed-grove-vl53l0x-101020532",
+    "geometry": "9d9012a84a528090d635101d53ca258f8c87227aaf7137a32c97920ed0601931"
+  },
+  {
+    "id": "seeed-grove-as5600-101020692",
+    "geometry": "e196780dccc608d138d9429c8aa6dc194f57bf076ab01836306597360a35fddf"
+  },
+  {
+    "id": "seeed-grove-digital-pir-101020793",
+    "geometry": "e4a6bcb16e3590a9323534e4e15110dc3f74bce7bd3bd72b52adfdc39a4a424c"
+  },
+  {
+    "id": "seeed-grove-amg8833-101020557",
+    "geometry": "7e42a671fee2ac660260bd6156266b55b5097fa9dcd2ea2e29425eac4f79f075"
+  },
+  {
+    "id": "seeed-grove-compass-v2-101020492",
+    "geometry": "8db86ae8102bd686ed2608ea3dc22a76bd0845d4956fc0e1cc07d51f63823eed"
+  },
+  {
+    "id": "seeed-grove-adxl335-101020051",
+    "geometry": "b928152d76cdaa75fb6df8de7142bad38d5969ea166bafd6a86127662e13204a"
+  },
+  {
+    "id": "seeed-grove-d7s-101021096",
+    "geometry": "3a48e60b9f9635e71dcca2cc699613d1f0f0596d6cebbcba817671ed3be2a89a"
+  },
+  {
+    "id": "seeed-grove-gesture-paj7620-101020083",
+    "geometry": "249379c311b557c2bf2094988159b09b54b2fd04b4cad5736a83c17e380f2c2f"
+  },
+  {
+    "id": "seeed-grove-gsr-101020052",
+    "geometry": "a7f167c06bc53b3ccff2107884db9b612b0fbf3c48c05aeaa575bb79c7fd89c1"
+  },
+  {
+    "id": "seeed-grove-aht20-101990644",
+    "geometry": "ae5604da05c1bb49df22ca80c438210269fadce108ed7951bfb8c5cc868961ef"
+  },
+  {
+    "id": "seeed-grove-digital-light-101020030",
+    "geometry": "5ca750bed763b499bb3189d030d69f909a59d74a0213cb2b6a1ca7c0a0190083"
+  },
+  {
+    "id": "seeed-grove-sound-101020023",
+    "geometry": "4aabab21ac0471af343b0827a6958ceacde826c6ea8bba566677fceaa06fe130"
+  },
+  {
+    "id": "seeed-grove-switch-p-101020004",
+    "geometry": "1e8cccde5bddba3c5541984f9fc252f352dcdbe8eb3ccc51374055ce6d517cc1"
+  },
+  {
+    "id": "seeed-grove-moisture-101020008",
+    "geometry": "946bff897d399d3b02b0392e8ed8ce957d726c9b868cc8f3290d2b03bdbef098"
+  },
+  {
+    "id": "sparkfun-module-dev16402",
+    "geometry": "96bae44620d6f466f5fa6b6dfe6876fa9a553d75393da8d232c6e84f76ca7b46"
+  },
+  {
+    "id": "sparkfun-module-dev16401",
+    "geometry": "64d54d456c30e087c6e044ad0cfc015525706eefbd22ca357c0980c92cf7757c"
+  },
+  {
+    "id": "sparkfun-module-wrl16781",
+    "geometry": "64d54d456c30e087c6e044ad0cfc015525706eefbd22ca357c0980c92cf7757c"
+  },
+  {
+    "id": "sparkfun-module-dev21326",
+    "geometry": "64d54d456c30e087c6e044ad0cfc015525706eefbd22ca357c0980c92cf7757c"
+  },
+  {
+    "id": "sparkfun-module-wrl17381",
+    "geometry": "b3e759cd2e09753f526076379cdb7b471a424add077c1a38ee02e6b9d76c1e11"
+  },
+  {
+    "id": "sparkfun-module-dev15443",
+    "geometry": "4fd50f08436978faf5e8af7241a5739bd592de3be3f2bf63200cb49c6f1c80cf"
+  },
+  {
+    "id": "sparkfun-module-dev15110",
+    "geometry": "b1f27e882ffecf63f1dd29d883a5d830032df4cf4179efc0840bea6829288ab9"
+  },
+  {
+    "id": "sparkfun-module-sen19036",
+    "geometry": "361ac058072a9d7fc27382803a4eebddbde75536d417e745c24c6360a6e54ec1"
+  },
+  {
+    "id": "sparkfun-module-prt00449",
+    "geometry": "e24af40a4a5a572a89c8207937f99836ece7454181faf691b9957adcbf3a5141"
+  },
+  {
+    "id": "sparkfun-module-dev12924",
+    "geometry": "5717f803d756b3131f5aef35d7ca5def2c5dde9a072e7633c19532b8abb3927e"
+  },
+  {
+    "id": "sparkfun-module-bob13263",
+    "geometry": "58aed526aa8f27efd8691406c359908ff85f5215b5f1067c8ac61662a2498843"
+  },
+  {
+    "id": "sparkfun-module-wrl13287",
+    "geometry": "ce0449342de85c2ebaedae5f33b319aae113830a11e693ccbba0855f5f259d4a"
+  },
+  {
+    "id": "sparkfun-module-dev15837",
+    "geometry": "a4321ad345f89af1d50aa50ccf5ff2d833e3cac3b6e7defa9c06b129b189ef90"
+  },
+  {
+    "id": "sparkfun-module-dev17725",
+    "geometry": "39ccfed6b570e54c5e4c59edb9066ebac17d0e4e90e161d1226f64164d6a503e"
+  },
+  {
+    "id": "sparkfun-module-bob16445",
+    "geometry": "2fe27ff89a4ec166620c2ac1167652f5e3b2e6679edbf832f86f133711f8cbac"
+  },
+  {
+    "id": "sparkfun-module-dev15794",
+    "geometry": "4ee539cf79b636711bdd1aaafa5ee440caab9617099bf07014a8878ce148c3b5"
+  },
+  {
+    "id": "sparkfun-module-wrl11373",
+    "geometry": "f9079864cbe16d0968ef27192ae7b58f28174df45ad95020b0b8731778181bfc"
+  },
+  {
+    "id": "sparkfun-module-wrl11697",
+    "geometry": "f38584799fdb11d8fd3d83ad7902f61fcdc8949d1682a86fcf6d26ced2eb9f2a"
+  },
+  {
+    "id": "sparkfun-module-wrl11812",
+    "geometry": "993c626e87e1d6067e97666511177f89ebac8fba43cf13293422744b2173b7ae"
+  },
+  {
+    "id": "sparkfun-module-bob13717",
+    "geometry": "03994e7d61e15e5e95e00a0d197ce18096738ee70595ea0a12aa936ca50f4b2a"
+  },
+  {
+    "id": "sparkfun-module-dev12761",
+    "geometry": "b9eda4295815503840cf2d4c72d2de90e10f72c02d2b9f5cfd0b48047af62fe2"
+  },
+  {
+    "id": "sparkfun-module-com18356",
+    "geometry": "0b12c2866b4f9eb36e1dfb986865686c3558dc0a10c9888ca5ceec4dbbbcf7ba"
+  },
+  {
+    "id": "sparkfun-module-sen20176",
+    "geometry": "a471cf9e2fd665af6765c34110f4f3c3b440b07421f28bdec08b3393b7ce3f25"
+  },
+  {
+    "id": "sparkfun-module-sen21207",
+    "geometry": "8b886c412d831d78bb5c6e0fbe967a18a09a371c5b5bfc96b82e25bbcb9666d0"
+  },
+  {
+    "id": "sparkfun-module-sen16467",
+    "geometry": "66fad804f63a19041f002b3a7295ecc076987264dd4e6d4d2cdbb1a83e07db6e"
+  },
+  {
+    "id": "sparkfun-module-sen22395",
+    "geometry": "3ab6d4b5f93271d097c9fec8d64a482ebcaa87d92966c20fae9ba8ec3d3e5bbe"
+  },
+  {
+    "id": "sparkfun-module-sen21262",
+    "geometry": "f3375964928c226d2c3f445dd3ba5f782d9b300e4a666d08b85e9cc99f338106"
+  },
+  {
+    "id": "sparkfun-module-sen21221",
+    "geometry": "0fc808b97869a38a42a7bb5c78a50d3e475a196a06326c3e5e8e85180dc9ca2f"
+  },
+  {
+    "id": "sparkfun-module-sen21325",
+    "geometry": "202a750229bc7fe685aa53ea892bc9d7e75178613b3baab9a2fa2ad8cabd2f7b"
+  },
+  {
+    "id": "sparkfun-module-wrl13711",
+    "geometry": "56b10f6f912f111092214aa2aea5f12682d8ed067c035cd37e5ecc602390b99f"
+  },
+  {
+    "id": "sparkfun-module-dev15123",
+    "geometry": "69ec2c8a0acef62dc04120c4e857ce3c304fd5c2cd8b3902a3c81c464eb2a6f2"
+  },
+  {
+    "id": "sparkfun-module-wrl13231",
+    "geometry": "569147fbf451e2fcc88d4fbdaecd687a372ff10c7450fc0f12e8be2a0e9ef835"
+  },
+  {
+    "id": "sparkfun-module-wrl15663",
+    "geometry": "b3e759cd2e09753f526076379cdb7b471a424add077c1a38ee02e6b9d76c1e11"
+  },
+  {
+    "id": "sparkfun-module-dev13907",
+    "geometry": "b95d614d3535324da77ff2945d62f08f42507f2b81b387cf838d26f882b9cce4"
+  },
+  {
+    "id": "sparkfun-module-wrl15574",
+    "geometry": "c51c8d1ff13d33ded1daf03157d1ae38b24b932016a3f06de3e5e654a5930f47"
+  },
+  {
+    "id": "sparkfun-module-wrl15435",
+    "geometry": "24a34e0a6e038384c36dc68c1698d6d983c8254f519593e64ea06bfca0b54d21"
+  },
+  {
+    "id": "sparkfun-module-wrl17743",
+    "geometry": "25cfcced1e554b869c3ddfc9fb3607b2b41dc7ff9785344d8ec6980eb0e620d8"
+  },
+  {
+    "id": "sparkfun-module-bob13282",
+    "geometry": "c874bc017a0b94577768635eb793f5896f258ad0c414100fd826f74461c31c7e"
+  },
+  {
+    "id": "sparkfun-module-bob11722",
+    "geometry": "85cc33139016959c53327a809faf372298d304dd6c8616981bc99bdc621b4208"
+  },
+  {
+    "id": "sparkfun-module-sen12041",
+    "geometry": "80d8c7ed3991c16946126a9af7a7f698d284920d189b025dc1d370853fc493b1"
+  },
+  {
+    "id": "sparkfun-module-bob13884",
+    "geometry": "376026ead29e7d922edcff6abddf59514fe52e56c052d645419bda1d09c2d6e1"
+  },
+  {
+    "id": "sparkfun-module-bob15931",
+    "geometry": "6b52af51df88c26651ca53ee986cf570649e1919c620a718cda67b80f3616631"
+  },
+  {
+    "id": "sparkfun-module-bob10616",
+    "geometry": "bfdff0fdfce850398edee67fe92b304cc7eb289edf5e8e6c2aac14b7574aa940"
+  },
+  {
+    "id": "sparkfun-module-com16916",
+    "geometry": "a048229a71f55524e1c5a5cb0779913a3ba5460804925869ec1eec6f02d5ad16"
+  },
+  {
+    "id": "sparkfun-module-lcd23453",
+    "geometry": "9fbc1c731431c6a1f27588e6aa0959ccab483d2607b8ee035b14d17ace559758"
+  },
+  {
+    "id": "sparkfun-module-lcd22495",
+    "geometry": "5342e97201e137e23a2251ce1b6167f70c8cca4b1b24a91d6246560657fd0c71"
+  },
+  {
+    "id": "sparkfun-module-lcd24606",
+    "geometry": "c6ea3b79f090ab5bcb9cba8228ec13ddff5766bf90212486ce582d356475adf8"
+  },
+  {
+    "id": "sparkfun-module-lcd13003",
+    "geometry": "444b1133e72c4816417b8203557c0f23194327af788ac4c25e5da765668b4efb"
+  },
+  {
+    "id": "sparkfun-module-dev15083",
+    "geometry": "8e29f80c8c13854df0a5e22f86a8c2a50c7d7d4582eb3eac12948b8592a03a0b"
+  },
+  {
+    "id": "sparkfun-module-com15290",
+    "geometry": "e781efe5de398ea70b46c7208ba24806e1535979047c3c9bd87d9826f3b3dc03"
+  },
+  {
+    "id": "sparkfun-module-bob11570",
+    "geometry": "fabf4149ffcab7b7221667c07f295533e21e8e796f5b7bbb67c8a4fe0e449a71"
+  },
+  {
+    "id": "sparkfun-module-bob09816",
+    "geometry": "2cdd4cf5ea1b4b1fd734ffd513d9b58fa97d82e9e9d86f4dac94e7e2f68855fb"
+  },
+  {
+    "id": "sparkfun-module-bob10160",
+    "geometry": "a2cb1bc15832317e656c2f031991612c1cdc4fd6e2e3f560af9b7f70d995d7cf"
+  },
+  {
+    "id": "sparkfun-module-bob00573",
+    "geometry": "a47997962fea36a3054d47da4b1632999582e916b4110d39dbda426ce61a224e"
+  },
+  {
+    "id": "sparkfun-module-bob09118",
+    "geometry": "b70b2d01c52824c07082b52556f4b792bb69661360609cb91a3ac3682dccb7d4"
+  },
+  {
+    "id": "sparkfun-module-bob11189",
+    "geometry": "d75477599423c235b59e500e74cf9a7cb90cb4be5871b24c709eceea37a58fc7"
+  },
+  {
+    "id": "sparkfun-module-sen13030",
+    "geometry": "4085a2441d3ec16d1fc09a348a492d265bfd325ebe28382bd2cd34617909db57"
+  },
+  {
+    "id": "sparkfun-module-sen22858",
+    "geometry": "91ace9682323522a14fe9088028453458d5c4464a6a245056dfa03818998c367"
+  },
+  {
+    "id": "sparkfun-module-bob11771",
+    "geometry": "b0af609e1b88956e05b0f6859a3cd4a78fbdefb645ab845be19621263a9f9a40"
+  },
+  {
+    "id": "sparkfun-module-bob16281",
+    "geometry": "2d7b3f975c40581ac7069ae2a8631dd77a43abe278a43d50bd8c73b8e9705e20"
+  },
+  {
+    "id": "sparkfun-module-bob13906",
+    "geometry": "680943cad5fa664656f7755486d455a0939a130ae1681d8f4d897aa3642814f9"
+  },
+  {
+    "id": "sparkfun-module-sen18020",
+    "geometry": "202a750229bc7fe685aa53ea892bc9d7e75178613b3baab9a2fa2ad8cabd2f7b"
+  },
+  {
+    "id": "sparkfun-module-bob10680",
+    "geometry": "e6e100c4ae806a0d3ba77d37fa67ab69b147ea6dbdc7b52e415ce28c262f7448"
+  },
+  {
+    "id": "sparkfun-module-bob10124",
+    "geometry": "4ac5b26c6b0dea9e2af06293303990b31bc542b05425f17c641f32e334c11765"
+  },
+  {
+    "id": "sparkfun-module-bob09056",
+    "geometry": "ea1dbf04fabcf9bb2c745c9d8285bc483623457133d61aae0904d2b90bb7aa53"
+  },
+  {
+    "id": "sparkfun-module-sen16826",
+    "geometry": "acba462ac0057493d8d1f5ef5513b84fa4b651cd62f2b28a1de1b577c666b728"
+  },
+  {
+    "id": "sparkfun-module-dev13746",
+    "geometry": "4709d9d032b56bd673ae0b079e321a65cf97515fdcf9122c2aa849140863f4f6"
+  },
+  {
+    "id": "sparkfun-module-dev14050",
+    "geometry": "29514346d3bb7714fbcbe8717426fc79c385ea1ddc47cb651151d5f7dd842d82"
+  },
+  {
+    "id": "sparkfun-module-dev15573",
+    "geometry": "700565ea79e45666a33c2cffb9961bea99409d8e31955b123ca237b717b29652"
+  },
+  {
+    "id": "sparkfun-module-dev18077",
+    "geometry": "700565ea79e45666a33c2cffb9961bea99409d8e31955b123ca237b717b29652"
+  },
+  {
+    "id": "sparkfun-module-wrl12775",
+    "geometry": "f44c623ff1c84dc62f3db346298ddd31ac673bc20846e66efd9780a1d8cd8ccf"
+  },
+  {
+    "id": "sparkfun-module-wig13279",
+    "geometry": "6e920f5acadc0a4db832e56c80a661ccef4cb633ebc7ea9e97114f437149a8aa"
+  },
+  {
+    "id": "sparkfun-module-dev17047",
+    "geometry": "32af67347087364e1f0b63c32b925d09f359402dcef3707bf217b622af4bcd8e"
+  },
+  {
+    "id": "sparkfun-module-dev15164",
+    "geometry": "8feb8072a615a80c87fdbff35abd347b257c0f6e3287300b7a540a3e118a817d"
+  },
+  {
+    "id": "sparkfun-module-bob23589",
+    "geometry": "9b89f08657ee4d6dc54b77d0e6141844ea6acdb0239edd214713ad90ef471b60"
+  },
+  {
+    "id": "sparkfun-module-bob00544",
+    "geometry": "6c7fd767f3f372276d79f403e90e1cfe30208c80c97f4296b02d2c3e38892d92"
+  },
+  {
+    "id": "sparkfun-module-bob12941",
+    "geometry": "ca6e6cca09a5923415da94948068c57ed268c6395683c140376e019d99f0fa84"
+  },
+  {
+    "id": "sparkfun-module-bob23055",
+    "geometry": "b3c12223bac3f28a0e006f23b4fc5f85a67ec7bd11ebc76fd8663d22e7b85be8"
+  },
+  {
+    "id": "sparkfun-module-dev14495",
+    "geometry": "ea2a882b00c0ba75a70394a06001f056ec84a0a4f7b090c8f9f2f32de615f234"
+  },
+  {
+    "id": "sparkfun-module-wig09555",
+    "geometry": "c26932f63f627ee10f5198b725b35ceba22f1e4f9c888de5fcb20746bab7f73a"
+  },
+  {
+    "id": "sparkfun-module-dev13743",
+    "geometry": "2b5243b36f72fcc141b1a54d7befa0a3a677e0e87b3cce948cd282a5df4edba3"
+  },
+  {
+    "id": "sparkfun-module-wrl22032",
+    "geometry": "c0bf3d86d2adb93814db2e11e41302a70ca7a2400eef1dd38bb83c346ed48a0d"
+  },
+  {
+    "id": "sparkfun-module-wrl15836",
+    "geometry": "0116d19ff7f1173108dc92c88ebee5faf009296ce419f7c4d01a23b440a48a70"
+  },
+  {
+    "id": "sparkfun-module-bob19389",
+    "geometry": "b2495078ff98ff1ec163e1cfaae20f4ae936f897fb48ca4f402f392094741dd4"
+  },
+  {
+    "id": "sparkfun-module-rob14538",
+    "geometry": "6314fc272e06688762fbb44504244485dd7b0f5ddb62a4638afa606cb2a77df5"
+  },
+  {
+    "id": "sparkfun-module-bob11083",
+    "geometry": "eb3072ad34b09c209042bd25dd76d0f86feda9217cc1c0a3fa1f4b54d91dc6ea"
+  },
+  {
+    "id": "sparkfun-module-bob09540",
+    "geometry": "e4b94221ca50accf4b6b45bb1d7cd7c1d4b232e8c1e134a6cf50fd7a74d1191f"
+  },
+  {
+    "id": "sparkfun-module-rob14451",
+    "geometry": "45bd6909976db16db0946593a185d653600d915875ccf07c17dddc9daaa48be5"
+  },
+  {
+    "id": "sparkfun-module-prt10217",
+    "geometry": "e47a9e59ecc5a3f45db4d53f7c709f30bd1a3237035db123227c48f4193a32c7"
+  },
+  {
+    "id": "sparkfun-module-prt10401",
+    "geometry": "65360c6d812603d451e08f3b9261e174969c34b01bf469f6931b70e22e732e59"
+  },
+  {
+    "id": "sparkfun-module-prt15353",
+    "geometry": "19e9b80b6ef8dd19f82ae4fbdabbde6975da1daed34cf1438b1bf9603ebb7571"
+  },
+  {
+    "id": "sparkfun-module-prt11214",
+    "geometry": "d588dd1af83be4aef070b75b9b64b08587e08b6706209b75c2b93973b6808968"
+  },
+  {
+    "id": "sparkfun-module-prt13032",
+    "geometry": "2bcdb2f3a5465cad0d45850aac82f8de3b072a34633cf1b1710a852d71316ee8"
+  },
+  {
+    "id": "sparkfun-module-prt14765",
+    "geometry": "6a86d56f110b62cacab5a5671dc2f16462c3ee83cdbb59d85f1c9a7fad89eefa"
+  },
+  {
+    "id": "sparkfun-module-wig13118",
+    "geometry": "0132fb5132225e9f01c39ea7f18ccf15b7c7297e2613cb9975ab012fd2a0d2a8"
+  },
+  {
+    "id": "sparkfun-module-com16810",
+    "geometry": "5af4a2160257bc5025758b75be3aa34bdfd0792dd4651f171be65bda3b33ec88"
+  },
+  {
+    "id": "sparkfun-module-wrl15484",
+    "geometry": "159b6df6a9e49172993299469052960a287d41b7a934bc5452c6e0212406aa40"
+  },
+  {
+    "id": "sparkfun-module-prt10588",
+    "geometry": "ad8ef16b575f13597374b6148c3696a1baf0059c96b4efb10e425b7e1f010468"
+  },
+  {
+    "id": "sparkfun-module-prt14380",
+    "geometry": "9d6b24a1fc57801db8810d6223bd66bf5f4ef0b60367064289d1ed70c0b6a221"
+  },
+  {
+    "id": "sparkfun-module-dev20690",
+    "geometry": "ca0d067d781506654fd99a0fa393b77948599e40beee69691e386e70d2e078c8"
+  },
+  {
+    "id": "sparkfun-module-prt13777",
+    "geometry": "330f143b14cd7ddfc4be4cacb24da3de33b41d46cf3d0edec2eed68d256a7896"
+  },
+  {
+    "id": "sparkfun-module-sen17372",
+    "geometry": "ac9fe6852913b847ef5170dee9a94b81cc45202924db19feae979a21e96314b3"
+  },
+  {
+    "id": "sparkfun-module-bob08688",
+    "geometry": "e8af7d37f5c130353876f0d9efaedd9cb5c88524220fadc54b4ac3b9a5e16054"
+  },
+  {
+    "id": "sparkfun-module-bob09322",
+    "geometry": "780cbf6c11210871e2084d8fc441b7f404c76c9665f83dd33605c07efc11fca2"
+  },
+  {
+    "id": "sparkfun-module-rob09453",
+    "geometry": "d96d03ea058b0f9ba281ab7240befc2b255b13ca8cae0f9c284b173a42ae59d8"
+  },
+  {
+    "id": "sparkfun-module-rob09454",
+    "geometry": "d96d03ea058b0f9ba281ab7240befc2b255b13ca8cae0f9c284b173a42ae59d8"
+  },
+  {
+    "id": "sparkfun-module-sen11769",
+    "geometry": "a3d2c1050fc69b6f20b65f85744fc3ad7d0bb72777d1fa6574a2f144c257776a"
+  },
+  {
+    "id": "sparkfun-module-sen12916",
+    "geometry": "f5d097d1c38750320592a52458d8fcbd0056a672870177b6377e568798ec4181"
+  },
+  {
+    "id": "sparkfun-module-sen12642",
+    "geometry": "dc56a8d56731572cee444450d7e3782c17197fb3946cc93eb25197a10cda2432"
+  },
+  {
+    "id": "sparkfun-module-sen12829",
+    "geometry": "2786bb2073a60ebe3fc5ce4fd592b9131fd1f84e23fa5b2498d9eeeb95b5c3b2"
+  },
+  {
+    "id": "sparkfun-module-sen12040",
+    "geometry": "fe7a26aeff009780607ed5655872b5bac71c1c67f428523d82b5e282fa006a14"
+  },
+  {
+    "id": "sparkfun-module-sen13314",
+    "geometry": "7700e8498e6856cda7dcab09ebd1179bb8e1a875a142dbb545b7e34400905ca1"
+  },
+  {
+    "id": "sparkfun-module-sen12784",
+    "geometry": "e5334e4ceeb09b50679a04bc287a9f513e8cb8b7716c8d48838d336db1dc5a73"
+  },
+  {
+    "id": "sparkfun-module-sen12785",
+    "geometry": "457445c8f9b04483b25ca356fd346ad7c7f274b45127fcf8445dc7b990831c1a"
+  },
+  {
+    "id": "sparkfun-module-sen11084",
+    "geometry": "f2846875b1b827abbb08498dad05b6ab1837e7ab3227c8e40ddaacc260f19880"
+  },
+  {
+    "id": "sparkfun-module-sen09269",
+    "geometry": "585f3a309c386c7df2462cb419f2e8b0078eea7baa27300b3439ba7df549fc54"
+  },
+  {
+    "id": "sparkfun-module-sen13322",
+    "geometry": "84388adea782975b18e9d24e8240f77dfcf657d77996ad939ebba25ce14f0f94"
+  },
+  {
+    "id": "sparkfun-module-sen12909",
+    "geometry": "c00969a70ef88d714fd0f751aafee430ed8d1acdd53600241bbe7e53766f3628"
+  },
+  {
+    "id": "sparkfun-module-sen13582",
+    "geometry": "3daf2431c7d8377d0da2ec564bb162a007a175b07ca35be6f58642516e96ed2b"
+  },
+  {
+    "id": "sparkfun-module-sen09836",
+    "geometry": "7879052ee20dc3654b29cac52786ff208b44cbbc4fed9268eb1242170fd354eb"
+  },
+  {
+    "id": "sparkfun-module-sen11446",
+    "geometry": "5c80662df8d7dac98983a209cff369f97f242c67439c85019d32d231586a05a9"
+  },
+  {
+    "id": "sparkfun-module-sen19921",
+    "geometry": "7163b0e3fd8d6f798d1370658e7f47f3295ae04958a7370edea7378c8fc2aa67"
+  },
+  {
+    "id": "sparkfun-module-sen13676",
+    "geometry": "845ef19572928c96d440a926c4071e713aaa7daf07c5814f3bfa7766320d6fa1"
+  },
+  {
+    "id": "sparkfun-module-sen13963",
+    "geometry": "f81f893ae777d22b52e2dd4a6c068e3c1cca7778bb6a23afc2b7d2797220032c"
+  },
+  {
+    "id": "sparkfun-module-sen12589",
+    "geometry": "96354108327d082ae7052027d7472e8795bccaefef78a84e923f8edff8d870f7"
+  },
+  {
+    "id": "sparkfun-module-sen15177",
+    "geometry": "2376b588003847674f527436ab686fc137a0a8574fd367f5cbdf0f0d506941f8"
+  },
+  {
+    "id": "sparkfun-module-sen14722",
+    "geometry": "165b3b3cc60637b2ed5233d61ae80cbecb9dff816a2fdbbc5344a78659abc650"
+  },
+  {
+    "id": "sparkfun-module-sen16476",
+    "geometry": "fcedbf6416da86d6e89b4428928f3484e44071cf05d1b2872e4512a20a44bb96"
+  },
+  {
+    "id": "sparkfun-module-sen15219",
+    "geometry": "0c4d910aad70cc29a85c173ea856a3a59280b9f8f56444f7d5b532a3f83bee2f"
+  },
+  {
+    "id": "sparkfun-module-sen20844",
+    "geometry": "ed83f370acd5eeaca766c077b2ed699b282eabe00858f3e4eea80b1c68c2d7c1"
+  },
+  {
+    "id": "sparkfun-module-sen16466",
+    "geometry": "d84b82c121bda5fcf1c28bb9d1a1047b1f32ad93c1a742e8477b26aae52d79e8"
+  },
+  {
+    "id": "sparkfun-module-sen17374",
+    "geometry": "04a511e873a7b9acc8120f5a5942e258f48a2f8f5babe9ac92ed3a5ae64cf473"
+  },
+  {
+    "id": "sparkfun-module-sen10740",
+    "geometry": "b78fa2006bdf3e337ee3ce74bc18ab21cbcfa1152a045758ed7c0c85d9fe9869"
+  },
+  {
+    "id": "sparkfun-module-sen14571",
+    "geometry": "9bb50831cf4edd889058153c23d26cb95e757af83e8edb17a4f45b650b5fff90"
+  },
+  {
+    "id": "sparkfun-module-sen22857",
+    "geometry": "b8f45108a45d3118b6823728735ebb385b76df98154ec2d254127139b62f7e5a"
+  },
+  {
+    "id": "sparkfun-module-tol20680",
+    "geometry": "9bb4af6477e27c4d2ad3211f62b67974d09d70d8ecd7e82877a693411fb880d6"
+  },
+  {
+    "id": "sparkfun-module-sen15805",
+    "geometry": "26eef99bdea9cb2d8d87f03466e6c6ab545ff96bfc6cba714770bca8914f951c"
   }
 ]

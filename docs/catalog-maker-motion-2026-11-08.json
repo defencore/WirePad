@@ -1,0 +1,1751 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "owner": "lilygo_nordic",
+  "families": [
+    "teensy-more",
+    "pololu-more",
+    "robotdyn-more"
+  ],
+  "sourceArtifactsDirectory": "/tmp/wirepad-maker-motion",
+  "footprintPolicy": "All 9 native footprints are FP:R off-board 2.54 mm wire-termination carriers. None claims production mating geometry. All generated 3D WRLs are 3D:A approximate; the vendor STEP link for Pololu DRV8838 does not upgrade generated WRL accuracy.",
+  "entries": [
+    {
+      "part": "Teensy 4.0",
+      "revision": "Board 4.0, additional PCB revision unmarked; card 10 rev 2; PJRC product photo",
+      "view": "USB at top in front; rear rotated 90\u00b0 counterclockwise from the original USB-right card and explicitly mirrored in X",
+      "references": [
+        "https://www.pjrc.com/store/teensy40.html",
+        "https://www.pjrc.com/store/teensy40_front.jpg",
+        "https://www.pjrc.com/teensy/card10a_rev2_web.pdf",
+        "https://www.pjrc.com/teensy/card10b_rev2_web.pdf",
+        "https://www.pjrc.com/teensy/dimensions_teensy40.png",
+        "https://www.pjrc.com/teensy/schematic40.png",
+        "https://www.pjrc.com/store/test_points_teensy40.png",
+        "https://www.pjrc.com/teensy/parts_placement_teensy40_bottom.png"
+      ],
+      "localArtifacts": [
+        "teensy40_front.jpg",
+        "teensy40_card10a_rev2.png",
+        "teensy40_card10b_rev2.png",
+        "dimensions_teensy40.png",
+        "schematic40.png",
+        "test_points_teensy40.png",
+        "parts_placement_teensy40_bottom.png"
+      ],
+      "evidence": "33 outer holes, 1 VUSB through hole, 10 rear GPIO24\u201333 pads, 8 SDIO lands (34,35,GND,36,3V3,37,38,39), 3 rear USB/power lands (VUSB,D\u2212,D+), and 11 named factory test points. Adjacent long solder lands belong to fitted components. Rear D+/D\u2212 serve USB host. All GPIO is 3.3 V and not 5 V tolerant. Factory VIN/VUSB bridge is modeled closed; cutting the bridge changes that connection. T1\u2013T11 identify test points from the manufacturer map, modeled as passive probe nodes.",
+      "expectedContacts": 66,
+      "id": "pjrc-teensy-4-0",
+      "manufacturer": "PJRC",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "hl-gnd",
+          "terminal": "HL.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 95.24,
+          "y": 55.24
+        },
+        {
+          "id": "hl-0",
+          "terminal": "HL.0",
+          "label": "0",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 85.72
+        },
+        {
+          "id": "hl-1",
+          "terminal": "HL.1",
+          "label": "1",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 116.19999999999999
+        },
+        {
+          "id": "hl-2",
+          "terminal": "HL.2",
+          "label": "2",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 146.68
+        },
+        {
+          "id": "hl-3",
+          "terminal": "HL.3",
+          "label": "3",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 177.16
+        },
+        {
+          "id": "hl-4",
+          "terminal": "HL.4",
+          "label": "4",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 207.64
+        },
+        {
+          "id": "hl-5",
+          "terminal": "HL.5",
+          "label": "5",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 238.12
+        },
+        {
+          "id": "hl-6",
+          "terminal": "HL.6",
+          "label": "6",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 268.6
+        },
+        {
+          "id": "hl-7",
+          "terminal": "HL.7",
+          "label": "7",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 299.08
+        },
+        {
+          "id": "hl-8",
+          "terminal": "HL.8",
+          "label": "8",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 329.56
+        },
+        {
+          "id": "hl-9",
+          "terminal": "HL.9",
+          "label": "9",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 360.03999999999996
+        },
+        {
+          "id": "hl-10",
+          "terminal": "HL.10",
+          "label": "10",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 390.52
+        },
+        {
+          "id": "hl-11",
+          "terminal": "HL.11",
+          "label": "11",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 421
+        },
+        {
+          "id": "hl-12",
+          "terminal": "HL.12",
+          "label": "12",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 451.4800000000001
+        },
+        {
+          "id": "hr-vin",
+          "terminal": "HR.VIN",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 278.12,
+          "y": 55.24
+        },
+        {
+          "id": "hr-gnd",
+          "terminal": "HR.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 278.12,
+          "y": 85.72
+        },
+        {
+          "id": "hr-3v3",
+          "terminal": "HR.3V3",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 278.12,
+          "y": 116.19999999999999
+        },
+        {
+          "id": "hr-23",
+          "terminal": "HR.23",
+          "label": "23",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 146.68
+        },
+        {
+          "id": "hr-22",
+          "terminal": "HR.22",
+          "label": "22",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 177.16
+        },
+        {
+          "id": "hr-21",
+          "terminal": "HR.21",
+          "label": "21",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 207.64
+        },
+        {
+          "id": "hr-20",
+          "terminal": "HR.20",
+          "label": "20",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 238.12
+        },
+        {
+          "id": "hr-19",
+          "terminal": "HR.19",
+          "label": "19",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 268.6
+        },
+        {
+          "id": "hr-18",
+          "terminal": "HR.18",
+          "label": "18",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 299.08
+        },
+        {
+          "id": "hr-17",
+          "terminal": "HR.17",
+          "label": "17",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 329.56
+        },
+        {
+          "id": "hr-16",
+          "terminal": "HR.16",
+          "label": "16",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 360.03999999999996
+        },
+        {
+          "id": "hr-15",
+          "terminal": "HR.15",
+          "label": "15",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 390.52
+        },
+        {
+          "id": "hr-14",
+          "terminal": "HR.14",
+          "label": "14",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 421
+        },
+        {
+          "id": "hr-13",
+          "terminal": "HR.13",
+          "label": "13",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 451.4800000000001
+        },
+        {
+          "id": "end-vbat",
+          "terminal": "END.VBAT",
+          "label": "VBAT",
+          "type": "power_in",
+          "x": 125.72,
+          "y": 451.48
+        },
+        {
+          "id": "end-3v3",
+          "terminal": "END.3V3",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 156.2,
+          "y": 451.48
+        },
+        {
+          "id": "end-gnd",
+          "terminal": "END.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 186.68,
+          "y": 451.48
+        },
+        {
+          "id": "end-program",
+          "terminal": "END.PROGRAM",
+          "label": "PROGRAM",
+          "type": "input",
+          "x": 217.16,
+          "y": 451.48
+        },
+        {
+          "id": "end-onoff",
+          "terminal": "END.ONOFF",
+          "label": "ONOFF",
+          "type": "input",
+          "x": 247.64000000000001,
+          "y": 451.48
+        },
+        {
+          "id": "usb-vusb",
+          "terminal": "USB.VUSB",
+          "label": "VUSB",
+          "type": "passive",
+          "x": 247.64000000000001,
+          "y": 85.72
+        },
+        {
+          "id": "gpio-24",
+          "terminal": "GPIO.24",
+          "label": "24",
+          "type": "bidirectional",
+          "x": 497.41333333333336,
+          "y": 403.0863157894737
+        },
+        {
+          "id": "gpio-25",
+          "terminal": "GPIO.25",
+          "label": "25",
+          "type": "bidirectional",
+          "x": 497.41333333333336,
+          "y": 354.42526315789473
+        },
+        {
+          "id": "gpio-26",
+          "terminal": "GPIO.26",
+          "label": "26",
+          "type": "bidirectional",
+          "x": 529.6148888888889,
+          "y": 403.0863157894737
+        },
+        {
+          "id": "gpio-27",
+          "terminal": "GPIO.27",
+          "label": "27",
+          "type": "bidirectional",
+          "x": 529.6148888888889,
+          "y": 354.42526315789473
+        },
+        {
+          "id": "gpio-28",
+          "terminal": "GPIO.28",
+          "label": "28",
+          "type": "bidirectional",
+          "x": 561.8164444444444,
+          "y": 403.0863157894737
+        },
+        {
+          "id": "gpio-29",
+          "terminal": "GPIO.29",
+          "label": "29",
+          "type": "bidirectional",
+          "x": 561.8164444444444,
+          "y": 354.42526315789473
+        },
+        {
+          "id": "gpio-30",
+          "terminal": "GPIO.30",
+          "label": "30",
+          "type": "bidirectional",
+          "x": 594.018,
+          "y": 403.0863157894737
+        },
+        {
+          "id": "gpio-31",
+          "terminal": "GPIO.31",
+          "label": "31",
+          "type": "bidirectional",
+          "x": 594.018,
+          "y": 354.42526315789473
+        },
+        {
+          "id": "gpio-32",
+          "terminal": "GPIO.32",
+          "label": "32",
+          "type": "bidirectional",
+          "x": 626.2195555555555,
+          "y": 403.0863157894737
+        },
+        {
+          "id": "gpio-33",
+          "terminal": "GPIO.33",
+          "label": "33",
+          "type": "bidirectional",
+          "x": 626.2195555555555,
+          "y": 354.42526315789473
+        },
+        {
+          "id": "sd1-34",
+          "terminal": "SD1.34",
+          "label": "34",
+          "type": "bidirectional",
+          "x": 515.1933333333334,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "sd2-35",
+          "terminal": "SD2.35",
+          "label": "35",
+          "type": "bidirectional",
+          "x": 527.2442222222222,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "sd3-gnd",
+          "terminal": "SD3.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 539.295111111111,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "sd4-36",
+          "terminal": "SD4.36",
+          "label": "36",
+          "type": "bidirectional",
+          "x": 551.346,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "sd5-3v3",
+          "terminal": "SD5.3V3",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 563.396888888889,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "sd6-37",
+          "terminal": "SD6.37",
+          "label": "37",
+          "type": "bidirectional",
+          "x": 575.4477777777778,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "sd7-38",
+          "terminal": "SD7.38",
+          "label": "38",
+          "type": "bidirectional",
+          "x": 587.4986666666666,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "sd8-39",
+          "terminal": "SD8.39",
+          "label": "39",
+          "type": "bidirectional",
+          "x": 599.5495555555556,
+          "y": 127.96421052631577
+        },
+        {
+          "id": "usbpad-vusb",
+          "terminal": "USBPAD.VUSB",
+          "label": "VUSB",
+          "type": "passive",
+          "x": 477.65777777777777,
+          "y": 62.458947368421036
+        },
+        {
+          "id": "usbpad-dminus",
+          "terminal": "USBPAD.D-",
+          "label": "D-",
+          "type": "bidirectional",
+          "x": 544.8266666666667,
+          "y": 62.458947368421036
+        },
+        {
+          "id": "usbpad-dplus",
+          "terminal": "USBPAD.D+",
+          "label": "D+",
+          "type": "bidirectional",
+          "x": 588.2888888888889,
+          "y": 62.458947368421036
+        },
+        {
+          "id": "tp-nvcc-pll",
+          "terminal": "TP.NVCC_PLL",
+          "label": "NVCC_PLL",
+          "type": "passive",
+          "x": 512.1792,
+          "y": 377.2068965517242
+        },
+        {
+          "id": "tp-vdd-soc-in",
+          "terminal": "TP.VDD_SOC_IN",
+          "label": "VDD_SOC_IN",
+          "type": "passive",
+          "x": 541.44,
+          "y": 377.2068965517242
+        },
+        {
+          "id": "tp-vdd-snvs-in",
+          "terminal": "TP.VDD_SNVS_IN",
+          "label": "VDD_SNVS_IN",
+          "type": "passive",
+          "x": 571.92,
+          "y": 377.2068965517242
+        },
+        {
+          "id": "tp-vdd-usb-cap",
+          "terminal": "TP.VDD_USB_CAP",
+          "label": "VDD_USB_CAP",
+          "type": "passive",
+          "x": 601.1808,
+          "y": 377.2068965517242
+        },
+        {
+          "id": "tp-ad-b0-00",
+          "terminal": "TP.AD_B0_00",
+          "label": "AD_B0_00",
+          "type": "passive",
+          "x": 510.96,
+          "y": 259.49103448275866
+        },
+        {
+          "id": "tp-vdd-snvs-cap",
+          "terminal": "TP.VDD_SNVS_CAP",
+          "label": "VDD_SNVS_CAP",
+          "type": "passive",
+          "x": 535.344,
+          "y": 247.2289655172414
+        },
+        {
+          "id": "tp-vdd-high-cap",
+          "terminal": "TP.VDD_HIGH_CAP",
+          "label": "VDD_HIGH_CAP",
+          "type": "passive",
+          "x": 548.7552000000001,
+          "y": 314.67034482758623
+        },
+        {
+          "id": "tp-pta0",
+          "terminal": "TP.PTA0",
+          "label": "PTA0",
+          "type": "passive",
+          "x": 515.8368,
+          "y": 107.44137931034484
+        },
+        {
+          "id": "tp-pta2",
+          "terminal": "TP.PTA2",
+          "label": "PTA2",
+          "type": "passive",
+          "x": 545.0976,
+          "y": 107.44137931034484
+        },
+        {
+          "id": "tp-pmic-on-req",
+          "terminal": "TP.PMIC_ON_REQ",
+          "label": "PMIC_ON_REQ",
+          "type": "passive",
+          "x": 595.0848000000001,
+          "y": 107.44137931034484
+        },
+        {
+          "id": "tp-usb-vbus",
+          "terminal": "TP.USB_VBUS",
+          "label": "USB_VBUS",
+          "type": "passive",
+          "x": 614.592,
+          "y": 68.20275862068968
+        }
+      ],
+      "internalConnections": [
+        [
+          "hl-gnd",
+          "hr-gnd",
+          "end-gnd",
+          "sd3-gnd"
+        ],
+        [
+          "hr-3v3",
+          "end-3v3",
+          "sd5-3v3"
+        ],
+        [
+          "usb-vusb",
+          "usbpad-vusb"
+        ],
+        [
+          "hr-vin",
+          "usb-vusb",
+          "usbpad-vusb",
+          "tp-usb-vbus"
+        ]
+      ]
+    },
+    {
+      "part": "Teensy-LC",
+      "revision": "Unmarked PCB revision; card 6 rev 4",
+      "view": "USB at top in front; rear rotated 90\u00b0 counterclockwise from the original USB-right card and explicitly mirrored in X",
+      "references": [
+        "https://www.pjrc.com/store/teensylc.html",
+        "https://www.pjrc.com/store/teensylc_front.jpg",
+        "https://www.pjrc.com/teensy/card6a_rev4_web.pdf",
+        "https://www.pjrc.com/teensy/card6b_rev4_web.pdf",
+        "https://www.pjrc.com/teensy/dimensions_teensylc.png",
+        "https://www.pjrc.com/teensy/schematic_lc.png"
+      ],
+      "localArtifacts": [
+        "teensylc_front.jpg",
+        "teensylc_card6a_rev4.png",
+        "teensylc_card6b_rev4.png",
+        "dimensions_teensylc.png",
+        "schematic_lc.png"
+      ],
+      "evidence": "33 outer holes, 1 VUSB through hole, 3 inner holes (AREF,24,25), and 4 rear USB lands (VUSB,D\u2212,D+,GND). GPIO26 is A12/DAC. END.17_BUF is a separate output-only VIN-level 8 mA buffer of GPIO17. Ordinary GPIO is 3.3 V and not 5 V tolerant. Factory VIN/VUSB bridge is modeled closed; cutting changes the connection.",
+      "expectedContacts": 41,
+      "id": "pjrc-teensy-lc",
+      "manufacturer": "PJRC",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "hl-gnd",
+          "terminal": "HL.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 95.24,
+          "y": 55.24
+        },
+        {
+          "id": "hl-0",
+          "terminal": "HL.0",
+          "label": "0",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 85.72
+        },
+        {
+          "id": "hl-1",
+          "terminal": "HL.1",
+          "label": "1",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 116.19999999999999
+        },
+        {
+          "id": "hl-2",
+          "terminal": "HL.2",
+          "label": "2",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 146.68
+        },
+        {
+          "id": "hl-3",
+          "terminal": "HL.3",
+          "label": "3",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 177.16
+        },
+        {
+          "id": "hl-4",
+          "terminal": "HL.4",
+          "label": "4",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 207.64
+        },
+        {
+          "id": "hl-5",
+          "terminal": "HL.5",
+          "label": "5",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 238.12
+        },
+        {
+          "id": "hl-6",
+          "terminal": "HL.6",
+          "label": "6",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 268.6
+        },
+        {
+          "id": "hl-7",
+          "terminal": "HL.7",
+          "label": "7",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 299.08
+        },
+        {
+          "id": "hl-8",
+          "terminal": "HL.8",
+          "label": "8",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 329.56
+        },
+        {
+          "id": "hl-9",
+          "terminal": "HL.9",
+          "label": "9",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 360.03999999999996
+        },
+        {
+          "id": "hl-10",
+          "terminal": "HL.10",
+          "label": "10",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 390.52
+        },
+        {
+          "id": "hl-11",
+          "terminal": "HL.11",
+          "label": "11",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 421
+        },
+        {
+          "id": "hl-12",
+          "terminal": "HL.12",
+          "label": "12",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 451.4800000000001
+        },
+        {
+          "id": "hr-vin",
+          "terminal": "HR.VIN",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 278.12,
+          "y": 55.24
+        },
+        {
+          "id": "hr-gnd",
+          "terminal": "HR.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 278.12,
+          "y": 85.72
+        },
+        {
+          "id": "hr-3v3",
+          "terminal": "HR.3V3",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 278.12,
+          "y": 116.19999999999999
+        },
+        {
+          "id": "hr-23",
+          "terminal": "HR.23",
+          "label": "23",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 146.68
+        },
+        {
+          "id": "hr-22",
+          "terminal": "HR.22",
+          "label": "22",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 177.16
+        },
+        {
+          "id": "hr-21",
+          "terminal": "HR.21",
+          "label": "21",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 207.64
+        },
+        {
+          "id": "hr-20",
+          "terminal": "HR.20",
+          "label": "20",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 238.12
+        },
+        {
+          "id": "hr-19",
+          "terminal": "HR.19",
+          "label": "19",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 268.6
+        },
+        {
+          "id": "hr-18",
+          "terminal": "HR.18",
+          "label": "18",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 299.08
+        },
+        {
+          "id": "hr-17",
+          "terminal": "HR.17",
+          "label": "17",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 329.56
+        },
+        {
+          "id": "hr-16",
+          "terminal": "HR.16",
+          "label": "16",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 360.03999999999996
+        },
+        {
+          "id": "hr-15",
+          "terminal": "HR.15",
+          "label": "15",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 390.52
+        },
+        {
+          "id": "hr-14",
+          "terminal": "HR.14",
+          "label": "14",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 421
+        },
+        {
+          "id": "hr-13",
+          "terminal": "HR.13",
+          "label": "13",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 451.4800000000001
+        },
+        {
+          "id": "end-17-buf",
+          "terminal": "END.17_BUF",
+          "label": "17_BUF",
+          "type": "output",
+          "x": 125.72,
+          "y": 451.48
+        },
+        {
+          "id": "end-3v3",
+          "terminal": "END.3V3",
+          "label": "3V3",
+          "type": "power_out",
+          "x": 156.2,
+          "y": 451.48
+        },
+        {
+          "id": "end-gnd",
+          "terminal": "END.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 186.68,
+          "y": 451.48
+        },
+        {
+          "id": "end-program",
+          "terminal": "END.PROGRAM",
+          "label": "PROGRAM",
+          "type": "input",
+          "x": 217.16,
+          "y": 451.48
+        },
+        {
+          "id": "end-26",
+          "terminal": "END.26",
+          "label": "26",
+          "type": "bidirectional",
+          "x": 247.64000000000001,
+          "y": 451.48
+        },
+        {
+          "id": "usb-vusb",
+          "terminal": "USB.VUSB",
+          "label": "VUSB",
+          "type": "passive",
+          "x": 247.64000000000001,
+          "y": 85.72
+        },
+        {
+          "id": "inner-aref",
+          "terminal": "INNER.AREF",
+          "label": "AREF",
+          "type": "input",
+          "x": 247.64000000000001,
+          "y": 146.68
+        },
+        {
+          "id": "inner-24",
+          "terminal": "INNER.24",
+          "label": "24",
+          "type": "bidirectional",
+          "x": 247.64000000000001,
+          "y": 177.16
+        },
+        {
+          "id": "inner-25",
+          "terminal": "INNER.25",
+          "label": "25",
+          "type": "bidirectional",
+          "x": 247.64000000000001,
+          "y": 207.64000000000001
+        },
+        {
+          "id": "usbpad-vusb",
+          "terminal": "USBPAD.VUSB",
+          "label": "VUSB",
+          "type": "passive",
+          "x": 504,
+          "y": 60.4
+        },
+        {
+          "id": "usbpad-dminus",
+          "terminal": "USBPAD.D-",
+          "label": "D-",
+          "type": "bidirectional",
+          "x": 536.4,
+          "y": 60.4
+        },
+        {
+          "id": "usbpad-dplus",
+          "terminal": "USBPAD.D+",
+          "label": "D+",
+          "type": "bidirectional",
+          "x": 565.2,
+          "y": 60.4
+        },
+        {
+          "id": "usbpad-gnd",
+          "terminal": "USBPAD.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 602.4,
+          "y": 60.4
+        }
+      ],
+      "internalConnections": [
+        [
+          "hl-gnd",
+          "hr-gnd",
+          "end-gnd",
+          "usbpad-gnd"
+        ],
+        [
+          "hr-3v3",
+          "end-3v3"
+        ],
+        [
+          "usb-vusb",
+          "usbpad-vusb"
+        ],
+        [
+          "hr-vin",
+          "usb-vusb",
+          "usbpad-vusb"
+        ]
+      ]
+    },
+    {
+      "part": "Teensy 2.0",
+      "revision": "Board 2.0, further PCB revision unmarked; card 2 rev 5",
+      "view": "Component side, USB at top; no rear user contacts claimed",
+      "references": [
+        "https://www.pjrc.com/store/teensy.html",
+        "https://www.pjrc.com/store/teensy_2.jpg",
+        "https://www.pjrc.com/teensy/card2b_rev5_web.pdf",
+        "https://www.pjrc.com/teensy/dimensions_teensy20.png",
+        "https://www.pjrc.com/teensy/schematic2.png"
+      ],
+      "localArtifacts": [
+        "teensy_2.jpg",
+        "teensy20_card2b_rev5.png",
+        "dimensions_teensy20.png",
+        "schematic2.png"
+      ],
+      "evidence": "29 outer header holes and 2 inner contacts. Left column GND,0\u202610; right VCC,21\u202611; end left to right 23,VCC,GND,RESET,22; inner left 24/PE6 and inner right AREF. Supply and logic are 5 V in the factory configuration. Optional regulator conversion and solder bridge sites are configuration sites, not additional user terminals.",
+      "expectedContacts": 31,
+      "id": "pjrc-teensy-2-0",
+      "manufacturer": "PJRC",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "hl-gnd",
+          "terminal": "HL.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 95.24,
+          "y": 55.24
+        },
+        {
+          "id": "hl-0",
+          "terminal": "HL.0",
+          "label": "0",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 85.72
+        },
+        {
+          "id": "hl-1",
+          "terminal": "HL.1",
+          "label": "1",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 116.19999999999999
+        },
+        {
+          "id": "hl-2",
+          "terminal": "HL.2",
+          "label": "2",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 146.68
+        },
+        {
+          "id": "hl-3",
+          "terminal": "HL.3",
+          "label": "3",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 177.16
+        },
+        {
+          "id": "hl-4",
+          "terminal": "HL.4",
+          "label": "4",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 207.64
+        },
+        {
+          "id": "hl-5",
+          "terminal": "HL.5",
+          "label": "5",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 238.12
+        },
+        {
+          "id": "hl-6",
+          "terminal": "HL.6",
+          "label": "6",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 268.6
+        },
+        {
+          "id": "hl-7",
+          "terminal": "HL.7",
+          "label": "7",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 299.08
+        },
+        {
+          "id": "hl-8",
+          "terminal": "HL.8",
+          "label": "8",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 329.56
+        },
+        {
+          "id": "hl-9",
+          "terminal": "HL.9",
+          "label": "9",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 360.03999999999996
+        },
+        {
+          "id": "hl-10",
+          "terminal": "HL.10",
+          "label": "10",
+          "type": "bidirectional",
+          "x": 95.24,
+          "y": 390.52
+        },
+        {
+          "id": "hr-vcc",
+          "terminal": "HR.VCC",
+          "label": "VCC",
+          "type": "power_in",
+          "x": 278.12,
+          "y": 55.24
+        },
+        {
+          "id": "hr-21",
+          "terminal": "HR.21",
+          "label": "21",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 85.72
+        },
+        {
+          "id": "hr-20",
+          "terminal": "HR.20",
+          "label": "20",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 116.19999999999999
+        },
+        {
+          "id": "hr-19",
+          "terminal": "HR.19",
+          "label": "19",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 146.68
+        },
+        {
+          "id": "hr-18",
+          "terminal": "HR.18",
+          "label": "18",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 177.16
+        },
+        {
+          "id": "hr-17",
+          "terminal": "HR.17",
+          "label": "17",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 207.64
+        },
+        {
+          "id": "hr-16",
+          "terminal": "HR.16",
+          "label": "16",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 238.12
+        },
+        {
+          "id": "hr-15",
+          "terminal": "HR.15",
+          "label": "15",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 268.6
+        },
+        {
+          "id": "hr-14",
+          "terminal": "HR.14",
+          "label": "14",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 299.08
+        },
+        {
+          "id": "hr-13",
+          "terminal": "HR.13",
+          "label": "13",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 329.56
+        },
+        {
+          "id": "hr-12",
+          "terminal": "HR.12",
+          "label": "12",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 360.03999999999996
+        },
+        {
+          "id": "hr-11",
+          "terminal": "HR.11",
+          "label": "11",
+          "type": "bidirectional",
+          "x": 278.12,
+          "y": 390.52
+        },
+        {
+          "id": "end-23",
+          "terminal": "END.23",
+          "label": "23",
+          "type": "bidirectional",
+          "x": 125.72,
+          "y": 390.52
+        },
+        {
+          "id": "end-vcc",
+          "terminal": "END.VCC",
+          "label": "VCC",
+          "type": "power_in",
+          "x": 156.2,
+          "y": 390.52
+        },
+        {
+          "id": "end-gnd",
+          "terminal": "END.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 186.68,
+          "y": 390.52
+        },
+        {
+          "id": "end-reset",
+          "terminal": "END.RESET",
+          "label": "RESET",
+          "type": "input",
+          "x": 217.16,
+          "y": 390.52
+        },
+        {
+          "id": "end-22",
+          "terminal": "END.22",
+          "label": "22",
+          "type": "bidirectional",
+          "x": 247.64000000000001,
+          "y": 390.52
+        },
+        {
+          "id": "inner-24",
+          "terminal": "INNER.24",
+          "label": "24",
+          "type": "bidirectional",
+          "x": 125.72,
+          "y": 177.16
+        },
+        {
+          "id": "inner-aref",
+          "terminal": "INNER.AREF",
+          "label": "AREF",
+          "type": "input",
+          "x": 247.64000000000001,
+          "y": 177.16
+        }
+      ],
+      "internalConnections": [
+        [
+          "hl-gnd",
+          "end-gnd"
+        ],
+        [
+          "hr-vcc",
+          "end-vcc"
+        ]
+      ]
+    },
+    {
+      "part": "QTR-1A #958",
+      "revision": "Unmarked red carrier revision, original single-sensor SKU; later sold in two-packs",
+      "view": "Component/sensing side; left header top to bottom OUT,VIN,GND",
+      "references": [
+        "https://www.pololu.com/product/958",
+        "https://a.pololu-files.com/picture/0J624.1200.jpg",
+        "https://a.pololu-files.com/picture/0J630.1200.png"
+      ],
+      "localArtifacts": [
+        "0J624.1200.jpg",
+        "0J630.1200.png"
+      ],
+      "evidence": "Analog output through 47 k\u03a9 pull-up to VIN; lower output voltage means stronger reflection. Supply 5 V, about 17 mA. The mounting hole is not an electrical contact.",
+      "expectedContacts": 3,
+      "id": "pololu-qtr-1a-958",
+      "manufacturer": "Pololu",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "out",
+          "terminal": "OUT",
+          "label": "OUT",
+          "type": "output",
+          "x": 28,
+          "y": 35
+        },
+        {
+          "id": "vin",
+          "terminal": "VIN",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 28,
+          "y": 77
+        },
+        {
+          "id": "gnd",
+          "terminal": "GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 28,
+          "y": 119
+        }
+      ],
+      "internalConnections": []
+    },
+    {
+      "part": "QTR-1RC #959",
+      "revision": "Unmarked red carrier revision, original single-sensor SKU; later sold in two-packs",
+      "view": "Component/sensing side; left header top to bottom OUT,VIN,GND",
+      "references": [
+        "https://www.pololu.com/product/959",
+        "https://a.pololu-files.com/picture/0J625.1200.jpg",
+        "https://a.pololu-files.com/picture/0J631.1200.png"
+      ],
+      "localArtifacts": [
+        "0J625.1200.jpg",
+        "0J631.1200.png"
+      ],
+      "evidence": "OUT is a bidirectional RC charge/discharge node with a 10 nF capacitor and 220 \u03a9 output resistor. Host charges HIGH for at least 10 \u00b5s then releases it. This is not a driven comparator output. Supply 5 V. Mounting hole is not electrical.",
+      "expectedContacts": 3,
+      "id": "pololu-qtr-1rc-959",
+      "manufacturer": "Pololu",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "out",
+          "terminal": "OUT",
+          "label": "OUT",
+          "type": "bidirectional",
+          "x": 28,
+          "y": 35
+        },
+        {
+          "id": "vin",
+          "terminal": "VIN",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 28,
+          "y": 77
+        },
+        {
+          "id": "gnd",
+          "terminal": "GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 28,
+          "y": 119
+        }
+      ],
+      "internalConnections": []
+    },
+    {
+      "part": "DRV8838 #2990",
+      "revision": "md26a; mechanical drawing dated 23 September 2014",
+      "view": "Labeled solder-side bottom; mirrored in X from the component-side land pattern",
+      "references": [
+        "https://www.pololu.com/product/2990",
+        "https://a.pololu-files.com/picture/0J5751.1200.jpg",
+        "https://www.pololu.com/file/0J818/drv8838-motor-driver-carrier-dimensions.pdf",
+        "https://www.pololu.com/file/0J807/drv8838-motor-driver-carrier-schematic.pdf",
+        "https://www.pololu.com/file/0J1696/drv8838-motor-driver-carrier.step"
+      ],
+      "localArtifacts": [
+        "0J5751.1200.jpg",
+        "drv8838-motor-driver-carrier-dimensions.pdf",
+        "drv8838-motor-driver-carrier-schematic.pdf"
+      ],
+      "evidence": "Bottom left GND,VIN,O2,O1,VM; right GND,VCC,EN,PH,SLP. All 10 contacts. VIN is reverse-protected motor input,1.5\u201311 V; VM is the direct motor rail,0\u201311 V. VCC is 1.8\u20137 V logic. SLP is pulled HIGH by 10 k\u03a9. Vendor STEP verified on the manufacturer resource page; generated carrier WRL remains approximate.",
+      "expectedContacts": 10,
+      "cad": "https://www.pololu.com/file/0J1696/drv8838-motor-driver-carrier.step",
+      "id": "pololu-drv8838-2990",
+      "manufacturer": "Pololu",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "contacts": [
+        {
+          "id": "l-gnd",
+          "terminal": "L.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 38,
+          "y": 32
+        },
+        {
+          "id": "l-vin",
+          "terminal": "L.VIN",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 38,
+          "y": 70
+        },
+        {
+          "id": "l-o2",
+          "terminal": "L.O2",
+          "label": "O2",
+          "type": "output",
+          "x": 38,
+          "y": 108
+        },
+        {
+          "id": "l-o1",
+          "terminal": "L.O1",
+          "label": "O1",
+          "type": "output",
+          "x": 38,
+          "y": 146
+        },
+        {
+          "id": "l-vm",
+          "terminal": "L.VM",
+          "label": "VM",
+          "type": "passive",
+          "x": 38,
+          "y": 184
+        },
+        {
+          "id": "r-gnd",
+          "terminal": "R.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 192,
+          "y": 32
+        },
+        {
+          "id": "r-vcc",
+          "terminal": "R.VCC",
+          "label": "VCC",
+          "type": "power_in",
+          "x": 192,
+          "y": 70
+        },
+        {
+          "id": "r-en",
+          "terminal": "R.EN",
+          "label": "EN",
+          "type": "input",
+          "x": 192,
+          "y": 108
+        },
+        {
+          "id": "r-ph",
+          "terminal": "R.PH",
+          "label": "PH",
+          "type": "input",
+          "x": 192,
+          "y": 146
+        },
+        {
+          "id": "r-slp",
+          "terminal": "R.SLP",
+          "label": "SLP",
+          "type": "input",
+          "x": 192,
+          "y": 184
+        }
+      ],
+      "internalConnections": [
+        [
+          "l-gnd",
+          "r-gnd"
+        ]
+      ]
+    },
+    {
+      "part": "Original 25 V DC Voltage Sensor, two-pin AO header",
+      "revision": "PCB revision and numeric SKU unmarked in the archived manufacturer photo",
+      "view": "Component side; no mirrored rear bank",
+      "references": [
+        "https://github.com/RobotDynOfficial/Documentation/wiki/Simple-DC-Voltage-Sensor%2C-VDC-25V",
+        "https://raw.githubusercontent.com/wiki/RobotDynOfficial/Documentation/images/Simple-DC-Voltage-Sensor%2C-VDC-25V_2.jpg",
+        "https://raw.githubusercontent.com/wiki/RobotDynOfficial/Documentation/images/Simple-DC-Voltage-Sensor%2C-VDC-25V_4.png"
+      ],
+      "archive": "https://github.com/RobotDynOfficial/Documentation.wiki.git",
+      "sourceCommit": "a852375999752d542c724fb51d297b0d9e3a8506",
+      "localArtifacts": [
+        "robotdyn-wiki/images/Simple-DC-Voltage-Sensor,-VDC-25V_2.jpg",
+        "robotdyn-wiki/images/Simple-DC-Voltage-Sensor,-VDC-25V_4.png"
+      ],
+      "evidence": "4 contacts: screw block GND above VCC, right header GND above AO. Photo resistor codes identify 30 k\u03a9/7.5 k\u03a9, a 5:1 divider. Maximum 25 V only with a 5 V ADC; maximum 16.5 V with a 3.3 V ADC. Common ground; no isolation.",
+      "expectedContacts": 4,
+      "limitations": "The current robotdyn.com domain states that it is independent of the original manufacturer. It was not used as a primary hardware source. Only the original RobotDynOfficial wiki and photos were used. Vendor CAD is unverified.",
+      "id": "robotdyn-25v-voltage-sensor",
+      "manufacturer": "RobotDyn",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "input-gnd",
+          "terminal": "P1.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 54,
+          "y": 55
+        },
+        {
+          "id": "input-vcc",
+          "terminal": "P1.1",
+          "label": "VCC",
+          "type": "input",
+          "x": 54,
+          "y": 105
+        },
+        {
+          "id": "output-gnd",
+          "terminal": "P2.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 284,
+          "y": 55
+        },
+        {
+          "id": "output-ao",
+          "terminal": "P2.1",
+          "label": "AO",
+          "type": "output",
+          "x": 284,
+          "y": 105
+        }
+      ],
+      "internalConnections": [
+        [
+          "input-gnd",
+          "output-gnd"
+        ]
+      ]
+    },
+    {
+      "part": "AMS1117-3.3 LDO module",
+      "revision": "PCB revision and numeric SKU unmarked in the archived manufacturer photo",
+      "view": "Component side; no mirrored rear bank",
+      "references": [
+        "https://github.com/RobotDynOfficial/Documentation/wiki/Voltage-regulator-Module-LDO-(3.3%20V)",
+        "https://raw.githubusercontent.com/wiki/RobotDynOfficial/Documentation/images/Voltage-regulator-Module-LDO-(3.3V)_2.jpg",
+        "https://raw.githubusercontent.com/wiki/RobotDynOfficial/Documentation/images/Voltage-regulator-Module-LDO-(3.3V)_3.png"
+      ],
+      "archive": "https://github.com/RobotDynOfficial/Documentation.wiki.git",
+      "sourceCommit": "a852375999752d542c724fb51d297b0d9e3a8506",
+      "localArtifacts": [
+        "robotdyn-wiki/images/Voltage-regulator-Module-LDO-(3.3V)_2.jpg",
+        "robotdyn-wiki/images/Voltage-regulator-Module-LDO-(3.3V)_3.png"
+      ],
+      "evidence": "8 contacts: left header GND above VIN, right header GND above VOUT, and 4 plated corner holes repeating adjacent nets. H1\u2013H4 are WirePad references. The 5 V photo shows AMS1117-5.0 and the 5 V option checked; the 3.3 V photo shows AMS1117-3.3 and 3.3 V checked. The archived 3.3 V page copies 5 V specifications, and the 5 V page copies a 3.3 V schematic. Exact output is verified by the populated photo. Input 6\u201312 V; dropout and thermal derating apply.",
+      "expectedContacts": 8,
+      "limitations": "The current robotdyn.com domain states that it is independent of the original manufacturer. It was not used as a primary hardware source. Only the original RobotDynOfficial wiki and photos were used. Vendor CAD is unverified.",
+      "id": "robotdyn-ams1117-3-3v-module",
+      "manufacturer": "RobotDyn",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "input-gnd",
+          "terminal": "P1.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 26,
+          "y": 86
+        },
+        {
+          "id": "vin",
+          "terminal": "P1.1",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 26,
+          "y": 122
+        },
+        {
+          "id": "output-gnd",
+          "terminal": "P2.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 334,
+          "y": 86
+        },
+        {
+          "id": "vout",
+          "terminal": "P2.1",
+          "label": "VOUT",
+          "type": "power_out",
+          "x": 334,
+          "y": 122
+        },
+        {
+          "id": "corner-in-gnd",
+          "terminal": "H1.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 46,
+          "y": 42
+        },
+        {
+          "id": "corner-vin",
+          "terminal": "H2.VIN",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 46,
+          "y": 171
+        },
+        {
+          "id": "corner-out-gnd",
+          "terminal": "H3.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 314,
+          "y": 42
+        },
+        {
+          "id": "corner-vout",
+          "terminal": "H4.VOUT",
+          "label": "VOUT",
+          "type": "power_out",
+          "x": 314,
+          "y": 171
+        }
+      ],
+      "internalConnections": [
+        [
+          "input-gnd",
+          "output-gnd",
+          "corner-in-gnd",
+          "corner-out-gnd"
+        ],
+        [
+          "vin",
+          "corner-vin"
+        ],
+        [
+          "vout",
+          "corner-vout"
+        ]
+      ]
+    },
+    {
+      "part": "AMS1117-5 LDO module",
+      "revision": "PCB revision and numeric SKU unmarked in the archived manufacturer photo",
+      "view": "Component side; no mirrored rear bank",
+      "references": [
+        "https://github.com/RobotDynOfficial/Documentation/wiki/Voltage-regulator-Module-LDO-(5%20V)",
+        "https://raw.githubusercontent.com/wiki/RobotDynOfficial/Documentation/images/Voltage-regulator-Module-LDO-(5V)_2.jpg",
+        "https://raw.githubusercontent.com/wiki/RobotDynOfficial/Documentation/images/Voltage-regulator-Module-LDO-(5V)_3.png"
+      ],
+      "archive": "https://github.com/RobotDynOfficial/Documentation.wiki.git",
+      "sourceCommit": "a852375999752d542c724fb51d297b0d9e3a8506",
+      "localArtifacts": [
+        "robotdyn-wiki/images/Voltage-regulator-Module-LDO-(5V)_2.jpg",
+        "robotdyn-wiki/images/Voltage-regulator-Module-LDO-(5V)_3.png"
+      ],
+      "evidence": "8 contacts: left header GND above VIN, right header GND above VOUT, and 4 plated corner holes repeating adjacent nets. H1\u2013H4 are WirePad references. The 5 V photo shows AMS1117-5.0 and the 5 V option checked; the 3.3 V photo shows AMS1117-3.3 and 3.3 V checked. The archived 3.3 V page copies 5 V specifications, and the 5 V page copies a 3.3 V schematic. Exact output is verified by the populated photo. Input 6\u201312 V; dropout and thermal derating apply.",
+      "expectedContacts": 8,
+      "limitations": "The current robotdyn.com domain states that it is independent of the original manufacturer. It was not used as a primary hardware source. Only the original RobotDynOfficial wiki and photos were used. Vendor CAD is unverified.",
+      "id": "robotdyn-ams1117-5v-module",
+      "manufacturer": "RobotDyn",
+      "footprintStatus": "reference",
+      "threeDStatus": "approximate",
+      "cad": null,
+      "contacts": [
+        {
+          "id": "input-gnd",
+          "terminal": "P1.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 26,
+          "y": 86
+        },
+        {
+          "id": "vin",
+          "terminal": "P1.1",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 26,
+          "y": 122
+        },
+        {
+          "id": "output-gnd",
+          "terminal": "P2.2",
+          "label": "GND",
+          "type": "power_in",
+          "x": 334,
+          "y": 86
+        },
+        {
+          "id": "vout",
+          "terminal": "P2.1",
+          "label": "VOUT",
+          "type": "power_out",
+          "x": 334,
+          "y": 122
+        },
+        {
+          "id": "corner-in-gnd",
+          "terminal": "H1.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 46,
+          "y": 42
+        },
+        {
+          "id": "corner-vin",
+          "terminal": "H2.VIN",
+          "label": "VIN",
+          "type": "power_in",
+          "x": 46,
+          "y": 171
+        },
+        {
+          "id": "corner-out-gnd",
+          "terminal": "H3.GND",
+          "label": "GND",
+          "type": "power_in",
+          "x": 314,
+          "y": 42
+        },
+        {
+          "id": "corner-vout",
+          "terminal": "H4.VOUT",
+          "label": "VOUT",
+          "type": "power_out",
+          "x": 314,
+          "y": 171
+        }
+      ],
+      "internalConnections": [
+        [
+          "input-gnd",
+          "output-gnd",
+          "corner-in-gnd",
+          "corner-out-gnd"
+        ],
+        [
+          "vin",
+          "corner-vin"
+        ],
+        [
+          "vout",
+          "corner-vout"
+        ]
+      ]
+    }
+  ],
+  "validation": {
+    "focusedAssertions": "All 174 contacts have unique anchors, complete native-pad coverage, physical surface flags, explicit types and descriptions; both SVG modes render every contact. Teensy 4.0 SDIO order and 11 test points, Teensy LC buffered GPIO17, and QTR analog versus RC types are asserted.",
+    "nativeKiCad": "KiCad CLI individually exported all 9 symbols and all 9 footprints without errors; files retained with the previous 8 DIY entries under /tmp/wirepad-maker-motion/native.",
+    "visual": "Both SVG modes generated; labeled modules sheet and each Teensy view reviewed locally. Root performs final integrated browser/export review.",
+    "status": "FP:R and 3D:A for all entries."
+  }
+}

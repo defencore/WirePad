@@ -1,6 +1,6 @@
 import { defineFamily } from "../registry.js";
 import { gowinBoardComponent as makeComponent, gowinBoardArt as artFor, gowinBoardFootprint as footprintFor } from "../shared/gowin-board.js";
-import boards from "../data/gowin-gw1-gw2.js";
+import boards from "../data/gowin-gw1-gw2/manifest.js";
 
 const gowinLegacyComponents = boards.map(makeComponent);
 const gowinLegacyArt = Object.fromEntries(boards.map(board => [board.id,(component,labels)=>artFor(board,component,labels)]));

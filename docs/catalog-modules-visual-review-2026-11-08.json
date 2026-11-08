@@ -1,0 +1,666 @@
+{
+  "date": "2026-11-08",
+  "reviewer": "ebyte_semtech",
+  "status": "complete",
+  "scope": {
+    "initialFamilyPagesRendered": 43,
+    "initialModuleCards": 1000,
+    "initialSvgModes": 2000,
+    "refreshedMikroeFamilyPages": 7,
+    "refreshedMikroeSvgModes": 800,
+    "enlargedSourceComparisons": 19,
+    "finalFamilyPagesRendered": 43,
+    "finalModuleCards": 1000,
+    "finalSvgModes": 2000,
+    "renderer": "Chromium Playwright, successful process exit0",
+    "enlargedBrowserSourceComparisons": 19
+  },
+  "sourceComparisons": [
+    {
+      "key": "dcmotor5",
+      "sku": "MIKROE-2699",
+      "source": "https://www.mikroe.com/dc-motor-5-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/dc-motor-5/dc-motor-5-click-schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/dcmotor5.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/dcmotor5.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "56151a44f02b69b661a8a36c4cfced6ec81d4cf90b48954982dddda6dce8aa44",
+      "browserImageSha256": "0330bdedd8f59fb3bab30c856cfe8b4b2f81ca99f89496b65a9387b2d2814fe9"
+    },
+    {
+      "key": "hbridge9",
+      "sku": "MIKROE-4821",
+      "source": "https://www.mikroe.com/h-bridge-9-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/h-bridge_9_click/H-Bridge_9_click_v100_Schematic.PDF",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/hbridge9.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/hbridge9.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "f96c52e52bcf91ac0775ee5143614d8233f0d19d884962ca402134bb8f092f52",
+      "browserImageSha256": "a65493303889599ea49a4d6340167fe0eaa8792e9961f18c173c25667d5ad6d3"
+    },
+    {
+      "key": "brushless24",
+      "sku": "MIKROE-5478",
+      "source": "https://www.mikroe.com/brushless-24-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/brushless-24-click/Brushless_24_Click_Schematic_v100.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/brushless24.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/brushless24.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "17684e86a4628097e2931aafaf5335490934ad9be411eaaa6138900a2f70a23c",
+      "browserImageSha256": "87311fb4c0cf329196ac233b29a9f29a86a8bdb1c1d25ebefb58dae7f8020a1c"
+    },
+    {
+      "key": "fan3",
+      "sku": "MIKROE-2841",
+      "source": "https://www.mikroe.com/fan-3-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/fan-3/fan-3-click-schematic-v101.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/fan3.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/fan3.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "0400913765fb8d0cdbf5a1179fdeb7c4b2cd49e4d2f8783051be7e82c31d221e",
+      "browserImageSha256": "5ec863511b4508c4a112fa3e6256ce1bed6f0c5c91fc937f0fa6ba558f407bbe"
+    },
+    {
+      "key": "charger27",
+      "sku": "MIKROE-5960",
+      "source": "https://www.mikroe.com/charger-27-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/charger_27_click/charger_27_click_v100_Schematic.PDF",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/charger27.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/charger27.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "8f17b44a5f8f1900ed2cdf0314d0d6eaa55b6e00f3f4ccef58c93a7d954e40a1",
+      "browserImageSha256": "d446bc28c8c3602d289c77d265e40e96797127c4e2cf2ca9f8eeb50371033701"
+    },
+    {
+      "key": "leddriver14",
+      "sku": "MIKROE-4996",
+      "source": "https://www.mikroe.com/led-driver-14-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/led_driver_14_click/LED_Driver_14_click_v100_Schematic.PDF",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/leddriver14.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/leddriver14.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "c756e45d6e3a9f2bcf47afca5522a838e2b7a0fc5e60d87034ffb1c5790c40ff",
+      "browserImageSha256": "ca2eed745cb06dfcf12e2acdab5ea757d64d15131300c3b830b2254bac29a0e0"
+    },
+    {
+      "key": "leddriver15",
+      "sku": "MIKROE-5583",
+      "source": "https://www.mikroe.com/led-driver-15-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/led-driver-15-click/LED_Driver_15_Click_v101_Schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/leddriver15.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/leddriver15.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "febba31260786ac9e47e8b98e42d2aca3e416faa797526fb9192b66b5c519139",
+      "browserImageSha256": "5203f0fa8ea46924e5c7359645e9206276efb41a88928ae29ad31de5e5e9250e"
+    },
+    {
+      "key": "hbridge4",
+      "sku": "MIKROE-3787",
+      "source": "https://www.mikroe.com/h-bridge-4-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/h-bridge_4_Click/h-bridge-4-click-schematic-v100.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/hbridge4.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/hbridge4.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "dffcd18e9ed7cbd167d9fde3db1279d39f925c7fcee39fbc419266a0e03c86b0",
+      "browserImageSha256": "dd25df4c959a3ed1fa89dea1f10032029a4c4cba798fb1be6aeb62bdf02f8e54"
+    },
+    {
+      "key": "rs2324",
+      "sku": "MIKROE-6767",
+      "source": "https://www.mikroe.com/rs232-4-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/rs232-4-click/rs232-4-click-schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/rs2324.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/rs2324.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "c09e0b67517d1359a9ade336a952a53d000714ca7c1fc77a28590348747a0eca",
+      "browserImageSha256": "b6282ac2ab316350a8aeb72610135fd4b7635b77cfeb53eb11a825a9d9ce4560"
+    },
+    {
+      "key": "spiisolator",
+      "sku": "MIKROE-2583",
+      "source": "https://www.mikroe.com/spi-isolator-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/spi-isolator/spi-isolator-click-schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/spiisolator.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/spiisolator.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "45dd726649a53fcb9c23b44108faf2f4fd85399edc71d4f0816bc684d856b763",
+      "browserImageSha256": "26aeedbed5d277410131eb01da0f45d7376d46c2fb15ad1b26cf0df3c558f71c"
+    },
+    {
+      "key": "llcspi",
+      "sku": "MIKROE-3298",
+      "source": "https://www.mikroe.com/llc-spi-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/llc-spi/llc-spi-click-schematic-v100.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/llcspi.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/llcspi.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "2e0bbbc1576a63e20537a0a24391bacacf99f2e0f327658a0bfd59694b59d6a3",
+      "browserImageSha256": "20cad9cc57c9f08b23fa747770888f709b586fa66c8b44a73d62f097f5ea5159"
+    },
+    {
+      "key": "i2cisolator7",
+      "sku": "MIKROE-5943",
+      "source": "https://www.mikroe.com/i2c-isolator-7-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/i2c_isolator_7_click/i2c_isolator_7_click_v100_Schematic.PDF",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/i2cisolator7.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/i2cisolator7.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "3adc877e857cfe731e7555f2370189a0bdd7d273e565d820b21bac4767c4dc17",
+      "browserImageSha256": "d1add0633dc3fe4a7f29fca65e2bc14a9f7b500e746585be2a9c8cbca88e9885"
+    },
+    {
+      "key": "tfmini",
+      "sku": "MIKROE-4974",
+      "source": "https://www.mikroe.com/tfmini-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/TFmini_click/TFmini_Click_Schematic_v101.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/tfmini.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/tfmini.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "5543b879c02cc30ff884258106fbd11701f4cc90596eb71cd8089864c2f794c5",
+      "browserImageSha256": "fc3aba5a8fed410cce7d266153c9f5f059f6c2cbddaa3565f04cfa9cda118a44"
+    },
+    {
+      "key": "ledflash3",
+      "sku": "MIKROE-5922",
+      "source": "https://www.mikroe.com/led-flash-3-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/led_flash_3_click/led_flash_3_click_v100_Schematic.PDF",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/ledflash3.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/ledflash3.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "2d5f5bebf17553a060d9f51d1ea8b395e028792b6b0d1079dbf1e4cc8f4a92e0",
+      "browserImageSha256": "24d4bee68a8d550fb8d35707a043a59de2b9e15f3df81653045c554c0e995f26"
+    },
+    {
+      "key": "opto5",
+      "sku": "MIKROE-4476",
+      "source": "https://www.mikroe.com/opto-5-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/opto_5_click/opto-5-click-schematic-v100.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/opto5.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/opto5.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "9c79eb0fd39c9d03b556352584afe32ee2aaaa2c28a900df7dfde97baa5ad129",
+      "browserImageSha256": "f2e72af3309ae0faf924e3cd1554c441ef44ce9a57fcd35733dbd287ef8fc443"
+    },
+    {
+      "key": "ipd2",
+      "sku": "MIKROE-6314",
+      "source": "https://www.mikroe.com/ipd-2-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/ipd-2-click/ipd-2-click-schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/ipd2.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/ipd2.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "65481c82aa39ae4a43c70b83f3668cd512a10afc0df036cc5747690e8ce296a1",
+      "browserImageSha256": "2bf5973638197b7ef0fe18ca77e0f782dc8788a441a532541f836cb8049b9483"
+    },
+    {
+      "key": "solenoiddriver",
+      "sku": "MIKROE-6574",
+      "source": "https://www.mikroe.com/solenoid-driver-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/solenoid-driver-click/solenoid-click-schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/solenoiddriver.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/solenoiddriver.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "4e1b72ae409195b0af3ffd04222e2f6d0581d4a2567b1dc40222370204f6703f",
+      "browserImageSha256": "58d87f347f48155c79592d439b83d4ec58ec968e34dfa394bbcfc239a1f8c11c"
+    },
+    {
+      "key": "mcurrentsens",
+      "sku": "MIKROE-6985",
+      "source": "https://www.mikroe.com/mcurrent-sens-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/mcurrent-sens-click/mcurrent-sens-click-schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/mcurrentsens.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/mcurrentsens.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "b0875554e05978e24a57f824442da3b6c375aa209d0f09810cf4e15855815923",
+      "browserImageSha256": "9754ff0d0cd3218ff6b52e0a35670c40c89c56ac979377a856e9fa01e4bccfe2"
+    },
+    {
+      "key": "smartdof4",
+      "sku": "MIKROE-6369",
+      "source": "https://www.mikroe.com/smart-dof-4-click",
+      "schematic": "https://download.mikroe.com/documents/add-on-boards/click/smart-dof-4-click/smart-dof-4-click-schematic.pdf",
+      "sourcePhoto": "/tmp/wirepad-modules-mikroe/photos/smartdof4.jpg",
+      "browserImage": "/tmp/wirepad-modules-expansion/review/browser-enlarged/smartdof4.png",
+      "result": "Source connector inventory/order and mirrored underside orientation match; corrected thin pad strokes, labels and connector features are clear in the final browser image.",
+      "sourcePhotoSha256": "891d7439af7eac727f770127a5849117521f9351abe29ed7100046b1743c7531",
+      "browserImageSha256": "4e2767b74dd1bf119133667e9f7f6883a96f3a9e38172cbb7c5c38223c9de184"
+    }
+  ],
+  "findings": [
+    {
+      "id": "shared-pad-stroke",
+      "owner": "root",
+      "status": "resolved; final browser image verified",
+      "finding": "SVG default 1 mm stroke enlarged sourceModule pad illustrations beyond their physical size; now explicitly 0.06 mm, with board default 0.1 mm. Native geometry and anchors unchanged."
+    },
+    {
+      "id": "dense-tfmini-labels",
+      "owner": "analog_devices",
+      "status": "resolved; final browser image verified",
+      "finding": "Four 1.25 mm-pitch exposed SMT tail functions overlap; show exact physical pins 4,3,2,1 labels, retain full hover functions."
+    },
+    {
+      "id": "terminal-head-radius",
+      "owner": "analog_devices",
+      "status": "resolved; final browser image verified",
+      "finding": "LEDDriver14 head radius exceeded half its 2.54 mm pitch; owner caps radius at nearest pitch*.40."
+    },
+    {
+      "id": "nonstandard-connector-refs",
+      "owner": "analog_devices",
+      "status": "resolved; final browser image verified",
+      "finding": "Fan3 IN/OUT, Opto5 TRIAC and I2CIsolator7 I2C are actual screw-terminal blocks but generic ref detection rendered plain black rectangles."
+    },
+    {
+      "id": "large-pad-label-offset",
+      "owner": "analog_devices",
+      "status": "resolved; final browser image verified",
+      "finding": "DCmotor5 pads 2.8 mm need label baseline above their own half-height rather than the fixed 1.1 mm offset."
+    },
+    {
+      "id": "ledflash3-family",
+      "owner": "analog_devices",
+      "status": "resolved; final browser image verified",
+      "finding": "LEDFlash3 is an LED driver and must not be grouped with memory solely because its name contains Flash."
+    }
+  ],
+  "limitations": [
+    "This is an independent representative visual/source review of 19 modules, not a claim that every one of the 1000 modules was manually compared.",
+    "Every card in both SVG modes was browser-rendered; manufacturer CAD and production land accuracy remain separately assessed.",
+    "Selected reference-carrier copper and all generated 3D remain approximate."
+  ],
+  "result": "All six tracked visual/grouping findings are resolved and verified against final browser renders. No remaining actionable source-view/contact-order defect was found in the 19 representative source comparisons.",
+  "finalArtifacts": [
+    {
+      "family": "modules-adafruit-additional-development",
+      "cards": 11,
+      "svgModes": 22,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-additional-development.html",
+      "htmlSha256": "a21bfbb69829c79bba606c4514ec394c239f93fe4e059ed4b84432ce71e75a1a",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-additional-development.png",
+      "screenshotSha256": "bbf3a74338c6bbb3528517be1b6e097d4784ba4ce94fdb69fb289e88e63e3956"
+    },
+    {
+      "family": "modules-adafruit-additional-indicators-inputs",
+      "cards": 30,
+      "svgModes": 60,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-additional-indicators-inputs.html",
+      "htmlSha256": "326a2919b9887316a261f42ddeab2b7736d320b7bdf523d8e7d05f082ba75828",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-additional-indicators-inputs.png",
+      "screenshotSha256": "498714169bd205425ca49671dfdae65ea69b5aa48d9780ac96d2a3b144230e3f"
+    },
+    {
+      "family": "modules-adafruit-additional-interfaces",
+      "cards": 24,
+      "svgModes": 48,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-additional-interfaces.html",
+      "htmlSha256": "509b030ccc21befa9db64f5634ec0ba69fc98e682c7bebddee6ba6970c35448f",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-additional-interfaces.png",
+      "screenshotSha256": "c921758b16dad1c5618e0b50f1930477bb9ccc78d1950591826ad790617c1161"
+    },
+    {
+      "family": "modules-adafruit-additional-power-audio",
+      "cards": 5,
+      "svgModes": 10,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-additional-power-audio.html",
+      "htmlSha256": "4ccb5d81f6d951c7a672ce6b1a38e2ab2d2561a440e9e15e1582c73b6ab6252b",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-additional-power-audio.png",
+      "screenshotSha256": "e2527c97d220e50a6a42b5e1548818fb2de031fa566afdad3d53c2701a6326c3"
+    },
+    {
+      "family": "modules-adafruit-additional-sensors",
+      "cards": 1,
+      "svgModes": 2,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-additional-sensors.html",
+      "htmlSha256": "fae6ba86c69cdd14e656000cacba315f52e03ed828599fed6bd9645c032637eb",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-additional-sensors.png",
+      "screenshotSha256": "b469cdee419c16bc95aceb4f3ba7586913caa8add3c1c61c4a9db52db3a6f6e3"
+    },
+    {
+      "family": "modules-adafruit-development",
+      "cards": 14,
+      "svgModes": 28,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-development.html",
+      "htmlSha256": "91394539d43ffe6f14dcbaf9f11ea249454c28228365a0eda8063527d426eb33",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-development.png",
+      "screenshotSha256": "08dcb6dbeda8a2ba323d019a1403d89af784d8241adefcf1a244fb2df3675722"
+    },
+    {
+      "family": "modules-adafruit-indicators-inputs",
+      "cards": 38,
+      "svgModes": 76,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-indicators-inputs.html",
+      "htmlSha256": "ab86026a3849ba4810f4f23420bf0c5464a18c65d4f5a343745a826e3421e5f1",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-indicators-inputs.png",
+      "screenshotSha256": "c81ec6cd85829142e758dde77f39dbc76cab4f307118c805053642308113721a"
+    },
+    {
+      "family": "modules-adafruit-interfaces",
+      "cards": 67,
+      "svgModes": 134,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-interfaces.html",
+      "htmlSha256": "3f500fa9ce7a8eba04c221a04e0c540cacf13b2704b01cbd3061587a268b08f9",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-interfaces.png",
+      "screenshotSha256": "21892d404679522a8273336ca788f1fe536dd930c9fd71d65587bc2bae0b39f3"
+    },
+    {
+      "family": "modules-adafruit-power-audio",
+      "cards": 43,
+      "svgModes": 86,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-power-audio.html",
+      "htmlSha256": "42fd0a090a4a16c6e0acdfb7aa10d423db05d15003682f38386d75c3cb4ff0b4",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-power-audio.png",
+      "screenshotSha256": "2384c07728df8b138acc3d6605a1dd2066edb8cb109f733e72134d04c1e6ad60"
+    },
+    {
+      "family": "modules-adafruit-sensors",
+      "cards": 80,
+      "svgModes": 160,
+      "html": "/tmp/wirepad-modules-expansion/modules-adafruit-sensors.html",
+      "htmlSha256": "e9f14db76550492eea4bc67a98a098d1c1a845a907d8c1e391041bd7f7c7609f",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-adafruit-sensors.png",
+      "screenshotSha256": "2efefd4f1a46c773ab04bbf8438cc1687df0fb90148bcb5ff16d73887be7e795"
+    },
+    {
+      "family": "modules-dfrobot-buttons",
+      "cards": 1,
+      "svgModes": 2,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-buttons.html",
+      "htmlSha256": "a89e7fb68bb54e952f934eaae0086f24bb6c56ad7e900d63ccfb8685a49c0414",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-buttons.png",
+      "screenshotSha256": "e618e1ace094942356034be43dbfc137b9c11084dddfa5281614e0f282eadbd9"
+    },
+    {
+      "family": "modules-dfrobot-converters",
+      "cards": 9,
+      "svgModes": 18,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-converters.html",
+      "htmlSha256": "9c6de5303a99a33e81e446169fbe865cb93254cc340a4607bf4c3e9e0eb7da26",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-converters.png",
+      "screenshotSha256": "2493cfce6afd6b86faea5c59dc6618262be389fd8fa7454c6c5c5c29243c267f"
+    },
+    {
+      "family": "modules-dfrobot-dimensioned",
+      "cards": 1,
+      "svgModes": 2,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-dimensioned.html",
+      "htmlSha256": "9edc2b222297395478e6eb9a1c7d9bb35b47dc7bfa3450cab830441a43d49155",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-dimensioned.png",
+      "screenshotSha256": "3f05411d83ff496aa96e16fce38bcb6b9dbcbeadecea8545c655dc3fd0a47bdb"
+    },
+    {
+      "family": "modules-dfrobot-fermion-sensors",
+      "cards": 16,
+      "svgModes": 32,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-fermion-sensors.html",
+      "htmlSha256": "d0bbec6d51b8ff7cb9855cf773f5b08bdeb9be1aa36609d105be0bc3b55a651c",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-fermion-sensors.png",
+      "screenshotSha256": "b8f2180e2cc2b290360beacf35cef16021f6e15bf9be75c472303be22219accc"
+    },
+    {
+      "family": "modules-dfrobot-gas",
+      "cards": 11,
+      "svgModes": 22,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-gas.html",
+      "htmlSha256": "134d1653ac3a33769af3e0b1d92f9da1e6c366aad5fc4886b627cb19b1e84262",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-gas.png",
+      "screenshotSha256": "fbb65f0e4579dc0b82497c6e5da1617dc7d9b215c8fae41a8f4692db43c2b337"
+    },
+    {
+      "family": "modules-dfrobot-motion-relays",
+      "cards": 10,
+      "svgModes": 20,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-motion-relays.html",
+      "htmlSha256": "3e0d411f546145392a430bbc78f8741ca03571ad3495438f690a00010d482ab0",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-motion-relays.png",
+      "screenshotSha256": "fbd50199a97d6a1d4d36c3fe06f3cbe76e6c4af4f296e9b5765433598b9ba41c"
+    },
+    {
+      "family": "modules-dfrobot-native",
+      "cards": 2,
+      "svgModes": 4,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-native.html",
+      "htmlSha256": "c62eeb983741ea46caf32c26346b4421cff7792459039258bf76cbe95ddc180d",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-native.png",
+      "screenshotSha256": "475f67d471d68f68ca63a32271e199e30e6826204a6f61aa7a7468e3bb32c527"
+    },
+    {
+      "family": "modules-dfrobot-peripherals",
+      "cards": 9,
+      "svgModes": 18,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-peripherals.html",
+      "htmlSha256": "5a3a71a9ce7a5987fae37037fa6f1e0c1db594e9479f6339ebd922ae045a103a",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-peripherals.png",
+      "screenshotSha256": "2c4a52c493251f0e3f8077c6cead33d43e91c346d07eaaf562fdca5c230a1d3f"
+    },
+    {
+      "family": "modules-dfrobot-sensors",
+      "cards": 10,
+      "svgModes": 20,
+      "html": "/tmp/wirepad-modules-expansion/modules-dfrobot-sensors.html",
+      "htmlSha256": "3d9ad6934f317b6e79220abc51a5d7d71c6ed22ab0ead2bdd2bbef02f07f6d76",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-dfrobot-sensors.png",
+      "screenshotSha256": "9d2f42382368e5ac4ffd195a49659f11569bea6eef0d97ea4474ceb1c0cd57b1"
+    },
+    {
+      "family": "modules-mikroe-controls",
+      "cards": 45,
+      "svgModes": 90,
+      "html": "/tmp/wirepad-modules-expansion/modules-mikroe-controls.html",
+      "htmlSha256": "6cd0c6fb6090785c398f8b4e0203d9c751a3b7a58197e8509481b981151d2173",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-mikroe-controls.png",
+      "screenshotSha256": "6b6a44a661c9ebf2979dfded98489794d19f417adebce515cbc0a5c05a7d7518"
+    },
+    {
+      "family": "modules-mikroe-interfaces",
+      "cards": 22,
+      "svgModes": 44,
+      "html": "/tmp/wirepad-modules-expansion/modules-mikroe-interfaces.html",
+      "htmlSha256": "41b80e092d6041ed782b17f57174bfef6668a57f826f48f2ac351b6238383415",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-mikroe-interfaces.png",
+      "screenshotSha256": "cff12ccfff6b2e0c60f4dbe4cf2dc77323177159c676e5e0133649a67075854d"
+    },
+    {
+      "family": "modules-mikroe-memory",
+      "cards": 34,
+      "svgModes": 68,
+      "html": "/tmp/wirepad-modules-expansion/modules-mikroe-memory.html",
+      "htmlSha256": "e79e828808557b8c134cda0371e5a59e2eaab95f7282fbb62d40713e48588e1f",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-mikroe-memory.png",
+      "screenshotSha256": "6b6b60ad7bf5f23d8e938e8441daf71d1ad68f8536bafd644ffa3a567997d36e"
+    },
+    {
+      "family": "modules-mikroe-motion",
+      "cards": 68,
+      "svgModes": 136,
+      "html": "/tmp/wirepad-modules-expansion/modules-mikroe-motion.html",
+      "htmlSha256": "9940b816ec8b2ba357ed0dc2afc128fc67ebb5da2dd54f6db261cb77126bc697",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-mikroe-motion.png",
+      "screenshotSha256": "7977dfff51ab44b1dd1b4bf814f88587255ec215717bdb113298a33642bcd391"
+    },
+    {
+      "family": "modules-mikroe-optical",
+      "cards": 49,
+      "svgModes": 98,
+      "html": "/tmp/wirepad-modules-expansion/modules-mikroe-optical.html",
+      "htmlSha256": "eba063a3fdead5e4295d2e462c24f14ca77af4b5c669d3a365ea6e40bb9b9f74",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-mikroe-optical.png",
+      "screenshotSha256": "34de5218ddfe97a2d155e0b36cd1c4809627be7bc7a90b78b54771d5a0516ca2"
+    },
+    {
+      "family": "modules-mikroe-power",
+      "cards": 65,
+      "svgModes": 130,
+      "html": "/tmp/wirepad-modules-expansion/modules-mikroe-power.html",
+      "htmlSha256": "55ed2bd0d948328e7743faf52b55618c4099c4e435f974a4322010f4627e60c4",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-mikroe-power.png",
+      "screenshotSha256": "a50dc17c5f6b7b496d06eebe39f85dc8b3ee1a22ec6c2d57b70bd007da94146c"
+    },
+    {
+      "family": "modules-mikroe-sensing",
+      "cards": 117,
+      "svgModes": 234,
+      "html": "/tmp/wirepad-modules-expansion/modules-mikroe-sensing.html",
+      "htmlSha256": "10288f8439dfe9b9fbb999234f12831e2869590650a95c58860daed5a678dc3f",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-mikroe-sensing.png",
+      "screenshotSha256": "74de6256f619c84680ff84457d6adc43c27325af039a81d1d3e95ec356e873f6"
+    },
+    {
+      "family": "modules-seeed-extended-display-audio",
+      "cards": 7,
+      "svgModes": 14,
+      "html": "/tmp/wirepad-modules-expansion/modules-seeed-extended-display-audio.html",
+      "htmlSha256": "7239ed34548c7677f91d5484f843650b0bd5c1063fe28090fb738a4913d4fd14",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-seeed-extended-display-audio.png",
+      "screenshotSha256": "62728bb8039ec9a384698adcc542981c984f2070308fb0f343cf5de8c46538f1"
+    },
+    {
+      "family": "modules-seeed-extended-interfaces",
+      "cards": 9,
+      "svgModes": 18,
+      "html": "/tmp/wirepad-modules-expansion/modules-seeed-extended-interfaces.html",
+      "htmlSha256": "d7d3803bc18354040a30beaab66fd9776d9f60b8d3207cae74966e4a62ce0d37",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-seeed-extended-interfaces.png",
+      "screenshotSha256": "0148588a26330de5937b581600bdae5dc3b117603f032aea6f9b1daebab7cf69"
+    },
+    {
+      "family": "modules-seeed-extended-motion",
+      "cards": 3,
+      "svgModes": 6,
+      "html": "/tmp/wirepad-modules-expansion/modules-seeed-extended-motion.html",
+      "htmlSha256": "7986ad502fd1b9758e34acbd8aa137f4bf100e8233049d687679606d922228f5",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-seeed-extended-motion.png",
+      "screenshotSha256": "4a2c9753b9096d6751105c994c0e6632eaa999b5cf291e3f785a2f321d7cd09d"
+    },
+    {
+      "family": "modules-seeed-extended-sensing",
+      "cards": 16,
+      "svgModes": 32,
+      "html": "/tmp/wirepad-modules-expansion/modules-seeed-extended-sensing.html",
+      "htmlSha256": "be0365dfece9e40d90085669849095bb32cb632f9f000b4f8df3882fe1650040",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-seeed-extended-sensing.png",
+      "screenshotSha256": "91a9756f5c62a1eaa1b3f8cc1e969707915d091a1ba6ed49a482e62c11a1d33c"
+    },
+    {
+      "family": "modules-seeed-practical",
+      "cards": 24,
+      "svgModes": 48,
+      "html": "/tmp/wirepad-modules-expansion/modules-seeed-practical.html",
+      "htmlSha256": "d1b3e695032610d3e2649ddd614411e51e196e5b1d369b855f0d642f21d619fe",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-seeed-practical.png",
+      "screenshotSha256": "ce7ca7f79f5f62014e46f162794dccad0ed728bddcc5ec5e6f89c3ff5daa896c"
+    },
+    {
+      "family": "modules-seeed-sensing",
+      "cards": 17,
+      "svgModes": 34,
+      "html": "/tmp/wirepad-modules-expansion/modules-seeed-sensing.html",
+      "htmlSha256": "b50e4711c14699dd40ce49a55aa7b3806ef6c41bff8bcfe4bae0dc9ba480ae6d",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-seeed-sensing.png",
+      "screenshotSha256": "18b4f1c8ee4c4259bab9c4adff550fb800d56dee643b9444dedf2e67926e74fc"
+    },
+    {
+      "family": "modules-seeed-source",
+      "cards": 5,
+      "svgModes": 10,
+      "html": "/tmp/wirepad-modules-expansion/modules-seeed-source.html",
+      "htmlSha256": "4d1d737dbe71e3941b4ca7c73218f2cc1cb0d827558ed3af427627f3bcc8e91e",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-seeed-source.png",
+      "screenshotSha256": "7d1190b71679cd762f90325d5ac4552f627b0237e5c912bc263f73aa8533890e"
+    },
+    {
+      "family": "modules-sparkfun-additional-development",
+      "cards": 6,
+      "svgModes": 12,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-additional-development.html",
+      "htmlSha256": "69b178ed6b61c3aede2d6825db0597b0a7c4cda51219dac505adffb74a174ae7",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-additional-development.png",
+      "screenshotSha256": "da5c05e31f405abebb09eb08a6f616978d4b625e97915c9913c7cb945a499df7"
+    },
+    {
+      "family": "modules-sparkfun-additional-indicators-inputs",
+      "cards": 1,
+      "svgModes": 2,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-additional-indicators-inputs.html",
+      "htmlSha256": "281a4fbaec2015da9e404a225b521c9b93623aa53951f147c975200e8c832bec",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-additional-indicators-inputs.png",
+      "screenshotSha256": "f4c8f0e4ec52f697c9d426e475fcf11760439c9e7f9c6a5d3e46cc325dda78ec"
+    },
+    {
+      "family": "modules-sparkfun-additional-interfaces",
+      "cards": 14,
+      "svgModes": 28,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-additional-interfaces.html",
+      "htmlSha256": "9af851c7f17da38adeee55554a6e1134a47bd15ba9f5b4ea5495412a048ee96c",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-additional-interfaces.png",
+      "screenshotSha256": "17797560f5de4ee2679aff8319c21e7bcb48e4a58e1d9fb1b2cbea98b9c0cfcd"
+    },
+    {
+      "family": "modules-sparkfun-additional-power-audio",
+      "cards": 1,
+      "svgModes": 2,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-additional-power-audio.html",
+      "htmlSha256": "6037c76fcfd474548499149baa54e90cbb3226ff34379215c882287838a114b3",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-additional-power-audio.png",
+      "screenshotSha256": "feabeace0d84cfae5a5f2de1baf46e54a5effe4b15907c869e5598aa21152656"
+    },
+    {
+      "family": "modules-sparkfun-additional-sensors",
+      "cards": 7,
+      "svgModes": 14,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-additional-sensors.html",
+      "htmlSha256": "76a7d53b3f108181b07d5a5109115dce09c378db68e48a6dd8852da179ebcf05",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-additional-sensors.png",
+      "screenshotSha256": "194d78f8382c5ba08e50ac301248d37cda5b07bfb3cea63a601776ed998145f0"
+    },
+    {
+      "family": "modules-sparkfun-development",
+      "cards": 8,
+      "svgModes": 16,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-development.html",
+      "htmlSha256": "9f7ba0f2cd42ff8649d08ebb6eb7c0bb6ab46f4a75da12705ae2413d42ea786b",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-development.png",
+      "screenshotSha256": "c1db8b5c1f8328ae9fc7315a6d92eafe9482f58c7de194f073e7045651599b95"
+    },
+    {
+      "family": "modules-sparkfun-indicators-inputs",
+      "cards": 14,
+      "svgModes": 28,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-indicators-inputs.html",
+      "htmlSha256": "334346eaba2d79dd2df76d63f01475127c818017a33e011cbd399386c80cb460",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-indicators-inputs.png",
+      "screenshotSha256": "2445e93c4bd648a2902eb9eca936f216cc6460a13b3a70c93f93371c2db994b0"
+    },
+    {
+      "family": "modules-sparkfun-interfaces",
+      "cards": 32,
+      "svgModes": 64,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-interfaces.html",
+      "htmlSha256": "06599ca4ce7430210a58fd24a95ad494c4a5852ba3984091a4dae63010c24ac7",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-interfaces.png",
+      "screenshotSha256": "2fb5f857d220642b7c5f470f5ba49d88df9135647973c353b81b354589933613"
+    },
+    {
+      "family": "modules-sparkfun-power-audio",
+      "cards": 18,
+      "svgModes": 36,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-power-audio.html",
+      "htmlSha256": "947ea5b34274092abe32379e4deefe30da4a3716121d6b50f8057da67cc5c1e6",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-power-audio.png",
+      "screenshotSha256": "f34ddb91cd93f01a4f9bb74c151560b438618a02bc9fe54856d51dca78a8c3d4"
+    },
+    {
+      "family": "modules-sparkfun-sensors",
+      "cards": 36,
+      "svgModes": 72,
+      "html": "/tmp/wirepad-modules-expansion/modules-sparkfun-sensors.html",
+      "htmlSha256": "1b36779ce3e8413a61c4e4ce0138023a22ad7a512ba3f021fde164fc2ae1c02a",
+      "screenshot": "/tmp/wirepad-modules-expansion/review/modules-sparkfun-sensors.png",
+      "screenshotSha256": "951ec0400b99d112e2157823365c445d47a6d9e3412814ece2e64cd2a16551f0"
+    }
+  ],
+  "familiesManifestSha256": "aff47d469c00c54d766ca3f0595176d71f84470828abd3185f6989dcb320f32a",
+  "sourceModuleHelperSha256": "cd8abc5448314d8f502632fb42b9ef6ea9820b6e6b7dbef60ef117c42d2101cf",
+  "publishedEditsByReviewer": "None during this review; original105-module21-file freeze remains unchanged.",
+  "artifactPathScope": "Absolute /tmp paths identify temporary review artifacts created during the recorded catalog expansion; their SHA256 values are retained as review evidence."
+}

@@ -20,7 +20,7 @@ test('destroy and remount remove generated SVG layers and disconnect each observ
     }
     replaceChildren(...nodes) { for (const node of [...this.children]) node.remove(); this.append(...nodes); }
   }
-  const document = { createElementNS: () => new Node(document) };
+  const document = { createElementNS: () => new Node(document), defaultView: { matchMedia: () => new EventTarget() } };
   const svg = new Node(document), scene = new Node(document), draft = new Node(document);
   svg.append(scene, draft);
   const observers = [];

@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { componentById } from '../src/catalog/index.js';
-import { version1Contacts } from '../src/catalog/data/contact-layout-v1.js';
+import { version1Contacts } from '../src/model/data/contact-layout-v1.js';
 import { endpointPositions } from '../src/geometry/parts.js';
 import { routeFor } from '../src/geometry/routing.js';
 import { ProjectHistory } from '../src/model/history.js';

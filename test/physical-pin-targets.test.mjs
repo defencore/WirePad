@@ -2,13 +2,13 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { canvasTargets } from '../src/canvas/targets.js';
 
-test('overlapping hit areas on dense headers resolve to the nearest physical contact instead of SVG stacking order', t => {
-  const previous = globalThis.document;
-  t.after(() => previous === undefined ? delete globalThis.document : globalThis.document = previous);
+test('overlapping hit areas on dense headers resolve to the nearest physical contact instead of SVG stacking order', () => {
   const node = (part, pin) => ({ dataset: { part, pin }, closest(selector) { return selector.includes('.canvas-pin') ? this : null; } });
   const first = node('board', '1'), last = node('board', '2');
-  const svg = { contains: target => [first, last].includes(target) };
-  globalThis.document = { elementsFromPoint: () => [last, first] };
+  const svg = {
+    ownerDocument: { elementsFromPoint: () => [last, first] },
+    contains: target => [first, last].includes(target),
+  };
   for (const scale of [.25, 1, 4]) {
     const canvas = {
       point: (x, y) => ({ x: (x - 80) / scale, y: (y - 40) / scale }),

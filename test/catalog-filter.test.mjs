@@ -16,9 +16,9 @@ test('every manufacturer option resolves to its complete, nonempty component lis
   }
 });
 
-test('Gowin and Espressif aliases find all boards under one manufacturer', () => {
+test('Gowin, Espressif and EBYTE aliases find all boards under one manufacturer', () => {
   const index = createLibraryIndex(components);
-  for (const [alias, canonical] of [['GOWIN', 'Gowin Semiconductor'], ['Espressif', 'Espressif Systems']]) {
+  for (const [alias, canonical] of [['GOWIN', 'Gowin Semiconductor'], ['Espressif', 'Espressif Systems'], ['Ebyte', 'EBYTE']]) {
     const expected = components.filter(component => manufacturerName(component.manufacturer) === canonical).map(c => c.id);
     assert.deepEqual(filterLibrary(index, { manufacturer: alias }).map(e => e.component.id), expected);
     assert.deepEqual(filterLibrary(index, { manufacturer: canonical }).map(e => e.component.id), expected);

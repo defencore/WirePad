@@ -1,6 +1,5 @@
 import { createScope } from '../shared/lifecycle.js';
-import { componentArt, componentById, components } from '../catalog/index.js';
-import { createLibraryIndex, filterLibrary, manufacturerName } from '../catalog/filter.js';
+import { componentArt, componentById, components, createLibraryIndex, filterLibrary, manufacturerName } from '../catalog/index.js';
 import { icon } from './icons.js';
 import { escapeText } from '../shared/text.js';
 

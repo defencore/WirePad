@@ -50,7 +50,7 @@ function workspace(t) {
     pending: null, wire: null, part: null, trace: null, traceSeed: null, hasDrawing: false, canMoveSelection: false };
   const history = { canUndo: false, canRedo: false };
   const controls = { mode: 'select', wireTool: null, temporaryPan: false, movable: null, gesturing: false };
-  const canvas = { tracedNet: null, coarsePointer: { matches: false } };
+  const canvas = { tracedNet: null, controls: { coarsePointer: { matches: false } } };
   const panels = { isCompact: () => false };
   const persistence = { status: 'saved', message: '' };
   const view = createWorkspaceView({ editor, history, controls, canvas, panels, persistence, root });

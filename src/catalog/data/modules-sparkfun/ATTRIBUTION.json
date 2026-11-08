@@ -1,0 +1,1386 @@
+{
+  "notice": "Physical source facts and original simplified drawings derived from the manufacturer open hardware sources below. Source hardware remains under its stated Creative Commons Attribution-ShareAlike license. Preserve these attributions and license links with adaptations. No manufacturer endorsement is implied.",
+  "entries": [
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-19389",
+      "product": "https://www.sparkfun.com/sparkfun-analog-mems-microphone-breakout-sph8878lr5h-1.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Analog_MEMS_Microphone_Breakout_SPH8878LR5H-1",
+      "commit": "4d01f22a9be9f5e66b14664ec486083617988b34",
+      "source": "https://github.com/sparkfun/SparkFun_Analog_MEMS_Microphone_Breakout_SPH8878LR5H-1/blob/4d01f22a9be9f5e66b14664ec486083617988b34/Hardware/SparkFun_Analog_MEMS_Microphone_Breakout_SPH8878LR5H-1.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Analog_MEMS_Microphone_Breakout_SPH8878LR5H-1/blob/4d01f22a9be9f5e66b14664ec486083617988b34/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-17372",
+      "product": "https://www.sparkfun.com/sparkfun-pir-breakout-170ua-ekmc4607112k.html",
+      "repository": "https://github.com/sparkfun/SparkFun_PIR_Breakout",
+      "commit": "e1c86b1847447b501164085ba2aaa37a6c01d97a",
+      "source": "https://github.com/sparkfun/SparkFun_PIR_Breakout/blob/e1c86b1847447b501164085ba2aaa37a6c01d97a/Hardware/SparkFun_PIR_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_PIR_Breakout/blob/e1c86b1847447b501164085ba2aaa37a6c01d97a/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-08688",
+      "product": "https://www.sparkfun.com/sparkfun-ambient-light-sensor-breakout-temt6000.html",
+      "repository": "https://github.com/sparkfun/Ambient_Light_Sensor_Breakout-TEMT6000",
+      "commit": "e330459795e7a05b63107fdf66340e42b33b1c33",
+      "source": "https://github.com/sparkfun/Ambient_Light_Sensor_Breakout-TEMT6000/blob/e330459795e7a05b63107fdf66340e42b33b1c33/Hardware/SparkFun_TEMT6000_Breakout-v12.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Ambient_Light_Sensor_Breakout-TEMT6000/blob/e330459795e7a05b63107fdf66340e42b33b1c33/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-09322",
+      "product": "https://www.sparkfun.com/sparkfun-photo-interrupter-breakout-board-gp1a57hrj00f.html",
+      "repository": "https://github.com/sparkfun/Photo_Interrupter_Breakout",
+      "commit": "a2d2437948c43567ae02486b14bb44938b972bb2",
+      "source": "https://github.com/sparkfun/Photo_Interrupter_Breakout/blob/a2d2437948c43567ae02486b14bb44938b972bb2/Hardware/PhotoInterrupter-Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Photo_Interrupter_Breakout/blob/a2d2437948c43567ae02486b14bb44938b972bb2/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "ROB-09453",
+      "product": "https://www.sparkfun.com/sparkfun-line-sensor-breakout-qre1113-analog.html",
+      "repository": "https://github.com/sparkfun/QRE1113_Line_Sensor-Analog",
+      "commit": "1671498b31a63009afdcaf7832a2de51793f45f2",
+      "source": "https://github.com/sparkfun/QRE1113_Line_Sensor-Analog/blob/1671498b31a63009afdcaf7832a2de51793f45f2/Hardware/QRE1113%20Line%20Sensor%20Breakout%20-%20Analog.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/QRE1113_Line_Sensor-Analog/blob/1671498b31a63009afdcaf7832a2de51793f45f2/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "ROB-09454",
+      "product": "https://www.sparkfun.com/sparkfun-line-sensor-breakout-qre1113-digital.html",
+      "repository": "https://github.com/sparkfun/QRE1113_Line_Sensor_Breakout-Digital",
+      "commit": "c9880cb4f6baa0265e30cb472d816f04ea348d86",
+      "source": "https://github.com/sparkfun/QRE1113_Line_Sensor_Breakout-Digital/blob/c9880cb4f6baa0265e30cb472d816f04ea348d86/Hardware/SparkFun_QRE1113_Line_Sensor_Breakout_Digital.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/QRE1113_Line_Sensor_Breakout-Digital/blob/c9880cb4f6baa0265e30cb472d816f04ea348d86/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-11769",
+      "product": "https://www.sparkfun.com/sparkfun-redbot-sensor-line-follower.html",
+      "repository": "https://github.com/sparkfun/RedBot_Line_Sensor",
+      "commit": "81f44b0843601dd5127585ba34b0852fb47d67b0",
+      "source": "https://github.com/sparkfun/RedBot_Line_Sensor/blob/81f44b0843601dd5127585ba34b0852fb47d67b0/Hardware/RedBot_Line_Sensor.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RedBot_Line_Sensor/blob/81f44b0843601dd5127585ba34b0852fb47d67b0/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-09816",
+      "product": "https://www.sparkfun.com/sparkfun-opamp-breakout-lmv358.html",
+      "repository": "https://github.com/sparkfun/OpAmp_Breakout-LMV358",
+      "commit": "0a805d06e228d5c3a6631d51dfaceebe121e18a8",
+      "source": "https://github.com/sparkfun/OpAmp_Breakout-LMV358/blob/0a805d06e228d5c3a6631d51dfaceebe121e18a8/Hardware/SparkFun_OpAmp_Breakout-LMV358.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/OpAmp_Breakout-LMV358/blob/0a805d06e228d5c3a6631d51dfaceebe121e18a8/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12916",
+      "product": "https://www.sparkfun.com/sparkfun-hmc6343-breakout.html",
+      "repository": "https://github.com/sparkfun/HMC6343_Breakout",
+      "commit": "fbf992ea2d4b75a3d542096c5980e1a0421aec73",
+      "source": "https://github.com/sparkfun/HMC6343_Breakout/blob/fbf992ea2d4b75a3d542096c5980e1a0421aec73/Hardware/SparkFun_HMC6343_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/HMC6343_Breakout/blob/fbf992ea2d4b75a3d542096c5980e1a0421aec73/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12642",
+      "product": "https://www.sparkfun.com/sparkfun-sound-detector.html",
+      "repository": "https://github.com/sparkfun/Sound_Detector",
+      "commit": "5ab91c0ff1096f7e9ddcd28940336250b9781375",
+      "source": "https://github.com/sparkfun/Sound_Detector/blob/5ab91c0ff1096f7e9ddcd28940336250b9781375/hardware/sound-detector.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Sound_Detector/blob/5ab91c0ff1096f7e9ddcd28940336250b9781375/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12829",
+      "product": "https://www.sparkfun.com/sparkfun-rgb-light-sensor-isl29125.html",
+      "repository": "https://github.com/sparkfun/ISL29125_Breakout",
+      "commit": "97a4a9128a247f3f6526d20b2deab9c502e6d48e",
+      "source": "https://github.com/sparkfun/ISL29125_Breakout/blob/97a4a9128a247f3f6526d20b2deab9c502e6d48e/Hardware/SparkFun_ISL29125_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ISL29125_Breakout/blob/97a4a9128a247f3f6526d20b2deab9c502e6d48e/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12040",
+      "product": "https://www.sparkfun.com/sparkfun-current-sensor-breakout-ina169.html",
+      "repository": "https://github.com/sparkfun/INA169_Breakout",
+      "commit": "42a78dbe618fe314bf3a39a4d541c42765d4087b",
+      "source": "https://github.com/sparkfun/INA169_Breakout/blob/42a78dbe618fe314bf3a39a4d541c42765d4087b/Hardware/INA169_Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/INA169_Breakout/blob/42a78dbe618fe314bf3a39a4d541c42765d4087b/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-13314",
+      "product": "https://www.sparkfun.com/sparkfun-digital-temperature-sensor-breakout-tmp102.html",
+      "repository": "https://github.com/sparkfun/Digital_Temperature_Sensor_Breakout_-_TMP102",
+      "commit": "36ba5a6a268163e38cb3e0a89b786ba80f15c143",
+      "source": "https://github.com/sparkfun/Digital_Temperature_Sensor_Breakout_-_TMP102/blob/36ba5a6a268163e38cb3e0a89b786ba80f15c143/Hardware/Digital%20Temperature%20Sensor%20Breakout%20-%20TMP102.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/Digital_Temperature_Sensor_Breakout_-_TMP102/blob/36ba5a6a268163e38cb3e0a89b786ba80f15c143/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12784",
+      "product": "https://www.sparkfun.com/sparkfun-tof-range-finder-breakout-vl6180.html",
+      "repository": "https://github.com/sparkfun/ToF_Range_Finder_Breakout-VL6180",
+      "commit": "2faa308fd111d75ad37b4861f93b4bca551254aa",
+      "source": "https://github.com/sparkfun/ToF_Range_Finder_Breakout-VL6180/blob/2faa308fd111d75ad37b4861f93b4bca551254aa/Hardware/SparkFun_VL6180_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ToF_Range_Finder_Breakout-VL6180/blob/2faa308fd111d75ad37b4861f93b4bca551254aa/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12785",
+      "product": "https://www.sparkfun.com/sparkfun-tof-range-finder-sensor-vl6180.html",
+      "repository": "https://github.com/sparkfun/ToF_Range_Finder_Sensor-VL6180",
+      "commit": "6df9637f3e0700be49c3cc0022caf16341af2d0b",
+      "source": "https://github.com/sparkfun/ToF_Range_Finder_Sensor-VL6180/blob/6df9637f3e0700be49c3cc0022caf16341af2d0b/Hardware/SparkFun_VL6180_Sensor.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ToF_Range_Finder_Sensor-VL6180/blob/6df9637f3e0700be49c3cc0022caf16341af2d0b/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-11084",
+      "product": "https://www.sparkfun.com/sparkfun-altitude-pressure-sensor-breakout-mpl3115a2.html",
+      "repository": "https://github.com/sparkfun/MPL3115A2_Breakout",
+      "commit": "d80362a56081f9dc7d808d2cca5a535589d9becb",
+      "source": "https://github.com/sparkfun/MPL3115A2_Breakout/blob/d80362a56081f9dc7d808d2cca5a535589d9becb/hardware/MPL3115A2_breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MPL3115A2_Breakout/blob/d80362a56081f9dc7d808d2cca5a535589d9becb/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-09269",
+      "product": "https://www.sparkfun.com/sparkfun-triple-axis-accelerometer-breakout-adxl335.html",
+      "repository": "https://github.com/sparkfun/ADXL335_Breakout",
+      "commit": "a6bd15dc1c323079e7c0a6c2453a8c9bb4c61abb",
+      "source": "https://github.com/sparkfun/ADXL335_Breakout/blob/a6bd15dc1c323079e7c0a6c2453a8c9bb4c61abb/Hardware/ADXL335_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ADXL335_Breakout/blob/a6bd15dc1c323079e7c0a6c2453a8c9bb4c61abb/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-13282",
+      "product": "https://www.sparkfun.com/sparkfun-rgb-led-breakout-ws2812b.html",
+      "repository": "https://github.com/sparkfun/WS2812_Breakout",
+      "commit": "80e00a06f2763d089633d80b3d5870311750e7d3",
+      "source": "https://github.com/sparkfun/WS2812_Breakout/blob/80e00a06f2763d089633d80b3d5870311750e7d3/Hardware/SparkFunws2812bBreakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/WS2812_Breakout/blob/80e00a06f2763d089633d80b3d5870311750e7d3/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-13322",
+      "product": "https://www.sparkfun.com/sparkfun-soil-moisture-sensor.html",
+      "repository": "https://github.com/sparkfun/Soil_Moisture_Sensor",
+      "commit": "f4d72d965d0a72b6b031ec2d08d87dd4d307cd76",
+      "source": "https://github.com/sparkfun/Soil_Moisture_Sensor/blob/f4d72d965d0a72b6b031ec2d08d87dd4d307cd76/Hardware/SparkFun_Soil_Moisture_Sensor.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Soil_Moisture_Sensor/blob/f4d72d965d0a72b6b031ec2d08d87dd4d307cd76/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12909",
+      "product": "https://www.sparkfun.com/sparkfun-pressure-sensor-breakout-ms5803-14ba.html",
+      "repository": "https://github.com/sparkfun/MS5803-14BA_Breakout",
+      "commit": "06fa9f23e3c6b21b5588d30fa55342043b2a4e08",
+      "source": "https://github.com/sparkfun/MS5803-14BA_Breakout/blob/06fa9f23e3c6b21b5588d30fa55342043b2a4e08/Hardware/SparkFun_MS5803-14BA_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MS5803-14BA_Breakout/blob/06fa9f23e3c6b21b5588d30fa55342043b2a4e08/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-13582",
+      "product": "https://www.sparkfun.com/sparkfun-line-follower-array.html",
+      "repository": "https://github.com/sparkfun/Line_Follower_Array",
+      "commit": "085d5392b6d6eb41aa79620b34c0454d9ededbc9",
+      "source": "https://github.com/sparkfun/Line_Follower_Array/blob/085d5392b6d6eb41aa79620b34c0454d9ededbc9/Hardware/SparkFun%20Line%20Follower%20Array.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Line_Follower_Array/blob/085d5392b6d6eb41aa79620b34c0454d9ededbc9/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-10160",
+      "product": "https://www.sparkfun.com/sparkfun-deadon-rtc-breakout-ds3234.html",
+      "repository": "https://github.com/sparkfun/DeadOn_RTC",
+      "commit": "c5d6d0ee0d7e84953a3c0a122b234d60a61bf15d",
+      "source": "https://github.com/sparkfun/DeadOn_RTC/blob/c5d6d0ee0d7e84953a3c0a122b234d60a61bf15d/Hardware/DeadOn%20RTC%20-%20DS3234%20Breakout-v11.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/DeadOn_RTC/blob/c5d6d0ee0d7e84953a3c0a122b234d60a61bf15d/Libraries/Arduino/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-00573",
+      "product": "https://www.sparkfun.com/sparkfun-sim-card-socket-breakout.html",
+      "repository": "https://github.com/sparkfun/SIM_Card_Breakout",
+      "commit": "9a9e1751c6ae69d9c76797d829cb1a3879996651",
+      "source": "https://github.com/sparkfun/SIM_Card_Breakout/blob/9a9e1751c6ae69d9c76797d829cb1a3879996651/Hardware/Sim_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SIM_Card_Breakout/blob/9a9e1751c6ae69d9c76797d829cb1a3879996651/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-09836",
+      "product": "https://www.sparkfun.com/sparkfun-triple-axis-accelerometer-breakout-adxl345.html",
+      "repository": "https://github.com/sparkfun/ADXL345_Breakout",
+      "commit": "8e83a624bcaea0a3071885c58634b56fbefa346d",
+      "source": "https://github.com/sparkfun/ADXL345_Breakout/blob/8e83a624bcaea0a3071885c58634b56fbefa346d/Hardware/ADXL345_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ADXL345_Breakout/blob/8e83a624bcaea0a3071885c58634b56fbefa346d/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-11446",
+      "product": "https://www.sparkfun.com/sparkfun-triple-axis-accelerometer-breakout-adxl362.html",
+      "repository": "https://github.com/sparkfun/ADXL362_Breakout",
+      "commit": "59a85587537e4fc45d4ad3c78782bf165ba9caac",
+      "source": "https://github.com/sparkfun/ADXL362_Breakout/blob/59a85587537e4fc45d4ad3c78782bf165ba9caac/Hardware/ADXL362_BOB.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ADXL362_Breakout/blob/59a85587537e4fc45d4ad3c78782bf165ba9caac/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "ROB-14538",
+      "product": "https://www.sparkfun.com/sparkfun-haptic-motor-driver-drv2605l.html",
+      "repository": "https://github.com/sparkfun/Haptic_Motor_Driver",
+      "commit": "a300e3885810ff5475729ed6713678cf1b613451",
+      "source": "https://github.com/sparkfun/Haptic_Motor_Driver/blob/a300e3885810ff5475729ed6713678cf1b613451/Hardware/Haptic_Motor_Driver_DRV2605L_v20.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Haptic_Motor_Driver/blob/a300e3885810ff5475729ed6713678cf1b613451/Libraries/Arduino/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-09118",
+      "product": "https://www.sparkfun.com/sparkfun-opto-isolator-breakout.html",
+      "repository": "https://github.com/sparkfun/Opto_Isolator_Breakout",
+      "commit": "fcf3b555d61089760e7e3c924f89e31108b939b3",
+      "source": "https://github.com/sparkfun/Opto_Isolator_Breakout/blob/fcf3b555d61089760e7e3c924f89e31108b939b3/Hardware/SparkFun_Opto_Isolator_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Opto_Isolator_Breakout/blob/fcf3b555d61089760e7e3c924f89e31108b939b3/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-11722",
+      "product": "https://www.sparkfun.com/sparkfun-rotary-encoder-breakout-illuminated-rg-rgb.html",
+      "repository": "https://github.com/sparkfun/Rotary_Encoder_Breakout-Illuminated",
+      "commit": "340b6eaf4db65f28a62819535cf20a27ea37afab",
+      "source": "https://github.com/sparkfun/Rotary_Encoder_Breakout-Illuminated/blob/340b6eaf4db65f28a62819535cf20a27ea37afab/Hardware/SparkFun_Rotary_Encoder-Illuminated.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Rotary_Encoder_Breakout-Illuminated/blob/340b6eaf4db65f28a62819535cf20a27ea37afab/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-19921",
+      "product": "https://www.sparkfun.com/sparkfun-micro-magnetometer-mmc5983ma-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_Magnetometer-MMC5983MA",
+      "commit": "a6d2ec7928ca7a622ed40d157ed361ef2d9f5c07",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_Magnetometer-MMC5983MA/blob/a6d2ec7928ca7a622ed40d157ed361ef2d9f5c07/Hardware/SparkFun_Magnetometer_MMC5983MA_Qwiic_Micro.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_Magnetometer-MMC5983MA/blob/a6d2ec7928ca7a622ed40d157ed361ef2d9f5c07/license.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-13676",
+      "product": "https://www.sparkfun.com/sparkfun-atmospheric-sensor-breakout-bme280.html",
+      "repository": "https://github.com/sparkfun/SparkFun_BME280_Breakout_Board",
+      "commit": "91f0c754a30c304afdd3717e64423aaae459d84a",
+      "source": "https://github.com/sparkfun/SparkFun_BME280_Breakout_Board/blob/91f0c754a30c304afdd3717e64423aaae459d84a/Hardware/SparkFun_BME280_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_BME280_Breakout_Board/blob/91f0c754a30c304afdd3717e64423aaae459d84a/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-11189",
+      "product": "https://www.sparkfun.com/sparkfun-transceiver-breakout-max3232.html",
+      "repository": "https://github.com/sparkfun/MAX3232_Breakout",
+      "commit": "a622b6bf9c8cedb17b93a7e8bec73c2f4ea1efc2",
+      "source": "https://github.com/sparkfun/MAX3232_Breakout/blob/a622b6bf9c8cedb17b93a7e8bec73c2f4ea1efc2/Hardware/SparkFun_MAX3232_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MAX3232_Breakout/blob/a622b6bf9c8cedb17b93a7e8bec73c2f4ea1efc2/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-11083",
+      "product": "https://www.sparkfun.com/sparkfun-fm-tuner-basic-breakout-si4703.html",
+      "repository": "https://github.com/sparkfun/FM_Tuner_Basic_Breakout-Si4703",
+      "commit": "bd5b348b039c89b253dc2b6c1805658ba16a4a94",
+      "source": "https://github.com/sparkfun/FM_Tuner_Basic_Breakout-Si4703/blob/bd5b348b039c89b253dc2b6c1805658ba16a4a94/Hardware/SparkFun_FM_Tuner_Basic_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/FM_Tuner_Basic_Breakout-Si4703/blob/bd5b348b039c89b253dc2b6c1805658ba16a4a94/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-13030",
+      "product": "https://www.sparkfun.com/sparkfun-rfid-reader-breakout.html",
+      "repository": "https://github.com/sparkfun/RFID_Reader_Breakout",
+      "commit": "9db9110ae20f114ab58c5dd117d58dd7b789db52",
+      "source": "https://github.com/sparkfun/RFID_Reader_Breakout/blob/9db9110ae20f114ab58c5dd117d58dd7b789db52/hardware/RFID_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RFID_Reader_Breakout/blob/9db9110ae20f114ab58c5dd117d58dd7b789db52/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-13963",
+      "product": "https://www.sparkfun.com/sparkfun-triple-axis-accelerometer-breakout-lis3dh.html",
+      "repository": "https://github.com/sparkfun/LIS3DH_Breakout",
+      "commit": "a57ba3b3d98e85724a43635a34a181869db26e82",
+      "source": "https://github.com/sparkfun/LIS3DH_Breakout/blob/a57ba3b3d98e85724a43635a34a181869db26e82/Hardware/SparkFun_LIS3DH-Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/LIS3DH_Breakout/blob/a57ba3b3d98e85724a43635a34a181869db26e82/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12589",
+      "product": "https://www.sparkfun.com/sparkfun-redbot-sensor-accelerometer.html",
+      "repository": "https://github.com/sparkfun/RedBot_Accelerometer",
+      "commit": "dc04b82d3abcb1f428d3d7b37406e565d15d90bc",
+      "source": "https://github.com/sparkfun/RedBot_Accelerometer/blob/dc04b82d3abcb1f428d3d7b37406e565d15d90bc/Hardware/RedBot%20Accelerometer.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RedBot_Accelerometer/blob/dc04b82d3abcb1f428d3d7b37406e565d15d90bc/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-15177",
+      "product": "https://www.sparkfun.com/sparkfun-proximity-sensor-breakout-20cm-vcnl4040-qwiic.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Proximity_Sensor",
+      "commit": "af01991774b84238a18030e7f02f67c530ec456c",
+      "source": "https://github.com/sparkfun/Qwiic_Proximity_Sensor/blob/af01991774b84238a18030e7f02f67c530ec456c/Hardware/Qwiic%20Proximity%20Sensor%20-%20VCNL4040.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Proximity_Sensor/blob/af01991774b84238a18030e7f02f67c530ec456c/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-22858",
+      "product": "https://www.sparkfun.com/sparkfun-environmental-combo-breakout-ens160-bme280-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Environmental_Combo_Breakout_ENS160_BME280_QWIIC",
+      "commit": "f268b703dbc4f751e621dbbfca2c8875c3241058",
+      "source": "https://github.com/sparkfun/SparkFun_Environmental_Combo_Breakout_ENS160_BME280_QWIIC/blob/f268b703dbc4f751e621dbbfca2c8875c3241058/Hardware/SparkFun_ENS160_BME280_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Environmental_Combo_Breakout_ENS160_BME280_QWIIC/blob/f268b703dbc4f751e621dbbfca2c8875c3241058/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-14722",
+      "product": "https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Distance_VL53L1X",
+      "commit": "543b1e2d80325a39c2585882808757361f86cc66",
+      "source": "https://github.com/sparkfun/Qwiic_Distance_VL53L1X/blob/543b1e2d80325a39c2585882808757361f86cc66/Hardware/Qwiic%20Distance%20Sensor%20-%20VL53L1X.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Distance_VL53L1X/blob/543b1e2d80325a39c2585882808757361f86cc66/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-16476",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-micropressure-sensor.html",
+      "repository": "https://github.com/sparkfun/MicroPressure_Sensor",
+      "commit": "8dbe741d6e9372edd12e93c4f34f845914d4b4b4",
+      "source": "https://github.com/sparkfun/MicroPressure_Sensor/blob/8dbe741d6e9372edd12e93c4f34f845914d4b4b4/Hardware/SparkFun_MicroPressure_Sensor.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MicroPressure_Sensor/blob/8dbe741d6e9372edd12e93c4f34f845914d4b4b4/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-11771",
+      "product": "https://www.sparkfun.com/sparkfun-voltage-level-translator-breakout-txb0104.html",
+      "repository": "https://github.com/sparkfun/TXB0104_breakout",
+      "commit": "c8bf609f801a894d4af649a7134cd0ecddab8fa3",
+      "source": "https://github.com/sparkfun/TXB0104_breakout/blob/c8bf609f801a894d4af649a7134cd0ecddab8fa3/Hardware/TXB0104_breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/TXB0104_breakout/blob/c8bf609f801a894d4af649a7134cd0ecddab8fa3/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-15219",
+      "product": "https://www.sparkfun.com/sparkfun-pulse-oximeter-and-heart-rate-sensor-max30101-max32664-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Pulse_Oximeter_Heart_Rate_Sensor",
+      "commit": "eadf4873d663a43eef36f3ed97415727a784df7b",
+      "source": "https://github.com/sparkfun/SparkFun_Pulse_Oximeter_Heart_Rate_Sensor/blob/eadf4873d663a43eef36f3ed97415727a784df7b/Hardware/SparkFun_Pulse_Oximeter_Heart-Rate_Sensor.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Pulse_Oximeter_Heart_Rate_Sensor/blob/eadf4873d663a43eef36f3ed97415727a784df7b/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-12041",
+      "product": "https://www.sparkfun.com/sparkfun-capacitive-touch-breakout-at42qt1010.html",
+      "repository": "https://github.com/sparkfun/AT42QT1010_Capacitive_Touch_Breakout",
+      "commit": "333b46787981af4b0e9b28c46165f292fdfa80b6",
+      "source": "https://github.com/sparkfun/AT42QT1010_Capacitive_Touch_Breakout/blob/333b46787981af4b0e9b28c46165f292fdfa80b6/Hardware/AT42QT1010_Capacitive_Touch_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/AT42QT1010_Capacitive_Touch_Breakout/blob/333b46787981af4b0e9b28c46165f292fdfa80b6/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-20844",
+      "product": "https://www.sparkfun.com/sparkfun-indoor-air-quality-sensor-ens160-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Indoor_Air_Quality_Sensor-ENS160",
+      "commit": "6e53479ba84b3efeb097c745669291de00012ed7",
+      "source": "https://github.com/sparkfun/SparkFun_Indoor_Air_Quality_Sensor-ENS160/blob/6e53479ba84b3efeb097c745669291de00012ed7/Hardware/SparkFun_Air_Quality_ENS160.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Indoor_Air_Quality_Sensor-ENS160/blob/6e53479ba84b3efeb097c745669291de00012ed7/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-09540",
+      "product": "https://www.sparkfun.com/sparkfun-full-bridge-motor-driver-breakout-l298n.html",
+      "repository": "https://github.com/sparkfun/Full_Bridge_Motor_Driver_Breakout-L298N",
+      "commit": "8b81b873540e59a232a5abee3694d54799e0bcac",
+      "source": "https://github.com/sparkfun/Full_Bridge_Motor_Driver_Breakout-L298N/blob/8b81b873540e59a232a5abee3694d54799e0bcac/Hardware/SparkFun_Full_Bridge_Motor_Driver_Breakout-L298N.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Full_Bridge_Motor_Driver_Breakout-L298N/blob/8b81b873540e59a232a5abee3694d54799e0bcac/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "ROB-14451",
+      "product": "https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-1a.html",
+      "repository": "https://github.com/sparkfun/Motor_Driver-Dual_TB6612FNG",
+      "commit": "76bbcba16c4510c8bd9ab6b4622172a7d70bfd22",
+      "source": "https://github.com/sparkfun/Motor_Driver-Dual_TB6612FNG/blob/76bbcba16c4510c8bd9ab6b4622172a7d70bfd22/Hardware/SparkFun_Motor_Driver-TB6612FNG_v11.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Motor_Driver-Dual_TB6612FNG/blob/76bbcba16c4510c8bd9ab6b4622172a7d70bfd22/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-16281",
+      "product": "https://www.sparkfun.com/sparkfun-real-time-clock-module-rv-8803-qwiic.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Real_Time_Clock_RV-8803",
+      "commit": "3e7ea152fc18804519abb0774bacf88edacfb60f",
+      "source": "https://github.com/sparkfun/Qwiic_Real_Time_Clock_RV-8803/blob/3e7ea152fc18804519abb0774bacf88edacfb60f/Hardware/Qwiic_RTC_RV8803.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Real_Time_Clock_RV-8803/blob/3e7ea152fc18804519abb0774bacf88edacfb60f/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-16466",
+      "product": "https://www.sparkfun.com/sparkfun-environmental-sensor-breakout-bme680-qwiic.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Environmental_Sensor_BME680",
+      "commit": "ff6f1f269c195a209b036d0325c8b94deaeae1ab",
+      "source": "https://github.com/sparkfun/Qwiic_Environmental_Sensor_BME680/blob/ff6f1f269c195a209b036d0325c8b94deaeae1ab/Hardware/Qwiic%20Environmental%20BME680.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Environmental_Sensor_BME680/blob/ff6f1f269c195a209b036d0325c8b94deaeae1ab/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-17374",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-pir-170ua-ekmc4607112k.html",
+      "repository": "https://github.com/sparkfun/Qwiic_PIR",
+      "commit": "17b39a30d9ea2ae5aa8e94abd94721c7a31928aa",
+      "source": "https://github.com/sparkfun/Qwiic_PIR/blob/17b39a30d9ea2ae5aa8e94abd94721c7a31928aa/Hardware/Qwiic_PIR.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_PIR/blob/17b39a30d9ea2ae5aa8e94abd94721c7a31928aa/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-13906",
+      "product": "https://www.sparkfun.com/sparkfun-multiplexer-breakout-8-channel-74hc4051.html",
+      "repository": "https://github.com/sparkfun/74HC4051_8-Channel_Mux_Breakout",
+      "commit": "937d5446a825fcf739dcea2c65fb4e66cd9fd62f",
+      "source": "https://github.com/sparkfun/74HC4051_8-Channel_Mux_Breakout/blob/937d5446a825fcf739dcea2c65fb4e66cd9fd62f/Hardware/SparkFun-74HC4051-8-Channel-Mux-Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/74HC4051_8-Channel_Mux_Breakout/blob/937d5446a825fcf739dcea2c65fb4e66cd9fd62f/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-10740",
+      "product": "https://www.sparkfun.com/sparkfun-ir-thermometer-evaluation-board-mlx90614.html",
+      "repository": "https://github.com/sparkfun/IR_Thermometer_Evaluation_Board-MLX90614",
+      "commit": "afc54826e0842d36211a28420ee916cf09fba23b",
+      "source": "https://github.com/sparkfun/IR_Thermometer_Evaluation_Board-MLX90614/blob/afc54826e0842d36211a28420ee916cf09fba23b/Hardware/SparkFun_IR_Thermometer_Eval-MLX90614.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/IR_Thermometer_Evaluation_Board-MLX90614/blob/afc54826e0842d36211a28420ee916cf09fba23b/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-14571",
+      "product": "https://www.sparkfun.com/sparkfun-triple-axis-magnetometer-breakout-mlx90393-qwiic.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Magnetometer_MLX90393",
+      "commit": "9167ef00efc6b20c69a5dd715c359d926beadd56",
+      "source": "https://github.com/sparkfun/Qwiic_Magnetometer_MLX90393/blob/9167ef00efc6b20c69a5dd715c359d926beadd56/Hardware/Qwiic_MLX90393_Magnetometer.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Magnetometer_MLX90393/blob/9167ef00efc6b20c69a5dd715c359d926beadd56/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-18020",
+      "product": "https://www.sparkfun.com/sparkfun-6-degrees-of-freedom-breakout-lsm6dso-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_6DoF_LSM6DSO",
+      "commit": "fef35123412fc2935d342e2837b1f5b8fdf1caf0",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_6DoF_LSM6DSO/blob/fef35123412fc2935d342e2837b1f5b8fdf1caf0/Hardware/SparkFun_6DoF_LSM6DSO.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_6DoF_LSM6DSO/blob/fef35123412fc2935d342e2837b1f5b8fdf1caf0/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-13884",
+      "product": "https://www.sparkfun.com/sparkfun-led-driver-breakout-lp55231.html",
+      "repository": "https://github.com/sparkfun/LP55231_Breakout",
+      "commit": "22344d31a03233e4ea5ad2a805c65f5a140c4dda",
+      "source": "https://github.com/sparkfun/LP55231_Breakout/blob/22344d31a03233e4ea5ad2a805c65f5a140c4dda/Hardware/LP55231_breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/LP55231_Breakout/blob/22344d31a03233e4ea5ad2a805c65f5a140c4dda/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-10680",
+      "product": "https://www.sparkfun.com/sparkfun-shift-register-breakout-74hc595.html",
+      "repository": "https://github.com/sparkfun/Shift_Register_Breakout-74HC595",
+      "commit": "f4b8fcbc33bc4909edb6585cc242096297a6a2ce",
+      "source": "https://github.com/sparkfun/Shift_Register_Breakout-74HC595/blob/f4b8fcbc33bc4909edb6585cc242096297a6a2ce/Hardware/SparkFun_Shift_Register_Breakout-74HC595.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Shift_Register_Breakout-74HC595/blob/f4b8fcbc33bc4909edb6585cc242096297a6a2ce/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-10124",
+      "product": "https://www.sparkfun.com/sparkfun-transceiver-breakout-rs-485.html",
+      "repository": "https://github.com/sparkfun/RS-485_Breakout",
+      "commit": "08f1d60e6739cf89f001febbcf19147ea7988cf7",
+      "source": "https://github.com/sparkfun/RS-485_Breakout/blob/08f1d60e6739cf89f001febbcf19147ea7988cf7/Hardware/RS485_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RS-485_Breakout/blob/08f1d60e6739cf89f001febbcf19147ea7988cf7/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-09056",
+      "product": "https://www.sparkfun.com/sparkfun-analog-digital-mux-breakout-cd74hc4067.html",
+      "repository": "https://github.com/sparkfun/Analog_Digital_MUX_Breakout",
+      "commit": "f7f2eeb117617e67ab8442edc7ba767d19f0fd75",
+      "source": "https://github.com/sparkfun/Analog_Digital_MUX_Breakout/blob/f7f2eeb117617e67ab8442edc7ba767d19f0fd75/Hardware/Analog-Digital-Mux-Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/Analog_Digital_MUX_Breakout/blob/f7f2eeb117617e67ab8442edc7ba767d19f0fd75/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-15931",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-button-breakout.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Button",
+      "commit": "e89a82fe2ddb293bfe0d6d9f63ccf4782a77c359",
+      "source": "https://github.com/sparkfun/Qwiic_Button/blob/e89a82fe2ddb293bfe0d6d9f63ccf4782a77c359/Hardware/Qwiic_Button.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Button/blob/e89a82fe2ddb293bfe0d6d9f63ccf4782a77c359/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-22857",
+      "product": "https://www.sparkfun.com/sparkfun-vr-imu-breakout-bno086-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_VR_IMU_Breakout_BNO086_QWIIC",
+      "commit": "fc8ed693a5193c8faec3098f29d206dea171958e",
+      "source": "https://github.com/sparkfun/SparkFun_VR_IMU_Breakout_BNO086_QWIIC/blob/fc8ed693a5193c8faec3098f29d206dea171958e/Hardware/SparkFun_VR_IMU_Breakout_BNO086_QWIIC.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_VR_IMU_Breakout_BNO086_QWIIC/blob/fc8ed693a5193c8faec3098f29d206dea171958e/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-16826",
+      "product": "https://www.sparkfun.com/sparkfun-pulsed-radar-breakout-a111.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Pulsed_Radar_Breakout_A111",
+      "commit": "5f4d608a017d88721af725bd75d14d3e65de6438",
+      "source": "https://github.com/sparkfun/SparkFun_Pulsed_Radar_Breakout_A111/blob/5f4d608a017d88721af725bd75d14d3e65de6438/Hardware/A111_Pulsed_Radar_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Pulsed_Radar_Breakout_A111/blob/5f4d608a017d88721af725bd75d14d3e65de6438/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-10616",
+      "product": "https://www.sparkfun.com/sparkfun-led-driver-breakout-tlc5940-16-channel.html",
+      "repository": "https://github.com/sparkfun/LED_Driver_Breakout-TLC5940",
+      "commit": "52c035a3753d4f301d2620337d949fd105a381ee",
+      "source": "https://github.com/sparkfun/LED_Driver_Breakout-TLC5940/blob/52c035a3753d4f301d2620337d949fd105a381ee/Hardware/SparkFun_TLC5940_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/LED_Driver_Breakout-TLC5940/blob/52c035a3753d4f301d2620337d949fd105a381ee/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-10217",
+      "product": "https://www.sparkfun.com/sparkfun-lipo-charger-basic-micro-usb.html",
+      "repository": "https://github.com/sparkfun/Lipo_Charger_Basic-microUSB",
+      "commit": "73710c1269a31963b9878e43a2877c6df5e5454a",
+      "source": "https://github.com/sparkfun/Lipo_Charger_Basic-microUSB/blob/73710c1269a31963b9878e43a2877c6df5e5454a/Hardware/SparkFun_Lipo_Charger_Basic-microUSB.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Lipo_Charger_Basic-microUSB/blob/73710c1269a31963b9878e43a2877c6df5e5454a/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-10401",
+      "product": "https://www.sparkfun.com/sparkfun-lipo-charger-basic-mini-usb.html",
+      "repository": "https://github.com/sparkfun/Lipo_Charger_Basic-miniUSB",
+      "commit": "2337e59b6f3262da4831704031a2917ebb83dce3",
+      "source": "https://github.com/sparkfun/Lipo_Charger_Basic-miniUSB/blob/2337e59b6f3262da4831704031a2917ebb83dce3/Hardware/SparkFun_LiPo-Charger-Basic-MiniUSB.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Lipo_Charger_Basic-miniUSB/blob/2337e59b6f3262da4831704031a2917ebb83dce3/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-15353",
+      "product": "https://www.sparkfun.com/sparkfun-nano-power-timer-tpl5110.html",
+      "repository": "https://github.com/sparkfun/SparkFun_TPL5110_Nano_Power_Timer",
+      "commit": "2d8d2cce78c7de05692d414d517ff05b5ec02b5c",
+      "source": "https://github.com/sparkfun/SparkFun_TPL5110_Nano_Power_Timer/blob/2d8d2cce78c7de05692d414d517ff05b5ec02b5c/Hardware/SparkFun_TPL5110_Nano_Power_Switch.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_TPL5110_Nano_Power_Timer/blob/2d8d2cce78c7de05692d414d517ff05b5ec02b5c/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-11214",
+      "product": "https://www.sparkfun.com/sparkfun-mosfet-power-controller.html",
+      "repository": "https://github.com/sparkfun/MOSFET_Power_Controller",
+      "commit": "d20f59094c1d7a4e9a1747663bc88a6df2e4bed8",
+      "source": "https://github.com/sparkfun/MOSFET_Power_Controller/blob/d20f59094c1d7a4e9a1747663bc88a6df2e4bed8/Hardware/SparkFun_MOSFET_Power_Controller.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/MOSFET_Power_Controller/blob/d20f59094c1d7a4e9a1747663bc88a6df2e4bed8/Hardware/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "TOL-20680",
+      "product": "https://www.sparkfun.com/sparkfun-lipo-fuel-gauge.html",
+      "repository": "https://github.com/sparkfun/Lipo_Fuel_Gauge",
+      "commit": "e3e707c39049de7c6ebeac7bd36e45bb6d1290e3",
+      "source": "https://github.com/sparkfun/Lipo_Fuel_Gauge/blob/e3e707c39049de7c6ebeac7bd36e45bb6d1290e3/Hardware/SparkFun_Lipo_Fuel_Gauge.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Lipo_Fuel_Gauge/blob/e3e707c39049de7c6ebeac7bd36e45bb6d1290e3/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-13746",
+      "product": "https://www.sparkfun.com/sparkfun-beefy-3-ftdi-basic-breakout.html",
+      "repository": "https://github.com/sparkfun/Beefy_3",
+      "commit": "1a71bb997699b4622a6928de9686144e5ce14850",
+      "source": "https://github.com/sparkfun/Beefy_3/blob/1a71bb997699b4622a6928de9686144e5ce14850/Hardware/Beefy_3.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Beefy_3/blob/1a71bb997699b4622a6928de9686144e5ce14850/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-14050",
+      "product": "https://www.sparkfun.com/sparkfun-serial-basic-breakout-ch340g.html",
+      "repository": "https://github.com/sparkfun/Serial_Basic_Breakout-CH340G",
+      "commit": "19004d8256151ac61e5502eeaa41979b48e95c62",
+      "source": "https://github.com/sparkfun/Serial_Basic_Breakout-CH340G/blob/19004d8256151ac61e5502eeaa41979b48e95c62/Hardware/Serial-Basic.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Serial_Basic_Breakout-CH340G/blob/19004d8256151ac61e5502eeaa41979b48e95c62/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15573",
+      "product": "https://www.sparkfun.com/sparkfun-cryptographic-co-processor-breakout-atecc508a-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC508A_Qwiic",
+      "commit": "da869f8ba6f81d4b27afae658ca783c68a12dfaa",
+      "source": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC508A_Qwiic/blob/da869f8ba6f81d4b27afae658ca783c68a12dfaa/Hardware/SparkFun_Cryptographic_Co-processor_ATECC508A.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC508A_Qwiic/blob/da869f8ba6f81d4b27afae658ca783c68a12dfaa/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-18077",
+      "product": "https://www.sparkfun.com/sparkfun-cryptographic-co-processor-breakout-atecc608a-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC608A_Qwiic",
+      "commit": "a9a339c4b7ac3794252c8a24e5d9b2c1dacdae88",
+      "source": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC608A_Qwiic/blob/a9a339c4b7ac3794252c8a24e5d9b2c1dacdae88/Hardware/SparkFun_Cryptographic_Co-processor_ATECC608A.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC608A_Qwiic/blob/a9a339c4b7ac3794252c8a24e5d9b2c1dacdae88/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "COM-16916",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-alphanumeric-display-red.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Alphanumeric_Display_Breakout",
+      "commit": "93e6d110892d22604cbe8f278291b2ed05fefd52",
+      "source": "https://github.com/sparkfun/Qwiic_Alphanumeric_Display_Breakout/blob/93e6d110892d22604cbe8f278291b2ed05fefd52/Hardware/Qwiic_Alphanumeric_Display.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Alphanumeric_Display_Breakout/blob/93e6d110892d22604cbe8f278291b2ed05fefd52/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "LCD-23453",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-oled-1-3in-128x64.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_OLED_1.3in",
+      "commit": "fe1cef157c993c8265288fbccf211043df3708be",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_OLED_1.3in/blob/fe1cef157c993c8265288fbccf211043df3708be/Hardware/Qwiic_OLED_1.3in.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_OLED_1.3in/blob/fe1cef157c993c8265288fbccf211043df3708be/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "LCD-22495",
+      "product": "https://www.sparkfun.com/sparkfun-micro-oled-breakout-qwiic-lcd-22495.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Micro_OLED",
+      "commit": "c3ee0d437bd69ed8c1e5bce32e425c81365d2e21",
+      "source": "https://github.com/sparkfun/Qwiic_Micro_OLED/blob/c3ee0d437bd69ed8c1e5bce32e425c81365d2e21/Hardware/Qwiic_OLED_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Micro_OLED/blob/c3ee0d437bd69ed8c1e5bce32e425c81365d2e21/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "LCD-24606",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-oled-display-0-91-in-128x32-lcd-24606.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_OLED-0.91",
+      "commit": "270ccc6685ca933dee99031f7079327c7b601f08",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_OLED-0.91/blob/270ccc6685ca933dee99031f7079327c7b601f08/Hardware/OLED%20Display.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_OLED-0.91/blob/270ccc6685ca933dee99031f7079327c7b601f08/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-13032",
+      "product": "https://www.sparkfun.com/sparkfun-breadboard-power-supply-stick-5v-3-3v.html",
+      "repository": "https://github.com/sparkfun/Breadboard_Power_Supply_Stick_5V-3.3V",
+      "commit": "61db9993900f6341ecfdf4ad78172a0a0ff155b8",
+      "source": "https://github.com/sparkfun/Breadboard_Power_Supply_Stick_5V-3.3V/blob/61db9993900f6341ecfdf4ad78172a0a0ff155b8/Hardware/SparkFun_Breadboard_Power_Supply-5v_3V_SMD.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Breadboard_Power_Supply_Stick_5V-3.3V/blob/61db9993900f6341ecfdf4ad78172a0a0ff155b8/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-08780",
+      "product": "https://www.sparkfun.com/sparkfun-rs232-shifter-smd-no-db9.html",
+      "repository": "https://github.com/sparkfun/RS232_Shifter",
+      "commit": "bdd3ede6083f00aee6b5b1c1bc472e146b545ba7",
+      "source": "https://github.com/sparkfun/RS232_Shifter/blob/bdd3ede6083f00aee6b5b1c1bc472e146b545ba7/Hardware/Sparkfun_RS232.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RS232_Shifter/blob/bdd3ede6083f00aee6b5b1c1bc472e146b545ba7/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-12775",
+      "product": "https://www.sparkfun.com/sparkfun-rfm69-breakout-915mhz.html",
+      "repository": "https://github.com/sparkfun/RFM69HCW_Breakout",
+      "commit": "bbdeb90abd7d484141efe302b7735fe7d42c3550",
+      "source": "https://github.com/sparkfun/RFM69HCW_Breakout/blob/bbdeb90abd7d484141efe302b7735fe7d42c3550/hardware/RFM69HCW_BOB.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RFM69HCW_Breakout/blob/bbdeb90abd7d484141efe302b7735fe7d42c3550/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-14765",
+      "product": "https://www.sparkfun.com/sparkfun-logic-level-converter-single-supply.html",
+      "repository": "https://github.com/sparkfun/Single_Supply_Logic_Level_Converter",
+      "commit": "5f675f2d775cb42f4a4552231788bdc252794832",
+      "source": "https://github.com/sparkfun/Single_Supply_Logic_Level_Converter/blob/5f675f2d775cb42f4a4552231788bdc252794832/Hardware/Single_Supply_Logic_Level_Converter.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Single_Supply_Logic_Level_Converter/blob/5f675f2d775cb42f4a4552231788bdc252794832/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WIG-13118",
+      "product": "https://www.sparkfun.com/sparkfun-servo-trigger.html",
+      "repository": "https://github.com/sparkfun/Servo_Trigger",
+      "commit": "92e979266c02ae5d4a299a0ea645edb494bfdf73",
+      "source": "https://github.com/sparkfun/Servo_Trigger/blob/92e979266c02ae5d4a299a0ea645edb494bfdf73/Hardware/SparkFun_Servo_Trigger.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Servo_Trigger/blob/92e979266c02ae5d4a299a0ea645edb494bfdf73/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "LCD-13003",
+      "product": "https://www.sparkfun.com/sparkfun-micro-oled-breakout.html",
+      "repository": "https://github.com/sparkfun/Micro_OLED_Breakout",
+      "commit": "c7dd8939c905110a473beadf4ffc893d9c7b9ea2",
+      "source": "https://github.com/sparkfun/Micro_OLED_Breakout/blob/c7dd8939c905110a473beadf4ffc893d9c7b9ea2/Hardware/SparkFun_Micro-OLED_Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/Micro_OLED_Breakout/blob/c7dd8939c905110a473beadf4ffc893d9c7b9ea2/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "COM-16810",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-dual-solid-state-relay.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Dual_Solid_State_Relay",
+      "commit": "f9fa87f14ecabf325691b4dac59270415eae224c",
+      "source": "https://github.com/sparkfun/Qwiic_Dual_Solid_State_Relay/blob/f9fa87f14ecabf325691b4dac59270415eae224c/Hardware/Qwiic%20Solid%20State%20Relay.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Dual_Solid_State_Relay/blob/f9fa87f14ecabf325691b4dac59270415eae224c/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WIG-13279",
+      "product": "https://www.sparkfun.com/sparkfun-large-digit-driver.html",
+      "repository": "https://github.com/sparkfun/Large_Digit_Driver",
+      "commit": "10e7c4d8e63a7fee790a0cef35d12d5dc099fbbd",
+      "source": "https://github.com/sparkfun/Large_Digit_Driver/blob/10e7c4d8e63a7fee790a0cef35d12d5dc099fbbd/Hardware/SparkFunLargeDigitDriver.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Large_Digit_Driver/blob/10e7c4d8e63a7fee790a0cef35d12d5dc099fbbd/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15083",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-twist-rgb-rotary-encoder-breakout.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Twist",
+      "commit": "f9bbde3fad9b549a7cbdb31b192a003f8ffae182",
+      "source": "https://github.com/sparkfun/Qwiic_Twist/blob/f9bbde3fad9b549a7cbdb31b192a003f8ffae182/Hardware/Qwiic%20Twist.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Twist/blob/f9bbde3fad9b549a7cbdb31b192a003f8ffae182/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "COM-15290",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-keypad-12-button.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Keypad",
+      "commit": "3c219d96fedc362823868bff1757e3e6ec07d017",
+      "source": "https://github.com/sparkfun/Qwiic_Keypad/blob/3c219d96fedc362823868bff1757e3e6ec07d017/Hardware/Qwiic_keypad.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Keypad/blob/3c219d96fedc362823868bff1757e3e6ec07d017/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-17047",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-gpio.html",
+      "repository": "https://github.com/sparkfun/Qwiic_GPIO",
+      "commit": "d3fc4672ccd731266f01de194a290f7923f77d8a",
+      "source": "https://github.com/sparkfun/Qwiic_GPIO/blob/d3fc4672ccd731266f01de194a290f7923f77d8a/Hardware/Qwiic_GPIO.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_GPIO/blob/d3fc4672ccd731266f01de194a290f7923f77d8a/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-13711",
+      "product": "https://www.sparkfun.com/sparkfun-esp8266-thing-dev-board.html",
+      "repository": "https://github.com/sparkfun/ESP8266_Thing_Dev",
+      "commit": "e2f5277a9f49694436a95733a86f40216b845bbd",
+      "source": "https://github.com/sparkfun/ESP8266_Thing_Dev/blob/e2f5277a9f49694436a95733a86f40216b845bbd/Hardware/ESP8266-Thing-Dev.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ESP8266_Thing_Dev/blob/e2f5277a9f49694436a95733a86f40216b845bbd/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15164",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-openlog.html",
+      "repository": "https://github.com/sparkfun/Qwiic_OpenLog",
+      "commit": "f3f6a3ec3f70fe4c14612b38fac360f26ee79a4c",
+      "source": "https://github.com/sparkfun/Qwiic_OpenLog/blob/f3f6a3ec3f70fe4c14612b38fac360f26ee79a4c/Hardware/Qwiic-OpenLog.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_OpenLog/blob/f3f6a3ec3f70fe4c14612b38fac360f26ee79a4c/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-15484",
+      "product": "https://www.sparkfun.com/sparkfun-artemis-module-low-power-machine-learning-ble-cortex-m4f.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Artemis",
+      "commit": "e1d026549109ea02264e977fc1f7b8d49bcfdfe9",
+      "source": "https://github.com/sparkfun/SparkFun_Artemis/blob/e1d026549109ea02264e977fc1f7b8d49bcfdfe9/Hardware/SparkFun_Artemis.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Artemis/blob/e1d026549109ea02264e977fc1f7b8d49bcfdfe9/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15123",
+      "product": "https://www.sparkfun.com/sparkfun-redboard-qwiic.html",
+      "repository": "https://github.com/sparkfun/RedBoard",
+      "commit": "498b7cf536c74f1a9a3a2315bf9f8feb0d7169c9",
+      "source": "https://github.com/sparkfun/RedBoard/blob/498b7cf536c74f1a9a3a2315bf9f8feb0d7169c9/Hardware/RedBoard.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RedBoard/blob/498b7cf536c74f1a9a3a2315bf9f8feb0d7169c9/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-11570",
+      "product": "https://www.sparkfun.com/sparkfun-trrs-3-5mm-jack-breakout.html",
+      "repository": "https://github.com/sparkfun/TRRS_3.5mm_Jack_Breakout",
+      "commit": "1e6fa3677d11380108fc276f8680482839ed4603",
+      "source": "https://github.com/sparkfun/TRRS_3.5mm_Jack_Breakout/blob/1e6fa3677d11380108fc276f8680482839ed4603/Hardware/SparkFun_TRRS_3.5mm_Jack_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/TRRS_3.5mm_Jack_Breakout/blob/1e6fa3677d11380108fc276f8680482839ed4603/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-23589",
+      "product": "https://www.sparkfun.com/sparkfun-eslov-to-qwiic-bridge.html",
+      "repository": "https://github.com/sparkfun/SparkFun_ESLOV_to_Qwiic_Bridge",
+      "commit": "a666bf9ff5f64aa4173cf14a91c46ec30a275723",
+      "source": "https://github.com/sparkfun/SparkFun_ESLOV_to_Qwiic_Bridge/blob/a666bf9ff5f64aa4173cf14a91c46ec30a275723/Hardware/SparkFun_ESLOV_to_Qwiic_Bridge.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_ESLOV_to_Qwiic_Bridge/blob/a666bf9ff5f64aa4173cf14a91c46ec30a275723/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-00544",
+      "product": "https://www.sparkfun.com/sparkfun-microsd-transflash-breakout.html",
+      "repository": "https://github.com/sparkfun/microSD_Transflash_Breakout",
+      "commit": "452f85520c81f96c2dedbddf25c896412a55390d",
+      "source": "https://github.com/sparkfun/microSD_Transflash_Breakout/blob/452f85520c81f96c2dedbddf25c896412a55390d/Hardware/SparkFun_microSD_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/microSD_Transflash_Breakout/blob/452f85520c81f96c2dedbddf25c896412a55390d/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-12941",
+      "product": "https://www.sparkfun.com/sparkfun-sd-mmc-card-breakout.html",
+      "repository": "https://github.com/sparkfun/SD-MMC_Breakout",
+      "commit": "d472cfaa8c39cf9efc94f010e50b85bc87eefc7b",
+      "source": "https://github.com/sparkfun/SD-MMC_Breakout/blob/d472cfaa8c39cf9efc94f010e50b85bc87eefc7b/Hardware/SD_MMC%20Breakout-v20.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SD-MMC_Breakout/blob/d472cfaa8c39cf9efc94f010e50b85bc87eefc7b/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-23055",
+      "product": "https://www.sparkfun.com/sparkfun-usb-c-breakout-vertical.html",
+      "repository": "https://github.com/sparkfun/SparkFun_USB-C_Vertical_Breakout",
+      "commit": "4c7334fc922f8f0e9de07536f063adfe0231c05f",
+      "source": "https://github.com/sparkfun/SparkFun_USB-C_Vertical_Breakout/blob/4c7334fc922f8f0e9de07536f063adfe0231c05f/Hardware/USB%20C%20Vertical%20Breakout-PTH.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_USB-C_Vertical_Breakout/blob/4c7334fc922f8f0e9de07536f063adfe0231c05f/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-10588",
+      "product": "https://www.sparkfun.com/sparkfun-audio-jack-breakout.html",
+      "repository": "https://github.com/sparkfun/Audio_Jack_Breakout",
+      "commit": "f0329895d5650231a612e34d667e27eaddbd1ccb",
+      "source": "https://github.com/sparkfun/Audio_Jack_Breakout/blob/f0329895d5650231a612e34d667e27eaddbd1ccb/Hardware/SparkFun_Audio_Jack_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Audio_Jack_Breakout/blob/f0329895d5650231a612e34d667e27eaddbd1ccb/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-14495",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-adapter.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Adapter",
+      "commit": "3c810f09ea89ea3e10fd5907076c6cccff8b224a",
+      "source": "https://github.com/sparkfun/Qwiic_Adapter/blob/3c810f09ea89ea3e10fd5907076c6cccff8b224a/Hardware/SparkFun%20Qwiic%20Adapter.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Adapter/blob/3c810f09ea89ea3e10fd5907076c6cccff8b224a/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WIG-09555",
+      "product": "https://www.sparkfun.com/sparkfun-obd-ii-uart.html",
+      "repository": "https://github.com/sparkfun/OBD-II_UART",
+      "commit": "c35ae778350c3c9f5c8568319e0dbf106518fd76",
+      "source": "https://github.com/sparkfun/OBD-II_UART/blob/c35ae778350c3c9f5c8568319e0dbf106518fd76/Hardware/OBD-II-UART.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/OBD-II_UART/blob/c35ae778350c3c9f5c8568319e0dbf106518fd76/Hardware/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-13743",
+      "product": "https://www.sparkfun.com/sparkfun-level-shifting-microsd-breakout.html",
+      "repository": "https://github.com/sparkfun/Shifting_microSD",
+      "commit": "805f7ea82e15699bff82da9536cf72ba25ca70c9",
+      "source": "https://github.com/sparkfun/Shifting_microSD/blob/805f7ea82e15699bff82da9536cf72ba25ca70c9/Hardware/Shifting_microSD.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Shifting_microSD/blob/805f7ea82e15699bff82da9536cf72ba25ca70c9/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-14380",
+      "product": "https://www.sparkfun.com/sparkfun-adjustable-lipo-charger.html",
+      "repository": "https://github.com/sparkfun/Adjustable_Lipo_Charger",
+      "commit": "868eacc48301330d7427ae267d21163763f37c5c",
+      "source": "https://github.com/sparkfun/Adjustable_Lipo_Charger/blob/868eacc48301330d7427ae267d21163763f37c5c/Hardware/Sparkfun_Adjustable_LiPo_Charger.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Adjustable_Lipo_Charger/blob/868eacc48301330d7427ae267d21163763f37c5c/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-20690",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-speaker-amp.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_Speaker_Amp",
+      "commit": "0666c55c884f3d58f34ac0dac3905eb5b8ca0fcf",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_Speaker_Amp/blob/0666c55c884f3d58f34ac0dac3905eb5b8ca0fcf/Hardware/SparkFun_Qwiic_Speaker_Amp.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_Speaker_Amp/blob/0666c55c884f3d58f34ac0dac3905eb5b8ca0fcf/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-13777",
+      "product": "https://www.sparkfun.com/sparkfun-battery-babysitter-lipo-battery-manager.html",
+      "repository": "https://github.com/sparkfun/Battery_Babysitter",
+      "commit": "c3cb25541fb2fba7b2803e078727e8bec7a3da13",
+      "source": "https://github.com/sparkfun/Battery_Babysitter/blob/c3cb25541fb2fba7b2803e078727e8bec7a3da13/Hardware/sparkfun-battery-babysitter.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Battery_Babysitter/blob/c3cb25541fb2fba7b2803e078727e8bec7a3da13/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-13231",
+      "product": "https://www.sparkfun.com/sparkfun-esp8266-thing.html",
+      "repository": "https://github.com/sparkfun/ESP8266_Thing",
+      "commit": "9f412e78a48587f9689b4d6eafaf941f308822ea",
+      "source": "https://github.com/sparkfun/ESP8266_Thing/blob/9f412e78a48587f9689b4d6eafaf941f308822ea/Hardware/SparkFun_ESP8266_Thing_V10a.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ESP8266_Thing/blob/9f412e78a48587f9689b4d6eafaf941f308822ea/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-15663",
+      "product": "https://www.sparkfun.com/sparkfun-thing-plus-esp32-wroom-micro-b.html",
+      "repository": "https://github.com/sparkfun/ESP32_Thing_Plus",
+      "commit": "ed6d941070fa7756af6d2e24bdcfed8e27b2734a",
+      "source": "https://github.com/sparkfun/ESP32_Thing_Plus/blob/ed6d941070fa7756af6d2e24bdcfed8e27b2734a/Hardware/ESP32_Thing_Plus.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ESP32_Thing_Plus/blob/ed6d941070fa7756af6d2e24bdcfed8e27b2734a/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-22032",
+      "product": "https://www.sparkfun.com/sparkfun-digi-xbeer-explorer-regulated.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Digi_XBee_Regulated_Qwiic",
+      "commit": "0e25ebd7364daae9f0bd36c49f88e7d2f2435074",
+      "source": "https://github.com/sparkfun/SparkFun_Digi_XBee_Regulated_Qwiic/blob/0e25ebd7364daae9f0bd36c49f88e7d2f2435074/Hardware/SparkFun_Digi_XBee_Regulated_Qwiic.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Digi_XBee_Regulated_Qwiic/blob/0e25ebd7364daae9f0bd36c49f88e7d2f2435074/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-13907",
+      "product": "https://www.sparkfun.com/sparkfun-esp32-thing.html",
+      "repository": "https://github.com/sparkfun/ESP32_Thing",
+      "commit": "fb2dac4c1c493854c3db8a74acc9377a38db2b4a",
+      "source": "https://github.com/sparkfun/ESP32_Thing/blob/fb2dac4c1c493854c3db8a74acc9377a38db2b4a/Hardware/esp32-thing.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ESP32_Thing/blob/fb2dac4c1c493854c3db8a74acc9377a38db2b4a/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-15836",
+      "product": "https://www.sparkfun.com/sparkfun-pro-rf-lora-915mhz-samd21.html",
+      "repository": "https://github.com/sparkfun/SAMD21_Pro_RF",
+      "commit": "4d1cfcd83d3b3f5626493ca8165d668130ef8da6",
+      "source": "https://github.com/sparkfun/SAMD21_Pro_RF/blob/4d1cfcd83d3b3f5626493ca8165d668130ef8da6/Hardware/SAMD21_Pro_RF.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SAMD21_Pro_RF/blob/4d1cfcd83d3b3f5626493ca8165d668130ef8da6/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-15574",
+      "product": "https://www.sparkfun.com/sparkfun-thing-plus-artemis.html",
+      "repository": "https://github.com/sparkfun/Artemis_Thing_Plus",
+      "commit": "fc9612da34b751c9c8a5c7f041443c914a42a65d",
+      "source": "https://github.com/sparkfun/Artemis_Thing_Plus/blob/fc9612da34b751c9c8a5c7f041443c914a42a65d/Hardware/Artemis%20Thing%20Plus.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Artemis_Thing_Plus/blob/fc9612da34b751c9c8a5c7f041443c914a42a65d/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-15435",
+      "product": "https://www.sparkfun.com/sparkfun-thing-plus-xbee3-micro-u-fl.html",
+      "repository": "https://github.com/sparkfun/XBee3_Thing_Plus",
+      "commit": "624c5b54180645034c3d2f315639a831f0518abc",
+      "source": "https://github.com/sparkfun/XBee3_Thing_Plus/blob/624c5b54180645034c3d2f315639a831f0518abc/Hardware/XBEE3_Thing_Plus.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/XBee3_Thing_Plus/blob/624c5b54180645034c3d2f315639a831f0518abc/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-17743",
+      "product": "https://www.sparkfun.com/sparkfun-thing-plus-esp32-s2-wroom.html",
+      "repository": "https://github.com/sparkfun/ESP32-S2_Thing_Plus",
+      "commit": "49a7c05da8a254010d7022d4b9586dff2c6bbb9a",
+      "source": "https://github.com/sparkfun/ESP32-S2_Thing_Plus/blob/49a7c05da8a254010d7022d4b9586dff2c6bbb9a/Hardware/ESP32-S2_Thing_Plus.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ESP32-S2_Thing_Plus/blob/49a7c05da8a254010d7022d4b9586dff2c6bbb9a/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-20176",
+      "product": "https://www.sparkfun.com/sparkfun-micro-6dof-imu-ism330dhcx-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_6DoF_ISM330DHCX",
+      "commit": "f848874e34e034c00f4e4b8a50d073738f87817b",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_6DoF_ISM330DHCX/blob/f848874e34e034c00f4e4b8a50d073738f87817b/Hardware/Qwiic%20Micro/SparkFun_6DoF_ISM330DHCX_Qwiic_Micro.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_6DoF_ISM330DHCX/blob/f848874e34e034c00f4e4b8a50d073738f87817b/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-21207",
+      "product": "https://www.sparkfun.com/sparkfun-micro-triple-axis-accelerometer-breakout-bma400-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_Accelerometer_BMA400",
+      "commit": "2751c15eec8f50759e3414337c0133b55b9c19d1",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_Accelerometer_BMA400/blob/2751c15eec8f50759e3414337c0133b55b9c19d1/Hardware/Qwiic%20Micro/SparkFun_Qwiic_Micro_Accelerometer_BMA400.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_Accelerometer_BMA400/blob/2751c15eec8f50759e3414337c0133b55b9c19d1/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-16467",
+      "product": "https://www.sparkfun.com/sparkfun-humidity-sensor-breakout-shtc3-qwiic.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Humidity_SHTC3",
+      "commit": "89ecc1a11c2d0c3bbd8bc6224095ddf24aff0d09",
+      "source": "https://github.com/sparkfun/Qwiic_Humidity_SHTC3/blob/89ecc1a11c2d0c3bbd8bc6224095ddf24aff0d09/Hardware/SHTC3%20Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Humidity_SHTC3/blob/89ecc1a11c2d0c3bbd8bc6224095ddf24aff0d09/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-22395",
+      "product": "https://www.sparkfun.com/sparkfun-co-humidity-and-temperature-sensor-scd40-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_CO2_Sensor_SCD4X",
+      "commit": "cc7038afb5866ae185909394f119b9622c563c26",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_CO2_Sensor_SCD4X/blob/cc7038afb5866ae185909394f119b9622c563c26/Hardware/SCD40/SparkFun_Qwiic_CO2_Sensor_SCD40.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_CO2_Sensor_SCD4X/blob/cc7038afb5866ae185909394f119b9622c563c26/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "COM-18356",
+      "product": "https://www.sparkfun.com/sparkfun-buck-regulator-breakout-3-3v-ap63203.html",
+      "repository": "https://github.com/sparkfun/Buck_Regulator_AP63203",
+      "commit": "63cdc8eadd1258e32630f4e8ce2c1978d6ed62a5",
+      "source": "https://github.com/sparkfun/Buck_Regulator_AP63203/blob/63cdc8eadd1258e32630f4e8ce2c1978d6ed62a5/SparkFun%20Buck%20Regulator%20-%20AP63203/Hardware/SparkFun%20Buck%20Regulator%20-%20AP63203.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Buck_Regulator_AP63203/blob/63cdc8eadd1258e32630f4e8ce2c1978d6ed62a5/license.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-21262",
+      "product": "https://www.sparkfun.com/sparkfun-temperature-sensor-stts22h-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Temperature_Sensor-STTS22H",
+      "commit": "9d0e0f48df40bdf507b0101b32ba3f23b96b763a",
+      "source": "https://github.com/sparkfun/SparkFun_Temperature_Sensor-STTS22H/blob/9d0e0f48df40bdf507b0101b32ba3f23b96b763a/Hardware/Qwiic/SparkFun_Temperature_Sensor-STTS22H.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Temperature_Sensor-STTS22H/blob/9d0e0f48df40bdf507b0101b32ba3f23b96b763a/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-21221",
+      "product": "https://www.sparkfun.com/sparkfun-absolute-digital-barometer-lps28dfw-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_Barometer_LPS28DFW",
+      "commit": "b012d97cd56bf5a8a2a540c1f81aa75693716141",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_Barometer_LPS28DFW/blob/b012d97cd56bf5a8a2a540c1f81aa75693716141/Hardware/Qwiic%201x1/SparkFun_Qwiic_Barometer_LPS28DFW.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_Barometer_LPS28DFW/blob/b012d97cd56bf5a8a2a540c1f81aa75693716141/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-19036",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-dtof-imager-tmf8820.html",
+      "repository": "https://github.com/sparkfun/SparkFun_Qwiic_dTof-TMF882X",
+      "commit": "740270a20d78007335bffadc37cc784e1ea64e54",
+      "source": "https://github.com/sparkfun/SparkFun_Qwiic_dTof-TMF882X/blob/740270a20d78007335bffadc37cc784e1ea64e54/Hardware/TMF8820/SparkFun_dToF-TMF8820.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_Qwiic_dTof-TMF882X/blob/740270a20d78007335bffadc37cc784e1ea64e54/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "SEN-21325",
+      "product": "https://www.sparkfun.com/sparkfun-6dof-imu-breakout-lsm6dsv16x-qwiic.html",
+      "repository": "https://github.com/sparkfun/SparkFun_6DoF_LSM6DSV16X",
+      "commit": "81f28abb82c4edfa63f5bcc623be1ea7ef1c1ce5",
+      "source": "https://github.com/sparkfun/SparkFun_6DoF_LSM6DSV16X/blob/81f28abb82c4edfa63f5bcc623be1ea7ef1c1ce5/Hardware/Qwiic/SparkFun_6DoF_LSM6DSV16X.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_6DoF_LSM6DSV16X/blob/81f28abb82c4edfa63f5bcc623be1ea7ef1c1ce5/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-16402",
+      "product": "https://www.sparkfun.com/sparkfun-micromod-teensy-processor.html",
+      "repository": "https://github.com/sparkfun/MicroMod_Teensy_Processor",
+      "commit": "51ca16ddcabd38d134c051391ffedf16dafc19a0",
+      "source": "https://github.com/sparkfun/MicroMod_Teensy_Processor/blob/51ca16ddcabd38d134c051391ffedf16dafc19a0/Hardware/Lockable/MicroMod-Teensy-Lockable.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MicroMod_Teensy_Processor/blob/51ca16ddcabd38d134c051391ffedf16dafc19a0/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "PRT-00449",
+      "product": "https://www.sparkfun.com/sparkfun-rs232-shifter-smd.html",
+      "repository": "https://github.com/sparkfun/RS232_Shifter_SMD",
+      "commit": "1ffd9ab0958647a191cd9c134b5008753b02ec4c",
+      "source": "https://github.com/sparkfun/RS232_Shifter_SMD/blob/1ffd9ab0958647a191cd9c134b5008753b02ec4c/Hardware/Sparkfun_RS232.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RS232_Shifter_SMD/blob/1ffd9ab0958647a191cd9c134b5008753b02ec4c/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-12924",
+      "product": "https://www.sparkfun.com/sparkfun-microview-usb-programmer.html",
+      "repository": "https://github.com/sparkfun/MicroView_USB_Programmer",
+      "commit": "7057bea2c0b54db610f1ea53f22856b7026088ea",
+      "source": "https://github.com/sparkfun/MicroView_USB_Programmer/blob/7057bea2c0b54db610f1ea53f22856b7026088ea/Hardware/SparkFun_MicroViewUSB.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MicroView_USB_Programmer/blob/7057bea2c0b54db610f1ea53f22856b7026088ea/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-13263",
+      "product": "https://www.sparkfun.com/sparkfun-ft231x-breakout.html",
+      "repository": "https://github.com/sparkfun/FT231X_Breakout",
+      "commit": "d2e1c4d47918c22910eefd6794f0705f62567c08",
+      "source": "https://github.com/sparkfun/FT231X_Breakout/blob/d2e1c4d47918c22910eefd6794f0705f62567c08/hardware/ft231x-breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/sparkfun/FT231X_Breakout/blob/d2e1c4d47918c22910eefd6794f0705f62567c08/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-13287",
+      "product": "https://www.sparkfun.com/sparkfun-wifi-shield-esp8266.html",
+      "repository": "https://github.com/sparkfun/ESP8266_WiFi_Shield",
+      "commit": "749e0c4b562e96147a4b3361443263421a739eb5",
+      "source": "https://github.com/sparkfun/ESP8266_WiFi_Shield/blob/749e0c4b562e96147a4b3361443263421a739eb5/Hardware/SparkFun-ESP8266-WiFi-Shield.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ESP8266_WiFi_Shield/blob/749e0c4b562e96147a4b3361443263421a739eb5/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15837",
+      "product": "https://www.sparkfun.com/sparkfun-weather-bit-micro-bit-carrier-board-qwiic.html",
+      "repository": "https://github.com/sparkfun/Micro_Bit_Weather_Bit",
+      "commit": "7c11fc6f1685c92a7b45d4cf2ae8ae3dfafb80d1",
+      "source": "https://github.com/sparkfun/Micro_Bit_Weather_Bit/blob/7c11fc6f1685c92a7b45d4cf2ae8ae3dfafb80d1/Hardware/weather-bit.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Micro_Bit_Weather_Bit/blob/7c11fc6f1685c92a7b45d4cf2ae8ae3dfafb80d1/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-16401",
+      "product": "https://www.sparkfun.com/sparkfun-micromod-artemis-processor.html",
+      "repository": "https://github.com/sparkfun/MicroMod_Artemis_Processor",
+      "commit": "f3e16866c81b140543ed791169d8974c673a9ff8",
+      "source": "https://github.com/sparkfun/MicroMod_Artemis_Processor/blob/f3e16866c81b140543ed791169d8974c673a9ff8/Hardware/MicroMod-Artemis-ProcessorBoard.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MicroMod_Artemis_Processor/blob/f3e16866c81b140543ed791169d8974c673a9ff8/license.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-16781",
+      "product": "https://www.sparkfun.com/sparkfun-micromod-esp32-processor.html",
+      "repository": "https://github.com/sparkfun/MicroMod_ESP32_Processor",
+      "commit": "0faa0480023b6428aa1653dea9e5e82c78e1e742",
+      "source": "https://github.com/sparkfun/MicroMod_ESP32_Processor/blob/0faa0480023b6428aa1653dea9e5e82c78e1e742/Hardware/SparkFun_MicroMod_ESP32.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MicroMod_ESP32_Processor/blob/0faa0480023b6428aa1653dea9e5e82c78e1e742/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-21326",
+      "product": "https://www.sparkfun.com/sparkfun-micromod-stm32-processor.html",
+      "repository": "https://github.com/sparkfun/MicroMod_STM32_Processor",
+      "commit": "419f9807fba00844d928c920a6be062b85855e37",
+      "source": "https://github.com/sparkfun/MicroMod_STM32_Processor/blob/419f9807fba00844d928c920a6be062b85855e37/Hardware/MicroMod_STM32_Processor.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MicroMod_STM32_Processor/blob/419f9807fba00844d928c920a6be062b85855e37/license.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-17725",
+      "product": "https://www.sparkfun.com/sparkfun-micromod-update-tool.html",
+      "repository": "https://github.com/sparkfun/MicroMod_Asset_Tracker_Update_Tool",
+      "commit": "1da02c805c6ca93b8c6c91f639babe04baff3c45",
+      "source": "https://github.com/sparkfun/MicroMod_Asset_Tracker_Update_Tool/blob/1da02c805c6ca93b8c6c91f639babe04baff3c45/Hardware/MicroMod_Asset_Tracker_Firmware_Update_Tool.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/MicroMod_Asset_Tracker_Update_Tool/blob/1da02c805c6ca93b8c6c91f639babe04baff3c45/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-16445",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-micro-bit-breakout.html",
+      "repository": "https://github.com/sparkfun/Micro_Bit_Breakout",
+      "commit": "1e9cd8063e3ae1b69dbc29cd949a2d8854e48135",
+      "source": "https://github.com/sparkfun/Micro_Bit_Breakout/blob/1e9cd8063e3ae1b69dbc29cd949a2d8854e48135/Hardware/Micro_Bit_Breakout.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Micro_Bit_Breakout/blob/1e9cd8063e3ae1b69dbc29cd949a2d8854e48135/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15794",
+      "product": "https://www.sparkfun.com/sparkfun-qwiic-shim-for-raspberry-pi.html",
+      "repository": "https://github.com/sparkfun/Qwiic_Pi_SHIM",
+      "commit": "b1803830bd5c8b9f264a86ea724303ac92b6563b",
+      "source": "https://github.com/sparkfun/Qwiic_Pi_SHIM/blob/b1803830bd5c8b9f264a86ea724303ac92b6563b/Hardware/Qwiic%20Pi%20SHIM.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Qwiic_Pi_SHIM/blob/b1803830bd5c8b9f264a86ea724303ac92b6563b/License.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-17381",
+      "product": "https://www.sparkfun.com/sparkfun-thing-plus-esp32-wroom-u-fl.html",
+      "repository": "https://github.com/sparkfun/ESP32_Thing_Plus_U.FL",
+      "commit": "cc74046280c1cc5f410adf89ca029a7923f55154",
+      "source": "https://github.com/sparkfun/ESP32_Thing_Plus_U.FL/blob/cc74046280c1cc5f410adf89ca029a7923f55154/Hardware/ESP32_Thing_Plus_UFL.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/ESP32_Thing_Plus_U.FL/blob/cc74046280c1cc5f410adf89ca029a7923f55154/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-11373",
+      "product": "https://www.sparkfun.com/sparkfun-xbee-explorer-regulated.html",
+      "repository": "https://github.com/sparkfun/XBee_Explorer_Regulated",
+      "commit": "eac83216d9f6b8921fe2813fc3e6d34e357090aa",
+      "source": "https://github.com/sparkfun/XBee_Explorer_Regulated/blob/eac83216d9f6b8921fe2813fc3e6d34e357090aa/Hardware/XBee-Regulated.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/XBee_Explorer_Regulated/blob/eac83216d9f6b8921fe2813fc3e6d34e357090aa/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-11697",
+      "product": "https://www.sparkfun.com/sparkfun-xbee-explorer-dongle.html",
+      "repository": "https://github.com/sparkfun/XBee_Explorer_Dongle",
+      "commit": "4cb68052dfc5e8f37b921ec27df40bbae25c4817",
+      "source": "https://github.com/sparkfun/XBee_Explorer_Dongle/blob/4cb68052dfc5e8f37b921ec27df40bbae25c4817/Hardware/XBee-Explorer-Dongle.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/XBee_Explorer_Dongle/blob/4cb68052dfc5e8f37b921ec27df40bbae25c4817/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "WRL-11812",
+      "product": "https://www.sparkfun.com/sparkfun-xbee-explorer-usb.html",
+      "repository": "https://github.com/sparkfun/XBee_Explorer_USB",
+      "commit": "1c268163f47bea2f6d020cf3382618237049e284",
+      "source": "https://github.com/sparkfun/XBee_Explorer_USB/blob/1c268163f47bea2f6d020cf3382618237049e284/Hardware/XBee-Explorer.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/XBee_Explorer_USB/blob/1c268163f47bea2f6d020cf3382618237049e284/README.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15110",
+      "product": "https://www.sparkfun.com/sparkfun-esp32-thing-plus-dmx-to-led-shield.html",
+      "repository": "https://github.com/sparkfun/SparkFun_ESP32_Thing_Plus_DMX_to_LED_Shield",
+      "commit": "ea55d9d5a0a1d7c638f598915d8ebc329b2e8753",
+      "source": "https://github.com/sparkfun/SparkFun_ESP32_Thing_Plus_DMX_to_LED_Shield/blob/ea55d9d5a0a1d7c638f598915d8ebc329b2e8753/Hardware/SparkFun%20ESP32%20Thing%20Plus%20DMX%20to%20LED%20Shield.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/SparkFun_ESP32_Thing_Plus_DMX_to_LED_Shield/blob/ea55d9d5a0a1d7c638f598915d8ebc329b2e8753/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "BOB-13717",
+      "product": "https://www.sparkfun.com/sparkfun-pi-wedge.html",
+      "repository": "https://github.com/sparkfun/Pi_Wedge_40-Pin_PreAssembled",
+      "commit": "6d93ad550771dc4c304dc220aea1f0c69fdad907",
+      "source": "https://github.com/sparkfun/Pi_Wedge_40-Pin_PreAssembled/blob/6d93ad550771dc4c304dc220aea1f0c69fdad907/hardware/SparkFun_Pi_Wedge_40-Pin_PreAssembled.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/Pi_Wedge_40-Pin_PreAssembled/blob/6d93ad550771dc4c304dc220aea1f0c69fdad907/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-12761",
+      "product": "https://www.sparkfun.com/sparkfun-microsd-shield.html",
+      "repository": "https://github.com/sparkfun/microSD_Shield",
+      "commit": "993693390e5300f1dc514fdfb9424026b4f4ad7f",
+      "source": "https://github.com/sparkfun/microSD_Shield/blob/993693390e5300f1dc514fdfb9424026b4f4ad7f/Hardware/microSD_Shield.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/microSD_Shield/blob/993693390e5300f1dc514fdfb9424026b4f4ad7f/LICENSE.md"
+    },
+    {
+      "manufacturer": "SparkFun",
+      "sku": "DEV-15443",
+      "product": "https://www.sparkfun.com/sparkfun-redboard-artemis-nano.html",
+      "repository": "https://github.com/sparkfun/RedBoard_Artemis_Nano",
+      "commit": "2e62061e8ccc0fd7359bf5a990b46df76c59b5bc",
+      "source": "https://github.com/sparkfun/RedBoard_Artemis_Nano/blob/2e62061e8ccc0fd7359bf5a990b46df76c59b5bc/Hardware/RedBoard-Artemis-Nano.brd",
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/sparkfun/RedBoard_Artemis_Nano/blob/2e62061e8ccc0fd7359bf5a990b46df76c59b5bc/LICENSE.md"
+    },
+    {
+      "id": "sparkfun-module-sen15805",
+      "manufacturer": "SparkFun",
+      "repo": "sparkfun/SparkFun_High_Precision_Temperature_Sensor_TMP117_Qwiic",
+      "commit": "aa763eaee71d9245e5c31daa6883f6f5c6186f16",
+      "source": "https://github.com/sparkfun/SparkFun_High_Precision_Temperature_Sensor_TMP117_Qwiic/blob/aa763eaee71d9245e5c31daa6883f6f5c6186f16/Hardware/Sparkfun_TMP117_Qwiic.brd",
+      "schematic": "https://github.com/sparkfun/SparkFun_High_Precision_Temperature_Sensor_TMP117_Qwiic/blob/aa763eaee71d9245e5c31daa6883f6f5c6186f16/Hardware/Sparkfun_TMP117_Qwiic.sch",
+      "license": "CC-BY-SA-4.0",
+      "licenseURL": "https://github.com/sparkfun/SparkFun_High_Precision_Temperature_Sensor_TMP117_Qwiic/blob/aa763eaee71d9245e5c31daa6883f6f5c6186f16/LICENSE.md",
+      "attribution": "SparkFun Electronics; source physical facts and original simplified illustration primitives."
+    }
+  ]
+}

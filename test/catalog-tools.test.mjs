@@ -37,6 +37,16 @@ test('contact-map validation permits repeated lands while identifying missing, u
   assert.throws(() => validateContactMap(component, { pads: [{ ...pads[0], x: NaN }, ...pads.slice(1)] }), /invalid footprint geometry/);
 });
 
+test('plated contact drills leave copper around both pad dimensions', () => {
+  const component = { pins: [{ id: 'contact', number: '1' }] };
+  const pad = { id: 'contact', number: '1', x: 0, y: 0, width: 2, height: 1, shape: 'oval', drill: .8 };
+  assert.equal(validateContactMap(component, { pads: [pad] }), 1);
+  for (const drill of [1, 1.5, 5]) {
+    assert.throws(() => validateContactMap(component, { pads: [{ ...pad, drill }] }), /drill must fit inside its copper pad/);
+  }
+  assert.equal(validateContactMap(component, { pads: [{ ...pad, smd: true, drill: null }] }), 1);
+});
+
 test('new-family command creates only an unregistered scaffold and prints its exact registration edits', async t => {
   const root = await mkdtemp(join(tmpdir(), 'wirepad-family-tool-'));
   t.after(() => rm(root, { recursive: true, force: true }));

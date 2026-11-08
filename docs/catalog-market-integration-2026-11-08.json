@@ -1,0 +1,131 @@
+{
+  "auditDate": "2026-11-08",
+  "scope": "Integrated market expansion and reconciliation of parallel catalog work.",
+  "beforeComponents": 608,
+  "addedComponents": 394,
+  "totalComponents": 1002,
+  "addedFamilies": [
+    {
+      "id": "market-communications",
+      "components": 20,
+      "contacts": 322
+    },
+    {
+      "id": "market-hc-logic",
+      "components": 61,
+      "contacts": 980
+    },
+    {
+      "id": "market-cmos-logic",
+      "components": 35,
+      "contacts": 526
+    },
+    {
+      "id": "market-memory-display",
+      "components": 10,
+      "contacts": 112
+    },
+    {
+      "id": "market-transistors",
+      "components": 44,
+      "contacts": 132
+    },
+    {
+      "id": "market-sensors",
+      "components": 44,
+      "contacts": 410
+    },
+    {
+      "id": "market-analog",
+      "components": 76,
+      "contacts": 742
+    },
+    {
+      "id": "market-power",
+      "components": 28,
+      "contacts": 257
+    },
+    {
+      "id": "market-opto",
+      "components": 20,
+      "contacts": 84
+    },
+    {
+      "id": "market-diodes",
+      "components": 40,
+      "contacts": 104
+    },
+    {
+      "id": "market-hall-angle",
+      "components": 6,
+      "contacts": 37
+    },
+    {
+      "id": "market-optical-ti-vishay",
+      "components": 5,
+      "contacts": 31
+    },
+    {
+      "id": "market-optical-sensing",
+      "components": 5,
+      "contacts": 38
+    }
+  ],
+  "sourceAuditFiles": [
+    "docs/catalog-market-logic-memory-2026-11-08.json",
+    "docs/catalog-market-analog-power-2026-11-08.json",
+    "docs/catalog-market-sensors-radios-2026-11-08.json",
+    "docs/catalog-market-discretes-2026-11-08.json",
+    "docs/catalog-market-optical-sensing-2026-11-08.json"
+  ],
+  "accuracy": "Every new footprint is explicitly FP:R: source-reviewed contacts and package references with selected host lands, not a qualified production land pattern. Every generated 3D model is approximate (3D:A). Native parsing and passing tests do not upgrade geometric accuracy.",
+  "availability": "Exact maker and ordering-code offers were recorded on the audit date. Listing snapshots establish observed availability, not a sales ranking, lifecycle guarantee or live inventory promise.",
+  "preservation": {
+    "previousComponentsChecked": 608,
+    "previousComponentsUnchanged": true,
+    "fields": "Full component definitions, both artwork modes and complete native symbol/footprint/WRL outputs.",
+    "beforeAggregateSha256": "006c543ac4910cf2098e799155e917ec88399dac13aceebf2d7152d6a1e74683",
+    "afterAggregateSha256": "006c543ac4910cf2098e799155e917ec88399dac13aceebf2d7152d6a1e74683",
+    "otherWorkspaceFilesChecked": 277,
+    "unexpectedChanges": [],
+    "unexpectedNewNonMarketFiles": []
+  },
+  "verification": {
+    "testsPassed": 216,
+    "testsFailed": 0,
+    "nativeSymbols": 394,
+    "nativeFootprints": 394,
+    "currentNativeInputHashesVerified": true,
+    "newSvgDocuments": 788,
+    "strictSvgXml": "pass",
+    "svgLabelBounds": "pass",
+    "copperOverlapCheck": "pass",
+    "allFamiliesOnDiskRegisteredOnce": true,
+    "sourceAuditCoverage": "394 exact IDs, no duplicates or omissions",
+    "canvasAndNativeFixtures": "All 1002 IDs; previous 608 records preserved, 394 records appended.",
+    "componentTreeFresh": true,
+    "gitDiffCheck": "pass",
+    "browser": {
+      "newEntries": 394,
+      "manufacturerFilters": 28,
+      "placedThroughLibrary": 28,
+      "importedGallery": 394,
+      "physicalContacts": 3775,
+      "exports": [
+        "SVG",
+        "PNG"
+      ],
+      "pageErrors": []
+    },
+    "versionedBuild": {
+      "strictNewSvgDocuments": 788,
+      "versionedCatalogCount": 1002,
+      "versionedAssetRequests": 232,
+      "pageErrors": []
+    }
+  },
+  "finalVisualCorrections": [
+    "Long body markings fit small packages; narrow packages keep physical numbers beside outside captions.",
+    "Bottom views are explicitly captioned; bridge polarity labels contrast with the package body."
+  ]
+}

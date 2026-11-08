@@ -53,6 +53,16 @@ test('catalog families share builders and part data without loading peer familie
   }
 });
 
+test('catalog consumers use its registered public interface', () => {
+  for (const [file, dependencies] of graph) {
+    if (name(file).startsWith('catalog/')) continue;
+    for (const dependency of dependencies) {
+      if (!name(dependency).startsWith('catalog/')) continue;
+      assert.equal(name(dependency), 'catalog/index.js', `${name(file)} imports a private catalog module`);
+    }
+  }
+});
+
 test('the browser entry is the only JavaScript file at the source root after cutover', () => {
   assert.deepEqual(readdirSync(sourceRoot).filter(name => name.endsWith('.js')).sort(), ['main.js']);
 });

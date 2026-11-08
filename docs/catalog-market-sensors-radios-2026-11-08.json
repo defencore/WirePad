@@ -1,0 +1,1249 @@
+{
+  "auditDate": "2026-11-08",
+  "scope": "Completed source and commercial-offer review for 44 sensor ICs, 20 communication/interface ICs and five TI/Vishay optical sensors. Hall/angle and the other optical additions are owned by separate audits; the planned new-radio batch was removed from scope.",
+  "policy": "Commercial listing observations establish an available offer, not a sales ranking or manufacturer lifecycle guarantee. All generated footprints are reference carriers and all generated 3D geometry is approximate.",
+  "entries": [
+    {
+      "id": "max485esa",
+      "part": "MAX485ESA+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX1487-MAX491.pdf",
+      "package": "SOIC-8 (S8)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 8,
+      "pinEvidence": "19-0122 pin description; S8 package nominal body/lead pitch.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/MAX485ESA/1495323",
+        "status": "DigiKey exact Analog Devices MAX485ESA+ listing showed 10,927 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "max3485esa",
+      "part": "MAX3485ESA+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX3483-MAX3491.pdf",
+      "package": "SOIC-8 (S8)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 8,
+      "pinEvidence": "Rev 2, May 2024; standard half-duplex 75176 pin arrangement.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/MAX3485ESA/1702240",
+        "status": "DigiKey exact Analog Devices MAX3485ESA+ listing showed 4,462 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "max3232ese",
+      "part": "MAX3232ESE+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX3222-MAX3241.pdf",
+      "package": "SOIC-16 (S16)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 16,
+      "pinEvidence": "Rev 10, May 2019; MAX3232 pin configuration page 14.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/MAX3232ESE/1512677",
+        "status": "DigiKey exact Analog Devices MAX3232ESE+ listing showed 1,682 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "mcp2562-e-p",
+      "part": "MCP2562-E/P",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf",
+      "package": "PDIP-8 (P)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 8,
+      "pinEvidence": "DS20005167C Table 1-2; VIO differs from MCP2561 SPLIT. 1.8 V I/O operates with derated receiver performance as described.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/microchip/mcp2562-e-p/can-interf-can-transceiver-1mbps/dp/12X8699",
+        "status": "Newark listed 856 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "sn65hvd230dr",
+      "part": "SN65HVD230DR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf",
+      "package": "SOIC-8 (D)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 8,
+      "pinEvidence": "SLOS346O pin functions. Vref exists only on 230/231, not 232.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/SN65HVD230DR/404367",
+        "status": "DigiKey exact Texas Instruments SN65HVD230DR listing showed 100,149 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "mcp2515-i-p",
+      "part": "MCP2515-I/P",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/MCP2515-Stand-Alone-CAN-Controller-with-SPI-20001801J.pdf",
+      "package": "PDIP-18 (P)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 18,
+      "pinEvidence": "DS20001801J PDIP/SOIC package pin diagram and Table 1-1.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://canada.newark.com/microchip/mcp2515-i-p/controller-can-spi-pdip18-2515/dp/58M8895",
+        "status": "Newark listed 2,280 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "sc16is752ipw",
+      "part": "SC16IS752IPW,128",
+      "manufacturer": "NXP Semiconductors",
+      "source": "https://www.nxp.com/docs/en/data-sheet/SC16IS752_SC16IS762.pdf",
+      "package": "TSSOP-28 (SOT361-1)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 28,
+      "pinEvidence": "Rev 9.1 February 2025, Table 2 TSSOP28 column. Pin 12 SO is undefined in I2C mode, while pin14 is ground in SPI mode.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/nxp/sc16is752ipw-128/uart-5mbps-40-to-95deg-c/dp/31AC6922",
+        "status": "Newark listed 6,129 in-stock cut-tape/re-reel units."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "max3100eee",
+      "part": "MAX3100EEE+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX3100.pdf",
+      "package": "QSOP-16 (E16)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 16,
+      "pinEvidence": "QSOP column of pin-description table; NC pins 5 and12 must remain present.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/MAX3100EEE/947882",
+        "status": "DigiKey exact Analog Devices MAX3100EEE+ listing showed 298 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "mcp23008-e-p",
+      "part": "MCP23008-E/P",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf",
+      "package": "PDIP-18 (P)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 18,
+      "pinEvidence": "DS21919E PDIP/SOIC diagram. Speed and temperature impose narrower VDD ranges; consult electrical table.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/microchip-technology/MCP23008-E-P/735951",
+        "status": "DigiKey exact Microchip Technology MCP23008-E/P listing showed 4,730 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "mcp23s08-e-p",
+      "part": "MCP23S08-E/P",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf",
+      "package": "PDIP-18 (P)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 18,
+      "pinEvidence": "DS21919E PDIP/SOIC diagram. Speed and temperature impose narrower VDD ranges; consult electrical table.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://canada.newark.com/microchip/mcp23s08-e-p/8bit-expander-i-o-spi-i-f-dip18/dp/34M7436",
+        "status": "Newark listed 515 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "mcp23017-e-sp",
+      "part": "MCP23017-E/SP",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf",
+      "package": "SPDIP-28 (SP)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 28,
+      "pinEvidence": "DS20001952C package diagram. SCL label resolves legacy first-page SCK typographical error for MCP23017.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/MCP23017-E%2FSP/MCP23017-E%2FSP-ND/894272",
+        "status": "DigiKey exact Microchip Technology MCP23017-E/SP listing showed 8,830 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "mcp23s17-e-sp",
+      "part": "MCP23S17-E/SP",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf",
+      "package": "SPDIP-28 (SP)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 28,
+      "pinEvidence": "DS20001952C package diagram. SCL label resolves legacy first-page SCK typographical error for MCP23017.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/microchip/mcp23s17-e-sp/i-o-expander-16-bit-10mhz-dip/dp/31K2951",
+        "status": "Newark listed 1,244 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "pcf8574t",
+      "part": "PCF8574T/3,518",
+      "manufacturer": "NXP Semiconductors",
+      "source": "https://www.nxp.com/docs/en/data-sheet/PCF8574_PCF8574A.pdf",
+      "package": "SO-16 (SOT162-1)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 16,
+      "pinEvidence": "Rev 5 May 2013 Table3 DIP16/SO16 column; obsolete/NRND remaining-stock offer, not current-production claim.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://fat.lcsc.com/product-detail/C7605.html",
+        "status": "LCSC listed 1,524 in stock; not recommended for new designs."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "pcf8575dbr",
+      "part": "PCF8575DBR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/pcf8575.pdf",
+      "package": "SSOP-24 (DB)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 24,
+      "pinEvidence": "SCPS121I August2024 SSOP24 pin diagram. Terminal13 P10 through20 P17.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/PCF8575DBR/754551",
+        "status": "DigiKey exact Texas Instruments PCF8575DBR listing showed 1,454 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "pca9536d",
+      "part": "PCA9536D,118",
+      "manufacturer": "NXP Semiconductors",
+      "source": "https://www.nxp.com/docs/en/data-sheet/PCA9536.pdf",
+      "package": "SO-8 (SOT96-1)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 8,
+      "pinEvidence": "Rev6 November2017 SO8 column; availability does not imply continued manufacture.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/nxp-usa-inc/PCA9536D-118/789924",
+        "status": "DigiKey exact NXP Semiconductors PCA9536D,118 listing showed 5,973 in stock. Not for new designs."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "tca9554dwr",
+      "part": "TCA9554DWR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/tca9554.pdf",
+      "package": "SOIC-16 (DW)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 16,
+      "pinEvidence": "SCPS233E February2017 Table5 pin functions; push-pull differs from PCF8574 quasi-bidirectional ports.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.ca/en/products/detail/texas-instruments/TCA9554DWR/9745995",
+        "status": "DigiKey exact Texas Instruments TCA9554DWR listing showed 822 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "ds2482s-100",
+      "part": "DS2482S-100+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/DS2482-100.pdf",
+      "package": "SOIC-8 (150 mil)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 8,
+      "pinEvidence": "Rev11 August2024 SO column, not WLP ball numbering.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.ca/en/products/detail/analog-devices-inc-maxim-integrated/DS2482S-100/1197435",
+        "status": "DigiKey exact Analog Devices DS2482S-100+ listing showed 8,740 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "ds2482s-800",
+      "part": "DS2482S-800+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/DS2482-800.pdf",
+      "package": "SOIC-16 (150 mil)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 16,
+      "pinEvidence": "Rev6 August2023 pin-description table; terminal1 is IO3.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/analog-devices/ds2482s-800/interface-bridge-i2c-to-1wire/dp/81Y9078",
+        "status": "Newark listed 263 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "ds2408s",
+      "part": "DS2408S+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/DS2408.pdf",
+      "package": "SOIC-16 (150 mil)",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 16,
+      "pinEvidence": "Pin description page5; NC1/6/15/16 retained and RSTZ is dual-function.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/DS2408S/1197414",
+        "status": "DigiKey exact Analog Devices DS2408S+ listing showed 6,128 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "ch340g-ic",
+      "part": "CH340G",
+      "manufacturer": "WCH",
+      "source": "https://www.wch-ic.com/downloads/CH340DS1_PDF.html",
+      "package": "SOP-16",
+      "view": "Component-side top view, terminal 1 upper left, counterclockwise numbering.",
+      "contacts": 16,
+      "pinEvidence": "WCH CH340DS1 manufacturer datasheet, SOP16 variant. Manufacturer-hosted download page is JavaScript-only; manufacturer PDF mirrored by LCSC at https://datasheet.lcsc.com/lcsc/Jiangsu-Qin-Heng-CH340C_C84681.pdf . G variant requires external crystal, unlike C.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/USB_CH340G_C14267.html",
+        "status": "LCSC listed 32,744 in stock."
+      },
+      "footprint": "R: source package dimensions and pitch with explicitly selected reference copper lands; not audited production land pattern.",
+      "generated3D": "Approximate generated package body."
+    },
+    {
+      "id": "lm35dz-ic",
+      "part": "LM35DZ/NOPB",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/lm35.pdf",
+      "package": "TO-92-3 (LP)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 3,
+      "pinEvidence": "TI SNIS159H: TO-92 bottom-view pins 1 +VS, 2 VOUT, 3 GND. Vertically reflected to a component-side top view with the flat edge below. Lead-hole positions and body alignment form a selected reference carrier.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.jameco.com/z/LM35DZ-Texas-Instruments-Precision-Centigrade-Temperature-Sensor-3-Pin-TO-92_155740.html",
+        "status": "Jameco listed 370 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lm335z-ic",
+      "part": "LM335Z/LFT7",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/lm135.pdf",
+      "package": "TO-92-3 (LP)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 3,
+      "pinEvidence": "TI SNIS160E: bottom-view functions ADJ, +, − run left to right with the flat edge above. Vertically reflected top view puts the flat edge below. Numbers 1–3 follow the LP mechanical drawing.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/base-product/texas-instruments/296/LM335/122067",
+        "status": "DigiKey listed 6, 249 exact LM 335Z/LFT7 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "tmp36gt9z-ic",
+      "part": "TMP36GT9Z",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf",
+      "package": "TO-92-3 (T-3)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 3,
+      "pinEvidence": "ADI Rev H Figure 4: T-3 bottom-view pins 1 +VS, 2 VOUT, 3 GND. Vertically reflected to top view; inline lead holes are a selected reference carrier.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/analog-devices/tmp36gt9z/temperature-sensor-40-to-125deg/dp/50AK7215",
+        "status": "Newark listed 4, 872 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lm75bd-ic",
+      "part": "LM75BD,118",
+      "manufacturer": "NXP Semiconductors",
+      "source": "https://www.nxp.com/docs/en/data-sheet/LM75B.pdf",
+      "package": "SO-8 (SOT96-1)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "NXP LM75B Table 3, SO-8 column; all three physical address pins are retained.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.in/en/products/detail/nxp-usa-inc/LM75BD-118/1992993",
+        "status": "DigiKey exact NXP Semiconductors LM75BD,118 listing showed 20,920 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "adt7410trz-ic",
+      "part": "ADT7410TRZ",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADT7410.pdf",
+      "package": "SOIC-8 (R-8)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "ADI Rev C Table 4, page 6: eight-pin SOIC pinning with I2C interface.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/analog-devices/adt7410trz/temperature-sensor-55-to-150deg/dp/60AK5672",
+        "status": "Newark listed 194 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "adt7310trz-ic",
+      "part": "ADT7310TRZ-REEL",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADT7310.pdf",
+      "package": "SOIC-8 (R-8)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "ADI Rev A Table 4, page 6: eight-pin SOIC pinning with SPI interface, distinct from ADT7410 I2C.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc/ADT7310TRZ-REEL/2059277",
+        "status": "DigiKey exact Analog Devices ADT7310TRZ-REEL listing showed 3,060 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "mcp9808-e-ms",
+      "part": "MCP9808-E/MS",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/25095A.pdf",
+      "package": "MSOP-8 (MS)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "Microchip DS25095A Table 3-1, MSOP-8 column. The MSOP variant has no DFN exposed pad.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/temperature-sensors_microchip-mcp9808-e-ms_C94847.html",
+        "status": "LCSC listed 287 in stock, manufacturer MICROCHIP."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "mcp9700at-e-tt",
+      "part": "MCP9700AT-E/TT",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/20001942G.pdf",
+      "package": "SOT-23-3 (TT)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 3,
+      "pinEvidence": "Microchip DS20001942G: top-view SOT-23 pins 1 VDD, 2 VOUT, 3 GND. The drawing places the 2.9 mm body dimension horizontally.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/microchip-technology/MCP9700AT-E-TT/1228267",
+        "status": "DigiKey exact Microchip Technology MCP9700AT-E/TT listing showed 89,555 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "tmp102aidrlr",
+      "part": "TMP102AIDRLR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/tmp102.pdf",
+      "package": "SOT-563-6 (DRL)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 6,
+      "pinEvidence": "TI SBOS397I Figure 4-1 and Table 4-1: DRL top view, 1 SCL, 2 GND, 3 ALERT, 4 ADD0, 5 V+, 6 SDA. Section 7.2.1 also permits SDA/SCL address straps.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/Temperature-Sensors_TI_TMP102AIDRLR_TMP102AIDRLR_C99269.html",
+        "status": "LCSC listed 43, 352 in stock, manufacturer TI; UMW/Tudi copies excluded."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "tmp117aidrvr",
+      "part": "TMP117AIDRVR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/tmp117.pdf",
+      "package": "WSON-6 with isolated thermal pad (DRV)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "TI SNOSD82D Figure 5-1, Table 5-1 and Section 10.2. The unnumbered isolated thermal pad is explicit EP; no internal ground tie is asserted. TI recommends leaving it unsoldered for best accuracy.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/C699536.html",
+        "status": "LCSC listed 3, 296 in stock, manufacturer TI."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "stts22htr",
+      "part": "STTS22HTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/stts22h.pdf",
+      "package": "UDFN-6L with exposed pad",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "ST DS12606 Rev 8, March 2026: Table 1 and UDFN-6 mechanical drawing. The exposed pad exists physically, but its electrical tie is not stated in the numbered pin table; no internal ground tie is asserted.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/stmicroelectronics/stts22htr/temperature-sensor-40-to-125deg/dp/40AH5442",
+        "status": "Newark listed 7, 587 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "ds18b20-ic",
+      "part": "DS18B20+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/ds18b20.pdf",
+      "package": "TO-92-3",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 3,
+      "pinEvidence": "Manufacturer DS18B20 TO-92 pin table: 1 GND, 2 DQ, 3 VDD. Source bottom view reflected vertically into top view with the flat edge below.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/DS18B20/956983",
+        "status": "DigiKey exact Analog Devices DS18B20+ listing showed 6,907 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "sht20-ic",
+      "part": "SHT20-TR-1.5KS",
+      "manufacturer": "Sensirion",
+      "source": "https://sensirion.com/media/documents/CCDE1377/635000A2/Sensirion_Datasheet_Humidity_Sensor_SHT20.pdf",
+      "package": "DFN-6 with grounded die pad",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "Sensirion Version 5, October 2022, Table 2: transparent top view has pin 1 lower right; 1 SDA, 2 VSS, 3 NC, 4 NC, 5 VDD, 6 SCL. Die pad is internally VSS. The table is rotated 90 degrees from the first-page mechanical drawing.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/sensirion-ag/SHT20-TR-1-5KS/5872244",
+        "status": "DigiKey exact Sensirion SHT20-TR-1.5KS listing showed 3,776 in stock. Not for new designs."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "sht31-dis-ic",
+      "part": "SHT31-DIS-B2.5KS",
+      "manufacturer": "Sensirion",
+      "source": "https://sensirion.com/media/documents/213E6A3B/63A5A569/Datasheet_SHT3x_DIS.pdf",
+      "package": "DFN-8 with grounded die pad",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 9,
+      "pinEvidence": "Sensirion Version 7, December 2022, Table 7 and Section 3.3. Pin 7 R has no electrical function but must externally connect to VSS. Only the die pad is asserted internally grounded.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/sensirion-ag/SHT31-DIS-B2-5KS/5872294",
+        "status": "DigiKey exact Sensirion SHT31-DIS-B2.5KS listing showed 17,426 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "shtc3-ic",
+      "part": "SHTC3-TR-2.5KS",
+      "manufacturer": "Sensirion",
+      "source": "https://sensirion.com/file/datasheet_shtc3",
+      "package": "DFN-4 with grounded die pad",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 5,
+      "pinEvidence": "Sensirion Version 4, December 2022, Table 7: top-view pins 1 VDD, 2 SCL, 3 SDA, 4 VSS. Four signal pins plus a die pad internally connected to VSS.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/sensirion-ag/SHTC3-TR-2-5KS/8628148",
+        "status": "DigiKey exact Sensirion SHTC3-TR-2.5KS listing showed 29,988 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "sht45-ad1b-ic",
+      "part": "SHT45-AD1B-R3",
+      "manufacturer": "Sensirion",
+      "source": "https://sensirion.com/resource/datasheet/sht4x",
+      "package": "DFN-4 (1.5 ×1.5 mm)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 4,
+      "pinEvidence": "Sensirion Version 7.3, June 2026, Figure 18: transparent top-view pins 1 SDA, 2 SCL, 3 VDD, 4 VSS. Figure 17 forbids PCB copper beneath the isolated central mechanical die pad; no electrical contact or copper land is invented there.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.ca/en/products/detail/sensirion-ag/SHT45-AD1B-R3/16360965",
+        "status": "DigiKey exact Sensirion SHT45-AD1B-R3 listing showed 5,595 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "hdc1080dmbr",
+      "part": "HDC1080DMBR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/hdc1080.pdf",
+      "package": "PWSON-6 with floating DAP (DMB)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "TI SNAS672A: 1 SDA, 2 GND, 3 NC, 4 NC, 5 VDD, 6 SCL. DAP must electrically float, not ground.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/C82227.html",
+        "status": "LCSC listed 30, 994 in stock, manufacturer TI."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "hdc2080dmbr",
+      "part": "HDC2080DMBR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/hdc2080.pdf",
+      "package": "PWSON-6 with floating DAP (DMB)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "TI SNAS678C Table 6-1 and Section 11.2: floating DAP may be soldered to an isolated PCB land but must not connect to GND. DRDY/INT is push-pull.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/HDC2080DMBR/9692560",
+        "status": "DigiKey exact Texas Instruments HDC2080DMBR listing showed 21,297 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "max31855kasa-ic",
+      "part": "MAX31855KASA+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31855.pdf",
+      "package": "SOIC-8 (S8)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "ADI MAX31855 Rev 5, page 7 pin table: T− must not be grounded.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/analog-devices/max31855kasa/temperature-sensor-2deg-c-nsoic/dp/73Y3352?MER=sy-me-pd-mi-alte",
+        "status": "Newark listed 1, 314 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "max6675isa-ic",
+      "part": "MAX6675ISA+",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX6675.pdf",
+      "package": "SOIC-8 (S8)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "ADI MAX6675 Rev 3 Figure 1 and pin table: T− externally connects to GND for open-thermocouple detection, unlike MAX31855.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/analog-devices/max6675isa/ic-conv-temp-to-digital-spi-8soic/dp/81Y9556",
+        "status": "Newark listed 185 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "adxl335bcpz-ic",
+      "part": "ADXL335BCPZ",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL335.pdf",
+      "package": "LFCSP-16 (CP-16-4) with isolatedEP",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 17,
+      "pinEvidence": "ADI Rev B Table 3 and Figure 2: counterclockwise top-view pins 1–16 plus isolated EP. Commons 3/5/6/7 and supplies 14/15 remain distinct physical pads.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://canada.newark.com/analog-devices/adxl335bcpz/mems-accelerometer-x-y-z-analogue/dp/60AK6142",
+        "status": "Newark listed 18 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "adxl345bccz-ic",
+      "part": "ADXL345BCCZ-RL7",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf",
+      "package": "LGA-14 (CC-14-1)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 14,
+      "pinEvidence": "ADI Rev G Table 5: top-view CC-14 package. Reserved pin 3 may connect to VS or float; reserved pin 11 may connect to GND or float. Contact layout cross-checked against the manufacturer-referenced KiCad LGA-14 3 × 5 mm carrier.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc/ADXL345BCCZ-RL7/2038984",
+        "status": "DigiKey exact Analog Devices ADXL345BCCZ-RL7 listing showed 19,865 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "adxl362bccz-ic",
+      "part": "ADXL362BCCZ-RL7",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL362.pdf",
+      "package": "LGA-16 (CC-16-4)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 16,
+      "pinEvidence": "ADI Rev G Table 6/Figure 4: top-view perimeter has 5 left, 3 bottom, 5 right and 3 top contacts; pin 1 upper left. Body 3 × 3.25 mm, pitch 0.5 mm. INT pins are bidirectional for alternate clock/sample inputs. Copper remains reference geometry.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/analog-devices/adxl362bccz-rl7/mems-acc-2g-4g-8g-x-y-z-spi/dp/60AK6155RL",
+        "status": "Newark listed 55 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "adxl372bccz-ic",
+      "part": "ADXL372BCCZ-RL7",
+      "manufacturer": "Analog Devices",
+      "source": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL372.pdf",
+      "package": "LGA-16 (CC-16-4)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 16,
+      "pinEvidence": "ADI Rev C Table 7/Figure 12: top-view perimeter has 5 left, 3 bottom, 5 right and 3 top contacts; pin 1 upper left. Body 3 × 3.25 mm, pitch 0.5 mm. INT pins have alternate clock/sample inputs. Copper remains reference geometry.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc/ADXL372BCCZ-RL7/7019684",
+        "status": "DigiKey exact Analog Devices ADXL372BCCZ-RL7 listing showed 433 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lis3dhtr-ic",
+      "part": "LIS3DHTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lis3dh.pdf",
+      "package": "LGA-16 (3×3 mm)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 16,
+      "pinEvidence": "ST DocID17530 Rev 2 Table 2: bottom view reflected into a component-side top view. Reserved pin 10 requires an external GND tie; pins 13, 15 and 16 are auxiliary ADC inputs.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://estore.st.com/en/products/mems-and-sensors/accelerometers/lis3dh.html",
+        "status": "STmanufacturer store listed LIS 3DHTR InStock, addtocart."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lis2dw12tr-ic",
+      "part": "LIS2DW12TR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lis2dw12.pdf",
+      "package": "LGA-12L",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 12,
+      "pinEvidence": "ST DS11811 Rev 9 Table 1: LGA-12 bottom view reflected into counterclockwise top view, pin 1 upper left. Reserved pin 7 requires external GND; INT2 has an alternate clock-input function.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://mexico.newark.com/en-MX/stmicroelectronics/lis2dw12tr/mems-acc-2g-4g-8g-16g-x-y-z/dp/51AC9121",
+        "status": "Newark listed 46, 956 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "bmp581-ic",
+      "part": "BMP581",
+      "manufacturer": "Bosch Sensortec",
+      "source": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp581-ds004.pdf",
+      "package": "LGA-10 metal lid",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 10,
+      "pinEvidence": "Bosch BST-BMP581-DS004-13, April 2025, Table 28 and Figures 29–30. Ten contacts follow 2 left, 3 bottom, 2 right and 3 top positions, pin 1 upper left. Selected copper differs from package metal terminals.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/category/615.html?brand=916",
+        "status": "LCSC listed exactBosch BMP581 C5362283, 9, 363 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "bme680-ic",
+      "part": "BME680",
+      "manufacturer": "Bosch Sensortec",
+      "source": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf",
+      "package": "LGA-8 metal lid",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "Bosch BST-BME680-DS001-09, February 2024, Picture 11/Table 24: unusual clockwise top-view numbering, 1 upper right down to 4 lower right, then 5 lower left up to 8 upper left.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/C125972.html?is_substitute=1&original_product_code=C3232509&original_unit_price=5.8507",
+        "status": "LCSC listed 969 in stock, manufacturerBosch."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lps22hhtr-ic",
+      "part": "LPS22HHTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lps22hh.pdf",
+      "package": "HLGA-10L",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 10,
+      "pinEvidence": "ST DocID030890 Rev 2 Table 2, bottom-view HLGA-10L. Top-view contact positions cross-checked with KiCad 10 ST_HLGA-10_2x2mm_P0.5mm_LayoutBorder3x2y, whose third-party GPL3 source references the manufacturer drawing on page 55. Reserved pin 3 needs external GND, with no internal short asserted.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/C2827824.html?is_substitute=1&original_product_code=C5124834&original_unit_price=5.3938",
+        "status": "LCSC listed 67 in stock, manufacturer ST."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lps28dfwtr-ic",
+      "part": "LPS28DFWTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lps28dfw.pdf",
+      "package": "CCLGA-7L water-resistant metal lid",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "ST DS13317 Rev 1 Tables 1 and 9: pad 7 PAD2LID is not automatically GND. Reference contact coordinates cross-checked with KiCad 10 ST CCLGA-7L 2.8 × 2.8 mm, pitch 1.15 mm. Indicative model height differs from the 2.1 mm maximum drawing; all generated 3D remains approximate.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/LPS28DFWTR/15903389",
+        "status": "DigiKey exact STMicroelectronics LPS28DFWTR listing showed 10,038 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "bma400-ic",
+      "part": "BMA400",
+      "manufacturer": "Bosch Sensortec",
+      "source": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bma400-ds000.pdf",
+      "package": "LGA-12 (2×2 mm)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 12,
+      "pinEvidence": "Bosch BST-BMA400-DS000-14 Rev 2.3, July 2025, Section 7.1/Table 22: top-view layout has 4 left, 2 bottom, 4 right and 2 top contacts, including corner pads. All 12 physical contacts are retained; this is not a generic equal-sided QFN.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/C437655.html?is_substitute=1&original_product_code=C966924&original_unit_price=0.5224",
+        "status": "LCSC listed 131 in stock, manufacturerBosch."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "bmi270-ic",
+      "part": "BMI270",
+      "manufacturer": "Bosch Sensortec",
+      "source": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmi270-ds000.pdf",
+      "package": "LGA-14 (3×2.5 mm top-view orientation)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 14,
+      "pinEvidence": "Bosch BST-BMI270-DS000-08 Rev 1.6, March 2026, Table 22: top-view layout has 4 left, 3 bottom, 4 right and 3 top contacts. Primary and secondary ports differ; INT pins also accept external synchronization. GNDIO and GND are retained separately.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/bosch-sensortec/BMI270/9974486",
+        "status": "DigiKey exact Bosch Sensortec BMI270 listing showed 32,396 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lsm6dsotr-ic",
+      "part": "LSM6DSOTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lsm6dso.pdf",
+      "package": "LGA-14L (3×2.5 mm top-view orientation)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 14,
+      "pinEvidence": "ST DS12140 Rev 2 Table 1, manufacturer-authored mirror https://www.mouser.com/datasheet/2/389/lsm6dso-1393615.pdf. Pins 2/3 are functional auxiliary ports across four modes, not NC. Top-view layout has 4 left, 3 bottom, 4 right and 3 top contacts; selected copper remains reference geometry.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/stmicroelectronics/lsm6dsotr/mems-mod-3-axis-gyroscope-accelerometer/dp/84AC1874",
+        "status": "Newark listed 254, 791 instockcut-tape/re-reelunits."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lsm6dsoxtr-ic",
+      "part": "LSM6DSOXTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lsm6dsox.pdf",
+      "package": "LGA-14L (3×2.5 mm top-view orientation)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 14,
+      "pinEvidence": "ST DS12814 Rev 4, June 2024, Table 1: pins 2/3 are functional auxiliary ports across four modes, not NC. Top-view layout has 4 left, 3 bottom, 4 right and 3 top contacts; selected copper remains reference geometry.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/stmicroelectronics/lsm6dsoxtr/mems-module-3d-gyroscope-accelero/dp/99AC0350?st=lsm6dsox",
+        "status": "Newark listed 18, 870 instockcut-tape/re-reelunits."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lis2mdltr-ic",
+      "part": "LIS2MDLTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lis2mdl.pdf",
+      "package": "LGA-12L",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 12,
+      "pinEvidence": "ST DS12144 Rev 6, July 2024, Table 1: pin 5 C1 requires a regulator capacitor. Pin 7 supports SPI output since Rev 4. Source bottom view reflected into top view.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/stmicroelectronics/lis2mdltr/magnetometer-digital-40-to-85/dp/07AH6648RL",
+        "status": "Newark listed 1, 702 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "lsm303agrtr-ic",
+      "part": "LSM303AGRTR",
+      "manufacturer": "STMicroelectronics",
+      "source": "https://www.st.com/resource/en/datasheet/lsm303agr.pdf",
+      "package": "LGA-12L eCompass",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 12,
+      "pinEvidence": "ST DocID027765 Rev 11, August 2022, Table 2: pin 3 is CS_MAG, pin 5 C1 requires 220 nF, pin 11 is INT2_XL and pin 12 is INT1_XL. Source bottom view reflected into top view.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://estore.st.com/en/products/mems-and-sensors/e-compasses-and-magnetic-sensors/lsm303agr.html",
+        "status": "STmanufacturerstore listed LSM 303AGRTR InStock, addtocart."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "cap1188-1-cp-tr",
+      "part": "CAP1188-1-CP-TR",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/00001620B.pdf",
+      "package": "QFN-24 with grounded exposed pad (CP)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 25,
+      "pinEvidence": "Microchip DS00001620B Table 2-1 and Figures 2-1, 7-1 and 7-2: 24 perimeter pins plus unnumbered grounded bottom pad. QFN CP variant only; no SSOP variant is inferred. Package pitch 0.5 mm, body 4 × 4 mm, nominal exposed pad 2.5 × 2.5 mm. Reference copper sizes and thermal-via omissions prevent production-land-pattern accuracy claims.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/microchip/cap1188-1-cp-tr/capacitive-touch-sensor-0-to-85deg/dp/41AH8389RL",
+        "status": "Newark listed 800 cut-tape/re-reel units in stock; full reel is on backorder."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "cap1203-1-sn-tr",
+      "part": "CAP1203-1-SN-TR",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/00001572B.pdf",
+      "package": "SOIC-8 (SN)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "Microchip DS00001572B Figures 1-2 and Table 1-1 SOIC column: 1 ALERT#, 2 SMDATA, 3 SMCLK, 4 VDD, 5 GND, 6 CS3, 7 CS2, 8 CS1. SOIC SN has no exposed pad.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/microchip-technology/CAP1203-1-SN-TR/5880936",
+        "status": "DigiKey exact Microchip Technology CAP1203-1-SN-TR listing showed 4,273 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "at42qt1010-tshr",
+      "part": "AT42QT1010-TSHR",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/40001946A.pdf",
+      "package": "SOT-23-6 (TSH)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 6,
+      "pinEvidence": "Microchip DS40001946A Figure 1.1.1 and Table 1-1: top-view pins 1 OUT, 2 VSS, 3 SNSK, 4 SNS, 5 VDD, 6 SYNC/MODE. SNS and SNSK are explicitly I/O; OUT is push-pull. Selected reference SOT23 copper spans 2.4 mm between rows.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/microchip-technology/AT42QT1010-TSHR/2268866",
+        "status": "DigiKey exact Microchip Technology AT42QT1010-TSHR listing showed 36,685 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "at42qt1070-ssur",
+      "part": "AT42QT1070-SSUR",
+      "manufacturer": "Microchip Technology",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-9596-AT42-QTouch-BSW-AT42QT1070_Datasheet.pdf",
+      "package": "SOIC-14 (SSU)",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 14,
+      "pinEvidence": "Atmel/Microchip 9596C May 2013 Table 1-1, 14-pin SOIC column only. Pins 7–13 are charge-transfer excitation outputs per the manufacturer type column, not generic digital inputs. MODE changes pins 3 and 5–8 to discrete outputs. SOIC body 3.9 × 8.65 mm at 1.27 mm pitch.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.in/en/products/detail/microchip-technology/AT42QT1070-SSUR/2522788",
+        "status": "DigiKey exact Microchip Technology AT42QT1070-SSUR listing showed 47,610 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "sgp40-ic",
+      "part": "SGP40-D-R4",
+      "manufacturer": "Sensirion",
+      "source": "https://sensirion.com/resource/datasheet/sgp40",
+      "package": "DFN-6 with grounded die pad",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "SGP40 Version 1.2 February 2022 Table 6, Figures 13–14. Transparent top view has pin 1 upper-left; center die pad internally connects to VSS. Pin 4 has no electrical function but must externally connect to ground; it is not asserted internally shorted. VDD and VDDH share an external supply but remain separate physical pins. Reference rectangular die pad omits the source pin-1 chamfer and stencil apertures.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.sg/en/products/detail/sensirion-ag/SGP40-D-R4/12820418",
+        "status": "DigiKey exact Sensirion SGP40-D-R4 listing showed 6,121 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "sgp41-ic",
+      "part": "SGP41-D-R4",
+      "manufacturer": "Sensirion",
+      "source": "https://sensirion.com/media/documents/5FE8673C/61E96F50/Sensirion_Gas_Sensors_Datasheet_SGP41.pdf",
+      "package": "DFN-6 with grounded die pad",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 7,
+      "pinEvidence": "SGP41 Version 1.0 December 2021 Table 6, Figures 17–18. Transparent top view has pin 1 upper-left; center die pad internally connects to VSS. Pin 4 has no electrical function but must externally connect to ground; it is not asserted internally shorted. VDD and VDDH share an external supply but remain separate physical pins. Reference rectangular die pad omits the source pin-1 chamfer and stencil apertures.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/sensirion-ag/SGP41-D-R4/15652790",
+        "status": "DigiKey exact Sensirion SGP41-D-R4 listing showed 4,036 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "ens160-bglt-ic",
+      "part": "ENS160-BGLT",
+      "manufacturer": "ScioSense",
+      "source": "https://www.sciosense.com/wp-content/uploads/2023/12/ENS160-Datasheet.pdf",
+      "package": "LGA-9 with metal lid",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 9,
+      "pinEvidence": "ScioSense Version 1.3 March 2023 Table 1 and Figures 2, 17–18: top-view perimeter 1–8 counterclockwise, pin 9 center ground; 3 × 3 mm package and 1.05 mm grid. Main supply is only 1.71–1.98 V while VDDIO accepts 1.71–3.6 V. CONFIG register selects interrupt output driver.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/sciosense/ENS160-BGLT/16129831",
+        "status": "DigiKey exact ScioSense ENS160-BGLT listing showed 3,243 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "bme688-ic",
+      "part": "BME688",
+      "manufacturer": "Bosch Sensortec",
+      "source": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme688-ds000.pdf",
+      "package": "LGA-8 metal lid",
+      "view": "Component-side top view; hidden contacts are exposed transparently without mirroring. TO-92 source bottom views are reflected vertically so the flat edge is below.",
+      "contacts": 8,
+      "pinEvidence": "Bosch BST-BME688-DS000-03 Revision 1.3 February 2024 Table 26 and Pictures 14, 16–17 explicitly specify unusual CLOCKWISE top-view numbering: pin 1 upper-right down to 4 lower-right, then 5 lower-left up to 8 upper-left. BME688 adds programmable gas-scan functionality distinct from BME680.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/product-detail/Humidity-Sensors-Temperature-and-Humidity-Sensors_Bosch-Sensortec-BME688_C3664478.html",
+        "status": "LCSC listed 1, 050 exact Bosch BME 688 in stock."
+      },
+      "footprint": "R: source package outline/pitch with reference copper carrier; not a qualified production land pattern.",
+      "generated3D": "Approximate generated body.",
+      "batch": "sensors"
+    },
+    {
+      "id": "opt3001dnpr-ic",
+      "part": "OPT3001DNPR",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/opt3001.pdf",
+      "package": "Clear USON-6 with thermal pad (DNP)",
+      "contacts": 7,
+      "view": "Transparent optical top view; hidden physical contacts are revealed without solder-side mirroring.",
+      "pinEvidence": "TI SBOS681C Table Pin Functions, Figures 36–37 and DNP0006A package outline. Six numbered contacts plus physical unnumbered thermal pad. Optical top view is rotated 90 degrees from Figure 37 to match the pin table: pin 1 upper left. Section 10.1 recommends grounding the thermal pad externally. Rectangular reference EP omits the pin-1 chamfer, vias and exact paste pattern.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.lcsc.com/brand/1256-100.html",
+        "status": "LCSC TI-branded OPT3001DNPR C90462 listing showed 1,925 in stock. DigiKey/Mouser zero-stock pages were excluded."
+      },
+      "footprint": "R: reference carrier using source package dimensions and selected physical contact/copper geometry; production land pattern not fully reproduced.",
+      "generated3D": "Approximate generated body; optical windows and internal structures are not modeled.",
+      "batch": "optical-ti-vishay"
+    },
+    {
+      "id": "opt101p-ic",
+      "part": "OPT101P",
+      "manufacturer": "Texas Instruments",
+      "source": "https://www.ti.com/lit/ds/symlink/opt101.pdf",
+      "package": "Clear PDIP-8 (NTC)",
+      "contacts": 8,
+      "view": "Transparent optical top view; hidden physical contacts are revealed without solder-side mirroring.",
+      "pinEvidence": "TI SBBS002B page 3 pin table and NTC R-PDIP-T8 drawing. Pins 4 feedback and 5 output require an external connection; pin 8 photodiode anode is not internally tied to the negative supply. Source body nominal 6.52 × 9.53 mm, 7.62 mm lead-row spacing, 2.54 mm pitch. Optical die size 2.29 × 2.29 mm; its small internal structures and markings are representative.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/OPT101P/251177",
+        "status": "DigiKey listed 1,938 exact Texas Instruments OPT101P in stock."
+      },
+      "footprint": "R: reference carrier using source package dimensions and selected physical contact/copper geometry; production land pattern not fully reproduced.",
+      "generated3D": "Approximate generated body; optical windows and internal structures are not modeled.",
+      "batch": "optical-ti-vishay"
+    },
+    {
+      "id": "veml7700-tt-ic",
+      "part": "VEML7700-TT",
+      "manufacturer": "Vishay Semiconductors",
+      "source": "https://www.vishay.com/docs/84286/veml7700.pdf",
+      "package": "Clear SMD-4, TT optical-face-up mount",
+      "contacts": 4,
+      "view": "Optical-face-up TT mounting view, contacts left to right along the lower edge. No solder-side mirror is applied.",
+      "pinEvidence": "Vishay 84286 Rev 1.8, November 2024: first-page numbered photo and pin table show only 1 SCL, 2 VDD, 3 GND, 4 SDA, left to right with contacts below the optical face. Page 10 gives 1.27 mm pitch and 6.8 × 3 mm optical face; page 12 identifies TT tape orientation. Contact anchors lie on the visible lower lead shoes. Native top-mount carrier uses selected Y alignment and copper sizes; it is not the exact manufacturer production pattern.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.newark.com/vishay/veml7700-tt/ambient-light-sensor-i2c-3-6v/dp/96Y6767",
+        "status": "Newark listed 1,062 exact Vishay VEML7700-TT units in stock; its SMD-8 catalog text is contradicted by the four-contact manufacturer drawing."
+      },
+      "footprint": "R: reference carrier using source package dimensions and selected physical contact/copper geometry; production land pattern not fully reproduced.",
+      "generated3D": "Approximate generated body; optical windows and internal structures are not modeled.",
+      "batch": "optical-ti-vishay"
+    },
+    {
+      "id": "veml3328-ic",
+      "part": "VEML3328",
+      "manufacturer": "Vishay Semiconductors",
+      "source": "https://www.vishay.com/docs/84968/veml3328.pdf",
+      "package": "Clear OPLGA-4",
+      "contacts": 4,
+      "view": "Transparent optical top view; hidden physical contacts are revealed without solder-side mirroring.",
+      "pinEvidence": "Vishay 84968 Rev 1.3, November 2024, page 2 pin table and Figure 8 top/bottom mechanical views: 1 upper left, 2 lower left, 3 lower right, 4 upper right in optical top view. All four contact anchors lie inside the source underside metal areas. Figure 9 recommends a larger asymmetric production land pattern; this carrier intentionally uses smaller rectangular reference lands and does not claim to reproduce it.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.co.uk/en/products/detail/vishay-semiconductor-opto-division/VEML3328/10673129",
+        "status": "DigiKey listed 3,855 exact Vishay VEML3328 in stock."
+      },
+      "footprint": "R: reference carrier using source package dimensions and selected physical contact/copper geometry; production land pattern not fully reproduced.",
+      "generated3D": "Approximate generated body; optical windows and internal structures are not modeled.",
+      "batch": "optical-ti-vishay"
+    },
+    {
+      "id": "vcnl4040m3oe-ic",
+      "part": "VCNL4040M3OE",
+      "manufacturer": "Vishay Semiconductors",
+      "source": "https://www.vishay.com/docs/84274/vcnl4040.pdf",
+      "package": "SMD-8 proximity/ALS optical module",
+      "contacts": 8,
+      "view": "Transparent optical top view; hidden physical contacts are revealed without solder-side mirroring.",
+      "pinEvidence": "Vishay 84274 Rev 2.0, January 2026, pin table and Figures 14–15 for standard M3OE, not the taller H5 interposer. Optical top view is rotated 180 degrees so pin 1 is upper left and numbering runs down the left row. Source pad-row spacing 1.4 mm, pitch 1.075 mm. Pages 8 and 16 require external connection between sensor and LED cathodes, pins 2/5; no internal short is invented. Cathode/diode nodes use passive electrical types; the interrupt uses a pull-up.",
+      "availability": {
+        "checked": "2026-11-08",
+        "url": "https://www.digikey.com/en/products/detail/vishay-semiconductor-opto-division/VCNL4040M3OE/5171283",
+        "status": "DigiKey listed 47,245 exact Vishay VCNL4040M3OE in stock."
+      },
+      "footprint": "R: reference carrier using source package dimensions and selected physical contact/copper geometry; production land pattern not fully reproduced.",
+      "generated3D": "Approximate generated body; optical windows and internal structures are not modeled.",
+      "batch": "optical-ti-vishay"
+    }
+  ],
+  "totals": {
+    "sensorEntries": 44,
+    "communicationEntries": 20,
+    "opticalEntries": 5,
+    "entries": 69,
+    "physicalContacts": 763
+  },
+  "validation": {
+    "checked": "2026-11-08",
+    "entries": 69,
+    "physicalContacts": 763,
+    "artworkModes": 138,
+    "nativeSymbols": 69,
+    "nativeFootprints": 69,
+    "nativeGeneratedModels": 69,
+    "nativeImport": "KiCad 10 CLI successfully opened all 69 final symbols and all 69 final footprints and exported 138 SVG files.",
+    "physicalChecks": "All contacts have unique physical anchors, functions, electrical types and matching native pad numbers. Analytic reference-copper checks find no overlapping pads.",
+    "visualReview": "Labeled and unlabeled drawings reviewed in Chrome galleries, including optical windows, clockwise BME numbering, TO-92 flat sides and dense LGA contacts. Source views compared to retained manufacturer PDF pages.",
+    "nativeLimitations": "All footprints remain FP:R selected reference carriers; the generated WRL body is approximate (3D:A). Successful native import does not establish production geometry accuracy."
+  }
+}

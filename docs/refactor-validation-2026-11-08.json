@@ -1,0 +1,183 @@
+{
+  "checked": "2026-11-08",
+  "scope": "Completed project refactor after the 1000-module expansion. No public deployment.",
+  "catalogOrganization": {
+    "baselineComponents": 2002,
+    "families": 145,
+    "catalogFilesBefore": 253,
+    "catalogFilesAfter": 505,
+    "catalogBytesBefore": 32136043,
+    "catalogBytesAfter": 33444904,
+    "catalogFileGrowth": 252,
+    "explicitOrderManifests": 44,
+    "cohesiveSpecificationSections": 144,
+    "moduleSpecsOrganized": 988,
+    "chipDiscreteSpecsOrganized": 293,
+    "gowinBoardSpecsOrganized": 18,
+    "retiredAggregateDataFiles": 39,
+    "largestBehaviorModuleBefore": {
+      "file": "src/catalog/families/catalog-market-analog.js",
+      "bytes": 184349
+    },
+    "largestBehaviorModuleAfter": {
+      "file": "src/catalog/families/catalog-luckfox.js",
+      "bytes": 64864
+    },
+    "largestSourceDataAggregateBefore": {
+      "file": "src/catalog/data/modules-mikroe/sensing.js",
+      "bytes": 2227656
+    },
+    "largestSpecificationSectionAfter": {
+      "file": "src/catalog/data/modules-adafruit/additional-indicators-inputs/displays.js",
+      "bytes": 97422
+    },
+    "largestPhysicalSourceAssetAfter": {
+      "file": "src/catalog/data/modules-seeed-extended/sensing/specifications-assets.js",
+      "bytes": 1717004
+    },
+    "v1Asset": {
+      "from": "src/catalog/data/contact-layout-v1.js",
+      "to": "src/model/data/contact-layout-v1.js",
+      "sha256": "4d53f8133a13f290adf537b5833e42f02f7d87d17e03a11144553bedd1c9307d",
+      "unchanged": true
+    },
+    "unusedImporterColorFieldsRemoved": 82,
+    "outputHashGate": {
+      "components": 2002,
+      "families": 145,
+      "comparedFields": 7,
+      "unchanged": true,
+      "errors": []
+    },
+    "notes": [
+      "Catalog imports remain eager; more source modules are requested and no startup/payload speedup is claimed.",
+      "Physical source asset collections retain complete original contact tables, SVG strings and component.provenance; large manufacturer evidence remains intentionally unchanged.",
+      "Large source CAD leaves are grouped by the same device function as their adjacent readable specifications.",
+      "Version-1 migration data moved into model ownership without modifying its bytes."
+    ]
+  },
+  "compatibility": {
+    "entries": 2002,
+    "familyOrderAndComponentOrderUnchanged": true,
+    "changedComponentOutputs": 0,
+    "labeledAndUnlabeledSVGStrings": 4004,
+    "nativeAssetStrings": 6006,
+    "version1Imports": true,
+    "version2Saves": true,
+    "storageRecoveryKeysPreserved": true,
+    "unchangedOutputRollups": {
+      "family": "48563d663ce74aa56cb348c642384ab45a45bcc647a70e05c631333d9536271a",
+      "definition": "cfb7882fd8d908a58ce3e13b83d4ba711a5f19f9115f6993224a3dd6e6be1d4f",
+      "geometry": "6ab26fa29e17c0a496b675a963d3aca2abdfa4c29737729be1fce2c7411e5cc0",
+      "labeledSvg": "709d70ba6f919db5218bcdf61e3258ffc6165463df37b872e994fff2577231b2",
+      "unlabeledSvg": "679a696420a276f87300a20af2a9492e713d074c9591bbd88255d4dd464d81e9",
+      "symbol": "63effb4f2b5d3824fa4223c8cd7274e9b19e91a87d450e67862de8f199f872d7",
+      "footprint": "a2e65cf5ff872fdcf855540f12d4626b5fcc579c221ceeacea143064320af4a8",
+      "model": "16770a328888000639df7f5ebd9bd6d1303b80268e388eac3641b092b06d38a7"
+    },
+    "rollupAlgorithm": "SHA-256 of compact UTF-8 JSON arrays [componentId, original output SHA-256], in published catalog order; family values are family IDs."
+  },
+  "fullTests": {
+    "command": "WIREPAD_CAD_PYTHON=<Python with ezdxf and Shapely 2> node --test",
+    "tests": 249,
+    "passed": 249,
+    "failed": 0,
+    "skipped": 0
+  },
+  "catalogValidation": {
+    "families": 145,
+    "components": 2002,
+    "contacts": 48142,
+    "pads": 48495,
+    "svgViews": 4004,
+    "treeCurrent": true
+  },
+  "architecture": {
+    "relativeImportsResolve": true,
+    "acyclic": true,
+    "pureLayersIndependent": true,
+    "publicCatalogAccess": true,
+    "allShippedModulesReachable": true
+  },
+  "nativeKiCad": {
+    "checked": "2026-11-08",
+    "toolVersion": "10.0.0",
+    "components": 2002,
+    "parsedSymbols": 2002,
+    "parsedFootprints": 2002,
+    "combinedSymbolLibrarySha256": "2cb836f77ca54aaf33bab1ba9df5c67d7e2abfc14ef0a75a561605ac3cbb705a",
+    "errors": [],
+    "scope": "Native KiCad symbol/footprint parsing. This is not a manufacturing accuracy assessment; catalog accuracy labels remain authoritative."
+  },
+  "browser": {
+    "build": {
+      "revision": "refactor-defencore-20261108",
+      "sourceAssetFilesChecked": 583,
+      "allSourceAssetsByteIdentical": true,
+      "indexHtmlSHA256": "9e48d3625205d449928d00b8fa5dfd38528762216ffdb1c8270b45cb4689cbe7",
+      "deployed": false
+    },
+    "assetNamespace": "assets/refactor-defencore-20261108",
+    "totals": {
+      "viewports": 6,
+      "placedThroughLibrary": 6,
+      "importedProjects": 6,
+      "version1Imports": 2,
+      "version2Imports": 4,
+      "canvasConnections": 2,
+      "svgExports": 6,
+      "pngExports": 6,
+      "screenshots": 12,
+      "reachableJavaScriptModules": 568,
+      "reachableCSSFiles": 10,
+      "successfulScriptStyleResponsesAcrossCases": 3468,
+      "browserErrors": 0,
+      "failedRequests": 0,
+      "notFoundResponses": 0,
+      "viewportScreenshots": 10,
+      "ovalPreviewScreenshots": 2
+    },
+    "viewports": [
+      1600,
+      390,
+      320
+    ],
+    "sites": [
+      "development",
+      "versioned production build"
+    ],
+    "brandByline": "by DEFENCORE",
+    "brandBelowNameAtEveryViewport": true,
+    "horizontalOverflow": false,
+    "ovalPreviewAxes": [
+      "horizontal",
+      "vertical"
+    ],
+    "pinchDestroy": {
+      "active": {
+        "captures": [
+          2,
+          3
+        ],
+        "gesturing": true
+      },
+      "stopped": {
+        "captures": [],
+        "gesturing": false,
+        "sameProject": true,
+        "sceneChildren": 0,
+        "controlLayers": 0
+      }
+    },
+    "lateImportAfterDestroyIgnored": true,
+    "remountAndExport": true
+  },
+  "whitespace": "git diff --check passed",
+  "notes": [
+    "The complete before/after component-output comparison passed with no differences.",
+    "Detailed source responsibility and concrete defects are documented in REFACTOR_AUDIT.md.",
+    "Browser/native screenshots and temporary output artifacts were reviewed locally and are not part of the static site.",
+    "Native parsing does not establish manufacturing accuracy; catalog-kicad-accuracy.json remains authoritative.",
+    "Catalog imports remain eager; no payload or startup-speed improvement is claimed."
+  ]
+}

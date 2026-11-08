@@ -1,4 +1,4 @@
-import { version1Contacts } from '../catalog/data/contact-layout-v1.js';
+import { version1Contacts } from './data/contact-layout-v1.js';
 import { pointOnPart } from '../geometry/parts.js';
 import { componentForPart } from './part-component.js';
 

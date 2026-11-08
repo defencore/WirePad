@@ -59,6 +59,10 @@ function workspace(t) {
     requestAnimationFrame: callback => { frames.set(++frameId, callback); return frameId; },
     cancelAnimationFrame: id => frames.delete(id),
   };
+  svg.ownerDocument = document;
+  document.defaultView = window;
+  window.requestAnimationFrame = globals.requestAnimationFrame;
+  window.cancelAnimationFrame = globals.cancelAnimationFrame;
   for (const [key, value] of Object.entries(globals)) {
     const previous = Object.getOwnPropertyDescriptor(globalThis, key);
     Object.defineProperty(globalThis, key, { configurable: true, writable: true, value });
@@ -83,7 +87,7 @@ function workspace(t) {
     applyView() {},
     showSelectionBox(...args) { calls.boxes.push(args); },
     selectionInBox(start, end) { calls.boxQueries.push({ start, end }); return this.boxSelection; },
-    showReconnectPreview() {}, updateWireHandles() {}, setPartControls() {}, showDraft() {},
+    showReconnectPreview() {}, controls: { update() {}, setPartEnabled() {} }, showDraft() {},
     position() { return point(0, 0); },
   };
   let controls;
@@ -565,3 +569,33 @@ test('destroying canvas input rolls back an active preview and detaches pointer,
   assert.equal(commits(), 0);
   assert.equal(calls.zoom.length, 0);
 });
+
+for (const stop of ['destroy', 'blur']) {
+  test(`${stop} releases every active pinch capture and cancels its queued frame`, t => {
+    const { editor, controls, canvas, svg, window, calls, send, flush, captures, commits } = workspace(t);
+    const original = editor.project;
+    canvas.zoomAt = (...args) => calls.zoom.push(args);
+    send('pointerdown', svg, { pointerType: 'touch', pointerId: 11, clientX: 100, clientY: 100 });
+    send('pointerdown', svg, { pointerType: 'touch', pointerId: 12, clientX: 200, clientY: 100 });
+    send('pointermove', svg, { pointerType: 'touch', pointerId: 12, clientX: 250, clientY: 100 });
+    assert.deepEqual([...captures], [11, 12]);
+    assert.equal(controls.gesturing, true);
+
+    if (stop === 'destroy') controls.destroy();
+    else window.emit('blur');
+    assert.equal(captures.size, 0);
+    assert.equal(controls.gesturing, false);
+    flush();
+    assert.equal(calls.zoom.length, 0);
+    assert.equal(editor.project, original);
+    assert.equal(commits(), 0);
+
+    if (stop === 'blur') {
+      send('pointerdown', svg, { pointerType: 'touch', pointerId: 13, clientX: 20, clientY: 20 });
+      assert.deepEqual([...captures], [13]);
+      send('pointerup', svg, { pointerType: 'touch', pointerId: 13, clientX: 20, clientY: 20 });
+      assert.equal(captures.size, 0);
+    }
+    controls.destroy();
+  });
+}

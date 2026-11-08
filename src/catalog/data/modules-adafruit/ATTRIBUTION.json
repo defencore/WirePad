@@ -1,0 +1,3135 @@
+{
+  "notice": "Physical source facts and original simplified drawings derived from the manufacturer open hardware sources below. Source hardware remains under its stated Creative Commons Attribution-ShareAlike license. Preserve these attributions and license links with adaptations. No manufacturer endorsement is implied.",
+  "entries": [
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1893",
+      "product": "https://www.adafruit.com/product/1893",
+      "repository": "https://github.com/adafruit/Adafruit-MPL3115A2-PCB",
+      "commit": "c57b3e05fa7907f850a4f0af6fb211ae9c831847",
+      "source": "https://github.com/adafruit/Adafruit-MPL3115A2-PCB/blob/c57b3e05fa7907f850a4f0af6fb211ae9c831847/MPL3115A2_v0.2.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MPL3115A2-PCB/blob/c57b3e05fa7907f850a4f0af6fb211ae9c831847/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4026",
+      "product": "https://www.adafruit.com/product/4026",
+      "repository": "https://github.com/adafruit/Adafruit-STEMMA-Soil-Sensor-PCB",
+      "commit": "b20a708dd015cb81da8740460d47aae1555a1781",
+      "source": "https://github.com/adafruit/Adafruit-STEMMA-Soil-Sensor-PCB/blob/b20a708dd015cb81da8740460d47aae1555a1781/Adafruit%20STEMMA%20Soil%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STEMMA-Soil-Sensor-PCB/blob/b20a708dd015cb81da8740460d47aae1555a1781/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4636",
+      "product": "https://www.adafruit.com/product/4636",
+      "repository": "https://github.com/adafruit/Adafruit-SHTC3-PCB",
+      "commit": "762d5a5d96ba72ec14e1fc05e32a3f5ce00cde7c",
+      "source": "https://github.com/adafruit/Adafruit-SHTC3-PCB/blob/762d5a5d96ba72ec14e1fc05e32a3f5ce00cde7c/Adafruit_SHTC3.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SHTC3-PCB/blob/762d5a5d96ba72ec14e1fc05e32a3f5ce00cde7c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4681",
+      "product": "https://www.adafruit.com/product/4681",
+      "repository": "https://github.com/adafruit/Adafruit-BH1750-PCB",
+      "commit": "0b61eb2c8c54254a5685adc044fbf7c5ab968e56",
+      "source": "https://github.com/adafruit/Adafruit-BH1750-PCB/blob/0b61eb2c8c54254a5685adc044fbf7c5ab968e56/Adafruit%20BH1750.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-BH1750-PCB/blob/0b61eb2c8c54254a5685adc044fbf7c5ab968e56/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4821",
+      "product": "https://www.adafruit.com/product/4821",
+      "repository": "https://github.com/adafruit/Adafruit-TMP117-PCB",
+      "commit": "874b3a5b27792d4d166547bab075cb963e1bdb32",
+      "source": "https://github.com/adafruit/Adafruit-TMP117-PCB/blob/874b3a5b27792d4d166547bab075cb963e1bdb32/Adafruit_TMP117.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TMP117-PCB/blob/874b3a5b27792d4d166547bab075cb963e1bdb32/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4831",
+      "product": "https://www.adafruit.com/product/4831",
+      "repository": "https://github.com/adafruit/Adafruit-LTR390-PCB",
+      "commit": "0f4656c2b2c2da7860b5a74977b89a8c39999581",
+      "source": "https://github.com/adafruit/Adafruit-LTR390-PCB/blob/0f4656c2b2c2da7860b5a74977b89a8c39999581/Adafruit_LTR390.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LTR390-PCB/blob/0f4656c2b2c2da7860b5a74977b89a8c39999581/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6357",
+      "product": "https://www.adafruit.com/product/6357",
+      "repository": "https://github.com/adafruit/Adafruit-AS5600-Magnetic-Angle-Sensor-PCB",
+      "commit": "e146e77404551f1ae0619f6627bcc4435d81b0eb",
+      "source": "https://github.com/adafruit/Adafruit-AS5600-Magnetic-Angle-Sensor-PCB/blob/e146e77404551f1ae0619f6627bcc4435d81b0eb/Adafruit%20AS5600%20Magnetic%20Angle%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AS5600-Magnetic-Angle-Sensor-PCB/blob/e146e77404551f1ae0619f6627bcc4435d81b0eb/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4369",
+      "product": "https://www.adafruit.com/product/4369",
+      "repository": "https://github.com/adafruit/Adafruit-PCT2075-PCB",
+      "commit": "9f80ea91d459f9cde468b5c6894c44e99444f0c3",
+      "source": "https://github.com/adafruit/Adafruit-PCT2075-PCB/blob/9f80ea91d459f9cde468b5c6894c44e99444f0c3/Adafruit_PCT2075.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCT2075-PCB/blob/9f80ea91d459f9cde468b5c6894c44e99444f0c3/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5832",
+      "product": "https://www.adafruit.com/product/5832",
+      "repository": "https://github.com/adafruit/Adafruit-INA228-PCB",
+      "commit": "61b0d990f8e5f2e6df1ee5d270c501d17f53242d",
+      "source": "https://github.com/adafruit/Adafruit-INA228-PCB/blob/61b0d990f8e5f2e6df1ee5d270c501d17f53242d/Adafruit%20INA228%20I2C%20Power%20Monitor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-INA228-PCB/blob/61b0d990f8e5f2e6df1ee5d270c501d17f53242d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4698",
+      "product": "https://www.adafruit.com/product/4698",
+      "repository": "https://github.com/adafruit/Adafruit-AS7341-PCB",
+      "commit": "a3fdedb61db3047458d89393f1c8f4b93204df81",
+      "source": "https://github.com/adafruit/Adafruit-AS7341-PCB/blob/a3fdedb61db3047458d89393f1c8f4b93204df81/Adafruit_AS7341.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AS7341-PCB/blob/a3fdedb61db3047458d89393f1c8f4b93204df81/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1918",
+      "product": "https://www.adafruit.com/product/1918",
+      "repository": "https://github.com/adafruit/Adafruit-GUVA-Analog-UV-Sensor-Breakout-PCB",
+      "commit": "6d03cc0e0a1d64360514f60730dba3c79e2846a0",
+      "source": "https://github.com/adafruit/Adafruit-GUVA-Analog-UV-Sensor-Breakout-PCB/blob/6d03cc0e0a1d64360514f60730dba3c79e2846a0/Adafruit%20GUVA%20UV%20Sensor%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-GUVA-Analog-UV-Sensor-Breakout-PCB/blob/6d03cc0e0a1d64360514f60730dba3c79e2846a0/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2748",
+      "product": "https://www.adafruit.com/product/2748",
+      "repository": "https://github.com/adafruit/Adafruit-ALS-PT19-Sensor-Breakout-PCB",
+      "commit": "7075f89067dfed503101a3414c45d55e9ab80444",
+      "source": "https://github.com/adafruit/Adafruit-ALS-PT19-Sensor-Breakout-PCB/blob/7075f89067dfed503101a3414c45d55e9ab80444/Adafruit%20ALS-PT19-315C%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ALS-PT19-Sensor-Breakout-PCB/blob/7075f89067dfed503101a3414c45d55e9ab80444/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4683",
+      "product": "https://www.adafruit.com/product/4683",
+      "repository": "https://github.com/adafruit/Adafruit-MPM3610-PCB",
+      "commit": "8cdc9051c29e348b88fd83b331d0875e7154879b",
+      "source": "https://github.com/adafruit/Adafruit-MPM3610-PCB/blob/8cdc9051c29e348b88fd83b331d0875e7154879b/Adafruit%20MPM3610.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MPM3610-PCB/blob/8cdc9051c29e348b88fd83b331d0875e7154879b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4654",
+      "product": "https://www.adafruit.com/product/4654",
+      "repository": "https://github.com/adafruit/Adafruit-TPS61023-PCB",
+      "commit": "82b5a33a1900a5c13849029bc84e7856a44086e0",
+      "source": "https://github.com/adafruit/Adafruit-TPS61023-PCB/blob/82b5a33a1900a5c13849029bc84e7856a44086e0/Adafruit%20TPS61023.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPS61023-PCB/blob/82b5a33a1900a5c13849029bc84e7856a44086e0/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2200",
+      "product": "https://www.adafruit.com/product/2200",
+      "repository": "https://github.com/adafruit/Adafruit-LM4040-Voltage-Reference-PCB",
+      "commit": "6e1c7a03f744e43faf24efe80b1913821f83badb",
+      "source": "https://github.com/adafruit/Adafruit-LM4040-Voltage-Reference-PCB/blob/6e1c7a03f744e43faf24efe80b1913821f83badb/Adafruit%20LM4040.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LM4040-Voltage-Reference-PCB/blob/6e1c7a03f744e43faf24efe80b1913821f83badb/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5644",
+      "product": "https://www.adafruit.com/product/5644",
+      "repository": "https://github.com/adafruit/Adafruit-TPS61040-PCB",
+      "commit": "07958c909f40c45c5aea5cdd2cc96ca19461ec96",
+      "source": "https://github.com/adafruit/Adafruit-TPS61040-PCB/blob/07958c909f40c45c5aea5cdd2cc96ca19461ec96/Adafruit%20TPS61040%20Boost%20Converter.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPS61040-PCB/blob/07958c909f40c45c5aea5cdd2cc96ca19461ec96/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4920",
+      "product": "https://www.adafruit.com/product/4920",
+      "repository": "https://github.com/adafruit/Adafruit-TPS62827-PCB",
+      "commit": "441e9beed498f62705ee2df458a903a010eae4a2",
+      "source": "https://github.com/adafruit/Adafruit-TPS62827-PCB/blob/441e9beed498f62705ee2df458a903a010eae4a2/TPS62827%203.3V%20Buck%20Converter.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPS62827-PCB/blob/441e9beed498f62705ee2df458a903a010eae4a2/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2745",
+      "product": "https://www.adafruit.com/product/2745",
+      "repository": "https://github.com/adafruit/Adafruit-LM3671-Buck-Converter-PCB",
+      "commit": "7635cfe1f15899a86acc20f0ee553fb4e0e780c7",
+      "source": "https://github.com/adafruit/Adafruit-LM3671-Buck-Converter-PCB/blob/7635cfe1f15899a86acc20f0ee553fb4e0e780c7/Adafruit%20LM3671%20Buck.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LM3671-Buck-Converter-PCB/blob/7635cfe1f15899a86acc20f0ee553fb4e0e780c7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3199",
+      "product": "https://www.adafruit.com/product/3199",
+      "repository": "https://github.com/adafruit/Adafruit-MiCS-5524-Gas-Sensor-Breakout-PCB",
+      "commit": "d347601d3c62369d5b22a20b0e3f15a8fc04ef48",
+      "source": "https://github.com/adafruit/Adafruit-MiCS-5524-Gas-Sensor-Breakout-PCB/blob/d347601d3c62369d5b22a20b0e3f15a8fc04ef48/Adafruit%20MICS-5524.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MiCS-5524-Gas-Sensor-Breakout-PCB/blob/d347601d3c62369d5b22a20b0e3f15a8fc04ef48/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1551",
+      "product": "https://www.adafruit.com/product/1551",
+      "repository": "https://github.com/adafruit/Adafruit-DS2413-PCB",
+      "commit": "a5aeeffa483ae80c718e9cb3cd23ea769cd5321b",
+      "source": "https://github.com/adafruit/Adafruit-DS2413-PCB/blob/a5aeeffa483ae80c718e9cb3cd23ea769cd5321b/Adafruit%20DS2413.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DS2413-PCB/blob/a5aeeffa483ae80c718e9cb3cd23ea769cd5321b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3661",
+      "product": "https://www.adafruit.com/product/3661",
+      "repository": "https://github.com/adafruit/Adafruit-AP3602A-PCB",
+      "commit": "31d35855d27654a2bdb78720d0c3fffcdbaa436e",
+      "source": "https://github.com/adafruit/Adafruit-AP3602A-PCB/blob/31d35855d27654a2bdb78720d0c3fffcdbaa436e/Adafruit%20AP6302.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AP3602A-PCB/blob/31d35855d27654a2bdb78720d0c3fffcdbaa436e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3435",
+      "product": "https://www.adafruit.com/product/3435",
+      "repository": "https://github.com/adafruit/Adafruit-TPL5110-Power-Timer-Breakout-PCB",
+      "commit": "f1967694bc20333d31b167e4eeaff58742e37bba",
+      "source": "https://github.com/adafruit/Adafruit-TPL5110-Power-Timer-Breakout-PCB/blob/f1967694bc20333d31b167e4eeaff58742e37bba/Adafruit%20TPL5110.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPL5110-Power-Timer-Breakout-PCB/blob/f1967694bc20333d31b167e4eeaff58742e37bba/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1312",
+      "product": "https://www.adafruit.com/product/1312",
+      "repository": "https://github.com/adafruit/Adafruit_Breadboard_NeoPixel_PCB",
+      "commit": "fcb0f12bb62142336634dfb3a8a8ffc5c15bb90e",
+      "source": "https://github.com/adafruit/Adafruit_Breadboard_NeoPixel_PCB/blob/fcb0f12bb62142336634dfb3a8a8ffc5c15bb90e/Adafruit_Breadboard_NeoPixel.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit_Breadboard_NeoPixel_PCB/blob/fcb0f12bb62142336634dfb3a8a8ffc5c15bb90e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4870",
+      "product": "https://www.adafruit.com/product/4870",
+      "repository": "https://github.com/adafruit/Adafruit-Neo-Trinkey-PCB",
+      "commit": "65c1e5f1d3c088cec327f7b2b0489bb7e085eed8",
+      "source": "https://github.com/adafruit/Adafruit-Neo-Trinkey-PCB/blob/65c1e5f1d3c088cec327f7b2b0489bb7e085eed8/Adafruit%20Neo%20Trinkey.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Neo-Trinkey-PCB/blob/65c1e5f1d3c088cec327f7b2b0489bb7e085eed8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5020",
+      "product": "https://www.adafruit.com/product/5020",
+      "repository": "https://github.com/adafruit/Adafruit-NeoKey-Trinkey-PCB",
+      "commit": "c6a77bea3980cbdd7b0163c4f5c0aa1f4dfe51e6",
+      "source": "https://github.com/adafruit/Adafruit-NeoKey-Trinkey-PCB/blob/c6a77bea3980cbdd7b0163c4f5c0aa1f4dfe51e6/Adafruit%20NeoKey%20Trinkey.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoKey-Trinkey-PCB/blob/c6a77bea3980cbdd7b0163c4f5c0aa1f4dfe51e6/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5764",
+      "product": "https://www.adafruit.com/product/5764",
+      "repository": "https://github.com/adafruit/Adafruit-TRRS-Jack-Breakout-PCB",
+      "commit": "d6d4fe70bc727056076c4603e90112b8b1c6d006",
+      "source": "https://github.com/adafruit/Adafruit-TRRS-Jack-Breakout-PCB/blob/d6d4fe70bc727056076c4603e90112b8b1c6d006/Adafruit%20TRRS%20Jack%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TRRS-Jack-Breakout-PCB/blob/d6d4fe70bc727056076c4603e90112b8b1c6d006/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5830",
+      "product": "https://www.adafruit.com/product/5830",
+      "repository": "https://github.com/adafruit/Adafruit-LM66200-PCB",
+      "commit": "a305a260e91be4643626c906667e9f58f7349832",
+      "source": "https://github.com/adafruit/Adafruit-LM66200-PCB/blob/a305a260e91be4643626c906667e9f58f7349832/Adafruit%20LM66200%20Ideal%20Diode%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LM66200-PCB/blob/a305a260e91be4643626c906667e9f58f7349832/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6049",
+      "product": "https://www.adafruit.com/product/6049",
+      "repository": "https://github.com/adafruit/Adafruit-I2S-MEMS-Microphone-Breakout-PCB",
+      "commit": "cde79ddef57c7df69a5e7268b66567fa50b7e42d",
+      "source": "https://github.com/adafruit/Adafruit-I2S-MEMS-Microphone-Breakout-PCB/blob/cde79ddef57c7df69a5e7268b66567fa50b7e42d/Adafruit%20I2S%20MEMS%20Microphone%20Breakout%20-%20ICS-43434.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-I2S-MEMS-Microphone-Breakout-PCB/blob/cde79ddef57c7df69a5e7268b66567fa50b7e42d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA992",
+      "product": "https://www.adafruit.com/product/992",
+      "repository": "https://github.com/adafruit/Adafruit-MPL115A2-Breakout-PCB",
+      "commit": "c28cfcbce2a9bd072de601268ede652433dbb51a",
+      "source": "https://github.com/adafruit/Adafruit-MPL115A2-Breakout-PCB/blob/c28cfcbce2a9bd072de601268ede652433dbb51a/Adafruit%20MPL115A2%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MPL115A2-Breakout-PCB/blob/c28cfcbce2a9bd072de601268ede652433dbb51a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4686",
+      "product": "https://www.adafruit.com/product/4686",
+      "repository": "https://github.com/adafruit/Adafruit-TMP235-PCB",
+      "commit": "05afa047f2324ed06268ded1c27b741c86acedc8",
+      "source": "https://github.com/adafruit/Adafruit-TMP235-PCB/blob/05afa047f2324ed06268ded1c27b741c86acedc8/TMP235%20Rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TMP235-PCB/blob/05afa047f2324ed06268ded1c27b741c86acedc8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3885",
+      "product": "https://www.adafruit.com/product/3885",
+      "repository": "https://github.com/adafruit/Adafruit-STEMMA-Speaker-PCB",
+      "commit": "2f4a20b1411e8ead3160e6e89889f20311b248a1",
+      "source": "https://github.com/adafruit/Adafruit-STEMMA-Speaker-PCB/blob/2f4a20b1411e8ead3160e6e89889f20311b248a1/Adafruit%20STEMMA%20Speaker.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STEMMA-Speaker-PCB/blob/2f4a20b1411e8ead3160e6e89889f20311b248a1/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1164",
+      "product": "https://www.adafruit.com/product/1164",
+      "repository": "https://github.com/adafruit/Adafruit-INA169-Breakout-PCB",
+      "commit": "8c1084623d75d41d05dd5070c191f7a1176434ca",
+      "source": "https://github.com/adafruit/Adafruit-INA169-Breakout-PCB/blob/8c1084623d75d41d05dd5070c191f7a1176434ca/Adafruit%20INA169%20CurPowerMonitor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-INA169-Breakout-PCB/blob/8c1084623d75d41d05dd5070c191f7a1176434ca/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6280",
+      "product": "https://www.adafruit.com/product/6280",
+      "repository": "https://github.com/adafruit/Adafruit-TPS65131-Split-Power-Supply-PCB",
+      "commit": "5c4644c7acc1e285870881ca24b7542121193ce7",
+      "source": "https://github.com/adafruit/Adafruit-TPS65131-Split-Power-Supply-PCB/blob/5c4644c7acc1e285870881ca24b7542121193ce7/Adafruit%20TPS65131%20Split%20Power%20Supply.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPS65131-Split-Power-Supply-PCB/blob/5c4644c7acc1e285870881ca24b7542121193ce7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4964",
+      "product": "https://www.adafruit.com/product/4964",
+      "repository": "https://github.com/adafruit/Adafruit-Rotary-Trinkey-PCB",
+      "commit": "b93b2aeaabbfbfd231eec6c88afc6694d4581410",
+      "source": "https://github.com/adafruit/Adafruit-Rotary-Trinkey-PCB/blob/b93b2aeaabbfbfd231eec6c88afc6694d4581410/Adafruit%20Rotary%20Trinkey.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Rotary-Trinkey-PCB/blob/b93b2aeaabbfbfd231eec6c88afc6694d4581410/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5635",
+      "product": "https://www.adafruit.com/product/5635",
+      "repository": "https://github.com/adafruit/Adafruit-SPI-Flash-Breakout-PCB",
+      "commit": "9a46c77e68ab9a797bfdce54b0629004823e868a",
+      "source": "https://github.com/adafruit/Adafruit-SPI-Flash-Breakout-PCB/blob/9a46c77e68ab9a797bfdce54b0629004823e868a/SPI%20Flash%20Rev%20E.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SPI-Flash-Breakout-PCB/blob/9a46c77e68ab9a797bfdce54b0629004823e868a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3573",
+      "product": "https://www.adafruit.com/product/3573",
+      "repository": "https://github.com/adafruit/Adafruit-TPL5111-Reset-Enable-Timer-PCB",
+      "commit": "7a19d15939cb776f1931c3b4b38ac35509f06bd3",
+      "source": "https://github.com/adafruit/Adafruit-TPL5111-Reset-Enable-Timer-PCB/blob/7a19d15939cb776f1931c3b4b38ac35509f06bd3/Adafruit%20TPL5111%20Reset%20Enable%20Timer.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPL5111-Reset-Enable-Timer-PCB/blob/7a19d15939cb776f1931c3b4b38ac35509f06bd3/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1400",
+      "product": "https://www.adafruit.com/product/1400",
+      "repository": "https://github.com/adafruit/Adafruit-Push-Button-Power-Switch-PCB",
+      "commit": "6013b8b9aa67f74778996c69ec765875c787ff53",
+      "source": "https://github.com/adafruit/Adafruit-Push-Button-Power-Switch-PCB/blob/6013b8b9aa67f74778996c69ec765875c787ff53/Adafruit%20Power%20Switch.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Push-Button-Power-Switch-PCB/blob/6013b8b9aa67f74778996c69ec765875c787ff53/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA661",
+      "product": "https://www.adafruit.com/product/661",
+      "repository": "https://github.com/adafruit/Adafruit-128x32-SPI-OLED-breakout-board-PCB",
+      "commit": "7c33372ae12d8cadd9ccd868c4f30274e61ac87d",
+      "source": "https://github.com/adafruit/Adafruit-128x32-SPI-OLED-breakout-board-PCB/blob/7c33372ae12d8cadd9ccd868c4f30274e61ac87d/Adafruit%20OLED%20128x32%20Mono.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-128x32-SPI-OLED-breakout-board-PCB/blob/7c33372ae12d8cadd9ccd868c4f30274e61ac87d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5022",
+      "product": "https://www.adafruit.com/product/5022",
+      "repository": "https://github.com/adafruit/Adafruit-Proximity-Trinkey-PCB",
+      "commit": "6e99b157c7857fc71afc03e713dce83d44b6d750",
+      "source": "https://github.com/adafruit/Adafruit-Proximity-Trinkey-PCB/blob/6e99b157c7857fc71afc03e713dce83d44b6d750/Adafruit%20Proximity%20Trinkey.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Proximity-Trinkey-PCB/blob/6e99b157c7857fc71afc03e713dce83d44b6d750/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3246",
+      "product": "https://www.adafruit.com/product/3246",
+      "repository": "https://github.com/adafruit/Adafruit-Mini-Analog-Thumbstick-Breakout-PCB",
+      "commit": "f09366288515bc9d9ea436602506ed4d2c295544",
+      "source": "https://github.com/adafruit/Adafruit-Mini-Analog-Thumbstick-Breakout-PCB/blob/f09366288515bc9d9ea436602506ed4d2c295544/Adafruit%20Mini%20Analog%20Thumbstick.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Mini-Analog-Thumbstick-Breakout-PCB/blob/f09366288515bc9d9ea436602506ed4d2c295544/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6066",
+      "product": "https://www.adafruit.com/product/6066",
+      "repository": "https://github.com/adafruit/Adafruit-Pixel-Shifter-PCB",
+      "commit": "e8ec19ef46cda9e6cf594e6738372a66d1208d0e",
+      "source": "https://github.com/adafruit/Adafruit-Pixel-Shifter-PCB/blob/e8ec19ef46cda9e6cf594e6738372a66d1208d0e/Adafruit%20Pixel%20Shifter.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Pixel-Shifter-PCB/blob/e8ec19ef46cda9e6cf594e6738372a66d1208d0e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2019",
+      "product": "https://www.adafruit.com/product/2019",
+      "repository": "https://github.com/adafruit/Adafruit-MMA8451-Breakout-PCB",
+      "commit": "f9fa425744bf6c85d7ff0a4c80fd36311a0da974",
+      "source": "https://github.com/adafruit/Adafruit-MMA8451-Breakout-PCB/blob/f9fa425744bf6c85d7ff0a4c80fd36311a0da974/Adafruit%20MMA8451.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MMA8451-Breakout-PCB/blob/f9fa425744bf6c85d7ff0a4c80fd36311a0da974/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6362",
+      "product": "https://www.adafruit.com/product/6362",
+      "repository": "https://github.com/adafruit/Adafruit-Simple-Soil-Moisture-Sensor-PCB",
+      "commit": "c5401f929e78ba1f8dc35b9587ab3c62d0f73073",
+      "source": "https://github.com/adafruit/Adafruit-Simple-Soil-Moisture-Sensor-PCB/blob/c5401f929e78ba1f8dc35b9587ab3c62d0f73073/Adafruit%20Simple%20Soil%20Moisture%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Simple-Soil-Moisture-Sensor-PCB/blob/c5401f929e78ba1f8dc35b9587ab3c62d0f73073/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5221",
+      "product": "https://www.adafruit.com/product/5221",
+      "repository": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-Breakout-PCB",
+      "commit": "b6d4e909afa879750c0bd96747585dc598a90a67",
+      "source": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-Breakout-PCB/blob/b6d4e909afa879750c0bd96747585dc598a90a67/Adafruit%20ANO%20Rotary%20Encoder%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-Breakout-PCB/blob/b6d4e909afa879750c0bd96747585dc598a90a67/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5639",
+      "product": "https://www.adafruit.com/product/5639",
+      "repository": "https://github.com/adafruit/Adafruit-High-Power-Infrared-LED-Emitter-PCB",
+      "commit": "bf82859bcb77e3b545f9ae6dc629a24ca0695343",
+      "source": "https://github.com/adafruit/Adafruit-High-Power-Infrared-LED-Emitter-PCB/blob/bf82859bcb77e3b545f9ae6dc629a24ca0695343/IR%20STEMMA%20LED%20Emitter.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-High-Power-Infrared-LED-Emitter-PCB/blob/bf82859bcb77e3b545f9ae6dc629a24ca0695343/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1032",
+      "product": "https://www.adafruit.com/product/1032",
+      "repository": "https://github.com/adafruit/Adafruit-L3GD20-Breakout-PCB",
+      "commit": "32bf273c21430e7c4e28cfa79be2109f91b893ea",
+      "source": "https://github.com/adafruit/Adafruit-L3GD20-Breakout-PCB/blob/32bf273c21430e7c4e28cfa79be2109f91b893ea/Adafruit%20L3GD20H%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-L3GD20-Breakout-PCB/blob/32bf273c21430e7c4e28cfa79be2109f91b893ea/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5970",
+      "product": "https://www.adafruit.com/product/5970",
+      "repository": "https://github.com/adafruit/Adafruit-TSMP96000-Breakout-PCB",
+      "commit": "5d456214739128a6fc19903849618996ac3116b8",
+      "source": "https://github.com/adafruit/Adafruit-TSMP96000-Breakout-PCB/blob/5d456214739128a6fc19903849618996ac3116b8/Adafruit%20TSMP96000%20Code%20Learning%20IR%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TSMP96000-Breakout-PCB/blob/5d456214739128a6fc19903849618996ac3116b8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4409",
+      "product": "https://www.adafruit.com/product/4409",
+      "repository": "https://github.com/adafruit/Adafruit-STEMMA-Non-Latching-Mini-Relay-PCB",
+      "commit": "7559d509a129d1555af92d410a75b5d89673a9e4",
+      "source": "https://github.com/adafruit/Adafruit-STEMMA-Non-Latching-Mini-Relay-PCB/blob/7559d509a129d1555af92d410a75b5d89673a9e4/Adafruit%20Non-Latching%20Relay%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STEMMA-Non-Latching-Mini-Relay-PCB/blob/7559d509a129d1555af92d410a75b5d89673a9e4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5940",
+      "product": "https://www.adafruit.com/product/5940",
+      "repository": "https://github.com/adafruit/Adafruit-TSSP77038-IR-Demodulator-Breakout-PCB",
+      "commit": "6df204dc531804658d977a4f69bc873b863bb6ac",
+      "source": "https://github.com/adafruit/Adafruit-TSSP77038-IR-Demodulator-Breakout-PCB/blob/6df204dc531804658d977a4f69bc873b863bb6ac/Adafruit%20TSSP77038%20IR%20Demodulator%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TSSP77038-IR-Demodulator-Breakout-PCB/blob/6df204dc531804658d977a4f69bc873b863bb6ac/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5913",
+      "product": "https://www.adafruit.com/product/5913",
+      "repository": "https://github.com/adafruit/Adafruit-STEMMA-Reflective-Photo-Interrupt-Sensor-PCB",
+      "commit": "301c949dc5f3d4b045aca5ca94913a096af24918",
+      "source": "https://github.com/adafruit/Adafruit-STEMMA-Reflective-Photo-Interrupt-Sensor-PCB/blob/301c949dc5f3d4b045aca5ca94913a096af24918/Adafruit%20STEMMA%20Reflective%20Photo%20Interrupt%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STEMMA-Reflective-Photo-Interrupt-Sensor-PCB/blob/301c949dc5f3d4b045aca5ca94913a096af24918/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6354",
+      "product": "https://www.adafruit.com/product/6354",
+      "repository": "https://github.com/adafruit/Adafruit-TPS61169-Constant-Current-Boost-Converter-PCB",
+      "commit": "c538e5fd9950a652d65cf40744e51a227d458ab2",
+      "source": "https://github.com/adafruit/Adafruit-TPS61169-Constant-Current-Boost-Converter-PCB/blob/c538e5fd9950a652d65cf40744e51a227d458ab2/Adafruit%20TPS61169%20Constant%20Current%20Boost%20Converter%20LED%20Driver.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPS61169-Constant-Current-Boost-Converter-PCB/blob/c538e5fd9950a652d65cf40744e51a227d458ab2/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2045",
+      "product": "https://www.adafruit.com/product/2045",
+      "repository": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-Breakout-PCB",
+      "commit": "14a50ca2041bbcccc6a2b1378cb72424603f5d20",
+      "source": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-Breakout-PCB/blob/14a50ca2041bbcccc6a2b1378cb72424603f5d20/Adafruit%20Si5351A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-Breakout-PCB/blob/14a50ca2041bbcccc6a2b1378cb72424603f5d20/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5056",
+      "product": "https://www.adafruit.com/product/5056",
+      "repository": "https://github.com/adafruit/Adafruit-Trinkey-QT2040-PCB",
+      "commit": "496bdd10c670077e7107143e42b4fef8e3da07bb",
+      "source": "https://github.com/adafruit/Adafruit-Trinkey-QT2040-PCB/blob/496bdd10c670077e7107143e42b4fef8e3da07bb/Adafruit%20QT2040%20Trinkey.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Trinkey-QT2040-PCB/blob/496bdd10c670077e7107143e42b4fef8e3da07bb/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5648",
+      "product": "https://www.adafruit.com/product/5648",
+      "repository": "https://github.com/adafruit/Adafruit-MOSFET-Driver-STEMMA-PCB",
+      "commit": "ea11049753a79330cc2651df233909c0191a5af4",
+      "source": "https://github.com/adafruit/Adafruit-MOSFET-Driver-STEMMA-PCB/blob/ea11049753a79330cc2651df233909c0191a5af4/Adafruit%20MOSFET%20Driver%20STEMMA%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MOSFET-Driver-STEMMA-PCB/blob/ea11049753a79330cc2651df233909c0191a5af4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5743",
+      "product": "https://www.adafruit.com/product/5743",
+      "repository": "https://github.com/adafruit/Adafruit-Mini-I2C-Gamepad-PCB",
+      "commit": "f214e3c4c4cc4926375d8748b2b136e1991acdf8",
+      "source": "https://github.com/adafruit/Adafruit-Mini-I2C-Gamepad-PCB/blob/f214e3c4c4cc4926375d8748b2b136e1991acdf8/Gamepad%20Seesaw%20QT%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Mini-I2C-Gamepad-PCB/blob/f214e3c4c4cc4926375d8748b2b136e1991acdf8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1727",
+      "product": "https://www.adafruit.com/product/1727",
+      "repository": "https://github.com/adafruit/Adafruit-MAX31850-thermocouple-breakout-board",
+      "commit": "759ee92d8dd940d14ad418e81016b3e25eb1a581",
+      "source": "https://github.com/adafruit/Adafruit-MAX31850-thermocouple-breakout-board/blob/759ee92d8dd940d14ad418e81016b3e25eb1a581/Adafruit%20MAX31850.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MAX31850-thermocouple-breakout-board/blob/759ee92d8dd940d14ad418e81016b3e25eb1a581/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5708",
+      "product": "https://www.adafruit.com/product/5708",
+      "repository": "https://github.com/adafruit/Adafruit-CAN-Pal-PCB",
+      "commit": "56618b3a53162ce48872514be044eab033ed33ef",
+      "source": "https://github.com/adafruit/Adafruit-CAN-Pal-PCB/blob/56618b3a53162ce48872514be044eab033ed33ef/Adafruit%20CAN%20Pal%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-CAN-Pal-PCB/blob/56618b3a53162ce48872514be044eab033ed33ef/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5206",
+      "product": "https://www.adafruit.com/product/5206",
+      "repository": "https://github.com/adafruit/Adafruit-1.69in-280x240-Round-Rectangle-TFT-PCB",
+      "commit": "f4768731183344c8bbe1453f15ff3c655001d592",
+      "source": "https://github.com/adafruit/Adafruit-1.69in-280x240-Round-Rectangle-TFT-PCB/blob/f4768731183344c8bbe1453f15ff3c655001d592/Adafruit%201.69in%20280x240%20Round%20Rectangle%20TFT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.69in-280x240-Round-Rectangle-TFT-PCB/blob/f4768731183344c8bbe1453f15ff3c655001d592/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5394",
+      "product": "https://www.adafruit.com/product/5394",
+      "repository": "https://github.com/adafruit/Adafruit-1.9in-320x170-Color-IPS-TFT-PCB",
+      "commit": "55df02725e803b00706c48715883efdbe4aceb1c",
+      "source": "https://github.com/adafruit/Adafruit-1.9in-320x170-Color-IPS-TFT-PCB/blob/55df02725e803b00706c48715883efdbe4aceb1c/Adafruit%201.9in%20320x170%20Color%20IPS%20TFT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.9in-320x170-Color-IPS-TFT-PCB/blob/55df02725e803b00706c48715883efdbe4aceb1c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5939",
+      "product": "https://www.adafruit.com/product/5939",
+      "repository": "https://github.com/adafruit/Adafruit-Infrared-IR-Remote-Receiver-PCB",
+      "commit": "ead85073a5f1e06c649a5f8e9a143e4ecd4e9333",
+      "source": "https://github.com/adafruit/Adafruit-Infrared-IR-Remote-Receiver-PCB/blob/ead85073a5f1e06c649a5f8e9a143e4ecd4e9333/Adafruit%20Infrared%20IR%20Remote%20Receiver.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Infrared-IR-Remote-Receiver-PCB/blob/ead85073a5f1e06c649a5f8e9a143e4ecd4e9333/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5393",
+      "product": "https://www.adafruit.com/product/5393",
+      "repository": "https://github.com/adafruit/Adafruit-1.47in-320x172-Round-Rectangle-TFT-PCB",
+      "commit": "73022f63a4b82117093ff5c250c119b6720005df",
+      "source": "https://github.com/adafruit/Adafruit-1.47in-320x172-Round-Rectangle-TFT-PCB/blob/73022f63a4b82117093ff5c250c119b6720005df/Adafruit%201.47in%20320x172%20Round%20Rectangle%20TFT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.47in-320x172-Round-Rectangle-TFT-PCB/blob/73022f63a4b82117093ff5c250c119b6720005df/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1875",
+      "product": "https://www.adafruit.com/product/1875",
+      "repository": "https://github.com/adafruit/Adafruit-TXB0104-Level-Shifter-Breakout-PCB",
+      "commit": "0dcd9500672a5b6ab652f9cbf9e01bccdd6a31b6",
+      "source": "https://github.com/adafruit/Adafruit-TXB0104-Level-Shifter-Breakout-PCB/blob/0dcd9500672a5b6ab652f9cbf9e01bccdd6a31b6/Adafruit%20TXB0104.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TXB0104-Level-Shifter-Breakout-PCB/blob/0dcd9500672a5b6ab652f9cbf9e01bccdd6a31b6/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3527",
+      "product": "https://www.adafruit.com/product/3527",
+      "repository": "https://github.com/adafruit/Adafruit-PiOLED-128x32-PCB",
+      "commit": "41f958463af931f5eb51f1135b290f3378779290",
+      "source": "https://github.com/adafruit/Adafruit-PiOLED-128x32-PCB/blob/41f958463af931f5eb51f1135b290f3378779290/Adafruit%20128x32%20Pi%20OLED.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiOLED-128x32-PCB/blob/41f958463af931f5eb51f1135b290f3378779290/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3386",
+      "product": "https://www.adafruit.com/product/3386",
+      "repository": "https://github.com/adafruit/Adafruit-PiRTC-RTC-for-Raspberry-Pi-PCB",
+      "commit": "afaa9a44856f370313c9509650e84d1f5b4b9b28",
+      "source": "https://github.com/adafruit/Adafruit-PiRTC-RTC-for-Raspberry-Pi-PCB/blob/afaa9a44856f370313c9509650e84d1f5b4b9b28/Adafruit%20PiRTC%20PCF8523.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiRTC-RTC-for-Raspberry-Pi-PCB/blob/afaa9a44856f370313c9509650e84d1f5b4b9b28/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4201",
+      "product": "https://www.adafruit.com/product/4201",
+      "repository": "https://github.com/adafruit/Adafruit-AirLift-Breakout-PCB",
+      "commit": "821189f7f9160b896a46bf6e239c8a0262ba1a46",
+      "source": "https://github.com/adafruit/Adafruit-AirLift-Breakout-PCB/blob/821189f7f9160b896a46bf6e239c8a0262ba1a46/Adafruit%20AirLift%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AirLift-Breakout-PCB/blob/821189f7f9160b896a46bf6e239c8a0262ba1a46/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4314",
+      "product": "https://www.adafruit.com/product/4314",
+      "repository": "https://github.com/adafruit/Adafruit-ATECC608-PCB",
+      "commit": "1535820f36fb71b8a76cebc654b934e32a760c9c",
+      "source": "https://github.com/adafruit/Adafruit-ATECC608-PCB/blob/1535820f36fb71b8a76cebc654b934e32a760c9c/Adafruit%20ATECC608.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ATECC608-PCB/blob/1535820f36fb71b8a76cebc654b934e32a760c9c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5954",
+      "product": "https://www.adafruit.com/product/5954",
+      "repository": "https://github.com/adafruit/Adafruit-TRRS-Trinkey-PCB",
+      "commit": "d244f5b5658d5cd1b1bf62de57265185179cdf0f",
+      "source": "https://github.com/adafruit/Adafruit-TRRS-Trinkey-PCB/blob/d244f5b5658d5cd1b1bf62de57265185179cdf0f/Adafruit%20TRRS%20Trinkey.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TRRS-Trinkey-PCB/blob/d244f5b5658d5cd1b1bf62de57265185179cdf0f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5988",
+      "product": "https://www.adafruit.com/product/5988",
+      "repository": "https://github.com/adafruit/Adafruit-RS-232-Level-Shifter-Breakout-PCB",
+      "commit": "63c6200bb3ef17d491089cfa6441b1810d79bb20",
+      "source": "https://github.com/adafruit/Adafruit-RS-232-Level-Shifter-Breakout-PCB/blob/63c6200bb3ef17d491089cfa6441b1810d79bb20/Adafruit%20RS-232%20Full%20Pinout%20Level-Shifter%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RS-232-Level-Shifter-Breakout-PCB/blob/63c6200bb3ef17d491089cfa6441b1810d79bb20/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5987",
+      "product": "https://www.adafruit.com/product/5987",
+      "repository": "https://github.com/adafruit/Adafruit-RS232-Pal-PCB",
+      "commit": "653d1bb7c6cf2d9efe381b85ff275bf0feefdb17",
+      "source": "https://github.com/adafruit/Adafruit-RS232-Pal-PCB/blob/653d1bb7c6cf2d9efe381b85ff275bf0feefdb17/Adafruit%20RS232%20Pal.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RS232-Pal-PCB/blob/653d1bb7c6cf2d9efe381b85ff275bf0feefdb17/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4836",
+      "product": "https://www.adafruit.com/product/4836",
+      "repository": "https://github.com/adafruit/Adafruit-Wii-Nunchuck-Breakout-Adapter-PCB",
+      "commit": "d3f2e25c4f9211553e32b36ffce03212f414ead3",
+      "source": "https://github.com/adafruit/Adafruit-Wii-Nunchuck-Breakout-Adapter-PCB/blob/d3f2e25c4f9211553e32b36ffce03212f414ead3/Adafruit%20Wii%20Nunchuck%20Breakout%20Adapter.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Wii-Nunchuck-Breakout-Adapter-PCB/blob/d3f2e25c4f9211553e32b36ffce03212f414ead3/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4716",
+      "product": "https://www.adafruit.com/product/4716",
+      "repository": "https://github.com/adafruit/Adafruit-MS8607-PCB",
+      "commit": "56dfd5af979fb63cff98ebcfe2170644b4439430",
+      "source": "https://github.com/adafruit/Adafruit-MS8607-PCB/blob/56dfd5af979fb63cff98ebcfe2170644b4439430/Adafruit%20MS8607.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MS8607-PCB/blob/56dfd5af979fb63cff98ebcfe2170644b4439430/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4756",
+      "product": "https://www.adafruit.com/product/4756",
+      "repository": "https://github.com/adafruit/Adafruit-LTC4311-PCB",
+      "commit": "8fb4ee69175a7ddb4128edbb7d9d79a78fbbf405",
+      "source": "https://github.com/adafruit/Adafruit-LTC4311-PCB/blob/8fb4ee69175a7ddb4128edbb7d9d79a78fbbf405/Adafruit%20LTC4311%20I2C%20Extender.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LTC4311-PCB/blob/8fb4ee69175a7ddb4128edbb7d9d79a78fbbf405/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4366",
+      "product": "https://www.adafruit.com/product/4366",
+      "repository": "https://github.com/adafruit/Adafruit-TLV493D-PCB",
+      "commit": "2450d66eef51807f25f6ce598fa7aa9f95d588aa",
+      "source": "https://github.com/adafruit/Adafruit-TLV493D-PCB/blob/2450d66eef51807f25f6ce598fa7aa9f95d588aa/Adafruit_TLV493D.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TLV493D-PCB/blob/2450d66eef51807f25f6ce598fa7aa9f95d588aa/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4351",
+      "product": "https://www.adafruit.com/product/4351",
+      "repository": "https://github.com/adafruit/Adafruit-Infineon-Trust-M-PCB",
+      "commit": "be8bbc2b780c9807f57df6a793e743d38681eccd",
+      "source": "https://github.com/adafruit/Adafruit-Infineon-Trust-M-PCB/blob/be8bbc2b780c9807f57df6a793e743d38681eccd/Adafruit%20Infineon%20Trust%20M.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Infineon-Trust-M-PCB/blob/be8bbc2b780c9807f57df6a793e743d38681eccd/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5791",
+      "product": "https://www.adafruit.com/product/5791",
+      "repository": "https://github.com/adafruit/Adafruit-STEMMA-Piezo-Driver-Amp-PCB",
+      "commit": "678bf96ec53107bd831f84c2aebca380a3bd4157",
+      "source": "https://github.com/adafruit/Adafruit-STEMMA-Piezo-Driver-Amp-PCB/blob/678bf96ec53107bd831f84c2aebca380a3bd4157/Adafruit%20STEMMA%20Piezo%20Driver%20Amp.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STEMMA-Piezo-Driver-Amp-PCB/blob/678bf96ec53107bd831f84c2aebca380a3bd4157/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2999",
+      "product": "https://www.adafruit.com/product/2999",
+      "repository": "https://github.com/adafruit/Adafruit-ATWINC1500-WiFi-Breakout-PCB",
+      "commit": "7384f4727943c46e8f2473a765239112a8b48f12",
+      "source": "https://github.com/adafruit/Adafruit-ATWINC1500-WiFi-Breakout-PCB/blob/7384f4727943c46e8f2473a765239112a8b48f12/Adafruit%20WINC1500%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ATWINC1500-WiFi-Breakout-PCB/blob/7384f4727943c46e8f2473a765239112a8b48f12/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5579",
+      "product": "https://www.adafruit.com/product/5579",
+      "repository": "https://github.com/adafruit/Adafruit-MMC5603-PCB",
+      "commit": "fb9a564eb11939578643054a859481408a64a868",
+      "source": "https://github.com/adafruit/Adafruit-MMC5603-PCB/blob/fb9a564eb11939578643054a859481408a64a868/MMC56x3%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MMC5603-PCB/blob/fb9a564eb11939578643054a859481408a64a868/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6455",
+      "product": "https://www.adafruit.com/product/6455",
+      "repository": "https://github.com/adafruit/Adafruit-SGP41-Gas-Sensor-Breakout-PCB",
+      "commit": "9c8e8c6d195e430a3537b0dca20fe7e310ece822",
+      "source": "https://github.com/adafruit/Adafruit-SGP41-Gas-Sensor-Breakout-PCB/blob/9c8e8c6d195e430a3537b0dca20fe7e310ece822/Adafruit%20SGP41%20Gas%20Sensor%20Breakout%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SGP41-Gas-Sensor-Breakout-PCB/blob/9c8e8c6d195e430a3537b0dca20fe7e310ece822/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4829",
+      "product": "https://www.adafruit.com/product/4829",
+      "repository": "https://github.com/adafruit/Adafruit-SGP40-PCB",
+      "commit": "57911e5d238bc5c3730c621e3135ff2aa36604ec",
+      "source": "https://github.com/adafruit/Adafruit-SGP40-PCB/blob/57911e5d238bc5c3730c621e3135ff2aa36604ec/Adafruit%20SGP40.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SGP40-PCB/blob/57911e5d238bc5c3730c621e3135ff2aa36604ec/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5647",
+      "product": "https://www.adafruit.com/product/5647",
+      "repository": "https://github.com/adafruit/Adafruit-STEMMA-Audio-Amp-PCB",
+      "commit": "12d0f77a674db2b356c9e6b385f3917d4eb3420a",
+      "source": "https://github.com/adafruit/Adafruit-STEMMA-Audio-Amp-PCB/blob/12d0f77a674db2b356c9e6b385f3917d4eb3420a/Adafruit%20STEMMA%20Audio%20Amp.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STEMMA-Audio-Amp-PCB/blob/12d0f77a674db2b356c9e6b385f3917d4eb3420a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6359",
+      "product": "https://www.adafruit.com/product/6359",
+      "repository": "https://github.com/adafruit/Adafruit-LM73100-Ideal-Diode-Breakout-PCB",
+      "commit": "eb584e823d1e506ff31bf8f8e76e6a0b5fa13176",
+      "source": "https://github.com/adafruit/Adafruit-LM73100-Ideal-Diode-Breakout-PCB/blob/eb584e823d1e506ff31bf8f8e76e6a0b5fa13176/Adafruit%20LM73100%20Ideal%20Diode%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LM73100-Ideal-Diode-Breakout-PCB/blob/eb584e823d1e506ff31bf8f8e76e6a0b5fa13176/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6388",
+      "product": "https://www.adafruit.com/product/6388",
+      "repository": "https://github.com/adafruit/Adafruit-QMC5883P-Triple-Axis-Magnetometer-PCB",
+      "commit": "e99e587a0e0e38b1deaf081639ec0116de6006aa",
+      "source": "https://github.com/adafruit/Adafruit-QMC5883P-Triple-Axis-Magnetometer-PCB/blob/e99e587a0e0e38b1deaf081639ec0116de6006aa/Adafruit%20QMC5883P%20Magnetometer.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-QMC5883P-Triple-Axis-Magnetometer-PCB/blob/e99e587a0e0e38b1deaf081639ec0116de6006aa/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1712",
+      "product": "https://www.adafruit.com/product/1712",
+      "repository": "https://github.com/adafruit/Adafruit-TPA2016-PCB",
+      "commit": "cad449b53378a89066d524a24f085207d74faf06",
+      "source": "https://github.com/adafruit/Adafruit-TPA2016-PCB/blob/cad449b53378a89066d524a24f085207d74faf06/Adafruit%20TPA2016D2.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPA2016-PCB/blob/cad449b53378a89066d524a24f085207d74faf06/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3967",
+      "product": "https://www.adafruit.com/product/3967",
+      "repository": "https://github.com/adafruit/Adafruit-VL53L1X-PCB",
+      "commit": "e2a85759d3b85907b3c2422f3c140d6bb45390d7",
+      "source": "https://github.com/adafruit/Adafruit-VL53L1X-PCB/blob/e2a85759d3b85907b3c2422f3c140d6bb45390d7/Adafruit%20VL53L1X.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VL53L1X-PCB/blob/e2a85759d3b85907b3c2422f3c140d6bb45390d7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1552",
+      "product": "https://www.adafruit.com/product/1552",
+      "repository": "https://github.com/adafruit/Adafruit-TPA2012-or-TS2012-Breakout-PCB",
+      "commit": "b099d41a3fb4cddce5f19a7a8bbdc7a2d68711d8",
+      "source": "https://github.com/adafruit/Adafruit-TPA2012-or-TS2012-Breakout-PCB/blob/b099d41a3fb4cddce5f19a7a8bbdc7a2d68711d8/Adafruit%20TS2012%20TPA2012%20Class%20D%20Audio%20Amp.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TPA2012-or-TS2012-Breakout-PCB/blob/b099d41a3fb4cddce5f19a7a8bbdc7a2d68711d8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4282",
+      "product": "https://www.adafruit.com/product/4282",
+      "repository": "https://github.com/adafruit/Adafruit-PiRTC-DS3231-PCB",
+      "commit": "fea853b94ebefe77f3655f3e572b4addfe14ead7",
+      "source": "https://github.com/adafruit/Adafruit-PiRTC-DS3231-PCB/blob/fea853b94ebefe77f3655f3e572b4addfe14ead7/Adafruit%20DS3231%20PiRTC.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiRTC-DS3231-PCB/blob/fea853b94ebefe77f3655f3e572b4addfe14ead7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5309",
+      "product": "https://www.adafruit.com/product/5309",
+      "repository": "https://github.com/adafruit/Adafruit_MSA311_PCB",
+      "commit": "a4a29e76941999057e062a5255594cabc4eba0ca",
+      "source": "https://github.com/adafruit/Adafruit_MSA311_PCB/blob/a4a29e76941999057e062a5255594cabc4eba0ca/Adafruit%20MSA311.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit_MSA311_PCB/blob/a4a29e76941999057e062a5255594cabc4eba0ca/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4867",
+      "product": "https://www.adafruit.com/product/4867",
+      "repository": "https://github.com/adafruit/Adafruit-SCD-30-PCB",
+      "commit": "54178bea411a7661007c529d41ed45fce767d155",
+      "source": "https://github.com/adafruit/Adafruit-SCD-30-PCB/blob/54178bea411a7661007c529d41ed45fce767d155/Adafruit%20SCD30.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SCD-30-PCB/blob/54178bea411a7661007c529d41ed45fce767d155/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6064",
+      "product": "https://www.adafruit.com/product/6064",
+      "repository": "https://github.com/adafruit/Adafruit-VCNL4200-Breakout-PCB",
+      "commit": "461ffb1e80f5cb6555e25400d41db8b1a72ca58e",
+      "source": "https://github.com/adafruit/Adafruit-VCNL4200-Breakout-PCB/blob/461ffb1e80f5cb6555e25400d41db8b1a72ca58e/Adafruit%20VCNL4200%20Long%20Distance%20IR%20Sensor%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VCNL4200-Breakout-PCB/blob/461ffb1e80f5cb6555e25400d41db8b1a72ca58e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5740",
+      "product": "https://www.adafruit.com/product/5740",
+      "repository": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C",
+      "commit": "4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901",
+      "source": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C/blob/4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901/Adafruit%20ANO%20Rotary%20Encoder%20to%20I2C.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C/blob/4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5396",
+      "product": "https://www.adafruit.com/product/5396",
+      "repository": "https://github.com/adafruit/Adafruit-VL53L4CD-PCB",
+      "commit": "de475b8aede92ff30e66671ded9ec015fc0df6ba",
+      "source": "https://github.com/adafruit/Adafruit-VL53L4CD-PCB/blob/de475b8aede92ff30e66671ded9ec015fc0df6ba/Adafruit%20VL53L4CD.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VL53L4CD-PCB/blob/de475b8aede92ff30e66671ded9ec015fc0df6ba/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5425",
+      "product": "https://www.adafruit.com/product/5425",
+      "repository": "https://github.com/adafruit/Adafruit-VL53L4CX-PCB",
+      "commit": "8e287e0d06293984a3c2b4e14180830dda2e3acc",
+      "source": "https://github.com/adafruit/Adafruit-VL53L4CX-PCB/blob/8e287e0d06293984a3c2b4e14180830dda2e3acc/Adafruit%20VL53L4CX.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VL53L4CX-PCB/blob/8e287e0d06293984a3c2b4e14180830dda2e3acc/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4161",
+      "product": "https://www.adafruit.com/product/4161",
+      "repository": "https://github.com/adafruit/Adafruit-VCNL4040-PCB",
+      "commit": "e64c08ed339dba5886b54a6e6c6c4c6cf95b25b8",
+      "source": "https://github.com/adafruit/Adafruit-VCNL4040-PCB/blob/e64c08ed339dba5886b54a6e6c6c4c6cf95b25b8/Adafruit%20VCNL4040.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VCNL4040-PCB/blob/e64c08ed339dba5886b54a6e6c6c4c6cf95b25b8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4832",
+      "product": "https://www.adafruit.com/product/4832",
+      "repository": "https://github.com/adafruit/Adafruit-HTU31-PCB",
+      "commit": "9ac7a4470edb8555ba33d1aba62f260fa4cc63da",
+      "source": "https://github.com/adafruit/Adafruit-HTU31-PCB/blob/9ac7a4470edb8555ba33d1aba62f260fa4cc63da/Adafruit%20HTU31D.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-HTU31-PCB/blob/9ac7a4470edb8555ba33d1aba62f260fa4cc63da/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5959",
+      "product": "https://www.adafruit.com/product/5959",
+      "repository": "https://github.com/adafruit/Adafruit-S-35710-Breakout-PCB",
+      "commit": "acc0684ee70d88a395b09dcea589cb5b443159db",
+      "source": "https://github.com/adafruit/Adafruit-S-35710-Breakout-PCB/blob/acc0684ee70d88a395b09dcea589cb5b443159db/Adafruit%20S-35710%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-S-35710-Breakout-PCB/blob/acc0684ee70d88a395b09dcea589cb5b443159db/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6482",
+      "product": "https://www.adafruit.com/product/6482",
+      "repository": "https://github.com/adafruit/Adafruit-TMP119-Temperature-Sensor-PCB",
+      "commit": "fe8ae26b0f8362aa93a8074374984c1da7bf01aa",
+      "source": "https://github.com/adafruit/Adafruit-TMP119-Temperature-Sensor-PCB/blob/fe8ae26b0f8362aa93a8074374984c1da7bf01aa/Adafruit%20TMP119%20Temperature%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TMP119-Temperature-Sensor-PCB/blob/fe8ae26b0f8362aa93a8074374984c1da7bf01aa/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5753",
+      "product": "https://www.adafruit.com/product/5753",
+      "repository": "https://github.com/adafruit/Adafruit-PC-Joystick-to-seesaw-PCB",
+      "commit": "890610a1efbc5e3b9c7dca5b28a125e36333b3f6",
+      "source": "https://github.com/adafruit/Adafruit-PC-Joystick-to-seesaw-PCB/blob/890610a1efbc5e3b9c7dca5b28a125e36333b3f6/Adafruit%20PC%20Joystick%20seesaw%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PC-Joystick-to-seesaw-PCB/blob/890610a1efbc5e3b9c7dca5b28a125e36333b3f6/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6067",
+      "product": "https://www.adafruit.com/product/6067",
+      "repository": "https://github.com/adafruit/Adafruit-LPS28-Pressure-Sensor-PCB",
+      "commit": "593fed8bfe3f406d6f40a9c7bd83e88b92a25055",
+      "source": "https://github.com/adafruit/Adafruit-LPS28-Pressure-Sensor-PCB/blob/593fed8bfe3f406d6f40a9c7bd83e88b92a25055/Adafruit%20LPS28%20Pressure%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LPS28-Pressure-Sensor-PCB/blob/593fed8bfe3f406d6f40a9c7bd83e88b92a25055/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6498",
+      "product": "https://www.adafruit.com/product/6498",
+      "repository": "https://github.com/adafruit/Adafruit-MAX44009-Lux-Light-Sensor-PCB",
+      "commit": "8105e22700e71f254633c947bb89a1d9bafbcb18",
+      "source": "https://github.com/adafruit/Adafruit-MAX44009-Lux-Light-Sensor-PCB/blob/8105e22700e71f254633c947bb89a1d9bafbcb18/Adafruit%20MAX44009%20Lux%20Light%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MAX44009-Lux-Light-Sensor-PCB/blob/8105e22700e71f254633c947bb89a1d9bafbcb18/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6491",
+      "product": "https://www.adafruit.com/product/6491",
+      "repository": "https://github.com/adafruit/Adafruit-VCNL4030-Proximity-and-Lux-Sensor-PCB",
+      "commit": "2cb43e92b39950b2a3431f76c197c378cac2ba3e",
+      "source": "https://github.com/adafruit/Adafruit-VCNL4030-Proximity-and-Lux-Sensor-PCB/blob/2cb43e92b39950b2a3431f76c197c378cac2ba3e/Adafruit%20VCNL4030%20Proximity%20and%20Lux%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VCNL4030-Proximity-and-Lux-Sensor-PCB/blob/2cb43e92b39950b2a3431f76c197c378cac2ba3e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6479",
+      "product": "https://www.adafruit.com/product/6479",
+      "repository": "https://github.com/adafruit/Adafruit-TCS3430-Ambient-Tri-Stimulus-Color-Sensor-PCB",
+      "commit": "66a56ff8cdb46158dbb87cbe5cc557d7ff14b6e1",
+      "source": "https://github.com/adafruit/Adafruit-TCS3430-Ambient-Tri-Stimulus-Color-Sensor-PCB/blob/66a56ff8cdb46158dbb87cbe5cc557d7ff14b6e1/Adafruit%20TCS3430%20Ambient%20Tri-Stimulus%20Color%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TCS3430-Ambient-Tri-Stimulus-Color-Sensor-PCB/blob/66a56ff8cdb46158dbb87cbe5cc557d7ff14b6e1/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6403",
+      "product": "https://www.adafruit.com/product/6403",
+      "repository": "https://github.com/adafruit/Adafruit-MLX90632-FIR-Remote-Thermal-Temperature-Sensor-PCB",
+      "commit": "928c728704680ccfc11515f2ec7113c8cb7d4224",
+      "source": "https://github.com/adafruit/Adafruit-MLX90632-FIR-Remote-Thermal-Temperature-Sensor-PCB/blob/928c728704680ccfc11515f2ec7113c8cb7d4224/Adafruit%20MLX90632%20FIR%20Remote%20Temperature%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MLX90632-FIR-Remote-Thermal-Temperature-Sensor-PCB/blob/928c728704680ccfc11515f2ec7113c8cb7d4224/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6461",
+      "product": "https://www.adafruit.com/product/6461",
+      "repository": "https://github.com/adafruit/Adafruit-APDS9999-Proximity-Light-and-Color-Sensor-PCB",
+      "commit": "0f0fc27bab6c79a684ce17a6ab397f63f98f74bd",
+      "source": "https://github.com/adafruit/Adafruit-APDS9999-Proximity-Light-and-Color-Sensor-PCB/blob/0f0fc27bab6c79a684ce17a6ab397f63f98f74bd/Adafruit%20APDS9999%20Proximity%20Light%20Color%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-APDS9999-Proximity-Light-and-Color-Sensor-PCB/blob/0f0fc27bab6c79a684ce17a6ab397f63f98f74bd/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6426",
+      "product": "https://www.adafruit.com/product/6426",
+      "repository": "https://github.com/adafruit/Adafruit-STHS34PF80-IR-Presence-Sensor-PCB",
+      "commit": "df3aece9ec5e5ad5f1a1fe48835046ddb6b0a292",
+      "source": "https://github.com/adafruit/Adafruit-STHS34PF80-IR-Presence-Sensor-PCB/blob/df3aece9ec5e5ad5f1a1fe48835046ddb6b0a292/Adafruit%20STHS34PF80%20IR%20Presence%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STHS34PF80-IR-Presence-Sensor-PCB/blob/df3aece9ec5e5ad5f1a1fe48835046ddb6b0a292/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6478",
+      "product": "https://www.adafruit.com/product/6478",
+      "repository": "https://github.com/adafruit/Adafruit-STCC4-and-SHT41-CO2-Temperature-and-Humidity-Sensor-PCB",
+      "commit": "3bf8a8ea4042964af182c617ce1ab904cc4a7bd1",
+      "source": "https://github.com/adafruit/Adafruit-STCC4-and-SHT41-CO2-Temperature-and-Humidity-Sensor-PCB/blob/3bf8a8ea4042964af182c617ce1ab904cc4a7bd1/Adafruit%20STCC4%20and%20SHT41%20CO2%20Temperature%20and%20Humidity%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STCC4-and-SHT41-CO2-Temperature-and-Humidity-Sensor-PCB/blob/3bf8a8ea4042964af182c617ce1ab904cc4a7bd1/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5201",
+      "product": "https://www.adafruit.com/product/5201",
+      "repository": "https://github.com/adafruit/Adafruit-IS31FL3741-PCB",
+      "commit": "07d4cb6a19e65be56da4a96736c2335b714ff82b",
+      "source": "https://github.com/adafruit/Adafruit-IS31FL3741-PCB/blob/07d4cb6a19e65be56da4a96736c2335b714ff82b/Adafruit%20IS31FL3741%20Matrix.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-IS31FL3741-PCB/blob/07d4cb6a19e65be56da4a96736c2335b714ff82b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4488",
+      "product": "https://www.adafruit.com/product/4488",
+      "repository": "https://github.com/adafruit/Adafruit-LIS2MDL-PCB",
+      "commit": "c65288a9024d03b559eb0121ec8c231345ed8e3e",
+      "source": "https://github.com/adafruit/Adafruit-LIS2MDL-PCB/blob/c65288a9024d03b559eb0121ec8c231345ed8e3e/Adafruit%20LIS2MDL.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LIS2MDL-PCB/blob/c65288a9024d03b559eb0121ec8c231345ed8e3e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5953",
+      "product": "https://www.adafruit.com/product/5953",
+      "repository": "https://github.com/adafruit/Adafruit-Pixel-Trinkey-PCB",
+      "commit": "3331f2f048f8ea2769698f96f35f18969f4f3619",
+      "source": "https://github.com/adafruit/Adafruit-Pixel-Trinkey-PCB/blob/3331f2f048f8ea2769698f96f35f18969f4f3619/Adafruit%20Pixel%20Trinkey.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Pixel-Trinkey-PCB/blob/3331f2f048f8ea2769698f96f35f18969f4f3619/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5892",
+      "product": "https://www.adafruit.com/product/5892",
+      "repository": "https://github.com/adafruit/Adafruit-STEMMA-Analog-SPDT-Switch-PCB",
+      "commit": "0d377c1934aaadf3bcc8a9a89adf87b82d96726a",
+      "source": "https://github.com/adafruit/Adafruit-STEMMA-Analog-SPDT-Switch-PCB/blob/0d377c1934aaadf3bcc8a9a89adf87b82d96726a/Adafruit%20STEMMA%20Analog%20SPDT%20Switch.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STEMMA-Analog-SPDT-Switch-PCB/blob/0d377c1934aaadf3bcc8a9a89adf87b82d96726a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5810",
+      "product": "https://www.adafruit.com/product/5810",
+      "repository": "https://github.com/adafruit/Adafruit-VCNL4020-Proximity-and-Light-Sensor-PCB",
+      "commit": "525a2aff1484aa23a424b656a5bf022d4b70a36e",
+      "source": "https://github.com/adafruit/Adafruit-VCNL4020-Proximity-and-Light-Sensor-PCB/blob/525a2aff1484aa23a424b656a5bf022d4b70a36e/Adafruit%20VCNL4020%20Proximity%20and%20Light%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VCNL4020-Proximity-and-Light-Sensor-PCB/blob/525a2aff1484aa23a424b656a5bf022d4b70a36e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6420",
+      "product": "https://www.adafruit.com/product/6420",
+      "repository": "https://github.com/adafruit/Adafruit-SPA06-003-Temperature-and-Pressure-Sensor-PCB",
+      "commit": "c4adbd023d64f5dbd1cea79366b0a2216d34facf",
+      "source": "https://github.com/adafruit/Adafruit-SPA06-003-Temperature-and-Pressure-Sensor-PCB/blob/c4adbd023d64f5dbd1cea79366b0a2216d34facf/Adafruit%20SPA06-003%20Temperature%20%2B%20Pressure%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SPA06-003-Temperature-and-Pressure-Sensor-PCB/blob/c4adbd023d64f5dbd1cea79366b0a2216d34facf/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3070",
+      "product": "https://www.adafruit.com/product/3070",
+      "repository": "https://github.com/adafruit/Adafruit-RFM-LoRa-Radio-Breakout-PCB",
+      "commit": "3ad6bed6e1b407afa7119ae548b5c2f1b107c6b1",
+      "source": "https://github.com/adafruit/Adafruit-RFM-LoRa-Radio-Breakout-PCB/blob/3ad6bed6e1b407afa7119ae548b5c2f1b107c6b1/Adafruit%20RFM%2BLoRa%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RFM-LoRa-Radio-Breakout-PCB/blob/3ad6bed6e1b407afa7119ae548b5c2f1b107c6b1/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4741",
+      "product": "https://www.adafruit.com/product/4741",
+      "repository": "https://github.com/adafruit/Adafruit-Grayscale-1.5-inch-128x128-OLED-PCB",
+      "commit": "a48daa304b9d13a8d1f4ab29866c116abd44727d",
+      "source": "https://github.com/adafruit/Adafruit-Grayscale-1.5-inch-128x128-OLED-PCB/blob/a48daa304b9d13a8d1f4ab29866c116abd44727d/Adafruit%20Grayscale%201.5-inch%20128x128%20OLED.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Grayscale-1.5-inch-128x128-OLED-PCB/blob/a48daa304b9d13a8d1f4ab29866c116abd44727d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5606",
+      "product": "https://www.adafruit.com/product/5606",
+      "repository": "https://github.com/adafruit/Adafruit-ENS160-PCB",
+      "commit": "70109a844d554d955433ffba0b05acc497bd77d5",
+      "source": "https://github.com/adafruit/Adafruit-ENS160-PCB/blob/70109a844d554d955433ffba0b05acc497bd77d5/Adafruit%20ENS160.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ENS160-PCB/blob/70109a844d554d955433ffba0b05acc497bd77d5/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6109",
+      "product": "https://www.adafruit.com/product/6109",
+      "repository": "https://github.com/adafruit/Adafruit-A4988-Breakout-PCB",
+      "commit": "f10f6b1d10aeeabc7a4a3445b81925c0a51d0e45",
+      "source": "https://github.com/adafruit/Adafruit-A4988-Breakout-PCB/blob/f10f6b1d10aeeabc7a4a3445b81925c0a51d0e45/Adafruit%20A4988%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-A4988-Breakout-PCB/blob/f10f6b1d10aeeabc7a4a3445b81925c0a51d0e45/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5870",
+      "product": "https://www.adafruit.com/product/5870",
+      "repository": "https://github.com/adafruit/Adafruit-MCP3421-18-Bit-ADC-PCB",
+      "commit": "3037fb9364ec7dbc29817c3254bda21e8217cbe5",
+      "source": "https://github.com/adafruit/Adafruit-MCP3421-18-Bit-ADC-PCB/blob/3037fb9364ec7dbc29817c3254bda21e8217cbe5/Adafruit%20MCP3421%20ADC.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MCP3421-18-Bit-ADC-PCB/blob/3037fb9364ec7dbc29817c3254bda21e8217cbe5/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5297",
+      "product": "https://www.adafruit.com/product/5297",
+      "repository": "https://github.com/adafruit/Adafruit-1.12in-128x128-OLED-PCB",
+      "commit": "ac65ded15c60c42bd7fa323c670640263b88f761",
+      "source": "https://github.com/adafruit/Adafruit-1.12in-128x128-OLED-PCB/blob/ac65ded15c60c42bd7fa323c670640263b88f761/Adafruit%20Monochrome%201.12in%20128x128%20OLED.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.12in-128x128-OLED-PCB/blob/ac65ded15c60c42bd7fa323c670640263b88f761/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5914",
+      "product": "https://www.adafruit.com/product/5914",
+      "repository": "https://github.com/adafruit/Adafruit-LTC4316-PCB",
+      "commit": "16f4d8d3e788323f11749103c2cf7a24ee3c521c",
+      "source": "https://github.com/adafruit/Adafruit-LTC4316-PCB/blob/16f4d8d3e788323f11749103c2cf7a24ee3c521c/Adafruit%20LTC4316.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LTC4316-PCB/blob/16f4d8d3e788323f11749103c2cf7a24ee3c521c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6365",
+      "product": "https://www.adafruit.com/product/6365",
+      "repository": "https://github.com/adafruit/Adafruit-Pi-Stemma-QT-Breakout-PCB",
+      "commit": "58188b7bb82e7a350ddfcdb5ebd9e4ec83bcc90c",
+      "source": "https://github.com/adafruit/Adafruit-Pi-Stemma-QT-Breakout-PCB/blob/58188b7bb82e7a350ddfcdb5ebd9e4ec83bcc90c/Adafruit%20Pi%20Stemma%20QT%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Pi-Stemma-QT-Breakout-PCB/blob/58188b7bb82e7a350ddfcdb5ebd9e4ec83bcc90c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6431",
+      "product": "https://www.adafruit.com/product/6431",
+      "repository": "https://github.com/adafruit/Adafruit-ENS161-MOX-Gas-Sensor-PCB",
+      "commit": "e86ce34b208d4d83c8f4cb945312f6c976704c81",
+      "source": "https://github.com/adafruit/Adafruit-ENS161-MOX-Gas-Sensor-PCB/blob/e86ce34b208d4d83c8f4cb945312f6c976704c81/Adafruit%20ENS161%20MOX%20Gas%20Sensor%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ENS161-MOX-Gas-Sensor-PCB/blob/e86ce34b208d4d83c8f4cb945312f6c976704c81/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6501",
+      "product": "https://www.adafruit.com/product/6501",
+      "repository": "https://github.com/adafruit/Adafruit-TMF8806-Time-of-Flight-Distance-Sensor-PCB",
+      "commit": "00602b9a3252e047cf1d8824c6d0e8f7dfc026cc",
+      "source": "https://github.com/adafruit/Adafruit-TMF8806-Time-of-Flight-Distance-Sensor-PCB/blob/00602b9a3252e047cf1d8824c6d0e8f7dfc026cc/Adafruit%20TMF8806%20Time%20of%20Flight%20Sensor%20rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TMF8806-Time-of-Flight-Distance-Sensor-PCB/blob/00602b9a3252e047cf1d8824c6d0e8f7dfc026cc/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6538",
+      "product": "https://www.adafruit.com/product/6538",
+      "repository": "https://github.com/adafruit/Adafruit-RV-8803-High-Accuracy-Real-Time-Clock-PCB",
+      "commit": "32351f05d78df6b2e532512ec7fc56d9bd44c9e4",
+      "source": "https://github.com/adafruit/Adafruit-RV-8803-High-Accuracy-Real-Time-Clock-PCB/blob/32351f05d78df6b2e532512ec7fc56d9bd44c9e4/Adafruit%20RV-8803%20RTC%20Breakout%20Board.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RV-8803-High-Accuracy-Real-Time-Clock-PCB/blob/32351f05d78df6b2e532512ec7fc56d9bd44c9e4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2448",
+      "product": "https://www.adafruit.com/product/2448",
+      "repository": "https://github.com/adafruit/Adafruit-TB6612-Motor-Driver-Breakout-PCB",
+      "commit": "514d5ded1aade108d0698d0e718a92c22ff5496f",
+      "source": "https://github.com/adafruit/Adafruit-TB6612-Motor-Driver-Breakout-PCB/blob/514d5ded1aade108d0698d0e718a92c22ff5496f/Adafruit%20TB6612.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TB6612-Motor-Driver-Breakout-PCB/blob/514d5ded1aade108d0698d0e718a92c22ff5496f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4712",
+      "product": "https://www.adafruit.com/product/4712",
+      "repository": "https://github.com/adafruit/Adafruit-LC709203F-PCB",
+      "commit": "65d60917fbe771308a387132dc943800a52f1380",
+      "source": "https://github.com/adafruit/Adafruit-LC709203F-PCB/blob/65d60917fbe771308a387132dc943800a52f1380/Adafruit%20LC709203F%20LiPoly%20LiIon%20Fuel%20Gauge%20and%20Battery%20Monitor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LC709203F-PCB/blob/65d60917fbe771308a387132dc943800a52f1380/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4808",
+      "product": "https://www.adafruit.com/product/4808",
+      "repository": "https://github.com/adafruit/Adafruit-EMC2101-PCB",
+      "commit": "3d1c2ca4c2ecfb430e67ed098780de451e5c5c6b",
+      "source": "https://github.com/adafruit/Adafruit-EMC2101-PCB/blob/3d1c2ca4c2ecfb430e67ed098780de451e5c5c6b/Adafruit_EMC2101.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-EMC2101-PCB/blob/3d1c2ca4c2ecfb430e67ed098780de451e5c5c6b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5613",
+      "product": "https://www.adafruit.com/product/5613",
+      "repository": "https://github.com/adafruit/Adafruit-EYESPI-PCB",
+      "commit": "bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b",
+      "source": "https://github.com/adafruit/Adafruit-EYESPI-PCB/blob/bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b/Adafruit%20EYESPI%20Breakout%20Board.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-EYESPI-PCB/blob/bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5649",
+      "product": "https://www.adafruit.com/product/5649",
+      "repository": "https://github.com/adafruit/Adafruit-QT-3V-to-5V-Level-Booster-PCB",
+      "commit": "13637316890d99395fe7f6b359de027a0f422c7b",
+      "source": "https://github.com/adafruit/Adafruit-QT-3V-to-5V-Level-Booster-PCB/blob/13637316890d99395fe7f6b359de027a0f422c7b/Adafruit%20STEMMA%20QT%20Booster%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-QT-3V-to-5V-Level-Booster-PCB/blob/13637316890d99395fe7f6b359de027a0f422c7b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5637",
+      "product": "https://www.adafruit.com/product/5637",
+      "repository": "https://github.com/adafruit/Adafruit-QT-5-3V-Shifter-PCB",
+      "commit": "1b59f72ce55b4b116f2b8756c4eefdb9fa2e4eb3",
+      "source": "https://github.com/adafruit/Adafruit-QT-5-3V-Shifter-PCB/blob/1b59f72ce55b4b116f2b8756c4eefdb9fa2e4eb3/Adafruit%20QT%205-3V%20Shifter.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-QT-5-3V-Shifter-PCB/blob/1b59f72ce55b4b116f2b8756c4eefdb9fa2e4eb3/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4570",
+      "product": "https://www.adafruit.com/product/4570",
+      "repository": "https://github.com/adafruit/Adafruit-DS1841-PCB",
+      "commit": "5d475eace8eedf69f1152edd5dc347744d76609f",
+      "source": "https://github.com/adafruit/Adafruit-DS1841-PCB/blob/5d475eace8eedf69f1152edd5dc347744d76609f/DS1841%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DS1841-PCB/blob/5d475eace8eedf69f1152edd5dc347744d76609f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4413",
+      "product": "https://www.adafruit.com/product/4413",
+      "repository": "https://github.com/adafruit/Adafruit-LSM303AGR-PCB",
+      "commit": "3a099ee3de341bfaf089d7f314380e825b3ae35e",
+      "source": "https://github.com/adafruit/Adafruit-LSM303AGR-PCB/blob/3a099ee3de341bfaf089d7f314380e825b3ae35e/Adafruit_LSM303AGR.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LSM303AGR-PCB/blob/3a099ee3de341bfaf089d7f314380e825b3ae35e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5146",
+      "product": "https://www.adafruit.com/product/5146",
+      "repository": "https://github.com/adafruit/Adafruit-24LC32-PCB",
+      "commit": "e92cf5549d43c5c17ab04d6ee2899a7783cc19f4",
+      "source": "https://github.com/adafruit/Adafruit-24LC32-PCB/blob/e92cf5549d43c5c17ab04d6ee2899a7783cc19f4/Adafruit%2024LC32%20I2C%20EEPROM.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-24LC32-PCB/blob/e92cf5549d43c5c17ab04d6ee2899a7783cc19f4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6516",
+      "product": "https://www.adafruit.com/product/6516",
+      "repository": "https://github.com/adafruit/Adafruit-GP8403-Breakout-Board-PCB",
+      "commit": "e1326df4fb03b1c9efe779644eaa711c6aadbcd8",
+      "source": "https://github.com/adafruit/Adafruit-GP8403-Breakout-Board-PCB/blob/e1326df4fb03b1c9efe779644eaa711c6aadbcd8/Adafruit%20GP8403%20Breakout%20Board%20rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-GP8403-Breakout-Board-PCB/blob/e1326df4fb03b1c9efe779644eaa711c6aadbcd8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4682",
+      "product": "https://www.adafruit.com/product/4682",
+      "repository": "https://github.com/adafruit/Adafruit-MicroSD-SPI-or-SDIO-card-breakout-PCB",
+      "commit": "959792478854acec21fb862650427ffaa32b07f1",
+      "source": "https://github.com/adafruit/Adafruit-MicroSD-SPI-or-SDIO-card-breakout-PCB/blob/959792478854acec21fb862650427ffaa32b07f1/Adafruit%20SDIO%20microSD.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MicroSD-SPI-or-SDIO-card-breakout-PCB/blob/959792478854acec21fb862650427ffaa32b07f1/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5640",
+      "product": "https://www.adafruit.com/product/5640",
+      "repository": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-with-STEMMA-QT-PCB",
+      "commit": "f4ca8e1c846ced71a104c657bcb727502675b466",
+      "source": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-with-STEMMA-QT-PCB/blob/f4ca8e1c846ced71a104c657bcb727502675b466/Si5351%20STEMMA%20QT%20Board.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-with-STEMMA-QT-PCB/blob/f4ca8e1c846ced71a104c657bcb727502675b466/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5767",
+      "product": "https://www.adafruit.com/product/5767",
+      "repository": "https://github.com/adafruit/Adafruit-TSC2046-PCB",
+      "commit": "cf5b01b3b6ae479abf051a8d0d3e8ed5b05ba632",
+      "source": "https://github.com/adafruit/Adafruit-TSC2046-PCB/blob/cf5b01b3b6ae479abf051a8d0d3e8ed5b05ba632/Adafruit%20TSC2046%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TSC2046-PCB/blob/cf5b01b3b6ae479abf051a8d0d3e8ed5b05ba632/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5543",
+      "product": "https://www.adafruit.com/product/5543",
+      "repository": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-LIS3MDL-PCB",
+      "commit": "bc2d3ee876a254d5ebc669bc4d0df78b11602a64",
+      "source": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-LIS3MDL-PCB/blob/bc2d3ee876a254d5ebc669bc4d0df78b11602a64/LIS3MDL%20%2B%20LSM6DS3%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-LIS3MDL-PCB/blob/bc2d3ee876a254d5ebc669bc4d0df78b11602a64/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5165",
+      "product": "https://www.adafruit.com/product/5165",
+      "repository": "https://github.com/adafruit/Adafruit-MCP9601-PCB",
+      "commit": "135d6a8e4ca84c55ec2c8a0208ba61e98e4db31e",
+      "source": "https://github.com/adafruit/Adafruit-MCP9601-PCB/blob/135d6a8e4ca84c55ec2c8a0208ba61e98e4db31e/Adafruit%20MCP9601.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MCP9601-PCB/blob/135d6a8e4ca84c55ec2c8a0208ba61e98e4db31e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6340",
+      "product": "https://www.adafruit.com/product/6340",
+      "repository": "https://github.com/adafruit/Adafruit-INA237-Power-Monitor-PCB",
+      "commit": "d62a2a17f07157d492c9cd14a48fe0efc3f8dbbc",
+      "source": "https://github.com/adafruit/Adafruit-INA237-Power-Monitor-PCB/blob/d62a2a17f07157d492c9cd14a48fe0efc3f8dbbc/Adafruit%20INA237%20Power%20Monitor%20PCB.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-INA237-Power-Monitor-PCB/blob/d62a2a17f07157d492c9cd14a48fe0efc3f8dbbc/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4648",
+      "product": "https://www.adafruit.com/product/4648",
+      "repository": "https://github.com/adafruit/Adafruit-PCF8591-PCB",
+      "commit": "618da56679c56b97583774e2c2f724c453e78396",
+      "source": "https://github.com/adafruit/Adafruit-PCF8591-PCB/blob/618da56679c56b97583774e2c2f724c453e78396/Adafruit_PCF8591.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCF8591-PCB/blob/618da56679c56b97583774e2c2f724c453e78396/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3678",
+      "product": "https://www.adafruit.com/product/3678",
+      "repository": "https://github.com/adafruit/Adafruit-UDA1334A-I2S-Stereo-DAC-PCB",
+      "commit": "e836025c26c8dcfa3fab3e9aa7756542770f4849",
+      "source": "https://github.com/adafruit/Adafruit-UDA1334A-I2S-Stereo-DAC-PCB/blob/e836025c26c8dcfa3fab3e9aa7756542770f4849/Adafruit%20UDA1334%20I2S%20DAC.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-UDA1334A-I2S-Stereo-DAC-PCB/blob/e836025c26c8dcfa3fab3e9aa7756542770f4849/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4415",
+      "product": "https://www.adafruit.com/product/4415",
+      "repository": "https://github.com/adafruit/Adafruit-PA1010D-Mini-GPS-PCB",
+      "commit": "6f1d0f216b848bea8d473a4b1384fd0340536ea0",
+      "source": "https://github.com/adafruit/Adafruit-PA1010D-Mini-GPS-PCB/blob/6f1d0f216b848bea8d473a4b1384fd0340536ea0/Adafruit%20PA1010D%20Mini%20GPS.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PA1010D-Mini-GPS-PCB/blob/6f1d0f216b848bea8d473a4b1384fd0340536ea0/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3779",
+      "product": "https://www.adafruit.com/product/3779",
+      "repository": "https://github.com/adafruit/Adafruit-AS7262-Breakout-PCB",
+      "commit": "e938964b93a0dca5c0120fe2aa54a16e590b27fa",
+      "source": "https://github.com/adafruit/Adafruit-AS7262-Breakout-PCB/blob/e938964b93a0dca5c0120fe2aa54a16e590b27fa/AS726x-Spectral_REV-D.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AS7262-Breakout-PCB/blob/e938964b93a0dca5c0120fe2aa54a16e590b27fa/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5752",
+      "product": "https://www.adafruit.com/product/5752",
+      "repository": "https://github.com/adafruit/Adafruit-I2C-Quad-Rotary-Encoder-Breakout-PCB",
+      "commit": "635fe51901050a78f4ecf4533022d0e440b82875",
+      "source": "https://github.com/adafruit/Adafruit-I2C-Quad-Rotary-Encoder-Breakout-PCB/blob/635fe51901050a78f4ecf4533022d0e440b82875/Adafruit%20I2C%20Quad%20Rotary%20Encoder%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-I2C-Quad-Rotary-Encoder-Breakout-PCB/blob/635fe51901050a78f4ecf4533022d0e440b82875/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4626",
+      "product": "https://www.adafruit.com/product/4626",
+      "repository": "https://github.com/adafruit/Adafruit-LIS331-PCB",
+      "commit": "4b94be760d8804bd08d6f3959697bac0875c8fea",
+      "source": "https://github.com/adafruit/Adafruit-LIS331-PCB/blob/4b94be760d8804bd08d6f3959697bac0875c8fea/Adafruit_LIS331.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LIS331-PCB/blob/4b94be760d8804bd08d6f3959697bac0875c8fea/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5295",
+      "product": "https://www.adafruit.com/product/5295",
+      "repository": "https://github.com/adafruit/Adafruit-NeoSlider-PCB",
+      "commit": "f0bf0d2795cdc2af0f31f70b032023b25afa5b69",
+      "source": "https://github.com/adafruit/Adafruit-NeoSlider-PCB/blob/f0bf0d2795cdc2af0f31f70b032023b25afa5b69/Adafruit%20NeoSlider.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoSlider-PCB/blob/f0bf0d2795cdc2af0f31f70b032023b25afa5b69/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6495",
+      "product": "https://www.adafruit.com/product/6495",
+      "repository": "https://github.com/adafruit/Adafruit-Terminal-Block-BFF-PCB",
+      "commit": "6e2c47d43d37a4911910750956fb27c9459b2a57",
+      "source": "https://github.com/adafruit/Adafruit-Terminal-Block-BFF-PCB/blob/6e2c47d43d37a4911910750956fb27c9459b2a57/Adafruit%20Terminal%20Block%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Terminal-Block-BFF-PCB/blob/6e2c47d43d37a4911910750956fb27c9459b2a57/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5964",
+      "product": "https://www.adafruit.com/product/5964",
+      "repository": "https://github.com/adafruit/Adafruit-SEN5x-Adapter-Breakout-PCB",
+      "commit": "fcedf60e56ee80e49331ec1621d4c64182aa6177",
+      "source": "https://github.com/adafruit/Adafruit-SEN5x-Adapter-Breakout-PCB/blob/fcedf60e56ee80e49331ec1621d4c64182aa6177/Adafruit%20SEN5x%20Adapter%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SEN5x-Adapter-Breakout-PCB/blob/fcedf60e56ee80e49331ec1621d4c64182aa6177/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6421",
+      "product": "https://www.adafruit.com/product/6421",
+      "repository": "https://github.com/adafruit/Adafruit-PCM5122-I2S-DAC-PCB",
+      "commit": "5ce8729798cefc4174524ae678db3958ad0b8113",
+      "source": "https://github.com/adafruit/Adafruit-PCM5122-I2S-DAC-PCB/blob/5ce8729798cefc4174524ae678db3958ad0b8113/Adafruit%20PCM5122%20I2S%20DAC.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCM5122-I2S-DAC-PCB/blob/5ce8729798cefc4174524ae678db3958ad0b8113/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6432",
+      "product": "https://www.adafruit.com/product/6432",
+      "repository": "https://github.com/adafruit/Adafruit-ADS122C04-24-Bit-ADC-PCB",
+      "commit": "bb60e307305d48648d0d77d3edcdef25bee5c94a",
+      "source": "https://github.com/adafruit/Adafruit-ADS122C04-24-Bit-ADC-PCB/blob/bb60e307305d48648d0d77d3edcdef25bee5c94a/Adafruit%20ADS122C04%2024-Bit%20ADC.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ADS122C04-24-Bit-ADC-PCB/blob/bb60e307305d48648d0d77d3edcdef25bee5c94a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA259",
+      "product": "https://www.adafruit.com/product/259",
+      "repository": "https://github.com/adafruit/Adafruit-USB-LiIon-LiPoly-Charger-PCB",
+      "commit": "e8bcaf9566ca85bc555d8c7c849adb473948dc5f",
+      "source": "https://github.com/adafruit/Adafruit-USB-LiIon-LiPoly-Charger-PCB/blob/e8bcaf9566ca85bc555d8c7c849adb473948dc5f/Adafruit%20USB%20LiIon-LiPoly%20Charger.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-USB-LiIon-LiPoly-Charger-PCB/blob/e8bcaf9566ca85bc555d8c7c849adb473948dc5f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6331",
+      "product": "https://www.adafruit.com/product/6331",
+      "repository": "https://github.com/adafruit/Adafruit-SEN6x-Breakout-PCB",
+      "commit": "7caff419c5f32d5bf41f8e42641b9c158a1db04e",
+      "source": "https://github.com/adafruit/Adafruit-SEN6x-Breakout-PCB/blob/7caff419c5f32d5bf41f8e42641b9c158a1db04e/Adafruit%20SEN6x%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SEN6x-Breakout-PCB/blob/7caff419c5f32d5bf41f8e42641b9c158a1db04e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1580",
+      "product": "https://www.adafruit.com/product/1580",
+      "repository": "https://github.com/adafruit/Adafruit-AR1100-Resistive-Touch-Controller-PCB",
+      "commit": "217534674defab8d2040a7399b23d3cead345195",
+      "source": "https://github.com/adafruit/Adafruit-AR1100-Resistive-Touch-Controller-PCB/blob/217534674defab8d2040a7399b23d3cead345195/Adafruit%20AR1100.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AR1100-Resistive-Touch-Controller-PCB/blob/217534674defab8d2040a7399b23d3cead345195/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6178",
+      "product": "https://www.adafruit.com/product/6178",
+      "repository": "https://github.com/adafruit/Adafruit-1.28-240x240-Round-Display-PCB",
+      "commit": "90e7a557ce75a56f658b5d05fbf68a91dd4c1c38",
+      "source": "https://github.com/adafruit/Adafruit-1.28-240x240-Round-Display-PCB/blob/90e7a557ce75a56f658b5d05fbf68a91dd4c1c38/Adafruit%201.28%20240x240%20Round%20Display.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.28-240x240-Round-Display-PCB/blob/90e7a557ce75a56f658b5d05fbf68a91dd4c1c38/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4438",
+      "product": "https://www.adafruit.com/product/4438",
+      "repository": "https://github.com/adafruit/Adafruit-LSM6DSOX-PCB",
+      "commit": "c05abef4675b0380fbf3d23171615a2f1ac0b130",
+      "source": "https://github.com/adafruit/Adafruit-LSM6DSOX-PCB/blob/c05abef4675b0380fbf3d23171615a2f1ac0b130/Adafruit_LSM6DSOX.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LSM6DSOX-PCB/blob/c05abef4675b0380fbf3d23171615a2f1ac0b130/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5879",
+      "product": "https://www.adafruit.com/product/5879",
+      "repository": "https://github.com/adafruit/Adafruit-UPDI-Friend-PCB",
+      "commit": "6063046738409ca77509f5ccce2f2b0ce72be210",
+      "source": "https://github.com/adafruit/Adafruit-UPDI-Friend-PCB/blob/6063046738409ca77509f5ccce2f2b0ce72be210/Adafruit%20UPDI%20Friend.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-UPDI-Friend-PCB/blob/6063046738409ca77509f5ccce2f2b0ce72be210/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5423",
+      "product": "https://www.adafruit.com/product/5423",
+      "repository": "https://github.com/adafruit/Adafruit-TSC2007-PCB",
+      "commit": "8d182929dfc27dcdb407a2769cf416f9f63b4a16",
+      "source": "https://github.com/adafruit/Adafruit-TSC2007-PCB/blob/8d182929dfc27dcdb407a2769cf416f9f63b4a16/Adafruit%20TSC2007.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TSC2007-PCB/blob/8d182929dfc27dcdb407a2769cf416f9f63b4a16/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6113",
+      "product": "https://www.adafruit.com/product/6113",
+      "repository": "https://github.com/adafruit/Adafruit-Color-Newxie-TFT-Display-PCB",
+      "commit": "89c8dfd70d3f9e74606d12f3d5d6af7ea6fa8197",
+      "source": "https://github.com/adafruit/Adafruit-Color-Newxie-TFT-Display-PCB/blob/89c8dfd70d3f9e74606d12f3d5d6af7ea6fa8197/Adafruit%20Color%20Newxie%20TFT%20Display.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Color-Newxie-TFT-Display-PCB/blob/89c8dfd70d3f9e74606d12f3d5d6af7ea6fa8197/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4503",
+      "product": "https://www.adafruit.com/product/4503",
+      "repository": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-PCB",
+      "commit": "9bf02b7214d35f2699bfd24737865511e4f9f114",
+      "source": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-PCB/blob/9bf02b7214d35f2699bfd24737865511e4f9f114/Adafruit_LSM6DS3.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-PCB/blob/9bf02b7214d35f2699bfd24737865511e4f9f114/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5545",
+      "product": "https://www.adafruit.com/product/5545",
+      "repository": "https://github.com/adafruit/Adafruit-PCF8574-PCB",
+      "commit": "a2fbf46bed447a1bd87b51f11169b275b9bc8fb0",
+      "source": "https://github.com/adafruit/Adafruit-PCF8574-PCB/blob/a2fbf46bed447a1bd87b51f11169b275b9bc8fb0/Adafruit%20PCF8574%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCF8574-PCB/blob/a2fbf46bed447a1bd87b51f11169b275b9bc8fb0/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5836",
+      "product": "https://www.adafruit.com/product/5836",
+      "repository": "https://github.com/adafruit/Adafruit-ADS7830-PCB",
+      "commit": "b796c6e98ecc7bddd24d97c2ce9e553dbf0edf7c",
+      "source": "https://github.com/adafruit/Adafruit-ADS7830-PCB/blob/b796c6e98ecc7bddd24d97c2ce9e553dbf0edf7c/Adafruit%20ADS7830%20Breakout%20PCB.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ADS7830-PCB/blob/b796c6e98ecc7bddd24d97c2ce9e553dbf0edf7c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5932",
+      "product": "https://www.adafruit.com/product/5932",
+      "repository": "https://github.com/adafruit/Adafruit-ADG729-Dual-1-to-4-Analog-Matrix-Switch-PCB",
+      "commit": "0cae682f07dc8351b45d07d01df7e9eaa0ca875f",
+      "source": "https://github.com/adafruit/Adafruit-ADG729-Dual-1-to-4-Analog-Matrix-Switch-PCB/blob/0cae682f07dc8351b45d07d01df7e9eaa0ca875f/Adafruit%20ADG729%20Dual%201-to-4%20Analog%20Switch.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ADG729-Dual-1-to-4-Analog-Matrix-Switch-PCB/blob/0cae682f07dc8351b45d07d01df7e9eaa0ca875f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2471",
+      "product": "https://www.adafruit.com/product/2471",
+      "repository": "https://github.com/adafruit/Adafruit-Huzzah-ESP8266-Basic-Breakout-PCB",
+      "commit": "ddd588632d07928551e7f1f71a38335e33c4b530",
+      "source": "https://github.com/adafruit/Adafruit-Huzzah-ESP8266-Basic-Breakout-PCB/blob/ddd588632d07928551e7f1f71a38335e33c4b530/Adafruit%20HUZZAH%20ESP8266%20Basic%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Huzzah-ESP8266-Basic-Breakout-PCB/blob/ddd588632d07928551e7f1f71a38335e33c4b530/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1602",
+      "product": "https://www.adafruit.com/product/1602",
+      "repository": "https://github.com/adafruit/Adafruit-CAP1188-PCB",
+      "commit": "cf65678210cb9bc8a792efa091d49082e4ad6a2b",
+      "source": "https://github.com/adafruit/Adafruit-CAP1188-PCB/blob/cf65678210cb9bc8a792efa091d49082e4ad6a2b/Adafruit%20CAP1188.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-CAP1188-PCB/blob/cf65678210cb9bc8a792efa091d49082e4ad6a2b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5973",
+      "product": "https://www.adafruit.com/product/5973",
+      "repository": "https://github.com/adafruit/Adafruit-CH9328-Breakout-PCB",
+      "commit": "8dccab1fd771ca7ed068b74442a3e8785da59d03",
+      "source": "https://github.com/adafruit/Adafruit-CH9328-Breakout-PCB/blob/8dccab1fd771ca7ed068b74442a3e8785da59d03/Adafruit%20CH9328%20UART%20to%20HID%20Keyboard%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-CH9328-Breakout-PCB/blob/8dccab1fd771ca7ed068b74442a3e8785da59d03/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6062",
+      "product": "https://www.adafruit.com/product/6062",
+      "repository": "https://github.com/adafruit/Adafruit-INA3221-Breakout-PCB",
+      "commit": "8512a5309b714b62bf669fd1b85787a5ef051a16",
+      "source": "https://github.com/adafruit/Adafruit-INA3221-Breakout-PCB/blob/8512a5309b714b62bf669fd1b85787a5ef051a16/Adafruit%20INA3221%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-INA3221-Breakout-PCB/blob/8512a5309b714b62bf669fd1b85787a5ef051a16/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3134",
+      "product": "https://www.adafruit.com/product/3134",
+      "repository": "https://github.com/adafruit/Adafruit-7x15-CharliePlex-LED-FeatherWing",
+      "commit": "b4883693227a02cd6affefb6ecc7a748b8150883",
+      "source": "https://github.com/adafruit/Adafruit-7x15-CharliePlex-LED-FeatherWing/blob/b4883693227a02cd6affefb6ecc7a748b8150883/Adafruit%20CharlieWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-7x15-CharliePlex-LED-FeatherWing/blob/b4883693227a02cd6affefb6ecc7a748b8150883/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5703",
+      "product": "https://www.adafruit.com/product/5703",
+      "repository": "https://github.com/adafruit/Adafruit-PiCowbell-Adalogger-PCB",
+      "commit": "667876fdbc1bf1bf7e68f5d9e240d109c55e5093",
+      "source": "https://github.com/adafruit/Adafruit-PiCowbell-Adalogger-PCB/blob/667876fdbc1bf1bf7e68f5d9e240d109c55e5093/Adafruit%20PiCowbell%20Adalogger.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiCowbell-Adalogger-PCB/blob/667876fdbc1bf1bf7e68f5d9e240d109c55e5093/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5772",
+      "product": "https://www.adafruit.com/product/5772",
+      "repository": "https://github.com/adafruit/Adafruit-EYESPI-BFF-PCB",
+      "commit": "90ddd1a730d2963aacaa67d787213e31e9ef8a0f",
+      "source": "https://github.com/adafruit/Adafruit-EYESPI-BFF-PCB/blob/90ddd1a730d2963aacaa67d787213e31e9ef8a0f/Adafruit%20EYESPI%20BFF%20PCB.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-EYESPI-BFF-PCB/blob/90ddd1a730d2963aacaa67d787213e31e9ef8a0f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4172",
+      "product": "https://www.adafruit.com/product/4172",
+      "repository": "https://github.com/adafruit/Adafruit-ESP32-HUZZAH-Breakout-PCB",
+      "commit": "2f1dcc9ebf93d4a9c825a3747d51849c088c390d",
+      "source": "https://github.com/adafruit/Adafruit-ESP32-HUZZAH-Breakout-PCB/blob/2f1dcc9ebf93d4a9c825a3747d51849c088c390d/Adafruit%20ESP32%20Huzzah%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ESP32-HUZZAH-Breakout-PCB/blob/2f1dcc9ebf93d4a9c825a3747d51849c088c390d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5335",
+      "product": "https://www.adafruit.com/product/5335",
+      "repository": "https://github.com/adafruit/Adafruit-CP2102N-Friend-PCB",
+      "commit": "1c29f780bdc7503e18c8b6d29d1f8fb7cc1510bb",
+      "source": "https://github.com/adafruit/Adafruit-CP2102N-Friend-PCB/blob/1c29f780bdc7503e18c8b6d29d1f8fb7cc1510bb/Adafruit%20CP2102N%20Friend.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-CP2102N-Friend-PCB/blob/1c29f780bdc7503e18c8b6d29d1f8fb7cc1510bb/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5568",
+      "product": "https://www.adafruit.com/product/5568",
+      "repository": "https://github.com/adafruit/Adafruit-WCH-CH9102F-Friend-PCB",
+      "commit": "eb022866b738f738971172c8725546e7b221369f",
+      "source": "https://github.com/adafruit/Adafruit-WCH-CH9102F-Friend-PCB/blob/eb022866b738f738971172c8725546e7b221369f/Adafruit%20CH9102F.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-WCH-CH9102F-Friend-PCB/blob/eb022866b738f738971172c8725546e7b221369f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6027",
+      "product": "https://www.adafruit.com/product/6027",
+      "repository": "https://github.com/adafruit/Adafruit-DS2482S-800-Breakout-PCB",
+      "commit": "520f5e8de72928ab3b5517cc8db37e8aedb6133c",
+      "source": "https://github.com/adafruit/Adafruit-DS2482S-800-Breakout-PCB/blob/520f5e8de72928ab3b5517cc8db37e8aedb6133c/Adafruit%20DS2482S-800%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DS2482S-800-Breakout-PCB/blob/520f5e8de72928ab3b5517cc8db37e8aedb6133c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3954",
+      "product": "https://www.adafruit.com/product/3954",
+      "repository": "https://github.com/adafruit/Adafruit-NeoTrellis-4x4-PCB",
+      "commit": "d9c12effecfbaab5c55e2c96186188166340862a",
+      "source": "https://github.com/adafruit/Adafruit-NeoTrellis-4x4-PCB/blob/d9c12effecfbaab5c55e2c96186188166340862a/Adafruit%20NeoTrellis%204x4.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoTrellis-4x4-PCB/blob/d9c12effecfbaab5c55e2c96186188166340862a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5296",
+      "product": "https://www.adafruit.com/product/5296",
+      "repository": "https://github.com/adafruit/Adafruit-LED-Arcade-Button-1x4-PCB",
+      "commit": "437bc15cf86fe7176b153575118f58b178de18fd",
+      "source": "https://github.com/adafruit/Adafruit-LED-Arcade-Button-1x4-PCB/blob/437bc15cf86fe7176b153575118f58b178de18fd/Adafruit%20LED%20Arcade%20Button%201x4.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LED-Arcade-Button-1x4-PCB/blob/437bc15cf86fe7176b153575118f58b178de18fd/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4886",
+      "product": "https://www.adafruit.com/product/4886",
+      "repository": "https://github.com/adafruit/Adafruit-AW9523-PCB",
+      "commit": "080a15c70db83a9091bdfd03ee7e85ae38b694a5",
+      "source": "https://github.com/adafruit/Adafruit-AW9523-PCB/blob/080a15c70db83a9091bdfd03ee7e85ae38b694a5/Adafruit%20AW9523.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AW9523-PCB/blob/080a15c70db83a9091bdfd03ee7e85ae38b694a5/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5611",
+      "product": "https://www.adafruit.com/product/5611",
+      "repository": "https://github.com/adafruit/Adafruit-PCF8575-PCB",
+      "commit": "8a26f47e5a0c47467d0bdf6a3385eb2c5a9a0377",
+      "source": "https://github.com/adafruit/Adafruit-PCF8575-PCB/blob/8a26f47e5a0c47467d0bdf6a3385eb2c5a9a0377/Adafruit%20PCF8575.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCF8575-PCB/blob/8a26f47e5a0c47467d0bdf6a3385eb2c5a9a0377/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5395",
+      "product": "https://www.adafruit.com/product/5395",
+      "repository": "https://github.com/adafruit/Adafruit-QT-Py-ESP32-Pico-PCB",
+      "commit": "f45b12704ccbb7180d89db28e1af7bd861124133",
+      "source": "https://github.com/adafruit/Adafruit-QT-Py-ESP32-Pico-PCB/blob/f45b12704ccbb7180d89db28e1af7bd861124133/Adafruit%20QT%20Py%20ESP32%20Pico.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-QT-Py-ESP32-Pico-PCB/blob/f45b12704ccbb7180d89db28e1af7bd861124133/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5996",
+      "product": "https://www.adafruit.com/product/5996",
+      "repository": "https://github.com/adafruit/Adafruit-QT-Py-CH32V203-PCB",
+      "commit": "c5c1580d9823d2f8923778530339179531d024f6",
+      "source": "https://github.com/adafruit/Adafruit-QT-Py-CH32V203-PCB/blob/c5c1580d9823d2f8923778530339179531d024f6/Adafruit%20QT%20Py%20CH32V203.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-QT-Py-CH32V203-PCB/blob/c5c1580d9823d2f8923778530339179531d024f6/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4759",
+      "product": "https://www.adafruit.com/product/4759",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-M4-CAN-PCB",
+      "commit": "d82af0d26250cb47e0685715276474798bb79470",
+      "source": "https://github.com/adafruit/Adafruit-Feather-M4-CAN-PCB/blob/d82af0d26250cb47e0685715276474798bb79470/Adafruit%20Feather%20M4%20Express%20CAN.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-M4-CAN-PCB/blob/d82af0d26250cb47e0685715276474798bb79470/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5727",
+      "product": "https://www.adafruit.com/product/5727",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-RP2040-ThinkInk",
+      "commit": "d58fe34ce514708b82d5a25def954bce635c4c8f",
+      "source": "https://github.com/adafruit/Adafruit-Feather-RP2040-ThinkInk/blob/d58fe34ce514708b82d5a25def954bce635c4c8f/Adafruit%20Feather%20RP2040%20ThinkInk.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-RP2040-ThinkInk/blob/d58fe34ce514708b82d5a25def954bce635c4c8f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5724",
+      "product": "https://www.adafruit.com/product/5724",
+      "repository": "https://github.com/adafruit/Adafruit-RP2040-CAN-Bus-Feather-PCB",
+      "commit": "499de161e9d106e530be5ba1aa09a756c38a31ba",
+      "source": "https://github.com/adafruit/Adafruit-RP2040-CAN-Bus-Feather-PCB/blob/499de161e9d106e530be5ba1aa09a756c38a31ba/Adafruit%20RP2040%20CAN%20Bus%20Feather.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RP2040-CAN-Bus-Feather-PCB/blob/499de161e9d106e530be5ba1aa09a756c38a31ba/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1590",
+      "product": "https://www.adafruit.com/product/1590",
+      "repository": "https://github.com/adafruit/Adafruit-RA8875-Breakout-Board-PCB",
+      "commit": "64c271bb8118f9f82b9a4161e5b8e0db6398fb2e",
+      "source": "https://github.com/adafruit/Adafruit-RA8875-Breakout-Board-PCB/blob/64c271bb8118f9f82b9a4161e5b8e0db6398fb2e/Adafruit%20RA8875%20TFT%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RA8875-Breakout-Board-PCB/blob/64c271bb8118f9f82b9a4161e5b8e0db6398fb2e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5626",
+      "product": "https://www.adafruit.com/product/5626",
+      "repository": "https://github.com/adafruit/Adafruit-PCA9548-PCB",
+      "commit": "5b8baf8ad61c5bd340e53f47d9386bd3bd553d92",
+      "source": "https://github.com/adafruit/Adafruit-PCA9548-PCB/blob/5b8baf8ad61c5bd340e53f47d9386bd3bd553d92/PCA9548A%20QT%20Board.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCA9548-PCB/blob/5b8baf8ad61c5bd340e53f47d9386bd3bd553d92/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3190",
+      "product": "https://www.adafruit.com/product/3190",
+      "repository": "https://github.com/adafruit/Adafruit-DRV8871-Breakout-PCB",
+      "commit": "4183ffe41cac746a327c60825b18fa814e081e0f",
+      "source": "https://github.com/adafruit/Adafruit-DRV8871-Breakout-PCB/blob/4183ffe41cac746a327c60825b18fa814e081e0f/Adafruit%20DRV8871.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DRV8871-Breakout-PCB/blob/4183ffe41cac746a327c60825b18fa814e081e0f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5974",
+      "product": "https://www.adafruit.com/product/5974",
+      "repository": "https://github.com/adafruit/Adafruit-HX711-24-bit-ADC-PCB",
+      "commit": "4444b42fc47d665fcd6694097690cfbf6c609b43",
+      "source": "https://github.com/adafruit/Adafruit-HX711-24-bit-ADC-PCB/blob/4444b42fc47d665fcd6694097690cfbf6c609b43/Adafruit%20HX711%20ADC%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-HX711-24-bit-ADC-PCB/blob/4444b42fc47d665fcd6694097690cfbf6c609b43/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6353",
+      "product": "https://www.adafruit.com/product/6353",
+      "repository": "https://github.com/adafruit/Adafruit-STSPIN220-Stepper-Motor-Driver-Breakout-Board-PCB",
+      "commit": "900c418203489887894b71debe1849a6df259c0f",
+      "source": "https://github.com/adafruit/Adafruit-STSPIN220-Stepper-Motor-Driver-Breakout-Board-PCB/blob/900c418203489887894b71debe1849a6df259c0f/Adafruit%20STSPIN220%20Stepper%20Motor%20Driver.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-STSPIN220-Stepper-Motor-Driver-Breakout-Board-PCB/blob/900c418203489887894b71debe1849a6df259c0f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6477",
+      "product": "https://www.adafruit.com/product/6477",
+      "repository": "https://github.com/adafruit/Adafruit-AS7343-14-Channel-Light-Color-Sensor-PCB",
+      "commit": "ce4bb797425e7eecbcbe1ded1232209a2d995e7e",
+      "source": "https://github.com/adafruit/Adafruit-AS7343-14-Channel-Light-Color-Sensor-PCB/blob/ce4bb797425e7eecbcbe1ded1232209a2d995e7e/Adafruit%20AS7343%2014%20Channel%20Light%20Color%20Sensor%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AS7343-14-Channel-Light-Color-Sensor-PCB/blob/ce4bb797425e7eecbcbe1ded1232209a2d995e7e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3297",
+      "product": "https://www.adafruit.com/product/3297",
+      "repository": "https://github.com/adafruit/Adafruit-DRV8833-Motor-Driver-Breakout-PCB",
+      "commit": "dda79a86d6518d05a35091cb8b03b9c0d57d04e2",
+      "source": "https://github.com/adafruit/Adafruit-DRV8833-Motor-Driver-Breakout-PCB/blob/dda79a86d6518d05a35091cb8b03b9c0d57d04e2/Adafruit%20DRV8833.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DRV8833-Motor-Driver-Breakout-PCB/blob/dda79a86d6518d05a35091cb8b03b9c0d57d04e2/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4978",
+      "product": "https://www.adafruit.com/product/4978",
+      "repository": "https://github.com/adafruit/Adafruit-NeoKey-Breakout-PCB",
+      "commit": "8e89cf15d32369072d473cda4424f417255abf97",
+      "source": "https://github.com/adafruit/Adafruit-NeoKey-Breakout-PCB/blob/8e89cf15d32369072d473cda4424f417255abf97/Adafruit%20NeoKey%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoKey-Breakout-PCB/blob/8e89cf15d32369072d473cda4424f417255abf97/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3533",
+      "product": "https://www.adafruit.com/product/3533",
+      "repository": "https://github.com/adafruit/Adafruit-0.96-160x80-TFT-Display-Breakout-PCB",
+      "commit": "7ada397dddd065125d27c9d957d58b2a96cdf6d7",
+      "source": "https://github.com/adafruit/Adafruit-0.96-160x80-TFT-Display-Breakout-PCB/blob/7ada397dddd065125d27c9d957d58b2a96cdf6d7/Adafruit%200.96in%20160x80%20TFT%20Display.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-0.96-160x80-TFT-Display-Breakout-PCB/blob/7ada397dddd065125d27c9d957d58b2a96cdf6d7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1673",
+      "product": "https://www.adafruit.com/product/1673",
+      "repository": "https://github.com/adafruit/Adafruit-1.27inch-Color-OLED-Breakout-PCB",
+      "commit": "e3f77c8c186fbdbadf4f33629ca83cec93f3f731",
+      "source": "https://github.com/adafruit/Adafruit-1.27inch-Color-OLED-Breakout-PCB/blob/e3f77c8c186fbdbadf4f33629ca83cec93f3f731/Adafruit%201.27%20128x96%20RGB%20OLED.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.27inch-Color-OLED-Breakout-PCB/blob/e3f77c8c186fbdbadf4f33629ca83cec93f3f731/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4383",
+      "product": "https://www.adafruit.com/product/4383",
+      "repository": "https://github.com/adafruit/Adafruit-1.14-inch-240x135-TFT-PCB",
+      "commit": "e87c63d29caea5604ad987077b2ca9eb61a4284f",
+      "source": "https://github.com/adafruit/Adafruit-1.14-inch-240x135-TFT-PCB/blob/e87c63d29caea5604ad987077b2ca9eb61a4284f/Adafruit%201.14-inch%20240x135%20Color%20TFT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.14-inch-240x135-TFT-PCB/blob/e87c63d29caea5604ad987077b2ca9eb61a4284f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5978",
+      "product": "https://www.adafruit.com/product/5978",
+      "repository": "https://github.com/adafruit/Adafruit-USB-Type-C-Plug-Breakout-PCB",
+      "commit": "11a5d518bac2d73989a15c8c9e2dcd97611ef6ab",
+      "source": "https://github.com/adafruit/Adafruit-USB-Type-C-Plug-Breakout-PCB/blob/11a5d518bac2d73989a15c8c9e2dcd97611ef6ab/Adafruit%20USB%20Type%20C%20Plug%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-USB-Type-C-Plug-Breakout-PCB/blob/11a5d518bac2d73989a15c8c9e2dcd97611ef6ab/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5882",
+      "product": "https://www.adafruit.com/product/5882",
+      "repository": "https://github.com/adafruit/Adafruit-DC-Power-BFF-PCB",
+      "commit": "de89d2fa7b7cfbdea51fc6e946cd2e780d7b2677",
+      "source": "https://github.com/adafruit/Adafruit-DC-Power-BFF-PCB/blob/de89d2fa7b7cfbdea51fc6e946cd2e780d7b2677/Adafruit%20DC%20Power%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DC-Power-BFF-PCB/blob/de89d2fa7b7cfbdea51fc6e946cd2e780d7b2677/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4090",
+      "product": "https://www.adafruit.com/product/4090",
+      "repository": "https://github.com/adafruit/Adafruit-USB-C-Downstream-Breakout",
+      "commit": "1484ecb56b369e177848e69de4b7b7e513399590",
+      "source": "https://github.com/adafruit/Adafruit-USB-C-Downstream-Breakout/blob/1484ecb56b369e177848e69de4b7b7e513399590/Adafruit%20USB%20Type%20C%20Downstream%20Breakout%20rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-USB-C-Downstream-Breakout/blob/1484ecb56b369e177848e69de4b7b7e513399590/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6050",
+      "product": "https://www.adafruit.com/product/6050",
+      "repository": "https://github.com/adafruit/Adafruit-Sunken-USB-Type-C-Breakout-PCB",
+      "commit": "4cb1207ddd6eae864f4410d110bac38072e9b895",
+      "source": "https://github.com/adafruit/Adafruit-Sunken-USB-Type-C-Breakout-PCB/blob/4cb1207ddd6eae864f4410d110bac38072e9b895/Adafruit%20Sunken%20USB%20Type%20C%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Sunken-USB-Type-C-Breakout-PCB/blob/4cb1207ddd6eae864f4410d110bac38072e9b895/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6223",
+      "product": "https://www.adafruit.com/product/6223",
+      "repository": "https://github.com/adafruit/Adafruit-DAC7578-Breakout-PCB",
+      "commit": "b9eeb74cd3d047db6354b2b9f4fa5676c20b3bc9",
+      "source": "https://github.com/adafruit/Adafruit-DAC7578-Breakout-PCB/blob/b9eeb74cd3d047db6354b2b9f4fa5676c20b3bc9/Adafruit%20DAC7578P%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DAC7578-Breakout-PCB/blob/b9eeb74cd3d047db6354b2b9f4fa5676c20b3bc9/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5766",
+      "product": "https://www.adafruit.com/product/5766",
+      "repository": "https://github.com/adafruit/Adafruit-NeoDriver-STEMMA-QT-PCB",
+      "commit": "aaaae6964cf56ddb17c5ab11a15566573e1a4cb7",
+      "source": "https://github.com/adafruit/Adafruit-NeoDriver-STEMMA-QT-PCB/blob/aaaae6964cf56ddb17c5ab11a15566573e1a4cb7/Adafruit%20NeoDriver%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoDriver-STEMMA-QT-PCB/blob/aaaae6964cf56ddb17c5ab11a15566573e1a4cb7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6494",
+      "product": "https://www.adafruit.com/product/6494",
+      "repository": "https://github.com/adafruit/Adafruit-ADS7128-8-Channel-ADC-and-GPIO-Expander-PCB",
+      "commit": "ecc6fd2b2e97ae7e0e1799c3c15e738a79b1287c",
+      "source": "https://github.com/adafruit/Adafruit-ADS7128-8-Channel-ADC-and-GPIO-Expander-PCB/blob/ecc6fd2b2e97ae7e0e1799c3c15e738a79b1287c/Adafruit%20ADS7128%208-Channel%20ADC%20and%20GPIO%20Expander.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ADS7128-8-Channel-ADC-and-GPIO-Expander-PCB/blob/ecc6fd2b2e97ae7e0e1799c3c15e738a79b1287c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6106",
+      "product": "https://www.adafruit.com/product/6106",
+      "repository": "https://github.com/adafruit/Adafruit-bq25185-with-5V-Boost-PCB",
+      "commit": "2ce979f3dec58aa42ab4ae3707f10a7df528ef12",
+      "source": "https://github.com/adafruit/Adafruit-bq25185-with-5V-Boost-PCB/blob/2ce979f3dec58aa42ab4ae3707f10a7df528ef12/Adafruit%20bq25185%20with%205V%20Boost%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-bq25185-with-5V-Boost-PCB/blob/2ce979f3dec58aa42ab4ae3707f10a7df528ef12/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5625",
+      "product": "https://www.adafruit.com/product/5625",
+      "repository": "https://github.com/adafruit/Adafruit-Qwiic-Stemma-QT-5-Port-Hub-PCB",
+      "commit": "6e0b58b27cc36f2f4f2ae72371457032f9a1dc75",
+      "source": "https://github.com/adafruit/Adafruit-Qwiic-Stemma-QT-5-Port-Hub-PCB/blob/6e0b58b27cc36f2f4f2ae72371457032f9a1dc75/Adafruit%20Stemma%20QT%205%20Port%20Hub.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Qwiic-Stemma-QT-5-Port-Hub-PCB/blob/6e0b58b27cc36f2f4f2ae72371457032f9a1dc75/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5769",
+      "product": "https://www.adafruit.com/product/5769",
+      "repository": "https://github.com/adafruit/Adafruit-Audio-BFF-PCB",
+      "commit": "cc58e5b14991044038626a00b502c2e8eda2f85a",
+      "source": "https://github.com/adafruit/Adafruit-Audio-BFF-PCB/blob/cc58e5b14991044038626a00b502c2e8eda2f85a/Adafruit%20Audio%20BFF%20PCB.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Audio-BFF-PCB/blob/cc58e5b14991044038626a00b502c2e8eda2f85a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5937",
+      "product": "https://www.adafruit.com/product/5937",
+      "repository": "https://github.com/adafruit/Adafruit-BNO055-BMP280-BFF-PCB",
+      "commit": "6959d4d990cc3c7b6c0eb1595544220e9e2b8a87",
+      "source": "https://github.com/adafruit/Adafruit-BNO055-BMP280-BFF-PCB/blob/6959d4d990cc3c7b6c0eb1595544220e9e2b8a87/Adafruit%20BNO055%20and%20BMP280%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-BNO055-BMP280-BFF-PCB/blob/6959d4d990cc3c7b6c0eb1595544220e9e2b8a87/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5683",
+      "product": "https://www.adafruit.com/product/5683",
+      "repository": "https://github.com/adafruit/Adafruit-microSD-Card-BFF-PCB",
+      "commit": "65445ba23f0ee7e381b21e19db13e9ccfef9ba11",
+      "source": "https://github.com/adafruit/Adafruit-microSD-Card-BFF-PCB/blob/65445ba23f0ee7e381b21e19db13e9ccfef9ba11/Adafruit%20microSD%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-microSD-Card-BFF-PCB/blob/65445ba23f0ee7e381b21e19db13e9ccfef9ba11/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6092",
+      "product": "https://www.adafruit.com/product/6092",
+      "repository": "https://github.com/adafruit/Adafruit-bq25185-with-3.3V-Buck-PCB",
+      "commit": "a28ea1355e38f7f310f64ec49bac85a8aacb365c",
+      "source": "https://github.com/adafruit/Adafruit-bq25185-with-3.3V-Buck-PCB/blob/a28ea1355e38f7f310f64ec49bac85a8aacb365c/Adafruit%20bq25185%20with%203.3V%20Output.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-bq25185-with-3.3V-Buck-PCB/blob/a28ea1355e38f7f310f64ec49bac85a8aacb365c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5666",
+      "product": "https://www.adafruit.com/product/5666",
+      "repository": "https://github.com/adafruit/Adafruit-IoT-Button-with-NeoPixel-BFF-PCB",
+      "commit": "6c3fe13b68c13fb1ca52c27b5d0db88478e917f9",
+      "source": "https://github.com/adafruit/Adafruit-IoT-Button-with-NeoPixel-BFF-PCB/blob/6c3fe13b68c13fb1ca52c27b5d0db88478e917f9/IoT%20Button%20with%20NeoPixel%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-IoT-Button-with-NeoPixel-BFF-PCB/blob/6c3fe13b68c13fb1ca52c27b5d0db88478e917f9/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5877",
+      "product": "https://www.adafruit.com/product/5877",
+      "repository": "https://github.com/adafruit/Adafruit-CAN-Bus-BFF-PCB",
+      "commit": "7456bb16b65da5de6bae232dbe146e98cf4b0a5b",
+      "source": "https://github.com/adafruit/Adafruit-CAN-Bus-BFF-PCB/blob/7456bb16b65da5de6bae232dbe146e98cf4b0a5b/Adafruit%20CAN%20Bus%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-CAN-Bus-BFF-PCB/blob/7456bb16b65da5de6bae232dbe146e98cf4b0a5b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5646",
+      "product": "https://www.adafruit.com/product/5646",
+      "repository": "https://github.com/adafruit/Adafruit-5x5-NeoPixel-Grid-BFF-PCB",
+      "commit": "defbba9accab3281a52eb74f49cb0ef6d8ce7387",
+      "source": "https://github.com/adafruit/Adafruit-5x5-NeoPixel-Grid-BFF-PCB/blob/defbba9accab3281a52eb74f49cb0ef6d8ce7387/Adafruit_5x5_NeoPixel_Grid_BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-5x5-NeoPixel-Grid-BFF-PCB/blob/defbba9accab3281a52eb74f49cb0ef6d8ce7387/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5956",
+      "product": "https://www.adafruit.com/product/5956",
+      "repository": "https://github.com/adafruit/Adafruit-USB-Host-BFF-PCB",
+      "commit": "dc61b50d5ba04d7ba3a73dfa57c0a54d25154393",
+      "source": "https://github.com/adafruit/Adafruit-USB-Host-BFF-PCB/blob/dc61b50d5ba04d7ba3a73dfa57c0a54d25154393/Adafruit%20USB%20Host%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-USB-Host-BFF-PCB/blob/dc61b50d5ba04d7ba3a73dfa57c0a54d25154393/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5770",
+      "product": "https://www.adafruit.com/product/5770",
+      "repository": "https://github.com/adafruit/Adafruit-I2S-Amplifier-BFF-PCB",
+      "commit": "fe191f0585be438605feca267afa38fe587e57f4",
+      "source": "https://github.com/adafruit/Adafruit-I2S-Amplifier-BFF-PCB/blob/fe191f0585be438605feca267afa38fe587e57f4/Adafruit%20I2S%20Amplifier%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-I2S-Amplifier-BFF-PCB/blob/fe191f0585be438605feca267afa38fe587e57f4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5645",
+      "product": "https://www.adafruit.com/product/5645",
+      "repository": "https://github.com/adafruit/Adafruit-NeoPixel-Driver-BFF-PCB",
+      "commit": "eb3fc189fbd73227ace0e5a74d15265b98fb59e1",
+      "source": "https://github.com/adafruit/Adafruit-NeoPixel-Driver-BFF-PCB/blob/eb3fc189fbd73227ace0e5a74d15265b98fb59e1/Adafruit_NeoPixel_Driver_BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoPixel-Driver-BFF-PCB/blob/eb3fc189fbd73227ace0e5a74d15265b98fb59e1/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5695",
+      "product": "https://www.adafruit.com/product/5695",
+      "repository": "https://github.com/adafruit/Adafruit-NeoKey-BFF-PCB",
+      "commit": "4f0e7f24bc6bd4af262cbd93772e1eeb09c9244a",
+      "source": "https://github.com/adafruit/Adafruit-NeoKey-BFF-PCB/blob/4f0e7f24bc6bd4af262cbd93772e1eeb09c9244a/Adafruit%20NeoKey%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoKey-BFF-PCB/blob/4f0e7f24bc6bd4af262cbd93772e1eeb09c9244a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1381",
+      "product": "https://www.adafruit.com/product/1381",
+      "repository": "https://github.com/adafruit/Adafruit-VS1053-Breakout-PCB",
+      "commit": "61db4e571d89d321c33bb693b84f80da1510c5e2",
+      "source": "https://github.com/adafruit/Adafruit-VS1053-Breakout-PCB/blob/61db4e571d89d321c33bb693b84f80da1510c5e2/Adafruit%20VS1053%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VS1053-Breakout-PCB/blob/61db4e571d89d321c33bb693b84f80da1510c5e2/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3464",
+      "product": "https://www.adafruit.com/product/3464",
+      "repository": "https://github.com/adafruit/Adafruit-Joy-Bonnet-PCB",
+      "commit": "6f2c397555472348c959db74b7dde90106c48bb4",
+      "source": "https://github.com/adafruit/Adafruit-Joy-Bonnet-PCB/blob/6f2c397555472348c959db74b7dde90106c48bb4/Adafruit%20Joy%20Bonnet.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Joy-Bonnet-PCB/blob/6f2c397555472348c959db74b7dde90106c48bb4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6534",
+      "product": "https://www.adafruit.com/product/6534",
+      "repository": "https://github.com/adafruit/Adafruit-Si5351C-8-Channel-TCXO-Clock-Generator-PCB",
+      "commit": "d5fc0fc928d6088a98b8ff0acc428731f978a110",
+      "source": "https://github.com/adafruit/Adafruit-Si5351C-8-Channel-TCXO-Clock-Generator-PCB/blob/d5fc0fc928d6088a98b8ff0acc428731f978a110/Adafruit%20Si5351C%208%20Channel%20TCXO%20Clock%20Generator%20rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Si5351C-8-Channel-TCXO-Clock-Generator-PCB/blob/d5fc0fc928d6088a98b8ff0acc428731f978a110/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2478",
+      "product": "https://www.adafruit.com/product/2478",
+      "repository": "https://github.com/adafruit/Adafruit-2.4-TFT-Breakout-PCB",
+      "commit": "62eaf05ad6ead75f2da987f2ff7ed994c02869c7",
+      "source": "https://github.com/adafruit/Adafruit-2.4-TFT-Breakout-PCB/blob/62eaf05ad6ead75f2da987f2ff7ed994c02869c7/Adafruit%202.4in%20TFT%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-2.4-TFT-Breakout-PCB/blob/62eaf05ad6ead75f2da987f2ff7ed994c02869c7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1743",
+      "product": "https://www.adafruit.com/product/1743",
+      "repository": "https://github.com/adafruit/Adafruit-3.2-TFT-Breakout-PCB",
+      "commit": "78921b1128d96fb384ceedf88545cafa5540b3a8",
+      "source": "https://github.com/adafruit/Adafruit-3.2-TFT-Breakout-PCB/blob/78921b1128d96fb384ceedf88545cafa5540b3a8/Adafruit%203.2in%20TFT%20320x240.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-3.2-TFT-Breakout-PCB/blob/78921b1128d96fb384ceedf88545cafa5540b3a8/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5768",
+      "product": "https://www.adafruit.com/product/5768",
+      "repository": "https://github.com/adafruit/Adafruit-RP2040-Prop-Maker-Feather-PCB",
+      "commit": "408fa9a40c0a01a3a65497ef42a29e0b08fe711e",
+      "source": "https://github.com/adafruit/Adafruit-RP2040-Prop-Maker-Feather-PCB/blob/408fa9a40c0a01a3a65497ef42a29e0b08fe711e/Adafruit%20Feather%20RP2040%20Prop-Maker.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RP2040-Prop-Maker-Feather-PCB/blob/408fa9a40c0a01a3a65497ef42a29e0b08fe711e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4363",
+      "product": "https://www.adafruit.com/product/4363",
+      "repository": "https://github.com/adafruit/Adafruit-Airlift-Bitsy-Add-On-PCB",
+      "commit": "e865b846cad8b220f4c14781b5a82e452e0712bc",
+      "source": "https://github.com/adafruit/Adafruit-Airlift-Bitsy-Add-On-PCB/blob/e865b846cad8b220f4c14781b5a82e452e0712bc/Adafruit%20Airlift%20Bitsy%20Add-On.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Airlift-Bitsy-Add-On-PCB/blob/e865b846cad8b220f4c14781b5a82e452e0712bc/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5302",
+      "product": "https://www.adafruit.com/product/5302",
+      "repository": "https://github.com/adafruit/Adafruit-KB2040-PCB",
+      "commit": "b4160dcf4385ef2cc30e9652489328321720ee4b",
+      "source": "https://github.com/adafruit/Adafruit-KB2040-PCB/blob/b4160dcf4385ef2cc30e9652489328321720ee4b/Adafruit%20KB2040.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-KB2040-PCB/blob/b4160dcf4385ef2cc30e9652489328321720ee4b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3296",
+      "product": "https://www.adafruit.com/product/3296",
+      "repository": "https://github.com/adafruit/DS1307-breakout-board",
+      "commit": "22f84c8b77cacd22bf1296fa9f996f89bf646ae6",
+      "source": "https://github.com/adafruit/DS1307-breakout-board/blob/22f84c8b77cacd22bf1296fa9f996f89bf646ae6/DS1307%20Rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/DS1307-breakout-board/blob/22f84c8b77cacd22bf1296fa9f996f89bf646ae6/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1895",
+      "product": "https://www.adafruit.com/product/1895",
+      "repository": "https://github.com/adafruit/Adafruit-FRAM-Breakout-PCB",
+      "commit": "f7d4afa22ddd562f52c557e2e8f003611515b4f4",
+      "source": "https://github.com/adafruit/Adafruit-FRAM-Breakout-PCB/blob/f7d4afa22ddd562f52c557e2e8f003611515b4f4/Adafruit%20I2C%20FRAM.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-FRAM-Breakout-PCB/blob/f7d4afa22ddd562f52c557e2e8f003611515b4f4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3251",
+      "product": "https://www.adafruit.com/product/3251",
+      "repository": "https://github.com/adafruit/Adafruit-Si7021-PCB",
+      "commit": "6ab3474d07ba277c08b10f2d322f0f59968b0b9d",
+      "source": "https://github.com/adafruit/Adafruit-Si7021-PCB/blob/6ab3474d07ba277c08b10f2d322f0f59968b0b9d/Adafruit%20Si7021%20Temperature%20and%20Humidity.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Si7021-PCB/blob/6ab3474d07ba277c08b10f2d322f0f59968b0b9d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3709",
+      "product": "https://www.adafruit.com/product/3709",
+      "repository": "https://github.com/adafruit/Adafruit-SGP30-PCB",
+      "commit": "7050ebded47a6c29e98e50ed1329a57262b66f66",
+      "source": "https://github.com/adafruit/Adafruit-SGP30-PCB/blob/7050ebded47a6c29e98e50ed1329a57262b66f66/SGP30%20Rev%20D.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SGP30-PCB/blob/7050ebded47a6c29e98e50ed1329a57262b66f66/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5189",
+      "product": "https://www.adafruit.com/product/5189",
+      "repository": "https://github.com/adafruit/Adafruit-PCF8523-RTC-Breakout-PCB",
+      "commit": "4ec7e14d667a2d075430da0980c35c4f049e860b",
+      "source": "https://github.com/adafruit/Adafruit-PCF8523-RTC-Breakout-PCB/blob/4ec7e14d667a2d075430da0980c35c4f049e860b/Adafrruit%20PCF8523%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCF8523-RTC-Breakout-PCB/blob/4ec7e14d667a2d075430da0980c35c4f049e860b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5190",
+      "product": "https://www.adafruit.com/product/5190",
+      "repository": "https://github.com/adafruit/Adafruit-SCD-4x-PCB",
+      "commit": "c83995482b4c830a835caef158e6196a507025b3",
+      "source": "https://github.com/adafruit/Adafruit-SCD-4x-PCB/blob/c83995482b4c830a835caef158e6196a507025b3/Adafruit%20SCD-41.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-SCD-4x-PCB/blob/c83995482b4c830a835caef158e6196a507025b3/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1899",
+      "product": "https://www.adafruit.com/product/1899",
+      "repository": "https://github.com/adafruit/Adafruit-HTU21D-Breakout-PCB",
+      "commit": "9a352b1841ff45b684a7263721490af9cc6a455f",
+      "source": "https://github.com/adafruit/Adafruit-HTU21D-Breakout-PCB/blob/9a352b1841ff45b684a7263721490af9cc6a455f/Adafruit%20HTU21D-F%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-HTU21D-Breakout-PCB/blob/9a352b1841ff45b684a7263721490af9cc6a455f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5591",
+      "product": "https://www.adafruit.com/product/5591",
+      "repository": "https://github.com/adafruit/Adafruit-LTR-329-LTR-303-PCB",
+      "commit": "618d2124daa9b3865b55c9bf389d3fd9157ee4d7",
+      "source": "https://github.com/adafruit/Adafruit-LTR-329-LTR-303-PCB/blob/618d2124daa9b3865b55c9bf389d3fd9157ee4d7/Adafruit%20LTR-329.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LTR-329-LTR-303-PCB/blob/618d2124daa9b3865b55c9bf389d3fd9157ee4d7/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1980",
+      "product": "https://www.adafruit.com/product/1980",
+      "repository": "https://github.com/adafruit/Adafruit-TSL2591-Breakout-PCB",
+      "commit": "22be4c7b8d53155dacedc18f3373ba8dbf95dc23",
+      "source": "https://github.com/adafruit/Adafruit-TSL2591-Breakout-PCB/blob/22be4c7b8d53155dacedc18f3373ba8dbf95dc23/Adafruit%20TSL2591.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TSL2591-Breakout-PCB/blob/22be4c7b8d53155dacedc18f3373ba8dbf95dc23/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3317",
+      "product": "https://www.adafruit.com/product/3317",
+      "repository": "https://github.com/adafruit/Adafruit-VL53L0X-ToF-Distance-Sensor-PCB",
+      "commit": "1ef873512150740edc9798f90028facfa35fd81f",
+      "source": "https://github.com/adafruit/Adafruit-VL53L0X-ToF-Distance-Sensor-PCB/blob/1ef873512150740edc9798f90028facfa35fd81f/Adafruit%20VL530X%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-VL53L0X-ToF-Distance-Sensor-PCB/blob/1ef873512150740edc9798f90028facfa35fd81f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5027",
+      "product": "https://www.adafruit.com/product/5027",
+      "repository": "https://github.com/adafruit/Adafruit-MCP9808-Breakout-PCB",
+      "commit": "5a46deacf915eeeb5fcafd82e214ce162bf4a464",
+      "source": "https://github.com/adafruit/Adafruit-MCP9808-Breakout-PCB/blob/5a46deacf915eeeb5fcafd82e214ce162bf4a464/Adafruit%20MCP9808%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MCP9808-Breakout-PCB/blob/5a46deacf915eeeb5fcafd82e214ce162bf4a464/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3595",
+      "product": "https://www.adafruit.com/product/3595",
+      "repository": "https://github.com/adafruit/Adafruit-APDS9960-Breakout-PCB",
+      "commit": "23880074d26df8524399f323e016680ad82dc69f",
+      "source": "https://github.com/adafruit/Adafruit-APDS9960-Breakout-PCB/blob/23880074d26df8524399f323e016680ad82dc69f/Adafruit%20APDS9960%20Proximity%20Sensor.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-APDS9960-Breakout-PCB/blob/23880074d26df8524399f323e016680ad82dc69f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6489",
+      "product": "https://www.adafruit.com/product/6489",
+      "repository": "https://github.com/adafruit/Adafruit-TMAG5273-3D-Hall-Effect-Magnetometer-Breakout-PCB",
+      "commit": "543c3c93357a56703c6f33de5c8e277451bf9f1d",
+      "source": "https://github.com/adafruit/Adafruit-TMAG5273-3D-Hall-Effect-Magnetometer-Breakout-PCB/blob/543c3c93357a56703c6f33de5c8e277451bf9f1d/Adafruit%20TMAG5273A1%203D%20Hall%20Effect%20Magnetometer%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-TMAG5273-3D-Hall-Effect-Magnetometer-Breakout-PCB/blob/543c3c93357a56703c6f33de5c8e277451bf9f1d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3660",
+      "product": "https://www.adafruit.com/product/3660",
+      "repository": "https://github.com/adafruit/Adafruit-BME680-PCB",
+      "commit": "2d1e857d88c157422347d2568fdfcd76155c1997",
+      "source": "https://github.com/adafruit/Adafruit-BME680-PCB/blob/2d1e857d88c157422347d2568fdfcd76155c1997/Adafruit%20BME680.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-BME680-PCB/blob/2d1e857d88c157422347d2568fdfcd76155c1997/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2472",
+      "product": "https://www.adafruit.com/product/2472",
+      "repository": "https://github.com/adafruit/Adafruit-BNO055-Breakout-PCB",
+      "commit": "64c5a387aa807edb01eff440d1cd07ce4b608642",
+      "source": "https://github.com/adafruit/Adafruit-BNO055-Breakout-PCB/blob/64c5a387aa807edb01eff440d1cd07ce4b608642/Adafruit%20BNO055%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-BNO055-Breakout-PCB/blob/64c5a387aa807edb01eff440d1cd07ce4b608642/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4097",
+      "product": "https://www.adafruit.com/product/4097",
+      "repository": "https://github.com/adafruit/Adafruit_ADXL343_PCB",
+      "commit": "13dce5a5963041d7d7f60492da459e00a96f4344",
+      "source": "https://github.com/adafruit/Adafruit_ADXL343_PCB/blob/13dce5a5963041d7d7f60492da459e00a96f4344/Adafruit%20ADXL343%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit_ADXL343_PCB/blob/13dce5a5963041d7d7f60492da459e00a96f4344/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3538",
+      "product": "https://www.adafruit.com/product/3538",
+      "repository": "https://github.com/adafruit/Adafruit-AMG8833-Breakout-PCB",
+      "commit": "3e5dd5f7bc0ed9e6ca07226eaa56b04bbe408489",
+      "source": "https://github.com/adafruit/Adafruit-AMG8833-Breakout-PCB/blob/3e5dd5f7bc0ed9e6ca07226eaa56b04bbe408489/Adafruit%20AMG8833.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-AMG8833-Breakout-PCB/blob/3e5dd5f7bc0ed9e6ca07226eaa56b04bbe408489/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4022",
+      "product": "https://www.adafruit.com/product/4022",
+      "repository": "https://github.com/adafruit/Adafruit-MLX90393-PCB",
+      "commit": "1c5deadca25875af5eb643b80ae0b7ece4afbb02",
+      "source": "https://github.com/adafruit/Adafruit-MLX90393-PCB/blob/1c5deadca25875af5eb643b80ae0b7ece4afbb02/Adafruit%20MLX90393%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MLX90393-PCB/blob/1c5deadca25875af5eb643b80ae0b7ece4afbb02/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1500",
+      "product": "https://www.adafruit.com/product/1500",
+      "repository": "https://github.com/adafruit/Adafruit-Trinket-PCB",
+      "commit": "3a2695463e52f72434d20daca6502fc62e8e2fcc",
+      "source": "https://github.com/adafruit/Adafruit-Trinket-PCB/blob/3a2695463e52f72434d20daca6502fc62e8e2fcc/Adafruit%20Trinket%203.3V.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Trinket-PCB/blob/3a2695463e52f72434d20daca6502fc62e8e2fcc/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3387",
+      "product": "https://www.adafruit.com/product/3387",
+      "repository": "https://github.com/adafruit/Adafruit-LSM9DS1-Breakout-PCB",
+      "commit": "9f6db79a66ae599aa410a2a14b161e26216e8bd4",
+      "source": "https://github.com/adafruit/Adafruit-LSM9DS1-Breakout-PCB/blob/9f6db79a66ae599aa410a2a14b161e26216e8bd4/Adafruit%20LSM9DS1%20Rev%20C.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LSM9DS1-Breakout-PCB/blob/9f6db79a66ae599aa410a2a14b161e26216e8bd4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5663",
+      "product": "https://www.adafruit.com/product/5663",
+      "repository": "https://github.com/adafruit/Adafruit-PCA9546-PCB",
+      "commit": "a98b24b8bafac251284dff313569e4c2b790bf23",
+      "source": "https://github.com/adafruit/Adafruit-PCA9546-PCB/blob/a98b24b8bafac251284dff313569e4c2b790bf23/PCA9546%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PCA9546-PCB/blob/a98b24b8bafac251284dff313569e4c2b790bf23/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1465",
+      "product": "https://www.adafruit.com/product/1465",
+      "repository": "https://github.com/adafruit/Adafruit-ISP-SWD-and-JTAG-Breakout-PCBs",
+      "commit": "0c7bd1cb7a409f9d1689bc26a0a18079c9339b33",
+      "source": "https://github.com/adafruit/Adafruit-ISP-SWD-and-JTAG-Breakout-PCBs/blob/0c7bd1cb7a409f9d1689bc26a0a18079c9339b33/Adafruit%206-ISP%20AVR.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ISP-SWD-and-JTAG-Breakout-PCBs/blob/0c7bd1cb7a409f9d1689bc26a0a18079c9339b33/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1463",
+      "product": "https://www.adafruit.com/product/1463",
+      "repository": "https://github.com/adafruit/Adafruit-NeoPixel-Ring",
+      "commit": "3d43edf8f1828cdbbd85560876027ded6257eae3",
+      "source": "https://github.com/adafruit/Adafruit-NeoPixel-Ring/blob/3d43edf8f1828cdbbd85560876027ded6257eae3/Adafruit%20NeoPixel%20Ring%2016%20rev%20C.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoPixel-Ring/blob/3d43edf8f1828cdbbd85560876027ded6257eae3/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1426",
+      "product": "https://www.adafruit.com/product/1426",
+      "repository": "https://github.com/adafruit/NeoPixel-Sticks",
+      "commit": "73d3e55379367ca0ef051d7c9a8b846b6948b21a",
+      "source": "https://github.com/adafruit/NeoPixel-Sticks/blob/73d3e55379367ca0ef051d7c9a8b846b6948b21a/Adafruit%20NeoPixel%208%20Stick.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/NeoPixel-Sticks/blob/73d3e55379367ca0ef051d7c9a8b846b6948b21a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2267",
+      "product": "https://www.adafruit.com/product/2267",
+      "repository": "https://github.com/adafruit/Adafruit-Bluefruit-LE-USB-Friend-and-Sniffer-PCB",
+      "commit": "bb6108b9a9eb952f4e8514530771253a16800d14",
+      "source": "https://github.com/adafruit/Adafruit-Bluefruit-LE-USB-Friend-and-Sniffer-PCB/blob/bb6108b9a9eb952f4e8514530771253a16800d14/Adafruit%20Bluefruit%20LE%20USB%20Friend%20Rev%20I.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Bluefruit-LE-USB-Friend-and-Sniffer-PCB/blob/bb6108b9a9eb952f4e8514530771253a16800d14/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA326",
+      "product": "https://www.adafruit.com/product/326",
+      "repository": "https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB",
+      "commit": "51ef8e242dcf460d5effc298d8565110624e6b23",
+      "source": "https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB/blob/51ef8e242dcf460d5effc298d8565110624e6b23/Adafruit%200.96in%20128x64%20OLED%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB/blob/51ef8e242dcf460d5effc298d8565110624e6b23/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA938",
+      "product": "https://www.adafruit.com/product/938",
+      "repository": "https://github.com/adafruit/Adafruit-1.3inch-128x64-Mono-OLED-PCB",
+      "commit": "02c953af3a9c7c53d0c33faaa98a8aa1bffca5be",
+      "source": "https://github.com/adafruit/Adafruit-1.3inch-128x64-Mono-OLED-PCB/blob/02c953af3a9c7c53d0c33faaa98a8aa1bffca5be/Adafruit%201.3in%20128x64%20OLED%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.3inch-128x64-Mono-OLED-PCB/blob/02c953af3a9c7c53d0c33faaa98a8aa1bffca5be/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1487",
+      "product": "https://www.adafruit.com/product/1487",
+      "repository": "https://github.com/adafruit/Adafruit-NeoPixel-8x8-Matrix",
+      "commit": "afa33c7b1e1a1a4d74bcbe9e3e798099545cdf91",
+      "source": "https://github.com/adafruit/Adafruit-NeoPixel-8x8-Matrix/blob/afa33c7b1e1a1a4d74bcbe9e3e798099545cdf91/Adafruit_NeoMatrix_8x8.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoPixel-8x8-Matrix/blob/afa33c7b1e1a1a4d74bcbe9e3e798099545cdf91/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2315",
+      "product": "https://www.adafruit.com/product/2315",
+      "repository": "https://github.com/adafruit/Adafruit-PiTFT-2.2-Inch-HAT-PCB",
+      "commit": "1611c88b5a0f16be4fa7ca2b05c5bc311e0f7577",
+      "source": "https://github.com/adafruit/Adafruit-PiTFT-2.2-Inch-HAT-PCB/blob/1611c88b5a0f16be4fa7ca2b05c5bc311e0f7577/Adafruit%202.2in%20TFT%20HAT%20rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiTFT-2.2-Inch-HAT-PCB/blob/1611c88b5a0f16be4fa7ca2b05c5bc311e0f7577/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3088",
+      "product": "https://www.adafruit.com/product/3088",
+      "repository": "https://github.com/adafruit/Adafruit-LED-Backpack-FeatherWing-PCB",
+      "commit": "50dc43b6c03adafa21683995f62efb6e825bba12",
+      "source": "https://github.com/adafruit/Adafruit-LED-Backpack-FeatherWing-PCB/blob/50dc43b6c03adafa21683995f62efb6e825bba12/7%20seg%20featherwing%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-LED-Backpack-FeatherWing-PCB/blob/50dc43b6c03adafa21683995f62efb6e825bba12/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5397",
+      "product": "https://www.adafruit.com/product/5397",
+      "repository": "https://github.com/adafruit/Adafruit-Charger-BFF-PCB",
+      "commit": "2acd339ac57539b236e1b072488f581ea56e3a4c",
+      "source": "https://github.com/adafruit/Adafruit-Charger-BFF-PCB/blob/2acd339ac57539b236e1b072488f581ea56e3a4c/Adafruit%20LIPoly%20Charger%20BFF.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Charger-BFF-PCB/blob/2acd339ac57539b236e1b072488f581ea56e3a4c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA292",
+      "product": "https://www.adafruit.com/product/292",
+      "repository": "https://github.com/adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB",
+      "commit": "f5c03f2f3004402e60c7103068c4016b3c749bdf",
+      "source": "https://github.com/adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB/blob/f5c03f2f3004402e60c7103068c4016b3c749bdf/Adafruit%20I2C%20SPI%20LCD%20STEMMA%20backpack.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB/blob/f5c03f2f3004402e60c7103068c4016b3c749bdf/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4800",
+      "product": "https://www.adafruit.com/product/4800",
+      "repository": "https://github.com/adafruit/Adafruit_MagTag_PCBs",
+      "commit": "2746976559095738acfb7063a46d37e4d7c93603",
+      "source": "https://github.com/adafruit/Adafruit_MagTag_PCBs/blob/2746976559095738acfb7063a46d37e4d7c93603/Adafruit%20MagTag%202.9in%20Rev%20D.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit_MagTag_PCBs/blob/2746976559095738acfb7063a46d37e4d7c93603/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2946",
+      "product": "https://www.adafruit.com/product/2946",
+      "repository": "https://github.com/adafruit/Adafruit-IS31FL3731-CharliePlex-LED-Breakout-PCB",
+      "commit": "6293e5aa3d88caab44292709fef00a5e12c1bef6",
+      "source": "https://github.com/adafruit/Adafruit-IS31FL3731-CharliePlex-LED-Breakout-PCB/blob/6293e5aa3d88caab44292709fef00a5e12c1bef6/Adafruit%20IS31FL3731%20STEMMA%20QT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-IS31FL3731-CharliePlex-LED-Breakout-PCB/blob/6293e5aa3d88caab44292709fef00a5e12c1bef6/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5325",
+      "product": "https://www.adafruit.com/product/5325",
+      "repository": "https://github.com/adafruit/Adafruit-QT-Py-ESP32-S2-PCB",
+      "commit": "7df4eac2c0b9a73ba966766ae6027b0a4d8a6901",
+      "source": "https://github.com/adafruit/Adafruit-QT-Py-ESP32-S2-PCB/blob/7df4eac2c0b9a73ba966766ae6027b0a4d8a6901/Adafruit%20QT%20Py%20ESP32-S2%20Rev%20C.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-QT-Py-ESP32-S2-PCB/blob/7df4eac2c0b9a73ba966766ae6027b0a4d8a6901/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5420",
+      "product": "https://www.adafruit.com/product/5420",
+      "repository": "https://github.com/adafruit/Adafruit-MEMENTO-PCB",
+      "commit": "8f1e07b4baa4e43749793e3ebebd12005a5a8f96",
+      "source": "https://github.com/adafruit/Adafruit-MEMENTO-PCB/blob/8f1e07b4baa4e43749793e3ebebd12005a5a8f96/Adafruit%20MEMENTO%20Camera%20Board.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MEMENTO-PCB/blob/8f1e07b4baa4e43749793e3ebebd12005a5a8f96/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA684",
+      "product": "https://www.adafruit.com/product/684",
+      "repository": "https://github.com/adafruit/Adafruit-96x64-RGB-OLED-Breakout-PCB",
+      "commit": "41ffc374eacf8b0e1747c455ff87f5317a332a21",
+      "source": "https://github.com/adafruit/Adafruit-96x64-RGB-OLED-Breakout-PCB/blob/41ffc374eacf8b0e1747c455ff87f5317a332a21/Adafruit%2096x64%20RGB%20OLED%20Breakout%20v2.0.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-96x64-RGB-OLED-Breakout-PCB/blob/41ffc374eacf8b0e1747c455ff87f5317a332a21/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4311",
+      "product": "https://www.adafruit.com/product/4311",
+      "repository": "https://github.com/adafruit/Adafruit-2.0-inch-240x320-TFT-PCB",
+      "commit": "9804ed3f84ab9b4547706bc13a467492435a60f4",
+      "source": "https://github.com/adafruit/Adafruit-2.0-inch-240x320-TFT-PCB/blob/9804ed3f84ab9b4547706bc13a467492435a60f4/Adafruit%20EYESPI%202.0%20Inch%20240x320%20IPS%20TFT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-2.0-inch-240x320-TFT-PCB/blob/9804ed3f84ab9b4547706bc13a467492435a60f4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2088",
+      "product": "https://www.adafruit.com/product/2088",
+      "repository": "https://github.com/adafruit/Adafruit-1.44-TFT-Breakout-PCB",
+      "commit": "ceaa444157175651785903b73bb0001e45b7ea88",
+      "source": "https://github.com/adafruit/Adafruit-1.44-TFT-Breakout-PCB/blob/ceaa444157175651785903b73bb0001e45b7ea88/Adafruit%20EYESPI%201.44%20inch%20TFT%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.44-TFT-Breakout-PCB/blob/ceaa444157175651785903b73bb0001e45b7ea88/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3787",
+      "product": "https://www.adafruit.com/product/3787",
+      "repository": "https://github.com/adafruit/Adafruit-1.54-inch-240x240-TFT-PCB",
+      "commit": "3f46e828b8404212ac402a82e02ab37381af1eb9",
+      "source": "https://github.com/adafruit/Adafruit-1.54-inch-240x240-TFT-PCB/blob/3f46e828b8404212ac402a82e02ab37381af1eb9/Adafruit%201.54in%20240x240%20TFT%20EYESPI.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.54-inch-240x240-TFT-PCB/blob/3f46e828b8404212ac402a82e02ab37381af1eb9/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4313",
+      "product": "https://www.adafruit.com/product/4313",
+      "repository": "https://github.com/adafruit/Adafruit-1.3-inch-240x240-TFT-PCB",
+      "commit": "7632e0cbe4a0b5b5219c8262aa0737c611716a09",
+      "source": "https://github.com/adafruit/Adafruit-1.3-inch-240x240-TFT-PCB/blob/7632e0cbe4a0b5b5219c8262aa0737c611716a09/Adafruit%201.3in%20240x240%20IPS%20TFT%20EYESPI.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.3-inch-240x240-TFT-PCB/blob/7632e0cbe4a0b5b5219c8262aa0737c611716a09/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2050",
+      "product": "https://www.adafruit.com/product/2050",
+      "repository": "https://github.com/adafruit/3.5inch-TFT-Breakout-PCB",
+      "commit": "f229969d9b1416f34bedc4015fce967aaf7c5b00",
+      "source": "https://github.com/adafruit/3.5inch-TFT-Breakout-PCB/blob/f229969d9b1416f34bedc4015fce967aaf7c5b00/Adafruit%203.5in%20480x320%20Resistive%20Touch.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/3.5inch-TFT-Breakout-PCB/blob/f229969d9b1416f34bedc4015fce967aaf7c5b00/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2900",
+      "product": "https://www.adafruit.com/product/2900",
+      "repository": "https://github.com/adafruit/Adafruit-OLED-FeatherWing-PCB",
+      "commit": "179eb83875ab86c49a6b2d771e95099a55d8984b",
+      "source": "https://github.com/adafruit/Adafruit-OLED-FeatherWing-PCB/blob/179eb83875ab86c49a6b2d771e95099a55d8984b/Adafruit%20OLED%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-OLED-FeatherWing-PCB/blob/179eb83875ab86c49a6b2d771e95099a55d8984b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3357",
+      "product": "https://www.adafruit.com/product/3357",
+      "repository": "https://github.com/adafruit/Adafruit-Music-Maker-FeatherWing-PCB",
+      "commit": "8721087a4720070e3c38f449119976e4316446ef",
+      "source": "https://github.com/adafruit/Adafruit-Music-Maker-FeatherWing-PCB/blob/8721087a4720070e3c38f449119976e4316446ef/Adafruit%20VS1053%20Amp%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Music-Maker-FeatherWing-PCB/blob/8721087a4720070e3c38f449119976e4316446ef/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3346",
+      "product": "https://www.adafruit.com/product/3346",
+      "repository": "https://github.com/adafruit/Adafruit-Stereo-Speaker-Bonnet-PCB",
+      "commit": "7ba780f5f5c00274d3eeb395f444534189f13a0d",
+      "source": "https://github.com/adafruit/Adafruit-Stereo-Speaker-Bonnet-PCB/blob/7ba780f5f5c00274d3eeb395f444534189f13a0d/Adafruit%20Speaker%20Bonnet%20Original.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Stereo-Speaker-Bonnet-PCB/blob/7ba780f5f5c00274d3eeb395f444534189f13a0d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA1272",
+      "product": "https://www.adafruit.com/product/1272",
+      "repository": "https://github.com/adafruit/Adafruit-GPS-Logger-Shield-PCB",
+      "commit": "20679c594e363723b81bb2cac5fc47c21cd4b214",
+      "source": "https://github.com/adafruit/Adafruit-GPS-Logger-Shield-PCB/blob/20679c594e363723b81bb2cac5fc47c21cd4b214/Adafruit%20GPS%20Logger%20Shield%20Rev%20D.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-GPS-Logger-Shield-PCB/blob/20679c594e363723b81bb2cac5fc47c21cd4b214/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2024",
+      "product": "https://www.adafruit.com/product/2024",
+      "repository": "https://github.com/adafruit/Adafruit-MPR121-Capacitive-Touch-Shield-PCB",
+      "commit": "a18e1c035a787044fdb3ff570f4e811dee23ec7c",
+      "source": "https://github.com/adafruit/Adafruit-MPR121-Capacitive-Touch-Shield-PCB/blob/a18e1c035a787044fdb3ff570f4e811dee23ec7c/Adafruit%20MPR121%20Capacitive%20Touch%20Shield.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MPR121-Capacitive-Touch-Shield-PCB/blob/a18e1c035a787044fdb3ff570f4e811dee23ec7c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3249",
+      "product": "https://www.adafruit.com/product/3249",
+      "repository": "https://github.com/adafruit/Adafruit-NeoPXL8-PCBs",
+      "commit": "1aa9e3e82c5872db786e047b8eb1b8fadaa7e802",
+      "source": "https://github.com/adafruit/Adafruit-NeoPXL8-PCBs/blob/1aa9e3e82c5872db786e047b8eb1b8fadaa7e802/Adafruit%20NeoPXL8%20M0%20Wing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoPXL8-PCBs/blob/1aa9e3e82c5872db786e047b8eb1b8fadaa7e802/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3315",
+      "product": "https://www.adafruit.com/product/3315",
+      "repository": "https://github.com/adafruit/Adafruit-2.4-TFT-FeatherWing-PCB",
+      "commit": "7db81bbb064e1e703423beb6f8e4dbf9b7272879",
+      "source": "https://github.com/adafruit/Adafruit-2.4-TFT-FeatherWing-PCB/blob/7db81bbb064e1e703423beb6f8e4dbf9b7272879/Adafruit%202.4in%20TFT%20FeatherWing%20V2.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-2.4-TFT-FeatherWing-PCB/blob/7db81bbb064e1e703423beb6f8e4dbf9b7272879/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3651",
+      "product": "https://www.adafruit.com/product/3651",
+      "repository": "https://github.com/adafruit/Adafruit-3.5in-TFT-Featherwing-PCB",
+      "commit": "824a68056b2b102a71621405b9bd683ddf38796b",
+      "source": "https://github.com/adafruit/Adafruit-3.5in-TFT-Featherwing-PCB/blob/824a68056b2b102a71621405b9bd683ddf38796b/Adafruit%203.5in%20480x320%20FeatherWing%20Rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-3.5in-TFT-Featherwing-PCB/blob/824a68056b2b102a71621405b9bd683ddf38796b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2324",
+      "product": "https://www.adafruit.com/product/2324",
+      "repository": "https://github.com/adafruit/Adafruit-Ultimate-GPS-HAT-PCB",
+      "commit": "73b23e57b2c80f36aa1405aa67be887b5dabe68e",
+      "source": "https://github.com/adafruit/Adafruit-Ultimate-GPS-HAT-PCB/blob/73b23e57b2c80f36aa1405aa67be887b5dabe68e/Adafruit%20Ultimate%20GPS%20HAT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Ultimate-GPS-HAT-PCB/blob/73b23e57b2c80f36aa1405aa67be887b5dabe68e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2945",
+      "product": "https://www.adafruit.com/product/2945",
+      "repository": "https://github.com/adafruit/Adafruit-NeoPixel-FeatherWing-PCB",
+      "commit": "3b80152edf1808446eab953d2f7a7b06b433c199",
+      "source": "https://github.com/adafruit/Adafruit-NeoPixel-FeatherWing-PCB/blob/3b80152edf1808446eab953d2f7a7b06b433c199/Adafruit%20NeoPixel%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-NeoPixel-FeatherWing-PCB/blob/3b80152edf1808446eab953d2f7a7b06b433c199/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3632",
+      "product": "https://www.adafruit.com/product/3632",
+      "repository": "https://github.com/adafruit/Adafruit-Joy-Featherwing-PCB",
+      "commit": "45f843d490a5968f4642ff970e8e867918c80b8d",
+      "source": "https://github.com/adafruit/Adafruit-Joy-Featherwing-PCB/blob/45f843d490a5968f4642ff970e8e867918c80b8d/Joypad%20FeatherWing%20rev%20C.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Joy-Featherwing-PCB/blob/45f843d490a5968f4642ff970e8e867918c80b8d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2340",
+      "product": "https://www.adafruit.com/product/2340",
+      "repository": "https://github.com/adafruit/Adafruit-Capacitive-Touch-HAT-PCB",
+      "commit": "6405328c281fe7d9d8e9cbfa334d50c3eccef7ce",
+      "source": "https://github.com/adafruit/Adafruit-Capacitive-Touch-HAT-PCB/blob/6405328c281fe7d9d8e9cbfa334d50c3eccef7ce/Adafruit%20Capacitive%20Touch%20HAT.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Capacitive-Touch-HAT-PCB/blob/6405328c281fe7d9d8e9cbfa334d50c3eccef7ce/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4567",
+      "product": "https://www.adafruit.com/product/4567",
+      "repository": "https://github.com/adafruit/Adafruit-2.23-inch-Monochrome-OLED-Bonnet-PCB",
+      "commit": "63ee954e2c78665d69f9f5e730198dd6479f95b5",
+      "source": "https://github.com/adafruit/Adafruit-2.23-inch-Monochrome-OLED-Bonnet-PCB/blob/63ee954e2c78665d69f9f5e730198dd6479f95b5/Adafruit%202.23-inch%20Monochrome%20OLED%20Bonnet.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-2.23-inch-Monochrome-OLED-Bonnet-PCB/blob/63ee954e2c78665d69f9f5e730198dd6479f95b5/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4500",
+      "product": "https://www.adafruit.com/product/4500",
+      "repository": "https://github.com/adafruit/Adafruit-CLUE-PCB",
+      "commit": "ce323d9f40e63fbe0ae231c9287abce5d2070663",
+      "source": "https://github.com/adafruit/Adafruit-CLUE-PCB/blob/ce323d9f40e63fbe0ae231c9287abce5d2070663/Adafruit%20CLUE%20nRF52840%20Express.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-CLUE-PCB/blob/ce323d9f40e63fbe0ae231c9287abce5d2070663/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5778",
+      "product": "https://www.adafruit.com/product/5778",
+      "repository": "https://github.com/adafruit/Adafruit-MatrixPortal-S3-PCB",
+      "commit": "1ff841b511d7dc153ae8d4c0b148d33cb3b2ba85",
+      "source": "https://github.com/adafruit/Adafruit-MatrixPortal-S3-PCB/blob/1ff841b511d7dc153ae8d4c0b148d33cb3b2ba85/Adafruit%20MatrixPortal%20S3.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MatrixPortal-S3-PCB/blob/1ff841b511d7dc153ae8d4c0b148d33cb3b2ba85/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3531",
+      "product": "https://www.adafruit.com/product/3531",
+      "repository": "https://github.com/adafruit/Adafruit-128x64-OLED-Bonnet-for-Raspberry-Pi-PCB",
+      "commit": "5cabac70d709c34fb8477e2eca90dc6429af0151",
+      "source": "https://github.com/adafruit/Adafruit-128x64-OLED-Bonnet-for-Raspberry-Pi-PCB/blob/5cabac70d709c34fb8477e2eca90dc6429af0151/Adafruit%20128x64%20OLED%20Bonnet.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-128x64-OLED-Bonnet-for-Raspberry-Pi-PCB/blob/5cabac70d709c34fb8477e2eca90dc6429af0151/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3467",
+      "product": "https://www.adafruit.com/product/3467",
+      "repository": "https://github.com/adafruit/Adafruit-CharliePlex-Bonnet-PCBs",
+      "commit": "e6c0dc1cc87f6add9272260db3fe237371e3ac52",
+      "source": "https://github.com/adafruit/Adafruit-CharliePlex-Bonnet-PCBs/blob/e6c0dc1cc87f6add9272260db3fe237371e3ac52/Adafruit%20CharliePlex%20Bonnet.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-CharliePlex-Bonnet-PCBs/blob/e6c0dc1cc87f6add9272260db3fe237371e3ac52/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5786",
+      "product": "https://www.adafruit.com/product/5786",
+      "repository": "https://github.com/adafruit/Adafruit-Metro-RP2040-PCB",
+      "commit": "9fe571ea428c5c2bc1b7593dadf61e8ef804f480",
+      "source": "https://github.com/adafruit/Adafruit-Metro-RP2040-PCB/blob/9fe571ea428c5c2bc1b7593dadf61e8ef804f480/Adafruit%20Metro%20RP2040.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Metro-RP2040-PCB/blob/9fe571ea428c5c2bc1b7593dadf61e8ef804f480/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6001",
+      "product": "https://www.adafruit.com/product/6001",
+      "repository": "https://github.com/adafruit/Adafruit-Reversible-USB-Type-A-Plug-Connector-Breakout-PCB",
+      "commit": "61c86cfbb89a45a97a5046854997d486fac109d2",
+      "source": "https://github.com/adafruit/Adafruit-Reversible-USB-Type-A-Plug-Connector-Breakout-PCB/blob/61c86cfbb89a45a97a5046854997d486fac109d2/Adafruit%20Reversible%20USB%20Type%20A%20Plug%20Connector%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Reversible-USB-Type-A-Plug-Connector-Breakout-PCB/blob/61c86cfbb89a45a97a5046854997d486fac109d2/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4740",
+      "product": "https://www.adafruit.com/product/4740",
+      "repository": "https://github.com/adafruit/Adafruit-MIDI-FeatherWing-PCB",
+      "commit": "d060360d31ba77963443121e71bae136c882a788",
+      "source": "https://github.com/adafruit/Adafruit-MIDI-FeatherWing-PCB/blob/d060360d31ba77963443121e71bae136c882a788/Adafruit%20MIDI%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-MIDI-FeatherWing-PCB/blob/d060360d31ba77963443121e71bae136c882a788/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6323",
+      "product": "https://www.adafruit.com/product/6323",
+      "repository": "https://github.com/adafruit/Adafruit-USB-Type-C-CC-Resistor-Fixer-PCB",
+      "commit": "7ab085193a5180f3ebc9a4a0971910ae7ee4553b",
+      "source": "https://github.com/adafruit/Adafruit-USB-Type-C-CC-Resistor-Fixer-PCB/blob/7ab085193a5180f3ebc9a4a0971910ae7ee4553b/Adafruit%20USB%20Type-C%20CC%20Resistor%20Fixer.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-USB-Type-C-CC-Resistor-Fixer-PCB/blob/7ab085193a5180f3ebc9a4a0971910ae7ee4553b/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3191",
+      "product": "https://www.adafruit.com/product/3191",
+      "repository": "https://github.com/adafruit/Adafruit-Power-Relay-FeatherWing-PCB",
+      "commit": "f975014d53db224ea030fcb11ea0412fb34c8d45",
+      "source": "https://github.com/adafruit/Adafruit-Power-Relay-FeatherWing-PCB/blob/f975014d53db224ea030fcb11ea0412fb34c8d45/Adafruit%20PowerRelay%20Wing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Power-Relay-FeatherWing-PCB/blob/f975014d53db224ea030fcb11ea0412fb34c8d45/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5993",
+      "product": "https://www.adafruit.com/product/5993",
+      "repository": "https://github.com/adafruit/Adafruit-USB-Type-C-Vertical-Breakout-PCB",
+      "commit": "412fb33dba25c7b84994b1aa90161a8e67a379b2",
+      "source": "https://github.com/adafruit/Adafruit-USB-Type-C-Vertical-Breakout-PCB/blob/412fb33dba25c7b84994b1aa90161a8e67a379b2/Adafruit%20USB%20Type%20C%20Vertical%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-USB-Type-C-Vertical-Breakout-PCB/blob/412fb33dba25c7b84994b1aa90161a8e67a379b2/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA6014",
+      "product": "https://www.adafruit.com/product/6014",
+      "repository": "https://github.com/adafruit/Adafruit-FPC-Breakout-PCB",
+      "commit": "78b551a2118c356b7c2f6ffc1eb3b41b45943fb4",
+      "source": "https://github.com/adafruit/Adafruit-FPC-Breakout-PCB/blob/78b551a2118c356b7c2f6ffc1eb3b41b45943fb4/Adafruit%20FPC%20Breakout%20-%20Pi%205%20DSI%20-%20RP2350%20HSTX.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-FPC-Breakout-PCB/blob/78b551a2118c356b7c2f6ffc1eb3b41b45943fb4/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3405",
+      "product": "https://www.adafruit.com/product/3405",
+      "repository": "https://github.com/adafruit/Adafruit-HUZZAH32-ESP32-Feather-PCB",
+      "commit": "e23514c6f9e124a60f9d1de6567c791561b43e73",
+      "source": "https://github.com/adafruit/Adafruit-HUZZAH32-ESP32-Feather-PCB/blob/e23514c6f9e124a60f9d1de6567c791561b43e73/Adafruit%20HUZZAH32%20ESP32%20Feather.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-HUZZAH32-ESP32-Feather-PCB/blob/e23514c6f9e124a60f9d1de6567c791561b43e73/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3458",
+      "product": "https://www.adafruit.com/product/3458",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-328P-PCB",
+      "commit": "62859c243921da2d1221681373356f1559855cbc",
+      "source": "https://github.com/adafruit/Adafruit-Feather-328P-PCB/blob/62859c243921da2d1221681373356f1559855cbc/Adafruit%20Feather%20328P.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-328P-PCB/blob/62859c243921da2d1221681373356f1559855cbc/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2771",
+      "product": "https://www.adafruit.com/product/2771",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-32u4-Basic-Proto-PCB",
+      "commit": "42d06b39d8afeb23881364d3a9fabe1cc80b6dd5",
+      "source": "https://github.com/adafruit/Adafruit-Feather-32u4-Basic-Proto-PCB/blob/42d06b39d8afeb23881364d3a9fabe1cc80b6dd5/Adafruit%20Feather%2032u4%20Basic%20rev%20B.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-32u4-Basic-Proto-PCB/blob/42d06b39d8afeb23881364d3a9fabe1cc80b6dd5/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3403",
+      "product": "https://www.adafruit.com/product/3403",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-M0-Express-PCB",
+      "commit": "5017ef41885371f8a26ba1b8ab9dd700bd7ce655",
+      "source": "https://github.com/adafruit/Adafruit-Feather-M0-Express-PCB/blob/5017ef41885371f8a26ba1b8ab9dd700bd7ce655/Adafruit%20Feather%20M0%20Express.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-M0-Express-PCB/blob/5017ef41885371f8a26ba1b8ab9dd700bd7ce655/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2829",
+      "product": "https://www.adafruit.com/product/2829",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-32u4-Bluefruit-LE-PCB",
+      "commit": "fab08d3f5f0755a29559b81ad54239b746906b56",
+      "source": "https://github.com/adafruit/Adafruit-Feather-32u4-Bluefruit-LE-PCB/blob/fab08d3f5f0755a29559b81ad54239b746906b56/Adafruit%20Feather%2032u4%20Bluefruit%20LE.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-32u4-Bluefruit-LE-PCB/blob/fab08d3f5f0755a29559b81ad54239b746906b56/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4687",
+      "product": "https://www.adafruit.com/product/4687",
+      "repository": "https://github.com/adafruit/Adafruit-2-13in-eInk-Bonnet-PCB",
+      "commit": "76df16153ef37dc6a620457f3f69457a8bdb660a",
+      "source": "https://github.com/adafruit/Adafruit-2-13in-eInk-Bonnet-PCB/blob/76df16153ef37dc6a620457f3f69457a8bdb660a/Adafruit%202.13in%20eInk%20Bonnet.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-2-13in-eInk-Bonnet-PCB/blob/76df16153ef37dc6a620457f3f69457a8bdb660a/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2995",
+      "product": "https://www.adafruit.com/product/2995",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-M0-Bluefruit-LE-PCB",
+      "commit": "b2e0b3f2930568da3471d6c42cb4919d573d3481",
+      "source": "https://github.com/adafruit/Adafruit-Feather-M0-Bluefruit-LE-PCB/blob/b2e0b3f2930568da3471d6c42cb4919d573d3481/Adafruit%20Feather%20Zero%20BLE%20rev%20A.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-M0-Bluefruit-LE-PCB/blob/b2e0b3f2930568da3471d6c42cb4919d573d3481/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4506",
+      "product": "https://www.adafruit.com/product/4506",
+      "repository": "https://github.com/adafruit/Adafruit-1.3in-Color-TFT-Bonnet-PCB",
+      "commit": "3db1dae4f805b3572137c3a93e8ae65b40875546",
+      "source": "https://github.com/adafruit/Adafruit-1.3in-Color-TFT-Bonnet-PCB/blob/3db1dae4f805b3572137c3a93e8ae65b40875546/Adafruit%201.3in%20Color%20TFT%20Bonnet.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-1.3in-Color-TFT-Bonnet-PCB/blob/3db1dae4f805b3572137c3a93e8ae65b40875546/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5957",
+      "product": "https://www.adafruit.com/product/5957",
+      "repository": "https://github.com/adafruit/Adafruit-DVI-Sock-for-Pico-PCB",
+      "commit": "f9e5a5557654b1b3d8d63e5405fc23394c13cd19",
+      "source": "https://github.com/adafruit/Adafruit-DVI-Sock-for-Pico-PCB/blob/f9e5a5557654b1b3d8d63e5405fc23394c13cd19/Adafruit%20DVI%20Sock%20for%20Pico.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-DVI-Sock-for-Pico-PCB/blob/f9e5a5557654b1b3d8d63e5405fc23394c13cd19/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3178",
+      "product": "https://www.adafruit.com/product/3178",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-M0-RFM-LoRa-PCB",
+      "commit": "1b3616c9daf1cd0643bb7f6a98f4e3c71fe16c83",
+      "source": "https://github.com/adafruit/Adafruit-Feather-M0-RFM-LoRa-PCB/blob/1b3616c9daf1cd0643bb7f6a98f4e3c71fe16c83/Adafruit%20Feather%20M0%20RFMxx.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-M0-RFM-LoRa-PCB/blob/1b3616c9daf1cd0643bb7f6a98f4e3c71fe16c83/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2795",
+      "product": "https://www.adafruit.com/product/2795",
+      "repository": "https://github.com/adafruit/Adafruit-Feather-32u4-Adalogger-PCB",
+      "commit": "c7e87d6e0feb5d3e048c3715038c0e4ce71cdfa0",
+      "source": "https://github.com/adafruit/Adafruit-Feather-32u4-Adalogger-PCB/blob/c7e87d6e0feb5d3e048c3715038c0e4ce71cdfa0/Adafruit%20Feather%2032u4%20Adalogger.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Feather-32u4-Adalogger-PCB/blob/c7e87d6e0feb5d3e048c3715038c0e4ce71cdfa0/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3133",
+      "product": "https://www.adafruit.com/product/3133",
+      "repository": "https://github.com/adafruit/Adafruit-Ultimate-GPS-FeatherWing-PCB",
+      "commit": "1b15a4f782c555903c0cfd7174d0616d2e128887",
+      "source": "https://github.com/adafruit/Adafruit-Ultimate-GPS-FeatherWing-PCB/blob/1b15a4f782c555903c0cfd7174d0616d2e128887/Adafruit%20Ultimate%20GPS%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Ultimate-GPS-FeatherWing-PCB/blob/1b15a4f782c555903c0cfd7174d0616d2e128887/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5945",
+      "product": "https://www.adafruit.com/product/5945",
+      "repository": "https://github.com/adafruit/Adafruit-PiCowbell-Camera-Breakout-PCB",
+      "commit": "493cada020a7b197c078ba895efb419d1902f8a1",
+      "source": "https://github.com/adafruit/Adafruit-PiCowbell-Camera-Breakout-PCB/blob/493cada020a7b197c078ba895efb419d1902f8a1/Adafruit%20PiCowbell%20Camera%20Breakout.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiCowbell-Camera-Breakout-PCB/blob/493cada020a7b197c078ba895efb419d1902f8a1/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5858",
+      "product": "https://www.adafruit.com/product/5858",
+      "repository": "https://github.com/adafruit/Adafruit-USB-Host-FeatherWing-PCB",
+      "commit": "7011deb5316121374db87580ad3b03f22d8f676d",
+      "source": "https://github.com/adafruit/Adafruit-USB-Host-FeatherWing-PCB/blob/7011deb5316121374db87580ad3b03f22d8f676d/Adafruit%20USB%20Host%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-USB-Host-FeatherWing-PCB/blob/7011deb5316121374db87580ad3b03f22d8f676d/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3229",
+      "product": "https://www.adafruit.com/product/3229",
+      "repository": "https://github.com/adafruit/Adafruit-Radio-FeatherWing-PCB",
+      "commit": "926b55164daad155e05ebe8ca3a02365bc07a40c",
+      "source": "https://github.com/adafruit/Adafruit-Radio-FeatherWing-PCB/blob/926b55164daad155e05ebe8ca3a02365bc07a40c/Adafruit%20Radio%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Radio-FeatherWing-PCB/blob/926b55164daad155e05ebe8ca3a02365bc07a40c/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4569",
+      "product": "https://www.adafruit.com/product/4569",
+      "repository": "https://github.com/adafruit/Adafruit-ISM330DHCX-LIS3MDL-FeatherWing-PCB",
+      "commit": "bd7f6d63e4edaed3d9089f1c9197f40e5a437c67",
+      "source": "https://github.com/adafruit/Adafruit-ISM330DHCX-LIS3MDL-FeatherWing-PCB/blob/bd7f6d63e4edaed3d9089f1c9197f40e5a437c67/Adafruit%20ISM330DHCX%20%2B%20LIS3MDL%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-ISM330DHCX-LIS3MDL-FeatherWing-PCB/blob/bd7f6d63e4edaed3d9089f1c9197f40e5a437c67/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2746",
+      "product": "https://www.adafruit.com/product/2746",
+      "repository": "https://github.com/adafruit/Adafruit-Bluefruit-LE-Shield-PCB",
+      "commit": "6b86d1bdaa0a1058f4738f09524606a86cd793ce",
+      "source": "https://github.com/adafruit/Adafruit-Bluefruit-LE-Shield-PCB/blob/6b86d1bdaa0a1058f4738f09524606a86cd793ce/Adafruit%20Bluefruit%20LE%20Shield.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Bluefruit-LE-Shield-PCB/blob/6b86d1bdaa0a1058f4738f09524606a86cd793ce/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA4300",
+      "product": "https://www.adafruit.com/product/4300",
+      "repository": "https://github.com/adafruit/Adafruit-Hallowing-M4-PCB",
+      "commit": "24076afe1a14927e0a7cc2fb2cabb8cb0a7cdd27",
+      "source": "https://github.com/adafruit/Adafruit-Hallowing-M4-PCB/blob/24076afe1a14927e0a7cc2fb2cabb8cb0a7cdd27/Adafruit%20Hallowing%20M4.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Hallowing-M4-PCB/blob/24076afe1a14927e0a7cc2fb2cabb8cb0a7cdd27/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3654",
+      "product": "https://www.adafruit.com/product/3654",
+      "repository": "https://github.com/adafruit/Adafruit-WINC1500-Shield-PCB",
+      "commit": "5b4642c624ffe549731ff9aae4aeb5330fbbb4a3",
+      "source": "https://github.com/adafruit/Adafruit-WINC1500-Shield-PCB/blob/5b4642c624ffe549731ff9aae4aeb5330fbbb4a3/Adafruit%20Winc1500%20Shield.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-WINC1500-Shield-PCB/blob/5b4642c624ffe549731ff9aae4aeb5330fbbb4a3/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5728",
+      "product": "https://www.adafruit.com/product/5728",
+      "repository": "https://github.com/adafruit/Adafruit-PiCowbell-CAN-Bus-PCB",
+      "commit": "6a54bc0068c96f8ab23616ab215f0996f77bea80",
+      "source": "https://github.com/adafruit/Adafruit-PiCowbell-CAN-Bus-PCB/blob/6a54bc0068c96f8ab23616ab215f0996f77bea80/Adafruit%20PiCowbell%20CAN%20Bus.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiCowbell-CAN-Bus-PCB/blob/6a54bc0068c96f8ab23616ab215f0996f77bea80/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5679",
+      "product": "https://www.adafruit.com/product/5679",
+      "repository": "https://github.com/adafruit/Adafruit_Floppy_FeatherWing_PCB",
+      "commit": "8793e86222bd62b1ee243e07e97a8de9ff6a7e7e",
+      "source": "https://github.com/adafruit/Adafruit_Floppy_FeatherWing_PCB/blob/8793e86222bd62b1ee243e07e97a8de9ff6a7e7e/Adafruit%20Floppy%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit_Floppy_FeatherWing_PCB/blob/8793e86222bd62b1ee243e07e97a8de9ff6a7e7e/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5862",
+      "product": "https://www.adafruit.com/product/5862",
+      "repository": "https://github.com/adafruit/Adafruit-Grove-and-Stemma-QT-FeatherWing-PCB",
+      "commit": "2815cb84b56f4e79c573aa0c641fadef878a512f",
+      "source": "https://github.com/adafruit/Adafruit-Grove-and-Stemma-QT-FeatherWing-PCB/blob/2815cb84b56f4e79c573aa0c641fadef878a512f/Adafruit%20Grove%20and%20STEMMA%20QT%20FeatherWing.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Grove-and-Stemma-QT-FeatherWing-PCB/blob/2815cb84b56f4e79c573aa0c641fadef878a512f/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA2601",
+      "product": "https://www.adafruit.com/product/2601",
+      "repository": "https://github.com/adafruit/Adafruit-RGB-Matrix-Shield-PCB",
+      "commit": "d49153b7b42f584c5b243d7605a7ec9c75c3b934",
+      "source": "https://github.com/adafruit/Adafruit-RGB-Matrix-Shield-PCB/blob/d49153b7b42f584c5b243d7605a7ec9c75c3b934/Adafruit%20RGB%20Matrix%20Shield.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-RGB-Matrix-Shield-PCB/blob/d49153b7b42f584c5b243d7605a7ec9c75c3b934/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3305",
+      "product": "https://www.adafruit.com/product/3305",
+      "repository": "https://github.com/adafruit/Adafruit-50pin-to-40pin-TFT-with-AR1100-Adapter-PCB",
+      "commit": "0c0c72915d3f1a48031f893c11a9e7c903f5cbf9",
+      "source": "https://github.com/adafruit/Adafruit-50pin-to-40pin-TFT-with-AR1100-Adapter-PCB/blob/0c0c72915d3f1a48031f893c11a9e7c903f5cbf9/Adafruit%2050pin%20to%2040pin%20TFT%20with%20AR1100%20Adapter.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-50pin-to-40pin-TFT-with-AR1100-Adapter-PCB/blob/0c0c72915d3f1a48031f893c11a9e7c903f5cbf9/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5745",
+      "product": "https://www.adafruit.com/product/5745",
+      "repository": "https://github.com/adafruit/Adafruit-PiCowbell-DVI-Output",
+      "commit": "eebbb6a106e7084c95cee9f53a9a498f4e444766",
+      "source": "https://github.com/adafruit/Adafruit-PiCowbell-DVI-Output/blob/eebbb6a106e7084c95cee9f53a9a498f4e444766/Adafruit%20PiCowbell%20DVI%20Output%20for%20Pico.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-PiCowbell-DVI-Output/blob/eebbb6a106e7084c95cee9f53a9a498f4e444766/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA3422",
+      "product": "https://www.adafruit.com/product/3422",
+      "repository": "https://github.com/adafruit/Adafruit-Arcade-Bonnet-PCB",
+      "commit": "20446a9dc6a3f9b86abfc56c499863b030211beb",
+      "source": "https://github.com/adafruit/Adafruit-Arcade-Bonnet-PCB/blob/20446a9dc6a3f9b86abfc56c499863b030211beb/Adafruit%20Arcade%20Bonnet.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-Arcade-Bonnet-PCB/blob/20446a9dc6a3f9b86abfc56c499863b030211beb/license.txt"
+    },
+    {
+      "manufacturer": "Adafruit",
+      "sku": "ADA5783",
+      "product": "https://www.adafruit.com/product/5783",
+      "repository": "https://github.com/adafruit/Adafruit-EYESPI-Pi-Beret-PCB",
+      "commit": "db6a85a699fe0bd1d8f0cb4918d9db1ea701f3d9",
+      "source": "https://github.com/adafruit/Adafruit-EYESPI-Pi-Beret-PCB/blob/db6a85a699fe0bd1d8f0cb4918d9db1ea701f3d9/Adafruit%20EYESPI%20Pi%20Beret.brd",
+      "license": "CC-BY-SA-3.0",
+      "licenseSource": "https://github.com/adafruit/Adafruit-EYESPI-Pi-Beret-PCB/blob/db6a85a699fe0bd1d8f0cb4918d9db1ea701f3d9/license.txt"
+    }
+  ]
+}

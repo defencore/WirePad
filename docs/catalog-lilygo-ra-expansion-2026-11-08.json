@@ -1,0 +1,278 @@
+{
+  "checked": "2026-11-08",
+  "baseline": 535,
+  "added": 17,
+  "total": 552,
+  "lilygoAdded": 10,
+  "radioModulesAdded": 7,
+  "contacts": 419,
+  "pads": 419,
+  "unchangedExistingAnchors": 535,
+  "unchangedExistingSymbolsFootprintsAndModels": 535,
+  "projectFormatsPreserved": [
+    1,
+    2
+  ],
+  "verification": {
+    "catalog": "All entries, both SVG label modes, physical anchors and pin-to-pad maps validated",
+    "nativeKiCad": "All 17 new symbols and 17 footprints loaded and plotted with native kicad-cli; GUI access unavailable in this session",
+    "browser": "All 34 labeled/unlabeled SVG views rendered; six new representative parts added through library cards; LILYGO (24) and Ai-Thinker (10) filters checked; PNG/SVG downloads verified without page errors",
+    "tests": "185 tests passed, zero failures or skips; includes 552 canvas/native geometry records and source-specific interface, voltage, polarity and shared-net guards",
+    "packaging": "Versioned build lilygo-ra-20261108 imports all 552 components; module and CSS paths checked by the static-site tests; no publication performed"
+  },
+  "limitations": [
+    "Most LILYGO footprints are explicitly labeled off-board cable-termination carriers, not mating PCB land patterns; T-ETH-Lite ESP32-S3 uses the native manufacturer DXF contact geometry.",
+    "Fitted display, USB, camera/card and RF connectors are shown as assembled interfaces where their individual wiring contacts are outside the documented jumper-contact scope.",
+    "The original AMOLED entry is the non-touch green-LED electrical variant; its linked Touch STEP archive is labeled as a later mechanical reference.",
+    "Ra-05 native pitch follows the dimensioned datasheet rather than the 0.07 mm inconsistent pad 10 coordinate in the manufacturer ASC. Base Ra-01SC/SCH footprints exclude extra -P lands from the shared archive.",
+    "All generated 3D bodies and explicitly representative small-part artwork remain approximate; source documents and manufacturer CAD are linked per entry."
+  ],
+  "families": [
+    {
+      "id": "ai-thinker-ra",
+      "count": 7,
+      "checkedBy": "radio-family source audit + root review",
+      "entries": [
+        {
+          "id": "ra-01h",
+          "name": "Ai-Thinker Ra-01H LoRa Module",
+          "manufacturer": "Ai-Thinker",
+          "variant": "SX1276 / 803–930 MHz / SMD-16",
+          "source": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01H_V1.0%20Specification-20191029.pdf",
+          "contacts": 16,
+          "footprintPads": 16,
+          "cad": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Packaging/PCB_Ra-01_V3.2.zip",
+          "description": "Ra-01H, specification V1.0 (2019-10-29), Ra-01_V3.2 package reference. High-band SX1276 transceiver with a soldered external antenna terminal; no fitted IPEX connector. Pin 1 is ANT, not GND. The canvas shows the shield side; physical contacts and illustrated gold pads share the same coordinates. Pin 1 is upper-left, mirroring the underside pin diagram in the dedicated datasheet. Nominal package 16 × 17 × 3.2 mm. Small markings and shield details are representative.",
+          "footprintNote": "Manufacturer PCB_Ra-01_V3.2 archive, RA-01H decal: 16 lands at 2 mm pitch, 16.2 mm row spacing and 1.8 × 1.0 mm host lands. Finger offsets place land centers at ±8.1 mm about the 16 mm body center. The dedicated datasheet also illustrates an alternate extended antenna land. Top-layer footprint, matching the shield-side canvas orientation. These are host solder lands, separate from the nominal package contact dimensions. Review solder tolerances, antenna clearances and the linked manufacturer design before fabrication."
+        },
+        {
+          "id": "ra-01",
+          "name": "Ai-Thinker Ra-01 LoRa Module",
+          "manufacturer": "Ai-Thinker",
+          "variant": "SX1278 / 410–525 MHz / SMD-16",
+          "source": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01_V1.1%20Specification-20171219.pdf",
+          "contacts": 16,
+          "footprintPads": 16,
+          "cad": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Packaging/PCB_Ra-01_V3.2.zip",
+          "description": "Ra-01, product specification V1.1 (2017-12-19), Ra-01_V3.2 package reference. Low-band SX1278 transceiver with a soldered external antenna terminal, shown in the shielded variant pictured in the manufacturer specification. The manufacturer's Ra-01/Ra-01H shared V3.2 CAD defines the numbered contacts. The canvas shows the shield side; physical contacts and illustrated gold pads share the same coordinates. Pin 1 ANT is upper-left; do not substitute the different Ra-02 antenna/ground arrangement. Nominal package 16 × 17 × 3.2 mm. Small markings and shield details are representative.",
+          "footprintNote": "Manufacturer PCB_Ra-01_V3.2 shared Ra-01 / Ra-01H decal: 16 lands at 2 mm pitch, land rows at ±8.1 mm and 1.8 × 1.0 mm host lands. Pin numbers are retained from the archive's matching symbol and RA-01H decal. Top-layer footprint, matching the shield-side canvas orientation. These are host solder lands, separate from the nominal package contact dimensions. Review solder tolerances, antenna clearances and the linked manufacturer design before fabrication."
+        },
+        {
+          "id": "ra-01sc",
+          "name": "Ai-Thinker Ra-01SC LoRa Module",
+          "manufacturer": "Ai-Thinker",
+          "variant": "LLCC68 / 410–525 MHz / SMD-16",
+          "source": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01SC%20Specification-20210331.pdf",
+          "contacts": 16,
+          "footprintPads": 16,
+          "cad": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Packaging/PCB_Ra-01S_SC-P.zip",
+          "description": "Ra-01SC, specification V1.1 (2021-03-31). Base 16-contact module in the default version without an IPEX socket; the manufacturer also offers an IPEX-fitted option with the same contacts. TXEN, RXEN and BUSY replace several SX127x DIO contacts. This is the base module, not the separately documented -P revision. The canvas shows the shield side; physical contacts and illustrated gold pads share the same coordinates. Pin 1 ANT is upper-left, mirrored from the underside diagram. Nominal package 16 × 17 × 3.2 mm. Small markings and shield details are representative.",
+          "footprintNote": "Reference land pattern from the dedicated module datasheet section 6.2: 2 mm pitch, 1.5358 × 1.0 mm regular lands and a 2.262 × 1.27 mm inboard-extended antenna land. The linked shared CAD archive contains additional -P-specific lands; those are deliberately excluded from this base 16-contact package. Top-layer footprint, matching the shield-side canvas orientation. These are host solder lands, separate from the nominal package contact dimensions. Review solder tolerances, antenna clearances and the linked manufacturer design before fabrication."
+        },
+        {
+          "id": "ra-01sch",
+          "name": "Ai-Thinker Ra-01SCH LoRa Module",
+          "manufacturer": "Ai-Thinker",
+          "variant": "LLCC68 / 803–930 MHz / SMD-16",
+          "source": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01SCH_V1.1.0%20Specification-20221110.pdf",
+          "contacts": 16,
+          "footprintPads": 16,
+          "cad": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Packaging/PCB_Ra-01S_SC-P.zip",
+          "description": "Ra-01SCH, specification V1.1.0 (2022-11-10). Base 16-contact module in the default version without an IPEX socket; the manufacturer also offers an IPEX-fitted option with the same contacts. TXEN, RXEN and BUSY replace several SX127x DIO contacts. This is the base module, not the separately documented -P revision. The canvas shows the shield side; physical contacts and illustrated gold pads share the same coordinates. Pin 1 ANT is upper-left, mirrored from the underside diagram. Nominal package 16 × 17 × 3.2 mm. Small markings and shield details are representative.",
+          "footprintNote": "Reference land pattern from the dedicated module datasheet section 6.2: 2 mm pitch, 1.5358 × 1.0 mm regular lands and a 2.262 × 1.27 mm inboard-extended antenna land. The linked shared CAD archive contains additional -P-specific lands; those are deliberately excluded from this base 16-contact package. Top-layer footprint, matching the shield-side canvas orientation. These are host solder lands, separate from the nominal package contact dimensions. Review solder tolerances, antenna clearances and the linked manufacturer design before fabrication."
+        },
+        {
+          "id": "ra-03sch",
+          "name": "Ai-Thinker Ra-03SCH LoRa Module",
+          "manufacturer": "Ai-Thinker",
+          "variant": "LLCC68 / 803–930 MHz / SMD-14",
+          "source": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-03SCH_V1.0.1%20Specification-20260410A.pdf",
+          "contacts": 14,
+          "footprintPads": 14,
+          "cad": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Packaging/PCB_Ra-03SCH.zip",
+          "description": "Ra-03SCH, specification V1.0.1 (2026-04-10). 14-contact LLCC68 transceiver with a castellated RF terminal and explicit CTL1/CTL2 RF-switch inputs. The six-contact left bank has a gap between SCK and GND; all fourteen contacts retain their individual manufacturer positions. The canvas shows the shield side; physical contacts and illustrated gold pads share the same coordinates. Pin 1 MISO is upper-left; pin 14 VCC is upper-right. Nominal package 18.4 × 18.4 × 2.6 mm. Small markings and shield details are representative.",
+          "footprintNote": "Manufacturer PCB_FOOTPRINT_Ra-03SCH.asc, RA-03SCH_SMD14 decal. The 18.4 mm-wide row spacing, asymmetric lower-bank gaps and 2.4 × 1.0 mm host lands are retained from the published CAD. Top-layer footprint, matching the shield-side canvas orientation. These are host solder lands, separate from the nominal package contact dimensions. Review solder tolerances, antenna clearances and the linked manufacturer design before fabrication."
+        },
+        {
+          "id": "ra-05",
+          "name": "Ai-Thinker Ra-05 LoRa Module",
+          "manufacturer": "Ai-Thinker",
+          "variant": "SX1281 / 2400–2500 MHz / SMD-14",
+          "source": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-05%20Specification-20241114.pdf",
+          "contacts": 14,
+          "footprintPads": 14,
+          "cad": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Packaging/PCB_Ra-05.zip",
+          "description": "Ra-05, specification V1.0.0 (2024-11-14). Onboard PCB antenna with an unpopulated compatible IPEX position. Pure RF transceiver with LoRa, FLRC and GFSK modulation and selectable SPI/UART host interfaces; requires a host MCU. No antenna contact is added to its fourteen-contact digital interface. The canvas shows the shield side; physical contacts and illustrated gold pads share the same coordinates. The module is rotated 180° from the front product photo: antenna end at the bottom, pin 1 VCC at upper-left. Nominal package 15 × 24 × 3.1 mm. Small markings and shield details are representative.",
+          "footprintNote": "Dedicated datasheet figure 8 host land pattern: 1.27 mm pitch, land rows at ±7.6 mm and 2.8 × 0.8 mm lands. The dimensioned pitch governs pad 10; the Ra-05 ASC archive contains a 0.07 mm coordinate inconsistency at that pad. Antenna end is at the bottom in both native footprint and canvas view. Top-layer footprint, matching the shield-side canvas orientation. These are host solder lands, separate from the nominal package contact dimensions. Review solder tolerances, antenna clearances and the linked manufacturer design before fabrication."
+        },
+        {
+          "id": "ra-05u",
+          "name": "Ai-Thinker Ra-05U LoRa Module",
+          "manufacturer": "Ai-Thinker",
+          "variant": "SX1281 / 2400–2500 MHz / SMD-14",
+          "source": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-05U%20Specification-20241114.pdf",
+          "contacts": 14,
+          "footprintPads": 14,
+          "cad": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Packaging/PCB_Ra-05U.zip",
+          "description": "Ra-05U, specification V1.0.0 (2024-11-14). Fitted IPEX socket for an external 2.4 GHz antenna. Pure RF transceiver with LoRa, FLRC and GFSK modulation and selectable SPI/UART host interfaces; requires a host MCU. No antenna contact is added to its fourteen-contact digital interface. The canvas shows the shield side; physical contacts and illustrated gold pads share the same coordinates. The module is rotated 180° from the front product photo: antenna end at the bottom, pin 1 VCC at upper-left. Nominal package 15 × 17.8 × 3.1 mm. Small markings and shield details are representative.",
+          "footprintNote": "Dedicated datasheet figure 8 host land pattern: 1.27 mm pitch, land rows at ±7.6 mm and 2.8 × 0.8 mm lands. The dimensioned pitch governs pad 10; the Ra-05 ASC archive contains a 0.07 mm coordinate inconsistency at that pad. Antenna end is at the bottom in both native footprint and canvas view. Top-layer footprint, matching the shield-side canvas orientation. These are host solder lands, separate from the nominal package contact dimensions. Review solder tolerances, antenna clearances and the linked manufacturer design before fabrication."
+        }
+      ]
+    },
+    {
+      "id": "lilygo-interactive",
+      "count": 5,
+      "checkedBy": "interactive family source audit + independent radio review + root review",
+      "entries": [
+        {
+          "id": "lilygo-t-deck-sx1262-20230601",
+          "name": "LILYGO T-Deck SX1262 (2023 design)",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 / SX1262 / keyboard + trackball / 2023-06-01 schematic",
+          "source": "https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf",
+          "references": [
+            "https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf",
+            "https://github.com/Xinyuan-LilyGO/documentation/blob/master/public/products/t-deck-series/t-deck/index/image/t-deck-pin-en.jpg"
+          ],
+          "contacts": 10,
+          "footprintPads": 10,
+          "cad": "https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/shell/T-Deck-PCB-3D.stp",
+          "description": "Original T-Deck SX1262 assembly matched to the manufacturer 2023-06-01 schematic and original pinmap; the schematic does not mark a PCB revision. Front keyboard/display view and a separate rear component-side view keep the actual contact positions. The ten wiring contacts are the four P8 UART socket contacts and six J1 ESP32-C3 keyboard programming pads, captioned UART in the keyboard schematic. P8.4/3 are ESP32-S3 RX44/TX43; keyboard J1.6/5 are ESP32-C3 TX21/RX20. The fitted speaker, battery, USB, card, display and RF connections are illustrated as assembled ports. GPIO10 enables peripheral power. Board details and the off-board termination carrier are representative. T-Deck Plus has a different GPS/Grove assignment and is a separate device.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Deck SX1262 (2023 design). One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-embed-cc1101-v1-0",
+          "name": "LILYGO T-Embed CC1101 V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 / CC1101 FSK-OOK / PN532 / 2024-07-29 schematic",
+          "source": "https://github.com/Xinyuan-LilyGO/T-Embed-CC1101/blob/master/hardware/T-Embed-CC1101%20V1.0%2024-07-29.pdf",
+          "references": [
+            "https://github.com/Xinyuan-LilyGO/T-Embed-CC1101/blob/master/hardware/T-Embed-CC1101%20V1.0%2024-07-29.pdf",
+            "https://github.com/Xinyuan-LilyGO/documentation/blob/master/public/products/t-embed-series/t-embed-cc1101/index/image/t-embed-cc1101-en.jpg",
+            "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf"
+          ],
+          "contacts": 8,
+          "footprintPads": 8,
+          "cad": "https://github.com/Xinyuan-LilyGO/T-Embed-CC1101/blob/master/3D_files/T-Embed%20CC1101.stp",
+          "description": "V1.0 2024-07-29 CC1101 FSK/OOK and PN532 NFC assembly with display, rotary encoder, infrared and audio. Front and rear cover views are accompanied by an enlarged end-connector mating-face view, PCB below the contacts. The eight external wiring contacts are P6 I²C (GND, 3.3 V, SDA8, SCL18) and P1 UART (GND, 3.3 V, TX43, RX44). Both sockets use four electrical circuits; schematic pads 5/6 are housing ground tabs. The UART socket is not an I²C bus despite the common Qwiic-style housing. Internal battery/speaker, fitted USB/card/RF and the NFC coil remain assembled interfaces. Enclosure and connector placement are representative; the footprint is an off-board cable carrier.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Embed CC1101 V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-display-s3-amoled-original",
+          "name": "LILYGO T-Display S3 AMOLED (original)",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 / 1.91-inch RM67162 / original green-LED design",
+          "source": "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/schematic/T-DISPLAY-S3-AMOLED.pdf",
+          "references": [
+            "https://github.com/Xinyuan-LilyGO/T-Display-S3-AMOLED/blob/main/schematic/T-DISPLAY-S3-AMOLED.pdf",
+            "https://github.com/Xinyuan-LilyGO/documentation/blob/master/public/products/t-display-series/t-display-s3-amoled/index/image/t-display-s3-amoled-pinout.jpg"
+          ],
+          "contacts": 34,
+          "footprintPads": 34,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T-Display-S3-AMOLED-Touch-PCB-3D.7z",
+          "description": "Original non-touch, green-LED GPIO38 design from the original T-DISPLAY-S3-AMOLED schematic; that drawing does not mark a PCB revision. Component-side view has USB at the bottom and the display-side view is a separate inset. All 28 P5/P6 header contacts, four P4 UART contacts and two P7 battery contacts are represented. The original P5.12/P5.13 are both 3.3 V; later Touch/Plus boards assign P5.13-equivalent to VBAT. P6.12/P6.13 carry VSYS, the diode-selected USB/battery system rail printed on the actual PCB, although the marketing diagram calls it VBUS. P7.1 is the positive/right contact and P7.2 the negative/left contact in the illustrated view, matching the printed polarity. The linked Touch STEP archive is a later mechanical reference only. Fitted display, USB and antenna are complete interfaces; geometry is representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Display S3 AMOLED (original). One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-display-s3-amoled-plus-v1-0",
+          "name": "LILYGO T-Display S3 AMOLED Plus V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 / PMIC / PCF85063 RTC / 2024-10-21 schematic",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/schematic/T-Display-S3-AMOLED-Plus.pdf",
+          "references": [
+            "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/schematic/T-Display-S3-AMOLED-Plus.pdf",
+            "https://github.com/Xinyuan-LilyGO/documentation/blob/master/public/products/t-display-series/t-display-s3-amoled-plus/index/image/t-display-s3-amoled-plus-3.jpg"
+          ],
+          "contacts": 36,
+          "footprintPads": 36,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T-Display-S3-AMOLED-Plus.7z",
+          "description": "V1.0 2024-10-21 AMOLED Plus with PMIC, PCF85063 RTC, microSD and external antenna. Rear component-side view matches the official pinmap, with a separate display-side inset. All 28 P4/P5 main-header contacts and the eight CN1/CN2 socket contacts are represented. P4.13 is VBAT, while P4.12 is 3.3 V. CN2 carries shared I²C SDA3/SCL2; CN1 carries UART TX43/RX44, so the identical socket housings have different functions. GPIO1 is the PMIC interrupt and GPIO15 the RTC interrupt. GPIO11/12/13/14 share the fitted SD card. The battery socket is illustrated as a fitted charging port; VBAT is available at P4.13. The footprint is an off-board termination carrier and physical geometry is representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Display S3 AMOLED Plus V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t4-s3-v1-0",
+          "name": "LILYGO T4-S3 V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 / 2.41-inch RM690B0 AMOLED / 2024-07-19 schematic",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/schematic/T4-S3-240719.pdf",
+          "references": [
+            "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/schematic/T4-S3-240719.pdf",
+            "https://github.com/Xinyuan-LilyGO/documentation/blob/master/public/products/t4-series/t4-s3/index/image/t4-s3-pinout.jpg"
+          ],
+          "contacts": 38,
+          "footprintPads": 38,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-AMOLED-Series/blob/master/dimensions/T4-S3-AMOLED-PCB.7z",
+          "description": "V1.0 T4-S3-2.41, matched to the official rear pinmap and T4-S3-240719 schematic. The main rear view exposes all 30 physical P5 contacts plus both four-contact side sockets; the display front is an inset. P5 is a 2×15, 1.27 mm connector. In the rear view, its upper row runs P5.15 to P5.1 left-to-right and the lower row P5.16 to P5.30. Numeric labels identify dense contacts; full functions are on hover. P2 is UART TX43/RX44, P4 is I²C SDA6/SCL7. GPIO18 is the fitted display TE signal and must not be driven as an independent GPIO. Battery, display/card/USB/RF ports are assembled interfaces; battery rail wiring is available at P5.16/.17. Artwork and off-board termination-carrier dimensions are representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T4-S3 V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        }
+      ]
+    },
+    {
+      "id": "lilygo-connectivity",
+      "count": 5,
+      "checkedBy": "connectivity family source audit + root review",
+      "entries": [
+        {
+          "id": "lilygo-t-eth-lite-s3-v1-0",
+          "name": "LILYGO T-ETH-Lite ESP32-S3 V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3-WROOM-1 N16R8 / W5500 / PCB 2329",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/schematic/T-ETH-Lite-ESP32S3.pdf",
+          "contacts": 42,
+          "footprintPads": 42,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-Lite-ESP32S3.DXF",
+          "description": "ESP32-S3/W5500 variant, V1.0 schematic dated 2023-07-28 and PCB marking 2329. Component-side view with the antenna at the top and RJ45 at the bottom. All 31 main-header contacts, three P4 GPIO pads and eight P1 PoE-shield contacts are shown. P1 numbers follow the DXF's square pad1; numbered contacts expose their full function on hover. 5V-IN/VBUS and 5V-OP/VCC5V remain separate nets. PoE requires the optional shield. The fitted RJ45, card slot and RF interface are cable/card ports. Small-part appearance is representative.",
+          "footprintNote": "Component-side contact/outline reference from LILYGO's T-ETH-Lite-ESP32S3.DXF. Native P1/P2/P3/P4 hole centers and drills are retained. This is the board's electrical-contact reference, not the optional PoE shield's land pattern. Mounting holes are visual only; the 3D body and small-part artwork are approximate."
+        },
+        {
+          "id": "lilygo-t-eth-lite-esp32-v1-0",
+          "name": "LILYGO T-ETH-Lite ESP32 V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-WROVER-E / RTL8201 / 16 MB flash / 8 MB PSRAM",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/schematic/T-ETH-Lite-ESP32.pdf",
+          "contacts": 38,
+          "footprintPads": 38,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-Lite-ESP32.DXF",
+          "description": "Original ESP32/RTL8201 variant, V1.0 schematic dated 2023-07-28, matched to the official component-side pin diagram. All 30 main-header contacts and eight PoE-shield contacts are shown. Repeated GPIO13/14/34 positions are real shared contacts. The maker's legacy labels IO39 and IO38 route to WROVER sensor pads4/5: actual GPIO36/SENSOR_VP and GPIO39/SENSOR_VN respectively; those electrical functions are used here while the drawing preserves the printed 39/38 captions. USB-to-UART programming uses the TXD/RXD/BOOT/RST headers. Fitted RF, RJ45 and microSD ports are outside the jumper-contact scope. Geometry is representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-ETH-Lite ESP32 V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-eth-elite-2421",
+          "name": "LILYGO T-ETH-ELite ESP32-S3 (2421)",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 N16R8 / W5500 / IEEE 802.3af PoE / Rev 2421",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/schematic/T-ETH-ELite.pdf",
+          "contacts": 40,
+          "footprintPads": 40,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-ELite.dxf",
+          "description": "Rev2421 schematic dated 2024-05-30 and matching 2421 rear silkscreen. Component-side view, USB-C at the top and RJ45 at the bottom. The complete J1 40-pin header uses its real odd/even physical order. Its shape is Raspberry Pi compatible, but its signal functions differ from a Raspberry Pi. J1.35/37 are USB D−/D+ through JP1/JP2; UART0 TX/RX are J1.8/10. Ethernet and microSD use shared SPI signals. USB OTG power forwarding is controlled by the fitted OTG switch. Native board and connector placement are represented from the maker's photo; the export is a reference termination carrier.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-ETH-ELite ESP32-S3 (2421). One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-internet-poe-v1-0",
+          "name": "LILYGO T-Internet-POE V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-WROOM-32 / LAN8720 / XY_Internet_POE V1.0",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/image/pinmap/T-ETH-POE.jpg",
+          "contacts": 22,
+          "footprintPads": 22,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/shell/T-ETH-POE.DXF",
+          "description": "XY_Internet_POE V1.0 component-side board from the manufacturer pinmap, matched to T-Internet-POE.pdf. RJ45 is at the left and the power-only USB-C port at the right. All 16 P0 expansion contacts and six P1 programming contacts are present. P0.1/2 are the bottom outside/inside pair in this view; P0.15/16 are the top pair. An external 3.3 V UART adapter is needed for programming. GPIO2/14/15 share microSD signals. The fitted Ethernet jack, microSD socket and USB power port are outside the jumper-contact scope. Outline and placement are representative; this is not the V2 electrical variant.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-Internet-POE V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        },
+        {
+          "id": "lilygo-t-sim7080g-s3-v1-0",
+          "name": "LILYGO T-SIM7080G-S3 V1.0",
+          "manufacturer": "LILYGO",
+          "variant": "ESP32-S3 N16R8 / SIM7080G / AXP2101 / Cat-M + NB-IoT",
+          "source": "https://github.com/Xinyuan-LilyGO/LilyGo-T-SIM7080G/blob/master/schematic/T-SIM7080G_Schematic.pdf",
+          "contacts": 45,
+          "footprintPads": 45,
+          "cad": "https://github.com/Xinyuan-LilyGO/LilyGo-T-SIM7080G/blob/master/dwg/T-SIM7080G.DXF",
+          "description": "AXP2101 T-SIM7080G-S3, V1.0 schematic dated 2024-03-29. Component side has the ESP32-S3 at the top, modem at the bottom and a separately identified mirrored rear battery/UART view. All 32 P1/P2 header contacts, four P4 UART contacts, two solar contacts, two battery terminals, four 1.8 V modem service pads and the documented USB5V solder joint are represented. P2 numbers descend from top to bottom; P1 numbers ascend. GPIO35/36/37 are exposed shared PSRAM nets and must not be used for external wiring on N16R8 assemblies. DC1 must stay at 3.3 V. The camera FPC, RF, SIM, card and USB connectors are fitted cable/card interfaces outside the jumper-contact scope. Outline, small parts and off-board termination carrier are representative.",
+          "footprintNote": "Reference off-board cable-termination carrier for LILYGO T-SIM7080G-S3 V1.0. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. Use the linked manufacturer CAD for an enclosure or mating PCB."
+        }
+      ]
+    }
+  ]
+}

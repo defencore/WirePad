@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { DrawingCanvas } from '../src/canvas/canvas.js';
+import { CanvasControls } from '../src/canvas/controls.js';
 import { drawingMarkup } from '../src/canvas/markup.js';
 import { bindCanvas } from '../src/canvas/input.js';
 import { componentForPart } from '../src/model/part-component.js';
@@ -18,15 +18,16 @@ test('orientation controls remain upright, fixed size, and in the viewport after
   const component = componentForPart(part);
   const buttons = [0, 90, 180, 270].map(angle => attributes({ dataset: { partRotation: String(angle) } }));
   const panel = attributes({ dataset: {}, querySelectorAll: () => buttons });
-  const canvas = Object.assign(Object.create(DrawingCanvas.prototype), {
+  const canvas = {
     svg: { clientWidth: 800, clientHeight: 600, dataset: { input: 'pointer' } },
-    coarsePointer: { matches: false },
     center: { x: component.width / 2, y: component.height / 2 },
     selection: { type: 'part', id: part.id },
     selections: [{ type: 'part', id: part.id }],
     geometry: { parts: new Map([[part.id, { part }]]) },
-    partControls: panel,
-    partControlsEnabled: true,
+  };
+  const controls = Object.assign(Object.create(CanvasControls.prototype), {
+    svg: canvas.svg, coarsePointer: { matches: false }, rotationNode: panel,
+    partEnabled: true, getState: () => canvas,
   });
 
   for (const [input, width, height, hitSize] of [['pointer', 136, 34, 28], ['touch', 200, 56, 44]]) {
@@ -35,7 +36,7 @@ test('orientation controls remain upright, fixed size, and in the viewport after
       canvas.scale = scale;
       for (const rotation of [0, 90, 180, 270]) {
         part.rotation = rotation;
-        canvas.updatePartControls();
+        controls.updateParts();
         assert.ok(panel.innerHTML.includes(`width="${width}" height="${height}"`));
         assert.ok(panel.innerHTML.includes(`height="${hitSize}"`));
         const transform = panel.attributes.get('transform');
@@ -52,10 +53,10 @@ test('orientation controls remain upright, fixed size, and in the viewport after
     }
   }
   canvas.selections.push({ type: 'part', id: 'other' });
-  canvas.updatePartControls();
+  controls.updateParts();
   assert.equal(panel.attributes.get('display'), 'none');
   assert.ok(buttons.every(button => button.attributes.get('tabindex') === '-1'));
-  canvas.setPartControls(false);
+  controls.setPartEnabled(false);
   assert.equal(panel.attributes.get('display'), 'none');
   assert.ok(buttons.every(button => button.attributes.get('tabindex') === '-1'));
 });
@@ -70,12 +71,15 @@ test('orientation controls activate once with pointer, touch, Enter and Space wi
     else globalThis.window = originalWindow;
   });
   const listeners = new Map();
+  const captures = new Set();
   const svg = {
     addEventListener(name, callback) {
       if (!listeners.has(name)) listeners.set(name, []);
       listeners.get(name).push(callback);
     },
-    setPointerCapture() {},
+    setPointerCapture(id) { captures.add(id); },
+    hasPointerCapture(id) { return captures.has(id); },
+    releasePointerCapture(id) { captures.delete(id); },
   };
   const panel = { dataset: { rotationPart: 'selected' } };
   const buttons = [0, 90, 180, 270].map(angle => ({
@@ -88,6 +92,8 @@ test('orientation controls activate once with pointer, touch, Enter and Space wi
   let underPointer = buttons[1];
   globalThis.document = { addEventListener() {}, elementFromPoint: () => underPointer };
   globalThis.window = { addEventListener() {} };
+  svg.ownerDocument = globalThis.document;
+  globalThis.document.defaultView = globalThis.window;
   const angles = [];
   const editor = {
     mode: 'select', pending: null, part: { id: 'selected' },

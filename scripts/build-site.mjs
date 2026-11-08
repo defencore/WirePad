@@ -1,15 +1,27 @@
 #!/usr/bin/env node
-import { cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { cp, mkdir, readFile, readdir, realpath, writeFile } from 'node:fs/promises';
+import { basename, dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { assetDirectory, publicAssets, repositoryRoot, rewriteAssetURLs, withinDirectory } from './site-assets.mjs';
+
+async function destinationPath(filename) {
+  try {
+    return await realpath(filename);
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    const parent = dirname(filename);
+    if (parent === filename) throw error;
+    return resolve(await destinationPath(parent), basename(filename));
+  }
+}
 
 export async function buildSite(outdir, revision, { root = repositoryRoot } = {}) {
   const assets = assetDirectory(revision);
   if (typeof outdir !== 'string' || !outdir.trim()) throw new Error('Choose an output directory.');
-  root = resolve(root);
-  outdir = resolve(outdir);
-  if (withinDirectory(outdir, root) || withinDirectory(resolve(root, 'src'), outdir)) {
+  root = await realpath(resolve(root));
+  const source = await realpath(resolve(root, 'src'));
+  outdir = await destinationPath(resolve(outdir));
+  if (withinDirectory(outdir, root) || withinDirectory(source, outdir)) {
     throw new Error('The output directory must be separate from the source tree and its parent directories.');
   }
   const html = rewriteAssetURLs(await readFile(resolve(root, 'index.html'), 'utf8'), revision);

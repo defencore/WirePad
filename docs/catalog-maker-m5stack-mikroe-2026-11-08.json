@@ -1,0 +1,562 @@
+{
+  "checked": "2026-11-08",
+  "checkedBy": "Root — primary schematic, manufacturer photo and CAD archive review",
+  "families": [
+    {
+      "id": "m5stack-units",
+      "entries": [
+        {
+          "id": "m5stack-unit-light-u021",
+          "name": "M5Stack Unit Light U021",
+          "variant": "U021 / 2018 V1.0 schematic / HY2.0-4P",
+          "source": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/709/U201-UNIT_LIGHT_SCHE.pdf",
+          "references": [
+            "https://docs.m5stack.com/en/unit/Unit_Light"
+          ],
+          "cad": "https://github.com/m5stack/M5_Hardware/blob/master/Products/U021_Unit_Light/Structures/Unit_Light.stl",
+          "view": "Photoresistor and adjustable LM393 light-threshold module. J1.1 is analog A.OUT, J1.2 is digital D.OUT, and the internal HT7533 regulator supplies the sensing circuit at 3.3 V. The schematic title and enclosure identify U021 despite the U201 download filename. Front housing view and a separate enlarged J1 socket mating face, rear-label side up. Socket contacts run white, yellow, red, black from left to right in that view. J1 terminal numbers follow the linked schematic. Housing shape and contact placement are representative; use manufacturer housing CAD for mechanical design.",
+          "contacts": [
+            {
+              "id": "analog",
+              "number": "J1.1",
+              "label": "A.OUT",
+              "type": "output",
+              "description": "Analog photoresistor-divider output, referenced to the internal 3.3 V rail. J1.1, white wire."
+            },
+            {
+              "id": "digital",
+              "number": "J1.2",
+              "label": "D.OUT",
+              "type": "open_collector",
+              "description": "LM393 comparator output with onboard 10 kΩ pull-up to 3.3 V; threshold set by the trimmer. J1.2, yellow wire."
+            },
+            {
+              "id": "vcc",
+              "number": "J1.3",
+              "label": "5V",
+              "type": "power_in",
+              "description": "5 V supply input; not a GPIO. J1.3, red wire."
+            },
+            {
+              "id": "gnd",
+              "number": "J1.4",
+              "label": "GND",
+              "type": "power_in",
+              "description": "Common supply and signal ground. J1.4, black wire."
+            }
+          ],
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A",
+          "footprintNote": "Reference off-board cable-termination carrier for M5Stack Unit Light U021. J1 and J2 rows use selected 2.54 mm pitch, 1 mm holes and 1.8 mm copper; this is not the enclosed Unit PCB or its connector mating pattern. J2 is the removable relay terminal when present. The housing illustration and generated WRL body are approximate. The linked manufacturer STL describes the housing; it is not imported by the WRL exporter."
+        },
+        {
+          "id": "m5stack-unit-pir-u004",
+          "name": "M5Stack Unit PIR U004",
+          "variant": "U004 / AS312 / HT7533 schematic / HY2.0-4P",
+          "source": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/701/UNIT_PIR.pdf",
+          "references": [
+            "https://docs.m5stack.com/en/unit/Unit_PIR"
+          ],
+          "cad": "https://github.com/m5stack/M5_Hardware/blob/master/Products/U004_Unit_PIR/Structures/Unit_PIR.stl",
+          "view": "AS312 passive infrared motion detector with a nominal two-second retriggerable output. The white-wire J1.1 is the motion output; yellow-wire J1.2 is unused. Housing IN/OUT captions describe the host port direction. Front housing view and a separate enlarged J1 socket mating face, rear-label side up. Socket contacts run white, yellow, red, black from left to right in that view. J1 terminal numbers follow the linked schematic. Housing shape and contact placement are representative; use manufacturer housing CAD for mechanical design.",
+          "contacts": [
+            {
+              "id": "motion",
+              "number": "J1.1",
+              "label": "OUT",
+              "type": "output",
+              "description": "Active-high motion output through a 1 kΩ series resistor from the 3.3 V AS312 sensor. J1.1, white wire."
+            },
+            {
+              "id": "nc",
+              "number": "J1.2",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "Unused yellow-wire contact in this schematic revision. J1.2, yellow wire."
+            },
+            {
+              "id": "vcc",
+              "number": "J1.3",
+              "label": "5V",
+              "type": "power_in",
+              "description": "5 V supply input; not a GPIO. J1.3, red wire."
+            },
+            {
+              "id": "gnd",
+              "number": "J1.4",
+              "label": "GND",
+              "type": "power_in",
+              "description": "Common supply and signal ground. J1.4, black wire."
+            }
+          ],
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A",
+          "footprintNote": "Reference off-board cable-termination carrier for M5Stack Unit PIR U004. J1 and J2 rows use selected 2.54 mm pitch, 1 mm holes and 1.8 mm copper; this is not the enclosed Unit PCB or its connector mating pattern. J2 is the removable relay terminal when present. The housing illustration and generated WRL body are approximate. The linked manufacturer STL describes the housing; it is not imported by the WRL exporter."
+        },
+        {
+          "id": "m5stack-unit-relay-u023",
+          "name": "M5Stack Unit Relay U023",
+          "variant": "U023 / single-channel SPDT schematic / HY2.0-4P",
+          "source": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/577/UNIT-RELAY.pdf",
+          "references": [
+            "https://docs.m5stack.com/en/unit/Unit_Relay"
+          ],
+          "cad": "https://github.com/m5stack/M5_Hardware/blob/master/Products/U023_Unit_Relay/Structures/Unit_Relay.stl",
+          "view": "5 V single-channel SPDT relay module with S8050 transistor driver and flyback diode. J1.2 drives the coil, while J1.1 is unused. COM, NO and NC are isolated switching contacts and are not connected to Grove ground. Connector and housing placement follow the product photo. Front housing view and a separate enlarged J1 socket mating face, rear-label side up. Socket contacts run white, yellow, red, black from left to right in that view. J1 terminal numbers follow the linked schematic. Housing shape and contact placement are representative; use manufacturer housing CAD for mechanical design.",
+          "contacts": [
+            {
+              "id": "unused",
+              "number": "J1.1",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "Unused white-wire contact; not the relay normally-closed contact. J1.1, white wire."
+            },
+            {
+              "id": "control",
+              "number": "J1.2",
+              "label": "DIN",
+              "type": "input",
+              "description": "Active-high transistor-driver input. A 10 kΩ resistor pulls the control line down. J1.2, yellow wire."
+            },
+            {
+              "id": "vcc",
+              "number": "J1.3",
+              "label": "5V",
+              "type": "power_in",
+              "description": "5 V supply input; not a GPIO. J1.3, red wire."
+            },
+            {
+              "id": "gnd",
+              "number": "J1.4",
+              "label": "GND",
+              "type": "power_in",
+              "description": "Common supply and signal ground. J1.4, black wire."
+            },
+            {
+              "id": "com",
+              "number": "J2.1",
+              "label": "COM",
+              "type": "passive",
+              "description": "Isolated relay common contact."
+            },
+            {
+              "id": "no",
+              "number": "J2.2",
+              "label": "NO",
+              "type": "passive",
+              "description": "Normally open relay contact; joins COM when the coil is energized."
+            },
+            {
+              "id": "relay-nc",
+              "number": "J2.3",
+              "label": "NC",
+              "type": "passive",
+              "description": "Normally closed relay contact; joins COM when the coil is de-energized."
+            }
+          ],
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A",
+          "footprintNote": "Reference off-board cable-termination carrier for M5Stack Unit Relay U023. J1 and J2 rows use selected 2.54 mm pitch, 1 mm holes and 1.8 mm copper; this is not the enclosed Unit PCB or its connector mating pattern. J2 is the removable relay terminal when present. The housing illustration and generated WRL body are approximate. The linked manufacturer STL describes the housing; it is not imported by the WRL exporter."
+        }
+      ]
+    },
+    {
+      "id": "mikroe-click",
+      "entries": [
+        {
+          "id": "mikroe-buzz-click-945",
+          "name": "MIKROE BUZZ Click MIKROE-945",
+          "variant": "MIKROE-945 / v100 / mikroBUS S",
+          "source": "https://download.mikroe.com/documents/add-on-boards/click/buzz/BUZZ_click_Schematic_v100.pdf",
+          "references": [
+            "https://www.mikroe.com/buzz-click",
+            "https://download.mikroe.com/documents/standards/mikrobus/mikrobus-standard-specification-v200.pdf"
+          ],
+          "cad": "https://download.mikroe.com/documents/2d-3d-files/BUZZ_Click_2d_3d_files.zip",
+          "view": "Piezo transducer driven through a BC846 transistor. Both GPI and PWM reach the same driver node through populated J3/J2 links by default; do not drive them to opposite levels. Removing the corresponding link separates an input. J1 selects 3.3 V or 5 V supply. Component-side view with the bottom-right orientation notch. All sixteen mikroBUS header contacts are present, including the printed NC terminals. Header numbering follows the manufacturer pinout table: 1–8 down the left and 16–9 down the right. Small component shapes are representative.",
+          "contacts": [
+            {
+              "id": "p1",
+              "number": "1",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 1 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p2",
+              "number": "2",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 2 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p3",
+              "number": "3",
+              "label": "GPI",
+              "type": "input",
+              "description": "mikroBUS 3 — Digital buzzer driver input, shared with PWM through the default populated link."
+            },
+            {
+              "id": "p4",
+              "number": "4",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 4 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p5",
+              "number": "5",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 5 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p6",
+              "number": "6",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 6 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p7",
+              "number": "7",
+              "label": "3.3V",
+              "type": "power_in",
+              "description": "mikroBUS 7 — 3.3 V supply input; the power-selection jumper must select the intended rail."
+            },
+            {
+              "id": "p8",
+              "number": "8",
+              "label": "GND",
+              "type": "power_in",
+              "description": "mikroBUS 8 — Common signal and supply ground."
+            },
+            {
+              "id": "p9",
+              "number": "9",
+              "label": "GND",
+              "type": "power_in",
+              "description": "mikroBUS 9 — Common signal and supply ground."
+            },
+            {
+              "id": "p10",
+              "number": "10",
+              "label": "5V",
+              "type": "power_in",
+              "description": "mikroBUS 10 — 5 V supply input; the power-selection jumper must select the intended rail."
+            },
+            {
+              "id": "p11",
+              "number": "11",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 11 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p12",
+              "number": "12",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 12 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p13",
+              "number": "13",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 13 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p14",
+              "number": "14",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 14 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p15",
+              "number": "15",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 15 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p16",
+              "number": "16",
+              "label": "PWM",
+              "type": "input",
+              "description": "mikroBUS 16 — Tone/PWM driver input, shared with GPI through the default populated link."
+            }
+          ],
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A",
+          "footprintNote": "MIKROE-945 v100 reference host carrier. Electrical contact centers use the manufacturer DXF's 22.86 mm row separation and 2.54 mm pitch. The 1 mm drills and 1.8 mm copper are selected reference dimensions, not an audited production land pattern. The rectangular generated envelope does not reproduce the orientation notch, full silkscreen, selected component heights or enclosure clearances. All sixteen pins, including NC contacts, retain manufacturer mikroBUS numbers. Generated 3D is approximate."
+        },
+        {
+          "id": "mikroe-button-r-click-1901",
+          "name": "MIKROE Button R Click MIKROE-1901",
+          "variant": "MIKROE-1901 / v100 / mikroBUS S",
+          "source": "https://download.mikroe.com/documents/add-on-boards/click/button-r/Button_R_click_v100_Schematic.PDF",
+          "references": [
+            "https://www.mikroe.com/button-r-click",
+            "https://download.mikroe.com/documents/standards/mikrobus/mikrobus-standard-specification-v200.pdf"
+          ],
+          "cad": "https://download.mikroe.com/documents/2d-3d-files/Button_R_Click_2d_3d_files.zip",
+          "view": "Marquardt 3006.2112 push button with independent red LED. INT is a pulled-down, RC-filtered signal that rises when pressed; PWM controls the LED independently. The PWR SEL jumper selects 3.3 V or 5 V logic. Component-side view with the bottom-right orientation notch. All sixteen mikroBUS header contacts are present, including the printed NC terminals. Header numbering follows the manufacturer pinout table: 1–8 down the left and 16–9 down the right. Small component shapes are representative.",
+          "contacts": [
+            {
+              "id": "p1",
+              "number": "1",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 1 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p2",
+              "number": "2",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 2 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p3",
+              "number": "3",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 3 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p4",
+              "number": "4",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 4 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p5",
+              "number": "5",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 5 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p6",
+              "number": "6",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 6 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p7",
+              "number": "7",
+              "label": "3.3V",
+              "type": "power_in",
+              "description": "mikroBUS 7 — 3.3 V supply input; the power-selection jumper must select the intended rail."
+            },
+            {
+              "id": "p8",
+              "number": "8",
+              "label": "GND",
+              "type": "power_in",
+              "description": "mikroBUS 8 — Common signal and supply ground."
+            },
+            {
+              "id": "p9",
+              "number": "9",
+              "label": "GND",
+              "type": "power_in",
+              "description": "mikroBUS 9 — Common signal and supply ground."
+            },
+            {
+              "id": "p10",
+              "number": "10",
+              "label": "5V",
+              "type": "power_in",
+              "description": "mikroBUS 10 — 5 V supply input; the power-selection jumper must select the intended rail."
+            },
+            {
+              "id": "p11",
+              "number": "11",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 11 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p12",
+              "number": "12",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 12 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p13",
+              "number": "13",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 13 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p14",
+              "number": "14",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 14 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p15",
+              "number": "15",
+              "label": "INT",
+              "type": "output",
+              "description": "mikroBUS 15 — Active-high button state, with onboard pull-down and RC filter."
+            },
+            {
+              "id": "p16",
+              "number": "16",
+              "label": "PWM",
+              "type": "input",
+              "description": "mikroBUS 16 — Red button-backlight control/PWM input, independent of the button contact."
+            }
+          ],
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A",
+          "footprintNote": "MIKROE-1901 v100 reference host carrier. Electrical contact centers use the manufacturer DXF's 22.86 mm row separation and 2.54 mm pitch. The 1 mm drills and 1.8 mm copper are selected reference dimensions, not an audited production land pattern. The rectangular generated envelope does not reproduce the orientation notch, full silkscreen, selected component heights or enclosure clearances. All sixteen pins, including NC contacts, retain manufacturer mikroBUS numbers. Generated 3D is approximate."
+        },
+        {
+          "id": "mikroe-light-click-1424",
+          "name": "MIKROE Light Click MIKROE-1424",
+          "variant": "MIKROE-1424 / v101 / mikroBUS S",
+          "source": "https://download.mikroe.com/documents/add-on-boards/click/light_click/Light_click_v101_Schematic.PDF",
+          "references": [
+            "https://www.mikroe.com/light-click",
+            "https://download.mikroe.com/documents/standards/mikrobus/mikrobus-standard-specification-v200.pdf"
+          ],
+          "cad": "https://download.mikroe.com/documents/2d-3d-files/Light_Click_2d_3d_files.zip",
+          "view": "PD15-22C/TR8 photodiode, LM358 amplifier and MCP3201 read-only SPI ADC. A/D SEL routes the amplifier either to AN or to the ADC; ADC is the documented default. I/O Level selects 3.3 V or 5 V for the SPI circuit. The AN pad is not an active output while the ADC path is selected. Component-side view with the bottom-right orientation notch. All sixteen mikroBUS header contacts are present, including the printed NC terminals. Header numbering follows the manufacturer pinout table: 1–8 down the left and 16–9 down the right. Small component shapes are representative.",
+          "contacts": [
+            {
+              "id": "p1",
+              "number": "1",
+              "label": "AN",
+              "type": "output",
+              "description": "mikroBUS 1 — Analog light voltage only when A/D SEL is moved to AN; disconnected in the default ADC position."
+            },
+            {
+              "id": "p2",
+              "number": "2",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 2 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p3",
+              "number": "3",
+              "label": "CS",
+              "type": "input",
+              "description": "mikroBUS 3 — Active-low MCP3201 SPI chip-select input."
+            },
+            {
+              "id": "p4",
+              "number": "4",
+              "label": "SCK",
+              "type": "input",
+              "description": "mikroBUS 4 — MCP3201 SPI clock input."
+            },
+            {
+              "id": "p5",
+              "number": "5",
+              "label": "SDO",
+              "type": "output",
+              "description": "mikroBUS 5 — MCP3201 serial conversion-data output (host MISO)."
+            },
+            {
+              "id": "p6",
+              "number": "6",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 6 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p7",
+              "number": "7",
+              "label": "3.3V",
+              "type": "power_in",
+              "description": "mikroBUS 7 — 3.3 V supply input; the power-selection jumper must select the intended rail."
+            },
+            {
+              "id": "p8",
+              "number": "8",
+              "label": "GND",
+              "type": "power_in",
+              "description": "mikroBUS 8 — Common signal and supply ground."
+            },
+            {
+              "id": "p9",
+              "number": "9",
+              "label": "GND",
+              "type": "power_in",
+              "description": "mikroBUS 9 — Common signal and supply ground."
+            },
+            {
+              "id": "p10",
+              "number": "10",
+              "label": "5V",
+              "type": "power_in",
+              "description": "mikroBUS 10 — 5 V supply input; the power-selection jumper must select the intended rail."
+            },
+            {
+              "id": "p11",
+              "number": "11",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 11 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p12",
+              "number": "12",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 12 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p13",
+              "number": "13",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 13 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p14",
+              "number": "14",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 14 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p15",
+              "number": "15",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 15 — Not connected on this exact Click revision."
+            },
+            {
+              "id": "p16",
+              "number": "16",
+              "label": "NC",
+              "type": "no_connect",
+              "description": "mikroBUS 16 — Not connected on this exact Click revision."
+            }
+          ],
+          "footprintAccuracy": "R",
+          "generated3DAccuracy": "A",
+          "footprintNote": "MIKROE-1424 v101 reference host carrier. Electrical contact centers use the manufacturer DXF's 22.86 mm row separation and 2.54 mm pitch. The 1 mm drills and 1.8 mm copper are selected reference dimensions, not an audited production land pattern. The rectangular generated envelope does not reproduce the orientation notch, full silkscreen, selected component heights or enclosure clearances. All sixteen pins, including NC contacts, retain manufacturer mikroBUS numbers. Generated 3D is approximate."
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "M5Stack contacts are shown in an enlarged physical socket mating-face inset, with the housing rear-label side up. J1 numbering follows each linked source schematic, not assumed generic Grove color numbering. Relay J2 follows the printed COM/NO/NC terminal order.",
+    "M5Stack U021 schematic download filename says U201; the title, source product page and circuit identify the U021 light unit.",
+    "MIKROE reference carriers retain source DXF header coordinates but select 1 mm drills and 1.8 mm copper. They omit the full production notch/silkscreen/courtyard. NC pins remain exposed and typed no_connect.",
+    "BUZZ v100 CAD archive contains DXF only. Button R v100 and Light v101 archives contain DXF and STEP. M5Stack links point to manufacturer housing STL files. None of these external models is imported into the generated approximate WRL."
+  ]
+}

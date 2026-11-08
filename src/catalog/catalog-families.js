@@ -64,6 +64,86 @@ import nxpMoreFamily from "./families/catalog-ready-nxp-more.js";
 import waveshareMoreFamily from "./families/catalog-ready-waveshare-more.js";
 
 import semtechRadiosFamily from "./families/catalog-semtech.js";
+import tiWirelessFamily from "./families/catalog-ti-wireless.js";
+import ebyteFamily from "./families/catalog-ebyte.js";
+import semtechMoreFamily from "./families/catalog-semtech-more.js";
+import analogDevicesFamily from "./families/catalog-analog-devices.js";
+import lilygoMoreFamily from "./families/catalog-lilygo-more.js";
+import nordicMoreFamily from "./families/catalog-nordic-more.js";
+import aiThinkerRaFamily from "./families/catalog-ai-thinker-ra.js";
+import lilygoInteractiveFamily from "./families/catalog-lilygo-interactive.js";
+import lilygoConnectivityFamily from "./families/catalog-lilygo-connectivity.js";
+import diyKitInputsFamily from "./families/catalog-diy-kit-inputs.js";
+import diyKitSensorsFamily from "./families/catalog-diy-kit-sensors.js";
+import diyKitOutputsFamily from "./families/catalog-diy-kit-outputs.js";
+import m5stackUnitsFamily from "./families/catalog-m5stack-units.js";
+import mikroeClickFamily from "./families/catalog-mikroe-click.js";
+import dfrobotMoreFamily from "./families/catalog-dfrobot-more.js";
+import sparkfunMoreFamily from "./families/catalog-sparkfun-more.js";
+import seeedMoreFamily from "./families/catalog-seeed-more.js";
+import espressifMoreBoardsFamily from "./families/catalog-espressif-more-boards.js";
+import pololuMoreFamily from "./families/catalog-pololu-more.js";
+import robotdynMoreFamily from "./families/catalog-robotdyn-more.js";
+import arduinoMoreBoardsFamily from "./families/catalog-arduino-more-boards.js";
+import teensyMoreFamily from "./families/catalog-teensy-more.js";
+import raspberryPiMoreFamily from "./families/catalog-raspberry-pi-more.js";
+import marketCommunicationsFamily from "./families/catalog-market-communications.js";
+import marketHcLogicFamily from "./families/catalog-market-hc-logic.js";
+import marketCmosLogicFamily from "./families/catalog-market-cmos-logic.js";
+import marketMemoryDisplayFamily from "./families/catalog-market-memory-display.js";
+import marketTransistorsFamily from "./families/catalog-market-transistors.js";
+import marketSensorsFamily from "./families/catalog-market-sensors.js";
+import marketAnalogFamily from "./families/catalog-market-analog.js";
+import marketPowerFamily from "./families/catalog-market-power.js";
+import marketOptoFamily from "./families/catalog-market-opto.js";
+import marketDiodesFamily from "./families/catalog-market-diodes.js";
+import marketHallAngleFamily from "./families/catalog-market-hall-angle.js";
+import marketOpticalTiVishayFamily from "./families/catalog-market-optical-ti-vishay.js";
+import marketOpticalSensingFamily from "./families/catalog-market-optical-sensing.js";
+
+import modulesAdafruitAdditionalDevelopmentFamily from "./families/catalog-modules-adafruit-additional-development.js";
+import modulesAdafruitAdditionalIndicatorsInputsFamily from "./families/catalog-modules-adafruit-additional-indicators-inputs.js";
+import modulesAdafruitAdditionalInterfacesFamily from "./families/catalog-modules-adafruit-additional-interfaces.js";
+import modulesAdafruitAdditionalPowerAudioFamily from "./families/catalog-modules-adafruit-additional-power-audio.js";
+import modulesAdafruitAdditionalSensorsFamily from "./families/catalog-modules-adafruit-additional-sensors.js";
+import modulesAdafruitDevelopmentFamily from "./families/catalog-modules-adafruit-development.js";
+import modulesAdafruitIndicatorsInputsFamily from "./families/catalog-modules-adafruit-indicators-inputs.js";
+import modulesAdafruitInterfacesFamily from "./families/catalog-modules-adafruit-interfaces.js";
+import modulesAdafruitPowerAudioFamily from "./families/catalog-modules-adafruit-power-audio.js";
+import modulesAdafruitSensorsFamily from "./families/catalog-modules-adafruit-sensors.js";
+import modulesDfrobotButtonsFamily from "./families/catalog-modules-dfrobot-buttons.js";
+import modulesDfrobotConvertersFamily from "./families/catalog-modules-dfrobot-converters.js";
+import modulesDfrobotDimensionedFamily from "./families/catalog-modules-dfrobot-dimensioned.js";
+import modulesDfrobotFermionSensorsFamily from "./families/catalog-modules-dfrobot-fermion-sensors.js";
+import modulesDfrobotGasFamily from "./families/catalog-modules-dfrobot-gas.js";
+import modulesDfrobotMotionRelaysFamily from "./families/catalog-modules-dfrobot-motion-relays.js";
+import modulesDfrobotNativeFamily from "./families/catalog-modules-dfrobot-native.js";
+import modulesDfrobotPeripheralsFamily from "./families/catalog-modules-dfrobot-peripherals.js";
+import modulesDfrobotSensorsFamily from "./families/catalog-modules-dfrobot-sensors.js";
+import modulesMikroeControlsFamily from "./families/catalog-modules-mikroe-controls.js";
+import modulesMikroeInterfacesFamily from "./families/catalog-modules-mikroe-interfaces.js";
+import modulesMikroeMemoryFamily from "./families/catalog-modules-mikroe-memory.js";
+import modulesMikroeMotionFamily from "./families/catalog-modules-mikroe-motion.js";
+import modulesMikroeOpticalFamily from "./families/catalog-modules-mikroe-optical.js";
+import modulesMikroePowerFamily from "./families/catalog-modules-mikroe-power.js";
+import modulesMikroeSensingFamily from "./families/catalog-modules-mikroe-sensing.js";
+import modulesSeeedExtendedDisplayAudioFamily from "./families/catalog-modules-seeed-extended-display-audio.js";
+import modulesSeeedExtendedInterfacesFamily from "./families/catalog-modules-seeed-extended-interfaces.js";
+import modulesSeeedExtendedMotionFamily from "./families/catalog-modules-seeed-extended-motion.js";
+import modulesSeeedExtendedSensingFamily from "./families/catalog-modules-seeed-extended-sensing.js";
+import modulesSeeedPracticalFamily from "./families/catalog-modules-seeed-practical.js";
+import modulesSeeedSensingFamily from "./families/catalog-modules-seeed-sensing.js";
+import modulesSeeedSourceFamily from "./families/catalog-modules-seeed-source.js";
+import modulesSparkfunAdditionalDevelopmentFamily from "./families/catalog-modules-sparkfun-additional-development.js";
+import modulesSparkfunAdditionalIndicatorsInputsFamily from "./families/catalog-modules-sparkfun-additional-indicators-inputs.js";
+import modulesSparkfunAdditionalInterfacesFamily from "./families/catalog-modules-sparkfun-additional-interfaces.js";
+import modulesSparkfunAdditionalPowerAudioFamily from "./families/catalog-modules-sparkfun-additional-power-audio.js";
+import modulesSparkfunAdditionalSensorsFamily from "./families/catalog-modules-sparkfun-additional-sensors.js";
+import modulesSparkfunDevelopmentFamily from "./families/catalog-modules-sparkfun-development.js";
+import modulesSparkfunIndicatorsInputsFamily from "./families/catalog-modules-sparkfun-indicators-inputs.js";
+import modulesSparkfunInterfacesFamily from "./families/catalog-modules-sparkfun-interfaces.js";
+import modulesSparkfunPowerAudioFamily from "./families/catalog-modules-sparkfun-power-audio.js";
+import modulesSparkfunSensorsFamily from "./families/catalog-modules-sparkfun-sensors.js";
 
 // This ordered list is the only family registration point.
 export const catalogFamilies = [
@@ -73,6 +153,42 @@ export const catalogFamilies = [
   coreBasicsFamily,
   heltecSemtechFamily,
   semtechRadiosFamily,
+  tiWirelessFamily,
+  ebyteFamily,
+  semtechMoreFamily,
+  analogDevicesFamily,
+  lilygoMoreFamily,
+  nordicMoreFamily,
+  aiThinkerRaFamily,
+  lilygoInteractiveFamily,
+  lilygoConnectivityFamily,
+  diyKitInputsFamily,
+  diyKitSensorsFamily,
+  diyKitOutputsFamily,
+  m5stackUnitsFamily,
+  mikroeClickFamily,
+  dfrobotMoreFamily,
+  sparkfunMoreFamily,
+  seeedMoreFamily,
+  espressifMoreBoardsFamily,
+  pololuMoreFamily,
+  robotdynMoreFamily,
+  arduinoMoreBoardsFamily,
+  teensyMoreFamily,
+  raspberryPiMoreFamily,
+  marketCommunicationsFamily,
+  marketHcLogicFamily,
+  marketCmosLogicFamily,
+  marketMemoryDisplayFamily,
+  marketTransistorsFamily,
+  marketSensorsFamily,
+  marketAnalogFamily,
+  marketPowerFamily,
+  marketOptoFamily,
+  marketDiodesFamily,
+  marketHallAngleFamily,
+  marketOpticalTiVishayFamily,
+  marketOpticalSensingFamily,
   espRpFamily,
   arduinoFamily,
   stm32Family,
@@ -133,4 +249,47 @@ export const catalogFamilies = [
   radxaMoreFamily,
   nxpMoreFamily,
   waveshareMoreFamily,
+  modulesAdafruitAdditionalDevelopmentFamily,
+  modulesAdafruitAdditionalIndicatorsInputsFamily,
+  modulesAdafruitAdditionalInterfacesFamily,
+  modulesAdafruitAdditionalPowerAudioFamily,
+  modulesAdafruitAdditionalSensorsFamily,
+  modulesAdafruitDevelopmentFamily,
+  modulesAdafruitIndicatorsInputsFamily,
+  modulesAdafruitInterfacesFamily,
+  modulesAdafruitPowerAudioFamily,
+  modulesAdafruitSensorsFamily,
+  modulesDfrobotButtonsFamily,
+  modulesDfrobotConvertersFamily,
+  modulesDfrobotDimensionedFamily,
+  modulesDfrobotFermionSensorsFamily,
+  modulesDfrobotGasFamily,
+  modulesDfrobotMotionRelaysFamily,
+  modulesDfrobotNativeFamily,
+  modulesDfrobotPeripheralsFamily,
+  modulesDfrobotSensorsFamily,
+  modulesMikroeControlsFamily,
+  modulesMikroeInterfacesFamily,
+  modulesMikroeMemoryFamily,
+  modulesMikroeMotionFamily,
+  modulesMikroeOpticalFamily,
+  modulesMikroePowerFamily,
+  modulesMikroeSensingFamily,
+  modulesSeeedExtendedDisplayAudioFamily,
+  modulesSeeedExtendedInterfacesFamily,
+  modulesSeeedExtendedMotionFamily,
+  modulesSeeedExtendedSensingFamily,
+  modulesSeeedPracticalFamily,
+  modulesSeeedSensingFamily,
+  modulesSeeedSourceFamily,
+  modulesSparkfunAdditionalDevelopmentFamily,
+  modulesSparkfunAdditionalIndicatorsInputsFamily,
+  modulesSparkfunAdditionalInterfacesFamily,
+  modulesSparkfunAdditionalPowerAudioFamily,
+  modulesSparkfunAdditionalSensorsFamily,
+  modulesSparkfunDevelopmentFamily,
+  modulesSparkfunIndicatorsInputsFamily,
+  modulesSparkfunInterfacesFamily,
+  modulesSparkfunPowerAudioFamily,
+  modulesSparkfunSensorsFamily,
 ];

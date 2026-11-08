@@ -1,7 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { circle, label, line, rect } from "../shared/svg.js";
 import { gowinBoardComponent, gowinBoardArt, gowinBoardFootprint } from "../shared/gowin-board.js";
-import boards from "../data/gowin-special.js";
+import boards from "../data/gowin-special/manifest.js";
 
 // Component-side connector locations follow the exact manual's PCB Components photo.
 // Cable contacts stay inside their illustrated socket; PCIe A/B rows adjoin the two edge faces.

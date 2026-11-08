@@ -1,0 +1,1631 @@
+import assets from "./input-controls-assets.js";
+
+// Verified source specifications. Related CAD illustration/evidence assets stay adjacent.
+export default [
+  {
+    "id": "adafruit-module-3246",
+    "sku": "ADA3246",
+    "name": "Analog Mini Thumbstick Breakout Board",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/3246",
+    "revision": "EAGLE Adafruit Mini Analog Thumbstick.brd; commit f09366288515",
+    "category": "Inputs",
+    "board": {
+      "width": 25.4,
+      "height": 26.67,
+      "color": "#246545",
+      "outline": "M-10.16 13.335A2.54 2.54 0 0 1 -12.7 10.795L-12.7 -10.795A2.54 2.54 0 0 1 -10.16 -13.335L10.16 -13.335A2.54 2.54 0 0 1 12.7 -10.795L12.7 10.795A2.54 2.54 0 0 1 10.16 13.335L-10.16 13.335Z"
+    },
+    "contacts": assets["adafruit-module-3246"]["contacts"],
+    "holes": [
+      {
+        "x": -6,
+        "y": -5.619,
+        "drill": 1.6
+      },
+      {
+        "x": 6,
+        "y": 6.381,
+        "drill": 1.6
+      },
+      {
+        "x": 10.16,
+        "y": 10.795,
+        "drill": 2.2
+      },
+      {
+        "x": -10.16,
+        "y": 10.795,
+        "drill": 2.2
+      },
+      {
+        "x": 10.16,
+        "y": -10.795,
+        "drill": 2.2
+      },
+      {
+        "x": -10.16,
+        "y": -10.795,
+        "drill": 2.2
+      }
+    ],
+    "artwork": assets["adafruit-module-3246"]["artwork"],
+    "backArtwork": assets["adafruit-module-3246"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-3246"]["provenance"],
+    "internalConnections": [
+      [
+        "jp1-1",
+        "jp2-1"
+      ],
+      [
+        "jp1-2",
+        "jp2-2"
+      ],
+      [
+        "jp1-3",
+        "jp2-3"
+      ],
+      [
+        "jp1-4",
+        "jp2-4"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/3246"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-Mini-Analog-Thumbstick-Breakout-PCB/blob/f09366288515bc9d9ea436602506ed4d2c295544/Adafruit%20Mini%20Analog%20Thumbstick.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-Mini-Analog-Thumbstick-Breakout-PCB/blob/f09366288515bc9d9ea436602506ed4d2c295544/Adafruit%20Mini%20Analog%20Thumbstick.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-Mini-Analog-Thumbstick-Breakout-PCB/blob/f09366288515bc9d9ea436602506ed4d2c295544/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/3246",
+      "status": "Official Adafruit product feed reported in stock.",
+      "sku": "ADA3246",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "in stock"
+    },
+    "description": "Adafruit ADA3246. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible. The optional device/control footprint is shown as an empty dashed outline; the commercial board does not include that user-fitted part. This is an unpopulated passive carrier PCB; the intended device pin names identify its traces and no active driver is fitted.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -9.04,
+      -8.658999999999999,
+      9.04,
+      9.421
+    ]
+  },
+  {
+    "id": "adafruit-module-4836",
+    "sku": "ADA4836",
+    "name": "Adafruit Wii Nunchuck Breakout Adapter",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/4836",
+    "revision": "EAGLE Adafruit Wii Nunchuck Breakout Adapter.brd; commit d3f2e25c4f92",
+    "category": "Inputs",
+    "board": {
+      "width": 25.4,
+      "height": 17.78,
+      "color": "#246545",
+      "outline": "M-12.7 6.35A2.54 2.54 0 0 0 -10.16 8.89L10.16 8.89A2.54 2.54 0 0 0 12.7 6.35L12.7 -6.35A2.54 2.54 0 0 0 10.16 -8.89L6.223 -8.89L6.223 -4.953L7.239 -4.953L7.239 -2.413L6.223 -2.413L6.223 -0.381L3.175 -0.381L3.175 -7.747L-3.175 -7.747L-3.175 -0.508L-6.223 -0.508L-6.223 -2.413L-7.239 -2.413L-7.239 -4.953L-6.223 -4.953L-6.223 -8.89L-10.16 -8.89A2.54 2.54 0 0 0 -12.7 -6.35L-12.7 6.35Z"
+    },
+    "contacts": assets["adafruit-module-4836"]["contacts"],
+    "holes": [
+      {
+        "x": -10.16,
+        "y": -6.35,
+        "drill": 2.5
+      },
+      {
+        "x": 10.16,
+        "y": -6.35,
+        "drill": 2.5
+      },
+      {
+        "x": -10.16,
+        "y": 6.35,
+        "drill": 2.5
+      },
+      {
+        "x": 10.16,
+        "y": 6.35,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-4836"]["artwork"],
+    "backArtwork": assets["adafruit-module-4836"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-4836"]["provenance"],
+    "internalConnections": [
+      [
+        "conn3-2",
+        "conn4-2",
+        "jp2-1"
+      ],
+      [
+        "conn3-3",
+        "conn4-3",
+        "jp2-5"
+      ],
+      [
+        "conn3-1",
+        "conn3-mt1",
+        "conn3-mt2",
+        "conn4-1",
+        "conn4-mt1",
+        "conn4-mt2",
+        "jp2-3"
+      ],
+      [
+        "conn3-4",
+        "conn4-4",
+        "jp2-4"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/4836"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-Wii-Nunchuck-Breakout-Adapter-PCB/blob/d3f2e25c4f9211553e32b36ffce03212f414ead3/Adafruit%20Wii%20Nunchuck%20Breakout%20Adapter.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-Wii-Nunchuck-Breakout-Adapter-PCB/blob/d3f2e25c4f9211553e32b36ffce03212f414ead3/Adafruit%20Wii%20Nunchuck%20Breakout%20Adapter.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-Wii-Nunchuck-Breakout-Adapter-PCB/blob/d3f2e25c4f9211553e32b36ffce03212f414ead3/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/4836",
+      "status": "Official Adafruit stock feed reported 93 available.",
+      "sku": "ADA4836",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "93"
+    },
+    "description": "Adafruit ADA4836. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -12.286,
+      -4.123,
+      12.286,
+      4.988
+    ]
+  },
+  {
+    "id": "adafruit-module-5753",
+    "sku": "ADA5753",
+    "name": "Adafruit PC Joystick to seesaw I2C Adapter - STEMMA QT / Qwiic",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/5753",
+    "revision": "EAGLE Adafruit PC Joystick seesaw Breakout.brd; commit 890610a1efbc",
+    "category": "Inputs",
+    "board": {
+      "width": 40.64,
+      "height": 25.4,
+      "color": "#246545",
+      "outline": "M-20.32 10.16A2.54 2.54 0 0 0 -17.78 12.7L17.78 12.7A2.54 2.54 0 0 0 20.32 10.16L20.32 -12.7L-20.32 -12.7L-20.32 10.16Z"
+    },
+    "contacts": assets["adafruit-module-5753"]["contacts"],
+    "holes": [
+      {
+        "x": -16.6624,
+        "y": -0.635,
+        "drill": 3.302
+      },
+      {
+        "x": 16.6624,
+        "y": -0.635,
+        "drill": 3.302
+      },
+      {
+        "x": -11.43,
+        "y": 10.16,
+        "drill": 2.5
+      },
+      {
+        "x": 11.43,
+        "y": 10.16,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-5753"]["artwork"],
+    "backArtwork": assets["adafruit-module-5753"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-5753"]["provenance"],
+    "internalConnections": [
+      [
+        "conn3-2",
+        "conn4-2",
+        "jp1-1"
+      ],
+      [
+        "conn3-3",
+        "conn4-3",
+        "jp1-4"
+      ],
+      [
+        "conn3-1",
+        "conn3-mt1",
+        "conn3-mt2",
+        "conn4-1",
+        "conn4-mt1",
+        "conn4-mt2",
+        "jp1-2",
+        "x2-4",
+        "x2-5",
+        "x2-12"
+      ],
+      [
+        "conn3-4",
+        "conn4-4",
+        "jp1-3"
+      ],
+      [
+        "x2-1",
+        "x2-8",
+        "x2-9",
+        "x2-15"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/5753"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-PC-Joystick-to-seesaw-PCB/blob/890610a1efbc5e3b9c7dca5b28a125e36333b3f6/Adafruit%20PC%20Joystick%20seesaw%20Breakout.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-PC-Joystick-to-seesaw-PCB/blob/890610a1efbc5e3b9c7dca5b28a125e36333b3f6/Adafruit%20PC%20Joystick%20seesaw%20Breakout.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-PC-Joystick-to-seesaw-PCB/blob/890610a1efbc5e3b9c7dca5b28a125e36333b3f6/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/5753",
+      "status": "Official Adafruit stock feed reported 29 available.",
+      "sku": "ADA5753",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "29"
+    },
+    "description": "Adafruit ADA5753. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -19.906,
+      -18.582,
+      19.906,
+      9.49
+    ]
+  },
+  {
+    "id": "adafruit-module-5767",
+    "sku": "ADA5767",
+    "name": "Adafruit TSC2046 SPI Resistive Touch Screen Controller",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/5767",
+    "revision": "EAGLE Adafruit TSC2046 Breakout.brd; commit cf5b01b3b6ae",
+    "category": "Inputs",
+    "board": {
+      "width": 29.21,
+      "height": 17.78,
+      "color": "#246545",
+      "outline": "M14.605 6.35A2.54 2.54 0 0 1 12.065 8.89L-12.065 8.89A2.54 2.54 0 0 1 -14.605 6.35L-14.605 -6.35A2.54 2.54 0 0 1 -12.065 -8.89L12.065 -8.89A2.54 2.54 0 0 1 14.605 -6.35L14.605 6.35Z"
+    },
+    "contacts": assets["adafruit-module-5767"]["contacts"],
+    "holes": [
+      {
+        "x": -12.065,
+        "y": -6.35,
+        "drill": 2.5
+      },
+      {
+        "x": 12.065,
+        "y": -6.35,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-5767"]["artwork"],
+    "backArtwork": assets["adafruit-module-5767"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-5767"]["provenance"],
+    "internalConnections": [
+      [
+        "jp4-1",
+        "u-7-1"
+      ],
+      [
+        "jp4-2",
+        "u-7-2"
+      ],
+      [
+        "jp5-1",
+        "u-7-4"
+      ],
+      [
+        "jp5-2",
+        "u-7-3"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/5767"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-TSC2046-PCB/blob/cf5b01b3b6ae479abf051a8d0d3e8ed5b05ba632/Adafruit%20TSC2046%20Breakout.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-TSC2046-PCB/blob/cf5b01b3b6ae479abf051a8d0d3e8ed5b05ba632/Adafruit%20TSC2046%20Breakout.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-TSC2046-PCB/blob/cf5b01b3b6ae479abf051a8d0d3e8ed5b05ba632/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/5767",
+      "status": "Official Adafruit product feed reported in stock.",
+      "sku": "ADA5767",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "in stock"
+    },
+    "description": "Adafruit ADA5767. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -11.850999999999999,
+      -8.492999999999999,
+      7.254,
+      3.8246
+    ]
+  },
+  {
+    "id": "adafruit-module-5295",
+    "sku": "ADA5295",
+    "name": "Adafruit NeoSlider I2C QT Slide Potentiometer with 4 NeoPixels",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/5295",
+    "revision": "EAGLE Adafruit NeoSlider.brd; commit f0bf0d2795cd",
+    "category": "Inputs",
+    "board": {
+      "width": 76.2,
+      "height": 21.59,
+      "color": "#246545",
+      "outline": "M38.1 8.255A2.54 2.54 0 0 1 35.56 10.795L-35.56 10.795A2.54 2.54 0 0 1 -38.1 8.255L-38.1 -8.255A2.54 2.54 0 0 1 -35.56 -10.795L35.56 -10.795A2.54 2.54 0 0 1 38.1 -8.255L38.1 8.255Z"
+    },
+    "contacts": assets["adafruit-module-5295"]["contacts"],
+    "holes": [
+      {
+        "x": 19.05,
+        "y": -8.255,
+        "drill": 2.5
+      },
+      {
+        "x": -19.05,
+        "y": -8.255,
+        "drill": 2.5
+      },
+      {
+        "x": 19.05,
+        "y": 8.255,
+        "drill": 2.5
+      },
+      {
+        "x": -19.05,
+        "y": 8.255,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-5295"]["artwork"],
+    "backArtwork": assets["adafruit-module-5295"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-5295"]["provenance"],
+    "internalConnections": [
+      [
+        "jp5-1",
+        "conn3-2",
+        "conn4-2",
+        "jp1-1"
+      ],
+      [
+        "jp5-2",
+        "conn3-1",
+        "conn3-mt1",
+        "conn3-mt2",
+        "conn4-1",
+        "conn4-mt1",
+        "conn4-mt2",
+        "jp1-2"
+      ],
+      [
+        "jp5-3",
+        "conn3-4",
+        "conn4-4",
+        "jp1-3"
+      ],
+      [
+        "jp5-4",
+        "conn3-3",
+        "conn4-3",
+        "jp1-4"
+      ],
+      [
+        "jp5-5",
+        "jp1-5"
+      ],
+      [
+        "jp5-6",
+        "jp1-6"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/5295"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-NeoSlider-PCB/blob/f0bf0d2795cdc2af0f31f70b032023b25afa5b69/Adafruit%20NeoSlider.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-NeoSlider-PCB/blob/f0bf0d2795cdc2af0f31f70b032023b25afa5b69/Adafruit%20NeoSlider.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-NeoSlider-PCB/blob/f0bf0d2795cdc2af0f31f70b032023b25afa5b69/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/5295",
+      "status": "Official Adafruit stock feed reported 78 available.",
+      "sku": "ADA5295",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "78"
+    },
+    "description": "Adafruit ADA5295. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -35.473,
+      -6.009,
+      27.1295,
+      9.565
+    ],
+    "backArtworkBounds": [
+      -37.54,
+      -4.54,
+      37.54,
+      4.54
+    ]
+  },
+  {
+    "id": "adafruit-module-1580",
+    "sku": "ADA1580",
+    "name": "Resistive Touch Screen to USB Mouse Controller - AR1100",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/1580",
+    "revision": "EAGLE Adafruit AR1100.brd; commit 217534674def",
+    "category": "Inputs",
+    "board": {
+      "width": 27.94,
+      "height": 20.32,
+      "color": "#246545",
+      "outline": "M11.43 -10.16A2.54 2.54 0 0 1 13.97 -7.62L13.97 7.62A2.54 2.54 0 0 1 11.43 10.16L-11.43 10.16A2.54 2.54 0 0 1 -13.97 7.62L-13.97 -7.62A2.54 2.54 0 0 1 -11.43 -10.16L11.43 -10.16Z"
+    },
+    "contacts": assets["adafruit-module-1580"]["contacts"],
+    "holes": [
+      {
+        "x": -8.398,
+        "y": -2.2,
+        "drill": 1
+      },
+      {
+        "x": -8.398,
+        "y": 2.2,
+        "drill": 1
+      },
+      {
+        "x": -11.43,
+        "y": -7.62,
+        "drill": 2.5
+      },
+      {
+        "x": 11.43,
+        "y": -7.62,
+        "drill": 2.5
+      },
+      {
+        "x": -11.43,
+        "y": 7.62,
+        "drill": 2.5
+      },
+      {
+        "x": 11.43,
+        "y": 7.62,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-1580"]["artwork"],
+    "backArtwork": assets["adafruit-module-1580"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-1580"]["provenance"],
+    "internalConnections": [
+      [
+        "u-7-1",
+        "cn1-4"
+      ],
+      [
+        "u-7-2",
+        "cn1-2"
+      ],
+      [
+        "u-7-3",
+        "cn1-1"
+      ],
+      [
+        "u-7-4",
+        "cn1-3"
+      ],
+      [
+        "x1-gnd2",
+        "x1-gnd",
+        "x1-gnd1",
+        "x1-gnd3",
+        "x1-gnd4",
+        "cn2-2"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/1580"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-AR1100-Resistive-Touch-Controller-PCB/blob/217534674defab8d2040a7399b23d3cead345195/Adafruit%20AR1100.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-AR1100-Resistive-Touch-Controller-PCB/blob/217534674defab8d2040a7399b23d3cead345195/Adafruit%20AR1100.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-AR1100-Resistive-Touch-Controller-PCB/blob/217534674defab8d2040a7399b23d3cead345195/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/1580",
+      "status": "Official Adafruit stock feed reported 35 available.",
+      "sku": "ADA1580",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "35"
+    },
+    "description": "Adafruit ADA1580. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -14.037999999999998,
+      -7.431,
+      13.938,
+      5.907
+    ]
+  },
+  {
+    "id": "adafruit-module-5423",
+    "sku": "ADA5423",
+    "name": "Adafruit TSC2007 I2C Resistive Touch Screen Controller",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/5423",
+    "revision": "EAGLE Adafruit TSC2007.brd; commit 8d182929dfc2",
+    "category": "Inputs",
+    "board": {
+      "width": 25.4,
+      "height": 19.05,
+      "color": "#246545",
+      "outline": "M-12.7 6.985A2.54 2.54 0 0 0 -10.16 9.525L10.16 9.525A2.54 2.54 0 0 0 12.7 6.985L12.7 -6.985A2.54 2.54 0 0 0 10.16 -9.525L-10.16 -9.525A2.54 2.54 0 0 0 -12.7 -6.985L-12.7 6.985Z"
+    },
+    "contacts": assets["adafruit-module-5423"]["contacts"],
+    "holes": [
+      {
+        "x": -10.16,
+        "y": -6.985,
+        "drill": 2.5
+      },
+      {
+        "x": 10.16,
+        "y": -6.985,
+        "drill": 2.5
+      },
+      {
+        "x": -10.16,
+        "y": 6.985,
+        "drill": 2.5
+      },
+      {
+        "x": 10.16,
+        "y": 6.985,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-5423"]["artwork"],
+    "backArtwork": assets["adafruit-module-5423"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-5423"]["provenance"],
+    "internalConnections": [
+      [
+        "jp1-1",
+        "conn3-2",
+        "conn4-2"
+      ],
+      [
+        "jp1-3",
+        "conn3-1",
+        "conn3-mt1",
+        "conn3-mt2",
+        "conn4-1",
+        "conn4-mt1",
+        "conn4-mt2"
+      ],
+      [
+        "jp1-4",
+        "conn3-4",
+        "conn4-4"
+      ],
+      [
+        "jp1-5",
+        "conn3-3",
+        "conn4-3"
+      ],
+      [
+        "jp4-1",
+        "u-4-1"
+      ],
+      [
+        "jp4-2",
+        "u-4-2"
+      ],
+      [
+        "jp5-1",
+        "u-4-4"
+      ],
+      [
+        "jp5-2",
+        "u-4-3"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/5423"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-TSC2007-PCB/blob/8d182929dfc27dcdb407a2769cf416f9f63b4a16/Adafruit%20TSC2007.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-TSC2007-PCB/blob/8d182929dfc27dcdb407a2769cf416f9f63b4a16/Adafruit%20TSC2007.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-TSC2007-PCB/blob/8d182929dfc27dcdb407a2769cf416f9f63b4a16/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/5423",
+      "status": "Official Adafruit stock feed reported 33 available.",
+      "sku": "ADA5423",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "33"
+    },
+    "description": "Adafruit ADA5423. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -12.158999999999999,
+      -9.492999999999999,
+      12.159,
+      4.615
+    ],
+    "backArtworkBounds": [
+      -9.946,
+      -4.612,
+      8.041,
+      5.755
+    ]
+  },
+  {
+    "id": "adafruit-module-3954",
+    "sku": "ADA3954",
+    "name": "Adafruit NeoTrellis RGB Driver PCB for 4x4 Keypad",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/3954",
+    "revision": "EAGLE Adafruit NeoTrellis 4x4.brd; commit d9c12effecfb",
+    "category": "Indicators",
+    "board": {
+      "width": 60,
+      "height": 60,
+      "color": "#246545",
+      "outline": "M-30.0 30.0L30.0 30.0L30.0 -30.0L-30.0 -30.0L-30.0 30.0Z"
+    },
+    "contacts": assets["adafruit-module-3954"]["contacts"],
+    "holes": [
+      {
+        "x": -27.972,
+        "y": -14.972,
+        "drill": 2.8
+      },
+      {
+        "x": -1.972,
+        "y": -14.972,
+        "drill": 2.8
+      },
+      {
+        "x": 2.028,
+        "y": -14.972,
+        "drill": 2.8
+      },
+      {
+        "x": 28.028,
+        "y": -14.972,
+        "drill": 2.8
+      },
+      {
+        "x": -27.972,
+        "y": 15.028,
+        "drill": 2.8
+      },
+      {
+        "x": -1.972,
+        "y": 15.028,
+        "drill": 2.8
+      },
+      {
+        "x": 2.028,
+        "y": 15.028,
+        "drill": 2.8
+      },
+      {
+        "x": 28.028,
+        "y": 15.028,
+        "drill": 2.8
+      },
+      {
+        "x": -14.972,
+        "y": -14.972,
+        "drill": 2
+      },
+      {
+        "x": 15.028,
+        "y": -14.972,
+        "drill": 2
+      },
+      {
+        "x": -14.972,
+        "y": 15.028,
+        "drill": 2
+      },
+      {
+        "x": 15.028,
+        "y": 15.028,
+        "drill": 2
+      },
+      {
+        "x": -28.672,
+        "y": -28.672,
+        "drill": 1
+      },
+      {
+        "x": 28.728,
+        "y": -28.672,
+        "drill": 1
+      },
+      {
+        "x": -28.672,
+        "y": 28.728,
+        "drill": 1
+      },
+      {
+        "x": 28.728,
+        "y": 28.728,
+        "drill": 1
+      },
+      {
+        "x": 15.014,
+        "y": 0.028,
+        "drill": 2.5
+      },
+      {
+        "x": -14.958,
+        "y": 0.028,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-3954"]["artwork"],
+    "backArtwork": assets["adafruit-module-3954"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate. Opposite-side solder contacts are projected onto one F.Cu reference carrier; use the pinned manufacturer CAD for actual layer placement and production assembly.",
+    "provenance": assets["adafruit-module-3954"]["provenance"],
+    "internalConnections": [
+      [
+        "jp1-1",
+        "jp2-1",
+        "jp3-1",
+        "jp4-1"
+      ],
+      [
+        "jp1-2",
+        "jp2-2",
+        "jp3-2",
+        "jp4-2",
+        "x2-2"
+      ],
+      [
+        "jp1-3",
+        "jp2-3",
+        "jp3-3",
+        "jp4-3",
+        "x2-1"
+      ],
+      [
+        "jp1-4",
+        "jp2-4",
+        "jp3-4",
+        "jp4-4",
+        "x2-4"
+      ],
+      [
+        "jp1-5",
+        "jp2-5",
+        "jp3-5",
+        "jp4-5",
+        "x2-3"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/3954"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-NeoTrellis-4x4-PCB/blob/d9c12effecfbaab5c55e2c96186188166340862a/Adafruit%20NeoTrellis%204x4.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-NeoTrellis-4x4-PCB/blob/d9c12effecfbaab5c55e2c96186188166340862a/Adafruit%20NeoTrellis%204x4.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-NeoTrellis-4x4-PCB/blob/d9c12effecfbaab5c55e2c96186188166340862a/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/3954",
+      "status": "Official Adafruit product feed reported in stock.",
+      "sku": "ADA3954",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "in stock"
+    },
+    "description": "Adafruit ADA3954. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -23.643,
+      -23.125999999999998,
+      23.723,
+      24.596
+    ],
+    "backArtworkBounds": [
+      -30.333,
+      -30.206,
+      30.262,
+      30.262
+    ]
+  },
+  {
+    "id": "adafruit-module-5296",
+    "sku": "ADA5296",
+    "name": "Adafruit LED Arcade Button 1x4 - STEMMA QT I2C Breakout",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/5296",
+    "revision": "EAGLE Adafruit LED Arcade Button 1x4.brd; commit 437bc15cf86f",
+    "category": "Inputs",
+    "board": {
+      "width": 76.2,
+      "height": 21.59,
+      "color": "#246545",
+      "outline": "M38.1 8.255A2.54 2.54 0 0 1 35.56 10.795L-35.56 10.795A2.54 2.54 0 0 1 -38.1 8.255L-38.1 -8.255A2.54 2.54 0 0 1 -35.56 -10.795L35.56 -10.795A2.54 2.54 0 0 1 38.1 -8.255L38.1 8.255Z"
+    },
+    "contacts": assets["adafruit-module-5296"]["contacts"],
+    "holes": [
+      {
+        "x": 19.05,
+        "y": -8.255,
+        "drill": 2.5
+      },
+      {
+        "x": -19.05,
+        "y": -8.255,
+        "drill": 2.5
+      },
+      {
+        "x": 19.05,
+        "y": 8.255,
+        "drill": 2.5
+      },
+      {
+        "x": -19.05,
+        "y": 8.255,
+        "drill": 2.5
+      }
+    ],
+    "artwork": assets["adafruit-module-5296"]["artwork"],
+    "backArtwork": assets["adafruit-module-5296"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate. Opposite-side solder contacts are projected onto one F.Cu reference carrier; use the pinned manufacturer CAD for actual layer placement and production assembly.",
+    "provenance": assets["adafruit-module-5296"]["provenance"],
+    "internalConnections": [
+      [
+        "jp5-1",
+        "conn3-2",
+        "conn4-2",
+        "jp1-1"
+      ],
+      [
+        "jp5-2",
+        "conn3-1",
+        "conn3-mt1",
+        "conn3-mt2",
+        "conn4-1",
+        "conn4-mt1",
+        "conn4-mt2",
+        "jp1-2",
+        "x1-1",
+        "x1-mt1",
+        "x1-mt2",
+        "x2-mt1",
+        "x2-mt2",
+        "x3-1",
+        "x3-mt1",
+        "x3-mt2",
+        "x4-mt1",
+        "x4-mt2",
+        "x5-1",
+        "x5-mt1",
+        "x5-mt2",
+        "x6-mt1",
+        "x6-mt2",
+        "x7-1",
+        "x7-mt1",
+        "x7-mt2",
+        "x8-mt1",
+        "x8-mt2"
+      ],
+      [
+        "jp5-3",
+        "conn3-4",
+        "conn4-4",
+        "jp1-3"
+      ],
+      [
+        "jp5-4",
+        "conn3-3",
+        "conn4-3",
+        "jp1-4"
+      ],
+      [
+        "jp5-5",
+        "jp1-5"
+      ],
+      [
+        "jp5-6",
+        "jp1-6"
+      ],
+      [
+        "x1-2",
+        "tp1-p-1"
+      ],
+      [
+        "x2-1",
+        "tp5-p-1"
+      ],
+      [
+        "x2-2",
+        "x4-2",
+        "x6-2",
+        "x8-2",
+        "tp9-p-1"
+      ],
+      [
+        "x3-2",
+        "tp2-p-1"
+      ],
+      [
+        "x4-1",
+        "tp6-p-1"
+      ],
+      [
+        "x5-2",
+        "tp3-p-1"
+      ],
+      [
+        "x6-1",
+        "tp7-p-1"
+      ],
+      [
+        "x7-2",
+        "tp4-p-1"
+      ],
+      [
+        "x8-1",
+        "tp8-p-1"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/5296"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-LED-Arcade-Button-1x4-PCB/blob/437bc15cf86fe7176b153575118f58b178de18fd/Adafruit%20LED%20Arcade%20Button%201x4.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-LED-Arcade-Button-1x4-PCB/blob/437bc15cf86fe7176b153575118f58b178de18fd/Adafruit%20LED%20Arcade%20Button%201x4.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-LED-Arcade-Button-1x4-PCB/blob/437bc15cf86fe7176b153575118f58b178de18fd/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/5296",
+      "status": "Official Adafruit stock feed reported 47 available.",
+      "sku": "ADA5296",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "47"
+    },
+    "description": "Adafruit ADA5296. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -32.082499999999996,
+      -6.1610000000000005,
+      31.336,
+      7.8695
+    ],
+    "backArtworkBounds": [
+      -34.885,
+      -7.215,
+      34.885,
+      7.215
+    ]
+  },
+  {
+    "id": "adafruit-module-4978",
+    "sku": "ADA4978",
+    "name": "NeoKey Socket Breakout for Mechanical Key Switches with NeoPixel",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/4978",
+    "revision": "EAGLE Adafruit NeoKey Breakout.brd; commit 8e89cf15d323",
+    "category": "Inputs",
+    "board": {
+      "width": 19.05,
+      "height": 21.59,
+      "color": "#246545",
+      "outline": "M9.525 8.255A2.54 2.54 0 0 1 6.985 10.795L-6.985 10.795A2.54 2.54 0 0 1 -9.525 8.255L-9.525 -8.255A2.54 2.54 0 0 1 -6.985 -10.795L6.985 -10.795A2.54 2.54 0 0 1 9.525 -8.255L9.525 8.255Z"
+    },
+    "contacts": assets["adafruit-module-4978"]["contacts"],
+    "holes": [
+      {
+        "x": 7.62,
+        "y": -5.715,
+        "drill": 2.54
+      },
+      {
+        "x": -7.62,
+        "y": 5.715,
+        "drill": 2.54
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "drill": 3.9
+      },
+      {
+        "x": -2.54,
+        "y": -5.08,
+        "drill": 3.0635
+      },
+      {
+        "x": 3.81,
+        "y": -2.54,
+        "drill": 3.0635
+      },
+      {
+        "x": -5.08,
+        "y": 0,
+        "drill": 1.8135
+      },
+      {
+        "x": 5.08,
+        "y": 0,
+        "drill": 1.8135
+      }
+    ],
+    "artwork": assets["adafruit-module-4978"]["artwork"],
+    "backArtwork": assets["adafruit-module-4978"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate. Opposite-side solder contacts are projected onto one F.Cu reference carrier; use the pinned manufacturer CAD for actual layer placement and production assembly.",
+    "provenance": assets["adafruit-module-4978"]["provenance"],
+    "internalConnections": [
+      [
+        "sw1-2",
+        "jp3-4",
+        "jp1-4"
+      ],
+      [
+        "jp3-1",
+        "jp1-1"
+      ],
+      [
+        "jp3-2",
+        "jp1-2"
+      ],
+      [
+        "jp3-3",
+        "jp2-1"
+      ],
+      [
+        "jp3-5",
+        "jp1-5",
+        "jp2-2",
+        "jp4-2"
+      ],
+      [
+        "jp1-3",
+        "jp4-1"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/4978"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-NeoKey-Breakout-PCB/blob/8e89cf15d32369072d473cda4424f417255abf97/Adafruit%20NeoKey%20Breakout.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-NeoKey-Breakout-PCB/blob/8e89cf15d32369072d473cda4424f417255abf97/Adafruit%20NeoKey%20Breakout.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-NeoKey-Breakout-PCB/blob/8e89cf15d32369072d473cda4424f417255abf97/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/4978",
+      "status": "Official Adafruit product feed reported in stock.",
+      "sku": "ADA4978",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "in stock"
+    },
+    "description": "Adafruit ADA4978. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -3.7880000000000003,
+      -0.024,
+      5.603,
+      4.396
+    ],
+    "backArtworkBounds": [
+      -9.565,
+      -9.565,
+      9.565,
+      9.565
+    ]
+  },
+  {
+    "id": "adafruit-module-5666",
+    "sku": "ADA5666",
+    "name": "Adafruit IoT Button with NeoPixel BFF Add-On for QT Py and Xiao",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/5666",
+    "revision": "EAGLE IoT Button with NeoPixel BFF.brd; commit 6c3fe13b68c1",
+    "category": "Inputs",
+    "board": {
+      "width": 17.78,
+      "height": 20.701,
+      "color": "#246545",
+      "outline": "M8.89 7.8105A2.54 2.54 0 0 1 6.35 10.3505L-6.35 10.3505A2.54 2.54 0 0 1 -8.89 7.8105L-8.89 -7.8105A2.54 2.54 0 0 1 -6.35 -10.3505L6.35 -10.3505A2.54 2.54 0 0 1 8.89 -7.8105L8.89 7.8105Z"
+    },
+    "contacts": assets["adafruit-module-5666"]["contacts"],
+    "holes": [
+      {
+        "x": -4.4958,
+        "y": 1.9685,
+        "drill": 1.8034
+      },
+      {
+        "x": 4.4958,
+        "y": 1.9685,
+        "drill": 1.8034
+      }
+    ],
+    "artwork": assets["adafruit-module-5666"]["artwork"],
+    "backArtwork": assets["adafruit-module-5666"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate.",
+    "provenance": assets["adafruit-module-5666"]["provenance"],
+    "internalConnections": [
+      [
+        "jp1-1",
+        "jp1-1c"
+      ],
+      [
+        "jp1-2",
+        "jp1-2c"
+      ],
+      [
+        "jp1-3",
+        "jp1-3c"
+      ],
+      [
+        "jp1-4",
+        "jp1-4c"
+      ],
+      [
+        "jp1-5",
+        "jp1-5c"
+      ],
+      [
+        "jp1-6",
+        "jp1-6c"
+      ],
+      [
+        "jp1-7",
+        "jp1-7c"
+      ],
+      [
+        "jp3-1",
+        "jp3-1c"
+      ],
+      [
+        "jp3-2",
+        "jp3-2c"
+      ],
+      [
+        "jp3-3",
+        "jp3-3c"
+      ],
+      [
+        "jp3-4",
+        "jp3-4c"
+      ],
+      [
+        "jp3-5",
+        "jp3-5c"
+      ],
+      [
+        "jp3-6",
+        "jp3-6c"
+      ],
+      [
+        "jp3-7",
+        "jp3-7c"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/5666"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-IoT-Button-with-NeoPixel-BFF-PCB/blob/6c3fe13b68c13fb1ca52c27b5d0db88478e917f9/IoT%20Button%20with%20NeoPixel%20BFF.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-IoT-Button-with-NeoPixel-BFF-PCB/blob/6c3fe13b68c13fb1ca52c27b5d0db88478e917f9/IoT%20Button%20with%20NeoPixel%20BFF.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-IoT-Button-with-NeoPixel-BFF-PCB/blob/6c3fe13b68c13fb1ca52c27b5d0db88478e917f9/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/5666",
+      "status": "Official Adafruit product feed reported in stock.",
+      "sku": "ADA5666",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "in stock"
+    },
+    "description": "Adafruit ADA5666. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -6.517,
+      -10.1975,
+      6.517,
+      8.1045
+    ],
+    "backArtworkBounds": [
+      -9.565,
+      -9.04,
+      9.565,
+      9.04
+    ]
+  },
+  {
+    "id": "adafruit-module-5695",
+    "sku": "ADA5695",
+    "name": "Adafruit NeoKey BFF for Mechanical Key Add-On for QT Py and Xiao",
+    "manufacturer": "Adafruit",
+    "source": "https://www.adafruit.com/product/5695",
+    "revision": "EAGLE Adafruit NeoKey BFF.brd; commit 4f0e7f24bc6b",
+    "category": "Inputs",
+    "board": {
+      "width": 20.701,
+      "height": 17.78,
+      "color": "#246545",
+      "outline": "M7.8105 8.89A2.54 2.54 0 0 0 10.3505 6.35L10.3505 -6.35A2.54 2.54 0 0 0 7.8105 -8.89L-7.8105 -8.89A2.54 2.54 0 0 0 -10.3505 -6.35L-10.3505 6.35A2.54 2.54 0 0 0 -7.8105 8.89L7.8105 8.89Z"
+    },
+    "contacts": assets["adafruit-module-5695"]["contacts"],
+    "holes": [
+      {
+        "x": 0.1905,
+        "y": -0.381,
+        "drill": 3.9
+      },
+      {
+        "x": 2.7305,
+        "y": 4.699,
+        "drill": 3.2
+      },
+      {
+        "x": -3.6195,
+        "y": 2.159,
+        "drill": 3.2
+      },
+      {
+        "x": 5.2705,
+        "y": -0.381,
+        "drill": 1.8135
+      },
+      {
+        "x": -4.8895,
+        "y": -0.381,
+        "drill": 1.8135
+      }
+    ],
+    "artwork": assets["adafruit-module-5695"]["artwork"],
+    "backArtwork": assets["adafruit-module-5695"]["backArtwork"],
+    "viewLabel": "COMPONENT SIDE / MIRRORED UNDERSIDE WHEN PRESENT",
+    "footprintMode": "reference",
+    "footprintNote": "Reference module contact carrier derived from the cited manufacturer board contact centers. Exposed electrical header, socket-solder and test contacts are modeled; this is not a certified mating or production host footprint. Connector mechanical retention and configuration solder jumpers are not separate electrical terminals. Verify the shipped PCB revision, mating contact face and mechanical hardware. Generated 3D geometry is approximate. Opposite-side solder contacts are projected onto one F.Cu reference carrier; use the pinned manufacturer CAD for actual layer placement and production assembly.",
+    "provenance": assets["adafruit-module-5695"]["provenance"],
+    "internalConnections": [
+      [
+        "jp1-1",
+        "jp1-1c"
+      ],
+      [
+        "jp1-2",
+        "jp1-2c"
+      ],
+      [
+        "jp1-3",
+        "jp1-3c"
+      ],
+      [
+        "jp1-4",
+        "jp1-4c"
+      ],
+      [
+        "jp1-5",
+        "jp1-5c"
+      ],
+      [
+        "jp1-6",
+        "jp1-6c"
+      ],
+      [
+        "jp1-7",
+        "jp1-7c"
+      ],
+      [
+        "jp3-1",
+        "jp3-1c"
+      ],
+      [
+        "jp3-2",
+        "jp3-2c"
+      ],
+      [
+        "jp3-3",
+        "jp3-3c"
+      ],
+      [
+        "jp3-4",
+        "jp3-4c"
+      ],
+      [
+        "jp3-5",
+        "jp3-5c"
+      ],
+      [
+        "jp3-6",
+        "jp3-6c",
+        "sw2-2"
+      ],
+      [
+        "jp3-7",
+        "jp3-7c"
+      ],
+      [
+        "tp2-p-1",
+        "sw2-1"
+      ]
+    ],
+    "references": [
+      {
+        "label": "Exact manufacturer product / availability",
+        "url": "https://www.adafruit.com/product/5695"
+      },
+      {
+        "label": "Pinned manufacturer EAGLE PCB",
+        "url": "https://github.com/adafruit/Adafruit-NeoKey-BFF-PCB/blob/4f0e7f24bc6bd4af262cbd93772e1eeb09c9244a/Adafruit%20NeoKey%20BFF.brd"
+      },
+      {
+        "label": "Matching manufacturer schematic",
+        "url": "https://github.com/adafruit/Adafruit-NeoKey-BFF-PCB/blob/4f0e7f24bc6bd4af262cbd93772e1eeb09c9244a/Adafruit%20NeoKey%20BFF.sch"
+      },
+      {
+        "label": "Source hardware license / attribution",
+        "url": "https://github.com/adafruit/Adafruit-NeoKey-BFF-PCB/blob/4f0e7f24bc6bd4af262cbd93772e1eeb09c9244a/license.txt"
+      }
+    ],
+    "availability": {
+      "checked": "2026-11-08",
+      "url": "https://www.adafruit.com/product/5695",
+      "status": "Official Adafruit product feed reported in stock.",
+      "sku": "ADA5695",
+      "feed": "https://www.adafruit.com/api/products",
+      "reportedStock": "in stock"
+    },
+    "description": "Adafruit ADA5695. Board color and small finishes are representative. Source-revision module with the electrical connector and service-test contacts identified in the manufacturer PCB and matching schematic. Physical contact numbers are CAD reference plus pad number; hover for source nets and electrical functions. Connector housings are transparent so their board-side solder contacts remain accessible.",
+    "tags": [
+      "module",
+      "breakout",
+      "diy",
+      "starter kit",
+      "arduino"
+    ],
+    "artworkBounds": [
+      -9.04,
+      -9.565,
+      9.6895,
+      9.565
+    ],
+    "backArtworkBounds": [
+      -1.4495,
+      -6.839,
+      1.8305,
+      -3.259
+    ]
+  },
+];
