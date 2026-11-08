@@ -1,6 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, line, path, rect, tactile, usb } from "../shared/svg.js";
 import { readyAntenna, readyBoard, readyRow, readySocket } from "../shared/wire-board.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
 
 const eth = "https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series/blob/master/";
 const sim = "https://github.com/Xinyuan-LilyGO/LilyGo-T-SIM7080G/blob/master/";
@@ -125,6 +126,20 @@ liteS3.footprint = {
     size: contact.ref === "P1" ? 1.6 : 1.5, drill: contact.ref === "P1" ? 1.1 : .9, square: contact.number.endsWith(".1") })),
   note: "Component-side contact/outline reference from LILYGO's T-ETH-Lite-ESP32S3.DXF. Native P1/P2/P3/P4 hole centers and drills are retained. This is the board's electrical-contact reference, not the optional PoE shield's land pattern. Mounting holes are visual only; the 3D body and small-part artwork are approximate.",
 };
+const liteMountBounds = { x: 80, y: 45, width: 310, height: 669 };
+liteS3.mounting = reviewedBoardMounting({
+  source: { url: eth + 'shell/T-ETH-Lite-ESP32S3.DXF', label: 'LILYGO T-ETH-Lite ESP32-S3 V1.0 component-side manufacturer DXF' },
+  contacts: liteS3Contacts.filter(contact => ['P2', 'P3'].includes(contact.ref)).map(contact => ({
+    pinId: contact.number.toLowerCase().replace(/[^a-z0-9]+/g, '-'), x: contact.native[0], y: -contact.native[1] })),
+  calibration: { origin: { x: 80 - liteBounds.left * liteScale, y: 45 + liteBounds.top * liteScale }, unitsPerMm: liteScale },
+  bodyRegions: [{ x: 80, y: 45, width: 310, height: 648 }, { x: 169, y: 587, width: 150, height: 127 }],
+  viewBounds: liteMountBounds,
+  bodyEvidence: 'The source DXF explicitly locates every P2/P3 hole, with 25.40 mm between rows and 2.54 mm pitch. The PCB artwork uses the existing eleven-units/mm DXF projection; body and RJ45 material regions retain the renderer primitives. Small hardware envelopes remain representative.',
+  note: 'Populate all 15+16 P2/P3 straight male-header leads, 25.40 mm apart. Leave the optional PoE-shield P1 and three P4 service pads unpopulated or face-up. The optional PoE daughterboard is not fitted in this assembly.',
+  view: { id: 'breadboard', pins: liteS3.component.pins.map(pin => ({ pinId: pin.id, x: pin.x, y: pin.y, face: 'front' })),
+    note: 'The complete component-side DXF contact map is retained in a tight single-board assembly view. No default/native pin moves.' },
+  renderMounted: component => clippedFrontArtwork(liteS3.render, component, liteMountBounds),
+});
 
 const lite32Left = "3V3 GPIO36 GPIO34 GPIO13 GPIO32 GPIO14 GPIO34 GPIO33 GPIO14 GPIO13 GPIO4 GPIO2 GPIO15 GND 3V3";
 const lite32Right = "FIVE_IN GND GPIO1 GPIO3 RST GPIO0 GPIO5 GPIO35 GPIO39 GND FIVE_IN FIVE_OUT GND FIVE_OUT GND";

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { circle, label, line, path, rect, screw } from "../shared/svg.js";
 
 const copper = "#d5b66d";
@@ -41,7 +42,7 @@ function uartModule(part, chipName, band, manual, cad) {
     tags: ["ebyte", part.toLowerCase(), "lora", "uart", "modem", chipName.toLowerCase(), "sma", "dip", band],
     source: manual, width: 240, height: 435, pins,
   };
-  return {
+  const entry = {
     component,
     render: (component, showLabels) => {
       const fixing = [1.92, 4.46, 7].map((x, index) => {
@@ -69,6 +70,18 @@ function uartModule(part, chipName, band, manual, cad) {
     },
     model: { label: `EBYTE ${part.split("-")[0]}-T manufacturer 3D files`, url: cad },
   };
+  const viewBounds = { x: 35.5, y: 29.5, width: 169, height: 388.2 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `EBYTE ${part} 2026 DIP header mechanical drawing`, url: manual },
+    contacts: uartPads.map(({ id: pinId, x, y }) => ({ pinId, x, y })),
+    calibration: { origin: { x: 120, y: 174 }, unitsPerMm: 8 },
+    bodyRegions: [{ x: 36, y: 30, width: 168, height: 288 },
+      { x: 54.4, y: 288.24, width: 49.6, height: 128.96 }],
+    bodyEvidence: "Manufacturer 21 × 36 mm DIP PCB and 7-contact 2.54 mm row; canonical drawing adds the separate projecting SMA shell without reserving its empty side wings.",
+    viewBounds, renderMounted: part => clippedFrontArtwork(entry.render, part, viewBounds),
+    note: "All seven electrical header leads must seat together. Positions 8–10 are mechanical fixing holes, not extra insertion leads. The SMA connector remains above the board and is not an electrical breadboard contact.",
+  });
+  return entry;
 }
 
 const e22Manual = "https://www.cdebyte.com/pdf-down.aspx?id=4217";

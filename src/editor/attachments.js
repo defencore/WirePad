@@ -2,10 +2,11 @@ import { mountingFor } from '../catalog/index.js';
 import { partSize } from '../model/part-placement.js';
 import { componentForPart } from '../model/part-component.js';
 import { partBounds, partOutlineBounds } from '../geometry/parts.js';
+import { compactBoardView } from '../model/part-view.js';
 
 function rotationCenter(part) {
   const profile = mountingFor(part.componentId);
-  const bounds = part.scale && profile?.viewBounds ? partBounds(part) : partOutlineBounds(part);
+  const bounds = compactBoardView(part) && profile?.viewBounds ? partBounds(part) : partOutlineBounds(part);
   return { x: (bounds.left + bounds.right) / 2, y: (bounds.top + bounds.bottom) / 2 };
 }
 

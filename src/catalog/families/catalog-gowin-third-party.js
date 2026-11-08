@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { miniComputingMounting } from "../shared/mini-computing-mounting.js";
 import { circle, label, line, rect } from "../shared/svg.js";
 
 // Contact tables retain each published connector identity; representative scopes are explicit.
@@ -1188,4 +1189,19 @@ const gowinThirdPartyArt=Object.fromEntries(boards.map(board=>[board.id,(compone
 const gowinThirdPartyFootprints=Object.fromEntries(boards.map(board=>[board.id,footprint(board)]));
 const gowinThirdPartyModels=Object.fromEntries(boards.map(board=>[board.id,board.cad]));
 
-export default defineFamily("gowin-third-party", (gowinThirdPartyComponents).map(component => ({ component, render: (gowinThirdPartyArt)[component.art], footprint: (gowinThirdPartyFootprints)[component.id], model: gowinThirdPartyModels[component.id] })));
+const kiwiBoard = boards.find(board => board.id === 'onekiwi-kiwi-1p5');
+const kiwiComponent = gowinThirdPartyComponents.find(component => component.id === kiwiBoard.id);
+const kiwiInsertion = miniComputingMounting(kiwiComponent, {
+  size: [70, 26], labelAxis: 'y', source: kiwiBoard.cad.url,
+  contacts: kiwiComponent.pins.map(pin => pin.id),
+  pins: Object.fromEntries(kiwiComponent.pins.map(pin => [pin.id, {
+    x: 5.79 + (Number(pin.number.split('.').at(-1)) - 1) * 2.54,
+    y: pin.id.startsWith('j1-') ? 24.43 : 1.57,
+  }])),
+  evidence: 'The manufacturer QN48X schematic/mechanical drawing gives a 70 x 26 mm board, both complete 24-pin rows, 2.54 mm pitch and 22.86 mm row separation. The existing component-side J1/J2 pin-number orientation is retained. Header centres are taken from that reviewed drawing, independently of the native reference-carrier footprint.',
+  note: 'Populate all 48 J1/J2 contacts with straight downward male headers. USB sockets remain cable interfaces. Use a breadboard with enough independent cells for the full row separation.',
+  regions: [{ x: 0, y: 0, width: 70, height: 26 },
+    { x: -1, y: 9, width: 8, height: 8 }, { x: 63, y: 9, width: 8, height: 8 }],
+  renderHardware: () => bodyArt(kiwiBoard),
+});
+export default defineFamily("gowin-third-party", (gowinThirdPartyComponents).map(component => ({ component, render: (gowinThirdPartyArt)[component.art], footprint: (gowinThirdPartyFootprints)[component.id], model: gowinThirdPartyModels[component.id], ...(component.id === kiwiComponent.id ? { mounting: kiwiInsertion } : {}) })));

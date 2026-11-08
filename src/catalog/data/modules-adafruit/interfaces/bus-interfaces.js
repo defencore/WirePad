@@ -819,6 +819,22 @@ export default [
   },
   {
     "id": "adafruit-module-5611",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp6-1", "jp6-2", "jp6-3", "jp6-4", "jp6-5", "jp6-6", "jp6-7", "jp6-8", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp4-1", "jp4-2", "jp4-3", "jp4-4"],
+      "source": {"label": "Adafruit ADA5611: EAGLE Adafruit PCF8575.brd; commit 8a26f47e5a0c physical insertion headers", "url": "https://github.com/adafruit/Adafruit-PCF8575-PCB/blob/8a26f47e5a0c47467d0bdf6a3385eb2c5a9a0377/Adafruit%20PCF8575.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}, {"id": "JP6", "count": 8, "package": "1X08_ROUND_70"}, {"id": "JP3", "count": 4, "package": "1X04_ROUND"}, {"id": "JP4", "count": 4, "package": "1X04_ROUND"}],
+        "duplicateHeaderContacts": [{"pinId": "jp7-1", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp7-2", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp7-3", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp7-4", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp7-5", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp7-6", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp7-7", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp7-8", "equivalentPinId": "jp4-1", "connector": "JP7", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-1", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-2", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-3", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-4", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-5", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-6", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-7", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp8-8", "equivalentPinId": "jp4-2", "connector": "JP8", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "96e83ae0be8dda87d5e3933efa30934cec431236a0a59d56b1bc5b8809c06476"
+      },
+      "bodyRegions": [
+        {"x": -20.32, "y": -8.89, "width": 40.64, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5611",
     "name": "Adafruit PCF8575 I2C 16 GPIO Expander Breakout",
     "manufacturer": "Adafruit",
@@ -951,6 +967,22 @@ export default [
   },
   {
     "id": "adafruit-module-5626",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA5626: EAGLE PCA9548A QT Board.brd; commit 5b8baf8ad61c physical insertion headers", "url": "https://github.com/adafruit/Adafruit-PCA9548-PCB/blob/5b8baf8ad61c5bd340e53f47d9386bd3bd553d92/PCA9548A%20QT%20Board.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "a475ae5afc4be00bf27478afde22568f2c9882fa9110c73ce98628f84e307308"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -20.32, "y": -10.16, "width": 40.64, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5626",
     "name": "Adafruit PCA9548 8-Channel STEMMA QT / Qwiic I2C Multiplexer",
     "manufacturer": "Adafruit",
@@ -1169,6 +1201,22 @@ export default [
   },
   {
     "id": "adafruit-module-5663",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA5663: EAGLE PCA9546 STEMMA QT.brd; commit a98b24b8bafa physical insertion headers", "url": "https://github.com/adafruit/Adafruit-PCA9546-PCB/blob/a98b24b8bafac251284dff313569e4c2b790bf23/PCA9546%20STEMMA%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "e09a1099ee51120c0297e3e1a7923ae8fe1f78ac21fc67883ad08785556886fd"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -10.16, "width": 25.4, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5663",
     "name": "Adafruit PCA9546 4-Channel I2C Multiplexer",
     "manufacturer": "Adafruit",

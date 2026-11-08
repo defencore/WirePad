@@ -1,5 +1,6 @@
 import { defineFamily } from "../registry.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { chip, circle, label, line, moduleArt, path, pinRow, rect, smd, tactile } from "../shared/svg.js";
 
 const docs = "https://docs.espressif.com/projects/esp-dev-kits/en/latest/";
@@ -81,8 +82,25 @@ function makeDevKit(details, left, right, geometry, drawBoard, hasJumper = false
   }, pin => pin.number.startsWith("J5.")
     ? [width / 2 - (pin.number === "J5.1" ? 35 : 17), (details.id.includes("c6") ? 160 : 139) + 20.5]
     : [pin.x === 0 ? 13 : width - 13, pin.y]);
+  const pcbBottom = height - (geometry.dual ? 53 : 9), cx = width / 2;
+  const moduleWidth = details.id.includes("c6") ? 110 : 80;
+  const bodyRegions = [{ x: 8, y: 31, width: width - 16, height: pcbBottom - 31 },
+    { x: cx - moduleWidth / 2, y: 7, width: moduleWidth, height: 24 },
+    ...(geometry.dual ? [cx - 42, cx + 8].map(x => ({ x, y: pcbBottom - 16, width: 34, height: 24 }))
+      : [{ x: cx - 17, y: pcbBottom - 18, width: 34, height: 22 }])];
+  const bounds = { x: 8, y: 7, width: width - 16, height: pcbBottom + (geometry.dual ? 8 : 4) - 7 };
+  const render = moduleArt(entry => drawBoard(entry));
   return {
-    component, art: moduleArt(entry => drawBoard(entry)),
+    component, art: render,
+    mounting: reviewedBoardMounting({
+      source: { label: `${details.name} manufacturer mechanical header drawing`, url: `${mechanical}${({ "esp32-c3-devkitm-1": "DIMENSION_ESP32-C3-DEVKITM-1_V1_20200915AA.dxf", "esp32-c6-devkitc-1": "esp32-c6-devkitc-1-dimensions_v1.2.dxf", "esp32-h2-devkitm-1": "esp32-h2-devkitm-1_v1.2_dimension.dxf" })[details.id]}` },
+      contacts: [left, right].flatMap((row, side) => row.map((pin, index) => ({ pinId: pin[0], x: side ? 11.43 : -11.43, y: geometry.firstY + index * 2.54 }))),
+      bodyRegions, bodyEvidence: "The component-side PCB, 24-unit antenna overhang and individual USB shells use devKitBody's renderer coordinates. The lower reference panel and annotation frame are not physical material.",
+      note: "Populate both complete outer rows. Manufacturer insertion centers use 2.54 mm pitch and 22.86 mm row spacing. Current-measurement jumpers are not downward insertion contacts; leave their shunts in the documented operating position.",
+      viewBounds: bounds, view: { id: "breadboard", pins: component.pins.map(pin => ({ pinId: pin.id, x: pin.x, y: pin.y, face: "front" })),
+        note: "Component-side view preserving every physical front contact; only the decorative lower reference panel is omitted." },
+      renderMounted: part => clippedFrontArtwork(render, component, bounds),
+    }),
     footprint: {
       body: [25.4, geometry.pcbLength], color: "#252a2d",
       groups: [
@@ -174,10 +192,11 @@ const entries = [c3, c6, h2];
 const espressifReadyComponents = entries.map(entry => entry.component);
 const espressifReadyArt = Object.fromEntries(entries.map(entry => [entry.component.id, entry.art]));
 const espressifReadyFootprints = Object.fromEntries(entries.map(entry => [entry.component.id, entry.footprint]));
+const espressifReadyMountings = Object.fromEntries(entries.map(entry => [entry.component.id, entry.mounting]));
 const espressifReadyModels = {
   "esp32-c3-devkitm-1": { label: "Espressif V1 mechanical CAD (DXF)", url: `${mechanical}DIMENSION_ESP32-C3-DEVKITM-1_V1_20200915AA.dxf` },
   "esp32-c6-devkitc-1": { label: "Espressif v1.2 mechanical CAD (DXF)", url: `${mechanical}esp32-c6-devkitc-1-dimensions_v1.2.dxf` },
   "esp32-h2-devkitm-1": { label: "Espressif mechanical CAD (DXF)", url: `${mechanical}esp32-h2-devkitm-1_v1.2_dimension.dxf` },
 };
 
-export default defineFamily("espressif-ready", (espressifReadyComponents).map(component => ({ component, render: (espressifReadyArt)[component.art], footprint: (espressifReadyFootprints)[component.id], model: espressifReadyModels[component.id] })));
+export default defineFamily("espressif-ready", (espressifReadyComponents).map(component => ({ component, render: (espressifReadyArt)[component.art], footprint: (espressifReadyFootprints)[component.id], model: espressifReadyModels[component.id], mounting: espressifReadyMountings[component.id] })));

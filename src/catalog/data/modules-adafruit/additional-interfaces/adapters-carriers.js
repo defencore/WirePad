@@ -105,6 +105,22 @@ export default [
   },
   {
     "id": "adafruit-module-292",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16"],
+      "source": {"label": "Adafruit ADA292: EAGLE Adafruit I2C SPI LCD STEMMA backpack.brd; commit f5c03f2f3004 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB/blob/f5c03f2f3004402e60c7103068c4016b3c749bdf/Adafruit%20I2C%20SPI%20LCD%20STEMMA%20backpack.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16"}],
+        "boardSha256": "8d9677aecc50153dcd94a62a1b2649388e1a6c913500b66d2ba85b8342f11f1b"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.1125, "width": 50.8, "height": 22.225}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA292",
     "name": "i2c / SPI character LCD backpack - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -211,6 +227,28 @@ export default [
   },
   {
     "id": "adafruit-module-5420",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2"],
+      "source": {"label": "Adafruit ADA5420: EAGLE Adafruit MEMENTO Camera Board.brd; commit 8f1e07b4baa4 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-MEMENTO-PCB/blob/8f1e07b4baa4e43749793e3ebebd12005a5a8f96/Adafruit%20MEMENTO%20Camera%20Board.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 2, "package": "1X02_ROUND"}],
+        "boardSha256": "400fc72d1b9736b6bd3cadc6d250c345520eaf4e119c49d4a954262eca158644"
+      },
+      "projectRearContacts": true,
+      "rearOverhangRegions": [{"x": -2.9005, "y": -23.253, "width": 34.7, "height": 31.52}],
+      "bodyRegions": [
+        {"x": -31.75, "y": -31.75, "width": 63.5, "height": 63.5},
+        {"x": -35.737, "y": 9.094, "width": 20.47, "height": 14.2},
+        {"x": 25.1366, "y": 14.6308, "width": 7.35, "height": 8.94},
+        {"x": 15.2309, "y": -32.7593, "width": 6.8, "height": 4.1},
+        {"x": -23.0453, "y": -32.3339, "width": 7.0, "height": 3.4},
+        {"x": -2.9005, "y": -23.253, "width": 34.7, "height": 31.52}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5420",
     "name": "MEMENTO - Python Programmable DIY Camera - Bare Board",
     "manufacturer": "Adafruit",
@@ -1968,6 +2006,25 @@ export default [
   },
   {
     "id": "adafruit-module-5679",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12", "jp3-13", "jp3-14", "jp3-15", "jp3-16", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12"],
+      "source": {"label": "Adafruit ADA5679: EAGLE Adafruit Floppy FeatherWing.brd; commit 8793e86222bd physical insertion headers", "url": "https://github.com/adafruit/Adafruit_Floppy_FeatherWing_PCB/blob/8793e86222bd62b1ee243e07e97a8de9ff6a7e7e/Adafruit%20Floppy%20FeatherWing.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP3", "count": 16, "package": "1X16_ROUND"}, {"id": "JP1", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "4292b97d36e58b6ca39cec23a032506d6ac68e747b6868d6ca5c4972ddd02dc4"
+      },
+      "projectRearContacts": true,
+      "rearOverhangRegions": [{"x": 12.094, "y": -12.363, "width": 7.0, "height": 7.0}],
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": -26.422, "y": -3.4, "width": 4.1, "height": 6.8},
+        {"x": 12.094, "y": -12.363, "width": 7.0, "height": 7.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5679",
     "name": "Adafruit Floppy FeatherWing with 34-Pin IDC Connector",
     "manufacturer": "Adafruit",

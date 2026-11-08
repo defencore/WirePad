@@ -1,17 +1,23 @@
 import { mountingFor } from '../catalog/index.js';
 import { POSITION_LIMIT } from './limits.js';
+import { viewForPart, viewPin } from './part-view.js';
 
 export function instancePinPoint(part, pin) {
   const lead = part.leads?.find(lead => lead.pinId === pin.id);
-  return { x: lead?.x ?? pin.x, y: lead?.y ?? pin.y };
+  const projected = viewPin(viewForPart(part), pin.id);
+  return { x: lead?.x ?? projected?.x ?? pin.x, y: lead?.y ?? projected?.y ?? pin.y };
 }
 
 export function instancePins(part, component) {
-  if (!part.leads) return component.pins;
-  const leads = new Map(part.leads.map(lead => [lead.pinId, lead]));
+  const view = viewForPart(part);
+  if (!part.leads && !view) return component.pins;
+  const leads = new Map((part.leads ?? []).map(lead => [lead.pinId, lead]));
   return component.pins.map(pin => {
+    const projected = viewPin(view, pin.id);
+    const physical = projected ? { ...pin, ...projected, id: pin.id, face: projected.face ?? 'front', back: false, surface: true,
+      description: `${projected.description ?? pin.description ?? ''}${projected.face === 'rear' ? ' Rear contact projected through the PCB; shown with a dashed BACK marker.' : ''}` } : pin;
     const lead = leads.get(pin.id);
-    return lead ? { ...pin, x: lead.x, y: lead.y, surface: true } : pin;
+    return lead ? { ...physical, x: lead.x, y: lead.y, surface: true } : physical;
   });
 }
 

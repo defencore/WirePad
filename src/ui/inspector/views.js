@@ -1,5 +1,7 @@
 import { configurationFor, mountingFor } from '../../catalog/index.js';
 import { componentForPart } from '../../model/part-component.js';
+import { instancePins } from '../../model/part-pins.js';
+import { viewForPart } from '../../model/part-view.js';
 import { wirePalette } from '../../model/wire-colors.js';
 import { escapeText } from '../../shared/text.js';
 import { icon } from '../icons.js';
@@ -21,7 +23,8 @@ export function inspectPart(part, tab, { keepLeadPositions = false } = {}) {
     : bendable ? 'Drop onto a breadboard to form its leads. Each lead can then be moved to another hole.'
       : mounting.type === 'breadboard-part' ? 'Through-hole part. Drag onto a breadboard and release when all contacts are highlighted.'
         : 'Requires straight 2.54 mm male headers. Drag onto a breadboard and release when its contacts are highlighted.';
-  const pinList = tab === 'part' ? component.pins.map((pin, index) => {
+  const rearContacts = viewForPart(part)?.pins.some(pin => pin.face === 'rear');
+  const pinList = tab === 'part' ? instancePins(part, component).map((pin, index) => {
     const number = pin.number ?? index + 1;
     const text = [pin.id, pin.label, number, pin.description].join(' ').toLowerCase();
     return `<div data-pin-row data-pin-text="${escapeText(text)}"><dt>${escapeText(pin.label)}<small>Contact ${escapeText(number)}</small></dt><dd>${escapeText(pin.description)}</dd></div>`;
@@ -43,6 +46,7 @@ export function inspectPart(part, tab, { keepLeadPositions = false } = {}) {
             <button class="button" type="button" data-action="rotate" aria-label="Rotate component 90 degrees" title="Rotate component 90 degrees">${icon('rotate')} Rotate</button>
           </div>
           ${mountingStatus ? `<p class="control-note" role="status" data-mounting-status>${escapeText(mountingStatus)}</p>` : ''}
+          ${rearContacts ? '<p class="control-note">Dashed B markers identify underside contacts. They are not inserted leads.</p>' : ''}
           ${bendable && part.leads ? `<label class="lead-body-toggle"><input id="keep-lead-positions" type="checkbox"${keepLeadPositions ? ' checked' : ''}> Move body, keep leads</label><p class="control-note">When enabled, dragging the body bends its legs while the tips stay in their holes.</p>` : ''}
         </section>
         ${configurationMarkup(part, component)}

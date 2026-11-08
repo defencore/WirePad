@@ -1,5 +1,6 @@
 import { defineFamily } from "../registry.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
+import { reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { chip, circle, label, line, path, rect, smd, tactile } from "../shared/svg.js";
 
 // Pin tables, photograph side, connector numbering and DXF header centers were
@@ -74,6 +75,18 @@ function makeEntry(board) {
       details: [[0, -board.height / 2 + 5, board.can, 14, 2.5, metal], [0, board.height / 2 - 2, 8, 5, 3, metal]],
     },
     model: { label: `Espressif ${board.name} ${board.revision} mechanical DXF`, url: board.cad },
+    mounting: reviewedBoardMounting({
+      source: { label: `Espressif ${board.name} ${board.revision} manufacturer header-center DXF`, url: board.cad },
+      contacts: raw.map(pin => ({ pinId: pin.id, x: pin.nativeX, y: pin.nativeY })),
+      bodyRegions: [
+        { x: margin, y: pcbTop, width: 25.4 * scale, height: board.height * scale },
+        { x: width / 2 - board.can * scale / 2, y: pcbTop - board.ant * scale, width: board.can * scale, height: board.ant * scale },
+        { x: width / 2 - 24, y: pcbTop + board.height * scale - 27, width: 48, height: 32 },
+      ],
+      bodyEvidence: "The PCB, narrower PCB-antenna projection and Micro-USB shell are the exact physical rectangles in this component-side renderer; label columns and lower padding are excluded.",
+      note: "Insert both complete outer header rows, 22.86 mm apart, at 2.54 mm pitch. Antenna above and USB below; allow the documented antenna and USB cable clearance.",
+      calibration: { origin: { x: margin + 12.7 * scale, y: pcbTop + board.height * scale / 2 }, unitsPerMm: scale },
+    }),
   };
 }
 

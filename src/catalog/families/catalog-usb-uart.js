@@ -1,4 +1,6 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
+import { rearContactOverlay } from "../shared/rear-contact-overlay.js";
 import { chip, circle, label, pad, pinRow, rect, smd, usb } from "../shared/svg.js";
 
 // The manufacturer prints the header legend on the underside. These rows follow the component-side view.
@@ -91,4 +93,29 @@ const usbUartModels = {
   },
 };
 
-export default defineFamily("usb-uart", (usbUartComponents).map(component => ({ component, render: (usbUartArt)[component.art], footprint: (usbUartFootprints)[component.id], model: usbUartModels[component.id] })));
+const insertionOrigin = { x: 110, y: 120 }, insertionUnits = 10;
+const insertionContacts = [left, right].flatMap((bank, side) => bank.map(([id], index) => ({
+  pinId: id, x: side ? 6.35 : -6.35, y: -10.16 + index * 2.54,
+})));
+const physicalPins = insertionContacts.map(contact => ({ pinId: contact.pinId,
+  x: insertionOrigin.x + contact.x * insertionUnits, y: insertionOrigin.y + contact.y * insertionUnits, face: "front" }));
+// VIO is a wire-only underside via; its photo-derived projection is not a lead center.
+physicalPins.push({ pinId: "vio", x: insertionOrigin.x - .386 * insertionUnits,
+  y: insertionOrigin.y - 4.57 * insertionUnits, face: "rear" });
+const insertionBody = { x: 33.8, y: 5.7, width: 152.4, height: 228.6 };
+const insertionBounds = { x: 33.3, y: -7.5, width: 153.4, height: 242.3 };
+const mounting = reviewedBoardMounting({
+  source: { label: "Pololu usb03b dimension diagram and complete breadboard assembly", url: "https://www.pololu.com/product/1317" },
+  contacts: insertionContacts, calibration: { origin: insertionOrigin, unitsPerMm: insertionUnits },
+  bodyRegions: [insertionBody, { x: 65, y: -7, width: 90, height: 69 }], viewBounds: insertionBounds,
+  bodyEvidence: "The usb03b dimension diagram gives 0.1 inch side-header pitch and 0.5 inch row spacing on the 0.6 × 0.9 inch PCB. Pololu explicitly illustrates both complete straight male rows inserted in a solderless breadboard. Include the projecting Micro-B shell; leave the alternative end header unpopulated.",
+  view: { id: "breadboard", pins: physicalPins,
+    note: "All 18 side-header IDs use the manufacturer grid. VIO is the separately identified, photo-projected rear via, mirrored into this front view and marked BACK; it is never a downward lead. Default composite rear inset and saved project coordinates are preserved." },
+  renderMounted: () => `<svg x="${insertionBounds.x}" y="${insertionBounds.y}" width="${insertionBounds.width}" height="${insertionBounds.height}" viewBox="${insertionBounds.x} ${insertionBounds.y} ${insertionBounds.width} ${insertionBounds.height}" overflow="hidden"><g transform="translate(${insertionBody.x - 49 * 1.2491803278688524} ${insertionBody.y - 24 * 1.2159574468085107}) scale(1.2491803278688524 1.2159574468085107)"><svg x="48.5" y="14.5" width="123" height="198" viewBox="48.5 14.5 123 198" overflow="hidden">${cp2102nArt({ ...cp2102n, pins: [cp2102n.pins.find(pin => pin.id === "vio")] }, false)}</svg></g>` +
+    physicalPins.filter(pin => pin.face === "front").map(pin => pad(pin.x, pin.y)).join("") + rearContactOverlay(physicalPins) + "</svg>",
+  note: "Use both supplied 1×9 straight male side strips below the PCB. The alternative six-pin end strip is left unpopulated. VIO remains a rear wire connection; neither VIO nor the duplicated alternative end contacts create extra insertion leads.",
+});
+
+export default defineFamily("usb-uart", usbUartComponents.map(component => ({
+  component, render: usbUartArt[component.art], footprint: usbUartFootprints[component.id], model: usbUartModels[component.id], mounting,
+})));

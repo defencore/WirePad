@@ -417,6 +417,22 @@ export default [
   },
   {
     "id": "sparkfun-module-bob15931",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun BOB-15931: EAGLE Qwiic_Button.brd; commit e89a82fe2ddb physical insertion headers", "url": "https://github.com/sparkfun/Qwiic_Button/blob/e89a82fe2ddb293bfe0d6d9f63ccf4782a77c359/Hardware/Qwiic_Button.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J1", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "c2783580884e2a6cfbae09d2224165c3b5d5da435c00d818f0dd3c50dadfbce4"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-15931",
     "name": "SparkFun Qwiic Button Breakout",
     "manufacturer": "SparkFun",
@@ -1161,6 +1177,22 @@ export default [
   },
   {
     "id": "sparkfun-module-lcd13003",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "SparkFun LCD-13003: EAGLE SparkFun_Micro-OLED_Breakout.brd; commit c7dd8939c905 physical insertion headers", "url": "https://github.com/sparkfun/Micro_OLED_Breakout/blob/c7dd8939c905110a473beadf4ffc893d9c7b9ea2/Hardware/SparkFun_Micro-OLED_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_PIN1_NO_SILK"}, {"id": "JP1", "count": 8, "package": "1X08_PIN1_NO_SILK"}],
+        "boardSha256": "6665f3ec2e32420860d3fa23a59f6569055154653c0f312aea78b01b173e9ddc"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -10.16, "y": -10.16, "width": 20.32, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "LCD-13003",
     "name": "SparkFun Micro OLED Breakout",
     "manufacturer": "SparkFun",
@@ -1240,6 +1272,22 @@ export default [
   },
   {
     "id": "sparkfun-module-dev15083",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun DEV-15083: EAGLE Qwiic Twist.brd; commit f9bbde3fad9b physical insertion headers", "url": "https://github.com/sparkfun/Qwiic_Twist/blob/f9bbde3fad9b549a7cbdb31b192a003f8ffae182/Hardware/Qwiic%20Twist.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "dfed45e9931decad58f1f23342074318c8881930a878545e39d298638c7c0551"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -15.24, "y": -12.7, "width": 30.48, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DEV-15083",
     "name": "SparkFun Qwiic Twist - RGB Rotary Encoder Breakout",
     "manufacturer": "SparkFun",

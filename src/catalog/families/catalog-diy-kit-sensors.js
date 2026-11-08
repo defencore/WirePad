@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { circle, label, line, path, rect } from "../shared/svg.js";
 import { escapeText } from "../../shared/text.js";
 
@@ -76,8 +77,8 @@ function sensor(spec) {
     tags: ["diy", "starter kit", "arduino", "sensor", ...spec.tags],
     contactLayout: "physical", width, height, pins,
   };
-  return { component,
-    render: (part, showLabels = true) => {
+  const entry = { component,
+    render: (part, showLabels = true, compact = false) => {
       const bottom = top + geometry.h;
       const shape = spec.notched
         ? path(`M${left} ${top}H${left + geometry.w}V${bottom - 45}q-12 0-12 10q0 10 12 10V${bottom}H${left}V${bottom - 25}q12 0 12-10q0-10-12-10Z`, "#242622", "#777c65")
@@ -87,9 +88,9 @@ function sensor(spec) {
           const pin = part.pins[i];
           return `<g data-contact="${pin.id}"><title>${escapeText(pin.description)}</title>` +
             rect(pin.x - 6.5, pin.y - 7, 13, 14, 1, spec.manufacturer ? "#303431" : "#e6cf45", "#d8d8ad") +
-            rect(pin.x - 2.3, pin.y - 1.5, 4.6, bottom + 14 - pin.y, .7, silver, "#f2f1df") +
+            (compact ? circle(pin.x, pin.y, 3.2, silver, "#f2f1df") : rect(pin.x - 2.3, pin.y - 1.5, 4.6, bottom + 14 - pin.y, .7, silver, "#f2f1df")) +
             (showLabels ? label(pin.x, pin.y - 14, pin.label, 6.3, silk) : "") + "</g>";
-        }).join("") + label(width / 2, height - 12, "COMPONENT SIDE / HEADER DOWN", 6.3, "#465b59");
+        }).join("") + (compact ? "" : label(width / 2, height - 12, "COMPONENT SIDE / HEADER DOWN", 6.3, "#465b59"));
     },
     footprint: { body: spec.body, color: "#242622", modelHeight: 1.6,
       pads: contacts.map(({ id, x, y }) => ({ id, x, y, size: 1.8, drill: 1, square: id === contacts[0].id })),
@@ -97,6 +98,21 @@ function sensor(spec) {
       details: spec.details ?? [],
     },
   };
+  const bodyRegions = [{ x: left, y: top, width: bw * scale, height: bh * scale },
+    ...(spec.mountingOverhangs ?? []).map(region => ({ x: width / 2 + region.x, y: top + region.y, width: region.width, height: region.height }))];
+  const x = Math.min(...bodyRegions.map(region => region.x)), y = Math.min(...bodyRegions.map(region => region.y));
+  const viewBounds = { x: x - .5, y: y - .5,
+    width: Math.max(...bodyRegions.map(region => region.x + region.width)) - x + 1,
+    height: Math.max(...bodyRegions.map(region => region.y + region.height)) - y + 1 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `${spec.name} manufacturer contact/population reference`, url: spec.source },
+    contacts: contacts.map(({ id: pinId, x, y }) => ({ pinId, x, y })),
+    calibration: { origin: { x: width / 2, y: top + bh * scale / 2 }, unitsPerMm: scale },
+    bodyRegions, bodyEvidence: "The SKU-specific component-side photograph establishes its single standard 2.54 mm signal header and contact population. The existing millimeter PCB illustration and individual projecting sensors define representative body clearance; this does not upgrade the native reference carrier.",
+    viewBounds, renderMounted: part => entry.render(part, false, true),
+    note: "This profile requires the straight downward male-header assembly. Replace a fitted side-facing/right-angle strip before flat insertion. Every signal-header lead seats; spare sensor-placement and mounting holes do not. PCB envelope and header inset remain representative for the pictured unmarked revision.",
+  });
+  return entry;
 }
 
 const headerFour = (first, supplyRange, analogNote, digitalNote) => [
@@ -106,7 +122,7 @@ const headerFour = (first, supplyRange, analogNote, digitalNote) => [
 
 const entries = [
   sensor({
-    id: "keyestudio-ks0036-flame", name: "Keyestudio KS0036 Flame Sensor", short: "KS0036 Flame",
+    id: "keyestudio-ks0036-flame", mountingOverhangs: [{ x: -13, y: -30, width: 26, height: 64 }], name: "Keyestudio KS0036 Flame Sensor", short: "KS0036 Flame",
     source: keyes("KS0036"), references: [keyesImage("KS0036", "image-20251226155333010.png"), keyesImage("KS0036", "3.png")],
     body: [16, 40], scale: 6.5, subtitle: "KS0036 / four-contact IR flame detector",
     variant: "Unmarked four-contact black PCB revision in the manufacturer photo and wiring diagram; VCC, GND, D0, A0 run left-to-right.",
@@ -124,7 +140,7 @@ const entries = [
     },
   }),
   sensor({
-    id: "keyestudio-ks0040-mq2", name: "Keyestudio KS0040 MQ-2 Gas Sensor", short: "KS0040 MQ-2",
+    id: "keyestudio-ks0040-mq2", mountingOverhangs: [{ x: -56, y: -13, width: 112, height: 112 }], name: "Keyestudio KS0040 MQ-2 Gas Sensor", short: "KS0040 MQ-2",
     source: keyes("KS0040"), references: [keyesImage("KS0040", "wps1.jpg"), keyesImage("KS0040", "wps2.png"), "https://docs.keyestudio.com/projects/KS4009-KS4010/en/latest/KS4009-KS4010.html"],
     body: [20, 50], scale: 6.2, subtitle: "KS0040 / heated MQ-2 / analog + threshold",
     variant: "Unmarked black four-contact PCB photographed in the KS0040 manual. GND, VCC, D0, A0 run left-to-right, as confirmed by the wiring diagram; do not copy the flame module's supply order.",
@@ -181,7 +197,7 @@ const entries = [
     },
   }),
   sensor({
-    id: "joyit-ky037-sound-threshold", name: "Joy-IT KY-037 Microphone Threshold Sensor", short: "KY-037 Sound",
+    id: "joyit-ky037-sound-threshold", mountingOverhangs: [{ x: -23, y: -9, width: 46, height: 41 }], name: "Joy-IT KY-037 Microphone Threshold Sensor", short: "KY-037 Sound",
     manufacturer: "Joy-IT", source: joy("KY-037"), references: ["https://sensorkit.joy-it.net/files/files/sensors/KY-037/KY-037.png", "https://sensorkit.joy-it.net/files/files/sensors/KY-037/KY-037.svg", "https://www.ti.com/lit/ds/symlink/lm393.pdf"],
     body: [15, 36], scale: 7, subtitle: "KY-037 / LM393 / A0 + D0",
     variant: "Joy-IT SensorKit black PCB variant, oriented as its pin-assignment drawing: A0, G, +, D0 left-to-right. Other generic KY-037 boards can differ.",
@@ -218,7 +234,7 @@ const entries = [
       label(cx, top + 114, "Photocell", 10, silk),
   }),
   sensor({
-    id: "joyit-ky003-hall", name: "Joy-IT KY-003 A3144 Hall Sensor", short: "KY-003 Hall",
+    id: "joyit-ky003-hall", mountingOverhangs: [{ x: -15, y: -35, width: 30, height: 72 }], name: "Joy-IT KY-003 A3144 Hall Sensor", short: "KY-003 Hall",
     manufacturer: "Joy-IT", source: joy("KY-003"), references: ["https://sensorkit.joy-it.net/files/files/sensors/KY-003/KY-003.png", "https://sensorkit.joy-it.net/files/files/sensors/KY-003/KY-003.svg", "https://www.joy-it.net/en/products/SEN-KY003HMS"],
     body: [15, 29], scale: 7, top: 57, subtitle: "KY-003 / SEN-KY003HMS / A3144 / active-low",
     variant: "Joy-IT SensorKit A3144 board, using its component-side pin-assignment drawing: -, +, S left-to-right. The three-contact wiring header is modeled; spare sensor-placement holes remain artwork.",

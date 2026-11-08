@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { circle, label, line, path, rect } from "../shared/svg.js";
 
@@ -56,7 +57,7 @@ function row(connector, y, firstX, specs, firstNumber = 1, numberStep = 1) {
 }
 
 function readyBoard({ id, name, shortName, subtitle, description, category = "Interfaces", source,
-  tags, body, color = charcoal, contacts, mounting, draw, details, cad }) {
+  tags, body, color = charcoal, contacts, mounting, draw, details, cad, insertionHeaders, insertionOverhangs = [] }) {
   const width = body[0] * scale + insetX * 2;
   const height = body[1] * scale + insetY * 2;
   const logicalPins = contacts.map(([id, caption, type, description, number, x, y]) => ({
@@ -82,7 +83,7 @@ function readyBoard({ id, name, shortName, subtitle, description, category = "In
     }).join("");
     return `<g transform="translate(${insetX} ${insetY}) scale(${scale})">${pcb}</g>` + leads;
   };
-  return {
+  const entry = {
     component: {
       id, art: id, name: `Adafruit ${name}`, shortName, manufacturer: "Adafruit", category, referencePrefix: "U",
       subtitle, description, source: learn + source + "/pinouts", tags, width, height, pins, contactLayout: "physical",
@@ -99,6 +100,24 @@ function readyBoard({ id, name, shortName, subtitle, description, category = "In
     },
     model: cad,
   };
+  const bodyRegions = [{ x: insetX, y: insetY, width: body[0] * scale, height: body[1] * scale },
+    ...insertionOverhangs.map(region => ({ x: insetX + region.x * scale, y: insetY + region.y * scale,
+      width: region.width * scale, height: region.height * scale }))];
+  const visible = [...bodyRegions, { x: insetX, y: insetY + 2.4, width: body[0] * scale, height: body[1] * scale }];
+  const left = Math.min(...visible.map(region => region.x)), top = Math.min(...visible.map(region => region.y));
+  const viewBounds = { x: left - .5, y: top - .5,
+    width: Math.max(...visible.map(region => region.x + region.width)) - left + 1,
+    height: Math.max(...visible.map(region => region.y + region.height)) - top + 1 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `Adafruit ${shortName} cited EAGLE through-hole header centers`, url: cad.url },
+    contacts: contacts.filter(contact => insertionHeaders.includes(contact[4].split(".")[0]) && !contact[7])
+      .map(([pinId, , , , , x, y]) => ({ pinId, x, y })),
+    calibration: { origin: { x: insetX, y: insetY }, unitsPerMm: scale },
+    bodyRegions, bodyEvidence: "Existing component-side PCB drawing is projected directly from the cited Adafruit EAGLE millimeter source; includes explicitly projecting terminal/jack material. The decorative lower bevel is visible without reserving extra breadboard holes, and the annotation margin is excluded.",
+    viewBounds, renderMounted: part => clippedFrontArtwork(art, part, viewBounds),
+    note: `Seat every contact of ${insertionHeaders.join(" and ")}. Any screw-terminal block is a cable connection; leave other optional header holes unpopulated or populate them upward.`,
+  });
+  return entry;
 }
 
 const gnd = (id = "gnd", caption = "GND") => [id, caption, "power_in", "Common supply and signal ground."];
@@ -110,7 +129,7 @@ const qtCad = (repo, part) => ({ label: `Adafruit ${part} EAGLE PCB CAD`, url: g
 const sharedSockets = () => qtSocket(0.1, 6.74, 1) + qtSocket(25.3, 6.74, -1);
 
 const tca4307 = readyBoard({
-  id: "adafruit-tca4307-5159", name: "TCA4307 Hot-Swap I²C Buffer", shortName: "TCA4307 Buffer",
+  id: "adafruit-tca4307-5159", insertionHeaders: ["JP2", "JP3"], name: "TCA4307 Hot-Swap I²C Buffer", shortName: "TCA4307 Buffer",
   subtitle: "Stuck-bus recovery / separate IN and OUT",
   description: "STEMMA QT breakout #5159, PCB Rev A. Separates controller and peripheral I²C segments with automatic stuck-bus recovery. Power and ground are shared between the two sides.",
   source: "adafruit-tca4307",
@@ -141,7 +160,7 @@ const tca4307 = readyBoard({
 });
 
 const ds2484 = readyBoard({
-  id: "adafruit-ds2484-5976", name: "DS2484 I²C to 1-Wire Adapter", shortName: "DS2484 1-Wire",
+  id: "adafruit-ds2484-5976", insertionHeaders: ["JP1"], insertionOverhangs: [{ x: 8.7, y: -.3, width: 8, height: 6.6 }], name: "DS2484 I²C to 1-Wire Adapter", shortName: "DS2484 1-Wire",
   subtitle: "I²C 0x18 / 1-Wire terminal block",
   description: "STEMMA QT breakout #5976, PCB Rev A, with a 3-position 1-Wire terminal block. V+ follows VIN through a cuttable jumper, supporting a separate 1-Wire supply after the jumper is opened.",
   source: "adafruit-ds2484-i2c-to-1-wire-bus-adapter-breakout",
@@ -174,7 +193,7 @@ const ds2484 = readyBoard({
 });
 
 const pcm5102 = readyBoard({
-  id: "adafruit-pcm5102-6250", name: "PCM5102 I²S Stereo Line DAC", shortName: "PCM5102 Stereo DAC",
+  id: "adafruit-pcm5102-6250", insertionHeaders: ["JP1", "JP2"], insertionOverhangs: [{ x: 30, y: 8.5, width: 1.7, height: 3.3 }], name: "PCM5102 I²S Stereo Line DAC", shortName: "PCM5102 Stereo DAC",
   subtitle: "112 dB SNR / 3.5 mm line output",
   description: "PCM5102A breakout #6250, PCB Rev A. Stereo line-level output for loads of at least 1 kΩ. Supply accepts 3.3–5 V, and all audio-data and configuration inputs use 3.3 V logic.",
   source: "adafruit-pcm510x-i2s-dac",
@@ -215,7 +234,7 @@ const pcm5102 = readyBoard({
 });
 
 const ultimateGps = readyBoard({
-  id: "adafruit-ultimate-gps-v3-746", name: "Ultimate GPS Breakout v3", shortName: "Ultimate GPS v3", category: "Sensors",
+  id: "adafruit-ultimate-gps-v3-746", insertionHeaders: ["JP1"], name: "Ultimate GPS Breakout v3", shortName: "Ultimate GPS v3", category: "Sensors",
   subtitle: "PA1616S / MTK3339 / UART and PPS",
   description: "Breakout #746, v3 PCB with the PA1616S module shown in Adafruit's pinout photo. The carrier follows the published Rev E header layout, with a ceramic patch antenna, u.FL antenna socket and backup-battery holder underneath.",
   source: "adafruit-ultimate-gps",
@@ -250,9 +269,4 @@ const ultimateGps = readyBoard({
 });
 
 const entries = [tca4307, ds2484, pcm5102, ultimateGps];
-const adafruitReadyComponents = entries.map(({ component }) => component);
-const adafruitReadyArt = Object.fromEntries(entries.map(({ component, art }) => [component.id, art]));
-const adafruitReadyFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const adafruitReadyModels = Object.fromEntries(entries.map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("adafruit-ready", (adafruitReadyComponents).map(component => ({ component, render: (adafruitReadyArt)[component.art], footprint: (adafruitReadyFootprints)[component.id], model: adafruitReadyModels[component.id] })));
+export default defineFamily("adafruit-ready", entries.map(({ art: render, ...entry }) => ({ ...entry, render })));

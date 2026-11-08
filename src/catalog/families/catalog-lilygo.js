@@ -1,5 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, pad, path, rect, smd, tactile, usb } from "../shared/svg.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
+import { headerPostOverlay } from "../shared/header-post-overlay.js";
 
 const originalLeft = "GND GND GPIO21 GPIO22 GPIO17 GPIO2 GPIO15 GPIO13 GPIO12 GND GND 3V3".split(" ");
 const originalRight = "3V3 GPIO36 GPIO37 GPIO38 GPIO39 GPIO32 GPIO33 GPIO25 GPIO26 GPIO27 GND 5V".split(" ");
@@ -109,7 +111,27 @@ function displayBoard({ s3 = false, touch = false }) {
       usb(158, bottom - 11, 44) + (s3 ? "" : tactile(122, bottom - 17) + tactile(222, bottom - 17)) +
       rect(244, 336, 10, 28, 1, "#e6e7dc", "#b0b8af") + headers + extras;
   };
-  return { component, art, footprint: { body, color: "#253131", pads,
+  const scale = (403 - 12) / body[1], pcbLeft = width / 2 - body[0] * scale / 2;
+  const bounds = { x: pcbLeft, y: 12, width: body[0] * scale, height: 398 };
+  const viewPins = pins.map(pin => ({ pinId: pin.id, x: pin.x, y: pin.y, face: 'front' }));
+  const main = pins.filter(pin => ['left', 'right'].includes(pin.labelSide));
+  const mounting = reviewedBoardMounting({ source: {
+    url: s3 ? 'https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/dimensions/t-display-s3-pcb.stp' :
+      'https://github.com/Xinyuan-LilyGO/TTGO-T-Display/tree/master/eagle',
+    label: s3 ? 'LILYGO T-Display-S3 manufacturer STEP main-header hole cylinders' : 'LILYGO TTGO T-Display manufacturer Eagle header package' },
+    contacts: main.map((pin, index) => ({ pinId: pin.id, x: index < 12 ? -11.43 : 11.43,
+      y: (s3 ? -17 : -18.2) + (index % 12) * 2.54 })),
+    calibration: { origin: { x: width / 2, y: 12 + body[1] / 2 * scale }, unitsPerMm: scale },
+    bodyRegions: [{ x: pcbLeft, y: 12, width: body[0] * scale, height: 391 },
+      { x: 158, y: 392, width: 44, height: 18 }], viewBounds: bounds,
+    bodyEvidence: 'Both complete main rows are source-reviewed: original Eagle 22.86 mm spacing, or S3 STEP cylinders x=81.2948/104.1548 with twelve 2.54 mm centers per row. Body/auxiliary connector outlines and absolute header offset retain the existing representative reconstruction, rather than claiming a production mating pattern.',
+    note: 'Populate both complete 12-pin male-header rows, 22.86 mm apart at 2.54 mm pitch. Keep battery and CNC service contacts out of the downward population. Use header height that clears the fitted display/components below the PCB; the 2D material envelope does not establish vertical clearance.',
+    view: { id: 'breadboard', pins: viewPins,
+      note: 'Explicit straight-header assembly view retains every original contact and the existing front/rear-side choice. Native carrier geometry and default artwork remain unchanged; material artwork remains representative.' },
+    renderMounted: part => clippedFrontArtwork(art, component, bounds) +
+      headerPostOverlay(viewPins.filter(pin => main.some(contact => contact.id === pin.pinId)), scale),
+  });
+  return { component, art, mounting, footprint: { body, color: "#253131", pads,
     note: `${s3 ? "Reference carrier for T-Display-S3, main headers at 2.54 mm pitch. Header offsets and the 25.5 × 58 mm reference envelope are approximate." : "Reference carrier using the original official EAGLE library's 22.86 mm row separation and 2.54 mm pitch. Header offset and outline remain reference geometry."} Battery${s3 ? " and CNC UART" : ""} contacts use off-board 2.54 mm cable-termination rows beyond the outline, not the fitted socket/solder-pad land pattern. Check the exact board CAD and connector polarity.`,
     details: [[0, body[1] / 2, 8, 5, 3, "#adbbc0"]],
   }, model: { label: `${name} manufacturer STEP model`, url: repo + (s3 ? "/blob/main/dimensions/t-display-s3-full.stp" : "/blob/master/3d_file/T-Display.step") } };
@@ -120,5 +142,6 @@ const lilygoComponents = entries.map(entry => entry.component);
 const lilygoArt = Object.fromEntries(entries.map(entry => [entry.component.id, entry.art]));
 const lilygoFootprints = Object.fromEntries(entries.map(entry => [entry.component.id, entry.footprint]));
 const lilygoModels = Object.fromEntries(entries.map(entry => [entry.component.id, entry.model]));
+const lilygoMountings = Object.fromEntries(entries.map(entry => [entry.component.id, entry.mounting]));
 
-export default defineFamily("lilygo", (lilygoComponents).map(component => ({ component, render: (lilygoArt)[component.art], footprint: (lilygoFootprints)[component.id], model: lilygoModels[component.id] })));
+export default defineFamily("lilygo", (lilygoComponents).map(component => ({ component, render: (lilygoArt)[component.art], footprint: (lilygoFootprints)[component.id], model: lilygoModels[component.id], mounting: lilygoMountings[component.id] })));

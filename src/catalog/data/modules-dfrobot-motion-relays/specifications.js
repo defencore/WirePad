@@ -59,6 +59,21 @@ export default [
   },
   {
     "id": "dfrobot-gravity-6dof-sen0692",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "source": {"label": "DFRobot SEN0692: V1.0.0 / manufacturer layout 2026-02-05; cited part-specific DXF physical insertion headers", "url": "https://dfimg.dfrobot.com/wiki/23751/SEN0692_6-dof-imu-sensor_stpfile_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Source physical header rows reviewed against the cited manufacturer Manufacturer part-specific DXF mechanical facts and physical pinmap/schematic. All selected insertion leads preserve their exact source centers and complete connector population.",
+        "connectors": [{"id": "J1", "count": 6}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -16.0, "y": -13.5, "width": 32, "height": 27}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0692",
     "name": "DFRobot Gravity: 6DOF IMU Sensor for Motion & Gesture Detection (I2C / UART, Plug & Play)",
     "manufacturer": "DFRobot",
@@ -137,6 +152,21 @@ export default [
   },
   {
     "id": "dfrobot-gravity-9dof-sen0694",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+      "source": {"label": "DFRobot SEN0694: V1.0.0 / manufacturer layout 2026-02-05; cited part-specific DXF physical insertion headers", "url": "https://dfimg.dfrobot.com/wiki/23755/SEN0694_9-dof-imu-sensor_stpfile_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Source physical header rows reviewed against the cited manufacturer Manufacturer part-specific DXF mechanical facts and physical pinmap/schematic. All selected insertion leads preserve their exact source centers and complete connector population.",
+        "connectors": [{"id": "J3", "count": 7}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -16.0, "y": -13.5, "width": 32, "height": 27}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0694",
     "name": "DFRobot Gravity: 9DOF IMU Sensor for Motion, Heading & Orientation (I2C / UART, Plug & Play)",
     "manufacturer": "DFRobot",

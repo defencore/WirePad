@@ -74,9 +74,9 @@ test('registry rejects fabricated source scales, view bounds and precision', () 
   assert.throws(() => accept({ ...entry.mounting, renderMounted: true }), /renderer must be a function/);
 });
 
-test('the source-module review enables 582 precise header maps with explicit source scale and isolated views', () => {
+test('the source-module review enables 789 precise header maps with explicit source scale and physical views', () => {
   const reviewed = components.filter(component => component.tags?.includes('modules expansion') && mountingFor(component.id)?.type === 'breadboard-module');
-  assert.equal(reviewed.length, 582);
+  assert.equal(reviewed.length, 789);
   const counts = {}, quantized = [];
   for (const component of reviewed) {
     const profile = mountingFor(component.id);
@@ -95,7 +95,7 @@ test('the source-module review enables 582 precise header maps with explicit sou
     }
     for (const labels of [false, true]) assert.doesNotMatch(profile.renderMounted(component, labels), /UNDERSIDE BELOW|SEPARATE MIRRORED|(?:NaN|undefined|Infinity)/, component.id);
   }
-  assert.equal(quantized.length, 134);
-  assert.deepEqual(counts, { Adafruit: 191, SparkFun: 81, DFRobot: 32, MIKROE: 276, 'Seeed Studio': 2 });
-  for (const id of ['adafruit-module-5786', 'adafruit-module-2471', 'adafruit-module-4886', 'adafruit-module-5335', 'sparkfun-module-wrl11373', 'seeed-module-104020130', 'dfrobot-gravity-rgb-button-dfr0991', 'mikroe-mikroe-6645-capslider3']) assert.equal(mountingFor(id), undefined, id);
+  assert.equal(quantized.length, 145);
+  assert.deepEqual(counts, { Adafruit: 245, SparkFun: 95, DFRobot: 34, MIKROE: 400, 'Seeed Studio': 15 });
+  for (const id of ['adafruit-module-5786', 'adafruit-module-2471', 'sparkfun-module-wrl11373', 'seeed-module-104020130', 'dfrobot-gravity-rgb-button-dfr0991']) assert.equal(mountingFor(id), undefined, id);
 });

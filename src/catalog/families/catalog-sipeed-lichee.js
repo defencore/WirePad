@@ -1,6 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, line, rect } from "../shared/svg.js";
 import { sipeedBoard } from "../shared/sipeed-board.js";
+import { miniComputingMounting, projectMiniHardware } from "../shared/mini-computing-mounting.js";
 
 const wiki = "https://wiki.sipeed.com/hardware/en/lichee/";
 const words = value => value.trim().split(/\s+/);
@@ -663,4 +664,19 @@ const sipeedLicheeArt = Object.fromEntries(entries.map(entry => [entry.component
 const sipeedLicheeFootprints = Object.fromEntries(entries.map(entry => [entry.component.id, entry.footprint]));
 const sipeedLicheeModels = Object.fromEntries(entries.filter(entry => entry.model).map(entry => [entry.component.id, entry.model]));
 
-export default defineFamily("sipeed-lichee", (sipeedLicheeComponents).map(component => ({ component, render: (sipeedLicheeArt)[component.art], footprint: (sipeedLicheeFootprints)[component.id], model: sipeedLicheeModels[component.id] })));
+const rvNanoMounting = Object.fromEntries([rvNanoB, rvNanoW, rvNanoE, rvNanoWE].map(entry => {
+  const component = entry.component, size = [22.86, 35.56];
+  const pins = Object.fromEntries(component.pins.map((pin, index) => [pin.id,
+    { x: index < 14 ? 1.27 : 21.59, y: 1.27 + index % 14 * 2.54 }]));
+  const regions = [{ x: 0, y: 0, width: size[0], height: size[1] },
+    { x: 7.77, y: 32.45, width: 7.32, height: 3.34 }];
+  if (/-e$|-we$/.test(component.id)) regions.push({ x: 16, y: 1.77, width: 7.55, height: 7.56 });
+  return [component.id, miniComputingMounting(component, { size, pins, regions,
+    contacts: component.pins.map(pin => pin.id),
+    source: 'https://dl.sipeed.com/shareURL/LICHEE/LicheeRV_Nano/01_Specification',
+    evidence: 'LicheeRV_Nano_v70405_specification_V1.0_en.pdf explicitly specifies 2x14P 2.54 mm pitch, 800 mil spacing and breadboard support; the production 70418 schematic and component-side pinout retain all 28 J1-J28 expansion terminals. B/W/E/WE populate options on this common PCB. The nominal outline is 22.86 x 35.56 mm (the datasheet rounds this to 22.9 x 35.6 +/-0.5 mm). Connector silhouettes remain illustrative.',
+    note: 'Install both complete 14-contact straight male header rows. Keep fitted USB/FPC/RJ45 ports as cable connections; no expansion terminal is omitted.',
+    renderHardware: () => projectMiniHardware(entry.renderHardware, component, [42, 42, size[0] * 11, size[1] * 11], size),
+  })];
+}));
+export default defineFamily("sipeed-lichee", (sipeedLicheeComponents).map(component => ({ component, render: (sipeedLicheeArt)[component.art], footprint: (sipeedLicheeFootprints)[component.id], model: sipeedLicheeModels[component.id], ...(rvNanoMounting[component.id] ? { mounting: rvNanoMounting[component.id] } : {}) })));

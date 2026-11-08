@@ -6,6 +6,7 @@ import { translation, partRotation, labelPosition, partOutlineLocalBounds } from
 import { escapeText } from '../shared/text.js';
 import { resolveDrawing, foregroundParts } from './scene.js';
 import { partArt, usesCompactBoardView } from './part-art.js';
+import { viewForPart } from '../model/part-view.js';
 
 const SVG_FONT = 'Arial, sans-serif';
 
@@ -33,18 +34,19 @@ export function partMarkup(part, component, wired, editing, { bodyOnly = false, 
   const labelWidth = Math.max(compact ? 36 : 54, caption.length * (compact ? 6 : 7) + (compact ? 12 : 16));
   const pins = bodyOnly ? '' : instancePins(part, component).map(pin => {
     const connected = wired.has(pin.id);
+    const rear = Boolean(viewForPart(part) && pin.face === 'rear');
     if (!editing) {
       if (covered.has(pin.id)) return '';
       return connected
-        ? `<circle cx="${pin.x}" cy="${pin.y}" r="3" fill="#087a6f" stroke="#fff" stroke-width=".9"/>`
+        ? `<circle cx="${pin.x}" cy="${pin.y}" r="3" fill="#087a6f" stroke="${rear ? '#a43683' : '#fff'}" stroke-width=".9"${rear ? ' stroke-dasharray="1.5 1"' : ''}/>`
         : '';
     }
     const label = escapeText(`${name} · ${pin.label} — ${pin.description}`);
-    return `<g class="canvas-pin" data-pin="${pin.id}" data-part="${part.id}" role="button" tabindex="0" aria-label="${label}">
+    return `<g class="canvas-pin" data-pin="${pin.id}" data-part="${part.id}"${rear ? ' data-contact-face="rear"' : ''} role="button" tabindex="0" aria-label="${label}">
       <title>${label}</title>
       <circle cx="${pin.x}" cy="${pin.y}" r="8" fill="transparent"/>
       <circle class="pin-highlight" cx="${pin.x}" cy="${pin.y}" r="6" fill="#aeeadf" stroke="#087a6f" stroke-width="1"/>
-      <circle cx="${pin.x}" cy="${pin.y}" r="${connected ? 3.3 : 2.55}" fill="${connected ? '#087a6f' : '#fffbeb'}" stroke="${connected ? '#ffffff' : '#967543'}" stroke-width=".9"/>
+      <circle cx="${pin.x}" cy="${pin.y}" r="${connected ? 3.3 : 2.55}" fill="${connected ? '#087a6f' : rear ? '#fff2fc' : '#fffbeb'}" stroke="${rear ? '#a43683' : connected ? '#ffffff' : '#967543'}" stroke-width=".9"${rear ? ' stroke-dasharray="1.5 1"' : ''}/>
     </g>`;
   }).join('');
   const body = contactsOnly ? '' : editing
@@ -91,7 +93,7 @@ export function drawingMarkup(project) {
   for (const { part, connected, covered } of foregroundParts(parts).values()) {
     const component = componentForPart(part);
     const transform = `transform="${translation(part.x, part.y)}"`;
-    const onBoardContacts = part.leads || component.surface || component.contactLayout === 'physical';
+    const onBoardContacts = part.leads || viewForPart(part) || component.surface || component.contactLayout === 'physical';
     if (onBoardContacts) backgrounds.push(`<g ${transform}>${partMarkup(part, component, connected, false, { bodyOnly: true, covered })}</g>`);
     partShapes.push(`<g ${transform}>${partMarkup(part, component, connected, false, { contactsOnly: onBoardContacts, covered })}</g>`);
   }

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, edgePads, label, line, mountingHole, pad, path, pinRow, rect, screw, smd } from "../shared/svg.js";
 
@@ -216,11 +217,6 @@ const pam8302 = {
 
 const entries = [max9814, sph0645, drv2605, pam8302];
 
-const audioPrototypingComponents = entries.map(({ component }) => component);
-const audioPrototypingArt = Object.fromEntries(entries.map(({ component, art }) => [component.art, art]));
-const audioPrototypingFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const audioPrototypingModels = Object.fromEntries(entries.map(({ component, model }) => [component.id, model]));
-
 const contactCenters = {
   "adafruit-max9814-1713": pin => [15, pin.y],
   "adafruit-sph0645-3421": pin => [15, pin.y],
@@ -228,6 +224,44 @@ const contactCenters = {
   "adafruit-pam8302-2130": (pin, index) => [index < 5 ? 31 : 168, pin.y],
 };
 
-export default defineFamily("audio-prototyping", audioPrototypingComponents.map(component => physicalEntry({
-  component, render: audioPrototypingArt[component.art], footprint: audioPrototypingFootprints[component.id], model: audioPrototypingModels[component.id],
-}, contactCenters[component.id])));
+// These are the source Eagle contact centers for the exact revisions, not the
+// independently spaced default illustration or an inferred generic carrier.
+function audioInsertion(entry, { body, contacts, wired = [], note }) {
+  const component = entry.component, unitsPerMm = 8, origin = { x: component.width / 2, y: component.height / 2 };
+  const mapped = [...contacts, ...wired];
+  const viewPins = mapped.map(contact => ({ pinId: contact.pinId,
+    x: origin.x + contact.x * unitsPerMm, y: origin.y + contact.y * unitsPerMm, face: "front" }));
+  const region = { x: origin.x - body[0] * unitsPerMm / 2, y: origin.y - body[1] * unitsPerMm / 2,
+    width: body[0] * unitsPerMm, height: body[1] * unitsPerMm };
+  const bounds = { x: region.x - .5, y: region.y - .5, width: region.width + 1, height: region.height + 1 };
+  const sx = region.width / (component.width - 14), sy = region.height / (component.height - (component.id === "adafruit-sph0645-3421" ? 14 : 16));
+  return reviewedBoardMounting({
+    source: { label: `${component.name} manufacturer Eagle header geometry`, url: component.source },
+    contacts, calibration: { origin, unitsPerMm }, bodyRegions: [region], viewBounds: bounds,
+    bodyEvidence: "The manufacturer Eagle revision establishes the PCB dimensions and insertion-header centers. The new physical view resizes the existing component-side hardware to that envelope and draws every pad from its source coordinate; optional motor/speaker lands stay wire-only.",
+    view: { id: "breadboard", pins: viewPins, note: "Every existing pin ID remains present. Only the complete reviewed straight-header bank is inserted; separately mapped 3.5 mm speaker or haptic motor lands are never made into breadboard leads." },
+    renderMounted: () => clippedFrontArtwork(() => `<g transform="translate(${region.x - 7 * sx} ${region.y - 7 * sy}) scale(${sx} ${sy})">${entry.render({ ...component, pins: [] }, false)}</g>` +
+      viewPins.map(pin => circle(pin.x, pin.y, 4, "#d8b96d", "#efdeaa") + circle(pin.x, pin.y, 1.9, "#243a31")).join(""), component, bounds),
+    note,
+  });
+}
+
+const sourceInsertions = {
+  "adafruit-sph0645-3421": { body: [12.7, 16.51],
+    contacts: sph0645Contacts.map(([pinId], index) => ({ pinId, x: -3.81, y: -6.35 + index * 2.54 })),
+    note: "Use the complete six-pin straight male strip with the acoustic-port face up. Keep the port and underside microphone package clear; no rear auxiliary lead is inserted." },
+  "adafruit-drv2605l-2305-qt": { body: [25.4, 17.78],
+    contacts: drvLogic.map(([pinId], index) => ({ pinId, x: -5.08 + index * 2.54, y: 6.35 })),
+    wired: [{ pinId: "out-minus", x: -5.08, y: -6.35 }, { pinId: "out-plus", x: 5.08, y: -6.35 }],
+    note: "Seat the complete five-pin JP2 logic header. Motor strain-relief holes and solder lands remain unpopulated below the board and connect by wires above it; QT sockets are cable alternatives." },
+  "adafruit-pam8302-2130": { body: [24.13, 15.24],
+    contacts: pamInputs.map(([pinId], index) => ({ pinId, x: -9.017, y: -5.08 + index * 2.54 })),
+    wired: [{ pinId: "speaker-plus", x: 8.382, y: -1.673 }, { pinId: "speaker-minus", x: 8.382, y: 1.827 }],
+    note: "Seat only the complete five-pin input/power strip. The 3.5 mm differential speaker terminal is a wire connection above the PCB, never a 2.54 mm insertion row." },
+};
+
+export default defineFamily("audio-prototyping", entries.map(({ art: render, ...definition }) => {
+  const entry = physicalEntry({ ...definition, render }, contactCenters[definition.component.id]);
+  const insertion = sourceInsertions[entry.component.id];
+  return insertion ? { ...entry, mounting: audioInsertion(entry, insertion) } : entry;
+}));

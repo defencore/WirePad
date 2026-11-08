@@ -4,6 +4,7 @@ import { endpointKey } from '../model/endpoints.js';
 import { partScale, partSize } from '../model/part-placement.js';
 import { instancePinPoint, instancePins } from '../model/part-pins.js';
 import { mountingFor } from '../catalog/index.js';
+import { compactBoardView, viewForPart } from '../model/part-view.js';
 
 export const translation = (x, y) => `translate(${x} ${y})`;
 export function partRotation(part, component) {
@@ -15,7 +16,7 @@ export function partRotation(part, component) {
 
 export function labelPosition(part, component) {
   const profile = mountingFor(component.id);
-  if (part.leads || profile?.bodyFor || profile?.type === 'breadboard-module' && (part.scale || part.attachment)) {
+  if (part.leads || profile?.bodyFor || compactBoardView(part, component.id)) {
     const bounds = partBounds(part, component);
     return translation((bounds.left + bounds.right) / 2 - part.x, bounds.bottom - part.y + 8);
   }
@@ -38,7 +39,7 @@ export function partBounds(part, component = componentForPart(part)) {
   }
   const profile = mountingFor(component.id);
   const view = profile?.bodyFor?.(component) ??
-    (profile?.type === 'breadboard-module' && (part.scale || part.attachment) && (profile.viewBounds ?? profile.body));
+    (compactBoardView(part, component.id) && (profile.viewBounds ?? profile.body));
   if (view) return boundsForPoints(rectanglePoints(view).map(point => pointOnPart(part, point, component)));
   return defaultPartBounds(part, component);
 }
@@ -56,7 +57,7 @@ export function partOutlineLocalBounds(part, component = componentForPart(part))
     return { x: bounds.left, y: bounds.top, width: bounds.right - bounds.left, height: bounds.bottom - bounds.top };
   }
   const profile = mountingFor(component.id);
-  if (profile?.renderMounted && !part.scale && !part.attachment) {
+  if (profile?.renderMounted && !compactBoardView(part, component.id)) {
     return { x: 0, y: 0, width: component.width, height: component.height };
   }
   return profile?.bodyFor?.(component) ?? profile?.body ?? { x: 0, y: 0, width: component.width, height: component.height };
@@ -93,6 +94,7 @@ export function partBodyBounds(part, component = componentForPart(part)) {
 
 export function partBodyRegions(part, component = componentForPart(part)) {
   const profile = mountingFor(component.id);
+  if (profile?.view && !viewForPart(part)) return [defaultPartBounds(part, component)];
   const body = profile?.bodyFor?.(component) ?? profile?.body;
   const regions = profile?.bodyRegions ?? (body ? [body] : null);
   return regions ? regions.map(region => boundsForPoints(rectanglePoints(region)
@@ -158,12 +160,12 @@ export function endpointPositions(project) {
     if (pins.has(key)) return pins.get(key);
     const part = parts.get(endpoint.partId);
     const component = componentForPart(part);
-    const pin = part.leads ? instancePins(part, component).find(pin => pin.id === endpoint.pinId) : pinById(component, endpoint.pinId);
+    const pin = part.leads || viewForPart(part) ? instancePins(part, component).find(pin => pin.id === endpoint.pinId) : pinById(component, endpoint.pinId);
     const normal = pin.surface ? undefined : rotateVector(pinVector(pin, component), part.rotation);
     const bounds = partBounds(part, component);
     const point = {
       ...pointOnPart(part, pin, component), normal,
-      surfacePartId: pin.surface && (part.leads || component.contactLayout === 'physical') ? part.id : undefined,
+      surfacePartId: pin.surface && (part.leads || viewForPart(part) || component.contactLayout === 'physical') ? part.id : undefined,
       bounds: pin.surface ? undefined : {
         x: [bounds.left, bounds.right],
         y: [bounds.top, bounds.bottom],

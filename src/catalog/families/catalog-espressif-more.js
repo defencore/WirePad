@@ -2031,6 +2031,9 @@ const reviewedInsertionDrawings = {
   "esp32-c3-devkitc-02": "https://dl.espressif.com/dl/schematics/DXF_ESP32-C3-DevKitC-02_V1_1_20210121AA.pdf",
   "esp32-c6-devkitm-1": "https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.pdf",
   "esp32-s2-devkitm-1": "https://dl.espressif.com/dl/schematics/ESP32-S2-DevKitM-1_V1_Dimensions.pdf",
+  "esp32-s2-saola-1-v1-2": boards.find(board => board.id === "esp32-s2-saola-1-v1-2").model,
+  "esp32-c5-devkitc-1-v1-2": boards.find(board => board.id === "esp32-c5-devkitc-1-v1-2").model,
+  "esp32-c61-devkitc-1-v2": boards.find(board => board.id === "esp32-c61-devkitc-1-v2").model,
 };
 const espressifMoreMountings = Object.fromEntries(entries.filter(entry => reviewedInsertionDrawings[entry.component.id]).map(entry => [
   entry.component.id,

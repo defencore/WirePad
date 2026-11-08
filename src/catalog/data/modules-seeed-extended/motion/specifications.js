@@ -4,6 +4,22 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "seeed-module-108020103",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4"],
+      "source": {"label": "Seeed Studio 108020103: EAGLE Grove - I2C Motor Driver (TB6612FNG).brd / v1.0 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-I2C_Motor_Driver-TB6612FNG/res/Grove%20-%20I2C%20Motor%20Driver%20(TB6612FNG).zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J2", "count": 4, "package": "H4-2.54"}],
+        "boardSha256": "90db58bf683e43ea5492a137565fbe22965401ba7314f7981445506d465f9e93"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -32.1, "y": -22.1, "width": 64.2, "height": 44.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "108020103",
     "name": "Seeed Grove - I2C Motor Driver (TB6612FNG)",
     "manufacturer": "Seeed Studio",

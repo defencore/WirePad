@@ -4,6 +4,7 @@ import { pinById } from './component-pins.js';
 import { componentForPart } from './part-component.js';
 import { MAX_PART_SCALE, MIN_PART_SCALE, partScale } from './part-placement.js';
 import { leadShapeError } from './part-pins.js';
+import { internalConnectionsFor, viewForPart, viewPin } from './part-view.js';
 
 export const MOUNTING_EPSILON = 1e-4;
 const CALIBRATION_EPSILON = 1e-3;
@@ -56,7 +57,7 @@ function calibrationFor(component) {
       if (Number.isFinite(unitsPerMm) && unitsPerMm > 0 && origin &&
           [origin.x, origin.y].every(Number.isFinite) && toleranceMm >= 0 && toleranceMm <= .001 &&
           profile.contacts.every(contact => {
-            const pin = pinById(component, contact.pinId);
+            const pin = viewPin(profile.view, contact.pinId) ?? pinById(component, contact.pinId);
             return close(pin.x, origin.x + contact.x * unitsPerMm, tolerance) &&
               close(pin.y, origin.y + contact.y * unitsPerMm, tolerance);
           })) result = { profile, x: unitsPerMm, y: unitsPerMm };
@@ -116,21 +117,24 @@ export function mountingHoles(hostComponent, guestProfile) {
   return mountingHoleSet(hostComponent, guestProfile).holes;
 }
 
-export function sameContactNet(component, first, second) {
+export function sameContactNet(component, first, second, part) {
   if (!component) return false;
-  let nets = contactNets.get(component);
+  let variants = contactNets.get(component);
+  if (!variants) { variants = new Map(); contactNets.set(component, variants); }
+  const groups = internalConnectionsFor(part, component);
+  let nets = variants.get(groups);
   if (!nets) {
     const parents = new Map(component.pins.map(pin => [pin.id, pin.id]));
     const root = id => {
       while (parents.get(id) !== id) id = parents.get(id);
       return id;
     };
-    for (const group of component.internalConnections ?? []) {
+    for (const group of groups) {
       const first = root(group[0]);
       for (const id of group.slice(1)) parents.set(root(id), first);
     }
     nets = new Map([...parents.keys()].map(id => [id, root(id)]));
-    contactNets.set(component, nets);
+    variants.set(groups, nets);
   }
   return nets.has(first) && nets.has(second) && nets.get(first) === nets.get(second);
 }
@@ -158,6 +162,7 @@ function attachmentIssue(project, part, checkCollisions) {
   if (!calibration || !scale || hostProfile?.type !== 'breadboard' || typeof hostProfile.contacts !== 'function') {
     return 'does not have a reviewed, compatible breadboard header layout.';
   }
+  if (calibration.profile.view && !viewForPart(part)) return 'must use its explicit reviewed physical view before seating.';
   const hostScale = partScale(hostPart);
   const turned = Math.abs((part.rotation ?? 0) - (hostPart.rotation ?? 0)) % 180 !== 0;
   const expected = { x: scale.x * hostScale[turned ? 'y' : 'x'], y: scale.y * hostScale[turned ? 'x' : 'y'] };
@@ -176,7 +181,7 @@ function attachmentIssue(project, part, checkCollisions) {
     const hole = holes.get(contact.hostPinId);
     if (!hole) return 'refers to a missing breadboard terminal hole.';
     if (usedHoles.has(contact.hostPinId)) return 'inserts multiple header contacts into one hole.';
-    if (usedGroups.has(hole.group) && !sameContactNet(component, usedGroups.get(hole.group), contact.pinId)) {
+    if (usedGroups.has(hole.group) && !sameContactNet(component, usedGroups.get(hole.group), contact.pinId, part)) {
       return 'would short separate header contacts on one breadboard strip.';
     }
     usedLeads.add(contact.pinId);

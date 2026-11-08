@@ -4,8 +4,12 @@ import { partScale } from '../model/part-placement.js';
 import { mountingHoles } from '../model/mounting.js';
 import { breadboardOccupancy } from '../model/breadboard-occupancy.js';
 import { bodyRegionsOverlap, partBodyRegions, partBounds, partViewCenter, pointOnPart } from './parts.js';
+import { viewForPart } from '../model/part-view.js';
 
 export function partCenter(part, component = componentForPart(part)) {
+  if (mountingFor(component.id)?.view && !viewForPart(part)) {
+    return pointOnPart(part, { x: component.width / 2, y: component.height / 2 }, component);
+  }
   return pointOnPart(part, partViewCenter(component), component);
 }
 

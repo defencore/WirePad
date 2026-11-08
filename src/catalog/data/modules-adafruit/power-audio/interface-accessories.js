@@ -100,6 +100,22 @@ export default [
   },
   {
     "id": "adafruit-module-3573",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA3573: EAGLE Adafruit TPL5111 Reset Enable Timer.brd; commit 7a19d15939cb physical insertion headers", "url": "https://github.com/adafruit/Adafruit-TPL5111-Reset-Enable-Timer-PCB/blob/7a19d15939cb776f1931c3b4b38ac35509f06bd3/Adafruit%20TPL5111%20Reset%20Enable%20Timer.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_76"}],
+        "boardSha256": "5469ffa16d557adc3fe37751d980e823c292b7ff933db4f5d915edfb25a39660"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -8.89, "y": -9.525, "width": 17.78, "height": 19.05}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3573",
     "name": "Adafruit TPL5111 Low Power Timer Breakout",
     "manufacturer": "Adafruit",
@@ -190,6 +206,22 @@ export default [
   },
   {
     "id": "adafruit-module-5639",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "Adafruit ADA5639: EAGLE IR STEMMA LED Emitter.brd; commit bf82859bcb77 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-High-Power-Infrared-LED-Emitter-PCB/blob/bf82859bcb77e3b545f9ae6dc629a24ca0695343/IR%20STEMMA%20LED%20Emitter.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_OVAL"}],
+        "duplicateHeaderContacts": [{"pinId": "jp2-1", "equivalentPinId": "jp1-1", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-2", "equivalentPinId": "jp1-2", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-3", "equivalentPinId": "jp1-3", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "19a72d16275acc1c11ffd83928dd37b7d0125f6942ddc8b2c4f5a5e42dcfb3ec"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5639",
     "name": "Adafruit High Power Infrared IR LED Emitter - STEMMA JST PH 2mm",
     "manufacturer": "Adafruit",
@@ -678,6 +710,23 @@ export default [
   },
   {
     "id": "adafruit-module-5335",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA5335: EAGLE Adafruit CP2102N Friend.brd; commit 1c29f780bdc7 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-CP2102N-Friend-PCB/blob/1c29f780bdc7503e18c8b6d29d1f8fb7cc1510bb/Adafruit%20CP2102N%20Friend.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP4", "count": 8, "package": "1X08_ROUND_70"}, {"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "duplicateHeaderContacts": [{"pinId": "jp1-1", "equivalentPinId": "jp4-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-2", "equivalentPinId": "jp2-1", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-3", "equivalentPinId": "jp4-1", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-4", "equivalentPinId": "jp2-4", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-5", "equivalentPinId": "jp2-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-6", "equivalentPinId": "jp2-2", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "9d241a35085e357bedf6f56045d40f577d9488fce722f8feea75ef65d676c6f3"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -13.97, "width": 17.78, "height": 27.94},
+        {"x": -4.47, "y": -14.859, "width": 8.94, "height": 7.35}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5335",
     "name": "Adafruit CP2102N Friend - USB to Serial Converter",
     "manufacturer": "Adafruit",
@@ -800,6 +849,23 @@ export default [
   },
   {
     "id": "adafruit-module-5568",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA5568: EAGLE Adafruit CH9102F.brd; commit eb022866b738 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-WCH-CH9102F-Friend-PCB/blob/eb022866b738f738971172c8725546e7b221369f/Adafruit%20CH9102F.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP4", "count": 8, "package": "1X08_ROUND_70"}, {"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "duplicateHeaderContacts": [{"pinId": "jp1-1", "equivalentPinId": "jp4-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-2", "equivalentPinId": "jp2-1", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-3", "equivalentPinId": "jp4-1", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-4", "equivalentPinId": "jp2-4", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-5", "equivalentPinId": "jp2-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-6", "equivalentPinId": "jp2-2", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "210bf179614c7d111edf135b1b49dba4d0d21fad38688f27133298880928af13"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -13.97, "width": 17.78, "height": 27.94},
+        {"x": -4.47, "y": -14.859, "width": 8.94, "height": 7.35}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5568",
     "name": "Adafruit WCH CH9102F Friend - USB to Serial Converter",
     "manufacturer": "Adafruit",

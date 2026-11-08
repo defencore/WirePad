@@ -113,6 +113,23 @@ export default [
   },
   {
     "id": "sparkfun-module-dev13743",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7"],
+      "source": {"label": "SparkFun DEV-13743: EAGLE Shifting_microSD.brd; commit 805f7ea82e15 physical insertion headers", "url": "https://github.com/sparkfun/Shifting_microSD/blob/805f7ea82e15699bff82da9536cf72ba25ca70c9/Hardware/Shifting_microSD.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07"}],
+        "boardSha256": "0e2092e00d1eb59539b94475e5adf6a3e003263e0fac95bdfc1269301e4ba22f"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -8.89, "y": -12.065, "width": 17.78, "height": 24.13},
+        {"x": -7.0531, "y": -15.1755, "width": 14.0, "height": 20.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DEV-13743",
     "name": "SparkFun Level Shifting microSD Breakout",
     "manufacturer": "SparkFun",

@@ -4,6 +4,22 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "seeed-grove-bme280-101020193",
+    "mountingReview": {
+      "contactIds": ["spi-1", "spi-2", "spi-3", "spi-4", "spi-5", "spi-6"],
+      "source": {"label": "Seeed Studio 101020193: v1.0 / 2016-03-15 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-Barometer_Sensor-BME280/res/Grove-Barometer_Sensor-BME280-v1.0_Schematics.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "SPI", "count": 6, "package": "H6-2.54-C65D35MIL"}],
+        "boardSha256": "19c9b2219daf04f98681dc225cb90a3287cfa1d6dbb44229641aa12257937dd6"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -20.1, "y": -10.25, "width": 40.2, "height": 20.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020193",
     "name": "Seeed Grove - Barometer Sensor(BME280)",
     "manufacturer": "Seeed Studio",
@@ -126,6 +142,22 @@ export default [
   },
   {
     "id": "seeed-grove-bme680-101020513",
+    "mountingReview": {
+      "contactIds": ["spi-1", "spi-2", "spi-3", "spi-4", "spi-5", "spi-6"],
+      "source": {"label": "Seeed Studio 101020513: v1.0 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-Temperature-Humidity-Pressure-Gas-Sensor_BME680/res/Grove-Temperature-Humidity-Pressure-and-Gas-Sensor_BME680.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "SPI", "count": 6, "package": "H6-2.54-C65D35MIL"}],
+        "boardSha256": "34e9f2c1f4b5aa02986dd6406d7cdad6a6f68e9b10861d1eeb27933acdd85cdb"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -20.1, "y": -10.25, "width": 40.2, "height": 20.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020513",
     "name": "Seeed Grove - Temperature Humidity Pressure Gas Sensor(BME680)",
     "manufacturer": "Seeed Studio",
@@ -218,6 +250,22 @@ export default [
   },
   {
     "id": "seeed-grove-bmp280-101020192",
+    "mountingReview": {
+      "contactIds": ["spi-1", "spi-2", "spi-3", "spi-4", "spi-5", "spi-6"],
+      "source": {"label": "Seeed Studio 101020192: v1.0 / 2016-03-15 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-Barometer_Sensor-BMP280/res/Grove%20-%20Barometer%20Sensor_BMP280_Schematic.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "SPI", "count": 6, "package": "H6-2.54-C65D35MIL"}],
+        "boardSha256": "f5348ea11ab7de30aa6ae84f05ff7f2f96b134700c28019712079aeb7ed9d47c"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -20.1, "y": -10.25, "width": 40.2, "height": 20.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020192",
     "name": "Seeed Grove - Barometer Sensor (BMP280)",
     "manufacturer": "Seeed Studio",
@@ -594,6 +642,22 @@ export default [
   },
   {
     "id": "seeed-grove-scd30-101020634",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4"],
+      "source": {"label": "Seeed Studio 101020634: v1.0 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-CO2-Temperature-Humidity-Sensor-SCD30/res/Grove-CO2_Temperature_Humidity_Sensor-SCD30.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J2", "count": 4, "package": "H4-2.54"}],
+        "boardSha256": "c15a75faba1c6faccbab195501e0e763fc3d6c28c5c8cf295220853ec05d0389"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -32.1, "y": -22.1, "width": 64.2, "height": 44.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020634",
     "name": "Seeed Grove - CO2 & Temperature & Humidity Sensor (SCD30)",
     "manufacturer": "Seeed Studio",
@@ -700,6 +764,22 @@ export default [
   },
   {
     "id": "seeed-grove-scd41-101020952",
+    "mountingReview": {
+      "contactIds": ["j2-p-1", "j2-p-2", "j2-p-3", "j2-p-4"],
+      "source": {"label": "Seeed Studio 101020952: V1.01 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-CO2&Temperature&HumiditySensor-SCD4/res/SCH&PCB.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J2", "count": 4, "package": "HEADER-4P"}],
+        "boardSha256": "26345baf1fdb8a15ff17cf57250a010657b27aca90b387d51f865cfafc9cdcef"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -10.0, "y": -12.1, "width": 20, "height": 24.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020952",
     "name": "Seeed Grove - CO2 & Temperature & Humidity Sensor (SCD41)",
     "manufacturer": "Seeed Studio",
@@ -838,6 +918,22 @@ export default [
   },
   {
     "id": "seeed-grove-vl53l0x-101020532",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2"],
+      "source": {"label": "Seeed Studio 101020532: v1.0 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-Time_of_Flight_Distance_Sensor-VL53L0X-/res/Grove%20-%20Time%20of%20Flight%20Distance%20Sensor%20(VL53L0X).zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J1", "count": 2, "package": "H2-2.54"}],
+        "boardSha256": "b600d662eef779a401b84056d2ec5cb6f01bba1d9b0c337853a9a6508f142783"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -10.0, "y": -10.25, "width": 20, "height": 20.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020532",
     "name": "Seeed Grove - Time of Flight Distance Sensor VL53L0X",
     "manufacturer": "Seeed Studio",
@@ -1285,6 +1381,22 @@ export default [
   },
   {
     "id": "seeed-grove-d7s-101021096",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j1-7"],
+      "source": {"label": "Seeed Studio 101021096: V1.0 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/grove-d7s-vibration-sensor/D7S-Vibration-Sensor.rar"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J1", "count": 7, "package": "H7-2.54"}],
+        "boardSha256": "1819e0a32c15a22927f8e760aba2fe22b6a4c8a3efb265357b763085924183da"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -20.1, "y": -10.25, "width": 40.2, "height": 20.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101021096",
     "name": "Seeed Grove - D7S Vibration Sensor",
     "manufacturer": "Seeed Studio",

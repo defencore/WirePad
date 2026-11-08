@@ -4,6 +4,22 @@ import assets from "./radio-wireless-assets.js";
 export default [
   {
     "id": "adafruit-module-5970",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "Adafruit ADA5970: EAGLE Adafruit TSMP96000 Code Learning IR Breakout.brd; commit 5d4562147391 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-TSMP96000-Breakout-PCB/blob/5d456214739128a6fc19903849618996ac3116b8/Adafruit%20TSMP96000%20Code%20Learning%20IR%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_OVAL"}],
+        "duplicateHeaderContacts": [{"pinId": "jp2-1", "equivalentPinId": "jp1-1", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-2", "equivalentPinId": "jp1-2", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-3", "equivalentPinId": "jp1-3", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "cf7267f3f02773507de611d0d1ffe84165100fa153288bbe6e3af3811348ed14"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5970",
     "name": "Adafruit TSMP96000 \"Code Learning\" Infrared IR Receiver Breakout",
     "manufacturer": "Adafruit",
@@ -101,6 +117,22 @@ export default [
   },
   {
     "id": "adafruit-module-5940",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "Adafruit ADA5940: EAGLE Adafruit TSSP77038 IR Demodulator Breakout.brd; commit 6df204dc5318 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-TSSP77038-IR-Demodulator-Breakout-PCB/blob/6df204dc531804658d977a4f69bc873b863bb6ac/Adafruit%20TSSP77038%20IR%20Demodulator%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_OVAL"}],
+        "duplicateHeaderContacts": [{"pinId": "jp2-1", "equivalentPinId": "jp1-1", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-2", "equivalentPinId": "jp1-2", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-3", "equivalentPinId": "jp1-3", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "b394196f82725e438ce3c1eb84dc3d854f4c270c149f974e0841f5642436a18d"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5940",
     "name": "Adafruit TSSP77038 38KHz Infrared IR Demodulator Breakout",
     "manufacturer": "Adafruit",
@@ -198,6 +230,23 @@ export default [
   },
   {
     "id": "adafruit-module-5939",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5"],
+      "source": {"label": "Adafruit ADA5939: EAGLE Adafruit Infrared IR Remote Receiver.brd; commit ead85073a5f1 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-Infrared-IR-Remote-Receiver-PCB/blob/ead85073a5f1e06c649a5f8e9a143e4ecd4e9333/Adafruit%20Infrared%20IR%20Remote%20Receiver.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP3", "count": 5, "package": "1X05_ROUND_70"}],
+        "duplicateHeaderContacts": [{"pinId": "jp1-1", "equivalentPinId": "jp3-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-2", "equivalentPinId": "jp3-4", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-3", "equivalentPinId": "jp3-5", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "f50fbfcc07ef00a7bebb32add1226649072f2015b76425949dec7008db5214f9"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78},
+        {"x": -0.86, "y": -9.658, "width": 6.8, "height": 4.1}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5939",
     "name": "Adafruit Infrared IR Remote Receiver - STEMMA JST PH 2mm",
     "manufacturer": "Adafruit",
@@ -485,6 +534,23 @@ export default [
   },
   {
     "id": "adafruit-module-3070",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA3070: EAGLE Adafruit RFM+LoRa Breakout.brd; commit 3ad6bed6e1b4 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-RFM-LoRa-Radio-Breakout-PCB/blob/3ad6bed6e1b407afa7119ae548b5c2f1b107c6b1/Adafruit%20RFM%2BLoRa%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP3", "count": 9, "package": "1X09_ROUND_70"}, {"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "7c1436eaafa74ed13a5871eb45f9e25420dd3151dfacd0a81cd1246867e30ca8"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.605, "width": 25.4, "height": 29.21},
+        {"x": 5.461, "y": -23.6855, "width": 6.35, "height": 12.7649}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3070",
     "name": "Adafruit RFM69HCW Transceiver Radio Breakout - 868 or 915 MHz",
     "manufacturer": "Adafruit",
@@ -561,6 +627,22 @@ export default [
   },
   {
     "id": "adafruit-module-4415",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6"],
+      "source": {"label": "Adafruit ADA4415: EAGLE Adafruit PA1010D Mini GPS.brd; commit 6f1d0f216b84 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-PA1010D-Mini-GPS-PCB/blob/6f1d0f216b848bea8d473a4b1384fd0340536ea0/Adafruit%20PA1010D%20Mini%20GPS.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP2", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "b8cb633d4010bac22016eebd44980994894d3cd42d402ad9628180a5a48b56e8"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4415",
     "name": "Adafruit Mini GPS PA1010D - UART and I2C - STEMMA QT",
     "manufacturer": "Adafruit",

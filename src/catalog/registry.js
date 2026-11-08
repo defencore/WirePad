@@ -59,6 +59,37 @@ function validateFootprint(footprint, component, context) {
   for (const id of references) if (!ids.has(id)) throw new Error(`${context} footprint refers to unknown contact "${id}".`);
 }
 
+function validateMountingView(mounting, component, context) {
+  const view = mounting.view;
+  if (view === undefined) return null;
+  if (!view || typeof view !== 'object' || Array.isArray(view) || mounting.type !== 'breadboard-module' || view.id !== 'breadboard' ||
+      !mounting.calibration || !mounting.viewBounds || typeof mounting.renderMounted !== 'function') {
+    throw new Error(`${context} physical view needs a reviewed module, calibration, bounds and renderer.`);
+  }
+  requireText(view.note, `${context} physical view evidence`);
+  if (!Array.isArray(view.pins) || view.pins.length !== component.pins.length) throw new Error(`${context} physical view must retain every contact.`);
+  const canonical = new Set(component.pins.map(pin => pin.id)), ids = new Set();
+  const { x, y, width, height } = mounting.viewBounds;
+  for (const pin of view.pins) {
+    if (!pin || !canonical.has(pin.pinId) || ids.has(pin.pinId) || ![pin.x, pin.y].every(Number.isFinite) ||
+        pin.face !== undefined && !['front', 'rear'].includes(pin.face)) throw new Error(`${context} physical view has an invalid or repeated contact.`);
+    if (pin.x < x - 1e-7 || pin.y < y - 1e-7 || pin.x > x + width + 1e-7 || pin.y > y + height + 1e-7) {
+      throw new Error(`${context} physical view contact is outside its visible bounds.`);
+    }
+    ids.add(pin.pinId);
+  }
+  if (view.connections !== undefined) {
+    if (!Array.isArray(view.connections) || !view.connections.length || view.connections.some(group =>
+      !Array.isArray(group) || group.length < 2 || new Set(group).size !== group.length || group.some(id => !canonical.has(id)))) {
+      throw new Error(`${context} physical view has invalid internal connections.`);
+    }
+    requireText(view.connectionSource?.label, `${context} physical view connection source label`);
+    requireText(view.connectionSource?.url, `${context} physical view connection source URL`);
+    if (!/^https?:\/\//.test(view.connectionSource.url)) throw new Error(`${context} physical view connection source must use HTTP or HTTPS.`);
+  }
+  return new Map(view.pins.map(pin => [pin.pinId, pin]));
+}
+
 function validateMounting(mounting, component, context) {
   if (!mounting || typeof mounting !== 'object') throw new Error(`${context} has an invalid mounting descriptor.`);
   if (!['breadboard', 'breadboard-module', 'breadboard-part'].includes(mounting.type)) throw new Error(`${context} has an unsupported mounting type.`);
@@ -116,6 +147,7 @@ function validateMounting(mounting, component, context) {
     if ([mounting.body.x - left, mounting.body.y - top, mounting.body.width - (right - left), mounting.body.height - (bottom - top)]
       .some(delta => Math.abs(delta) > 1e-7)) throw new Error(`${context} mounting body must match its physical region envelope.`);
   }
+  const viewPins = validateMountingView(mounting, component, context);
   const terminals = mounting.type === 'breadboard' ? mounting.contacts(component) : mounting.contacts;
   const rails = mounting.type === 'breadboard' && mounting.railContacts ? mounting.railContacts(component) : [];
   if (!Array.isArray(terminals) || !Array.isArray(rails)) throw new Error(`${context} mounting must identify physical contacts.`);
@@ -125,7 +157,8 @@ function validateMounting(mounting, component, context) {
   const ids = new Set(), positions = new Set();
   const origin = contacts[0];
   for (const contact of contacts) {
-    const pin = pins.get(contact.pinId);
+    const canonicalPin = pins.get(contact.pinId), projected = viewPins?.get(contact.pinId);
+    const pin = projected ? { ...canonicalPin, ...projected, face: projected.face ?? 'front', back: false } : canonicalPin;
     if (!pin) throw new Error(`${context} mounting refers to unknown contact "${contact.pinId}".`);
     if (ids.has(contact.pinId)) throw new Error(`${context} mounting repeats contact "${contact.pinId}".`);
     ids.add(contact.pinId);
@@ -159,6 +192,11 @@ function validateMounting(mounting, component, context) {
   } : {}), ...(mounting.body ? { body: Object.freeze({ ...mounting.body }) } : {}),
     ...(mounting.bodyRegions ? { bodyRegions: Object.freeze(mounting.bodyRegions.map(region => Object.freeze({ ...region }))) } : {}),
     ...(mounting.viewBounds ? { viewBounds: Object.freeze({ ...mounting.viewBounds }) } : {}),
+    ...(mounting.view ? { view: Object.freeze({ ...mounting.view,
+      ...(mounting.view.connections ? { connections: Object.freeze(mounting.view.connections.map(group => Object.freeze([...group]))),
+        connectionSource: Object.freeze({ ...mounting.view.connectionSource }) } : {}),
+      pins: Object.freeze(mounting.view.pins.map(pin => Object.freeze({ ...pin,
+        ...(Array.isArray(pin.size) ? { size: Object.freeze([...pin.size]) } : {}) }))) }) } : {}),
     ...(mounting.calibration ? { calibration: Object.freeze({ ...mounting.calibration, origin: Object.freeze({ ...mounting.calibration.origin }) }) } : {}),
     ...(mounting.origin ? { origin: Object.freeze({ ...mounting.origin }) } : {}),
     ...(mounting.roots ? { roots: Object.freeze(mounting.roots.map(root => Object.freeze({ ...root }))) } : {}) });
@@ -178,7 +216,7 @@ function validateEntry(entry, familyId) {
   }
   if (configuration !== undefined) {
     requireText(configuration.key, `${context} configuration key`);
-    if (['id', 'componentId', 'x', 'y', 'rotation', 'label', 'scale', 'scaleX', 'scaleY', 'attachment', 'attachments', 'mounting', 'leads', '__proto__', 'constructor', 'prototype'].includes(configuration.key)) throw new Error(`${context} uses a reserved configuration key.`);
+    if (['id', 'componentId', 'x', 'y', 'rotation', 'label', 'scale', 'scaleX', 'scaleY', 'attachment', 'attachments', 'mounting', 'leads', 'view', '__proto__', 'constructor', 'prototype'].includes(configuration.key)) throw new Error(`${context} uses a reserved configuration key.`);
     if (typeof configuration.normalize !== 'function' || typeof configuration.create !== 'function') throw new Error(`${context} configuration must define normalize and create functions.`);
   }
   return Object.freeze({ component, render, footprint, ...(model ? { model } : {}), ...(configuration ? { configuration: Object.freeze(configuration) } : {}),

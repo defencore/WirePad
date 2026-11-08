@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { circle, label, line, mountingHole, path, rect, smd } from "../shared/svg.js";
 
@@ -121,7 +122,7 @@ function keyes({ sku, id, name, shortName, kind, description, tags, contacts, ca
       id: pinId, number: String(index + 1), label: pinLabel, description: desc, type, edge: "bottom", x: positions[index][0], y: positions[index][1],
     })),
   }, positions);
-  return {
+  const entry = {
     component,
     render: (part, showLabels) => keyesArt(kind, boardX, boardY, boardW, boardH, showLabels) + headers(part, showLabels),
     footprint: {
@@ -131,6 +132,27 @@ function keyes({ sku, id, name, shortName, kind, description, tags, contacts, ca
       details: [[0, -5, joystick ? 19 : 13, joystick ? 19 : 13, kind === "reed" || kind === "tilt" ? 5 : 12, kind === "button" ? "#e9c70d" : "#454c47"]],
     },
   };
+  const unitsPerMm = 6, insertionY = boardY + boardH - 2.54 * unitsPerMm;
+  const viewPins = component.pins.map(pin => ({ pinId: pin.id, x: pin.x, y: insertionY, face: "front" }));
+  const bodyRegions = [{ x: boardX, y: boardY, width: boardW, height: boardH },
+    ...(collision ? [{ x: cx - 40, y: boardY - 48, width: 126, height: 53 }] : [])];
+  const x = Math.min(...bodyRegions.map(region => region.x)), y = Math.min(...bodyRegions.map(region => region.y));
+  const viewBounds = { x: x - .5, y: y - .5,
+    width: Math.max(...bodyRegions.map(region => region.x + region.width)) - x + 1,
+    height: Math.max(...bodyRegions.map(region => region.y + region.height)) - y + 1 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `${sku} manufacturer header/population photographs`, url: docs(sku) },
+    contacts: component.pins.map((pin, index) => ({ pinId: pin.id, x: (index - (component.pins.length - 1) / 2) * 2.54, y: boardH / unitsPerMm / 2 - 2.54 })),
+    calibration: { origin: { x: cx, y: boardY + boardH / 2 }, unitsPerMm },
+    bodyRegions, bodyEvidence: "SKU-specific manufacturer photograph and connector-side wiring order identify the complete standard 2.54 mm header. The straight-header assembly uses the existing representative PCB envelope; the collision switch lever is a separate projecting material region.",
+    viewBounds,
+    view: { id: "breadboard", pins: viewPins,
+      note: "Explicit straight downward-header assembly replaces the old illustration of side-facing exposed male post ends. Every old pin ID is mapped onto the complete 2.54 mm insertion strip; the representative board envelope and header inset are not manufacturer production dimensions." },
+    renderMounted: () => keyesArt(kind, boardX, boardY, boardW, boardH, false) + viewPins.map(pin =>
+      circle(pin.x, pin.y, 4.8, gold, "#ffe776") + circle(pin.x, pin.y, 2.2, "#293630")).join(""),
+    note: "Use the straight downward male-header population; the photographed side-facing/right-angle posts must be replaced before flat insertion. Seat every signal-header lead. The PCB/shaft envelope remains representative, and unused switch or sensor pads are not insertion contacts.",
+  });
+  return entry;
 }
 
 const entries = [

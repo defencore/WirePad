@@ -3,6 +3,7 @@ import { partScale } from '../model/part-placement.js';
 import { translation, partRotation, labelPosition } from '../geometry/parts.js';
 import { wireMarkup, partMarkup, junctionDot } from './markup.js';
 import { usesCompactBoardView } from './part-art.js';
+import { viewForPart } from '../model/part-view.js';
 
 export const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
@@ -100,9 +101,10 @@ export function updateWire(layer, entry, { wire, geometry }, selected) {
 
 function updatePin(pin, connected) {
   const dot = pin.lastElementChild;
+  const rear = pin.dataset.contactFace === 'rear';
   dot.setAttribute('r', connected ? 3.3 : 2.55);
-  dot.setAttribute('fill', connected ? '#087a6f' : '#fffbeb');
-  dot.setAttribute('stroke', connected ? '#ffffff' : '#967543');
+  dot.setAttribute('fill', connected ? '#087a6f' : rear ? '#fff2fc' : '#fffbeb');
+  dot.setAttribute('stroke', rear ? '#a43683' : connected ? '#ffffff' : '#967543');
 }
 
 export function updatePart(layer, entry, { part, connected, covered = new Set() }, selected, active) {
@@ -111,7 +113,7 @@ export function updatePart(layer, entry, { part, connected, covered = new Set() 
   const component = componentForPart(part);
   const mountedView = usesCompactBoardView(part, component);
   if (!entry || entry.component !== component || entry.label !== label || entry.leads !== part.leads ||
-      Boolean(entry.seated) !== Boolean(part.attachment) || Boolean(entry.mountedView) !== mountedView ||
+      Boolean(entry.seated) !== Boolean(part.attachment) || Boolean(entry.mountedView) !== mountedView || entry.view !== part.view ||
       mountedView && entry.rotation !== rotation) {
     const node = entry?.node ?? group(layer);
     entry?.background?.remove();
@@ -122,7 +124,7 @@ export function updatePart(layer, entry, { part, connected, covered = new Set() 
     const pins = new Map([...body.children].slice(1).map(pin => [pin.dataset.pin, pin]));
     let background;
     let backgroundBody;
-    if (part.leads || component.surface || component.contactLayout === 'physical') {
+    if (part.leads || viewForPart(part) || component.surface || component.contactLayout === 'physical') {
       background = group(layer);
       backgroundBody = group(layer);
       backgroundBody.setAttribute('transform', partRotation(part, component));
@@ -130,7 +132,7 @@ export function updatePart(layer, entry, { part, connected, covered = new Set() 
       background.append(backgroundBody);
     }
     entry = { node, component, label, body, caption, pins, outline, background, backgroundBody, connected, rotation,
-      scaleX: scale.x, scaleY: scale.y, leads: part.leads, seated: Boolean(part.attachment), mountedView, covered: new Set(), selected: false };
+      scaleX: scale.x, scaleY: scale.y, leads: part.leads, view: part.view, seated: Boolean(part.attachment), mountedView, covered: new Set(), selected: false };
   }
   if (entry.x !== x || entry.y !== y) {
     entry.node.setAttribute('transform', translation(x, y));

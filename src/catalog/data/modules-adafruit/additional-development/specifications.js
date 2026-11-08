@@ -4,6 +4,24 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "adafruit-module-5325",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7"],
+      "source": {"label": "Adafruit ADA5325: EAGLE Adafruit QT Py ESP32-S2 Rev C.brd; commit 7df4eac2c0b9 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-QT-Py-ESP32-S2-PCB/blob/7df4eac2c0b9a73ba966766ae6027b0a4d8a6901/Adafruit%20QT%20Py%20ESP32-S2%20Rev%20C.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. For castellated packages use only the inner plated round holes for the downward header; the electrically paired outer edge contacts are solderable auxiliary contacts. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07_CASTEL"}, {"id": "JP3", "count": 7, "package": "1X07_CASTEL"}],
+        "castellationAliases": [{"pinId": "jp1-1c", "equivalentPinId": "jp1-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-2c", "equivalentPinId": "jp1-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-3c", "equivalentPinId": "jp1-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-4c", "equivalentPinId": "jp1-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-5c", "equivalentPinId": "jp1-5", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-6c", "equivalentPinId": "jp1-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-7c", "equivalentPinId": "jp1-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-1c", "equivalentPinId": "jp3-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-2c", "equivalentPinId": "jp3-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-3c", "equivalentPinId": "jp3-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-4c", "equivalentPinId": "jp3-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-5c", "equivalentPinId": "jp3-5", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-6c", "equivalentPinId": "jp3-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-7c", "equivalentPinId": "jp3-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}],
+        "boardSha256": "8bf3bbd36baa60cdb2e61accf4954786f0b25854471922261bcc58b5cf3bfb2c"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -8.89, "y": -10.3505, "width": 17.78, "height": 20.701},
+        {"x": -4.47, "y": -11.3665, "width": 8.94, "height": 7.35}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5325",
     "name": "Adafruit QT Py ESP32-S2 WiFi Dev Board with STEMMA QT",
     "manufacturer": "Adafruit",
@@ -900,6 +918,23 @@ export default [
   },
   {
     "id": "adafruit-module-3403",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12"],
+      "source": {"label": "Adafruit ADA3403: EAGLE Adafruit Feather M0 Express.brd; commit 5017ef418853 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-Feather-M0-Express-PCB/blob/5017ef41885371f8a26ba1b8ab9dd700bd7ce655/Adafruit%20Feather%20M0%20Express.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16_ROUND"}, {"id": "JP3", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "0fb666534da006fb2e01c61a8f3725fd91a64c918aeaba1f9ceb421b4bc7b3d8"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": -25.855, "y": -3.975, "width": 6.0, "height": 8.325}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3403",
     "name": "Adafruit Feather M0 Express",
     "manufacturer": "Adafruit",
@@ -1016,6 +1051,23 @@ export default [
   },
   {
     "id": "adafruit-module-2829",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12"],
+      "source": {"label": "Adafruit ADA2829: EAGLE Adafruit Feather 32u4 Bluefruit LE.brd; commit fab08d3f5f07 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-Feather-32u4-Bluefruit-LE-PCB/blob/fab08d3f5f0755a29559b81ad54239b746906b56/Adafruit%20Feather%2032u4%20Bluefruit%20LE.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16_ROUND"}, {"id": "JP3", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "293c29fe2e51166129c54af4d5adfab23ced18188499ac0876fd749a20d97210"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": -25.855, "y": -3.975, "width": 6.0, "height": 8.325}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2829",
     "name": "Adafruit Feather 32u4 Bluefruit LE",
     "manufacturer": "Adafruit",
@@ -1142,6 +1194,23 @@ export default [
   },
   {
     "id": "adafruit-module-2995",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12"],
+      "source": {"label": "Adafruit ADA2995: EAGLE Adafruit Feather Zero BLE rev A.brd; commit b2e0b3f29305 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-Feather-M0-Bluefruit-LE-PCB/blob/b2e0b3f2930568da3471d6c42cb4919d573d3481/Adafruit%20Feather%20Zero%20BLE%20rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16_ROUND"}, {"id": "JP3", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "8ed913e496f3823c1678e33e0665e226041cbb2a5398c21b8e7e5795d8bfec8e"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": -25.855, "y": -3.975, "width": 6.0, "height": 8.325}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2995",
     "name": "Adafruit Feather M0 Bluefruit LE",
     "manufacturer": "Adafruit",

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
 import { chip, circle, label, line, path, rect } from "../shared/svg.js";
 import { readyBoard, readyRow } from "../shared/wire-board.js";
 
@@ -54,7 +55,19 @@ function sensor(spec) {
     nets.get(pin.label).push(pin.id);
   }
   entry.component.internalConnections = [...nets.values()].filter(ids => ids.length > 1);
-  return { component: entry.component, render: entry.art, footprint: entry.footprint, model: entry.model };
+  const headerPins = entry.component.pins.filter(pin => pin.number.startsWith("J3."));
+  if (headerPins.length !== 6) throw new Error(`Incomplete reviewed six-pin header on ${spec.id}.`);
+  const bounds = { x: 39.5, y: 39.5, width: 255, height: 255 };
+  const mounting = reviewedBoardMounting({
+    source: { label: `${spec.sku} v1.0 manufacturer board CAD six-pin header`, url: spec.cad },
+    contacts: headerPins.map((pin, index) => ({ pinId: pin.id, x: -6.35 + index * 2.54, y: 11.43 })),
+    calibration: { origin: { x: 167, y: 167 }, unitsPerMm: 10 },
+    bodyRegions: [{ x: 40, y: 40, width: 254, height: 254 }], viewBounds: bounds,
+    bodyEvidence: "The exact v1.0 manufacturer EAGLE/KiCad source gives a 25.4 mm square PCB and the full J3 bank at 2.54 mm pitch, 1.27 mm from the lower edge. Qwiic solder tails and optional LED lands retain their actual above-board physical coordinates and are never inserted.",
+    renderMounted: () => clippedFrontArtwork(entry.art, entry.component, bounds),
+    note: "Install the complete six-pin J3 straight male strip below the PCB. Qwiic sockets, their 1 mm solder tails and optional LED wire contacts stay above the board. AS7331's reversed J3 numbering follows its exact board revision.",
+  });
+  return { component: entry.component, render: entry.art, footprint: entry.footprint, model: entry.model, mounting };
 }
 
 const normalHeader = signals => readyRow("J3", signals, 103.5, 281.3, 25.4, 0, { side: "top", captions: signals.split(" ") });

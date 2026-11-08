@@ -48,7 +48,7 @@ function treeLines(nodes, prefix = '') {
 export function renderComponentTree(families, accuracy) {
   const assessed = accuracyByComponent(families, accuracy);
   const categories = new Map(), counts = Object.fromEntries(marks.map(mark => [mark, 0]));
-  let total = 0, external = 0;
+  let total = 0, external = 0, insertable = 0, hosts = 0;
   for (const family of families) for (const entry of family.entries) {
     const { component } = entry;
     const category = add(categories, singleLine(component.category), () => new Map());
@@ -58,7 +58,11 @@ export function renderComponentTree(families, accuracy) {
     counts[mark]++;
     total++;
     if (entry.model?.url) external++;
-    entries.push({ label: `${singleLine(component.name)} [${component.id}] [FP:${mark}] [3D:A] [CAD:${entry.model?.url ? '+' : '-'}]` });
+    const breadboard = entry.mounting?.type === 'breadboard' ? 'H'
+      : ['breadboard-module', 'breadboard-part'].includes(entry.mounting?.type) ? '+' : '-';
+    if (breadboard === '+') insertable++;
+    if (breadboard === 'H') hosts++;
+    entries.push({ label: `${singleLine(component.name)} [${component.id}] [FP:${mark}] [3D:A] [CAD:${entry.model?.url ? '+' : '-'}] [BB:${breadboard}]` });
   }
   const nodes = [...categories].sort(([a], [b]) => compare(a, b)).map(([category, makers]) => {
     let categoryCount = 0;
@@ -99,6 +103,16 @@ export function renderComponentTree(families, accuracy) {
     '',
     'Explicit per-component assessments and their evidence are maintained in [catalog-kicad-accuracy.json](catalog-kicad-accuracy.json). No mark is promoted automatically from a URL, descriptive keyword, test result or geometry fixture. A missing assessment is always `FP:?`. `CAD:-` means no separate external CAD link is recorded.',
     '',
+    '## Breadboard insertion marks',
+    '',
+    '| Mark | Meaning | Components |',
+    '| --- | --- | ---: |',
+    `| BB:+ | Reviewed direct insertion profile; fit checks every declared lead, physical pitch and electrical strip. | ${insertable} |`,
+    `| BB:H | Configurable breadboard host. | ${hosts} |`,
+    `| BB:- | No reviewed direct insertion profile. | ${total - insertable - hosts} |`,
+    '',
+    'Breadboard marks come only from explicit catalog mounting descriptors. A 2.54 mm product tag, a reference footprint or matching visual overlap does not create a profile. `BB:-` does not mean that the part has no 2.54 mm contacts: it can require a different header population, an adapter, or further source review. Insertion marks do not upgrade KiCad accuracy. See [BREADBOARD_MOUNTING.md](BREADBOARD_MOUNTING.md) and its per-component source audits.',
+    '',
     '## Tree',
     '',
     '```text',
@@ -108,7 +122,7 @@ export function renderComponentTree(families, accuracy) {
     '',
     '## Maintenance',
     '',
-    'After adding, removing, renaming, regrouping or changing a component/CAD assessment, update its accuracy evidence and regenerate this file in the same change:',
+    'After adding, removing, renaming, regrouping or changing a component, mounting profile or CAD assessment, update the relevant source evidence and regenerate this file in the same change:',
     '',
     '```sh',
     'node scripts/catalog.mjs',

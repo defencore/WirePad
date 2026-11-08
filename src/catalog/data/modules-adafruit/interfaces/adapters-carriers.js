@@ -315,6 +315,22 @@ export default [
   },
   {
     "id": "adafruit-module-5791",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA5791: EAGLE Adafruit STEMMA Piezo Driver Amp.brd; commit 678bf96ec531 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-STEMMA-Piezo-Driver-Amp-PCB/blob/678bf96ec53107bd831f84c2aebca380a3bd4157/Adafruit%20STEMMA%20Piezo%20Driver%20Amp.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "duplicateHeaderContacts": [{"pinId": "jp1-1", "equivalentPinId": "jp2-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-2", "equivalentPinId": "jp2-2", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-3", "equivalentPinId": "jp2-1", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "62b051531a294530c537db2d9ed7913c865619f679ef31be2efe0b0a997aff71"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5791",
     "name": "Adafruit STEMMA Piezo Driver Amp - PAM8904",
     "manufacturer": "Adafruit",
@@ -1422,6 +1438,23 @@ export default [
   },
   {
     "id": "adafruit-module-5973",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4"],
+      "source": {"label": "Adafruit ADA5973: EAGLE Adafruit CH9328 UART to HID Keyboard Breakout.brd; commit 8dccab1fd771 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-CH9328-Breakout-PCB/blob/8dccab1fd771ca7ed068b74442a3e8785da59d03/Adafruit%20CH9328%20UART%20to%20HID%20Keyboard%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04_ROUND"}],
+        "boardSha256": "fe2c63dac691fff3230331ed86234a72ee9127b487d374415230534e6d6f2bf7"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -10.16, "y": -12.7, "width": 20.32, "height": 25.4},
+        {"x": -4.47, "y": -13.843, "width": 8.94, "height": 7.35}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5973",
     "name": "Adafruit CH9328 UART to HID Keyboard Breakout",
     "manufacturer": "Adafruit",
@@ -1554,6 +1587,25 @@ export default [
   },
   {
     "id": "adafruit-module-5772",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7"],
+      "source": {"label": "Adafruit ADA5772: EAGLE Adafruit EYESPI BFF PCB.brd; commit 90ddd1a730d2 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-EYESPI-BFF-PCB/blob/90ddd1a730d2963aacaa67d787213e31e9ef8a0f/Adafruit%20EYESPI%20BFF%20PCB.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. For castellated packages use only the inner plated round holes for the downward header; the electrically paired outer edge contacts are solderable auxiliary contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07_CASTEL"}, {"id": "JP3", "count": 7, "package": "1X07_CASTEL"}],
+        "castellationAliases": [{"pinId": "jp1-1c", "equivalentPinId": "jp1-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-2c", "equivalentPinId": "jp1-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-3c", "equivalentPinId": "jp1-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-4c", "equivalentPinId": "jp1-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-5c", "equivalentPinId": "jp1-5", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-6c", "equivalentPinId": "jp1-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-7c", "equivalentPinId": "jp1-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-1c", "equivalentPinId": "jp3-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-2c", "equivalentPinId": "jp3-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-3c", "equivalentPinId": "jp3-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-4c", "equivalentPinId": "jp3-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-5c", "equivalentPinId": "jp3-5", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-6c", "equivalentPinId": "jp3-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-7c", "equivalentPinId": "jp3-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}],
+        "boardSha256": "8678eae8d4edcd19f3d2c076bb88b7f327d50c1df7fd43e22a341636d5e1080a"
+      },
+      "rearOverhangRegions": [{"x": -9.525, "y": -9.0, "width": 2.54, "height": 18.0}, {"x": 6.985, "y": -9.0, "width": 2.54, "height": 18.0}],
+      "bodyRegions": [
+        {"x": -8.89, "y": -10.3505, "width": 17.78, "height": 20.701},
+        {"x": -9.525, "y": -9.0, "width": 2.54, "height": 18.0},
+        {"x": 6.985, "y": -9.0, "width": 2.54, "height": 18.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5772",
     "name": "Adafruit EYESPI BFF for QT Py or Xiao - 18 Pin FPC Connector",
     "manufacturer": "Adafruit",
@@ -2254,6 +2306,25 @@ export default [
   },
   {
     "id": "adafruit-module-5937",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7"],
+      "source": {"label": "Adafruit ADA5937: EAGLE Adafruit BNO055 and BMP280 BFF.brd; commit 6959d4d990cc physical insertion headers", "url": "https://github.com/adafruit/Adafruit-BNO055-BMP280-BFF-PCB/blob/6959d4d990cc3c7b6c0eb1595544220e9e2b8a87/Adafruit%20BNO055%20and%20BMP280%20BFF.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. For castellated packages use only the inner plated round holes for the downward header; the electrically paired outer edge contacts are solderable auxiliary contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07_CASTEL"}, {"id": "JP3", "count": 7, "package": "1X07_CASTEL"}],
+        "castellationAliases": [{"pinId": "jp1-1c", "equivalentPinId": "jp1-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-2c", "equivalentPinId": "jp1-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-3c", "equivalentPinId": "jp1-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-4c", "equivalentPinId": "jp1-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-5c", "equivalentPinId": "jp1-5", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-6c", "equivalentPinId": "jp1-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-7c", "equivalentPinId": "jp1-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-1c", "equivalentPinId": "jp3-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-2c", "equivalentPinId": "jp3-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-3c", "equivalentPinId": "jp3-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-4c", "equivalentPinId": "jp3-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-5c", "equivalentPinId": "jp3-5", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-6c", "equivalentPinId": "jp3-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp3-7c", "equivalentPinId": "jp3-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}],
+        "boardSha256": "b669e21a27ff81e0abfab94e824f96fadd472bc51561334459bd004a270fe5fc"
+      },
+      "rearOverhangRegions": [{"x": -9.525, "y": -9.0, "width": 2.54, "height": 18.0}, {"x": 6.985, "y": -9.0, "width": 2.54, "height": 18.0}],
+      "bodyRegions": [
+        {"x": -8.89, "y": -10.3505, "width": 17.78, "height": 20.701},
+        {"x": -9.525, "y": -9.0, "width": 2.54, "height": 18.0},
+        {"x": 6.985, "y": -9.0, "width": 2.54, "height": 18.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5937",
     "name": "Adafruit BNO055 + BMP280 BFF Add-On for QT Py",
     "manufacturer": "Adafruit",
@@ -2648,6 +2719,24 @@ export default [
   },
   {
     "id": "adafruit-module-5302",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12", "jp2-13", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13"],
+      "source": {"label": "Adafruit ADA5302: EAGLE Adafruit KB2040.brd; commit b4160dcf4385 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-KB2040-PCB/blob/b4160dcf4385ef2cc30e9652489328321720ee4b/Adafruit%20KB2040.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. For castellated packages use only the inner plated round holes for the downward header; the electrically paired outer edge contacts are solderable auxiliary contacts. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 13, "package": "1X13_CASTEL"}, {"id": "JP1", "count": 13, "package": "1X13_CASTEL"}],
+        "castellationAliases": [{"pinId": "jp2-1c", "equivalentPinId": "jp2-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-2c", "equivalentPinId": "jp2-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-3c", "equivalentPinId": "jp2-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-4c", "equivalentPinId": "jp2-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-5c", "equivalentPinId": "jp2-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-6c", "equivalentPinId": "jp2-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-7c", "equivalentPinId": "jp2-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-8c", "equivalentPinId": "jp2-8", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-9c", "equivalentPinId": "jp2-9", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-10c", "equivalentPinId": "jp2-10", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-11c", "equivalentPinId": "jp2-11", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-12c", "equivalentPinId": "jp2-12", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp2-13c", "equivalentPinId": "jp2-13", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-1c", "equivalentPinId": "jp1-1", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-2c", "equivalentPinId": "jp1-2", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-3c", "equivalentPinId": "jp1-3", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-4c", "equivalentPinId": "jp1-4", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-5c", "equivalentPinId": "jp1-5", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-6c", "equivalentPinId": "jp1-6", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-7c", "equivalentPinId": "jp1-7", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-8c", "equivalentPinId": "jp1-8", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-9c", "equivalentPinId": "jp1-9", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-10c", "equivalentPinId": "jp1-10", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-11c", "equivalentPinId": "jp1-11", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-12c", "equivalentPinId": "jp1-12", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}, {"pinId": "jp1-13c", "equivalentPinId": "jp1-13", "reason": "Electrically paired outer castellation; insert the package inner round header hole only."}],
+        "boardSha256": "6fef1dc137e3ef2e2870be4618694b680f8ff729eb24d1f40409ea2decb6d083"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -16.51, "y": -8.89, "width": 33.02, "height": 17.78},
+        {"x": -17.7165, "y": -4.47, "width": 7.35, "height": 8.94}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5302",
     "name": "Adafruit KB2040 - RP2040 Kee Boar Driver",
     "manufacturer": "Adafruit",

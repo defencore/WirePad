@@ -2,6 +2,7 @@ import { megaSomContacts, primer20SomContacts } from "../data/sipeed-fpga/som-co
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, line, path, rect } from "../shared/svg.js";
 import { sipeedBoard } from "../shared/sipeed-board.js";
+import { miniComputingMounting } from "../shared/mini-computing-mounting.js";
 
 const wiki = "https://wiki.sipeed.com/hardware/en/";
 
@@ -234,4 +235,30 @@ const sipeedFpgaArt = Object.fromEntries(entries.map(entry => [entry.component.i
 const sipeedFpgaFootprints = Object.fromEntries(entries.map(entry => [entry.component.id, entry.footprint]));
 const sipeedFpgaModels = Object.fromEntries(entries.filter(entry => entry.model).map(entry => [entry.component.id, entry.model]));
 
-export default defineFamily("sipeed-fpga", (sipeedFpgaComponents).map(component => ({ component, render: (sipeedFpgaArt)[component.art], footprint: (sipeedFpgaFootprints)[component.id], model: sipeedFpgaModels[component.id] })));
+const nano4kInsertion = miniComputingMounting(nano4k.component, {
+  size: [22.86, 60],
+  pins: Object.fromEntries(nano4k.component.pins.map(pin => {
+    const number = Number(pin.number.split('.').at(-1));
+    return [pin.id, { x: pin.contactGroup === 'P6' ? 1.27 : 21.59, y: 5.4356 + (22 - number) * 2.54 }];
+  })),
+  contacts: nano4k.component.pins.map(pin => pin.id),
+  source: 'https://dl.sipeed.com/shareURL/TANG/Nano%204K/HDK/04_Dimensional%20drawing',
+  evidence: 'Tang_Nano_4K_3603(Dimension Drawing).dxf and the 3603 pinout: all 44 manufacturer TopSolder header-pad circles have centres at source X=5.4356+i*2.54 mm and Y=1.27/21.59 mm. Rotate this mechanical plane into the existing USB-at-top component-side orientation. The PCB is 60 x 22.86 mm; header separation is 20.32 mm. The old default picture remains unchanged; this view corrects its enlarged PCB length.',
+  note: 'Populate all P6/P7 contacts with downward straight male headers. HDMI, USB and camera connectors remain cable interfaces.',
+  regions: [{ x: 0, y: 0, width: 22.86, height: 60 },
+    { x: 8, y: -.75, width: 6.86, height: 5.63 },
+    { x: 5.72, y: 54, width: 11.43, height: 6.75 }],
+  // The component-side photograph places the FPGA below the camera socket;
+  // the older enlarged catalog illustration overlapped those two features.
+  renderHardware: () => `<g stroke-width=".12">` + rect(0, 0, 22.86, 60, .7, '#272c2f', '#667b7e') +
+    rect(8, -.75, 6.86, 5.63, .5, '#b5c1c4', '#e6eae7') + rect(8.6, -.1, 5.66, 1.4, .1, '#4a5d67') +
+    [2.1, 18].map(x => rect(x, .6, 2.8, 2.8, .3, '#a8b0b5', '#d6dde0') + circle(x + 1.4, 2, .8, '#343e47')).join('') +
+    `<g transform="translate(7.2 9.1) scale(.1)">${chip(0, 0, 80, 80, 'BL702', 8)}</g>` +
+    rect(4.57, 24.4, 13.72, 4.87, .3, '#d1d5c4', '#7f8f7d') + rect(5.1, 28, 12.6, 1.1, .1, '#272e30') +
+    `<g transform="translate(6.43 32.4) scale(.1)">${chip(0, 0, 100, 100, 'GW1NSR', 8)}</g>` +
+    rect(6.6, 45, 5, 3.6, .2, '#171d27', '#60736f') + label(9.1, 46.8, 'FLASH', .8) +
+    rect(5.72, 54, 11.43, 6.75, .4, '#b5c1c4', '#e6eae7') + rect(6.4, 57.5, 10, 2.3, .1, '#4a5d67') +
+    [[5, 7], [16.5, 12], [5, 19], [17, 20], [5, 45], [17, 48]].map(([x, y]) => rect(x, y, 1.4, .6, .1, '#a7afa4')).join('') +
+    label(11.43, 51.1, 'Tang Nano 4K', 1.1, '#d5e2df') + '</g>',
+});
+export default defineFamily("sipeed-fpga", (sipeedFpgaComponents).map(component => ({ component, render: (sipeedFpgaArt)[component.art], footprint: (sipeedFpgaFootprints)[component.id], model: sipeedFpgaModels[component.id], ...(component.id === nano4k.component.id ? { mounting: nano4kInsertion } : {}) })));

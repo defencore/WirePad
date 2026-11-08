@@ -2,21 +2,22 @@ import { componentForPart } from './part-component.js';
 import { pinById } from './component-pins.js';
 import { endpointKey } from '../model/endpoints.js';
 import { attachmentConnections } from './mounting.js';
+import { internalConnectionsFor } from './part-view.js';
 
 const connectionIndexes = new WeakMap();
 const projectIndexes = new WeakMap();
 
-function connectionsByPin(component) {
-  let index = connectionIndexes.get(component);
+function connectionsByPin(groups) {
+  let index = connectionIndexes.get(groups);
   if (!index) {
     index = new Map();
-    for (const group of component.internalConnections ?? []) {
+    for (const group of groups) {
       for (const pinId of group) {
         if (!index.has(pinId)) index.set(pinId, []);
         index.get(pinId).push(group);
       }
     }
-    connectionIndexes.set(component, index);
+    connectionIndexes.set(groups, index);
   }
   return index;
 }
@@ -81,7 +82,7 @@ export function traceNet(project, seed) {
     const part = parts.get(endpoint.partId);
     if (part) {
       const component = componentForPart(part);
-      const groups = component?.internalConnections ? connectionsByPin(component).get(endpoint.pinId) ?? [] : [];
+      const groups = connectionsByPin(internalConnectionsFor(part, component)).get(endpoint.pinId) ?? [];
       let visited = visitedGroups.get(part.id);
       if (!visited) {
         visited = new Set();

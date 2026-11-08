@@ -1,5 +1,6 @@
 import { defineFamily } from "../registry.js";
 import { cadReadyBoard } from "../shared/cad-board.js";
+import { cadBoardMounting } from "../shared/cad-board-mounting.js";
 import { circle, label, line, rect } from "../shared/svg.js";
 
 const gold="#c7ab63",silk="#ecede0",pcb="#244f7b";
@@ -38,7 +39,19 @@ function finish(board,front,back=""){
   }
  }
  board.svg=`<g stroke-width=".12">${art}</g>`;
- return cadReadyBoard(board);
+ const entry = cadReadyBoard(board);
+ if (!board.id.includes('relay')) {
+  const plus = board.id.endsWith('plus'), c6 = board.id.includes('esp32-c6');
+  const pins = board.contacts.filter(pin => plus ? pin.connector === 'U5' : c6 ? pin.connector === 'P8' :
+   pin.connector === 'P1' && (Number(pin.number.split('.').at(-1)) <= 9 || Number(pin.number.split('.').at(-1)) >= 15));
+  entry.mounting = cadBoardMounting(board, entry, { pinIds: pins.map(pin => pin.id), overhangs: [[plus ? 6.1 : 4.6, -.6, 8.8, 7]],
+   source: { url: board.source, label: `Waveshare ${board.shortName} manufacturer mechanical drawing and pinout` },
+   bodyEvidence: 'Manufacturer dimensions verify the PCB and complete two-row expansion centers. Body regions copy the fixed PCB and protruding USB-C shell from the existing same-side reconstruction. Underside test contacts remain source-photo reference projections; they are not insertion leads.',
+   note: plus ? 'Populate both complete 20-pin Pico rows, 17.78 mm apart at 2.54 mm pitch.' : c6 ?
+    'Populate both complete nine-pin edge rows, 15.24 mm apart at 2.54 mm pitch.' :
+    'Populate both complete nine-pin side rows, 15.24 mm apart at 2.54 mm pitch. Leave the five crosswise bottom contacts unpopulated or face-up; inserting them downward would short independent signals in the breadboard strips.' });
+ }
+ return entry;
 }
 function zero(rp2350){
  const name=rp2350?"RP2350-Zero":"RP2040-Zero",board=newBoard(name.toLowerCase(),name,[18,23.5],`${name} with USB-C, BOOT/RESET and WS2812 on GPIO16. All 23 edge contacts and ten underside GPIO/ground pads are exposed${rp2350?", plus three underside SWD contacts":""}. The two Zero generations have different underside terminal numbering and spacing; each is mapped from its own schematic.`,{label:`Waveshare ${name} manufacturer STEP archive`,url:rp2350?"https://www.waveshare.net/w/upload/1/1d/RP2350_Zero_step.zip":"https://www.waveshare.net/w/upload/f/f7/RP2040_Zero_stp.zip"});
@@ -98,5 +111,6 @@ const waveshareMoreComponents=entries.map(e=>e.component);
 const waveshareMoreArt=Object.fromEntries(entries.map(e=>[e.component.id,e.art]));
 const waveshareMoreFootprints=Object.fromEntries(entries.map(e=>[e.component.id,e.footprint]));
 const waveshareMoreModels=Object.fromEntries(entries.map(e=>[e.component.id,e.model]));
+const waveshareMoreMountings=Object.fromEntries(entries.map(e=>[e.component.id,e.mounting]));
 
-export default defineFamily("waveshare-more", (waveshareMoreComponents).map(component => ({ component, render: (waveshareMoreArt)[component.art], footprint: (waveshareMoreFootprints)[component.id], model: waveshareMoreModels[component.id] })));
+export default defineFamily("waveshare-more", (waveshareMoreComponents).map(component => ({ component, render: (waveshareMoreArt)[component.art], footprint: (waveshareMoreFootprints)[component.id], model: waveshareMoreModels[component.id], mounting: waveshareMoreMountings[component.id] })));

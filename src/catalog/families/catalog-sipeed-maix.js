@@ -1,6 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, path, rect, tactile, usb } from "../shared/svg.js";
 import { readyRow, readyBoard, readySocket, readyAntenna } from "../shared/wire-board.js";
+import { miniComputingMounting, projectMiniHardware } from "../shared/mini-computing-mounting.js";
 
 const wiki = "https://wiki.sipeed.com/hardware/en/";
 const download = "https://dl.sipeed.com/shareURL/";
@@ -151,4 +152,38 @@ const sipeedMaixArt = Object.fromEntries(entries.map(entry => [entry.component.i
 const sipeedMaixFootprints = Object.fromEntries(entries.map(entry => [entry.component.id, entry.footprint]));
 const sipeedMaixModels = Object.fromEntries(entries.map(entry => [entry.component.id, entry.model]));
 
-export default defineFamily("sipeed-maix", (sipeedMaixComponents).map(component => ({ component, render: (sipeedMaixArt)[component.art], footprint: (sipeedMaixFootprints)[component.id], model: sipeedMaixModels[component.id] })));
+const m0Insertion = miniComputingMounting(m0.component, {
+  size: [18.4238, 23.8], contacts: m0.component.pins.map(pin => pin.id),
+  pins: Object.fromEntries(m0.component.pins.map(pin => [pin.id, {
+    x: pin.id.startsWith('j3-') ? 1.5904 : 16.8304,
+    y: 2.699 + (Number(pin.number.split('.').at(-1)) - 1) * 2.54,
+  }])),
+  source: 'https://dl.sipeed.com/shareURL/Maix-Zero/M0sense/3_Bit_number_map',
+  evidence: 'Manufacturer M0Sense_30215_ibom.html: J3 inner round THT centres X=139.1666 and J2 inner centres X=154.4068 mm, Y=92.199+i*2.54 mm, 0.9 mm drills. The PCB edge coordinates are X=137.5762..156 and Y=89.5..113.3 mm. Use the inner drilled holes rather than the outer castellations. The 0.0002 mm exported row discrepancy is retained in this audit; straight male posts use the nominal 15.24 mm separation within these drilled holes. PCB and pin numbering follow the component-side iBOM; non-contact hardware remains illustrative.',
+  note: 'Install both complete eight-contact rows through the inner round holes. Leave outer castellations for PCB soldering; they are the same electrical contacts, not extra downward pins.',
+  regions: [{ x: 0, y: 0, width: 18.4238, height: 23.8 },
+    { x: 5.36, y: -1.48, width: 7.7, height: 7.02 }],
+  renderHardware: () => projectMiniHardware(m0.renderHardware, m0.component, [56, 55, 278, 354], [18.4238, 23.8]),
+});
+const m1sDockInsertion = miniComputingMounting(m1sDock.component, {
+  size: [27.4, 55.4], contacts: m1sDock.component.pins.filter(pin => !pin.id.startsWith('p7-')).map(pin => pin.id),
+  connections: [['p7-4', 'p5-13'], ['p7-3', 'p5-12'], ['p7-2', 'p6-1'], ['p7-1', 'p6-16']],
+  connectionSource: { label: 'Sipeed M1s Dock 3272 manufacturer schematic V1.0',
+    url: 'https://dl.sipeed.com/fileList/MAIX/M1s/M1s_Dock/2_Schematic/M1s_Dock_3272_Schematic_V1.pdf' },
+  pins: Object.fromEntries(m1sDock.component.pins.map(pin => {
+    const number = Number(pin.number.split('.').at(-1));
+    return [pin.id, pin.id.startsWith('p7-') ? {
+      x: 15.56 - (number - 1) * 1.25, y: 50.54, face: 'rear',
+      description: `${pin.number}: ${pin.label}. Actual underside P7 solder-pad projection; use the fitted UART socket through its cable. This pad is not a downward breadboard lead.`,
+    } : { x: pin.id.startsWith('p6-') ? 2.27 : 25.13, y: 7.54 + (number - 1) * 2.54 }];
+  })),
+  source: 'https://dl.sipeed.com/shareURL/MAIX/M1s/M1s_Dock/3_Bit_number_map',
+  evidence: 'Manufacturer M1s_Dock_3272.html iBOM: P5/P6 each have sixteen 1 mm drilled contacts at X=76.7/99.56 mm and Y=-114.6+i*2.54 mm. Mirror X into the published module-shield-side orientation, preserving P6 left/P5 right and 22.86 mm separation. PCB envelope is X=74.43..101.83, Y=-122.14..-66.74 mm. All four P7 underside SMD terminal centres (1.25 mm pitch) are projected separately with BACK PAD markers; P7 is not an insertion header. Non-contact hardware remains illustrative.',
+  note: 'Install both complete P5/P6 rows with downward straight male headers. The fitted four-contact P7 socket remains a cable connection and is not populated downward.',
+  regions: [{ x: 0, y: 0, width: 27.4, height: 55.4 },
+    { x: .85, y: 53.9, width: 10.87, height: 1.69 },
+    { x: 16.06, y: 53.9, width: 10.58, height: 1.69 }],
+  renderHardware: () => projectMiniHardware(m1sDock.renderHardware, m1sDock.component, [75, 30, 290, 590], [27.4, 55.4]),
+});
+const sipeedMaixMounting = { [m0.component.id]: m0Insertion, [m1sDock.component.id]: m1sDockInsertion };
+export default defineFamily("sipeed-maix", (sipeedMaixComponents).map(component => ({ component, render: (sipeedMaixArt)[component.art], footprint: (sipeedMaixFootprints)[component.id], model: sipeedMaixModels[component.id], ...(sipeedMaixMounting[component.id] ? { mounting: sipeedMaixMounting[component.id] } : {}) })));

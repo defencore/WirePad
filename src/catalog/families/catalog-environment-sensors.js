@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, path, pinRow, rect, screw, smd } from "../shared/svg.js";
 
@@ -46,7 +47,7 @@ function breakout({
   const headerPins = mappedPins.slice(0, header.length);
   const terminalPins = mappedPins.slice(header.length);
 
-  return {
+  const entry = {
     component: {
       id, name: `Adafruit ${name}`, shortName, source, description, subtitle, tags, manufacturer: "Adafruit",
       category: "Sensors", referencePrefix: "U", art: id, width, height, pins: [...headerPins, ...terminalPins], contactLayout: "physical",
@@ -70,6 +71,18 @@ function breakout({
     },
     model,
   };
+  const unitsPerMm = canvasPitch / pitch;
+  const bodyRegions = [{ x: margin, y: top, width: boardWidth, height: boardHeight }];
+  const viewBounds = { x: margin - .5, y: top - .5, width: boardWidth + 1, height: boardHeight + 3 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `${shortName} published Adafruit header drawing / CAD`, url: model.url },
+    contacts: headerPins.map((pin, index) => ({ pinId: pin.id, x: (index - (headerPins.length - 1) / 2) * pitch, y: body[1] / 2 - pitch })),
+    calibration: { origin: { x: width / 2, y: headerY - (body[1] / 2 - pitch) * unitsPerMm }, unitsPerMm },
+    bodyRegions, bodyEvidence: "Manufacturer board dimensions and source header pitch share the existing physical projection. The separate lower PCB bevel is visible only; physical clearance ends at the source PCB edge and outside captions are excluded.",
+    viewBounds, renderMounted: part => clippedFrontArtwork(entry.art, part, viewBounds),
+    note: "Seat every contact of the single main 2.54 mm header. STEMMA QT sockets and thermocouple terminals remain cable connections and do not claim breadboard holes.",
+  });
+  return entry;
 }
 
 function qtSocket(x, y, facingLeft) {
@@ -184,9 +197,4 @@ const entries = [
   }),
 ];
 
-const environmentSensorComponents = entries.map(({ component }) => component);
-const environmentSensorArt = Object.fromEntries(entries.map(({ component, art }) => [component.art, art]));
-const environmentSensorFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const environmentSensorModels = Object.fromEntries(entries.map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("environment-sensors", (environmentSensorComponents).map(component => ({ component, render: (environmentSensorArt)[component.art], footprint: (environmentSensorFootprints)[component.id], model: environmentSensorModels[component.id] })));
+export default defineFamily("environment-sensors", entries.map(({ art: render, ...entry }) => ({ ...entry, render })));

@@ -420,6 +420,22 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl13287",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "SparkFun WRL-13287: EAGLE SparkFun-ESP8266-WiFi-Shield.brd; commit 749e0c4b562e physical insertion headers", "url": "https://github.com/sparkfun/ESP8266_WiFi_Shield/blob/749e0c4b562e96147a4b3361443263421a739eb5/Hardware/SparkFun-ESP8266-WiFi-Shield.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11"}],
+        "boardSha256": "2947f4120a5f7d472827a2bd171b2e6c57f6d82f7278490ba925b697ce8d2fbc"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -29.845, "y": -26.67, "width": 59.69, "height": 53.34}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-13287",
     "name": "SparkFun WiFi Shield - ESP8266",
     "manufacturer": "SparkFun",
@@ -533,6 +549,25 @@ export default [
   },
   {
     "id": "sparkfun-module-dev15837",
+    "mountingReview": {
+      "contactIds": ["j6-1", "j6-2", "j6-3", "j7-1", "j7-2", "j7-3"],
+      "source": {"label": "SparkFun DEV-15837: EAGLE weather-bit.brd; commit 7c11fc6f1685 physical insertion headers", "url": "https://github.com/sparkfun/Micro_Bit_Weather_Bit/blob/7c11fc6f1685c92a7b45d4cf2ae8ae3dfafb80d1/Hardware/weather-bit.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J6", "count": 3, "package": "1X03"}, {"id": "J7", "count": 3, "package": "1X03"}],
+        "boardSha256": "ee107c0c6eb238f61cc2f41c7414e70753be69db6ee62c08610791fe1763dd1c"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -34.29, "y": -29.21, "width": 68.58, "height": 58.42},
+        {"x": -28.4, "y": -64.46, "width": 56.8, "height": 47.2},
+        {"x": -28.448, "y": 11.176, "width": 13.716, "height": 18.542},
+        {"x": 14.732, "y": 11.176, "width": 13.716, "height": 18.542}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DEV-15837",
     "name": "SparkFun weather:bit - micro:bit Carrier Board (Qwiic)",
     "manufacturer": "SparkFun",

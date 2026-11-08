@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, edgePads, label, line, mountingHole, pad, path, pinRow, rect, screw, smd, usb } from "../shared/svg.js";
 
@@ -26,7 +27,7 @@ function carrierRow(contacts, x, y, settings = {}) {
   return { ids: contacts.map(([id]) => id), x, y, ...settings };
 }
 
-function module({ rows, face, footprint, model, drawPins = edgePads, ...definition }) {
+function module({ rows, face, footprint, model, drawPins = edgePads, insertion, ...definition }) {
   const { id, width, height } = definition;
   const component = {
     art: id, referencePrefix: "U", ...definition,
@@ -46,6 +47,37 @@ function module({ rows, face, footprint, model, drawPins = edgePads, ...definiti
     component, footprint, model,
     render: (part, showLabels) => face(part) + drawPins(part, showLabels),
   }, centers[id] ?? inset);
+  if (insertion) {
+    const unitsPerMm = 8, origin = { x: width / 2, y: height / 2 };
+    const physical = insertion.headers.flatMap(header => {
+      const pins = entry.component.pins.filter(pin => String(pin.number).startsWith(`${header.header}.`));
+      return pins.map((pin, index) => ({ pinId: pin.id, x: header.x + (header.axis === "y" ? 0 : index * 2.54),
+        y: header.y + (header.axis === "y" ? index * 2.54 : 0) }));
+    });
+    const bodyRegions = [{ x: origin.x - insertion.body[0] * unitsPerMm / 2, y: origin.y - insertion.body[1] * unitsPerMm / 2,
+      width: insertion.body[0] * unitsPerMm, height: insertion.body[1] * unitsPerMm }];
+    const viewPins = physical.map(pin => ({ pinId: pin.pinId, x: origin.x + pin.x * unitsPerMm,
+      y: origin.y + pin.y * unitsPerMm, face: "front" }));
+    const sx = bodyRegions[0].width / (width - 14), sy = bodyRegions[0].height / (height - 14);
+    for (const region of insertion.shells ?? []) bodyRegions.push({
+      x: bodyRegions[0].x + (region.x - 7) * sx, y: bodyRegions[0].y + (region.y - 7) * sy,
+      width: region.width * sx, height: region.height * sy,
+    });
+    const left = Math.min(...bodyRegions.map(region => region.x)), top = Math.min(...bodyRegions.map(region => region.y));
+    const viewBounds = { x: left - .5, y: top - .5,
+      width: Math.max(...bodyRegions.map(region => region.x + region.width)) - left + 1,
+      height: Math.max(...bodyRegions.map(region => region.y + region.height)) - top + 1 };
+    entry.mounting = reviewedBoardMounting({
+      source: { label: `${definition.name} manufacturer header and board geometry`, url: definition.source },
+      contacts: physical, calibration: { origin, unitsPerMm }, bodyRegions,
+      bodyEvidence: "The exact source header rows and documented PCB dimensions establish this physical assembly. Existing stylized component-side hardware is resized to that PCB envelope; manufacturer mechanical CAD remains the fabrication authority.",
+      viewBounds, view: { id: "breadboard", pins: viewPins,
+        note: "Explicit millimeter header layout and full pin-ID mapping replace the old independently spaced illustration only for this new insertion view. No reference carrier row is used to infer compatibility." },
+      renderMounted: () => `<g transform="translate(${bodyRegions[0].x - 7 * sx} ${bodyRegions[0].y - 7 * sy}) scale(${sx} ${sy})">${face(entry.component)}</g>` +
+        viewPins.map(pin => circle(pin.x, pin.y, 5, "#d8b96d", "#efdeaa") + circle(pin.x, pin.y, 2.3, "#243a31")).join(""),
+      note: "Populate both complete documented rows with straight male leads facing below the PCB; use the straight header option for a single-row USB adapter. Side-facing/female headers must be replaced for flat insertion. Allow USB-plug or motor-terminal access outside the breadboard.",
+    });
+  }
   return { ...entry, art: entry.render };
 }
 
@@ -95,6 +127,7 @@ function stepper({ id, name, part, item, description, left, right, color, rim, f
     id, name, shortName: part, manufacturer: "Pololu", subtitle: `Stepper carrier #${item}`, category: "Actuators",
     description, tags: [part.toLowerCase(), "stepper", "driver", "motor", "step dir", "pololu", String(item)],
     source: pololu(item), width: 150, height: 184, model,
+    insertion: { body: [15.24, 20.32], headers: [{ header: "L", x: -6.35, y: -8.89, axis: "y" }, { header: "R", x: 6.35, y: -8.89, axis: "y" }] },
     rows: [row("left", 23, 19.7, "L", left), row("right", 23, 19.7, "R", right)],
     face: component => pcb(component, color, rim) + face(),
     footprint: {
@@ -137,6 +170,7 @@ function motorCarrier({ id, part, item, description, left, right, widthMm, face,
     manufacturer: "Pololu", subtitle: `Dual H-bridge #${item}`, description,
     tags: [part.toLowerCase(), "dc motor", "motor", "h-bridge", "pwm", String(item)],
     source: pololu(item), width: 156, height: 184, model,
+    insertion: { body: [widthMm, 20.32], headers: [{ header: "L", x: -(widthMm - pitch) / 2, y: -8.89, axis: "y" }, { header: "R", x: (widthMm - pitch) / 2, y: -8.89, axis: "y" }] },
     rows: [row("left", 23, 19.7, "L", left), row("right", 23, 19.7, "R", right)],
     face: component => pcb(component, color, "#60a478") + face(),
     footprint: {
@@ -202,7 +236,7 @@ const levelLow = [
   bidir("lv3", "LV3", "Low-voltage side of bidirectional channel 3."), bidir("lv4", "LV4", "Low-voltage side of bidirectional channel 4."),
 ];
 const levelShifter = module({
-  id: "sparkfun-bss138-level-shifter", name: "SparkFun BSS138 Bi-Directional Logic Level Converter",
+  id: "sparkfun-bss138-level-shifter", insertion: { body: [15.24, 12.7], headers: [{ header: "HV", x: -6.35, y: -5.08 }, { header: "LV", x: -6.35, y: 5.08 }] }, name: "SparkFun BSS138 Bi-Directional Logic Level Converter",
   shortName: "BSS138 Level Shifter", category: "Interfaces", manufacturer: "SparkFun", subtitle: "Four channels / BOB-12009",
   description: "Four MOSFET level-shifting channels with pull-ups to the separate LV and HV rails. The rail grounds are common. Suitable for open-drain buses such as I²C.",
   tags: ["bss138", "logic level", "level shifter", "i2c", "bidirectional", "12009"],
@@ -227,7 +261,7 @@ const uartBasic = [
   output("dtr", "DTR", "Active-low data terminal ready output. Can be used for automatic reset through a capacitor."),
 ];
 const ch340c = module({
-  id: "sparkfun-ch340c-serial-basic", name: "SparkFun CH340C Serial Basic USB-C", shortName: "CH340C Serial Basic",
+  id: "sparkfun-ch340c-serial-basic", insertion: { body: [17.78, 21.59], shells: [{ x: 41, y: 6, width: 52, height: 18 }], headers: [{ header: "J", x: -6.35, y: 9.525 }] }, name: "SparkFun CH340C Serial Basic USB-C", shortName: "CH340C Serial Basic",
   category: "Interfaces", manufacturer: "SparkFun", subtitle: "USB-C to UART / DEV-15096",
   description: "USB-to-UART breakout with the six-contact FTDI-style connector. A rear jumper selects the UART logic and target supply voltage. Ships set for 3.3 V.",
   tags: ["ch340c", "ch340", "usb uart", "usb-c", "serial", "ttl", "15096"],
@@ -378,7 +412,7 @@ const muxLeft = [power("vin", "VIN", "3–5 V board supply. Match the host's log
   ...[0, 1, 2].map(index => address(index)), muxData(0), muxClock(0), muxData(1), muxClock(1)];
 const muxRight = [7, 6, 5, 4, 3, 2].flatMap(index => [muxClock(index), muxData(index)]);
 const tca9548a = module({
-  id: "adafruit-tca9548a-2717", name: "Adafruit TCA9548A I²C Multiplexer", shortName: "TCA9548A",
+  id: "adafruit-tca9548a-2717", insertion: { body: [17.6, 30.6], headers: [{ header: "L", x: -7.62, y: -13.97, axis: "y" }, { header: "R", x: 7.62, y: -13.97, axis: "y" }] }, name: "Adafruit TCA9548A I²C Multiplexer", shortName: "TCA9548A",
   category: "Interfaces", manufacturer: "Adafruit", subtitle: "Eight I²C buses / #2717",
   description: "Original dual-header TCA9548A breakout. It switches between eight downstream I²C buses. Set A0–A2 to choose an address in the 0x70–0x77 range.",
   tags: ["tca9548a", "i2c", "mux", "multiplexer", "2717"],
@@ -409,7 +443,7 @@ const expanderLower = [
   ...Array.from({ length: 8 }, (_, index) => gpio("A", index)),
 ];
 const mcp23017 = module({
-  id: "adafruit-mcp23017-5346", name: "Adafruit MCP23017 I²C GPIO Expander", shortName: "MCP23017",
+  id: "adafruit-mcp23017-5346", insertion: { body: [43, 18], headers: [{ header: "U", x: -15.24, y: -6.35 }, { header: "L", x: -15.24, y: 6.35 }] }, name: "Adafruit MCP23017 I²C GPIO Expander", shortName: "MCP23017",
   category: "Interfaces", manufacturer: "Adafruit", subtitle: "Sixteen GPIO / STEMMA QT / #5346",
   description: "Sixteen digital GPIOs with port interrupts and companion ground pads. Default I²C address is 0x20. The two STEMMA QT connectors parallel the same I²C bus and supply.",
   tags: ["mcp23017", "gpio", "i2c", "expander", "stemma qt", "5346"],
@@ -497,7 +531,7 @@ const cp2102Serial = [
   input("cts", "CTS", "Active-low hardware flow-control input."),
 ];
 const cp2102 = module({
-  id: "waveshare-cp2102-usb-uart-mini", name: "Waveshare CP2102 USB UART Board (mini)", shortName: "CP2102 USB UART",
+  id: "waveshare-cp2102-usb-uart-mini", insertion: { body: [40, 20], shells: [{ x: 201, y: 38, width: 24, height: 50 }], headers: [{ header: "H3", x: -18.7, y: -6.35, axis: "y" }] }, name: "Waveshare CP2102 USB UART Board (mini)", shortName: "CP2102 USB UART",
   category: "Interfaces", manufacturer: "Waveshare", subtitle: "Mini USB to UART",
   description: "Green USB Mini-B CP2102 board with hardware flow control and a jumper-selectable target supply output. This entry models the six-contact H3 UART header.",
   tags: ["cp2102", "usb uart", "mini usb", "serial", "ttl", "waveshare"],
@@ -576,7 +610,7 @@ const ftRight = [
   ...Array.from({ length: 8 }, (_, index) => bidir(`c${7 - index}`, `C${7 - index}`, `FT232H auxiliary GPIO C${7 - index}.`)),
 ].map((pin, index) => [...pin, `JP2.${11 - index}`]);
 const ft232h = module({
-  id: "adafruit-ft232h-usbc-2264", name: "Adafruit FT232H USB-C Interface Breakout", shortName: "FT232H USB-C",
+  id: "adafruit-ft232h-usbc-2264", insertion: { body: [22.86, 38.1], headers: [{ header: "JP1", x: -10.16, y: -12.7, axis: "y" }, { header: "JP2", x: 10.16, y: -12.7, axis: "y" }] }, name: "Adafruit FT232H USB-C Interface Breakout", shortName: "FT232H USB-C",
   category: "Interfaces", manufacturer: "Adafruit", subtitle: "USB to SPI, I²C or GPIO / #2264",
   description: "USB-C revision with an I²C mode switch and a STEMMA QT connector. In I²C mode the switch joins D1 and D2. The header positions differ from the earlier Micro-USB board.",
   tags: ["ft232h", "usb-c", "spi", "i2c", "gpio", "ftdi", "2264"],
@@ -601,9 +635,4 @@ const ft232h = module({
 const entries = [a4988, drv8825, tb6612, drv8833, l298n, tmc2209, relay, pca9685,
   levelShifter, tca9548a, mcp23017, ch340c, cp2102, ft232h, canModule];
 
-const commonInterfaceComponents = entries.map(({ component }) => component);
-const commonInterfaceArt = Object.fromEntries(entries.map(({ component, art }) => [component.id, art]));
-const commonInterfaceFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const commonInterfaceModels = Object.fromEntries(entries.filter(({ model }) => model).map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("common-interfaces", (commonInterfaceComponents).map(component => ({ component, render: (commonInterfaceArt)[component.art], footprint: (commonInterfaceFootprints)[component.id], model: commonInterfaceModels[component.id] })));
+export default defineFamily("common-interfaces", entries.map(({ art, ...entry }) => entry));

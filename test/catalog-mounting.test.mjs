@@ -74,7 +74,7 @@ test('the original reviewed board headers retain source-backed insertion centers
       }
     }
   }
-  for (const id of ['arduino-uno-r3', 'pjrc-teensy-4-0', 'raspberry-pi-pico-2', 'seeed-xiao-rp2040', 'missing-board']) assert.equal(mountingFor(id), undefined, id);
+  for (const id of ['arduino-uno-r3', 'missing-board']) assert.equal(mountingFor(id), undefined, id);
 });
 
 test('reviewed mounting contacts admit positive independent canvas-axis calibration without reflections or nonlinear moves', () => {

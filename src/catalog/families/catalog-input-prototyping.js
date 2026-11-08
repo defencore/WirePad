@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
 import { physicalComponent, physicalEntry } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pad, path, pinRow, rect, smd } from "../shared/svg.js";
 
@@ -53,7 +54,7 @@ function terminalLabels(component) {
   return component.pins.map(pin => label(pin.x, pin.edge === "top" || pin.y + 10 > component.height - 5 ? pin.y - 10 : pin.y + 10, pin.label, 7.2, "#34475a")).join("");
 }
 
-function qtBreakout({ component, body, headers, socketsY, holes, artwork, details, cad, outline, note }) {
+function qtBreakout({ component, body, headers, socketsY, holes, artwork, details, cad, outline, note, insertion }) {
   const [bodyWidth, bodyHeight] = body;
   const width = Math.ceil(bodyWidth * scale + horizontalMargin * 2);
   const height = Math.ceil(bodyHeight * scale + verticalMargin * 2);
@@ -72,7 +73,7 @@ function qtBreakout({ component, body, headers, socketsY, holes, artwork, detail
     const captionY = padY + (captionOffsets?.[index] ?? (side === "top" ? 11 : 10));
     return pad(padX, padY) + (showLabels ? label(padX, captionY, spec[1], 6.4, silk) : "");
   }).join("")).join("");
-  return {
+  const entry = {
     component: part,
     art: (_definition, showLabels) => {
       const pcb = outline ?? rect(0, 0, bodyWidth * scale, bodyHeight * scale, 15.24, pcbColor, "#8f9990");
@@ -96,9 +97,26 @@ function qtBreakout({ component, body, headers, socketsY, holes, artwork, detail
     },
     model: adafruitCad(cad),
   };
+  if (insertion) {
+    const contacts = headers.flatMap(header => header.specs.map((spec, index) => ({
+      pinId: spec[0], x: header.x + index * 2.54 - bodyWidth / 2, y: header.y - bodyHeight / 2,
+    })));
+    const region = { x: boardX, y: boardY, width: bodyWidth * scale, height: bodyHeight * scale };
+    const bounds = { x: region.x - .5, y: region.y - .5, width: region.width + 1, height: region.height + 1 };
+    entry.mounting = reviewedBoardMounting({
+      source: { label: `${component.name} manufacturer Eagle header layout`, url: component.source },
+      contacts, calibration: { origin: { x: boardX + bodyWidth * scale / 2, y: boardY + bodyHeight * scale / 2 }, unitsPerMm: scale },
+      bodyRegions: [region], viewBounds: bounds,
+      bodyEvidence: "The source-reviewed Adafruit Eagle layout establishes the PCB outline, full opposing header centers and row spacing. Both complete strips can be populated below the PCB; QT sockets stay above and are separate cable connections.",
+      renderMounted: () => clippedFrontArtwork(entry.art, part, bounds),
+      note: "Populate both complete 2.54 mm header rows with straight male leads. Every electrode or matrix contact is a real downward lead; no touch signal is replaced by a schematic-only connection.",
+    });
+  }
+  return entry;
 }
 
 const mpr121 = qtBreakout({
+  insertion: true,
   component: {
     id: "adafruit-mpr121-1982", name: "Adafruit MPR121 12-Key Capacitive Touch Breakout", shortName: "MPR121",
     subtitle: "12 electrodes / STEMMA QT / #1982",
@@ -136,6 +154,7 @@ const mpr121 = qtBreakout({
 });
 
 const tca8418 = qtBreakout({
+  insertion: true,
   component: {
     id: "adafruit-tca8418-4918", name: "Adafruit TCA8418 8×10 Keypad Matrix Breakout", shortName: "TCA8418",
     subtitle: "80 keys or 18 GPIO / STEMMA QT / #4918",
@@ -313,9 +332,4 @@ const entries = [mpr121, tca8418, qtRotary,
   physicalEntry(trimmer, pin => [pin.x, pin.y]),
 ];
 
-const inputPrototypingComponents = entries.map(({ component }) => component);
-const inputPrototypingArt = Object.fromEntries(entries.map(({ component, art }) => [component.id, art]));
-const inputPrototypingFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const inputPrototypingModels = Object.fromEntries(entries.map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("input-prototyping", (inputPrototypingComponents).map(component => ({ component, render: (inputPrototypingArt)[component.art], footprint: (inputPrototypingFootprints)[component.id], model: inputPrototypingModels[component.id] })));
+export default defineFamily("input-prototyping", entries.map(({ art: render, ...entry }) => ({ ...entry, render })));

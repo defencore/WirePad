@@ -10,7 +10,9 @@ export function sourceModuleMounting(spec, contacts, { cx, cy, scale, renderMoun
   const review = spec.mountingReview;
   if (!review) return undefined;
   const fail = message => { throw new Error(`Invalid source mounting review ${spec.id}: ${message}.`); };
-  if (contacts.some(contact => contact.back)) fail('separate rear contacts need an explicit view migration');
+  const hasRear = contacts.some(contact => contact.back);
+  if (review.projectRearContacts !== undefined && typeof review.projectRearContacts !== 'boolean') fail('physical view activation must be explicit');
+  if (hasRear && review.projectRearContacts !== true) fail('separate rear contacts need an explicit view migration');
   if (!Array.isArray(review.contactIds) || review.contactIds.length < 2 || new Set(review.contactIds).size !== review.contactIds.length) fail('list every reviewed insertion lead once');
   const selected = review.contactIds.map(id => contacts.find(contact => contact.id === id));
   if (selected.some(contact => !contact || contact.smd || !contact.drill)) fail('insertion leads must be source through-hole contacts');
@@ -32,15 +34,24 @@ export function sourceModuleMounting(spec, contacts, { cx, cy, scale, renderMoun
   const projectRectangle = region => ({ x: cx + region.x * scale, y: cy + region.y * scale, width: region.width * scale, height: region.height * scale });
   const bodyRegions = review.bodyRegions.map(projectRectangle), body = rectangleEnvelope(bodyRegions);
   const contactRegions = contacts.map(contact => projectRectangle({ x: contact.x - contact.size[0] / 2, y: contact.y - contact.size[1] / 2, width: contact.size[0], height: contact.size[1] }));
-  const visible = rectangleEnvelope([...bodyRegions, ...contactRegions]);
+  const rearAnnotations = review.projectRearContacts ? contacts.filter(contact => contact.back && (contact.smd || !contact.drill))
+    .map(contact => projectRectangle({ x: contact.x - .4, y: contact.y - .9, width: 1.1 + .8 / scale, height: 1.3 })) : [];
+  const visible = rectangleEnvelope([...bodyRegions, ...contactRegions, ...rearAnnotations]);
   // The view includes physical edge ink, while body regions remain material
   // geometry so decorative stroke never reserves an extra breadboard hole.
   const ink = .08 * scale;
   const viewBounds = { x: visible.x - ink, y: visible.y - ink, width: visible.width + ink * 2, height: visible.height + ink * 2 };
+  const view = review.projectRearContacts ? {
+    id: 'breadboard',
+    note: 'Manufacturer source coordinates projected onto the component side. Through-hole centers remain visible from this side; dashed BACK PAD markers identify hidden rear-only contacts. The physical view activates only through explicit breadboard placement.',
+    pins: contacts.map(contact => ({ pinId: contact.id, x: cx + contact.x * scale, y: cy + contact.y * scale,
+      face: contact.back && (contact.smd || !contact.drill) ? 'rear' : 'front',
+      description: `${contact.number} — ${contact.description}` })),
+  } : undefined;
   return {
     type: 'breadboard-module', pitch, source: review.source, contacts: insertionContacts,
     note: review.installation, body, bodyRegions, bodyEvidence: review.bodyEvidence,
     calibration: { origin: { x: cx, y: cy }, unitsPerMm: scale, ...(toleranceMm ? { toleranceMm } : {}) },
-    viewBounds, renderMounted,
+    viewBounds, renderMounted, ...(view ? { view } : {}),
   };
 }

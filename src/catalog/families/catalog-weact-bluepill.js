@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { chip, circle, label, pad, rect, smd, tactile, usb } from "../shared/svg.js";
 
 const left = "PB12 PB13 PB14 PB15 PA8 PA9 PA10 PA11 PA12 PA15 PB3 PB4 PB5 PB6 PB7 PB8 PB9 5V GND 3V3".split(" ");
@@ -103,7 +104,20 @@ function pill({ id, name, mcu, family, source, cad, revision }) {
       label(140, top + 289, classic ? "Blue Pill" : "WeAct Studio", 8.2) +
       label(140, top + 335, revision, 7) + sidePads + endPads + bootLabels;
   };
-  return { component, art, footprint: {
+  const bounds = { x: 76, y: boardTop - 3, width: 128, height: 379 };
+  const insertion = ["left", "right"].flatMap((side, bank) => component.pins.filter(pin => pin.labelSide === side)
+    .map((pin, index) => ({ pinId: pin.id, x: bank ? 7.62 : -7.62, y: -24.13 + index * 2.54 })));
+  return { component, art, mounting: reviewedBoardMounting({
+    source: { label: classic ? "Original Blue Pill 40-pin schematic and matching board header layout" : `WeAct ${revision} manufacturer mechanical STEP and header layout`, url: classic ? source : cad },
+    contacts: insertion,
+    bodyRegions: [{ x: 76, y: boardTop, width: 128, height: 376 }, { x: 115, y: boardTop - 3, width: 50, height: 28 }],
+    bodyEvidence: "The front PCB rectangle and projecting USB shell use the pill renderer's exact coordinates. Boot/SWD contacts are retained in their on-board positions; annotation margins are excluded.",
+    viewBounds: bounds,
+    note: `Populate both complete 20-contact side rows, 15.24 mm apart at 2.54 mm pitch. SWD and boot/configuration headers face upward or remain unpopulated. ${classic ? "This is the catalog's representative original 40-pin Blue Pill variant; different clone layouts need a separate review." : "Use the exact WeAct PCB revision named by this entry."}`,
+    view: { id: "breadboard", pins: component.pins.map(pin => ({ pinId: pin.id, x: pin.x, y: pin.y, face: "front" })),
+      note: "The explicit mounting view normalizes the source-reviewed forty side-header centers. Auxiliary front contacts retain their illustrated physical locations and do not become insertion leads." },
+    renderMounted: part => clippedFrontArtwork(art, component, bounds),
+  }), footprint: {
     body: [18, 53.5], color: family === "black" ? "#26323a" : "#285474", pads,
     note: `${classic ? "Representative carrier for the original unbranded Blue Pill schematic. Verify clone header, SWD and boot-jumper orientation." : `Reference host-board carrier for WeAct ${revision}. Main headers use 15.24 mm separation and 2.54 mm pitch.`} Outline and auxiliary connector placement are approximate${family === "black" ? ", except the SWD row center follows the manufacturer's KiCad footprint" : ""}. USB faces the top in the canvas view.`,
     details: [[0, -26.5, 8, 5, 3, "#aab7bc"], [0, 0, 7, 7, 1, "#222e35"]],
@@ -125,5 +139,6 @@ const weactBluepillComponents = entries.map(entry => entry.component);
 const weactBluepillArt = Object.fromEntries(entries.map(entry => [entry.component.id, entry.art]));
 const weactBluepillFootprints = Object.fromEntries(entries.map(entry => [entry.component.id, entry.footprint]));
 const weactBluepillModels = Object.fromEntries(entries.map(entry => [entry.component.id, entry.model]));
+const weactBluepillMountings = Object.fromEntries(entries.map(entry => [entry.component.id, entry.mounting]));
 
-export default defineFamily("weact-bluepill", (weactBluepillComponents).map(component => ({ component, render: (weactBluepillArt)[component.art], footprint: (weactBluepillFootprints)[component.id], model: weactBluepillModels[component.id] })));
+export default defineFamily("weact-bluepill", (weactBluepillComponents).map(component => ({ component, render: (weactBluepillArt)[component.art], footprint: (weactBluepillFootprints)[component.id], model: weactBluepillModels[component.id], mounting: weactBluepillMountings[component.id] })));

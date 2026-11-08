@@ -102,6 +102,22 @@ export default [
   },
   {
     "id": "seeed-module-101991067",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j3-1", "j3-2", "j3-3", "j3-4", "j3-5", "j3-6", "j3-7"],
+      "source": {"label": "Seeed Studio 101991067: EAGLE Grove - Smart IR Gesture Sensor.brd / v1.0 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/grove-gesture-paj7620/res/Grove-Smart-IR-Gesture-Sensor_v1.0_SCH&PCB.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J2", "count": 7, "package": "H7-2.54"}, {"id": "J3", "count": 7, "package": "H7-2.54"}],
+        "boardSha256": "acdb706d6d0b4b11c931e4a6714f1fa1603ce60ada5a205b438fdbf5b557e372"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -21.8105705, "y": -10.0032, "width": 43.621141, "height": 20.0064}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101991067",
     "name": "Seeed Grove Smart IR Gesture Sensor (PAJ7660)",
     "manufacturer": "Seeed Studio",
@@ -223,6 +239,22 @@ export default [
   },
   {
     "id": "seeed-module-105020074",
+    "mountingReview": {
+      "contactIds": ["j7-1", "j7-2"],
+      "source": {"label": "Seeed Studio 105020074: EAGLE LED Matrix Driver(HT16K33) v1.0.brd physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-LED_Matrix_Driver-HT16K33/res/202002241_PCBA;Grove-LED-Matrix-Driver(HT16K33).zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J7", "count": 2, "package": "H2-2.54"}],
+        "boardSha256": "8176141910b89858438af347141482b26b16ee2e5dbfa6899119e50940b924c7"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -22.1, "y": -22.1, "width": 44.2, "height": 44.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "105020074",
     "name": "Seeed Grove - LED Matrix Driver (HT16K33)",
     "manufacturer": "Seeed Studio",
@@ -999,6 +1031,22 @@ export default [
   },
   {
     "id": "seeed-module-103020024",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "Seeed Studio 103020024: EAGLE Grove - Finger-clip Heart Rate Sensor v1.0 .brd physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-Finger-clip_Heart_Rate_Sensor/res/Grove-Finger-clip_Heart_Rate_Sensor_v1.0_sch_pcb.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J3", "count": 4, "package": "4P-2.54-65/35MIL"}],
+        "boardSha256": "ba47df2ac863511108fd7da98c59c311dcba583f65960ad9b191b170a4fb99dd"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -21.8105, "y": -11.9605, "width": 43.621, "height": 23.921}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "103020024",
     "name": "Seeed Grove - Finger-clip Heart Rate Sensor",
     "manufacturer": "Seeed Studio",
@@ -1351,6 +1399,22 @@ export default [
   },
   {
     "id": "seeed-module-101020592",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2"],
+      "source": {"label": "Seeed Studio 101020592: EAGLE Grove - I2C High Accuracy Temp&Humi Sensor (SHT35).brd / v1.0 physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-I2C_High_Accuracy_Temp-Humi_Sensor-SHT35/res/Grove%20-%20I2C%20High%20Accuracy%20Temp%26Humi%20Sensor%20(SHT35).zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J2", "count": 2, "package": "H2-2.54"}],
+        "boardSha256": "f4821df034862f75d85e49cd6a823c6df38ea9e1d9e2a9126c32ddbd85e39a29"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -21.8105, "y": -11.9605, "width": 43.621, "height": 23.921}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020592",
     "name": "Seeed Grove - I2C High Accuracy Temp&Humi Sensor(SHT35)",
     "manufacturer": "Seeed Studio",

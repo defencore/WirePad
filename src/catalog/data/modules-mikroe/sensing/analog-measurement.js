@@ -4,6 +4,22 @@ import assets from "./analog-measurement-assets.js";
 export default [
   {
     "id": "mikroe-mikroe-6985-mcurrentsens",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-6985: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/mcurrent_sens_click_v100_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -28.575, "width": 25.4, "height": 57.15},
+        {"x": -12.852, "y": -26.213, "width": 25.4, "height": 2.54}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-6985",
     "name": "mCurrent Sens Click",
     "manufacturer": "MIKROE",
@@ -93,6 +109,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4997-adc19",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4997: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/adc_19_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4997",
     "name": "ADC 19 Click",
     "manufacturer": "MIKROE",
@@ -176,6 +207,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4105-adc9",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4105: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/ADC%209%20Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4105",
     "name": "ADC 9 Click",
     "manufacturer": "MIKROE",
@@ -253,6 +299,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4111-analogmux",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4111: v2 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/analog_mux_click2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -28.575, "width": 25.4, "height": 57.15}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4111",
     "name": "Analog MUX Click",
     "manufacturer": "MIKROE",
@@ -340,6 +401,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4767-dac11",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4767: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/dac_11_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -28.575, "width": 25.4, "height": 57.15}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4767",
     "name": "DAC 11 Click",
     "manufacturer": "MIKROE",
@@ -422,6 +498,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4763-vcpmonitor4",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4763: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/VCP_Monitor_4_Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4763",
     "name": "VCP Monitor 4 Click",
     "manufacturer": "MIKROE",
@@ -499,6 +590,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-3115-adc7",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-3115: v101 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/adc-7-click-2d-and-3d-files-v101.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-3115",
     "name": "ADC 7 Click",
     "manufacturer": "MIKROE",
@@ -577,6 +683,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4221-antopwm2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4221: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/an_to_pwm_2_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4221",
     "name": "AN to PWM 2 Click",
     "manufacturer": "MIKROE",
@@ -659,6 +780,22 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4966-adc17",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4966: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/ADC_17_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "toleranceMm": 0.001,
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4966",
     "name": "ADC 17 Click",
     "manufacturer": "MIKROE",
@@ -743,6 +880,22 @@ export default [
   },
   {
     "id": "mikroe-mikroe-1893-adc2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1893: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/ADC_2_Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "toleranceMm": 0.001,
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1893",
     "name": "ADC 2 Click",
     "manufacturer": "MIKROE",
@@ -826,6 +979,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4732-dac10",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4732: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/dac_10_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4732",
     "name": "DAC 10 Click",
     "manufacturer": "MIKROE",
@@ -913,6 +1081,22 @@ export default [
   },
   {
     "id": "mikroe-mikroe-1918-dac2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1918: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/DAC_2_Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "toleranceMm": 0.001,
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1918",
     "name": "DAC 2 Click",
     "manufacturer": "MIKROE",
@@ -996,6 +1180,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5821-rmstodc2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5821: v102 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/rms_to_dc_2_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5821",
     "name": "RMS to DC 2 Click",
     "manufacturer": "MIKROE",
@@ -1084,6 +1283,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4222-vcpmonitor3",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4222: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/vcp_monitor_3_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -28.575, "width": 25.4, "height": 57.15}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4222",
     "name": "VCP Monitor 3 Click",
     "manufacturer": "MIKROE",
@@ -1162,6 +1376,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-6101-vcpmonitor6",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-6101: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/VCP_Monitor_6_Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-6101",
     "name": "VCP Monitor 6 Click",
     "manufacturer": "MIKROE",
@@ -1246,6 +1475,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-3394-adc8",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-3394: v100 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/ADC_8_Click_v100_CAD.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-3394",
     "name": "ADC 8 Click",
     "manufacturer": "MIKROE",
@@ -1329,6 +1573,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5525-dac14",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5525: v101 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/dac_14_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -28.575, "width": 25.4, "height": 57.15}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5525",
     "name": "DAC 14 Click",
     "manufacturer": "MIKROE",
@@ -1413,6 +1672,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-3886-dac7",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-3886: v2 physical insertion headers", "url": "https://download.mikroe.com/documents/2d-3d-files/dac_7_click2D_and_3D_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Manufacturer mikroBUS primary 16-pin header: 2.54 mm pitch and 22.86 mm row spacing. Physical header centers come from the cited per-SKU manufacturer CAD, including the reviewed nominal-grid precision where declared.",
+        "connectors": [{"id": "mikroBUS", "count": 16, "package": "Manufacturer mikroBUS 2x8"}]
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-3886",
     "name": "DAC 7 Click",
     "manufacturer": "MIKROE",

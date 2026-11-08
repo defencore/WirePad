@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { analogDevicesLayouts } from "../data/analog-devices-layouts.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { circle, label, line, rect, screw } from "../shared/svg.js";
@@ -48,7 +49,7 @@ function deviceArt(part, point) {
   return box("#b8c0b9", "none", 0.5) + rect(x - w * 0.32, y - h * 0.32, w * 0.64, h * 0.64, 0.3, fill);
 }
 
-function breakout({ key, id, name, shortName, category = "Sensors", source, description, subtitle, tags, color, nets, captions = {}, cad, title, optionalTerminal = false, maker = "Adafruit", note = "", padding = margin }) {
+function breakout({ key, id, name, shortName, category = "Sensors", source, description, subtitle, tags, color, nets, captions = {}, cad, title, optionalTerminal = false, maker = "Adafruit", note = "", padding = margin, insertionHeaders }) {
   const layout = analogDevicesLayouts[key];
   const [bw, bh] = layout.body;
   const width = bw * scale + padding * 2, height = bh * scale + padding * 2;
@@ -88,7 +89,7 @@ function breakout({ key, id, name, shortName, category = "Sensors", source, desc
     id: pad.id, x: pad.x, y: pad.y,
     ...(pad.smd ? { smd: true, size: [pad.padWidth, pad.padHeight], shape: "rect" } : { drill: pad.drill, size: pad.size, shape: "circle" }),
   });
-  return {
+  const entry = {
     component,
     render: (_component, showLabels) => rect(padding, padding + 2, bw * scale, bh * scale, 2.54 * scale, "#1d2b33") +
       rect(padding, padding, bw * scale, bh * scale, key === "ad8232" ? 1 : 2.54 * scale, color, "#92a699") +
@@ -122,6 +123,26 @@ function breakout({ key, id, name, shortName, category = "Sensors", source, desc
     },
     model: cad,
   };
+  const bodyRegions = [{ x: padding, y: padding, width: bw * scale, height: bh * scale },
+    ...parts.filter(part => part.kind !== "optional").map(part => ({
+      x: width / 2 + (part.x - part.width / 2) * scale,
+      y: height / 2 + (part.y - part.height / 2) * scale,
+      width: part.width * scale, height: part.height * scale,
+    }))];
+  const x = Math.min(...bodyRegions.map(region => region.x)), y = Math.min(...bodyRegions.map(region => region.y));
+  const viewBounds = { x: x - .5, y: y - .5,
+    width: Math.max(...bodyRegions.map(region => region.x + region.width)) - x + 1,
+    height: Math.max(...bodyRegions.map(region => region.y + region.height)) - y + 1 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `${maker} ${shortName} ${layout.revision ?? "cited"} PCB CAD header centers`, url: cad.url },
+    contacts: layout.contacts.filter(pad => insertionHeaders.includes(pad.number.split(".")[0]))
+      .map(({ id: pinId, x, y }) => ({ pinId, x, y })),
+    calibration: { origin: { x: width / 2, y: height / 2 }, unitsPerMm: scale },
+    bodyRegions, bodyEvidence: "Source-reviewed manufacturer PCB envelope and individual projecting package bounds from the adjacent millimeter CAD layout. Captions and empty annotation space are excluded.",
+    viewBounds, renderMounted: part => clippedFrontArtwork(entry.render, part, viewBounds),
+    note: `Insert every lead of ${insertionHeaders.join(" and ")}. Leave all other optional header holes unpopulated or fit their headers upward; QT sockets, screw terminals, electrode contacts and service pads do not enter breadboard holes.`,
+  });
+  return entry;
 }
 
 const accelerationNets = {
@@ -136,7 +157,7 @@ const accelerationNets = {
 
 export default defineFamily("analog-devices", [
   breakout({
-    key: "ad5693r", id: "adafruit-ad5693r-5811", name: "Adafruit AD5693R 16-bit DAC Breakout", shortName: "AD5693R", category: "DAC",
+    key: "ad5693r", insertionHeaders: ["JP1", "JP2", "JP3"], id: "adafruit-ad5693r-5811", name: "Adafruit AD5693R 16-bit DAC Breakout", shortName: "AD5693R", category: "DAC",
     source: "https://learn.adafruit.com/adafruit-ad5693r-16-bit-dac-breakout-board/pinouts",
     description: "Adafruit #5811 Rev B STEMMA QT board with an Analog Devices AD5693R in MSOP-10. Single 16-bit DAC with a 2.5 V internal reference and selectable 1×/2× gain; the output remains limited by the supply. I²C address 0x4C or 0x4E. Includes every header, optional terminal and QT solder-tail contact in component-side view.",
     subtitle: "I²C / 16-bit DAC / 2.5 V reference", tags: ["ad5693r", "5811", "dac", "16-bit", "i2c", "stemma qt", "qwiic", "voltage reference"],
@@ -149,7 +170,7 @@ export default defineFamily("analog-devices", [
     note: "X1 is an unpopulated optional 3.5 mm terminal footprint. ",
   }),
   breakout({
-    key: "adg728", id: "adafruit-adg728-5899", name: "Adafruit ADG728 1-to-8 Analog Matrix Switch", shortName: "ADG728", category: "Interfaces",
+    key: "adg728", insertionHeaders: ["JP3"], id: "adafruit-adg728-5899", name: "Adafruit ADG728 1-to-8 Analog Matrix Switch", shortName: "ADG728", category: "Interfaces",
     source: "https://learn.adafruit.com/adafruit-adg728-1-to-8-analog-matrix-switch/pinouts",
     description: "Adafruit #5899 Rev A STEMMA QT board using the Analog Devices ADG728 in TSSOP-16. Eight independently controlled bidirectional analog switches connect S1–S8 to common D. Signal voltages must stay between ground and VIN. I²C address 0x4C–0x4F; RESET opens every switch. Header numbering follows the published board, including the reversed top row.",
     subtitle: "I²C / eight bidirectional analog switches", tags: ["adg728", "5899", "analog switch", "matrix", "multiplexer", "i2c", "stemma qt", "qwiic"],
@@ -163,7 +184,7 @@ export default defineFamily("analog-devices", [
     cad: { label: "Adafruit ADG728 Rev A Eagle PCB CAD", url: "https://github.com/adafruit/Adafruit-ADG728-1-to-8-Analog-Matrix-Switch-PCB/blob/main/Adafruit%20ADG728%201-to-8%20Analog%20Matrix%20Switch.brd" },
   }),
   breakout({
-    key: "adxl345", id: "adafruit-adxl345-1231-qt", name: "Adafruit ADXL345 Triple-axis Accelerometer (QT)", shortName: "ADXL345",
+    key: "adxl345", insertionHeaders: ["JP1", "JP2"], id: "adafruit-adxl345-1231-qt", name: "Adafruit ADXL345 Triple-axis Accelerometer (QT)", shortName: "ADXL345",
     source: "https://learn.adafruit.com/adxl345-digital-accelerometer/pinouts",
     description: "Adafruit #1231 Rev C STEMMA QT layout for the Analog Devices ADXL345, a 14-lead LGA accelerometer with ±2/4/8/16 g ranges. I²C/SPI and two interrupt outputs. The published PCB reuses the ADXL343 CAD device name; this entry represents the ADXL345 sold as #1231. SCL and SDA are level shifted, while CS, SDO and interrupts remain 3.3 V signals.",
     subtitle: "I²C / SPI / ±2–16 g / Rev C QT", tags: ["adxl345", "1231", "accelerometer", "vibration", "imu", "i2c", "spi", "stemma qt", "qwiic"],
@@ -171,7 +192,7 @@ export default defineFamily("analog-devices", [
     cad: { label: "Adafruit ADXL345 QT Rev C Eagle PCB CAD", url: "https://github.com/adafruit/Adafruit_ADXL345_PCB/blob/master/ADXL345%20STEMMA%20QT.brd" },
   }),
   breakout({
-    key: "adxl375", id: "adafruit-adxl375-5374", name: "Adafruit ADXL375 High-g Accelerometer", shortName: "ADXL375",
+    key: "adxl375", insertionHeaders: ["JP1", "JP2"], id: "adafruit-adxl375-5374", name: "Adafruit ADXL375 High-g Accelerometer", shortName: "ADXL375",
     source: "https://learn.adafruit.com/adafruit-adxl375/pinouts",
     description: "Adafruit #5374 Rev A STEMMA QT board for the Analog Devices ADXL375 ±200 g accelerometer in LGA-14. Supports I²C/SPI and two interrupt outputs. Uses the maker's ADXL343-compatible CAD land pattern. SCL and SDA are level shifted to VIN; CS, SDO and interrupts use the sensor's 3.3 V logic level. Default I²C address 0x53.",
     subtitle: "I²C / SPI / ±200 g / high-impact sensing", tags: ["adxl375", "5374", "accelerometer", "high g", "shock", "impact", "i2c", "spi", "stemma qt", "qwiic"],
@@ -179,7 +200,7 @@ export default defineFamily("analog-devices", [
     cad: { label: "Adafruit ADXL375 Rev A Eagle PCB CAD", url: "https://github.com/adafruit/Adafruit_ADXL375_PCB/blob/main/Adafruit%20ADXL375.brd" },
   }),
   breakout({
-    key: "adt7410", id: "adafruit-adt7410-4089-qt", name: "Adafruit ADT7410 Precision Temperature Sensor (QT)", shortName: "ADT7410",
+    key: "adt7410", insertionHeaders: ["JP1"], id: "adafruit-adt7410-4089-qt", name: "Adafruit ADT7410 Precision Temperature Sensor (QT)", shortName: "ADT7410",
     source: "https://learn.adafruit.com/adt7410-breakout/pinouts",
     description: "Adafruit #4089 Rev C STEMMA QT board with an Analog Devices ADT7410 in SOIC-8. Provides 13-bit or 16-bit I²C temperature readings, plus interrupt and critical-temperature outputs. The QT revision exposes VIN, GND, SCL, SDA, INT and CT; A0/A1 are rear solder jumpers. Default address 0x48, configurable through 0x4B.",
     subtitle: "I²C / precision temperature / INT and CT", tags: ["adt7410", "4089", "temperature", "precision", "i2c", "stemma qt", "qwiic"],
@@ -190,7 +211,7 @@ export default defineFamily("analog-devices", [
     cad: { label: "Adafruit ADT7410 QT Rev C Eagle PCB CAD", url: "https://github.com/adafruit/Adafruit-ADT7410-PCB/blob/master/Adafruit%20ADT7410%20STEMMA%20QT.brd" },
   }),
   breakout({
-    key: "max31865", id: "adafruit-max31865-3328", name: "Adafruit MAX31865 PT100 RTD Amplifier", shortName: "MAX31865",
+    key: "max31865", insertionHeaders: ["JP1"], id: "adafruit-max31865-3328", name: "Adafruit MAX31865 PT100 RTD Amplifier", shortName: "MAX31865",
     source: "https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/pinouts",
     description: "Adafruit #3328 Rev B platinum RTD interface with a Maxim/Analog Devices MAX31865 in TQFN-20 and a 430 Ω reference resistor for PT100 sensors. Supports 2-, 3- and 4-wire RTDs through the documented jumper settings. Includes four physically positioned terminal contacts and the eight-pin SPI host header. The PT1000 #3648 variant uses a different reference resistor.",
     subtitle: "SPI / PT100 RTD / 2-, 3- or 4-wire", tags: ["max31865", "maxim", "3328", "pt100", "rtd", "temperature", "spi", "platinum"],
@@ -205,7 +226,7 @@ export default defineFamily("analog-devices", [
     note: "Terminal numbers follow X2 then X1 from left to right in this component-side view. ",
   }),
   breakout({
-    key: "max31855", id: "adafruit-max31855-269", name: "Adafruit MAX31855K Thermocouple Amplifier", shortName: "MAX31855K",
+    key: "max31855", insertionHeaders: ["JP1"], id: "adafruit-max31855-269", name: "Adafruit MAX31855K Thermocouple Amplifier", shortName: "MAX31855K",
     source: "https://learn.adafruit.com/thermocouple?view=all",
     description: "Adafruit #269 v2 CAD layout with a Maxim/Analog Devices MAX31855K in SOIC-8, regulator and input level shifting. Reads a K-type thermocouple over read-only SPI with cold-junction compensation and fault reporting. Do not tie either thermocouple input to board ground; J1.1 is positive and J1.2 is negative. The published v2 board file has no silkscreen revision identifier.",
     subtitle: "SPI / K-type thermocouple / cold junction", tags: ["max31855", "max31855k", "maxim", "269", "thermocouple", "type k", "temperature", "spi"],
@@ -216,7 +237,7 @@ export default defineFamily("analog-devices", [
     cad: { label: "Adafruit MAX31855 v2 Eagle PCB CAD", url: "https://github.com/adafruit/Adafruit-MAX31855-breakout-board/blob/master/Adafruit_MAX31855%20v2.brd" },
   }),
   breakout({
-    key: "ad8232", id: "sparkfun-ad8232-sen12650", name: "SparkFun AD8232 Single-lead Heart Rate Monitor", shortName: "AD8232",
+    key: "ad8232", insertionHeaders: ["JP3"], id: "sparkfun-ad8232-sen12650", name: "SparkFun AD8232 Single-lead Heart Rate Monitor", shortName: "AD8232",
     maker: "SparkFun", source: "https://learn.sparkfun.com/tutorials/ad8232-heart-rate-monitor-hookup-guide",
     description: "SparkFun SEN-12650 v1.0 board with an Analog Devices AD8232 in LFCSP-20. Provides an analog biopotential output, two leads-off flags and shutdown control. Electrode pads and the 3.5 mm jack solder tails share RA, LA and RL nets. Intended for battery-powered educational experiments; this board is not a medical diagnostic device.",
     subtitle: "3.3 V / analog biopotential front end", tags: ["ad8232", "sen-12650", "12650", "ecg", "heart rate", "biopotential", "analog", "sparkfun"],

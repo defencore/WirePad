@@ -4,6 +4,26 @@
 export default [
   {
     "id": "adafruit-module-4800",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2"],
+      "source": {"label": "Adafruit ADA4800: EAGLE Adafruit MagTag 2.9in Rev D.brd; commit 274697655909 physical insertion headers", "url": "https://github.com/adafruit/Adafruit_MagTag_PCBs/blob/2746976559095738acfb7063a46d37e4d7c93603/Adafruit%20MagTag%202.9in%20Rev%20D.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 2, "package": "1X02_ROUND"}],
+        "boardSha256": "cce711f4622f6e3467898ceadeee4bfa40f707be76a888e90f144c96211067a3"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -40.005, "y": -26.67, "width": 80.01, "height": 53.34},
+        {"x": -40.894, "y": 9.5, "width": 7.35, "height": 8.94},
+        {"x": 23.905, "y": -27.692, "width": 6.8, "height": 4.1},
+        {"x": -40.627, "y": -2.23, "width": 3.4, "height": 7.0},
+        {"x": -40.627, "y": -14.93, "width": 3.4, "height": 7.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4800",
     "name": "Adafruit MagTag - 2.9\" Grayscale E-Ink WiFi Display",
     "manufacturer": "Adafruit",

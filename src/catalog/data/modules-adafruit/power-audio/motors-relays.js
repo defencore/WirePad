@@ -136,6 +136,22 @@ export default [
   },
   {
     "id": "adafruit-module-5648",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4"],
+      "source": {"label": "Adafruit ADA5648: EAGLE Adafruit MOSFET Driver STEMMA Breakout.brd; commit ea11049753a7 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-MOSFET-Driver-STEMMA-PCB/blob/ea11049753a79330cc2651df233909c0191a5af4/Adafruit%20MOSFET%20Driver%20STEMMA%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP3", "count": 4, "package": "1X04_ROUND"}],
+        "duplicateHeaderContacts": [{"pinId": "jp1-1", "equivalentPinId": "jp3-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-2", "equivalentPinId": "jp3-2", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-3", "equivalentPinId": "jp3-1", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "19ac37bca05d6322da6dea9132855b5816cc1b0fc24ee9ed07114ac8158567a4"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5648",
     "name": "Adafruit MOSFET Driver - For Motors, Solenoids, LEDs, etc",
     "manufacturer": "Adafruit",

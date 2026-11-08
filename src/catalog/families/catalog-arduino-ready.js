@@ -1,4 +1,6 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
+import { rearContactOverlay } from "../shared/rear-contact-overlay.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pad, path, rect, smd } from "../shared/svg.js";
 import { boardDefinition, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
@@ -241,4 +243,30 @@ const arduinoReadyModels = {
   "arduino-mkr-wifi-1010": { label: "Arduino MKRWiFi1010 V2.0 Eagle CAD", url: `${cadBase}696878518f486c07e1a416ecd44c3729/ABX00023-cad-files.zip` },
 };
 
-export default defineFamily("arduino-ready", (arduinoReadyComponents).map(component => ({ component, render: (arduinoReadyArt)[component.art], footprint: (arduinoReadyFootprints)[component.id], model: arduinoReadyModels[component.id] })));
+function reviewedMounting(entry) {
+  const component = entry.component, nano = component.id === 'arduino-nano-33-iot';
+  const rows = ['left', 'right'].map(edge => component.pins.filter(pin => pin.edge === edge && pin.view !== 'back'));
+  const spacing = nano ? 15.24 : 20.32, firstY = nano ? -18.19 : -8.6152;
+  const contacts = rows.flatMap((row, side) => row.map((pin, index) => ({ pinId: pin.id,
+    x: (side ? 1 : -1) * spacing / 2, y: firstY + index * 2.54 })));
+  const ux = (rows[1][0].x - rows[0][0].x) / spacing, uy = (rows[0][1].y - rows[0][0].y) / 2.54;
+  const origin = { x: component.width / 2, y: rows[0][0].y - firstY * uy };
+  const left = (component.width - (nano ? 106 : 145)) / 2, top = nano ? 42 : 47;
+  const bounds = { x: left, y: top - (nano ? 3 : 4), width: nano ? 106 : 145, height: nano ? 266 : 312 };
+  const viewPins = component.pins.map(pin => {
+    if (pin.view !== 'back') return { pinId: pin.id, x: pin.x, y: pin.y, face: 'front' };
+    const number = pin.number.split('.').at(-1), physical = ninaRear[pin.number] ?? (nano ? nanoRear : mkrRear)[number];
+    return { pinId: pin.id, x: origin.x + (physical[1] - (nano ? 8.89 : 12.5)) * ux,
+      y: origin.y + (physical[0] - (nano ? 22 : 30.75)) * uy, face: 'rear' };
+  });
+  return reviewedBoardMounting({ source: arduinoReadyModels[component.id], contacts, viewBounds: bounds,
+    bodyRegions: [{ x: left, y: top, width: nano ? 106 : 145, height: nano ? 263 : 308 },
+      { x: left + (nano ? 38 : 56), y: top - (nano ? 3 : 4), width: nano ? 30 : 33, height: 22 }],
+    bodyEvidence: 'Exact named main-header centers and underside service coordinates follow the linked Arduino Eagle revision. Material regions retain the fixed PCB and USB primitives of the existing same-side reconstruction; its small component/outline geometry remains representative.',
+    note: `Populate both complete ${nano ? 15 : 14}-pin male-header rows, ${spacing} mm apart at 2.54 mm pitch. USB above; leave the fitted battery/ESLOV connectors and rear service pads out of the insertion population.`,
+    view: { id: 'breadboard', pins: viewPins, note: 'Source-reviewed main-header calibration and an explicitly projected, dashed B underside keep every original electrical contact in one board view. Published default anchors and native carrier geometry are unchanged.' },
+    renderMounted: part => clippedFrontArtwork(entry.art, component, bounds) + rearContactOverlay(viewPins.map(pin => ({ ...component.pins.find(p => p.id === pin.pinId), ...pin }))),
+  });
+}
+export default defineFamily("arduino-ready", entries.map(entry => ({ component: entry.component, render: entry.art, footprint: entry.footprint,
+  model: arduinoReadyModels[entry.component.id], mounting: reviewedMounting(entry) })));

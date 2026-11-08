@@ -4,6 +4,25 @@ import assets from "./timing-identity-assets.js";
 export default [
   {
     "id": "adafruit-module-2045",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7"],
+      "source": {"label": "Adafruit ADA2045: EAGLE Adafruit Si5351A.brd; commit 14a50ca2041b physical insertion headers", "url": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-Breakout-PCB/blob/14a50ca2041bbcccc6a2b1378cb72424603f5d20/Adafruit%20Si5351A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07_ROUND_76"}],
+        "boardSha256": "c624d6518c8b3818b3aa2e5ef5e106ff63ac8e2b2d7a13e3a0c6091a2edbda2f"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -15.24, "y": -10.795, "width": 30.48, "height": 21.59},
+        {"x": 6.985, "y": -19.4945, "width": 6.35, "height": 7.62},
+        {"x": -3.175, "y": -19.4945, "width": 6.35, "height": 7.62},
+        {"x": -13.335, "y": -19.4945, "width": 6.35, "height": 7.62}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2045",
     "name": "Adafruit Si5351A Clock Generator Breakout Board - 8KHz to 160MHz",
     "manufacturer": "Adafruit",
@@ -453,6 +472,22 @@ export default [
   },
   {
     "id": "adafruit-module-4282",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2"],
+      "source": {"label": "Adafruit ADA4282: EAGLE Adafruit DS3231 PiRTC.brd; commit fea853b94ebe physical insertion headers", "url": "https://github.com/adafruit/Adafruit-PiRTC-DS3231-PCB/blob/fea853b94ebefe77f3655f3e572b4addfe14ead7/Adafruit%20DS3231%20PiRTC.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 2, "package": "1X02_ROUND"}],
+        "boardSha256": "d8a926810ea5596aeda8da33d9a6f21ed7686783f5c1a62b439d1936ddab7e33"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -9.9949, "y": -10.6045, "width": 19.9898, "height": 21.209}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4282",
     "name": "Adafruit PiRTC - Precise DS3231 Real Time Clock for Raspberry Pi",
     "manufacturer": "Adafruit",
@@ -557,6 +592,22 @@ export default [
   },
   {
     "id": "adafruit-module-6538",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA6538: EAGLE Adafruit RV-8803 RTC Breakout Board.brd; commit 32351f05d78d physical insertion headers", "url": "https://github.com/adafruit/Adafruit-RV-8803-High-Accuracy-Real-Time-Clock-PCB/blob/32351f05d78df6b2e532512ec7fc56d9bd44c9e4/Adafruit%20RV-8803%20RTC%20Breakout%20Board.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "e1595c733313b50fb6ea299af1b3f7177968600cf4dab813bcf6beb1b2be9ce2"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6538",
     "name": "Adafruit RV-8803 High Accuracy Real Time Clock Breakout Board",
     "manufacturer": "Adafruit",
@@ -668,6 +719,23 @@ export default [
   },
   {
     "id": "adafruit-module-5640",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp5-5"],
+      "source": {"label": "Adafruit ADA5640: EAGLE Si5351 STEMMA QT Board.brd; commit f4ca8e1c846c physical insertion headers", "url": "https://github.com/adafruit/Adafruit-Si5351A-Clock-Generator-with-STEMMA-QT-PCB/blob/f4ca8e1c846ced71a104c657bcb727502675b466/Si5351%20STEMMA%20QT%20Board.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}, {"id": "JP5", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "0339b969cfca1c40e0d0ac6fa8805e71d4a940b1fb1d718da47a1827ee3908d6"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78},
+        {"x": -3.175, "y": -17.7165, "width": 6.35, "height": 7.62}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5640",
     "name": "Adafruit Si5351A Clock Generator with STEMMA QT - 8KHz to 160MHz",
     "manufacturer": "Adafruit",
@@ -794,6 +862,30 @@ export default [
   },
   {
     "id": "adafruit-module-6534",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12", "jp3-13", "jp3-14", "jp3-15", "jp3-16", "jp3-17", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12", "jp2-13"],
+      "source": {"label": "Adafruit ADA6534: EAGLE Adafruit Si5351C 8 Channel TCXO Clock Generator rev B.brd; commit d5fc0fc928d6 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-Si5351C-8-Channel-TCXO-Clock-Generator-PCB/blob/d5fc0fc928d6088a98b8ff0acc428731f978a110/Adafruit%20Si5351C%208%20Channel%20TCXO%20Clock%20Generator%20rev%20B.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP3", "count": 17, "package": "1X17_ROUND70"}, {"id": "JP2", "count": 13, "package": "1X13_ROUND_70"}],
+        "boardSha256": "6f8b482b72c270a683dd079e0098b26132a76ea3576522d47dc4f2906bfee8af"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -22.86, "y": -8.89, "width": 45.72, "height": 17.78},
+        {"x": 9.525, "y": -17.8435, "width": 6.35, "height": 7.62},
+        {"x": 4.445, "y": -17.8435, "width": 6.35, "height": 7.62},
+        {"x": 14.605, "y": -17.8435, "width": 6.35, "height": 7.62},
+        {"x": -5.715, "y": -17.8435, "width": 6.35, "height": 7.62},
+        {"x": -10.795, "y": -17.8435, "width": 6.35, "height": 7.62},
+        {"x": -0.635, "y": -17.8435, "width": 6.35, "height": 7.62},
+        {"x": -20.955, "y": -17.8435, "width": 6.35, "height": 7.62},
+        {"x": -15.875, "y": -17.8435, "width": 6.35, "height": 7.62}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6534",
     "name": "Adafruit Si5351C 8 Channel TCXO Clock Generator - 2.5KHz-200MHz",
     "manufacturer": "Adafruit",
@@ -960,6 +1052,22 @@ export default [
   },
   {
     "id": "adafruit-module-5189",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA5189: EAGLE Adafrruit PCF8523 QT.brd; commit 4ec7e14d667a physical insertion headers", "url": "https://github.com/adafruit/Adafruit-PCF8523-RTC-Breakout-PCB/blob/4ec7e14d667a2d075430da0980c35c4f049e860b/Adafrruit%20PCF8523%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "a6f25e971d63bde33f12b66a94beea01f11e71e8e2e6a7a73e8dded9f094eb5b"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5189",
     "name": "Adafruit PCF8523 Real Time Clock Breakout Board",
     "manufacturer": "Adafruit",

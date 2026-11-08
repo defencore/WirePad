@@ -1,5 +1,6 @@
 import { physicalEntry } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { board, chip, circle, edgePads, label, line, pad, path, pinRow, rect, smd } from "../shared/svg.js";
 
 const tiLdo = "https://www.ti.com/lit/ds/symlink/lm1117.pdf";
@@ -288,7 +289,7 @@ function pololuBoard({ modelName, item, voltage, title, variant, body, pinSpecs,
   const spacing = 2.54 * scale;
   const id = `pololu-${modelName.toLowerCase()}`;
   const start = (width - (pinSpecs.length - 1) * spacing) / 2;
-  return powerPart({
+  const entry = powerPart({
     id, name: `Pololu ${modelName} ${voltage} V ${title}`, shortName: modelName, width, height, description,
     manufacturer: "Pololu", subtitle: `${voltage} V / ${title} DC-DC`,
     tags: ["dc-dc", "dc dc", title.toLowerCase(), "regulator", "switching"], source: pololuUrl(item),
@@ -317,6 +318,18 @@ function pololuBoard({ modelName, item, voltage, title, variant, body, pinSpecs,
         }).join("");
     },
   });
+  const bodyRegions = [{ x: 7, y: 7, width: width - 14, height: height - 14 }];
+  const viewBounds = { x: 6.5, y: 6.5, width: width - 13, height: height - 13 };
+  const padY = height - 21.7;
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `Pololu ${modelName} manufacturer 0.1 inch header drawing`, url: pololuUrl(item) },
+    contacts: pinSpecs.map(([pinId], index) => ({ pinId, x: (index - (pinSpecs.length - 1) / 2) * 2.54, y: body[1] / 2 - 1.27 })),
+    calibration: { origin: { x: width / 2, y: padY - (body[1] / 2 - 1.27) * scale }, unitsPerMm: scale },
+    bodyRegions, bodyEvidence: "Manufacturer source identifies the single 0.1 inch straight header and complete source terminal order. The canonical PCB drawing supplies representative body clearance independently of the native reference-carrier pads.",
+    viewBounds, renderMounted: part => clippedFrontArtwork(entry.art, part, viewBounds),
+    note: `Seat all ${pinSpecs.length} contacts using the supplied straight header strip; do not use a right-angle strip for flat mounting. ${clearanceNote ?? "Allow the module's populated underside clearance above the breadboard."}`,
+  });
+  return entry;
 }
 
 const shutdown = number => terminal("shdn", "SHDN", "Drive low to shut down. The on-board pull-up enables the regulator when this pin is open.", "input", number);
@@ -360,7 +373,7 @@ const converters = [
 function sipConverter({ id, name, shortName, manufacturer, description, source, body, modelHeight, padY, minInput, maxInput, voltage, rating, art, model }) {
   const width = 138;
   const height = 120;
-  return powerPart({
+  const entry = powerPart({
     id, name, shortName, width, height, manufacturer, description, source, art, model,
     subtitle: `${voltage} V / ${rating} / SIP-3`, tags: ["dc-dc", "dc dc", "buck", "step down", "sip-3", "78xx"],
     pins: bottom(width, height, 40, 29, [
@@ -372,6 +385,22 @@ function sipConverter({ id, name, shortName, manufacturer, description, source, 
       groups: [{ ids: ["vin", "gnd", "vout"], x: -2.54, y: padY, pitch: 2.54, drill: 1, size: 1.9 }],
     },
   });
+  const unitsPerMm = 10, origin = { x: width / 2, y: height / 2 };
+  const contacts = [{ pinId: "vin", x: -2.54, y: padY }, { pinId: "gnd", x: 0, y: padY }, { pinId: "vout", x: 2.54, y: padY }];
+  const viewPins = contacts.map(contact => ({ pinId: contact.pinId, x: origin.x + contact.x * unitsPerMm, y: origin.y + contact.y * unitsPerMm, face: "front" }));
+  const bodyRegions = [{ x: origin.x - body[0] * unitsPerMm / 2, y: origin.y - body[1] * unitsPerMm / 2, width: body[0] * unitsPerMm, height: body[1] * unitsPerMm }];
+  const viewBounds = { x: bodyRegions[0].x - .5, y: bodyRegions[0].y - .5, width: bodyRegions[0].width + 1, height: bodyRegions[0].height + 1 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `${manufacturer} ${shortName} SIP-3 mechanical drawing`, url: source }, contacts,
+    calibration: { origin, unitsPerMm }, bodyRegions,
+    bodyEvidence: "Manufacturer SIP-3 package dimensions and 2.54 mm lead centers; physical top-view envelope is separate from the older front illustration with long exposed leads.",
+    viewBounds, view: { id: "breadboard", pins: viewPins, note: "Reviewed SIP-3 top-view lead projection from the manufacturer mechanical drawing. Every old electrical ID is retained; default front-view anchors stay unchanged until insertion." },
+    renderMounted: () => rect(bodyRegions[0].x, bodyRegions[0].y, bodyRegions[0].width, bodyRegions[0].height, 2, "#293c3f", "#879c91") +
+      label(origin.x, origin.y - 18, manufacturer, 8, "#e2e9df") + label(origin.x, origin.y - 3, shortName, 6.5, "#e2e9df") +
+      viewPins.map(pin => circle(pin.x, pin.y, 6, "#d8bc75", "#f0dfa6") + circle(pin.x, pin.y, 2.5, "#30463c")).join(""),
+    note: "All three fixed SIP leads enter together in the manufacturer's 2.54 mm VIN/GND/VOUT order. This top-view body is a representative illustration; respect the full vertical package height and manufacturer assembly clearances.",
+  });
+  return entry;
 }
 
 const recom5V = sipConverter({
@@ -408,13 +437,6 @@ const murata5V = sipConverter({
 
 const powerParts = [...filters, tdkFilter, ...ldos, ...converters, recom5V, murata5V];
 
-const powerComponents = powerParts.map(({ component }) => component);
-const powerArt = Object.fromEntries(powerParts.map(({ component, art }) => [component.art, art]));
-const powerFootprints = Object.fromEntries(powerParts.map(({ component, footprint }) => [component.id, footprint]));
-const powerModels = Object.fromEntries(
-  powerParts.filter(({ model }) => model).map(({ component, model }) => [component.id, model]),
-);
-
 function contactPosition(component, pin, index) {
   if (component.id === "tdk-mem2012f75r0t001") return [[38.5, 52], [109.5, 52], [74, 72]][index];
   if (component.id.startsWith("mcp170")) return [pin.x, 69];
@@ -426,4 +448,4 @@ function contactPosition(component, pin, index) {
   return [pin.x === 0 ? 9 : component.width - 9, pin.y];
 }
 
-export default defineFamily("power", powerComponents.map(component => physicalEntry({ component, render: powerArt[component.art], footprint: powerFootprints[component.id], model: powerModels[component.id] }, (pin, index) => contactPosition(component, pin, index))));
+export default defineFamily("power", powerParts.map(({ art: render, ...entry }) => physicalEntry({ ...entry, render }, (pin, index) => contactPosition(entry.component, pin, index))));

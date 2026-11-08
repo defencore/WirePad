@@ -4,6 +4,24 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "sparkfun-module-wrl13711",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10"],
+      "source": {"label": "SparkFun WRL-13711: EAGLE ESP8266-Thing-Dev.brd; commit e2f5277a9f49 physical insertion headers", "url": "https://github.com/sparkfun/ESP8266_Thing_Dev/blob/e2f5277a9f49694436a95733a86f40216b845bbd/Hardware/ESP8266-Thing-Dev.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 10, "package": "1X10_NO_SILK"}, {"id": "JP3", "count": 10, "package": "1X10_NO_SILK"}],
+        "duplicateHeaderContacts": [{"pinId": "jp5-1", "equivalentPinId": "jp2-1", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp5-2", "equivalentPinId": "jp3-2", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "123a7efd650048c55e32074b546d1774a13bdcf182b9bcade3b8fc8a69346b0b"
+      },
+      "bodyRegions": [
+        {"x": -27.686, "y": -12.954, "width": 55.372, "height": 25.908},
+        {"x": -28.527, "y": -0.65, "width": 6.0, "height": 11.0},
+        {"x": -27.717, "y": -6.76, "width": 7.6, "height": 5.9}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-13711",
     "name": "SparkFun ESP8266 Thing - Dev Board",
     "manufacturer": "SparkFun",
@@ -382,6 +400,24 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl13231",
+    "mountingReview": {
+      "contactIds": ["jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10"],
+      "source": {"label": "SparkFun WRL-13231: EAGLE SparkFun_ESP8266_Thing_V10a.brd; commit 9f412e78a485 physical insertion headers", "url": "https://github.com/sparkfun/ESP8266_Thing/blob/9f412e78a48587f9689b4d6eafaf941f308822ea/Hardware/SparkFun_ESP8266_Thing_V10a.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP5", "count": 4, "package": "1X04"}, {"id": "JP3", "count": 10, "package": "1X10"}],
+        "boardSha256": "0bbf25ec0e94daa6e877b7f298fea8531a975b89b33758a0267e498c3bff70ee"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -27.686, "y": -12.954, "width": 55.372, "height": 25.908},
+        {"x": -28.4635, "y": -0.52, "width": 6.0, "height": 9.6},
+        {"x": -26.464, "y": -12.96, "width": 6.7, "height": 4.1}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-13231",
     "name": "SparkFun ESP8266 Thing",
     "manufacturer": "SparkFun",
@@ -750,6 +786,24 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl15574",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4", "j3-5", "j3-6", "j3-7", "j3-8", "j3-9", "j3-10", "j3-11", "j3-12", "j4-1", "j4-2", "j4-3", "j4-4", "j4-5", "j4-6", "j4-7", "j4-8", "j4-9", "j4-10", "j4-11", "j4-12", "j4-13", "j4-14", "j4-15", "j4-16"],
+      "source": {"label": "SparkFun WRL-15574: EAGLE Artemis Thing Plus.brd; commit fc9612da34b7 physical insertion headers", "url": "https://github.com/sparkfun/Artemis_Thing_Plus/blob/fc9612da34b751c9c8a5c7f041443c914a42a65d/Hardware/Artemis%20Thing%20Plus.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J3", "count": 12, "package": "1X12_SM_SQ_NOSILK"}, {"id": "J4", "count": 16, "package": "1X16_SM_SQ_NOSILK"}],
+        "boardSha256": "2f62ffda49d9f39d75c38f1bd2b031f95c18247c79f0a234346f47c3b7bf9d53"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -11.43, "y": -29.21, "width": 22.86, "height": 58.42},
+        {"x": -5.375, "y": -29.2665, "width": 10.75, "height": 15.75},
+        {"x": -4.82, "y": 22.725, "width": 9.64, "height": 7.835}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-15574",
     "name": "SparkFun Thing Plus - Artemis",
     "manufacturer": "SparkFun",
@@ -912,6 +966,23 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl15435",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j1-7", "j1-8", "j1-9", "j1-10", "j1-11", "j1-12", "j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8", "j2-9", "j2-10", "j2-11", "j2-12", "j2-13", "j2-14", "j2-15", "j2-16"],
+      "source": {"label": "SparkFun WRL-15435: EAGLE XBEE3_Thing_Plus.brd; commit 624c5b541806 physical insertion headers", "url": "https://github.com/sparkfun/XBee3_Thing_Plus/blob/624c5b54180645034c3d2f315639a831f0518abc/Hardware/XBEE3_Thing_Plus.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J1", "count": 12, "package": "1X12_SM_SQ_NOSILK"}, {"id": "J2", "count": 16, "package": "1X16_SM_SQ_NOSILK"}],
+        "boardSha256": "0c401953868aae5ad968805b523a6a1acdb0cd0e1f09fb45859338ba62273d31"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -11.43, "y": -29.21, "width": 22.86, "height": 58.42},
+        {"x": -4.02, "y": 24.155, "width": 8.04, "height": 5.62}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-15435",
     "name": "SparkFun Thing Plus - XBee3 Micro (U.FL)",
     "manufacturer": "SparkFun",
@@ -1121,6 +1192,23 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl17743",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8", "j2-9", "j2-10", "j2-11", "j2-12", "j4-1", "j4-2", "j4-3", "j4-4", "j4-5", "j4-6", "j4-7", "j4-8", "j4-9", "j4-10", "j4-11", "j4-12", "j4-13", "j4-14", "j4-15", "j4-16"],
+      "source": {"label": "SparkFun WRL-17743: EAGLE ESP32-S2_Thing_Plus.brd; commit 49a7c05da8a2 physical insertion headers", "url": "https://github.com/sparkfun/ESP32-S2_Thing_Plus/blob/49a7c05da8a254010d7022d4b9586dff2c6bbb9a/Hardware/ESP32-S2_Thing_Plus.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J2", "count": 12, "package": "1X12_SM_SQ_NOSILK"}, {"id": "J4", "count": 16, "package": "1X16_SM_SQ_NOSILK"}],
+        "boardSha256": "3f91041525fae7df4d28bb742840dd851ff4ef20cd0dbaa5ce7d7a28b7794b5b"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -11.43, "y": -32.385, "width": 22.86, "height": 64.77},
+        {"x": -4.82, "y": 25.646, "width": 9.64, "height": 7.835}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-17743",
     "name": "SparkFun Thing Plus - ESP32-S2 WROOM",
     "manufacturer": "SparkFun",

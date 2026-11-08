@@ -3,6 +3,9 @@ import { defineFamily } from "../registry.js";
 import { board, chip, circle, label, line, mountingHole, path, pinRow, rect, smd, tactile } from "../shared/svg.js";
 import { microUsb, espDevKitArt } from "../shared/esp-devkit-art.js";
 import { breadboardHeaderMounting } from "../shared/breadboard-mounting.js";
+import { xiaoBoardMounting } from "../shared/xiao-board-mounting.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
+import { rearContactOverlay } from "../shared/rear-contact-overlay.js";
 
 const espDocs = "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3";
 const seeedS3 = "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/";
@@ -80,10 +83,35 @@ function xiaoViews(component, footprint, draw) {
     };
   });
   const sx = 17.8 * frontScale / (component.width - 14), sy = 21 * frontScale / (bottom - 14);
-  return { component: physical, art: (entry, labels) =>
+  const entry = { component: physical, art: (entry, labels) =>
     `<g transform="translate(${entry.width / 2 - entry.width / 2 * sx} ${7 - 7 * sy}) scale(${sx} ${sy})">${draw(entry)}</g>` +
     rect(entry.width / 2 - 17.8 * backScale / 2, rearStart + 6, 17.8 * backScale, 21 * backScale, 2, "#304139", "#6d8277") +
     label(entry.width / 2, rearStart, "UNDERSIDE · MIRRORED", 5.5, "#334c55") + contactArt(entry, labels) };
+  {
+    const usbWidth = component.id.includes('esp32') ? 46 : 56;
+    const usbX = component.id.includes('esp32') ? 55 : 50;
+    const usbHeight = component.id.includes('esp32') || plus ? 42 : 34;
+    entry.mounting = xiaoBoardMounting(physical, { source: { url: component.source,
+      label: `Seeed ${component.name} manufacturer PCB drill map and mechanical drawing` },
+      centerX: component.width / 2, top: 7, unitsPerMm: frontScale,
+      drillDiameterMm: (!plus && component.id.includes('esp32')) || (plus && component.id.includes('rp2040')) ? .95 : .85,
+      castellations: physical.pins.filter(pin => frontIds.has(pin.id)),
+      auxiliaryContacts: physical.pins.filter(pin => !frontIds.has(pin.id)).map(pin => ({ pinId: pin.id, ...pads.get(pin.id) })),
+      ...((!plus && component.id.includes('esp32')) || (plus && component.id.includes('rp2040')) ? {
+        drillContacts: physical.pins.filter(pin => frontIds.has(pin.id)).map(pin => {
+          const n = Number(pin.number), left = n <= 7, end = [1, 7, 8, 14].includes(n);
+          const offset = component.id.includes('rp2040') ? (end ? .075 : .175) : 0;
+          return { pinId: pin.id, x: (left ? -1 : 1) * ((end ? 7.72 : 7.62) - offset),
+            y: -7.62 + (left ? n - 1 : 14 - n) * 2.54 };
+        }),
+        assemblyNote: 'Manufacturer solder-header instructions and the pre-soldered/common-XIAO assembly use straight nominal 15.24 mm rows. Offset locking/drill centers remain visible beneath the square installed posts; they are not used as the insertion-tip positions.',
+      } : {}),
+      usbRegion: { x: component.width / 2 + (usbX - component.width / 2) * sx,
+        y: 7 + (2 - 7) * sy, width: usbWidth * sx, height: usbHeight * sy },
+      frontArtwork: () => `<g transform="translate(${component.width / 2 - component.width / 2 * sx} ${7 - 7 * sy}) scale(${sx} ${sy})">${draw(physical)}</g>`,
+    });
+  }
+  return entry;
 }
 
 function makeBoard(options, rows, draw, footprint) {
@@ -948,5 +976,39 @@ const espRpMountings = Object.fromEntries([
   return [id, breadboardHeaderMounting({ url, label }, entry.footprint.groups.slice(0, 2), note,
     { regions, evidence: "Canonical regions copy the existing PCB and protruding USB/RF/control primitives in picoArt, espDevKitArt or the Feather renderer. Cosmetic shadow, contact labels and canvas padding are excluded; no default artwork or pin is moved." })];
 }));
+for (const entry of boards) if (entry.mounting) espRpMountings[entry.component.id] = entry.mounting;
+
+for (const entry of [qtpyS3, qtpyRp, espZero]) {
+  const component = entry.component, zero = component.id.startsWith('waveshare-'), esp = component.id.endsWith('esp32-s3');
+  const contacts = entry.footprint.groups.slice(0, 2).flatMap(group => group.ids.map((pinId, index) => ({
+    pinId, x: group.x, y: group.y + index * 2.54 })));
+  const first = contacts[0], firstPin = component.pins.find(pin => pin.id === first.pinId);
+  const ux = (component.pins.find(pin => pin.id === contacts[zero ? 9 : 7].pinId).x - firstPin.x) / 15.24;
+  const uy = (component.pins.find(pin => pin.id === contacts[1].pinId).y - firstPin.y) / 2.54;
+  const origin = { x: firstPin.x - first.x * ux, y: firstPin.y - first.y * uy };
+  const physical = footprintContacts(entry.footprint);
+  const viewPins = component.pins.map(pin => {
+    const rear = zero ? pin.number.startsWith('B.') : pin.number.startsWith('BAT.');
+    const point = physical.get(pin.id);
+    return rear ? { pinId: pin.id, x: origin.x + point.x * ux, y: origin.y + point.y * uy, face: 'rear' } :
+      { pinId: pin.id, x: pin.x, y: pin.y, face: 'front' };
+  });
+  const bounds = { x: 7, y: zero || !esp ? 3 : 2, width: component.width - 14,
+    height: (zero ? 154 : component.height - 7) - (zero || !esp ? 3 : 2) };
+  const regions = [{ x: 7, y: 7, width: component.width - 14, height: (zero ? 161 : component.height) - 14 },
+    zero ? { x: 47, y: 3, width: 56, height: 39 } : esp ?
+      { x: 52, y: 8, width: 54, height: 41 } : { x: 48, y: 3, width: 62, height: 49 }];
+  const frontArt = zero ? entry.art : part => (esp ? qtpyS3Art(part) : qtpyRpArt(part)) +
+    contactArt({ ...part, pins: part.pins.filter(pin => !pin.number.startsWith('BAT.')) }, false);
+  espRpMountings[component.id] = reviewedBoardMounting({
+    source: { url: zero ? component.source : `${esp ? 'https://learn.adafruit.com/adafruit-qt-py-esp32-s3' : 'https://learn.adafruit.com/adafruit-qt-py-2040'}/downloads`,
+      label: zero ? 'Waveshare ESP32-S3-Zero mechanical drawing and component-side pinout' : `${component.name} manufacturer schematic and fab print` },
+    contacts, bodyRegions: regions, viewBounds: bounds,
+    bodyEvidence: 'The complete two-row main headers follow the manufacturer 2.54 mm/15.24 mm pattern. Fixed body regions use the existing PCB/USB primitives and remain a representative hardware reconstruction. The separate rear panel and annotation frame are omitted.',
+    note: `Populate both complete ${zero ? 9 : 7}-pin main side rows, 15.24 mm apart. Auxiliary solder pads, battery pads and fitted STEMMA sockets are not downward leads. Dashed B contacts identify the rear pads projected through this PCB.`,
+    view: { id: 'breadboard', pins: viewPins, note: 'Complete source-reviewed assembly view calibrates both drawing axes against the main headers and projects all hidden contacts without moving default/native geometry.' },
+    renderMounted: part => clippedFrontArtwork(frontArt, component, bounds) + rearContactOverlay(viewPins.map(pin => ({ ...component.pins.find(p => p.id === pin.pinId), ...pin }))),
+  });
+}
 
 export default defineFamily("esp-rp", (espRpComponents).map(component => ({ component, render: (espRpArt)[component.art], footprint: (espRpFootprints)[component.id], model: espRpModels[component.id], mounting: espRpMountings[component.id] })));

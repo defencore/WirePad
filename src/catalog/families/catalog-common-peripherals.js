@@ -1,3 +1,5 @@
+import { sourceReferenceMounting } from "../shared/source-reference-mounting.js";
+import physicalReferences from "../data/popular-mounting/common-peripherals.js";
 import { defineFamily } from "../registry.js";
 import { board, chip, circle, label, line, mountingHole, path, rect, screw, smd } from "../shared/svg.js";
 import { boardDefinition, contact, ground, header, supply } from "../shared/board.js";
@@ -363,8 +365,7 @@ header("J2", "right", 21, numbered([
 
 const entries = [lcd1602, oled091, tft096, sh1106, tm1637, matrix, rtc, microSd, openLog, max98357, rfid, gps, dfPlayer];
 
-const commonPeripheralComponents = entries.map(({ component }) => component);
-const commonPeripheralArt = Object.fromEntries(entries.map(({ component, art }) => [component.art, art]));
-const commonPeripheralFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-
-export default defineFamily("common-peripherals", (commonPeripheralComponents).map(component => ({ component, render: (commonPeripheralArt)[component.art], footprint: (commonPeripheralFootprints)[component.id] })));
+export default defineFamily("common-peripherals", entries.map(({ art: render, ...entry }) => {
+  const mounting = sourceReferenceMounting(entry.component, physicalReferences[entry.component.id]);
+  return { ...entry, render, ...(mounting ? { mounting } : {}) };
+}));

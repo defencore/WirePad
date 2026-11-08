@@ -4,6 +4,22 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "seeed-module-113020006",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5"],
+      "source": {"label": "Seeed Studio 113020006: EAGLE Grove - NFC v1.brd physical insertion headers", "url": "https://files.seeedstudio.com/wiki/Grove-NFC/res/Grove-NFC.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "J1", "count": 5, "package": "5P-2.54"}],
+        "boardSha256": "a44e9c453466b151f337f80c19b6121e1e32ac32845cfbcab8406c5c6009aa22"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -21.8105, "y": -11.9605, "width": 43.621, "height": 23.921}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "113020006",
     "name": "Seeed Grove - NFC",
     "manufacturer": "Seeed Studio",

@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { chip, circle, label, line, path, rect, smd } from "../shared/svg.js";
 
 // Manufacturer photos show no PCB revision. These entries identify the photographed SKU,
@@ -33,12 +34,37 @@ function entry(spec) {
     const caption = showLabels ? label(pin.x + (p.dx ?? -31), pin.y + (p.dy ?? 0), p.caption, p.font ?? 8.5, p.color ?? yellow, p.anchor ?? "end") : "";
     return `<g data-contact="${pin.id}">${metal}${caption}</g>`;
   }).join("");
-  return { component, render, footprint };
+  const result = { component, render, footprint };
+  if (spec.insertion) {
+    const review = spec.insertion, unitsPerMm = 8, origin = { x: component.width / 2, y: component.height / 2 };
+    const contacts = pins.map((pin, index) => ({ pinId: pin.id, x: review.x, y: review.y + index * 2.54 }));
+    const viewPins = contacts.map(contact => ({ pinId: contact.pinId,
+      x: origin.x + contact.x * unitsPerMm, y: origin.y + contact.y * unitsPerMm, face: "front" }));
+    const physicalRegions = review.regions ?? [{ x: -review.body[0] / 2, y: -review.body[1] / 2, width: review.body[0], height: review.body[1] }];
+    const bodyRegions = physicalRegions.map(region => ({ x: origin.x + region.x * unitsPerMm,
+      y: origin.y + region.y * unitsPerMm, width: region.width * unitsPerMm, height: region.height * unitsPerMm }));
+    const x = Math.min(...bodyRegions.map(region => region.x)), y = Math.min(...bodyRegions.map(region => region.y));
+    const bounds = { x: x - .5, y: y - .5,
+      width: Math.max(...bodyRegions.map(region => region.x + region.width)) - x + 1,
+      height: Math.max(...bodyRegions.map(region => region.y + region.height)) - y + 1 };
+    const sx = review.body[0] * unitsPerMm / review.art[2], sy = review.body[1] * unitsPerMm / review.art[3];
+    result.mounting = reviewedBoardMounting({
+      source: { label: `${spec.name} manufacturer photographed header order / straight-header assembly`, url: spec.source },
+      contacts, calibration: { origin, unitsPerMm }, bodyRegions, viewBounds: bounds,
+      bodyEvidence: "The exact manufacturer SKU photo verifies the complete standard 2.54 mm header and its contact order. A replacement straight male strip supplies the downward lead centers. PCB outline, header inset and component envelopes remain explicitly representative photo geometry; native carrier accuracy is unchanged.",
+      view: { id: "breadboard", pins: viewPins,
+        note: "Complete straight-header assembly, retaining every original ID. The source's side-facing header is replaced for this flat insertion view; its original image and saved anchors remain unchanged. Representative body dimensions do not claim production CAD." },
+      renderMounted: () => `<g transform="translate(${origin.x - review.body[0] * unitsPerMm / 2 - review.art[0] * sx} ${origin.y - review.body[1] * unitsPerMm / 2 - review.art[1] * sy}) scale(${sx} ${sy})">${spec.draw(false, true)}</g>` +
+        viewPins.map(pin => circle(pin.x, pin.y, 4, "#d8b96d", "#efdeaa") + circle(pin.x, pin.y, 1.8, "#243a31")).join(""),
+      note: "Replace the factory side-facing/right-angle strip with the complete straight male header facing below the PCB. All reviewed contacts are inserted; a female or cable-only assembly does not use this profile.",
+    });
+  }
+  return result;
 }
 
-function smallBoard(title, populated, showLabels) {
+function smallBoard(title, populated, showLabels, compact = false) {
   return path("M18 20H145Q158 42 171 20H194Q202 20 202 28V132Q202 140 194 140H171Q158 118 145 140H18Q10 140 10 132V28Q10 20 18 20Z", pcb, outline) +
-    hole(135, 80, 15) + rect(197, 51, 9, 58, 1.5, "#cfad35", "#efce61") + populated +
+    hole(135, 80, 15) + (compact ? "" : rect(197, 51, 9, 58, 1.5, "#cfad35", "#efce61")) + populated +
     (showLabels ? label(81, 32, title, 9, yellow) + label(82, 127, "Keyestudio", 9.5, yellow) : "");
 }
 const standard = (signalDescription, signalType = "input") => [
@@ -50,47 +76,47 @@ const buzzerArt = active => circle(62, 79, 38, "#151716", "#454a44") + circle(62
   (active ? circle(62, 79, 10, "#070b09") + label(43, 60, "+", 12, "#b6b9ae") : circle(62, 73, 8, "#090d0b") + circle(62, 93, 5, "#0a0f0c")) +
   smd(105, 51) + rect(99, 103, 11, 12, 1.5, "#303a32", "#82917c") + line(102, 102, 102, 99, "#c9ccbb", 1.7);
 
-const active = entry({ id: "keyestudio-ks0018-active-buzzer", name: "Keyestudio KS0018 Active Buzzer", short: "Active buzzer", subtitle: "KS0018 / digital / 3.3–5 V",
+const active = entry({ id: "keyestudio-ks0018-active-buzzer", insertion: { body: [32, 20], art: [10, 20, 192, 120], x: 13.46, y: -2.54 }, name: "Keyestudio KS0018 Active Buzzer", short: "Active buzzer", subtitle: "KS0018 / digital / 3.3–5 V",
   description: "Digital active buzzer module with onboard drive transistor. Component-side view with the three header contacts at the right: S, +, − from top to bottom. Supply 3.3–5 V.",
   source: docs("KS0018"), tags: ["buzzer", "active", "sound", "ks0018"], contacts: standard("Digital buzzer control input; HIGH enables the buzzer driver."),
-  draw: show => smallBoard("BUZZER", buzzerArt(true), show) });
-const passive = entry({ id: "keyestudio-ks0019-passive-buzzer", name: "Keyestudio KS0019 Passive Buzzer", short: "Passive buzzer", subtitle: "KS0019 / external tone / 3.3–5 V",
+  draw: (show, compact) => smallBoard("BUZZER", buzzerArt(true), show, compact) });
+const passive = entry({ id: "keyestudio-ks0019-passive-buzzer", insertion: { body: [32, 20], art: [10, 20, 192, 120], x: 13.46, y: -2.54 }, name: "Keyestudio KS0019 Passive Buzzer", short: "Passive buzzer", subtitle: "KS0019 / external tone / 3.3–5 V",
   description: "Passive piezo buzzer module with drive transistor; it requires a tone waveform. Component-side view: right header S, +, − from top to bottom. Supply 3.3–5 V.",
   source: docs("KS0019"), tags: ["buzzer", "passive", "tone", "piezo", "ks0019"], contacts: standard("Tone/PWM input to the onboard buzzer driver; this passive buzzer requires external pulse frequencies."),
-  draw: show => smallBoard("BUZZER", buzzerArt(false), show) });
+  draw: (show, compact) => smallBoard("BUZZER", buzzerArt(false), show, compact) });
 
-const rgb = entry({ id: "keyestudio-ks0032-rgb-led", name: "Keyestudio KS0032 RGB LED Module", short: "RGB LED", subtitle: "KS0032 / common anode / 5 V",
+const rgb = entry({ id: "keyestudio-ks0032-rgb-led", insertion: { body: [32, 20], art: [10, 20, 192, 120], x: 13.46, y: -3.81 }, name: "Keyestudio KS0032 RGB LED Module", short: "RGB LED", subtitle: "KS0032 / common anode / 5 V",
   description: "Four-contact non-addressable RGB LED module, with three series resistors. The photographed component-side header reads G, R, B, V from top to bottom. V is the common positive supply; sink the three color inputs to illuminate them. Use 5 V.",
   source: docs("KS0032"), tags: ["rgb", "led", "pwm", "common anode", "ks0032"], contacts: [
     contact("green", "G", "input", "Green LED cathode through its onboard resistor; sink current/drive LOW to light green.", 219, 53),
     contact("red", "R", "input", "Red LED cathode through its onboard resistor; sink current/drive LOW to light red.", 219, 71),
     contact("blue", "B", "input", "Blue LED cathode through its onboard resistor; sink current/drive LOW to light blue.", 219, 89),
     contact("vcc", "V", "power_in", "Common-anode positive supply, 5 V. This module has no separate ground contact.", 219, 107),
-  ], draw: show => smallBoard("RGB LED", rect(45, 66, 29, 29, 3, "#e8e2d5", "#bcbcb0") + circle(59.5, 80.5, 9, "#f6f0df", "#bcbcab") +
+  ], draw: (show, compact) => smallBoard("RGB LED", rect(45, 66, 29, 29, 3, "#e8e2d5", "#bcbcb0") + circle(59.5, 80.5, 9, "#f6f0df", "#bcbcab") +
     circle(56, 78, 2.4, "#be6656") + circle(63, 78, 2.4, "#679868") + circle(59.5, 85, 2.4, "#557ab0") + smd(51, 48) +
-    '<g transform="translate(34 72) rotate(90)">' + smd(0, 0) + "</g>" + '<g transform="translate(88 72) rotate(90)">' + smd(0, 0) + "</g>", show) });
+    '<g transform="translate(34 72) rotate(90)">' + smd(0, 0) + "</g>" + '<g transform="translate(88 72) rotate(90)">' + smd(0, 0) + "</g>", show, compact) });
 
-const traffic = entry({ id: "keyestudio-ks0310-traffic-light", name: "Keyestudio KS0310 Traffic Light", short: "Traffic light", subtitle: "KS0310 / red-yellow-green / 3.3–5 V", width: 284, height: 182,
+const traffic = entry({ id: "keyestudio-ks0310-traffic-light", insertion: { body: [40, 26.3333333333], art: [30, 12, 240, 158], x: -17.46, y: -3.81, regions: [{ x: -20, y: -13.1666666667, width: 7, height: 26.3333333334 }, { x: -13, y: -3.6666666667, width: 20.6666666667, height: 7.3333333334 }, { x: 7.6666666667, y: -13.1666666667, width: 12.3333333333, height: 26.3333333334 }] }, name: "Keyestudio KS0310 Traffic Light", short: "Traffic light", subtitle: "KS0310 / red-yellow-green / 3.3–5 V", width: 284, height: 182,
   description: "T-shaped red/yellow/green traffic-light board. Component-side view with LEDs at the right; left header reads R, Y, G, GND from top to bottom. Each color lights with a HIGH input. Operating voltage 3.3–5 V.",
   source: docs("KS0310"), tags: ["traffic light", "led", "red", "yellow", "green", "ks0310"], contacts: [
     contact("red", "R", "input", "Red LED anode via its onboard series resistor; HIGH illuminates red.", 25, 64, { dx: 16, anchor: "start" }),
     contact("yellow", "Y", "input", "Yellow LED anode via its onboard series resistor; HIGH illuminates yellow.", 25, 82, { dx: 16, anchor: "start" }),
     contact("green", "G", "input", "Green LED anode via its onboard series resistor; HIGH illuminates green.", 25, 100, { dx: 16, anchor: "start" }),
     contact("gnd", "GND", "power_in", "Shared LED cathode/ground reference.", 25, 118, { dx: 16, anchor: "start", font: 7 }),
-  ], draw: show => path("M30 12H72V69H196V12H270V170H196V113H72V170H30Z", pcb, outline) + hole(51, 36, 14) + hole(51, 146, 14) +
-    rect(25, 56, 11, 70, 1.2, "#d8ba3f", "#e7d080") + [[40,"#ad252a"],[91,"#e2c72d"],[142,"#2d9253"]].map(([y,c]) => circle(232,y,22,"#d1ca9a") + circle(232,y,18,c,"#9d9f7e") + circle(227,y-6,5,"#ffffff55") + smd(204,y+18)).join("") +
+  ], draw: (show, compact) => path("M30 12H72V69H196V12H270V170H196V113H72V170H30Z", pcb, outline) + hole(51, 36, 14) + hole(51, 146, 14) +
+    (compact ? "" : rect(25, 56, 11, 70, 1.2, "#d8ba3f", "#e7d080")) + [[40,"#ad252a"],[91,"#e2c72d"],[142,"#2d9253"]].map(([y,c]) => circle(232,y,22,"#d1ca9a") + circle(232,y,18,c,"#9d9f7e") + circle(227,y-6,5,"#ffffff55") + smd(204,y+18)).join("") +
     (show ? label(132,91,"TRAFFIC LIGHT",8,yellow) : "") });
 
-const irtx = entry({ id: "keyestudio-ks0027-ir-transmitter", name: "Keyestudio KS0027 IR Transmitter", short: "IR transmitter", category: "Communication", subtitle: "KS0027 / IR LED / 3–5 V",
+const irtx = entry({ id: "keyestudio-ks0027-ir-transmitter", insertion: { body: [32, 20], art: [10, 20, 192, 120], x: 13.46, y: -2.54, regions: [{ x: -16, y: -10, width: 32, height: 20 }, { x: -17.84, y: -2.5, width: 7.2, height: 5.5 }] }, name: "Keyestudio KS0027 IR Transmitter", short: "IR transmitter", category: "Communication", subtitle: "KS0027 / IR LED / 3–5 V",
   description: "Digital infrared transmitter with a forward-facing clear IR LED and driver transistor. Component-side view with right header S, +, − from top to bottom. Supply 3–5 V; generate the carrier and protocol in firmware.",
   source: docs("KS0027"), tags: ["infrared", "ir", "transmitter", "remote", "38khz", "ks0027"], contacts: standard("IR LED driver input. HIGH enables IR emission; supply a carrier (for example 38 kHz) for a demodulating remote-control receiver."),
-  draw: show => smallBoard("IR Transmitter", line(18,74,43,74,"#bfc6b9",3) + line(18,89,43,89,"#bfc6b9",3) + rect(13,65,29,33,4,"#d9e0d2", "#a1b2a6") +
-    path("M13 65Q-1 81.5 13 98", "#e7eee2", "#a1b2a6") + smd(82,64) + smd(83,94) + rect(65,95,9,12,1,"#223127", "#85947c"), show) });
-const irrx = entry({ id: "keyestudio-ks0026-ir-receiver", name: "Keyestudio KS0026 IR Receiver", short: "IR receiver", category: "Communication", subtitle: "KS0026 / demodulating 38 kHz / 5 V",
+  draw: (show, compact) => smallBoard("IR Transmitter", line(18,74,43,74,"#bfc6b9",3) + line(18,89,43,89,"#bfc6b9",3) + rect(13,65,29,33,4,"#d9e0d2", "#a1b2a6") +
+    path("M13 65Q-1 81.5 13 98", "#e7eee2", "#a1b2a6") + smd(82,64) + smd(83,94) + rect(65,95,9,12,1,"#223127", "#85947c"), show, compact) });
+const irrx = entry({ id: "keyestudio-ks0026-ir-receiver", insertion: { body: [32, 20], art: [10, 20, 192, 120], x: 13.46, y: -2.54 }, name: "Keyestudio KS0026 IR Receiver", short: "IR receiver", category: "Communication", subtitle: "KS0026 / demodulating 38 kHz / 5 V",
   description: "38 kHz remote-control IR receiver module with metal receiver shield and onboard activity LED. Component-side view, receiver facing left; right header S, +, − from top to bottom. Manufacturer operating voltage 5 V.",
   source: docs("KS0026"), tags: ["infrared", "ir", "receiver", "remote", "38khz", "ks0026"], contacts: standard("Demodulated infrared envelope output to a microcontroller digital input; active-low receive pulses.", "output"),
-  draw: show => smallBoard("IR Receiver", rect(36,55,37,49,5,"#acb7af", "#d3dace") + rect(34,63,15,33,3,"#3e4742", "#b4c1b7") + circle(42,80,10,"#3b2929", "#8f7a6d") +
-    line(55,105,55,112,"#d1d4c5",2) + line(64,105,64,112,"#d1d4c5",2) + smd(83,65) + smd(83,93) + rect(91,79,7,6,1,"#9f4138", "#b8c0a1"), show) });
+  draw: (show, compact) => smallBoard("IR Receiver", rect(36,55,37,49,5,"#acb7af", "#d3dace") + rect(34,63,15,33,3,"#3e4742", "#b4c1b7") + circle(42,80,10,"#3b2929", "#8f7a6d") +
+    line(55,105,55,112,"#d1d4c5",2) + line(64,105,64,112,"#d1d4c5",2) + smd(83,65) + smd(83,93) + rect(91,79,7,6,1,"#9f4138", "#b8c0a1"), show, compact) });
 
 const maxSource = "https://www.haljia.com/products/haljia-max7219-dot-matrix-mcu-led-display-control-module-kit-compatible-with-arduino-with-dupont-cable";
 const matrixContacts = ["VCC", "GND", "DIN", "CS", "CLK"].map((s,i) => contact(`in-${s.toLowerCase()}`, s, ["VCC","GND"].includes(s) ? "power_in" : "input", `Input connector ${s}: ${s === "VCC" ? "5 V module supply" : s === "GND" ? "common ground" : s === "DIN" ? "MAX7219 serial data input" : s === "CS" ? "LOAD/chip-select input" : "serial clock input"}.`, 26, 58+i*22, { group:"IN", number:`IN.${s}`, dx:15, anchor:"start", font:7.5 }));

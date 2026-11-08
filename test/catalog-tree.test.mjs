@@ -20,14 +20,16 @@ test('component documentation is current and lists every live component exactly 
   const accuracy = await readAccuracy();
   const rendered = renderComponentTree(catalogFamilies, accuracy);
   assert.equal(await readFile(componentTreePath, 'utf8'), rendered, 'Run node scripts/catalog.mjs to refresh docs/COMPONENTS.md.');
-  const leaves = [...rendered.matchAll(/^.* \[([^\]]+)\] \[FP:([MCR?])\] \[3D:A\] \[CAD:([+-])\]$/gm)];
+  const leaves = [...rendered.matchAll(/^.* \[([^\]]+)\] \[FP:([MCR?])\] \[3D:A\] \[CAD:([+-])\] \[BB:([+H-])\]$/gm)];
   assert.deepEqual(leaves.map(match => match[1]).sort(), components.map(component => component.id).sort());
   assert.equal(new Set(leaves.map(match => match[1])).size, components.length);
   const assessed = accuracyByComponent(catalogFamilies, accuracy);
   const entries = new Map(catalogFamilies.flatMap(family => family.entries.map(item => [item.component.id, item])));
-  for (const [, id, footprint, cad] of leaves) {
+  for (const [, id, footprint, cad, breadboard] of leaves) {
     assert.equal(footprint, assessed.get(id)?.footprint ?? '?', id);
     assert.equal(cad, entries.get(id).model?.url ? '+' : '-', id);
+    const type = entries.get(id).mounting?.type;
+    assert.equal(breadboard, type === 'breadboard' ? 'H' : ['breadboard-module', 'breadboard-part'].includes(type) ? '+' : '-', id);
   }
 });
 
@@ -45,16 +47,28 @@ test('component tree groups actual manufacturers and categories with determinist
     '├── Connectors (1)',
     '│   └── Unspecified (1)',
     '│       └── alpha (1)',
-    '│           └── Contact [c] [FP:?] [3D:A] [CAD:-]',
+    '│           └── Contact [c] [FP:?] [3D:A] [CAD:-] [BB:-]',
     '└── Wireless (3)',
     '    └── EBYTE (3)',
     '        ├── alpha (1)',
-    '        │   └── Beta [b] [FP:?] [3D:A] [CAD:-]',
+    '        │   └── Beta [b] [FP:?] [3D:A] [CAD:-] [BB:-]',
     '        └── zeta (2)',
-    '            ├── Alpha [a] [FP:?] [3D:A] [CAD:-]',
-    '            └── Zeta [z] [FP:?] [3D:A] [CAD:-]',
+    '            ├── Alpha [a] [FP:?] [3D:A] [CAD:-] [BB:-]',
+    '            └── Zeta [z] [FP:?] [3D:A] [CAD:-] [BB:-]',
     '',
   ].join('\n'));
+});
+
+test('breadboard marks follow explicit insertion evidence independently of tags, CAD and KiCad accuracy', () => {
+  const families = [{ id: 'insertion', entries: [
+    { ...entry('tagged', 'Tagged'), component: { ...entry('tagged', 'Tagged').component, tags: ['2.54 mm', 'breadboard'] } },
+    { ...entry('reviewed', 'Reviewed'), mounting: { type: 'breadboard-module' } },
+    { ...entry('host', 'Host'), mounting: { type: 'breadboard' } },
+  ] }];
+  const rendered = renderComponentTree(families, manifest(assessment('R', 'reviewed')));
+  assert.match(rendered, /Tagged \[tagged\] \[FP:\?\] \[3D:A\] \[CAD:-\] \[BB:-\]/);
+  assert.match(rendered, /Reviewed \[reviewed\] \[FP:R\] \[3D:A\] \[CAD:-\] \[BB:\+\]/);
+  assert.match(rendered, /Host \[host\] \[FP:\?\] \[3D:A\] \[CAD:-\] \[BB:H\]/);
 });
 
 test('new entries appear automatically without inheriting accuracy from a family or external CAD link', () => {

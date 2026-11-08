@@ -89,7 +89,8 @@ export function readyBoard(spec) {
   pads.forEach(p => { p.x -= maxX / 2; p.y -= maxY / 2; });
   const footprint = { body: [maxX + 10.16, maxY + 10.16], color: "#283b35", pads,
     note: `Reference off-board cable-termination carrier for ${spec.name}. One 2.54 mm termination row per named connector; these rows are not the board's mating land pattern. The displayed board geometry is a source-based illustration, not a mechanical drawing. ${spec.footnote ?? "Use the linked manufacturer CAD for an enclosure or mating PCB."}` };
-  return { component, art, footprint, model: { label: spec.cadLabel ?? `${spec.name} manufacturer CAD / mechanical reference`, url: spec.cad ?? spec.source } };
+  return { component, art, renderHardware: (_component, showLabels = false) => spec.draw(showLabels),
+    footprint, model: { label: spec.cadLabel ?? `${spec.name} manufacturer CAD / mechanical reference`, url: spec.cad ?? spec.source } };
 }
 
 export const readySocket = (x, y, width, height, name, vertical = false) => rect(x, y, width, height, 2, "#e2e0d1", "#9ca59b") +

@@ -1,6 +1,7 @@
 import { createScope } from '../shared/lifecycle.js';
 import { componentForPart } from '../model/part-component.js';
 import { partName } from '../model/names.js';
+import { instancePins } from '../model/part-pins.js';
 
 const normalize = value => value.normalize('NFKD').toLowerCase();
 
@@ -110,7 +111,7 @@ export function bindPinPicker({ onChoose, focusCanvas, root = document, signal }
           : from ? 'Choose where the wire should connect.' : 'Choose a starting pin for the wire.';
       search.value = '';
       const fixedLabel = mode === 'reconnect' ? 'Fixed end' : 'Wire start';
-      entries = component.pins.map(pin => ({
+      entries = instancePins(part, component).map(pin => ({
         button: pinChoice(pin, { disabled: from?.partId === partId && from.pinId === pin.id, suggested: pin.id === pinId, fixedLabel }),
         text: normalize([pin.id, pin.label, pin.number, pin.description].join(' ')),
       }));

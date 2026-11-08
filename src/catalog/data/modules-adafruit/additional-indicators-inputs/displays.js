@@ -2406,6 +2406,24 @@ export default [
   },
   {
     "id": "adafruit-module-5778",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA5778: EAGLE Adafruit MatrixPortal S3.brd; commit 1ff841b511d7 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-MatrixPortal-S3-PCB/blob/1ff841b511d7dc153ae8d4c0b148d33cb3b2ba85/Adafruit%20MatrixPortal%20S3.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND"}],
+        "boardSha256": "985aaa4bcc94beb3f8f85c4298989ec8e2036bc032c2509ee4ff19c8fbfa46e7"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -31.75, "y": -22.225, "width": 63.5, "height": 44.45},
+        {"x": -32.372, "y": 0.183, "width": 3.4, "height": 7.0},
+        {"x": -32.245, "y": -9.596, "width": 3.4, "height": 7.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5778",
     "name": "Adafruit Matrix Portal S3 CircuitPython Powered Internet Display",
     "manufacturer": "Adafruit",

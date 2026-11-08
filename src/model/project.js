@@ -5,6 +5,7 @@ import { migrateVersion1Contacts } from "./layout-migration.js";
 import { normalizePartScale } from "./part-placement.js";
 import { attachmentError } from "./mounting.js";
 import { leadShapeError } from "./part-pins.js";
+import { partViewError } from "./part-view.js";
 import { MAX_PARTS, MAX_WIRES, MAX_JUNCTIONS, MAX_PROJECT_ROUTE_POINTS, POSITION_LIMIT,
   MAX_POINTS_PER_WIRE, MAX_FIXED_ROUTE_POINTS } from "./limits.js";
 
@@ -116,6 +117,11 @@ function readPart(value, label) {
     part.label = string(value.label, `${label} label`, 60, false);
   }
   if (value.scale !== undefined) part.scale = normalizePartScale(value.scale);
+  if (value.view !== undefined) {
+    part.view = value.view;
+    const error = partViewError(part);
+    if (error) throw new Error(error);
+  }
   if (value.leads !== undefined) {
     part.leads = readList(value.leads, `${label} formed leads`, component.pins.length, (lead, index) => {
       const leadLabel = `${label} formed lead ${index + 1}`;

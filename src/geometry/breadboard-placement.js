@@ -4,6 +4,7 @@ import { componentForPart } from '../model/part-component.js';
 import { MAX_PART_SCALE, MIN_PART_SCALE } from '../model/part-placement.js';
 import { attachmentError, MOUNTING_EPSILON, mountingScale, mountingTolerance, sameContactNet } from '../model/mounting.js';
 import { POSITION_LIMIT } from '../model/limits.js';
+import { activateMountingView } from '../model/part-view.js';
 import { pointOnPart } from './parts.js';
 import { fitBendablePart } from './bendable-placement.js';
 import { clearsMountedBodies, mountingTargets, partCenter, poseAtCenter } from './breadboard-targets.js';
@@ -55,7 +56,7 @@ export function fitPart(project, part, { hostPartId, targets, rotation: required
       const turned = Math.abs(rotation - (hostPart.rotation ?? 0)) % 180 !== 0;
       const scale = { x: calibration.x * hostScale[turned ? 'y' : 'x'], y: calibration.y * hostScale[turned ? 'x' : 'y'] };
       if (Object.values(scale).some(value => value < MIN_PART_SCALE || value > MAX_PART_SCALE)) continue;
-      const candidate = poseAtCenter(part, component, center, scale, rotation);
+      const candidate = poseAtCenter(activateMountingView(part, profile), component, center, scale, rotation);
       const first = pointOnPart(candidate, pinById(component, profile.contacts[0].pinId), component);
       const anchors = (anchorHoleId ? holes.filter(hole => hole.pinId === anchorHoleId) : target.available)
         .filter(hole => !occupied.has(hole.pinId) && distance(first, hole.point) <= radius)
@@ -72,7 +73,7 @@ export function fitPart(project, part, { hostPartId, targets, rotation: required
           const point = pointOnPart(placed, pinById(component, lead.pinId), component);
           const hole = holeAt(point, byPosition, target.available, tolerance);
           if (!hole || occupied.has(hole.pinId) || used.has(hole.pinId) ||
-              groups.has(hole.group) && !sameContactNet(component, groups.get(hole.group), lead.pinId)) break;
+              groups.has(hole.group) && !sameContactNet(component, groups.get(hole.group), lead.pinId, placed)) break;
           groups.set(hole.group, lead.pinId);
           used.add(hole.pinId);
           contacts.push({ pinId: lead.pinId, hostPinId: hole.pinId, point: hole.point });

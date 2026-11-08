@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pad, pinRow, rect, smd } from "../shared/svg.js";
 
@@ -95,7 +96,7 @@ function breakout({
     pins: [...lowerPins, ...upperPins],
   }, pin => [pin.x, pin.y === 0 ? marginY + drawnPitch : height - marginY - drawnPitch]);
 
-  return {
+  const entry = {
     component,
     art: (part, showLabels) => topView(part, color, artwork, topSilk, showLabels),
     footprint: {
@@ -115,6 +116,18 @@ function breakout({
       url: `https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/${encodeURIComponent(cad)}`,
     },
   };
+  const bodyRegions = [{ x: marginX, y: marginY, width: boardWidth, height: height - marginY * 2 }];
+  const viewBounds = { x: marginX - .5, y: marginY - .5, width: boardWidth + 1, height: height - marginY * 2 + 2.5 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `${shortName} cited Adafruit PCB header geometry`, url: entry.model.url },
+    contacts: [...lowerPins.map((pin, index) => ({ pinId: pin.id, x: -6.35 + index * pitch, y: halfSpacing })),
+      ...upperPins.map((pin, index) => ({ pinId: pin.id, x: -6.35 + topOffset * pitch + index * pitch, y: -halfSpacing }))],
+    calibration: { origin: { x: width / 2, y: height / 2 }, unitsPerMm: drawnPitch / pitch },
+    bodyRegions, bodyEvidence: "The cited board CAD's two complete source-coordinate header rows and 25.4 mm PCB envelope share the existing drawing projection, with its decorative lower bevel included only in the visible frame.",
+    viewBounds, renderMounted: part => clippedFrontArtwork(entry.art, part, viewBounds),
+    note: `Both ${lowerHeader} and ${upperHeader} must use downward straight male headers and seat completely; QT sockets remain separate cable contacts.`,
+  });
+  return entry;
 }
 
 const entries = [
@@ -233,9 +246,4 @@ const entries = [
   }),
 ];
 
-const motionSensorComponents = entries.map(({ component }) => component);
-const motionSensorArt = Object.fromEntries(entries.map(({ component, art }) => [component.art, art]));
-const motionSensorFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const motionSensorModels = Object.fromEntries(entries.map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("motion-sensors", (motionSensorComponents).map(component => ({ component, render: (motionSensorArt)[component.art], footprint: (motionSensorFootprints)[component.id], model: motionSensorModels[component.id] })));
+export default defineFamily("motion-sensors", entries.map(({ art: render, ...entry }) => ({ ...entry, render })));

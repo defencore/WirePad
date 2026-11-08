@@ -4,6 +4,22 @@ import assets from "./analog-measurement-assets.js";
 export default [
   {
     "id": "adafruit-module-5892",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6"],
+      "source": {"label": "Adafruit ADA5892: EAGLE Adafruit STEMMA Analog SPDT Switch.brd; commit 0d377c1934aa physical insertion headers", "url": "https://github.com/adafruit/Adafruit-STEMMA-Analog-SPDT-Switch-PCB/blob/0d377c1934aaadf3bcc8a9a89adf87b82d96726a/Adafruit%20STEMMA%20Analog%20SPDT%20Switch.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP4", "count": 6, "package": "1X06_ROUND_FULL_76"}],
+        "duplicateHeaderContacts": [{"pinId": "jp1-1", "equivalentPinId": "jp4-3", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-2", "equivalentPinId": "jp4-2", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp1-3", "equivalentPinId": "jp4-1", "connector": "JP1", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "e5759909fcbf430b9f25025e47c933b695e7bbe629e56b03e204c83d01f3defd"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5892",
     "name": "Adafruit STEMMA Analog SPDT Switch - MAX4544 12V - JST PH 2mm",
     "manufacturer": "Adafruit",

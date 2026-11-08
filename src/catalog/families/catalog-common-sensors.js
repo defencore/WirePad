@@ -1,4 +1,7 @@
 import { defineFamily } from "../registry.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
+import { sourceReferenceMounting } from "../shared/source-reference-mounting.js";
+import physicalReferences from "../data/popular-mounting/common-sensors.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { board, chip, circle, edgePads, label, line, mountingHole, path, pinRow, rect, smd } from "../shared/svg.js";
 
@@ -15,7 +18,7 @@ const sda = (description = "Bidirectional I²C data line.") => ["sda", "SDA", de
 function sensor({
   id, name, shortName, manufacturer, source, description, subtitle, tags, size, side, contacts,
   body, color, art, model, modelHeight = 1.6, details = [], pitch = 2.54, inset = 2.54,
-  drill = 1, termination = false, drawPins = edgePads, canvasPitch,
+  drill = 1, termination = false, drawPins = edgePads, canvasPitch, insertion,
   note = "Reference host-board header pattern. Check PCB and mounting clearance against the exact module.",
 }) {
   const [width, height] = size;
@@ -32,7 +35,7 @@ function sensor({
   const header = vertical
     ? { axis: "y", x: (body[0] / 2 - inset) * (side === "left" ? -1 : 1), y: offset }
     : { axis: "x", x: offset, y: (body[1] / 2 - inset) * (side === "top" ? -1 : 1) };
-  return {
+  const entry = {
     component: {
       id, name, shortName, manufacturer, source, description, subtitle, tags,
       category: "Sensors", referencePrefix: "U", art: id, width, height, pins, contactLayout: "physical",
@@ -47,6 +50,49 @@ function sensor({
     },
     model,
   };
+  if (insertion === true) {
+    const unitsPerMm = 8, origin = { x: width / 2, y: height / 2 };
+    const physical = pins.map((pin, index) => ({ pinId: pin.id, x: -5.08, y: -7.62 + index * 2.54 }));
+    const viewPins = physical.map(pin => ({ pinId: pin.pinId, x: origin.x + pin.x * unitsPerMm,
+      y: origin.y + pin.y * unitsPerMm, face: "front" }));
+    const rectangle = { x: origin.x - 12.7 * unitsPerMm / 2, y: origin.y - 17.78 * unitsPerMm / 2,
+      width: 12.7 * unitsPerMm, height: 17.78 * unitsPerMm };
+    const sx = rectangle.width / (width - 12), sy = rectangle.height / (height - 12);
+    entry.mounting = reviewedBoardMounting({
+      source: { label: "Pololu irs11a mechanical drawing and straight-header assembly", url: source },
+      contacts: physical, calibration: { origin, unitsPerMm }, bodyRegions: [rectangle],
+      bodyEvidence: "Pololu's irs11a drawing gives the 0.5 × 0.7 inch board and seven 0.1 inch lead centers. The product page explicitly permits a standard solderless breadboard using the supplied straight male strip; the sensor and mounting holes remain above the PCB.",
+      viewBounds: { x: rectangle.x - .5, y: rectangle.y - .5, width: rectangle.width + 1, height: rectangle.height + 1 },
+      view: { id: "breadboard", pins: viewPins, note: "All seven original contact IDs are mapped to the exact irs11a header centers only for a newly inserted instance. Default artwork and saved anchors are unchanged." },
+      renderMounted: () => `<g transform="translate(${rectangle.x - 6 * sx} ${rectangle.y - 6 * sy}) scale(${sx} ${sy})">${art(entry.component)}</g>` +
+        viewPins.map(pin => circle(pin.x, pin.y, 4, "#d8b96d", "#efdeaa") + circle(pin.x, pin.y, 1.8, "#243a31")).join(""),
+      note: "Use the supplied 1×7 straight male header rather than the right-angle alternative. All seven header leads enter separate breadboard strips.",
+    });
+  }
+  if (insertion && insertion !== true) {
+    const unitsPerMm = 8, origin = { x: width / 2, y: height / 2 };
+    const physical = pins.map((pin, index) => ({ pinId: pin.id,
+      x: insertion.x + (insertion.axis === "x" ? index * 2.54 : 0),
+      y: insertion.y + (insertion.axis === "y" ? index * 2.54 : 0) }));
+    const viewPins = physical.map(pin => ({ pinId: pin.pinId, x: origin.x + pin.x * unitsPerMm,
+      y: origin.y + pin.y * unitsPerMm, face: "front" }));
+    const region = { x: origin.x - insertion.body[0] * unitsPerMm / 2, y: origin.y - insertion.body[1] * unitsPerMm / 2,
+      width: insertion.body[0] * unitsPerMm, height: insertion.body[1] * unitsPerMm };
+    const sx = region.width / (width - 12), sy = region.height / (height - 12);
+    const viewBounds = { x: region.x - .5, y: region.y - .5, width: region.width + 1, height: region.height + 1 };
+    entry.mounting = reviewedBoardMounting({
+      source: { label: `${name} photographed header order and straight-header assembly`, url: source },
+      contacts: physical, calibration: { origin, unitsPerMm }, bodyRegions: [region],
+      bodyEvidence: "The manufacturer SKU photos show the complete standard 2.54 mm connector and its printed order. The explicitly specified replacement straight-header centers establish insertion pitch. The PCB envelope and connector inset remain representative photo dimensions, not a manufacturer mating footprint; native accuracy is unchanged.",
+      viewBounds,
+      view: { id: "breadboard", pins: viewPins,
+        note: "Reviewed straight 2.54 mm header assembly, with every original contact retained. Replace the factory side-facing strip before flat insertion. Body size and header inset are representative; no reference carrier is used to infer a physical row." },
+      renderMounted: () => clippedFrontArtwork(() => `<g transform="translate(${region.x - 6 * sx} ${region.y - 6 * sy}) scale(${sx} ${sy})">${art(entry.component)}</g>` +
+        viewPins.map(pin => circle(pin.x, pin.y, 4, "#d8b96d", "#efdeaa") + circle(pin.x, pin.y, 1.8, "#243a31")).join(""), entry.component, viewBounds),
+      note: "This profile models the complete straight male-header assembly facing below the PCB. Replace the pictured side-facing/right-angle header before using this flat view; female or cabled assemblies are not inserted. All declared contacts enter independent strips.",
+    });
+  }
+  return entry;
 }
 
 const adafruitSupply = vin("VIN", "Board supply. Match VIN to the host logic voltage.");
@@ -128,10 +174,10 @@ const adafruit = [
   }),
 ];
 
-function blackModule({ id, model, name, shortName, description, subtitle, tags, size, side, contacts, body, art, details }) {
+function blackModule({ id, model, name, shortName, description, subtitle, tags, size, side, contacts, body, art, details, insertion }) {
   return sensor({
     id, name, shortName, description, subtitle, tags: [...tags, model.toLowerCase()], size, side, contacts, body,
-    art, details, color: keyesColor, manufacturer: "Keyestudio", source: keyestudioDocs(model),
+    art, details, insertion, color: keyesColor, manufacturer: "Keyestudio", source: keyestudioDocs(model),
     inset: 1.9, note: "Representative 2.54 mm header carrier for the pictured Keyestudio board. Verify PCB outline and mounting clearance before fabrication.",
   });
 }
@@ -151,7 +197,7 @@ function ventedCase(x, y, width, height, color, vent) {
 
 const keyestudio = [
   blackModule({
-    id: "keyestudio-dht11-ks0034", model: "KS0034", name: "Keyestudio DHT11 Temperature & Humidity", shortName: "DHT11",
+    id: "keyestudio-dht11-ks0034", insertion: { body: [20, 30], x: -2.54, y: 13.1, axis: "x" }, model: "KS0034", name: "Keyestudio DHT11 Temperature & Humidity", shortName: "DHT11",
     description: "KS0034 three-pin DHT11 board. The DHT11 single-wire protocol carries calibrated temperature and humidity readings.",
     subtitle: "5 V / digital temperature and humidity", tags: ["dht11", "humidity", "temperature", "climate"],
     size: [84, 122], side: "bottom", contacts: [
@@ -162,7 +208,7 @@ const keyestudio = [
       smd(24, 84) + smd(50, 84, "#404048") + mountingHole(13, 108) + mountingHole(71, 108),
   }),
   blackModule({
-    id: "keyestudio-ds18b20-ks0023", model: "KS0023", name: "Keyestudio DS18B20 Temperature Sensor", shortName: "DS18B20",
+    id: "keyestudio-ds18b20-ks0023", insertion: { body: [20, 30], x: -2.54, y: 13.1, axis: "x" }, model: "KS0023", name: "Keyestudio DS18B20 Temperature Sensor", shortName: "DS18B20",
     description: "KS0023 DS18B20 breakout for measuring temperature over a multidrop 1-Wire bus.",
     subtitle: "3.3–5 V / 1-Wire", tags: ["ds18b20", "temperature", "1-wire", "onewire"],
     size: [84, 116], side: "bottom", contacts: [
@@ -175,7 +221,7 @@ const keyestudio = [
       mountingHole(42, 81),
   }),
   blackModule({
-    id: "keyestudio-bh1750-ks0278", model: "KS0278", name: "Keyestudio BH1750 Ambient Light Sensor", shortName: "BH1750",
+    id: "keyestudio-bh1750-ks0278", insertion: { body: [30, 20], x: 13.1, y: -3.81, axis: "y" }, model: "KS0278", name: "Keyestudio BH1750 Ambient Light Sensor", shortName: "BH1750",
     description: "KS0278 illuminance breakout with a four-pin header. ADDR is fixed low for I²C address 0x23 on this board.",
     subtitle: "5 V / I²C lux sensor", tags: ["bh1750", "bh1750fvi", "ambient light", "lux", "i2c"],
     size: [133, 83], side: "right", contacts: [
@@ -187,7 +233,7 @@ const keyestudio = [
       smd(58, 25) + smd(48, 55, "#4e5054") + smd(18, 57),
   }),
   blackModule({
-    id: "keyestudio-mpu6050-ks0170", model: "KS0170", name: "Keyestudio MPU6050 Gyroscope & Accelerometer", shortName: "MPU6050",
+    id: "keyestudio-mpu6050-ks0170", insertion: { body: [28, 22], x: 12.1, y: -8.89, axis: "y" }, model: "KS0170", name: "Keyestudio MPU6050 Gyroscope & Accelerometer", shortName: "MPU6050",
     description: "KS0170 six-axis MPU6050 breakout with auxiliary bus and interrupt. This pin order is specific to the black Keyestudio board.",
     subtitle: "6-axis IMU / I²C", tags: ["mpu6050", "mpu-6050", "gy-521", "imu", "accelerometer", "gyroscope", "i2c"],
     size: [158, 129], side: "right", contacts: [
@@ -205,7 +251,7 @@ const keyestudio = [
       smd(36, 86, "#4c5157") + label(59, 109, "Keyestudio", 9, "#ead35b"),
   }),
   blackModule({
-    id: "keyestudio-pir-ks0052", model: "KS0052", name: "Keyestudio KS0052 PIR Motion Sensor", shortName: "KS0052 PIR",
+    id: "keyestudio-pir-ks0052", insertion: { body: [30, 20], x: 13.1, y: -2.54, axis: "y" }, model: "KS0052", name: "Keyestudio KS0052 PIR Motion Sensor", shortName: "KS0052 PIR",
     description: "Compact pyroelectric motion breakout with a Fresnel lens and an active-high digital output.",
     subtitle: "Passive infrared / digital", tags: ["pir", "motion", "infrared", "pyroelectric"],
     size: [134, 86], side: "right", contacts: [
@@ -217,7 +263,7 @@ const keyestudio = [
       smd(76, 24) + smd(78, 62) + label(46, 75, "PYE_IR", 7.5, "#e7c75a"),
   }),
   blackModule({
-    id: "keyestudio-touch-ks0031", model: "KS0031", name: "Keyestudio Capacitive Touch Sensor", shortName: "KS0031 Touch",
+    id: "keyestudio-touch-ks0031", insertion: { body: [20, 30], x: -2.54, y: 13.1, axis: "x" }, model: "KS0031", name: "Keyestudio Capacitive Touch Sensor", shortName: "KS0031 Touch",
     description: "KS0031 contactless-touch breakout with a round electrode and a digital output that goes high when touched.",
     subtitle: "3.3–5 V / capacitive touch", tags: ["touch", "capacitive", "digital", "touch pad"],
     size: [84, 117], side: "bottom", contacts: [
@@ -229,7 +275,7 @@ const keyestudio = [
       mountingHole(13, 102) + mountingHole(71, 102),
   }),
   blackModule({
-    id: "keyestudio-ir-obstacle-ks0051", model: "KS0051", name: "Keyestudio IR Obstacle Avoidance Sensor", shortName: "KS0051 IR",
+    id: "keyestudio-ir-obstacle-ks0051", insertion: { body: [19, 43], x: -3.81, y: 19.6, axis: "x" }, model: "KS0051", name: "Keyestudio IR Obstacle Avoidance Sensor", shortName: "KS0051 IR",
     description: "Reflective IR obstacle breakout with a pair of optical devices, adjustment trimmers and an EN jumper.",
     subtitle: "3.3–5 V / reflective infrared", tags: ["ir", "obstacle", "proximity", "infrared", "robot"],
     size: [99, 173], side: "bottom", contacts: [
@@ -273,7 +319,7 @@ function ultrasonicCan(x, y) {
 }
 
 const ultrasonic = sensor({
-  id: "hc-sr04-ks0328", name: "HC-SR04 Ultrasonic Distance Module", shortName: "HC-SR04", manufacturer: "Keyestudio",
+  id: "hc-sr04-ks0328", insertion: { body: [45, 20], x: -3.81, y: 8.6, axis: "x" }, name: "HC-SR04 Ultrasonic Distance Module", shortName: "HC-SR04", manufacturer: "Keyestudio",
   source: keyestudioDocs("KS0328"),
   description: "KS0328 blue HC-SR04 module with a separate trigger input and echo pulse output. The echo is 5 V logic and needs a divider or level shifter for a 3.3 V-only host.",
   subtitle: "5 V / ultrasonic ranging", tags: ["hc-sr04", "hr-sr04", "hcsr04", "ks0328", "ultrasonic", "distance", "ranging"],
@@ -299,7 +345,7 @@ function pololuTimeOfFlight(id, part, item, range, goldWindows) {
     source: `https://www.pololu.com/product/${item}`,
     description: `Pololu #${item} ranging breakout with a 2.8 V regulator and I²C level shifting. Default address is 0x29. Range is up to ${range} m depending on the target and ranging mode.`,
     subtitle: "I²C / optical ranging", tags: [part.toLowerCase(), "distance", "lidar", "tof", "time of flight", "i2c", String(item)],
-    size: [105, 124], side: "left", body: [12.7, 17.78], color: pololuGreen, inset: 1.27, drill: 1.02,
+    size: [105, 124], side: "left", insertion: true, body: [12.7, 17.78], color: pololuGreen, inset: 1.27, drill: 1.02,
     note: "Pololu header placement from drawing irs11a. Seven 1.02 mm holes are on 2.54 mm centers. Mounting holes are outside this electrical carrier footprint.",
     contacts: [
       ["vdd", "VDD", "Regulated 2.8 V output. Can accept an external 2.6–3.5 V supply with VIN disconnected.", "power_out"],
@@ -392,11 +438,7 @@ const joyItPir = sensor({
 
 const entries = [...adafruit, ...keyestudio, ...distance, ...dfrobot, joyItPir];
 
-const commonSensorComponents = entries.map(({ component }) => component);
-const commonSensorArt = Object.fromEntries(entries.map(({ component, art }) => [component.art, art]));
-const commonSensorFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const commonSensorModels = Object.fromEntries(entries
-  .filter(entry => entry.model)
-  .map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("common-sensors", (commonSensorComponents).map(component => ({ component, render: (commonSensorArt)[component.art], footprint: (commonSensorFootprints)[component.id], model: commonSensorModels[component.id] })));
+export default defineFamily("common-sensors", entries.map(({ art: render, ...entry }) => {
+  const mounting = sourceReferenceMounting(entry.component, physicalReferences[entry.component.id]) ?? entry.mounting;
+  return { ...entry, render, ...(mounting ? { mounting } : {}) };
+}));

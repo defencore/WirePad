@@ -358,6 +358,7 @@ function nanoBodyArt({ art, shortName }) {
 }
 
 const nanoMountingSources = {
+  "arduino-micro": "A000053",
   "arduino-nano": "A000005",
   "arduino-nano-every": "ABX00028",
   "arduino-nano-esp32": "ABX00083",
@@ -391,7 +392,7 @@ function nanoDefinition(id, model, subtitle, description, left, right, extras = 
   }, [
     { ids: left.map(pin => pin[0]), x: -7.62, y: -(left.length - 1) * 1.27 },
     { ids: right.map(pin => pin[0]), x: 7.62, y: -(right.length - 1) * 1.27 },
-  ], "Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.",
+  ], `Component side, USB above. The two ${left.length}-contact rows are 15.24 mm apart; separate ICSP and other auxiliary contacts are not insertion leads.`,
   { regions: [physicalRectangle(1, 3, 86, boardHeight - 5), physicalRectangle((88 - usbWidth) / 2, 0, usbWidth, usbDepth)],
     evidence: "The nanoBodyArt PCB rectangle and variant-specific USB shell are projected through the same boardProjection transform as the rendered body. Canvas padding and physical-header text are excluded." }) } : {}) };
 }

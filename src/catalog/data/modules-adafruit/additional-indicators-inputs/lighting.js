@@ -293,6 +293,22 @@ export default [
   },
   {
     "id": "adafruit-module-2946",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12", "jp2-13", "jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp4-9", "jp4-10", "jp4-11", "jp4-12", "jp4-13"],
+      "source": {"label": "Adafruit ADA2946: EAGLE Adafruit IS31FL3731 STEMMA QT.brd; commit 6293e5aa3d88 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-IS31FL3731-CharliePlex-LED-Breakout-PCB/blob/6293e5aa3d88caab44292709fef00a5e12c1bef6/Adafruit%20IS31FL3731%20STEMMA%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 13, "package": "1X13_ROUND_70"}, {"id": "JP4", "count": 13, "package": "1X13_ROUND_70"}],
+        "duplicateHeaderContacts": [{"pinId": "jp5-1", "equivalentPinId": "jp2-1", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp5-2", "equivalentPinId": "jp2-2", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp5-3", "equivalentPinId": "jp2-3", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp5-4", "equivalentPinId": "jp2-4", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp5-5", "equivalentPinId": "jp4-13", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp5-6", "equivalentPinId": "jp4-11", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp5-7", "equivalentPinId": "jp4-10", "connector": "JP5", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "b7f4742997f14c8377801c8df8d42cbb31d288840ae91fae35ed66138b0d19f9"
+      },
+      "bodyRegions": [
+        {"x": -21.59, "y": -13.97, "width": 43.18, "height": 27.94}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2946",
     "name": "Adafruit 16x9 Charlieplexed PWM LED Matrix Driver - IS31FL3731",
     "manufacturer": "Adafruit",

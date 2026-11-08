@@ -1,6 +1,8 @@
 import { defineFamily } from "../registry.js";
 import { makerContact as c, makerReferenceBoard } from "../shared/maker-reference-board.js";
 import { chip, circle, label, line, path, rect, smd, tactile } from "../shared/svg.js";
+import { reviewedBoardMounting, clippedFrontArtwork } from "../shared/reviewed-board-mounting.js";
+import { rearContactOverlay } from "../shared/rear-contact-overlay.js";
 
 const unit = 12, frontX = 80, rearX = 450, top = 40;
 const number = value => String(value).replaceAll("+","plus").replaceAll("-","minus").replace(/[^a-z0-9]+/gi,"-").toLowerCase();
@@ -117,13 +119,32 @@ function make(spec) {
   // Factory USB/VIN bridge is closed; cutting it changes this power connection.
   if(spec.version!=="2.0")internalConnections.push(["hr-vin",...spec.contacts.filter(p=>p.label==="VUSB"||p.label==="USB_VBUS").map(p=>p.id)]);
   const hasRear=spec.version!=="2.0", width=hasRear?750:380;
-  return makerReferenceBoard({id:spec.id,name:`PJRC Teensy ${spec.version}`,shortName:`Teensy ${spec.version}`,manufacturer:"PJRC",category:"Microcontrollers",width,height:spec.length*unit+145,
+  const entry = makerReferenceBoard({id:spec.id,name:`PJRC Teensy ${spec.version}`,shortName:`Teensy ${spec.version}`,manufacturer:"PJRC",category:"Microcontrollers",width,height:spec.length*unit+145,
     subtitle:spec.subtitle,source:spec.source,
     description:`${spec.description} Front view has USB at the top. ${hasRear?"The separate rear view is explicitly mirrored in X and exposes the rear solder contacts; through-hole contacts are connectable in the front view." : "All 29 outer header holes and both interior user contacts are present. Optional regulator conversion/bridge pads are configuration sites, not separate user terminals."} Terminal identifiers use printed signal names with WirePad row/group prefixes, because PJRC does not number the board like a DIP package. Board revision is ${spec.revision}; source card and mechanical drawing are linked in the audit. Native export is an approximate off-board wire carrier, not a verified Teensy mating land pattern.`,
     tags:["diy","starter kit","arduino","teensy","pjrc",spec.cpu,"usb","microcontroller"],contacts:spec.contacts,internalConnections,
     draw:show=>drawBoard(spec,false,show)+(hasRear?drawBoard(spec,true,show):""),
     footprintNote:"PJRC dimension drawings verify the main header pitch, but the off-board carrier does not claim those native board coordinates. No vendor STEP was verified.",
   });
+  const viewPins = spec.contacts.map(pin => ({ pinId: pin.id,
+    x: pin.x >= rearX ? frontX + 17.78 * unit - (pin.x - rearX) : pin.x,
+    y: pin.y, face: pin.x >= rearX ? 'rear' : 'front' }));
+  const bounds = { x: frontX, y: top - 5, width: 17.78 * unit, height: spec.length * unit + 5 };
+  entry.mounting = reviewedBoardMounting({
+    source: { url: spec.source, label: `PJRC Teensy ${spec.version} pinout card and dimension drawing` },
+    contacts: spec.contacts.filter(pin => ['HL', 'HR'].includes(pin.group))
+      .map(pin => ({ pinId: pin.id, x: (pin.x - frontX) / unit, y: (pin.y - top) / unit })),
+    calibration: { origin: { x: frontX, y: top }, unitsPerMm: unit },
+    bodyRegions: [{ x: frontX, y: top, width: 17.78 * unit, height: spec.length * unit },
+      { x: frontX + 8.89 * unit - 42, y: top - 5, width: 84, height: 54 }],
+    viewBounds: bounds,
+    bodyEvidence: 'PJRC dimensional drawings verify the 17.78 mm PCB width, board length and main plated-hole centers. The component-side PCB and USB shell match drawBoard; the second mirrored board and footer captions are omitted.',
+    note: `Populate only the two complete ${spec.count}-pin HL/HR side rows, 15.24 mm apart at 2.54 mm pitch. Leave the crosswise END and interior holes unpopulated or face-up; they would otherwise short independent signals on the breadboard strips. Back solder/test pads are dashed B projections from the reviewed PJRC rear card, not insertion leads.`,
+    view: { id: 'breadboard', pins: viewPins, note: 'The single component-side view keeps every original pin ID. Mirrored rear-card anchors project through the same PCB and are clearly marked B; their photo-reviewed locations retain reference precision.' },
+    renderMounted: component => clippedFrontArtwork(entry.render, entry.component, bounds) +
+      rearContactOverlay(viewPins.map(pin => ({ ...entry.component.pins.find(p => p.id === pin.pinId), ...pin }))),
+  });
+  return entry;
 }
 
 const t40={id:"pjrc-teensy-4-0",version:"4.0",cpu:"imxrt1062",logic:"3.3V",voltageNote:"Not 5 V tolerant; never apply more than 3.3 V to any signal pin.",vin:"3.6–5.5 V",current:"250 mA",length:35.56,count:14,

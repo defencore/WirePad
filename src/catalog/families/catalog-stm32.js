@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { chip, circle, label, line, path, rect, smd } from "../shared/svg.js";
 import { boardDefinition, physicalHeaderArt, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
 
@@ -318,7 +319,24 @@ function nucleo32(model, core, { uart = "USART1", clock = "PF", pwm, adc } = {})
     x: (144 - 110 * .96) / 2 + (pad.x / 18.542 + .5) * 110 * .96,
     y: (302 - 286 * .96) / 2 + (pad.y / boardLength + .5) * 286 * .96,
   }));
-  return { ...definition, art: board32Art };
+  const sx = .96, ox = (144 - 110 * sx) / 2, oy = (302 - 286 * sx) / 2;
+  const regions = [{ x: ox, y: oy, width: 110 * sx, height: 286 * sx },
+    { x: ox + 34 * sx, y: oy - 7 * sx, width: 43 * sx, height: 28 * sx }];
+  const bounds = { x: ox, y: oy - 7 * sx, width: 110 * sx, height: 293 * sx };
+  const contacts = definition.component.pins.map(pin => {
+    const left = pin.number.startsWith("CN3.");
+    const row = Number(pin.number.split(".")[1]) - 1;
+    return { pinId: pin.id, x: left ? -7.62 : 7.62, y: firstRow + row * 2.54 };
+  });
+  return { ...definition, art: board32Art, mounting: reviewedBoardMounting({
+    source: { label: `ST NUCLEO-${model} MB1180 Arduino Nano header mechanical drawing`, url: mb1180 }, contacts,
+    bodyRegions: regions, bodyEvidence: "The Nucleo-32 PCB and Mini-USB projection use board32Art's exact board32Pcb transform. Pin captions and drawing margins are excluded.",
+    viewBounds: bounds,
+    note: "Insert all thirty CN3/CN4 Arduino Nano-format contacts. Both complete 15-contact rows use 2.54 mm pitch and 15.24 mm spacing. The on-board ST-LINK and configuration links stay above the breadboard.",
+    view: { id: "breadboard", pins: definition.component.pins.map(pin => ({ pinId: pin.id, x: pin.x, y: pin.y, face: "front" })),
+      note: "Source-reviewed MB1180 main-header centers define the compact physical view; all thirty original terminal identities remain present." },
+    renderMounted: part => clippedFrontArtwork(board32Art, definition.component, bounds),
+  }) };
 }
 
 const f0Adc = [0, 1, 3, 4, 5, 6, 7, 2].map(index => `ADC_IN${index}`);
@@ -348,4 +366,4 @@ const stm32Definitions = [
   nucleo32("L432KC", "Cortex-M4", { clock: "PC", adc: l4Adc, pwm: l4Pwm }),
 ];
 
-export default defineFamily("stm32", stm32Definitions.map(entry => ({ component: entry.component, render: entry.art, footprint: entry.footprint })));
+export default defineFamily("stm32", stm32Definitions.map(entry => ({ component: entry.component, render: entry.art, footprint: entry.footprint, mounting: entry.mounting })));

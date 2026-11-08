@@ -1,6 +1,7 @@
 import { somTables, vendorPads } from "../data/luckfox/som-contact-maps.js";
 import { defineFamily } from "../registry.js";
 import { circle, label, line, path, rect } from "../shared/svg.js";
+import { miniComputingMounting } from "../shared/mini-computing-mounting.js";
 
 const wiki = "https://wiki.luckfox.com/";
 const github = "https://github.com/LuckfoxTECH/";
@@ -438,4 +439,42 @@ const luckfoxFootprints = Object.fromEntries(boards.map(board => [board.id, {
 }]));
 const luckfoxModels = Object.fromEntries(boards.map(board => [board.id, board.cad]));
 
-export default defineFamily("luckfox", (luckfoxComponents).map(component => ({ component, render: (luckfoxArt)[component.art], footprint: (luckfoxFootprints)[component.id], model: luckfoxModels[component.id] })));
+// Header centres are read from the named manufacturer STEP models, not from
+// the approximate native carrier. USB is at the top in this instance view.
+const insertionModels = {
+  "luckfox-pico": [51, 1.60940242, 1.3700125, "Luckfox Pico.step"],
+  "luckfox-pico-mini-a": [28.16, 1.59921702, 1.39252706, "Luckfox Pico Mini.step"],
+  "luckfox-pico-mini-b": [28.16, 1.59921702, 1.39252706, "Luckfox Pico Mini.step"],
+  "luckfox-pico-plus": [72, 1.60940242, 1.3700125, "Luckfox Pico Plus.step"],
+  "luckfox-pico-pro": [72, 1.60940242, 1.369948, "Luckfox Pico Pro_Max.step"],
+  "luckfox-pico-max": [72, 1.60940242, 1.369948, "Luckfox Pico Pro_Max.step"],
+  "luckfox-lyra": [51, 1.61100262, 1.36801392, "Luckfox Lyra.step"],
+  "luckfox-lyra-b": [51, 1.61100262, 1.36801392, "Luckfox Lyra.step"],
+  "luckfox-lyra-plus": [72, 1.61100262, 1.368, "Luckfox Lyra Plus.step"],
+};
+function insertionProfile(board) {
+  const model = insertionModels[board.id];
+  if (!model) return undefined;
+  const [height, firstX, firstY, file] = model, mini = board.shape === "mini";
+  const primary = board.contacts.filter(pin => /^\d+$/.test(pin.number));
+  const pins = Object.fromEntries(board.contacts.map(pin => {
+    if (!primary.includes(pin)) return [pin.id, { x: pin.x, y: pin.y,
+      description: `${pin.description} Unpopulated Ethernet edge termination; this contact does not enter the breadboard.` }];
+    const left = pin.x < 10.5;
+    return [pin.id, { x: firstX + (left ? 0 : 17.78), y: firstY + pin.y - (mini ? 1.3 : 1.37) }];
+  }));
+  const mountedBoard = { ...board, body: [21, height] };
+  const regions = [{ x: 0, y: 0, width: 21, height },
+    { x: mini ? 4.74 : 5.69, y: mini ? -.98 : -1.33, width: mini ? 11.5 : 9.6, height: mini ? 7.6 : 7.72 }];
+  if (height === 72) regions.push({ x: 2.4, y: 51.3, width: 16.2, height: 22 });
+  return miniComputingMounting(board.component, { size: [21, height], source: board.cad.url,
+    pins, contacts: primary.map(pin => pin.id), regions,
+    evidence: `${file} in the manufacturer's STEP archive supplies both complete 2.54 mm edge rows, their 17.78 mm separation and the PCB/USB/Ethernet envelope. Mini A/B and Pro/Max share their respective mechanical model; Lyra/B share the published Lyra layout. The component-side pinout supplies terminal numbering.`,
+    note: "Populate both complete edge rows with downward straight male headers. Leave the five Ethernet edge pads unpopulated where present; they remain available for separate PHY wiring. USB, CSI/DSI, SD and fitted RJ45 use their original cable interfaces.",
+    renderHardware: () => physicalBody(mountedBoard, false) +
+      regions.slice(1).map((region, index) => port(index === 0 ? "usb" : "ethernet", region.x, region.y,
+        region.width, region.height, index === 0 ? "USB-C" : "RJ45")).join(""),
+  });
+}
+const luckfoxMounting = Object.fromEntries(boards.map(board => [board.id, insertionProfile(board)]));
+export default defineFamily("luckfox", (luckfoxComponents).map(component => ({ component, render: (luckfoxArt)[component.art], footprint: (luckfoxFootprints)[component.id], model: luckfoxModels[component.id], ...(luckfoxMounting[component.id] ? { mounting: luckfoxMounting[component.id] } : {}) })));

@@ -6,6 +6,7 @@ import { pinById } from '../model/component-pins.js';
 import { fitPart } from '../geometry/breadboard-placement.js';
 import { gap, mountingTargets, partCenter, poseAtCenter, relativeScale } from '../geometry/breadboard-targets.js';
 import { nominalLeads } from '../geometry/bendable-placement.js';
+import { activateMountingView } from '../model/part-view.js';
 
 export function suggestPlacement(project, componentId, hostPartId) {
   const component = componentById.get(componentId), profile = mountingFor(componentId);
@@ -21,7 +22,7 @@ export function suggestPlacement(project, componentId, hostPartId) {
     const holes = host.holes.filter(hole => !host.occupied.has(hole.pinId)).sort((a, b) => gap(a.point, middle) - gap(b.point, middle));
     for (const rotation of [0, 90, 180, 270]) {
       const scale = relativeScale(intrinsic, host, rotation);
-      const base = { ...probe, rotation, scale,
+      const base = { ...activateMountingView(probe, profile), rotation, scale,
         ...(profile.mode === 'bendable' ? { leads: nominalLeads(component, profile) } : {}) };
       const first = pointOnPart(base, pinById(component, profile.contacts[0].pinId), component);
       for (const hole of holes) {

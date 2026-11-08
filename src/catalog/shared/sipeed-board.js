@@ -82,6 +82,7 @@ export function sipeedBoard(originalOptions, banks) {
     return bank.contacts.map((pin, index) => ({ id: pin.id, x: x + (vertical ? index % columns * pitch : Math.floor(index / columns) * pitch), y: y + (vertical ? Math.floor(index / columns) * pitch : index % columns * pitch), size: bank.foot?.size ?? 1.65, drill: bank.foot?.drill ?? 0.85, square: index === 0 }));
   });
   return { component,
+    renderHardware: entry => sipeedArt(entry, options, banks, false, false),
     footprint: { body: options.size, color: options.color ?? "#282c2e", pads,
       note: `${options.revision} reference carrier for ${options.scope}. ${options.footnote ?? "Pad positions are approximate cable termination positions, not a board mating pattern. Verify connector orientation, pitch, I/O voltage and exact board dimensions before fabrication."}`,
       details: [[0, 0, options.size[0] * 0.45, options.size[0] * 0.45, 1.8, "#27333a"]] },
@@ -96,7 +97,7 @@ function socket(x, y, width, height, type) {
   return rect(x, y, width, height, type === "usb" ? 3 : 1, "#b5c1c4", "#e6eae7") + rect(x + 3, y + 3, width - 6, Math.max(4, height / 4), 1, "#4a5d67") + line(x + 4, y + height - 4, x + width - 4, y + height - 4, "#8c9b9b", 1.5);
 }
 
-function sipeedArt(component, options, banks, showLabels) {
+function sipeedArt(component, options, banks, showLabels, includeContacts = true) {
   const { width, height } = component;
   const geometry = physicalMetrics(options, options.physical);
   const bodyWidth = geometry.bodyWidth, bodyHeight = geometry.bodyHeight;
@@ -152,6 +153,7 @@ function sipeedArt(component, options, banks, showLabels) {
   if (options.physical.bottom) main = backBody(0);
   if (geometry.views > 1) main += backBody(1);
   for(let view=0;view<geometry.views;view++)main += label(geometry.margin+view*(bodyWidth+geometry.gap)+bodyWidth/2,by+bodyHeight+22,options.physical.bottom ? "Connector side" : view ? "Back · mirrored from front" : "Front · component side",11,"#405563");
+  if (!includeContacts) return main;
   const groups = new Map();
   for(const bank of banks)for(const pin of bank.contacts){
     const key=bank.name+":"+pin.physicalView+(options.physical.banks[bank.name]===null?":"+bank.side:"");

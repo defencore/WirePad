@@ -1,3 +1,6 @@
+import { sourceReferenceMounting } from "../shared/source-reference-mounting.js";
+import physicalReferences from "../data/popular-mounting/core.js";
+import { coreDevboardMounting } from "../shared/core-devboard-mounting.js";
 import { defineFamily } from "../registry.js";
 import { coreBreadboardMounting } from "../shared/core-breadboard-parts.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
@@ -687,9 +690,14 @@ const coreContactPositions = {
   lm2596: (component, pin) => [pin.x === 0 ? 14 : component.width - 14, pin.y < component.height / 2 ? 13 : component.height - 13],
 };
 
-export const coreModulesFamily = defineFamily("core-modules", coreModuleComponents.map(component => physicalEntry({
-  component, render: coreModuleArt[component.art], footprint: coreModuleFootprints[component.id], model: coreModuleModels[component.id],
-}, (pin, index) => coreContactPositions[component.id](component, pin, index))));
+export const coreModulesFamily = defineFamily("core-modules", coreModuleComponents.map(component => {
+  const entry = physicalEntry({
+    component, render: coreModuleArt[component.art], footprint: coreModuleFootprints[component.id], model: coreModuleModels[component.id],
+  }, (pin, index) => coreContactPositions[component.id](component, pin, index));
+  const mounting = component.id === "esp32-s3" ? coreDevboardMounting(entry)
+    : sourceReferenceMounting(entry.component, physicalReferences[component.id]);
+  return { ...entry, ...(mounting ? { mounting } : {}) };
+}));
 export const coreBasicsFamily = defineFamily("core-basics", coreBasicComponents.map(component => {
   const entry = { component, render: coreBasicArt[component.art], footprint: coreBasicFootprints[component.id], model: coreBasicModels[component.id] };
   const resolved = ["npn", "nmos"].includes(component.art) ? physicalEntry(entry, (_pin, index) => [39 + index * 8, 58])

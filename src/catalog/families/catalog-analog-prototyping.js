@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { chip, circle, label, line, pinRow, rect, screw, smd } from "../shared/svg.js";
 
@@ -46,7 +47,7 @@ function board({ id, name, shortName, category, source, description, subtitle, t
     }));
   });
   const pins = physicalComponent({ width, height, pins: contacts.map(({ logical }) => logical) }, (_pin, index) => contacts[index].pin).pins;
-  return {
+  const entry = {
     component: {
       id, name: `Adafruit ${name}`, shortName, category, source, description, subtitle, tags,
       manufacturer: "Adafruit", referencePrefix: "U", art: id, width, height, pins, contactLayout: "physical",
@@ -75,6 +76,17 @@ function board({ id, name, shortName, category, source, description, subtitle, t
     },
     model: cad,
   };
+  const bodyRegions = [{ x: margin, y: margin, width: width - margin * 2, height: height - margin * 2 }];
+  const viewBounds = { x: margin - .5, y: margin - .5, width: width - margin * 2 + 1, height: height - margin * 2 + 3 };
+  entry.mounting = reviewedBoardMounting({
+    source: { label: `${shortName} cited Adafruit EAGLE header centers`, url: cad.url },
+    contacts: contacts.filter(contact => !contact.terminal).map(({ pin, x, y }) => ({ pinId: pin.id, x, y })),
+    calibration: { origin: { x: width / 2, y: height / 2 }, unitsPerMm: scale },
+    bodyRegions, bodyEvidence: "Explicit source-coordinate connector banks and PCB dimensions from the manufacturer CAD are projected together. The decorative lower bevel stays in the visible frame only; no annotation frame is reserved as physical material.",
+    viewBounds, renderMounted: part => clippedFrontArtwork(entry.art, part, viewBounds),
+    note: "Seat every listed header lead. Screw-terminal banks and repeated optional wire-termination holes are not insertion leads; leave any unlisted optional downward headers unpopulated.",
+  });
+  return entry;
 }
 
 const qtBody = [25.4, 17.78];
@@ -181,9 +193,4 @@ const entries = [
   }),
 ];
 
-const analogPrototypingComponents = entries.map(({ component }) => component);
-const analogPrototypingArt = Object.fromEntries(entries.map(({ component, art }) => [component.id, art]));
-const analogPrototypingFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
-const analogPrototypingModels = Object.fromEntries(entries.map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("analog-prototyping", (analogPrototypingComponents).map(component => ({ component, render: (analogPrototypingArt)[component.art], footprint: (analogPrototypingFootprints)[component.id], model: analogPrototypingModels[component.id] })));
+export default defineFamily("analog-prototyping", entries.map(({ art: render, ...entry }) => ({ ...entry, render })));

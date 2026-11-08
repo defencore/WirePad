@@ -42,7 +42,7 @@ export function bindInspector({ inspection, editor, notify, focusCanvas, autoRou
     if (editor.selections.length > 1) {
       setView(`selection/${JSON.stringify(editor.selections)}`, () => inspectSelection(editor.selections, editor.canMoveSelection));
     } else if (part) {
-      setView(`part/${part.id}/${part.componentId}/${part.rotation ?? 0}/${configurationSignature(part)}/${JSON.stringify(part.attachment ?? null)}/${Boolean(part.leads)}/${getKeepLeadPositions()}/${tab}`,
+      setView(`part/${part.id}/${part.componentId}/${part.rotation ?? 0}/${part.view ?? ''}/${configurationSignature(part)}/${JSON.stringify(part.attachment ?? null)}/${Boolean(part.leads)}/${getKeepLeadPositions()}/${tab}`,
         () => inspectPart(part, tab, { keepLeadPositions: getKeepLeadPositions() }));
       const label = inspection.querySelector('#part-label');
       if (label && root.activeElement !== label) label.value = part.label ?? '';

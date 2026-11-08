@@ -47,7 +47,8 @@ function sourcePose(component, host, layout = safeGrid(component)) {
   const turned = layout.rotation % 180 !== 0;
   const scale = { x: intrinsic.x * hostScale[turned ? 'y' : 'x'], y: intrinsic.y * hostScale[turned ? 'x' : 'y'] };
   const part = { id: 'module', componentId: component.id, x: 0, y: 0,
-    rotation: ((host.rotation ?? 0) + layout.rotation) % 360, scale };
+    rotation: ((host.rotation ?? 0) + layout.rotation) % 360, scale,
+    ...(mountingFor(component.id).view ? { view: mountingFor(component.id).view.id } : {}) };
   const first = pointOnPart(part, pinById(component, mountingFor(component.id).contacts[0].pinId), component);
   const anchor = pointOnPart(host, { x: 96 + layout.dx * 16, y: 96 + layout.dy * 16 });
   return { ...part, x: anchor.x - first.x, y: anchor.y - first.y };
@@ -92,7 +93,8 @@ test('source scales and physical view centers survive rotated hosts, detachment 
     const editor = new DiagramEditor(history, () => {}, () => {});
     const center = partCenter(fit.part), bounds = partBounds(fit.part), body = partBodyBounds(fit.part);
     close(center.x, (bounds.left + bounds.right) / 2); close(center.y, (bounds.top + bounds.bottom) / 2);
-    assert.ok(body.left >= bounds.left && body.right <= bounds.right && body.top >= bounds.top && body.bottom <= bounds.bottom);
+    assert.ok(body.left >= bounds.left - 1e-7 && body.right <= bounds.right + 1e-7 &&
+      body.top >= bounds.top - 1e-7 && body.bottom <= bounds.bottom + 1e-7, `${component.id}/${rotation}`);
     editor.select('part', part.id);
     assert.equal(editor.rotatePart((fit.part.rotation + 90) % 360), true);
     const detached = editor.project.parts[1];

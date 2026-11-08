@@ -1,5 +1,7 @@
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
+import { xiaoBoardMounting } from "../shared/xiao-board-mounting.js";
 import { board, circle, label, line, moduleArt, mountingHole, path, pinRow, rect, smd } from "../shared/svg.js";
 
 const seeedDocs = "https://wiki.seeedstudio.com/XIAO_BLE/";
@@ -305,7 +307,51 @@ const nordicBoardArt = Object.fromEntries(entries.map(({ component, art }) => [c
 const nordicBoardFootprints = Object.fromEntries(entries.map(({ component, footprint }) => [component.id, footprint]));
 const nordicBoardModels = Object.fromEntries(entries.filter(({ model }) => model).map(({ component, model }) => [component.id, model]));
 
-export default defineFamily("nordic-boards", nordicBoardComponents.map(component => ({
-  component: component.id.startsWith("xiao-") ? physicalXiao(component, nordicBoardFootprints[component.id]) : physicalComponent(component, pin => [pin.x === 0 ? 9 : component.width - 9, pin.y]),
-  render: nordicBoardArt[component.art], footprint: nordicBoardFootprints[component.id], model: nordicBoardModels[component.id],
-})));
+function reviewedHeaderMounting(component) {
+  const nano = component.manufacturer === "Arduino", sense = component.id.includes("-sense-");
+  const raw = entries.find(entry => entry.component.id === component.id).component;
+  const rows = [raw.pins.filter(pin => pin.x === 0), raw.pins.filter(pin => pin.x === raw.width)];
+  const spacing = nano ? 15.24 : 20.32, firstY = nano ? -17.78 : -19.05;
+  const contacts = rows.flatMap((pins, side) => pins.map((pin, index) => ({ pinId: pin.id,
+    x: (side ? 1 : -1) * spacing / 2, y: firstY + (index + (!nano && side ? 4 : 0)) * 2.54 })));
+  const bodyRegions = [{ x: 7, y: 7, width: component.width - 14, height: component.height - 14 },
+    { x: component.width / 2 - (nano ? 27 : 25), y: nano ? 3 : 5, width: nano ? 54 : 50, height: 36 }];
+  const bounds = { x: 7, y: nano ? 3 : 5, width: component.width - 14, height: component.height - (nano ? 10 : 12) };
+  const render = nordicBoardArt[component.id];
+  return reviewedBoardMounting({
+    source: { label: nano ? `Arduino Nano 33 BLE${sense ? " Sense" : ""} Rev2 manufacturer mechanical drawing`
+      : "Adafruit Feather nRF52840 Express manufacturer header assembly and layout",
+    url: nano ? `https://docs.arduino.cc/resources/datasheets/${sense ? "ABX00069" : "ABX00071"}-datasheet.pdf`
+      : "https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/assembly" }, contacts,
+    bodyRegions, bodyEvidence: "The canonical front PCB and projecting USB shell use the board and usbShell renderer coordinates. Pin-label margins and the decorative shadow are excluded.",
+    note: nano ? "Insert both complete 15-contact Nano rows at 2.54 mm pitch and 15.24 mm spacing. Component side, USB above."
+      : "Insert all 16+12 Feather header leads at 2.54 mm pitch and 20.32 mm row spacing; the shorter row begins four pitches below the longer row. Use downward plain male headers, not upward female sockets.",
+    viewBounds: bounds, view: { id: "breadboard", pins: component.pins.map(pin => ({ pinId: pin.id, x: pin.x, y: pin.y, face: "front" })),
+      note: "Source-reviewed Nano/Feather insertion centers normalize the existing front-only illustration; all original contacts remain available." },
+    renderMounted: part => clippedFrontArtwork(render, component, bounds),
+  });
+}
+
+function reviewedXiaoMounting(component, footprint) {
+  const unitsPerMm = 3.8, centerX = 43, top = 40;
+  const sx = 17.8 * unitsPerMm / 104, sy = 21 * unitsPerMm / 124;
+  const auxiliaryContacts = [...footprint.pads, ...footprint.groups.slice(2).flatMap(group =>
+    group.ids.map((pinId, index) => ({ id: pinId, x: group.x, y: group.y + index * 2.54 })))]
+    .map(pad => ({ pinId: pad.id, x: pad.x, y: pad.y }));
+  return xiaoBoardMounting(component, {
+    source: { label: "Seeed XIAO nRF52840 manufacturer PCB full-hole rows and separate underside-pad coordinates", url: component.source },
+    centerX, top, unitsPerMm, auxiliaryContacts,
+    drillDiameterMm: component.id.includes('plus') ? 1 : .85,
+    copperDiameterMm: component.id.includes('plus') ? 1.4 : 1.5,
+    castellations: component.pins.filter(pin => pin.face === "front"),
+    usbRegion: { x: centerX - 25 * sx, y: top - 7 * sy, width: 50 * sx, height: 36 * sy },
+    frontArtwork: () => `<g transform="translate(${centerX - component.width / 2 * sx} ${top - 11 * sy}) scale(${sx} ${sy})">${xiaoBody(component)}</g>`,
+  });
+}
+
+export default defineFamily("nordic-boards", nordicBoardComponents.map(original => {
+  const xiao = original.id.startsWith("xiao-");
+  const component = xiao ? physicalXiao(original, nordicBoardFootprints[original.id]) : physicalComponent(original, pin => [pin.x === 0 ? 9 : original.width - 9, pin.y]);
+  return { component, render: nordicBoardArt[component.art], footprint: nordicBoardFootprints[component.id], model: nordicBoardModels[component.id],
+    mounting: xiao ? reviewedXiaoMounting(component, nordicBoardFootprints[component.id]) : reviewedHeaderMounting(component) };
+}));

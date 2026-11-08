@@ -1,5 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
+import { clippedFrontArtwork, reviewedBoardMounting } from "../shared/reviewed-board-mounting.js";
+import { rearContactOverlay } from "../shared/rear-contact-overlay.js";
 import { chip, circle, label, line, path, rect, smd, tactile } from "../shared/svg.js";
 
 const scale = 6, frontX = 75, rearX = 290, boardTop = 26;
@@ -65,7 +67,7 @@ function makePico(wireless) {
     referencePrefix: "U", art: id, width: 450, height: 362, pins, internalConnections: [...nets.values()].filter(group => group.length > 1),
   }, pins.map(pin => [pin.x, pin.y]));
   const shell = [[7.775, 49.5, 1.1, 1.8], [13.225, 49.5, 1.1, 1.8], [8.075, 46.47, 1.05, 1.45], [12.925, 46.47, 1.05, 1.45]];
-  return {
+  const entry = {
     component,
     render: (part, showLabels) => {
       const bw = 21 * scale, bh = 51 * scale, cx = frontX + bw / 2;
@@ -104,6 +106,20 @@ function makePico(wireless) {
     },
     ...(!wireless ? { model: { label: "Raspberry Pi Pico 2 vendor STEP archive", url: "https://pip.raspberrypi.com/documents/RP-009061-CA" } } : {}),
   };
+  const bodyRegions = [{ x: frontX, y: boardTop, width: 21 * scale, height: 51 * scale },
+    { x: frontX + 10.5 * scale - 23, y: boardTop - 5, width: 46, height: 34 }];
+  const bounds = { x: frontX, y: boardTop - 5, width: 21 * scale, height: 51 * scale + 5 };
+  const viewPins = component.pins.map(pin => ({ pinId: pin.id, x: frontX + pin.nativeX * scale,
+    y: boardTop + pin.nativeY * scale, face: pin.view === "rear" ? "rear" : "front" }));
+  return { ...entry, mounting: reviewedBoardMounting({
+    source: { label: `Raspberry Pi Pico 2${wireless ? " W" : ""} manufacturer datasheet: 40 insertion headers and underside SMT reference`, url: component.source },
+    contacts: component.pins.filter(pin => /^[0-9]+$/.test(pin.number)).map(pin => ({ pinId: pin.id, x: pin.nativeX, y: pin.nativeY })),
+    bodyRegions, bodyEvidence: "The component-side 21 × 51 mm PCB and projecting Micro-USB shell use the same exact rectangles as the canonical renderer. Separate mirrored rear artwork and captions are excluded.",
+    calibration: { origin: { x: frontX, y: boardTop }, unitsPerMm: scale }, viewBounds: bounds,
+    note: "Populate both complete 20-contact outer rows. Their centers are 17.78 mm apart at 2.54 mm pitch. SWD and rear factory test pads are auxiliary contacts, not downward insertion leads. Dashed B contacts show the rear pads projected through the PCB.",
+    view: { id: "breadboard", pins: viewPins, note: "Explicit component-side mounting view from manufacturer header and SMT-reference coordinates. Front header/SWD locations retain their canonical centers; rear test points project to their physical positions through the PCB only for newly fitted instances." },
+    renderMounted: part => clippedFrontArtwork(entry.render, component, bounds) + rearContactOverlay(viewPins.map(point => ({ ...component.pins.find(pin => pin.id === point.pinId), ...point }))),
+  }) };
 }
 
 // Debug Probe rev2, source schematic 2023-02-20 and maker's labelled TP view.

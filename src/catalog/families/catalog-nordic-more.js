@@ -1,5 +1,6 @@
 import { defineFamily } from "../registry.js";
 import { cadReadyBoard } from "../shared/cad-board.js";
+import { cadBoardMounting } from "../shared/cad-board-mounting.js";
 import { circle, label, path, rect } from "../shared/svg.js";
 import boards from "../data/nordic-more-cad.js";
 
@@ -79,7 +80,16 @@ const entries = boards.map(board => {
   entry.component.internalConnections = [...nets.values()].filter(ids => ids.length > 1);
   const scale = Math.min(9, 650 / Math.max(...board.view));
   entry.art = (_component, showLabels = true) => `<g transform="translate(20 20) scale(${scale})">${boardArtwork(board, showLabels)}${board.hasBack ? label(w / 2, h + 3, "UNDERSIDE • MIRRORED", 1.1, "#455c60") : ""}</g>`;
+  const sparkfun = board.id.startsWith('sparkfun-');
+  const connectors = friend ? [board.id.includes('spi') ? 'JP2' : 'JP1'] : itsy ? ['JP2', 'JP4'] : ['J2', 'J5', 'J7'];
+  const overhangs = board.elements.filter(element => element[4] === 'module').map(([x, y, width, height]) =>
+    [x - width / 2 - .45, y - height / 2 - .45, width + .9, height + .9]);
+  entry.mounting = cadBoardMounting(board, entry, { connectors, overhangs,
+    bodyEvidence: 'Named header drill coordinates and PCB outline follow the exact manufacturer Eagle commit linked on this entry. Body regions retain the fixed source-scaled PCB and existing simplified radio-package rectangles; the rear artwork is omitted. Simplified component envelopes do not upgrade native CAD accuracy.',
+    note: friend ? 'Populate the complete single main male-header row at 2.54 mm pitch. Keep rear SWD/power service pads free of downward pins.' :
+      itsy ? 'Populate both complete 14-pin main rows, 15.24 mm apart at 2.54 mm pitch.' :
+      'Populate all 21 signal/power holes in J2, J5 and J7, with the signal rows 15.24 mm apart. Leave the adjacent J13/J9/J14 ground-guard rows unpopulated or face-up to avoid shorting their neighboring signal strips. The manufacturer hardware-assembly guide shows this breadboard header population.' });
   return entry;
 });
 
-export default defineFamily("nordic-more", entries.map(({ component, art, footprint, model }) => ({ component, render: art, footprint, model })));
+export default defineFamily("nordic-more", entries.map(({ component, art, footprint, model, mounting }) => ({ component, render: art, footprint, model, mounting })));

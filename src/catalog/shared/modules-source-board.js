@@ -1,6 +1,7 @@
 import { circle, label, path, rect } from './svg.js';
 import { escapeText } from '../../shared/text.js';
 import { sourceModuleMounting } from './source-module-mounting.js';
+import { rearContactOverlay } from './rear-contact-overlay.js';
 
 // Source coordinates are millimeters, centered on the board, with Y downward.
 // Artwork, physical anchors and native contacts share this coordinate system.
@@ -51,7 +52,8 @@ export function sourceModule(spec) {
     const board = spec.board.outline ? path(spec.board.outline,spec.board.color ?? '#246545','#8caaa0',.16)
       : rect(-boardWidth/2,-boardHeight/2,boardWidth,boardHeight,spec.board.radius ?? .8,spec.board.color ?? '#246545','#8caaa0');
     const holes = (spec.holes ?? []).map(h => circle(h.x,h.y,h.drill/2,'#eef3ed','#a7ad9a')).join('');
-    const padsFor = back => contacts.filter(p => Boolean(p.back)===back).map(p => {
+    const padsFor = back => contacts.filter(p => Boolean(p.back)===back || !back && frontOnly &&
+      spec.mountingReview?.projectRearContacts && p.back && p.drill && !p.smd).map(p => {
       const [w,h]=p.size;
       const metal = p.shape==='circle' || (!p.smd && p.shape!=='rect' && p.shape!=='oval')
         ? circle(p.x,p.y,Math.min(w,h)/2,p.metalColor ?? '#d4bb75','#efe1af')
@@ -79,7 +81,17 @@ export function sourceModule(spec) {
     const front=`<g transform="translate(${cx} ${cy}) scale(${scale})" stroke-width="0.1">${board}${holes}${spec.artwork ?? ''}${padsFor(false)}</g>`;
     const back=hasBack&&!frontOnly?`<g transform="translate(${cx} ${cy+separation}) scale(${-scale} ${scale})" stroke-width="0.1">${board}${holes}${spec.backArtwork ?? ''}${padsFor(true)}</g>`+
       label(width/2,cy+extentY*scale+separation/2,'UNDERSIDE BELOW · MIRRORED',6,'#405c63'):'';
-    if (frontOnly) return front + captions;
+    if (frontOnly) {
+      const rearHardware = (spec.mountingReview?.rearOverhangRegions ?? []).map(region =>
+        rect(region.x, region.y, region.width, region.height, .1, '#c49ac122', '#9b4899') +
+        label(region.x + region.width / 2, region.y + region.height / 2, 'BACK', Math.min(.7, region.width / 3), '#8e368d')).join('');
+      const rearProjection = rearHardware ? `<g class="rear-hardware-overlay" pointer-events="none" aria-hidden="true" transform="translate(${cx} ${cy}) scale(${scale})" stroke-width=".12" stroke-dasharray=".4 .25"><title>BACK HARDWARE · projecting rear packages shown through the PCB at their physical source coordinates.</title>${rearHardware}</g>` : '';
+      const rear = spec.mountingReview?.projectRearContacts ? rearContactOverlay(contacts
+        .filter(contact => contact.back && (contact.smd || !contact.drill))
+        .map(contact => ({ ...contact, face: 'rear', x: cx + contact.x * scale, y: cy + contact.y * scale })),
+      { radius: .4 * scale, labelSize: .5 * scale }) : '';
+      return rearProjection + front + rear + captions;
+    }
     return front+back+captions+label(width/2,9,spec.sku,7,'#405c63')+
       label(width/2,height-9,spec.viewLabel ?? (hasBack?'COMPONENT SIDE / SEPARATE MIRRORED UNDERSIDE':'COMPONENT-SIDE CONTACT VIEW'),6,'#405c63');
   };

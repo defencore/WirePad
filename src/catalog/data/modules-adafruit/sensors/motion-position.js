@@ -4,6 +4,22 @@ import assets from "./motion-position-assets.js";
 export default [
   {
     "id": "adafruit-module-6357",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6357: EAGLE Adafruit AS5600 Magnetic Angle Sensor.brd; commit e146e7740455 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-AS5600-Magnetic-Angle-Sensor-PCB/blob/e146e77404551f1ae0619f6627bcc4435d81b0eb/Adafruit%20AS5600%20Magnetic%20Angle%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "75fb995ef95f4517ba3485d86535f43c094efd8466cd856a4a506356befb7c93"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6357",
     "name": "Adafruit AS5600 Magnetic Angle Sensor",
     "manufacturer": "Adafruit",

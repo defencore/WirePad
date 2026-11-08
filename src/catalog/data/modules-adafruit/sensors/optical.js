@@ -615,6 +615,22 @@ export default [
   },
   {
     "id": "adafruit-module-5913",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "Adafruit ADA5913: EAGLE Adafruit STEMMA Reflective Photo Interrupt Sensor.brd; commit 301c949dc5f3 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-STEMMA-Reflective-Photo-Interrupt-Sensor-PCB/blob/301c949dc5f3d4b045aca5ca94913a096af24918/Adafruit%20STEMMA%20Reflective%20Photo%20Interrupt%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_OVAL"}],
+        "duplicateHeaderContacts": [{"pinId": "jp2-1", "equivalentPinId": "jp1-1", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-2", "equivalentPinId": "jp1-2", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "jp2-3", "equivalentPinId": "jp1-3", "connector": "JP2", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "9a6a23a7a9ed4c506c3b8501e785cbd21f0d4fbeed11adc7bf0cacd7f457616c"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5913",
     "name": "Adafruit STEMMA Reflective Photo Interrupt Sensor - TCRT1000",
     "manufacturer": "Adafruit",
@@ -2131,6 +2147,23 @@ export default [
   },
   {
     "id": "adafruit-module-3779",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "ftdi1-1", "ftdi1-2", "ftdi1-3", "ftdi1-4", "ftdi1-5", "ftdi1-6", "ftdi1-7"],
+      "source": {"label": "Adafruit ADA3779: EAGLE AS726x-Spectral_REV-D.brd; commit e938964b93a0 physical insertion headers", "url": "https://github.com/adafruit/Adafruit-AS7262-Breakout-PCB/blob/e938964b93a0dca5c0120fe2aa54a16e590b27fa/AS726x-Spectral_REV-D.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Every explicitly listed header lead must enter a separate compatible breadboard hole. Leave all unlisted optional headers unpopulated or facing upward; do not insert sockets, screw terminals, solder jumpers, or short solder stubs. Duplicate alternative headers are intentionally not populated downward; all their electrical nets remain available through the selected complete header rows. Mounting explicitly activates the component-side physical view: through-hole contacts are shown at their real top-projected centers, while hidden rear-only pads use a distinct BACK PAD projection.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Exact manufacturer EAGLE connector package and full plated header rows reviewed. Only source-identified primary header holes are insertion leads. Source model internal connections verify every excluded duplicate header/castellation terminal is electrically represented by a selected lead.",
+        "connectors": [{"id": "JP2", "count": 7, "package": "1X07_ROUND"}, {"id": "FTDI1", "count": 7, "package": "1X07_ROUND"}],
+        "duplicateHeaderContacts": [{"pinId": "ext_led-1", "equivalentPinId": "jp2-2", "connector": "EXT_LED", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}, {"pinId": "ext_led-2", "equivalentPinId": "ftdi1-7", "connector": "EXT_LED", "reason": "Optional duplicate whole header; every electrical terminal remains on a selected insertion contact."}],
+        "boardSha256": "e8fedba6a2578a0646dc6870da011615df3151c679758991191d01b21bceabd5"
+      },
+      "projectRearContacts": true,
+      "bodyRegions": [
+        {"x": -13.97, "y": -12.7, "width": 27.94, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing source-coordinate component-side and rear hardware illustrations. Rear packages are projected at their physical centers, without applying the separate-view display offset. Captions, silkscreen text, margins and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3779",
     "name": "Adafruit AS7262 6-Channel Visible Light / Color Sensor Breakout",
     "manufacturer": "Adafruit",

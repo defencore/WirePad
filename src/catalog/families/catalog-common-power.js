@@ -1,4 +1,6 @@
 import { defineFamily } from "../registry.js";
+import { sourceReferenceMounting } from "../shared/source-reference-mounting.js";
+import physicalReferences from "../data/popular-mounting/common-power.js";
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { board, chip, circle, edgePads, label, line, mountingHole, pad, path, pinRow, rect, screw, smd, usb } from "../shared/svg.js";
 
@@ -421,9 +423,7 @@ const parts = [
   dfSolar,
 ];
 
-const commonPowerComponents = parts.map(({ component }) => component);
-const commonPowerArt = Object.fromEntries(parts.map(({ component, art }) => [component.id, art]));
-const commonPowerFootprints = Object.fromEntries(parts.map(({ component, footprint }) => [component.id, footprint]));
-const commonPowerModels = Object.fromEntries(parts.filter(({ model }) => model).map(({ component, model }) => [component.id, model]));
-
-export default defineFamily("common-power", (commonPowerComponents).map(component => ({ component, render: (commonPowerArt)[component.art], footprint: (commonPowerFootprints)[component.id], model: commonPowerModels[component.id] })));
+export default defineFamily("common-power", parts.map(({ art: render, ...entry }) => {
+  const mounting = sourceReferenceMounting(entry.component, physicalReferences[entry.component.id]);
+  return { ...entry, render, ...(mounting ? { mounting } : {}) };
+}));
