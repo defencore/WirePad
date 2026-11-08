@@ -3,9 +3,10 @@ const MAX_ZOOM = 4;
 const limitZoom = scale => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, scale));
 
 export class CanvasViewport {
-  constructor({ svg, onZoom }) {
+  constructor({ svg, onZoom, viewInsets }) {
     this.svg = svg;
     this.onZoom = onZoom;
+    this.viewInsets = viewInsets;
     this.scale = 1;
     this.center = { x: 0, y: 0 };
     this.autoFit = true;
@@ -17,11 +18,17 @@ export class CanvasViewport {
     const { clientWidth, clientHeight } = this.svg;
     if (!clientWidth || !clientHeight) return;
     this.autoFit = autoFit;
-    this.center = { x: bounds.x + bounds.width / 2, y: bounds.y + bounds.height / 2 };
+    const requested = this.viewInsets?.() ?? {};
+    const minimum = { left: Math.min(52.5, clientWidth * .08), right: Math.min(52.5, clientWidth * .08),
+      top: Math.min(69, clientHeight * .13), bottom: Math.min(69, clientHeight * .13) };
+    const inset = Object.fromEntries(Object.entries(minimum).map(([side, value]) =>
+      [side, Math.max(value, Number.isFinite(requested[side]) ? requested[side] : 0)]));
     this.scale = bounds.width || bounds.height ? Math.min(
-      1.4, Math.max(MIN_ZOOM, Math.max(1, clientWidth - Math.min(105, clientWidth * .16)) / Math.max(1, bounds.width)),
-      Math.max(MIN_ZOOM, Math.max(1, clientHeight - Math.min(138, clientHeight * .26)) / Math.max(1, bounds.height)),
+      1.4, Math.max(MIN_ZOOM, Math.max(1, clientWidth - inset.left - inset.right) / Math.max(1, bounds.width)),
+      Math.max(MIN_ZOOM, Math.max(1, clientHeight - inset.top - inset.bottom) / Math.max(1, bounds.height)),
     ) : 1;
+    this.center = { x: bounds.x + bounds.width / 2 + (inset.right - inset.left) / (2 * this.scale),
+      y: bounds.y + bounds.height / 2 + (inset.bottom - inset.top) / (2 * this.scale) };
     this.applyView();
   }
 

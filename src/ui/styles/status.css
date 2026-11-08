@@ -3,13 +3,10 @@
 .statusbar { display: flex; align-items: center; min-width: 0; gap: 10px; padding: 0 13px; border-top: 1px solid var(--line); background: #fafbfc; color: var(--quiet); font-size: 11px; }
 .statusbar > span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .statusbar #editor-status { flex: 0 0 auto; color: var(--muted); }
-.statusbar .canvas-hint { flex: 1; min-width: 0; overflow: hidden; }
-#canvas-hint-text { overflow: hidden; text-overflow: ellipsis; }
 .statusbar .icon { width: 12px; height: 12px; }
 .status-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #349782; }
-.statusbar #project-count { font-variant-numeric: tabular-nums; }
-.status-separator { height: 12px; }
+.statusbar #project-count { margin-left: auto; font-variant-numeric: tabular-nums; }
 .toast { position: fixed; z-index: 30; right: 16px; bottom: 42px; max-width: min(390px, calc(100vw - 32px)); padding: 11px 14px; border: 1px solid #cdded8; border-radius: 8px; box-shadow: 0 4px 18px #26313d1a; background: #f6fcf9; color: var(--ink); font-size: 12px; }
-.workspace-warning { position: absolute; z-index: 2; top: 12px; right: 12px; left: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; border: 1px solid #e2c59d; border-radius: var(--radius); background: #fff8ec; color: #775328; font-size: 12px; line-height: 1.4; }
+.workspace-warning { position: absolute; z-index: 2; top: 76px; right: 14px; left: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; border: 1px solid #e2c59d; border-radius: var(--radius); background: #fff8ec; color: #775328; font-size: 12px; line-height: 1.4; }
 .workspace-warning > span { flex: 1 1 180px; }
 .workspace-warning .button { flex: 0 0 auto; border-color: #d6b27f; color: #775328; }

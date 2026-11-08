@@ -34,6 +34,8 @@ The model, geometry, catalog and native asset layers have no DOM dependencies. A
 - `assets/` owns symbol, footprint and model geometry. `previews.js` and `kicad.js` consume those same layouts. No asset generator switches on a board's component ID.
 - `export/drawing.js` creates SVG and raster dimensions without browser APIs. `export/browser.js` owns downloads, rasterization, object URLs and clipboard timing.
 
+Workspace tool, history and navigation cards are HTML overlays outside the SVG drawing/export tree. Only their buttons intercept pointer events; gaps remain canvas. The application supplies measured overlay insets to the viewport's fit operation, while user zoom/pan retains its existing behavior. At narrow widths the Inspector occupies a separate grid row below the canvas.
+
 ## Adding a family
 
 Run:

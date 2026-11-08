@@ -21,6 +21,7 @@ const icons = {
   undo: '<path d="M4 11h10a5 5 0 0 1 0 10M4 11l5-5m-5 5 5 5"/>',
   redo: '<path d="M20 11H10a5 5 0 0 0 0 10m10-10-5-5m5 5-5 5"/>',
   fit: '<path d="M8 4H4v4m12-4h4v4m0 8v4h-4M4 16v4h4"/><rect x="8" y="8" width="8" height="8" rx="1"/>',
+  selection: '<path d="M8 4H4v4m12-4h4v4m0 8v4h-4M4 16v4h4"/><rect x="8" y="8" width="8" height="8" rx="1" stroke-dasharray="2 2"/>',
   sliders: '<path d="M5 3v3m0 5v10m7-18v9m0 5v4m7-18v3m0 5v10"/><circle cx="5" cy="8.5" r="2.5"/><circle cx="12" cy="14.5" r="2.5"/><circle cx="19" cy="8.5" r="2.5"/>',
   edit: '<path d="m14 6 4 4M5 19l1-5L17 3l4 4-11 11Z"/>',
   shield: '<path d="M12 22s7-3 7-9V5l-7-3-7 3v8c0 6 7 9 7 9Z"/><path d="m9 12 2 2 4-4"/>',

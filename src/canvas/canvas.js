@@ -13,8 +13,8 @@ import { group, SceneLayer, SVG_NAMESPACE, updateWireHandle, updateWire, updateP
 import { CanvasViewport } from './viewport.js';
 
 export class DrawingCanvas extends CanvasViewport {
-  constructor({ svg, scene, draft, onZoom, signal }) {
-    super({ svg, onZoom });
+  constructor({ svg, scene, draft, onZoom, viewInsets, signal }) {
+    super({ svg, onZoom, viewInsets });
     this.scope = createScope({ signal });
     this.scene = scene;
     this.draft = draft;

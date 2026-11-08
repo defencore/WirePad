@@ -13,7 +13,7 @@ import { bindWorkspacePanels } from '../ui/panels.js';
 import { bindPinPicker } from '../ui/pin-picker.js';
 import { bindProjectControls } from '../ui/project-controls.js';
 import { bindWorkspaceActions } from '../ui/workspace-bindings.js';
-import { createWorkspaceView } from '../ui/workspace-view.js';
+import { createWorkspaceView, workspaceInsets } from '../ui/workspace-view.js';
 import { createCommands } from './commands.js';
 import { bindPersistence } from './persistence.js';
 import { createPreferences } from './preferences.js';
@@ -52,6 +52,7 @@ export function createApplication({ root = document, storage = new ProjectStorag
     scope.cleanup(panels.destroy);
     const canvas = new DrawingCanvas({
       svg, scene: element('scene'), draft: element('draft'), signal: scope.signal,
+      viewInsets: () => workspaceInsets(root, svg),
       onZoom: zoom => { element('zoom-value').textContent = `${Math.max(1, Math.round(zoom * 100))}%`; },
     });
     scope.cleanup(() => canvas.destroy());

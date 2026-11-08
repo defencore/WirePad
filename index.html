@@ -76,26 +76,6 @@
     </aside>
 
     <main class="workspace" aria-label="Wiring workspace">
-      <div class="workspace-toolbar">
-        <div class="tool-group" role="group" aria-label="Canvas tools">
-          <button type="button" data-mode="select" data-icon="cursor" title="Select and move components (V)" aria-label="Select" aria-keyshortcuts="V" aria-pressed="true"><span class="tool-label">Select</span> <kbd aria-hidden="true">V</kbd></button>
-          <button type="button" data-mode="wire" data-icon="wire" title="Connect pins and wires (W)" aria-label="Wire" aria-keyshortcuts="W" aria-pressed="false"><span class="tool-label">Wire</span> <kbd aria-hidden="true">W</kbd></button>
-          <button type="button" data-mode="trace" data-icon="trace" title="Highlight every connected pin and wire (T)" aria-label="Trace" aria-keyshortcuts="T" aria-pressed="false"><span class="tool-label">Trace</span> <kbd aria-hidden="true">T</kbd></button>
-          <button type="button" data-mode="pan" data-icon="hand" title="Pan (H; hold Shift or Space temporarily)" aria-label="Pan" aria-keyshortcuts="H" aria-pressed="false"><span class="tool-label">Pan</span> <kbd aria-hidden="true">H</kbd></button>
-        </div>
-        <span class="toolbar-divider"></span>
-        <div class="history" role="group" aria-label="History">
-          <button type="button" id="undo" class="button compact bare" data-icon="undo" title="Undo" aria-label="Undo" disabled><span class="mobile-label">Undo</span></button>
-          <button type="button" id="redo" class="button compact bare" data-icon="redo" title="Redo" aria-label="Redo" disabled><span class="mobile-label">Redo</span></button>
-        </div>
-        <div class="top-spacer"></div>
-        <div class="view-controls" role="group" aria-label="View controls">
-          <button type="button" id="fit" class="button compact bare fit" data-icon="fit" title="Fit drawing (F / Home)" aria-label="Fit view"><span class="mobile-label">Fit</span></button>
-          <span class="toolbar-divider"></span>
-          <button type="button" class="button compact panel-toggle" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-controls="library" aria-expanded="false"><span class="mobile-label">Parts</span></button>
-          <button type="button" class="button compact panel-toggle" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-controls="inspector" aria-expanded="false"><span class="mobile-label">Inspect</span></button>
-        </div>
-      </div>
       <section class="board" id="board" aria-label="Diagram canvas">
         <div id="workspace-warning" class="workspace-warning" role="alert" hidden>
           <span id="workspace-warning-text"></span>
@@ -105,8 +85,27 @@
           <g id="scene"></g>
           <g id="draft" pointer-events="none"></g>
         </svg>
+        <div class="canvas-toolbar" role="group" aria-label="Workspace controls">
+          <div class="panel-controls" role="group" aria-label="Workspace panels">
+            <button type="button" class="button compact panel-toggle" id="toggle-library" data-icon="library" title="Components" aria-label="Toggle components" aria-controls="library" aria-expanded="false"></button>
+            <button type="button" class="button compact panel-toggle" id="toggle-inspector" data-icon="sliders" title="Inspector" aria-label="Toggle inspector" aria-controls="inspector" aria-expanded="false"></button>
+          </div>
+          <div class="canvas-tools">
+            <div class="tool-group" role="group" aria-label="Canvas tools">
+              <button type="button" data-mode="select" data-icon="cursor" title="Select and move components (V)" aria-label="Select" aria-keyshortcuts="V" aria-pressed="true"><span class="tool-label">Select</span> <kbd aria-hidden="true">V</kbd></button>
+              <button type="button" data-mode="wire" data-icon="wire" title="Connect pins and wires (W)" aria-label="Wire" aria-keyshortcuts="W" aria-pressed="false"><span class="tool-label">Wire</span> <kbd aria-hidden="true">W</kbd></button>
+              <button type="button" data-mode="trace" data-icon="trace" title="Highlight every connected pin and wire (T)" aria-label="Trace" aria-keyshortcuts="T" aria-pressed="false"><span class="tool-label">Trace</span> <kbd aria-hidden="true">T</kbd></button>
+              <button type="button" data-mode="pan" data-icon="hand" title="Pan (H; hold Shift or Space temporarily)" aria-label="Pan" aria-keyshortcuts="H" aria-pressed="false"><span class="tool-label">Pan</span> <kbd aria-hidden="true">H</kbd></button>
+            </div>
+            <div class="history" role="group" aria-label="History">
+              <button type="button" id="undo" class="button compact bare" data-icon="undo" title="Undo" aria-label="Undo" disabled></button>
+              <button type="button" id="redo" class="button compact bare" data-icon="redo" title="Redo" aria-label="Redo" disabled></button>
+            </div>
+          </div>
+        </div>
         <div class="board-bottom">
-          <div class="canvas-guide">
+          <div class="canvas-guide" data-active="false">
+            <span id="canvas-hint" class="canvas-hint canvas-tip" data-icon="info"><span id="canvas-hint-text"></span></span>
             <div class="canvas-actions" role="group" aria-label="Canvas actions">
               <button type="button" id="cancel-wire" class="button canvas-action" data-icon="close" hidden><span id="cancel-wire-label">Cancel wire</span></button>
               <button type="button" id="add-bend" class="button canvas-action" data-icon="plus" aria-pressed="false" hidden>Add bend</button>
@@ -114,6 +113,7 @@
               <button type="button" id="toggle-move" class="button canvas-action" data-icon="sliders" aria-controls="move-controls" aria-expanded="false" hidden>Nudge</button>
               <button type="button" id="branch-wire" class="button canvas-action" data-icon="wire" aria-label="Add a branch from the selected wire" hidden>Add branch</button>
               <button type="button" id="inspect-wire" class="button canvas-action" data-icon="sliders" aria-label="Show wire details" hidden>Details</button>
+              <button type="button" id="delete-selection" class="button canvas-action danger" data-icon="trash" aria-label="Delete selection" title="Delete selection (Delete)" hidden>Delete</button>
               <button type="button" id="clear-trace" class="button canvas-action" data-icon="close" hidden>Clear trace</button>
             </div>
             <div id="move-controls" class="move-controls" role="group" aria-label="Move selection" hidden>
@@ -124,10 +124,13 @@
               <button type="button" class="button" data-nudge-x="1" data-nudge-y="0" aria-label="Move right" title="Move right">→</button>
             </div>
           </div>
-          <div class="zoom" role="group" aria-label="Zoom">
+          <div class="zoom" role="group" aria-label="Canvas navigation">
             <button type="button" class="button compact bare" id="zoom-out" data-icon="minus" aria-label="Zoom out" title="Zoom out"></button>
             <button type="button" class="button bare zoom-value" id="zoom-value" title="Actual size (100%)" aria-label="Reset zoom to actual size">100%</button>
             <button type="button" class="button compact bare" id="zoom-in" data-icon="plus" aria-label="Zoom in" title="Zoom in"></button>
+            <span class="toolbar-divider" aria-hidden="true"></span>
+            <button type="button" id="fit" class="button compact bare fit" data-icon="fit" title="Fit drawing (F / Home)" aria-label="Fit view"></button>
+            <button type="button" id="fit-selection" class="button compact bare fit" data-icon="selection" title="Fit selection (Shift+F)" aria-label="Fit selection" disabled></button>
           </div>
         </div>
         <div id="empty-board" class="empty-board" hidden>
@@ -157,8 +160,6 @@
 
   <footer class="statusbar">
     <span id="editor-status" role="status"><span class="status-dot" aria-hidden="true"></span><span id="editor-status-text">Ready</span></span>
-    <span class="status-separator"></span>
-    <span id="canvas-hint" class="canvas-hint"><span id="canvas-hint-text"></span></span>
     <span id="project-count"></span>
   </footer>
   <div class="toast" id="toast" role="status" hidden></div>

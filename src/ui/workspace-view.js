@@ -3,6 +3,16 @@ import { endpointName } from '../model/names.js';
 import { componentForPart } from '../model/part-component.js';
 import { requireElement } from './dom.js';
 
+export function workspaceInsets(root, svg) {
+  const frame = svg.getBoundingClientRect();
+  if (!frame.height) return {};
+  const top = root.querySelector('.canvas-toolbar').getBoundingClientRect();
+  const bottom = root.querySelector('.board-bottom').getBoundingClientRect();
+  const ratio = svg.clientHeight / frame.height;
+  return { top: Math.max(0, top.bottom - frame.top + 12) * ratio,
+    bottom: Math.max(0, frame.bottom - bottom.top + 12) * ratio };
+}
+
 export function createWorkspaceView({ editor, history, canvas, controls, panels, persistence, root = document }) {
   const element = id => requireElement(root, `#${id}`);
   const title = element('project-title');
@@ -20,6 +30,9 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
   const emptyBoard = element('empty-board');
   const undo = element('undo');
   const redo = element('redo');
+  const fitSelection = element('fit-selection');
+  const deleteSelection = element('delete-selection');
+  const guidePanel = root.querySelector('.canvas-guide');
   const moveToggle = element('toggle-move');
   const moveControls = element('move-controls');
   const warning = element('workspace-warning');
@@ -86,6 +99,7 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
     const tool = controls.wireTool?.kind;
     const editingWire = tool === 'from' || tool === 'to' || tool === 'add';
     const editableWire = selectedWire && editor.mode === 'select';
+    const selected = editor.selections.length > 0;
     const movable = controls.movable;
     if (!movable) moveOpen = false;
     moveToggle.hidden = !movable;
@@ -104,6 +118,9 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
     if (count.textContent !== total) count.textContent = total;
     undo.disabled = !history.canUndo;
     redo.disabled = !history.canRedo;
+    fitSelection.disabled = !selected || Boolean(editor.pending || editingWire);
+    deleteSelection.hidden = !selected || routing || editingWire || tool === 'bend' || controls.mode === 'pan';
+    guidePanel.dataset.active = String(routing || editingWire);
     cancelWire.hidden = !routing && !editingWire;
     cancelWireLabel.textContent = editingWire ? 'Cancel edit' : 'Cancel wire';
     addBend.hidden = !editableWire || (editingWire && tool !== 'add');

@@ -108,3 +108,21 @@ test('fit selection frames horizontal and vertical wires with a zero span on one
     }
   }
 });
+
+test('fit keeps drawing bounds clear of floating tools and navigation cards on a narrow canvas', () => {
+  const insets = { top: 132, bottom: 76 };
+  const canvas = Object.assign(Object.create(DrawingCanvas.prototype), {
+    svg: { clientWidth: 320, clientHeight: 600 }, viewInsets: () => insets, applyView() {},
+  });
+  const bounds = { x: -100, y: 50, width: 1000, height: 1800 };
+  for (const bottom of [76, 180]) {
+    insets.bottom = bottom;
+    canvas.fitBounds(bounds);
+    const project = (x, y) => ({ x: 160 + (x - canvas.center.x) * canvas.scale,
+      y: 300 + (y - canvas.center.y) * canvas.scale });
+    const topLeft = project(bounds.x, bounds.y), bottomRight = project(bounds.x + bounds.width, bounds.y + bounds.height);
+    assert.ok(topLeft.y >= insets.top - 1e-8);
+    assert.ok(bottomRight.y <= 600 - insets.bottom + 1e-8);
+    assert.ok(topLeft.x >= 0 && bottomRight.x <= 320);
+  }
+});

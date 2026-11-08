@@ -22,6 +22,8 @@ Open [WirePad on localhost](http://127.0.0.1:8080/). This development server dis
 6. Hold **Shift** or **Space** to use the hand tool temporarily, then drag to pan. Releasing the key restores the previous tool and keeps any unfinished wire. Middle/right mouse drag also pans in any tool. The wheel zooms at the cursor; **Shift + scroll** pans in the direction of your wheel or trackpad gesture without changing the zoom. **Alt + wheel** pans vertically. On touchscreens, drag empty canvas to pan and pinch to zoom. Collapse **Components** or **Inspector** from the toolbar for more drawing space.
 7. Use **Fit view** to frame the drawing, or **Shift + F** to frame the selection. Choose **Download PNG**, **Download SVG**, or **Copy image** from **Export**. Image copying uses the browser clipboard and requires a secure context.
 
+The editing tools and Undo/Redo float at the top-right of the canvas. Panel toggles stay at the top-left. Zoom, 100% reset, **Fit view** and **Fit selection** share the bottom-right navigation card; selection actions sit at the bottom-left. Fit leaves space for these controls. On narrow screens the Inspector docks below the canvas so the tools remain reachable.
+
 **Project → Open demo** opens an ESP32-S3 sensor node with a BME280 and a 3.3 V MAX3485 breakout. The example uses GPIO1 for SCL, GPIO2 for SDA, GPIO42 for UART TX, GPIO41 for UART RX, and GPIO40 for RS-485 direction control. The transceiver’s A and B terminals are available for field wiring.
 
 WirePad autosaves the active project to browser storage. Use **Project → Save project file** to download a versioned `.wirepad.json` file you can back up, share, or reopen with **Open project file**. Browser storage is separate for each site origin.

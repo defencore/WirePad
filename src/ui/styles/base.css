@@ -14,7 +14,6 @@
   --radius: 6px;
   --top: 52px;
   --status: 28px;
-  --toolbar: 44px;
   --panel-heading: 44px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 14px;
@@ -31,7 +30,6 @@ button:disabled { cursor: default; opacity: .36; }
 :where(button, a, input, select, summary, [tabindex]) { scroll-margin: 8px; }
 a { color: var(--accent-dark); }
 .icon { flex: 0 0 auto; width: 17px; height: 17px; vertical-align: middle; }
-.top-spacer { flex: 1; min-width: 0; }
 .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; transform: translateY(-160%); padding: 10px 14px; border: 2px solid white; border-radius: var(--radius); background: var(--accent-dark); color: white; font-weight: 600; }
 .skip-link:focus { transform: none; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 32px; padding: 0 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); cursor: pointer; font-size: 12px; font-weight: 550; white-space: nowrap; text-decoration: none; }
@@ -43,5 +41,5 @@ a { color: var(--accent-dark); }
 .button.danger { color: #a3474d; }
 .button > span .icon { width: 12px; height: 12px; }
 .copy-image[aria-busy="true"] { cursor: progress; }
-.top-divider, .toolbar-divider, .status-separator { width: 1px; flex: 0 0 1px; height: 18px; background: var(--line); }
+.top-divider, .toolbar-divider { width: 1px; flex: 0 0 1px; height: 18px; background: var(--line); }
 .topbar { position: relative; z-index: 8; display: flex; align-items: center; min-width: 0; gap: 8px; padding: 0 16px; background: #202a35; color: #f4f7fa; box-shadow: 0 1px 4px #17212d25; }

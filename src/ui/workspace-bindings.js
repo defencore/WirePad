@@ -36,6 +36,7 @@ export function bindWorkspaceActions({ editor, controls, commands, preferences, 
   scope.cleanup(toolbar.destroy);
   click('help', () => element('help-dialog').showModal());
   click('fit', event => commands.fit(event.shiftKey));
+  click('fit-selection', () => commands.fit(true));
   click('zoom-in', () => commands.zoom(1.25));
   click('zoom-out', () => commands.zoom(.8));
   click('zoom-value', () => commands.zoom(1));
@@ -55,6 +56,7 @@ export function bindWorkspaceActions({ editor, controls, commands, preferences, 
   click('branch-wire', commands.branchWire);
   click('inspect-wire', () => panels.set('inspector', true, { focus: true }));
   click('clear-trace', commands.clearTrace);
+  click('delete-selection', () => { commands.deleteSelection(); focusCanvas(); });
 
   const shortcuts = bindKeyboardShortcuts({
     commands, controls, library, projectControls, panels, cancel,
