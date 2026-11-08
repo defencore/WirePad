@@ -4,6 +4,20 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "dfrobot-txs0108e-dfr0844",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16", "p17", "p18", "p19", "p20"],
+      "source": {"label": "DFRobot DFR0844: V1.0 / cited manufacturer pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/17484/DFR0844_8-channel-logic-level-conversion_schematics_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer same-side pinmap, schematic and dimension/layout drawing. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "B", "count": 10}, {"id": "A", "count": 10}]
+      },
+      "bodyRegions": [
+        {"x": -13.0, "y": -7.75, "width": 26, "height": 15.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DFR0844",
     "name": "DFRobot Fermion: TXS0108E 8-Bit Level Translator (Breakout)",
     "manufacturer": "DFRobot",

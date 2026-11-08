@@ -480,6 +480,21 @@ export default [
   },
   {
     "id": "adafruit-module-6001",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA6001: EAGLE Adafruit Reversible USB Type A Plug Connector Breakout.brd; commit 61c86cfbb89a header geometry", "url": "https://github.com/adafruit/Adafruit-Reversible-USB-Type-A-Plug-Connector-Breakout-PCB/blob/61c86cfbb89a45a97a5046854997d486fac109d2/Adafruit%20Reversible%20USB%20Type%20A%20Plug%20Connector%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "8c352f9ac4e6f12a3f703ecfbcf2979145967388b0b76d5e04d6398b7fad49a3"
+      },
+      "bodyRegions": [
+        {"x": -7.62, "y": -7.112, "width": 15.24, "height": 14.224}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6001",
     "name": "Adafruit Reversible USB Type A Plug Connector Breakout",
     "manufacturer": "Adafruit",
@@ -669,6 +684,21 @@ export default [
   },
   {
     "id": "adafruit-module-5993",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA5993: EAGLE Adafruit USB Type C Vertical Breakout.brd; commit 412fb33dba25 header geometry", "url": "https://github.com/adafruit/Adafruit-USB-Type-C-Vertical-Breakout-PCB/blob/412fb33dba25c7b84994b1aa90161a8e67a379b2/Adafruit%20USB%20Type%20C%20Vertical%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_ROUND_76"}, {"id": "JP2", "count": 8, "package": "1X08_ROUND_76"}],
+        "boardSha256": "da6725da602cbdd4b940fde1702d3a8eeee2d3dcbc99dee6374f19a15fb376e5"
+      },
+      "bodyRegions": [
+        {"x": -15.24, "y": -7.62, "width": 30.48, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5993",
     "name": "Adafruit USB Type C Vertical Breakout - Downstream Connection",
     "manufacturer": "Adafruit",
@@ -817,6 +847,21 @@ export default [
   },
   {
     "id": "adafruit-module-6014",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp1-17"],
+      "source": {"label": "Adafruit ADA6014: EAGLE Adafruit FPC Breakout - Pi 5 DSI - RP2350 HSTX.brd; commit 78b551a2118c header geometry", "url": "https://github.com/adafruit/Adafruit-FPC-Breakout-PCB/blob/78b551a2118c356b7c2f6ffc1eb3b41b45943fb4/Adafruit%20FPC%20Breakout%20-%20Pi%205%20DSI%20-%20RP2350%20HSTX.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 17, "package": "1X17_ROUND70"}],
+        "boardSha256": "ae107af3e4a4f4da5236aa31211bdbf1ddb66dc1affe74ed65b89097b0787dea"
+      },
+      "bodyRegions": [
+        {"x": -22.225, "y": -6.35, "width": 44.45, "height": 12.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6014",
     "name": "Adafruit FPC Breakout for Raspberry Pi 5 DSI or RP2350 HSTX",
     "manufacturer": "Adafruit",
@@ -2146,6 +2191,21 @@ export default [
   },
   {
     "id": "adafruit-module-5862",
+    "mountingReview": {
+      "contactIds": ["jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp5-5", "jp5-6", "jp5-7", "jp5-8", "jp5-9", "jp5-10", "jp5-11", "jp5-12", "jp6-1", "jp6-2", "jp6-3", "jp6-4", "jp6-5", "jp6-6", "jp6-7", "jp6-8", "jp6-9", "jp6-10", "jp6-11", "jp6-12", "jp6-13", "jp6-14", "jp6-15", "jp6-16"],
+      "source": {"label": "Adafruit ADA5862: EAGLE Adafruit Grove and STEMMA QT FeatherWing.brd; commit 2815cb84b56f header geometry", "url": "https://github.com/adafruit/Adafruit-Grove-and-Stemma-QT-FeatherWing-PCB/blob/2815cb84b56f4e79c573aa0c641fadef878a512f/Adafruit%20Grove%20and%20STEMMA%20QT%20FeatherWing.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP5", "count": 12, "package": "1X12_ROUND"}, {"id": "JP6", "count": 16, "package": "1X16_ROUND"}],
+        "boardSha256": "3b141a893876de9a16e1d6bd295627d337f3b2170cd8ceb6f811103d7d8b21c2"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5862",
     "name": "Adafruit Grove and Stemma QT FeatherWing for all Feathers",
     "manufacturer": "Adafruit",

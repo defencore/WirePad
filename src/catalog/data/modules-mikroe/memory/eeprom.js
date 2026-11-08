@@ -4,6 +4,28 @@ import assets from "./eeprom-assets.js";
 export default [
   {
     "id": "mikroe-mikroe-1200-eeprom",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1200: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/EEPROM_Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.6685, "width": 25.4, "height": 29.337},
+        {"x": 9.97, "y": -3.111, "width": 2.92, "height": 5.08},
+        {"x": 9.97, "y": -8.191, "width": 2.92, "height": 5.08},
+        {"x": 9.97, "y": 7.049, "width": 2.92, "height": 5.08},
+        {"x": 9.97, "y": 1.969, "width": 2.92, "height": 5.08},
+        {"x": -12.89, "y": -3.111, "width": 2.92, "height": 5.08},
+        {"x": -12.89, "y": -8.191, "width": 2.92, "height": 5.08},
+        {"x": -12.89, "y": 7.049, "width": 2.92, "height": 5.08},
+        {"x": -12.89, "y": 1.969, "width": 2.92, "height": 5.08}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1200",
     "name": "EEPROM Click",
     "manufacturer": "MIKROE",
@@ -75,6 +97,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5889-eeprom11",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5889: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom_11_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5889",
     "name": "EEPROM 11 Click",
     "manufacturer": "MIKROE",
@@ -146,6 +183,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5885-eeprom13",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5885: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom_13_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5885",
     "name": "EEPROM 13 Click",
     "manufacturer": "MIKROE",
@@ -217,6 +269,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-2536-eeprom4",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-2536: v101 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom-4-click-2d-and-3d-files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-2536",
     "name": "EEPROM 4 Click",
     "manufacturer": "MIKROE",
@@ -288,6 +354,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4422-eeprom5",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4422: v2 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom_5_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4422",
     "name": "EEPROM 5 Click",
     "manufacturer": "MIKROE",
@@ -358,6 +439,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4421-eeprom7",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4421: v101 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom_7_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4421",
     "name": "EEPROM 7 Click",
     "manufacturer": "MIKROE",
@@ -428,6 +524,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5681-eeprom9",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5681: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom_9_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5681",
     "name": "EEPROM 9 Click",
     "manufacturer": "MIKROE",
@@ -499,6 +610,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-2729-eeram5v",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-2729: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/EERAM%205V%20Click_v100.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-2729",
     "name": "EERAM 5V Click",
     "manufacturer": "MIKROE",
@@ -569,6 +695,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4521-swieeprom",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4521: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/swi-eeprom-click-2d-3d-Files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4521",
     "name": "SWI EEPROM Click",
     "manufacturer": "MIKROE",
@@ -640,6 +781,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-1909-eeprom2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1909: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom-2-click-2d-and-3d-files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1909",
     "name": "EEPROM 2 Click",
     "manufacturer": "MIKROE",
@@ -710,6 +866,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-1989-eeprom3",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1989: v101a header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/eeprom-3-click-2d-and-3d-files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1989",
     "name": "EEPROM 3 Click",
     "manufacturer": "MIKROE",

@@ -4,6 +4,20 @@ import assets from "./temperature-assets.js";
 export default [
   {
     "id": "mikroe-mikroe-2554-fever",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-2554: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/fever-click-2d-and-3d-files-v100.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-2554",
     "name": "Fever Click",
     "manufacturer": "MIKROE",
@@ -75,6 +89,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-6135-irthermo4",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-6135: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/IR_Thermo_4_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-6135",
     "name": "IR Thermo 4 Click",
     "manufacturer": "MIKROE",
@@ -145,6 +174,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-2886-templog",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-2886: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/temp-log-2d-and-3d-files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7765, "y": -21.5395, "width": 25.553, "height": 43.079}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-2886",
     "name": "Temp-Log Click",
     "manufacturer": "MIKROE",
@@ -216,6 +259,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-3004-templog2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-3004: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/temp-log-2-click-2d-and-3d-files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.6885, "y": -21.42, "width": 25.377, "height": 42.84}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-3004",
     "name": "Temp-Log 2 Click",
     "manufacturer": "MIKROE",
@@ -287,6 +344,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-3442-templog5",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-3442: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/Temp-Log-5-click-v100-CAD.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-3442",
     "name": "Temp-Log 5 Click",
     "manufacturer": "MIKROE",
@@ -358,6 +429,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-3688-thermo13",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-3688: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo_13_click_2D_and_3D_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-3688",
     "name": "Thermo 13 Click",
     "manufacturer": "MIKROE",
@@ -429,6 +514,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-3662-thermo16",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-3662: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo_16_click_2D_and_3D_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-3662",
     "name": "Thermo 16 Click",
     "manufacturer": "MIKROE",
@@ -500,6 +600,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4829-thermo18",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4829: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/Thermo_18_Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4829",
     "name": "Thermo 18 Click",
     "manufacturer": "MIKROE",
@@ -570,6 +685,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4316-thermo20",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4316: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo_20_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4316",
     "name": "Thermo 20 Click",
     "manufacturer": "MIKROE",
@@ -640,6 +770,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4879-thermo21",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4879: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo_21_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4879",
     "name": "Thermo 21 Click",
     "manufacturer": "MIKROE",
@@ -711,6 +856,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5068-thermo22",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5068: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo_22_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5068",
     "name": "Thermo 22 Click",
     "manufacturer": "MIKROE",
@@ -782,6 +942,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5335-thermo25",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5335: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo_25_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5335",
     "name": "Thermo 25 Click",
     "manufacturer": "MIKROE",
@@ -853,6 +1028,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-1885-thermo3",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1885: v101 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/Thermo_3_click_2d_3d_files_v101ID.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1885",
     "name": "Thermo 3 Click",
     "manufacturer": "MIKROE",
@@ -924,6 +1114,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-2979-thermo7",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-2979: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo-7-click-2d-and-3d-files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -21.463, "width": 25.4, "height": 42.926}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-2979",
     "name": "Thermo 7 Click",
     "manufacturer": "MIKROE",
@@ -995,6 +1199,28 @@ export default [
   },
   {
     "id": "mikroe-mikroe-1362-irthermo5v",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1362: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/irthermo-5v-click-2d-and-3d-files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -15.7095, "width": 25.4, "height": 31.419},
+        {"x": -12.89, "y": 3.01, "width": 2.92, "height": 5.08},
+        {"x": -12.89, "y": 8.09, "width": 2.92, "height": 5.08},
+        {"x": -12.89, "y": -7.15, "width": 2.92, "height": 5.08},
+        {"x": -12.89, "y": -2.07, "width": 2.92, "height": 5.08},
+        {"x": 9.97, "y": -2.07, "width": 2.92, "height": 5.08},
+        {"x": 9.97, "y": -7.15, "width": 2.92, "height": 5.08},
+        {"x": 9.97, "y": 8.09, "width": 2.92, "height": 5.08},
+        {"x": 9.97, "y": 3.01, "width": 2.92, "height": 5.08}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1362",
     "name": "IrThermo 5V Click",
     "manufacturer": "MIKROE",
@@ -1066,6 +1292,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4205-surfacetemp",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4205: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/surface_temp_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7795, "y": -21.54, "width": 25.559, "height": 43.08}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4205",
     "name": "Surface Temp Click",
     "manufacturer": "MIKROE",
@@ -1137,6 +1377,20 @@ export default [
   },
   {
     "id": "mikroe-mikroe-4266-surfacetemp2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-4266: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/surface_temp_2_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "bodyRegions": [
+        {"x": -12.7795, "y": -21.54, "width": 25.559, "height": 43.08}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-4266",
     "name": "Surface Temp 2 Click",
     "manufacturer": "MIKROE",
@@ -1207,6 +1461,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-1840-thermo2",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-1840: v100 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/THERMO_2_Click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-1840",
     "name": "Thermo 2 Click",
     "manufacturer": "MIKROE",
@@ -1278,6 +1547,21 @@ export default [
   },
   {
     "id": "mikroe-mikroe-5466-thermo28",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16"],
+      "source": {"label": "MIKROE MIKROE-5466: v101 header geometry", "url": "https://download.mikroe.com/documents/2d-3d-files/thermo_28_click_2d_3d_files.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "All sixteen primary mikroBUS insertion centers use the manufacturer board CAD, 2.54 mm pitch and 22.86 mm row spacing. Auxiliary connectors are excluded. The source STEP extraction rounds contact coordinates to 0.001 mm; the reviewed insertion map uses nominal 2.54 mm steps relative to p1 with at most 0.001 mm residual. Canonical SVG, electrical anchors and native assets retain the stored source coordinates.",
+        "connectors": [{"id": "mikroBUS", "count": 16}]
+      },
+      "toleranceMm": 0.001,
+      "bodyRegions": [
+        {"x": -12.7, "y": -14.2875, "width": 25.4, "height": 28.575}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "MIKROE-5466",
     "name": "Thermo 28 Click",
     "manufacturer": "MIKROE",

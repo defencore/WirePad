@@ -4,6 +4,22 @@ import assets from "./interface-accessories-assets.js";
 export default [
   {
     "id": "adafruit-module-5764",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5764: EAGLE Adafruit TRRS Jack Breakout.brd; commit d6d4fe70bc72 header geometry", "url": "https://github.com/adafruit/Adafruit-TRRS-Jack-Breakout-PCB/blob/d6d4fe70bc727056076c4603e90112b8b1c6d006/Adafruit%20TRRS%20Jack%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "22ed10288836c165a08716b65faac7ea8582578ac22a20a411b1a1c56a1c2948"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -8.5725, "width": 17.78, "height": 17.145},
+        {"x": -3.152572, "y": -10.545372, "width": 6.305144, "height": 13.900937}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5764",
     "name": "Adafruit TRRS Jack Breakout Board",
     "manufacturer": "Adafruit",
@@ -114,6 +130,21 @@ export default [
   },
   {
     "id": "adafruit-module-5221",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9"],
+      "source": {"label": "Adafruit ADA5221: EAGLE Adafruit ANO Rotary Encoder Breakout.brd; commit b6d4e909afa8 header geometry", "url": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-Breakout-PCB/blob/b6d4e909afa879750c0bd96747585dc598a90a67/Adafruit%20ANO%20Rotary%20Encoder%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 9, "package": "1X09_ROUND_70"}],
+        "boardSha256": "ecc35215a50cb4866042534b3b198c152cf7d8af506e9fbf51969f25d188f852"
+      },
+      "bodyRegions": [
+        {"x": -17.78, "y": -19.05, "width": 35.56, "height": 38.1}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5221",
     "name": "Adafruit ANO Rotary Navigation Encoder Breakout PCB",
     "manufacturer": "Adafruit",
@@ -229,6 +260,21 @@ export default [
   },
   {
     "id": "adafruit-module-5740",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5740: EAGLE Adafruit ANO Rotary Encoder to I2C.brd; commit 4bf9961d2f3b header geometry", "url": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C/blob/4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901/Adafruit%20ANO%20Rotary%20Encoder%20to%20I2C.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "95372a6e3059ac47ff0f520a1dd098adda89328b4270d056187ba5d10d40ffa2"
+      },
+      "bodyRegions": [
+        {"x": -17.78, "y": -20.32, "width": 35.56, "height": 40.64}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5740",
     "name": "Adafruit ANO Rotary Navigation Encoder to I2C Stemma QT Adapter",
     "manufacturer": "Adafruit",
@@ -375,6 +421,21 @@ export default [
   },
   {
     "id": "adafruit-module-5752",
+    "mountingReview": {
+      "contactIds": ["jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp5-5", "jp5-6", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5752: EAGLE Adafruit I2C Quad Rotary Encoder Breakout.brd; commit 635fe5190105 header geometry", "url": "https://github.com/adafruit/Adafruit-I2C-Quad-Rotary-Encoder-Breakout-PCB/blob/635fe51901050a78f4ecf4533022d0e440b82875/Adafruit%20I2C%20Quad%20Rotary%20Encoder%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP5", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "e9e27dafc387b5d05fc62a56ea533aba4ea6a2c5db5dfdfd8205700e382c30ea"
+      },
+      "bodyRegions": [
+        {"x": -38.1, "y": -10.795, "width": 76.2, "height": 21.59}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5752",
     "name": "Adafruit I2C Quad Rotary Encoder Breakout with NeoPixel",
     "manufacturer": "Adafruit",
@@ -503,6 +564,21 @@ export default [
   },
   {
     "id": "adafruit-module-3296",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA3296: EAGLE DS1307 Rev B.brd; commit 22f84c8b77ca header geometry", "url": "https://github.com/adafruit/DS1307-breakout-board/blob/22f84c8b77cacd22bf1296fa9f996f89bf646ae6/DS1307%20Rev%20B.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_76"}],
+        "boardSha256": "ae99ee474b9a69ff822ea5a4571ee6e3b8ffcf42609e20a1ba296f9bb6c23ae6"
+      },
+      "bodyRegions": [
+        {"x": -10.795, "y": -12.7, "width": 21.59, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3296",
     "name": "Adafruit DS1307 Real Time Clock Assembled Breakout Board",
     "manufacturer": "Adafruit",

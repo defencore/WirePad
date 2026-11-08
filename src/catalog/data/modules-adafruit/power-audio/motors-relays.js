@@ -4,6 +4,22 @@ import assets from "./motors-relays-assets.js";
 export default [
   {
     "id": "adafruit-module-4409",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "Adafruit ADA4409: EAGLE Adafruit Non-Latching Relay Breakout.brd; commit 7559d509a129 header geometry", "url": "https://github.com/adafruit/Adafruit-STEMMA-Non-Latching-Mini-Relay-PCB/blob/7559d509a129d1555af92d410a75b5d89673a9e4/Adafruit%20Non-Latching%20Relay%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_OVAL"}],
+        "boardSha256": "c2be8d34850fb359397472b6a5f9f221e6c47563dec9921acb693dc238e6b145"
+      },
+      "bodyRegions": [
+        {"x": -17.145, "y": -10.795, "width": 34.29, "height": 21.59},
+        {"x": -6.52, "y": 5.109, "width": 10.5, "height": 7.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4409",
     "name": "Adafruit STEMMA Non-Latching Mini Relay - JST PH 2mm",
     "manufacturer": "Adafruit",
@@ -224,6 +240,21 @@ export default [
   },
   {
     "id": "adafruit-module-6109",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp4-9", "jp4-10"],
+      "source": {"label": "Adafruit ADA6109: EAGLE Adafruit A4988 Breakout.brd; commit f10f6b1d10ae header geometry", "url": "https://github.com/adafruit/Adafruit-A4988-Breakout-PCB/blob/f10f6b1d10aeeabc7a4a3445b81925c0a51d0e45/Adafruit%20A4988%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP4", "count": 10, "package": "1X10_ROUND70"}],
+        "boardSha256": "f76edbaddd1d4d1bd884d0c27dc001f92f505be01b886c3cbb2acb5faeed75d8"
+      },
+      "bodyRegions": [
+        {"x": -13.335, "y": -12.065, "width": 26.67, "height": 24.13}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6109",
     "name": "Adafruit A4988 Stepper Motor Driver Breakout Board",
     "manufacturer": "Adafruit",
@@ -320,6 +351,22 @@ export default [
   },
   {
     "id": "adafruit-module-2448",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6"],
+      "source": {"label": "Adafruit ADA2448: EAGLE Adafruit TB6612.brd; commit 514d5ded1aad header geometry", "url": "https://github.com/adafruit/Adafruit-TB6612-Motor-Driver-Breakout-PCB/blob/514d5ded1aade108d0698d0e718a92c22ff5496f/Adafruit%20TB6612.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 10, "package": "1X10_ROUND_76"}, {"id": "JP3", "count": 6, "package": "1X06-CLEANBIG"}],
+        "boardSha256": "cedb60196f79f332cdc5a4e1032a83177e4bdac621d1591b1a0ec7d3f4fdd34e"
+      },
+      "bodyRegions": [
+        {"x": -9.525, "y": -13.335, "width": 19.05, "height": 26.67},
+        {"x": -3.727, "y": -13.379, "width": 7.0, "height": 7.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2448",
     "name": "Adafruit TB6612 1.2A DC/Stepper Motor Driver Breakout Board",
     "manufacturer": "Adafruit",
@@ -406,6 +453,21 @@ export default [
   },
   {
     "id": "adafruit-module-3190",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "Adafruit ADA3190: EAGLE Adafruit DRV8871.brd; commit 4183ffe41cac header geometry", "url": "https://github.com/adafruit/Adafruit-DRV8871-Breakout-PCB/blob/4183ffe41cac746a327c60825b18fa814e081e0f/Adafruit%20DRV8871.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 4, "package": "1X04_ROUND_76"}],
+        "boardSha256": "9ef03092946747de0e64a29ff47a6b1207039135849c55bcba179b964e038a6a"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -12.065, "width": 20.32, "height": 24.13}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3190",
     "name": "Adafruit DRV8871 DC Motor Driver Breakout Board - 3.6A Max",
     "manufacturer": "Adafruit",
@@ -490,6 +552,21 @@ export default [
   },
   {
     "id": "adafruit-module-6353",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA6353: EAGLE Adafruit STSPIN220 Stepper Motor Driver.brd; commit 900c41820348 header geometry", "url": "https://github.com/adafruit/Adafruit-STSPIN220-Stepper-Motor-Driver-Breakout-Board-PCB/blob/900c418203489887894b71debe1849a6df259c0f/Adafruit%20STSPIN220%20Stepper%20Motor%20Driver.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "bac1581475de057a90a278dbeadd7aba8cc0df6f396fbdecd09bd06c0928e38c"
+      },
+      "bodyRegions": [
+        {"x": -13.335, "y": -12.065, "width": 26.67, "height": 24.13}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6353",
     "name": "Adafruit STSPIN220 Stepper Motor Driver Breakout Board",
     "manufacturer": "Adafruit",
@@ -580,6 +657,21 @@ export default [
   },
   {
     "id": "adafruit-module-3297",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp3-1", "jp3-2", "jp4-1", "jp4-2", "jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp5-5", "jp5-6", "jp5-7", "jp5-8"],
+      "source": {"label": "Adafruit ADA3297: EAGLE Adafruit DRV8833.brd; commit dda79a86d651 header geometry", "url": "https://github.com/adafruit/Adafruit-DRV8833-Motor-Driver-Breakout-PCB/blob/dda79a86d6518d05a35091cb8b03b9c0d57d04e2/Adafruit%20DRV8833.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 2, "package": "1X02_ROUND"}, {"id": "JP3", "count": 2, "package": "1X02_ROUND"}, {"id": "JP4", "count": 2, "package": "1X02_ROUND"}, {"id": "JP5", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "27d7f13138cc0737ffcc27ae1d0f3736ceae4fddda3dc768554e088108e951d2"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -12.7, "width": 17.78, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3297",
     "name": "Adafruit DRV8833 DC/Stepper Motor Driver Breakout Board",
     "manufacturer": "Adafruit",

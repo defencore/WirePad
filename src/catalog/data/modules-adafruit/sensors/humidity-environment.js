@@ -4,6 +4,21 @@ import assets from "./humidity-environment-assets.js";
 export default [
   {
     "id": "adafruit-module-4636",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4636: EAGLE Adafruit_SHTC3.brd; commit 762d5a5d96ba header geometry", "url": "https://github.com/adafruit/Adafruit-SHTC3-PCB/blob/762d5a5d96ba72ec14e1fc05e32a3f5ce00cde7c/Adafruit_SHTC3.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "58f96d715de1d60766b021b841543808f65f11b21a1254924ad5a0da364358af"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4636",
     "name": "Adafruit Sensirion SHTC3 Temperature & Humidity Sensor",
     "manufacturer": "Adafruit",
@@ -114,6 +129,21 @@ export default [
   },
   {
     "id": "adafruit-module-4716",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4716: EAGLE Adafruit MS8607.brd; commit 56dfd5af979f header geometry", "url": "https://github.com/adafruit/Adafruit-MS8607-PCB/blob/56dfd5af979fb63cff98ebcfe2170644b4439430/Adafruit%20MS8607.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND"}],
+        "boardSha256": "b934e2e1cc743b48e1141385f11722f6b817003f227f7512b7b2d94a8aa9cab1"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4716",
     "name": "Adafruit MS8607 Pressure Humidity Temperature PHT Sensor",
     "manufacturer": "Adafruit",
@@ -224,6 +254,21 @@ export default [
   },
   {
     "id": "adafruit-module-4867",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA4867: EAGLE Adafruit SCD30.brd; commit 54178bea411a header geometry", "url": "https://github.com/adafruit/Adafruit-SCD-30-PCB/blob/54178bea411a7661007c529d41ed45fce767d155/Adafruit%20SCD30.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "0b55346d46f6413a7a41913e75a0a980c3b62fff00667b5345b1194239c78bdc"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -12.7, "width": 50.8, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4867",
     "name": "Adafruit SCD-30 - NDIR True CO2 Temperature and Humidity Sensor",
     "manufacturer": "Adafruit",
@@ -334,6 +379,21 @@ export default [
   },
   {
     "id": "adafruit-module-4832",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA4832: EAGLE Adafruit HTU31D.brd; commit 9ac7a4470edb header geometry", "url": "https://github.com/adafruit/Adafruit-HTU31-PCB/blob/9ac7a4470edb8555ba33d1aba62f260fa4cc63da/Adafruit%20HTU31D.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "f225ef7711081dcb91d7792d8f43c19b019c4bf57821106275a0c732018d7a1e"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4832",
     "name": "Adafruit HTU31 Temperature & Humidity Sensor Breakout Board",
     "manufacturer": "Adafruit",
@@ -450,6 +510,21 @@ export default [
   },
   {
     "id": "adafruit-module-6478",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6478: EAGLE Adafruit STCC4 and SHT41 CO2 Temperature and Humidity Sensor.brd; commit 3bf8a8ea4042 header geometry", "url": "https://github.com/adafruit/Adafruit-STCC4-and-SHT41-CO2-Temperature-and-Humidity-Sensor-PCB/blob/3bf8a8ea4042964af182c617ce1ab904cc4a7bd1/Adafruit%20STCC4%20and%20SHT41%20CO2%20Temperature%20and%20Humidity%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "756e9efe91ab128ac8eae841599ca88b9bdba5e0506bd836947dba42974b1e23"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6478",
     "name": "Adafruit STCC4 and SHT41 - CO2, Temperature & Humidity Sensor",
     "manufacturer": "Adafruit",
@@ -566,6 +641,21 @@ export default [
   },
   {
     "id": "adafruit-module-3251",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA3251: EAGLE Adafruit Si7021 Temperature and Humidity.brd; commit 6ab3474d07ba header geometry", "url": "https://github.com/adafruit/Adafruit-Si7021-PCB/blob/6ab3474d07ba277c08b10f2d322f0f59968b0b9d/Adafruit%20Si7021%20Temperature%20and%20Humidity.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "476abc769a815dcfa9a74c83414bba0fdc080299cd7b882b0002fa3db7dbaa17"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3251",
     "name": "Adafruit Si7021 Temperature & Humidity Sensor Breakout Board",
     "manufacturer": "Adafruit",
@@ -676,6 +766,21 @@ export default [
   },
   {
     "id": "adafruit-module-5190",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA5190: EAGLE Adafruit SCD-41.brd; commit c83995482b4c header geometry", "url": "https://github.com/adafruit/Adafruit-SCD-4x-PCB/blob/c83995482b4c830a835caef158e6196a507025b3/Adafruit%20SCD-41.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_76"}],
+        "boardSha256": "ff2209c94618f266f03a1f8fcde63c90703752aaea600e6d5fa7c5a4af365881"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -11.43, "width": 25.4, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5190",
     "name": "Adafruit SCD-41 - True CO2 Temperature and Humidity Sensor",
     "manufacturer": "Adafruit",
@@ -792,6 +897,21 @@ export default [
   },
   {
     "id": "adafruit-module-1899",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA1899: EAGLE Adafruit HTU21D-F STEMMA QT.brd; commit 9a352b1841ff header geometry", "url": "https://github.com/adafruit/Adafruit-HTU21D-Breakout-PCB/blob/9a352b1841ff45b684a7263721490af9cc6a455f/Adafruit%20HTU21D-F%20STEMMA%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "6244b55dba42e5284ec43f8161aed0f176cc36af163e12a19896a7e13bd093cf"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1899",
     "name": "Adafruit HTU21D-F Temperature & Humidity Sensor Breakout Board",
     "manufacturer": "Adafruit",
@@ -902,6 +1022,21 @@ export default [
   },
   {
     "id": "adafruit-module-3660",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7"],
+      "source": {"label": "Adafruit ADA3660: EAGLE Adafruit BME680.brd; commit 2d1e857d88c1 header geometry", "url": "https://github.com/adafruit/Adafruit-BME680-PCB/blob/2d1e857d88c157422347d2568fdfcd76155c1997/Adafruit%20BME680.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07_ROUND_70"}],
+        "boardSha256": "482cb7b4bc94ba5d7bd31e36109b513204b307caf7318202cba29f0f747e9859"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3660",
     "name": "Adafruit BME680 - Temperature, Humidity, Pressure and Gas Sensor",
     "manufacturer": "Adafruit",

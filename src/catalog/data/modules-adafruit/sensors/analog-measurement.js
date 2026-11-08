@@ -4,6 +4,21 @@ import assets from "./analog-measurement-assets.js";
 export default [
   {
     "id": "adafruit-module-5832",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA5832: EAGLE Adafruit INA228 I2C Power Monitor.brd; commit 61b0d990f8e5 header geometry", "url": "https://github.com/adafruit/Adafruit-INA228-PCB/blob/61b0d990f8e5f2e6df1ee5d270c501d17f53242d/Adafruit%20INA228%20I2C%20Power%20Monitor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "e59bb5abc4fc6c6ccabb35757e24e5e2642fd812210468ee798deaf9143bba97"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -10.16, "width": 25.4, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5832",
     "name": "Adafruit INA228 - I2C 85V, 20-bit High or Low Side Power Monitor",
     "manufacturer": "Adafruit",
@@ -122,6 +137,22 @@ export default [
   },
   {
     "id": "adafruit-module-1164",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA1164: EAGLE Adafruit INA169 CurPowerMonitor.brd; commit 8c1084623d75 header geometry", "url": "https://github.com/adafruit/Adafruit-INA169-Breakout-PCB/blob/8c1084623d75d41d05dd5070c191f7a1176434ca/Adafruit%20INA169%20CurPowerMonitor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "b7a077685b223df3567e3263de127fa30daf9e99063459470749f3162796f435"
+      },
+      "bodyRegions": [
+        {"x": -11.43, "y": -10.485, "width": 22.86, "height": 20.97},
+        {"x": -3.627, "y": -10.491, "width": 7.0, "height": 7.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1164",
     "name": "INA169 Analog DC Current Sensor Breakout - 60V 5A Max",
     "manufacturer": "Adafruit",
@@ -216,6 +247,21 @@ export default [
   },
   {
     "id": "adafruit-module-6340",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA6340: EAGLE Adafruit INA237 Power Monitor PCB.brd; commit d62a2a17f071 header geometry", "url": "https://github.com/adafruit/Adafruit-INA237-Power-Monitor-PCB/blob/d62a2a17f07157d492c9cd14a48fe0efc3f8dbbc/Adafruit%20INA237%20Power%20Monitor%20PCB.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "75561ca68143f5acc0e6eda7f3be92d3379fd70b83fbf4751a1bc05687c8f385"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -10.16, "width": 25.4, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6340",
     "name": "Adafruit INA237 85V 10A 16-bit DC Current Voltage Power Monitor",
     "manufacturer": "Adafruit",
@@ -334,6 +380,21 @@ export default [
   },
   {
     "id": "adafruit-module-6062",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12", "jp3-13", "jp3-14", "jp3-15"],
+      "source": {"label": "Adafruit ADA6062: EAGLE Adafruit INA3221 Breakout.brd; commit 8512a5309b71 header geometry", "url": "https://github.com/adafruit/Adafruit-INA3221-Breakout-PCB/blob/8512a5309b714b62bf669fd1b85787a5ef051a16/Adafruit%20INA3221%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 15, "package": "1X15_ROUND_70"}],
+        "boardSha256": "74c75a06b769f428b50b97ebb83ad8ccfdb5a6e6c81e3d4e61904a286eed4f8e"
+      },
+      "bodyRegions": [
+        {"x": -19.177, "y": -11.43, "width": 38.354, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6062",
     "name": "Adafruit INA3221 - Triple 0-26 VDC, ±3.2 Amp Power Monitor",
     "manufacturer": "Adafruit",

@@ -4,6 +4,23 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "dfrobot-fermion-hcho-sen0563",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0563: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17619/SEN0563_fermion-mems-hcho-sensor_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0563",
     "name": "DFRobot Fermion: Formaldehyde Sensor (Breakout, 0-3ppm MEMS HCHO Detection, Low Power)",
     "manufacturer": "DFRobot",
@@ -50,6 +67,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-co-sen0564",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0564: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17640/SEN0564_mems-co-sensor_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0564",
     "name": "DFRobot Fermion: MEMS Carbon Monoxide CO Gas Detection Sensor (Breakout, 5-5000ppm)",
     "manufacturer": "DFRobot",
@@ -96,6 +130,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-ch4-sen0565",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0565: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17635/SEN0565_fermion-ch4-detection-sensor_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0565",
     "name": "DFRobot Fermion: MEMS Methane CH4 Gas Detection Sensor (Breakout, 1-10000ppm)",
     "manufacturer": "DFRobot",
@@ -142,6 +193,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-voc-sen0566",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0566: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17639/SEN0566_voc-gas-sensor_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0566",
     "name": "DFRobot Fermion: VOC Gas Sensor – Volatile Organic Compounds Detector (Breakout, 1-500ppm, MEMS)",
     "manufacturer": "DFRobot",
@@ -188,6 +256,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-nh3-sen0567",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0567: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17634/SEN0567_mems-nh3_schematics_v1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0567",
     "name": "DFRobot Fermion: NH3 Gas Sensor – Ammonia Detector (Breakout, 1-300ppm, MEMS, Low Power)",
     "manufacturer": "DFRobot",
@@ -234,6 +319,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-h2s-sen0568",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0568: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17643/SEN0568_mems-h2s-sensor_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0568",
     "name": "DFRobot Fermion: H2S Gas Sensor – Hydrogen Sulfide Detector (Breakout, 0.5-50ppm, MEMS, Low Power)",
     "manufacturer": "DFRobot",
@@ -280,6 +382,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-ethanol-sen0569",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0569: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17623/SEN0569_compact-etoh-detector_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0569",
     "name": "DFRobot Fermion: MEMS Ethanol Gas Sensor - Compact EtOH Detector (1-500ppm, Breakout)",
     "manufacturer": "DFRobot",
@@ -326,6 +445,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-smoke-sen0570",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0570: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17630/SEN0570_mems-smoke-detection-sensor_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0570",
     "name": "DFRobot Fermion: MEMS Smoke Detection Sensor - 10-1000ppm Range (Ethanol Compatible, Breakout)",
     "manufacturer": "DFRobot",
@@ -372,6 +508,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-odor-sen0571",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0571: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17642/SEN0571_mems-odor-smell-gas-detection-sensor_schematics_v1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0571",
     "name": "DFRobot Fermion: MEMS Odor Smell Gas Detection Sensor (Breakout, 0.5-50ppm)",
     "manufacturer": "DFRobot",
@@ -418,6 +571,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-h2-sen0572",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0572: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17636/SEN0572_mems-h2_schematics_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0572",
     "name": "DFRobot Fermion: MEMS Hydrogen H2 Gas Detection Sensor (Breakout, 0.1-1000ppm)",
     "manufacturer": "DFRobot",
@@ -464,6 +634,23 @@ export default [
   },
   {
     "id": "dfrobot-fermion-no2-sen0574",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0574: V1.0 / cited SKU schematic and shared SEN0570-DIP library header geometry", "url": "https://dfimg.dfrobot.com/wiki/17632/SEN0574_fermion-mems-no2-sensor_schematics_v1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer Altium PcbLib converted by native KiCad 10 footprint upgrade. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -6.5, "y": -6.5, "width": 13, "height": 13},
+        {"x": 1.8, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -0.74, "y": 5.75, "width": 1.5, "height": 1.5},
+        {"x": -3.28, "y": 5.75, "width": 1.5, "height": 1.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0574",
     "name": "DFRobot Fermion: MEMS Nitrogen Dioxide NO2 Gas Detection Sensor (Breakout, 0.1-10ppm)",
     "manufacturer": "DFRobot",

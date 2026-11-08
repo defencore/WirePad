@@ -74,6 +74,7 @@ export function createApplication({ root = document, storage = new ProjectStorag
     scope.cleanup(pinPicker.destroy);
     const inspector = bindInspector({ inspection: element('inspection'), editor, notify, focusCanvas,
       getKeepLeadPositions: () => controls.keepLeadPositions, setKeepLeadPositions: controls.setKeepLeadPositions,
+      fitLayout: () => canvas.fit(),
       autoRouteWire: commands.autoRouteWire, root, signal: scope.signal });
     scope.cleanup(inspector.destroy);
     const projectControls = bindProjectControls({ editor, canvas, savedProject, storage, notify, focusCanvas,

@@ -12,15 +12,33 @@ export const BREADBOARD_DEFAULTS = Object.freeze({
   splitRails: false,
 });
 
+export const BREADBOARD_LIMITS = Object.freeze({
+  rows: Object.freeze({ min: 1, max: 100 }),
+  cells: Object.freeze({ min: 1, max: 50 }),
+  rails: Object.freeze({ min: 0, max: 4 }),
+});
+
 const PITCH = 16;
 const MILLIMETRE_PITCH = 2.54;
 const CORE_X = 96;
 const CORE_Y = 96;
 // Existing A–E/F–J identities stay stable when either bank is resized.
-const BANK_COLUMNS = ["abcdeklmno", "fghijpqrst"];
 const SIDES = ["top", "bottom", "left", "right"];
 const RAIL_COLORS = ["#c15050", "#3e729e"];
-const MAX_RAILS = 4;
+const MAX_RAILS = BREADBOARD_LIMITS.rails.max;
+
+export function breadboardColumnId(bank, cell) {
+  if (![0, 1].includes(bank) || !Number.isInteger(cell) || cell < 0 || cell >= BREADBOARD_LIMITS.cells.max) {
+    throw new RangeError('Breadboard column needs a valid bank and cell index.');
+  }
+  let index = Math.floor(cell / 5) * 10 + bank * 5 + cell % 5;
+  let result = '';
+  do {
+    result = String.fromCharCode(97 + index % 26) + result;
+    index = Math.floor(index / 26) - 1;
+  } while (index >= 0);
+  return result;
+}
 
 export function normalizeBreadboardConfig(value = {}) {
   if (value === null || typeof value !== "object" || Array.isArray(value)) {
@@ -30,8 +48,7 @@ export function normalizeBreadboardConfig(value = {}) {
   for (const key of ["rows", "leftCells", "rightCells", "topRails", "bottomRails", "leftRails", "rightRails"]) {
     const count = value[key] === undefined ? BREADBOARD_DEFAULTS[key] : value[key];
     const cells = key === "leftCells" || key === "rightCells";
-    const minimum = key === "rows" || cells ? 1 : 0;
-    const maximum = key === "rows" ? 100 : cells ? 10 : MAX_RAILS;
+    const { min: minimum, max: maximum } = BREADBOARD_LIMITS[key === "rows" ? "rows" : cells ? "cells" : "rails"];
     if (!Number.isInteger(count) || count < minimum || count > maximum) {
       throw new RangeError(`Breadboard ${key} must be an integer from ${minimum} to ${maximum}.`);
     }
@@ -50,8 +67,8 @@ function hole(id, caption, x, y, description) {
 
 function terminalBanks(config) {
   return [config.leftCells, config.rightCells].map((count, bank) =>
-    Array.from(BANK_COLUMNS[bank].slice(0, count), (id, index) => ({
-      id, bank, x: CORE_X + (index + (bank ? config.leftCells + 2 : 0)) * PITCH,
+    Array.from({ length: count }, (_, index) => ({
+      id: breadboardColumnId(bank, index), bank, x: CORE_X + (index + (bank ? config.leftCells + 2 : 0)) * PITCH,
     })));
 }
 
@@ -120,7 +137,7 @@ export function createBreadboard(value = {}) {
     subtitle: `${config.rows} rows / ${pins.length} holes / configurable rails`,
     manufacturer: "Generic",
     source: "https://learn.adafruit.com/breadboards-for-beginners/breadboards",
-    description: "Representative configurable breadboard with independent left and right terminal strips in each row. Each side has 1–10 cells; the default is A–E and F–J with five cells each. Each colored rail is an independent conductor. Optional rail splits isolate the two halves. Dimensions and 2.54 mm grid are a wiring reference for a custom layout.",
+    description: "Representative configurable breadboard with independent left and right terminal strips in each row. Each side has 1–50 cells; the default is A–E and F–J with five cells each. Each colored rail is an independent conductor. Optional rail splits isolate the two halves. Dimensions and 2.54 mm grid are a wiring reference for a custom layout.",
     tags: ["breadboard", "solderless", "prototype", "prototyping", "terminal strip", "power rail", "2.54mm", "socket"],
     width: lastColumnX + (MAX_RAILS + 2) * PITCH,
     height: lastRowY + (MAX_RAILS + 2) * PITCH,
@@ -220,18 +237,24 @@ export default defineFamily("breadboard", [{
   component: breadboardComponent,
   render: breadboardArt,
   footprint: breadboardFootprint,
-  configuration: { key: "breadboard", normalize: normalizeBreadboardConfig, create: createBreadboard },
+  configuration: { key: "breadboard", normalize: normalizeBreadboardConfig, create: createBreadboard, limits: BREADBOARD_LIMITS },
   mounting: {
     type: "breadboard", pitch: MILLIMETRE_PITCH, canvasPitch: PITCH,
     contacts: component => {
       const pins = new Map(component.pins.map(pin => [pin.id, pin]));
       return component.internalConnections.filter(ids => !ids[0].includes("-")).flatMap(ids =>
-        ids.map(pinId => ({ pinId, x: pins.get(pinId).x, y: pins.get(pinId).y, group: ids[0], region: "terminal" })));
+        ids.map(pinId => ({ pinId, x: pins.get(pinId).x, y: pins.get(pinId).y, group: ids[0], conductor: ids[0], region: "terminal" })));
     },
     railContacts: component => {
       const pins = new Map(component.pins.map(pin => [pin.id, pin]));
-      return component.internalConnections.filter(ids => ids[0].includes("-")).flatMap(ids =>
-        ids.map(pinId => ({ pinId, x: pins.get(pinId).x, y: pins.get(pinId).y, group: ids[0], region: "rail" })));
+      const segments = new Map();
+      return component.internalConnections.filter(ids => ids[0].includes("-")).flatMap(ids => {
+        const rail = ids[0].slice(0, ids[0].lastIndexOf('-'));
+        const segment = segments.get(rail) ?? 0;
+        segments.set(rail, segment + 1);
+        return ids.map(pinId => ({ pinId, x: pins.get(pinId).x, y: pins.get(pinId).y,
+          group: ids[0], conductor: `${rail}/${segment}`, region: "rail" }));
+      });
     },
   },
 }]);

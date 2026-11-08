@@ -380,13 +380,20 @@ function nanoDefinition(id, model, subtitle, description, left, right, extras = 
     tags: ["arduino", "breadboard", "development board"],
   }, headers, { body: [18, length], color: arduinoBlue, note: boardNote }, nanoBodyArt, [88, nanoArtVariants[id].boardHeight]);
   const sku = nanoMountingSources[id];
+  const projection = boardProjection(entry.component, 88, nanoArtVariants[id].boardHeight);
+  const { usb: usbKind, boardHeight } = nanoArtVariants[id];
+  const [usbWidth, usbDepth] = { mini: [40, 39], micro: [35, 24], c: [45, 29] }[usbKind];
+  const physicalRectangle = (x, y, width, height) => ({ x: projection.x + x * projection.scale,
+    y: projection.y + y * projection.scale, width: width * projection.scale, height: height * projection.scale });
   return { ...entry, ...(sku ? { mounting: breadboardHeaderMounting({
     label: `Arduino ${model} ${sku} manufacturer mechanical drawing`,
     url: `https://docs.arduino.cc/resources/datasheets/${sku}-datasheet.pdf`,
   }, [
     { ids: left.map(pin => pin[0]), x: -7.62, y: -(left.length - 1) * 1.27 },
     { ids: right.map(pin => pin[0]), x: 7.62, y: -(right.length - 1) * 1.27 },
-  ], "Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.") } : {}) };
+  ], "Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.",
+  { regions: [physicalRectangle(1, 3, 86, boardHeight - 5), physicalRectangle((88 - usbWidth) / 2, 0, usbWidth, usbDepth)],
+    evidence: "The nanoBodyArt PCB rectangle and variant-specific USB shell are projected through the same boardProjection transform as the rendered body. Canvas padding and physical-header text are excluded." }) } : {}) };
 }
 
 const nanoRight = pins => [...pins.slice(2, 13).reverse(), ground("digital-gnd"), reset("digital-reset"), pins[0], pins[1]];

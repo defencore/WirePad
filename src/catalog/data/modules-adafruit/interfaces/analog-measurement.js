@@ -113,6 +113,21 @@ export default [
   },
   {
     "id": "adafruit-module-5870",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5870: EAGLE Adafruit MCP3421 ADC.brd; commit 3037fb9364ec header geometry", "url": "https://github.com/adafruit/Adafruit-MCP3421-18-Bit-ADC-PCB/blob/3037fb9364ec7dbc29817c3254bda21e8217cbe5/Adafruit%20MCP3421%20ADC.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "700ec37266b2d0b979bf80869bb8c452f1f8d4b8a8a14278db8f5bc4a4cea963"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5870",
     "name": "Adafruit MCP3421 18-Bit ADC - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -231,6 +246,21 @@ export default [
   },
   {
     "id": "adafruit-module-6432",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6432: EAGLE Adafruit ADS122C04 24-Bit ADC.brd; commit bb60e307305d header geometry", "url": "https://github.com/adafruit/Adafruit-ADS122C04-24-Bit-ADC-PCB/blob/bb60e307305d48648d0d77d3edcdef25bee5c94a/Adafruit%20ADS122C04%2024-Bit%20ADC.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "34b8736670da2cbc1154a81d4d6d4439c209634117e73bf0feff3ea2ba02c4d9"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6432",
     "name": "Adafruit ADS122C04 24-Bit ADC - 4 Channel 2-kSPS",
     "manufacturer": "Adafruit",
@@ -347,6 +377,21 @@ export default [
   },
   {
     "id": "adafruit-module-5836",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8"],
+      "source": {"label": "Adafruit ADA5836: EAGLE Adafruit ADS7830 Breakout PCB.brd; commit b796c6e98ecc header geometry", "url": "https://github.com/adafruit/Adafruit-ADS7830-PCB/blob/b796c6e98ecc7bddd24d97c2ce9e553dbf0edf7c/Adafruit%20ADS7830%20Breakout%20PCB.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}, {"id": "JP3", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "a5f2ada28d17e96535dd3feb708e814404966f7c631535775aff3d882636c35e"
+      },
+      "bodyRegions": [
+        {"x": -15.24, "y": -8.89, "width": 30.48, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5836",
     "name": "Adafruit ADS7830 8-Channel 8-Bit ADC with I2C",
     "manufacturer": "Adafruit",
@@ -579,6 +624,21 @@ export default [
   },
   {
     "id": "adafruit-module-6494",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8"],
+      "source": {"label": "Adafruit ADA6494: EAGLE Adafruit ADS7128 8-Channel ADC and GPIO Expander.brd; commit ecc6fd2b2e97 header geometry", "url": "https://github.com/adafruit/Adafruit-ADS7128-8-Channel-ADC-and-GPIO-Expander-PCB/blob/ecc6fd2b2e97ae7e0e1799c3c15e738a79b1287c/Adafruit%20ADS7128%208-Channel%20ADC%20and%20GPIO%20Expander.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}, {"id": "JP3", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "0e7b207298b736df652413b06d7e31a9bd38918d05259275ef048e20d1747e0d"
+      },
+      "bodyRegions": [
+        {"x": -15.24, "y": -8.89, "width": 30.48, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6494",
     "name": "Adafruit ADS7128 8-Channel ADC and GPIO Expander",
     "manufacturer": "Adafruit",

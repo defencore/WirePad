@@ -4,6 +4,21 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen19036",
+    "mountingReview": {
+      "contactIds": ["j6-1", "j6-2", "j6-3", "j6-4", "j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun SEN-19036: EAGLE SparkFun_dToF-TMF8820.brd; commit 740270a20d78 header geometry", "url": "https://github.com/sparkfun/SparkFun_Qwiic_dTof-TMF882X/blob/740270a20d78007335bffadc37cc784e1ea64e54/Hardware/TMF8820/SparkFun_dToF-TMF8820.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J6", "count": 4, "package": "1X04_NO_SILK"}, {"id": "J1", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "ce2672ea688fb0b3d9e82a1a6c4b8df23682f7ad103a7024476274df5f09323b"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-19036",
     "name": "SparkFun Qwiic dToF Imager - TMF8820",
     "manufacturer": "SparkFun",
@@ -110,6 +125,21 @@ export default [
   },
   {
     "id": "sparkfun-module-prt00449",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "SparkFun PRT-00449: EAGLE Sparkfun_RS232.brd; commit 1ffd9ab09586 header geometry", "url": "https://github.com/sparkfun/RS232_Shifter_SMD/blob/1ffd9ab0958647a191cd9c134b5008753b02ec4c/Hardware/Sparkfun_RS232.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 4, "package": "1X04"}],
+        "boardSha256": "72176fe86fd148bd84c9893b59ab478c8a89ebd3ecfc4716d72822c696e3154b"
+      },
+      "bodyRegions": [
+        {"x": -11.43, "y": -15.24, "width": 22.86, "height": 30.48}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "PRT-00449",
     "name": "SparkFun RS232 Shifter - SMD",
     "manufacturer": "SparkFun",
@@ -791,6 +821,22 @@ export default [
   },
   {
     "id": "sparkfun-module-bob16445",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8", "j2-9", "j2-10", "j2-11", "j2-12", "j2-13", "j2-14", "j2-15", "j2-16", "j2-17", "j2-18", "j2-19", "j2-20", "j2-21", "j2-22"],
+      "source": {"label": "SparkFun BOB-16445: EAGLE Micro_Bit_Breakout.brd; commit 1e9cd8063e3a header geometry", "url": "https://github.com/sparkfun/Micro_Bit_Breakout/blob/1e9cd8063e3ae1b69dbc29cd949a2d8854e48135/Hardware/Micro_Bit_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J2", "count": 22, "package": "1X22"}],
+        "boardSha256": "6a1da4c524601a02d45809646f337387dee1378127ec571eb224a47845b3ae8a"
+      },
+      "bodyRegions": [
+        {"x": -34.29, "y": -11.43, "width": 68.58, "height": 22.86},
+        {"x": -28.45, "y": -16.49, "width": 56.9, "height": 21.37}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-16445",
     "name": "SparkFun Qwiic micro:bit Breakout",
     "manufacturer": "SparkFun",
@@ -1597,6 +1643,22 @@ export default [
   },
   {
     "id": "sparkfun-module-bob13717",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12", "jp3-13", "jp3-14", "jp3-15", "jp3-16", "jp3-17", "jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp4-9", "jp4-10", "jp4-11", "jp4-12", "jp4-13", "jp4-14", "jp4-15", "jp4-16", "jp4-17"],
+      "source": {"label": "SparkFun BOB-13717: EAGLE SparkFun_Pi_Wedge_40-Pin_PreAssembled.brd; commit 6d93ad550771 header geometry", "url": "https://github.com/sparkfun/Pi_Wedge_40-Pin_PreAssembled/blob/6d93ad550771dc4c304dc220aea1f0c69fdad907/hardware/SparkFun_Pi_Wedge_40-Pin_PreAssembled.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 17, "package": "1X17_NO_SILK_KIT"}, {"id": "JP4", "count": 17, "package": "1X17_NO_SILK_KIT"}],
+        "boardSha256": "e45d47beff65d5605eea55c9646449787afbdc47cbc2582118fceda4cb18c848"
+      },
+      "bodyRegions": [
+        {"x": -41.275, "y": -32.766, "width": 82.55, "height": 65.532},
+        {"x": 37.993, "y": -30.194, "width": 8.5, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-13717",
     "name": "SparkFun Pi Wedge",
     "manufacturer": "SparkFun",

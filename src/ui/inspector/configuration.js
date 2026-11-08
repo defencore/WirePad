@@ -1,19 +1,21 @@
 import { configurationFor } from '../../catalog/index.js';
 
-function breadboardSettings(config) {
+function breadboardSettings(config, { limits }) {
+  const { rows, cells, rails: railLimits } = limits;
   const rails = [['topRails', 'Top'], ['bottomRails', 'Bottom'], ['leftRails', 'Left'], ['rightRails', 'Right']];
   return `<details class="inspector-section breadboard-layout" open><summary><span>Breadboard layout</span><span>${config.rows} rows</span></summary>
     <form id="breadboard-settings" data-part-configuration="breadboard" class="breadboard-settings">
-    <label>Terminal rows<input type="number" name="rows" min="1" max="100" step="1" value="${config.rows}" required></label>
+    <label>Terminal rows<input type="number" name="rows" min="${rows.min}" max="${rows.max}" step="1" value="${config.rows}" required></label>
     <div class="breadboard-terminal-fields">
-      <label>Left terminal cells<input type="number" name="leftCells" min="1" max="10" step="1" value="${config.leftCells}" required></label>
-      <label>Right terminal cells<input type="number" name="rightCells" min="1" max="10" step="1" value="${config.rightCells}" required></label>
+      <label>Left terminal cells<input type="number" name="leftCells" min="${cells.min}" max="${cells.max}" step="1" value="${config.leftCells}" required></label>
+      <label>Right terminal cells<input type="number" name="rightCells" min="${cells.min}" max="${cells.max}" step="1" value="${config.rightCells}" required></label>
     </div>
     <fieldset><legend>Power rails</legend><div class="breadboard-rail-fields">
-      ${rails.map(([name, caption]) => `<label>${caption}<select name="${name}">${[0, 1, 2, 3, 4].map(count =>
+      ${rails.map(([name, caption]) => `<label>${caption}<select name="${name}">${Array.from({ length: railLimits.max - railLimits.min + 1 }, (_, index) => railLimits.min + index).map(count =>
         `<option value="${count}"${config[name] === count ? ' selected' : ''}>${count}</option>`).join('')}</select></label>`).join('')}
     </div></fieldset>
     <label class="breadboard-split"><input type="checkbox" name="splitRails"${config.splitRails ? ' checked' : ''}>Split each power rail at its midpoint</label>
+    <p>${rows.min}–${rows.max} terminal rows and ${cells.min}–${cells.max} cells per side. Connected parts keep their electrical lines when the layout changes.</p>
     <p>Each terminal row connects the contacts on each side of the centre trench separately. Every power rail is independent. Split rails have two isolated halves.</p>
     <button type="submit" class="button" id="apply-breadboard">Apply layout</button>
   </form></details>`;
@@ -36,7 +38,7 @@ export function configurationMarkup(part, component) {
   if (!configuration) return '';
   const provider = providers.get(configuration.key);
   if (!provider) throw new Error(`No configuration interface for ${configuration.key}.`);
-  return provider.render(configuration.normalize(part[configuration.key]));
+  return provider.render(configuration.normalize(part[configuration.key]), configuration);
 }
 
 export function configurationValues(form) {

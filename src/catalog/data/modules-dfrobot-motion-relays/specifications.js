@@ -293,6 +293,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-9dof-sen0695",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+      "source": {"label": "DFRobot SEN0695: V1.0.0 / cited source DXF and manufacturer layout 2026-02-05 header geometry", "url": "https://dfimg.dfrobot.com/wiki/23756/SEN0695_bmi323-bmm350-9-dof-imu-sensor_stpfile_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer part-specific DXF mechanical facts and physical pinmap/schematic. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "J1", "count": 7}]
+      },
+      "bodyRegions": [
+        {"x": -12.0, "y": -9.5, "width": 24, "height": 19}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0695",
     "name": "DFRobot Fermion: Compact 9DOF IMU Sensor for Motion & Heading Integration (24×19 mm, I2C, Breakout)",
     "manufacturer": "DFRobot",
@@ -367,6 +381,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-10dof-sen0697",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+      "source": {"label": "DFRobot SEN0697: V1.0.0 / cited source DXF and manufacturer layout 2026-02-05 header geometry", "url": "https://dfimg.dfrobot.com/wiki/23758/SEN0697_bmi323-bmm350-bmp581-10-dof-sensor_stpfile_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer part-specific DXF mechanical facts and physical pinmap/schematic. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "J1", "count": 8}]
+      },
+      "bodyRegions": [
+        {"x": -12.0, "y": -9.5, "width": 24, "height": 19}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0697",
     "name": "DFRobot Fermion: Compact 10DOF IMU Sensor for Motion, Heading & Pressure Sensing (24×19mm, I2C, Breakout)",
     "manufacturer": "DFRobot",
@@ -441,6 +469,20 @@ export default [
   },
   {
     "id": "dfrobot-bmv080-sen0663",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+      "source": {"label": "DFRobot SEN0663: V1.0 / cited manufacturer mechanical drawing and physical pinmap header geometry", "url": "https://dfimg.dfrobot.com/wiki/23295/SEN0663_bmv080-pm2-5-sensor_stpfile_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer part-specific DXF mechanical facts and physical pinmap/schematic. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "J1", "count": 7}]
+      },
+      "bodyRegions": [
+        {"x": -12.0, "y": -10.0, "width": 24, "height": 20}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0663",
     "name": "DFRobot Fermion: BMV080 Air Quality Sensor (Breakout, PM1/PM2.5/PM10, I2C/SPI)",
     "manufacturer": "DFRobot",

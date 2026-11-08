@@ -4,6 +4,23 @@
 export default [
   {
     "id": "sparkfun-module-com18356",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5"],
+      "source": {"label": "SparkFun COM-18356: EAGLE SparkFun Buck Regulator - AP63203.brd; commit 63cdc8eadd12 header geometry", "url": "https://github.com/sparkfun/Buck_Regulator_AP63203/blob/63cdc8eadd1258e32630f4e8ce2c1978d6ed62a5/SparkFun%20Buck%20Regulator%20-%20AP63203/Hardware/SparkFun%20Buck%20Regulator%20-%20AP63203.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J2", "count": 5, "package": "1X05_NO_SILK"}],
+        "boardSha256": "187e843aab50591cc436ad8d1cc5d5a57a7d6cd7f2f42487715ceb242ece4308"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4},
+        {"x": -4.517, "y": 5.603, "width": 9.017, "height": 13.4},
+        {"x": 5.744, "y": -7.543, "width": 7.0, "height": 15.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "COM-18356",
     "name": "SparkFun Buck Regulator Breakout - 3.3V (AP63203)",
     "manufacturer": "SparkFun",

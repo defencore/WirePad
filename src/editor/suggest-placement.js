@@ -4,7 +4,7 @@ import { mountingScale } from '../model/mounting.js';
 import { pointOnPart } from '../geometry/parts.js';
 import { pinById } from '../model/component-pins.js';
 import { fitPart } from '../geometry/breadboard-placement.js';
-import { gap, mountingTargets, partCenter, relativeScale } from '../geometry/breadboard-targets.js';
+import { gap, mountingTargets, partCenter, poseAtCenter, relativeScale } from '../geometry/breadboard-targets.js';
 import { nominalLeads } from '../geometry/bendable-placement.js';
 
 export function suggestPlacement(project, componentId, hostPartId) {
@@ -27,7 +27,7 @@ export function suggestPlacement(project, componentId, hostPartId) {
       for (const hole of holes) {
         const part = { ...base, x: hole.point.x - first.x, y: hole.point.y - first.y };
         const center = partCenter(part, component);
-        const point = { x: center.x - component.width / 2, y: center.y - component.height / 2 };
+        const point = poseAtCenter(probe, component, center, { x: 1, y: 1 }, rotation);
         // Test the actual rounded input used by library insertion, so a click
         // never promises a fit that its final placement cannot reproduce.
         const raw = { ...probe, x: Math.round(point.x), y: Math.round(point.y), rotation };

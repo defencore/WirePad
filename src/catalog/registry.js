@@ -94,6 +94,27 @@ function validateMounting(mounting, component, context) {
       }
     }
   }
+  const validBodyRectangle = value => value && ['x', 'y', 'width', 'height'].every(key => Number.isFinite(value[key])) && value.width > 0 && value.height > 0;
+  if (mounting.body !== undefined && !validBodyRectangle(mounting.body)) throw new Error(`${context} mounting body has invalid bounds.`);
+  if (mounting.viewBounds !== undefined && !validBodyRectangle(mounting.viewBounds)) throw new Error(`${context} mounted view has invalid bounds.`);
+  if (mounting.renderMounted !== undefined && typeof mounting.renderMounted !== 'function') throw new Error(`${context} mounted view renderer must be a function.`);
+  if (mounting.calibration !== undefined) {
+    const calibration = mounting.calibration;
+    if (!calibration || !calibration.origin || ![calibration.origin.x, calibration.origin.y].every(Number.isFinite)) throw new Error(`${context} mounting calibration has an invalid source origin.`);
+    requirePositive(calibration.unitsPerMm, `${context} source canvas units per mm`);
+    if (calibration.toleranceMm !== undefined && (!Number.isFinite(calibration.toleranceMm) || calibration.toleranceMm < 0 || calibration.toleranceMm > .001)) throw new Error(`${context} mounting source precision must be between 0 and 0.001 mm.`);
+  }
+  if (mounting.bodyRegions !== undefined) {
+    if (!Array.isArray(mounting.bodyRegions) || !mounting.bodyRegions.length || mounting.bodyRegions.length > 32 ||
+        !mounting.bodyRegions.every(validBodyRectangle) || !validBodyRectangle(mounting.body)) {
+      throw new Error(`${context} mounting physical body regions need finite positive rectangles and an envelope.`);
+    }
+    requireText(mounting.bodyEvidence, `${context} physical body region evidence`);
+    const left = Math.min(...mounting.bodyRegions.map(region => region.x)), top = Math.min(...mounting.bodyRegions.map(region => region.y));
+    const right = Math.max(...mounting.bodyRegions.map(region => region.x + region.width)), bottom = Math.max(...mounting.bodyRegions.map(region => region.y + region.height));
+    if ([mounting.body.x - left, mounting.body.y - top, mounting.body.width - (right - left), mounting.body.height - (bottom - top)]
+      .some(delta => Math.abs(delta) > 1e-7)) throw new Error(`${context} mounting body must match its physical region envelope.`);
+  }
   const terminals = mounting.type === 'breadboard' ? mounting.contacts(component) : mounting.contacts;
   const rails = mounting.type === 'breadboard' && mounting.railContacts ? mounting.railContacts(component) : [];
   if (!Array.isArray(terminals) || !Array.isArray(rails)) throw new Error(`${context} mounting must identify physical contacts.`);
@@ -126,12 +147,18 @@ function validateMounting(mounting, component, context) {
     })) {
       throw new Error(`${context} mounting contacts must share the declared physical pitch grid.`);
     }
+    if (mounting.calibration && ['x', 'y'].some(axis => Math.abs(pin[axis] - mounting.calibration.origin[axis] - contact[axis] * mounting.calibration.unitsPerMm) > (mounting.calibration.toleranceMm ?? 0) * mounting.calibration.unitsPerMm + 1e-7)) {
+      throw new Error(`${context} mounting contact exceeds its reviewed source calibration precision.`);
+    }
   }
   if (mounting.type === 'breadboard-part' && component.pins.some(pin => !ids.has(pin.id))) throw new Error(`${context} part mounting must include every electrical contact.`);
   return Object.freeze({ ...mounting, ...(mounting.type !== 'breadboard' ? {
     source: Object.freeze({ ...mounting.source }),
     contacts: Object.freeze(contacts.map(contact => Object.freeze({ ...contact }))),
   } : {}), ...(mounting.body ? { body: Object.freeze({ ...mounting.body }) } : {}),
+    ...(mounting.bodyRegions ? { bodyRegions: Object.freeze(mounting.bodyRegions.map(region => Object.freeze({ ...region }))) } : {}),
+    ...(mounting.viewBounds ? { viewBounds: Object.freeze({ ...mounting.viewBounds }) } : {}),
+    ...(mounting.calibration ? { calibration: Object.freeze({ ...mounting.calibration, origin: Object.freeze({ ...mounting.calibration.origin }) }) } : {}),
     ...(mounting.origin ? { origin: Object.freeze({ ...mounting.origin }) } : {}),
     ...(mounting.roots ? { roots: Object.freeze(mounting.roots.map(root => Object.freeze({ ...root }))) } : {}) });
 }

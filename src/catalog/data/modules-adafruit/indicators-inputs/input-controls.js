@@ -4,6 +4,21 @@ import assets from "./input-controls-assets.js";
 export default [
   {
     "id": "adafruit-module-3246",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "Adafruit ADA3246: EAGLE Adafruit Mini Analog Thumbstick.brd; commit f09366288515 header geometry", "url": "https://github.com/adafruit/Adafruit-Mini-Analog-Thumbstick-Breakout-PCB/blob/f09366288515bc9d9ea436602506ed4d2c295544/Adafruit%20Mini%20Analog%20Thumbstick.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04_ROUND_76"}, {"id": "JP2", "count": 4, "package": "1X04_ROUND_76"}],
+        "boardSha256": "f7f080cded9e8fa79cbcb987f96a1d6e42778f1f1aee3718a1b1d1f9c55a47cd"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -13.335, "width": 25.4, "height": 26.67}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3246",
     "name": "Analog Mini Thumbstick Breakout Board",
     "manufacturer": "Adafruit",
@@ -116,6 +131,21 @@ export default [
   },
   {
     "id": "adafruit-module-4836",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4836: EAGLE Adafruit Wii Nunchuck Breakout Adapter.brd; commit d3f2e25c4f92 header geometry", "url": "https://github.com/adafruit/Adafruit-Wii-Nunchuck-Breakout-Adapter-PCB/blob/d3f2e25c4f9211553e32b36ffce03212f414ead3/Adafruit%20Wii%20Nunchuck%20Breakout%20Adapter.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "c4546fc875dfbe4e2075f1feab40bdafde7e62b77d1d9abbef205d43a66010fc"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4836",
     "name": "Adafruit Wii Nunchuck Breakout Adapter",
     "manufacturer": "Adafruit",
@@ -226,6 +256,22 @@ export default [
   },
   {
     "id": "adafruit-module-5753",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5753: EAGLE Adafruit PC Joystick seesaw Breakout.brd; commit 890610a1efbc header geometry", "url": "https://github.com/adafruit/Adafruit-PC-Joystick-to-seesaw-PCB/blob/890610a1efbc5e3b9c7dca5b28a125e36333b3f6/Adafruit%20PC%20Joystick%20seesaw%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "49a33982750e4fcf20a437257df0f9f2c2093d11b8ef8f1e82d043403bc4ebe9"
+      },
+      "bodyRegions": [
+        {"x": -20.32, "y": -12.7, "width": 40.64, "height": 25.4},
+        {"x": -19.685, "y": -18.542, "width": 39.243, "height": 21.082}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5753",
     "name": "Adafruit PC Joystick to seesaw I2C Adapter - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -345,6 +391,21 @@ export default [
   },
   {
     "id": "adafruit-module-5767",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp4-1", "jp4-2", "jp5-1", "jp5-2"],
+      "source": {"label": "Adafruit ADA5767: EAGLE Adafruit TSC2046 Breakout.brd; commit cf5b01b3b6ae header geometry", "url": "https://github.com/adafruit/Adafruit-TSC2046-PCB/blob/cf5b01b3b6ae479abf051a8d0d3e8ed5b05ba632/Adafruit%20TSC2046%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND"}, {"id": "JP4", "count": 2, "package": "1X02_ROUND"}, {"id": "JP5", "count": 2, "package": "1X02_ROUND"}],
+        "boardSha256": "c5d333ac199cc5742a71e55a8265e044355807627d10aa2cd7999ed52020d902"
+      },
+      "bodyRegions": [
+        {"x": -14.605, "y": -8.89, "width": 29.21, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5767",
     "name": "Adafruit TSC2046 SPI Resistive Touch Screen Controller",
     "manufacturer": "Adafruit",
@@ -437,6 +498,21 @@ export default [
   },
   {
     "id": "adafruit-module-5295",
+    "mountingReview": {
+      "contactIds": ["jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp5-5", "jp5-6", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5295: EAGLE Adafruit NeoSlider.brd; commit f0bf0d2795cd header geometry", "url": "https://github.com/adafruit/Adafruit-NeoSlider-PCB/blob/f0bf0d2795cdc2af0f31f70b032023b25afa5b69/Adafruit%20NeoSlider.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP5", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "f1a7c58f952b9b762a45958a734c825b333e04543c97e1609c1a7e50a7c881f9"
+      },
+      "bodyRegions": [
+        {"x": -38.1, "y": -10.795, "width": 76.2, "height": 21.59}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5295",
     "name": "Adafruit NeoSlider I2C QT Slide Potentiometer with 4 NeoPixels",
     "manufacturer": "Adafruit",
@@ -565,6 +641,22 @@ export default [
   },
   {
     "id": "adafruit-module-1580",
+    "mountingReview": {
+      "contactIds": ["cn1-1", "cn1-2", "cn1-3", "cn1-4", "cn2-1", "cn2-2", "cn2-3", "cn2-4"],
+      "source": {"label": "Adafruit ADA1580: EAGLE Adafruit AR1100.brd; commit 217534674def header geometry", "url": "https://github.com/adafruit/Adafruit-AR1100-Resistive-Touch-Controller-PCB/blob/217534674defab8d2040a7399b23d3cead345195/Adafruit%20AR1100.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "CN1", "count": 4, "package": "1X04-CLEANBIG"}, {"id": "CN2", "count": 4, "package": "1X04-CLEANBIG"}],
+        "boardSha256": "bbde6e38b6597e3e2a491f48a186845c77b5051d3ea935f107c9b875d7f151fe"
+      },
+      "bodyRegions": [
+        {"x": -13.97, "y": -10.16, "width": 27.94, "height": 20.32},
+        {"x": -13.998, "y": -5.08, "width": 9.2, "height": 10.13}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1580",
     "name": "Resistive Touch Screen to USB Mouse Controller - AR1100",
     "manufacturer": "Adafruit",
@@ -685,6 +777,21 @@ export default [
   },
   {
     "id": "adafruit-module-5423",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp4-1", "jp4-2", "jp5-1", "jp5-2"],
+      "source": {"label": "Adafruit ADA5423: EAGLE Adafruit TSC2007.brd; commit 8d182929dfc2 header geometry", "url": "https://github.com/adafruit/Adafruit-TSC2007-PCB/blob/8d182929dfc27dcdb407a2769cf416f9f63b4a16/Adafruit%20TSC2007.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP4", "count": 2, "package": "1X02_ROUND"}, {"id": "JP5", "count": 2, "package": "1X02_ROUND"}],
+        "boardSha256": "fc117b69fee0f38ff22c5cb08cfc226244586f3847bd2c43a5a9286bb40f5227"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -9.525, "width": 25.4, "height": 19.05}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5423",
     "name": "Adafruit TSC2007 I2C Resistive Touch Screen Controller",
     "manufacturer": "Adafruit",

@@ -14,7 +14,7 @@ export function partRotation(part, component) {
 }
 
 export function labelPosition(part, component) {
-  if (part.leads) {
+  if (part.leads || part.scale && mountingFor(component.id)?.viewBounds) {
     const bounds = partBounds(part, component);
     return translation((bounds.left + bounds.right) / 2 - part.x, bounds.bottom - part.y + 8);
   }
@@ -35,7 +35,15 @@ export function partBounds(part, component = componentForPart(part)) {
       .map(point => pointOnPart(part, { x: point.x, y: point.y }, component));
     return boundsForPoints(points);
   }
+  const view = part.scale && mountingFor(component.id)?.viewBounds;
+  if (view) return boundsForPoints(rectanglePoints(view).map(point => pointOnPart(part, point, component)));
   return defaultPartBounds(part, component);
+}
+
+export function partViewCenter(component) {
+  const view = mountingFor(component.id)?.viewBounds;
+  return view ? { x: view.x + view.width / 2, y: view.y + view.height / 2 }
+    : { x: component.width / 2, y: component.height / 2 };
 }
 
 function defaultPartBounds(part, component) {
@@ -58,9 +66,30 @@ function boundsForPoints(points) {
 }
 
 export function partBodyBounds(part, component = componentForPart(part)) {
-  const body = mountingFor(component.id)?.body;
-  return body ? boundsForPoints(rectanglePoints(body).map(point => pointOnPart(part, point, component)))
-    : defaultPartBounds(part, component);
+  const regions = partBodyRegions(part, component);
+  return { left: Math.min(...regions.map(region => region.left)), top: Math.min(...regions.map(region => region.top)),
+    right: Math.max(...regions.map(region => region.right)), bottom: Math.max(...regions.map(region => region.bottom)) };
+}
+
+export function partBodyRegions(part, component = componentForPart(part)) {
+  const profile = mountingFor(component.id);
+  const regions = profile?.bodyRegions ?? (profile?.body ? [profile.body] : null);
+  return regions ? regions.map(region => boundsForPoints(rectanglePoints(region)
+    .map(point => pointOnPart(part, point, component)))) : [defaultPartBounds(part, component)];
+}
+
+export function pointInsidePartBody(part, point, component = componentForPart(part)) {
+  return partBodyRegions(part, component).some(region => point.x > region.left && point.x < region.right &&
+    point.y > region.top && point.y < region.bottom);
+}
+
+export function bodyRegionsOverlap(first, second, tolerance = 1e-4) {
+  return first.some(a => second.some(b => Math.min(a.right, b.right) - Math.max(a.left, b.left) > tolerance &&
+    Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > tolerance));
+}
+
+export function partBodiesOverlap(first, second, tolerance = 1e-4) {
+  return bodyRegionsOverlap(partBodyRegions(first), partBodyRegions(second), tolerance);
 }
 
 function rotateVector({ x, y }, rotation) {

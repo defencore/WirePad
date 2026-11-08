@@ -270,6 +270,21 @@ export default [
   },
   {
     "id": "adafruit-module-2340",
+    "mountingReview": {
+      "contactIds": ["conn1-1", "conn1-2", "conn1-3", "conn1-4", "conn1-5", "conn1-6", "conn1-7", "conn1-8", "conn1-9", "conn1-10", "conn1-11", "conn1-12", "conn1-13", "conn1-14", "conn1-15", "conn1-16", "conn1-17", "conn1-18", "conn1-19", "conn1-20", "conn1-21", "conn1-22", "conn1-23", "conn1-24", "conn1-25"],
+      "source": {"label": "Adafruit ADA2340: EAGLE Adafruit Capacitive Touch HAT.brd; commit 6405328c281f header geometry", "url": "https://github.com/adafruit/Adafruit-Capacitive-Touch-HAT-PCB/blob/6405328c281fe7d9d8e9cbfa334d50c3eccef7ce/Adafruit%20Capacitive%20Touch%20HAT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "CONN1", "count": 25, "package": "1X25_ROUND_70MIL"}],
+        "boardSha256": "85134b8f8e5ebfa21509a6e7278778849874ef0de5cdeec40e52c8833dd36297"
+      },
+      "bodyRegions": [
+        {"x": -32.5, "y": -28.25, "width": 65, "height": 56.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2340",
     "name": "Adafruit Capacitive Touch HAT for Raspberry Pi - Mini Kit",
     "manufacturer": "Adafruit",

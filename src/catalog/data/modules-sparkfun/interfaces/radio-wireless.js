@@ -4,6 +4,21 @@ import assets from "./radio-wireless-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen13030",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp5-5"],
+      "source": {"label": "SparkFun SEN-13030: EAGLE RFID_Breakout.brd; commit 9db9110ae20f header geometry", "url": "https://github.com/sparkfun/RFID_Reader_Breakout/blob/9db9110ae20f114ab58c5dd117d58dd7b789db52/hardware/RFID_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP4", "count": 6, "package": "1X06"}, {"id": "JP5", "count": 5, "package": "1X05"}],
+        "boardSha256": "f31cdd61ddcdc6977ebe66c3aeea3003aa16e6c494baeb9af80f7b793013957f"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-13030",
     "name": "SparkFun RFID Reader Breakout",
     "manufacturer": "SparkFun",
@@ -67,6 +82,21 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl22032",
+    "mountingReview": {
+      "contactIds": ["j5-1", "j5-2", "j5-3", "j5-4", "j5-5", "j5-6", "j5-7", "j5-8", "j5-9", "j5-10", "j6-1", "j6-2", "j6-3", "j6-4", "j6-5", "j6-6", "j6-7", "j6-8", "j6-9", "j6-10"],
+      "source": {"label": "SparkFun WRL-22032: EAGLE SparkFun_Digi_XBee_Regulated_Qwiic.brd; commit 0e25ebd7364d header geometry", "url": "https://github.com/sparkfun/SparkFun_Digi_XBee_Regulated_Qwiic/blob/0e25ebd7364daae9f0bd36c49f88e7d2f2435074/Hardware/SparkFun_Digi_XBee_Regulated_Qwiic.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J5", "count": 10, "package": "1X10_NO_SILK"}, {"id": "J6", "count": 10, "package": "1X10_NO_SILK"}],
+        "boardSha256": "d524f5158f47f02ac1ae5b8a25624e624edc3c012a8cd97099ef56ac1cd4af8e"
+      },
+      "bodyRegions": [
+        {"x": -17.78, "y": -26.035, "width": 35.56, "height": 52.07}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-22032",
     "name": "SparkFun Digi XBee® Explorer Regulated",
     "manufacturer": "SparkFun",

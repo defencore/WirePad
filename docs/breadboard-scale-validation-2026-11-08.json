@@ -1,0 +1,573 @@
+{
+  "checked": "2026-11-08",
+  "stage": "Completed source and versioned-build verification before publication",
+  "scope": "Calibrated source-module insertion, precise physical socket coverage, compact front views, 50-cell banks and atomic conductor-preserving resize.",
+  "baselineRevision": "dc9733e54989304184ddb1fe7d1b10637dd730e4",
+  "catalog": {
+    "components": 2003,
+    "families": 146,
+    "contacts": 48146,
+    "physicalPads": 48499,
+    "svgViews": 4006,
+    "treeCurrent": true
+  },
+  "insertable": {
+    "total": 814,
+    "devboards": 14,
+    "sourceModules": 582,
+    "rigidParts": 177,
+    "bendableParts": 41,
+    "exactNewSourceGrid": 448,
+    "reviewed001mmSourcePrecision": 134
+  },
+  "sourceAudits": [
+    "catalog-breadboard-mounting-2026-11-08.json",
+    "catalog-source-module-mounting-2026-11-08.json",
+    "catalog-breadboard-parts-2026-11-08.json"
+  ],
+  "fullTests": {
+    "tests": 364,
+    "passed": 364,
+    "failed": 0,
+    "skipped": 0,
+    "optionalCADDependenciesAvailable": true,
+    "localhostChecksEnabled": true
+  },
+  "preservation": {
+    "components": 2003,
+    "families": 146,
+    "preserved": {
+      "componentIds": true,
+      "ordering": true,
+      "familyOwnership": true,
+      "canvasGeometries": 2003,
+      "labeledSvg": 2003,
+      "unlabeledSvg": 2003,
+      "footprints": 2003,
+      "generatedModels": 2003,
+      "symbolGeometry": 2003
+    },
+    "intentionalDifferences": [
+      {
+        "id": "breadboard",
+        "field": "definition",
+        "reason": "Breadboard descriptive cell limit updated from 10 to 50; geometry unchanged."
+      },
+      {
+        "id": "breadboard",
+        "field": "symbol",
+        "reason": "Breadboard descriptive cell limit updated from 10 to 50; geometry unchanged."
+      }
+    ]
+  },
+  "wholeSourceFit": {
+    "profiles": 582,
+    "fullHeaderFitPassed": 582,
+    "savedProjectRoundTripsPassed": 582,
+    "regression": "test/breadboard-module-scale.test.mjs"
+  },
+  "independentReview": {
+    "compactViewPoses": 2328,
+    "allPinInverseTransformsPassed": true,
+    "canonicalUnscaledArtUnchanged": true,
+    "exportFrontViewPassed": true,
+    "additionalRotatedScaledHostPoses": 72,
+    "remainingActionableFindings": [],
+    "findingsFixed": [
+      "Nine 2.54 mm full-header unions would short independent terminals on breadboard strips; excluded rather than dropping essential leads.",
+      "Wired holes that cross a moved split-rail boundary now reject the resize atomically.",
+      "Rotation controls now follow the visible front-view center at every quarter-turn."
+    ]
+  },
+  "desktopBrowser": {
+    "checks": [
+      "C6 antenna wings, side margins and below-USB holes are visible and directly clickable; actual PCB holes remain covered.",
+      "All30 actual C6 illustrated header pads align with breadboard holes; pad pitch16 equals hole pitch16, and header rows are9 pitches apart.",
+      "Real Inspector Apply grows both terminal banks10→11→15→50, preserving all30 C6 contacts, their conductors, an existing jumper, and exact Undo/Redo transactions.",
+      "Fifty cells render AA+ terminal headings and contacts correctly;51 is rejected before submit, and the full mounted circuit saves/reopens exactly."
+    ],
+    "errors": [],
+    "alignmentBefore": {
+      "pinPitch": 15.999999999999986,
+      "holePitch": 16,
+      "screenPinPitch": 15.456037323826308,
+      "rowSpan": 144,
+      "rowSpanPitches": 9,
+      "maxMetalError": 7.8065533497731e-06,
+      "scale": {
+        "x": 0.7874015748031495,
+        "y": 0.7874015748031495
+      },
+      "covered": 162,
+      "freeOutside": 798
+    },
+    "growth": [
+      {
+        "cells": 11,
+        "pinPitch": 15.999999999999986,
+        "holePitch": 16,
+        "screenPinPitch": 15.456037323826308,
+        "rowSpan": 144,
+        "rowSpanPitches": 9,
+        "maxMetalError": 7.80655328540894e-06,
+        "scale": {
+          "x": 0.7874015748031495,
+          "y": 0.7874015748031495
+        },
+        "covered": 160,
+        "freeOutside": 880
+      },
+      {
+        "cells": 15,
+        "pinPitch": 15.999999999999986,
+        "holePitch": 16,
+        "screenPinPitch": 15.456037323826308,
+        "rowSpan": 144,
+        "rowSpanPitches": 9,
+        "maxMetalError": 7.8065533497731e-06,
+        "scale": {
+          "x": 0.7874015748031495,
+          "y": 0.7874015748031495
+        },
+        "covered": 160,
+        "freeOutside": 1200
+      },
+      {
+        "cells": 50,
+        "pinPitch": 15.999999999999986,
+        "holePitch": 16,
+        "screenPinPitch": 8.23684207041424,
+        "rowSpan": 144,
+        "rowSpanPitches": 9,
+        "maxMetalError": 8.733461454768595e-06,
+        "scale": {
+          "x": 0.7874015748031495,
+          "y": 0.7874015748031495
+        },
+        "covered": 162,
+        "freeOutside": 3998
+      }
+    ]
+  },
+  "touchBrowser": {
+    "checks": [
+      "390px native touch Apply grows10+10 to11+11 while C6 stays fully seated and its existing jumper stays connected.",
+      "A previously masked C6-margin hole accepts a direct390px touch with no contact picker.",
+      "A fresh breadboard accepts50+50 cells on mobile;51 fails the form limit."
+    ],
+    "errors": []
+  },
+  "moduleBrowser": {
+    "checks": [
+      "Real library clicks insert six source-backed modules spanning Adafruit, SparkFun, DFRobot, mikroBUS and Seeed; each reviewed header fits and keeps non-header sockets separate.",
+      "Actual rendered drill centers match the breadboard; exact profiles stay below0.001screenpx and rounded mikroBUS stays within its explicit0.001mm source tolerance.",
+      "Scaled source modules show one physical front, omit duplicate mirrored artwork and annotation captions, and keep the compact view after detachment.",
+      "Existing canvas cache switches cleanly between canonical and compact views when explicit1x scale is added or removed.",
+      "Dragging a composite-source module over the breadboard centers its physical front and previews all8 insertion leads with no duplicate back view."
+    ],
+    "errors": [],
+    "samples": [
+      {
+        "id": "adafruit-module-5832",
+        "contacts": 8,
+        "expected": 8,
+        "totalPins": 23,
+        "omittedConnected": [],
+        "maxMetalError": 4.06728275071082e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "hasMirrorCaption": false
+      },
+      {
+        "id": "adafruit-module-3405",
+        "contacts": 28,
+        "expected": 28,
+        "totalPins": 41,
+        "omittedConnected": [],
+        "maxMetalError": 7.775439293729008e-06,
+        "maxElectricalError": 1.2710574864626038e-13,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "hasMirrorCaption": false
+      },
+      {
+        "id": "sparkfun-module-sen17372",
+        "contacts": 3,
+        "expected": 3,
+        "totalPins": 3,
+        "omittedConnected": [],
+        "maxMetalError": 5.9423152800133e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "hasMirrorCaption": false
+      },
+      {
+        "id": "dfrobot-fermion-sht31-f-sen0332",
+        "contacts": 6,
+        "expected": 6,
+        "totalPins": 6,
+        "omittedConnected": [],
+        "maxMetalError": 1.581100051519788e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "hasMirrorCaption": false
+      },
+      {
+        "id": "mikroe-mikroe-5917-2x2rgb",
+        "contacts": 16,
+        "expected": 16,
+        "totalPins": 16,
+        "omittedConnected": [],
+        "maxMetalError": 0.004514083985072768,
+        "maxElectricalError": 0.004513630212500175,
+        "sourceToleranceMm": 0.001,
+        "pitch": 16.006299212598407,
+        "hasMirrorCaption": false
+      },
+      {
+        "id": "seeed-grove-adxl335-101020051",
+        "contacts": 6,
+        "expected": 6,
+        "totalPins": 6,
+        "omittedConnected": [],
+        "maxMetalError": 1.7869025777244261e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "hasMirrorCaption": false
+      }
+    ]
+  },
+  "versionedBrowser": {
+    "revision": "board-corrections-20261108-final",
+    "build": "/tmp/wirepad-board-corrections-site-final",
+    "sourceAssetsChecked": 605,
+    "allSourceAssetsByteIdentical": true,
+    "checks": [
+      "C6 antenna wings, side margins and below-USB holes are visible and directly clickable; actual PCB holes remain covered.",
+      "All30 actual C6 illustrated header pads align with breadboard holes; pad pitch16 equals hole pitch16, and header rows are9 pitches apart.",
+      "Real Inspector Apply grows both terminal banks10→11→15→50, preserving all30 C6 contacts, their conductors, an existing jumper, and exact Undo/Redo transactions.",
+      "Fifty cells render AA+ terminal headings and contacts correctly;51 is rejected before submit, and the full mounted circuit saves/reopens exactly.",
+      "390px native touch Apply grows10+10 to11+11 while C6 stays fully seated and its existing jumper stays connected.",
+      "A previously masked C6-margin hole accepts a direct390px touch with no contact picker.",
+      "A fresh breadboard accepts50+50 cells on mobile;51 fails the form limit.",
+      "Rotated composite-source annotation margins remain directly wireable, and the rotation toolbar follows the visible physical front at all four angles.",
+      "Real library clicks insert six source-backed modules spanning Adafruit, SparkFun, DFRobot, mikroBUS and Seeed; each reviewed header fits and keeps non-header sockets separate.",
+      "Actual rendered drill centers match the breadboard; exact profiles stay below0.001screenpx and rounded mikroBUS stays within its explicit0.001mm source tolerance.",
+      "Scaled source modules show one physical front, omit duplicate mirrored artwork and annotation captions, and keep the compact view after detachment.",
+      "Existing canvas cache switches cleanly between canonical and compact views when explicit1x scale is added or removed.",
+      "Dragging a composite-source module over the breadboard centers its physical front and previews all8 insertion leads with no duplicate back view."
+    ],
+    "eligible": 814,
+    "network": {
+      "source-report": {
+        "revision": "board-corrections-20261108-final",
+        "scripts": 590,
+        "styles": 10,
+        "failures": []
+      },
+      "touch-source-report": {
+        "revision": "board-corrections-20261108-final",
+        "scripts": 590,
+        "styles": 10,
+        "failures": []
+      },
+      "source-modules-report": {
+        "revision": "board-corrections-20261108-final",
+        "scripts": 590,
+        "styles": 10,
+        "failures": []
+      }
+    },
+    "c6Growth": [
+      {
+        "cells": 11,
+        "contacts": 30,
+        "pinPitch": 15.999999999999986,
+        "rowSpanPitches": 9,
+        "maxMetalError": 7.80655328540894e-06
+      },
+      {
+        "cells": 15,
+        "contacts": 30,
+        "pinPitch": 15.999999999999986,
+        "rowSpanPitches": 9,
+        "maxMetalError": 7.8065533497731e-06
+      },
+      {
+        "cells": 50,
+        "contacts": 30,
+        "pinPitch": 15.999999999999986,
+        "rowSpanPitches": 9,
+        "maxMetalError": 8.733461454768595e-06
+      }
+    ],
+    "moduleSamples": [
+      {
+        "id": "adafruit-module-5832",
+        "partId": "part-9ab14eba7f0249b14c724705",
+        "contacts": 8,
+        "expected": 8,
+        "totalPins": 23,
+        "omitted": [
+          "conn3-2",
+          "conn3-3",
+          "conn3-1",
+          "conn3-4",
+          "conn4-2",
+          "conn4-3",
+          "conn4-1",
+          "conn4-4",
+          "x1-1",
+          "x1-2",
+          "x1-3",
+          "conn3-mt1",
+          "conn3-mt2",
+          "conn4-mt1",
+          "conn4-mt2"
+        ],
+        "omittedConnected": [],
+        "maxMetalError": 4.06728275071082e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "rotation": 90,
+        "scale": {
+          "x": 0.6299212598425197,
+          "y": 0.6299212598425197
+        },
+        "physicalBounds": {
+          "left": 199.496062992126,
+          "top": 207.49606299212599,
+          "right": 328.503937007874,
+          "bottom": 368.503937007874
+        },
+        "hasMirrorCaption": false,
+        "frontTransforms": [
+          "translate(179 125.6) scale(10)"
+        ],
+        "allDrawnContacts": 23
+      },
+      {
+        "id": "adafruit-module-3405",
+        "partId": "part-011a24556c8b4aa9bf202043",
+        "contacts": 28,
+        "expected": 28,
+        "totalPins": 41,
+        "omitted": [
+          "x1-1",
+          "x1-2",
+          "x4-sprt-4",
+          "x4-sprt-3",
+          "x4-sprt-1",
+          "x4-sprt-2",
+          "x4-vbus",
+          "x4-d-",
+          "x4-dplus",
+          "x4-id",
+          "x4-gnd",
+          "x4-base-1",
+          "x4-base-2"
+        ],
+        "omittedConnected": [],
+        "maxMetalError": 7.775439293729008e-06,
+        "maxElectricalError": 1.2710574864626038e-13,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "rotation": 90,
+        "scale": {
+          "x": 0.6299212598425197,
+          "y": 0.6299212598425197
+        },
+        "physicalBounds": {
+          "left": 207.49606299212593,
+          "top": -51.37007874015751,
+          "right": 352.50393700787396,
+          "bottom": 272.8440944881889
+        },
+        "hasMirrorCaption": false,
+        "frontTransforms": [
+          "translate(311 138.3) scale(10)"
+        ],
+        "allDrawnContacts": 41
+      },
+      {
+        "id": "sparkfun-module-sen17372",
+        "partId": "part-426f6341f342d08390884572",
+        "contacts": 3,
+        "expected": 3,
+        "totalPins": 3,
+        "omitted": [],
+        "omittedConnected": [],
+        "maxMetalError": 5.9423152800133e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "rotation": 90,
+        "scale": {
+          "x": 0.6299212598425197,
+          "y": 0.6299212598425197
+        },
+        "physicalBounds": {
+          "left": 207.49606299212599,
+          "top": 207.49606299212599,
+          "right": 344.503937007874,
+          "bottom": 288.503937007874
+        },
+        "hasMirrorCaption": false,
+        "frontTransforms": [
+          "translate(115.5 131.95) scale(10)"
+        ],
+        "allDrawnContacts": 3
+      },
+      {
+        "id": "dfrobot-fermion-sht31-f-sen0332",
+        "partId": "part-698cff9d7eec2361c771f51b",
+        "contacts": 6,
+        "expected": 6,
+        "totalPins": 6,
+        "omitted": [],
+        "omittedConnected": [],
+        "maxMetalError": 1.581100051519788e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "rotation": 90,
+        "scale": {
+          "x": 0.6299212598425197,
+          "y": 0.6299212598425197
+        },
+        "physicalBounds": {
+          "left": 205.73228346456693,
+          "top": 211.65354330708664,
+          "right": 307.5275590551181,
+          "bottom": 332.3464566929134
+        },
+        "hasMirrorCaption": false,
+        "frontTransforms": [
+          "translate(147 104) scale(10)"
+        ],
+        "allDrawnContacts": 6
+      },
+      {
+        "id": "mikroe-mikroe-5917-2x2rgb",
+        "partId": "part-ddacdb21ba95db30474c099a",
+        "contacts": 16,
+        "expected": 16,
+        "totalPins": 16,
+        "omitted": [],
+        "omittedConnected": [],
+        "maxMetalError": 0.004514083985072768,
+        "maxElectricalError": 0.004513630212500175,
+        "sourceToleranceMm": 0.001,
+        "pitch": 16.006299212598407,
+        "rotation": 0,
+        "scale": {
+          "x": 0.6299212598425197,
+          "y": 0.6299212598425197
+        },
+        "physicalBounds": {
+          "left": 207.49606299212599,
+          "top": 187.49921259842523,
+          "right": 368.503937007874,
+          "bottom": 368.50708661417326
+        },
+        "hasMirrorCaption": false,
+        "frontTransforms": [
+          "translate(179 166.875) scale(10)"
+        ],
+        "allDrawnContacts": 16
+      },
+      {
+        "id": "seeed-grove-adxl335-101020051",
+        "partId": "part-683fd8cfd811b8720a0d16fc",
+        "contacts": 6,
+        "expected": 6,
+        "totalPins": 6,
+        "omitted": [],
+        "omittedConnected": [],
+        "maxMetalError": 1.7869025777244261e-06,
+        "maxElectricalError": 0,
+        "sourceToleranceMm": 0,
+        "pitch": 16,
+        "rotation": 90,
+        "scale": {
+          "x": 0.6299212598425197,
+          "y": 0.6299212598425197
+        },
+        "physicalBounds": {
+          "left": 99.27559055118112,
+          "top": 208.50393700787401,
+          "right": 252.72440944881893,
+          "bottom": 335.496062992126
+        },
+        "hasMirrorCaption": false,
+        "frontTransforms": [
+          "translate(152 145) scale(10)"
+        ],
+        "allDrawnContacts": 6
+      }
+    ],
+    "rotationToolbar": [
+      {
+        "angle": 0,
+        "error": 1.9836425849462103e-05
+      },
+      {
+        "angle": 90,
+        "error": 1.9836425849462103e-05
+      },
+      {
+        "angle": 180,
+        "error": 1.9836425849462103e-05
+      },
+      {
+        "angle": 270,
+        "error": 1.9836425849462103e-05
+      }
+    ],
+    "annotationMargin": {
+      "hostId": "part-c90da51acb0fe117f5e30915",
+      "pinId": "k27",
+      "x": 608.2983785388769,
+      "y": 494.6001977416135
+    },
+    "exports": [
+      {
+        "name": "c6-circuit",
+        "svgBytes": 75386,
+        "pngBytes": 159046,
+        "pngDimensions": {
+          "width": 1184,
+          "height": 1802
+        },
+        "pngSha256": "5b6c86433e09e0e11ca099739b3aea384e13ad1f0f2d39fda0fb786ae61dc299"
+      },
+      {
+        "name": "source-module-circuit",
+        "svgBytes": 151095,
+        "pngBytes": 274569,
+        "pngDimensions": {
+          "width": 1824,
+          "height": 2442
+        },
+        "pngSha256": "47d92426a53bcda6bb1dcc4793163417ffd4f172f9de9a1c669e69eb9c8d236e"
+      }
+    ],
+    "errors": []
+  },
+  "buildEquivalence": {
+    "revision": "board-corrections-20261108-final",
+    "sourceAssets": 605,
+    "javaScriptModules": 590,
+    "stylesheets": 10,
+    "allByteIdentical": true
+  },
+  "whitespace": "git diff --check passed",
+  "accuracyScope": "Mounting metadata leaves existing per-component KiCad/CAD assessments unchanged. Generated 3D models remain approximate.",
+  "artifactScope": "Local build and screenshot paths identify review artifacts; they are not shipped application files.",
+  "proofSha256": "163a9e80a8efe9f672f6b766c05ee81154d84193c064420c1c57773affe57ab3"
+}

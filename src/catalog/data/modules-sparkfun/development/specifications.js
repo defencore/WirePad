@@ -505,6 +505,23 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl15663",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8", "j2-9", "j2-10", "j2-11", "j2-12", "j4-1", "j4-2", "j4-3", "j4-4", "j4-5", "j4-6", "j4-7", "j4-8", "j4-9", "j4-10", "j4-11", "j4-12", "j4-13", "j4-14", "j4-15", "j4-16"],
+      "source": {"label": "SparkFun WRL-15663: EAGLE ESP32_Thing_Plus.brd; commit ed6d941070fa header geometry", "url": "https://github.com/sparkfun/ESP32_Thing_Plus/blob/ed6d941070fa7756af6d2e24bdcfed8e27b2734a/Hardware/ESP32_Thing_Plus.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J2", "count": 12, "package": "1X12_SM_SQ_NOSILK"}, {"id": "J4", "count": 16, "package": "1X16_SM_SQ_NOSILK"}],
+        "boardSha256": "2d8ad41aa8942343e4000bf90b9a1adba8d3b31a5b996843e28cd5cdbba27a75"
+      },
+      "bodyRegions": [
+        {"x": -11.43, "y": -29.21, "width": 22.86, "height": 58.42},
+        {"x": -9.127, "y": -29.297, "width": 18.254, "height": 25.754},
+        {"x": -3.999, "y": 24.9932, "width": 8.04, "height": 5.62}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-15663",
     "name": "SparkFun Thing Plus - ESP32 WROOM (Micro-B)",
     "manufacturer": "SparkFun",
@@ -606,6 +623,24 @@ export default [
   },
   {
     "id": "sparkfun-module-dev13907",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j1-7", "j1-8", "j1-9", "j1-10", "j1-11", "j1-12", "j1-13", "j1-14", "j1-15", "j1-16", "j1-17", "j1-18", "j1-19", "j1-20", "j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8", "j2-9", "j2-10", "j2-11", "j2-12", "j2-13", "j2-14", "j2-15", "j2-16", "j2-17", "j2-18", "j2-19", "j2-20"],
+      "source": {"label": "SparkFun DEV-13907: EAGLE esp32-thing.brd; commit fb2dac4c1c49 header geometry", "url": "https://github.com/sparkfun/ESP32_Thing/blob/fb2dac4c1c493854c3db8a74acc9377a38db2b4a/Hardware/esp32-thing.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 20, "package": "1X20_NOSILK"}, {"id": "J2", "count": 20, "package": "1X20_NOSILK"}],
+        "boardSha256": "35caa64b3d683df10ced0ecfc5b1c8b9020ced8027c273202ede50298bb30c88"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -29.464, "width": 25.4, "height": 58.928},
+        {"x": -12.524, "y": -29.491, "width": 24.861, "height": 9.52},
+        {"x": -12.08, "y": 24.4955, "width": 11.0, "height": 6.0},
+        {"x": 3.4, "y": 21.895, "width": 5.9, "height": 7.6}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DEV-13907",
     "name": "SparkFun ESP32 Thing",
     "manufacturer": "SparkFun",

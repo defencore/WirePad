@@ -4,6 +4,21 @@ import assets from "./pressure-force-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen11084",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6"],
+      "source": {"label": "SparkFun SEN-11084: EAGLE MPL3115A2_breakout.brd; commit d80362a56081 header geometry", "url": "https://github.com/sparkfun/MPL3115A2_Breakout/blob/d80362a56081f9dc7d808d2cca5a535589d9becb/hardware/MPL3115A2_breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP4", "count": 6, "package": "1X06"}],
+        "boardSha256": "6d2783544d5f195a3d9c9c5cbe91f55ecc3868090c20f93d713f7d9901c9cfa0"
+      },
+      "bodyRegions": [
+        {"x": -7.62, "y": -8.89, "width": 15.24, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-11084",
     "name": "SparkFun Altitude/Pressure Sensor Breakout - MPL3115A2",
     "manufacturer": "SparkFun",
@@ -78,6 +93,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen12909",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7"],
+      "source": {"label": "SparkFun SEN-12909: EAGLE SparkFun_MS5803-14BA_Breakout.brd; commit 06fa9f23e3c6 header geometry", "url": "https://github.com/sparkfun/MS5803-14BA_Breakout/blob/06fa9f23e3c6b21b5588d30fa55342043b2a4e08/Hardware/SparkFun_MS5803-14BA_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07"}],
+        "boardSha256": "ea4fdbb5d35926808256912c77625c266208abba31b55c65607978c79d05f015"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -8.89, "width": 20.32, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-12909",
     "name": "SparkFun Pressure Sensor Breakout - MS5803-14BA",
     "manufacturer": "SparkFun",
@@ -152,6 +182,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen16476",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4", "j4-1", "j4-2"],
+      "source": {"label": "SparkFun SEN-16476: EAGLE SparkFun_MicroPressure_Sensor.brd; commit 8dbe741d6e93 header geometry", "url": "https://github.com/sparkfun/MicroPressure_Sensor/blob/8dbe741d6e9372edd12e93c4f34f845914d4b4b4/Hardware/SparkFun_MicroPressure_Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}, {"id": "J4", "count": 2, "package": "1X02_NO_SILK"}],
+        "boardSha256": "30943a1915c9292524e86fd2e149895d0986dbd8e9352348d240aa1b6b0a1b42"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-16476",
     "name": "SparkFun Qwiic MicroPressure Sensor",
     "manufacturer": "SparkFun",

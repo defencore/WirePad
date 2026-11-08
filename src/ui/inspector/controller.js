@@ -8,7 +8,7 @@ import { configurationSignature, configurationValues } from './configuration.js'
 import { inspectPart, inspectWire, inspectEmpty, inspectSelection } from './views.js';
 
 export function bindInspector({ inspection, editor, notify, focusCanvas, autoRouteWire,
-  getKeepLeadPositions = () => false, setKeepLeadPositions = () => {}, root = document, signal }) {
+  getKeepLeadPositions = () => false, setKeepLeadPositions = () => {}, fitLayout = () => {}, root = document, signal }) {
   const scope = createScope({ signal });
   const element = id => requireElement(root, `#${id}`);
   const dialog = element('asset-dialog');
@@ -114,7 +114,8 @@ export function bindInspector({ inspection, editor, notify, focusCanvas, autoRou
     if (!event.target.matches('[data-part-configuration]')) return;
     event.preventDefault();
     const form = event.target;
-    if (!editor.configurePart(configurationValues(form))) form.reset();
+    if (editor.configurePart(configurationValues(form))) fitLayout();
+    else form.reset();
   });
 
   scope.on(inspection, 'keydown', event => {

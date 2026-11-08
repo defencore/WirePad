@@ -2,7 +2,6 @@ import { componentForPart } from '../model/part-component.js';
 import { instancePins } from '../model/part-pins.js';
 import { escapeText } from '../shared/text.js';
 import { partName } from '../model/names.js';
-import { partSize } from '../model/part-placement.js';
 import { partBounds, pointOnPart, translation } from '../geometry/parts.js';
 import { group, SceneLayer, updateWireHandle } from './layers.js';
 import { wireHandleLayout } from './scene.js';
@@ -81,9 +80,8 @@ export class CanvasControls {
     if (!visible) return;
 
     const component = componentForPart(part);
-    const { width } = partSize(part, component);
     const bounds = partBounds(part, component);
-    const centerX = part.x + width / 2;
+    const centerX = (bounds.left + bounds.right) / 2;
     const viewWidth = this.svg.clientWidth;
     const viewHeight = this.svg.clientHeight;
     const screenX = viewWidth / 2 + (centerX - center.x) * scale;

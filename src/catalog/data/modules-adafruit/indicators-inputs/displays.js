@@ -4,6 +4,21 @@ import assets from "./displays-assets.js";
 export default [
   {
     "id": "adafruit-module-661",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "Adafruit ADA661: EAGLE Adafruit OLED 128x32 Mono.brd; commit 7c33372ae12d header geometry", "url": "https://github.com/adafruit/Adafruit-128x32-SPI-OLED-breakout-board-PCB/blob/7c33372ae12d8cadd9ccd868c4f30274e61ac87d/Adafruit%20OLED%20128x32%20Mono.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_ROUND_76"}],
+        "boardSha256": "376ffbbb9b74471aec1fa8c0243d334c9ada4fdbdf8dc2ab4514d00153686a0b"
+      },
+      "bodyRegions": [
+        {"x": -16.0, "y": -11.5, "width": 32, "height": 23}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA661",
     "name": "Monochrome 128x32 SPI OLED graphic display",
     "manufacturer": "Adafruit",
@@ -105,6 +120,22 @@ export default [
   },
   {
     "id": "adafruit-module-5206",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA5206: EAGLE Adafruit 1.69in 280x240 Round Rectangle TFT.brd; commit f47687311833 header geometry", "url": "https://github.com/adafruit/Adafruit-1.69in-280x240-Round-Rectangle-TFT-PCB/blob/f4768731183344c8bbe1453f15ff3c655001d592/Adafruit%201.69in%20280x240%20Round%20Rectangle%20TFT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND_76"}],
+        "boardSha256": "f22ea4d0034170f637032acf87325e7408a22b1048ec16418e941fc99fe0014e"
+      },
+      "bodyRegions": [
+        {"x": -18.415, "y": -22.86, "width": 36.83, "height": 45.72},
+        {"x": -22.251, "y": -6.35, "width": 20.56, "height": 14.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5206",
     "name": "Adafruit 1.69\" 280x240 Round Rectangle Color IPS TFT Display",
     "manufacturer": "Adafruit",
@@ -249,6 +280,21 @@ export default [
   },
   {
     "id": "adafruit-module-5394",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA5394: EAGLE Adafruit 1.9in 320x170 Color IPS TFT.brd; commit 55df02725e80 header geometry", "url": "https://github.com/adafruit/Adafruit-1.9in-320x170-Color-IPS-TFT-PCB/blob/55df02725e803b00706c48715883efdbe4aceb1c/Adafruit%201.9in%20320x170%20Color%20IPS%20TFT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND_76"}],
+        "boardSha256": "3ea3e824bd9deef75c4919d8c556bb69276903702fb845b39915ae7ee4354c53"
+      },
+      "bodyRegions": [
+        {"x": -28.575, "y": -18.415, "width": 57.15, "height": 36.83}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5394",
     "name": "Adafruit 1.9\" 320x170 Color IPS TFT Display",
     "manufacturer": "Adafruit",
@@ -377,6 +423,22 @@ export default [
   },
   {
     "id": "adafruit-module-5393",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA5393: EAGLE Adafruit 1.47in 320x172 Round Rectangle TFT.brd; commit 73022f63a4b8 header geometry", "url": "https://github.com/adafruit/Adafruit-1.47in-320x172-Round-Rectangle-TFT-PCB/blob/73022f63a4b82117093ff5c250c119b6720005df/Adafruit%201.47in%20320x172%20Round%20Rectangle%20TFT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND_76"}],
+        "boardSha256": "8a75b7b9df27584a7fb1caeda45feab2f492221b228a342325ee757b619582f2"
+      },
+      "bodyRegions": [
+        {"x": -18.415, "y": -15.24, "width": 36.83, "height": 30.48},
+        {"x": 1.691, "y": -7.777, "width": 20.56, "height": 14.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5393",
     "name": "Adafruit 1.47\" 320x172 Round Rectangle Color IPS TFT Display",
     "manufacturer": "Adafruit",
@@ -620,6 +682,21 @@ export default [
   },
   {
     "id": "adafruit-module-5297",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA5297: EAGLE Adafruit Monochrome 1.12in 128x128 OLED.brd; commit ac65ded15c60 header geometry", "url": "https://github.com/adafruit/Adafruit-1.12in-128x128-OLED-PCB/blob/ac65ded15c60c42bd7fa323c670640263b88f761/Adafruit%20Monochrome%201.12in%20128x128%20OLED.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_76"}],
+        "boardSha256": "48e85dd52b41a510614c275ef7638f7a2f35ae1d6fa9f21a2d13053a70e19b9d"
+      },
+      "bodyRegions": [
+        {"x": -15.24, "y": -20.32, "width": 30.48, "height": 40.64}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5297",
     "name": "Adafruit Monochrome 1.12\" 128x128 OLED Graphic Display",
     "manufacturer": "Adafruit",
@@ -742,6 +819,23 @@ export default [
   },
   {
     "id": "adafruit-module-6178",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA6178: EAGLE Adafruit 1.28 240x240 Round Display.brd; commit 90e7a557ce75 header geometry", "url": "https://github.com/adafruit/Adafruit-1.28-240x240-Round-Display-PCB/blob/90e7a557ce75a56f658b5d05fbf68a91dd4c1c38/Adafruit%201.28%20240x240%20Round%20Display.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND_76"}],
+        "boardSha256": "ca383d83af1069d8000a4b87391890ed7b6c53935b3901415ae06f896ac236da"
+      },
+      "bodyRegions": [
+        {"x": -14.4145, "y": -21.082, "width": 28.829, "height": 42.164},
+        {"x": -20.4335, "y": -8.813, "width": 20.47, "height": 14.2},
+        {"x": 13.564, "y": -0.5715, "width": 1.32, "height": 0.762}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6178",
     "name": "Adafruit 1.28\" 240x240 Round TFT LCD Display with MicroSD",
     "manufacturer": "Adafruit",
@@ -1139,6 +1233,21 @@ export default [
   },
   {
     "id": "adafruit-module-1590",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15"],
+      "source": {"label": "Adafruit ADA1590: EAGLE Adafruit RA8875 TFT Breakout.brd; commit 64c271bb8118 header geometry", "url": "https://github.com/adafruit/Adafruit-RA8875-Breakout-Board-PCB/blob/64c271bb8118f9f82b9a4161e5b8e0db6398fb2e/Adafruit%20RA8875%20TFT%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 15, "package": "1X15-CB"}],
+        "boardSha256": "cf29872c1ce925713c848bf427c3b1608dae98405463aa0d23ce2a0d8de77fe0"
+      },
+      "bodyRegions": [
+        {"x": -24.13, "y": -20.32, "width": 48.26, "height": 40.64}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1590",
     "name": "RA8875 Driver Board for 40-pin TFT Touch Displays - 800x480 Max",
     "manufacturer": "Adafruit",
@@ -1259,6 +1368,22 @@ export default [
   },
   {
     "id": "adafruit-module-3533",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA3533: EAGLE Adafruit 0.96in 160x80 TFT Display.brd; commit 7ada397dddd0 header geometry", "url": "https://github.com/adafruit/Adafruit-0.96-160x80-TFT-Display-Breakout-PCB/blob/7ada397dddd065125d27c9d957d58b2a96cdf6d7/Adafruit%200.96in%20160x80%20TFT%20Display.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND"}],
+        "boardSha256": "2d7a0bcf265f73929d3a9a9ace4b8d40c43a0cd5c1f7fae5fc7e6fa2c3a41912"
+      },
+      "bodyRegions": [
+        {"x": -15.875, "y": -13.9065, "width": 31.75, "height": 27.813},
+        {"x": -20.37, "y": -6.2095, "width": 20.47, "height": 14.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3533",
     "name": "Adafruit 0.96\" 160x80 Color TFT Display w/ MicroSD Card Breakout",
     "manufacturer": "Adafruit",
@@ -1405,6 +1530,22 @@ export default [
   },
   {
     "id": "adafruit-module-1673",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA1673: EAGLE Adafruit 1.27 128x96 RGB OLED.brd; commit e3f77c8c186f header geometry", "url": "https://github.com/adafruit/Adafruit-1.27inch-Color-OLED-Breakout-PCB/blob/e3f77c8c186fbdbadf4f33629ca83cec93f3f731/Adafruit%201.27%20128x96%20RGB%20OLED.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND"}],
+        "boardSha256": "86f7e52d2b87adc53690feecd85d4a46c0e7c120d2010fa90a5d3ce3dbe3d7e7"
+      },
+      "bodyRegions": [
+        {"x": -21.59, "y": -17.78, "width": 43.18, "height": 35.56},
+        {"x": -21.87, "y": -12.05, "width": 20.47, "height": 14.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1673",
     "name": "OLED Breakout Board - 16-bit Color 1.27\" w/microSD holder",
     "manufacturer": "Adafruit",
@@ -1509,6 +1650,22 @@ export default [
   },
   {
     "id": "adafruit-module-4383",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11"],
+      "source": {"label": "Adafruit ADA4383: EAGLE Adafruit 1.14-inch 240x135 Color TFT.brd; commit e87c63d29cae header geometry", "url": "https://github.com/adafruit/Adafruit-1.14-inch-240x135-TFT-PCB/blob/e87c63d29caea5604ad987077b2ca9eb61a4284f/Adafruit%201.14-inch%20240x135%20Color%20TFT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 11, "package": "1X11_ROUND"}],
+        "boardSha256": "9a1f762be5009829f24f51933e0b15c66eb699f6df0304310680fcb1bab151cf"
+      },
+      "bodyRegions": [
+        {"x": -15.875, "y": -13.9065, "width": 31.75, "height": 27.813},
+        {"x": -20.37, "y": -6.2095, "width": 20.47, "height": 14.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4383",
     "name": "Adafruit 1.14\" 240x135 Color TFT Display + MicroSD Card Breakout",
     "manufacturer": "Adafruit",
@@ -1665,6 +1822,22 @@ export default [
   },
   {
     "id": "adafruit-module-2478",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12", "jp2-13", "jp2-14", "jp2-15", "jp2-16", "jp2-17", "jp2-18", "jp2-19", "jp2-20", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp1-17", "jp1-18", "jp1-19", "jp1-20"],
+      "source": {"label": "Adafruit ADA2478: EAGLE Adafruit 2.4in TFT Breakout.brd; commit 62eaf05ad6ea header geometry", "url": "https://github.com/adafruit/Adafruit-2.4-TFT-Breakout-PCB/blob/62eaf05ad6ead75f2da987f2ff7ed994c02869c7/Adafruit%202.4in%20TFT%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 20, "package": "1X20_ROUND"}, {"id": "JP1", "count": 20, "package": "1X20_ROUND"}],
+        "boardSha256": "cae8cbba365b80cdaf185c0339650371151ee08610407e4efa611f1d417799bf"
+      },
+      "bodyRegions": [
+        {"x": -31.115, "y": -26.289, "width": 62.23, "height": 52.578},
+        {"x": -34.467, "y": 5.03, "width": 20.47, "height": 14.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2478",
     "name": "Adafruit 2.4\" TFT LCD with Touchscreen Breakout w/MicroSD Socket",
     "manufacturer": "Adafruit",

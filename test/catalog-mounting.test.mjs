@@ -44,8 +44,8 @@ test('breadboard mounting enumerates terminal holes and their existing conductor
   }
 });
 
-test('only reviewed board headers opt in and retain source-backed insertion centers', () => {
-  const actual = components.filter(component => mountingFor(component.id)?.type === 'breadboard-module').map(component => component.id).sort();
+test('the original reviewed board headers retain source-backed insertion centers', () => {
+  const actual = components.filter(component => Object.hasOwn(guests, component.id) && mountingFor(component.id)?.type === 'breadboard-module').map(component => component.id).sort();
   assert.deepEqual(actual, Object.keys(guests).sort());
   for (const [id, [count, span]] of Object.entries(guests)) {
     const component = componentById.get(id), mounting = mountingFor(id);

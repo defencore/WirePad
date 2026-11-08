@@ -4,6 +4,21 @@ import assets from "./signal-interfaces-assets.js";
 export default [
   {
     "id": "adafruit-module-4741",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA4741: EAGLE Adafruit Grayscale 1.5-inch 128x128 OLED.brd; commit a48daa304b9d header geometry", "url": "https://github.com/adafruit/Adafruit-Grayscale-1.5-inch-128x128-OLED-PCB/blob/a48daa304b9d13a8d1f4ab29866c116abd44727d/Adafruit%20Grayscale%201.5-inch%20128x128%20OLED.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "b9786c1559e19ee6f9fe46a395714e21289259ee0e33e4bc73dbdbb21e683931"
+      },
+      "bodyRegions": [
+        {"x": -17.78, "y": -23.495, "width": 35.56, "height": 46.99}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4741",
     "name": "Adafruit Grayscale 1.5\" 128x128 OLED Graphic Display",
     "manufacturer": "Adafruit",
@@ -110,6 +125,21 @@ export default [
   },
   {
     "id": "adafruit-module-4712",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA4712: EAGLE Adafruit LC709203F LiPoly LiIon Fuel Gauge and Battery Monitor.brd; commit 65d60917fbe7 header geometry", "url": "https://github.com/adafruit/Adafruit-LC709203F-PCB/blob/65d60917fbe771308a387132dc943800a52f1380/Adafruit%20LC709203F%20LiPoly%20LiIon%20Fuel%20Gauge%20and%20Battery%20Monitor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "bb2a9620010d43cccfc346367c38e4da72e11de637dfabda5ee270cd69897a86"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -10.16, "width": 25.4, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4712",
     "name": "Adafruit LC709203F LiPoly / LiIon Fuel Gauge and Battery Monitor",
     "manufacturer": "Adafruit",
@@ -228,6 +258,21 @@ export default [
   },
   {
     "id": "adafruit-module-1602",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12", "jp3-13", "jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp4-9", "jp4-10", "jp4-11", "jp4-12", "jp4-13"],
+      "source": {"label": "Adafruit ADA1602: EAGLE Adafruit CAP1188.brd; commit cf65678210cb header geometry", "url": "https://github.com/adafruit/Adafruit-CAP1188-PCB/blob/cf65678210cb9bc8a792efa091d49082e4ad6a2b/Adafruit%20CAP1188.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 13, "package": "1X13_ROUND_70"}, {"id": "JP4", "count": 13, "package": "1X13_ROUND_70"}],
+        "boardSha256": "89ecab39879785e69d5971f094737f2acbd0688d256dd9c8c4530295ce4d1929"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -20.955, "width": 17.78, "height": 41.91}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1602",
     "name": "CAP1188 - 8-Key Capacitive Touch Sensor Breakout - I2C or SPI",
     "manufacturer": "Adafruit",

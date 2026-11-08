@@ -930,7 +930,23 @@ const espRpMountings = Object.fromEntries([
   [espDevKitM, "https://dl.espressif.com/dl/schematics/DXF_ESP32-S3-DevKitM-1_V1_20210310AC.pdf", "Espressif ESP32-S3-DevKitM-1 V1 mechanical drawing", "Component side, antenna above. J1 and J3 each have 22 leads; their rows are 22.86 mm apart."],
   [featherS3, "https://learn.adafruit.com/adafruit-esp32-s3-feather/downloads", "Adafruit Feather ESP32-S3 manufacturer schematic and fab print", "USB above. The 16-pin and 12-pin header rows are 20.32 mm apart, with the shorter row starting four 2.54 mm pitches below the longer row."],
   [featherRp, "https://learn.adafruit.com/adafruit-feather-rp2040-pico/downloads", "Adafruit Feather RP2040 manufacturer schematic and fab print", "USB above. The 16-pin and 12-pin header rows are 20.32 mm apart, with the shorter row starting four 2.54 mm pitches below the longer row."],
-].map(([entry, url, label, note]) => [entry.component.id,
-  breadboardHeaderMounting({ url, label }, entry.footprint.groups.slice(0, 2), note)]));
+].map(([entry, url, label, note]) => {
+  const { id, width, height } = entry.component;
+  const regions = id.startsWith("raspberry-pi-pico") ? [
+    { x: 7, y: 9, width: width - 14, height: height - 25 },
+    { x: 51, y: 2, width: 44, height: 35 },
+  ] : id === "esp32-s3-devkitm-1" ? [
+    { x: 7, y: 7, width: width - 14, height: height - 14 },
+    { x: width / 2 - 36, y: 2, width: 72, height: 105 },
+    ...[-41, 11].map(x => ({ x: width / 2 + x, y: height - 20, width: 30, height: 15 })),
+  ] : [
+    { x: 7, y: 7, width: width - 14, height: height - 14 },
+    { x: id === "adafruit-feather-esp32-s3" ? 55 : 53, y: 3, width: id === "adafruit-feather-esp32-s3" ? 44 : 48,
+      height: id === "adafruit-feather-esp32-s3" ? 38 : 37 },
+    ...(id === "adafruit-feather-rp2040" ? [{ x: 91, y: 288, width: 16, height: 6 }] : []),
+  ];
+  return [id, breadboardHeaderMounting({ url, label }, entry.footprint.groups.slice(0, 2), note,
+    { regions, evidence: "Canonical regions copy the existing PCB and protruding USB/RF/control primitives in picoArt, espDevKitArt or the Feather renderer. Cosmetic shadow, contact labels and canvas padding are excluded; no default artwork or pin is moved." })];
+}));
 
 export default defineFamily("esp-rp", (espRpComponents).map(component => ({ component, render: (espRpArt)[component.art], footprint: (espRpFootprints)[component.id], model: espRpModels[component.id], mounting: espRpMountings[component.id] })));

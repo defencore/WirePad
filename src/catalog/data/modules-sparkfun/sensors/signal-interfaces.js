@@ -4,6 +4,21 @@ import assets from "./signal-interfaces-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen12642",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "SparkFun SEN-12642: EAGLE sound-detector.brd; commit 5ab91c0ff109 header geometry", "url": "https://github.com/sparkfun/Sound_Detector/blob/5ab91c0ff1096f7e9ddcd28940336250b9781375/hardware/sound-detector.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05"}],
+        "boardSha256": "4e55c1eb8f4926172e6493d8e51c73fcc45fe2fc3f70dd429b2d2bf414efb34b"
+      },
+      "bodyRegions": [
+        {"x": -21.59, "y": -11.43, "width": 43.18, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-12642",
     "name": "SparkFun Sound Detector",
     "manufacturer": "SparkFun",

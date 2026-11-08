@@ -3,9 +3,8 @@ import { partBounds } from '../geometry/parts.js';
 
 export function createCommands({ editor, canvas, controls, panels, svg, notify, focusCanvas }) {
   function dropPosition(id, event) {
-    const component = componentById.get(id);
     const center = canvas.point(event.clientX, event.clientY);
-    return { x: center.x - component.width / 2, y: center.y - component.height / 2 };
+    return editor.insertionPoint(id, center);
   }
 
   const commands = {

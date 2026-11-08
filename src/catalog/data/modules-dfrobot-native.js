@@ -2,6 +2,20 @@
 export default [
   {
     "id": "dfrobot-fermion-bmm150-sen0419",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9"],
+      "source": {"label": "DFRobot SEN0419: V1.0 / cited manufacturer KiCad library header geometry", "url": "https://dfimg.dfrobot.com/wiki/20544/SEN0419_bmm150-3-axis-digital-geomagnetic-sensor_stpfile_1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer KiCad footprint and symbol. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "HEADER", "count": 9}]
+      },
+      "bodyRegions": [
+        {"x": -12.5, "y": -8.0, "width": 25, "height": 16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0419",
     "name": "DFRobot Fermion: BMM150 Triple Axis Magnetometer Sensor (Breakout)",
     "manufacturer": "DFRobot",

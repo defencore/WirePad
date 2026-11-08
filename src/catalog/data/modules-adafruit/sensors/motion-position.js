@@ -124,6 +124,21 @@ export default [
   },
   {
     "id": "adafruit-module-2019",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "Adafruit ADA2019: EAGLE Adafruit MMA8451.brd; commit f9fa425744bf header geometry", "url": "https://github.com/adafruit/Adafruit-MMA8451-Breakout-PCB/blob/f9fa425744bf6c85d7ff0a4c80fd36311a0da974/Adafruit%20MMA8451.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "83e363f22dca040fac9b27b0c7bdf0a6fbe297e233fe1c068ba72afb56cbe703"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -8.89, "width": 20.32, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2019",
     "name": "Adafruit Triple-Axis Accelerometer - ±2/4/8g @ 14-bit - MMA8451",
     "manufacturer": "Adafruit",
@@ -199,6 +214,21 @@ export default [
   },
   {
     "id": "adafruit-module-1032",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9"],
+      "source": {"label": "Adafruit ADA1032: EAGLE Adafruit L3GD20H Breakout.brd; commit 32bf273c2143 header geometry", "url": "https://github.com/adafruit/Adafruit-L3GD20-Breakout-PCB/blob/32bf273c21430e7c4e28cfa79be2109f91b893ea/Adafruit%20L3GD20H%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 9, "package": "1X09_ROUND_76"}],
+        "boardSha256": "406f9879c1a769beb42ee1caa4aab5af89416919ca688323ed5698ea4b250d44"
+      },
+      "bodyRegions": [
+        {"x": -15.24, "y": -9.525, "width": 30.48, "height": 19.05}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1032",
     "name": "L3GD20H Triple-Axis Gyro Breakout Board - L3GD20/L3G4200 Upgrade",
     "manufacturer": "Adafruit",
@@ -284,6 +314,21 @@ export default [
   },
   {
     "id": "adafruit-module-4366",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4366: EAGLE Adafruit_TLV493D.brd; commit 2450d66eef51 header geometry", "url": "https://github.com/adafruit/Adafruit-TLV493D-PCB/blob/2450d66eef51807f25f6ce598fa7aa9f95d588aa/Adafruit_TLV493D.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND"}],
+        "boardSha256": "2746bb3b5c85538c2fca187f6f086cd1b9419cfe95706e36d528a1f53cfa62fb"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4366",
     "name": "Adafruit TLV493D Triple-Axis Magnetometer - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -390,6 +435,21 @@ export default [
   },
   {
     "id": "adafruit-module-5579",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA5579: EAGLE MMC56x3 rev A.brd; commit fb9a564eb119 header geometry", "url": "https://github.com/adafruit/Adafruit-MMC5603-PCB/blob/fb9a564eb11939578643054a859481408a64a868/MMC56x3%20rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "6bc97e261a0cf86b269a742102c7f62b7f9105b3a2d4fc062a88819f66f162e8"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5579",
     "name": "Adafruit Triple-axis Magnetometer - MMC5603",
     "manufacturer": "Adafruit",
@@ -500,6 +560,21 @@ export default [
   },
   {
     "id": "adafruit-module-6388",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA6388: EAGLE Adafruit QMC5883P Magnetometer.brd; commit e99e587a0e0e header geometry", "url": "https://github.com/adafruit/Adafruit-QMC5883P-Triple-Axis-Magnetometer-PCB/blob/e99e587a0e0e38b1deaf081639ec0116de6006aa/Adafruit%20QMC5883P%20Magnetometer.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "14957ae9f24cdfc68335e8153988f2f4bd0bb7d16a7e178fe42ad35c8a057157"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6388",
     "name": "Adafruit QMC5883P - Triple Axis Magnetometer",
     "manufacturer": "Adafruit",
@@ -616,6 +691,21 @@ export default [
   },
   {
     "id": "adafruit-module-5309",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5309: EAGLE Adafruit MSA311.brd; commit a4a29e769419 header geometry", "url": "https://github.com/adafruit/Adafruit_MSA311_PCB/blob/a4a29e76941999057e062a5255594cabc4eba0ca/Adafruit%20MSA311.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "e733588a568feb72eed6f28a27656f080e9a5b66f8dd08b8b36a53ad2c22e7ac"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5309",
     "name": "Adafruit MSA311 Triple Axis Accelerometer - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -722,6 +812,21 @@ export default [
   },
   {
     "id": "adafruit-module-6426",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6426: EAGLE Adafruit STHS34PF80 IR Presence Sensor.brd; commit df3aece9ec5e header geometry", "url": "https://github.com/adafruit/Adafruit-STHS34PF80-IR-Presence-Sensor-PCB/blob/df3aece9ec5e5ad5f1a1fe48835046ddb6b0a292/Adafruit%20STHS34PF80%20IR%20Presence%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "e06038ce900abeec95a1e43356163a7871110d79a876c5d75b4ad93c7917f719"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6426",
     "name": "Adafruit STHS34PF80 IR Presence / Motion Sensor",
     "manufacturer": "Adafruit",
@@ -838,6 +943,21 @@ export default [
   },
   {
     "id": "adafruit-module-4488",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7"],
+      "source": {"label": "Adafruit ADA4488: EAGLE Adafruit LIS2MDL.brd; commit c65288a9024d header geometry", "url": "https://github.com/adafruit/Adafruit-LIS2MDL-PCB/blob/c65288a9024d03b559eb0121ec8c231345ed8e3e/Adafruit%20LIS2MDL.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07_ROUND_70"}],
+        "boardSha256": "78d17fad3994337420323a68318c4769bbdd3b3d8504f97442b6dd6fef504bdf"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4488",
     "name": "Adafruit Triple-axis Magnetometer - LIS2MDL",
     "manufacturer": "Adafruit",
@@ -948,6 +1068,21 @@ export default [
   },
   {
     "id": "adafruit-module-4413",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp3-1", "jp3-2", "jp3-3", "jp3-4"],
+      "source": {"label": "Adafruit ADA4413: EAGLE Adafruit_LSM303AGR.brd; commit 3a099ee3de34 header geometry", "url": "https://github.com/adafruit/Adafruit-LSM303AGR-PCB/blob/3a099ee3de341bfaf089d7f314380e825b3ae35e/Adafruit_LSM303AGR.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP3", "count": 4, "package": "1X04_ROUND"}],
+        "boardSha256": "9e4e8f4c25a8cdc2f8bb6cd137884f7ac3b3fc2137ef8bc276b28c3da9d1f2a2"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4413",
     "name": "Adafruit LSM303AGR Accelerometer Magnetometer - STEMMA QT Qwiic",
     "manufacturer": "Adafruit",
@@ -1054,6 +1189,21 @@ export default [
   },
   {
     "id": "adafruit-module-5543",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA5543: EAGLE LIS3MDL + LSM6DS3 rev A.brd; commit bc2d3ee876a2 header geometry", "url": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-LIS3MDL-PCB/blob/bc2d3ee876a254d5ebc669bc4d0df78b11602a64/LIS3MDL%20%2B%20LSM6DS3%20rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP4", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "ee24a927d28f4b8f32c421e1af1916290d0959ec86a1152a39fbe8a3cf98cd4c"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5543",
     "name": "Adafruit LSM6DS3TR-C + LIS3MDL - Precision 9 DoF IMU",
     "manufacturer": "Adafruit",
@@ -1170,6 +1320,21 @@ export default [
   },
   {
     "id": "adafruit-module-4626",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6"],
+      "source": {"label": "Adafruit ADA4626: EAGLE Adafruit_LIS331.brd; commit 4b94be760d88 header geometry", "url": "https://github.com/adafruit/Adafruit-LIS331-PCB/blob/4b94be760d8804bd08d6f3959697bac0875c8fea/Adafruit_LIS331.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP2", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "16c14fb7631e2e0761f91d2427a91436602e6fd5277c5a3875606a30168d2ffc"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4626",
     "name": "Adafruit LIS331 Triple-Axis Wide-Range ±24g Accelerometer",
     "manufacturer": "Adafruit",
@@ -1282,6 +1447,21 @@ export default [
   },
   {
     "id": "adafruit-module-4438",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4438: EAGLE Adafruit_LSM6DSOX.brd; commit c05abef4675b header geometry", "url": "https://github.com/adafruit/Adafruit-LSM6DSOX-PCB/blob/c05abef4675b0380fbf3d23171615a2f1ac0b130/Adafruit_LSM6DSOX.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 9, "package": "1X09_ROUND_70"}, {"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "42b56029ffb6dddc04ed11b2173ebecbe7d558b3489007661546e2276abea58a"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4438",
     "name": "Adafruit LSM6DSOX 6 DoF Accelerometer and Gyroscope",
     "manufacturer": "Adafruit",
@@ -1385,6 +1565,21 @@ export default [
   },
   {
     "id": "adafruit-module-4503",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4503: EAGLE Adafruit_LSM6DS3.brd; commit 9bf02b7214d3 header geometry", "url": "https://github.com/adafruit/Adafruit-LSM6DS3TR-C-PCB/blob/9bf02b7214d35f2699bfd24737865511e4f9f114/Adafruit_LSM6DS3.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 9, "package": "1X09_ROUND_70"}, {"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "7a51838fd1cd4c5454fbd59fff928d67bd5fff31385b1db71daac461e2c5344d"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4503",
     "name": "Adafruit LSM6DS3TR-C 6-DoF Accel + Gyro IMU",
     "manufacturer": "Adafruit",
@@ -1488,6 +1683,21 @@ export default [
   },
   {
     "id": "adafruit-module-6489",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6489: EAGLE Adafruit TMAG5273A1 3D Hall Effect Magnetometer Breakout.brd; commit 543c3c93357a header geometry", "url": "https://github.com/adafruit/Adafruit-TMAG5273-3D-Hall-Effect-Magnetometer-Breakout-PCB/blob/543c3c93357a56703c6f33de5c8e277451bf9f1d/Adafruit%20TMAG5273A1%203D%20Hall%20Effect%20Magnetometer%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "82f4e2ee60cbc045db2fe6bf51e6c48f66313e21494c0ce28c489d3f6893b3c0"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6489",
     "name": "Adafruit TMAG5273 (A1) 3D Hall Effect Magnetometer Breakout",
     "manufacturer": "Adafruit",
@@ -1598,6 +1808,21 @@ export default [
   },
   {
     "id": "adafruit-module-2472",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6"],
+      "source": {"label": "Adafruit ADA2472: EAGLE Adafruit BNO055 STEMMA QT.brd; commit 64c5a387aa80 header geometry", "url": "https://github.com/adafruit/Adafruit-BNO055-Breakout-PCB/blob/64c5a387aa807edb01eff440d1cd07ce4b608642/Adafruit%20BNO055%20STEMMA%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 4, "package": "1X04_ROUND_76"}, {"id": "JP3", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "f3beeaba3b9b8b36b72486bb36e5402a7707927164a0961747fd45bdb1ec0404"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -10.16, "width": 25.4, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2472",
     "name": "Adafruit 9-DOF Absolute Orientation IMU Fusion Breakout - BNO055",
     "manufacturer": "Adafruit",
@@ -1714,6 +1939,21 @@ export default [
   },
   {
     "id": "adafruit-module-4097",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "Adafruit ADA4097: EAGLE Adafruit ADXL343 STEMMA QT.brd; commit 13dce5a59630 header geometry", "url": "https://github.com/adafruit/Adafruit_ADXL343_PCB/blob/13dce5a5963041d7d7f60492da459e00a96f4344/Adafruit%20ADXL343%20STEMMA%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP2", "count": 4, "package": "1X04_ROUND"}],
+        "boardSha256": "0fce811e81158ae6c9f459d94b686b647fe6a567f816b1072f3bb5b1a266ed80"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4097",
     "name": "ADXL343 - Triple-Axis Accelerometer (+-2g/4g/8g/16g) w/ I2C/SPI",
     "manufacturer": "Adafruit",
@@ -1831,6 +2071,21 @@ export default [
   },
   {
     "id": "adafruit-module-4022",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6"],
+      "source": {"label": "Adafruit ADA4022: EAGLE Adafruit MLX90393 QT.brd; commit 1c5deadca258 header geometry", "url": "https://github.com/adafruit/Adafruit-MLX90393-PCB/blob/1c5deadca25875af5eb643b80ae0b7ece4afbb02/Adafruit%20MLX90393%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP4", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "a8e00d9c3c24815fe4cf8d6a632b380934b5eed7db5363dab665b113794989ff"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4022",
     "name": "Adafruit Wide-Range Triple-axis Magnetometer - MLX90393",
     "manufacturer": "Adafruit",

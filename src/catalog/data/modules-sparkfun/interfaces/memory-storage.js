@@ -4,6 +4,21 @@ import assets from "./memory-storage-assets.js";
 export default [
   {
     "id": "sparkfun-module-bob00544",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7"],
+      "source": {"label": "SparkFun BOB-00544: EAGLE SparkFun_microSD_Breakout.brd; commit 452f85520c81 header geometry", "url": "https://github.com/sparkfun/microSD_Transflash_Breakout/blob/452f85520c81f96c2dedbddf25c896412a55390d/Hardware/SparkFun_microSD_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07"}],
+        "boardSha256": "ab4e9ddc4f6caed222fa1a16f0afe0f8d40e32dd6433b9dfb0810225505ea156"
+      },
+      "bodyRegions": [
+        {"x": -10.795, "y": -10.16, "width": 21.59, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-00544",
     "name": "SparkFun microSD Transflash Breakout",
     "manufacturer": "SparkFun",

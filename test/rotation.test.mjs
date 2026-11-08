@@ -5,6 +5,7 @@ import { CanvasControls } from '../src/canvas/controls.js';
 import { drawingMarkup } from '../src/canvas/markup.js';
 import { bindCanvas } from '../src/canvas/input.js';
 import { componentForPart } from '../src/model/part-component.js';
+import { partBounds } from '../src/geometry/parts.js';
 
 function attributes(node = {}) {
   return Object.assign(node, {
@@ -12,6 +13,28 @@ function attributes(node = {}) {
     setAttribute(name, value) { this.attributes.set(name, String(value)); },
   });
 }
+
+test('orientation controls stay centered on a compact front view at every quarter-turn', () => {
+  const part = { id: 'source', componentId: 'adafruit-module-5832', x: 10, y: 20, scale: { x: .8, y: .8 } };
+  const buttons = [0, 90, 180, 270].map(angle => attributes({ dataset: { partRotation: String(angle) } }));
+  const panel = attributes({ dataset: {}, querySelectorAll: () => buttons });
+  const canvas = { svg: { clientWidth: 2000, clientHeight: 2000, dataset: { input: 'pointer' } }, scale: .5,
+    selection: { type: 'part', id: part.id }, selections: [{ type: 'part', id: part.id }],
+    geometry: { parts: new Map([[part.id, { part }]]) } };
+  const controls = Object.assign(Object.create(CanvasControls.prototype), {
+    svg: canvas.svg, coarsePointer: { matches: false }, rotationNode: panel,
+    partEnabled: true, getState: () => canvas,
+  });
+  for (const rotation of [0, 90, 180, 270]) {
+    part.rotation = rotation;
+    const bounds = partBounds(part);
+    canvas.center = { x: (bounds.left + bounds.right) / 2, y: (bounds.top + bounds.bottom) / 2 };
+    controls.updateParts();
+    const [, x] = panel.attributes.get('transform').match(/^translate\(([^ ]+) ([^)]+)\)/).map(Number);
+    const screenCenter = 1000 + (x - canvas.center.x) * canvas.scale + 136 / 2;
+    assert.ok(Math.abs(screenCenter - 1000) < 1e-7, `${rotation}: ${screenCenter}`);
+  }
+});
 
 test('orientation controls remain upright, fixed size, and in the viewport after zoom and rotation', () => {
   const part = { id: 'sensor', componentId: 'bme280', x: 0, y: 0, rotation: 0 };

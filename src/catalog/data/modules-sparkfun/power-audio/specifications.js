@@ -4,6 +4,21 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "sparkfun-module-bob19389",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "SparkFun BOB-19389: EAGLE SparkFun_Analog_MEMS_Microphone_Breakout_SPH8878LR5H-1.brd; commit 4d01f22a9be9 header geometry", "url": "https://github.com/sparkfun/SparkFun_Analog_MEMS_Microphone_Breakout_SPH8878LR5H-1/blob/4d01f22a9be9f5e66b14664ec486083617988b34/Hardware/SparkFun_Analog_MEMS_Microphone_Breakout_SPH8878LR5H-1.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_NO_SILK"}],
+        "boardSha256": "109ba7a9ae40dd8649400f1c7b516a9dc7c90544bba68763e4e8434bee8663ea"
+      },
+      "bodyRegions": [
+        {"x": -6.985, "y": -5.08, "width": 13.97, "height": 10.16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-19389",
     "name": "SparkFun Analog MEMS Microphone Breakout - SPH8878LR5H-1",
     "manufacturer": "SparkFun",
@@ -73,6 +88,21 @@ export default [
   },
   {
     "id": "sparkfun-module-rob14538",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "SparkFun ROB-14538: EAGLE Haptic_Motor_Driver_DRV2605L_v20.brd; commit a300e3885810 header geometry", "url": "https://github.com/sparkfun/Haptic_Motor_Driver/blob/a300e3885810ff5475729ed6713678cf1b613451/Hardware/Haptic_Motor_Driver_DRV2605L_v20.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 2, "package": "1X02"}, {"id": "JP1", "count": 6, "package": "1X06"}],
+        "boardSha256": "07a3ee9fad3003569ce7c447a21b3fb19174a5c49214beec30ca40df215db1f2"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -10.16, "width": 20.32, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ROB-14538",
     "name": "SparkFun Haptic Motor Driver - DRV2605L",
     "manufacturer": "SparkFun",
@@ -147,6 +177,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob11083",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10"],
+      "source": {"label": "SparkFun BOB-11083: EAGLE SparkFun_FM_Tuner_Basic_Breakout.brd; commit bd5b348b039c header geometry", "url": "https://github.com/sparkfun/FM_Tuner_Basic_Breakout-Si4703/blob/bd5b348b039c89b253dc2b6c1805658ba16a4a94/Hardware/SparkFun_FM_Tuner_Basic_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 10, "package": "1X10"}],
+        "boardSha256": "1cbb646d6d43c423e61958e951e2c602677a09b96471b4d69324985a68b35d53"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -6.985, "width": 25.4, "height": 13.97}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-11083",
     "name": "SparkFun FM Tuner Basic Breakout - Si4703",
     "manufacturer": "SparkFun",
@@ -210,6 +255,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob09540",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15"],
+      "source": {"label": "SparkFun BOB-09540: EAGLE SparkFun_Full_Bridge_Motor_Driver_Breakout-L298N.brd; commit 8b81b873540e header geometry", "url": "https://github.com/sparkfun/Full_Bridge_Motor_Driver_Breakout-L298N/blob/8b81b873540e59a232a5abee3694d54799e0bcac/Hardware/SparkFun_Full_Bridge_Motor_Driver_Breakout-L298N.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 15, "package": "1X15"}],
+        "boardSha256": "3f56c8a7b6bb1ec172aff8c554bab79a22ff1257a9658f09bb1c8d41c728d681"
+      },
+      "bodyRegions": [
+        {"x": -20.32, "y": -12.065, "width": 40.64, "height": 24.13}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-09540",
     "name": "SparkFun L298N Breakout PCB (unpopulated)",
     "manufacturer": "SparkFun",
@@ -294,6 +354,21 @@ export default [
   },
   {
     "id": "sparkfun-module-rob14451",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "SparkFun ROB-14451: EAGLE SparkFun_Motor_Driver-TB6612FNG_v11.brd; commit 76bbcba16c45 header geometry", "url": "https://github.com/sparkfun/Motor_Driver-Dual_TB6612FNG/blob/76bbcba16c4510c8bd9ab6b4622172a7d70bfd22/Hardware/SparkFun_Motor_Driver-TB6612FNG_v11.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_OFFSET_REDUCED"}, {"id": "JP2", "count": 8, "package": "1X08_OFFSET_REDUCED"}],
+        "boardSha256": "0c71c32c7531e2c468b7752a91a1cac0903d8cac6a23562e9ce99de4ec855f6e"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -10.16, "width": 20.32, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ROB-14451",
     "name": "SparkFun Motor Driver - Dual TB6612FNG (1A)",
     "manufacturer": "SparkFun",
@@ -444,6 +519,22 @@ export default [
   },
   {
     "id": "sparkfun-module-prt10217",
+    "mountingReview": {
+      "contactIds": ["jp8-1", "jp8-2"],
+      "source": {"label": "SparkFun PRT-10217: EAGLE SparkFun_Lipo_Charger_Basic-microUSB.brd; commit 73710c1269a3 header geometry", "url": "https://github.com/sparkfun/Lipo_Charger_Basic-microUSB/blob/73710c1269a31963b9878e43a2877c6df5e5454a/Hardware/SparkFun_Lipo_Charger_Basic-microUSB.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP8", "count": 2, "package": "1X02"}],
+        "boardSha256": "637f853c79a6d959e20d70d7893093e8a89d1185536f8c03c84c43dc80201c31"
+      },
+      "bodyRegions": [
+        {"x": -14.605, "y": -5.08, "width": 29.21, "height": 10.16},
+        {"x": -16.263878, "y": -5.6, "width": 6.0, "height": 9.6}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "PRT-10217",
     "name": "SparkFun LiPo Charger Basic - Micro-B",
     "manufacturer": "SparkFun",
@@ -539,6 +630,22 @@ export default [
   },
   {
     "id": "sparkfun-module-prt10401",
+    "mountingReview": {
+      "contactIds": ["jp8-1", "jp8-2"],
+      "source": {"label": "SparkFun PRT-10401: EAGLE SparkFun_LiPo-Charger-Basic-MiniUSB.brd; commit 2337e59b6f32 header geometry", "url": "https://github.com/sparkfun/Lipo_Charger_Basic-miniUSB/blob/2337e59b6f3262da4831704031a2917ebb83dce3/Hardware/SparkFun_LiPo-Charger-Basic-MiniUSB.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP8", "count": 2, "package": "1X02"}],
+        "boardSha256": "439bb2d34bb47858b790cc5285f5f0f4d06f686970e7955ce380d04fe5fe0905"
+      },
+      "bodyRegions": [
+        {"x": -16.51, "y": -6.35, "width": 33.02, "height": 12.7},
+        {"x": -17.33, "y": -3.8, "width": 9.2, "height": 7.6}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "PRT-10401",
     "name": "SparkFun LiPo Charger Basic - Mini-USB",
     "manufacturer": "SparkFun",
@@ -819,6 +926,21 @@ export default [
   },
   {
     "id": "sparkfun-module-prt13032",
+    "mountingReview": {
+      "contactIds": ["jp5-1", "jp5-2"],
+      "source": {"label": "SparkFun PRT-13032: EAGLE SparkFun_Breadboard_Power_Supply-5v_3V_SMD.brd; commit 61db9993900f header geometry", "url": "https://github.com/sparkfun/Breadboard_Power_Supply_Stick_5V-3.3V/blob/61db9993900f6341ecfdf4ad78172a0a0ff155b8/Hardware/SparkFun_Breadboard_Power_Supply-5v_3V_SMD.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP5", "count": 2, "package": "1X02"}],
+        "boardSha256": "3f2b692b18f62be937900cbe56e51cb079645673557a58d07d9cabd276810a92"
+      },
+      "bodyRegions": [
+        {"x": -27.305, "y": -8.255, "width": 54.61, "height": 16.51}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "PRT-13032",
     "name": "SparkFun Breadboard Power Supply Stick - 5V/3.3V",
     "manufacturer": "SparkFun",
@@ -933,6 +1055,21 @@ export default [
   },
   {
     "id": "sparkfun-module-prt14765",
+    "mountingReview": {
+      "contactIds": ["jp7-1", "jp7-2", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "j1-1", "j1-2", "j1-3", "j1-4", "j2-1", "j2-2", "j2-3", "j2-4"],
+      "source": {"label": "SparkFun PRT-14765: EAGLE Single_Supply_Logic_Level_Converter.brd; commit 5f675f2d775c header geometry", "url": "https://github.com/sparkfun/Single_Supply_Logic_Level_Converter/blob/5f675f2d775cb42f4a4552231788bdc252794832/Hardware/Single_Supply_Logic_Level_Converter.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP7", "count": 2, "package": "1X02"}, {"id": "JP3", "count": 4, "package": "1X04"}, {"id": "J1", "count": 4, "package": "1X04"}, {"id": "J2", "count": 4, "package": "1X04"}],
+        "boardSha256": "3ead1c827915e1e6a4b37e2e7e2778d566275e38b9ad99a188eef871f0487f51"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -13.97, "width": 25.4, "height": 27.94}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "PRT-14765",
     "name": "SparkFun Logic Level Converter - Single Supply",
     "manufacturer": "SparkFun",
@@ -1112,6 +1249,21 @@ export default [
   },
   {
     "id": "sparkfun-module-com16810",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun COM-16810: EAGLE Qwiic Solid State Relay.brd; commit f9fa87f14eca header geometry", "url": "https://github.com/sparkfun/Qwiic_Dual_Solid_State_Relay/blob/f9fa87f14ecabf325691b4dac59270415eae224c/Hardware/Qwiic%20Solid%20State%20Relay.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "dcd657b0f55346df6c9833d3de89538098175353e67458e5fe158f3c718644d7"
+      },
+      "bodyRegions": [
+        {"x": -45.085, "y": -33.655, "width": 90.17, "height": 67.31}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "COM-16810",
     "name": "SparkFun Qwiic Dual Solid State Relay",
     "manufacturer": "SparkFun",
@@ -1326,6 +1478,22 @@ export default [
   },
   {
     "id": "sparkfun-module-prt10588",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "SparkFun PRT-10588: EAGLE SparkFun_Audio_Jack_Breakout.brd; commit f0329895d565 header geometry", "url": "https://github.com/sparkfun/Audio_Jack_Breakout/blob/f0329895d5650231a612e34d667e27eaddbd1ccb/Hardware/SparkFun_Audio_Jack_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05"}],
+        "boardSha256": "ebe65ab9efaac33e60a681a3257789c860aed0c0244d8b9f353c4f09a02c7a88"
+      },
+      "bodyRegions": [
+        {"x": -10.795, "y": -7.62, "width": 21.59, "height": 15.24},
+        {"x": -13.485, "y": -6.0, "width": 14.0, "height": 12.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "PRT-10588",
     "name": "SparkFun Audio Jack Breakout",
     "manufacturer": "SparkFun",

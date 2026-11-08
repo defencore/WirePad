@@ -4,6 +4,21 @@ import assets from "./memory-storage-assets.js";
 export default [
   {
     "id": "adafruit-module-5635",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7"],
+      "source": {"label": "Adafruit ADA5635: EAGLE SPI Flash Rev E.brd; commit 9a46c77e68ab header geometry", "url": "https://github.com/adafruit/Adafruit-SPI-Flash-Breakout-PCB/blob/9a46c77e68ab9a797bfdce54b0629004823e868a/SPI%20Flash%20Rev%20E.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 7, "package": "1X07_ROUND_70"}],
+        "boardSha256": "4469982fcd4fbc34f039edcbb144ef684fe35142d6eafdf0e3bf949878178e5f"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -8.89, "width": 20.32, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5635",
     "name": "Adafruit SPI FLASH Breakout - W25Q16 - 16 Mbit / 2 MByte",
     "manufacturer": "Adafruit",
@@ -79,6 +94,21 @@ export default [
   },
   {
     "id": "adafruit-module-5146",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp3-1", "jp3-2", "jp3-3", "jp3-4"],
+      "source": {"label": "Adafruit ADA5146: EAGLE Adafruit 24LC32 I2C EEPROM.brd; commit e92cf5549d43 header geometry", "url": "https://github.com/adafruit/Adafruit-24LC32-PCB/blob/e92cf5549d43c5c17ab04d6ee2899a7783cc19f4/Adafruit%2024LC32%20I2C%20EEPROM.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP3", "count": 4, "package": "1X04_ROUND"}],
+        "boardSha256": "145b889c336df7ca2c1600e5fefbcfdaba4fea14e94434b61e5dc4cb890a5964"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5146",
     "name": "Adafruit 24LC32 I2C EEPROM Breakout - 32Kbit / 4 KB - Stemma QT",
     "manufacturer": "Adafruit",
@@ -199,6 +229,22 @@ export default [
   },
   {
     "id": "adafruit-module-4682",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9"],
+      "source": {"label": "Adafruit ADA4682: EAGLE Adafruit SDIO microSD.brd; commit 959792478854 header geometry", "url": "https://github.com/adafruit/Adafruit-MicroSD-SPI-or-SDIO-card-breakout-PCB/blob/959792478854acec21fb862650427ffaa32b07f1/Adafruit%20SDIO%20microSD.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 9, "package": "1X09_ROUND_70"}],
+        "boardSha256": "0ec91e989f1004c85c203bc4539bb2652b8c33614cc18f624bd3bdac7cbf8c57"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -11.43, "width": 25.4, "height": 22.86},
+        {"x": -7.165, "y": -15.671, "width": 14.2, "height": 20.47}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4682",
     "name": "Adafruit Micro SD SPI or SDIO Card Breakout Board - 3V ONLY!",
     "manufacturer": "Adafruit",
@@ -313,6 +359,21 @@ export default [
   },
   {
     "id": "adafruit-module-5703",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12", "jp3-13", "jp3-14", "jp3-15", "jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp4-9", "jp4-10", "jp4-11", "jp4-12", "jp4-13", "jp4-14", "jp4-15"],
+      "source": {"label": "Adafruit ADA5703: EAGLE Adafruit PiCowbell Adalogger.brd; commit 667876fdbc1b header geometry", "url": "https://github.com/adafruit/Adafruit-PiCowbell-Adalogger-PCB/blob/667876fdbc1bf1bf7e68f5d9e240d109c55e5093/Adafruit%20PiCowbell%20Adalogger.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 15, "package": "1X15_ROUND_70"}, {"id": "JP4", "count": 15, "package": "1X15_ROUND_70"}],
+        "boardSha256": "50a523188ebcfcff8f2cdf00530a91e264fd47946906bd94f1c0ad5ca6b1e7f1"
+      },
+      "bodyRegions": [
+        {"x": -26.035, "y": -10.16, "width": 52.07, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5703",
     "name": "Adafruit PiCowbell Adalogger for Pico - MicroSD, RTC & STEMMA QT",
     "manufacturer": "Adafruit",
@@ -698,6 +759,21 @@ export default [
   },
   {
     "id": "adafruit-module-1895",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "Adafruit ADA1895: EAGLE Adafruit I2C FRAM.brd; commit f7d4afa22ddd header geometry", "url": "https://github.com/adafruit/Adafruit-FRAM-Breakout-PCB/blob/f7d4afa22ddd562f52c557e2e8f003611515b4f4/Adafruit%20I2C%20FRAM.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "5b1f3d761b525adf69dad0457708bbc4a2f44c9484cddc3eb237a37bafeb067b"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -7.62, "width": 20.32, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1895",
     "name": "Adafruit I2C Non-Volatile FRAM Breakout - 256Kbit / 32KByte",
     "manufacturer": "Adafruit",

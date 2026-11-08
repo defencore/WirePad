@@ -4,6 +4,21 @@ import assets from "./temperature-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen13314",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "SparkFun SEN-13314: EAGLE Digital Temperature Sensor Breakout - TMP102.brd; commit 36ba5a6a2681 header geometry", "url": "https://github.com/sparkfun/Digital_Temperature_Sensor_Breakout_-_TMP102/blob/36ba5a6a268163e38cb3e0a89b786ba80f15c143/Hardware/Digital%20Temperature%20Sensor%20Breakout%20-%20TMP102.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06"}],
+        "boardSha256": "d256bbd2224655414d58d246a4b4364e647e6573c030583c132fb5fc44d2c921"
+      },
+      "bodyRegions": [
+        {"x": -7.62, "y": -7.62, "width": 15.24, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-13314",
     "name": "SparkFun Digital Temperature Sensor Breakout - TMP102",
     "manufacturer": "SparkFun",
@@ -78,6 +93,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen10740",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "SparkFun SEN-10740: EAGLE SparkFun_IR_Thermometer_Eval-MLX90614.brd; commit afc54826e084 header geometry", "url": "https://github.com/sparkfun/IR_Thermometer_Evaluation_Board-MLX90614/blob/afc54826e0842d36211a28420ee916cf09fba23b/Hardware/SparkFun_IR_Thermometer_Eval-MLX90614.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06"}, {"id": "JP2", "count": 8, "package": "1X08"}],
+        "boardSha256": "857d5ac665368b28df0b46e58c7d92bc00d79341546c83c6d7f5bf4d74ca3d5f"
+      },
+      "bodyRegions": [
+        {"x": -15.24, "y": -11.43, "width": 30.48, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-10740",
     "name": "SparkFun IR Thermometer Evaluation Board - MLX90614",
     "manufacturer": "SparkFun",
@@ -152,6 +182,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen15805",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun SEN-15805: EAGLE v10 Sparkfun_TMP117_Qwiic.brd; commit aa763eaee71d header geometry", "url": "https://github.com/sparkfun/SparkFun_High_Precision_Temperature_Sensor_TMP117_Qwiic/blob/aa763eaee71d9245e5c31daa6883f6f5c6186f16/Hardware/Sparkfun_TMP117_Qwiic.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "9196c5492020bb2594d0c5d9a7b672514d58f515563dcc4f2a4b9c7ab03ebce3"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-15805",
     "name": "SparkFun High Precision Temperature Sensor - TMP117 (Qwiic)",
     "manufacturer": "SparkFun",

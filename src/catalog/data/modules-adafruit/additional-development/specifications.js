@@ -505,6 +505,23 @@ export default [
   },
   {
     "id": "adafruit-module-3405",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12"],
+      "source": {"label": "Adafruit ADA3405: EAGLE Adafruit HUZZAH32 ESP32 Feather.brd; commit e23514c6f9e1 header geometry", "url": "https://github.com/adafruit/Adafruit-HUZZAH32-ESP32-Feather-PCB/blob/e23514c6f9e124a60f9d1de6567c791561b43e73/Adafruit%20HUZZAH32%20ESP32%20Feather.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16_ROUND_MIN"}, {"id": "JP3", "count": 12, "package": "1X12_ROUND_MIN"}],
+        "boardSha256": "992bffd6f20cd5fb8087a5008e6154a038db17f7a3e3fe9dad4bcff48adc0200"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": -0.046, "y": -9.0, "width": 25.5, "height": 18.0},
+        {"x": -25.855, "y": -3.975, "width": 6.0, "height": 8.325}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3405",
     "name": "Adafruit HUZZAH32 – ESP32 Feather Board",
     "manufacturer": "Adafruit",
@@ -620,6 +637,22 @@ export default [
   },
   {
     "id": "adafruit-module-3458",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12"],
+      "source": {"label": "Adafruit ADA3458: EAGLE Adafruit Feather 328P.brd; commit 62859c243921 header geometry", "url": "https://github.com/adafruit/Adafruit-Feather-328P-PCB/blob/62859c243921da2d1221681373356f1559855cbc/Adafruit%20Feather%20328P.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16_ROUND"}, {"id": "JP3", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "da3bf5d00775cd123b660238dfa295a343b72016b7f9919aa3341755c3ebd760"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": -25.855, "y": -3.975, "width": 6.0, "height": 8.325}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3458",
     "name": "Adafruit Feather 328P - Atmega328P 3.3V @ 8 MHz",
     "manufacturer": "Adafruit",
@@ -735,6 +768,22 @@ export default [
   },
   {
     "id": "adafruit-module-2771",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12"],
+      "source": {"label": "Adafruit ADA2771: EAGLE Adafruit Feather 32u4 Basic rev B.brd; commit 42d06b39d8af header geometry", "url": "https://github.com/adafruit/Adafruit-Feather-32u4-Basic-Proto-PCB/blob/42d06b39d8afeb23881364d3a9fabe1cc80b6dd5/Adafruit%20Feather%2032u4%20Basic%20rev%20B.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16_ROUND"}, {"id": "JP3", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "ef83aadf8d0598e7b205a50def247c2fb806b8ce3fff1b2f74038c0fd24b4a4f"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": -25.855, "y": -3.975, "width": 6.0, "height": 8.325}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2771",
     "name": "Adafruit Feather 32u4 Basic Proto",
     "manufacturer": "Adafruit",
@@ -1346,6 +1395,23 @@ export default [
   },
   {
     "id": "adafruit-module-2795",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12"],
+      "source": {"label": "Adafruit ADA2795: EAGLE Adafruit Feather 32u4 Adalogger.brd; commit c7e87d6e0feb header geometry", "url": "https://github.com/adafruit/Adafruit-Feather-32u4-Adalogger-PCB/blob/c7e87d6e0feb5d3e048c3715038c0e4ce71cdfa0/Adafruit%20Feather%2032u4%20Adalogger.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16_ROUND"}, {"id": "JP3", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "2d4114b9801c7fb54a7a4b30004daf894802c3752a97dbe67a96cfb64f257026"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86},
+        {"x": 8.409, "y": -7.165, "width": 20.47, "height": 14.2},
+        {"x": -25.855, "y": -3.975, "width": 6.0, "height": 8.325}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2795",
     "name": "Adafruit Feather 32u4 Adalogger",
     "manufacturer": "Adafruit",

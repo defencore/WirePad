@@ -4,6 +4,20 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "dfrobot-fermion-sht31-f-sen0332",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "source": {"label": "DFRobot SEN0332: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/21781/SEN0332_sht31-f-temp-humi-sensor_layout_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Dimension-calibrated manufacturer vector PDF contact centers. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 6}]
+      },
+      "bodyRegions": [
+        {"x": -9.5, "y": -8.0, "width": 19, "height": 16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0332",
     "name": "DFRobot Fermion: SHT31-F Digital Temperature & Humidity Sensor (Breakout, I2C)",
     "manufacturer": "DFRobot",
@@ -56,6 +70,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-lwlp5000-sen0343",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4"],
+      "source": {"label": "DFRobot SEN0343: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/17657/SEN0343_lwlp5000-differential-pressure-sensor_dimension_v1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Dimension-calibrated manufacturer vector PDF contact centers. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 4}]
+      },
+      "bodyRegions": [
+        {"x": -7.25, "y": -12.0, "width": 14.5, "height": 24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0343",
     "name": "DFRobot Fermion: LWLP5000 Differential Pressure Sensor - ±500pa (Breakout)",
     "manufacturer": "DFRobot",
@@ -107,6 +135,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-as7341-sen0365",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "source": {"label": "DFRobot SEN0365: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/20213/SEN0365_as7341-visible-light-spectral-detection-sensor_dimension_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Dimension-calibrated manufacturer vector PDF contact centers. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 6}]
+      },
+      "bodyRegions": [
+        {"x": -9.0, "y": -7.0, "width": 18, "height": 14}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0365",
     "name": "DFRobot Fermion: AS7341 11-Channel Visible Light Sensor (Breakout)",
     "manufacturer": "DFRobot",
@@ -159,6 +201,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-vl53l3cx-sen0378",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "source": {"label": "DFRobot SEN0378: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/20571/SEN0378_tof-distance-ranging-sensor_dimension_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 6}]
+      },
+      "bodyRegions": [
+        {"x": -9.0, "y": -7.5, "width": 18, "height": 15}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0378",
     "name": "DFRobot Fermion: VL53L3CX ToF Distance Ranging Sensor (25-3000mm) (Breakout)",
     "manufacturer": "DFRobot",
@@ -211,6 +267,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-sgp40-sen0392",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4"],
+      "source": {"label": "DFRobot SEN0392: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/19373/SEN0392_sgp40_schematics_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 4}]
+      },
+      "bodyRegions": [
+        {"x": -9.0, "y": -5.75, "width": 18, "height": 11.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0392",
     "name": "DFRobot Fermion: SGP40 VOC Air Quality Sensor - Smart IAQ Monitoring (Breakout)",
     "manufacturer": "DFRobot",
@@ -262,6 +332,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-tcs3430-sen0403",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "source": {"label": "DFRobot SEN0403: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/20186/SEN0403_tcs3430-tristimulus-color-sensor_dimension_V1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 6}]
+      },
+      "bodyRegions": [
+        {"x": -11.0, "y": -7.5, "width": 22, "height": 15}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0403",
     "name": "DFRobot Fermion: TCS3430 Tristimulus Color Sensor (Breakout)",
     "manufacturer": "DFRobot",
@@ -418,6 +502,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-vl6180x-sen0427",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "source": {"label": "DFRobot SEN0427: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/21146/SEN0427_vl6180x_dimension_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 6}]
+      },
+      "bodyRegions": [
+        {"x": -9.5, "y": -9.0, "width": 19, "height": 18}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0427",
     "name": "DFRobot Fermion: VL6180X ToF Distance Ranging Sensor (5-100mm) (Breakout)",
     "manufacturer": "DFRobot",
@@ -470,6 +568,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-tmf8801-sen0430",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+      "source": {"label": "DFRobot SEN0430: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/21157/SEN0430_tmf8801_schematics_v1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 8}]
+      },
+      "bodyRegions": [
+        {"x": -10.5, "y": -7.25, "width": 21, "height": 14.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0430",
     "name": "DFRobot Fermion: TMF8801 ToF Distance Ranging Sensor (20-2500mm) (Breakout, I2C)",
     "manufacturer": "DFRobot",
@@ -522,6 +634,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-sts35-sen0434",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "source": {"label": "DFRobot SEN0434: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/19346/SEN0434_fermion-sts35-high-accuracy-digital-temperature-sensor_dimension_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 6}]
+      },
+      "bodyRegions": [
+        {"x": -10.0, "y": -8.75, "width": 20, "height": 17.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0434",
     "name": "DFRobot Fermion: STS35 High Accuracy Digital Temperature Sensor (Breakout)",
     "manufacturer": "DFRobot",
@@ -574,6 +700,22 @@ export default [
   },
   {
     "id": "dfrobot-fermion-mcp9808-sen0435",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+      "source": {"label": "DFRobot SEN0435: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/21795/SEN0435_mcp9808-temperature-sensor_dimension_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Dimension-calibrated manufacturer vector PDF contact centers. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 8}]
+      },
+      "bodyRegions": [
+        {"x": -11.5, "y": -9.25, "width": 23, "height": 18.5},
+        {"x": 7.2, "y": -9.3, "width": 3.6, "height": 3.6},
+        {"x": -10.8, "y": -9.3, "width": 3.6, "height": 3.6}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0435",
     "name": "DFRobot Fermion: MCP9808 High Accuracy Temperature Sensor (Breakout, I2C)",
     "manufacturer": "DFRobot",
@@ -626,6 +768,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-mics5524-sen0440",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4"],
+      "source": {"label": "DFRobot SEN0440: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/20519/SEN0440_fermion-mics-5524-gas-concentration-sensor_dimension_1.0.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 4}]
+      },
+      "bodyRegions": [
+        {"x": -6.0, "y": -7.75, "width": 12, "height": 15.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0440",
     "name": "DFRobot Fermion: MEMS Multi-Gas Detector - CO/CH4/Ethanol Sensor (1-1000ppm, Breakout)",
     "manufacturer": "DFRobot",
@@ -677,6 +833,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-mics2714-sen0441",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4"],
+      "source": {"label": "DFRobot SEN0441: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/20515/SEN0441_mics-2714-sensor_dimension_v1.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 4}]
+      },
+      "bodyRegions": [
+        {"x": -7.75, "y": -6.0, "width": 15.5, "height": 12}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0441",
     "name": "DFRobot Fermion: MEMS H2 & NOx Gas Detector - MiCS-2714 Sensor (1-1000ppm, Breakout)",
     "manufacturer": "DFRobot",
@@ -729,6 +899,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-s15ot421-sen0487",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3"],
+      "source": {"label": "DFRobot SEN0487: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/17383/SEN0487_mems-microphone-sensor_stpfile_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Dimension-calibrated manufacturer vector PDF contact centers. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "J1", "count": 3}]
+      },
+      "bodyRegions": [
+        {"x": -9.0, "y": -6.25, "width": 18, "height": 12.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0487",
     "name": "DFRobot Fermion: MEMS Microphone Module - S15OT421(Breakout)",
     "manufacturer": "DFRobot",
@@ -786,6 +970,20 @@ export default [
   },
   {
     "id": "dfrobot-fermion-bmm350-sen0622",
+    "mountingReview": {
+      "contactIds": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9"],
+      "source": {"label": "DFRobot SEN0622: V1.0 / cited manufacturer physical pinmap and schematic header geometry", "url": "https://dfimg.dfrobot.com/wiki/21159/SEN0622_bm350_layout_v1.pdf"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer dimension drawing / same-side flat pinmap traced to the documented board size and header pitch. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "P1", "count": 9}]
+      },
+      "bodyRegions": [
+        {"x": -12.5, "y": -8.0, "width": 25, "height": 16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0622",
     "name": "DFRobot Fermion: BMM350 Triple-Axis Magnetometer Sensor for AR / VR (Breakout)",
     "manufacturer": "DFRobot",

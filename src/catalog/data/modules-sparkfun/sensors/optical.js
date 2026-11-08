@@ -4,6 +4,21 @@ import assets from "./optical-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen17372",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3"],
+      "source": {"label": "SparkFun SEN-17372: EAGLE SparkFun_PIR_Breakout.brd; commit e1c86b184744 header geometry", "url": "https://github.com/sparkfun/SparkFun_PIR_Breakout/blob/e1c86b1847447b501164085ba2aaa37a6c01d97a/Hardware/SparkFun_PIR_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 3, "package": "1X03_NO_SILK"}],
+        "boardSha256": "cd41717cef0c8bc4fb4ef4cf274d7152d1b093a0499c055decf0bd34c639bb90"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -10.795, "width": 12.7, "height": 21.59}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-17372",
     "name": "SparkFun PIR Breakout - 170uA (EKMC4607112K)",
     "manufacturer": "SparkFun",
@@ -73,6 +88,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob08688",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3"],
+      "source": {"label": "SparkFun BOB-08688: EAGLE SparkFun_TEMT6000_Breakout-v12.brd; commit e330459795e7 header geometry", "url": "https://github.com/sparkfun/Ambient_Light_Sensor_Breakout-TEMT6000/blob/e330459795e7a05b63107fdf66340e42b33b1c33/Hardware/SparkFun_TEMT6000_Breakout-v12.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP4", "count": 3, "package": "1X03"}],
+        "boardSha256": "5f9db816deeb6b63a45ec8972c6280e5e6b5bbc061b9841241044e8b244ea745"
+      },
+      "bodyRegions": [
+        {"x": -5.08, "y": -5.08, "width": 10.16, "height": 10.16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-08688",
     "name": "SparkFun Ambient Light Sensor Breakout - TEMT6000",
     "manufacturer": "SparkFun",
@@ -136,6 +166,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob09322",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "SparkFun BOB-09322: EAGLE PhotoInterrupter-Breakout.brd; commit a2d2437948c4 header geometry", "url": "https://github.com/sparkfun/Photo_Interrupter_Breakout/blob/a2d2437948c43567ae02486b14bb44938b972bb2/Hardware/PhotoInterrupter-Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03"}],
+        "boardSha256": "9ac99faa0b102dd491433ad88cfda329743656ca80fd202f3d15aec4f2f53d13"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -7.62, "width": 20.32, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-09322",
     "name": "SparkFun Photo Interrupter Breakout Board - GP1A57HRJ00F",
     "manufacturer": "SparkFun",
@@ -210,6 +255,21 @@ export default [
   },
   {
     "id": "sparkfun-module-rob09453",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "SparkFun ROB-09453: EAGLE QRE1113 Line Sensor Breakout - Analog.brd; commit 1671498b31a6 header geometry", "url": "https://github.com/sparkfun/QRE1113_Line_Sensor-Analog/blob/1671498b31a63009afdcaf7832a2de51793f45f2/Hardware/QRE1113%20Line%20Sensor%20Breakout%20-%20Analog.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03"}],
+        "boardSha256": "ac6968e743283e9ae96fa28f0716d3bde0c03b757c72ffc377881cb58ca878f3"
+      },
+      "bodyRegions": [
+        {"x": -3.81, "y": -6.985, "width": 7.62, "height": 13.97}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ROB-09453",
     "name": "SparkFun Line Sensor Breakout - QRE1113 (Analog)",
     "manufacturer": "SparkFun",
@@ -285,6 +345,21 @@ export default [
   },
   {
     "id": "sparkfun-module-rob09454",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "SparkFun ROB-09454: EAGLE SparkFun_QRE1113_Line_Sensor_Breakout_Digital.brd; commit c9880cb4f6ba header geometry", "url": "https://github.com/sparkfun/QRE1113_Line_Sensor_Breakout-Digital/blob/c9880cb4f6baa0265e30cb472d816f04ea348d86/Hardware/SparkFun_QRE1113_Line_Sensor_Breakout_Digital.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03"}],
+        "boardSha256": "e0a672c7003eaba2524e3000f64ab2d30c478b346b7562f2aeae9f9cfaead6a6"
+      },
+      "bodyRegions": [
+        {"x": -3.81, "y": -6.985, "width": 7.62, "height": 13.97}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ROB-09454",
     "name": "SparkFun Line Sensor Breakout - QRE1113 (Digital)",
     "manufacturer": "SparkFun",
@@ -445,6 +520,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen12829",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "SparkFun SEN-12829: EAGLE SparkFun_ISL29125_Breakout.brd; commit 97a4a9128a24 header geometry", "url": "https://github.com/sparkfun/ISL29125_Breakout/blob/97a4a9128a247f3f6526d20b2deab9c502e6d48e/Hardware/SparkFun_ISL29125_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05"}],
+        "boardSha256": "9c40d52b4345d2ebe63d2c04fa8d7a0840c9d0b24488638fa49be35ccec48b09"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -8.255, "width": 17.78, "height": 16.51}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-12829",
     "name": "SparkFun RGB Light Sensor - ISL29125",
     "manufacturer": "SparkFun",
@@ -525,6 +615,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen12784",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "SparkFun SEN-12784: EAGLE SparkFun_VL6180_Breakout.brd; commit 2faa308fd111 header geometry", "url": "https://github.com/sparkfun/ToF_Range_Finder_Breakout-VL6180/blob/2faa308fd111d75ad37b4861f93b4bca551254aa/Hardware/SparkFun_VL6180_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06"}],
+        "boardSha256": "cb42395e065042391444b8f1c4a75090208085f8474b0353ceeb04da37e1117c"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -7.62, "width": 17.78, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-12784",
     "name": "SparkFun ToF Range Finder Breakout - VL6180",
     "manufacturer": "SparkFun",
@@ -599,6 +704,22 @@ export default [
   },
   {
     "id": "sparkfun-module-sen12785",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "SparkFun SEN-12785: EAGLE SparkFun_VL6180_Sensor.brd; commit 6df9637f3e07 header geometry", "url": "https://github.com/sparkfun/ToF_Range_Finder_Sensor-VL6180/blob/6df9637f3e0700be49c3cc0022caf16341af2d0b/Hardware/SparkFun_VL6180_Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06"}],
+        "boardSha256": "158f0f6078e64fd06aeb544532c900dcde9cfc4c3794db36fbaa075e3a1096a1"
+      },
+      "bodyRegions": [
+        {"x": -18.5, "y": -6.5000005, "width": 37, "height": 13.000001},
+        {"x": -7.620128, "y": 3.96059, "width": 15.24, "height": 2.54}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-12785",
     "name": "SparkFun ToF Range Finder Sensor - VL6180",
     "manufacturer": "SparkFun",
@@ -822,6 +943,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen15177",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun SEN-15177: EAGLE Qwiic Proximity Sensor - VCNL4040.brd; commit af01991774b8 header geometry", "url": "https://github.com/sparkfun/Qwiic_Proximity_Sensor/blob/af01991774b84238a18030e7f02f67c530ec456c/Hardware/Qwiic%20Proximity%20Sensor%20-%20VCNL4040.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "cc03e494959d2951093f3621fd7b1702219af076d48c596a0a11a0c274ed9baa"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-15177",
     "name": "SparkFun Proximity Sensor Breakout - 20cm, VCNL4040 (Qwiic)",
     "manufacturer": "SparkFun",
@@ -923,6 +1059,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen14722",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun SEN-14722: EAGLE Qwiic Distance Sensor - VL53L1X.brd; commit 543b1e2d8032 header geometry", "url": "https://github.com/sparkfun/Qwiic_Distance_VL53L1X/blob/543b1e2d80325a39c2585882808757361f86cc66/Hardware/Qwiic%20Distance%20Sensor%20-%20VL53L1X.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "0705d900704d4ba9d78a18d0126cd4067e52c2402f01f066310bbb0960f1f456"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-14722",
     "name": "SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)",
     "manufacturer": "SparkFun",
@@ -1024,6 +1175,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen17374",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun SEN-17374: EAGLE Qwiic_PIR.brd; commit 17b39a30d9ea header geometry", "url": "https://github.com/sparkfun/Qwiic_PIR/blob/17b39a30d9ea2ae5aa8e94abd94721c7a31928aa/Hardware/Qwiic_PIR.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "66d605d4561e8aa24a5ac8eda0232f7803251440bdd50e3e21097a5555b3121c"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-17374",
     "name": "SparkFun Qwiic PIR - 170uA (EKMC4607112K)",
     "manufacturer": "SparkFun",

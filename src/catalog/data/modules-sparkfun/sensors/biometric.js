@@ -4,6 +4,21 @@ import assets from "./biometric-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen15219",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4", "j3-5"],
+      "source": {"label": "SparkFun SEN-15219: EAGLE SparkFun_Pulse_Oximeter_Heart-Rate_Sensor.brd; commit eadf4873d663 header geometry", "url": "https://github.com/sparkfun/SparkFun_Pulse_Oximeter_Heart_Rate_Sensor/blob/eadf4873d663a43eef36f3ed97415727a784df7b/Hardware/SparkFun_Pulse_Oximeter_Heart-Rate_Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 5, "package": "1X05_NO_SILK"}],
+        "boardSha256": "e85ced2da3233b1d113fdd2687adeeeaf8b313af75a4de54394fbd2a5273cb34"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -6.35, "width": 25.4, "height": 12.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-15219",
     "name": "SparkFun Pulse Oximeter and Heart Rate Sensor - MAX30101 & MAX32664 (Qwiic)",
     "manufacturer": "SparkFun",

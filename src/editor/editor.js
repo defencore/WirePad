@@ -9,11 +9,12 @@ import { itemCollections as collections, updateItem } from '../model/items.js';
 import { clampPoint, deleteWireBend, insertWireBend } from '../geometry/routing.js';
 import { selectionKey, translateSelection } from './selection.js';
 import { rotateWithAttachments } from './attachments.js';
-import { placementProject, previewPart } from './placement.js';
+import { insertionPoint, placementProject, previewPart } from './placement.js';
 import { suggestPlacement } from './suggest-placement.js';
 import { placementAssessment } from '../geometry/placement-assessment.js';
 import { moveBodyKeepingLeads, moveLead } from '../geometry/lead-placement.js';
-import { attachmentError, detachInvalidAttachments } from '../model/mounting.js';
+import { configureMountedParts } from './configure-mounting.js';
+import { detachInvalidAttachments } from '../model/mounting.js';
 import { automaticWaypoints, resolveAnchor, connectWire, targetExists } from './wire-transactions.js';
 
 export class DiagramEditor {
@@ -143,6 +144,8 @@ export class DiagramEditor {
     return previewPart(this.project, componentId, point);
   }
 
+  insertionPoint(componentId, center) { return insertionPoint(componentId, center); }
+
   placementAssessment(partId, project = this.project) {
     return placementAssessment(project, project.parts.find(part => part.id === partId));
   }
@@ -224,11 +227,7 @@ export class DiagramEditor {
         throw new Error('These settings would remove connected contacts. Disconnect their wires before changing the layout.');
       }
       if (JSON.stringify(config) === JSON.stringify(configuration.normalize(part[configuration.key]))) return false;
-      const next = updateItem(this.project, 'part', part.id, { [configuration.key]: config });
-      const mounted = next.parts.filter(item => item.attachment?.hostPartId === part.id);
-      if (mounted.some(item => attachmentError(next, item))) {
-        throw new Error('These settings would move or remove occupied breadboard contacts. Detach the modules before changing the layout.');
-      }
+      const next = configureMountedParts(this.project, part.id, { ...part, [configuration.key]: config });
       return this.commit(next, { pending: null });
     } catch (error) {
       this.notify(error.message);

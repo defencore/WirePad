@@ -4,6 +4,21 @@ import assets from "./interface-accessories-assets.js";
 export default [
   {
     "id": "adafruit-module-3435",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA3435: EAGLE Adafruit TPL5110.brd; commit f1967694bc20 header geometry", "url": "https://github.com/adafruit/Adafruit-TPL5110-Power-Timer-Breakout-PCB/blob/f1967694bc20333d31b167e4eeaff58742e37bba/Adafruit%20TPL5110.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "b061846be953bc507fd5a4ce2a502eb1391170cfa7c20995650e8a8ce8e6d3d1"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -9.525, "width": 17.78, "height": 19.05}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3435",
     "name": "Adafruit TPL5110 Low Power Timer Breakout",
     "manufacturer": "Adafruit",
@@ -272,6 +287,21 @@ export default [
   },
   {
     "id": "adafruit-module-6354",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA6354: EAGLE Adafruit TPS61169 Constant Current Boost Converter LED Driver.brd; commit c538e5fd9950 header geometry", "url": "https://github.com/adafruit/Adafruit-TPS61169-Constant-Current-Boost-Converter-PCB/blob/c538e5fd9950a652d65cf40744e51a227d458ab2/Adafruit%20TPS61169%20Constant%20Current%20Boost%20Converter%20LED%20Driver.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_76"}],
+        "boardSha256": "22622f6e0128bcb354970bcd1f5d957a282319632c4b21763f3e3a8d3ad35095"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -9.525, "width": 25.4, "height": 19.05}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6354",
     "name": "Adafruit TPS61169 Constant Current Boost Converter for LEDs",
     "manufacturer": "Adafruit",
@@ -374,6 +404,21 @@ export default [
   },
   {
     "id": "adafruit-module-5959",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5959: EAGLE Adafruit S-35710 Breakout.brd; commit acc0684ee70d header geometry", "url": "https://github.com/adafruit/Adafruit-S-35710-Breakout-PCB/blob/acc0684ee70d88a395b09dcea589cb5b443159db/Adafruit%20S-35710%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "c73e864165b283be90056b0bdc9407176ab68a8c840c4fe28fc7ed44f1491679"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5959",
     "name": "Adafruit S-35710 Low-Power Wake Up Timer Breakout",
     "manufacturer": "Adafruit",
@@ -500,6 +545,21 @@ export default [
   },
   {
     "id": "adafruit-module-4648",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4648: EAGLE Adafruit_PCF8591.brd; commit 618da56679c5 header geometry", "url": "https://github.com/adafruit/Adafruit-PCF8591-PCB/blob/618da56679c56b97583774e2c2f724c453e78396/Adafruit_PCF8591.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 7, "package": "1X07_ROUND_70"}, {"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "1707df29ec83e1947cac18dfd43d668d71f39834fb69cb5c1074ab919afe2b8b"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -11.43, "width": 25.4, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4648",
     "name": "Adafruit PCF8591 Quad 8-bit ADC + 8-bit DAC - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -868,6 +928,21 @@ export default [
   },
   {
     "id": "adafruit-module-6223",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6223: EAGLE Adafruit DAC7578P Breakout.brd; commit b9eeb74cd3d0 header geometry", "url": "https://github.com/adafruit/Adafruit-DAC7578-Breakout-PCB/blob/b9eeb74cd3d047db6354b2b9f4fa5676c20b3bc9/Adafruit%20DAC7578P%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 10, "package": "1X10_ROUND70"}, {"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "922d65f912d8a4faff167ce5e1bc7184021036a1fc12ec07b3e3e4ffe8041e4c"
+      },
+      "bodyRegions": [
+        {"x": -13.97, "y": -8.89, "width": 27.94, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6223",
     "name": "Adafruit DAC7578 Breakout - 8 x Channel 12-bit I2C DAC",
     "manufacturer": "Adafruit",

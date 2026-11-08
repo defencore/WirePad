@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { createCommands } from '../src/app/commands.js';
 import { componentById } from '../src/catalog/index.js';
+import { insertionPoint } from '../src/editor/placement.js';
 
 function workspace() {
   const calls = { preview: [], add: [], overlay: [], fit: 0 };
@@ -9,6 +10,7 @@ function workspace() {
   const project = { version: 2, title: 'Existing drawing', parts: [], wires: [] };
   const preview = { project: { ...project, parts: [part] }, part, fit: null };
   const editor = { project, hasDrawing: true,
+    insertionPoint,
     previewPart(...args) { calls.preview.push(args); return preview; },
     addPart(...args) { calls.add.push(args); return part; },
   };
@@ -34,6 +36,19 @@ test('library drag preview uses canvas coordinates and never creates a project h
   assert.equal(editor.project, project);
   commands.clearPlacementPreview();
   assert.equal(calls.overlay.at(-1), undefined);
+});
+
+test('library drag centers the reviewed physical view through the editor placement API', () => {
+  const { commands, calls, editor } = workspace();
+  editor.insertionPoint = (id, center) => {
+    assert.equal(id, 'adafruit-module-5832');
+    assert.deepEqual(center, { x: 150, y: 100 });
+    return { x: -29, y: -25.6 };
+  };
+  commands.previewPart('adafruit-module-5832', { clientX: 300, clientY: 200 });
+  assert.deepEqual(calls.preview[0], ['adafruit-module-5832', { x: -29, y: -25.6 }]);
+  commands.addPart('adafruit-module-5832', { clientX: 300, clientY: 200 });
+  assert.deepEqual(calls.add[0][1], { x: -29, y: -25.6 });
 });
 
 test('library drop commits once with mounting enabled while a normal click keeps ordinary placement', () => {

@@ -4,6 +4,21 @@ import assets from "./adapters-carriers-assets.js";
 export default [
   {
     "id": "adafruit-module-5830",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6"],
+      "source": {"label": "Adafruit ADA5830: EAGLE Adafruit LM66200 Ideal Diode Breakout.brd; commit a305a260e91b header geometry", "url": "https://github.com/adafruit/Adafruit-LM66200-PCB/blob/a305a260e91be4643626c906667e9f58f7349832/Adafruit%20LM66200%20Ideal%20Diode%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "46bf6a6a842f51fdb3cbe87e57a614b3e8e0a7214f4a5f5e956236798d8b6918"
+      },
+      "bodyRegions": [
+        {"x": -8.255, "y": -5.08, "width": 16.51, "height": 10.16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5830",
     "name": "Adafruit LM66200 Ideal Dual Diodes Breakout",
     "manufacturer": "Adafruit",
@@ -165,6 +180,21 @@ export default [
   },
   {
     "id": "adafruit-module-5743",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6"],
+      "source": {"label": "Adafruit ADA5743: EAGLE Gamepad Seesaw QT rev A.brd; commit f214e3c4c4cc header geometry", "url": "https://github.com/adafruit/Adafruit-Mini-I2C-Gamepad-PCB/blob/f214e3c4c4cc4926375d8748b2b136e1991acdf8/Gamepad%20Seesaw%20QT%20rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 6, "package": "1X06_ROUND"}],
+        "boardSha256": "b60d024c024bfc2539ddc95bb85c5691c1889035021dc144451ac6ef2adf6b03"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5743",
     "name": "Adafruit Mini I2C Gamepad with seesaw - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -494,6 +524,21 @@ export default [
   },
   {
     "id": "adafruit-module-5613",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9"],
+      "source": {"label": "Adafruit ADA5613: EAGLE Adafruit EYESPI Breakout Board.brd; commit bc5fa13b55c2 header geometry", "url": "https://github.com/adafruit/Adafruit-EYESPI-PCB/blob/bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b/Adafruit%20EYESPI%20Breakout%20Board.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 9, "package": "1X09_ROUND_70"}, {"id": "JP1", "count": 9, "package": "1X09_ROUND_70"}],
+        "boardSha256": "980a07b3e4ffe77d07f7cedaf70c3356e2b34062b28a7dd54c361a6482c1c47d"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5613",
     "name": "Adafruit EYESPI Breakout Board - 18 Pin FPC Connector",
     "manufacturer": "Adafruit",
@@ -644,6 +689,21 @@ export default [
   },
   {
     "id": "adafruit-module-4570",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6"],
+      "source": {"label": "Adafruit ADA4570: EAGLE DS1841 rev A.brd; commit 5d475eace8ee header geometry", "url": "https://github.com/adafruit/Adafruit-DS1841-PCB/blob/5d475eace8eedf69f1152edd5dc347744d76609f/DS1841%20rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04_ROUND"}, {"id": "JP2", "count": 6, "package": "1X06_ROUND"}],
+        "boardSha256": "9b2da042da6ec18fccf489b9b19265b2207a46bdef36b72091cd63b751bf0ea4"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4570",
     "name": "Adafruit DS1841 I2C Digital 10K Potentiometer Breakout",
     "manufacturer": "Adafruit",
@@ -1089,6 +1149,21 @@ export default [
   },
   {
     "id": "adafruit-module-5964",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4"],
+      "source": {"label": "Adafruit ADA5964: EAGLE Adafruit SEN5x Adapter Breakout.brd; commit fcedf60e56ee header geometry", "url": "https://github.com/adafruit/Adafruit-SEN5x-Adapter-Breakout-PCB/blob/fcedf60e56ee80e49331ec1621d4c64182aa6177/Adafruit%20SEN5x%20Adapter%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04_ROUND"}],
+        "boardSha256": "a28e6cb575e3af8edf548efc8077f0284966667496bd03e8acb7c3a7d10b2464"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5964",
     "name": "Adafruit SEN54 or SEN55 Adapter Breakout - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -1209,6 +1284,21 @@ export default [
   },
   {
     "id": "adafruit-module-6331",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA6331: EAGLE Adafruit SEN6x Breakout.brd; commit 7caff419c5f3 header geometry", "url": "https://github.com/adafruit/Adafruit-SEN6x-Breakout-PCB/blob/7caff419c5f32d5bf41f8e42641b9c158a1db04e/Adafruit%20SEN6x%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "875448b578c99ee1a9db721c6441c7109ca120475d3d68e2772cb817b2707210"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6331",
     "name": "Adafruit SEN6x Breakout for Sensirion SEN66 - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -1632,6 +1722,21 @@ export default [
   },
   {
     "id": "adafruit-module-5978",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA5978: EAGLE Adafruit USB Type C Plug Breakout.brd; commit 11a5d518bac2 header geometry", "url": "https://github.com/adafruit/Adafruit-USB-Type-C-Plug-Breakout-PCB/blob/11a5d518bac2d73989a15c8c9e2dcd97611ef6ab/Adafruit%20USB%20Type%20C%20Plug%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_76"}],
+        "boardSha256": "b80c3e751655f75034cd39061f65298ff1a800066df9b829f6c1d06be1bacac5"
+      },
+      "bodyRegions": [
+        {"x": -6.985, "y": -6.35, "width": 13.97, "height": 12.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5978",
     "name": "Adafruit USB Type C Plug Breakout",
     "manufacturer": "Adafruit",
@@ -1737,6 +1842,21 @@ export default [
   },
   {
     "id": "adafruit-module-4090",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "Adafruit ADA4090: EAGLE Adafruit USB Type C Downstream Breakout rev B.brd; commit 1484ecb56b36 header geometry", "url": "https://github.com/adafruit/Adafruit-USB-C-Downstream-Breakout/blob/1484ecb56b369e177848e69de4b7b7e513399590/Adafruit%20USB%20Type%20C%20Downstream%20Breakout%20rev%20B.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_ROUND_76"}],
+        "boardSha256": "07970b0ad3243684bdf59c0ced537b8b9a8e8b67f7e9032b9464600da21b04e0"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -6.985, "width": 20.32, "height": 13.97}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4090",
     "name": "Adafruit USB Type C Breakout Board - Downstream Connection",
     "manufacturer": "Adafruit",
@@ -1859,6 +1979,22 @@ export default [
   },
   {
     "id": "adafruit-module-6050",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "Adafruit ADA6050: EAGLE Adafruit Sunken USB Type C Breakout.brd; commit 4cb1207ddd6e header geometry", "url": "https://github.com/adafruit/Adafruit-Sunken-USB-Type-C-Breakout-PCB/blob/4cb1207ddd6eae864f4410d110bac38072e9b895/Adafruit%20Sunken%20USB%20Type%20C%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_ROUND_76"}],
+        "boardSha256": "69c93336fbd822bb387f3f753466ece7d1254a1f5a956ddee6fc482309b2dc7b"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -6.985, "width": 20.32, "height": 13.97},
+        {"x": -4.52, "y": -7.561, "width": 9.04, "height": 6.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6050",
     "name": "Adafruit Sunken USB Type C Breakout Board",
     "manufacturer": "Adafruit",
@@ -1971,6 +2107,21 @@ export default [
   },
   {
     "id": "adafruit-module-5625",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp4-1", "jp4-2", "jp4-3", "jp4-4"],
+      "source": {"label": "Adafruit ADA5625: EAGLE Adafruit Stemma QT 5 Port Hub.brd; commit 6e0b58b27cc3 header geometry", "url": "https://github.com/adafruit/Adafruit-Qwiic-Stemma-QT-5-Port-Hub-PCB/blob/6e0b58b27cc36f2f4f2ae72371457032f9a1dc75/Adafruit%20Stemma%20QT%205%20Port%20Hub.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04_ROUND_76"}, {"id": "JP4", "count": 4, "package": "1X04_ROUND_76"}],
+        "boardSha256": "f672895bdded6cf7cafd0561f77ba7539391ef21df848d2ed41b0fe0ba83e5dd"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5625",
     "name": "Adafruit Qwiic / Stemma QT 5 Port Hub",
     "manufacturer": "Adafruit",
@@ -2230,6 +2381,22 @@ export default [
   },
   {
     "id": "adafruit-module-5956",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3"],
+      "source": {"label": "Adafruit ADA5956: EAGLE Adafruit USB Host BFF.brd; commit dc61b50d5ba0 header geometry", "url": "https://github.com/adafruit/Adafruit-USB-Host-BFF-PCB/blob/dc61b50d5ba04d7ba3a73dfa57c0a54d25154393/Adafruit%20USB%20Host%20BFF.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 3, "package": "1X03_ROUND"}],
+        "boardSha256": "87755cb302f682a41cb60a75b1cab1aea4137e88891c24141dae9b5ef3a03299"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -10.3505, "width": 17.78, "height": 20.701},
+        {"x": -3.975, "y": 5.0785, "width": 8.325, "height": 5.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5956",
     "name": "Adafruit USB Host BFF for QT Py or Xiao with MAX3421E",
     "manufacturer": "Adafruit",
@@ -2677,6 +2844,21 @@ export default [
   },
   {
     "id": "adafruit-module-3538",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6"],
+      "source": {"label": "Adafruit ADA3538: EAGLE Adafruit AMG8833.brd; commit 3e5dd5f7bc0e header geometry", "url": "https://github.com/adafruit/Adafruit-AMG8833-Breakout-PCB/blob/3e5dd5f7bc0ed9e6ca07226eaa56b04bbe408489/Adafruit%20AMG8833.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP3", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "dffa6669ebfa6874341fb2ac6a0d853bc5e335ce38b1fcacc14fc56217aa8493"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3538",
     "name": "Adafruit AMG8833 IR Thermal Camera Breakout",
     "manufacturer": "Adafruit",
@@ -2793,6 +2975,21 @@ export default [
   },
   {
     "id": "adafruit-module-3387",
+    "mountingReview": {
+      "contactIds": ["jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp4-9", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA3387: EAGLE Adafruit LSM9DS1 Rev C.brd; commit 9f6db79a66ae header geometry", "url": "https://github.com/adafruit/Adafruit-LSM9DS1-Breakout-PCB/blob/9f6db79a66ae599aa410a2a14b161e26216e8bd4/Adafruit%20LSM9DS1%20Rev%20C.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP4", "count": 9, "package": "1X09_ROUND_70"}, {"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "38dd2a62696fde4803ad7f471b7df6ba751a58e886d6463a92b72367ef3daeaa"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3387",
     "name": "Adafruit 9-DOF Accel/Mag/Gyro+Temp Breakout Board - LSM9DS1",
     "manufacturer": "Adafruit",
@@ -2893,6 +3090,21 @@ export default [
   },
   {
     "id": "adafruit-module-1465",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp2-1", "jp2-2", "jp2-3"],
+      "source": {"label": "Adafruit ADA1465: EAGLE Adafruit 6-ISP AVR.brd; commit 0c7bd1cb7a40 header geometry", "url": "https://github.com/adafruit/Adafruit-ISP-SWD-and-JTAG-Breakout-PCBs/blob/0c7bd1cb7a409f9d1689bc26a0a18079c9339b33/Adafruit%206-ISP%20AVR.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03-CLEANBIG"}, {"id": "JP2", "count": 3, "package": "1X03-CLEANBIG"}],
+        "boardSha256": "ec8544345907361863a6a8700fa9d32b8e88b25fedb2633243307ba1f0f018f9"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -7.62, "width": 17.78, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1465",
     "name": "Adafruit 6-pin AVR ISP Breadboard Adapter Mini Kit",
     "manufacturer": "Adafruit",

@@ -2,6 +2,7 @@ import { componentForPart } from '../model/part-component.js';
 import { partScale } from '../model/part-placement.js';
 import { translation, partRotation, labelPosition } from '../geometry/parts.js';
 import { wireMarkup, partMarkup, junctionDot } from './markup.js';
+import { usesMountedView } from './part-art.js';
 
 export const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
@@ -108,7 +109,9 @@ export function updatePart(layer, entry, { part, connected, covered = new Set() 
   const { label, x, y, rotation } = part;
   const scale = partScale(part);
   const component = componentForPart(part);
-  if (!entry || entry.component !== component || entry.label !== label || entry.leads !== part.leads) {
+  const mountedView = usesMountedView(part, component);
+  if (!entry || entry.component !== component || entry.label !== label || entry.leads !== part.leads ||
+      Boolean(entry.seated) !== Boolean(part.attachment) || Boolean(entry.mountedView) !== mountedView) {
     const node = entry?.node ?? group(layer);
     entry?.background?.remove();
     node.innerHTML = partMarkup(part, component, connected, true);
@@ -126,7 +129,7 @@ export function updatePart(layer, entry, { part, connected, covered = new Set() 
       background.append(backgroundBody);
     }
     entry = { node, component, label, body, caption, pins, outline, background, backgroundBody, connected, rotation,
-      scaleX: scale.x, scaleY: scale.y, leads: part.leads, covered: new Set(), selected: false };
+      scaleX: scale.x, scaleY: scale.y, leads: part.leads, seated: Boolean(part.attachment), mountedView, covered: new Set(), selected: false };
   }
   if (entry.x !== x || entry.y !== y) {
     entry.node.setAttribute('transform', translation(x, y));

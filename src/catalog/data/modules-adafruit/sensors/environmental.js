@@ -85,6 +85,21 @@ export default [
   },
   {
     "id": "adafruit-module-3199",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "Adafruit ADA3199: EAGLE Adafruit MICS-5524.brd; commit d347601d3c62 header geometry", "url": "https://github.com/adafruit/Adafruit-MiCS-5524-Gas-Sensor-Breakout-PCB/blob/d347601d3c62369d5b22a20b0e3f15a8fc04ef48/Adafruit%20MICS-5524.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 4, "package": "1X04_ROUND_76"}],
+        "boardSha256": "581f6049044c6a728f320b02fe49ae19a7b1777968dcbfa1c04599b088b14010"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -9.525, "width": 12.7, "height": 19.05}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3199",
     "name": "Adafruit MiCS5524 CO, Alcohol and VOC Gas Sensor Breakout",
     "manufacturer": "Adafruit",
@@ -237,6 +252,21 @@ export default [
   },
   {
     "id": "adafruit-module-6455",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5"],
+      "source": {"label": "Adafruit ADA6455: EAGLE Adafruit SGP41 Gas Sensor Breakout rev A.brd; commit 9c8e8c6d195e header geometry", "url": "https://github.com/adafruit/Adafruit-SGP41-Gas-Sensor-Breakout-PCB/blob/9c8e8c6d195e430a3537b0dca20fe7e310ece822/Adafruit%20SGP41%20Gas%20Sensor%20Breakout%20rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "a20c8bddd53446b7dbb918b35a25ec0b1a851194e85340d3b20277cb3529e2a5"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6455",
     "name": "Adafruit SGP41 Multi-Pixel Gas Sensor Breakout - VOC & NOx",
     "manufacturer": "Adafruit",
@@ -347,6 +377,21 @@ export default [
   },
   {
     "id": "adafruit-module-4829",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5"],
+      "source": {"label": "Adafruit ADA4829: EAGLE Adafruit SGP40.brd; commit 57911e5d238b header geometry", "url": "https://github.com/adafruit/Adafruit-SGP40-PCB/blob/57911e5d238bc5c3730c621e3135ff2aa36604ec/Adafruit%20SGP40.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "c449f7663c8c2a658d518e9a40da6acf90dc57b8ac764f254bc321a83f159909"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4829",
     "name": "Adafruit SGP40 Air Quality Sensor Breakout - VOC Index",
     "manufacturer": "Adafruit",
@@ -457,6 +502,21 @@ export default [
   },
   {
     "id": "adafruit-module-5606",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA5606: EAGLE Adafruit ENS160.brd; commit 70109a844d55 header geometry", "url": "https://github.com/adafruit/Adafruit-ENS160-PCB/blob/70109a844d554d955433ffba0b05acc497bd77d5/Adafruit%20ENS160.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "7d25dd033c86e786d2ebbef0de3d52451e0bb83af755d8f0e9fe386403492ace"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5606",
     "name": "Adafruit ENS160 MOX Gas Sensor - Sciosense CCS811 Upgrade",
     "manufacturer": "Adafruit",
@@ -563,6 +623,21 @@ export default [
   },
   {
     "id": "adafruit-module-6431",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA6431: EAGLE Adafruit ENS161 MOX Gas Sensor rev A.brd; commit e86ce34b208d header geometry", "url": "https://github.com/adafruit/Adafruit-ENS161-MOX-Gas-Sensor-PCB/blob/e86ce34b208d4d83c8f4cb945312f6c976704c81/Adafruit%20ENS161%20MOX%20Gas%20Sensor%20rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "731db81bfcc5a915dea7606028366261cbf5855fd272a9a2fee70fd3790a2693"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6431",
     "name": "Adafruit ENS161 MOX Gas Sensor",
     "manufacturer": "Adafruit",
@@ -669,6 +744,21 @@ export default [
   },
   {
     "id": "adafruit-module-3709",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5"],
+      "source": {"label": "Adafruit ADA3709: EAGLE SGP30 Rev D.brd; commit 7050ebded47a header geometry", "url": "https://github.com/adafruit/Adafruit-SGP30-PCB/blob/7050ebded47a6c29e98e50ed1329a57262b66f66/SGP30%20Rev%20D.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "03095d305f77e73aa1e0f05e18e6ec62ccbb897cbb0e3663fc613c40cb143ec9"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3709",
     "name": "Adafruit SGP30 Air Quality Sensor Breakout - VOC and eCO2",
     "manufacturer": "Adafruit",

@@ -4,6 +4,21 @@ import assets from "./serial-transceivers-assets.js";
 export default [
   {
     "id": "adafruit-module-5708",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7"],
+      "source": {"label": "Adafruit ADA5708: EAGLE Adafruit CAN Pal Breakout.brd; commit 56618b3a5316 header geometry", "url": "https://github.com/adafruit/Adafruit-CAN-Pal-PCB/blob/56618b3a53162ce48872514be044eab033ed33ef/Adafruit%20CAN%20Pal%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 7, "package": "1X07_ROUND_70"}],
+        "boardSha256": "c4465ef10bc37959d6d2b6f4ae72526831b1785e7a1cf8acf00d8842063f69ae"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -10.16, "width": 20.32, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5708",
     "name": "Adafruit CAN Pal - CAN Bus Transceiver",
     "manufacturer": "Adafruit",
@@ -102,6 +117,22 @@ export default [
   },
   {
     "id": "adafruit-module-5988",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12"],
+      "source": {"label": "Adafruit ADA5988: EAGLE Adafruit RS-232 Full Pinout Level-Shifter Breakout.brd; commit 63c6200bb3ef header geometry", "url": "https://github.com/adafruit/Adafruit-RS-232-Level-Shifter-Breakout-PCB/blob/63c6200bb3ef17d491089cfa6441b1810d79bb20/Adafruit%20RS-232%20Full%20Pinout%20Level-Shifter%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 12, "package": "1X12_ROUND_76MIL"}],
+        "boardSha256": "6a7b35ef909f5a2d243c326c34db3957aaa01275bf2aac8e0c749ff18162e870"
+      },
+      "bodyRegions": [
+        {"x": -15.875, "y": -14.6685, "width": 31.75, "height": 29.337},
+        {"x": -15.494, "y": -21.1455, "width": 30.988, "height": 21.082}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5988",
     "name": "Adafruit RS-232 Full Pinout Level-Shifter Breakout",
     "manufacturer": "Adafruit",
@@ -182,6 +213,21 @@ export default [
   },
   {
     "id": "adafruit-module-5987",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6"],
+      "source": {"label": "Adafruit ADA5987: EAGLE Adafruit RS232 Pal.brd; commit 653d1bb7c6cf header geometry", "url": "https://github.com/adafruit/Adafruit-RS232-Pal-PCB/blob/653d1bb7c6cf2d9efe381b85ff275bf0feefdb17/Adafruit%20RS232%20Pal.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP2", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "8718489dc93e19944ca749e7599744b31d8354ba46740e002836b0aa80a73dea"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -10.16, "width": 17.78, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5987",
     "name": "Adafruit RS232 Pal - Two Channel UART to RS-232 Level Shifters",
     "manufacturer": "Adafruit",
@@ -257,6 +303,22 @@ export default [
   },
   {
     "id": "adafruit-module-5879",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "Adafruit ADA5879: EAGLE Adafruit UPDI Friend.brd; commit 606304673840 header geometry", "url": "https://github.com/adafruit/Adafruit-UPDI-Friend-PCB/blob/6063046738409ca77509f5ccce2f2b0ce72be210/Adafruit%20UPDI%20Friend.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_ROUND_76"}],
+        "boardSha256": "fe954b3bfe370788593c6de37f63a518e9ceb12089adf0d001f3a57d473cca3d"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -12.7, "width": 17.78, "height": 25.4},
+        {"x": -4.47, "y": -13.589, "width": 8.94, "height": 7.35}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5879",
     "name": "Adafruit UPDI Friend - USB Serial UPDI Programmer",
     "manufacturer": "Adafruit",

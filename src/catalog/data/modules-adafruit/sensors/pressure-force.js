@@ -4,6 +4,21 @@ import assets from "./pressure-force-assets.js";
 export default [
   {
     "id": "adafruit-module-6067",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6067: EAGLE Adafruit LPS28 Pressure Sensor.brd; commit 593fed8bfe3f header geometry", "url": "https://github.com/adafruit/Adafruit-LPS28-Pressure-Sensor-PCB/blob/593fed8bfe3f406d6f40a9c7bd83e88b92a25055/Adafruit%20LPS28%20Pressure%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "a0762d93d636e04c368c6394c9ab94bafc692b6582b55cc9d0ae4fccb517863b"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6067",
     "name": "Adafruit LPS28 (LPS28DFW) Pressure Sensor - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -120,6 +135,21 @@ export default [
   },
   {
     "id": "adafruit-module-5974",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5974: EAGLE Adafruit HX711 ADC Breakout.brd; commit 4444b42fc47d header geometry", "url": "https://github.com/adafruit/Adafruit-HX711-24-bit-ADC-PCB/blob/4444b42fc47d665fcd6694097690cfbf6c609b43/Adafruit%20HX711%20ADC%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "158bde6f472703152b468b128c81ef813c23a9afd2334108cdf277de0651e963"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -11.43, "width": 25.4, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5974",
     "name": "Adafruit HX711 24-bit ADC for Load Cells / Strain Gauges",
     "manufacturer": "Adafruit",

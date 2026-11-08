@@ -4,6 +4,21 @@ import assets from "./motion-position-assets.js";
 export default [
   {
     "id": "sparkfun-module-sen12916",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4"],
+      "source": {"label": "SparkFun SEN-12916: EAGLE SparkFun_HMC6343_Breakout.brd; commit fbf992ea2d4b header geometry", "url": "https://github.com/sparkfun/HMC6343_Breakout/blob/fbf992ea2d4b75a3d542096c5980e1a0421aec73/Hardware/SparkFun_HMC6343_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04"}],
+        "boardSha256": "87e79e00a8f71ae02e3255256ca4000722a8a15b6d10e4f1c345897089e28f36"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -10.16, "width": 20.32, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-12916",
     "name": "SparkFun Digital Compass - HMC6343",
     "manufacturer": "SparkFun",
@@ -78,6 +93,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen09269",
+    "mountingReview": {
+      "contactIds": ["sl1-1", "sl1-2", "sl1-3", "sl1-4", "sl1-5", "sl1-6"],
+      "source": {"label": "SparkFun SEN-09269: EAGLE ADXL335_Breakout.brd; commit a6bd15dc1c32 header geometry", "url": "https://github.com/sparkfun/ADXL335_Breakout/blob/a6bd15dc1c323079e7c0a6c2453a8c9bb4c61abb/Hardware/ADXL335_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "SL1", "count": 6, "package": "1X06"}],
+        "boardSha256": "8e0987ccbae9df81317d1b221de2d5590153391457542fdc88e6347270fb739e"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -7.62, "width": 17.78, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-09269",
     "name": "SparkFun Triple Axis Accelerometer Breakout - ADXL335",
     "manufacturer": "SparkFun",
@@ -152,6 +182,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen09836",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "SparkFun SEN-09836: EAGLE ADXL345_Breakout.brd; commit 8e83a624bcae header geometry", "url": "https://github.com/sparkfun/ADXL345_Breakout/blob/8e83a624bcaea0a3071885c58634b56fbefa346d/Hardware/ADXL345_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08"}],
+        "boardSha256": "c24922728d0d5e47a2ae2fc88ac5c1f9433176839e0dfac97392f58ebb3ae5ba"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -7.62, "width": 20.32, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-09836",
     "name": "SparkFun Triple Axis Accelerometer Breakout - ADXL345",
     "manufacturer": "SparkFun",
@@ -226,6 +271,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen11446",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "SparkFun SEN-11446: EAGLE ADXL362_BOB.brd; commit 59a85587537e header geometry", "url": "https://github.com/sparkfun/ADXL362_Breakout/blob/59a85587537e4fc45d4ad3c78782bf165ba9caac/Hardware/ADXL362_BOB.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04"}, {"id": "JP2", "count": 4, "package": "1X04"}],
+        "boardSha256": "d09bcd9b3f5fb96fd6b279078b6b5690e303aea894f37246e88407defeeb6949"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -5.08, "width": 12.7, "height": 10.16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-11446",
     "name": "SparkFun Triple Axis Accelerometer Breakout - ADXL362",
     "manufacturer": "SparkFun",
@@ -382,6 +442,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen13963",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6"],
+      "source": {"label": "SparkFun SEN-13963: EAGLE SparkFun_LIS3DH-Breakout.brd; commit a57ba3b3d98e header geometry", "url": "https://github.com/sparkfun/LIS3DH_Breakout/blob/a57ba3b3d98e85724a43635a34a181869db26e82/Hardware/SparkFun_LIS3DH-Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 6, "package": "1X06_NO_SILK"}, {"id": "J2", "count": 6, "package": "1X06_NO_SILK"}],
+        "boardSha256": "dbb8693c545a98e21b53b401b2a105d8f26fa58efb095179618de399185d22a5"
+      },
+      "bodyRegions": [
+        {"x": -11.43, "y": -6.35, "width": 22.86, "height": 12.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-13963",
     "name": "SparkFun Triple Axis Accelerometer Breakout - LIS3DH",
     "manufacturer": "SparkFun",
@@ -568,6 +643,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen14571",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6"],
+      "source": {"label": "SparkFun SEN-14571: EAGLE Qwiic_MLX90393_Magnetometer.brd; commit 9167ef00efc6 header geometry", "url": "https://github.com/sparkfun/Qwiic_Magnetometer_MLX90393/blob/9167ef00efc6b20c69a5dd715c359d926beadd56/Hardware/Qwiic_MLX90393_Magnetometer.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 6, "package": "1X06_NO_SILK"}, {"id": "J2", "count": 6, "package": "1X06_NO_SILK"}],
+        "boardSha256": "7abddbb07fe1208bada10c2d68c684235389f156c33723e4ed917e093b3c0f5f"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-14571",
     "name": "SparkFun Triple Axis Magnetometer Breakout - MLX90393 (Qwiic)",
     "manufacturer": "SparkFun",

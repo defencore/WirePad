@@ -1216,6 +1216,21 @@ export default [
   },
   {
     "id": "seeed-grove-adxl335-101020051",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6"],
+      "source": {"label": "Seeed Studio 101020051: v1.1 header geometry", "url": "https://files.seeedstudio.com/wiki/Grove-3-Axis_Analog_Accelerometer/res/Grove-3-Axis_Analog_Accelerometer_Eagle_File.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 6, "package": "6P-2.54-60/35MIL"}],
+        "boardSha256": "8773404528a2219c39caa5023ba85a91911fba617857fcf339cb0d82e229e013"
+      },
+      "bodyRegions": [
+        {"x": -10.0, "y": -12.1, "width": 20, "height": 24.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "101020051",
     "name": "Seeed Grove - 3-Axis Analog Accelerometer",
     "manufacturer": "Seeed Studio",

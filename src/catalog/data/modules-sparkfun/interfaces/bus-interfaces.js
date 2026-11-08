@@ -4,6 +4,21 @@ import assets from "./bus-interfaces-assets.js";
 export default [
   {
     "id": "sparkfun-module-bob09118",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "SparkFun BOB-09118: EAGLE SparkFun_Opto_Isolator_Breakout.brd; commit fcf3b555d610 header geometry", "url": "https://github.com/sparkfun/Opto_Isolator_Breakout/blob/fcf3b555d61089760e7e3c924f89e31108b939b3/Hardware/SparkFun_Opto_Isolator_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04"}, {"id": "JP2", "count": 4, "package": "1X04"}],
+        "boardSha256": "5ea67b035204ff4afbc6c603e9e443f4a5d0e34d139199b3fa7029315f8911da"
+      },
+      "bodyRegions": [
+        {"x": -7.62, "y": -6.35, "width": 15.24, "height": 12.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-09118",
     "name": "SparkFun Opto-isolator Breakout",
     "manufacturer": "SparkFun",
@@ -73,6 +88,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob13906",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j1-7", "j1-8", "j1-9", "j1-10", "j1-11", "j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8"],
+      "source": {"label": "SparkFun BOB-13906: EAGLE SparkFun-74HC4051-8-Channel-Mux-Breakout.brd; commit 937d5446a825 header geometry", "url": "https://github.com/sparkfun/74HC4051_8-Channel_Mux_Breakout/blob/937d5446a825fcf739dcea2c65fb4e66cd9fd62f/Hardware/SparkFun-74HC4051-8-Channel-Mux-Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 11, "package": "1X11"}, {"id": "J2", "count": 8, "package": "1X08_ROUND"}],
+        "boardSha256": "4005b7cbb6652c2b38402d8d6accb0fe260728bf81bd0086a54f780a6d578e29"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -13.97, "width": 12.7, "height": 27.94}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-13906",
     "name": "SparkFun Multiplexer Breakout - 8 Channel (74HC4051)",
     "manufacturer": "SparkFun",
@@ -166,6 +196,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob09056",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12", "jp1-13", "jp1-14", "jp1-15", "jp1-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8"],
+      "source": {"label": "SparkFun BOB-09056: EAGLE Analog-Digital-Mux-Breakout.brd; commit f7f2eeb11761 header geometry", "url": "https://github.com/sparkfun/Analog_Digital_MUX_Breakout/blob/f7f2eeb117617e67ab8442edc7ba767d19f0fd75/Hardware/Analog-Digital-Mux-Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 16, "package": "1X16"}, {"id": "JP3", "count": 8, "package": "1X08"}],
+        "boardSha256": "801aac85612c46bd2941977f1febb9f025d41f54f8ccf912b33ae60706d8f408"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -20.32, "width": 17.78, "height": 40.64}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-09056",
     "name": "SparkFun Analog/Digital MUX Breakout - CD74HC4067",
     "manufacturer": "SparkFun",
@@ -246,6 +291,21 @@ export default [
   },
   {
     "id": "sparkfun-module-dev17047",
+    "mountingReview": {
+      "contactIds": ["j9-1", "j9-2", "j9-3", "j9-4"],
+      "source": {"label": "SparkFun DEV-17047: EAGLE Qwiic_GPIO.brd; commit d3fc4672ccd7 header geometry", "url": "https://github.com/sparkfun/Qwiic_GPIO/blob/d3fc4672ccd731266f01de194a290f7923f77d8a/Hardware/Qwiic_GPIO.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J9", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "2d8ed56bf13a1880bb2ffd87c0260be6e3438df6c62a7c5c1bea361ca20d64c1"
+      },
+      "bodyRegions": [
+        {"x": -30.48, "y": -19.05, "width": 60.96, "height": 38.1}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DEV-17047",
     "name": "SparkFun Qwiic GPIO",
     "manufacturer": "SparkFun",

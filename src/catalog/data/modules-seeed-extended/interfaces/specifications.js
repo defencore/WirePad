@@ -1099,6 +1099,21 @@ export default [
   },
   {
     "id": "seeed-module-103020002",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8", "j2-9", "j2-10", "j3-1", "j3-2", "j3-3", "j3-4", "j3-5", "j3-6", "j3-7", "j3-8", "j3-9", "j3-10"],
+      "source": {"label": "Seeed Studio 103020002: EAGLE Grove Bee Socket V0.9a.brd header geometry", "url": "https://files.seeedstudio.com/wiki/Grove-Bee_Socket/res/Bee_Socket_Eagle_File.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J2", "count": 10, "package": "CK1X10"}, {"id": "J3", "count": 10, "package": "CK1X10"}],
+        "boardSha256": "aec166acfdd70017609d40f21cfa9ad83570b7ea4a0f2d67ba9b5d23f97a870c"
+      },
+      "bodyRegions": [
+        {"x": -22.1, "y": -22.1, "width": 44.2, "height": 44.2}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "103020002",
     "name": "Seeed Grove - Bee Socket",
     "manufacturer": "Seeed Studio",

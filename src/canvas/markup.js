@@ -5,7 +5,7 @@ import { instancePins } from '../model/part-pins.js';
 import { translation, partRotation, labelPosition } from '../geometry/parts.js';
 import { escapeText } from '../shared/text.js';
 import { resolveDrawing, foregroundParts } from './scene.js';
-import { partArt } from './part-art.js';
+import { partArt, usesMountedView } from './part-art.js';
 
 const SVG_FONT = 'Arial, sans-serif';
 
@@ -19,11 +19,15 @@ export function wireMarkup(wire, d, editing) {
 
 export function partMarkup(part, component, wired, editing, { bodyOnly = false, contactsOnly = false, covered = new Set() } = {}) {
   const { width, height } = component;
-  const bodyBounds = part.leads && mountingFor(component.id)?.body;
+  const profile = mountingFor(component.id);
+  const frontView = usesMountedView(part, component);
+  const mountedBoard = profile?.type === 'breadboard-module' && Boolean(part.attachment || frontView);
+  const bodyBounds = (part.leads || mountedBoard) && (profile?.body ?? profile?.viewBounds);
   const name = partName(part, component);
-  const compact = mountingFor(component.id)?.type === 'breadboard-part' && Boolean(part.leads || part.attachment);
+  const compact = profile?.type === 'breadboard-part' && Boolean(part.leads || part.attachment);
   const defaultLabel = component.defaultValue && `${component.shortName ?? component.name} · ${component.defaultValue}`;
   const custom = part.label && part.label !== defaultLabel;
+  const hideCaption = mountedBoard && !custom;
   const caption = compact && !custom
     ? component.defaultValue ? `${component.referencePrefix ?? ''} · ${component.defaultValue}` : component.shortName ?? component.name
     : name;
@@ -54,7 +58,7 @@ export function partMarkup(part, component, wired, editing, { bodyOnly = false, 
   const graphic = `<g transform="${partRotation(part, component)}">${body}${pins}</g>`;
   if (bodyOnly) return graphic;
   return `${graphic}
-    <g transform="${labelPosition(part, component)}" font-family="${SVG_FONT}" ${editing ? `data-part="${part.id}" data-part-region="caption" class="part-body${compact ? ' breadboard-part-caption' : ''}"` : ''}>
+    <g transform="${labelPosition(part, component)}" font-family="${SVG_FONT}"${hideCaption ? ' display="none" aria-hidden="true"' : ''} ${editing ? `data-part="${part.id}" data-part-region="caption" class="part-body${compact || mountedBoard ? ' breadboard-part-caption' : ''}"` : ''}>
       <rect x="${-labelWidth / 2}" width="${labelWidth}" height="${compact ? 18 : 21}" rx="5" fill="#ffffff" stroke="#dce5e8"/>
       <text text-anchor="middle" y="${compact ? 12 : 14}" fill="#24313d" font-size="${compact ? 10 : 11}" font-weight="700">${text}</text>
     </g>`;

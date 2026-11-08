@@ -4,6 +4,21 @@ import assets from "./specifications-assets.js";
 export default [
   {
     "id": "sparkfun-module-bob13282",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp2-1", "jp2-2", "jp2-3"],
+      "source": {"label": "SparkFun BOB-13282: EAGLE SparkFunws2812bBreakout.brd; commit 80e00a06f276 header geometry", "url": "https://github.com/sparkfun/WS2812_Breakout/blob/80e00a06f2763d089633d80b3d5870311750e7d3/Hardware/SparkFunws2812bBreakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03"}, {"id": "JP2", "count": 3, "package": "1X03"}],
+        "boardSha256": "6445dba001a8d593432aaf3131e787c4ce92b76b98955809a871d45b71109ca0"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -6.35, "width": 17.78, "height": 12.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-13282",
     "name": "SparkFun RGB LED Breakout - WS2812B",
     "manufacturer": "SparkFun",
@@ -87,6 +102,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob11722",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "SparkFun BOB-11722: EAGLE SparkFun_Rotary_Encoder-Illuminated.brd; commit 340b6eaf4db6 header geometry", "url": "https://github.com/sparkfun/Rotary_Encoder_Breakout-Illuminated/blob/340b6eaf4db65f28a62819535cf20a27ea37afab/Hardware/SparkFun_Rotary_Encoder-Illuminated.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03"}, {"id": "JP2", "count": 5, "package": "1X05"}],
+        "boardSha256": "7e76fc3e166fd6fc347fcaafdad0c3bd996bc57911bf3be47b621f83c191ade6"
+      },
+      "bodyRegions": [
+        {"x": -7.62, "y": -13.97, "width": 15.24, "height": 27.94}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-11722",
     "name": "SparkFun Rotary Encoder Breakout - Illuminated (RG/RGB)",
     "manufacturer": "SparkFun",
@@ -156,6 +186,22 @@ export default [
   },
   {
     "id": "sparkfun-module-sen12041",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun SEN-12041: EAGLE AT42QT1010_Capacitive_Touch_Breakout.brd; commit 333b46787981 header geometry", "url": "https://github.com/sparkfun/AT42QT1010_Capacitive_Touch_Breakout/blob/333b46787981af4b0e9b28c46165f292fdfa80b6/Hardware/AT42QT1010_Capacitive_Touch_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 4, "package": "1X04"}],
+        "boardSha256": "920fd56cd362af6937b759443145304b1f7d672f41a0ae65608be4ab020328de"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -16.51, "width": 25.4, "height": 33.02},
+        {"x": -5.08, "y": 13.99, "width": 10.16, "height": 8.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-12041",
     "name": "SparkFun Capacitive Touch Breakout - AT42QT1010",
     "manufacturer": "SparkFun",
@@ -280,6 +326,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob13884",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j3-1", "j3-2", "j3-3", "j3-4", "j4-1", "j4-2", "j4-3", "j4-4", "j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j1-7", "j1-8"],
+      "source": {"label": "SparkFun BOB-13884: EAGLE LP55231_breakout.brd; commit 22344d31a032 header geometry", "url": "https://github.com/sparkfun/LP55231_Breakout/blob/22344d31a03233e4ea5ad2a805c65f5a140c4dda/Hardware/LP55231_breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J2", "count": 4, "package": "1X04_NO_SILK_ALL_ROUND"}, {"id": "J3", "count": 4, "package": "1X04_NO_SILK_ALL_ROUND"}, {"id": "J4", "count": 4, "package": "1X04_NO_SILK_ALL_ROUND"}, {"id": "J1", "count": 8, "package": "1X08_NO_SILK"}],
+        "boardSha256": "db51e5a97b85f7a35ce05a0a643947c9fce55d971f02a17c3887a7f39d8ca5dc"
+      },
+      "bodyRegions": [
+        {"x": -11.43, "y": -15.24, "width": 22.86, "height": 30.48}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-13884",
     "name": "SparkFun LED Driver Breakout - LP55231",
     "manufacturer": "SparkFun",
@@ -621,6 +682,21 @@ export default [
   },
   {
     "id": "sparkfun-module-com16916",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun COM-16916: EAGLE Qwiic_Alphanumeric_Display.brd; commit 93e6d110892d header geometry", "url": "https://github.com/sparkfun/Qwiic_Alphanumeric_Display_Breakout/blob/93e6d110892d22604cbe8f278291b2ed05fefd52/Hardware/Qwiic_Alphanumeric_Display.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "b64c170669f4e289a9341475c9d0f37348bf9df369db651e4749bfc86ad7963d"
+      },
+      "bodyRegions": [
+        {"x": -20.32, "y": -13.97, "width": 40.64, "height": 27.94}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "COM-16916",
     "name": "SparkFun Qwiic Alphanumeric Display - Red",
     "manufacturer": "SparkFun",
@@ -732,6 +808,21 @@ export default [
   },
   {
     "id": "sparkfun-module-lcd23453",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun LCD-23453: EAGLE Qwiic_OLED_1.3in.brd; commit fe1cef157c99 header geometry", "url": "https://github.com/sparkfun/SparkFun_Qwiic_OLED_1.3in/blob/fe1cef157c993c8265288fbccf211043df3708be/Hardware/Qwiic_OLED_1.3in.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "2b544b4274e4b7049abdd823f1da822f5be284a95bf99d95a5b649739f2ac72f"
+      },
+      "bodyRegions": [
+        {"x": -17.78, "y": -18.415, "width": 35.56, "height": 36.83}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "LCD-23453",
     "name": "SparkFun Qwiic OLED - (1.3in., 128x64)",
     "manufacturer": "SparkFun",
@@ -853,6 +944,21 @@ export default [
   },
   {
     "id": "sparkfun-module-lcd22495",
+    "mountingReview": {
+      "contactIds": ["j4-1", "j4-2", "j4-3", "j4-4"],
+      "source": {"label": "SparkFun LCD-22495: EAGLE Qwiic_OLED_Breakout.brd; commit c3ee0d437bd6 header geometry", "url": "https://github.com/sparkfun/Qwiic_Micro_OLED/blob/c3ee0d437bd69ed8c1e5bce32e425c81365d2e21/Hardware/Qwiic_OLED_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J4", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "8328f8dc53a1cc0501968341a3cf96b779ce1e11d0e3cb69655dda4888c33451"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -10.16, "width": 20.32, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "LCD-22495",
     "name": "SparkFun Micro OLED Breakout (Qwiic)",
     "manufacturer": "SparkFun",
@@ -1255,6 +1361,21 @@ export default [
   },
   {
     "id": "sparkfun-module-com15290",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun COM-15290: EAGLE Qwiic_keypad.brd; commit 3c219d96fedc header geometry", "url": "https://github.com/sparkfun/Qwiic_Keypad/blob/3c219d96fedc362823868bff1757e3e6ec07d017/Hardware/Qwiic_keypad.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "ad7f6dc556e79fc8fadcbb98eaa701368dc0b581de4667a1c269544cf574d71b"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "COM-15290",
     "name": "SparkFun Qwiic Keypad - 12 Button",
     "manufacturer": "SparkFun",
@@ -1363,6 +1484,21 @@ export default [
   },
   {
     "id": "sparkfun-module-bob11570",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4"],
+      "source": {"label": "SparkFun BOB-11570: EAGLE SparkFun_TRRS_3.5mm_Jack_Breakout.brd; commit 1e6fa3677d11 header geometry", "url": "https://github.com/sparkfun/TRRS_3.5mm_Jack_Breakout/blob/1e6fa3677d11380108fc276f8680482839ed4603/Hardware/SparkFun_TRRS_3.5mm_Jack_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04"}],
+        "boardSha256": "781c5e099bc9ae86c18defa8f4253c6b429597c6d5196df30e26eec4b24ce2a4"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -8.89, "width": 12.7, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "BOB-11570",
     "name": "SparkFun TRRS 3.5mm Jack Breakout",
     "manufacturer": "SparkFun",

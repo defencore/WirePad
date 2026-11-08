@@ -4,6 +4,21 @@ import assets from "./bus-interfaces-assets.js";
 export default [
   {
     "id": "adafruit-module-1551",
+    "mountingReview": {
+      "contactIds": ["cn1-1", "cn1-2", "cn1-3", "cn1-4"],
+      "source": {"label": "Adafruit ADA1551: EAGLE Adafruit DS2413.brd; commit a5aeeffa483a header geometry", "url": "https://github.com/adafruit/Adafruit-DS2413-PCB/blob/a5aeeffa483ae80c718e9cb3cd23ea769cd5321b/Adafruit%20DS2413.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "CN1", "count": 4, "package": "1X04-CLEANBIG"}],
+        "boardSha256": "e0a7b007260285ac70fd67b5df48dccdbfab78cc03c4395f2afa2b2bd58b68df"
+      },
+      "bodyRegions": [
+        {"x": -5.08, "y": -7.62, "width": 10.16, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1551",
     "name": "DS2413 1-Wire Two GPIO Controller Breakout",
     "manufacturer": "Adafruit",
@@ -74,6 +89,21 @@ export default [
   },
   {
     "id": "adafruit-module-1875",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6"],
+      "source": {"label": "Adafruit ADA1875: EAGLE Adafruit TXB0104.brd; commit 0dcd9500672a header geometry", "url": "https://github.com/adafruit/Adafruit-TXB0104-Level-Shifter-Breakout-PCB/blob/0dcd9500672a5b6ab652f9cbf9e01bccdd6a31b6/Adafruit%20TXB0104.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 6, "package": "1X06-CLEANBIG"}, {"id": "JP4", "count": 6, "package": "1X06-CLEANBIG"}],
+        "boardSha256": "61d590641f69c2f38ea8f67b172ecad4c1e02f73ea67c9d50d482093ae726db3"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -8.89, "width": 12.7, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1875",
     "name": "TXB0104 Bi-Directional Level Shifter",
     "manufacturer": "Adafruit",
@@ -138,6 +168,21 @@ export default [
   },
   {
     "id": "adafruit-module-4756",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5"],
+      "source": {"label": "Adafruit ADA4756: EAGLE Adafruit LTC4311 I2C Extender.brd; commit 8fb4ee69175a header geometry", "url": "https://github.com/adafruit/Adafruit-LTC4311-PCB/blob/8fb4ee69175a7ddb4128edbb7d9d79a78fbbf405/Adafruit%20LTC4311%20I2C%20Extender.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "6b2543f8c4ed3769ac2aea7ebd174997890368a0ec2762d41a6e733e9726d1af"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4756",
     "name": "Adafruit LTC4311 I2C Extender / Active Terminator",
     "manufacturer": "Adafruit",
@@ -244,6 +289,21 @@ export default [
   },
   {
     "id": "adafruit-module-5914",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8"],
+      "source": {"label": "Adafruit ADA5914: EAGLE Adafruit LTC4316.brd; commit 16f4d8d3e788 header geometry", "url": "https://github.com/adafruit/Adafruit-LTC4316-PCB/blob/16f4d8d3e788323f11749103c2cf7a24ee3c521c/Adafruit%20LTC4316.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "aca805aebdde98960103a5ab0f78d427623c5aa6fbed71ab9221ea813459fcae"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5914",
     "name": "Adafruit LTC4316 I2C Address Translator",
     "manufacturer": "Adafruit",
@@ -356,6 +416,21 @@ export default [
   },
   {
     "id": "adafruit-module-5637",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5"],
+      "source": {"label": "Adafruit ADA5637: EAGLE Adafruit QT 5-3V Shifter.brd; commit 1b59f72ce55b header geometry", "url": "https://github.com/adafruit/Adafruit-QT-5-3V-Shifter-PCB/blob/1b59f72ce55b4b116f2b8756c4eefdb9fa2e4eb3/Adafruit%20QT%205-3V%20Shifter.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 5, "package": "1X05_ROUND_76"}, {"id": "JP3", "count": 5, "package": "1X05_ROUND_76"}],
+        "boardSha256": "96098864fbf3d1d8098f779434fcf802837bfe8b35186e5ac0f985d403ae41b2"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5637",
     "name": "Adafruit QT 5V to 3V Level Shifter Breakout - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -484,6 +559,21 @@ export default [
   },
   {
     "id": "adafruit-module-5545",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10"],
+      "source": {"label": "Adafruit ADA5545: EAGLE Adafruit PCF8574 QT.brd; commit a2fbf46bed44 header geometry", "url": "https://github.com/adafruit/Adafruit-PCF8574-PCB/blob/a2fbf46bed447a1bd87b51f11169b275b9bc8fb0/Adafruit%20PCF8574%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP3", "count": 10, "package": "1X10_ROUND70"}],
+        "boardSha256": "e0524038141158575ba547c8840928331cf8b8f88926401dec0f1884f3cc5a2c"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5545",
     "name": "Adafruit PCF8574 I2C GPIO Expander Breakout",
     "manufacturer": "Adafruit",
@@ -592,6 +682,21 @@ export default [
   },
   {
     "id": "adafruit-module-6027",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6027: EAGLE Adafruit DS2482S-800 Breakout.brd; commit 520f5e8de729 header geometry", "url": "https://github.com/adafruit/Adafruit-DS2482S-800-Breakout-PCB/blob/520f5e8de72928ab3b5517cc8db37e8aedb6133c/Adafruit%20DS2482S-800%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "43b3e638e3cf0111551c3bc069cb2bca6e2851b93cf5e2f3f932b47a10139893"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6027",
     "name": "Adafruit DS2482S-800 8 Channel I2C to 1-Wire Bus Adapter",
     "manufacturer": "Adafruit",

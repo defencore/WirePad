@@ -419,6 +419,21 @@ export default [
   },
   {
     "id": "adafruit-module-3249",
+    "mountingReview": {
+      "contactIds": ["jp9-1", "jp9-2", "jp9-3", "jp9-4", "jp9-5", "jp9-6", "jp9-7", "jp9-8", "jp9-9", "jp12-1", "jp12-2", "jp12-3", "jp12-4", "jp12-5", "jp12-6", "jp12-7", "jp12-8", "jp12-9", "jp12-10"],
+      "source": {"label": "Adafruit ADA3249: EAGLE Adafruit NeoPXL8 M0 Wing.brd; commit 1aa9e3e82c58 header geometry", "url": "https://github.com/adafruit/Adafruit-NeoPXL8-PCBs/blob/1aa9e3e82c5872db786e047b8eb1b8fadaa7e802/Adafruit%20NeoPXL8%20M0%20Wing.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP9", "count": 9, "package": "1X09_ROUND_70"}, {"id": "JP12", "count": 10, "package": "1X10_ROUND"}],
+        "boardSha256": "39872152a2de53e956761e84ec784da1a9f0217fd79b6883be6708bbac6900c3"
+      },
+      "bodyRegions": [
+        {"x": -25.4, "y": -11.43, "width": 50.8, "height": 22.86}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3249",
     "name": "Adafruit NeoPXL8 FeatherWing for Feather M0 - 8 x DMA NeoPixels!",
     "manufacturer": "Adafruit",

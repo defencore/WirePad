@@ -459,6 +459,20 @@ export default [
   },
   {
     "id": "dfrobot-bmp585-fermion-sen0666",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j1-7"],
+      "source": {"label": "DFRobot SEN0666: V1.0 / cited manufacturer dimensional CAD header geometry", "url": "https://dfimg.dfrobot.com/wiki/23288/SEN0666_bmp585-sensor_cad_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer DXF and physical pin map. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "J1", "count": 7}]
+      },
+      "bodyRegions": [
+        {"x": -9.5, "y": -8.0, "width": 19, "height": 16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0666",
     "name": "DFRobot Fermion: BMP585 High-Precision Barometric Pressure & Temperature Sensor (±0.3 hPa, I2C / SPI / I3C)",
     "manufacturer": "DFRobot",
@@ -517,6 +531,20 @@ export default [
   },
   {
     "id": "dfrobot-bmp581-fermion-sen0667",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4", "j1-5", "j1-6", "j1-7"],
+      "source": {"label": "DFRobot SEN0667: V1.0 / cited manufacturer dimensional CAD header geometry", "url": "https://dfimg.dfrobot.com/wiki/23291/SEN0667_bmp581-sensor_cad_V1.0.zip"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed source physical header centers: Manufacturer DXF and physical pin map. All selected front through-hole leads share one exact 2.54 mm grid.",
+        "connectors": [{"id": "J1", "count": 7}]
+      },
+      "bodyRegions": [
+        {"x": -9.5, "y": -8.0, "width": 19, "height": 16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN0667",
     "name": "DFRobot Fermion: BMP581 High-Precision Barometric Pressure & Temperature Sensor (Breakout, I2C/I3C/SPI, ±0.3hPa)",
     "manufacturer": "DFRobot",

@@ -80,6 +80,7 @@ configuration: {
   key: 'breadboard',
   normalize: normalizeBreadboardConfig,
   create: createBreadboard,
+  limits: BREADBOARD_LIMITS,
 }
 ```
 
@@ -87,7 +88,7 @@ The key names the persisted instance field. The resolver normalizes settings, ca
 
 Add the corresponding controls to the provider map in `ui/inspector/configuration.js`. Providers render and read configuration only; the controller delegates validation and history changes to the editor.
 
-Breadboards support 1–100 terminal rows, independent 1–10-cell left/right banks, 0–4 rails per side and split rails. Old projects receive five cells per bank. Existing A–E/F–J contact identities remain stable; additional left contacts use K–O and additional right contacts use P–T. Resizing changes the right bank's physical offset while retaining those identities. Removing a wired contact is rejected.
+Breadboards support 1–100 terminal rows, independent 1–50-cell left/right banks, 0–4 rails per side and split rails. The descriptor's frozen limits drive normalization and Inspector controls. Old projects receive five cells per bank. Column IDs continue in alternating five-column blocks: A–E/F–J, K–O/P–T, U–Y/Z–AD and onward. All existing IDs and default geometry remain stable. The right bank moves when the left bank grows. Removing a wired contact or moving it onto a different split-rail conductor is rejected.
 
 ## Container movement and selection
 
@@ -95,7 +96,11 @@ Breadboard mounting is a catalog capability exposed through `mountingFor()`, wit
 
 `editor/placement.js` supplies the same immutable placement preview to canvas drags and library drops. A successful drop commits the fitted pose, independent X/Y instance scale and explicit contact pairs in one undo step. Default catalog coordinates, artwork and native assets stay unchanged. Shared part transforms apply the instance scale consistently to artwork, contacts, bounds, labels and controls; no individual pin is moved to fake a fit. `canvas/placement-preview.js` owns the temporary ghost/contact overlay and clears it with the controller lifecycle.
 
-Optional version-2 `part.scale = { x, y }` and `part.attachment = { hostPartId, contacts: [{ pinId, hostPinId }] }` fields persist the placement. The parser validates attachment relationships after resolving all parts, including reused immutable records. Continuity traverses validated attachment edges without creating wire records. Independent child movement or rotation detaches the contact pairs while retaining its fitted size; host movement/rotation carries attached children, including overhangs. Layout changes that move or remove occupied holes are rejected, and deleting the host detaches surviving modules. The Inspector displays the seated state and male-header requirement.
+Optional version-2 `part.scale = { x, y }` and `part.attachment = { hostPartId, contacts: [{ pinId, hostPinId }] }` fields persist the placement. The parser validates attachment relationships after resolving all parts, including reused immutable records. Continuity traverses validated attachment edges without creating wire records. Independent child movement or rotation detaches the contact pairs while retaining its fitted size; host movement/rotation carries attached children, including overhangs. Deleting the host detaches surviving modules. The Inspector displays the seated state and male-header requirement.
+
+`editor/configure-mounting.js` reflows seated parts atomically when a configurable host changes. It preserves each lead's conductor identity, scale and orientation, enumerates whole-part translations, and solves hole occupancy and physical clearance against final neighbor poses. Flexible leads may adjust within their reviewed reach if no rigid translation works. Wired sockets retain their exact IDs and conductor identities. A missing conductor or impossible final arrangement rejects the complete edit. History and file round trips retain the explicit replacement contact pairs.
+
+Physical `bodyRegions` describe PCB, antenna and connector material independently of annotation frames; collision checks and covered-hole hit targets use the same transformed regions. Their union supplies body bounds. Source-module profiles additionally supply an explicit source-unit calibration, `viewBounds` and `renderMounted`. Once fitted, these modules show only their front hardware, retain that physical view after lifting, and rotate around its center. Default catalog SVGs and native assets remain unchanged. Only reviewed source coordinates rounded to 0.001 mm may declare that precision; the mounting validator, fitter and reflow share its corresponding host-scaled tolerance. This does not alter stored canvas anchors or upgrade KiCad accuracy assessments.
 
 Ordinary insertable parts use the separate `breadboard-part` capability. Rigid DIP/header profiles retain their reviewed fixed lead geometry; bendable profiles own a fixed-size body renderer, physical body bounds, canonical lead roots, reach limit and nominal formed tips. Their optional `part.leads = [{ pinId, x, y }]` stores unscaled local tip positions independently of electrical attachment, so lifting a lead preserves its shape. `model/part-pins.js` resolves every instance tip consistently; `geometry/parts.js` supplies inverse transforms, physical body bounds and complete visual bounds. Native exports continue to resolve the canonical catalog component.
 

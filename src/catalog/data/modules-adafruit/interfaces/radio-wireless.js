@@ -305,6 +305,21 @@ export default [
   },
   {
     "id": "adafruit-module-4201",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10", "jp1-11", "jp1-12"],
+      "source": {"label": "Adafruit ADA4201: EAGLE Adafruit AirLift Breakout.brd; commit 821189f7f916 header geometry", "url": "https://github.com/adafruit/Adafruit-AirLift-Breakout-PCB/blob/821189f7f9160b896a46bf6e239c8a0262ba1a46/Adafruit%20AirLift%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 12, "package": "1X12_ROUND"}],
+        "boardSha256": "0eef55dc751da3ebf41c4e466e9207e85e0dfd63fcedb1911a8e0dd2fa0088d9"
+      },
+      "bodyRegions": [
+        {"x": -15.875, "y": -16.51, "width": 31.75, "height": 33.02}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4201",
     "name": "Adafruit AirLift – ESP32 WiFi Co-Processor Breakout Board",
     "manufacturer": "Adafruit",
@@ -380,6 +395,21 @@ export default [
   },
   {
     "id": "adafruit-module-2999",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12", "jp2-13"],
+      "source": {"label": "Adafruit ADA2999: EAGLE Adafruit WINC1500 Breakout.brd; commit 7384f4727943 header geometry", "url": "https://github.com/adafruit/Adafruit-ATWINC1500-WiFi-Breakout-PCB/blob/7384f4727943c46e8f2473a765239112a8b48f12/Adafruit%20WINC1500%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 13, "package": "1X13_ROUND_70"}],
+        "boardSha256": "81ffcbd99149ec4625ff035a58d345a8a003be531b2789d8ce4555616fec9e27"
+      },
+      "bodyRegions": [
+        {"x": -16.51, "y": -13.97, "width": 33.02, "height": 27.94}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2999",
     "name": "Adafruit ATWINC1500 WiFi Breakout",
     "manufacturer": "Adafruit",
@@ -661,6 +691,21 @@ export default [
   },
   {
     "id": "adafruit-module-4363",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12", "jp2-13", "jp2-14", "jp4-1", "jp4-2", "jp4-3", "jp4-4", "jp4-5", "jp4-6", "jp4-7", "jp4-8", "jp4-9", "jp4-10", "jp4-11", "jp4-12", "jp4-13", "jp4-14"],
+      "source": {"label": "Adafruit ADA4363: EAGLE Adafruit Airlift Bitsy Add-On.brd; commit e865b846cad8 header geometry", "url": "https://github.com/adafruit/Adafruit-Airlift-Bitsy-Add-On-PCB/blob/e865b846cad8b220f4c14781b5a82e452e0712bc/Adafruit%20Airlift%20Bitsy%20Add-On.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 14, "package": "1X14_ROUND70"}, {"id": "JP4", "count": 14, "package": "1X14_ROUND70"}],
+        "boardSha256": "6995df4878473bf0f659eff1ba39e56dcd1eae4a81ac63e066fd9b7a8c1496c2"
+      },
+      "bodyRegions": [
+        {"x": -17.78, "y": -8.89, "width": 35.56, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4363",
     "name": "Adafruit AirLift Bitsy Add-On – ESP32 WiFi Co-Processor",
     "manufacturer": "Adafruit",

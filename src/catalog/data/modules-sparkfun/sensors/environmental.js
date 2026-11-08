@@ -91,6 +91,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen13676",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6"],
+      "source": {"label": "SparkFun SEN-13676: EAGLE SparkFun_BME280_Breakout.brd; commit 91f0c754a30c header geometry", "url": "https://github.com/sparkfun/SparkFun_BME280_Breakout_Board/blob/91f0c754a30c304afdd3717e64423aaae459d84a/Hardware/SparkFun_BME280_Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 4, "package": "1X04_NO_SILK"}, {"id": "JP2", "count": 6, "package": "1X06_NO_SILK"}],
+        "boardSha256": "40ec150503438dc1be8200f557fa0d89ff1842bc98d29d757f7d38e0d931b3c1"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -10.16, "width": 12.7, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-13676",
     "name": "SparkFun Atmospheric Sensor Breakout - BME280",
     "manufacturer": "SparkFun",
@@ -183,6 +198,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen20844",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4", "j3-5", "j3-6", "j3-7"],
+      "source": {"label": "SparkFun SEN-20844: EAGLE SparkFun_Air_Quality_ENS160.brd; commit 6e53479ba84b header geometry", "url": "https://github.com/sparkfun/SparkFun_Indoor_Air_Quality_Sensor-ENS160/blob/6e53479ba84b3efeb097c745669291de00012ed7/Hardware/SparkFun_Air_Quality_ENS160.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 7, "package": "1X07_NO_SILK"}],
+        "boardSha256": "2e5f235f25e8087397cda9b92e623038cecdeb1d2798f5339dfa79942357aba0"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-20844",
     "name": "SparkFun Indoor Air Quality Sensor - ENS160 (Qwiic)",
     "manufacturer": "SparkFun",
@@ -289,6 +319,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen16466",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun SEN-16466: EAGLE Qwiic Environmental BME680.brd; commit ff6f1f269c19 header geometry", "url": "https://github.com/sparkfun/Qwiic_Environmental_Sensor_BME680/blob/ff6f1f269c195a209b036d0325c8b94deaeae1ab/Hardware/Qwiic%20Environmental%20BME680.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J2", "count": 6, "package": "1X06_NO_SILK"}, {"id": "J1", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "d498f766479410a327810df5c45b59f029b97ffcae867a421191dd48abf1dcf5"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-16466",
     "name": "SparkFun Environmental Sensor Breakout - BME680 (Qwiic)",
     "manufacturer": "SparkFun",

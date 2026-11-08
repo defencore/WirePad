@@ -4,6 +4,21 @@ import assets from "./temperature-assets.js";
 export default [
   {
     "id": "adafruit-module-1893",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7"],
+      "source": {"label": "Adafruit ADA1893: EAGLE MPL3115A2_v0.2.brd; commit c57b3e05fa79 header geometry", "url": "https://github.com/adafruit/Adafruit-MPL3115A2-PCB/blob/c57b3e05fa7907f850a4f0af6fb211ae9c831847/MPL3115A2_v0.2.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 7, "package": "1X07_ROUND_70"}],
+        "boardSha256": "82b88af48fd6954e01d97c77bbd029e946b94b95aeb82a3afe8117bcfd122a1c"
+      },
+      "bodyRegions": [
+        {"x": -9.525, "y": -8.89, "width": 19.05, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1893",
     "name": "MPL3115A2 - I2C Barometric Pressure/Altitude/Temperature Sensor",
     "manufacturer": "Adafruit",
@@ -79,6 +94,21 @@ export default [
   },
   {
     "id": "adafruit-module-4821",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA4821: EAGLE Adafruit_TMP117.brd; commit 874b3a5b2779 header geometry", "url": "https://github.com/adafruit/Adafruit-TMP117-PCB/blob/874b3a5b27792d4d166547bab075cb963e1bdb32/Adafruit_TMP117.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "a91de3882d9278d157ef3526270b1798f74daa4b8450b1aaf1b60809dfb68cbb"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4821",
     "name": "Adafruit TMP117 ±0.1°C High Accuracy I2C Temperature Sensor",
     "manufacturer": "Adafruit",
@@ -195,6 +225,21 @@ export default [
   },
   {
     "id": "adafruit-module-4369",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5"],
+      "source": {"label": "Adafruit ADA4369: EAGLE Adafruit_PCT2075.brd; commit 9f80ea91d459 header geometry", "url": "https://github.com/adafruit/Adafruit-PCT2075-PCB/blob/9f80ea91d459f9cde468b5c6894c44e99444f0c3/Adafruit_PCT2075.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 3, "package": "1X03_ROUND"}, {"id": "JP3", "count": 5, "package": "1X05_ROUND"}],
+        "boardSha256": "85a77e1b2e5afe0ce2199d97a58ab34869716a4d8209709e8006c975a8110832"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4369",
     "name": "Adafruit PCT2075 Temperature Sensor - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -307,6 +352,21 @@ export default [
   },
   {
     "id": "adafruit-module-992",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA992: EAGLE Adafruit MPL115A2 Breakout.brd; commit c28cfcbce2a9 header geometry", "url": "https://github.com/adafruit/Adafruit-MPL115A2-Breakout-PCB/blob/c28cfcbce2a9bd072de601268ede652433dbb51a/Adafruit%20MPL115A2%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "552937ff6409f07c67de6f4974e442a564f2d32002d885a95d7aa5bdf24df169"
+      },
+      "bodyRegions": [
+        {"x": -8.89, "y": -7.62, "width": 17.78, "height": 15.24}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA992",
     "name": "MPL115A2 - I2C Barometric Pressure/Temperature Sensor",
     "manufacturer": "Adafruit",
@@ -382,6 +442,21 @@ export default [
   },
   {
     "id": "adafruit-module-4686",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3"],
+      "source": {"label": "Adafruit ADA4686: EAGLE TMP235 Rev A.brd; commit 05afa047f232 header geometry", "url": "https://github.com/adafruit/Adafruit-TMP235-PCB/blob/05afa047f2324ed06268ded1c27b741c86acedc8/TMP235%20Rev%20A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03_OVAL"}],
+        "boardSha256": "1e6c22e7232cb343ae791e5fcdcbff80cc1ec298814779c7314a055a181b6c2a"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4686",
     "name": "Adafruit TMP235 - Plug-and-Play STEMMA Analog Temperature Sensor",
     "manufacturer": "Adafruit",
@@ -476,6 +551,21 @@ export default [
   },
   {
     "id": "adafruit-module-1727",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8"],
+      "source": {"label": "Adafruit ADA1727: EAGLE Adafruit MAX31850.brd; commit 759ee92d8dd9 header geometry", "url": "https://github.com/adafruit/Adafruit-MAX31850-thermocouple-breakout-board/blob/759ee92d8dd940d14ad418e81016b3e25eb1a581/Adafruit%20MAX31850.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 8, "package": "1X08_ROUND_70"}],
+        "boardSha256": "8f930b00f85f5e9322a920b2e8539c9e674718ef2bee7c08af95251127fed142"
+      },
+      "bodyRegions": [
+        {"x": -10.16, "y": -10.16, "width": 20.32, "height": 20.32}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1727",
     "name": "Thermocouple Amplifier with 1-Wire Breakout Board - MAX31850K",
     "manufacturer": "Adafruit",
@@ -557,6 +647,21 @@ export default [
   },
   {
     "id": "adafruit-module-6482",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6482: EAGLE Adafruit TMP119 Temperature Sensor.brd; commit fe8ae26b0f83 header geometry", "url": "https://github.com/adafruit/Adafruit-TMP119-Temperature-Sensor-PCB/blob/fe8ae26b0f8362aa93a8074374984c1da7bf01aa/Adafruit%20TMP119%20Temperature%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "0eba7c02e03f31863515e873f8d7b7faaf2c8ec209477e63a34599e5658eda1b"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6482",
     "name": "Adafruit TMP119 High-Precision ±0.03°C I2C Temperature Sensor",
     "manufacturer": "Adafruit",
@@ -673,6 +778,21 @@ export default [
   },
   {
     "id": "adafruit-module-6403",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA6403: EAGLE Adafruit MLX90632 FIR Remote Temperature Sensor.brd; commit 928c72870468 header geometry", "url": "https://github.com/adafruit/Adafruit-MLX90632-FIR-Remote-Thermal-Temperature-Sensor-PCB/blob/928c728704680ccfc11515f2ec7113c8cb7d4224/Adafruit%20MLX90632%20FIR%20Remote%20Temperature%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "ff7ccf3b71c216fb62c99e8f592756024695d0ba1b380e8a8292c926b51c19f3"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6403",
     "name": "Adafruit MLX90632 FIR Remote Thermal Temperature Sensor",
     "manufacturer": "Adafruit",
@@ -789,6 +909,21 @@ export default [
   },
   {
     "id": "adafruit-module-6420",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7"],
+      "source": {"label": "Adafruit ADA6420: EAGLE Adafruit SPA06-003 Temperature + Pressure Sensor.brd; commit c4adbd023d64 header geometry", "url": "https://github.com/adafruit/Adafruit-SPA06-003-Temperature-and-Pressure-Sensor-PCB/blob/c4adbd023d64f5dbd1cea79366b0a2216d34facf/Adafruit%20SPA06-003%20Temperature%20%2B%20Pressure%20Sensor.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 7, "package": "1X07_ROUND_70"}],
+        "boardSha256": "e8fec6ef859a01a8c15492aec0b7af6a8961b51d1c74fd0add5f9b26454d2905"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6420",
     "name": "Adafruit SPA06-003 Temperature + Pressure Sensor",
     "manufacturer": "Adafruit",
@@ -901,6 +1036,21 @@ export default [
   },
   {
     "id": "adafruit-module-4808",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "Adafruit ADA4808: EAGLE Adafruit_EMC2101.brd; commit 3d1c2ca4c2ec header geometry", "url": "https://github.com/adafruit/Adafruit-EMC2101-PCB/blob/3d1c2ca4c2ecfb430e67ed098780de451e5c5c6b/Adafruit_EMC2101.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP2", "count": 4, "package": "1X04_ROUND"}],
+        "boardSha256": "9f910ca3a298bd84e6464e9490750d2a011dfa7849094adff64c65b0d56e5f05"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4808",
     "name": "Adafruit EMC2101 I2C PC Fan Controller and Temperature Sensor",
     "manufacturer": "Adafruit",
@@ -1021,6 +1171,21 @@ export default [
   },
   {
     "id": "adafruit-module-5165",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9"],
+      "source": {"label": "Adafruit ADA5165: EAGLE Adafruit MCP9601.brd; commit 135d6a8e4ca8 header geometry", "url": "https://github.com/adafruit/Adafruit-MCP9601-PCB/blob/135d6a8e4ca84c55ec2c8a0208ba61e98e4db31e/Adafruit%20MCP9601.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 9, "package": "1X09_ROUND_70"}],
+        "boardSha256": "8108819551638716b6cb82c408f4d74948749153a88b19af9006fce1c6852c67"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5165",
     "name": "Adafruit MCP9601 (MCP96L01) I2C Thermocouple Amplifier",
     "manufacturer": "Adafruit",
@@ -1127,6 +1292,21 @@ export default [
   },
   {
     "id": "adafruit-module-5027",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA5027: EAGLE Adafruit MCP9808 STEMMA QT.brd; commit 5a46deacf915 header geometry", "url": "https://github.com/adafruit/Adafruit-MCP9808-Breakout-PCB/blob/5a46deacf915eeeb5fcafd82e214ce162bf4a464/Adafruit%20MCP9808%20STEMMA%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "9f8553805cb39c8c9b6dbe70a0551db0d1cac0e65b0e644b2a50c74dcee2f524"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5027",
     "name": "Adafruit MCP9808 High Accuracy I2C Temperature Sensor Breakout",
     "manufacturer": "Adafruit",

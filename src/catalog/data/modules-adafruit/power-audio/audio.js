@@ -4,6 +4,21 @@ import assets from "./audio-assets.js";
 export default [
   {
     "id": "adafruit-module-6049",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6"],
+      "source": {"label": "Adafruit ADA6049: EAGLE Adafruit I2S MEMS Microphone Breakout - ICS-43434.brd; commit cde79ddef57c header geometry", "url": "https://github.com/adafruit/Adafruit-I2S-MEMS-Microphone-Breakout-PCB/blob/cde79ddef57c7df69a5e7268b66567fa50b7e42d/Adafruit%20I2S%20MEMS%20Microphone%20Breakout%20-%20ICS-43434.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 6, "package": "1X06_ROUND"}],
+        "boardSha256": "7d9e59db046d49f8e54f1896ad9cf11875e30911d32c8ab85071b79651eecd4f"
+      },
+      "bodyRegions": [
+        {"x": -8.255, "y": -6.35, "width": 16.51, "height": 12.7}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6049",
     "name": "Adafruit I2S MEMS Microphone Breakout - ICS-43434",
     "manufacturer": "Adafruit",
@@ -282,6 +297,23 @@ export default [
   },
   {
     "id": "adafruit-module-1712",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10"],
+      "source": {"label": "Adafruit ADA1712: EAGLE Adafruit TPA2016D2.brd; commit cad449b53378 header geometry", "url": "https://github.com/adafruit/Adafruit-TPA2016-PCB/blob/cad449b53378a89066d524a24f085207d74faf06/Adafruit%20TPA2016D2.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 10, "package": "1X10_ROUND70"}],
+        "boardSha256": "68d39419e03c79cebe00a257c52ff096fbe560558f07d7df9f5416c007a8bf6b"
+      },
+      "bodyRegions": [
+        {"x": -10.795, "y": -13.97, "width": 21.59, "height": 27.94},
+        {"x": 3.839, "y": -7.41, "width": 7.0, "height": 7.0},
+        {"x": 3.839, "y": 0.21, "width": 7.0, "height": 7.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1712",
     "name": "Stereo 2.8W Class D Audio Amplifier - I2C Control AGC - TPA2016",
     "manufacturer": "Adafruit",
@@ -357,6 +389,21 @@ export default [
   },
   {
     "id": "adafruit-module-1552",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp1-7", "jp1-8", "jp1-9", "jp1-10"],
+      "source": {"label": "Adafruit ADA1552: EAGLE Adafruit TS2012 TPA2012 Class D Audio Amp.brd; commit b099d41a3fb4 header geometry", "url": "https://github.com/adafruit/Adafruit-TPA2012-or-TS2012-Breakout-PCB/blob/b099d41a3fb4cddce5f19a7a8bbdc7a2d68711d8/Adafruit%20TS2012%20TPA2012%20Class%20D%20Audio%20Amp.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 10, "package": "1X10_ROUND70"}],
+        "boardSha256": "fc7ad0c559a9ccc08593a00ffb17fb4ecd0735347ac08e7940e2a87527f8daed"
+      },
+      "bodyRegions": [
+        {"x": -11.5, "y": -14.0, "width": 23, "height": 28}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1552",
     "name": "Stereo 2.1W Class D Audio Amplifier - TPA2012",
     "manufacturer": "Adafruit",
@@ -432,6 +479,22 @@ export default [
   },
   {
     "id": "adafruit-module-3678",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6"],
+      "source": {"label": "Adafruit ADA3678: EAGLE Adafruit UDA1334 I2S DAC.brd; commit e836025c26c8 header geometry", "url": "https://github.com/adafruit/Adafruit-UDA1334A-I2S-Stereo-DAC-PCB/blob/e836025c26c8dcfa3fab3e9aa7756542770f4849/Adafruit%20UDA1334%20I2S%20DAC.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 9, "package": "1X09_ROUND_70"}, {"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}],
+        "boardSha256": "daf2f1a5a666db2157278f0fcc65eecf0efde9dd12f131d7b8b86c8fc0a740d6"
+      },
+      "bodyRegions": [
+        {"x": -19.05, "y": -12.7, "width": 38.1, "height": 25.4},
+        {"x": 4.55, "y": -3.0, "width": 17.0, "height": 6.0}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA3678",
     "name": "Adafruit I2S Stereo Decoder - UDA1334A Breakout",
     "manufacturer": "Adafruit",
@@ -542,6 +605,22 @@ export default [
   },
   {
     "id": "adafruit-module-6421",
+    "mountingReview": {
+      "contactIds": ["jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10"],
+      "source": {"label": "Adafruit ADA6421: EAGLE Adafruit PCM5122 I2S DAC.brd; commit 5ce8729798ce header geometry", "url": "https://github.com/adafruit/Adafruit-PCM5122-I2S-DAC-PCB/blob/5ce8729798cefc4174524ae678db3958ad0b8113/Adafruit%20PCM5122%20I2S%20DAC.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP3", "count": 10, "package": "1X10_ROUND70"}, {"id": "JP2", "count": 10, "package": "1X10_ROUND70"}],
+        "boardSha256": "7f24c73f30ccfe31a1d2a66e51fe6a3d84efa4a6b2b04a689efced174e830643"
+      },
+      "bodyRegions": [
+        {"x": -17.78, "y": -11.46175, "width": 35.56, "height": 22.9235},
+        {"x": 5.978934, "y": -3.120822, "width": 13.900937, "height": 6.305144}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA6421",
     "name": "Adafruit PCM5122 I2S DAC with Line Level Output - HW, I2C or SPI",
     "manufacturer": "Adafruit",
@@ -929,6 +1008,22 @@ export default [
   },
   {
     "id": "adafruit-module-1381",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4", "jp2-5", "jp2-6", "jp2-7", "jp2-8", "jp2-9", "jp2-10", "jp2-11", "jp2-12", "jp2-13", "jp2-14", "jp2-15", "jp2-16", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6", "jp3-7", "jp3-8", "jp3-9", "jp3-10", "jp3-11", "jp3-12", "jp3-13", "jp3-14", "jp3-15", "jp3-16"],
+      "source": {"label": "Adafruit ADA1381: EAGLE Adafruit VS1053 Breakout.brd; commit 61db4e571d89 header geometry", "url": "https://github.com/adafruit/Adafruit-VS1053-Breakout-PCB/blob/61db4e571d89d321c33bb693b84f80da1510c5e2/Adafruit%20VS1053%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 16, "package": "1X16_ROUND"}, {"id": "JP3", "count": 16, "package": "1X16_ROUND"}],
+        "boardSha256": "49f74d68d81ead8c1974d0289e93fac0ad371cf34ac7cc76ff81e0017a456c67"
+      },
+      "bodyRegions": [
+        {"x": -13.8176, "y": -28.8545, "width": 27.6352, "height": 57.709},
+        {"x": -7.5096, "y": 12.7525, "width": 14.2, "height": 20.47}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1381",
     "name": "VS1053 Codec + MicroSD Breakout - MP3/WAV/MIDI/OGG Play + Record",
     "manufacturer": "Adafruit",

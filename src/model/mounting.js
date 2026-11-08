@@ -1,5 +1,5 @@
 import { mountingFor } from '../catalog/index.js';
-import { partBodyBounds, pointOnPart } from '../geometry/parts.js';
+import { partBodiesOverlap, pointOnPart } from '../geometry/parts.js';
 import { pinById } from './component-pins.js';
 import { componentForPart } from './part-component.js';
 import { MAX_PART_SCALE, MIN_PART_SCALE, partScale } from './part-placement.js';
@@ -50,7 +50,17 @@ function calibrationFor(component) {
       ids.add(contact.pinId);
       return true;
     });
-    if (valid) {
+    if (valid && profile.calibration) {
+      const { origin, unitsPerMm, toleranceMm = 0 } = profile.calibration;
+      const tolerance = Math.max(CALIBRATION_EPSILON, unitsPerMm * toleranceMm + 1e-9);
+      if (Number.isFinite(unitsPerMm) && unitsPerMm > 0 && origin &&
+          [origin.x, origin.y].every(Number.isFinite) && toleranceMm >= 0 && toleranceMm <= .001 &&
+          profile.contacts.every(contact => {
+            const pin = pinById(component, contact.pinId);
+            return close(pin.x, origin.x + contact.x * unitsPerMm, tolerance) &&
+              close(pin.y, origin.y + contact.y * unitsPerMm, tolerance);
+          })) result = { profile, x: unitsPerMm, y: unitsPerMm };
+    } else if (valid) {
       const x = calibratedAxis(profile.contacts, component, 'x');
       const y = calibratedAxis(profile.contacts, component, 'y');
       // A single lead row can only establish one axis; apply its scale uniformly.
@@ -73,6 +83,15 @@ export function mountingScale(component, hostComponent) {
   const scale = { x: units / calibration.x, y: units / calibration.y };
   return Object.values(scale).every(value => Number.isFinite(value) && value >= MIN_PART_SCALE && value <= MAX_PART_SCALE)
     ? scale : null;
+}
+
+// Manufacturer STEP/EAGLE exports can round a nominal header grid by one
+// micrometre. Only explicitly reviewed profiles may declare that precision.
+export function mountingTolerance(part, hostPart) {
+  const profile = mountingFor(part.componentId), host = mountingFor(hostPart.componentId);
+  const precision = profile?.calibration?.toleranceMm ?? 0;
+  const scale = partScale(hostPart);
+  return MOUNTING_EPSILON + precision * host.canvasPitch / host.pitch * Math.max(scale.x, scale.y);
 }
 
 function mountingHoleSet(hostComponent, guestProfile) {
@@ -151,6 +170,7 @@ function attachmentIssue(project, part, checkCollisions) {
   }
   const holes = mountingHoleSet(hostComponent, calibration.profile).byId;
   const usedLeads = new Set(), usedHoles = new Set(), usedGroups = new Map();
+  const tolerance = mountingTolerance(part, hostPart);
   for (const contact of attachment.contacts) {
     if (!contact || !leads.has(contact.pinId) || usedLeads.has(contact.pinId)) return 'has an invalid or repeated header contact.';
     const hole = holes.get(contact.hostPinId);
@@ -164,18 +184,15 @@ function attachmentIssue(project, part, checkCollisions) {
     usedGroups.set(hole.group, contact.pinId);
     const guestPoint = pointOnPart(part, pinById(component, contact.pinId), component);
     const hostPoint = pointOnPart(hostPart, hole, hostComponent);
-    if (!close(guestPoint.x, hostPoint.x) || !close(guestPoint.y, hostPoint.y)) return 'has header contacts that do not align with their breadboard holes.';
+    if (!close(guestPoint.x, hostPoint.x, tolerance) || !close(guestPoint.y, hostPoint.y, tolerance)) return 'has header contacts that do not align with their breadboard holes.';
   }
   if (!checkCollisions) return null;
-  const bounds = partBodyBounds(part, component);
   for (const other of project.parts) {
     if (other.id === part.id || other.attachment?.hostPartId !== hostPart.id || !Array.isArray(other.attachment.contacts)) continue;
     // A lifted or stale relationship must not evict a valid stationary module.
     if (safeAttachmentIssue(project, other, false)) continue;
     if (other.attachment.contacts.some(contact => usedHoles.has(contact?.hostPinId))) return 'uses a breadboard hole occupied by another attached component.';
-    const otherBounds = partBodyBounds(other);
-    if (Math.min(bounds.right, otherBounds.right) - Math.max(bounds.left, otherBounds.left) > MOUNTING_EPSILON &&
-        Math.min(bounds.bottom, otherBounds.bottom) - Math.max(bounds.top, otherBounds.top) > MOUNTING_EPSILON) {
+    if (partBodiesOverlap(part, other, MOUNTING_EPSILON)) {
       return 'overlaps another seated module on the same breadboard.';
     }
   }

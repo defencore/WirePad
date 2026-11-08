@@ -258,6 +258,21 @@ export default [
   },
   {
     "id": "adafruit-module-2324",
+    "mountingReview": {
+      "contactIds": ["conn1-1", "conn1-2", "conn1-3", "conn1-4", "conn1-5", "conn1-6", "conn1-7", "conn1-8", "conn1-9", "conn1-10", "conn1-11", "conn1-12", "conn1-13", "conn1-14", "conn1-15", "conn1-16", "conn1-17", "conn1-18", "conn1-19", "conn1-20", "conn1-21", "conn1-22", "conn1-23", "conn1-24", "conn1-25"],
+      "source": {"label": "Adafruit ADA2324: EAGLE Adafruit Ultimate GPS HAT.brd; commit 73b23e57b2c8 header geometry", "url": "https://github.com/adafruit/Adafruit-Ultimate-GPS-HAT-PCB/blob/73b23e57b2c80f36aa1405aa67be887b5dabe68e/Adafruit%20Ultimate%20GPS%20HAT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "CONN1", "count": 25, "package": "1X25_ROUND_70MIL"}],
+        "boardSha256": "645cb8c49bb84dda6021e8457b4f9aacbcf1b6e60dd5635286eec759ca774537"
+      },
+      "bodyRegions": [
+        {"x": -32.5, "y": -28.25, "width": 65, "height": 56.5}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA2324",
     "name": "Adafruit Ultimate GPS HAT for Raspberry Pi A+/B+/Pi 2/3/4/Pi 5",
     "manufacturer": "Adafruit",

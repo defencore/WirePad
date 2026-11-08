@@ -377,6 +377,22 @@ export default [
   },
   {
     "id": "sparkfun-module-wrl17381",
+    "mountingReview": {
+      "contactIds": ["j2-1", "j2-2", "j2-3", "j2-4", "j2-5", "j2-6", "j2-7", "j2-8", "j2-9", "j2-10", "j2-11", "j2-12", "j4-1", "j4-2", "j4-3", "j4-4", "j4-5", "j4-6", "j4-7", "j4-8", "j4-9", "j4-10", "j4-11", "j4-12", "j4-13", "j4-14", "j4-15", "j4-16"],
+      "source": {"label": "SparkFun WRL-17381: EAGLE ESP32_Thing_Plus_UFL.brd; commit cc74046280c1 header geometry", "url": "https://github.com/sparkfun/ESP32_Thing_Plus_U.FL/blob/cc74046280c1cc5f410adf89ca029a7923f55154/Hardware/ESP32_Thing_Plus_UFL.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J2", "count": 12, "package": "1X12_SM_SQ_NOSILK"}, {"id": "J4", "count": 16, "package": "1X16_SM_SQ_NOSILK"}],
+        "boardSha256": "20807fc1370b46dac3823a1fc094b0464870e3e859449207b90b25c509fa73bc"
+      },
+      "bodyRegions": [
+        {"x": -11.43, "y": -29.21, "width": 22.86, "height": 58.42},
+        {"x": -3.999, "y": 24.9932, "width": 8.04, "height": 5.62}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "WRL-17381",
     "name": "SparkFun Thing Plus - ESP32 WROOM (U.FL)",
     "manufacturer": "SparkFun",

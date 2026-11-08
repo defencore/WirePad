@@ -7,6 +7,14 @@ import { fitPart } from '../geometry/breadboard-placement.js';
 import { placementAssessment } from '../geometry/placement-assessment.js';
 import { detachPart } from './attachments.js';
 import { translatePart } from './selection.js';
+import { poseAtCenter } from '../geometry/breadboard-targets.js';
+
+export function insertionPoint(componentId, center) {
+  const component = componentById.get(componentId);
+  if (!component) return null;
+  const pose = poseAtCenter({ componentId }, component, center, { x: 1, y: 1 }, 0);
+  return { x: pose.x, y: pose.y };
+}
 
 export function previewPart(project, componentId, point, { mount = true, hostPartId } = {}) {
   const component = componentById.get(componentId);

@@ -1,7 +1,7 @@
 import { componentForPart } from '../model/part-component.js';
 import { mountingFor } from '../catalog/index.js';
 import { endpointKey } from '../model/endpoints.js';
-import { endpointPositions, partBodyBounds } from '../geometry/parts.js';
+import { endpointPositions, pointInsidePartBody } from '../geometry/parts.js';
 import { wireRoute } from '../geometry/routing.js';
 
 export function pathFrom(points) {
@@ -56,10 +56,9 @@ export function resolveDrawing(project, previousRoutes) {
     const hosts = seated ? [seated] : part.leads ? [...parts.values()].filter(entry =>
       mountingFor(entry.part.componentId)?.type === 'breadboard') : [];
     if (!hosts.length) continue;
-    const bounds = partBodyBounds(part);
     for (const host of hosts) for (const pin of componentForPart(host.part).pins) {
       const point = position({ partId: host.part.id, pinId: pin.id });
-      if (point.x > bounds.left && point.x < bounds.right && point.y > bounds.top && point.y < bounds.bottom) {
+      if (pointInsidePartBody(part, point)) {
         host.covered.add(pin.id);
       }
     }

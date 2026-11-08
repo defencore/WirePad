@@ -140,7 +140,7 @@ test('terminal cell banks resize independently with stable identities and isolat
   assert.equal(pins.get('f1').number, 'F1');
   const pads = new Map(breadboardFootprint(board).pads.map(pin => [pin.id, pin]));
   assert.ok(Math.abs(pads.get('f1').x - pads.get('l1').x - 7.62) < 1e-8);
-  for (const key of ['leftCells', 'rightCells']) for (const value of [0, 11, 1.5, '5', null, true]) {
+  for (const key of ['leftCells', 'rightCells']) for (const value of [0, 51, 1.5, '5', null, true]) {
     assert.throws(() => normalizeBreadboardConfig({ [key]: value }), RangeError);
   }
 });

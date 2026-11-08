@@ -15,7 +15,7 @@
     "XIAO and Teensy carriers without a reviewed insertion-contact map"
   ],
   "sources": {
-    "nano": "Manufacturer datasheet mechanical pages: 11 (A000005), 9 (ABX00028), 17 (ABX00083), 16 (ABX00053), and 17\u201318 (ABX00142). The Nano family hardware guide confirms the 2.54 mm header pitch.",
+    "nano": "Manufacturer datasheet mechanical pages: 11 (A000005), 9 (ABX00028), 17 (ABX00083), 16 (ABX00053), and 17–18 (ABX00142). The Nano family hardware guide confirms the 2.54 mm header pitch.",
     "pico": "Manufacturer product-brief physical specifications show 2.54 mm pitch and 17.78 mm header span. The component-side view has USB above.",
     "feather": "Manufacturer downloads provide the exact board schematic and fab print. The official Feather specification confirms 16 + 12 contacts and 20.32 mm row spacing. The shorter row has a 10.16 mm longitudinal offset.",
     "espressif": "The named manufacturer mechanical PDFs were independently reviewed for pitch and row span. The ESP32-S3 V1 board is 25.40 mm wide with 1.27 mm edge offsets, giving 22.86 mm header spacing. Auxiliary measurement jumpers are omitted."
@@ -266,7 +266,40 @@
           "x": 11.43,
           "y": 23.370000000000005
         }
-      ]
+      ],
+      "body": {
+        "x": 7,
+        "y": 2,
+        "width": 136,
+        "height": 367
+      },
+      "bodyRegions": [
+        {
+          "x": 7,
+          "y": 7,
+          "width": 136,
+          "height": 360
+        },
+        {
+          "x": 39,
+          "y": 2,
+          "width": 72,
+          "height": 105
+        },
+        {
+          "x": 34,
+          "y": 354,
+          "width": 30,
+          "height": 15
+        },
+        {
+          "x": 86,
+          "y": 354,
+          "width": 30,
+          "height": 15
+        }
+      ],
+      "bodyEvidence": "Canonical regions copy the existing PCB and protruding USB/RF/control primitives in picoArt, espDevKitArt or the Feather renderer. Cosmetic shadow, contact labels and canvas padding are excluded; no default artwork or pin is moved."
     },
     {
       "id": "adafruit-feather-esp32-s3",
@@ -429,7 +462,28 @@
           "x": 10.16,
           "y": 19.05
         }
-      ]
+      ],
+      "body": {
+        "x": 7,
+        "y": 3,
+        "width": 140,
+        "height": 288
+      },
+      "bodyRegions": [
+        {
+          "x": 7,
+          "y": 7,
+          "width": 140,
+          "height": 284
+        },
+        {
+          "x": 55,
+          "y": 3,
+          "width": 44,
+          "height": 38
+        }
+      ],
+      "bodyEvidence": "Canonical regions copy the existing PCB and protruding USB/RF/control primitives in picoArt, espDevKitArt or the Feather renderer. Cosmetic shadow, contact labels and canvas padding are excluded; no default artwork or pin is moved."
     },
     {
       "id": "raspberry-pi-pico",
@@ -652,7 +706,28 @@
           "x": 8.89,
           "y": 24.13
         }
-      ]
+      ],
+      "body": {
+        "x": 7,
+        "y": 2,
+        "width": 132,
+        "height": 327
+      },
+      "bodyRegions": [
+        {
+          "x": 7,
+          "y": 9,
+          "width": 132,
+          "height": 320
+        },
+        {
+          "x": 51,
+          "y": 2,
+          "width": 44,
+          "height": 35
+        }
+      ],
+      "bodyEvidence": "Canonical regions copy the existing PCB and protruding USB/RF/control primitives in picoArt, espDevKitArt or the Feather renderer. Cosmetic shadow, contact labels and canvas padding are excluded; no default artwork or pin is moved."
     },
     {
       "id": "raspberry-pi-pico-w",
@@ -875,7 +950,28 @@
           "x": 8.89,
           "y": 24.13
         }
-      ]
+      ],
+      "body": {
+        "x": 7,
+        "y": 2,
+        "width": 132,
+        "height": 327
+      },
+      "bodyRegions": [
+        {
+          "x": 7,
+          "y": 9,
+          "width": 132,
+          "height": 320
+        },
+        {
+          "x": 51,
+          "y": 2,
+          "width": 44,
+          "height": 35
+        }
+      ],
+      "bodyEvidence": "Canonical regions copy the existing PCB and protruding USB/RF/control primitives in picoArt, espDevKitArt or the Feather renderer. Cosmetic shadow, contact labels and canvas padding are excluded; no default artwork or pin is moved."
     },
     {
       "id": "adafruit-feather-rp2040",
@@ -1038,7 +1134,34 @@
           "x": 10.16,
           "y": 19.05
         }
-      ]
+      ],
+      "body": {
+        "x": 7,
+        "y": 3,
+        "width": 140,
+        "height": 291
+      },
+      "bodyRegions": [
+        {
+          "x": 7,
+          "y": 7,
+          "width": 140,
+          "height": 284
+        },
+        {
+          "x": 53,
+          "y": 3,
+          "width": 48,
+          "height": 37
+        },
+        {
+          "x": 91,
+          "y": 288,
+          "width": 16,
+          "height": 6
+        }
+      ],
+      "bodyEvidence": "Canonical regions copy the existing PCB and protruding USB/RF/control primitives in picoArt, espDevKitArt or the Feather renderer. Cosmetic shadow, contact labels and canvas padding are excluded; no default artwork or pin is moved."
     },
     {
       "id": "arduino-nano",
@@ -1211,7 +1334,28 @@
           "x": 7.62,
           "y": 17.78
         }
-      ]
+      ],
+      "body": {
+        "x": 26,
+        "y": 39,
+        "width": 86,
+        "height": 222
+      },
+      "bodyRegions": [
+        {
+          "x": 26,
+          "y": 42,
+          "width": 86,
+          "height": 219
+        },
+        {
+          "x": 49,
+          "y": 39,
+          "width": 40,
+          "height": 39
+        }
+      ],
+      "bodyEvidence": "The nanoBodyArt PCB rectangle and variant-specific USB shell are projected through the same boardProjection transform as the rendered body. Canvas padding and physical-header text are excluded."
     },
     {
       "id": "arduino-nano-every",
@@ -1384,7 +1528,28 @@
           "x": 7.62,
           "y": 17.78
         }
-      ]
+      ],
+      "body": {
+        "x": 26,
+        "y": 39,
+        "width": 86,
+        "height": 222
+      },
+      "bodyRegions": [
+        {
+          "x": 26,
+          "y": 42,
+          "width": 86,
+          "height": 219
+        },
+        {
+          "x": 51.5,
+          "y": 39,
+          "width": 35,
+          "height": 24
+        }
+      ],
+      "bodyEvidence": "The nanoBodyArt PCB rectangle and variant-specific USB shell are projected through the same boardProjection transform as the rendered body. Canvas padding and physical-header text are excluded."
     },
     {
       "id": "arduino-nano-esp32",
@@ -1557,7 +1722,28 @@
           "x": 7.62,
           "y": 17.78
         }
-      ]
+      ],
+      "body": {
+        "x": 26,
+        "y": 39,
+        "width": 86,
+        "height": 222
+      },
+      "bodyRegions": [
+        {
+          "x": 26,
+          "y": 42,
+          "width": 86,
+          "height": 219
+        },
+        {
+          "x": 46.5,
+          "y": 39,
+          "width": 45,
+          "height": 29
+        }
+      ],
+      "bodyEvidence": "The nanoBodyArt PCB rectangle and variant-specific USB shell are projected through the same boardProjection transform as the rendered body. Canvas padding and physical-header text are excluded."
     },
     {
       "id": "arduino-nano-rp2040-connect",
@@ -1730,7 +1916,28 @@
           "x": 7.62,
           "y": 17.78
         }
-      ]
+      ],
+      "body": {
+        "x": 26,
+        "y": 39,
+        "width": 86,
+        "height": 222
+      },
+      "bodyRegions": [
+        {
+          "x": 26,
+          "y": 42,
+          "width": 86,
+          "height": 219
+        },
+        {
+          "x": 51.5,
+          "y": 39,
+          "width": 35,
+          "height": 24
+        }
+      ],
+      "bodyEvidence": "The nanoBodyArt PCB rectangle and variant-specific USB shell are projected through the same boardProjection transform as the rendered body. Canvas padding and physical-header text are excluded."
     },
     {
       "id": "arduino-nano-r4",
@@ -1903,7 +2110,28 @@
           "x": 7.62,
           "y": 17.78
         }
-      ]
+      ],
+      "body": {
+        "x": 26,
+        "y": 39,
+        "width": 86,
+        "height": 222
+      },
+      "bodyRegions": [
+        {
+          "x": 26,
+          "y": 42,
+          "width": 86,
+          "height": 219
+        },
+        {
+          "x": 46.5,
+          "y": 39,
+          "width": 45,
+          "height": 29
+        }
+      ],
+      "bodyEvidence": "The nanoBodyArt PCB rectangle and variant-specific USB shell are projected through the same boardProjection transform as the rendered body. Canvas padding and physical-header text are excluded."
     },
     {
       "id": "esp32-devkitc-v4-wroom-32e",
@@ -2116,7 +2344,34 @@
           "x": 12.7,
           "y": 22.86
         }
-      ]
+      ],
+      "body": {
+        "x": 62,
+        "y": 20,
+        "width": 223.51999999999998,
+        "height": 438.4
+      },
+      "bodyRegions": [
+        {
+          "x": 62,
+          "y": 68.32,
+          "width": 223.52,
+          "height": 386.08
+        },
+        {
+          "x": 101.75999999999999,
+          "y": 20,
+          "width": 144,
+          "height": 48.32
+        },
+        {
+          "x": 143.35999999999999,
+          "y": 406.4,
+          "width": 60.8,
+          "height": 52
+        }
+      ],
+      "bodyEvidence": "Canonical PCB rectangle, narrower antenna projection and USB-shell rectangles use makeBoard's exact rendering parameters. Outer label margins, caption space and decorative shadow are excluded."
     },
     {
       "id": "esp32-c3-devkitc-02",
@@ -2289,7 +2544,34 @@
           "x": 11.43,
           "y": 17.780000000000005
         }
-      ]
+      ],
+      "body": {
+        "x": 62,
+        "y": 20,
+        "width": 203.2,
+        "height": 363.28
+      },
+      "bodyRegions": [
+        {
+          "x": 62,
+          "y": 68,
+          "width": 203.2,
+          "height": 311.28
+        },
+        {
+          "x": 91.6,
+          "y": 20,
+          "width": 144,
+          "height": 48
+        },
+        {
+          "x": 133.2,
+          "y": 331.28,
+          "width": 60.8,
+          "height": 52
+        }
+      ],
+      "bodyEvidence": "Canonical PCB rectangle, narrower antenna projection and USB-shell rectangles use makeBoard's exact rendering parameters. Outer label margins, caption space and decorative shadow are excluded."
     },
     {
       "id": "esp32-c6-devkitm-1",
@@ -2462,7 +2744,40 @@
           "x": 11.43,
           "y": 13.005000000000003
         }
-      ]
+      ],
+      "body": {
+        "x": 62,
+        "y": 20,
+        "width": 203.2,
+        "height": 433.03999999999996
+      },
+      "bodyRegions": [
+        {
+          "x": 62,
+          "y": 62.96,
+          "width": 203.2,
+          "height": 386.08
+        },
+        {
+          "x": 110.8,
+          "y": 20,
+          "width": 105.6,
+          "height": 42.96
+        },
+        {
+          "x": 80.39999999999999,
+          "y": 401.03999999999996,
+          "width": 68,
+          "height": 52
+        },
+        {
+          "x": 178.79999999999998,
+          "y": 401.03999999999996,
+          "width": 68,
+          "height": 52
+        }
+      ],
+      "bodyEvidence": "Canonical PCB rectangle, narrower antenna projection and USB-shell rectangles use makeBoard's exact rendering parameters. Outer label margins, caption space and decorative shadow are excluded."
     },
     {
       "id": "esp32-s2-devkitm-1",
@@ -2695,7 +3010,65 @@
           "x": 11.43,
           "y": 25.4
         }
-      ]
+      ],
+      "body": {
+        "x": 62,
+        "y": 20,
+        "width": 203.2,
+        "height": 472.8
+      },
+      "bodyRegions": [
+        {
+          "x": 62,
+          "y": 56.8,
+          "width": 203.2,
+          "height": 432
+        },
+        {
+          "x": 102,
+          "y": 20,
+          "width": 123.2,
+          "height": 36.8
+        },
+        {
+          "x": 133.2,
+          "y": 440.8,
+          "width": 60.8,
+          "height": 52
+        }
+      ],
+      "bodyEvidence": "Canonical PCB rectangle, narrower antenna projection and USB-shell rectangles use makeBoard's exact rendering parameters. Outer label margins, caption space and decorative shadow are excluded."
     }
-  ]
+  ],
+  "bodyGeometryReview": {
+    "checked": "2026-11-08",
+    "scope": "The 14 reviewed controller profiles now reserve only material in the existing canonical component-side SVG: PCB, projecting RF-module antenna, USB shells and one protruding control housing.",
+    "coordinateSystem": "Canonical canvas coordinates before per-instance mounting calibration. bodyRegions is the union of reviewed rendering rectangles; body is its tight enclosing rectangle. Empty wings between regions are not physical body.",
+    "evidence": "Bounds are copied from the existing renderer primitives and their projection transforms. This review does not replace the manufacturer mechanical evidence for header insertion centers, assert manufacturing-exact illustrated body dimensions, move published canvas contacts, rescale canonical artwork or alter native assets.",
+    "excluded": [
+      "Outer canvas padding",
+      "Pin and connector captions",
+      "Separate text labels",
+      "Decorative shadows",
+      "Empty wings beside projecting antennas and between USB shells"
+    ],
+    "regression": "ESP32-C6-DevKitM-1 label margins, antenna wings, dual-USB gap and lower caption space must remain available; tests also cover Nano, Pico, Feather and S3 DevKit material projections.",
+    "implementationSources": [
+      {
+        "family": "catalog-arduino",
+        "renderer": "nanoBodyArt / boardProjection",
+        "file": "src/catalog/families/catalog-arduino.js"
+      },
+      {
+        "family": "catalog-esp-rp",
+        "renderer": "picoArt / espDevKitArt / featherS3Art / featherRP2040Art / board",
+        "file": "src/catalog/families/catalog-esp-rp.js"
+      },
+      {
+        "family": "catalog-espressif-more",
+        "renderer": "makeBoard / art",
+        "file": "src/catalog/families/catalog-espressif-more.js"
+      }
+    ]
+  }
 }

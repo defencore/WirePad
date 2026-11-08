@@ -190,6 +190,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen16467",
+    "mountingReview": {
+      "contactIds": ["j1-1", "j1-2", "j1-3", "j1-4"],
+      "source": {"label": "SparkFun SEN-16467: EAGLE SHTC3 Breakout.brd; commit 89ecc1a11c2d header geometry", "url": "https://github.com/sparkfun/Qwiic_Humidity_SHTC3/blob/89ecc1a11c2d0c3bbd8bc6224095ddf24aff0d09/Hardware/SHTC3%20Breakout.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J1", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "fc48e5b95c979410798f1050f933a80c6d8c9b31f50c3ae9e3c91fe0e5c379fa"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-16467",
     "name": "SparkFun Humidity Sensor Breakout - SHTC3 (Qwiic)",
     "manufacturer": "SparkFun",
@@ -301,6 +316,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen22395",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun SEN-22395: EAGLE SparkFun_Qwiic_CO2_Sensor_SCD40.brd; commit cc7038afb586 header geometry", "url": "https://github.com/sparkfun/SparkFun_Qwiic_CO2_Sensor_SCD4X/blob/cc7038afb5866ae185909394f119b9622c563c26/Hardware/SCD40/SparkFun_Qwiic_CO2_Sensor_SCD40.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "0d3334c64f6ca9c96bd089e0cb96521b182be25b0efe7c6a8bf79258993458ea"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-22395",
     "name": "SparkFun CO2 Humidity and Temperature Sensor - SCD40 (Qwiic)",
     "manufacturer": "SparkFun",
@@ -412,6 +442,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen21262",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4", "j3-5"],
+      "source": {"label": "SparkFun SEN-21262: EAGLE SparkFun_Temperature_Sensor-STTS22H.brd; commit 9d0e0f48df40 header geometry", "url": "https://github.com/sparkfun/SparkFun_Temperature_Sensor-STTS22H/blob/9d0e0f48df40bdf507b0101b32ba3f23b96b763a/Hardware/Qwiic/SparkFun_Temperature_Sensor-STTS22H.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 5, "package": "1X05_NO_SILK"}],
+        "boardSha256": "0e381610e6327d05db6e7424d35ab3dedbd14a7ff3a19dbb48d22ee4c75ab931"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-21262",
     "name": "SparkFun Temperature Sensor - STTS22H (Qwiic)",
     "manufacturer": "SparkFun",
@@ -523,6 +568,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen21221",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4", "j3-5", "j3-6"],
+      "source": {"label": "SparkFun SEN-21221: EAGLE SparkFun_Qwiic_Barometer_LPS28DFW.brd; commit b012d97cd56b header geometry", "url": "https://github.com/sparkfun/SparkFun_Qwiic_Barometer_LPS28DFW/blob/b012d97cd56bf5a8a2a540c1f81aa75693716141/Hardware/Qwiic%201x1/SparkFun_Qwiic_Barometer_LPS28DFW.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 6, "package": "1X06_NO_SILK"}],
+        "boardSha256": "14c1ad1008fe1651138756284efa1593f9e4fe4f17caca866c13de921f28def9"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-21221",
     "name": "SparkFun Absolute Digital Barometer - LPS28DFW (Qwiic)",
     "manufacturer": "SparkFun",
@@ -634,6 +694,21 @@ export default [
   },
   {
     "id": "sparkfun-module-sen21325",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp3-1", "jp3-2", "jp3-3", "jp3-4", "jp3-5", "jp3-6"],
+      "source": {"label": "SparkFun SEN-21325: EAGLE SparkFun_6DoF_LSM6DSV16X.brd; commit 81f28abb82c4 header geometry", "url": "https://github.com/sparkfun/SparkFun_6DoF_LSM6DSV16X/blob/81f28abb82c4edfa63f5bcc623be1ea7ef1c1ce5/Hardware/Qwiic/SparkFun_6DoF_LSM6DSV16X.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_NO_SILK"}, {"id": "JP3", "count": 6, "package": "1X06_NO_SILK"}],
+        "boardSha256": "b893e514dfea5aeb2aff480b1c39e2ae814a9ba67094f88f1e2318fb1bcf9dc4"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "SEN-21325",
     "name": "SparkFun 6DoF IMU Breakout - LSM6DSV16X (Qwiic)",
     "manufacturer": "SparkFun",

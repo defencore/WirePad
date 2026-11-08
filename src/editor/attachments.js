@@ -1,5 +1,7 @@
-import { partSize } from '../model/part-placement.js';
+import { mountingFor } from '../catalog/index.js';
+import { partScale, partSize } from '../model/part-placement.js';
 import { componentForPart } from '../model/part-component.js';
+import { partCenter, poseAtCenter } from '../geometry/breadboard-targets.js';
 
 export function attachedPartIds(project, hostIds) {
   const ids = new Set(hostIds);
@@ -20,7 +22,10 @@ export function rotateWithAttachments(project, part, rotation) {
   return {
     ...project,
     parts: project.parts.map(item => {
-      if (item.id === part.id) return { ...detachPart(item), rotation };
+      if (item.id === part.id) {
+        if (!item.scale || !mountingFor(item.componentId)?.viewBounds) return { ...detachPart(item), rotation };
+        return poseAtCenter(detachPart(item), componentForPart(item), partCenter(item), partScale(item), rotation);
+      }
       if (item.attachment?.hostPartId !== part.id) return item;
       const child = partSize(item, componentForPart(item));
       const dx = item.x + child.width / 2 - center.x, dy = item.y + child.height / 2 - center.y;

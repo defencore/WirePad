@@ -211,6 +211,21 @@ export default [
   },
   {
     "id": "adafruit-module-4314",
+    "mountingReview": {
+      "contactIds": ["jp2-1", "jp2-2", "jp2-3", "jp2-4"],
+      "source": {"label": "Adafruit ADA4314: EAGLE Adafruit ATECC608.brd; commit 1535820f36fb header geometry", "url": "https://github.com/adafruit/Adafruit-ATECC608-PCB/blob/1535820f36fb71b8a76cebc654b934e32a760c9c/Adafruit%20ATECC608.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP2", "count": 4, "package": "1X04_ROUND"}],
+        "boardSha256": "c5a659de27955bac4b43d88a8565db2b9b2365348cb1633b3f08acc821ef830b"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4314",
     "name": "Adafruit ATECC608 Breakout Board - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",
@@ -317,6 +332,21 @@ export default [
   },
   {
     "id": "adafruit-module-4351",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5"],
+      "source": {"label": "Adafruit ADA4351: EAGLE Adafruit Infineon Trust M.brd; commit be8bbc2b780c header geometry", "url": "https://github.com/adafruit/Adafruit-Infineon-Trust-M-PCB/blob/be8bbc2b780c9807f57df6a793e743d38681eccd/Adafruit%20Infineon%20Trust%20M.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 5, "package": "1X05_ROUND_70"}],
+        "boardSha256": "ae7bd81c604d07c0ef6bdd929bd066a8210ce784db7341f12dcc9f2ed4dc1745"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -8.89, "width": 25.4, "height": 17.78}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA4351",
     "name": "Adafruit Infineon Trust M Breakout Board - STEMMA QT / Qwiic",
     "manufacturer": "Adafruit",

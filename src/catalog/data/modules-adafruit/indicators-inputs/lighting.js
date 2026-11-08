@@ -4,6 +4,21 @@ import assets from "./lighting-assets.js";
 export default [
   {
     "id": "adafruit-module-1312",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp2-1", "jp2-2", "jp2-3"],
+      "source": {"label": "Adafruit ADA1312: EAGLE Adafruit_Breadboard_NeoPixel.brd; commit fcb0f12bb621 header geometry", "url": "https://github.com/adafruit/Adafruit_Breadboard_NeoPixel_PCB/blob/fcb0f12bb62142336634dfb3a8a8ffc5c15bb90e/Adafruit_Breadboard_NeoPixel.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 3, "package": "1X03-CLEANBIG"}, {"id": "JP2", "count": 3, "package": "1X03-CLEANBIG"}],
+        "boardSha256": "0992ebc56e332a783d2c930136177dc28b54698957433717e1587d3e701c7e26"
+      },
+      "bodyRegions": [
+        {"x": -6.35, "y": -5.08, "width": 12.7, "height": 10.16}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA1312",
     "name": "Breadboard-friendly RGB Smart NeoPixel - Pack of 5",
     "manufacturer": "Adafruit",
@@ -88,6 +103,21 @@ export default [
   },
   {
     "id": "adafruit-module-5201",
+    "mountingReview": {
+      "contactIds": ["jp5-1", "jp5-2", "jp5-3", "jp5-4", "jp5-5", "jp5-6", "jp5-7"],
+      "source": {"label": "Adafruit ADA5201: EAGLE Adafruit IS31FL3741 Matrix.brd; commit 07d4cb6a19e6 header geometry", "url": "https://github.com/adafruit/Adafruit-IS31FL3741-PCB/blob/07d4cb6a19e65be56da4a96736c2335b714ff82b/Adafruit%20IS31FL3741%20Matrix.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP5", "count": 7, "package": "1X07_ROUND_76"}],
+        "boardSha256": "2e2d6821b4e157d6a6725c70ff019c5fb55605eaea5eff173b8e027174b90c32"
+      },
+      "bodyRegions": [
+        {"x": -19.5, "y": -25.54, "width": 39, "height": 51.08}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5201",
     "name": "Adafruit IS31FL3741 13x9 PWM RGB LED Matrix Driver",
     "manufacturer": "Adafruit",
@@ -330,6 +360,21 @@ export default [
   },
   {
     "id": "adafruit-module-5766",
+    "mountingReview": {
+      "contactIds": ["jp1-1", "jp1-2", "jp1-3", "jp1-4", "jp1-5", "jp1-6", "jp2-1", "jp2-2", "jp3-1", "jp3-2", "jp3-3"],
+      "source": {"label": "Adafruit ADA5766: EAGLE Adafruit NeoDriver STEMMA QT.brd; commit aaaae6964cf5 header geometry", "url": "https://github.com/adafruit/Adafruit-NeoDriver-STEMMA-QT-PCB/blob/aaaae6964cf56ddb17c5ab11a15566573e1a4cb7/Adafruit%20NeoDriver%20STEMMA%20QT.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts. Leave unlisted optional through-hole headers unpopulated or facing upward; fitted downward auxiliary leads are outside this reviewed profile.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "JP1", "count": 6, "package": "1X06_ROUND_70"}, {"id": "JP2", "count": 2, "package": "1X02_ROUND"}, {"id": "JP3", "count": 3, "package": "1X03_ROUND"}],
+        "boardSha256": "9b0f6e4a0ed9a4b5eccdef8c1cf990e34c6304df0aeb127fabdbd6e85d994bc1"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "ADA5766",
     "name": "Adafruit NeoDriver - I2C to NeoPixel Driver Board - Stemma QT",
     "manufacturer": "Adafruit",

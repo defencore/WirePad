@@ -1,5 +1,6 @@
 import { circle, label, path, rect } from './svg.js';
 import { escapeText } from '../../shared/text.js';
+import { sourceModuleMounting } from './source-module-mounting.js';
 
 // Source coordinates are millimeters, centered on the board, with Y downward.
 // Artwork, physical anchors and native contacts share this coordinate system.
@@ -46,7 +47,7 @@ export function sourceModule(spec) {
   const minimumPitch = contacts.reduce((m,p,i) => Math.min(m,...contacts.slice(i+1).map(q => Math.hypot(p.x-q.x,p.y-q.y)).filter(d=>d>1e-6)),Infinity);
   const compact = spec.numericLabels ?? (contacts.length > 20 || minimumPitch < 1.5);
   const captionSize = Math.min(7, Number.isFinite(minimumPitch) ? minimumPitch * scale * .62 : 7);
-  const render = (part, labels = true) => {
+  const render = (part, labels = true, frontOnly = false) => {
     const board = spec.board.outline ? path(spec.board.outline,spec.board.color ?? '#246545','#8caaa0',.16)
       : rect(-boardWidth/2,-boardHeight/2,boardWidth,boardHeight,spec.board.radius ?? .8,spec.board.color ?? '#246545','#8caaa0');
     const holes = (spec.holes ?? []).map(h => circle(h.x,h.y,h.drill/2,'#eef3ed','#a7ad9a')).join('');
@@ -59,7 +60,7 @@ export function sourceModule(spec) {
         (p.screwSlot ? path(`M${p.x} ${p.y-h*.34}v${h*.68}`,'none','#47565c',.16) : '');
       return `<g data-contact="${escapeText(p.id)}" stroke-width="0.06"><title>${escapeText(p.number+' '+p.label+': '+p.description)}</title>${shape}</g>`;
     }).join('');
-    const captions = labels ? contacts.map(p => {
+    const captions = labels ? contacts.filter(p => !frontOnly || !p.back).map(p => {
       let dense = compact ? p.caption ?? p.number : p.caption ?? p.label;
       if (!dense) return '';
       if (String(dense).length>9 && p.caption===undefined) dense=p.number.split('.').at(-1);
@@ -76,8 +77,9 @@ export function sourceModule(spec) {
         label(x,y,dense,font,inside?'#f4ecd3':'#354e58',anchor);
     }).join('') : '';
     const front=`<g transform="translate(${cx} ${cy}) scale(${scale})" stroke-width="0.1">${board}${holes}${spec.artwork ?? ''}${padsFor(false)}</g>`;
-    const back=hasBack?`<g transform="translate(${cx} ${cy+separation}) scale(${-scale} ${scale})" stroke-width="0.1">${board}${holes}${spec.backArtwork ?? ''}${padsFor(true)}</g>`+
+    const back=hasBack&&!frontOnly?`<g transform="translate(${cx} ${cy+separation}) scale(${-scale} ${scale})" stroke-width="0.1">${board}${holes}${spec.backArtwork ?? ''}${padsFor(true)}</g>`+
       label(width/2,cy+extentY*scale+separation/2,'UNDERSIDE BELOW · MIRRORED',6,'#405c63'):'';
+    if (frontOnly) return front + captions;
     return front+back+captions+label(width/2,9,spec.sku,7,'#405c63')+
       label(width/2,height-9,spec.viewLabel ?? (hasBack?'COMPONENT SIDE / SEPARATE MIRRORED UNDERSIDE':'COMPONENT-SIDE CONTACT VIEW'),6,'#405c63');
   };
@@ -85,5 +87,6 @@ export function sourceModule(spec) {
     pads:(spec.footprintPads ?? contacts).map(p => ({id:p.id, x:p.x, y:p.y, size:p.size,
       ...(p.smd || !p.drill ? {smd:true,shape:p.shape ?? 'rect'} : {drill:p.drill,shape:p.shape ?? 'circle'})})),
     note:`${sourceNote} ${spec.footprintNote} Source board outline ${boardWidth} × ${boardHeight} mm. Contact numbering and schematic functions remain independent of approximate component heights and generated WRL artwork.` };
-  return {component,render,footprint,...(spec.cad ? {model:spec.cad} : {})};
+  const mounting = sourceModuleMounting(spec, contacts, { cx, cy, scale, renderMounted: (part, labels = true) => render(part, labels, true) });
+  return {component,render,footprint,...(spec.cad ? {model:spec.cad} : {}),...(mounting ? {mounting} : {})};
 }

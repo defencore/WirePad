@@ -2002,7 +2002,16 @@ function makeBoard(spec) {
     note: `Reference carrier based on the linked Espressif mechanical drawing; ${spec.row} mm header spacing and 2.54 mm pitch. The antenna and USB overhang require clearance.${spec.jumper ? " Auxiliary J5 coordinates are approximate." : ""} Use the vendor CAD for manufacturing.`,
   };
   if (spec.jumper) footprint.groups.push({ ids: ["j5-2", "j5-1"], x: spec.jumper[0] - bw / 2, y: spec.jumper[1] - bh / 2, pitch: 2.54 });
-  return { component, art, footprint, model: { label: "Espressif mechanical drawing / CAD", url: spec.model } };
+  const bottom = pcbTop + bh * scale, cx = width / 2;
+  // Physical material only: the PCB, its narrower antenna projection and the
+  // USB shells. Pin captions and the outer canvas margins reserve no holes.
+  const bodyRegions = [
+    { x: margin, y: pcbTop, width: bw * scale, height: bh * scale },
+    { x: cx - spec.moduleWidth * scale / 2, y: 20, width: spec.moduleWidth * scale, height: spec.antenna * scale },
+    ...(spec.style === "dual" ? [-10.4, 1.9].map(x => ({ x: cx + x * scale, y: bottom - 6 * scale, width: 8.5 * scale, height: 6.5 * scale }))
+      : [{ x: cx - 3.8 * scale, y: bottom - 6 * scale, width: 7.6 * scale, height: 6.5 * scale }]),
+  ];
+  return { component, art, footprint, bodyRegions, model: { label: "Espressif mechanical drawing / CAD", url: spec.model } };
 }
 
 function moduleHMM(spec) {
@@ -2027,7 +2036,8 @@ const espressifMoreMountings = Object.fromEntries(entries.filter(entry => review
   entry.component.id,
   breadboardHeaderMounting({ url: reviewedInsertionDrawings[entry.component.id], label: `Espressif ${entry.component.name} manufacturer mechanical drawing` },
     entry.footprint.groups.slice(0, 2),
-    "Component side, antenna above. The two long edge headers use the drawing's insertion-hole centers. Auxiliary current-measurement jumpers and fitted USB connectors are not breadboard leads. Allow antenna and USB cable clearance."),
+    "Component side, antenna above. The two long edge headers use the drawing's insertion-hole centers. Auxiliary current-measurement jumpers and fitted USB connectors are not breadboard leads. Allow antenna and USB cable clearance.",
+    { regions: entry.bodyRegions, evidence: "Canonical PCB rectangle, narrower antenna projection and USB-shell rectangles use makeBoard's exact rendering parameters. Outer label margins, caption space and decorative shadow are excluded." }),
 ]));
 
 export default defineFamily("espressif-more", (espressifMoreComponents).map(component => ({ component, render: (espressifMoreArt)[component.art], footprint: (espressifMoreFootprints)[component.id], model: espressifMoreModels[component.id], mounting: espressifMoreMountings[component.id] })));

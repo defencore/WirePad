@@ -169,6 +169,21 @@ export default [
   },
   {
     "id": "sparkfun-module-dev15573",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun DEV-15573: EAGLE SparkFun_Cryptographic_Co-processor_ATECC508A.brd; commit da869f8ba6f8 header geometry", "url": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC508A_Qwiic/blob/da869f8ba6f81d4b27afae658ca783c68a12dfaa/Hardware/SparkFun_Cryptographic_Co-processor_ATECC508A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "e434d8ba6f9358e1785c73b8faaaa22200054bc3600775f5ceaf881aa56a5023"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DEV-15573",
     "name": "SparkFun Cryptographic Co-Processor Breakout - ATECC508A (Qwiic)",
     "manufacturer": "SparkFun",
@@ -280,6 +295,21 @@ export default [
   },
   {
     "id": "sparkfun-module-dev18077",
+    "mountingReview": {
+      "contactIds": ["j3-1", "j3-2", "j3-3", "j3-4"],
+      "source": {"label": "SparkFun DEV-18077: EAGLE SparkFun_Cryptographic_Co-processor_ATECC608A.brd; commit a9a339c4b7ac header geometry", "url": "https://github.com/sparkfun/SparkFun_Cryptographic_Co-Processor_Breakout_ATECC608A_Qwiic/blob/a9a339c4b7ac3794252c8a24e5d9b2c1dacdae88/Hardware/SparkFun_Cryptographic_Co-processor_ATECC608A.brd"},
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the component-side PCB. Only the explicitly reviewed header contacts enter the breadboard; do not insert fitted female or right-angle sockets, screw terminals, solder jumpers, or other exposed service contacts.",
+      "evidence": {
+        "checked": "2026-11-08",
+        "geometry": "Reviewed manufacturer EAGLE connector packages and front through-hole centers. All selected header leads share one exact 2.54 mm grid; non-header sockets, screw terminals and auxiliary service contacts are excluded.",
+        "connectors": [{"id": "J3", "count": 4, "package": "1X04_NO_SILK"}],
+        "boardSha256": "c1d0f7dd71764546791af3a52f1598dd16b7a4d418b8af16b97699e9ced71c1d"
+      },
+      "bodyRegions": [
+        {"x": -12.7, "y": -12.7, "width": 25.4, "height": 25.4}
+      ],
+      "bodyEvidence": "Source-unit PCB envelope plus individual projecting physical package rectangles/circles from the existing component-side illustration. Captions, silkscreen text, margins, mirrored underside artwork and shadows are excluded. Regions retain separate overhangs rather than their empty enclosing wings."
+    },
     "sku": "DEV-18077",
     "name": "SparkFun Cryptographic Co-Processor Breakout - ATECC608A (Qwiic)",
     "manufacturer": "SparkFun",
