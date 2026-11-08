@@ -1,4 +1,4 @@
-import { configurationFor } from '../../catalog/index.js';
+import { configurationFor, mountingFor } from '../../catalog/index.js';
 import { componentForPart } from '../../model/part-component.js';
 import { wirePalette } from '../../model/wire-colors.js';
 import { escapeText } from '../../shared/text.js';
@@ -6,11 +6,21 @@ import { icon } from '../icons.js';
 import { assetDetails, previewAsset, sourceLink } from './assets.js';
 import { configurationMarkup } from './configuration.js';
 
-export function inspectPart(part, tab) {
+export function inspectPart(part, tab, { keepLeadPositions = false } = {}) {
   const component = componentForPart(part);
   const tabs = [['part', 'Overview'], ['symbol', 'Symbol'], ['pcb', 'Footprint'], ['model', '3D']];
   const preview = previewAsset(component, tab, { labels: false });
   const configurable = Boolean(configurationFor(component.id));
+  const mounting = mountingFor(component.id);
+  const mountable = mounting && mounting.type !== 'breadboard';
+  const bendable = mounting?.mode === 'bendable';
+  const mountingStatus = !mountable ? '' : part.attachment
+    ? bendable
+      ? `${part.attachment.contacts.length} of ${mounting.contacts.length} leads connected. Select: drag a lead tip. Wire: add a jumper.`
+      : `Seated on breadboard · ${part.attachment.contacts.length} contacts connected. Drag the module away to disconnect.`
+    : bendable ? 'Drop onto a breadboard to form its leads. Each lead can then be moved to another hole.'
+      : mounting.type === 'breadboard-part' ? 'Through-hole part. Drag onto a breadboard and release when all contacts are highlighted.'
+        : 'Requires straight 2.54 mm male headers. Drag onto a breadboard and release when its contacts are highlighted.';
   const pinList = tab === 'part' ? component.pins.map((pin, index) => {
     const number = pin.number ?? index + 1;
     const text = [pin.id, pin.label, number, pin.description].join(' ').toLowerCase();
@@ -24,6 +34,7 @@ export function inspectPart(part, tab) {
     </div>
     <div id="asset-panel" role="tabpanel" aria-labelledby="tab-${tab}">
       ${tab === 'part' ? `<details class="component-about"><summary>Part details</summary><p class="component-description">${escapeText(component.description)}</p>
+        ${mountable && mounting.note ? `<p class="control-note">${escapeText(mounting.note)}</p>` : ''}
         ${component.source ? sourceLink(component.source, 'Reference documentation') : ''}</details>
         <section class="inspector-section canvas-settings" aria-label="Component on canvas"><h4>On canvas</h4>
           <label class="part-label">Canvas label<input id="part-label" value="${escapeText(part.label ?? '')}" maxlength="60" placeholder="${escapeText(component.name)}"></label>
@@ -31,6 +42,8 @@ export function inspectPart(part, tab) {
             `<option value="${angle}"${(part.rotation ?? 0) === angle ? ' selected' : ''}>${angle}°</option>`).join('')}</select></label>
             <button class="button" type="button" data-action="rotate" aria-label="Rotate component 90 degrees" title="Rotate component 90 degrees">${icon('rotate')} Rotate</button>
           </div>
+          ${mountingStatus ? `<p class="control-note" role="status" data-mounting-status>${escapeText(mountingStatus)}</p>` : ''}
+          ${bendable && part.leads ? `<label class="lead-body-toggle"><input id="keep-lead-positions" type="checkbox"${keepLeadPositions ? ' checked' : ''}> Move body, keep leads</label><p class="control-note">When enabled, dragging the body bends its legs while the tips stay in their holes.</p>` : ''}
         </section>
         ${configurationMarkup(part, component)}
         <details class="inspector-section pinout-section"${configurable ? '' : ' open'}><summary><span>Pinout</span><span>${component.pins.length} contacts</span></summary>

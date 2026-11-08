@@ -1,0 +1,146 @@
+{
+  "checked": "2026-11-08",
+  "stage": "Completed source and versioned-build verification before publication",
+  "scope": "Practical breadboard assembly with rigid THT parts, fixed-body formed leads, explicit seating, accessible socket feedback, touch editing and jumper wiring.",
+  "catalog": {
+    "components": 2003,
+    "families": 146,
+    "contacts": 48146,
+    "physicalPads": 48499,
+    "svgViews": 4006,
+    "treeCurrent": true,
+    "newComponent": "omron-b3f-1000"
+  },
+  "insertable": {
+    "total": 232,
+    "devboards": 14,
+    "rigidParts": 177,
+    "bendableParts": 41
+  },
+  "sourceAudits": [
+    "catalog-breadboard-parts-2026-11-08.json",
+    "catalog-breadboard-mounting-2026-11-08.json"
+  ],
+  "fullTests": {
+    "tests": 335,
+    "passed": 335,
+    "failed": 0,
+    "skipped": 0,
+    "optionalCADDependenciesAvailable": true,
+    "localhostChecksEnabled": true
+  },
+  "preservation": {
+    "previousComponents": 2002,
+    "unchangedDefinitions": 2002,
+    "unchangedSVGViews": 4004,
+    "unchangedNativeStrings": 6006,
+    "previousComponentAndFamilyOrderUnchanged": true,
+    "previousFixtureRecordsUnchanged": true,
+    "version1ImportsAndVersion2SavesPreserved": true,
+    "newFixtureRows": {
+      "canvas": 1,
+      "native": 1
+    }
+  },
+  "newNativeValidation": {
+    "component": "omron-b3f-1000",
+    "toolVersion": "10.0.0",
+    "parsedSymbols": 1,
+    "parsedFootprints": 1,
+    "scope": "Native parsing of new reference component; existing2002nativeoutputs are unchanged. Does not establish manufacturing accuracy."
+  },
+  "sourceBrowser": {
+    "checks": [
+      "Breadboard parts filter and ordinary library clicks place resistor, LED, NE555 and four-leg tactile switch onto free holes without decorative overlap.",
+      "Hover highlights all five actual strip holes, press highlights its full net, and Escape clears the temporary feedback.",
+      "Select-dragging one blue lead tip reshapes only that leg, keeps its body and other leg fixed, and reseats electrically without creating a wire.",
+      "Lifting a single leg opens only that connection; one Undo restores its exact formed tip and electrical pairing.",
+      "Visible Move body, keep leads control moves the resistor body while both inserted tips and nets stay fixed.",
+      "A real jumper between spare breadboard holes joins the resistor and LED through their conductors and explicit inserted leads.",
+      "Every formed metal tip in the actual rendered art matches its electrical endpoint and breadboard hole.",
+      "The usable breadboard circuit exports as SVG/PNG and round-trips all formed geometry and connections."
+    ],
+    "errors": [],
+    "parts": [
+      {
+        "componentId": "breadboard",
+        "contacts": 0,
+        "formedLeads": 0
+      },
+      {
+        "componentId": "resistor",
+        "contacts": 2,
+        "formedLeads": 2
+      },
+      {
+        "componentId": "led",
+        "contacts": 2,
+        "formedLeads": 2
+      },
+      {
+        "componentId": "ti-ne555p",
+        "contacts": 8,
+        "formedLeads": 0
+      },
+      {
+        "componentId": "omron-b3f-1000",
+        "contacts": 4,
+        "formedLeads": 4
+      }
+    ],
+    "alignment": {
+      "contacts": 8,
+      "maxScreenError": 4.755323329732368e-06
+    }
+  },
+  "touchBrowser": {
+    "checks": [
+      "390px library filter and native taps insert a resistor on the sole breadboard with both leads connected.",
+      "An exact breadboard hole responds directly to touch rather than opening a 420-contact picker.",
+      "Native touch dragging the blue tip moves only one formed lead and reseats it without moving the resistor body.",
+      "A second touch cancels the lead preview and leaves the saved circuit unchanged."
+    ],
+    "errors": []
+  },
+  "versionedBrowser": {
+    "revision": "breadboard-workbench-20261108",
+    "localBuild": "/tmp/wirepad-workbench-ui-site-final",
+    "errors": [],
+    "failed": [],
+    "notFound": [],
+    "catalog": 2003,
+    "parts": 5,
+    "insertedLeads": 16,
+    "javaScriptModules": 588,
+    "stylesheets": 10,
+    "exports": [
+      "SVG",
+      "PNG"
+    ],
+    "buildEquivalence": {
+      "sourceAssetsChecked": 603,
+      "allByteIdentical": true
+    }
+  },
+  "independentReview": {
+    "findingsFixed": [
+      "New lead placement could target an otherwise free hole hidden beneath a seated PCB; insertion availability now reserves those covered holes.",
+      "Repeated host-hole assembly during relational validation and quick-placement probing caused multi-second stalls; resolved-host immutable hole/index caches and shared search targets eliminate that repeated work."
+    ],
+    "regression": "test/breadboard-clearance.test.mjs covers exact Pico/F12 case at every quarter-turn, retained other lead, unchanged bodies and accessible socket reseating.",
+    "performanceFixture": {
+      "path": "/tmp/wirepad-crowded-suggestion-review.mjs",
+      "parts": 265,
+      "allProjectRelationshipsValidated": true,
+      "validationMs": 113.199792,
+      "noFitSuggestionMs": 43.50354199999998,
+      "originalValidationExceededSeconds": 20,
+      "originalSuggestionMs": 6338.160708,
+      "scope": "One local Node run of a valid dense 100-row, 10+10-cell breadboard with 264 nonoverlapping LEDs. Timings are local evidence, not a universal performance guarantee."
+    },
+    "remainingActionableFindings": []
+  },
+  "whitespace": "git diff --check and changed/new text whitespace scan passed",
+  "artifactScope": "Temporary browser screenshots/build paths identify locally reviewed QA artifacts and are not shipped application files.",
+  "proofSha256": "2fd6c83f471c0eb8750c4be226128b96139ea8635e2eae14291c057ca3cc0b70"
+}

@@ -1,7 +1,7 @@
 import { rotationSelector, modifiesSelection, selectionOptions } from './targets.js';
 import { updateItem } from '../model/items.js';
-import { translatePart } from '../editor/selection.js';
 import { componentForPart } from '../model/part-component.js';
+import { mountingFor } from '../catalog/index.js';
 import { partBounds } from '../geometry/parts.js';
 import { clampPoint, moveWireBend, segmentDrag, slideSegment } from '../geometry/routing.js';
 
@@ -61,6 +61,8 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     const changed = gesture?.next;
     gesture = null;
     if (changed) paint(editor.project);
+    actions.clearHover?.();
+    canvas.showPlacementPreview();
     canvas.showSelectionBox();
     canvas.showReconnectPreview();
     const ids = [...touches.keys()];
@@ -143,6 +145,10 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
         segment = segmentDrag(item, position, handle.point, handle.index);
         if (segment) type = 'wire';
       }
+    } else if (!forcePan && !modifying && !editor.pending && !tool && pin && editor.mode === 'select' &&
+        editor.item('part', pin.partId)?.leads && mountingFor(editor.item('part', pin.partId).componentId)?.mode === 'bendable') {
+      type = 'lead';
+      item = editor.item('part', pin.partId);
     } else if (!forcePan && !modifying && !editor.pending && !isEnd(tool?.kind) && tool?.kind !== 'add' && pin && !touch && editor.mode !== 'trace') {
       type = 'connect';
     } else if (!forcePan && !isEnd(tool?.kind) && tool?.kind !== 'add' && editor.mode === 'select' && !editor.pending && !pin) {
@@ -168,10 +174,14 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     gesture = {
       id: event.pointerId, type, item, segment, hit, handle, forcePan, touch, selection, dx: 0, dy: 0,
       ...clientPoint(event), center: canvas.center, scale: canvas.scale, project: editor.project,
+      leadStart: type === 'lead' ? position(pin) : undefined,
+      keepLeads: type === 'part' && Boolean(item?.leads && actions.keepLeadPositions?.()),
     };
     event.preventDefault();
     svg.focus({ preventScroll: true });
     capture(event.pointerId);
+    if (pin) actions.hoverAt?.(hit, { net: true });
+    else actions.clearHover?.();
   });
 
   function move(action, event) {
@@ -187,9 +197,10 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
 
     const { item, segment, type, scale, project } = action;
     if (!action.moved && item && type !== 'group' && !action.handle) {
-      editor.select(type, item.id);
+      editor.select(type === 'lead' ? 'part' : type, item.id);
     }
     action.moved = true;
+    if (['part', 'lead', 'group', 'box', 'pan'].includes(type)) actions.clearHover?.();
     svg.classList.add('dragging');
     if (type === 'pan') {
       canvas.pan(action.center, dx, dy);
@@ -208,9 +219,16 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
       paint(action.next ?? project);
       return;
     }
-    if (type === 'part') {
-      action.next = translatePart(project, item.id, { x: item.x + dx / scale, y: item.y + dy / scale });
+    if (type === 'part' || type === 'lead') {
+      action.next = type === 'lead'
+        ? editor.leadProject(item.id, action.hit.pin.pinId, { x: action.leadStart.x + dx / scale, y: action.leadStart.y + dy / scale }, project)
+        : action.keepLeads
+          ? editor.bodyPlacementProject(item.id, { x: item.x + dx / scale, y: item.y + dy / scale }, project)
+          : editor.placementProject(item.id, { x: item.x + dx / scale, y: item.y + dy / scale }, project);
       paint(action.next ?? project);
+      const part = action.next?.parts.find(part => part.id === item.id);
+      const assessment = part && editor.placementAssessment?.(part.id, action.next);
+      canvas.showPlacementPreview(part && (assessment || part.attachment) ? { part, project: action.next, assessment } : undefined);
       return;
     }
     if (type === 'connect' || type === 'reconnect') {
@@ -250,6 +268,7 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
         if (gesture?.project === editor.project) move(gesture, event);
       });
     } else if (!gesture && !multipleTouches && event.pointerType !== 'touch') {
+      if (!editor.pending) actions.hoverAt?.(hitAt(event, { handles: false }));
       if (currentMode() === 'pan') {
         if (editor.pending) {
           moveCursor(canvas.point(event.clientX, event.clientY));
@@ -313,9 +332,12 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     if (event.type !== 'pointerup' || action.project !== editor.project) {
       if (action.next) paint(editor.project);
       canvas.showReconnectPreview();
+      canvas.showPlacementPreview();
       return;
     }
     move(action, event);
+    canvas.showPlacementPreview();
+    actions.clearHover?.();
     svg.classList.remove('dragging');
     svg.classList.remove('selecting');
     canvas.showSelectionBox();
@@ -324,6 +346,7 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
       editor.selectMany(canvas.selectionInBox(action.hit.point, canvas.point(event.clientX, event.clientY)), action.selection);
     } else if (action.next) editor.commit(action.next);
     else if (action.moved && ['connect', 'reconnect'].includes(action.type)) dropConnection(action, event);
+    else if (!action.moved && action.type === 'lead') editor.select('part', action.item.id);
     else if (!action.moved && !action.forcePan && Math.hypot(action.dx, action.dy) <= (action.touch ? 7 : 3)) tap(action.hit, action);
     else if (action.handle && action.moved) paint(editor.project);
   }
@@ -368,6 +391,8 @@ export function bindCanvasPointer({ scope, svg, canvas, editor, paint, targets, 
     svg.classList.remove('dragging', 'selecting');
     canvas.showSelectionBox();
     canvas.showReconnectPreview();
+    canvas.showPlacementPreview();
+    actions.clearHover?.();
     if (preview) paint(editor.project);
   }
 

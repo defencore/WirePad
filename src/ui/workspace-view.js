@@ -70,6 +70,9 @@ export function createWorkspaceView({ editor, history, canvas, controls, panels,
     if (editor.mode === 'wire') return touchLayout
       ? 'Tap a module to choose a pin, or tap a wire to branch.'
       : 'Choose a pin, module, wire, or junction to start.';
+    if (editor.part?.leads) return controls.keepLeadPositions
+      ? 'Drag the body to bend its legs · Inserted tips stay fixed'
+      : 'Drag blue tips to move leads · W to add a jumper';
     if (editor.part && componentForPart(editor.part).surface) return `Drag inside to ${canvas.controls.coarsePointer.matches ? 'pan' : 'select'} · Drag the border or label to move the board`;
     return touchLayout ? 'Drag to pan · Pinch to zoom · Tap to select'
       : 'Drag to select · Shift+scroll to pan · Scroll to zoom';

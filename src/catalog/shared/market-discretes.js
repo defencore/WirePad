@@ -1,4 +1,5 @@
 import { circle, label, line, path, rect } from "./svg.js";
+import { marketBreadboardPart } from './market-breadboard-parts.js';
 
 const metal = "#bac3bf", dark = "#242b2b", ink = "#dce1d7";
 const lead = (x,y,w,h) => rect(x-w/2,y-h/2,w,h,.6,metal,"#e3e7df");
@@ -50,7 +51,7 @@ const shapes = {
     lead(80,34,7,32)+lead(80,141,7,32)+rect(32,49,96,78,1,"#c9bdb2","#e7e3d9")+rect(38,55,84,66,0,"#d5c8ba")+rect(45,60,70,56,0,"#312a28","#777067")+line(48,63,48,114,"#ac9979",1)+line(80,116,80,125,"#e8ddc3",2)},
 };
 
-export function marketDiscrete(spec) {
+export function marketDiscrete(spec, { breadboard = false } = {}) {
   const shape=shapes[spec.shape];
   if(!shape)throw new Error(`Unknown discrete package view ${spec.shape}`);
   const points=spec.contactPositions??shape.points;
@@ -79,5 +80,6 @@ export function marketDiscrete(spec) {
       const labelOffset=spec.shape==="bridgeSquare"?(y<height/2?24:-24):spec.shape==="to92Bottom"?3:above?-12:left||right?16:13;
       return `<g data-contact="${p.id}">${pad}${showLabels?label(x+(spec.shape==="to92Bottom"?-17:0),y+labelOffset,p.number===p.label?p.label:`${p.number} ${p.label}`,7,insideDarkBody?ink:"#334c42"):""}</g>`;
     }).join("")+(["to92Bottom","bridgeRound"].includes(spec.shape)?label(width/2,height-7,spec.shape==="bridgeRound"?"BOTTOM VIEW · NATIVE X MIRRORED":"BOTTOM VIEW",5.5,"#334c42"):"");
-  return {component,render,footprint,...(spec.model?{model:spec.model}:{})};
+  const mounting = breadboard ? marketBreadboardPart(component, spec, body) : undefined;
+  return {component,render,footprint,...(spec.model?{model:spec.model}:{}),...(mounting?{mounting}:{})};
 }

@@ -1,6 +1,9 @@
 import { componentForPart } from '../model/part-component.js';
+import { instancePins } from '../model/part-pins.js';
+import { escapeText } from '../shared/text.js';
 import { partName } from '../model/names.js';
-import { partBounds, translation } from '../geometry/parts.js';
+import { partSize } from '../model/part-placement.js';
+import { partBounds, pointOnPart, translation } from '../geometry/parts.js';
 import { group, SceneLayer, updateWireHandle } from './layers.js';
 import { wireHandleLayout } from './scene.js';
 
@@ -18,19 +21,37 @@ export class CanvasControls {
     this.rotationNode.setAttribute('display', 'none');
     this.rotationNode.setAttribute('aria-hidden', 'true');
     svg.append(this.rotationNode);
+    this.leadNode = group(svg);
+    this.leadNode.setAttribute('class', 'lead-tip-controls');
+    this.leadNode.setAttribute('role', 'group');
+    this.leadNode.setAttribute('aria-label', 'Adjust component leads');
+    svg.append(this.leadNode);
     this.coarsePointer = svg.ownerDocument.defaultView.matchMedia('(pointer: coarse)');
     scope.on(this.coarsePointer, 'change', () => this.update());
-    scope.cleanup(() => { this.wireHandles.node.remove(); this.rotationNode.remove(); });
+    scope.cleanup(() => { this.wireHandles.node.remove(); this.rotationNode.remove(); this.leadNode.remove(); });
   }
 
   update() {
     this.updateWires();
     this.updateParts();
+    this.updateLeads();
   }
 
   setPartEnabled(enabled) {
     this.partEnabled = enabled;
     this.updateParts();
+    this.updateLeads();
+  }
+
+  updateLeads() {
+    const { geometry, selection, selections, scale } = this.getState();
+    const part = selection?.type === 'part' && selections?.length === 1 && geometry?.parts.get(selection.id)?.part;
+    const visible = this.partEnabled && part?.leads;
+    const markup = visible ? instancePins(part, componentForPart(part)).map(pin => {
+      const point = pointOnPart(part, pin);
+      return `<g class="canvas-pin lead-tip-control" data-part="${part.id}" data-pin="${pin.id}" role="button" tabindex="0" aria-label="Adjust ${escapeText(pin.label)} lead; use Wire to connect a jumper" transform="${translation(point.x, point.y)} scale(${1 / scale})"><title>Drag ${escapeText(pin.label)} lead to a hole</title><circle r="10" fill="transparent"/><circle r="5" fill="#f3f8ff" stroke="#346fad" stroke-width="1.7"/><circle r="1.5" fill="#346fad"/></g>`;
+    }).join('') : '';
+    if (markup !== this.leadMarkup) { this.leadNode.innerHTML = markup; this.leadMarkup = markup; }
   }
 
   updateParts() {
@@ -60,7 +81,7 @@ export class CanvasControls {
     if (!visible) return;
 
     const component = componentForPart(part);
-    const { width } = component;
+    const { width } = partSize(part, component);
     const bounds = partBounds(part, component);
     const centerX = part.x + width / 2;
     const viewWidth = this.svg.clientWidth;

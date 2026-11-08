@@ -221,4 +221,17 @@ export default defineFamily("breadboard", [{
   render: breadboardArt,
   footprint: breadboardFootprint,
   configuration: { key: "breadboard", normalize: normalizeBreadboardConfig, create: createBreadboard },
+  mounting: {
+    type: "breadboard", pitch: MILLIMETRE_PITCH, canvasPitch: PITCH,
+    contacts: component => {
+      const pins = new Map(component.pins.map(pin => [pin.id, pin]));
+      return component.internalConnections.filter(ids => !ids[0].includes("-")).flatMap(ids =>
+        ids.map(pinId => ({ pinId, x: pins.get(pinId).x, y: pins.get(pinId).y, group: ids[0], region: "terminal" })));
+    },
+    railContacts: component => {
+      const pins = new Map(component.pins.map(pin => [pin.id, pin]));
+      return component.internalConnections.filter(ids => ids[0].includes("-")).flatMap(ids =>
+        ids.map(pinId => ({ pinId, x: pins.get(pinId).x, y: pins.get(pinId).y, group: ids[0], region: "rail" })));
+    },
+  },
 }]);

@@ -37,14 +37,14 @@ test('destroy and remount remove generated SVG layers and disconnect each observ
   }
   const first = new DrawingCanvas({ svg, scene, draft, onZoom() {} });
   assert.equal(scene.children.length, 5);
-  assert.equal(svg.children.length, 7);
+  assert.equal(svg.children.length, 10);
   first.destroy(); first.destroy();
   assert.equal(scene.children.length, 0);
   assert.deepEqual(svg.children, [scene, draft]);
   assert.equal(observers[0].disconnected, 1);
   const second = new DrawingCanvas({ svg, scene, draft, onZoom() {} });
   assert.equal(scene.children.length, 5);
-  assert.equal(svg.children.length, 7);
+  assert.equal(svg.children.length, 10);
   second.destroy();
   assert.equal(observers[1].disconnected, 1);
   assert.deepEqual(svg.children, [scene, draft]);

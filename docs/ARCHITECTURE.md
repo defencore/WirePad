@@ -55,6 +55,7 @@ export default defineFamily('my-family', [{
   footprint,       // Physical/reference geometry, or a function of the resolved component.
   model,           // Optional labeled manufacturer CAD URL.
   configuration,   // Optional configurable-instance contract.
+  mounting,        // Optional reviewed physical insertion capability.
 }]);
 ```
 
@@ -89,6 +90,18 @@ Add the corresponding controls to the provider map in `ui/inspector/configuratio
 Breadboards support 1–100 terminal rows, independent 1–10-cell left/right banks, 0–4 rails per side and split rails. Old projects receive five cells per bank. Existing A–E/F–J contact identities remain stable; additional left contacts use K–O and additional right contacts use P–T. Resizing changes the right bank's physical offset while retaining those identities. Removing a wired contact is rejected.
 
 ## Container movement and selection
+
+Breadboard mounting is a catalog capability exposed through `mountingFor()`, with no component-ID branches in the editor. A host enumerates terminal holes and their existing electrical strip identities. A module lists every insertable header lead in manufacturer millimeters, with a source and header-installation note; auxiliary contacts remain independent. `model/mounting.js` checks a positive calibration against every declared lead and validates explicit attachments. `geometry/breadboard-placement.js` fits the whole header to free holes without joining separate leads on one strip. Off-board reference footprints and coincident drawing bounds cannot establish eligibility.
+
+`editor/placement.js` supplies the same immutable placement preview to canvas drags and library drops. A successful drop commits the fitted pose, independent X/Y instance scale and explicit contact pairs in one undo step. Default catalog coordinates, artwork and native assets stay unchanged. Shared part transforms apply the instance scale consistently to artwork, contacts, bounds, labels and controls; no individual pin is moved to fake a fit. `canvas/placement-preview.js` owns the temporary ghost/contact overlay and clears it with the controller lifecycle.
+
+Optional version-2 `part.scale = { x, y }` and `part.attachment = { hostPartId, contacts: [{ pinId, hostPinId }] }` fields persist the placement. The parser validates attachment relationships after resolving all parts, including reused immutable records. Continuity traverses validated attachment edges without creating wire records. Independent child movement or rotation detaches the contact pairs while retaining its fitted size; host movement/rotation carries attached children, including overhangs. Layout changes that move or remove occupied holes are rejected, and deleting the host detaches surviving modules. The Inspector displays the seated state and male-header requirement.
+
+Ordinary insertable parts use the separate `breadboard-part` capability. Rigid DIP/header profiles retain their reviewed fixed lead geometry; bendable profiles own a fixed-size body renderer, physical body bounds, canonical lead roots, reach limit and nominal formed tips. Their optional `part.leads = [{ pinId, x, y }]` stores unscaled local tip positions independently of electrical attachment, so lifting a lead preserves its shape. `model/part-pins.js` resolves every instance tip consistently; `geometry/parts.js` supplies inverse transforms, physical body bounds and complete visual bounds. Native exports continue to resolve the canonical catalog component.
+
+`geometry/bendable-placement.js` snaps each tip to a distinct accessible hole without stretching the body. `lead-placement.js` moves one tip or moves the body while preserving world-space tips, respecting reach and clearance. Flexible attachments can identify a nonempty subset of seated leads; unlisted tips remain electrically open unless the component's real internal connections provide another path. Rigid insertion still requires all declared leads. `model/breadboard-occupancy.js` distinguishes exact inserted or wired sockets from neighboring free sockets on the same conductor, and the shared target planner also excludes holes under another seated body. These restrictions apply to new placement without invalidating earlier explicit wire/lead graphs.
+
+`editor/suggest-placement.js` finds a reproducible free insertion position for library clicks on the selected, related or sole breadboard. The library's **Breadboard parts** filter exposes the capability rather than guessing from names. Canvas feedback highlights complete internal strips or full electrical nets, reports socket occupancy and clears through the mounted scope. Known breadboard holes are direct touch targets; dense or ambiguous module contacts retain the pin picker. Formed-lead handles and a visible keep-leads toggle route through the same immutable, undoable editor transactions.
 
 A surface board acts as a wiring container. Border/caption drags move the board, wholly contained parts and junctions, and interior routing points. External endpoints stay fixed. Crossing wires with no internal attachment or waypoint remain independent. The movement planner clips routes at container boundaries, shares one bounded translation and commits one history step; undo restores the original snapshot.
 

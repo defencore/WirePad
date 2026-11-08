@@ -30,6 +30,8 @@ WirePad autosaves the active project to browser storage. Use **Project → Save 
 
 Connection points sit directly on the illustrated solder pads, through-holes or connector contacts. Hidden contacts use a labeled rear or mating-face view; dense headers show local terminal numbers with full functions on hover. Version-1 projects open automatically in the version-2 physical layout, retaining their part/pin identities and connections. Only obsolete endpoint lead waypoints are removed during import.
 
+Breadboards support direct component assembly. Add a breadboard, enable **Breadboard parts**, then click a part to find a free insertion position or drag it to the desired holes. The library includes **232 reviewed insertable parts**: devboards, DIP ICs, headers, resistors, diodes, LEDs, capacitors, transistors and a four-leg tactile switch. Flexible parts keep a fixed-size body while individual metal leads can move to other holes; **Move body, keep leads** repositions the body without unplugging its tips. Hover a hole to see its connected strip and free/wired/occupied state; press and hold to highlight the full net. In **Wire** mode, choose exact holes to draw jumpers, including on touchscreens. See the [breadboard assembly guide](docs/BREADBOARD_MOUNTING.md).
+
 ### Keyboard shortcuts
 
 | Shortcut | Action |

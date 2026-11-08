@@ -1232,4 +1232,4 @@ const parts = [
   }
 ];
 
-export default defineFamily("market-opto", parts.map(({ builder, ...spec }) => builder === "marketPackage" ? marketPackage(spec) : marketDiscrete(spec)));
+export default defineFamily("market-opto", parts.map(({ builder, ...spec }) => builder === "marketPackage" ? marketPackage(spec, { breadboard: spec.kind === 'dip' }) : marketDiscrete(spec, { breadboard: ['led3', 'led5'].includes(spec.shape) })));

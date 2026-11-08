@@ -67,9 +67,10 @@ export function bindCanvasKeyboard({ scope, svg, canvas, editor, targets, action
   });
 
   scope.on(svg, 'focusin', event => {
-    if (!editor.pending) return;
     const endpoint = anchorAt(focusedHit(event.target));
     if (!endpoint) return;
+    actions.focusContact?.(endpoint);
+    if (!editor.pending) return;
     focusEndpoint(endpoint);
   });
 

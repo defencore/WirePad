@@ -5,7 +5,7 @@ import { escapeText } from '../shared/text.js';
 
 const dragType = 'application/x-wirepad-component';
 
-export function bindLibrary({ library, board, addPart, openPanel, closePanel, root = document, signal }) {
+export function bindLibrary({ library, board, addPart, previewPart, clearPlacementPreview, openPanel, closePanel, root = document, signal }) {
   const scope = createScope({ signal });
   const document = library.ownerDocument;
   const search = library.querySelector('#search');
@@ -14,7 +14,9 @@ export function bindLibrary({ library, board, addPart, openPanel, closePanel, ro
   const catalog = library.querySelector('#catalog');
   const count = library.querySelector('#part-count');
   const reset = library.querySelector('#clear-catalog-filters');
+  const breadboardParts = library.querySelector('#breadboard-parts');
   const index = createLibraryIndex(components);
+  let dragging;
   category.replaceChildren(new Option('All categories', ''), ...index.categories.map(name => new Option(name, name)));
   manufacturer.replaceChildren(new Option('All manufacturers', ''),
     ...index.manufacturers.map(({ name, count }) => new Option(`${name} (${count})`, name)));
@@ -48,17 +50,18 @@ export function bindLibrary({ library, board, addPart, openPanel, closePanel, ro
   }
 
   let filters;
-  scope.cleanup(() => { thumbnails.disconnect(); cards.clear(); board.classList.remove('is-drop-target'); });
+  scope.cleanup(() => { thumbnails.disconnect(); cards.clear(); finishDrag(); });
 
   function render() {
     const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
-    const nextFilters = JSON.stringify([terms, category.value, manufacturer.value]);
+    const nextFilters = JSON.stringify([terms, category.value, manufacturer.value, breadboardParts.checked]);
     if (filters === nextFilters) return;
     filters = nextFilters;
-    const results = filterLibrary(index, { query: search.value, category: category.value, manufacturer: manufacturer.value });
+    const results = filterLibrary(index, { query: search.value, category: category.value, manufacturer: manufacturer.value,
+      mountable: breadboardParts.checked });
     manufacturer.title = manufacturer.value || 'All manufacturers';
 
-    const filtered = Boolean(terms.length || category.value || manufacturer.value);
+    const filtered = Boolean(terms.length || category.value || manufacturer.value || breadboardParts.checked);
     count.textContent = filtered ? `${results.length} of ${components.length} components` : `${components.length} components`;
     reset.hidden = !filtered;
     thumbnails.disconnect();
@@ -95,11 +98,13 @@ export function bindLibrary({ library, board, addPart, openPanel, closePanel, ro
   scope.on(search, 'input', render);
   scope.on(category, 'change', render);
   scope.on(manufacturer, 'change', render);
+  scope.on(breadboardParts, 'change', render);
   scope.on(library, 'click', event => {
     if (event.target.closest('[data-action="clear-catalog"]')) {
       search.value = '';
       category.value = '';
       manufacturer.value = '';
+      breadboardParts.checked = false;
       render();
       browse();
       return;
@@ -108,11 +113,11 @@ export function bindLibrary({ library, board, addPart, openPanel, closePanel, ro
     if (card && addPart(card.dataset.component)) closePanel();
   });
 
-  let dragging;
-  const finishDrag = () => {
+  function finishDrag() {
     dragging = null;
     board.classList.remove('is-drop-target');
-  };
+    clearPlacementPreview();
+  }
   scope.on(catalog, 'dragstart', event => {
     const card = event.target.closest('[data-component]');
     if (!card) return;
@@ -121,14 +126,20 @@ export function bindLibrary({ library, board, addPart, openPanel, closePanel, ro
     event.dataTransfer.effectAllowed = 'copy';
   });
   scope.on(catalog, 'dragend', finishDrag);
+  scope.on(document.defaultView, 'blur', finishDrag);
+  scope.on(document, 'keydown', event => { if (event.key === 'Escape') finishDrag(); });
   scope.on(board, 'dragover', event => {
     if (!dragging) return;
     event.preventDefault();
     event.dataTransfer.dropEffect = 'copy';
     board.classList.add('is-drop-target');
+    previewPart(dragging, event);
   });
   scope.on(board, 'dragleave', event => {
-    if (!board.contains(event.relatedTarget)) board.classList.remove('is-drop-target');
+    if (!board.contains(event.relatedTarget)) {
+      board.classList.remove('is-drop-target');
+      clearPlacementPreview();
+    }
   });
   scope.on(board, 'drop', event => {
     if (!dragging) return;

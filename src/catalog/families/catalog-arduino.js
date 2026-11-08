@@ -1,6 +1,7 @@
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, line, mountingHole, path, rect, smd, tactile } from "../shared/svg.js";
 import { boardDefinition, physicalHeaderArt, contact, gpio, ground, header, reset, supply } from "../shared/board.js";
+import { breadboardHeaderMounting } from "../shared/breadboard-mounting.js";
 
 const manufacturer = "Arduino";
 const docs = "https://docs.arduino.cc/hardware/";
@@ -356,6 +357,14 @@ function nanoBodyArt({ art, shortName }) {
     usbPort((88 - usbWidth) / 2, 0, usbWidth, usbDepth, type) + parts;
 }
 
+const nanoMountingSources = {
+  "arduino-nano": "A000005",
+  "arduino-nano-every": "ABX00028",
+  "arduino-nano-esp32": "ABX00083",
+  "arduino-nano-rp2040-connect": "ABX00053",
+  "arduino-nano-r4": "ABX00142",
+};
+
 function nanoDefinition(id, model, subtitle, description, left, right, extras = []) {
   const height = Math.max(left.length, right.length) * 16 + 62;
   const length = id === "arduino-micro" ? 48 : 45;
@@ -365,11 +374,19 @@ function nanoDefinition(id, model, subtitle, description, left, right, extras = 
     header(connectors[1], "right", 32, right, { x: 7.62, y: -(right.length - 1) * 1.27 }),
     ...extras,
   ];
-  return arduinoBoard({
+  const entry = arduinoBoard({
     id, art: id, name: `Arduino ${model}`, shortName: model, manufacturer, subtitle, description,
     source: docs + id.slice("arduino-".length) + "/", width: 138, height,
     tags: ["arduino", "breadboard", "development board"],
   }, headers, { body: [18, length], color: arduinoBlue, note: boardNote }, nanoBodyArt, [88, nanoArtVariants[id].boardHeight]);
+  const sku = nanoMountingSources[id];
+  return { ...entry, ...(sku ? { mounting: breadboardHeaderMounting({
+    label: `Arduino ${model} ${sku} manufacturer mechanical drawing`,
+    url: `https://docs.arduino.cc/resources/datasheets/${sku}-datasheet.pdf`,
+  }, [
+    { ids: left.map(pin => pin[0]), x: -7.62, y: -(left.length - 1) * 1.27 },
+    { ids: right.map(pin => pin[0]), x: 7.62, y: -(right.length - 1) * 1.27 },
+  ], "Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.") } : {}) };
 }
 
 const nanoRight = pins => [...pins.slice(2, 13).reverse(), ground("digital-gnd"), reset("digital-reset"), pins[0], pins[1]];
@@ -569,4 +586,4 @@ const arduinoModels = {
   "arduino-nano-r4": { label: "Arduino Nano R4 STEP model", url: "https://docs.arduino.cc/resources/models/ABX00142-step.zip" },
 };
 
-export default defineFamily("arduino", arduinoDefinitions.map(entry => ({ component: entry.component, render: entry.art, footprint: entry.footprint, model: arduinoModels[entry.component.id] })));
+export default defineFamily("arduino", arduinoDefinitions.map(entry => ({ component: entry.component, render: entry.art, footprint: entry.footprint, model: arduinoModels[entry.component.id], mounting: entry.mounting })));

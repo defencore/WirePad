@@ -42,6 +42,8 @@
 .part-body { cursor: move; outline: none; }
 .part-body:focus-visible .part-focus { stroke: var(--accent); }
 .canvas-pin { cursor: crosshair; outline: none; }
+.lead-tip-control { cursor: grab; }
+#canvas:is([data-mode="wire"], [data-mode="trace"], [data-routing="true"]) .breadboard-part-caption { pointer-events: none; }
 .canvas-pin .pin-highlight { opacity: 0; }
 .canvas-pin:hover .pin-highlight, .canvas-pin:focus-visible .pin-highlight, .canvas-pin.is-active .pin-highlight { opacity: 1; }
 .wire-hit, .canvas-junction { cursor: grab; }

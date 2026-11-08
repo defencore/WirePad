@@ -1,3 +1,5 @@
+import { isMountable } from './catalog.js';
+
 const manufacturerAliases = new Map([
   ['espressif', 'Espressif Systems'],
   ['espressif systems', 'Espressif Systems'],
@@ -34,7 +36,7 @@ export function createLibraryIndex(components) {
     counts.set(manufacturer, (counts.get(manufacturer) ?? 0) + 1);
     const aliases = [...manufacturerAliases].filter(([, name]) => name === manufacturer).map(([alias]) => alias);
     return {
-      component, manufacturer,
+      component, manufacturer, mountable: isMountable(component.id),
       text: [component.id, component.name, component.shortName, component.description, component.category,
         component.subtitle, component.manufacturer, manufacturer, ...aliases, ...(component.tags ?? [])].join(' ').toLowerCase(),
     };
@@ -46,10 +48,11 @@ export function createLibraryIndex(components) {
   };
 }
 
-export function filterLibrary(index, { query = '', category = '', manufacturer = '' } = {}) {
+export function filterLibrary(index, { query = '', category = '', manufacturer = '', mountable = false } = {}) {
   const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   const maker = manufacturer ? manufacturerName(manufacturer) : '';
   return index.entries.filter(entry =>
+    (!mountable || entry.mountable) &&
     (!category || entry.component.category === category) &&
     (!maker || entry.manufacturer === maker) &&
     terms.every(term => entry.text.includes(term)));

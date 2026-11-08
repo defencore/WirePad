@@ -4,6 +4,7 @@ import { bindCanvasPointer } from './pointer.js';
 import { bindCanvasKeyboard } from './keyboard.js';
 import { nudgeTarget } from '../editor/nudge.js';
 import { clampPoint, wireRoute } from '../geometry/routing.js';
+import { mountingFor } from '../catalog/index.js';
 
 const isEnd = kind => kind === 'from' || kind === 'to';
 const opposite = side => side === 'from' ? 'to' : 'from';
@@ -19,11 +20,24 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
   let holdingShift = false;
   let wireTool;
   let pendingNudge;
+  let keepLeadPositions = false;
+  let feedbackSeed;
   const temporaryPan = () => holdingSpace || holdingShift;
   const currentMode = () => temporaryPan() ? 'pan' : editor.mode;
   const position = endpoint => canvas.position(endpoint);
   const planRoute = (from, to) => canvas.autoRoute(from, to);
   const editableWire = () => editor.mode === 'select' && !editor.pending ? editor.wire : null;
+  const isBreadboardHole = endpoint => endpoint?.partId &&
+    mountingFor(editor.item('part', endpoint.partId)?.componentId)?.type === 'breadboard';
+  function clearHover() {
+    feedbackSeed = null;
+    canvas.showBreadboardFeedback?.();
+  }
+  function hoverAt(hit, options = {}) {
+    if (temporaryPan() || !hit?.pin || !options.net && !isBreadboardHole(hit.pin)) { clearHover(); return; }
+    feedbackSeed = hit.pin;
+    canvas.showBreadboardFeedback?.(hit.pin, options);
+  }
   function currentTool() {
     if (pendingNudge && pendingNudge.before !== editor.project) {
       wireTool = pendingNudge.target && { ...pendingNudge.target, project: editor.project };
@@ -55,6 +69,7 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     setCanvasMode();
     canvas.controls.setPartEnabled(currentMode() === 'select' && !editor.pending);
     if (currentMode() === 'pan') {
+      clearHover();
       canvas.showReconnectPreview();
       canvas.showDraft(null);
       return;
@@ -64,6 +79,8 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     const point = cursor ?? (editor.pending && position(editor.pending.from));
     const color = editor.pending ? editor.connectionColor(editor.pending.from, hover) : editor.wireColor;
     canvas.showDraft(editor.pending, point, color, hover);
+    if (editor.pending) canvas.showBreadboardFeedback?.(editor.pending.from, { net: true });
+    else if (feedbackSeed) canvas.showBreadboardFeedback?.(feedbackSeed);
   }
 
   function chooseEndpoint(endpoint) {
@@ -81,7 +98,7 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     const tool = currentTool();
     const reconnecting = isEnd(tool?.kind);
     const fixed = reconnecting ? editor.wire[opposite(tool.kind)] : editor.pending?.from;
-    if (hit.partId && (touch || !hit.pin)) {
+    if (hit.partId && (!hit.pin || touch && !isBreadboardHole(hit.pin))) {
       openPinPicker(hit.partId, hit.pin?.pinId, fixed, reconnecting ? 'reconnect' : 'wire');
       return true;
     }
@@ -136,7 +153,7 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
       return;
     }
     if (editor.mode === 'trace') {
-      if (partId && (touch || !pin)) openPinPicker(partId, pin?.pinId);
+      if (partId && (!pin || touch && !isBreadboardHole(pin))) openPinPicker(partId, pin?.pinId);
       else editor.tracePoint(pin || junction || (wireId ? { wireId } : null));
       return;
     }
@@ -164,6 +181,7 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
   const pointer = bindCanvasPointer({
     scope, svg, canvas, editor, paint, targets, mode: currentMode, temporaryPan,
     actions: { currentTool, clearWireTool, panWithShift, renderDraft, connectionPreview, dropConnection, tap,
+      clearHover, hoverAt, keepLeadPositions: () => keepLeadPositions,
       moveCursor(point, endpoint = null) { cursor = point; hover = endpoint; },
     },
   });
@@ -217,6 +235,7 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
         cursor = position(endpoint);
         renderDraft();
       },
+      focusContact(endpoint) { hoverAt({ pin: endpoint }); },
     },
   });
 
@@ -247,9 +266,14 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     keyboard.reset();
     svg.classList.remove('dragging', 'selecting');
     canvas.showSelectionBox();
+    clearHover();
     const restoreMode = temporaryPan();
     holdingSpace = holdingShift = false;
     if (restoreMode) refresh();
+  });
+  scope.on(svg, 'pointerleave', () => { if (!editor.pending) clearHover(); });
+  scope.on(svg, 'focusout', event => {
+    if (!svg.contains(event.relatedTarget) && !editor.pending) clearHover();
   });
 
   function removeBend(tool = currentTool()) {
@@ -264,11 +288,18 @@ export function bindCanvas({ canvas, svg, editor, paint, refresh, openPinPicker,
     holdingSpace = holdingShift = false;
     keyboard.reset();
     canvas.showDraft(null);
+    clearHover();
   });
 
   return {
     destroy: scope.destroy,
-    renderDraft, chooseEndpoint, panWithSpace, clearWireTool, removeBend, nudge,
+    renderDraft, chooseEndpoint, panWithSpace, clearWireTool, clearHover, removeBend, nudge,
+    get keepLeadPositions() { return keepLeadPositions; },
+    setKeepLeadPositions(active) {
+      if (pointer.busy || keepLeadPositions === Boolean(active)) return;
+      keepLeadPositions = Boolean(active);
+      refresh();
+    },
     get mode() { return currentMode(); },
     get temporaryPan() { return temporaryPan(); },
     armBend() {

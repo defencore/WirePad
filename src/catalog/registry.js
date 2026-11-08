@@ -59,9 +59,86 @@ function validateFootprint(footprint, component, context) {
   for (const id of references) if (!ids.has(id)) throw new Error(`${context} footprint refers to unknown contact "${id}".`);
 }
 
+function validateMounting(mounting, component, context) {
+  if (!mounting || typeof mounting !== 'object') throw new Error(`${context} has an invalid mounting descriptor.`);
+  if (!['breadboard', 'breadboard-module', 'breadboard-part'].includes(mounting.type)) throw new Error(`${context} has an unsupported mounting type.`);
+  requirePositive(mounting.pitch, `${context} mounting pitch`);
+  if (mounting.type === 'breadboard') {
+    requirePositive(mounting.canvasPitch, `${context} mounting canvas pitch`);
+    if (typeof mounting.contacts !== 'function') throw new Error(`${context} mounting host must generate its terminal holes.`);
+    if (mounting.railContacts !== undefined && typeof mounting.railContacts !== 'function') throw new Error(`${context} mounting host must generate its rail holes.`);
+  } else {
+    requireText(mounting.source?.label, `${context} mounting source label`);
+    requireText(mounting.source?.url, `${context} mounting source URL`);
+    if (!/^https?:\/\//.test(mounting.source.url)) throw new Error(`${context} mounting source must use HTTP or HTTPS.`);
+    requireText(mounting.note, `${context} mounting installation note`);
+  }
+  if (mounting.type === 'breadboard-part') {
+    if (!['rigid', 'bendable'].includes(mounting.mode)) throw new Error(`${context} has an invalid breadboard part mode.`);
+    if (mounting.body !== undefined && (!mounting.body || !['x', 'y', 'width', 'height'].every(key => Number.isFinite(mounting.body[key])) || mounting.body.width <= 0 || mounting.body.height <= 0)) throw new Error(`${context} mounting body has invalid bounds.`);
+    if (mounting.allowRails !== undefined && typeof mounting.allowRails !== 'boolean') throw new Error(`${context} mounting rail permission must be boolean.`);
+    if (mounting.mode === 'bendable') {
+      requirePositive(mounting.unitsPerMm, `${context} mounted body scale`);
+      requirePositive(mounting.maxLeadMm, `${context} maximum formed lead length`);
+      if (mounting.leadRadius !== undefined) requirePositive(mounting.leadRadius, `${context} formed lead ink radius`);
+      if (!mounting.body || !mounting.origin || ![mounting.origin.x, mounting.origin.y].every(Number.isFinite) || typeof mounting.render !== 'function') throw new Error(`${context} bendable mounting needs a body, origin and renderer.`);
+      if (!Array.isArray(mounting.roots) || mounting.roots.length !== mounting.contacts?.length) throw new Error(`${context} bendable mounting roots must match its contacts.`);
+      const rootIds = new Set();
+      for (const root of mounting.roots) {
+        if (!root || rootIds.has(root.pinId) || !mounting.contacts.some(contact => contact.pinId === root.pinId) || ![root.x, root.y].every(Number.isFinite)) throw new Error(`${context} mounting has invalid or repeated body roots.`);
+        rootIds.add(root.pinId);
+        const { x, y, width, height } = mounting.body;
+        if (root.x < x - 1e-7 || root.x > x + width + 1e-7 || root.y < y - 1e-7 || root.y > y + height + 1e-7) throw new Error(`${context} mounting root is outside its physical body.`);
+        const tip = mounting.contacts.find(contact => contact.pinId === root.pinId);
+        if (Math.hypot(mounting.origin.x + tip.x * mounting.unitsPerMm - root.x, mounting.origin.y + tip.y * mounting.unitsPerMm - root.y) > mounting.maxLeadMm * mounting.unitsPerMm + 1e-7) throw new Error(`${context} nominal mounting lead exceeds its physical reach.`);
+      }
+    }
+  }
+  const terminals = mounting.type === 'breadboard' ? mounting.contacts(component) : mounting.contacts;
+  const rails = mounting.type === 'breadboard' && mounting.railContacts ? mounting.railContacts(component) : [];
+  if (!Array.isArray(terminals) || !Array.isArray(rails)) throw new Error(`${context} mounting must identify physical contacts.`);
+  const contacts = [...terminals, ...rails];
+  if (!Array.isArray(contacts) || !contacts.length) throw new Error(`${context} mounting must identify physical contacts.`);
+  const pins = new Map(component.pins.map(pin => [pin.id, pin]));
+  const ids = new Set(), positions = new Set();
+  const origin = contacts[0];
+  for (const contact of contacts) {
+    const pin = pins.get(contact.pinId);
+    if (!pin) throw new Error(`${context} mounting refers to unknown contact "${contact.pinId}".`);
+    if (ids.has(contact.pinId)) throw new Error(`${context} mounting repeats contact "${contact.pinId}".`);
+    ids.add(contact.pinId);
+    if (![contact.x, contact.y].every(Number.isFinite)) throw new Error(`${context} mounting contact "${contact.pinId}" has invalid coordinates.`);
+    const position = `${contact.x},${contact.y}`;
+    if (positions.has(position)) throw new Error(`${context} mounting repeats a physical contact position.`);
+    positions.add(position);
+    if (mounting.type === 'breadboard') {
+      requireText(contact.group, `${context} mounting conductor group`);
+      if (contact.x !== pin.x || contact.y !== pin.y) throw new Error(`${context} mounting hole must use its published canvas position.`);
+      if (!component.internalConnections?.some(ids => ids[0] === contact.group && ids.includes(contact.pinId))) {
+        throw new Error(`${context} mounting hole must identify its existing internal conductor.`);
+      }
+      if (contact.region !== (rails.includes(contact) ? 'rail' : 'terminal')) throw new Error(`${context} mounting hole has an incorrect breadboard region.`);
+    } else if (pin.back || ['back', 'rear'].includes(pin.face ?? pin.view)) {
+      throw new Error(`${context} mounting cannot use a separate rear-view contact.`);
+    } else if (['x', 'y'].some(axis => {
+      const steps = (contact[axis] - origin[axis]) / mounting.pitch;
+      return !Number.isFinite(steps) || Math.abs(steps - Math.round(steps)) > 1e-7;
+    })) {
+      throw new Error(`${context} mounting contacts must share the declared physical pitch grid.`);
+    }
+  }
+  if (mounting.type === 'breadboard-part' && component.pins.some(pin => !ids.has(pin.id))) throw new Error(`${context} part mounting must include every electrical contact.`);
+  return Object.freeze({ ...mounting, ...(mounting.type !== 'breadboard' ? {
+    source: Object.freeze({ ...mounting.source }),
+    contacts: Object.freeze(contacts.map(contact => Object.freeze({ ...contact }))),
+  } : {}), ...(mounting.body ? { body: Object.freeze({ ...mounting.body }) } : {}),
+    ...(mounting.origin ? { origin: Object.freeze({ ...mounting.origin }) } : {}),
+    ...(mounting.roots ? { roots: Object.freeze(mounting.roots.map(root => Object.freeze({ ...root }))) } : {}) });
+}
+
 function validateEntry(entry, familyId) {
   validateComponent(entry?.component);
-  const { component, render, footprint, model, configuration } = entry;
+  const { component, render, footprint, model, configuration, mounting } = entry;
   const context = `Component "${component.id}" in family "${familyId}"`;
   if (typeof render !== 'function') throw new Error(`${context} is missing its artwork renderer.`);
   if (!footprint || (typeof footprint !== 'function' && typeof footprint !== 'object')) throw new Error(`${context} is missing its footprint definition.`);
@@ -73,10 +150,11 @@ function validateEntry(entry, familyId) {
   }
   if (configuration !== undefined) {
     requireText(configuration.key, `${context} configuration key`);
-    if (['id', 'componentId', 'x', 'y', 'rotation', 'label', '__proto__', 'constructor', 'prototype'].includes(configuration.key)) throw new Error(`${context} uses a reserved configuration key.`);
+    if (['id', 'componentId', 'x', 'y', 'rotation', 'label', 'scale', 'scaleX', 'scaleY', 'attachment', 'attachments', 'mounting', 'leads', '__proto__', 'constructor', 'prototype'].includes(configuration.key)) throw new Error(`${context} uses a reserved configuration key.`);
     if (typeof configuration.normalize !== 'function' || typeof configuration.create !== 'function') throw new Error(`${context} configuration must define normalize and create functions.`);
   }
-  return Object.freeze({ component, render, footprint, ...(model ? { model } : {}), ...(configuration ? { configuration: Object.freeze(configuration) } : {}) });
+  return Object.freeze({ component, render, footprint, ...(model ? { model } : {}), ...(configuration ? { configuration: Object.freeze(configuration) } : {}),
+    ...(mounting !== undefined ? { mounting: validateMounting(mounting, component, context) } : {}) });
 }
 
 // A component's definition, artwork, footprint and CAD reference travel as one entry.

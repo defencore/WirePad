@@ -7,7 +7,8 @@ import { assetFile, previewAsset } from './assets.js';
 import { configurationSignature, configurationValues } from './configuration.js';
 import { inspectPart, inspectWire, inspectEmpty, inspectSelection } from './views.js';
 
-export function bindInspector({ inspection, editor, notify, focusCanvas, autoRouteWire, root = document, signal }) {
+export function bindInspector({ inspection, editor, notify, focusCanvas, autoRouteWire,
+  getKeepLeadPositions = () => false, setKeepLeadPositions = () => {}, root = document, signal }) {
   const scope = createScope({ signal });
   const element = id => requireElement(root, `#${id}`);
   const dialog = element('asset-dialog');
@@ -41,7 +42,8 @@ export function bindInspector({ inspection, editor, notify, focusCanvas, autoRou
     if (editor.selections.length > 1) {
       setView(`selection/${JSON.stringify(editor.selections)}`, () => inspectSelection(editor.selections, editor.canMoveSelection));
     } else if (part) {
-      setView(`part/${part.id}/${part.componentId}/${part.rotation ?? 0}/${configurationSignature(part)}/${tab}`, () => inspectPart(part, tab));
+      setView(`part/${part.id}/${part.componentId}/${part.rotation ?? 0}/${configurationSignature(part)}/${JSON.stringify(part.attachment ?? null)}/${Boolean(part.leads)}/${getKeepLeadPositions()}/${tab}`,
+        () => inspectPart(part, tab, { keepLeadPositions: getKeepLeadPositions() }));
       const label = inspection.querySelector('#part-label');
       if (label && root.activeElement !== label) label.value = part.label ?? '';
     } else if (wire || pending || mode === 'wire') {
@@ -98,6 +100,7 @@ export function bindInspector({ inspection, editor, notify, focusCanvas, autoRou
   });
 
   scope.on(inspection, 'change', ({ target }) => {
+    if (target.id === 'keep-lead-positions') setKeepLeadPositions(target.checked);
     if (target.id === 'part-rotation') editor.rotatePart(Number(target.value));
     if (target.id === 'custom-color') editor.setWireColor(target.value);
     if (target.id === 'part-label') {

@@ -26,7 +26,7 @@ test('orientation controls remain upright, fixed size, and in the viewport after
     geometry: { parts: new Map([[part.id, { part }]]) },
   };
   const controls = Object.assign(Object.create(CanvasControls.prototype), {
-    svg: canvas.svg, coarsePointer: { matches: false }, rotationNode: panel,
+    svg: canvas.svg, coarsePointer: { matches: false }, rotationNode: panel, leadNode: attributes(),
     partEnabled: true, getState: () => canvas,
   });
 

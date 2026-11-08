@@ -1,4 +1,5 @@
 import { defineFamily } from "../registry.js";
+import { coreBreadboardMounting } from "../shared/core-breadboard-parts.js";
 import { physicalEntry } from "../shared/physical-contacts.js";
 import { ads1220, drawAds1220, ads1220Footprint } from "../parts/ads1220.js";
 import { hw0519, drawHw0519 } from "../parts/hw0519.js";
@@ -691,7 +692,9 @@ export const coreModulesFamily = defineFamily("core-modules", coreModuleComponen
 }, (pin, index) => coreContactPositions[component.id](component, pin, index))));
 export const coreBasicsFamily = defineFamily("core-basics", coreBasicComponents.map(component => {
   const entry = { component, render: coreBasicArt[component.art], footprint: coreBasicFootprints[component.id], model: coreBasicModels[component.id] };
-  if (["npn", "nmos"].includes(component.art)) return physicalEntry(entry, (_pin, index) => [39 + index * 8, 58]);
-  if (["terminal", "header", "jst"].includes(component.art)) return physicalEntry(entry, pin => [pin.x, component.art === "header" ? 17 : component.art === "jst" ? 32 : 25]);
-  return { ...entry, component: { ...component, contactLayout: "leads" } };
+  const resolved = ["npn", "nmos"].includes(component.art) ? physicalEntry(entry, (_pin, index) => [39 + index * 8, 58])
+    : ["terminal", "header", "jst"].includes(component.art) ? physicalEntry(entry, pin => [pin.x, component.art === "header" ? 17 : component.art === "jst" ? 32 : 25])
+      : { ...entry, component: { ...component, contactLayout: "leads" } };
+  const mounting = coreBreadboardMounting(resolved.component);
+  return { ...resolved, ...(mounting ? { mounting } : {}) };
 }));

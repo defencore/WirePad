@@ -1,4 +1,5 @@
 import { componentForPart } from '../model/part-component.js';
+import { partScale } from '../model/part-placement.js';
 import { translation, partRotation, labelPosition } from '../geometry/parts.js';
 import { wireMarkup, partMarkup, junctionDot } from './markup.js';
 
@@ -103,10 +104,11 @@ function updatePin(pin, connected) {
   dot.setAttribute('stroke', connected ? '#ffffff' : '#967543');
 }
 
-export function updatePart(layer, entry, { part, connected }, selected, active) {
+export function updatePart(layer, entry, { part, connected, covered = new Set() }, selected, active) {
   const { label, x, y, rotation } = part;
+  const scale = partScale(part);
   const component = componentForPart(part);
-  if (!entry || entry.component !== component || entry.label !== label) {
+  if (!entry || entry.component !== component || entry.label !== label || entry.leads !== part.leads) {
     const node = entry?.node ?? group(layer);
     entry?.background?.remove();
     node.innerHTML = partMarkup(part, component, connected, true);
@@ -116,14 +118,15 @@ export function updatePart(layer, entry, { part, connected }, selected, active) 
     const pins = new Map([...body.children].slice(1).map(pin => [pin.dataset.pin, pin]));
     let background;
     let backgroundBody;
-    if (component.surface || component.contactLayout === 'physical') {
+    if (part.leads || component.surface || component.contactLayout === 'physical') {
       background = group(layer);
       backgroundBody = group(layer);
       backgroundBody.setAttribute('transform', partRotation(part, component));
       backgroundBody.append(artwork);
       background.append(backgroundBody);
     }
-    entry = { node, component, label, body, caption, pins, outline, background, backgroundBody, connected, rotation, selected: false };
+    entry = { node, component, label, body, caption, pins, outline, background, backgroundBody, connected, rotation,
+      scaleX: scale.x, scaleY: scale.y, leads: part.leads, covered: new Set(), selected: false };
   }
   if (entry.x !== x || entry.y !== y) {
     entry.node.setAttribute('transform', translation(x, y));
@@ -131,15 +134,20 @@ export function updatePart(layer, entry, { part, connected }, selected, active) 
     entry.x = x;
     entry.y = y;
   }
-  if (entry.rotation !== rotation) {
+  if (entry.rotation !== rotation || entry.scaleX !== scale.x || entry.scaleY !== scale.y) {
     entry.body.setAttribute('transform', partRotation(part, entry.component));
     entry.backgroundBody?.setAttribute('transform', partRotation(part, entry.component));
     entry.caption.setAttribute('transform', labelPosition(part, entry.component));
     entry.rotation = rotation;
+    entry.scaleX = scale.x;
+    entry.scaleY = scale.y;
   }
   for (const id of entry.connected) if (!connected.has(id)) updatePin(entry.pins.get(id), false);
   for (const id of connected) if (!entry.connected.has(id)) updatePin(entry.pins.get(id), true);
   entry.connected = connected;
+  for (const id of entry.covered ?? []) if (!covered.has(id)) entry.pins.get(id).removeAttribute('display');
+  for (const id of covered) if (!entry.covered?.has(id)) entry.pins.get(id).setAttribute('display', 'none');
+  entry.covered = covered;
   if (entry.active !== active) {
     entry.pins.get(entry.active)?.classList.remove('is-active');
     entry.pins.get(active)?.classList.add('is-active');

@@ -2,6 +2,7 @@ import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
 import { board, chip, circle, label, line, mountingHole, path, pinRow, rect, smd, tactile } from "../shared/svg.js";
 import { microUsb, espDevKitArt } from "../shared/esp-devkit-art.js";
+import { breadboardHeaderMounting } from "../shared/breadboard-mounting.js";
 
 const espDocs = "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3";
 const seeedS3 = "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/";
@@ -921,4 +922,15 @@ const espRpModels = {
   "adafruit-feather-rp2040": { label: "Adafruit Feather RP2040 CAD files", url: `${adafruitCad}/4884%20Feather%20RP2040` },
 };
 
-export default defineFamily("esp-rp", (espRpComponents).map(component => ({ component, render: (espRpArt)[component.art], footprint: (espRpFootprints)[component.id], model: espRpModels[component.id] })));
+// These named primary headers have source-reviewed insertion centers. Auxiliary
+// SWD and fitted connector contacts are deliberately absent from the mounting map.
+const espRpMountings = Object.fromEntries([
+  [pico, "https://datasheets.raspberrypi.com/pico/pico-product-brief.pdf", "Raspberry Pi Pico physical specifications", "Two 20-pin rows are 17.78 mm apart. USB above; pin 1 is upper left and pin 40 upper right. The three SWD contacts are not insertion leads."],
+  [picoW, "https://datasheets.raspberrypi.com/picow/pico-w-product-brief.pdf", "Raspberry Pi Pico W physical specifications", "Two 20-pin rows are 17.78 mm apart. USB above; pin 1 is upper left and pin 40 upper right. Exclude all SWD pads and keep the antenna clear."],
+  [espDevKitM, "https://dl.espressif.com/dl/schematics/DXF_ESP32-S3-DevKitM-1_V1_20210310AC.pdf", "Espressif ESP32-S3-DevKitM-1 V1 mechanical drawing", "Component side, antenna above. J1 and J3 each have 22 leads; their rows are 22.86 mm apart."],
+  [featherS3, "https://learn.adafruit.com/adafruit-esp32-s3-feather/downloads", "Adafruit Feather ESP32-S3 manufacturer schematic and fab print", "USB above. The 16-pin and 12-pin header rows are 20.32 mm apart, with the shorter row starting four 2.54 mm pitches below the longer row."],
+  [featherRp, "https://learn.adafruit.com/adafruit-feather-rp2040-pico/downloads", "Adafruit Feather RP2040 manufacturer schematic and fab print", "USB above. The 16-pin and 12-pin header rows are 20.32 mm apart, with the shorter row starting four 2.54 mm pitches below the longer row."],
+].map(([entry, url, label, note]) => [entry.component.id,
+  breadboardHeaderMounting({ url, label }, entry.footprint.groups.slice(0, 2), note)]));
+
+export default defineFamily("esp-rp", (espRpComponents).map(component => ({ component, render: (espRpArt)[component.art], footprint: (espRpFootprints)[component.id], model: espRpModels[component.id], mounting: espRpMountings[component.id] })));

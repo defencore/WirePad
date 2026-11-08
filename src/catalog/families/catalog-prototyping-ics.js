@@ -1,6 +1,7 @@
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
 import { circle, label, line, path, pinRow, rect } from "../shared/svg.js";
+import { rigidBreadboardPart } from "../shared/breadboard-parts.js";
 
 const input = (id, caption, description) => [id, caption, description, "input"];
 const output = (id, caption, description, type = "output") => [id, caption, description, type];
@@ -66,6 +67,14 @@ function dip({ id, part, family, packageId, name, description, subtitle, tags, c
   return {
     component: physicalComponent(component, pin => [pin.x === 0 ? (width - mechanical.body[0] * 7.5) / 2 - 9 : (width + mechanical.body[0] * 7.5) / 2 + 9, pin.y]),
     art: (part, showLabels) => dipArt(part, showLabels, mechanical),
+    mounting: rigidBreadboardPart(
+      { label: `Texas Instruments ${part} ${packageId} manufacturer package drawing`, url: component.source },
+      [...left.map(([pinId], index) => ({ pinId, x: -3.81, y: y + index * 2.54 })),
+        ...right.map(([pinId], index) => ({ pinId, x: 3.81, y: y + index * 2.54 }))],
+      { x: (width - mechanical.body[0] * 7.5) / 2, y: (height - mechanical.body[1] * 7.5) / 2,
+        width: mechanical.body[0] * 7.5, height: mechanical.body[1] * 7.5 },
+      `Manufacturer-reviewed ${mechanical.pins}-pin TI ${mechanical.packageCode} PDIP, component-side view, 2.54 mm lead pitch and 7.62 mm formed row spacing. Insert all leads across the breadboard trench; the source package body stays fixed.`,
+    ),
     footprint: {
       body: mechanical.body, color: "#252a2f", modelHeight: 3.5,
       pitch: 2.54, drill: 1, size: [1.8, 2.1], shape: "oval",
@@ -194,5 +203,6 @@ const prototypingIcComponents = parts.map(({ component }) => component);
 const prototypingIcArt = Object.fromEntries(parts.map(({ component, art }) => [component.id, art]));
 const prototypingIcFootprints = Object.fromEntries(parts.map(({ component, footprint }) => [component.id, footprint]));
 const prototypingIcModels = Object.fromEntries(parts.map(({ component, model }) => [component.id, model]));
+const prototypingIcMountings = Object.fromEntries(parts.map(({ component, mounting }) => [component.id, mounting]));
 
-export default defineFamily("prototyping-ics", (prototypingIcComponents).map(component => ({ component, render: (prototypingIcArt)[component.art], footprint: (prototypingIcFootprints)[component.id], model: prototypingIcModels[component.id] })));
+export default defineFamily("prototyping-ics", (prototypingIcComponents).map(component => ({ component, render: (prototypingIcArt)[component.art], footprint: (prototypingIcFootprints)[component.id], model: prototypingIcModels[component.id], mounting: prototypingIcMountings[component.id] })));

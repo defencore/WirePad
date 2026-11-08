@@ -4,4 +4,4 @@ import { marketDiscrete } from "../shared/market-discretes.js";
 
 // Marked polarity is retained; AC suffixes distinguish equivalent bridge inputs.
 
-export default defineFamily("market-diodes", parts.map(marketDiscrete));
+export default defineFamily("market-diodes", parts.map(spec => marketDiscrete(spec, { breadboard: spec.shape === 'axial' })));

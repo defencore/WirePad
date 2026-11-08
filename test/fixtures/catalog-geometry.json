@@ -8295,5 +8295,9 @@
   {
     "id": "sparkfun-module-sen15805",
     "geometry": "26eef99bdea9cb2d8d87f03466e6c6ab545ff96bfc6cba714770bca8914f951c"
+  },
+  {
+    "id": "omron-b3f-1000",
+    "geometry": "c4ee94ba5a89a29d51a684fe247b6b44be83859182a152ab931d963dd147ef9a"
   }
 ]

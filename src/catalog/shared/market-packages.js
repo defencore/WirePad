@@ -1,9 +1,10 @@
 import { circle, label, line, path, rect } from './svg.js';
+import { rigidBreadboardPart } from './breadboard-parts.js';
 
 // Even two-row packages, viewed from the component side: pin 1 upper left,
 // numbers down the left row and back up the right. Dimensions are millimeters.
 // Callers own the exact package drawing, pin functions and market evidence.
-export function marketPackage(spec) {
+export function marketPackage(spec, { breadboard = false } = {}) {
   const { body, rowSpacing, pitch, pins: specs } = spec;
   if (!['dip', 'soic', 'tssop'].includes(spec.kind) || !Array.isArray(body) ||
       !body.every(n => Number.isFinite(n) && n > 0) || !Number.isFinite(rowSpacing) || rowSpacing <= body[0] ||
@@ -49,6 +50,12 @@ export function marketPackage(spec) {
   const padHeight = spec.padSize?.[1] ?? (smd ? Math.min(pitch * .55, .65) : 2.0);
   return {
     component,
+    ...(breadboard && spec.kind === 'dip' ? { mounting: rigidBreadboardPart(
+      { label: `${spec.manufacturer} ${spec.part} ${spec.packageName} package drawing`, url: spec.source },
+      contacts.map(({ id, x, y }) => ({ pinId: id, x, y })),
+      { x: cx - body[0] * scale / 2, y: cy - body[1] * scale / 2, width: body[0] * scale, height: body[1] * scale },
+      `Source-reviewed ${spec.packageName} lead centers: ${pitch} mm lead pitch and ${rowSpacing} mm row spacing, viewed from the component side. Fit every lead across independent breadboard terminal strips; do not insert the SMD ordering-code variants. Package body dimensions remain fixed.`,
+    ) } : {}),
     render: (part, showLabels = true) => {
       const left = cx - body[0] * scale / 2, right = cx + body[0] * scale / 2;
       const top = cy - body[1] * scale / 2, bottom = cy + body[1] * scale / 2;

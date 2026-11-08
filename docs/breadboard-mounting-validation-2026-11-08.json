@@ -1,0 +1,125 @@
+{
+  "checked": "2026-11-08",
+  "scope": "Automatic fitting and explicit electrical insertion of reviewed devboard headers into a configurable breadboard; local source and versioned build verification.",
+  "reviewedModuleProfiles": 14,
+  "sourceAudit": "catalog-breadboard-mounting-2026-11-08.json",
+  "fullTests": {
+    "tests": 293,
+    "passed": 293,
+    "failed": 0,
+    "skipped": 0,
+    "optionalCADDependenciesAvailable": true,
+    "localhostTestsEnabled": true
+  },
+  "catalog": {
+    "components": 2002,
+    "families": 145,
+    "contacts": 48142,
+    "physicalPads": 48495,
+    "componentTreeCurrent": true
+  },
+  "preservation": {
+    "unchangedComponents": 2002,
+    "unchangedSVGStrings": 4004,
+    "unchangedNativeAssetStrings": 6006,
+    "componentAndFamilyOrderUnchanged": true,
+    "version1AndVersion2WithoutNewMetadataUnchanged": true,
+    "nativeAssetsUseOriginalCatalogGeometry": true
+  },
+  "fitRules": [
+    "Explicit source-reviewed male-header profile only",
+    "All insertion leads align with distinct free terminal holes",
+    "Calibrated positive X/Y scales shared by artwork and all contacts",
+    "Exact physical pitch and row spacing on the breadboard grid",
+    "No two separate leads may share a terminal strip",
+    "No overlapping seated module envelopes on one host",
+    "Power rails and auxiliary/programming/rear-view contacts excluded from insertion"
+  ],
+  "transactions": [
+    "Immutable preview and one undo step on drop",
+    "Explicit attachment edges without hidden wires or overlap inference",
+    "Independent movement/rotation detaches; fitted scale retained",
+    "Host movement/rotation carries seated modules",
+    "Invalidating occupied-hole configuration rejected",
+    "Host deletion detaches surviving modules",
+    "Moving a stale guest cannot detach a stationary neighbor"
+  ],
+  "sourceBrowser": {
+    "checks": [
+      "Native library drag previews a fitted Pico without changing history, then commits forty contacts atomically.",
+      "Every rendered pad center coincides with both its transformed endpoint and exact breadboard hole.",
+      "One undo removes the module and all forty connections; redo restores them.",
+      "Covered breadboard targets stay behind the PCB: clicking and dragging its body selects and moves the module without starting a wire.",
+      "Dragging an existing attached module previews a new fit; Escape discards the fit without changing the drawing.",
+      "Mounted geometry exports to SVG/PNG and round-trips through the saved project format.",
+      "Rotating the breadboard carries the fitted module while preserving all forty electrical contacts.",
+      "Dragging away detaches all contacts in one undoable edit and retains the fitted visual scale."
+    ],
+    "errors": [],
+    "geometry": {
+      "maxWorldError": 1.4210854715202004e-14,
+      "maxScreenError": 1.3323917073648772e-05,
+      "scale": {
+        "x": 0.875,
+        "y": 1.0666666666666667
+      },
+      "contacts": 40
+    },
+    "rotated": {
+      "contacts": 40,
+      "error": 1.4210854715202004e-14,
+      "scale": {
+        "x": 0.875,
+        "y": 1.0666666666666667
+      }
+    }
+  },
+  "touchBrowser": {
+    "checks": [
+      "390px native touch body drag previews and commits a complete forty-contact fit.",
+      "Touch placement uses one undo step and restores the exact original serialized project.",
+      "A second touch cancels the placement preview, leaves no attachment edit and releases the gesture."
+    ],
+    "errors": []
+  },
+  "versionedBrowser": {
+    "revision": "breadboard-mounting-20261108",
+    "localBuild": "/tmp/wirepad-breadboard-final-site-v2",
+    "deployed": false,
+    "catalog": 2002,
+    "importedParts": 2,
+    "importedContacts": 40,
+    "maximumError": 1.4210854715202004e-14,
+    "nanoFitContacts": 30,
+    "hiddenHostContacts": 126,
+    "exports": [
+      "SVG",
+      "PNG"
+    ],
+    "javaScriptModules": 575,
+    "stylesheets": 10,
+    "allFirstPartyAssetsUseRevision": true,
+    "notFoundResponses": 0,
+    "errors": []
+  },
+  "buildEquivalence": {
+    "sourceAssetsChecked": 590,
+    "allByteIdentical": true
+  },
+  "visualReview": {
+    "findings": [],
+    "reviewed": [
+      "mounted-editor.png",
+      "host-rotated.png",
+      "touch-preview.png",
+      "touch-mounted.png",
+      "preview-status-390.png",
+      "versioned-mounted-editor.png"
+    ],
+    "notes": "Mounted PCB hides underlying host contact targets. Its own contacts and all wires remain visible. Fit status is clear of rotation controls."
+  },
+  "uiProofSha256": "fe0887fc46dce1a7910a3be27b894c322d86b9eaa91801f61e8091aaa790c826",
+  "whitespace": "git diff --check and changed/untracked text whitespace scan passed",
+  "deployed": false,
+  "artifactScope": "Screenshot and temporary build paths record local QA artifacts; they are not shipped assets or public deployment URLs."
+}

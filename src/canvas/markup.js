@@ -1,9 +1,11 @@
-import { componentArt } from '../catalog/index.js';
+import { mountingFor } from '../catalog/index.js';
 import { partName } from '../model/names.js';
 import { componentForPart } from '../model/part-component.js';
+import { instancePins } from '../model/part-pins.js';
 import { translation, partRotation, labelPosition } from '../geometry/parts.js';
 import { escapeText } from '../shared/text.js';
 import { resolveDrawing, foregroundParts } from './scene.js';
+import { partArt } from './part-art.js';
 
 const SVG_FONT = 'Arial, sans-serif';
 
@@ -15,14 +17,22 @@ export function wireMarkup(wire, d, editing) {
   return `${shape} stroke="#ffffff" stroke-width="5.7"/>${shape} stroke="${wire.color}" stroke-width="3.1"/>${hit}`;
 }
 
-export function partMarkup(part, component, wired, editing, { bodyOnly = false, contactsOnly = false } = {}) {
+export function partMarkup(part, component, wired, editing, { bodyOnly = false, contactsOnly = false, covered = new Set() } = {}) {
   const { width, height } = component;
+  const bodyBounds = part.leads && mountingFor(component.id)?.body;
   const name = partName(part, component);
-  const text = escapeText(name);
-  const labelWidth = Math.max(54, name.length * 7 + 16);
-  const pins = bodyOnly ? '' : component.pins.map(pin => {
+  const compact = mountingFor(component.id)?.type === 'breadboard-part' && Boolean(part.leads || part.attachment);
+  const defaultLabel = component.defaultValue && `${component.shortName ?? component.name} · ${component.defaultValue}`;
+  const custom = part.label && part.label !== defaultLabel;
+  const caption = compact && !custom
+    ? component.defaultValue ? `${component.referencePrefix ?? ''} · ${component.defaultValue}` : component.shortName ?? component.name
+    : name;
+  const text = escapeText(caption);
+  const labelWidth = Math.max(compact ? 36 : 54, caption.length * (compact ? 6 : 7) + (compact ? 12 : 16));
+  const pins = bodyOnly ? '' : instancePins(part, component).map(pin => {
     const connected = wired.has(pin.id);
     if (!editing) {
+      if (covered.has(pin.id)) return '';
       return connected
         ? `<circle cx="${pin.x}" cy="${pin.y}" r="3" fill="#087a6f" stroke="#fff" stroke-width=".9"/>`
         : '';
@@ -36,17 +46,17 @@ export function partMarkup(part, component, wired, editing, { bodyOnly = false, 
     </g>`;
   }).join('');
   const body = contactsOnly ? '' : editing
-    ? `<g class="part-body" data-part="${part.id}" data-part-region="body" role="button" tabindex="0" aria-label="Select ${text}">
-        <rect class="part-focus" x="-8" y="-8" width="${width + 16}" height="${height + 16}" rx="9" fill="transparent" stroke="transparent" stroke-width="1.3" stroke-dasharray="4 4"/>
-        ${componentArt(component)}
+    ? `<g class="part-body" data-part="${part.id}" data-part-region="body" role="button" tabindex="0" aria-label="Select ${escapeText(name)}">
+        <rect class="part-focus" x="${bodyBounds ? bodyBounds.x - 8 : -8}" y="${bodyBounds ? bodyBounds.y - 8 : -8}" width="${(bodyBounds?.width ?? width) + 16}" height="${(bodyBounds?.height ?? height) + 16}" rx="9" fill="transparent" stroke="transparent" stroke-width="1.3" stroke-dasharray="4 4"/>
+        ${partArt(part, component)}
       </g>`
-    : componentArt(component);
+    : partArt(part, component);
   const graphic = `<g transform="${partRotation(part, component)}">${body}${pins}</g>`;
   if (bodyOnly) return graphic;
   return `${graphic}
-    <g transform="${labelPosition(part, component)}" font-family="${SVG_FONT}" ${editing ? `data-part="${part.id}" data-part-region="caption" class="part-body"` : ''}>
-      <rect x="${-labelWidth / 2}" width="${labelWidth}" height="21" rx="5" fill="#ffffff" stroke="#dce5e8"/>
-      <text text-anchor="middle" y="14" fill="#24313d" font-size="11" font-weight="700">${text}</text>
+    <g transform="${labelPosition(part, component)}" font-family="${SVG_FONT}" ${editing ? `data-part="${part.id}" data-part-region="caption" class="part-body${compact ? ' breadboard-part-caption' : ''}"` : ''}>
+      <rect x="${-labelWidth / 2}" width="${labelWidth}" height="${compact ? 18 : 21}" rx="5" fill="#ffffff" stroke="#dce5e8"/>
+      <text text-anchor="middle" y="${compact ? 12 : 14}" fill="#24313d" font-size="${compact ? 10 : 11}" font-weight="700">${text}</text>
     </g>`;
 }
 
@@ -76,12 +86,12 @@ export function drawingMarkup(project) {
   const wireShapes = [...wires.values()].map(({ wire, geometry }) => wireMarkup(wire, geometry.path, false));
   const backgrounds = [];
   const partShapes = [];
-  for (const { part, connected } of foregroundParts(parts).values()) {
+  for (const { part, connected, covered } of foregroundParts(parts).values()) {
     const component = componentForPart(part);
     const transform = `transform="${translation(part.x, part.y)}"`;
-    const onBoardContacts = component.surface || component.contactLayout === 'physical';
-    if (onBoardContacts) backgrounds.push(`<g ${transform}>${partMarkup(part, component, connected, false, { bodyOnly: true })}</g>`);
-    partShapes.push(`<g ${transform}>${partMarkup(part, component, connected, false, { contactsOnly: onBoardContacts })}</g>`);
+    const onBoardContacts = part.leads || component.surface || component.contactLayout === 'physical';
+    if (onBoardContacts) backgrounds.push(`<g ${transform}>${partMarkup(part, component, connected, false, { bodyOnly: true, covered })}</g>`);
+    partShapes.push(`<g ${transform}>${partMarkup(part, component, connected, false, { contactsOnly: onBoardContacts, covered })}</g>`);
   }
   return backgrounds.join('') + wireShapes.join('') + branches + partShapes.join('') + [...junctions.values()].map(junctionDot).join('');
 }

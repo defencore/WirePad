@@ -1,0 +1,2701 @@
+{
+  "checked": "2026-11-08",
+  "scope": "Entry-level breadboard mounting descriptors; all published component definitions, default artwork and native assets remain unchanged.",
+  "host": {
+    "id": "breadboard",
+    "pitchMm": 2.54,
+    "canvasPitch": 16,
+    "selection": "Main terminal-strip holes only; power rails excluded. Each group is the first contact ID of an existing internal conductor."
+  },
+  "installation": "Guest descriptors assume straight 2.54 mm male headers installed with insertion leads below the PCB. They do not claim compatibility for unsoldered, female-header, right-angle or castellated-SMT-only assemblies.",
+  "rejectedForThisRelease": [
+    "Unreviewed boards and generic native wire carriers",
+    "Separate mirrored rear/test-point views",
+    "SMT/castellated land centers that differ from insertion-hole centers",
+    "XIAO and Teensy carriers without a reviewed insertion-contact map"
+  ],
+  "sources": {
+    "nano": "Manufacturer datasheet mechanical pages: 11 (A000005), 9 (ABX00028), 17 (ABX00083), 16 (ABX00053), and 17\u201318 (ABX00142). The Nano family hardware guide confirms the 2.54 mm header pitch.",
+    "pico": "Manufacturer product-brief physical specifications show 2.54 mm pitch and 17.78 mm header span. The component-side view has USB above.",
+    "feather": "Manufacturer downloads provide the exact board schematic and fab print. The official Feather specification confirms 16 + 12 contacts and 20.32 mm row spacing. The shorter row has a 10.16 mm longitudinal offset.",
+    "espressif": "The named manufacturer mechanical PDFs were independently reviewed for pitch and row span. The ESP32-S3 V1 board is 25.40 mm wide with 1.27 mm edge offsets, giving 22.86 mm header spacing. Auxiliary measurement jumpers are omitted."
+  },
+  "additionalReferences": [
+    "https://docs.arduino.cc/learn/hardware/nano-pcb-guide/",
+    "https://learn.adafruit.com/adafruit-feather/feather-specification"
+  ],
+  "entries": [
+    {
+      "id": "esp32-s3-devkitm-1",
+      "contactCount": 44,
+      "pitchMm": 2.54,
+      "rowSpanMm": 22.86,
+      "source": {
+        "url": "https://dl.espressif.com/dl/schematics/DXF_ESP32-S3-DevKitM-1_V1_20210310AC.pdf",
+        "label": "Espressif ESP32-S3-DevKitM-1 V1 mechanical drawing"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, antenna above. J1 and J3 each have 22 leads; their rows are 22.86 mm apart.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 5.774278215223097,
+          "canvasOrigin": 75
+        },
+        "y": {
+          "canvasUnitsPerMm": 5.905511811023624,
+          "canvasOrigin": 195.988188976378
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "3v3",
+          "x": -11.43,
+          "y": -29.97
+        },
+        {
+          "pinId": "gpio0",
+          "x": -11.43,
+          "y": -27.43
+        },
+        {
+          "pinId": "gpio1",
+          "x": -11.43,
+          "y": -24.89
+        },
+        {
+          "pinId": "gpio2",
+          "x": -11.43,
+          "y": -22.349999999999998
+        },
+        {
+          "pinId": "gpio3",
+          "x": -11.43,
+          "y": -19.81
+        },
+        {
+          "pinId": "gpio4",
+          "x": -11.43,
+          "y": -17.27
+        },
+        {
+          "pinId": "gpio5",
+          "x": -11.43,
+          "y": -14.729999999999999
+        },
+        {
+          "pinId": "gpio6",
+          "x": -11.43,
+          "y": -12.189999999999998
+        },
+        {
+          "pinId": "gpio7",
+          "x": -11.43,
+          "y": -9.649999999999999
+        },
+        {
+          "pinId": "gpio8",
+          "x": -11.43,
+          "y": -7.109999999999999
+        },
+        {
+          "pinId": "gpio9",
+          "x": -11.43,
+          "y": -4.57
+        },
+        {
+          "pinId": "gpio10",
+          "x": -11.43,
+          "y": -2.0299999999999976
+        },
+        {
+          "pinId": "gpio11",
+          "x": -11.43,
+          "y": 0.5100000000000016
+        },
+        {
+          "pinId": "gpio12",
+          "x": -11.43,
+          "y": 3.0500000000000043
+        },
+        {
+          "pinId": "gpio13",
+          "x": -11.43,
+          "y": 5.590000000000003
+        },
+        {
+          "pinId": "gpio14",
+          "x": -11.43,
+          "y": 8.130000000000003
+        },
+        {
+          "pinId": "gpio15",
+          "x": -11.43,
+          "y": 10.670000000000002
+        },
+        {
+          "pinId": "gpio16",
+          "x": -11.43,
+          "y": 13.21
+        },
+        {
+          "pinId": "gpio17",
+          "x": -11.43,
+          "y": 15.75
+        },
+        {
+          "pinId": "gpio18",
+          "x": -11.43,
+          "y": 18.29
+        },
+        {
+          "pinId": "5v",
+          "x": -11.43,
+          "y": 20.83
+        },
+        {
+          "pinId": "gnd",
+          "x": -11.43,
+          "y": 23.370000000000005
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 11.43,
+          "y": -29.97
+        },
+        {
+          "pinId": "rst",
+          "x": 11.43,
+          "y": -27.43
+        },
+        {
+          "pinId": "gpio46",
+          "x": 11.43,
+          "y": -24.89
+        },
+        {
+          "pinId": "gpio45",
+          "x": 11.43,
+          "y": -22.349999999999998
+        },
+        {
+          "pinId": "gpio44",
+          "x": 11.43,
+          "y": -19.81
+        },
+        {
+          "pinId": "gpio43",
+          "x": 11.43,
+          "y": -17.27
+        },
+        {
+          "pinId": "gpio42",
+          "x": 11.43,
+          "y": -14.729999999999999
+        },
+        {
+          "pinId": "gpio41",
+          "x": 11.43,
+          "y": -12.189999999999998
+        },
+        {
+          "pinId": "gpio40",
+          "x": 11.43,
+          "y": -9.649999999999999
+        },
+        {
+          "pinId": "gpio39",
+          "x": 11.43,
+          "y": -7.109999999999999
+        },
+        {
+          "pinId": "gpio38",
+          "x": 11.43,
+          "y": -4.57
+        },
+        {
+          "pinId": "gpio37",
+          "x": 11.43,
+          "y": -2.0299999999999976
+        },
+        {
+          "pinId": "gpio36",
+          "x": 11.43,
+          "y": 0.5100000000000016
+        },
+        {
+          "pinId": "gpio35",
+          "x": 11.43,
+          "y": 3.0500000000000043
+        },
+        {
+          "pinId": "gpio34",
+          "x": 11.43,
+          "y": 5.590000000000003
+        },
+        {
+          "pinId": "gpio33",
+          "x": 11.43,
+          "y": 8.130000000000003
+        },
+        {
+          "pinId": "gpio26",
+          "x": 11.43,
+          "y": 10.670000000000002
+        },
+        {
+          "pinId": "gpio21",
+          "x": 11.43,
+          "y": 13.21
+        },
+        {
+          "pinId": "gpio20",
+          "x": 11.43,
+          "y": 15.75
+        },
+        {
+          "pinId": "gpio19",
+          "x": 11.43,
+          "y": 18.29
+        },
+        {
+          "pinId": "gpio48",
+          "x": 11.43,
+          "y": 20.83
+        },
+        {
+          "pinId": "gpio47",
+          "x": 11.43,
+          "y": 23.370000000000005
+        }
+      ]
+    },
+    {
+      "id": "adafruit-feather-esp32-s3",
+      "contactCount": 28,
+      "pitchMm": 2.54,
+      "rowSpanMm": 20.32,
+      "source": {
+        "url": "https://learn.adafruit.com/adafruit-esp32-s3-feather/downloads",
+        "label": "Adafruit Feather ESP32-S3 manufacturer schematic and fab print"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. USB above. The 16-pin and 12-pin header rows are 20.32 mm apart, with the shorter row starting four 2.54 mm pitches below the longer row.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 6.692913385826771,
+          "canvasOrigin": 77
+        },
+        "y": {
+          "canvasUnitsPerMm": 5.905511811023624,
+          "canvasOrigin": 151.50000000000006
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "rst",
+          "x": -10.16,
+          "y": -19.05
+        },
+        {
+          "pinId": "3v3",
+          "x": -10.16,
+          "y": -16.51
+        },
+        {
+          "pinId": "3v3-2",
+          "x": -10.16,
+          "y": -13.97
+        },
+        {
+          "pinId": "gnd",
+          "x": -10.16,
+          "y": -11.43
+        },
+        {
+          "pinId": "gpio18",
+          "x": -10.16,
+          "y": -8.89
+        },
+        {
+          "pinId": "gpio17",
+          "x": -10.16,
+          "y": -6.350000000000001
+        },
+        {
+          "pinId": "gpio16",
+          "x": -10.16,
+          "y": -3.8100000000000005
+        },
+        {
+          "pinId": "gpio15",
+          "x": -10.16,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "gpio14",
+          "x": -10.16,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gpio8",
+          "x": -10.16,
+          "y": 3.8099999999999987
+        },
+        {
+          "pinId": "gpio36",
+          "x": -10.16,
+          "y": 6.349999999999998
+        },
+        {
+          "pinId": "gpio35",
+          "x": -10.16,
+          "y": 8.89
+        },
+        {
+          "pinId": "gpio37",
+          "x": -10.16,
+          "y": 11.43
+        },
+        {
+          "pinId": "gpio38",
+          "x": -10.16,
+          "y": 13.970000000000002
+        },
+        {
+          "pinId": "gpio39",
+          "x": -10.16,
+          "y": 16.51
+        },
+        {
+          "pinId": "gpio43",
+          "x": -10.16,
+          "y": 19.05
+        },
+        {
+          "pinId": "bat",
+          "x": 10.16,
+          "y": -8.89
+        },
+        {
+          "pinId": "en",
+          "x": 10.16,
+          "y": -6.3500000000000005
+        },
+        {
+          "pinId": "usb",
+          "x": 10.16,
+          "y": -3.8100000000000005
+        },
+        {
+          "pinId": "gpio13",
+          "x": 10.16,
+          "y": -1.2700000000000005
+        },
+        {
+          "pinId": "gpio12",
+          "x": 10.16,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gpio11",
+          "x": 10.16,
+          "y": 3.8099999999999987
+        },
+        {
+          "pinId": "gpio10",
+          "x": 10.16,
+          "y": 6.35
+        },
+        {
+          "pinId": "gpio9",
+          "x": 10.16,
+          "y": 8.89
+        },
+        {
+          "pinId": "gpio6",
+          "x": 10.16,
+          "y": 11.43
+        },
+        {
+          "pinId": "gpio5",
+          "x": 10.16,
+          "y": 13.969999999999999
+        },
+        {
+          "pinId": "gpio4",
+          "x": 10.16,
+          "y": 16.509999999999998
+        },
+        {
+          "pinId": "gpio3",
+          "x": 10.16,
+          "y": 19.05
+        }
+      ]
+    },
+    {
+      "id": "raspberry-pi-pico",
+      "contactCount": 40,
+      "pitchMm": 2.54,
+      "rowSpanMm": 17.78,
+      "source": {
+        "url": "https://datasheets.raspberrypi.com/pico/pico-product-brief.pdf",
+        "label": "Raspberry Pi Pico physical specifications"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Two 20-pin rows are 17.78 mm apart. USB above; pin 1 is upper left and pin 40 upper right. The three SWD contacts are not insertion leads.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 7.199100112485938,
+          "canvasOrigin": 73
+        },
+        "y": {
+          "canvasUnitsPerMm": 5.905511811023624,
+          "canvasOrigin": 160.50000000000003
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "gp0",
+          "x": -8.89,
+          "y": -24.13
+        },
+        {
+          "pinId": "gp1",
+          "x": -8.89,
+          "y": -21.59
+        },
+        {
+          "pinId": "gnd-3",
+          "x": -8.89,
+          "y": -19.049999999999997
+        },
+        {
+          "pinId": "gp2",
+          "x": -8.89,
+          "y": -16.509999999999998
+        },
+        {
+          "pinId": "gp3",
+          "x": -8.89,
+          "y": -13.969999999999999
+        },
+        {
+          "pinId": "gp4",
+          "x": -8.89,
+          "y": -11.43
+        },
+        {
+          "pinId": "gp5",
+          "x": -8.89,
+          "y": -8.889999999999999
+        },
+        {
+          "pinId": "gnd-8",
+          "x": -8.89,
+          "y": -6.349999999999998
+        },
+        {
+          "pinId": "gp6",
+          "x": -8.89,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "gp7",
+          "x": -8.89,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "gp8",
+          "x": -8.89,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gp9",
+          "x": -8.89,
+          "y": 3.8100000000000023
+        },
+        {
+          "pinId": "gnd-13",
+          "x": -8.89,
+          "y": 6.350000000000001
+        },
+        {
+          "pinId": "gp10",
+          "x": -8.89,
+          "y": 8.890000000000004
+        },
+        {
+          "pinId": "gp11",
+          "x": -8.89,
+          "y": 11.430000000000003
+        },
+        {
+          "pinId": "gp12",
+          "x": -8.89,
+          "y": 13.970000000000002
+        },
+        {
+          "pinId": "gp13",
+          "x": -8.89,
+          "y": 16.51
+        },
+        {
+          "pinId": "gnd-18",
+          "x": -8.89,
+          "y": 19.05
+        },
+        {
+          "pinId": "gp14",
+          "x": -8.89,
+          "y": 21.59
+        },
+        {
+          "pinId": "gp15",
+          "x": -8.89,
+          "y": 24.13
+        },
+        {
+          "pinId": "vbus",
+          "x": 8.89,
+          "y": -24.13
+        },
+        {
+          "pinId": "vsys",
+          "x": 8.89,
+          "y": -21.59
+        },
+        {
+          "pinId": "gnd-38",
+          "x": 8.89,
+          "y": -19.049999999999997
+        },
+        {
+          "pinId": "3v3-en",
+          "x": 8.89,
+          "y": -16.509999999999998
+        },
+        {
+          "pinId": "3v3",
+          "x": 8.89,
+          "y": -13.969999999999999
+        },
+        {
+          "pinId": "adc-vref",
+          "x": 8.89,
+          "y": -11.43
+        },
+        {
+          "pinId": "gp28",
+          "x": 8.89,
+          "y": -8.889999999999999
+        },
+        {
+          "pinId": "agnd",
+          "x": 8.89,
+          "y": -6.349999999999998
+        },
+        {
+          "pinId": "gp27",
+          "x": 8.89,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "gp26",
+          "x": 8.89,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "run",
+          "x": 8.89,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gp22",
+          "x": 8.89,
+          "y": 3.8100000000000023
+        },
+        {
+          "pinId": "gnd-28",
+          "x": 8.89,
+          "y": 6.350000000000001
+        },
+        {
+          "pinId": "gp21",
+          "x": 8.89,
+          "y": 8.890000000000004
+        },
+        {
+          "pinId": "gp20",
+          "x": 8.89,
+          "y": 11.430000000000003
+        },
+        {
+          "pinId": "gp19",
+          "x": 8.89,
+          "y": 13.970000000000002
+        },
+        {
+          "pinId": "gp18",
+          "x": 8.89,
+          "y": 16.51
+        },
+        {
+          "pinId": "gnd-23",
+          "x": 8.89,
+          "y": 19.05
+        },
+        {
+          "pinId": "gp17",
+          "x": 8.89,
+          "y": 21.59
+        },
+        {
+          "pinId": "gp16",
+          "x": 8.89,
+          "y": 24.13
+        }
+      ]
+    },
+    {
+      "id": "raspberry-pi-pico-w",
+      "contactCount": 40,
+      "pitchMm": 2.54,
+      "rowSpanMm": 17.78,
+      "source": {
+        "url": "https://datasheets.raspberrypi.com/picow/pico-w-product-brief.pdf",
+        "label": "Raspberry Pi Pico W physical specifications"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Two 20-pin rows are 17.78 mm apart. USB above; pin 1 is upper left and pin 40 upper right. Exclude all SWD pads and keep the antenna clear.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 7.199100112485938,
+          "canvasOrigin": 73
+        },
+        "y": {
+          "canvasUnitsPerMm": 5.905511811023624,
+          "canvasOrigin": 160.50000000000003
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "gp0",
+          "x": -8.89,
+          "y": -24.13
+        },
+        {
+          "pinId": "gp1",
+          "x": -8.89,
+          "y": -21.59
+        },
+        {
+          "pinId": "gnd-3",
+          "x": -8.89,
+          "y": -19.049999999999997
+        },
+        {
+          "pinId": "gp2",
+          "x": -8.89,
+          "y": -16.509999999999998
+        },
+        {
+          "pinId": "gp3",
+          "x": -8.89,
+          "y": -13.969999999999999
+        },
+        {
+          "pinId": "gp4",
+          "x": -8.89,
+          "y": -11.43
+        },
+        {
+          "pinId": "gp5",
+          "x": -8.89,
+          "y": -8.889999999999999
+        },
+        {
+          "pinId": "gnd-8",
+          "x": -8.89,
+          "y": -6.349999999999998
+        },
+        {
+          "pinId": "gp6",
+          "x": -8.89,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "gp7",
+          "x": -8.89,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "gp8",
+          "x": -8.89,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gp9",
+          "x": -8.89,
+          "y": 3.8100000000000023
+        },
+        {
+          "pinId": "gnd-13",
+          "x": -8.89,
+          "y": 6.350000000000001
+        },
+        {
+          "pinId": "gp10",
+          "x": -8.89,
+          "y": 8.890000000000004
+        },
+        {
+          "pinId": "gp11",
+          "x": -8.89,
+          "y": 11.430000000000003
+        },
+        {
+          "pinId": "gp12",
+          "x": -8.89,
+          "y": 13.970000000000002
+        },
+        {
+          "pinId": "gp13",
+          "x": -8.89,
+          "y": 16.51
+        },
+        {
+          "pinId": "gnd-18",
+          "x": -8.89,
+          "y": 19.05
+        },
+        {
+          "pinId": "gp14",
+          "x": -8.89,
+          "y": 21.59
+        },
+        {
+          "pinId": "gp15",
+          "x": -8.89,
+          "y": 24.13
+        },
+        {
+          "pinId": "vbus",
+          "x": 8.89,
+          "y": -24.13
+        },
+        {
+          "pinId": "vsys",
+          "x": 8.89,
+          "y": -21.59
+        },
+        {
+          "pinId": "gnd-38",
+          "x": 8.89,
+          "y": -19.049999999999997
+        },
+        {
+          "pinId": "3v3-en",
+          "x": 8.89,
+          "y": -16.509999999999998
+        },
+        {
+          "pinId": "3v3",
+          "x": 8.89,
+          "y": -13.969999999999999
+        },
+        {
+          "pinId": "adc-vref",
+          "x": 8.89,
+          "y": -11.43
+        },
+        {
+          "pinId": "gp28",
+          "x": 8.89,
+          "y": -8.889999999999999
+        },
+        {
+          "pinId": "agnd",
+          "x": 8.89,
+          "y": -6.349999999999998
+        },
+        {
+          "pinId": "gp27",
+          "x": 8.89,
+          "y": -3.8099999999999987
+        },
+        {
+          "pinId": "gp26",
+          "x": 8.89,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "run",
+          "x": 8.89,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gp22",
+          "x": 8.89,
+          "y": 3.8100000000000023
+        },
+        {
+          "pinId": "gnd-28",
+          "x": 8.89,
+          "y": 6.350000000000001
+        },
+        {
+          "pinId": "gp21",
+          "x": 8.89,
+          "y": 8.890000000000004
+        },
+        {
+          "pinId": "gp20",
+          "x": 8.89,
+          "y": 11.430000000000003
+        },
+        {
+          "pinId": "gp19",
+          "x": 8.89,
+          "y": 13.970000000000002
+        },
+        {
+          "pinId": "gp18",
+          "x": 8.89,
+          "y": 16.51
+        },
+        {
+          "pinId": "gnd-23",
+          "x": 8.89,
+          "y": 19.05
+        },
+        {
+          "pinId": "gp17",
+          "x": 8.89,
+          "y": 21.59
+        },
+        {
+          "pinId": "gp16",
+          "x": 8.89,
+          "y": 24.13
+        }
+      ]
+    },
+    {
+      "id": "adafruit-feather-rp2040",
+      "contactCount": 28,
+      "pitchMm": 2.54,
+      "rowSpanMm": 20.32,
+      "source": {
+        "url": "https://learn.adafruit.com/adafruit-feather-rp2040-pico/downloads",
+        "label": "Adafruit Feather RP2040 manufacturer schematic and fab print"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. USB above. The 16-pin and 12-pin header rows are 20.32 mm apart, with the shorter row starting four 2.54 mm pitches below the longer row.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 6.692913385826771,
+          "canvasOrigin": 77
+        },
+        "y": {
+          "canvasUnitsPerMm": 5.905511811023624,
+          "canvasOrigin": 151.50000000000006
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "rst",
+          "x": -10.16,
+          "y": -19.05
+        },
+        {
+          "pinId": "3v3",
+          "x": -10.16,
+          "y": -16.51
+        },
+        {
+          "pinId": "3v3-2",
+          "x": -10.16,
+          "y": -13.97
+        },
+        {
+          "pinId": "gnd",
+          "x": -10.16,
+          "y": -11.43
+        },
+        {
+          "pinId": "gp26",
+          "x": -10.16,
+          "y": -8.89
+        },
+        {
+          "pinId": "gp27",
+          "x": -10.16,
+          "y": -6.350000000000001
+        },
+        {
+          "pinId": "gp28",
+          "x": -10.16,
+          "y": -3.8100000000000005
+        },
+        {
+          "pinId": "gp29",
+          "x": -10.16,
+          "y": -1.2699999999999996
+        },
+        {
+          "pinId": "gp24",
+          "x": -10.16,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gp25",
+          "x": -10.16,
+          "y": 3.8099999999999987
+        },
+        {
+          "pinId": "gp18",
+          "x": -10.16,
+          "y": 6.349999999999998
+        },
+        {
+          "pinId": "gp19",
+          "x": -10.16,
+          "y": 8.89
+        },
+        {
+          "pinId": "gp20",
+          "x": -10.16,
+          "y": 11.43
+        },
+        {
+          "pinId": "gp1",
+          "x": -10.16,
+          "y": 13.970000000000002
+        },
+        {
+          "pinId": "gp0",
+          "x": -10.16,
+          "y": 16.51
+        },
+        {
+          "pinId": "gp6",
+          "x": -10.16,
+          "y": 19.05
+        },
+        {
+          "pinId": "bat",
+          "x": 10.16,
+          "y": -8.89
+        },
+        {
+          "pinId": "en",
+          "x": 10.16,
+          "y": -6.3500000000000005
+        },
+        {
+          "pinId": "usb",
+          "x": 10.16,
+          "y": -3.8100000000000005
+        },
+        {
+          "pinId": "gp13",
+          "x": 10.16,
+          "y": -1.2700000000000005
+        },
+        {
+          "pinId": "gp12",
+          "x": 10.16,
+          "y": 1.2699999999999996
+        },
+        {
+          "pinId": "gp11",
+          "x": 10.16,
+          "y": 3.8099999999999987
+        },
+        {
+          "pinId": "gp10",
+          "x": 10.16,
+          "y": 6.35
+        },
+        {
+          "pinId": "gp9",
+          "x": 10.16,
+          "y": 8.89
+        },
+        {
+          "pinId": "gp8",
+          "x": 10.16,
+          "y": 11.43
+        },
+        {
+          "pinId": "gp7",
+          "x": 10.16,
+          "y": 13.969999999999999
+        },
+        {
+          "pinId": "gp3",
+          "x": 10.16,
+          "y": 16.509999999999998
+        },
+        {
+          "pinId": "gp2",
+          "x": 10.16,
+          "y": 19.05
+        }
+      ]
+    },
+    {
+      "id": "arduino-nano",
+      "contactCount": 30,
+      "pitchMm": 2.54,
+      "rowSpanMm": 15.24,
+      "source": {
+        "label": "Arduino Nano A000005 manufacturer mechanical drawing",
+        "url": "https://docs.arduino.cc/resources/datasheets/A000005-datasheet.pdf"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 4.888888888888888,
+          "canvasOrigin": 69
+        },
+        "y": {
+          "canvasUnitsPerMm": 4.977777777777775,
+          "canvasOrigin": 150.99999999999994
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "d13",
+          "x": -7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "3v3",
+          "x": -7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "aref",
+          "x": -7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "a0",
+          "x": -7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "a1",
+          "x": -7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "a2",
+          "x": -7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "a3",
+          "x": -7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "a4",
+          "x": -7.62,
+          "y": 0
+        },
+        {
+          "pinId": "a5",
+          "x": -7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "a6",
+          "x": -7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "a7",
+          "x": -7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "5v",
+          "x": -7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "reset",
+          "x": -7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "gnd",
+          "x": -7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "vin",
+          "x": -7.62,
+          "y": 17.78
+        },
+        {
+          "pinId": "d12",
+          "x": 7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "d11",
+          "x": 7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "d10",
+          "x": 7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "d9",
+          "x": 7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "d8",
+          "x": 7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "d7",
+          "x": 7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "d6",
+          "x": 7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "d5",
+          "x": 7.62,
+          "y": 0
+        },
+        {
+          "pinId": "d4",
+          "x": 7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "d3",
+          "x": 7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "d2",
+          "x": 7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "digital-gnd",
+          "x": 7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "digital-reset",
+          "x": 7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "d0",
+          "x": 7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "d1",
+          "x": 7.62,
+          "y": 17.78
+        }
+      ]
+    },
+    {
+      "id": "arduino-nano-every",
+      "contactCount": 30,
+      "pitchMm": 2.54,
+      "rowSpanMm": 15.24,
+      "source": {
+        "label": "Arduino Nano Every ABX00028 manufacturer mechanical drawing",
+        "url": "https://docs.arduino.cc/resources/datasheets/ABX00028-datasheet.pdf"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 4.888888888888888,
+          "canvasOrigin": 69
+        },
+        "y": {
+          "canvasUnitsPerMm": 4.977777777777775,
+          "canvasOrigin": 150.99999999999994
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "d13",
+          "x": -7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "3v3",
+          "x": -7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "aref",
+          "x": -7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "a0",
+          "x": -7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "a1",
+          "x": -7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "a2",
+          "x": -7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "a3",
+          "x": -7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "a4",
+          "x": -7.62,
+          "y": 0
+        },
+        {
+          "pinId": "a5",
+          "x": -7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "a6",
+          "x": -7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "a7",
+          "x": -7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "5v",
+          "x": -7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "reset",
+          "x": -7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "gnd",
+          "x": -7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "vin",
+          "x": -7.62,
+          "y": 17.78
+        },
+        {
+          "pinId": "d12",
+          "x": 7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "d11",
+          "x": 7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "d10",
+          "x": 7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "d9",
+          "x": 7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "d8",
+          "x": 7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "d7",
+          "x": 7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "d6",
+          "x": 7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "d5",
+          "x": 7.62,
+          "y": 0
+        },
+        {
+          "pinId": "d4",
+          "x": 7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "d3",
+          "x": 7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "d2",
+          "x": 7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "digital-gnd",
+          "x": 7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "digital-reset",
+          "x": 7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "d0",
+          "x": 7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "d1",
+          "x": 7.62,
+          "y": 17.78
+        }
+      ]
+    },
+    {
+      "id": "arduino-nano-esp32",
+      "contactCount": 30,
+      "pitchMm": 2.54,
+      "rowSpanMm": 15.24,
+      "source": {
+        "label": "Arduino Nano ESP32 ABX00083 manufacturer mechanical drawing",
+        "url": "https://docs.arduino.cc/resources/datasheets/ABX00083-datasheet.pdf"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 4.888888888888888,
+          "canvasOrigin": 69
+        },
+        "y": {
+          "canvasUnitsPerMm": 4.977777777777775,
+          "canvasOrigin": 150.99999999999994
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "d13",
+          "x": -7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "3v3",
+          "x": -7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "b0",
+          "x": -7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "a0",
+          "x": -7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "a1",
+          "x": -7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "a2",
+          "x": -7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "a3",
+          "x": -7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "a4",
+          "x": -7.62,
+          "y": 0
+        },
+        {
+          "pinId": "a5",
+          "x": -7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "a6",
+          "x": -7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "a7",
+          "x": -7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "vusb",
+          "x": -7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "b1",
+          "x": -7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "gnd",
+          "x": -7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "vin",
+          "x": -7.62,
+          "y": 17.78
+        },
+        {
+          "pinId": "d12",
+          "x": 7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "d11",
+          "x": 7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "d10",
+          "x": 7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "d9",
+          "x": 7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "d8",
+          "x": 7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "d7",
+          "x": 7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "d6",
+          "x": 7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "d5",
+          "x": 7.62,
+          "y": 0
+        },
+        {
+          "pinId": "d4",
+          "x": 7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "d3",
+          "x": 7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "d2",
+          "x": 7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "digital-gnd",
+          "x": 7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "digital-reset",
+          "x": 7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "d0",
+          "x": 7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "d1",
+          "x": 7.62,
+          "y": 17.78
+        }
+      ]
+    },
+    {
+      "id": "arduino-nano-rp2040-connect",
+      "contactCount": 30,
+      "pitchMm": 2.54,
+      "rowSpanMm": 15.24,
+      "source": {
+        "label": "Arduino Nano RP2040 Connect ABX00053 manufacturer mechanical drawing",
+        "url": "https://docs.arduino.cc/resources/datasheets/ABX00053-datasheet.pdf"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 4.888888888888888,
+          "canvasOrigin": 69
+        },
+        "y": {
+          "canvasUnitsPerMm": 4.977777777777775,
+          "canvasOrigin": 150.99999999999994
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "d13",
+          "x": -7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "3v3",
+          "x": -7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "aref",
+          "x": -7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "a0",
+          "x": -7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "a1",
+          "x": -7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "a2",
+          "x": -7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "a3",
+          "x": -7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "a4",
+          "x": -7.62,
+          "y": 0
+        },
+        {
+          "pinId": "a5",
+          "x": -7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "a6",
+          "x": -7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "a7",
+          "x": -7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "vusb",
+          "x": -7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "rec",
+          "x": -7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "gnd",
+          "x": -7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "vin",
+          "x": -7.62,
+          "y": 17.78
+        },
+        {
+          "pinId": "d12",
+          "x": 7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "d11",
+          "x": 7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "d10",
+          "x": 7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "d9",
+          "x": 7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "d8",
+          "x": 7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "d7",
+          "x": 7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "d6",
+          "x": 7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "d5",
+          "x": 7.62,
+          "y": 0
+        },
+        {
+          "pinId": "d4",
+          "x": 7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "d3",
+          "x": 7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "d2",
+          "x": 7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "digital-gnd",
+          "x": 7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "digital-reset",
+          "x": 7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "d0",
+          "x": 7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "d1",
+          "x": 7.62,
+          "y": 17.78
+        }
+      ]
+    },
+    {
+      "id": "arduino-nano-r4",
+      "contactCount": 30,
+      "pitchMm": 2.54,
+      "rowSpanMm": 15.24,
+      "source": {
+        "label": "Arduino Nano R4 ABX00142 manufacturer mechanical drawing",
+        "url": "https://docs.arduino.cc/resources/datasheets/ABX00142-datasheet.pdf"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, USB above. The two 15-contact rows are 15.24 mm apart; the separate ICSP and other auxiliary contacts are not insertion leads.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 4.888888888888888,
+          "canvasOrigin": 69
+        },
+        "y": {
+          "canvasUnitsPerMm": 4.977777777777775,
+          "canvasOrigin": 150.99999999999994
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "d13",
+          "x": -7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "3v3",
+          "x": -7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "aref",
+          "x": -7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "a0",
+          "x": -7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "a1",
+          "x": -7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "a2",
+          "x": -7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "a3",
+          "x": -7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "a4",
+          "x": -7.62,
+          "y": 0
+        },
+        {
+          "pinId": "a5",
+          "x": -7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "a6",
+          "x": -7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "a7",
+          "x": -7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "5v",
+          "x": -7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "boot",
+          "x": -7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "gnd",
+          "x": -7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "vin",
+          "x": -7.62,
+          "y": 17.78
+        },
+        {
+          "pinId": "d12",
+          "x": 7.62,
+          "y": -17.78
+        },
+        {
+          "pinId": "d11",
+          "x": 7.62,
+          "y": -15.240000000000002
+        },
+        {
+          "pinId": "d10",
+          "x": 7.62,
+          "y": -12.700000000000001
+        },
+        {
+          "pinId": "d9",
+          "x": 7.62,
+          "y": -10.16
+        },
+        {
+          "pinId": "d8",
+          "x": 7.62,
+          "y": -7.620000000000001
+        },
+        {
+          "pinId": "d7",
+          "x": 7.62,
+          "y": -5.080000000000002
+        },
+        {
+          "pinId": "d6",
+          "x": 7.62,
+          "y": -2.540000000000001
+        },
+        {
+          "pinId": "d5",
+          "x": 7.62,
+          "y": 0
+        },
+        {
+          "pinId": "d4",
+          "x": 7.62,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "d3",
+          "x": 7.62,
+          "y": 5.079999999999998
+        },
+        {
+          "pinId": "d2",
+          "x": 7.62,
+          "y": 7.619999999999997
+        },
+        {
+          "pinId": "digital-gnd",
+          "x": 7.62,
+          "y": 10.16
+        },
+        {
+          "pinId": "digital-reset",
+          "x": 7.62,
+          "y": 12.7
+        },
+        {
+          "pinId": "d0",
+          "x": 7.62,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "d1",
+          "x": 7.62,
+          "y": 17.78
+        }
+      ]
+    },
+    {
+      "id": "esp32-devkitc-v4-wroom-32e",
+      "contactCount": 38,
+      "pitchMm": 2.54,
+      "rowSpanMm": 25.4,
+      "source": {
+        "url": "https://dl.espressif.com/dl/schematics/esp32_devkitc_v4_dimensions.pdf",
+        "label": "Espressif ESP32-DevKitC V4 manufacturer mechanical drawing"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, antenna above. The two long edge headers use the drawing's insertion-hole centers. Auxiliary current-measurement jumpers and fitted USB connectors are not breadboard leads. Allow antenna and USB cable clearance.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 8,
+          "canvasOrigin": 173.76
+        },
+        "y": {
+          "canvasUnitsPerMm": 8.000000000000005,
+          "canvasOrigin": 261.3600000000001
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "j2-1",
+          "x": -12.7,
+          "y": -22.86
+        },
+        {
+          "pinId": "j2-2",
+          "x": -12.7,
+          "y": -20.32
+        },
+        {
+          "pinId": "j2-3",
+          "x": -12.7,
+          "y": -17.78
+        },
+        {
+          "pinId": "j2-4",
+          "x": -12.7,
+          "y": -15.239999999999998
+        },
+        {
+          "pinId": "j2-5",
+          "x": -12.7,
+          "y": -12.7
+        },
+        {
+          "pinId": "j2-6",
+          "x": -12.7,
+          "y": -10.16
+        },
+        {
+          "pinId": "j2-7",
+          "x": -12.7,
+          "y": -7.619999999999999
+        },
+        {
+          "pinId": "j2-8",
+          "x": -12.7,
+          "y": -5.079999999999998
+        },
+        {
+          "pinId": "j2-9",
+          "x": -12.7,
+          "y": -2.539999999999999
+        },
+        {
+          "pinId": "j2-10",
+          "x": -12.7,
+          "y": 0
+        },
+        {
+          "pinId": "j2-11",
+          "x": -12.7,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "j2-12",
+          "x": -12.7,
+          "y": 5.080000000000002
+        },
+        {
+          "pinId": "j2-13",
+          "x": -12.7,
+          "y": 7.620000000000001
+        },
+        {
+          "pinId": "j2-14",
+          "x": -12.7,
+          "y": 10.160000000000004
+        },
+        {
+          "pinId": "j2-15",
+          "x": -12.7,
+          "y": 12.700000000000003
+        },
+        {
+          "pinId": "j2-16",
+          "x": -12.7,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "j2-17",
+          "x": -12.7,
+          "y": 17.78
+        },
+        {
+          "pinId": "j2-18",
+          "x": -12.7,
+          "y": 20.32
+        },
+        {
+          "pinId": "j2-19",
+          "x": -12.7,
+          "y": 22.86
+        },
+        {
+          "pinId": "j3-1",
+          "x": 12.7,
+          "y": -22.86
+        },
+        {
+          "pinId": "j3-2",
+          "x": 12.7,
+          "y": -20.32
+        },
+        {
+          "pinId": "j3-3",
+          "x": 12.7,
+          "y": -17.78
+        },
+        {
+          "pinId": "j3-4",
+          "x": 12.7,
+          "y": -15.239999999999998
+        },
+        {
+          "pinId": "j3-5",
+          "x": 12.7,
+          "y": -12.7
+        },
+        {
+          "pinId": "j3-6",
+          "x": 12.7,
+          "y": -10.16
+        },
+        {
+          "pinId": "j3-7",
+          "x": 12.7,
+          "y": -7.619999999999999
+        },
+        {
+          "pinId": "j3-8",
+          "x": 12.7,
+          "y": -5.079999999999998
+        },
+        {
+          "pinId": "j3-9",
+          "x": 12.7,
+          "y": -2.539999999999999
+        },
+        {
+          "pinId": "j3-10",
+          "x": 12.7,
+          "y": 0
+        },
+        {
+          "pinId": "j3-11",
+          "x": 12.7,
+          "y": 2.539999999999999
+        },
+        {
+          "pinId": "j3-12",
+          "x": 12.7,
+          "y": 5.080000000000002
+        },
+        {
+          "pinId": "j3-13",
+          "x": 12.7,
+          "y": 7.620000000000001
+        },
+        {
+          "pinId": "j3-14",
+          "x": 12.7,
+          "y": 10.160000000000004
+        },
+        {
+          "pinId": "j3-15",
+          "x": 12.7,
+          "y": 12.700000000000003
+        },
+        {
+          "pinId": "j3-16",
+          "x": 12.7,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "j3-17",
+          "x": 12.7,
+          "y": 17.78
+        },
+        {
+          "pinId": "j3-18",
+          "x": 12.7,
+          "y": 20.32
+        },
+        {
+          "pinId": "j3-19",
+          "x": 12.7,
+          "y": 22.86
+        }
+      ]
+    },
+    {
+      "id": "esp32-c3-devkitc-02",
+      "contactCount": 30,
+      "pitchMm": 2.54,
+      "rowSpanMm": 22.86,
+      "source": {
+        "url": "https://dl.espressif.com/dl/schematics/DXF_ESP32-C3-DevKitC-02_V1_1_20210121AA.pdf",
+        "label": "Espressif ESP32-C3-DevKitC-02 manufacturer mechanical drawing"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, antenna above. The two long edge headers use the drawing's insertion-hole centers. Auxiliary current-measurement jumpers and fitted USB connectors are not breadboard leads. Allow antenna and USB cable clearance.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 8,
+          "canvasOrigin": 163.6
+        },
+        "y": {
+          "canvasUnitsPerMm": 8,
+          "canvasOrigin": 223.64
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "j1-1",
+          "x": -11.43,
+          "y": -17.779999999999998
+        },
+        {
+          "pinId": "j1-2",
+          "x": -11.43,
+          "y": -15.239999999999998
+        },
+        {
+          "pinId": "j1-3",
+          "x": -11.43,
+          "y": -12.699999999999998
+        },
+        {
+          "pinId": "j1-4",
+          "x": -11.43,
+          "y": -10.159999999999997
+        },
+        {
+          "pinId": "j1-5",
+          "x": -11.43,
+          "y": -7.619999999999997
+        },
+        {
+          "pinId": "j1-6",
+          "x": -11.43,
+          "y": -5.079999999999998
+        },
+        {
+          "pinId": "j1-7",
+          "x": -11.43,
+          "y": -2.5399999999999974
+        },
+        {
+          "pinId": "j1-8",
+          "x": -11.43,
+          "y": 3.552713678800501e-15
+        },
+        {
+          "pinId": "j1-9",
+          "x": -11.43,
+          "y": 2.5400000000000027
+        },
+        {
+          "pinId": "j1-10",
+          "x": -11.43,
+          "y": 5.080000000000002
+        },
+        {
+          "pinId": "j1-11",
+          "x": -11.43,
+          "y": 7.620000000000001
+        },
+        {
+          "pinId": "j1-12",
+          "x": -11.43,
+          "y": 10.160000000000004
+        },
+        {
+          "pinId": "j1-13",
+          "x": -11.43,
+          "y": 12.700000000000003
+        },
+        {
+          "pinId": "j1-14",
+          "x": -11.43,
+          "y": 15.240000000000006
+        },
+        {
+          "pinId": "j1-15",
+          "x": -11.43,
+          "y": 17.780000000000005
+        },
+        {
+          "pinId": "j3-1",
+          "x": 11.43,
+          "y": -17.779999999999998
+        },
+        {
+          "pinId": "j3-2",
+          "x": 11.43,
+          "y": -15.239999999999998
+        },
+        {
+          "pinId": "j3-3",
+          "x": 11.43,
+          "y": -12.699999999999998
+        },
+        {
+          "pinId": "j3-4",
+          "x": 11.43,
+          "y": -10.159999999999997
+        },
+        {
+          "pinId": "j3-5",
+          "x": 11.43,
+          "y": -7.619999999999997
+        },
+        {
+          "pinId": "j3-6",
+          "x": 11.43,
+          "y": -5.079999999999998
+        },
+        {
+          "pinId": "j3-7",
+          "x": 11.43,
+          "y": -2.5399999999999974
+        },
+        {
+          "pinId": "j3-8",
+          "x": 11.43,
+          "y": 3.552713678800501e-15
+        },
+        {
+          "pinId": "j3-9",
+          "x": 11.43,
+          "y": 2.5400000000000027
+        },
+        {
+          "pinId": "j3-10",
+          "x": 11.43,
+          "y": 5.080000000000002
+        },
+        {
+          "pinId": "j3-11",
+          "x": 11.43,
+          "y": 7.620000000000001
+        },
+        {
+          "pinId": "j3-12",
+          "x": 11.43,
+          "y": 10.160000000000004
+        },
+        {
+          "pinId": "j3-13",
+          "x": 11.43,
+          "y": 12.700000000000003
+        },
+        {
+          "pinId": "j3-14",
+          "x": 11.43,
+          "y": 15.240000000000006
+        },
+        {
+          "pinId": "j3-15",
+          "x": 11.43,
+          "y": 17.780000000000005
+        }
+      ]
+    },
+    {
+      "id": "esp32-c6-devkitm-1",
+      "contactCount": 30,
+      "pitchMm": 2.54,
+      "rowSpanMm": 22.86,
+      "source": {
+        "url": "https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.pdf",
+        "label": "Espressif ESP32-C6-DevKitM-1 manufacturer mechanical drawing"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, antenna above. The two long edge headers use the drawing's insertion-hole centers. Auxiliary current-measurement jumpers and fitted USB connectors are not breadboard leads. Allow antenna and USB cable clearance.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 8,
+          "canvasOrigin": 163.6
+        },
+        "y": {
+          "canvasUnitsPerMm": 8,
+          "canvasOrigin": 256
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "j1-1",
+          "x": -11.43,
+          "y": -22.555
+        },
+        {
+          "pinId": "j1-2",
+          "x": -11.43,
+          "y": -20.015
+        },
+        {
+          "pinId": "j1-3",
+          "x": -11.43,
+          "y": -17.475
+        },
+        {
+          "pinId": "j1-4",
+          "x": -11.43,
+          "y": -14.934999999999999
+        },
+        {
+          "pinId": "j1-5",
+          "x": -11.43,
+          "y": -12.395
+        },
+        {
+          "pinId": "j1-6",
+          "x": -11.43,
+          "y": -9.855
+        },
+        {
+          "pinId": "j1-7",
+          "x": -11.43,
+          "y": -7.3149999999999995
+        },
+        {
+          "pinId": "j1-8",
+          "x": -11.43,
+          "y": -4.774999999999999
+        },
+        {
+          "pinId": "j1-9",
+          "x": -11.43,
+          "y": -2.2349999999999994
+        },
+        {
+          "pinId": "j1-10",
+          "x": -11.43,
+          "y": 0.3049999999999997
+        },
+        {
+          "pinId": "j1-11",
+          "x": -11.43,
+          "y": 2.844999999999999
+        },
+        {
+          "pinId": "j1-12",
+          "x": -11.43,
+          "y": 5.385000000000002
+        },
+        {
+          "pinId": "j1-13",
+          "x": -11.43,
+          "y": 7.925000000000001
+        },
+        {
+          "pinId": "j1-14",
+          "x": -11.43,
+          "y": 10.465000000000003
+        },
+        {
+          "pinId": "j1-15",
+          "x": -11.43,
+          "y": 13.005000000000003
+        },
+        {
+          "pinId": "j3-1",
+          "x": 11.43,
+          "y": -22.555
+        },
+        {
+          "pinId": "j3-2",
+          "x": 11.43,
+          "y": -20.015
+        },
+        {
+          "pinId": "j3-3",
+          "x": 11.43,
+          "y": -17.475
+        },
+        {
+          "pinId": "j3-4",
+          "x": 11.43,
+          "y": -14.934999999999999
+        },
+        {
+          "pinId": "j3-5",
+          "x": 11.43,
+          "y": -12.395
+        },
+        {
+          "pinId": "j3-6",
+          "x": 11.43,
+          "y": -9.855
+        },
+        {
+          "pinId": "j3-7",
+          "x": 11.43,
+          "y": -7.3149999999999995
+        },
+        {
+          "pinId": "j3-8",
+          "x": 11.43,
+          "y": -4.774999999999999
+        },
+        {
+          "pinId": "j3-9",
+          "x": 11.43,
+          "y": -2.2349999999999994
+        },
+        {
+          "pinId": "j3-10",
+          "x": 11.43,
+          "y": 0.3049999999999997
+        },
+        {
+          "pinId": "j3-11",
+          "x": 11.43,
+          "y": 2.844999999999999
+        },
+        {
+          "pinId": "j3-12",
+          "x": 11.43,
+          "y": 5.385000000000002
+        },
+        {
+          "pinId": "j3-13",
+          "x": 11.43,
+          "y": 7.925000000000001
+        },
+        {
+          "pinId": "j3-14",
+          "x": 11.43,
+          "y": 10.465000000000003
+        },
+        {
+          "pinId": "j3-15",
+          "x": 11.43,
+          "y": 13.005000000000003
+        }
+      ]
+    },
+    {
+      "id": "esp32-s2-devkitm-1",
+      "contactCount": 42,
+      "pitchMm": 2.54,
+      "rowSpanMm": 22.86,
+      "source": {
+        "url": "https://dl.espressif.com/dl/schematics/ESP32-S2-DevKitM-1_V1_Dimensions.pdf",
+        "label": "Espressif ESP32-S2-DevKitM-1 manufacturer mechanical drawing"
+      },
+      "note": "Install straight 2.54 mm male headers with the long insertion leads below the PCB. Only the listed header leads enter the breadboard; auxiliary sockets, solder pads and programming contacts remain separate. Component side, antenna above. The two long edge headers use the drawing's insertion-hole centers. Auxiliary current-measurement jumpers and fitted USB connectors are not breadboard leads. Allow antenna and USB cable clearance.",
+      "canvasCalibration": {
+        "x": {
+          "canvasUnitsPerMm": 8,
+          "canvasOrigin": 163.6
+        },
+        "y": {
+          "canvasUnitsPerMm": 8.000000000000005,
+          "canvasOrigin": 272.8000000000001
+        }
+      },
+      "contacts": [
+        {
+          "pinId": "j1-1",
+          "x": -11.43,
+          "y": -25.4
+        },
+        {
+          "pinId": "j1-2",
+          "x": -11.43,
+          "y": -22.86
+        },
+        {
+          "pinId": "j1-3",
+          "x": -11.43,
+          "y": -20.32
+        },
+        {
+          "pinId": "j1-4",
+          "x": -11.43,
+          "y": -17.779999999999998
+        },
+        {
+          "pinId": "j1-5",
+          "x": -11.43,
+          "y": -15.239999999999998
+        },
+        {
+          "pinId": "j1-6",
+          "x": -11.43,
+          "y": -12.7
+        },
+        {
+          "pinId": "j1-7",
+          "x": -11.43,
+          "y": -10.159999999999998
+        },
+        {
+          "pinId": "j1-8",
+          "x": -11.43,
+          "y": -7.619999999999997
+        },
+        {
+          "pinId": "j1-9",
+          "x": -11.43,
+          "y": -5.079999999999998
+        },
+        {
+          "pinId": "j1-10",
+          "x": -11.43,
+          "y": -2.539999999999999
+        },
+        {
+          "pinId": "j1-11",
+          "x": -11.43,
+          "y": 0
+        },
+        {
+          "pinId": "j1-12",
+          "x": -11.43,
+          "y": 2.5400000000000027
+        },
+        {
+          "pinId": "j1-13",
+          "x": -11.43,
+          "y": 5.080000000000002
+        },
+        {
+          "pinId": "j1-14",
+          "x": -11.43,
+          "y": 7.6200000000000045
+        },
+        {
+          "pinId": "j1-15",
+          "x": -11.43,
+          "y": 10.160000000000004
+        },
+        {
+          "pinId": "j1-16",
+          "x": -11.43,
+          "y": 12.700000000000003
+        },
+        {
+          "pinId": "j1-17",
+          "x": -11.43,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "j1-18",
+          "x": -11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "j1-19",
+          "x": -11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "j1-20",
+          "x": -11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "j1-21",
+          "x": -11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "j3-1",
+          "x": 11.43,
+          "y": -25.4
+        },
+        {
+          "pinId": "j3-2",
+          "x": 11.43,
+          "y": -22.86
+        },
+        {
+          "pinId": "j3-3",
+          "x": 11.43,
+          "y": -20.32
+        },
+        {
+          "pinId": "j3-4",
+          "x": 11.43,
+          "y": -17.779999999999998
+        },
+        {
+          "pinId": "j3-5",
+          "x": 11.43,
+          "y": -15.239999999999998
+        },
+        {
+          "pinId": "j3-6",
+          "x": 11.43,
+          "y": -12.7
+        },
+        {
+          "pinId": "j3-7",
+          "x": 11.43,
+          "y": -10.159999999999998
+        },
+        {
+          "pinId": "j3-8",
+          "x": 11.43,
+          "y": -7.619999999999997
+        },
+        {
+          "pinId": "j3-9",
+          "x": 11.43,
+          "y": -5.079999999999998
+        },
+        {
+          "pinId": "j3-10",
+          "x": 11.43,
+          "y": -2.539999999999999
+        },
+        {
+          "pinId": "j3-11",
+          "x": 11.43,
+          "y": 0
+        },
+        {
+          "pinId": "j3-12",
+          "x": 11.43,
+          "y": 2.5400000000000027
+        },
+        {
+          "pinId": "j3-13",
+          "x": 11.43,
+          "y": 5.080000000000002
+        },
+        {
+          "pinId": "j3-14",
+          "x": 11.43,
+          "y": 7.6200000000000045
+        },
+        {
+          "pinId": "j3-15",
+          "x": 11.43,
+          "y": 10.160000000000004
+        },
+        {
+          "pinId": "j3-16",
+          "x": 11.43,
+          "y": 12.700000000000003
+        },
+        {
+          "pinId": "j3-17",
+          "x": 11.43,
+          "y": 15.240000000000002
+        },
+        {
+          "pinId": "j3-18",
+          "x": 11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "j3-19",
+          "x": 11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "j3-20",
+          "x": 11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "j3-21",
+          "x": 11.43,
+          "y": 25.4
+        }
+      ]
+    }
+  ]
+}

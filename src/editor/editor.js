@@ -1,14 +1,19 @@
-import { componentById, configurationFor } from '../catalog/index.js';
+import { configurationFor } from '../catalog/index.js';
 import { pinById } from '../model/component-pins.js';
 import { componentForPart } from '../model/part-component.js';
 import { traceNet } from '../model/continuity.js';
 import { automaticWireColor, connectionPowerRole, DEFAULT_WIRE_COLOR } from '../model/wire-colors.js';
-import { makeId } from '../model/project.js';
 import { MAX_POINTS_PER_WIRE } from '../model/limits.js';
 import { endpointKey, sameEndpoint } from '../model/endpoints.js';
 import { itemCollections as collections, updateItem } from '../model/items.js';
 import { clampPoint, deleteWireBend, insertWireBend } from '../geometry/routing.js';
 import { selectionKey, translateSelection } from './selection.js';
+import { rotateWithAttachments } from './attachments.js';
+import { placementProject, previewPart } from './placement.js';
+import { suggestPlacement } from './suggest-placement.js';
+import { placementAssessment } from '../geometry/placement-assessment.js';
+import { moveBodyKeepingLeads, moveLead } from '../geometry/lead-placement.js';
+import { attachmentError, detachInvalidAttachments } from '../model/mounting.js';
 import { automaticWaypoints, resolveAnchor, connectWire, targetExists } from './wire-transactions.js';
 
 export class DiagramEditor {
@@ -54,7 +59,7 @@ export class DiagramEditor {
   commit(next, options = {}) {
     const { mode = this.mode, pending = this.pending } = options;
     try {
-      this.history.commit(next);
+      this.history.commit(detachInvalidAttachments(next));
     } catch (error) {
       this.render();
       this.notify(error.message);
@@ -130,6 +135,30 @@ export class DiagramEditor {
     return translateSelection(project, this.#selections, dx, dy);
   }
 
+  placementProject(partId, destination, project = this.project) {
+    return placementProject(project, partId, destination);
+  }
+
+  previewPart(componentId, point) {
+    return previewPart(this.project, componentId, point);
+  }
+
+  placementAssessment(partId, project = this.project) {
+    return placementAssessment(project, project.parts.find(part => part.id === partId));
+  }
+
+  leadProject(partId, pinId, point, project = this.project) {
+    return moveLead(project, partId, pinId, point);
+  }
+
+  bodyPlacementProject(partId, point, project = this.project) {
+    return moveBodyKeepingLeads(project, partId, point);
+  }
+
+  suggestPlacement(componentId, hostPartId) {
+    return suggestPlacement(this.project, componentId, hostPartId);
+  }
+
   moveSelection(dx, dy) {
     const next = this.selectionProject(dx, dy);
     return next ? this.commit(next) : false;
@@ -156,16 +185,17 @@ export class DiagramEditor {
     this.render();
   }
 
-  addPart(componentId, point) {
-    const component = componentById.get(componentId);
-    const part = { id: makeId('part'), componentId, ...clampPoint(point) };
-    const configuration = configurationFor(componentId);
-    if (configuration) part[configuration.key] = configuration.normalize();
-    if (component.defaultValue) part.label = `${component.shortName ?? component.name} · ${component.defaultValue}`;
-    const project = this.project;
-    return this.commit({ ...project, parts: [...project.parts, part] }, {
+  addPart(componentId, point, { mount = false, hostPartId } = {}) {
+    const preview = previewPart(this.project, componentId, point, { mount, hostPartId });
+    if (!preview) return null;
+    if (mount && hostPartId && !preview.fit) {
+      this.notify('No free placement is available on this breadboard. Move a part or choose another position.');
+      return null;
+    }
+    const { part } = preview;
+    return this.commit(preview.project, {
       selection: { type: 'part', id: part.id }, mode: 'select', pending: null,
-    }) ? part : null;
+    }) ? this.item('part', part.id) : null;
   }
 
   updatePart(properties) {
@@ -178,7 +208,7 @@ export class DiagramEditor {
     const current = part.rotation ?? 0;
     const rotation = angle ?? (current + 90) % 360;
     if (![0, 90, 180, 270].includes(rotation) || rotation === current) return false;
-    return this.commit(updateItem(this.project, 'part', part.id, { rotation }));
+    return this.commit(rotateWithAttachments(this.project, part, rotation));
   }
 
   configurePart(settings) {
@@ -194,7 +224,12 @@ export class DiagramEditor {
         throw new Error('These settings would remove connected contacts. Disconnect their wires before changing the layout.');
       }
       if (JSON.stringify(config) === JSON.stringify(configuration.normalize(part[configuration.key]))) return false;
-      return this.commit(updateItem(this.project, 'part', part.id, { [configuration.key]: config }), { pending: null });
+      const next = updateItem(this.project, 'part', part.id, { [configuration.key]: config });
+      const mounted = next.parts.filter(item => item.attachment?.hostPartId === part.id);
+      if (mounted.some(item => attachmentError(next, item))) {
+        throw new Error('These settings would move or remove occupied breadboard contacts. Detach the modules before changing the layout.');
+      }
+      return this.commit(next, { pending: null });
     } catch (error) {
       this.notify(error.message);
       this.render();

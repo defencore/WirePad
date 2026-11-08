@@ -1,6 +1,7 @@
 import { componentForPart } from './part-component.js';
 import { pinById } from './component-pins.js';
 import { endpointKey } from '../model/endpoints.js';
+import { attachmentConnections } from './mounting.js';
 
 const connectionIndexes = new WeakMap();
 const projectIndexes = new WeakMap();
@@ -27,6 +28,14 @@ function indexProject(project) {
   const wires = new Map();
   const junctions = new Set((project.junctions ?? []).map(junction => junction.id));
   const adjacent = new Map();
+  const mounted = new Map();
+  for (const { from, to } of attachmentConnections(project)) {
+    for (const [endpoint, neighbor] of [[from, to], [to, from]]) {
+      const key = endpointKey(endpoint);
+      if (!mounted.has(key)) mounted.set(key, []);
+      mounted.get(key).push(neighbor);
+    }
+  }
   for (const wire of project.wires) {
     wires.set(wire.id, wire);
     for (const endpoint of [wire.from, wire.to]) {
@@ -35,7 +44,7 @@ function indexProject(project) {
       adjacent.get(key).push(wire);
     }
   }
-  const index = { parts, wires, junctions, adjacent };
+  const index = { parts, wires, junctions, adjacent, mounted };
   if (immutable) projectIndexes.set(project, index);
   return index;
 }
@@ -59,7 +68,7 @@ export function traceNet(project, seed) {
   const start = seedEndpoint(index, seed);
   if (!start) return { wireIds, endpoints };
 
-  const { adjacent, parts } = index;
+  const { adjacent, mounted, parts } = index;
   const visitedGroups = new Map();
 
   const remaining = [start];
@@ -68,6 +77,7 @@ export function traceNet(project, seed) {
     const key = endpointKey(endpoint);
     if (endpoints.has(key)) continue;
     endpoints.set(key, endpoint);
+    remaining.push(...(mounted.get(key) ?? []));
     const part = parts.get(endpoint.partId);
     if (part) {
       const component = componentForPart(part);

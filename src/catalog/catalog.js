@@ -8,3 +8,5 @@ export const definitionFor = component => catalog.definitionsById.get(component.
 export const footprintDefinitionFor = component => definitionFor(component)?.footprint;
 export const modelFor = component => definitionFor(component)?.model ?? null;
 export const configurationFor = componentId => catalog.definitionsById.get(componentId)?.configuration;
+export const mountingFor = componentId => catalog.definitionsById.get(componentId)?.mounting;
+export const isMountable = componentId => ['breadboard-module', 'breadboard-part'].includes(mountingFor(componentId)?.type);

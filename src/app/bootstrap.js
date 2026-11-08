@@ -73,12 +73,14 @@ export function createApplication({ root = document, storage = new ProjectStorag
     const pinPicker = bindPinPicker({ onChoose: controls.chooseEndpoint, focusCanvas, root, signal: scope.signal });
     scope.cleanup(pinPicker.destroy);
     const inspector = bindInspector({ inspection: element('inspection'), editor, notify, focusCanvas,
+      getKeepLeadPositions: () => controls.keepLeadPositions, setKeepLeadPositions: controls.setKeepLeadPositions,
       autoRouteWire: commands.autoRouteWire, root, signal: scope.signal });
     scope.cleanup(inspector.destroy);
     const projectControls = bindProjectControls({ editor, canvas, savedProject, storage, notify, focusCanvas,
       canExport: () => !controls.gesturing, root, signal: scope.signal });
     scope.cleanup(projectControls.destroy);
     const library = bindLibrary({ library: element('library'), board: element('board'), addPart: commands.addPart,
+      previewPart: commands.previewPart, clearPlacementPreview: commands.clearPlacementPreview,
       openPanel: () => panels.set('library', true),
       closePanel: () => { if (panels.isCompact('library')) { panels.set('library', false); focusCanvas(); } },
       root, signal: scope.signal });

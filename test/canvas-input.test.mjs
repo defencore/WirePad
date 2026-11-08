@@ -6,6 +6,7 @@ import { DrawingCanvas } from '../src/canvas/canvas.js';
 import { DiagramEditor } from '../src/editor/editor.js';
 import { newProject } from '../src/model/project.js';
 import { ProjectHistory } from '../src/model/history.js';
+import { endpointPositions } from '../src/geometry/parts.js';
 
 const point = (x, y) => ({ x, y });
 const selection = id => ({ type: 'part', id });
@@ -78,7 +79,7 @@ function workspace(t) {
   const commit = history.commit.bind(history);
   history.commit = project => { commits++; return commit(project); };
   const editor = new DiagramEditor(history, () => {}, message => assert.fail(message));
-  const calls = { pan: [], zoom: [], boxes: [], boxQueries: [], paint: [] };
+  const calls = { pan: [], zoom: [], boxes: [], boxQueries: [], paint: [], placement: [] };
   const canvas = {
     center: point(0, 0), scale: 1, boxSelection: [selection('a'), selection('b')],
     point(x, y) { return point(this.center.x + x / this.scale, this.center.y + y / this.scale); },
@@ -88,6 +89,7 @@ function workspace(t) {
     showSelectionBox(...args) { calls.boxes.push(args); },
     selectionInBox(start, end) { calls.boxQueries.push({ start, end }); return this.boxSelection; },
     showReconnectPreview() {}, controls: { update() {}, setPartEnabled() {} }, showDraft() {},
+    showPlacementPreview(preview) { calls.placement.push(preview); },
     position() { return point(0, 0); },
   };
   let controls;
@@ -124,6 +126,76 @@ test('plain pointer down/up without movement selects the clicked component and b
   assert.equal(editor.project, original);
   assert.equal(history.canUndo, false);
   assert.equal(commits(), 0);
+});
+
+function formedWorkspace(t) {
+  const view = workspace(t);
+  view.editor.replace({ ...newProject(), parts: [{ id: 'host', componentId: 'breadboard', x: 0, y: 0 }] });
+  const point = view.editor.suggestPlacement('resistor', 'host');
+  assert.ok(point);
+  const part = view.editor.addPart('resistor', point, { mount: true, hostPartId: 'host' });
+  assert.ok(part?.leads);
+  view.canvas.position = endpoint => endpointPositions(view.editor.project)(endpoint);
+  const pin = surface(['canvas-pin'], { part: part.id, pin: '1' });
+  const contains = view.svg.contains;
+  view.svg.contains = node => node === pin || contains(node);
+  return { ...view, part, pin };
+}
+
+test('Select dragging a formed lead previews only that tip and commits once while Wire still creates a jumper', t => {
+  const { editor, canvas, history, pin, part, calls, send, flush, commits, click, controls } = formedWorkspace(t);
+  const original = editor.project, beforeCommits = commits();
+  const start = canvas.position({ partId: part.id, pinId: '1' });
+  send('pointerdown', pin, { clientX: start.x, clientY: start.y });
+  send('pointermove', pin, { clientX: start.x, clientY: start.y + 32 });
+  flush();
+  assert.equal(editor.project, original);
+  const preview = calls.paint.at(-1).parts.find(item => item.id === part.id);
+  assert.equal(preview.x, part.x); assert.equal(preview.y, part.y);
+  assert.notDeepEqual(preview.leads.find(lead => lead.pinId === '1'), part.leads.find(lead => lead.pinId === '1'));
+  assert.deepEqual(preview.leads.find(lead => lead.pinId === '2'), part.leads.find(lead => lead.pinId === '2'));
+  send('pointerup', pin, { clientX: start.x, clientY: start.y + 32 });
+  assert.equal(commits(), beforeCommits + 1);
+  assert.equal(editor.project.wires.length, 0);
+  assert.equal(editor.project.parts.find(item => item.id === part.id).attachment.contacts.length, 2);
+  assert.equal(editor.pending, null);
+  editor.step('undo'); assert.equal(editor.project, original);
+  editor.setMode('wire');
+  click(pin, { clientX: start.x, clientY: start.y });
+  assert.deepEqual(editor.pending.from, { partId: part.id, pinId: '1' });
+  assert.equal(history.project.wires.length, 0);
+  controls.destroy();
+});
+
+test('visible keep-leads body mode uses its planner and rolls back on Escape', t => {
+  const { editor, controls, part, a, calls, send, flush, document } = formedWorkspace(t);
+  a.dataset.part = part.id;
+  controls.setKeepLeadPositions(true);
+  assert.equal(controls.keepLeadPositions, true);
+  let planned = 0;
+  const bodyPlacement = editor.bodyPlacementProject.bind(editor);
+  editor.bodyPlacementProject = (...args) => { planned++; return bodyPlacement(...args); };
+  const original = editor.project;
+  send('pointerdown', a, { clientX: part.x, clientY: part.y });
+  send('pointermove', a, { clientX: part.x + 10, clientY: part.y - 10 });
+  flush();
+  assert.equal(planned, 1);
+  assert.equal(editor.project, original);
+  assert.ok(calls.paint.at(-1).parts.find(item => item.id === part.id).leads);
+  document.emit('keydown', { key: 'Escape' });
+  assert.equal(editor.project, original);
+  assert.equal(controls.gesturing, false);
+  controls.destroy();
+});
+
+test('touching an exact breadboard hole acts directly without opening a dense pin picker', t => {
+  const view = workspace(t);
+  view.editor.replace({ ...newProject(), parts: [{ id: 'host', componentId: 'breadboard', x: 0, y: 0 }] });
+  const pin = surface(['canvas-pin'], { part: 'host', pin: 'a2' });
+  view.svg.contains = node => node === pin || node === view.svg;
+  view.click(pin, { pointerType: 'touch', clientX: 96, clientY: 112 });
+  assert.deepEqual(view.editor.pending.from, { partId: 'host', pinId: 'a2' });
+  view.controls.destroy();
 });
 
 test('left drag on blank space displays a box and selects the geometry returned by the canvas', t => {
@@ -596,6 +668,57 @@ for (const stop of ['destroy', 'blur']) {
       send('pointerup', svg, { pointerType: 'touch', pointerId: 13, clientX: 20, clientY: 20 });
       assert.equal(captures.size, 0);
     }
+    controls.destroy();
+  });
+}
+
+test('part dragging previews the placement planner and commits its final fractional scaled pose once', t => {
+  const { editor, a, svg, calls, send, flush, commits } = workspace(t);
+  const original = editor.project;
+  const proposals = [];
+  editor.placementProject = (id, destination, project) => {
+    proposals.push({ id, destination, project });
+    return { ...project, parts: project.parts.map(part => part.id === id
+      ? { ...part, x: destination.x + .25, y: destination.y + .5, scale: { x: .8, y: 1.2 } } : part) };
+  };
+  send('pointerdown', a, { clientX: 10, clientY: 10 });
+  send('pointermove', svg, { clientX: 40, clientY: 30 });
+  flush();
+  assert.equal(editor.project, original);
+  assert.equal(commits(), 0);
+  assert.deepEqual(calls.paint.at(-1).parts[0], { ...original.parts[0], x: 30.25, y: 20.5, scale: { x: .8, y: 1.2 } });
+  send('pointermove', svg, { clientX: 50, clientY: 45 });
+  send('pointerup', svg, { clientX: 60, clientY: 50 });
+  assert.equal(commits(), 1);
+  assert.deepEqual(proposals.at(-1), { id: 'a', destination: point(50, 40), project: original });
+  assert.deepEqual(editor.project.parts[0], { ...original.parts[0], x: 50.25, y: 40.5, scale: { x: .8, y: 1.2 } });
+  flush();
+  assert.equal(commits(), 1);
+  editor.step('undo');
+  assert.equal(editor.project, original);
+});
+
+for (const stop of ['Escape', 'pointercancel', 'blur', 'pinch', 'destroy']) {
+  test(`${stop} clears a fitted part preview without saving an attachment or scale`, t => {
+    const { editor, controls, document, window, a, svg, calls, send, flush, commits } = workspace(t);
+    const original = editor.project;
+    editor.placementProject = (id, destination, project) => ({ ...project,
+      parts: project.parts.map(part => part.id === id ? { ...part, ...destination, scale: { x: 2, y: 2 },
+        attachment: { hostPartId: 'b', contacts: [{ pinId: '1', hostPinId: '2' }] } } : part),
+    });
+    send('pointerdown', a, { clientX: 10, clientY: 10, pointerType: 'touch' });
+    send('pointermove', svg, { clientX: 45, clientY: 35, pointerType: 'touch' });
+    flush();
+    assert.equal(calls.placement.at(-1).part.attachment.hostPartId, 'b');
+    if (stop === 'Escape') document.emit('keydown', { key: 'Escape' });
+    if (stop === 'pointercancel') send('pointercancel');
+    if (stop === 'blur') window.emit('blur');
+    if (stop === 'pinch') send('pointerdown', svg, { pointerId: 2, pointerType: 'touch', clientX: 100, clientY: 100 });
+    if (stop === 'destroy') controls.destroy();
+    assert.equal(calls.placement.at(-1), undefined);
+    assert.equal(editor.project, original);
+    assert.equal(commits(), 0);
+    assert.equal(calls.paint.at(-1), original);
     controls.destroy();
   });
 }

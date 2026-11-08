@@ -1,5 +1,6 @@
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, path, rect, smd, tactile } from "../shared/svg.js";
+import { breadboardHeaderMounting } from "../shared/breadboard-mounting.js";
 
 // Header order and terminal numbers are from the linked Espressif guides and drawings.
 const boards = [
@@ -2016,4 +2017,17 @@ const espressifMoreArt = Object.fromEntries(entries.map(e => [e.component.id, e.
 const espressifMoreFootprints = Object.fromEntries(entries.map(e => [e.component.id, e.footprint]));
 const espressifMoreModels = Object.fromEntries(entries.map(e => [e.component.id, e.model]));
 
-export default defineFamily("espressif-more", (espressifMoreComponents).map(component => ({ component, render: (espressifMoreArt)[component.art], footprint: (espressifMoreFootprints)[component.id], model: espressifMoreModels[component.id] })));
+const reviewedInsertionDrawings = {
+  "esp32-devkitc-v4-wroom-32e": "https://dl.espressif.com/dl/schematics/esp32_devkitc_v4_dimensions.pdf",
+  "esp32-c3-devkitc-02": "https://dl.espressif.com/dl/schematics/DXF_ESP32-C3-DevKitC-02_V1_1_20210121AA.pdf",
+  "esp32-c6-devkitm-1": "https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.pdf",
+  "esp32-s2-devkitm-1": "https://dl.espressif.com/dl/schematics/ESP32-S2-DevKitM-1_V1_Dimensions.pdf",
+};
+const espressifMoreMountings = Object.fromEntries(entries.filter(entry => reviewedInsertionDrawings[entry.component.id]).map(entry => [
+  entry.component.id,
+  breadboardHeaderMounting({ url: reviewedInsertionDrawings[entry.component.id], label: `Espressif ${entry.component.name} manufacturer mechanical drawing` },
+    entry.footprint.groups.slice(0, 2),
+    "Component side, antenna above. The two long edge headers use the drawing's insertion-hole centers. Auxiliary current-measurement jumpers and fitted USB connectors are not breadboard leads. Allow antenna and USB cable clearance."),
+]));
+
+export default defineFamily("espressif-more", (espressifMoreComponents).map(component => ({ component, render: (espressifMoreArt)[component.art], footprint: (espressifMoreFootprints)[component.id], model: espressifMoreModels[component.id], mounting: espressifMoreMountings[component.id] })));

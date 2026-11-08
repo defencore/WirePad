@@ -437,4 +437,4 @@ const specs = [
   }
 ];
 
-export default defineFamily("market-hall-angle", specs.map(spec => spec.kind === "SOT233" ? marketAnalogPackage(spec) : marketPackage(spec)));
+export default defineFamily("market-hall-angle", specs.map(spec => spec.kind === "SOT233" ? marketAnalogPackage(spec) : marketPackage(spec, { breadboard: spec.kind === 'dip' })));

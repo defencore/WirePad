@@ -3,6 +3,8 @@ import { componentForPart } from '../model/part-component.js';
 import { updateItem } from '../model/items.js';
 import { partBounds as boundsForPart, endpointPositions } from '../geometry/parts.js';
 import { clampPoint, routeFor } from '../geometry/routing.js';
+import { attachedPartIds } from './attachments.js';
+import { detachInvalidAttachments } from '../model/mounting.js';
 
 export function selectionRect(start, end) {
   return {
@@ -106,8 +108,8 @@ function movementPlan(project, selections) {
   const containers = project.parts.filter(part => keys.has(`part:${part.id}`) && componentForPart(part).surface)
     .map(part => boundsForPart(part));
   const inside = point => containers.some(bounds => pointInRect(point, bounds));
-  const partIds = new Set(project.parts.filter(part => keys.has(`part:${part.id}`) ||
-    containers.some(bounds => rectContains(bounds, boundsForPart(part)))).map(part => part.id));
+  const partIds = attachedPartIds(project, new Set(project.parts.filter(part => keys.has(`part:${part.id}`) ||
+    containers.some(bounds => rectContains(bounds, boundsForPart(part)))).map(part => part.id)));
   const junctionIds = new Set((project.junctions ?? []).filter(junction =>
     keys.has(`junction:${junction.id}`) || inside(junction)).map(junction => junction.id));
   const endpointMoves = endpoint => endpoint.partId ? partIds.has(endpoint.partId) : junctionIds.has(endpoint.junctionId);
@@ -161,7 +163,7 @@ export function translateSelection(project, selections, dx, dy, { round = true }
   const offset = selectionOffset(project, selections, dx, dy, round);
   if (!offset) return null;
   const translate = point => ({ ...point, x: point.x + offset.dx, y: point.y + offset.dy });
-  return {
+  return detachInvalidAttachments({
     ...project,
     parts: project.parts.map(part => offset.partIds.has(part.id) ? translate(part) : part),
     wires: project.wires.map(wire => {
@@ -172,7 +174,7 @@ export function translateSelection(project, selections, dx, dy, { round = true }
     ...(project.junctions && {
       junctions: project.junctions.map(junction => offset.junctionIds.has(junction.id) ? translate(junction) : junction),
     }),
-  };
+  });
 }
 
 export function translatePart(project, partId, destination) {

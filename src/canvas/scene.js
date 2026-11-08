@@ -1,6 +1,7 @@
 import { componentForPart } from '../model/part-component.js';
+import { mountingFor } from '../catalog/index.js';
 import { endpointKey } from '../model/endpoints.js';
-import { endpointPositions } from '../geometry/parts.js';
+import { endpointPositions, partBodyBounds } from '../geometry/parts.js';
 import { wireRoute } from '../geometry/routing.js';
 
 export function pathFrom(points) {
@@ -43,7 +44,26 @@ export function samePosition(a, b) {
 
 export function resolveDrawing(project, previousRoutes) {
   const position = endpointPositions(project);
-  const parts = new Map(project.parts.map(part => [part.id, { part, connected: new Set() }]));
+  const parts = new Map(project.parts.map(part => [part.id, { part, connected: new Set(), covered: new Set() }]));
+  for (const part of project.parts) {
+    const seated = part.attachment && parts.get(part.attachment.hostPartId);
+    if (seated) for (const { pinId, hostPinId } of part.attachment.contacts) {
+      parts.get(part.id).connected.add(pinId);
+      seated.connected.add(hostPinId);
+    }
+    // Formed bodies remain opaque when a leg is lifted. This is visual
+    // occlusion only; electrical seating still requires explicit contact pairs.
+    const hosts = seated ? [seated] : part.leads ? [...parts.values()].filter(entry =>
+      mountingFor(entry.part.componentId)?.type === 'breadboard') : [];
+    if (!hosts.length) continue;
+    const bounds = partBodyBounds(part);
+    for (const host of hosts) for (const pin of componentForPart(host.part).pins) {
+      const point = position({ partId: host.part.id, pinId: pin.id });
+      if (point.x > bounds.left && point.x < bounds.right && point.y > bounds.top && point.y < bounds.bottom) {
+        host.covered.add(pin.id);
+      }
+    }
+  }
   const wires = new Map();
   const groups = new Map();
   for (const wire of project.wires) {

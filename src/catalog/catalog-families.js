@@ -1,4 +1,5 @@
 import breadboardFamily from "./families/catalog-breadboard.js";
+import breadboardTactileSwitchesFamily from './families/catalog-breadboard-tactile-switches.js';
 import { coreModulesFamily, coreBasicsFamily } from "./families/catalog-core.js";
 import waveshareFamily from "./families/catalog-waveshare.js";
 import heltecSemtechFamily from "./families/catalog-heltec-semtech.js";
@@ -292,4 +293,5 @@ export const catalogFamilies = [
   modulesSparkfunInterfacesFamily,
   modulesSparkfunPowerAudioFamily,
   modulesSparkfunSensorsFamily,
+  breadboardTactileSwitchesFamily,
 ];

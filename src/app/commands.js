@@ -1,22 +1,46 @@
-import { componentById } from '../catalog/index.js';
+import { componentById, isMountable, mountingFor } from '../catalog/index.js';
+import { partBounds } from '../geometry/parts.js';
 
 export function createCommands({ editor, canvas, controls, panels, svg, notify, focusCanvas }) {
+  function dropPosition(id, event) {
+    const component = componentById.get(id);
+    const center = canvas.point(event.clientX, event.clientY);
+    return { x: center.x - component.width / 2, y: center.y - component.height / 2 };
+  }
+
   const commands = {
+    previewPart(id, event) {
+      if (controls.gesturing) { commands.clearPlacementPreview(); return; }
+      const preview = editor.previewPart(id, dropPosition(id, event));
+      canvas.showPlacementPreview({ ...preview, ghost: true });
+      return preview;
+    },
+    clearPlacementPreview() { canvas.showPlacementPreview(); },
     addPart(id, drop) {
       if (controls.gesturing) return false;
       const component = componentById.get(id);
-      const center = drop && canvas.point(drop.clientX, drop.clientY);
-      const position = center
-        ? { x: center.x - component.width / 2, y: center.y - component.height / 2 }
-        : canvas.suggestPartPosition(editor.project, component);
+      const selected = editor.part;
+      const hosts = editor.project.parts.filter(part => mountingFor(part.componentId)?.type === 'breadboard');
+      const hostPartId = !drop && isMountable(id) && (mountingFor(selected?.componentId)?.type === 'breadboard'
+        ? selected.id : selected?.attachment?.hostPartId ?? (hosts.length === 1 ? hosts[0].id : undefined));
+      const suggested = hostPartId ? editor.suggestPlacement(id, hostPartId) : null;
+      if (hostPartId && !suggested) {
+        notify('No free placement is available on this breadboard. Move a part or choose another position.');
+        return false;
+      }
+      const position = suggested ?? (drop
+        ? dropPosition(id, drop)
+        : canvas.suggestPartPosition(editor.project, component));
       const hadDrawing = editor.hasDrawing;
-      const part = editor.addPart(id, position);
+      commands.clearPlacementPreview();
+      const part = editor.addPart(id, position, { mount: Boolean(drop || hostPartId), ...(hostPartId && { hostPartId }) });
       if (!part) return false;
       const rect = svg.getBoundingClientRect();
       const start = canvas.point(rect.left, rect.top);
       const end = canvas.point(rect.right, rect.bottom);
-      if (!hadDrawing || part.x < start.x || part.y < start.y ||
-          part.x + component.width > end.x || part.y + component.height > end.y) canvas.fit();
+      const bounds = partBounds(part);
+      if (!hadDrawing || bounds.left < start.x || bounds.top < start.y ||
+          bounds.right > end.x || bounds.bottom > end.y) canvas.fit();
       return true;
     },
     changeMode(mode) {
@@ -37,6 +61,7 @@ export function createCommands({ editor, canvas, controls, panels, svg, notify, 
       else editor.removeSelection();
     },
     cancel() {
+      controls.clearHover?.();
       controls.clearWireTool();
       const hadOperation = Boolean(editor.pending || editor.mode !== 'select');
       editor.cancelWire();

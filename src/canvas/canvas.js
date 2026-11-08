@@ -10,6 +10,8 @@ import { traceMarkup } from './markup.js';
 import { group, SceneLayer, SVG_NAMESPACE, updateWire, updatePart, updateJunction } from './layers.js';
 import { CanvasViewport } from './viewport.js';
 import { CanvasControls } from './controls.js';
+import { PlacementPreview } from './placement-preview.js';
+import { BreadboardFeedback } from './breadboard-feedback.js';
 
 export class DrawingCanvas extends CanvasViewport {
   constructor({ svg, scene, draft, onZoom, viewInsets, signal }) {
@@ -34,6 +36,9 @@ export class DrawingCanvas extends CanvasViewport {
     this.reconnectLayer.setAttribute('aria-hidden', 'true');
     this.reconnectLayer.setAttribute('pointer-events', 'none');
     svg.insertBefore(this.reconnectLayer, draft);
+    this.placementPreview = new PlacementPreview({ svg, before: draft, scope: this.scope, getScale: () => this.scale });
+    this.breadboardFeedback = new BreadboardFeedback({ svg, before: draft, scope: this.scope,
+      getState: () => ({ project: this.geometryProject, geometry: this.geometry, scale: this.scale }) });
     this.controls = new CanvasControls({ svg, scope: this.scope, getState: () => ({
       selection: this.selection, selections: this.selections, geometry: this.geometry,
       wireControls: this.wireControls, scale: this.scale, center: this.center,
@@ -62,6 +67,16 @@ export class DrawingCanvas extends CanvasViewport {
 
   onViewChange() {
     this.controls.update();
+    this.placementPreview.render();
+    this.breadboardFeedback.render();
+  }
+
+  showPlacementPreview(options) {
+    this.placementPreview.show(options);
+  }
+
+  showBreadboardFeedback(seed, options) {
+    this.breadboardFeedback.show(seed, options);
   }
 
   draw(project, selection, active, trace, wireControls, selections = selection ? [selection] : []) {
@@ -108,6 +123,7 @@ export class DrawingCanvas extends CanvasViewport {
     }
     this.wireControls = wireControls;
     this.controls.update();
+    this.breadboardFeedback.render();
   }
 
   position(endpoint) {

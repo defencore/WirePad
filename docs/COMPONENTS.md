@@ -2,7 +2,7 @@
 
 Generated from the live catalog. Do not edit the tree by hand.
 
-**2002 components · 145 source families · 31 categories.**
+**2003 components · 146 source families · 31 categories.**
 
 Hierarchy: **library category → actual manufacturer → source family → component**. Categories and manufacturer names match the library filters; source families identify catalog ownership, not additional UI categories. Square-bracket IDs are stable saved-project identifiers.
 
@@ -12,10 +12,10 @@ Hierarchy: **library category → actual manufacturer → source family → comp
 | --- | --- | ---: |
 | FP:M | Manufacturer-derived land/contact geometry for the stated package and reviewed scope. | 32 |
 | FP:C | CAD/drawing-derived contact reference: source-board contact coordinates, not a complete mating or production footprint. | 110 |
-| FP:R | Reference, approximate, mixed or off-board termination carrier. | 1836 |
+| FP:R | Reference, approximate, mixed or off-board termination carrier. | 1837 |
 | FP:? | Accuracy not reviewed; do not assume manufacturer geometry. New/unclassified entries default here. | 24 |
-| 3D:A | Approximate generated WirePad WRL model. | 2002 |
-| CAD:+ | A separate external CAD/reference link is available in the catalog. | 944 |
+| 3D:A | Approximate generated WirePad WRL model. | 2003 |
+| CAD:+ | A separate external CAD/reference link is available in the catalog. | 945 |
 
 **All current generated 3D models are approximate.** The [WRL exporter](../src/assets/kicad.js) constructs box geometry from [model layouts](../src/assets/model-layout.js); it does not import the external manufacturer CAD. A CAD link does not upgrade FP or 3D accuracy, and may identify a later mechanical reference rather than the exact electrical revision.
 
@@ -26,7 +26,7 @@ Explicit per-component assessments and their evidence are maintained in [catalog
 ## Tree
 
 ```text
-WirePad (2002)
+WirePad (2003)
 ├── Actuators (18)
 │   ├── Adafruit (3)
 │   │   ├── audio-prototyping (1)
@@ -2413,7 +2413,7 @@ WirePad (2002)
 │           ├── Sipeed LicheeRV Nano E [sipeed-licheerv-nano-e] [FP:R] [3D:A] [CAD:+]
 │           ├── Sipeed LicheeRV Nano W [sipeed-licheerv-nano-w] [FP:R] [3D:A] [CAD:+]
 │           └── Sipeed LicheeRV Nano WE [sipeed-licheerv-nano-we] [FP:R] [3D:A] [CAD:+]
-├── Switches (12)
+├── Switches (13)
 │   ├── Bourns (1)
 │   │   └── input-prototyping (1)
 │   │       └── Bourns PEC11R-4215F-S0024 Rotary Encoder [bourns-pec11r-4215f-s0024] [FP:R] [3D:A] [CAD:+]
@@ -2435,6 +2435,9 @@ WirePad (2002)
 │   ├── NKK Switches (1)
 │   │   └── switches-mosfets (1)
 │   │       └── NKK MN11SS4W03 SPST Toggle [nkk-mn11ss4w03] [FP:?] [3D:A] [CAD:+]
+│   ├── Omron (1)
+│   │   └── breadboard-tactile-switches (1)
+│   │       └── Omron B3F-1000 Tactile Switch [omron-b3f-1000] [FP:R] [3D:A] [CAD:+]
 │   └── Unspecified (1)
 │       └── core-basics (1)
 │           └── Tactile Push Button [button] [FP:R] [3D:A] [CAD:-]

@@ -125,3 +125,6 @@
   .inspector-preview { border-color: ButtonText; }
   .selection-count { border-color: ButtonText; }
 }
+.lead-body-toggle { display: flex; align-items: center; min-height: 28px; gap: 7px; margin-top: 10px; color: var(--ink); font-size: 12px; cursor: pointer; }
+.lead-body-toggle input { accent-color: var(--accent); }
+@media (any-pointer: coarse) { .lead-body-toggle { min-height: 44px; } }

@@ -2,6 +2,9 @@ import { configurationFor } from "../catalog/index.js";
 import { pinById } from "./component-pins.js";
 import { componentForPart } from "./part-component.js";
 import { migrateVersion1Contacts } from "./layout-migration.js";
+import { normalizePartScale } from "./part-placement.js";
+import { attachmentError } from "./mounting.js";
+import { leadShapeError } from "./part-pins.js";
 import { MAX_PARTS, MAX_WIRES, MAX_JUNCTIONS, MAX_PROJECT_ROUTE_POINTS, POSITION_LIMIT,
   MAX_POINTS_PER_WIRE, MAX_FIXED_ROUTE_POINTS } from "./limits.js";
 
@@ -112,6 +115,26 @@ function readPart(value, label) {
   if (value.label !== undefined) {
     part.label = string(value.label, `${label} label`, 60, false);
   }
+  if (value.scale !== undefined) part.scale = normalizePartScale(value.scale);
+  if (value.leads !== undefined) {
+    part.leads = readList(value.leads, `${label} formed leads`, component.pins.length, (lead, index) => {
+      const leadLabel = `${label} formed lead ${index + 1}`;
+      record(lead, leadLabel);
+      return { pinId: identifier(lead.pinId, leadLabel), ...position(lead, leadLabel) };
+    });
+    const error = leadShapeError(part, component);
+    if (error) throw new Error(error);
+  }
+  if (value.attachment !== undefined) {
+    record(value.attachment, `${label} attachment`);
+    const hostPartId = identifier(value.attachment.hostPartId, `${label} attachment host`);
+    const contacts = readList(value.attachment.contacts, `${label} attachment contacts`, component.pins.length, (contact, index) => {
+      const contactLabel = `${label} attachment contact ${index + 1}`;
+      record(contact, contactLabel);
+      return { pinId: identifier(contact.pinId, contactLabel), hostPinId: identifier(contact.hostPinId, contactLabel) };
+    });
+    part.attachment = { hostPartId, contacts };
+  }
   return part;
 }
 
@@ -201,6 +224,10 @@ function readProject(value, immutable) {
   }
   const project = { version: VERSION, title, parts: parts.items, wires };
   if (junctions) project.junctions = junctions.items;
+  for (const part of parts.items) {
+    const error = attachmentError(project, part);
+    if (error) throw new Error(error);
+  }
   return project;
 }
 

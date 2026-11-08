@@ -2391,6 +2391,18 @@
         "seeed-module-101020584",
         "seeed-module-101020583"
       ]
+    },
+    {
+      "footprint": "R",
+      "evidence": "Omron B3F-1000 page-4 top-view terminal centers and physical terminal numbering were reviewed. The generated carrier uses selected pad/drill values and does not qualify production solder/clearance or lead forming. The generated WRL remains approximate; the manufacturer CAD-resource page is an external link.",
+      "sources": [
+        "src/catalog/families/catalog-breadboard-tactile-switches.js",
+        "docs/catalog-breadboard-parts-2026-11-08.json",
+        "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf"
+      ],
+      "components": [
+        "omron-b3f-1000"
+      ]
     }
   ]
 }

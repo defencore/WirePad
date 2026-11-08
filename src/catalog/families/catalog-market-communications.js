@@ -2195,4 +2195,4 @@ const specifications = [
   }
 ];
 
-export default defineFamily("market-communications", specifications.map(marketPackage));
+export default defineFamily("market-communications", specifications.map(spec => marketPackage(spec, { breadboard: spec.kind === 'dip' })));
