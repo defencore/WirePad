@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { selectionToolbarBounds, selectionToolbarPosition } from '../src/ui/selection-toolbar.js';
+import { positionSelectionToolbar, selectionToolbarBounds, selectionToolbarPosition } from '../src/ui/selection-toolbar.js';
 import { partOutlineBounds } from '../src/geometry/parts.js';
+import { componentById, mountingFor } from '../src/catalog/index.js';
+import { leadControlLayout } from '../src/canvas/lead-control-layout.js';
+import { mountingScale } from '../src/model/mounting.js';
 
 const overlap = (a, b) => Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left)) *
   Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
@@ -61,4 +64,90 @@ test('a wide breadboard keeps contextual actions at its edge instead of clamping
   const placed = { left: point.x, top: point.y, right: point.x + toolbar.width, bottom: point.y + toolbar.height };
   assert.equal(overlap(placed, { left: 140, top: 420, right: 250, bottom: 700 }), 0);
   assert.ok(point.y + toolbar.height <= 420 || point.y >= 700);
+});
+
+function toolbarScene({ zoom = .25, ratio = { x: 1, y: 1 }, viewport = { width: 800, height: 600 } } = {}) {
+  const component = componentById.get('market-bpw34'), profile = mountingFor(component.id);
+  const part = { id: 'photodiode', componentId: component.id, x: 100, y: 200,
+    scale: mountingScale(component, componentById.get('breadboard')),
+    leads: profile.contacts.map(contact => ({ pinId: contact.pinId,
+      x: profile.origin.x + contact.x * profile.unitsPerMm,
+      y: profile.origin.y + contact.y * profile.unitsPerMm })) };
+  const world = partOutlineBounds(part), frame = { left: 120, top: 75, ...viewport };
+  const parent = { left: 25, top: 30 };
+  const center = { x: (world.left + world.right) / 2, y: (world.top + world.bottom) / 2 };
+  const screen = point => ({ x: frame.left + viewport.width / 2 + (point.x - center.x) * zoom * ratio.x,
+    y: frame.top + viewport.height / 2 + (point.y - center.y) * zoom * ratio.y });
+  const nodeFor = (point, radius = 10) => {
+    const position = screen(point);
+    const rect = { left: position.x - radius * ratio.x, top: position.y - radius * ratio.y,
+      right: position.x + radius * ratio.x, bottom: position.y + radius * ratio.y,
+      width: radius * 2 * ratio.x, height: radius * 2 * ratio.y };
+    return { rect, getBoundingClientRect: () => rect };
+  };
+  let controls = leadControlLayout(part, component, zoom).map(control => nodeFor(control.display));
+  const svg = { clientWidth: viewport.width / ratio.x, clientHeight: viewport.height / ratio.y,
+    getBoundingClientRect: () => frame,
+    querySelectorAll(selector) {
+      assert.equal(selector, '.lead-tip-control, .wire-handle', 'Only canvas-local editing controls become obstacles.');
+      return controls;
+    } };
+  const toolbar = { style: {}, parentElement: { getBoundingClientRect: () => parent },
+    getBoundingClientRect: () => ({ width: 310, height: 48 }) };
+  const canvas = { geometry: { parts: new Map([[part.id, { part }]]) }, svg, center, scale: zoom };
+  const selections = [{ type: 'part', id: part.id }];
+  const root = { querySelector: () => null };
+  const position = () => {
+    positionSelectionToolbar({ toolbar, canvas, selections, root });
+    const left = Number.parseFloat(toolbar.style.left) + parent.left;
+    const top = Number.parseFloat(toolbar.style.top) + parent.top;
+    return { left, top, right: left + 310, bottom: top + 48 };
+  };
+  return { canvas, toolbar, root, selections, world, screen, frame, position, nodeFor,
+    get controls() { return controls; }, set controls(value) { controls = value; } };
+}
+
+test('contextual actions avoid displaced lead control bounds at low zoom and independent canvas CSS scales', () => {
+  for (const zoom of [.25, .4]) for (const ratio of [{ x: 1, y: 1 }, { x: 1.5, y: .8 }]) {
+    const view = toolbarScene({ zoom, ratio });
+    const controls = view.controls;
+    view.controls = [];
+    const unprotected = view.position();
+    assert.ok(controls.some(control => overlap(unprotected, control.rect) > 0), 'This pose reproduces toolbar coverage of a displaced handle.');
+    view.controls = controls;
+    const placed = view.position();
+    assert.ok(controls.every(control => overlap(placed, control.rect) === 0), `Every handle remains accessible at zoom ${zoom}.`);
+    assert.deepEqual(selectionToolbarBounds(view.canvas, view.selections), view.world, 'Editing controls must not expand physical selection bounds.');
+  }
+});
+
+test('contextual actions avoid wire handles, ignore hidden or empty controls, and leave a hidden toolbar untouched', () => {
+  const view = toolbarScene();
+  view.controls = [];
+  const original = view.position();
+  const visible = { getBoundingClientRect: () => ({ ...original, width: 310, height: 48 }) };
+  view.controls = [visible];
+  const displaced = view.position();
+  assert.equal(overlap(displaced, original), 0, 'A wire handle screen rectangle is an obstacle even beyond selection bounds.');
+  view.controls = [{ ...visible, hidden: true }, { getBoundingClientRect: () => ({ left: 0, top: 0, right: 0, bottom: 0, width: 0, height: 0 }) }];
+  assert.deepEqual(view.position(), original);
+  view.toolbar.hidden = true;
+  view.toolbar.style.left = 'unchanged';
+  view.toolbar.style.top = 'unchanged';
+  positionSelectionToolbar(view);
+  assert.deepEqual(view.toolbar.style, { left: 'unchanged', top: 'unchanged' });
+});
+
+test('handle avoidance preserves toolbar viewport clamping when the selection is near an edge', () => {
+  for (const zoom of [.25, .4]) {
+    const view = toolbarScene({ zoom, viewport: { width: 390, height: 300 } });
+    view.canvas.center.y += 180 / zoom;
+    const top = view.frame.top + 6;
+    view.controls = [{ getBoundingClientRect: () => ({ left: view.frame.left + 165, top, right: view.frame.left + 185,
+      bottom: top + 20, width: 20, height: 20 }) }];
+    const placed = view.position();
+    assert.ok(placed.left >= view.frame.left + 8 && placed.right <= view.frame.left + view.frame.width - 8);
+    assert.ok(placed.top >= view.frame.top + 8 && placed.bottom <= view.frame.top + view.frame.height - 8);
+    assert.equal(overlap(placed, view.controls[0].getBoundingClientRect()), 0);
+  }
 });

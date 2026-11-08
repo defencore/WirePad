@@ -53,6 +53,7 @@ export function selectionToolbarPosition(bounds, size, viewport, obstacles = [])
 }
 
 export function positionSelectionToolbar({ toolbar, canvas, selections, root }) {
+  if (toolbar.hidden) return;
   const world = selectionToolbarBounds(canvas, selections), svg = canvas.svg;
   if (!world || !svg.clientWidth || !svg.clientHeight) return;
   const frame = svg.getBoundingClientRect(), parent = toolbar.parentElement.getBoundingClientRect();
@@ -62,8 +63,9 @@ export function positionSelectionToolbar({ toolbar, canvas, selections, root }) 
   const bounds = { left: project(world.left, 'x'), right: project(world.right, 'x'),
     top: project(world.top, 'y'), bottom: project(world.bottom, 'y') };
   const captions = selections.filter(item => item.type === 'part').map(item => canvas.parts?.entries.get(item.id)?.caption);
+  const controls = svg.querySelectorAll('.lead-tip-control, .wire-handle');
   const obstacles = [...['.panel-controls', '.canvas-tools', '.canvas-guide', '.zoom', '.workspace-warning']
-    .map(selector => root.querySelector(selector)), ...captions]
+    .map(selector => root.querySelector(selector)), ...captions, ...controls]
     .filter(node => node && !node.hidden).map(node => node.getBoundingClientRect())
     .filter(rect => rect.width > 0 && rect.height > 0)
     .map(rect => ({ left: rect.left - frame.left, top: rect.top - frame.top, right: rect.right - frame.left, bottom: rect.bottom - frame.top }));
