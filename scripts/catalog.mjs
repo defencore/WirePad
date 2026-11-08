@@ -7,6 +7,7 @@ import { validateComponent } from '../src/catalog/registry.js';
 import { footprintLayout } from '../src/assets/footprint-layout.js';
 import { terminalNumber } from '../src/model/component-pins.js';
 import { syncCatalogTree } from './catalog-tree.mjs';
+import { syncBreadboardAudit } from './breadboard-audit.mjs';
 
 const padShapes = new Set(['circle', 'oval', 'rect', 'roundrect']);
 
@@ -75,11 +76,12 @@ export function validateCatalog() {
 
 async function main(args) {
   if (args.includes('--help')) {
-    console.log('Usage: node scripts/catalog.mjs [--json]\nValidate every registered component, both SVG label modes and its pin-to-footprint map. Refresh docs/COMPONENTS.md; --json checks its freshness without writing.');
+    console.log('Usage: node scripts/catalog.mjs [--json]\nValidate every registered component, both SVG label modes, its pin-to-footprint map and individual breadboard audit coverage. Refresh generated component and audit documentation; --json checks freshness without writing.');
     return;
   }
   if (args.some(arg => arg !== '--json')) throw new Error('Usage: node scripts/catalog.mjs [--json]');
   const report = validateCatalog();
+  await syncBreadboardAudit({ check: args.includes('--json') });
   await syncCatalogTree({ check: args.includes('--json') });
   console.log(args.includes('--json') ? JSON.stringify(report, null, 2) :
     `Catalog valid: ${report.families} families, ${report.components} components, ${report.contacts} contacts, ${report.pads} physical pads, ${report.artworks} SVG views.`);

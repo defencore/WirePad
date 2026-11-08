@@ -78,7 +78,7 @@ function labelAt(pin, text, side, body, pitch, fontSize, shift, rotation) {
 }
 
 // Labels use the same canonical contact centers as the metal artwork. They
-// stay inside PCB material, so they never enlarge the body or consume a socket.
+// stay inside physical material, so they never enlarge the body or consume a socket.
 export function contactLabelLayout(component, profile, rotation = 0) {
   const regions = profile.bodyRegions ?? (profile.body ? [profile.body] : []);
   const materials = [...regions].sort((a, b) => b.width * b.height - a.width * a.height);

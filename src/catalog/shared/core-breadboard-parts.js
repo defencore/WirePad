@@ -3,6 +3,18 @@ import { bendableBreadboardPart, rigidBreadboardPart } from './breadboard-parts.
 // These generic catalog parts have representative, explicitly sourced bodies.
 // Their formed tips describe an assembly choice, not an exact native footprint.
 const specifications = {
+  inductor: {
+    kind: 'inductor', dimensions: [7.11, 2.79], tips: [[-5.08, 0], [5.08, 0]], exits: [[-3.555, 0], [3.555, 0]],
+    leadDiameter: .51, maxLeadMm: 20, color: '#476457',
+    source: { label: 'Bourns 78F axial RF choke mechanical example, product dimensions', url: 'https://www.bourns.com/docs/product-datasheets/78f_series.pdf' },
+    note: 'Representative Bourns 78F-style axial choke, not identification of the unspecified generic inductor. The fixed 7.11 × 2.79 mm envelope uses the manufacturer maximum body dimensions and 0.51 mm round leads. Form only the leads to the initial 10.16 mm span; at least 25.4 mm of untrimmed lead is supplied on either side. The 20 mm projected reach leaves insertion allowance. Bands are representative and do not specify inductance. Default artwork and native geometry are unchanged.',
+  },
+  'ferrite-bead': {
+    kind: 'ferrite', dimensions: [5.3, 3.75], tips: [[-5.08, 0], [5.08, 0]], exits: [[-2.65, 0], [2.65, 0]],
+    leadDiameter: .65, maxLeadMm: 15, color: '#303a42',
+    source: { label: 'Murata BL01RN1A1D2B manufacturer reference specification JENF243G-0003E-01, page 3 (distributor-hosted original)', url: 'https://media.digikey.com/pdf/Data%20Sheets/Murata%20PDFs/BL01RN1A_Spec.pdf' },
+    note: 'Representative straight-leaded Murata BL01RN1A1D2B mechanical example; it does not identify every generic ferrite bead. The fixed 5.3 × 3.75 mm envelope uses maximum source dimensions, with 0.65 mm round leads. Initial 10.16 mm tip spacing leaves more than the source 1.5 mm coating extension beyond either body exit before bending downward. Limit projected reach to 15 mm from each exit; the source supplies at least 20 mm of straight lead per side. Default artwork and native geometry are unchanged.',
+  },
   resistor: {
     kind: 'resistor', dimensions: [6.5, 2.5], tips: [[-5.08, 0], [5.08, 0]], exits: [[-3.25, 0], [3.25, 0]], leadDiameter: .6,
     source: { label: 'Vishay MRS25 DIN0207 mechanical example, document 28724', url: 'https://www.vishay.com/docs/28724/mrs16m25.pdf' },

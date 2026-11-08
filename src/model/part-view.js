@@ -21,6 +21,9 @@ export function viewPin(view, pinId) {
 
 export function compactBoardView(part, componentId = part.componentId) {
   const profile = mountingFor(componentId);
+  if (profile?.type === 'breadboard-part') {
+    return profile.mode === 'rigid' && Boolean(profile.view) && part.view === profile.view.id;
+  }
   return profile?.type === 'breadboard-module' && (profile.view
     ? part.view === profile.view.id : Boolean(part.scale || part.attachment));
 }

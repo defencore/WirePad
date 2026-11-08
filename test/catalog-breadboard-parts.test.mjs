@@ -9,8 +9,8 @@ const component = id => componentById.get(id);
 const entries = () => components.filter(part => mountingFor(part.id)?.type === 'breadboard-part');
 
 test('regular breadboard parts cover explicitly reviewed DIP packages and formed THT leads', () => {
-  assert.equal(entries().filter(part => mountingFor(part.id).mode === 'rigid').length, 177);
-  assert.equal(entries().filter(part => mountingFor(part.id).mode === 'bendable').length, 41);
+  assert.equal(entries().filter(part => mountingFor(part.id).mode === 'rigid').length, 178);
+  assert.equal(entries().filter(part => mountingFor(part.id).mode === 'bendable').length, 50);
   for (const id of ['resistor', 'diode', 'led', 'capacitor', 'electrolytic', 'market-2n3904ta', 'market-1n4007',
     'pin-header-4', 'ti-ne555p', 'ti-lm358p', 'sn74hc00n', 'cd4001be', 'omron-b3f-1000']) assert.equal(isMountable(id), true, id);
   for (const id of ['button', 'npn', 'nmos', 'jst-ph-2', 'battery', 'market-1n4148w-7-f', 'market-bav99-7-f']) assert.equal(isMountable(id), false, id);
@@ -71,7 +71,7 @@ test('all formed views have finite self-contained metal/body output in either la
 
 test('breadboard-compatible filtering exposes reviewed guests without admitting the host or SMD parts', () => {
   const index = createLibraryIndex(components), filtered = filterLibrary(index, { mountable: true });
-  assert.equal(filtered.length, 1243);
+  assert.equal(filtered.length, 1253);
   assert.equal(filtered.some(entry => entry.component.id === 'breadboard'), false);
   assert.equal(filterLibrary(index, { mountable: true, query: 'resistor' }).some(entry => entry.component.id === 'resistor'), true);
   assert.equal(filterLibrary(index, { mountable: true, query: '1N4148W-7-F' }).length, 0);

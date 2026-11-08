@@ -62,9 +62,10 @@ function validateFootprint(footprint, component, context) {
 function validateMountingView(mounting, component, context) {
   const view = mounting.view;
   if (view === undefined) return null;
-  if (!view || typeof view !== 'object' || Array.isArray(view) || mounting.type !== 'breadboard-module' || view.id !== 'breadboard' ||
+  const rigid = mounting.type === 'breadboard-module' || mounting.type === 'breadboard-part' && mounting.mode === 'rigid';
+  if (!view || typeof view !== 'object' || Array.isArray(view) || !rigid || view.id !== 'breadboard' ||
       !mounting.calibration || !mounting.viewBounds || typeof mounting.renderMounted !== 'function') {
-    throw new Error(`${context} physical view needs a reviewed module, calibration, bounds and renderer.`);
+    throw new Error(`${context} physical view needs a reviewed rigid profile, calibration, bounds and renderer.`);
   }
   requireText(view.note, `${context} physical view evidence`);
   if (!Array.isArray(view.pins) || view.pins.length !== component.pins.length) throw new Error(`${context} physical view must retain every contact.`);

@@ -1,3 +1,4 @@
+import { withRemainingMarketMounting } from '../shared/remaining-market-mounting.js';
 import { defineFamily } from "../registry.js";
 import { marketPackage } from "../shared/market-packages.js";
 import { marketDiscrete } from "../shared/market-discretes.js";
@@ -1232,4 +1233,4 @@ const parts = [
   }
 ];
 
-export default defineFamily("market-opto", parts.map(({ builder, ...spec }) => builder === "marketPackage" ? marketPackage(spec, { breadboard: spec.kind === 'dip' }) : marketDiscrete(spec, { breadboard: ['led3', 'led5'].includes(spec.shape) })));
+export default defineFamily("market-opto", parts.map(({ builder, ...spec }) => withRemainingMarketMounting(builder === "marketPackage" ? marketPackage(spec, { breadboard: spec.kind === 'dip' }) : marketDiscrete(spec, { breadboard: ['led3', 'led5'].includes(spec.shape) }))));

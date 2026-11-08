@@ -19,6 +19,7 @@ export function bendableBreadboardPart(component, specification) {
   const contacts = tips.map(([x, y], index) => ({ pinId: component.pins[index].id, x, y }));
   const color = specification.color ?? '#c98b4b';
   function drawBody(labels) {
+    if (specification.renderBody) return specification.renderBody({ component, origin, body, labels });
     const cx = origin.x, cy = origin.y, { x, y, width: w, height: h } = body;
     if (kind === 'resistor' || kind === 'inductor' || kind === 'ferrite') {
       return rect(x, y, w, h, Math.min(h / 2, 6), color, '#795c3c') +
@@ -52,9 +53,10 @@ export function bendableBreadboardPart(component, specification) {
         const tip = tipsById.get(root.pinId);
         if (!tip) throw new Error(`Missing formed lead ${component.id}/${root.pinId}.`);
         const pin = component.pins.find(pin => pin.id === root.pinId);
+        const [labelX, labelY] = specification.labelOffsets?.[root.pinId] ?? [3.5, -3.5];
         return `<g data-contact="${root.pinId}">` + line(root.x, root.y, tip.x, tip.y, metal, specification.leadDiameter ? specification.leadDiameter * UNITS : 3.2) +
           line(root.x, root.y - .5, tip.x, tip.y - .5, '#e2e8e5', .7) + circle(tip.x, tip.y, 1.7, '#b6c1bd') +
-          (labels ? label(tip.x + 3.5, tip.y - 3.5, pin.label, 6, '#314a43', 'start') : '') + '</g>';
+          (labels ? label(tip.x + labelX, tip.y + labelY, pin.label, 6, '#314a43', 'start') : '') + '</g>';
       }).join('');
       return leads + drawBody(labels);
     },

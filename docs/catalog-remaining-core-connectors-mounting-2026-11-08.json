@@ -1,0 +1,994 @@
+{
+  "schemaVersion": 1,
+  "checked": "2026-11-08",
+  "baselineRevision": "c215cbcc4a9e53af1521a9e4a50a0f17571b4503",
+  "scope": "All 48 previously unaudited core-basics and SP/XT connector entries. Source-specific decisions are independent of KiCad carrier marks. Generic axial examples are explicitly representative, like the existing generic resistor/LED examples.",
+  "summary": {
+    "checked": 48,
+    "enabled": 2,
+    "statuses": {
+      "enabled-representative": 2,
+      "pending-exact-variant": 4,
+      "pending-physical-contact-identities": 1,
+      "non-254-pitch": 1,
+      "off-board-cable": 38,
+      "non-grid-pcb-power-connector": 2
+    }
+  },
+  "reviewedSourceArtifacts": [
+    {
+      "file": "bourns-78f.pdf",
+      "url": "https://www.bourns.com/docs/product-datasheets/78f_series.pdf",
+      "sha256": "f68f21e55a13c8e07f2cee8749b66fc6c36d8cda24ddc890a5639264eaef4328",
+      "review": "Page 1 product drawing and same-side photograph: 7.11 mm maximum body length, 2.79 mm maximum diameter, 0.51 mm round leads, 25.40 mm minimum per side."
+    },
+    {
+      "file": "murata-bl01.pdf",
+      "url": "https://media.digikey.com/pdf/Data%20Sheets/Murata%20PDFs/BL01RN1A_Spec.pdf",
+      "bytes": 123171,
+      "sha256": "0d0eb102d10e2ce09e9ba7b1bec1cc98cdaa896c6fad8ee842dd478b1b9674ad",
+      "pdf": true
+    },
+    {
+      "file": "amass-2026.pdf",
+      "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf",
+      "bytes": 5212959,
+      "sha256": "763e2058896f87fb8839ebfa82917bb04ab7421d2a320190fbaf9aef66ab8699",
+      "pdf": true
+    },
+    {
+      "file": "weipu-plug.pdf",
+      "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf",
+      "bytes": 657442,
+      "sha256": "e7411a4469fc6b930c9631f8c68babc67e0c47a03cf4c278d4efd0a5b9a4f8d2",
+      "pdf": true
+    },
+    {
+      "file": "weipu-panel.pdf",
+      "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf",
+      "bytes": 718316,
+      "sha256": "83f718a0f761c4e87a81045871c123aae84ae7c8419ef5a8a797fe79e45323ca",
+      "pdf": true
+    }
+  ],
+  "entries": [
+    {
+      "id": "inductor",
+      "family": "core-basics",
+      "name": "Axial Inductor",
+      "status": "enabled-representative",
+      "reason": "Representative Bourns 78F-style axial choke, not identification of the unspecified generic inductor. The fixed 7.11 × 2.79 mm envelope uses the manufacturer maximum body dimensions and 0.51 mm round leads. Form only the leads to the initial 10.16 mm span; at least 25.4 mm of untrimmed lead is supplied on either side. The 20 mm projected reach leaves insertion allowance. Bands are representative and do not specify inductance. Default artwork and native geometry are unchanged.",
+      "evidence": [
+        {
+          "label": "Bourns 78F axial RF choke mechanical example, product dimensions",
+          "url": "https://www.bourns.com/docs/product-datasheets/78f_series.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "source": {
+        "label": "Bourns 78F axial RF choke mechanical example, product dimensions",
+        "url": "https://www.bourns.com/docs/product-datasheets/78f_series.pdf"
+      },
+      "contacts": [
+        {
+          "pinId": "1",
+          "x": -5.08,
+          "y": 0
+        },
+        {
+          "pinId": "2",
+          "x": 5.08,
+          "y": 0
+        }
+      ],
+      "bodyDimensionsMm": [
+        7.11,
+        2.79
+      ],
+      "leadDiameterMm": 0.51,
+      "maxProjectedLeadReachMm": 20,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "ferrite-bead",
+      "family": "core-basics",
+      "name": "Ferrite Bead",
+      "status": "enabled-representative",
+      "reason": "Representative straight-leaded Murata BL01RN1A1D2B mechanical example; it does not identify every generic ferrite bead. The fixed 5.3 × 3.75 mm envelope uses maximum source dimensions, with 0.65 mm round leads. Initial 10.16 mm tip spacing leaves more than the source 1.5 mm coating extension beyond either body exit before bending downward. Limit projected reach to 15 mm from each exit; the source supplies at least 20 mm of straight lead per side. Default artwork and native geometry are unchanged.",
+      "evidence": [
+        {
+          "label": "Murata BL01RN1A1D2B manufacturer reference specification JENF243G-0003E-01, page 3 (distributor-hosted original)",
+          "url": "https://media.digikey.com/pdf/Data%20Sheets/Murata%20PDFs/BL01RN1A_Spec.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "source": {
+        "label": "Murata BL01RN1A1D2B manufacturer reference specification JENF243G-0003E-01, page 3 (distributor-hosted original)",
+        "url": "https://media.digikey.com/pdf/Data%20Sheets/Murata%20PDFs/BL01RN1A_Spec.pdf"
+      },
+      "contacts": [
+        {
+          "pinId": "1",
+          "x": -5.08,
+          "y": 0
+        },
+        {
+          "pinId": "2",
+          "x": 5.08,
+          "y": 0
+        }
+      ],
+      "bodyDimensionsMm": [
+        5.3,
+        3.75
+      ],
+      "leadDiameterMm": 0.65,
+      "maxProjectedLeadReachMm": 15,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "npn",
+      "family": "core-basics",
+      "name": "NPN Transistor",
+      "status": "pending-exact-variant",
+      "reason": "The generic NPN symbol does not identify a transistor ordering code or a unique B/C/E lead order. Its TO-92 reference carrier is not evidence for one physical variant. Choose a source-identified named transistor; do not reinterpret saved electrical IDs as a guessed package order.",
+      "evidence": [],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "nmos",
+      "family": "core-basics",
+      "name": "N-Channel MOSFET",
+      "status": "pending-exact-variant",
+      "reason": "The generic MOSFET does not identify an ordering code or a unique G/D/S TO-92 lead sequence. Preserve the saved logical terminals and native representative carrier; a matching source-identified device is required before defining physical lead roots.",
+      "evidence": [],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "button",
+      "family": "core-basics",
+      "name": "Tactile Push Button",
+      "status": "pending-physical-contact-identities",
+      "reason": "The existing generic switch has only two electrical contact IDs while its approximate 6×6 mm native drawing represents a four-tail tactile package. Automatic insertion cannot silently invent the missing two physical tails. Use the separately reviewed four-ID Omron B3F-1000, or add an explicit saved-project migration for a different exact variant.",
+      "evidence": [],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "terminal-2",
+      "family": "core-basics",
+      "name": "2-pin Screw Terminal",
+      "status": "pending-exact-variant",
+      "reason": "A 5.08 mm nominal pitch is a possible breadboard lattice, but this unspecified two-position screw terminal has no matching part number, source post cross-section, available insertion length or component-side/solder-side mechanical map. A generic carrier drill is not proof that the actual terminal pins fit a solderless socket.",
+      "evidence": [],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "terminal-3",
+      "family": "core-basics",
+      "name": "3-pin Screw Terminal",
+      "status": "pending-exact-variant",
+      "reason": "The unspecified three-position terminal has a nominal 5.08 mm reference carrier, not a source-identified installed post pattern. Exact post width/thickness, length and complete housing orientation remain unresolved. It is a potential 5.08 mm candidate rather than categorically incompatible.",
+      "evidence": [],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "jst-ph-2",
+      "family": "core-basics",
+      "name": "JST PH 2-pin",
+      "status": "non-254-pitch",
+      "reason": "The exact JST B2B-PH-K-S vertical wire-to-board header uses 2.0 mm pitch. The manufacturer PH drawing confirms its PCB tails and mating socket; neither can be rescaled to 2.54 mm. The existing polarity-neutral stable contacts remain wireable.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer part/package reference",
+          "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "battery",
+      "family": "core-basics",
+      "name": "DC Power Source",
+      "status": "off-board-cable",
+      "reason": "This is a generic external DC source or battery connection, not a defined cell holder with rigid insertion posts. The native pads are explicitly a host-board cable termination. Preserve positive/negative wire endpoints without presenting the source body as an insertable package.",
+      "evidence": [],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1310-p2",
+      "family": "sp-xt",
+      "name": "WEIPU SP1310/P2 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1310/P2 Cable Plug is the 2-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1312-s2",
+      "family": "sp-xt",
+      "name": "WEIPU SP1312/S2 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1312/S2 Panel Socket is the 2-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1310-p3",
+      "family": "sp-xt",
+      "name": "WEIPU SP1310/P3 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1310/P3 Cable Plug is the 3-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1312-s3",
+      "family": "sp-xt",
+      "name": "WEIPU SP1312/S3 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1312/S3 Panel Socket is the 3-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1310-p4",
+      "family": "sp-xt",
+      "name": "WEIPU SP1310/P4 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1310/P4 Cable Plug is the 4-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 4,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1312-s4",
+      "family": "sp-xt",
+      "name": "WEIPU SP1312/S4 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1312/S4 Panel Socket is the 4-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 4,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1310-p5",
+      "family": "sp-xt",
+      "name": "WEIPU SP1310/P5 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1310/P5 Cable Plug is the 5-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 5,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1312-s5",
+      "family": "sp-xt",
+      "name": "WEIPU SP1312/S5 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1312/S5 Panel Socket is the 5-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 5,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1310-p7",
+      "family": "sp-xt",
+      "name": "WEIPU SP1310/P7 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1310/P7 Cable Plug is the 7-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 7,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1312-s7",
+      "family": "sp-xt",
+      "name": "WEIPU SP1312/S7 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1312/S7 Panel Socket is the 7-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp13/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 7,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1710-p2",
+      "family": "sp-xt",
+      "name": "WEIPU SP1710/P2 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1710/P2 Cable Plug is the 2-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1712-s2",
+      "family": "sp-xt",
+      "name": "WEIPU SP1712/S2 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1712/S2 Panel Socket is the 2-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1710-p3",
+      "family": "sp-xt",
+      "name": "WEIPU SP1710/P3 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1710/P3 Cable Plug is the 3-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1712-s3",
+      "family": "sp-xt",
+      "name": "WEIPU SP1712/S3 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1712/S3 Panel Socket is the 3-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1710-p4",
+      "family": "sp-xt",
+      "name": "WEIPU SP1710/P4 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1710/P4 Cable Plug is the 4-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 4,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1712-s4",
+      "family": "sp-xt",
+      "name": "WEIPU SP1712/S4 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1712/S4 Panel Socket is the 4-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 4,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1710-p5",
+      "family": "sp-xt",
+      "name": "WEIPU SP1710/P5 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1710/P5 Cable Plug is the 5-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 5,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1712-s5",
+      "family": "sp-xt",
+      "name": "WEIPU SP1712/S5 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1712/S5 Panel Socket is the 5-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 5,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1710-p7",
+      "family": "sp-xt",
+      "name": "WEIPU SP1710/P7 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1710/P7 Cable Plug is the 7-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 7,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp1712-s7",
+      "family": "sp-xt",
+      "name": "WEIPU SP1712/S7 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP1712/S7 Panel Socket is the 7-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp17/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 7,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2110-p2",
+      "family": "sp-xt",
+      "name": "WEIPU SP2110/P2 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2110/P2 Cable Plug is the 2-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2112-s2",
+      "family": "sp-xt",
+      "name": "WEIPU SP2112/S2 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2112/S2 Panel Socket is the 2-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2110-p3",
+      "family": "sp-xt",
+      "name": "WEIPU SP2110/P3 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2110/P3 Cable Plug is the 3-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2112-s3",
+      "family": "sp-xt",
+      "name": "WEIPU SP2112/S3 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2112/S3 Panel Socket is the 3-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 3,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2110-p4",
+      "family": "sp-xt",
+      "name": "WEIPU SP2110/P4 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2110/P4 Cable Plug is the 4-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 4,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2112-s4",
+      "family": "sp-xt",
+      "name": "WEIPU SP2112/S4 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2112/S4 Panel Socket is the 4-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 4,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2110-p5",
+      "family": "sp-xt",
+      "name": "WEIPU SP2110/P5 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2110/P5 Cable Plug is the 5-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 5,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2112-s5",
+      "family": "sp-xt",
+      "name": "WEIPU SP2112/S5 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2112/S5 Panel Socket is the 5-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 5,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2110-p7",
+      "family": "sp-xt",
+      "name": "WEIPU SP2110/P7 Cable Plug",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2110/P7 Cable Plug is the 7-contact straight cable plug with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a cable backshell. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY cable-plug solder assembly, A/0 08.2023",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP-SY-Cable-Plug-Assembling-Instruction-Solder.pdf"
+        }
+      ],
+      "publishedPinCount": 7,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "weipu-sp2112-s7",
+      "family": "sp-xt",
+      "name": "WEIPU SP2112/S7 Panel Socket",
+      "status": "off-board-cable",
+      "reason": "WEIPU SP2112/S7 Panel Socket is the 7-contact rear-nut panel receptacle with solder wire terminations. The manufacturer assembly instruction explicitly requires soldered insulated wires and a panel cutout. Its circular mating contacts are not downward breadboard posts. The linear 5.08/7.62 mm native carrier is an off-board wire reference, not this connector's pin geometry.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact connector family and arrangements",
+          "url": "https://www.weipuconnector.com/products/sp21-ip68/"
+        },
+        {
+          "label": "Manufacturer SP/SY rear-nut socket solder assembly, A/0 09.2025",
+          "url": "https://www.weipuconnector.com/wp-content/uploads/2023/07/SP%E3%80%81SYxx12-Rear-nut-Socket-Assembing-Instruction-Solder-202509.pdf"
+        }
+      ],
+      "publishedPinCount": 7,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt30u-f",
+      "family": "sp-xt",
+      "name": "AMASS XT30U-F Female",
+      "status": "off-board-cable",
+      "reason": "AMASS XT30U-F Female is a 2-pin solder-cup power connector with wire solder cups. The manufacturer catalog classifies this exact variant as a cable connector; the mating bullets are not PCB insertion tails. Its native inline 5.08/7.62/10.16 mm pads describe an off-board host-wire termination, not physical posts. Retain both polarity endpoints for cables.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact variant source",
+          "url": "https://www.china-amass.com/public/upload/20240608/810c62b3f7ace2287989748538eb2a6b.pdf"
+        },
+        {
+          "label": "Manufacturer 2026 catalog: cable variants, separate PCB assemblies",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt30u-m",
+      "family": "sp-xt",
+      "name": "AMASS XT30U-M Male",
+      "status": "off-board-cable",
+      "reason": "AMASS XT30U-M Male is a 2-pin solder-cup power connector with wire solder cups. The manufacturer catalog classifies this exact variant as a cable connector; the mating bullets are not PCB insertion tails. Its native inline 5.08/7.62/10.16 mm pads describe an off-board host-wire termination, not physical posts. Retain both polarity endpoints for cables.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact variant source",
+          "url": "https://www.china-amass.com/public/upload/20240608/810c62b3f7ace2287989748538eb2a6b.pdf"
+        },
+        {
+          "label": "Manufacturer 2026 catalog: cable variants, separate PCB assemblies",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt60h-f",
+      "family": "sp-xt",
+      "name": "AMASS XT60H-F Female",
+      "status": "off-board-cable",
+      "reason": "AMASS XT60H-F Female is a 2-pin solder-cup power connector with wire solder cups. The manufacturer catalog classifies this exact variant as a cable connector; the mating bullets are not PCB insertion tails. Its native inline 5.08/7.62/10.16 mm pads describe an off-board host-wire termination, not physical posts. Retain both polarity endpoints for cables.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact variant source",
+          "url": "https://www.china-amass.com/public/upload/20240608/d64f202d7bbc62ab5ced2c87cd917d2e.pdf"
+        },
+        {
+          "label": "Manufacturer 2026 catalog: cable variants, separate PCB assemblies",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt60h-m",
+      "family": "sp-xt",
+      "name": "AMASS XT60H-M Male",
+      "status": "off-board-cable",
+      "reason": "AMASS XT60H-M Male is a 2-pin solder-cup power connector with wire solder cups. The manufacturer catalog classifies this exact variant as a cable connector; the mating bullets are not PCB insertion tails. Its native inline 5.08/7.62/10.16 mm pads describe an off-board host-wire termination, not physical posts. Retain both polarity endpoints for cables.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact variant source",
+          "url": "https://www.china-amass.com/public/upload/20240608/d64f202d7bbc62ab5ced2c87cd917d2e.pdf"
+        },
+        {
+          "label": "Manufacturer 2026 catalog: cable variants, separate PCB assemblies",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt60pb-f",
+      "family": "sp-xt",
+      "name": "AMASS XT60PB-F Female",
+      "status": "non-grid-pcb-power-connector",
+      "reason": "AMASS XT60PB-F Female is an actual vertical PCB power connector, distinguished from the cable variants. The manufacturer catalog specifies the dedicated PCB assembly and 3.0 mm weld legs. The retained source-coordinate contact reference records 7.20 mm terminal separation and 4.60 mm finished PCB holes, rather than 0.1-inch square posts. That pattern is not a multiple of 2.54 mm; the 7.62 mm wire carriers of other XT parts must not be substituted. No direct solderless insertion is enabled.",
+      "evidence": [
+        {
+          "label": "Manufacturer 2026 catalog, printed page 17: XT60PB-M/F dedicated PCB version",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=17"
+        },
+        {
+          "label": "Existing scoped source-coordinate terminal assessment; copper geometry remains unchanged",
+          "url": "https://github.com/defencore/WirePad/blob/main/docs/catalog-kicad-accuracy.json"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt60pb-m",
+      "family": "sp-xt",
+      "name": "AMASS XT60PB-M Male",
+      "status": "non-grid-pcb-power-connector",
+      "reason": "AMASS XT60PB-M Male is an actual vertical PCB power connector, distinguished from the cable variants. The manufacturer catalog specifies the dedicated PCB assembly and 3.0 mm weld legs. The retained source-coordinate contact reference records 7.20 mm terminal separation and 4.60 mm finished PCB holes, rather than 0.1-inch square posts. That pattern is not a multiple of 2.54 mm; the 7.62 mm wire carriers of other XT parts must not be substituted. No direct solderless insertion is enabled.",
+      "evidence": [
+        {
+          "label": "Manufacturer 2026 catalog, printed page 17: XT60PB-M/F dedicated PCB version",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=17"
+        },
+        {
+          "label": "Existing scoped source-coordinate terminal assessment; copper geometry remains unchanged",
+          "url": "https://github.com/defencore/WirePad/blob/main/docs/catalog-kicad-accuracy.json"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt90h-f",
+      "family": "sp-xt",
+      "name": "AMASS XT90H-F Female",
+      "status": "off-board-cable",
+      "reason": "AMASS XT90H-F Female is a 2-pin solder-cup power connector with wire solder cups. The manufacturer catalog classifies this exact variant as a cable connector; the mating bullets are not PCB insertion tails. Its native inline 5.08/7.62/10.16 mm pads describe an off-board host-wire termination, not physical posts. Retain both polarity endpoints for cables.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact variant source",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=23"
+        },
+        {
+          "label": "Manufacturer 2026 catalog: cable variants, separate PCB assemblies",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt90h-m",
+      "family": "sp-xt",
+      "name": "AMASS XT90H-M Male",
+      "status": "off-board-cable",
+      "reason": "AMASS XT90H-M Male is a 2-pin solder-cup power connector with wire solder cups. The manufacturer catalog classifies this exact variant as a cable connector; the mating bullets are not PCB insertion tails. Its native inline 5.08/7.62/10.16 mm pads describe an off-board host-wire termination, not physical posts. Retain both polarity endpoints for cables.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact variant source",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=23"
+        },
+        {
+          "label": "Manufacturer 2026 catalog: cable variants, separate PCB assemblies",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    },
+    {
+      "id": "amass-xt90s-f",
+      "family": "sp-xt",
+      "name": "AMASS XT90S-F Female",
+      "status": "off-board-cable",
+      "reason": "AMASS XT90S-F Female is a 2-pin anti-spark cable connector with wire solder cups. The manufacturer catalog classifies this exact variant as a cable connector; its anti-spark contact does not turn it into a PCB header. Its native inline 5.08/7.62/10.16 mm pads describe an off-board host-wire termination, not physical posts. Retain both polarity endpoints for cables.",
+      "evidence": [
+        {
+          "label": "Manufacturer exact variant source",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf#page=23"
+        },
+        {
+          "label": "Manufacturer 2026 catalog: cable variants, separate PCB assemblies",
+          "url": "https://www.china-amass.com/public/upload/20260207/7fa24f5a6f35ec66c7a115c07a34ab06.pdf"
+        }
+      ],
+      "publishedPinCount": 2,
+      "defaultGeometryPreserved": true,
+      "nativeAccuracyChanged": false
+    }
+  ]
+}

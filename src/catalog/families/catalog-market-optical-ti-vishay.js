@@ -1,3 +1,4 @@
+import { withRemainingMarketMounting } from '../shared/remaining-market-mounting.js';
 import { defineFamily } from "../registry.js";
 import { marketSensorPackage } from "../shared/market-sensor-packages.js";
 import { circle, label, line, rect } from "../shared/svg.js";
@@ -741,4 +742,4 @@ const specifications = [
   }
 ];
 
-export default defineFamily("market-optical-ti-vishay", specifications.map(opticalPackage));
+export default defineFamily("market-optical-ti-vishay", specifications.map(spec => withRemainingMarketMounting(opticalPackage(spec))));

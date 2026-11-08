@@ -27,11 +27,11 @@ Explicit per-component assessments and their evidence are maintained in [catalog
 
 | Mark | Meaning | Components |
 | --- | --- | ---: |
-| BB:+ | Reviewed direct insertion profile; fit checks every declared lead, physical pitch and electrical strip. | 1243 |
+| BB:+ | Reviewed direct insertion profile; fit checks every declared lead, physical pitch and electrical strip. | 1253 |
 | BB:H | Configurable breadboard host. | 1 |
-| BB:- | No reviewed direct insertion profile. | 759 |
+| BB:- | No reviewed direct insertion profile. | 749 |
 
-Breadboard marks come only from explicit catalog mounting descriptors. A 2.54 mm product tag, a reference footprint or matching visual overlap does not create a profile. `BB:-` does not mean that the part has no 2.54 mm contacts: it can require a different header population, an adapter, or further source review. Insertion marks do not upgrade KiCad accuracy. See [BREADBOARD_MOUNTING.md](BREADBOARD_MOUNTING.md) and its per-component source audits.
+Breadboard marks come only from explicit catalog mounting descriptors. A 2.54 mm product tag, a reference footprint or matching visual overlap does not create a profile. `BB:-` does not mean that the part has no 2.54 mm contacts: it can require a different header population, an adapter, or further source review. Insertion marks do not upgrade KiCad accuracy. See [BREADBOARD_MOUNTING.md](BREADBOARD_MOUNTING.md), the [complete audit coverage](BREADBOARD_AUDIT.md) and its per-component source decisions.
 
 ## Tree
 
@@ -231,7 +231,7 @@ WirePad (2003)
 │   │       └── TDK MEM2012F75R0T001 Pi Filter [tdk-mem2012f75r0t001] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   └── Unspecified (1)
 │       └── core-basics (1)
-│           └── Ferrite Bead [ferrite-bead] [FP:R] [3D:A] [CAD:-] [BB:-]
+│           └── Ferrite Bead [ferrite-bead] [FP:R] [3D:A] [CAD:-] [BB:+]
 ├── Flight Controllers (3)
 │   ├── MATEKSYS (1)
 │   │   └── flight-controllers (1)
@@ -1327,7 +1327,7 @@ WirePad (2003)
 │   │       └── Bourns 3296W-1-103LF 10 kΩ Trimmer [bourns-3296w-1-103lf] [FP:R] [3D:A] [CAD:+] [BB:-]
 │   └── Unspecified (4)
 │       └── core-basics (4)
-│           ├── Axial Inductor [inductor] [FP:R] [3D:A] [CAD:-] [BB:-]
+│           ├── Axial Inductor [inductor] [FP:R] [3D:A] [CAD:-] [BB:+]
 │           ├── Axial Resistor [resistor] [FP:R] [3D:A] [CAD:-] [BB:+]
 │           ├── Ceramic Capacitor [capacitor] [FP:R] [3D:A] [CAD:-] [BB:+]
 │           └── Electrolytic Capacitor [electrolytic] [FP:R] [3D:A] [CAD:-] [BB:+]
@@ -1541,7 +1541,7 @@ WirePad (2003)
 │   │       └── IRLZ44N N-channel MOSFET [irlz44n] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   ├── InterFET (1)
 │   │   └── market-transistors (1)
-│   │       └── InterFET J175 [market-j175] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │       └── InterFET J175 [market-j175] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   ├── Lite-On (1)
 │   │   └── market-opto (1)
 │   │       └── Lite-On LTV-817 [market-ltv-817] [FP:R] [3D:A] [CAD:-] [BB:+]
@@ -1886,7 +1886,7 @@ WirePad (2003)
 │   │   │   ├── Vishay SS34-E3/57T [market-ss34-e3-57t] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │   │   └── Vishay W10G-E4/51 [market-w10g-e4-51] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │   └── market-opto (4)
-│   │       ├── Vishay BPW34 [market-bpw34] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │       ├── Vishay BPW34 [market-bpw34] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │       ├── Vishay TEPT4400 [market-tept4400] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │       ├── Vishay TLCR5800 [market-tlcr5800] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │       └── Vishay TSAL6200 [market-tsal6200] [FP:R] [3D:A] [CAD:-] [BB:+]
@@ -1895,7 +1895,7 @@ WirePad (2003)
 │   │       └── CH340G USB UART bridge [ch340g-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   └── WeEn Semiconductors (1)
 │       └── market-opto (1)
-│           └── WeEn Semiconductors BT169D,116 [market-bt169d-116] [FP:R] [3D:A] [CAD:-] [BB:-]
+│           └── WeEn Semiconductors BT169D,116 [market-bt169d-116] [FP:R] [3D:A] [CAD:-] [BB:+]
 ├── Sensors (340)
 │   ├── Adafruit (104)
 │   │   ├── adafruit-ready (1)
@@ -2024,10 +2024,10 @@ WirePad (2003)
 │   │       ├── ADXL345BCCZ-RL7 Digital3-axis accelerometer [adxl345bccz-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │       ├── ADXL362BCCZ-RL7 Micropower3-axis accelerometer [adxl362bccz-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │       ├── ADXL372BCCZ-RL7 High-gshock accelerometer [adxl372bccz-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
-│   │       ├── DS18B20+ 1-Wire digital thermometer [ds18b20-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │       ├── DS18B20+ 1-Wire digital thermometer [ds18b20-ic] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │       ├── MAX31855KASA+ Thermocouple temperature converter [max31855kasa-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │       ├── MAX6675ISA+ Thermocouple temperature converter [max6675isa-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
-│   │       └── TMP36GT9Z Offset analog temperature sensor [tmp36gt9z-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │       └── TMP36GT9Z Offset analog temperature sensor [tmp36gt9z-ic] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   ├── Bosch Sensortec (5)
 │   │   └── market-sensors (5)
 │   │       ├── BMA400 Motionwake-up accelerometer [bma400-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
@@ -2309,13 +2309,13 @@ WirePad (2003)
 │   │   │   ├── DRV5055A1QDBZR — Ratiometric linear Hall sensor with midpoint output at zero field [ti-drv5055a1qdbzr] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │   │   └── TMAG5273A2QDBVR — Low-power three-axis linear Hall sensor with I2C interface, temperature conversion and angle calculation [ti-tmag5273a2qdbvr] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │   ├── market-optical-ti-vishay (2)
-│   │   │   ├── OPT101P Photodiode with transimpedance amplifier [opt101p-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │   │   ├── OPT101P Photodiode with transimpedance amplifier [opt101p-ic] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │   │   └── OPT3001DNPR Ambient light sensor [opt3001dnpr-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │   └── market-sensors (6)
 │   │       ├── HDC1080DMBR I2C humidity and temperature sensor [hdc1080dmbr] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │       ├── HDC2080DMBR Interrupt humidity and temperature sensor [hdc2080dmbr] [FP:R] [3D:A] [CAD:-] [BB:-]
-│   │       ├── LM335Z/LFT7 Kelvin shunt temperature sensor [lm335z-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
-│   │       ├── LM35DZ/NOPB Analog temperature sensor [lm35dz-ic] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │       ├── LM335Z/LFT7 Kelvin shunt temperature sensor [lm335z-ic] [FP:R] [3D:A] [CAD:-] [BB:+]
+│   │       ├── LM35DZ/NOPB Analog temperature sensor [lm35dz-ic] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   │       ├── TMP102AIDRLR Low-voltage I2C temperature sensor [tmp102aidrlr] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   │       └── TMP117AIDRVR Precision I2C temperature sensor [tmp117aidrvr] [FP:R] [3D:A] [CAD:-] [BB:-]
 │   ├── Vishay Semiconductors (3)

@@ -111,7 +111,7 @@ export function renderComponentTree(families, accuracy) {
     `| BB:H | Configurable breadboard host. | ${hosts} |`,
     `| BB:- | No reviewed direct insertion profile. | ${total - insertable - hosts} |`,
     '',
-    'Breadboard marks come only from explicit catalog mounting descriptors. A 2.54 mm product tag, a reference footprint or matching visual overlap does not create a profile. `BB:-` does not mean that the part has no 2.54 mm contacts: it can require a different header population, an adapter, or further source review. Insertion marks do not upgrade KiCad accuracy. See [BREADBOARD_MOUNTING.md](BREADBOARD_MOUNTING.md) and its per-component source audits.',
+    'Breadboard marks come only from explicit catalog mounting descriptors. A 2.54 mm product tag, a reference footprint or matching visual overlap does not create a profile. `BB:-` does not mean that the part has no 2.54 mm contacts: it can require a different header population, an adapter, or further source review. Insertion marks do not upgrade KiCad accuracy. See [BREADBOARD_MOUNTING.md](BREADBOARD_MOUNTING.md), the [complete audit coverage](BREADBOARD_AUDIT.md) and its per-component source decisions.',
     '',
     '## Tree',
     '',

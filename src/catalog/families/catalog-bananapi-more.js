@@ -1117,7 +1117,7 @@ const boards = [
     "documentation": [
       "https://docs.banana-pi.org/en/BPI-R3/BananaPi_BPI-R3",
       "https://drive.google.com/uc?export=download&id=1ED2z_e01Y0e6LDzMC_vLhCsTHEZTGwcg",
-      "https://drive.google.com/file/d/1BE09wS1ca 5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing"
+      "https://drive.google.com/file/d/1BE09wS1ca5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing"
     ],
     "headers": [
       {
@@ -1442,7 +1442,7 @@ const boards = [
     "description": "All 26 GPIO contacts, four-contact console, default 5 V three-contact PWM fan and switched 12 V/5 V power output. The console includes a fourth 3.3 V contact, visible in the source schematic. Optional unpopulated two-contact USB data headers and two-contact fan footprint are excluded; miniPCIe/M.2/high-speed port sockets are illustrated only. Main GPIO and console pin-one location/orientation were checked against the matching top-side manufacturer DXF.",
     "cad": {
       "label": "BPI R3 v1.1 (2022-08-03) manufacturer DXF mechanical archive",
-      "url": "https://drive.google.com/file/d/1BE09wS1ca 5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing"
+      "url": "https://drive.google.com/file/d/1BE09wS1ca5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing"
     },
     "holes": [
       [

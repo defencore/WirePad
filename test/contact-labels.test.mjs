@@ -4,12 +4,16 @@ import { components, componentArt, componentById, mountingFor } from '../src/cat
 import { contactLabelLayout } from '../src/canvas/contact-labels.js';
 import { partArt } from '../src/canvas/part-art.js';
 import { instancePins } from '../src/model/part-pins.js';
+import { partOutlineLocalBounds } from '../src/geometry/parts.js';
 
 const intersects = (a, b) => a.x < b.x + b.width && b.x < a.x + a.width &&
   a.y < b.y + b.height && b.y < a.y + a.height;
 
-test('every reviewed module header keeps a compact label inside its PCB without covering another label or contact', () => {
-  const modules = components.filter(component => mountingFor(component.id)?.type === 'breadboard-module');
+test('reviewed module and explicit rigid-package headers keep labels inside material without covering another label or contact', () => {
+  const modules = components.filter(component => {
+    const profile = mountingFor(component.id);
+    return profile?.type === 'breadboard-module' || profile?.type === 'breadboard-part' && profile.mode === 'rigid' && profile.view;
+  });
   assert.ok(modules.length >= 596);
   let contacts = 0;
   for (const component of modules) {
@@ -23,7 +27,7 @@ test('every reviewed module header keeps a compact label inside its PCB without 
     }
     for (let index = 0; index < layout.length; index++) {
       const label = layout[index], { bounds } = label;
-      assert.ok(profile.bodyRegions.some(body => bounds.x >= body.x && bounds.y >= body.y &&
+      assert.ok((profile.bodyRegions ?? [profile.body]).some(body => bounds.x >= body.x && bounds.y >= body.y &&
         bounds.x + bounds.width <= body.x + body.width && bounds.y + bounds.height <= body.y + body.height), `${component.id}/${label.pinId}`);
       assert.ok(!layout.slice(index + 1).some(other => intersects(bounds, other.bounds)), `${component.id}/${label.pinId}`);
       assert.ok(!physical.pins.some(pin => pin.x >= bounds.x && pin.x <= bounds.x + bounds.width &&
@@ -64,5 +68,29 @@ test('compact labels preserve raw artwork, respect unlabeled rendering and survi
     assert.equal(partArt(seated, component), art);
     assert.equal(partArt(JSON.parse(JSON.stringify(fitted)), component), art);
     assert.doesNotMatch(partArt(fitted, component, { labels: false }), /class="contact-labels"|data-contact-label=/);
+  }
+});
+
+test('an explicit rigid optical-package view retains all eight captions while raw and scale-only drawings stay unchanged', () => {
+  const component = componentById.get('opt101p-ic'), profile = mountingFor(component.id);
+  assert.equal(profile.type, 'breadboard-part');
+  assert.equal(profile.mode, 'rigid');
+  assert.equal(profile.view.pins.length, 8);
+  const raw = { id: 'optical', componentId: component.id, x: 10, y: 20 };
+  for (const scale of [undefined, { x: .8, y: .8 }]) {
+    const part = { ...raw, ...(scale ? { scale } : {}) };
+    assert.equal(partArt(part, component), componentArt(component));
+    assert.equal(partArt(part, component, { labels: false }), componentArt(component, { labels: false }));
+    assert.deepEqual(partOutlineLocalBounds(part, component), { x: 0, y: 0, width: component.width, height: component.height });
+  }
+  for (const rotation of [0, 90, 180, 270]) {
+    const part = { ...raw, rotation, view: 'breadboard', scale: { x: .8, y: .8 } };
+    const physical = { ...component, pins: instancePins(part, component) };
+    assert.deepEqual(partOutlineLocalBounds(part, component), profile.viewBounds);
+    const captions = contactLabelLayout(physical, profile, rotation);
+    assert.deepEqual(captions.map(caption => caption.pinId).sort(), component.pins.map(pin => pin.id).sort());
+    assert.equal((partArt(part, component).match(/data-contact-label=/g) ?? []).length, 8);
+    assert.doesNotMatch(partArt(part, component, { labels: false }), /data-contact-label=|class="contact-labels"/);
+    assert.equal(profile.renderMounted(physical), profile.renderMounted(component));
   }
 });

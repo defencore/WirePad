@@ -1,0 +1,2100 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-08",
+  "baselineRevision": "c215cbcc4a9e53af1521a9e4a50a0f17571b4503",
+  "scope": "All 40 previously unaudited entries in nine wireless/receiver/controller/tool families. This is a complete per-ID eligibility review; pending statuses explicitly retain unresolved physical assemblies rather than certifying them.",
+  "policy": [
+    "Manufacturer package/contact evidence is independent of reference native carrier geometry. A source URL or 2.54 mm label alone does not opt a part into insertion.",
+    "Genuine SMT, card-edge, cable and dense-header interfaces remain distinct from unresolved installed-post assemblies. A 2.54 mm segment pitch is never reported as itself incompatible.",
+    "All published IDs, pin anchors, default SVGs and native exports remain unchanged. No automatic insertion profile is registered by this audit.",
+    "The manufacturer-supplied SuperD four-pin header, Nordic castellated grid and flight-controller loose headers are explicitly kept as source/assembly candidates."
+  ],
+  "summary": {
+    "checked": 40,
+    "families": 9,
+    "enabled": 0,
+    "pending": 5,
+    "statuses": {
+      "requires-smd-carrier": 23,
+      "cable-connector": 4,
+      "wire-solder-contacts": 1,
+      "pending-complete-header-mechanics": 4,
+      "requires-adapter-as-fitted": 3,
+      "pending-installed-post-assembly": 1,
+      "right-angle-smd-headers": 1,
+      "card-edge-interface": 3
+    }
+  },
+  "entries": [
+    {
+      "id": "rfm95w",
+      "family": "semtech-radios",
+      "name": "RFM95W LoRa Module",
+      "manufacturer": "HopeRF",
+      "status": "requires-smd-carrier",
+      "revision": "RFM95W/96W/98W V2.0",
+      "package": "HopeRF RFM9xW shared V2.0 package",
+      "reason": "RFM95W LoRa Module uses the manufacturer 16 × 16 mm SMD package with sixteen 2 mm edge contacts (V2.0 Figure 57, page 122). These are solder lands and castellations, with no downward male strip. The 2 mm centers do not match the breadboard's 2.54 mm pitch; a breakout carrier is required.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.hoperf.com/uploads/RFM95W-V2.0_1695351437.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 16,
+        "contactPitchMm": 2,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 122
+    },
+    {
+      "id": "rfm96w",
+      "family": "semtech-radios",
+      "name": "RFM96W LoRa Module",
+      "manufacturer": "HopeRF",
+      "status": "requires-smd-carrier",
+      "revision": "RFM95W/96W/98W V2.0",
+      "package": "HopeRF RFM9xW shared V2.0 package",
+      "reason": "RFM96W LoRa Module uses the manufacturer 16 × 16 mm SMD package with sixteen 2 mm edge contacts (V2.0 Figure 57, page 122). These are solder lands and castellations, with no downward male strip. The 2 mm centers do not match the breadboard's 2.54 mm pitch; a breakout carrier is required.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.hoperf.com/uploads/RFM96W-V2.0_1695351477.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 16,
+        "contactPitchMm": 2,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 122
+    },
+    {
+      "id": "rfm98w",
+      "family": "semtech-radios",
+      "name": "RFM98W LoRa Module",
+      "manufacturer": "HopeRF",
+      "status": "requires-smd-carrier",
+      "revision": "RFM95W/96W/98W V2.0",
+      "package": "HopeRF RFM9xW shared V2.0 package",
+      "reason": "RFM98W LoRa Module uses the manufacturer 16 × 16 mm SMD package with sixteen 2 mm edge contacts (V2.0 Figure 57, page 122). These are solder lands and castellations, with no downward male strip. The 2 mm centers do not match the breadboard's 2.54 mm pitch; a breakout carrier is required.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.hoperf.com/uploads/RFM98W-V2_0_1702287607.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 16,
+        "contactPitchMm": 2,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 122
+    },
+    {
+      "id": "ra-01s",
+      "family": "semtech-radios",
+      "name": "Ra-01S LoRa Module",
+      "manufacturer": "Ai-Thinker",
+      "status": "requires-smd-carrier",
+      "revision": "Ra-01S specification V1.1.2",
+      "package": "Ai-Thinker dual-row castellated SMT package",
+      "reason": "Ra-01S LoRa Module is the exact bare radio, not a carrier board. The manufacturer specification identifies sixteen dual-row stamp-hole SMT contacts; the dimension and recommended-footprint figures use a 2 mm longitudinal edge pitch. No complete downward male-header assembly exists in this package. Use a soldered breakout carrier instead of stretching the default illustration.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://docs.ai-thinker.com/en/Ra-01S/index.html"
+        },
+        {
+          "label": "Manufacturer dimension and SMT-package specification",
+          "url": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01S_V1.1.2%20Specification-20260410A.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 16,
+        "contactPitchMm": 2,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 8
+    },
+    {
+      "id": "ra-01sh",
+      "family": "semtech-radios",
+      "name": "Ra-01SH LoRa Module",
+      "manufacturer": "Ai-Thinker",
+      "status": "requires-smd-carrier",
+      "revision": "Ra-01SH specification V1.1",
+      "package": "Ai-Thinker dual-row castellated SMT package",
+      "reason": "Ra-01SH LoRa Module is the exact bare radio, not a carrier board. The manufacturer specification identifies sixteen dual-row stamp-hole SMT contacts; the dimension and recommended-footprint figures use a 2 mm longitudinal edge pitch. No complete downward male-header assembly exists in this package. Use a soldered breakout carrier instead of stretching the default illustration.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://docs.ai-thinker.com/en/Ra-01SH/index.html"
+        },
+        {
+          "label": "Manufacturer dimension and SMT-package specification",
+          "url": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01SH%20Specification-20200818.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 16,
+        "contactPitchMm": 2,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 10
+    },
+    {
+      "id": "ra-02",
+      "family": "semtech-radios",
+      "name": "Ra-02 LoRa Module",
+      "manufacturer": "Ai-Thinker",
+      "status": "requires-smd-carrier",
+      "revision": "Ra-02 specification V1.1",
+      "package": "Ai-Thinker dual-row castellated SMT package",
+      "reason": "Ra-02 LoRa Module is the exact bare radio, not a carrier board. The manufacturer specification identifies sixteen dual-row stamp-hole SMT contacts; the dimension and recommended-footprint figures use a 2 mm longitudinal edge pitch. No complete downward male-header assembly exists in this package. Use a soldered breakout carrier instead of stretching the default illustration.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://docs.ai-thinker.com/en/Ra-02/index.html"
+        },
+        {
+          "label": "Manufacturer dimension and SMT-package specification",
+          "url": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-02_V1.1%20Specification-20171219.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 16,
+        "contactPitchMm": 2,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 1
+    },
+    {
+      "id": "e22-400mm22s",
+      "family": "semtech-radios",
+      "name": "E22-400MM22S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E22-400MM22S",
+      "package": "EBYTE 20-contact four-edge SMT package",
+      "reason": "E22-400MM22S LoRa Module is a bare castellated SMT radio with 20 solder lands at 1.27 mm pitch. The exact manufacturer pin/mechanical reference identifies a 10 × 10 mm four-edge package. It has no downward male-header bank; retaining only alternate pads would drop distinct electrical terminals. Use a breakout carrier, not the existing approximate native lands as insertion evidence.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E22-400MM22S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2023-2-9/2023291742334019.jpg"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 20,
+        "contactPitchMm": 1.27,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e22-900mm22s",
+      "family": "semtech-radios",
+      "name": "E22-900MM22S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E22-900MM22S",
+      "package": "EBYTE 20-contact four-edge SMT package",
+      "reason": "E22-900MM22S LoRa Module is a bare castellated SMT radio with 20 solder lands at 1.27 mm pitch. The exact manufacturer pin/mechanical reference identifies a 10 × 10 mm four-edge package. It has no downward male-header bank; retaining only alternate pads would drop distinct electrical terminals. Use a breakout carrier, not the existing approximate native lands as insertion evidence.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E22-900MM22S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2023-2-9/2023291744417329.jpg"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 20,
+        "contactPitchMm": 1.27,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e22-400m22s",
+      "family": "semtech-radios",
+      "name": "E22-400M22S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E22-400M22S",
+      "package": "EBYTE 22-contact dual-edge SMT package",
+      "reason": "E22-400M22S LoRa Module is a bare castellated SMT radio with 22 solder lands at 1.27 mm pitch. The exact manufacturer pin/mechanical reference identifies the 14 × 20 mm dual-edge package. It has no downward male-header bank; retaining only alternate pads would drop distinct electrical terminals. Use a breakout carrier, not the existing approximate native lands as insertion evidence.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E22-400M22S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2024-1-4/2024141017548358.jpg"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 22,
+        "contactPitchMm": 1.27,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e22-900m22s",
+      "family": "semtech-radios",
+      "name": "E22-900M22S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E22-900M22S",
+      "package": "EBYTE 22-contact dual-edge SMT package",
+      "reason": "E22-900M22S LoRa Module is a bare castellated SMT radio with 22 solder lands at 1.27 mm pitch. The exact manufacturer pin/mechanical reference identifies the 14 × 20 mm dual-edge package. It has no downward male-header bank; retaining only alternate pads would drop distinct electrical terminals. Use a breakout carrier, not the existing approximate native lands as insertion evidence.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E22-900M22S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2024-1-4/2024141017548358.jpg"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 22,
+        "contactPitchMm": 1.27,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e22-400m30s",
+      "family": "semtech-radios",
+      "name": "E22-400M30S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E22-400M30S",
+      "package": "EBYTE 22-contact dual-edge high-power SMT package",
+      "reason": "E22-400M30S LoRa Module really has 2.54 mm longitudinal spacing within its upper and lower edge groups. The manufacturer mechanical image nevertheless shows twenty-two castellated SMT solder lands, a 24 mm-wide body, a separately dimensioned 7.60 mm inter-group gap and no installed downward male headers. A 2.54 mm segment pitch does not establish the complete row phase, installed-post separation or underside assembly. This exact raw RF package needs a source-reviewed carrier; it is not classified as incompatible solely because of its within-group pitch.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E22-400M30S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2021-10-27/20211027117293253.jpg"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 22,
+        "contactPitchMm": 2.54,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT",
+        "segmentPitchIs254": true,
+        "wholeInstalledHeaderGridEstablished": false,
+        "interGroupDimensionMm": 7.6,
+        "bodyWidthMm": 24
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e22-900m30s",
+      "family": "semtech-radios",
+      "name": "E22-900M30S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E22-900M30S",
+      "package": "EBYTE 22-contact dual-edge high-power SMT package",
+      "reason": "E22-900M30S LoRa Module really has 2.54 mm longitudinal spacing within its upper and lower edge groups. The manufacturer mechanical image nevertheless shows twenty-two castellated SMT solder lands, a 24 mm-wide body, a separately dimensioned 7.60 mm inter-group gap and no installed downward male headers. A 2.54 mm segment pitch does not establish the complete row phase, installed-post separation or underside assembly. This exact raw RF package needs a source-reviewed carrier; it is not classified as incompatible solely because of its within-group pitch.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E22-900M30S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2021-10-27/20211027119461143.jpg"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 22,
+        "contactPitchMm": 2.54,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT",
+        "segmentPitchIs254": true,
+        "wholeInstalledHeaderGridEstablished": false,
+        "interGroupDimensionMm": 7.6,
+        "bodyWidthMm": 24
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e22-900m33s",
+      "family": "semtech-radios",
+      "name": "E22-900M33S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E22-900M33S",
+      "package": "EBYTE 22-contact dual-edge high-power SMT package",
+      "reason": "E22-900M33S LoRa Module really has 2.54 mm longitudinal spacing within its upper and lower edge groups. The manufacturer mechanical image nevertheless shows twenty-two castellated SMT solder lands, a 24 mm-wide body, a separately dimensioned 7.60 mm inter-group gap and no installed downward male headers. A 2.54 mm segment pitch does not establish the complete row phase, installed-post separation or underside assembly. This exact raw RF package needs a source-reviewed carrier; it is not classified as incompatible solely because of its within-group pitch.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E22-900M33S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2024-4-3/2024431333153132.jpg"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 22,
+        "contactPitchMm": 2.54,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT",
+        "segmentPitchIs254": true,
+        "wholeInstalledHeaderGridEstablished": false,
+        "interGroupDimensionMm": 7.6,
+        "bodyWidthMm": 24
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e28-2g4m12s",
+      "family": "semtech-radios",
+      "name": "E28-2G4M12S LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E28-2G4M12S",
+      "package": "EBYTE 14-contact SX1281 SMT package",
+      "reason": "E28-2G4M12S LoRa Module is a bare castellated SMT radio with 14 solder lands at 1.27 mm pitch. The exact manufacturer pin/mechanical reference identifies the 1.27 mm chip-module interface. It has no downward male-header bank; retaining only alternate pads would drop distinct electrical terminals. Use a breakout carrier, not the existing approximate native lands as insertion evidence.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E28-2G4M12S"
+        },
+        {
+          "label": "Manufacturer pin/mechanical drawing",
+          "url": "https://www.cdebyte.com/Uploadfiles/Picture/2023-4-7/20234717167561.png"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 14,
+        "contactPitchMm": 1.27,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "e28-2g4m12sx",
+      "family": "semtech-radios",
+      "name": "E28-2G4M12SX LoRa Module",
+      "manufacturer": "Ebyte",
+      "status": "requires-smd-carrier",
+      "revision": "E28-2G4M12SX",
+      "package": "EBYTE 14-contact SX1281 SMT package",
+      "reason": "E28-2G4M12SX LoRa Module is a bare castellated SMT radio with 14 solder lands at 1.27 mm pitch. The exact manufacturer pin/mechanical reference identifies the 1.27 mm chip-module interface. It has no downward male-header bank; retaining only alternate pads would drop distinct electrical terminals. Use a breakout carrier, not the existing approximate native lands as insertion evidence.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer product/specification reference",
+          "url": "https://www.cdebyte.com/products/E28-2G4M12SX"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 14,
+        "contactPitchMm": 1.27,
+        "downwardMalePosts": 0,
+        "contactKind": "castellated SMT"
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "m5stack-unit-light-u021",
+      "family": "m5stack-units",
+      "name": "M5Stack Unit Light U021",
+      "manufacturer": "M5Stack",
+      "status": "cable-connector",
+      "revision": "U021 / 2018 V1.0 schematic / HY2.0-4P",
+      "package": "Enclosed Unit / HY2.0-4P cable socket",
+      "reason": "M5Stack Unit Light U021 uses the manufacturer HY2.0-4P cable interface at 2 mm pitch. The factory housing has no downward male-header bank. The native 2.54 mm wire-termination carrier is explicitly unrelated to its physical Unit PCB or socket mating pattern; it must not activate insertion.",
+      "facts": {
+        "exposedContacts": 4,
+        "cableContactCount": 4,
+        "connectorPitchMm": 2,
+        "downwardMalePosts": 0
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/709/U201-UNIT_LIGHT_SCHE.pdf"
+        },
+        {
+          "label": "Manufacturer supplied HY2.0-4P cable and exact Unit package",
+          "url": "https://docs.m5stack.com/en/unit/Unit_Light"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "m5stack-unit-pir-u004",
+      "family": "m5stack-units",
+      "name": "M5Stack Unit PIR U004",
+      "manufacturer": "M5Stack",
+      "status": "cable-connector",
+      "revision": "U004 / AS312 / HT7533 schematic / HY2.0-4P",
+      "package": "Enclosed Unit / HY2.0-4P cable socket",
+      "reason": "M5Stack Unit PIR U004 uses the manufacturer HY2.0-4P cable interface at 2 mm pitch. The factory housing has no downward male-header bank. The native 2.54 mm wire-termination carrier is explicitly unrelated to its physical Unit PCB or socket mating pattern; it must not activate insertion.",
+      "facts": {
+        "exposedContacts": 4,
+        "cableContactCount": 4,
+        "connectorPitchMm": 2,
+        "downwardMalePosts": 0
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/701/UNIT_PIR.pdf"
+        },
+        {
+          "label": "Manufacturer supplied HY2.0-4P cable and exact Unit package",
+          "url": "https://docs.m5stack.com/en/unit/Unit_PIR"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "m5stack-unit-relay-u023",
+      "family": "m5stack-units",
+      "name": "M5Stack Unit Relay U023",
+      "manufacturer": "M5Stack",
+      "status": "cable-connector",
+      "revision": "U023 / single-channel SPDT schematic / HY2.0-4P",
+      "package": "Enclosed Unit / HY2.0-4P cable socket and three-position relay terminal",
+      "reason": "M5Stack Unit Relay U023 uses the manufacturer HY2.0-4P cable interface at 2 mm pitch, plus a removable 3.96 mm COM/NO/NC relay terminal block. The factory housing has no downward male-header bank. The native 2.54 mm wire-termination carrier is explicitly unrelated to its physical Unit PCB or socket mating pattern; it must not activate insertion.",
+      "facts": {
+        "exposedContacts": 7,
+        "cableContactCount": 4,
+        "connectorPitchMm": 2,
+        "downwardMalePosts": 0,
+        "relayTerminalPitchMm": 3.96
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/577/UNIT-RELAY.pdf"
+        },
+        {
+          "label": "Manufacturer supplied HY2.0-4P cable and exact Unit package",
+          "url": "https://docs.m5stack.com/en/unit/Unit_Relay"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "radiomaster-rp1-v2",
+      "family": "elrs",
+      "name": "RadioMaster RP1 V2 ExpressLRS Receiver",
+      "manufacturer": "RadioMaster",
+      "status": "wire-solder-contacts",
+      "revision": "RP1 V2 / manufacturer RP1 manual",
+      "package": "11 × 13 mm receiver with wire-solder terminals and BOOT pad",
+      "reason": "The exact RP1 V2 manual and same-side receiver view identify RX, TX, 5V, GND and BOOT as solder contacts. The small receiver has no factory downward male-header assembly. The existing 2.54 mm native carrier is explicitly an estimated RF/wire reference; it does not establish production land centers or a straight-post installation. Keep all five contacts available for wires.",
+      "facts": {
+        "exposedContacts": 5,
+        "primaryWireContacts": 4,
+        "downwardMalePosts": 0,
+        "contactPitchMm": null
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "betafpv-superd-2-4ghz",
+      "family": "elrs",
+      "name": "BETAFPV SuperD 2.4 GHz ExpressLRS Receiver",
+      "manufacturer": "BETAFPV",
+      "status": "pending-complete-header-mechanics",
+      "revision": "2.4 GHz SuperD / User Manual edition II, 2023-05-25",
+      "package": "22 × 14 mm diversity receiver with four plated wire/header contacts",
+      "reason": "The manufacturer supplies a four-pin header and a four-wire harness, so this is a legitimate direct-insertion candidate rather than a proven incompatible receiver. Product diagrams and the 16-page edition-II manual confirm the complete RX/TX/5V/GND order and board dimensions. They do not numerically dimension the header centers, first-post offset or exact pitch; no matched board CAD was found. The approximate 2.54 mm carrier and a supplied generic four-pin strip are insufficient to certify the installed post map.",
+      "evidence": [
+        {
+          "label": "Exact 2.4 GHz manufacturer product, package contents and pinout",
+          "url": "https://betafpv.com/products/superd-elrs-2-4g-diversity-receiver"
+        },
+        {
+          "label": "Manufacturer manual download index",
+          "url": "https://support.betafpv.com/hc/en-us/articles/11916886817817-Manual-for-SuperD-ELRS-diversity-RX"
+        },
+        {
+          "label": "Edition-II manufacturer manual PDF",
+          "url": "https://support.betafpv.com/hc/en-us/article_attachments/19091862476825"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 4,
+        "boardMm": [
+          22,
+          14
+        ],
+        "suppliedFourPinHeader": true,
+        "contactPitchMm": null,
+        "installedPostMapReviewed": false
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "radiomaster-er4",
+      "family": "elrs",
+      "name": "RadioMaster ER4 ExpressLRS PWM Receiver",
+      "manufacturer": "RadioMaster",
+      "status": "requires-adapter-as-fitted",
+      "revision": "ER4 / manufacturer user card and factory product",
+      "package": "Keyed side-facing 2 × 6 servo contact field, 2.54 mm pitch",
+      "reason": "The manufacturer confirms 2.54 mm contacts, but the ER4 mating face is a complete two-column six-position servo connector, not two long breadboard strips. CH1 and CH2 occupy an adjacent pair; so do CH3 and CH4 at the opposite end. Both contacts of each adjacent pair would join one breadboard conductor, while a quarter turn would join PWM, servo supply and ground down a column. The full connector cannot straddle the breadboard trench at its 2.54 mm inter-column gap. Factory posts face sideways, and EXT-V is a separate rear wire pad. Use cables or a receiver adapter; do not omit servo channels to force fitting.",
+      "evidence": [
+        {
+          "label": "RadioMaster ER4 manufacturer user manual",
+          "url": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/ER4_User_Manual.pdf?v=1722224113"
+        },
+        {
+          "label": "Manufacturer confirms 2.54 mm connector and factory assembly",
+          "url": "https://radiomasterrc.com/products/er4-2-4ghz-elrs-pwm-receiver"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 13,
+        "connectorContacts": 12,
+        "columns": 2,
+        "positionsPerColumn": 6,
+        "contactPitchMm": 2.54,
+        "rowSeparationMm": 2.54,
+        "orientation": "side-facing",
+        "auxiliaryWireContacts": [
+          "ext-v"
+        ]
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "speedybee-f405-wing-mini",
+      "family": "flight-controllers",
+      "name": "SpeedyBee F405 WING MINI",
+      "manufacturer": "SpeedyBee",
+      "status": "pending-complete-header-mechanics",
+      "revision": "F405 WING MINI manual v1.2",
+      "package": "Multi-board flight controller / servo and cable interfaces",
+      "reason": "The SpeedyBee F405 WING MINI manual distinguishes the flight/power boards, angled servo banks, cable sockets and rear solder alternatives. Some supplied strips use ordinary header contacts, but that does not establish a single complete downward installation. A correct physical view must retain all 105 published contacts, include the actual lower-board and connector clearances, and locate complete selected banks without shorting adjacent servo/supply nets. The published stack envelope and off-board wiring carrier do not provide the complete numerical post/phase map. Keep this as a specific assembly-map candidate, not a rejection of all 2.54 mm parts.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer manual/product reference",
+          "url": "https://www.speedybee.com/f405-wing-mini-download/"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 105,
+        "primaryHeaderPitchMm": null,
+        "installedPostMapReviewed": false,
+        "fullViewMapReviewed": false
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "speedybee-f405-wing-app",
+      "family": "flight-controllers",
+      "name": "SpeedyBee F405 WING APP",
+      "manufacturer": "SpeedyBee",
+      "status": "pending-complete-header-mechanics",
+      "revision": "F405 WING APP manual v1.1",
+      "package": "Multi-board flight controller / servo and cable interfaces",
+      "reason": "The SpeedyBee F405 WING APP manual distinguishes the flight/power boards, angled servo banks, cable sockets and rear solder alternatives. Some supplied strips use ordinary header contacts, but that does not establish a single complete downward installation. A correct physical view must retain all 136 published contacts, include the actual lower-board and connector clearances, and locate complete selected banks without shorting adjacent servo/supply nets. The published stack envelope and off-board wiring carrier do not provide the complete numerical post/phase map. Keep this as a specific assembly-map candidate, not a rejection of all 2.54 mm parts.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer manual/product reference",
+          "url": "https://www.speedybee.com/f405-wing-app-download/"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 136,
+        "primaryHeaderPitchMm": null,
+        "installedPostMapReviewed": false,
+        "fullViewMapReviewed": false
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "matek-f405-wing-v2",
+      "family": "flight-controllers",
+      "name": "Matek F405-WING-V2",
+      "manufacturer": "MATEKSYS",
+      "status": "pending-complete-header-mechanics",
+      "revision": "F405-WING-V2 / USB-C / ICM42688-P",
+      "package": "Multi-board flight controller / servo and cable interfaces",
+      "reason": "Matek explicitly supplies 2.54 mm Dupont pins with this unsoldered V2 board, so the pitch itself is not a compatibility exclusion. Its servo strips, independent UART/power banks, side cable socket and numerous underside solder contacts need a complete per-revision physical view. The source identifies 54 × 36 × 13 mm overall dimensions and 30.5 mm mounting centers, but not exact first-post offsets or all inter-bank phases. Dense fully populated servo banks would share independent supply/signal contacts on breadboard strips. A header-only installation could be reviewed after exact CAD/assembly and all 87 endpoint projections are resolved; the current off-board carrier cannot establish it.",
+      "evidence": [
+        {
+          "label": "Exact manufacturer manual/product reference",
+          "url": "https://www.mateksys.com/?portfolio=f405-wing-v2"
+        },
+        {
+          "label": "Manufacturer V2 pin package and 54 × 36 × 13 mm assembly",
+          "url": "https://www.mateksys.com/?portfolio=f405-wing-v2"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 87,
+        "primaryHeaderPitchMm": 2.54,
+        "installedPostMapReviewed": false,
+        "fullViewMapReviewed": false
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "matek-m10q-5883",
+      "family": "fpv-navigation",
+      "name": "Matek M10Q-5883 GNSS and Compass",
+      "manufacturer": "MATEKSYS",
+      "status": "cable-connector",
+      "revision": "M10Q-5883 V2 / 15 mm patch-antenna version",
+      "package": "JST GH six-contact cable sockets and two underside service pads",
+      "reason": "The exact M10Q-5883 manufacturer page identifies SM06B-GHS-TB and the supplied JST-GH six-wire cable. JST specifies the GH series at 1.25 mm pitch; the Matek page says 1.27 mm, which is a source typo rather than 2.54 mm assembly evidence. Both fitted sockets repeat the same six signals; the two service pads remain separate wiring contacts. There is no downward male-header bank on this cable-connected module.",
+      "evidence": [
+        {
+          "label": "Exact M10Q-5883 manufacturer product/pinout",
+          "url": "https://www.mateksys.com/?portfolio=m10q-5883"
+        },
+        {
+          "label": "JST GH connector manufacturer specification",
+          "url": "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 8,
+        "connector": "SM06B-GHS-TB",
+        "connectorPitchMm": 1.25,
+        "sourcePagePitchTypoMm": 1.27,
+        "downwardMalePosts": 0
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "nordic-nrf52840-dongle",
+      "family": "nordic-ready",
+      "name": "Nordic nRF52840 Dongle",
+      "manufacturer": "Nordic Semiconductor",
+      "status": "pending-installed-post-assembly",
+      "revision": "PCA10059 v2.1.1",
+      "package": "Castellated USB dongle / rear service pads",
+      "reason": "Nordic explicitly specifies a 2.54 mm castellated grid with 15.24 mm row separation and describes stripboard connection. The two SWD edge sites use a different 10.16 mm row separation; all nine additional GPIO points, RESET and USB service pads are on the underside. The v2.1.1 production archive confirms an edge-castellated assembly rather than a reviewed installed downward header. Directly soldering an arbitrary strip to half-holes is not yet a qualified assembly map. Retain this as an installed-post/clearance evidence gap, not a claim that the GPIO pitch is incompatible; a carrier or documented complete header installation can resolve it.",
+      "evidence": [
+        {
+          "label": "Nordic external connections, exact stated edge grid",
+          "url": "https://infocenter.nordicsemi.com/pdf/nRF52840_Dongle_User_Guide_v1.0.pdf"
+        },
+        {
+          "label": "PCA10059 v2.1.1 Altium and manufacturing archive",
+          "url": "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/nrf52840-dongle/nrf52840-usb-dongle---hardware-files-2_1_1.zip"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 34,
+        "edgeContactPitchMm": 2.54,
+        "edgeRowSeparationMm": 15.24,
+        "swdEdgeRowSeparationMm": 10.16,
+        "downwardMalePosts": 0,
+        "installedPostMapReviewed": false
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "nordic-power-profiler-kit-ii",
+      "family": "nordic-ready",
+      "name": "Nordic Power Profiler Kit II",
+      "manufacturer": "Nordic Semiconductor",
+      "status": "right-angle-smd-headers",
+      "revision": "PCA63100 v1.0.1 / manufacturing revision 18750, 2020-11-02",
+      "package": "Two 2.54 mm right-angle SMT lists plus 1.27 mm SMT debug",
+      "reason": "Exact Nordic pick-and-place production data identifies P1 as LIST_ANG_1x4-SMD-2.54MM, P2 as LIST_ANG_1x10-SMD-2.54MM, and P3 as HDR_2x5-SMD-1.27mm-ANG. P1/P2 are actual side-facing surface-mount connectors, not plated through-hole strips that can simply receive straight downward replacements. The drill files confirm no 1 mm primary-header bores. P3 is also SMT and has 1.27 mm pitch. These cable-facing connectors need a carrier or a separately sourced replacement assembly; the native 2.54 mm off-board termination footprint does not establish direct insertion.",
+      "evidence": [
+        {
+          "label": "Nordic factory connector functions",
+          "url": "https://docs.nordicsemi.com/r/bundle/ug_ppk2/page/ug/ppk/ppk_user_guide_connectors.html"
+        },
+        {
+          "label": "Exact PCA63100 v1.0.1 production archive",
+          "url": "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/power-profiler-kit-ii/pca63100-power-profiler-kit-ii---hw-files---1_0_1.zip"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 24,
+        "primaryPitchMm": 2.54,
+        "debugPitchMm": 1.27,
+        "primaryBoardAttachment": "SMD right-angle",
+        "throughHolePrimaryBanks": 0,
+        "productionFootprints": {
+          "P1": "LIST_ANG_1x4-SMD-2.54MM",
+          "P2": "LIST_ANG_1x10-SMD-2.54MM",
+          "P3": "HDR_2x5-SMD-1.27mm-ANG"
+        }
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "sourceArchiveFiles": [
+        "Production files/PICK_PLACE/400491_Pick_And_Place.csv",
+        "Production files/DRILL/400491-RoundHoles.TXT",
+        "Schematic_Layout pdf files/PCA63100_Schematic_And_PCB.pdf"
+      ],
+      "productionFileSha256": {
+        "Production files/PICK_PLACE/400491_Pick_And_Place.csv": "018de10e1ad54895ba3378288f53852eb3dce72dfada95761fa0f52203c9d5f4",
+        "Production files/DRILL/400491-RoundHoles.TXT": "8922c03463ab978f9015eaf433b60ea8cf073ece91700064722e38b5786b39cd",
+        "Schematic_Layout pdf files/PCA63100_Schematic_And_PCB.pdf": "87a96f09c0080d3a0e750c53acc8987831d3dc74eeb46fd2743668efcc5110cf"
+      }
+    },
+    {
+      "id": "hlk-7688a",
+      "family": "hilink",
+      "name": "Hi-Link HLK-7688A Router Module",
+      "manufacturer": "Hi-Link",
+      "status": "requires-smd-carrier",
+      "revision": "MT7688AN / 56 contacts",
+      "package": "56-contact castellated/SMD router module",
+      "reason": "Hi-Link HLK-7688A Router Module is the exact 56-contact surface-mount package in its manufacturer hardware manual. Its 1.4 mm edge pitch and three-sided 56-contact solder interface plus ground thermal lands require a host PCB. There is no reviewed complete downward 2.54 mm male strip. Do not substitute another package variant or infer insertion from the reference carrier.",
+      "facts": {
+        "exposedContacts": 56,
+        "contactPitchMm": 1.4,
+        "downwardMalePosts": 0,
+        "contactKind": "SMT edge lands"
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://h.hlktech.com/download/HLK-7688A/1/HLK-7688A%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV1.4.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 12
+    },
+    {
+      "id": "hlk-7628n",
+      "family": "hilink",
+      "name": "Hi-Link HLK-7628N Router Module",
+      "manufacturer": "Hi-Link",
+      "status": "requires-smd-carrier",
+      "revision": "MT7628NN / 56 contacts",
+      "package": "56-contact castellated/SMD router module",
+      "reason": "Hi-Link HLK-7628N Router Module is the exact 56-contact surface-mount package in its manufacturer hardware manual. Its 1.4 mm edge pitch and three-sided 56-contact solder interface plus ground thermal lands require a host PCB. There is no reviewed complete downward 2.54 mm male strip. Do not substitute another package variant or infer insertion from the reference carrier.",
+      "facts": {
+        "exposedContacts": 56,
+        "contactPitchMm": 1.4,
+        "downwardMalePosts": 0,
+        "contactKind": "SMT edge lands"
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://h.hlktech.com/download/HLK-7628N/1/HLK-7628N%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV2.6.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 14
+    },
+    {
+      "id": "hlk-7621a",
+      "family": "hilink",
+      "name": "Hi-Link HLK-7621A Router Module",
+      "manufacturer": "Hi-Link",
+      "status": "requires-smd-carrier",
+      "revision": "MT7621AT / 140 contacts",
+      "package": "140-contact castellated/SMD router module",
+      "reason": "Hi-Link HLK-7621A Router Module is the exact 140-contact surface-mount package in its manufacturer hardware manual. Its 1.27 mm edge pitch and four-sided solder lands require a host PCB. There is no reviewed complete downward 2.54 mm male strip. Do not substitute another package variant or infer insertion from the reference carrier.",
+      "facts": {
+        "exposedContacts": 140,
+        "contactPitchMm": 1.27,
+        "downwardMalePosts": 0,
+        "contactKind": "SMT edge lands"
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://h.hlktech.com/download/HLK-7621/1/HLK-7621A%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_V1.5.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 5
+    },
+    {
+      "id": "hlk-rm08k",
+      "family": "hilink",
+      "name": "Hi-Link HLK-RM08K Router Module",
+      "manufacturer": "Hi-Link",
+      "status": "requires-smd-carrier",
+      "revision": "MT7688K / 52 contacts",
+      "package": "52-contact castellated/SMD router module",
+      "reason": "Hi-Link HLK-RM08K Router Module is the exact 52-contact surface-mount package in its manufacturer hardware manual. Its 2 mm edge pitch and three-sided 52-contact solder interface, distinct from the pin and half-pin variants require a host PCB. There is no reviewed complete downward 2.54 mm male strip. Do not substitute another package variant or infer insertion from the reference carrier.",
+      "facts": {
+        "exposedContacts": 52,
+        "contactPitchMm": 2,
+        "downwardMalePosts": 0,
+        "contactKind": "SMT edge lands"
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://h.hlktech.com/download/HLK-RM08K/1/HLK-RM08K--%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C--V1.6.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 6
+    },
+    {
+      "id": "simcom-sim7600g-h-m2",
+      "family": "cellular-gnss",
+      "name": "SIMCom SIM7600G-H M.2 (Luckfox)",
+      "manufacturer": "SIMCom",
+      "status": "card-edge-interface",
+      "revision": "R2 module / M.2 B-key / 67 contacts",
+      "package": "M.2 B-key card, 67 contacts in 75 numbered positions",
+      "reason": "SIMCom SIM7600G-H M.2 (Luckfox) uses the Luckfox-documented M.2 B-key card edge; numbered positions 12–19 are the key notch. Contacts are on opposite PCB faces and mate with a card socket; antenna sockets are coaxial cable ports. There are no downward 2.54 mm posts. The two 2.54 mm rows in the native export are explicitly off-board logical terminations, not this card edge or a socket footprint. Use a card carrier.",
+      "facts": {
+        "exposedContacts": 67,
+        "cardEdgeContacts": 67,
+        "downwardMalePosts": 0,
+        "contactPitchMm": null,
+        "faces": "opposite card-edge faces"
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://wiki.luckfox.com/SIM7600G-H-M.2"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "simcom-sim800c",
+      "family": "cellular-gnss",
+      "name": "SIMCom SIM800C",
+      "manufacturer": "SIMCom",
+      "status": "requires-smd-carrier",
+      "revision": "SIM800C Hardware Design V1.05",
+      "package": "42-contact LCC GSM module",
+      "reason": "The exact SIM800C V1.05 package has forty-two LCC solder lands on 1.10 mm pitch. It is a raw GSM radio requiring an external SIM holder, power decoupling and host PCB. Its complete land pattern cannot enter 2.54 mm sockets; a module carrier is required.",
+      "facts": {
+        "exposedContacts": 42,
+        "contactPitchMm": 1.1,
+        "downwardMalePosts": 0
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://simcom.ee/documents/SIM800C/SIM800C_Hardware_Design_V1.05.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 15
+    },
+    {
+      "id": "simcom-sim7600e-minipcie",
+      "family": "cellular-gnss",
+      "name": "SIMCom SIM7600E-PCIE",
+      "manufacturer": "SIMCom",
+      "status": "card-edge-interface",
+      "revision": "Mini PCIe / digital-audio PCIE / V1.01",
+      "package": "52-contact Mini PCIe modem card",
+      "reason": "SIMCom SIM7600E-PCIE uses the manufacturer 52-contact Mini PCIe card edge. Contacts are on opposite PCB faces and mate with a card socket; antenna sockets are coaxial cable ports. There are no downward 2.54 mm posts. The two 2.54 mm rows in the native export are explicitly off-board logical terminations, not this card edge or a socket footprint. Use a card carrier.",
+      "facts": {
+        "exposedContacts": 52,
+        "cardEdgeContacts": 52,
+        "downwardMalePosts": 0,
+        "contactPitchMm": null,
+        "faces": "opposite card-edge faces"
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://simcom.ee/documents/SIM7600E/SIM7600%20Series_PCIE_Hardware%20Design_V1.01.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "quectel-ec25-e-minipcie",
+      "family": "cellular-gnss",
+      "name": "Quectel EC25-E Mini PCIe",
+      "manufacturer": "Quectel",
+      "status": "card-edge-interface",
+      "revision": "52 contacts / Hardware Design V2.4",
+      "package": "52-contact Mini PCIe modem card",
+      "reason": "Quectel EC25-E Mini PCIe uses the manufacturer 52-contact Mini PCIe card edge. Contacts are on opposite PCB faces and mate with a card socket; antenna sockets are coaxial cable ports. There are no downward 2.54 mm posts. The two 2.54 mm rows in the native export are explicitly off-board logical terminations, not this card edge or a socket footprint. Use a card carrier.",
+      "facts": {
+        "exposedContacts": 52,
+        "cardEdgeContacts": 52,
+        "downwardMalePosts": 0,
+        "contactPitchMm": null,
+        "faces": "opposite card-edge faces"
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://quectel.com/content/uploads/2024/02/Quectel_EC25_Mini_PCIe_Hardware_Design_V2.4-2.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "quectel-lc76g-ab",
+      "family": "cellular-gnss",
+      "name": "Quectel LC76G (AB)",
+      "manufacturer": "Quectel",
+      "status": "requires-smd-carrier",
+      "revision": "QUECTEL-LC76G-AB / LC76G Hardware Design V1.3",
+      "package": "18 LCC + 10 underside LGA GNSS module",
+      "reason": "Quectel LC76G (AB) is the exact AB variant of the LC76G SMD package, with eighteen edge LCC lands and ten underside LGA lands at 1.1 mm pitch (V1.3 recommended footprint, Figure 18). All twenty-eight contacts require a host PCB; underside pads cannot be replaced by a partial header bank. Voltage-domain variants do not change this mechanical requirement.",
+      "facts": {
+        "exposedContacts": 28,
+        "contactPitchMm": 1.1,
+        "downwardMalePosts": 0,
+        "edgeLccContacts": 18,
+        "undersideLgaContacts": 10
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 41
+    },
+    {
+      "id": "quectel-lc76g-pa",
+      "family": "cellular-gnss",
+      "name": "Quectel LC76G (PA)",
+      "manufacturer": "Quectel",
+      "status": "requires-smd-carrier",
+      "revision": "QUECTEL-LC76G-PA / LC76G Hardware Design V1.3",
+      "package": "18 LCC + 10 underside LGA GNSS module",
+      "reason": "Quectel LC76G (PA) is the exact PA variant of the LC76G SMD package, with eighteen edge LCC lands and ten underside LGA lands at 1.1 mm pitch (V1.3 recommended footprint, Figure 18). All twenty-eight contacts require a host PCB; underside pads cannot be replaced by a partial header bank. Voltage-domain variants do not change this mechanical requirement.",
+      "facts": {
+        "exposedContacts": 28,
+        "contactPitchMm": 1.1,
+        "downwardMalePosts": 0,
+        "edgeLccContacts": 18,
+        "undersideLgaContacts": 10
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 41
+    },
+    {
+      "id": "quectel-lc76g-pb",
+      "family": "cellular-gnss",
+      "name": "Quectel LC76G (PB)",
+      "manufacturer": "Quectel",
+      "status": "requires-smd-carrier",
+      "revision": "QUECTEL-LC76G-PB / LC76G Hardware Design V1.3",
+      "package": "18 LCC + 10 underside LGA GNSS module",
+      "reason": "Quectel LC76G (PB) is the exact PB variant of the LC76G SMD package, with eighteen edge LCC lands and ten underside LGA lands at 1.1 mm pitch (V1.3 recommended footprint, Figure 18). All twenty-eight contacts require a host PCB; underside pads cannot be replaced by a partial header bank. Voltage-domain variants do not change this mechanical requirement.",
+      "facts": {
+        "exposedContacts": 28,
+        "contactPitchMm": 1.1,
+        "downwardMalePosts": 0,
+        "edgeLccContacts": 18,
+        "undersideLgaContacts": 10
+      },
+      "evidence": [
+        {
+          "label": "Exact manufacturer package/pinout reference",
+          "url": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf"
+        }
+      ],
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true,
+      "reviewedMechanicalPdfPage": 41
+    },
+    {
+      "id": "nxp-frdm-kl25z-e",
+      "family": "nxp-more",
+      "name": "NXP FRDM-KL25Z (Rev E)",
+      "manufacturer": "NXP",
+      "status": "requires-adapter-as-fitted",
+      "revision": "SCH-27556 E / 2013-01-30",
+      "package": "Arduino UNO-compatible 64-contact double-row expansion interfaces and auxiliary headers",
+      "reason": "The Rev E KL25Z has four double-row Arduino-compatible expansion banks with sixty-four contacts. Within-bank 2.54 mm pitch does not turn the complete 2-row field into two breadboard-straddling strips: adjacent independent signals would share a terminal conductor, and the UNO bank layout is not one complete breadboard grid. The auxiliary debug interface is a fine-pitch keyed header. The old canonical Rev E schematic URL now returns 404; the accessible manufacturer SCH-27556 PDF is Rev D, so it is retained only as family corroboration and is not substituted for exact Rev E mechanical CAD. Use shield/debug cables or an adapter; any future auxiliary-only insertion needs its own explicit complete view.",
+      "evidence": [
+        {
+          "label": "Published exact-revision source reference",
+          "url": "https://www.nxp.com/downloads/en/schematics/FRDM-KL25Z_SCH_REV_E.pdf"
+        },
+        {
+          "label": "Manufacturer board and Arduino header scope",
+          "url": "https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-KL25Z"
+        },
+        {
+          "label": "Manufacturer earlier Rev D schematic; not revision-E CAD",
+          "url": "https://www.nxp.com/downloads/en/schematics/FRDM-KL25Z_SCH.pdf"
+        },
+        {
+          "label": "Manufacturer double-row KL25Z pin layout",
+          "url": "https://www.nxp.com/docs/en/supporting-information/AMF_ENT_T0802.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 99,
+        "expansionContacts": 64,
+        "expansionPitchMm": 2.54,
+        "expansionKind": "double-row Arduino shield connectors",
+        "auxiliaryOnlyConfigurationReviewed": false,
+        "exactRevisionMechanicalMapReviewed": false
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    },
+    {
+      "id": "nxp-frdm-k64f-e4",
+      "family": "nxp-more",
+      "name": "NXP FRDM-K64F (E4)",
+      "manufacturer": "NXP",
+      "status": "requires-adapter-as-fitted",
+      "revision": "SCH-28163 E4 / 2016-05-16",
+      "package": "Arduino UNO-compatible 64-contact double-row expansion interfaces and auxiliary headers",
+      "reason": "The E4 K64F has four double-row Arduino-compatible expansion banks with sixty-four contacts. Within-bank 2.54 mm pitch does not turn the complete 2-row field into two breadboard-straddling strips: adjacent independent signals would share a terminal conductor, and the UNO bank layout is not one complete breadboard grid. The auxiliary debug interface is a fine-pitch keyed header. The manufacturer guide identifies the Bluetooth four-contact and RF eight-contact interfaces, but an auxiliary-only downward configuration still lacks a complete exact E4 post/clearance map for all published endpoints. Use shield/debug cables or an adapter; any future auxiliary-only insertion needs its own explicit complete view.",
+      "evidence": [
+        {
+          "label": "Published exact-revision source reference",
+          "url": "https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-K64F"
+        },
+        {
+          "label": "Manufacturer board and Arduino header scope",
+          "url": "https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-K64F"
+        },
+        {
+          "label": "Manufacturer board user guide",
+          "url": "https://www.nxp.com/docs/en/user-guide/FRDMK64FUG.pdf"
+        }
+      ],
+      "facts": {
+        "exposedContacts": 131,
+        "expansionContacts": 64,
+        "expansionPitchMm": 2.54,
+        "expansionKind": "double-row Arduino shield connectors",
+        "auxiliaryOnlyConfigurationReviewed": false,
+        "exactRevisionMechanicalMapReviewed": false
+      },
+      "nativeAccuracyChanged": false,
+      "canonicalGeometryPreserved": true
+    }
+  ],
+  "canonicalPreservation": {
+    "rfm95w": {
+      "definition": "3d18e4ce7e80bd29a3b7c2e1c486f124253e1514c18c420823a99a77c8a9dec8",
+      "art": [
+        "6edfeb196f53d1e37aab702887a7150b5b45fe07fe927184368448c48e8091e8",
+        "161306b8c3eab630583dc05a195b7700370e6c68bfc875dbec6fecec15810d6d"
+      ],
+      "native": [
+        "0803ca8c269e6f3f0a4bd288d48cb9bc82b2631ecc12d729c0ddacd61071f16a",
+        "2ce39ae6dceb4736ac21f5c61841c0ddcc81ad8851ae09607aba245a6a3f5fea",
+        "98786c0a7aea1fad2c37ad726d22fd36d20d2eb90f500754c2f14b75407507bd"
+      ]
+    },
+    "rfm96w": {
+      "definition": "fa334a0d51d3b5e515dedc5c3a6c4f689b040bb6d292ab363618aa6f3bf97724",
+      "art": [
+        "ee89aec0c3946c9c05957e0d86abf62ed1a1d9c155fa00e9a01941d153c4f1c4",
+        "36c7fa351541f53734bf91e521e4cf1f53a6cd6ac44b55f37f67fa5dfe09d3d0"
+      ],
+      "native": [
+        "66c4be80b63f7067099d3a6325b79b39aa9fc61ce42134f79085d15585d1e23e",
+        "b4914a8da795c5082bbc626e2ee7014f953dca78cc85b5829b1e9264378fc21b",
+        "98786c0a7aea1fad2c37ad726d22fd36d20d2eb90f500754c2f14b75407507bd"
+      ]
+    },
+    "rfm98w": {
+      "definition": "c48f5cc6edc0f4203eee7242d2444e1ffc35727619c2f0f12a598c60d2686120",
+      "art": [
+        "6d8ee511afdc7181988f9b9112b6df9a8d306ec333a52e60aba2da335a8c10cf",
+        "1d6f8d2ecddde336a674120fcee21640cba4fad15002034b8f9d685b85bd4132"
+      ],
+      "native": [
+        "e091d60f313b41653316bb23e058b251243365da73b624cdd786cc0165dd2056",
+        "2f6c9168a2d3630261580b03795b41c67185faf04429f41e68aa719e0aac9e39",
+        "98786c0a7aea1fad2c37ad726d22fd36d20d2eb90f500754c2f14b75407507bd"
+      ]
+    },
+    "ra-01s": {
+      "definition": "f8f1611a58a1b608c3ff0616a00a155efd4b6f0d4d9c1c50381cd0782a814635",
+      "art": [
+        "38e7838be74092f1b6df6b6e9ef4535a2602d0967fa78c78603da8ae9c72c9ae",
+        "52c5b051477c47dd7324858aa474cf0281401a303312560f52a8e5dcbaf5c629"
+      ],
+      "native": [
+        "3aa14c56f59a09b7bf81a8e6e33d62cd6c89b3ec58084d2b8fc1e988765fc8e9",
+        "e6852fef6d9419c6e7ff9d8965e69a4d26a0e95b3adb7a4777765361ca893625",
+        "84ab6790500c3a7bf3b4b7eae3d6cee508022ca5f2f1c79942a9edb566c236bd"
+      ]
+    },
+    "ra-01sh": {
+      "definition": "94fcacfa9ad66f569281814164a1a6f0897f32482836b6bb88836bac4cccf1c8",
+      "art": [
+        "4fc21a1f73270f4ac43afae746011c7112f5a1009b6845477ceb91d8b4ad6e1b",
+        "1930cf157126dc30899bc814f4ffaa384757dd5d07d4a683a55b7f7b28345a83"
+      ],
+      "native": [
+        "2f868c8ab0ee7307a598ba0464c63260a2369bcec1d0adf2ddcae52c37777693",
+        "a7bbd45a4a2a78bb39412300083442281681aa160954b70a25c085378028dbaa",
+        "41201ba407465634a06aa7652224d1b0f80415514ed8cfe31dcf3679d84c323a"
+      ]
+    },
+    "ra-02": {
+      "definition": "dd07ac98789dd3ce7efd9f747521f78f656009fcf6d45f0d0a7e75649274372e",
+      "art": [
+        "2dcd2b529b73bac12c1e0b7cba3795f338a2ba2d4d326c55a936a6db854e787a",
+        "84b4d2231105b1ff692b3ae659311d90441cb138bcf09d9e146eb228c03afff2"
+      ],
+      "native": [
+        "b17b909482e294cfd061e7aa479b893ab3225f87f4aa7fcd96eace20a46a40e3",
+        "f42f757c3065dbb1b7a473fd79f925b61325b59b18309a8689edce071d1668b9",
+        "4f0dd2ee693aa31cc01634c29f645079f4f682f0cb8013c402a77f2aeb593086"
+      ]
+    },
+    "e22-400mm22s": {
+      "definition": "16f7f5154d5bfa1725382aa52a002126f5ae85c6738377d4256b7dc19c7ae1db",
+      "art": [
+        "81d630c6cd27b44aa64f708f3cb54cde4c0a029f0812e810cd6f10a2253318d6",
+        "2c80953153e8dc8feafda5a62afbe1ade0f3c3e06b7f6ec5a245df5068271212"
+      ],
+      "native": [
+        "72c1308180149ed8118d21d653d4ab6c8c821c5eb8934b058c0494c9c9dfed71",
+        "47553c07e36838427f8b7c61266284f8559cd26dff8b67bc809efb1e8cad1b56",
+        "d70f4dee569bb5a4c0ec34bd007609eac47c14289f29a74df978b83c87eea851"
+      ]
+    },
+    "e22-900mm22s": {
+      "definition": "33cd6b849e77187b5fd56549e17c8571466327eb7184c4a375d2e64eef2481c9",
+      "art": [
+        "6060239c9b941e06b6ff824c5f41546cc8e35fcc6b0461c5b50c0e0d3f6b1ca3",
+        "cc843ce14db3c2efd48fb423706bbcbcc4b9fa7dba6eba117388b026b4ee0b69"
+      ],
+      "native": [
+        "0a66e577cd2ee38d74934ca88350fe6babb4370a27e8ed2e58fe453a7c627390",
+        "ade0027db4b5df8c663cb19dcb895d04d5d787832a9181094b8a7f23463b3597",
+        "d70f4dee569bb5a4c0ec34bd007609eac47c14289f29a74df978b83c87eea851"
+      ]
+    },
+    "e22-400m22s": {
+      "definition": "0d9a6db2ba300ebe52e49c28d2c09ba15043662d961035b669945081ace4909f",
+      "art": [
+        "4da9d76d7eb31068362039196bfc6dcc329954c3af2f4cc72fec92e157e2b7fe",
+        "d74d12815f5ffb6d2769ce79bb16c1247cbdf0a9dae5461218d3ea0d7c41f227"
+      ],
+      "native": [
+        "8648afece04f0eb1fec76fac0d58cc3a096a169af45a90aee3706da8994cd06d",
+        "c0d736076d5ed18406139c3b53e5308d969e230d3e2a7073c9ecf314c745e25b",
+        "439faaa83d12afec06a4b728fd9326ac0e4e9e5137e36395b01e5c3097392b48"
+      ]
+    },
+    "e22-900m22s": {
+      "definition": "d6ff74abe7525cd9a6c0ca34d93ecf72bd3d5da1bc7a2f4e1c876f80ae24f131",
+      "art": [
+        "7960e974911c9f1282c404fa401e3f97f596b31a16f48bce9abfde1acb8cdf1b",
+        "9df3a9c1edf328690ea3604c30410d54be618964baa80bb1b6d569b396188af1"
+      ],
+      "native": [
+        "d3db47533eb18b9aba505c6f1e03f7c7d8b28f93bccea2da3d7cd43bb9a6789f",
+        "0089411897583135b11751ee7bf2242c4a49e06f8052cc2fc996398359fa5f65",
+        "439faaa83d12afec06a4b728fd9326ac0e4e9e5137e36395b01e5c3097392b48"
+      ]
+    },
+    "e22-400m30s": {
+      "definition": "bfacc522380da3fee199f802f99c72276ce75f3cfea3d0a15666c539fa1da7d3",
+      "art": [
+        "d705ee43f6b8769b9deaa478537d901b1b57e7b5e81b41bc3ae5e85d1ddcc3e4",
+        "1b31c0167dbc672e4e1c848d5cb6044120222eee739c2fdacb28c7083a900e3c"
+      ],
+      "native": [
+        "9b4a25e7ea6f3c079d3daafdcd2acc6d171e97ba6752c72e2704b0c9bd9661b8",
+        "453436c7626a084c86ea58063c23329e280a482f31f15db05d79c31f323bc36d",
+        "4ac0890db726d92157970401ee6d2b27982356245950432c90019bc4e74cb170"
+      ]
+    },
+    "e22-900m30s": {
+      "definition": "1f0c8dd935ce400782b8726432a80826ea633a4e20df4b2415dc4fd12a86d6d7",
+      "art": [
+        "a0973da0bfa45825916ce8775536afe33bf468f8d6b9d3f1b0b6f01bbd78b799",
+        "9cfa9c91cb98bd52d8f7343b1aa443efd4b61b48f975553871041c2ec589e56a"
+      ],
+      "native": [
+        "e6bef91b20066671e82469b77b331ce2b9fa6884f37897685fad893c125506e4",
+        "a6a75941d65d18e2eadd2c05dd5816de91f5f844ce14a9a65377adb33c8d29de",
+        "4ac0890db726d92157970401ee6d2b27982356245950432c90019bc4e74cb170"
+      ]
+    },
+    "e22-900m33s": {
+      "definition": "917150960b2718e019f293116c915d1e4bde8f8ff4e3fdc42603f77d81937e24",
+      "art": [
+        "e5c51d690b4292f4ad25d3a260d465837e5762514ee18c47644ba75c0ed04f81",
+        "59c95e733c86975673c0456071d58b59cdcbc8b56d75c08bf7ed46e5c5dbd56b"
+      ],
+      "native": [
+        "e71d4750b611002580b4385baa1d8c70c50935034459b031e58d462318064f5a",
+        "6dd6a302c5f5d97ae7b0e5b099496d4692d930c4064e1234b9e675917e25020b",
+        "4ac0890db726d92157970401ee6d2b27982356245950432c90019bc4e74cb170"
+      ]
+    },
+    "e28-2g4m12s": {
+      "definition": "7c7e41aa2027e9154130c6215080741e4a1010f1bfb619751319261fa7f2a3d0",
+      "art": [
+        "1b4f2ded515a9aab0037e3183b3d3683c30c72334987bca947cf2347fd9739de",
+        "d641415a3a706b110fa253ef19ffd68aeee69c066688704c5d494bbc29e531e0"
+      ],
+      "native": [
+        "693f51b16ccb6d9d5976d975bf49a9b23b7f38892a4f862c66ff3634cf4063ae",
+        "9388c8e18bc0a5f9207d7efe0b5b72702d57456b9f8e686f024aa251a96638c4",
+        "5761be42af262ec6970e0c0f8ba5aa4151681dc4c83e3b2a0222655ee61dc7c9"
+      ]
+    },
+    "e28-2g4m12sx": {
+      "definition": "4aadd2a7e44f6d1937337e67e1845de692b7db412995e11fa3e126518c3277ef",
+      "art": [
+        "9f40f07191559ae146186d550a3ba7fafa51203998295e0e64cb95107915e064",
+        "1e7831da003a2e0c9e6d384e0278358d0d7e3a2c5935eb950a90d436b4e10927"
+      ],
+      "native": [
+        "25de73f9c384e3d788993562d350aeae71f395f8ee67e0bb40d52f89a0aba2e2",
+        "dcebfc487ad536e17461e6788176718257183e8ba72f084986604e128550bbdc",
+        "10129b88aa2c55fcec4938b1871e28eee3b3ab887df00399c8f512c9b28ebbe7"
+      ]
+    },
+    "m5stack-unit-light-u021": {
+      "definition": "59018ea831846822e53ac061e5df89cd1829896ec899dc8e092219d8aceaad43",
+      "art": [
+        "ad60ab17ad89f3a8200286a4a9fc8111616a045397365a4c497de76d50888a24",
+        "6f0b3de37ae5137596fd6a5a5d157eaf4a0568e8dcb43097da74a4549e4a0148"
+      ],
+      "native": [
+        "d5741ca451004013527251f803f6111e21e29628407cccdc009cadb709a36ec7",
+        "536bd729f027060fd79e9fe88097b10ef85cf5bf75aebd66666491c879767e43",
+        "aceabab058f405b6022a8c1d947aacfb526a181dac77e7b9fcee4b24d69b6e23"
+      ]
+    },
+    "m5stack-unit-pir-u004": {
+      "definition": "70cd44d3c4ccff00d14b3b1c0a3f9f98100f3662924ec693b616c8b4911f6b39",
+      "art": [
+        "30f083c164c272a038921035ff14b9d983b7e88a5f7940c9afb44535745b430e",
+        "42f31db4f81cf74a28248095adf59d51b8c1cdd3164721f7d3b9a91310de75e7"
+      ],
+      "native": [
+        "42d56beccf948f22a2eeee03c814f8c85e9a34659117709baff97c0790b69bd3",
+        "c89504fa9836a087c4d6fb667e13e0692afb1c91ef99299b80b24ec66cd8832c",
+        "aceabab058f405b6022a8c1d947aacfb526a181dac77e7b9fcee4b24d69b6e23"
+      ]
+    },
+    "m5stack-unit-relay-u023": {
+      "definition": "aab312150c37e17eb415421c8ee353fa985647e32bd96eb3292b0290eb439a36",
+      "art": [
+        "f3412451ef1ad79d771a840142769701ae5f4e1d7d108f6ead08a8bb822ba35d",
+        "c7f66c3aa30655f61117d23a8bafb16967f698e1abbd2e97341a6f0af152c59f"
+      ],
+      "native": [
+        "79d761edea60beae8f68090386d707a3a4b9cc55ee54917bfd8647a90efc29e2",
+        "05aaec3e5360ad36601ff1e3cde6472176f8fe5197a01dbee516de652fa5162c",
+        "99c34320dac0a637096c16635136844066409c7c65c5bd2538aabb95a14ae6c8"
+      ]
+    },
+    "radiomaster-rp1-v2": {
+      "definition": "4bf762995b14456c7519dea79cec1cc741f646b5700fb5f8576837d63a43da19",
+      "art": [
+        "2b5709ef2653c6a748cec8f2d7db2f5985954c8fcdfb57fca28839741c64e264",
+        "14c88d470e8cf121e3dae40b5d73492080b446f380865c63687e5e30c0499f99"
+      ],
+      "native": [
+        "928e2670ea212dbeea08f43debbedf49de6bb34b0d1a55aa592c85bd30985126",
+        "5a6c064b2793f0bacad22e81d210835b02b9ee59e096cf42740e9d01e7505698",
+        "035a4703997721824d11e389309583072b65b2303e778fbd0e5d8b92dd4683e6"
+      ]
+    },
+    "betafpv-superd-2-4ghz": {
+      "definition": "eed0972506e9fd615025f3014fff724f7ad540ad6cffd65c27323a88f42f1624",
+      "art": [
+        "e5defe921d943aeb34da3fc2728f7bb00c0275e1ba8e868cc951232a14439faa",
+        "2065976f5634d4dfcdd92ddafff758f638abf823b6ac4cb98a43ab461a34dfc2"
+      ],
+      "native": [
+        "cab5682fa9dc0705f1e51835e2ed49a44a481d294e0a14889cceda49c03a6d2e",
+        "3fc0cdad8c49b2ba52f0d3fdce770aa878f507b34b13ba8dba7bd2536525cf33",
+        "aab2dc0adbc0bfeae47231887d98007d52c126f7f0c2fdc89cf7e005ba0b3774"
+      ]
+    },
+    "radiomaster-er4": {
+      "definition": "d6a68e48900210e5c075fbd5c3963a9038f91b346171cc69ce2164005b635254",
+      "art": [
+        "ca7b2e5c0183eec295dfb7331c8237603a5683fbf26342afe46abd36c784e5c2",
+        "670a18bd1cfe914fa6532ef1aa893ccca3a52812ecc8da6aa16b7ccf9ea45009"
+      ],
+      "native": [
+        "947646573b4e63f7a0a35a7490e0be72ee181bff588dfda9cbb6565571749f6f",
+        "4d43e797397ff93c33cb947f14bfa9f3282fab2843dec9e996bf694fe3724438",
+        "89db6a4e512c94b16e6c8729fb34c73f0c11b1bf25ee51179d95963f01f1c89d"
+      ]
+    },
+    "speedybee-f405-wing-mini": {
+      "definition": "34c46e234a778f893dd1327daaeba9551ae8b07f0df1e414d76c8436c3cdfedb",
+      "art": [
+        "7c82448fbc65fd03d09066e0048a48bf15b4b7f6dac0357cec162ac927a2b792",
+        "6dba0313e487bf86e25dab49c448031fbc3f72d093700af14a605fe290e0260e"
+      ],
+      "native": [
+        "3a5aedf9211a99a65cf7b4ad33afadda5d6e365c7c9d7c2100b3891385aed8de",
+        "adabbdc7d4457422309e7e0e5807e7ea65233894c682ef8f17046804afd3ecf2",
+        "fcfedf3fbb7b16385e9664dc7475783419acfc74cc3ae633a9e7941890161cef"
+      ]
+    },
+    "speedybee-f405-wing-app": {
+      "definition": "2912f72d2cc8a8408b5cb17883d6c57c51ecbfdbc2f61170874fb1b5d7e4e8db",
+      "art": [
+        "1144acd1ca8295aa94cba1f65dee29ecb4646ce895ce892009941e85c1a7cdc3",
+        "1b1af70b3e6bb9f2807d593cd2761fee79c76422ce5e457221b7984571bd9920"
+      ],
+      "native": [
+        "4f37e9b00df678638e151b10737f6f0f275f90861eadb72f3dc9a856844b35fa",
+        "8fcc928d2a937747746aeb50042811a5682e6bed8c7e5c2eddf4d91ca56355d8",
+        "3b31f83bd0835a71d005c708332c296ec78b0573988e5aa1f9fb19b61e3dc90a"
+      ]
+    },
+    "matek-f405-wing-v2": {
+      "definition": "4527bbe3003bbd34c5df7b56c18a0fed25f8f9f5814aa719d4ef636c3b27ada0",
+      "art": [
+        "29bc24f56d6094cc0791b560d3bec7e81fd82b4177f8afa4fc7bb3fb8748eeef",
+        "0e7fc46f344e5b5a6462b141a082bc3f58f03c19a1b2986399274dc4fb8f32b8"
+      ],
+      "native": [
+        "8a46d9f0cbe88ff6d77e33461c3a4acbf413a5225e91d2cc3912b6fffa7aa38b",
+        "c1dc6a8f3a34ef2b83897605f421a40bf0421b5e0bd81adb504c8b0cb5384913",
+        "25b5f28951f681aa4438e530f3e21af8e346bf8c59f7d8b9315e802a25257262"
+      ]
+    },
+    "matek-m10q-5883": {
+      "definition": "528b7bf38823e6d2924e9fb9292be79f05581996ccb793235ff77cc88f3892d6",
+      "art": [
+        "4ec23decd88349a1c0c76dc09df1d414a4e1a7d21d7fa904c28df64499331233",
+        "31010e6ecba13be1c2bd64bb6a0284e9c5152b2a2f5b7b3657fead07882c4ea2"
+      ],
+      "native": [
+        "847dbf9dadfc951a283e94581fe8c76ebba61bc7e143594d153e73bef25ecf2b",
+        "a4161375fef2e911354f24cda60f036a7e72f46ec3cb9ba78ee8d4fa1bf367ca",
+        "4e0e847afdb307e6f21cdc7dce0b5c6d218d766d7b40409e44e9e086230ecfda"
+      ]
+    },
+    "nordic-nrf52840-dongle": {
+      "definition": "1fceffcaac6e7665d0ef78558532408c7ecb0b37564a24e049f62b065cfba1f2",
+      "art": [
+        "339cd4d000fabf95104d46e48cc9ba25d8fa25d05b0107c1696324493124f87d",
+        "d983bcd4f0d7e580b3281df14497fee0ba79b8ebab5ce0c26d551935ab591de0"
+      ],
+      "native": [
+        "d441b80a4c605c202224a85b6cf2b1f08ebcd783c896668d649d22b4279e60a8",
+        "836553dac3fc563b4e51aaa4a79e4c1849f6cf96d9a29c8485330fc4cff5cea9",
+        "a621a93d786d1d46bb14a1ac609179e9c1dbabe78b18ca92eb8ec8bcc7acd674"
+      ]
+    },
+    "nordic-power-profiler-kit-ii": {
+      "definition": "97f8bb49026f560538d044a25af6a646a53ef834e1e09e6eb0bae2d2cb993000",
+      "art": [
+        "ad12d2fa981088030ece889cff42524d02541196c4cd3085986edb6d8ef2833e",
+        "91b8cd4842d934a50357ef5ccdce88125092ce58ee45f822acd0e32bf44ea54a"
+      ],
+      "native": [
+        "7f37068865bd7000b3cee495824da94891d24ac951ef34213f753ea3d3b9f767",
+        "ab9f27a87e392e206c7c409f123b457b4bd3fe866704c6ea9ac0d20b0f1332f5",
+        "f21d979993a8fbf7e3518a0bee5d10194bbe8610ea3cf707b31e38eb1dd1f277"
+      ]
+    },
+    "hlk-7688a": {
+      "definition": "b1272bed0449a91c43b187f97ecbe5b4e7adfd8f983e60519d47bc24c2aecb2e",
+      "art": [
+        "cec2ce5935f7d126789d8aa25c92f0aa8bd3886540e92774ac5c35577407e26f",
+        "b341afac1c5c89c3029446a6b9a9b7a3c209d4b5949ecfcb8462abac1b250efa"
+      ],
+      "native": [
+        "cdc5542daf6b4dda30be524894da60b5b86a2ba86856b6fceda3ab229f9aa39a",
+        "c3b87434d9e930850c23f4cdd789292ff17d5b0da54c97ceebcd93bfdd7bb035",
+        "d4fbd89db51c6290609f798e77f22f5ef6a16a606553822e0b51d8f08d3b498b"
+      ]
+    },
+    "hlk-7628n": {
+      "definition": "4beb376ead1a06381dc109b0221bb07abd384d0d2fe16e3a2fc90c2e98d8df0d",
+      "art": [
+        "f08416544f95b4936795663d766794c24d07a78c0d8fc3b6089ee4dd73b910e4",
+        "56ab12fa6bedf9ef8b5585019659ce03d8f2c70d5956afc32eae42b095c447b4"
+      ],
+      "native": [
+        "1133205b7a438f21bbeb9237739f29c97fb01430424a6a6fd6c9e4c2349d7666",
+        "da12ab83af22fe413bfc06e1fd99caf9bd7ca5e1781d35ab8c08b9aa4c3ac152",
+        "a99c91e3e6ca7d66c6bc2b80c62db8a23e4d7ae33f173a26bfc371749d2d420e"
+      ]
+    },
+    "hlk-7621a": {
+      "definition": "c87cd654f96d9ae3c9549e685d19366474656dd47ab2307c9cc29d4c7c9e4d55",
+      "art": [
+        "61db65ea5d6befe0f1fb19a49a965f9a940375af8ab11a8a9a45913e34b9a535",
+        "07759e65539d1e15bd73e642b7638777842313f196804164c3899e5cbe0b18e5"
+      ],
+      "native": [
+        "7731dab50b5dc5decdd92c0524eeab70bd60913e252fb148655844338338240d",
+        "9ce2b4c1d41eb854dc1a5c60deb38ecd2a90cfc586fb0c47944fced15d2207c3",
+        "2c1253364bcf68d0b4e308ee91e868b0b45487838f72b107f2028f833c7b353e"
+      ]
+    },
+    "hlk-rm08k": {
+      "definition": "1c377cea2718c3afe4337781803983966bf5e49a9d433c6a2080ac447eada5a4",
+      "art": [
+        "88860b63107d98057d585674afd3593f5cf2d72d056b06b3c6c0ebecce277aaa",
+        "f8afd26440b95147588e1d7856b25f7c05d5ee605a331197ef1f46ae6859192c"
+      ],
+      "native": [
+        "35080caf30d9087fa8b74febff9b857a9bfe56d7f64c77e117d6979581544c51",
+        "020c6a26ba62a5d1b30360408927ded1032333df240eed684eaf0071430bc839",
+        "af36690d826f06f23578b18ea872c479ab3c01508cf44dccc5fc2021fb8b665c"
+      ]
+    },
+    "simcom-sim7600g-h-m2": {
+      "definition": "0ae6aad1aeefaa5a2cfe44707dacb4fc5ca1c4c31a7696efca9cde9266a3de52",
+      "art": [
+        "7db5f6e634384b7c6680552ff33a3aea05d40d0acbbbd28747ba2f5736a6b068",
+        "d5bd319ffd5dcbe9c259cd741910986ab28ad3b112e0c7b7bd40a1197d0e5bbe"
+      ],
+      "native": [
+        "f77f638316ea790e84e6983f0834a4166ef99e9c02b0214cdf636e6271a12bf1",
+        "c87a1f7a22cd79021e9b083ddb5ec35d0325ef36e20a2dcca1b227a299dfea5a",
+        "86fb449a5f91c7292b84376bf7b24078a7d49f859720b8d643a239b3fdd468c0"
+      ]
+    },
+    "simcom-sim800c": {
+      "definition": "235bd041f2652d3d89c2b81772db34f60464ea846d33cbbc696dba9ff6ab167c",
+      "art": [
+        "f51f1d748c4c69e92b66aa60bd7a70d6bcfbc5c6a07dd0ace3c5edd14db458e9",
+        "575a454d3bc8614c3cefb66140efabb6b568b5133a38a3b259db0f7f61e70e8e"
+      ],
+      "native": [
+        "6c1d9f33e9c2571e231f6263408d3699ae9c63255883fe6be53a42f1b8fb5f21",
+        "7e3ac5f49a8d55e471a0a09e3fbe43f472a641f547f4641ce49c14b6e86676a0",
+        "9d23b3ff371413762748c31cc65b61b10697d2b8180e268c390c29c542bd4a4a"
+      ]
+    },
+    "simcom-sim7600e-minipcie": {
+      "definition": "8bafdb5cee7685a9d1cf3bff1a483a920e3522a34716191ee9fba5458b674742",
+      "art": [
+        "ed7abc5473aec835fc69be5e84c6d9865947b02da2934409c7894891cc0d66e3",
+        "ef01abc70d8f8f7c357add62427f037568317d0ee53b390177a5f948b78e6c1a"
+      ],
+      "native": [
+        "170815fe712553c1441b4ea3a4c4a3233809b9055f096fcf30e47c78e77aec42",
+        "46a8505ffba269bf33ffbd3d6330c08fe270801d8528f35ef8de2c19ef905071",
+        "0a7b7f6ddc801f26373231af1cc31e0f77c06ba45d16af3d1b299f07f30151b8"
+      ]
+    },
+    "quectel-ec25-e-minipcie": {
+      "definition": "45437e9320993270bae964507134e5108a799d7290eed6ef3fff02e28eecacb0",
+      "art": [
+        "e753475d01a590d59f139e1f1ce75ee68dfec9ac131ef694402127a73be78ebb",
+        "e89a1990cf846906d388f0d99c1cd52f92eb0942fbd44fae952c6b77d16bb8d3"
+      ],
+      "native": [
+        "ea68bb96bbc35284de6101804d8b556f4f8448943af4c32d4d08c8c1a59b1a3f",
+        "3d4e9e753e76b6d177c1b702d7586bbfbcb7030c1cf1725ce931eae17a124d14",
+        "b79a4bfee32cad9eee7f6ec0454f1176c32788d01a98a67fc019cbd84551366d"
+      ]
+    },
+    "quectel-lc76g-ab": {
+      "definition": "2e15348b7b6d53bec0f98535964821455098b454ea92599bb2a687ae1c53a23a",
+      "art": [
+        "2b8352ffc3df6119ed482dcaad0e18eb8d35c99af4ab7edb300aa1b96cb06c51",
+        "1780b19bf0bf8d47d36dd6d9900e273f63027e3181d4584d2626cbe009e02bc6"
+      ],
+      "native": [
+        "755cc24a6a3e818e573635aab1d564d0938c6774f60db75fcd6714b342094d59",
+        "85080306c90b4bb471755701586d2116dc3d44cdbf7e3d6fbd76539faa7de1d3",
+        "05ebf0857be26efac441015889ea0089daa19386709afce8525db7507a00104d"
+      ]
+    },
+    "quectel-lc76g-pa": {
+      "definition": "656551c9695d1a8336697ca482e49ed8ce1c89acaf2ee09df80e210617add86d",
+      "art": [
+        "90863b8e6457814a34098daafe5ca8c7fafdee579f0009004d5573cd7399f5cb",
+        "18e35ccdbdb1fbfaa782e65d88cefd2ca99f1af2e0ba486bcddadbce6a194723"
+      ],
+      "native": [
+        "7b8d6e09e375c0797848ec68e66abab606923cd35ef07b67fa20296eb1120ef3",
+        "8eb89b3c35ee191c8aa3d6df087f9d2a3fb9509a3453f8164c7cee5204453fb0",
+        "05ebf0857be26efac441015889ea0089daa19386709afce8525db7507a00104d"
+      ]
+    },
+    "quectel-lc76g-pb": {
+      "definition": "5528992d55022834717fa47e1cd21bd4dd1d9173b49a79a604541ac704035cf4",
+      "art": [
+        "8a97e484f3f23697798b2ce8721813addfe2bb1eecd3c37376c68c7b731fd3f6",
+        "2b3f64eb9c4d311c150929b4443d35043a6d6fee2962ee5655fe0d7281eef25b"
+      ],
+      "native": [
+        "e355b4fb7e2948e1e31249fac488cd8d36c1b653c2e503e0f208b09aec49f93a",
+        "444d481213fefa8e43e729ef4d433370cf089114e758e94f409bd05fa8d58fc9",
+        "05ebf0857be26efac441015889ea0089daa19386709afce8525db7507a00104d"
+      ]
+    },
+    "nxp-frdm-kl25z-e": {
+      "definition": "6752db492f2fa14440fd2006ef9100a5673a74a10e056492b5a087809a526b95",
+      "art": [
+        "aa9965cbb52f2458b3cb96a5b66adf7610db787021ad134785915eccae3d281a",
+        "740c9471fab5791df32f35f21995476e0ccbaaa03c8acba36b49f53f7b314eb9"
+      ],
+      "native": [
+        "e0a678a9878cb475741d1775724af66e383d97e6b73684f21e5f6ca9cd3d0bad",
+        "3c68b14d2ebd8e479beb891b90b43f1356f8ed0de19d84e591508f7053e7362d",
+        "503acd630db21b571a59c6e079108f85d17e767cd056099a8e41a807a7a112cc"
+      ]
+    },
+    "nxp-frdm-k64f-e4": {
+      "definition": "e17260c05ab930bb34de95ef062ed4a2359b947a81ffed3e4d8d76a38270dfc5",
+      "art": [
+        "6f592199d1543be5e0276755690c0506c521239ed9c6af5e6debaa72437637bf",
+        "89a72804a8dde296ce47af7d32a5ea379590d792a17861098ba19fec8725d7b6"
+      ],
+      "native": [
+        "ed9163c45637db39644d22d1bae3a7203ec38b46a769dfe892e7591458df7337",
+        "4e9d159b50c8d82d8ebf1f2ca38a52835981f591762aec4f3861afa1ab9d8dbb",
+        "6d811c49f301dee94b00f55976348e117d08520d5a260abc219b803fcc7e2c1b"
+      ]
+    }
+  },
+  "sourceArtifacts": [
+    {
+      "id": "rfm95w",
+      "url": "https://www.hoperf.com/uploads/RFM95W-V2.0_1695351437.pdf",
+      "resolved": "https://www.hoperf.com/uploads/RFM95W-V2.0_1695351437.pdf",
+      "bytes": 3775271,
+      "sha256": "ae2a0cccdc4fbb9a3539b8a761d0a774a30b22982ba80f9572709035cd8ba803",
+      "file": "rfm95w.pdf"
+    },
+    {
+      "id": "rfm96w",
+      "url": "https://www.hoperf.com/uploads/RFM96W-V2.0_1695351477.pdf",
+      "resolved": "https://www.hoperf.com/uploads/RFM96W-V2.0_1695351477.pdf",
+      "bytes": 3775271,
+      "sha256": "ae2a0cccdc4fbb9a3539b8a761d0a774a30b22982ba80f9572709035cd8ba803",
+      "file": "rfm96w.pdf"
+    },
+    {
+      "id": "rfm98w",
+      "url": "https://www.hoperf.com/uploads/RFM98W-V2_0_1702287607.pdf",
+      "resolved": "https://www.hoperf.com/uploads/RFM98W-V2_0_1702287607.pdf",
+      "bytes": 3775271,
+      "sha256": "ae2a0cccdc4fbb9a3539b8a761d0a774a30b22982ba80f9572709035cd8ba803",
+      "file": "rfm98w.pdf"
+    },
+    {
+      "id": "ra-01s",
+      "url": "https://docs.ai-thinker.com/en/Ra-01S/index.html",
+      "resolved": "https://docs.ai-thinker.com/en/Ra-01S/index.html",
+      "bytes": 47747,
+      "sha256": "5a33abeede553ef23ebd79432a44449eccda850f8635276202e77edc89767b74",
+      "file": "ra-01s.html"
+    },
+    {
+      "id": "ra-01sh",
+      "url": "https://docs.ai-thinker.com/en/Ra-01SH/index.html",
+      "resolved": "https://docs.ai-thinker.com/en/Ra-01SH/index.html",
+      "bytes": 47550,
+      "sha256": "86bf652a0834665770976045d4e7effe1c230e8bc714f348dc2d496e24514c87",
+      "file": "ra-01sh.html"
+    },
+    {
+      "id": "ra-02",
+      "url": "https://docs.ai-thinker.com/en/Ra-02/index.html",
+      "resolved": "https://docs.ai-thinker.com/en/Ra-02/index.html",
+      "bytes": 45117,
+      "sha256": "91bbb07d1a01acc0d41d8ad823a1f89b2f8a2cb60fbb27e989611a70a4a248ee",
+      "file": "ra-02.html"
+    },
+    {
+      "id": "e22-400mm22s",
+      "url": "https://www.cdebyte.com/products/E22-400MM22S",
+      "resolved": "https://www.cdebyte.com/products/E22-400MM22S",
+      "bytes": 116554,
+      "sha256": "c467189f46bbf0628118f01dac21c9660060122451fb653268250242fd9d4a96",
+      "file": "e22-400mm22s.html"
+    },
+    {
+      "id": "e22-900mm22s",
+      "url": "https://www.cdebyte.com/products/E22-900MM22S",
+      "resolved": "https://www.cdebyte.com/products/E22-900MM22S",
+      "bytes": 116982,
+      "sha256": "14ca6da7856c7f45b16e577fd7f447f67edb82057ba077eef751af2ee3f93d31",
+      "file": "e22-900mm22s.html"
+    },
+    {
+      "id": "e22-400m22s",
+      "url": "https://www.cdebyte.com/products/E22-400M22S",
+      "resolved": "https://www.cdebyte.com/products/E22-400M22S",
+      "bytes": 118217,
+      "sha256": "07c23ac27fc1fa19597e81fd8ddb841536668e573ae642f17e53bae0f33deaf2",
+      "file": "e22-400m22s.html"
+    },
+    {
+      "id": "e22-900m22s",
+      "url": "https://www.cdebyte.com/products/E22-900M22S",
+      "resolved": "https://www.cdebyte.com/products/E22-900M22S",
+      "bytes": 117939,
+      "sha256": "81703064d6c7c80e3f8ef93b3c8b20802db614b51e8a28e08001cac206fe764c",
+      "file": "e22-900m22s.html"
+    },
+    {
+      "id": "e22-400m30s",
+      "url": "https://www.cdebyte.com/products/E22-400M30S",
+      "resolved": "https://www.cdebyte.com/products/E22-400M30S",
+      "bytes": 118167,
+      "sha256": "fe7eabea182339674d1030b21b15be3c3acc6714787c3224b14bc6adef0a84e3",
+      "file": "e22-400m30s.html"
+    },
+    {
+      "id": "e22-900m30s",
+      "url": "https://www.cdebyte.com/products/E22-900M30S",
+      "resolved": "https://www.cdebyte.com/products/E22-900M30S",
+      "bytes": 118107,
+      "sha256": "6e2b26349d3cac63874cccfd5bf12aff0f1ad42153b96906fd9a26ea788b0bcf",
+      "file": "e22-900m30s.html"
+    },
+    {
+      "id": "e22-900m33s",
+      "url": "https://www.cdebyte.com/products/E22-900M33S",
+      "resolved": "https://www.cdebyte.com/products/E22-900M33S",
+      "bytes": 118599,
+      "sha256": "98e9191d5a89dbdf6f02d2b6da3631da724a5d7709272019d618a8ca593e0cbd",
+      "file": "e22-900m33s.html"
+    },
+    {
+      "id": "e28-2g4m12s",
+      "url": "https://www.cdebyte.com/products/E28-2G4M12S",
+      "resolved": "https://www.cdebyte.com/products/E28-2G4M12S",
+      "bytes": 118347,
+      "sha256": "2b0f6b3cf43ee26084f04c2d699e78680cc3a097ea397df3b189a5466d765d7c",
+      "file": "e28-2g4m12s.html"
+    },
+    {
+      "id": "e28-2g4m12sx",
+      "url": "https://www.cdebyte.com/products/E28-2G4M12SX",
+      "resolved": "https://www.cdebyte.com/products/E28-2G4M12SX",
+      "bytes": 118807,
+      "sha256": "6ff7cfd1e3e6bd0719c5adf6bd4766ad10124e261cae4f55e62fcfd8ad4c89fc",
+      "file": "e28-2g4m12sx.html"
+    },
+    {
+      "id": "m5stack-unit-light-u021",
+      "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/709/U201-UNIT_LIGHT_SCHE.pdf",
+      "resolved": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/709/U201-UNIT_LIGHT_SCHE.pdf",
+      "bytes": 124399,
+      "sha256": "4ba71053562de27199f34bcea6220203b5272cd8290ef2521f9f8e268efd730b",
+      "file": "m5stack-unit-light-u021.pdf"
+    },
+    {
+      "id": "m5stack-unit-pir-u004",
+      "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/701/UNIT_PIR.pdf",
+      "resolved": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/701/UNIT_PIR.pdf",
+      "bytes": 60618,
+      "sha256": "fbcbc5ca83588d48afab0a1bf4bdaab2740b43044f28ece8f7ddcff9bddb095e",
+      "file": "m5stack-unit-pir-u004.pdf"
+    },
+    {
+      "id": "m5stack-unit-relay-u023",
+      "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/577/UNIT-RELAY.pdf",
+      "resolved": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/577/UNIT-RELAY.pdf",
+      "bytes": 60064,
+      "sha256": "bf05690fbb30fc8395cc9c20c7815257ffee425b2af56eb2787805d8c59a9971",
+      "file": "m5stack-unit-relay-u023.pdf"
+    },
+    {
+      "id": "radiomaster-rp1-v2",
+      "url": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320",
+      "resolved": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320",
+      "bytes": 488386,
+      "sha256": "37329d09053d99d0638b5a9b4f5520df0a9d50133cb963c8aef61768b0dea328",
+      "file": "radiomaster-rp1-v2.pdf"
+    },
+    {
+      "id": "radiomaster-er4",
+      "url": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/ER4_User_Manual.pdf?v=1722224113",
+      "resolved": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/ER4_User_Manual.pdf?v=1722224113",
+      "bytes": 915030,
+      "sha256": "92efddf31acb8c8057fe5a9274422bd0f8bd9193f30299d543b02f0985b1a0a0",
+      "file": "radiomaster-er4.pdf"
+    },
+    {
+      "id": "speedybee-f405-wing-mini",
+      "url": "https://www.speedybee.com/f405-wing-mini-download/",
+      "resolved": "https://www.speedybee.com/f405-wing-mini-download/",
+      "bytes": 76946,
+      "sha256": "41a924b0d49379b99779f89696c1c1c5fe6cbe164d99c6207e37383eac366f21",
+      "file": "speedybee-f405-wing-mini.html"
+    },
+    {
+      "id": "speedybee-f405-wing-app",
+      "url": "https://www.speedybee.com/f405-wing-app-download/",
+      "resolved": "https://www.speedybee.com/f405-wing-app-download/",
+      "bytes": 76524,
+      "sha256": "df84c30b134da6d15a32795321ffd8973db376f6e9cbf393e7cc46fc0f7c862f",
+      "file": "speedybee-f405-wing-app.html"
+    },
+    {
+      "id": "hlk-7688a",
+      "url": "https://h.hlktech.com/download/HLK-7688A/1/HLK-7688A%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV1.4.pdf",
+      "resolved": "https://h.hlktech.com/download/HLK-7688A/1/HLK-7688A%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV1.4.pdf",
+      "bytes": 800976,
+      "sha256": "83be7c61df1d16069dd1479c0648fcdd09c1c9dc15171f71928ce72914f28820",
+      "file": "hlk-7688a.pdf"
+    },
+    {
+      "id": "hlk-7628n",
+      "url": "https://h.hlktech.com/download/HLK-7628N/1/HLK-7628N%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV2.6.pdf",
+      "resolved": "https://h.hlktech.com/download/HLK-7628N/1/HLK-7628N%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8CV2.6.pdf",
+      "bytes": 1430547,
+      "sha256": "4ceede8b4964863c85dd9fac828b67978319085e26f7eec4798985882b908a92",
+      "file": "hlk-7628n.pdf"
+    },
+    {
+      "id": "hlk-7621a",
+      "url": "https://h.hlktech.com/download/HLK-7621/1/HLK-7621A%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_V1.5.pdf",
+      "resolved": "https://h.hlktech.com/download/HLK-7621/1/HLK-7621A%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_V1.5.pdf",
+      "bytes": 756410,
+      "sha256": "3b3debead2b4f58b201ca8629db16295cda48c4d004482c8e89529e02ed28b59",
+      "file": "hlk-7621a.pdf"
+    },
+    {
+      "id": "hlk-rm08k",
+      "url": "https://h.hlktech.com/download/HLK-RM08K/1/HLK-RM08K--%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C--V1.6.pdf",
+      "resolved": "https://h.hlktech.com/download/HLK-RM08K/1/HLK-RM08K--%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C--V1.6.pdf",
+      "bytes": 3025352,
+      "sha256": "152d2dc3b9d4f488889d1eaf2aad55169be739bc2c5ad9aded1d86ef47cf85b4",
+      "file": "hlk-rm08k.pdf"
+    },
+    {
+      "id": "simcom-sim7600g-h-m2",
+      "url": "https://wiki.luckfox.com/SIM7600G-H-M.2",
+      "resolved": "https://wiki.luckfox.com/SIM7600G-H-M.2/",
+      "bytes": 29137,
+      "sha256": "eac9bd5f0aafc5df62614ad4971a797c57be2857ff181be7a4af29b3788e67c8",
+      "file": "simcom-sim7600g-h-m2.html"
+    },
+    {
+      "id": "simcom-sim800c",
+      "url": "https://simcom.ee/documents/SIM800C/SIM800C_Hardware_Design_V1.05.pdf",
+      "resolved": "https://simcom.ee/documents/SIM800C/SIM800C_Hardware_Design_V1.05.pdf",
+      "bytes": 2706560,
+      "sha256": "93bab75565097ccba97b839d1315d516b2af13698bcb3a1279bcc002ca7e4360",
+      "file": "simcom-sim800c.pdf"
+    },
+    {
+      "id": "simcom-sim7600e-minipcie",
+      "url": "https://simcom.ee/documents/SIM7600E/SIM7600%20Series_PCIE_Hardware%20Design_V1.01.pdf",
+      "resolved": "https://simcom.ee/documents/SIM7600E/SIM7600%20Series_PCIE_Hardware%20Design_V1.01.pdf",
+      "bytes": 1249299,
+      "sha256": "35c6963a9712dc821a9690cdd37b3925c66f760a9a13547cdad06abab2302da4",
+      "file": "simcom-sim7600e-minipcie.pdf"
+    },
+    {
+      "id": "quectel-ec25-e-minipcie",
+      "url": "https://quectel.com/content/uploads/2024/02/Quectel_EC25_Mini_PCIe_Hardware_Design_V2.4-2.pdf",
+      "resolved": "https://quectel.com/content/uploads/2024/02/Quectel_EC25_Mini_PCIe_Hardware_Design_V2.4-2.pdf",
+      "bytes": 1119002,
+      "sha256": "e5a4207c7b87787e3a0e6ae7b94eab6e48a65406997089e0068f0f4a28f195b0",
+      "file": "quectel-ec25-e-minipcie.pdf"
+    },
+    {
+      "id": "quectel-lc76g-ab",
+      "url": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "resolved": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "bytes": 1411007,
+      "sha256": "978d3e4ba8bc4bced0d75ad23db0a2d92ad42dfd9f7f7a9fe6cd6408273b7a8e",
+      "file": "quectel-lc76g-ab.pdf"
+    },
+    {
+      "id": "quectel-lc76g-pa",
+      "url": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "resolved": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "bytes": 1411007,
+      "sha256": "978d3e4ba8bc4bced0d75ad23db0a2d92ad42dfd9f7f7a9fe6cd6408273b7a8e",
+      "file": "quectel-lc76g-pa.pdf"
+    },
+    {
+      "id": "quectel-lc76g-pb",
+      "url": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "resolved": "https://www.quectel.com/content/uploads/2023/05/Quectel_LC76G_Series_Hardware_Design_V1.3.pdf",
+      "bytes": 1411007,
+      "sha256": "978d3e4ba8bc4bced0d75ad23db0a2d92ad42dfd9f7f7a9fe6cd6408273b7a8e",
+      "file": "quectel-lc76g-pb.pdf"
+    },
+    {
+      "id": "ra-01s-spec",
+      "name": "ra-01s-spec",
+      "url": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01S_V1.1.2%20Specification-20260410A.pdf",
+      "file": "ra-01s-spec.pdf",
+      "sha256": "a7c679ad7b6892049597322e773aef3c2c9178d585ed0214a47ef5bc1504c422",
+      "bytes": 909168
+    },
+    {
+      "id": "ra-01sh-spec",
+      "name": "ra-01sh-spec",
+      "url": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-01SH%20Specification-20200818.pdf",
+      "file": "ra-01sh-spec.pdf",
+      "sha256": "72ec8eb37b9cdf08c082ee78dbaae9889f6b524720675b1bc99cc3e48b68f7c0",
+      "bytes": 865670
+    },
+    {
+      "id": "ra-02-spec",
+      "name": "ra-02-spec",
+      "url": "https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Public%20Document%20Center/LoRa/lora/Specification/Ra-02_V1.1%20Specification-20171219.pdf",
+      "file": "ra-02-spec.pdf",
+      "sha256": "b4d1fa7502007b18a06620681eece42985f8eb8bf62279fdaea4f00cd977b59d",
+      "bytes": 155598
+    },
+    {
+      "id": "e22-400m30s-pins",
+      "name": "e22-400m30s-pins",
+      "url": "https://www.cdebyte.com/products/E22-400M30S/2#Pin",
+      "file": "e22-400m30s-pins.html",
+      "sha256": "96bf9e0f122a930f591c89579d7a6c89baeae5e5e3105470fd985504ac98b8d3",
+      "bytes": 124483
+    },
+    {
+      "id": "e22-900m30s-pins",
+      "name": "e22-900m30s-pins",
+      "url": "https://www.cdebyte.com/products/E22-900M30S/2#Pin",
+      "file": "e22-900m30s-pins.html",
+      "sha256": "b32655c1f2a8de2d7274f6dddcb2ad948913a7af03d4f6403bc91d3dc926a003",
+      "bytes": 124425
+    },
+    {
+      "id": "e28-2g4m12sx-pins",
+      "name": "e28-2g4m12sx-pins",
+      "url": "https://www.cdebyte.com/products/E28-2G4M12SX/2#Pin",
+      "file": "e28-2g4m12sx-pins.html",
+      "sha256": "539b920171b72fc4124988daf2db02582020dadc28f59ef837cddebe38ee38c6",
+      "bytes": 126150
+    },
+    {
+      "id": "e22-900m33s-pins",
+      "name": "e22-900m33s-pins",
+      "url": "https://www.cdebyte.com/products/E22-900M33S/2#Pin",
+      "file": "e22-900m33s-pins.html",
+      "sha256": "1b69f4021ea55d8094424d34c14c12f4a495f9cd6701ec9ed530d538833e5cda",
+      "bytes": 128964
+    },
+    {
+      "id": "e22-900mm22s-pins",
+      "name": "e22-900mm22s-pins",
+      "url": "https://www.cdebyte.com/products/E22-900MM22S/2#Pin",
+      "file": "e22-900mm22s-pins.html",
+      "sha256": "b4cacdd5037b4a809d81eafe47feca29e07cce2c6f9038a9fcad7c563ab0cde1",
+      "bytes": 135942
+    },
+    {
+      "id": "e28-2g4m12s-pins",
+      "name": "e28-2g4m12s-pins",
+      "url": "https://www.cdebyte.com/products/E28-2G4M12S/2#Pin",
+      "file": "e28-2g4m12s-pins.html",
+      "sha256": "1fe5c0c926a2d29eaccfeaf8126ce27417877222ba54e3ef957453fedc77ba6c",
+      "bytes": 125071
+    },
+    {
+      "id": "e22-400m22s-pins",
+      "name": "e22-400m22s-pins",
+      "url": "https://www.cdebyte.com/products/E22-400M22S/2#Pin",
+      "file": "e22-400m22s-pins.html",
+      "sha256": "23f4650787652656d2bc411d903788fc58f9277d0b9f9731e0d87bd41b023435",
+      "bytes": 124038
+    },
+    {
+      "id": "e22-900m22s-pins",
+      "name": "e22-900m22s-pins",
+      "url": "https://www.cdebyte.com/products/E22-900M22S/2#Pin",
+      "file": "e22-900m22s-pins.html",
+      "sha256": "34781289f995b5a01b13204171b0bfd05b2a092b025f6dd505bd1d9f0c0accb3",
+      "bytes": 123523
+    },
+    {
+      "id": "e22-400mm22s-pins",
+      "name": "e22-400mm22s-pins",
+      "url": "https://www.cdebyte.com/products/E22-400MM22S/2#Pin",
+      "file": "e22-400mm22s-pins.html",
+      "sha256": "67a9885db7dbf26f58c6a69b28a8a146cc10eeb705ff9f53d5e21b28783a828c",
+      "bytes": 135786
+    },
+    {
+      "id": "e22-400mm22s-pins",
+      "name": "e22-400mm22s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2023-2-9/2023291742334019.jpg",
+      "sha256": "83ebf99a5bebcc7bd7e05000c35181ceb727acb5695653909fb2019f653016fb",
+      "file": "e22-400mm22s-pins.jpg"
+    },
+    {
+      "id": "e22-900m30s-pins",
+      "name": "e22-900m30s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2021-10-27/20211027119461143.jpg",
+      "sha256": "c9f297897d4f4aa328d33aa4416f2aa08d09575b5ef1c0f97158fc28a8c56da9",
+      "file": "e22-900m30s-pins.jpg"
+    },
+    {
+      "id": "e28-2g4m12s-pins",
+      "name": "e28-2g4m12s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2023-4-7/20234717167561.png",
+      "sha256": "3780dcf2d979e732240bb9010a907a1eff36d843a2a44c4724c04704592f9300",
+      "file": "e28-2g4m12s-pins.jpg"
+    },
+    {
+      "id": "e22-400m22s-pins",
+      "name": "e22-400m22s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2024-1-4/2024141017548358.jpg",
+      "sha256": "6e9c18a3205029d44628aca6e8185b6926937e65f9e7a863dd09b53338105d82",
+      "file": "e22-400m22s-pins.jpg"
+    },
+    {
+      "id": "e22-400m30s-pins",
+      "name": "e22-400m30s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2021-10-27/20211027117293253.jpg",
+      "sha256": "c9f297897d4f4aa328d33aa4416f2aa08d09575b5ef1c0f97158fc28a8c56da9",
+      "file": "e22-400m30s-pins.jpg"
+    },
+    {
+      "id": "e22-900m33s-pins",
+      "name": "e22-900m33s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2024-4-3/2024431333153132.jpg",
+      "sha256": "ac03f6f312303c5acf40e499f8535c422b01b558e8a13a406d2718d2e6b92493",
+      "file": "e22-900m33s-pins.jpg"
+    },
+    {
+      "id": "e22-900mm22s-pins",
+      "name": "e22-900mm22s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2023-2-9/2023291744417329.jpg",
+      "sha256": "83ebf99a5bebcc7bd7e05000c35181ceb727acb5695653909fb2019f653016fb",
+      "file": "e22-900mm22s-pins.jpg"
+    },
+    {
+      "id": "e22-900m22s-pins",
+      "name": "e22-900m22s-pins",
+      "url": "https://www.cdebyte.com/Uploadfiles/Picture/2024-1-4/2024141017548358.jpg",
+      "sha256": "6e9c18a3205029d44628aca6e8185b6926937e65f9e7a863dd09b53338105d82",
+      "file": "e22-900m22s-pins.jpg"
+    },
+    {
+      "id": "nordic-dongle-cad",
+      "url": "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/nrf52840-dongle/nrf52840-usb-dongle---hardware-files-2_1_1.zip",
+      "bytes": 5845205,
+      "sha256": "c9c204abe1e224d00008960e9ad5666a9e2fd19834beca40d78dc5f41ea8e930"
+    },
+    {
+      "id": "nordic-ppk-cad",
+      "url": "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/dev-kits/power-profiler-kit-ii/pca63100-power-profiler-kit-ii---hw-files---1_0_1.zip",
+      "bytes": 11938981,
+      "sha256": "8dc51b74d105d0d462615187be198ecf1551cfcaa2337576a4eabb9245260725"
+    },
+    {
+      "id": "superd-manual",
+      "url": "https://support.betafpv.com/hc/en-us/article_attachments/19091862476825",
+      "bytes": 18603162,
+      "sha256": "efdf5b2277411e753b39e500e41687c51e850ebad6787a9f3185e0d146a7b3c9"
+    }
+  ],
+  "retrievalNotes": [
+    {
+      "id": "matek-f405-wing-v2",
+      "note": "Direct HTTP fetch redirected to unrelated Google content; that body is excluded from the evidence artifacts. Manufacturer search-index text still supplies the exact V2 package and unsoldered Dupont-header statement."
+    },
+    {
+      "id": "matek-m10q-5883",
+      "note": "Direct HTTP fetch redirected to unrelated Google content; excluded from sourceArtifacts. Manufacturer indexed page and connector-maker JST specification were reviewed."
+    },
+    {
+      "id": "nxp-frdm-kl25z-e",
+      "note": "Original exact Rev E PDF URL returns 404. An accessible official Rev D schematic corroborates family topology only and is not relabeled as exact Rev E mechanics."
+    },
+    {
+      "id": "nxp-frdm-k64f-e4",
+      "note": "Direct legacy product URL failed in raw HTTP retrieval; the official NXP browser-indexed product and guide remain references. No account-restricted CAD was treated as reviewed."
+    }
+  ],
+  "visualReview": {
+    "manufacturerMechanicalPagesReviewed": 14,
+    "scope": "Manufacturer mechanics/package/connector views reviewed for classification. No default artwork or mounting renderer was changed. The SuperD Chinese/English specification and pinout pages were inspected visually; its manual converts text to paths and provides no numerical post map on those hardware pages.",
+    "sourceGridMatters": "E22-400/900M30S and E22-900M33S genuine 2.54 mm segments are explicitly retained as source facts; incomplete installed-header evidence prevents opt-in, not a fictitious wrong-pitch classification."
+  }
+}

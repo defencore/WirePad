@@ -60,6 +60,7 @@ export function partOutlineLocalBounds(part, component = componentForPart(part))
   if (profile?.renderMounted && !compactBoardView(part, component.id)) {
     return { x: 0, y: 0, width: component.width, height: component.height };
   }
+  if (profile?.type === 'breadboard-part' && viewForPart(part)) return profile.viewBounds;
   return profile?.bodyFor?.(component) ?? profile?.body ?? { x: 0, y: 0, width: component.width, height: component.height };
 }
 

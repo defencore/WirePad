@@ -1,0 +1,218 @@
+{
+  "checked": "2026-11-08",
+  "stage": "Completed source and frozen-build verification before publication",
+  "baselineRevision": "c215cbcc4a9e53af1521a9e4a50a0f17571b4503",
+  "scope": "Review all 343 guests absent from earlier individual breadboard audits; enable source-supported through-hole profiles and enforce complete future decision coverage.",
+  "catalog": {
+    "components": 2003,
+    "families": 146,
+    "insertable": 1253,
+    "boardModules": 1025,
+    "rigidThroughHole": 178,
+    "bendableThroughHole": 50,
+    "kiCadGeometryAndAccuracyMarksUnchanged": true
+  },
+  "decisionCoverage": {
+    "components": 2003,
+    "hosts": 1,
+    "individuallyRecorded": 2002,
+    "insertable": 1253,
+    "recordedWithoutProfile": 749,
+    "pending": 100,
+    "missing": 0
+  },
+  "sourceReview": {
+    "checked": 343,
+    "distinctChecked": 343,
+    "newProfiles": 10,
+    "newContacts": 32,
+    "explicitlyPendingNewDecisions": 44,
+    "otherNoninsertableNewDecisions": 289,
+    "sourceAudits": [
+      {
+        "path": "docs/catalog-remaining-core-connectors-mounting-2026-11-08.json",
+        "sha256": "d771e1d4e4206ba98561fb0fbd1bf2b2ea30cb3fed137c5b532c9eed9c336704"
+      },
+      {
+        "path": "docs/catalog-remaining-market-mounting-2026-11-08.json",
+        "sha256": "cb19e6144cb046fdc568388adee45ad4870b28817a103415135d33bb2be0fd2d"
+      },
+      {
+        "path": "docs/catalog-remaining-computing-mounting-2026-11-08.json",
+        "sha256": "6c52a7acb68e2e70aa4a488e0acce7a8a8d6549c0e6d5b763215c35fafda45f4"
+      },
+      {
+        "path": "docs/catalog-remaining-wireless-mounting-2026-11-08.json",
+        "sha256": "b80e5113f1f8d8cdb1453dfaeb6d7a2b9aa5cf833d3955f3a203516eef523227"
+      }
+    ],
+    "sourceBoundary": "Recorded decisions include exact-package exclusions, source-identified supported assemblies, explicit representative mechanical examples and unresolved source/assembly questions. Complete record coverage is not manufacturer geometry certification.",
+    "coverageRegeneration": "node scripts/catalog.mjs",
+    "coverageFreshness": "node scripts/breadboard-audit.mjs --check"
+  },
+  "profiles": [
+    {
+      "id": "inductor",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 2,
+      "retainedPins": 2,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "ferrite-bead",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 2,
+      "retainedPins": 2,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "market-j175",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 3,
+      "retainedPins": 3,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "lm35dz-ic",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 3,
+      "retainedPins": 3,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "lm335z-ic",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 3,
+      "retainedPins": 3,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "tmp36gt9z-ic",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 3,
+      "retainedPins": 3,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "ds18b20-ic",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 3,
+      "retainedPins": 3,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "market-bt169d-116",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 3,
+      "retainedPins": 3,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "market-bpw34",
+      "type": "breadboard-part",
+      "mode": "bendable",
+      "contacts": 2,
+      "retainedPins": 2,
+      "explicitPhysicalView": false
+    },
+    {
+      "id": "opt101p-ic",
+      "type": "breadboard-part",
+      "mode": "rigid",
+      "contacts": 8,
+      "retainedPins": 8,
+      "explicitPhysicalView": true
+    }
+  ],
+  "fullTests": {
+    "tests": 464,
+    "passed": 464,
+    "failed": 0,
+    "skipped": 0,
+    "optionalCADDependenciesAvailable": true,
+    "localhostChecksEnabled": true
+  },
+  "preservation": {
+    "baselineRevision": "c215cbcc4a9e53af1521a9e4a50a0f17571b4503",
+    "components": 2003,
+    "completeDefinitionsUnchanged": 2002,
+    "electricalDefinitionsAndPinGeometryUnchanged": 2003,
+    "canvasAnchorsUnchanged": 48146,
+    "defaultSvgViewsUnchanged": 4006,
+    "nativeAssetsUnchanged": 6009,
+    "idsAndOrderingUnchanged": true,
+    "documentationCorrections": [
+      {
+        "id": "banana-pi-bpi-r3",
+        "field": "documentation[2]",
+        "before": "https://drive.google.com/file/d/1BE09wS1ca 5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing",
+        "after": "https://drive.google.com/file/d/1BE09wS1ca5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing"
+      }
+    ],
+    "externalCADLinkCorrections": [
+      {
+        "id": "banana-pi-bpi-r3",
+        "before": "https://drive.google.com/file/d/1BE09wS1ca 5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing",
+        "after": "https://drive.google.com/file/d/1BE09wS1ca5xUdmd3DN2qyg5RYMTIC2l3/view?usp=sharing"
+      }
+    ],
+    "geometryDifferences": [],
+    "definitionDigest": "39249211cc52985d48559ef7bc56cba86440d59557f39c52a41f3af8180b7e4e"
+  },
+  "physicalBehavior": {
+    "completePublishedContactsRetained": true,
+    "allQuarterTurnScaledHostFitsVerified": true,
+    "formedBodiesRemainFixed": true,
+    "shortBPW34ReachBudgetReviewed": true,
+    "rawAndScaleOnlyArtworkPreserved": true,
+    "explicitRigidCaptionsRetainedAfterInsertion": true,
+    "labeledAndUnlabeledArtworkReviewed": true
+  },
+  "browser": {
+    "samples": 20,
+    "desktopSamples": 10,
+    "touch390pxSamples": 10,
+    "primaryLabelsVerified": 64,
+    "checks": [
+      "Actual LM35 library drag seats all three formed leads in one history step.",
+      "Every new part: desktop and 390px touch alignment, labels, selection bounds, V2 saves; LM35 rotation/undo and SVG/PNG export."
+    ],
+    "exports": [
+      "svg",
+      "png"
+    ],
+    "errors": [],
+    "consoleErrors": [],
+    "networkDesktop": {
+      "revision": "remaining-audit-20261108",
+      "scripts": 620,
+      "styles": 10,
+      "failures": []
+    },
+    "networkTouch": {
+      "revision": "remaining-audit-20261108",
+      "scripts": 620,
+      "styles": 10,
+      "failures": []
+    },
+    "largestWorldContactError": 2.0097183471152322e-14,
+    "largestRenderedContactErrorPixels": 0.000013500816591834612
+  },
+  "buildEquivalence": {
+    "revision": "remaining-audit-20261108",
+    "sourceAssets": 635,
+    "javaScriptModules": 620,
+    "stylesheets": 10,
+    "allByteIdentical": true
+  },
+  "versionedBrowserProofSha256": "42b25c64426c65b009ccb0e682ebda30cb8b1fd29d899bac97dd1c83c69995db",
+  "artifactScope": "Local rendering, screenshot, download and build files are validation artifacts; source audits and generated decision coverage are repository documentation."
+}
