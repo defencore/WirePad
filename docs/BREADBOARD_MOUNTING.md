@@ -1,6 +1,6 @@
 # Breadboard mounting
 
-Build directly on a configurable breadboard with **1213 reviewed insertable parts**: 995 boards/modules, 177 rigid through-hole parts and 41 parts with bendable leads. The catalog contains 2003 components in 146 families. Every seated lead joins the actual breadboard conductor; coincident drawings alone never create a connection.
+Build directly on a configurable breadboard with **1217 reviewed insertable parts**: 999 boards/modules, 177 rigid through-hole parts and 41 parts with bendable leads. The catalog contains 2003 components in 146 families. Every seated lead joins the actual breadboard conductor; coincident drawings alone never create a connection.
 
 ## Assemble a circuit
 
@@ -59,6 +59,14 @@ The source-module review now supports **789 profiles**: 245 Adafruit, 95 SparkFu
 Profiles describe the reviewed **straight male-header assembly**. Right-angle/female connectors may require replacing or repopulating the header; this requirement is recorded on the entry. Manufacturer dimensions can distinguish PCB drill or SMT-land centers from the centers of installed straight header posts. For example, the XIAO insertion view uses the actual header positions rather than the centers of its outer SMT lands. This adjustment applies only to the explicit fitted instance. The original PCB drawing and source coordinates remain available.
 
 A fitted component-side view keeps all published contact IDs. Dashed magenta **B** markers identify projected underside pads; they are available for wiring but are not inserted leads. Projecting rear hardware has a dashed outline and still participates in physical clearance. Source-reviewed internal aliases needed by a new view are activated only for that explicit instance, preserving old projects' connection graphs.
+
+## Heltec WiFi LoRa 32
+
+All four existing Heltec entries now support the nominal straight-header assembly: V3.2, V4.2 R2, V4.3 R2 and V4.3.2 R8. Populate both complete 18-contact main strips downward; their pitch is 2.54 mm and their opposing-row centers are 22.86 mm apart. The four V4 auxiliary through-holes retain their IDs and labels but remain unpopulated downward or face upward. They are not silently included in the insertion pattern.
+
+The separate [Heltec source audit](catalog-heltec-mounting-2026-11-08.json) records the manufacturer dimension drawings, CAD coordinates and source revisions. V4.2 and V4.3.1 use an identical dimensioned mechanical image, and the R8 datasheet independently dimensions the same main headers. V3.2 uses a nominal family assembly: the manufacturer's V3/V4 compatibility statement, V3 hardware history and current V3 PCB CAD corroborate the 22.86 mm header grid. This is an explicit inference about the compatible straight-header assembly, not a claim that a later PCB file is the exact V3.2 production board. The old V3 DWG's incidental 23.025 mm illustrated row spacing is retained as a discrepancy and is not used as an insertion grid or production drill reference.
+
+PCB tapers, the USB shell and the projecting antenna socket define clearance. The first spare outer row below the main headers stays accessible beside the narrower antenna tail. These profiles activate only on new fitted instances; older raw and scale-only drawings and all native assets keep their original geometry. See [Heltec validation](heltec-mounting-validation-2026-11-08.json).
 
 ## Placement and connections
 

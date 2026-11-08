@@ -1,0 +1,122 @@
+{
+  "checked": "2026-11-08",
+  "stage": "Completed source and versioned-build verification before publication",
+  "baselineRevision": "6c6a647d7185737859409f12c6e0c8eb2dc04841",
+  "scope": "Four existing Heltec WiFi LoRa 32 entries gain opt-in nominal straight-header assembly profiles.",
+  "catalog": {
+    "components": 2003,
+    "families": 146,
+    "insertable": 1217,
+    "boardModules": 999,
+    "declaredModuleInsertionContacts": 13920,
+    "explicitPhysicalViews": 321,
+    "kiCadAccuracyUnchanged": true
+  },
+  "profiles": [
+    {
+      "id": "heltec-v3",
+      "contacts": 36,
+      "retainedPins": 36
+    },
+    {
+      "id": "heltec-v4",
+      "contacts": 36,
+      "retainedPins": 40
+    },
+    {
+      "id": "heltec-v4-3-r2",
+      "contacts": 36,
+      "retainedPins": 40
+    },
+    {
+      "id": "heltec-v4-3-r8",
+      "contacts": 36,
+      "retainedPins": 40
+    }
+  ],
+  "fullTests": {
+    "tests": 409,
+    "passed": 409,
+    "failed": 0,
+    "skipped": 0,
+    "optionalCADDependenciesAvailable": true,
+    "localhostChecksEnabled": true
+  },
+  "sourceReview": {
+    "perRevisionManufacturerSchematicsVerified": true,
+    "v4RevisionDimensionImagesMatch": true,
+    "v3NominalFamilyInferenceExplicitlyRecorded": true,
+    "v3LegacyDwgDiscrepancyMm": 23.02515785545,
+    "sourceAudit": "docs/catalog-heltec-mounting-2026-11-08.json",
+    "sourceAuditSha256": "c5831d24a1d871ff60718f41358470491e411e7d77c61981d0dcace55b69f949"
+  },
+  "preservation": {
+    "baselineRevision": "6c6a647d7185737859409f12c6e0c8eb2dc04841",
+    "components": 2003,
+    "completeDefinitionsUnchanged": 2003,
+    "canvasAnchorsUnchanged": 48146,
+    "defaultSvgViewsUnchanged": 4006,
+    "nativeAssetsUnchanged": 6009,
+    "idsAndOrderingUnchanged": true,
+    "differences": [],
+    "definitionDigest": "91eb442ed19076c7635961639afd1871c5d891a9316d7ade9130f4b7a8f66ddc"
+  },
+  "physicalBehavior": {
+    "all16RotatedScaledHostInsertionsPass": true,
+    "bothComplete18PinMainStripsRequired": true,
+    "optionalV4AuxiliaryPinsRetainedAndNotInserted": true,
+    "oldRawAndScaleOnlyInstancesRetainOriginalGeometry": true,
+    "powerAliasesAreNewViewOnly": true,
+    "spareOuterRowBesideAntennaRemainsAccessible": true,
+    "v4ExactPolygonGridMaskComparisons": 714,
+    "v4GridMaskMismatches": 0,
+    "labeledAndUnlabeledViewsReviewed": true
+  },
+  "browser": {
+    "samples": 8,
+    "desktopSamples": 4,
+    "touch390pxSamples": 4,
+    "checks": [
+      "Real library drag previews and inserts Heltec V4 with36 exact leads and explicit physical view in one history step.",
+      "Desktop and390px touch: exact pads and holes, all primary labels, tight outlines, rear markers, rotate/detach undo and V2 saves."
+    ],
+    "exports": [
+      "svg",
+      "png"
+    ],
+    "errors": [],
+    "consoleErrors": [],
+    "networkDesktop": {
+      "revision": "heltec-mounting-20261108-publish",
+      "scripts": 606,
+      "styles": 10,
+      "failures": []
+    },
+    "networkTouch": {
+      "revision": "heltec-mounting-20261108-publish",
+      "scripts": 606,
+      "styles": 10,
+      "failures": []
+    },
+    "largestRenderedEndpointErrorPixels": 3.2855570143927726e-06
+  },
+  "buildEquivalence": {
+    "revision": "heltec-mounting-20261108-publish",
+    "sourceAssets": 621,
+    "javaScriptModules": 606,
+    "stylesheets": 10,
+    "allByteIdentical": true
+  },
+  "regressions": [
+    "test/catalog-heltec-mounting.test.mjs",
+    "test/contact-labels.test.mjs",
+    "test/breadboard-module-scale.test.mjs",
+    "test/catalog-radio-diy-mounting.test.mjs",
+    "test/architecture.test.mjs"
+  ],
+  "artifactScope": "Local screenshot/build paths are review evidence, not shipped application files.",
+  "versionedBrowserProof": {
+    "path": "/tmp/wirepad-heltec-ui/versioned-final/report.json",
+    "sha256": "4f9175ce26d9b21f51518de74a157e18834e8420ed907031b3cff1fd02e529a4"
+  }
+}

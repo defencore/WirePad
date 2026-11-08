@@ -27,9 +27,9 @@ Explicit per-component assessments and their evidence are maintained in [catalog
 
 | Mark | Meaning | Components |
 | --- | --- | ---: |
-| BB:+ | Reviewed direct insertion profile; fit checks every declared lead, physical pitch and electrical strip. | 1213 |
+| BB:+ | Reviewed direct insertion profile; fit checks every declared lead, physical pitch and electrical strip. | 1217 |
 | BB:H | Configurable breadboard host. | 1 |
-| BB:- | No reviewed direct insertion profile. | 789 |
+| BB:- | No reviewed direct insertion profile. | 785 |
 
 Breadboard marks come only from explicit catalog mounting descriptors. A 2.54 mm product tag, a reference footprint or matching visual overlap does not create a profile. `BB:-` does not mean that the part has no 2.54 mm contacts: it can require a different header population, an adapter, or further source review. Insertion marks do not upgrade KiCad accuracy. See [BREADBOARD_MOUNTING.md](BREADBOARD_MOUNTING.md) and its per-component source audits.
 
@@ -747,10 +747,10 @@ WirePad (2003)
 │   │       └── ESP32-H2-DevKitM-1 [esp32-h2-devkitm-1] [FP:R] [3D:A] [CAD:+] [BB:+]
 │   ├── Heltec Automation (4)
 │   │   └── heltec-semtech (4)
-│   │       ├── Heltec WiFi LoRa 32 V3.2 [heltec-v3] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │       ├── Heltec WiFi LoRa 32 V4.2 R2 [heltec-v4] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │       ├── Heltec WiFi LoRa 32 V4.3 R2 [heltec-v4-3-r2] [FP:R] [3D:A] [CAD:+] [BB:-]
-│   │       └── Heltec WiFi LoRa 32 V4.3.2 R8 [heltec-v4-3-r8] [FP:R] [3D:A] [CAD:-] [BB:-]
+│   │       ├── Heltec WiFi LoRa 32 V3.2 [heltec-v3] [FP:R] [3D:A] [CAD:+] [BB:+]
+│   │       ├── Heltec WiFi LoRa 32 V4.2 R2 [heltec-v4] [FP:R] [3D:A] [CAD:+] [BB:+]
+│   │       ├── Heltec WiFi LoRa 32 V4.3 R2 [heltec-v4-3-r2] [FP:R] [3D:A] [CAD:+] [BB:+]
+│   │       └── Heltec WiFi LoRa 32 V4.3.2 R8 [heltec-v4-3-r8] [FP:R] [3D:A] [CAD:-] [BB:+]
 │   ├── LILYGO (24)
 │   │   ├── lilygo (3)
 │   │   │   ├── LILYGO T-Display-S3 [lilygo-t-display-s3] [FP:R] [3D:A] [CAD:+] [BB:+]

@@ -19,32 +19,792 @@
       "file": "src/catalog/families/catalog-heltec-semtech.js",
       "entries": [
         {
-          "id": "heltec-v4",
-          "name": "Heltec WiFi LoRa 32 V4.2 R2",
-          "status": "pending-row-spacing-review",
-          "source": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/Schematic/WiFi_LoRa_32_V4.2.pdf",
-          "reason": "The manufacturer confirms both 18-pin 2.54 mm strips, but this audit has no dimensioned opposing-row centers for this exact revision. A compact physical view and auxiliary contact mapping must be source-reviewed; the existing reference carrier is not evidence of row spacing."
-        },
-        {
           "id": "heltec-v3",
           "name": "Heltec WiFi LoRa 32 V3.2",
-          "status": "pending-row-spacing-review",
-          "source": "https://heltec.org/project/wifi-lora-32-v3/",
-          "reason": "The manufacturer confirms both 18-pin 2.54 mm strips, but this audit has no dimensioned opposing-row centers for this exact revision. A compact physical view and auxiliary contact mapping must be source-reviewed; the existing reference carrier is not evidence of row spacing."
+          "status": "enabled",
+          "source": {
+            "label": "Heltec V3 straight-header assembly and manufacturer V3/V4 pin compatibility",
+            "url": "https://heltec.org/project/wifi-lora-32-v3/"
+          },
+          "reason": "Nominal straight-header assembly inferred from the manufacturer compatible-family statement, unchanged pin-layout history and current family CAD; old V3 mechanical DWG is used only for its named body envelope.",
+          "contacts": [
+            {
+              "pinId": "gnd",
+              "x": -11.43,
+              "y": 0
+            },
+            {
+              "pinId": "5v",
+              "x": -11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "ve",
+              "x": -11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "ve-2",
+              "x": -11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio44",
+              "x": -11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio43",
+              "x": -11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "reset",
+              "x": -11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio0",
+              "x": -11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio36",
+              "x": -11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio35",
+              "x": -11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio34",
+              "x": -11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio33",
+              "x": -11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio47",
+              "x": -11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio48",
+              "x": -11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio26",
+              "x": -11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio21",
+              "x": -11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio20",
+              "x": -11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio19",
+              "x": -11.43,
+              "y": 43.18
+            },
+            {
+              "pinId": "gnd-2",
+              "x": 11.43,
+              "y": 0
+            },
+            {
+              "pinId": "3v3",
+              "x": 11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "3v3-2",
+              "x": 11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "gpio37",
+              "x": 11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio46",
+              "x": 11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio45",
+              "x": 11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "gpio42",
+              "x": 11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio41",
+              "x": 11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio40",
+              "x": 11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio39",
+              "x": 11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio38",
+              "x": 11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio1",
+              "x": 11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio2",
+              "x": 11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio3",
+              "x": 11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio4",
+              "x": 11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio5",
+              "x": 11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio6",
+              "x": 11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio7",
+              "x": 11.43,
+              "y": 43.18
+            }
+          ],
+          "retainedPinCount": 36,
+          "physicalView": "breadboard",
+          "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. USB, battery and antenna interfaces retain their normal cable connections.",
+          "bodyEvidence": "The nominal 22.86 mm straight-header assembly follows Heltec's unchanged V3 pin layout and explicit V3/V4 form/pin compatibility, corroborated by the current V3 PCB STEP. The historic V3.2 mechanical DWG supplies the 25.5 × 50.2 mm outline; its incidental 23.025 mm illustrated row gap is not used as production drill evidence. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+          "evidenceAudit": "docs/catalog-heltec-mounting-2026-11-08.json"
+        },
+        {
+          "id": "heltec-v4",
+          "name": "Heltec WiFi LoRa 32 V4.2 R2",
+          "status": "enabled",
+          "source": {
+            "label": "Heltec WiFi LoRa 32 V4.2.0 datasheet, mechanical drawing page 16",
+            "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.2.0.pdf"
+          },
+          "reason": "Exact manufacturer revision/family dimension drawing confirms both complete 18-pin 2.54 mm strips and 22.86 mm opposing-row spacing.",
+          "contacts": [
+            {
+              "pinId": "gnd",
+              "x": -11.43,
+              "y": 0
+            },
+            {
+              "pinId": "5v",
+              "x": -11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "ve",
+              "x": -11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "ve-2",
+              "x": -11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio44",
+              "x": -11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio43",
+              "x": -11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "reset",
+              "x": -11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio0",
+              "x": -11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio36",
+              "x": -11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio35",
+              "x": -11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio34",
+              "x": -11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio33",
+              "x": -11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio47",
+              "x": -11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio48",
+              "x": -11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio26",
+              "x": -11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio21",
+              "x": -11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio20",
+              "x": -11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio19",
+              "x": -11.43,
+              "y": 43.18
+            },
+            {
+              "pinId": "gnd-2",
+              "x": 11.43,
+              "y": 0
+            },
+            {
+              "pinId": "3v3",
+              "x": 11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "3v3-2",
+              "x": 11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "gpio37",
+              "x": 11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio46",
+              "x": 11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio45",
+              "x": 11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "gpio42",
+              "x": 11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio41",
+              "x": 11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio40",
+              "x": 11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio39",
+              "x": 11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio38",
+              "x": 11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio1",
+              "x": 11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio2",
+              "x": 11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio3",
+              "x": 11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio4",
+              "x": 11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio5",
+              "x": 11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio6",
+              "x": 11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio7",
+              "x": 11.43,
+              "y": 43.18
+            }
+          ],
+          "retainedPinCount": 40,
+          "physicalView": "breadboard",
+          "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. Leave all four optional auxiliary headers unpopulated or upward. USB, battery, solar, GNSS and antenna interfaces retain their normal cable connections.",
+          "bodyEvidence": "Manufacturer revision-specific datasheet drawings dimension two 18-contact 2.54 mm rows, 22.86 mm apart. V4.2 and V4.3.1 share the same published mechanical drawing; the R8 datasheet independently specifies that complete header pattern. Auxiliary-hole positions and USB/PCB silhouette use the V4.3.1 family STEP mechanical reference. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+          "evidenceAudit": "docs/catalog-heltec-mounting-2026-11-08.json"
         },
         {
           "id": "heltec-v4-3-r2",
           "name": "Heltec WiFi LoRa 32 V4.3 R2",
-          "status": "pending-row-spacing-review",
-          "source": "https://heltec.org/project/wifi-lora-32-v4/",
-          "reason": "The manufacturer confirms both 18-pin 2.54 mm strips, but this audit has no dimensioned opposing-row centers for this exact revision. A compact physical view and auxiliary contact mapping must be source-reviewed; the existing reference carrier is not evidence of row spacing."
+          "status": "enabled",
+          "source": {
+            "label": "Heltec WiFi LoRa 32 V4.3.1 datasheet, mechanical drawing page 15",
+            "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.3.1_Datasheet.pdf"
+          },
+          "reason": "Exact manufacturer revision/family dimension drawing confirms both complete 18-pin 2.54 mm strips and 22.86 mm opposing-row spacing.",
+          "contacts": [
+            {
+              "pinId": "gnd",
+              "x": -11.43,
+              "y": 0
+            },
+            {
+              "pinId": "5v",
+              "x": -11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "ve",
+              "x": -11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "ve-2",
+              "x": -11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio44",
+              "x": -11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio43",
+              "x": -11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "reset",
+              "x": -11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio0",
+              "x": -11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio36",
+              "x": -11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio35",
+              "x": -11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio34",
+              "x": -11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio33",
+              "x": -11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio47",
+              "x": -11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio48",
+              "x": -11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio26",
+              "x": -11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio21",
+              "x": -11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio20",
+              "x": -11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio19",
+              "x": -11.43,
+              "y": 43.18
+            },
+            {
+              "pinId": "gnd-2",
+              "x": 11.43,
+              "y": 0
+            },
+            {
+              "pinId": "3v3",
+              "x": 11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "3v3-2",
+              "x": 11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "gpio37",
+              "x": 11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio46",
+              "x": 11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio45",
+              "x": 11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "gpio42",
+              "x": 11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio41",
+              "x": 11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio40",
+              "x": 11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio39",
+              "x": 11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio38",
+              "x": 11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio1",
+              "x": 11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio2",
+              "x": 11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio3",
+              "x": 11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio4",
+              "x": 11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio5",
+              "x": 11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio6",
+              "x": 11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio7",
+              "x": 11.43,
+              "y": 43.18
+            }
+          ],
+          "retainedPinCount": 40,
+          "physicalView": "breadboard",
+          "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. Leave all four optional auxiliary headers unpopulated or upward. USB, battery, solar, GNSS and antenna interfaces retain their normal cable connections.",
+          "bodyEvidence": "Manufacturer revision-specific datasheet drawings dimension two 18-contact 2.54 mm rows, 22.86 mm apart. V4.2 and V4.3.1 share the same published mechanical drawing; the R8 datasheet independently specifies that complete header pattern. Auxiliary-hole positions and USB/PCB silhouette use the V4.3.1 family STEP mechanical reference. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+          "evidenceAudit": "docs/catalog-heltec-mounting-2026-11-08.json"
         },
         {
           "id": "heltec-v4-3-r8",
           "name": "Heltec WiFi LoRa 32 V4.3.2 R8",
-          "status": "pending-row-spacing-review",
-          "source": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4-R8/Schematic/HTIT-WBR8H_V4.3.2.pdf",
-          "reason": "The manufacturer confirms both 18-pin 2.54 mm strips, but this audit has no dimensioned opposing-row centers for this exact revision. A compact physical view and auxiliary contact mapping must be source-reviewed; the existing reference carrier is not evidence of row spacing."
+          "status": "enabled",
+          "source": {
+            "label": "Heltec WiFi LoRa 32 V4-R8 datasheet, mechanical drawing page 15",
+            "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4-R8/datasheet/WiFi_LoRa_32_V4R8.pdf"
+          },
+          "reason": "Exact manufacturer revision/family dimension drawing confirms both complete 18-pin 2.54 mm strips and 22.86 mm opposing-row spacing.",
+          "contacts": [
+            {
+              "pinId": "gnd",
+              "x": -11.43,
+              "y": 0
+            },
+            {
+              "pinId": "5v",
+              "x": -11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "ve",
+              "x": -11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "ve-2",
+              "x": -11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio44",
+              "x": -11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio43",
+              "x": -11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "reset",
+              "x": -11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio0",
+              "x": -11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio36",
+              "x": -11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio35",
+              "x": -11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio34",
+              "x": -11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio33",
+              "x": -11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio47",
+              "x": -11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio48",
+              "x": -11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio26",
+              "x": -11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio21",
+              "x": -11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio20",
+              "x": -11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio19",
+              "x": -11.43,
+              "y": 43.18
+            },
+            {
+              "pinId": "gnd-2",
+              "x": 11.43,
+              "y": 0
+            },
+            {
+              "pinId": "3v3",
+              "x": 11.43,
+              "y": 2.54
+            },
+            {
+              "pinId": "3v3-2",
+              "x": 11.43,
+              "y": 5.08
+            },
+            {
+              "pinId": "gpio37",
+              "x": 11.43,
+              "y": 7.62
+            },
+            {
+              "pinId": "gpio46",
+              "x": 11.43,
+              "y": 10.16
+            },
+            {
+              "pinId": "gpio45",
+              "x": 11.43,
+              "y": 12.7
+            },
+            {
+              "pinId": "gpio42",
+              "x": 11.43,
+              "y": 15.24
+            },
+            {
+              "pinId": "gpio41",
+              "x": 11.43,
+              "y": 17.78
+            },
+            {
+              "pinId": "gpio40",
+              "x": 11.43,
+              "y": 20.32
+            },
+            {
+              "pinId": "gpio39",
+              "x": 11.43,
+              "y": 22.86
+            },
+            {
+              "pinId": "gpio38",
+              "x": 11.43,
+              "y": 25.4
+            },
+            {
+              "pinId": "gpio1",
+              "x": 11.43,
+              "y": 27.94
+            },
+            {
+              "pinId": "gpio2",
+              "x": 11.43,
+              "y": 30.48
+            },
+            {
+              "pinId": "gpio3",
+              "x": 11.43,
+              "y": 33.02
+            },
+            {
+              "pinId": "gpio4",
+              "x": 11.43,
+              "y": 35.56
+            },
+            {
+              "pinId": "gpio5",
+              "x": 11.43,
+              "y": 38.1
+            },
+            {
+              "pinId": "gpio6",
+              "x": 11.43,
+              "y": 40.64
+            },
+            {
+              "pinId": "gpio7",
+              "x": 11.43,
+              "y": 43.18
+            }
+          ],
+          "retainedPinCount": 40,
+          "physicalView": "breadboard",
+          "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. Leave all four optional auxiliary headers unpopulated or upward. USB, battery, solar, GNSS and antenna interfaces retain their normal cable connections.",
+          "bodyEvidence": "Manufacturer revision-specific datasheet drawings dimension two 18-contact 2.54 mm rows, 22.86 mm apart. V4.2 and V4.3.1 share the same published mechanical drawing; the R8 datasheet independently specifies that complete header pattern. Auxiliary-hole positions and USB/PCB silhouette use the V4.3.1 family STEP mechanical reference. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+          "evidenceAudit": "docs/catalog-heltec-mounting-2026-11-08.json"
         }
       ]
     },
@@ -6610,12 +7370,11 @@
   "summary": {
     "families": 32,
     "entries": 210,
-    "enabled": 105,
+    "enabled": 109,
     "statuses": {
-      "pending-row-spacing-review": 4,
+      "enabled": 109,
       "not-downward-header": 22,
       "requires-adapter": 4,
-      "enabled": 105,
       "non-254-pitch": 10,
       "cable-connector": 14,
       "pending-source-dimensions": 7,

@@ -1,0 +1,2773 @@
+{
+  "checked": "2026-11-08",
+  "baselineRevision": "6c6a647d7185737859409f12c6e0c8eb2dc04841",
+  "scope": "Complete opt-in insertion profiles for all four existing Heltec WiFi LoRa32 entries. No new catalog IDs, canonical anchors, default artwork or native assets.",
+  "summary": {
+    "reviewed": 4,
+    "enabled": 4,
+    "contactsPerMainAssembly": 36,
+    "pitchMm": 2.54,
+    "rowSpacingMm": 22.86
+  },
+  "policy": {
+    "insertion": "Populate both complete 18-contact main strips with straight downward male headers; leave all four V4 auxiliary holes unpopulated downward or populate upward. Every auxiliary contact remains available for wiring.",
+    "v3Inference": "The nominal V3.2 assembly is an explicitly identified inference from the manufacturer compatible-family evidence. The later V3.7 STEP is corroboration of the unchanged mainheader family, not exact V3.2 production CAD. No coordinate tolerance is enlarged and the V3.2 body uses its own 50.2 × 25.5 mm reference.",
+    "body": "Use reviewed material and real USB/coax projections, with narrow antenna tails rather than an annotation rectangle. Non-contact OLED/cover artwork remains representative.",
+    "preservation": "The explicit saved view selector activates only on new fitted instances. Default and old scale-only instances retain their exact anchors/artwork/native exports.",
+    "accuracy": "No KiCad footprint or approximate generated 3D accuracy assessment is promoted by the insertion profile."
+  },
+  "references": [
+    {
+      "label": "V3.2 datasheet",
+      "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA_V3.2.pdf",
+      "scope": "Exact V3.2 pinout, two 18-contact strips, 2.54 mm pitch and a 25.5 × 50.2 mm body; no opposing-row dimension."
+    },
+    {
+      "label": "V3 mechanical DWG",
+      "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V3/WiFi_LoRa32_V3.dwg",
+      "scope": "Dimensioned mechanical outline and USB envelope. Incidental illustrated rows23.02515785545mm apart are not a production drill reference.",
+      "sha256": "2dbffa58fc504fa4291e134e95bc4a67e51e3794f39c5af6f98596f2495b4c7a"
+    },
+    {
+      "label": "V3 family update history",
+      "url": "https://wiki.heltec.org/docs/devices/open-source-hardware/esp32-series/lora-32/wifi-lora-32-v3/hardware-update-log",
+      "scope": "Manufacturer documents unchanged main pin layout for the V3 family and the electrical/component changes of V3.1,V3.2,V3.4."
+    },
+    {
+      "label": "Current V3.7 PCB STEP",
+      "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V3/3D/HTIT-WB32LAF_V3.7%283%29.step",
+      "scope": "A later compatible V3 family PCB corroborates all 36 actual 0.9 mm drilled centers at Y = ±11.43 mm and X = 2.159 + i × 2.54 mm. Not claimed as exact V3.2 production CAD."
+    },
+    {
+      "label": "V4.2.0 datasheet",
+      "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.2.0.pdf",
+      "scope": "Dimensioned 22.86 mm opposing rows, 2.54 mm pitch and 43.18 mm span. Mechanical image identical to V4.3.1.",
+      "sha256": "d284d4f01f9e801bb8407386cf50ee4d099ed3c3f5e9153683cb5819b53f7f4d"
+    },
+    {
+      "label": "V4.3.1 datasheet",
+      "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.3.1_Datasheet.pdf",
+      "scope": "Dimensioned main header assembly and explicit V3 form/pin compatibility statement.",
+      "sha256": "0564d85ff8b466d8a5354a3e81d7ce1ad5839aa3456b4e09b9685c1656e49846"
+    },
+    {
+      "label": "V4.3.1 mechanical STEP",
+      "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/3D/HTIT-WB32LAF_V4.3.1%281%29.step",
+      "scope": "PCB outline, 36 main holes, four auxiliary holes and USB/antenna overhang. Shared family mechanical reference; not exact R8 production PCB.",
+      "sha256": "3ea368115d7812ef97bd1f46f0acb7fd51675dee55567367c9c2f26bd70535df"
+    },
+    {
+      "label": "V4-R8 datasheet",
+      "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4-R8/datasheet/WiFi_LoRa_32_V4R8.pdf",
+      "scope": "Independently dimensions the R8 family main headers: 22.86 mm row spacing, 2.54 mm pitch and 43.18 mm span; includes all four auxiliary contacts.",
+      "sha256": "ba0ef292a6f2e3f9300e217890bf37cf1fc2b2cefc7b3eb2f59062a51a3e848d"
+    }
+  ],
+  "v3MechanicalDiscrepancy": {
+    "illustratedRowSpacingMm": 23.02515785545,
+    "nominalInstalledPostRowSpacingMm": 22.86,
+    "sourceType": "Legacy mechanical illustration, not production PCB drill CAD",
+    "bodyFacts": {
+      "source": "https://resource.heltec.cn/download/WiFi_LoRa_32_V3/WiFi_LoRa32_V3.dwg",
+      "sourceSha256": "2dbffa58fc504fa4291e134e95bc4a67e51e3794f39c5af6f98596f2495b4c7a",
+      "units": "mm, established by 25.5/50.2 dimension entities and 2.54*17 header dimension; DWG header INSUNITS is not reliable",
+      "orientation": "component/OLED side, USB at top. x positive to right, y positive away from USB. Origin is first-pin longitudinal centre and opposing-row midpoint.",
+      "transform": {
+        "sourceFirstPinX": 50.35116787529478,
+        "sourceRowMidY": 17.15600218196232,
+        "x": "sourceRowMidY - sourceY",
+        "y": "sourceX - sourceFirstPinX"
+      },
+      "pcbContour": [
+        {
+          "x": -12.75,
+          "y": -1.4
+        },
+        {
+          "x": -12.75,
+          "y": 45.199999999999
+        },
+        {
+          "x": -7.75,
+          "y": 45.199999999999
+        },
+        {
+          "x": -5,
+          "y": 47.5
+        },
+        {
+          "x": 5,
+          "y": 47.5
+        },
+        {
+          "x": 7.75,
+          "y": 45.199999999999
+        },
+        {
+          "x": 12.75,
+          "y": 45.199999999999
+        },
+        {
+          "x": 12.75,
+          "y": -1.4
+        },
+        {
+          "x": 10.467817362238,
+          "y": -2.700000000001
+        },
+        {
+          "x": 5.467817362238,
+          "y": -2.700000000001
+        },
+        {
+          "x": 4,
+          "y": -1.4
+        },
+        {
+          "x": 0,
+          "y": -1.355388724234
+        },
+        {
+          "x": -4,
+          "y": -1.4
+        },
+        {
+          "x": -5.467817362238,
+          "y": -2.700000000001
+        },
+        {
+          "x": -10.467817362238,
+          "y": -2.700000000001
+        }
+      ],
+      "pcbBounds": {
+        "x": -12.75,
+        "y": -2.700000000001,
+        "width": 25.5,
+        "height": 50.2
+      },
+      "usbBounds": {
+        "x": -4.5,
+        "y": -3.355388724234,
+        "width": 9,
+        "height": 7.3
+      },
+      "illustratedDrillRowCentres": [
+        -11.512578927727,
+        11.512578927727
+      ],
+      "drillRadius": 0.45,
+      "headerLongitudinalCentres": [
+        0,
+        2.54,
+        5.08,
+        7.62,
+        10.16,
+        12.7,
+        15.24,
+        17.78,
+        20.32,
+        22.86,
+        25.4,
+        27.94,
+        30.48,
+        33.02,
+        35.56,
+        38.1,
+        40.64,
+        43.18
+      ],
+      "nominalAssemblyEvidence": "V4 dimensioned 22.86 row separation with manufacturer form/pin compatibility to V3; current V3.7 PCB STEP has exact 36 drilled centers on ±11.43. Old V3 DWG rows are 23.02515785545 mm apart and must not be called production PCB hole geometry."
+    }
+  },
+  "entries": [
+    {
+      "id": "heltec-v3",
+      "name": "Heltec WiFi LoRa 32 V3.2",
+      "status": "enabled",
+      "source": {
+        "label": "Heltec V3 straight-header assembly and manufacturer V3/V4 pin compatibility",
+        "url": "https://heltec.org/project/wifi-lora-32-v3/"
+      },
+      "reason": "Nominal straight-header assembly inferred from the manufacturer compatible-family statement, unchanged pin-layout history and current family CAD; old V3 mechanical DWG is used only for its named body envelope.",
+      "contacts": [
+        {
+          "pinId": "gnd",
+          "x": -11.43,
+          "y": 0
+        },
+        {
+          "pinId": "5v",
+          "x": -11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "ve",
+          "x": -11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "ve-2",
+          "x": -11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio44",
+          "x": -11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio43",
+          "x": -11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "reset",
+          "x": -11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio0",
+          "x": -11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio36",
+          "x": -11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio35",
+          "x": -11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio34",
+          "x": -11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio33",
+          "x": -11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio47",
+          "x": -11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio48",
+          "x": -11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio26",
+          "x": -11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio21",
+          "x": -11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio20",
+          "x": -11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio19",
+          "x": -11.43,
+          "y": 43.18
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 11.43,
+          "y": 0
+        },
+        {
+          "pinId": "3v3",
+          "x": 11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "gpio37",
+          "x": 11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio46",
+          "x": 11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio45",
+          "x": 11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "gpio42",
+          "x": 11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio41",
+          "x": 11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio40",
+          "x": 11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio39",
+          "x": 11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio38",
+          "x": 11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio1",
+          "x": 11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio2",
+          "x": 11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio3",
+          "x": 11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio4",
+          "x": 11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio5",
+          "x": 11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio6",
+          "x": 11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio7",
+          "x": 11.43,
+          "y": 43.18
+        }
+      ],
+      "retainedPinCount": 36,
+      "physicalView": "breadboard",
+      "physicalPins": [
+        {
+          "pinId": "gnd",
+          "x": 32.7,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "5v",
+          "x": 32.7,
+          "y": 90.4,
+          "face": "front",
+          "description": "5 V rail and alternative power input. Use this input or USB power. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve",
+          "x": 32.7,
+          "y": 115.8,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO36 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve-2",
+          "x": 32.7,
+          "y": 141.2,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO36 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio44",
+          "x": 32.7,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO44. UART0 RX. Connected to the onboard USB-to-UART bridge. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio43",
+          "x": 32.7,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO43. UART0 TX. Connected to the onboard USB-to-UART bridge. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "reset",
+          "x": 32.7,
+          "y": 217.4,
+          "face": "front",
+          "description": "Active-low chip enable and reset. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio0",
+          "x": 32.7,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO0. Program button and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio36",
+          "x": 32.7,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO36. Active-low control for both switched VE outputs. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio35",
+          "x": 32.7,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO35. Shared with the onboard user LED. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio34",
+          "x": 32.7,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO34. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio33",
+          "x": 32.7,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO33. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio47",
+          "x": 32.7,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO47. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio48",
+          "x": 32.7,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO48. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio26",
+          "x": 32.7,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO26. Alternate SPI chip select. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio21",
+          "x": 32.7,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO21. Shared with the onboard OLED reset line. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio20",
+          "x": 32.7,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO20. Native USB D+. The stock USB-C socket uses a USB-to-UART bridge. The optional native USB path requires the PCB configuration in the datasheet. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio19",
+          "x": 32.7,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO19. Native USB D−. The stock USB-C socket uses a USB-to-UART bridge. The optional native USB path requires the PCB configuration in the datasheet. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 261.3,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3",
+          "x": 261.3,
+          "y": 90.4,
+          "face": "front",
+          "description": "Main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 261.3,
+          "y": 115.8,
+          "face": "front",
+          "description": "Second contact on the main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio37",
+          "x": 261.3,
+          "y": 141.2,
+          "face": "front",
+          "description": "GPIO37. Active-high enable for the battery-voltage divider on GPIO1. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio46",
+          "x": 261.3,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO46. Boot strapping pin. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio45",
+          "x": 261.3,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO45. Boot strapping pin. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio42",
+          "x": 261.3,
+          "y": 217.4,
+          "face": "front",
+          "description": "GPIO42. JTAG MTMS. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio41",
+          "x": 261.3,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO41. JTAG MTDI. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio40",
+          "x": 261.3,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO40. JTAG MTDO. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio39",
+          "x": 261.3,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO39. JTAG MTCK. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio38",
+          "x": 261.3,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO38. General-purpose GPIO and alternate SPI write-protect. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio1",
+          "x": 261.3,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO1. ADC1 channel 0 and touch input. The board uses it to sense battery voltage. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio2",
+          "x": 261.3,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO2. ADC1 channel 1 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio3",
+          "x": 261.3,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO3. ADC1 channel 2, touch input and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio4",
+          "x": 261.3,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO4. ADC1 channel 3 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio5",
+          "x": 261.3,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO5. ADC1 channel 4 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio6",
+          "x": 261.3,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO6. ADC1 channel 5 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio7",
+          "x": 261.3,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO7. ADC1 channel 6 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. USB, battery and antenna interfaces retain their normal cable connections.",
+      "bodyEvidence": "The nominal 22.86 mm straight-header assembly follows Heltec's unchanged V3 pin layout and explicit V3/V4 form/pin compatibility, corroborated by the current V3 PCB STEP. The historic V3.2 mechanical DWG supplies the 25.5 × 50.2 mm outline; its incidental 23.025 mm illustrated row gap is not used as production drill evidence. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+      "body": {
+        "x": 19.5,
+        "y": 31.446112757660003,
+        "width": 255,
+        "height": 508.55388724234
+      },
+      "bodyRegions": [
+        {
+          "x": 19.5,
+          "y": 51,
+          "width": 255,
+          "height": 466
+        },
+        {
+          "x": 42.32182637762,
+          "y": 38,
+          "width": 50,
+          "height": 3.2500000000000018
+        },
+        {
+          "x": 201.67817362238,
+          "y": 38,
+          "width": 50,
+          "height": 3.2500000000000018
+        },
+        {
+          "x": 36.616369783215006,
+          "y": 41.25,
+          "width": 59.375,
+          "height": 3.2500000000000018
+        },
+        {
+          "x": 198.00863021678498,
+          "y": 41.25,
+          "width": 59.375,
+          "height": 3.2500000000000018
+        },
+        {
+          "x": 30.910913188809985,
+          "y": 44.5,
+          "width": 68.75000000000001,
+          "height": 3.2499999999999973
+        },
+        {
+          "x": 194.33908681119,
+          "y": 44.5,
+          "width": 68.75000000000001,
+          "height": 3.2499999999999973
+        },
+        {
+          "x": 25.205456594405007,
+          "y": 47.75,
+          "width": 78.12499999999999,
+          "height": 3.2500000000000018
+        },
+        {
+          "x": 190.669543405595,
+          "y": 47.75,
+          "width": 78.12499999999999,
+          "height": 3.2500000000000018
+        },
+        {
+          "x": 97,
+          "y": 517,
+          "width": 100,
+          "height": 23
+        },
+        {
+          "x": 72.93750000000001,
+          "y": 517,
+          "width": 148.12499999999997,
+          "height": 2.875000000000014
+        },
+        {
+          "x": 76.37500000000003,
+          "y": 519.875,
+          "width": 141.24999999999994,
+          "height": 2.875000000000014
+        },
+        {
+          "x": 79.81249999999997,
+          "y": 522.75,
+          "width": 134.37500000000006,
+          "height": 2.874999999999943
+        },
+        {
+          "x": 83.24999999999999,
+          "y": 525.625,
+          "width": 127.50000000000003,
+          "height": 2.875000000000014
+        },
+        {
+          "x": 86.6875,
+          "y": 528.5,
+          "width": 120.625,
+          "height": 2.875000000000014
+        },
+        {
+          "x": 90.12499999999993,
+          "y": 531.375,
+          "width": 113.75000000000014,
+          "height": 2.874999999999943
+        },
+        {
+          "x": 93.56249999999994,
+          "y": 534.25,
+          "width": 106.87500000000011,
+          "height": 2.875000000000014
+        },
+        {
+          "x": 96.99999999999997,
+          "y": 537.125,
+          "width": 100.00000000000007,
+          "height": 2.875000000000014
+        },
+        {
+          "x": 102,
+          "y": 31.446112757660003,
+          "width": 90,
+          "height": 73
+        }
+      ],
+      "viewBounds": {
+        "x": 18.9,
+        "y": 30.846112757660002,
+        "width": 256.2,
+        "height": 509.75388724234
+      },
+      "viewConnections": [
+        [
+          "gnd",
+          "gnd-2"
+        ],
+        [
+          "3v3",
+          "3v3-2"
+        ],
+        [
+          "ve",
+          "ve-2"
+        ]
+      ],
+      "connectionSource": {
+        "label": "Heltec WiFi LoRa 32 V3.2 manufacturer schematic: repeated ground, 3.3 V and Vext header nets",
+        "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V3/WiFi_LoRa_32_V3.2_Schematic_Diagram.pdf"
+      }
+    },
+    {
+      "id": "heltec-v4",
+      "name": "Heltec WiFi LoRa 32 V4.2 R2",
+      "status": "enabled",
+      "source": {
+        "label": "Heltec WiFi LoRa 32 V4.2.0 datasheet, mechanical drawing page 16",
+        "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.2.0.pdf"
+      },
+      "reason": "Exact manufacturer revision/family dimension drawing confirms both complete 18-pin 2.54 mm strips and 22.86 mm opposing-row spacing.",
+      "contacts": [
+        {
+          "pinId": "gnd",
+          "x": -11.43,
+          "y": 0
+        },
+        {
+          "pinId": "5v",
+          "x": -11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "ve",
+          "x": -11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "ve-2",
+          "x": -11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio44",
+          "x": -11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio43",
+          "x": -11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "reset",
+          "x": -11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio0",
+          "x": -11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio36",
+          "x": -11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio35",
+          "x": -11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio34",
+          "x": -11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio33",
+          "x": -11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio47",
+          "x": -11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio48",
+          "x": -11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio26",
+          "x": -11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio21",
+          "x": -11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio20",
+          "x": -11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio19",
+          "x": -11.43,
+          "y": 43.18
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 11.43,
+          "y": 0
+        },
+        {
+          "pinId": "3v3",
+          "x": 11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "gpio37",
+          "x": 11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio46",
+          "x": 11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio45",
+          "x": 11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "gpio42",
+          "x": 11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio41",
+          "x": 11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio40",
+          "x": 11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio39",
+          "x": 11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio38",
+          "x": 11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio1",
+          "x": 11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio2",
+          "x": 11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio3",
+          "x": 11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio4",
+          "x": 11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio5",
+          "x": 11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio6",
+          "x": 11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio7",
+          "x": 11.43,
+          "y": 43.18
+        }
+      ],
+      "retainedPinCount": 40,
+      "physicalView": "breadboard",
+      "physicalPins": [
+        {
+          "pinId": "gnd",
+          "x": 32.7,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "5v",
+          "x": 32.7,
+          "y": 90.4,
+          "face": "front",
+          "description": "5 V rail and alternative power input. Use this input or USB power. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve",
+          "x": 32.7,
+          "y": 115.8,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO36 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve-2",
+          "x": 32.7,
+          "y": 141.2,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO36 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio44",
+          "x": 32.7,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO44. UART0 RX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio43",
+          "x": 32.7,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO43. UART0 TX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "reset",
+          "x": 32.7,
+          "y": 217.4,
+          "face": "front",
+          "description": "Active-low chip enable and reset. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio0",
+          "x": 32.7,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO0. Program button and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio36",
+          "x": 32.7,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO36. Active-low control for both switched VE outputs. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio35",
+          "x": 32.7,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO35. Shared with the onboard user LED. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio34",
+          "x": 32.7,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO34. Active-low enable for the GNSS supply switch. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio33",
+          "x": 32.7,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO33. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio47",
+          "x": 32.7,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO47. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio48",
+          "x": 32.7,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO48. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio26",
+          "x": 32.7,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO26. SPI chip select for in-package PSRAM. Leave unused while PSRAM is enabled. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio21",
+          "x": 32.7,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO21. Shared with the onboard OLED reset line. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio20",
+          "x": 32.7,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO20. Native USB D+ and ADC2 channel 9. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio19",
+          "x": 32.7,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO19. Native USB D− and ADC2 channel 8. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 261.3,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3",
+          "x": 261.3,
+          "y": 90.4,
+          "face": "front",
+          "description": "Main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 261.3,
+          "y": 115.8,
+          "face": "front",
+          "description": "Second contact on the main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio37",
+          "x": 261.3,
+          "y": 141.2,
+          "face": "front",
+          "description": "GPIO37. Active-high enable for the battery-voltage divider on GPIO1. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio46",
+          "x": 261.3,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO46. Boot strapping pin. Shared with the GC1109 RF front-end PA_CPS signal on this revision. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio45",
+          "x": 261.3,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO45. Boot strapping pin. Also routed to the display connector on V4. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio42",
+          "x": 261.3,
+          "y": 217.4,
+          "face": "front",
+          "description": "GPIO42. GNSS reset output on the accessory connector. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio41",
+          "x": 261.3,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO41. GNSS pulse-per-second input on the accessory connector. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio40",
+          "x": 261.3,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO40. GNSS wake output on the accessory connector. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio39",
+          "x": 261.3,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO39. Connected to the GNSS header. ESP32 TX to GNSS RX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio38",
+          "x": 261.3,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO38. Connected to the GNSS header. ESP32 RX from GNSS TX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio1",
+          "x": 261.3,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO1. ADC1 channel 0 and touch input. The board uses it to sense battery voltage. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio2",
+          "x": 261.3,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO2. Shared with the LoRa RF front-end enable control. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio3",
+          "x": 261.3,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO3. ADC1 channel 2, touch input and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio4",
+          "x": 261.3,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO4. ADC1 channel 3 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio5",
+          "x": 261.3,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO5. ADC1 channel 4 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio6",
+          "x": 261.3,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO6. ADC1 channel 5 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio7",
+          "x": 261.3,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO7. Shared with the LoRa RF front-end supply control. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio18",
+          "x": 88.13979259999999,
+          "y": 522.2,
+          "face": "front",
+          "edge": "left",
+          "description": "GPIO18. Auxiliary pad. Shared with the onboard OLED SCL line. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio17",
+          "x": 113.5397926,
+          "y": 522.2,
+          "face": "front",
+          "edge": "left",
+          "description": "GPIO17. Auxiliary pad. Shared with the onboard OLED SDA line. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio16",
+          "x": 180.02,
+          "y": 522.2,
+          "face": "front",
+          "edge": "right",
+          "description": "GPIO16. Auxiliary pad. ADC2 channel 5 and alternate 32 kHz crystal input. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio15",
+          "x": 205.42,
+          "y": 522.2,
+          "face": "front",
+          "edge": "right",
+          "description": "GPIO15. Auxiliary pad. ADC2 channel 4 and alternate 32 kHz crystal input. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. Leave all four optional auxiliary headers unpopulated or upward. USB, battery, solar, GNSS and antenna interfaces retain their normal cable connections.",
+      "bodyEvidence": "Manufacturer revision-specific datasheet drawings dimension two 18-contact 2.54 mm rows, 22.86 mm apart. V4.2 and V4.3.1 share the same published mechanical drawing; the R8 datasheet independently specifies that complete header pattern. Auxiliary-hole positions and USB/PCB silhouette use the V4.3.1 family STEP mechanical reference. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+      "body": {
+        "x": 20,
+        "y": 20.99657583037,
+        "width": 254,
+        "height": 528.0120536189701
+      },
+      "bodyRegions": [
+        {
+          "x": 20,
+          "y": 52.3,
+          "width": 254,
+          "height": 457.2
+        },
+        {
+          "x": 41.59,
+          "y": 30.71,
+          "width": 52.7,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 199.71,
+          "y": 30.71,
+          "width": 52.7,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 38.415000000000006,
+          "y": 33.885000000000005,
+          "width": 59.052499999999995,
+          "height": 3.1750000000000034
+        },
+        {
+          "x": 196.5325,
+          "y": 33.885000000000005,
+          "width": 59.052499999999995,
+          "height": 3.1750000000000034
+        },
+        {
+          "x": 35.239999999999995,
+          "y": 37.06,
+          "width": 65.405,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 193.355,
+          "y": 37.06,
+          "width": 65.405,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 32.065,
+          "y": 40.235,
+          "width": 71.75750000000001,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 190.1775,
+          "y": 40.235,
+          "width": 71.75750000000001,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 28.89,
+          "y": 43.410000000000004,
+          "width": 236.22,
+          "height": 2.2224999999999984
+        },
+        {
+          "x": 26.66749999999999,
+          "y": 45.6325,
+          "width": 240.66500000000002,
+          "height": 2.2225000000000006
+        },
+        {
+          "x": 24.445000000000007,
+          "y": 47.855000000000004,
+          "width": 245.10999999999999,
+          "height": 2.2225000000000006
+        },
+        {
+          "x": 22.222499999999997,
+          "y": 50.0775,
+          "width": 249.555,
+          "height": 2.2224999999999984
+        },
+        {
+          "x": 96.2,
+          "y": 509.5,
+          "width": 101.6,
+          "height": 38.1
+        },
+        {
+          "x": 83.5,
+          "y": 509.5,
+          "width": 127,
+          "height": 25.4
+        },
+        {
+          "x": 62.8625,
+          "y": 509.5,
+          "width": 168.275,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 67.625,
+          "y": 514.2625,
+          "width": 158.75,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 72.3875,
+          "y": 519.0250000000001,
+          "width": 149.225,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 77.15,
+          "y": 523.7875,
+          "width": 139.7,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 81.91249999999994,
+          "y": 528.5500000000001,
+          "width": 130.17500000000013,
+          "height": 4.762499999999932
+        },
+        {
+          "x": 86.67499999999994,
+          "y": 533.3125,
+          "width": 120.65000000000012,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 91.43749999999994,
+          "y": 538.075,
+          "width": 111.12500000000011,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 96.19999999999995,
+          "y": 542.8375,
+          "width": 101.60000000000011,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 90.30129394712,
+          "y": 20.99657583037,
+          "width": 113.40000086456,
+          "height": 75.97699162227
+        },
+        {
+          "x": 132.00044578974,
+          "y": 518.0086291155201,
+          "width": 30.00000100145,
+          "height": 31.000000333819997
+        }
+      ],
+      "viewBounds": {
+        "x": 19.4,
+        "y": 20.396575830369997,
+        "width": 255.2,
+        "height": 529.2120536189701
+      },
+      "viewConnections": [
+        [
+          "gnd",
+          "gnd-2"
+        ],
+        [
+          "3v3",
+          "3v3-2"
+        ],
+        [
+          "ve",
+          "ve-2"
+        ]
+      ],
+      "connectionSource": {
+        "label": "Heltec WiFi LoRa 32 V4.2 R2 manufacturer schematic: repeated ground, 3.3 V and Vext header nets",
+        "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/Schematic/WiFi_LoRa_32_V4.2.pdf"
+      }
+    },
+    {
+      "id": "heltec-v4-3-r2",
+      "name": "Heltec WiFi LoRa 32 V4.3 R2",
+      "status": "enabled",
+      "source": {
+        "label": "Heltec WiFi LoRa 32 V4.3.1 datasheet, mechanical drawing page 15",
+        "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.3.1_Datasheet.pdf"
+      },
+      "reason": "Exact manufacturer revision/family dimension drawing confirms both complete 18-pin 2.54 mm strips and 22.86 mm opposing-row spacing.",
+      "contacts": [
+        {
+          "pinId": "gnd",
+          "x": -11.43,
+          "y": 0
+        },
+        {
+          "pinId": "5v",
+          "x": -11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "ve",
+          "x": -11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "ve-2",
+          "x": -11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio44",
+          "x": -11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio43",
+          "x": -11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "reset",
+          "x": -11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio0",
+          "x": -11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio36",
+          "x": -11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio35",
+          "x": -11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio34",
+          "x": -11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio33",
+          "x": -11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio47",
+          "x": -11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio48",
+          "x": -11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio26",
+          "x": -11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio21",
+          "x": -11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio20",
+          "x": -11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio19",
+          "x": -11.43,
+          "y": 43.18
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 11.43,
+          "y": 0
+        },
+        {
+          "pinId": "3v3",
+          "x": 11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "gpio37",
+          "x": 11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio46",
+          "x": 11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio45",
+          "x": 11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "gpio42",
+          "x": 11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio41",
+          "x": 11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio40",
+          "x": 11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio39",
+          "x": 11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio38",
+          "x": 11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio1",
+          "x": 11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio2",
+          "x": 11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio3",
+          "x": 11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio4",
+          "x": 11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio5",
+          "x": 11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio6",
+          "x": 11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio7",
+          "x": 11.43,
+          "y": 43.18
+        }
+      ],
+      "retainedPinCount": 40,
+      "physicalView": "breadboard",
+      "physicalPins": [
+        {
+          "pinId": "gnd",
+          "x": 32.7,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "5v",
+          "x": 32.7,
+          "y": 90.4,
+          "face": "front",
+          "description": "5 V rail and alternative power input. Use this input or USB power. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve",
+          "x": 32.7,
+          "y": 115.8,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO36 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve-2",
+          "x": 32.7,
+          "y": 141.2,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO36 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio44",
+          "x": 32.7,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO44. UART0 RX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio43",
+          "x": 32.7,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO43. UART0 TX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "reset",
+          "x": 32.7,
+          "y": 217.4,
+          "face": "front",
+          "description": "Active-low chip enable and reset. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio0",
+          "x": 32.7,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO0. Program button and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio36",
+          "x": 32.7,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO36. Active-low control for both switched VE outputs. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio35",
+          "x": 32.7,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO35. Shared with the onboard user LED. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio34",
+          "x": 32.7,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO34. Active-low enable for the GNSS supply switch. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio33",
+          "x": 32.7,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO33. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio47",
+          "x": 32.7,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO47. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio48",
+          "x": 32.7,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO48. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio26",
+          "x": 32.7,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO26. SPI chip select for in-package PSRAM. Leave unused while PSRAM is enabled. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio21",
+          "x": 32.7,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO21. Shared with the onboard OLED reset line. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio20",
+          "x": 32.7,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO20. Native USB D+ and ADC2 channel 9. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio19",
+          "x": 32.7,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO19. Native USB D− and ADC2 channel 8. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 261.3,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3",
+          "x": 261.3,
+          "y": 90.4,
+          "face": "front",
+          "description": "Main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 261.3,
+          "y": 115.8,
+          "face": "front",
+          "description": "Second contact on the main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio37",
+          "x": 261.3,
+          "y": 141.2,
+          "face": "front",
+          "description": "GPIO37. Active-high enable for the battery-voltage divider on GPIO1. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio46",
+          "x": 261.3,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO46. Boot strapping pin. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio45",
+          "x": 261.3,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO45. Boot strapping pin. Also routed to the display connector on V4. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio42",
+          "x": 261.3,
+          "y": 217.4,
+          "face": "front",
+          "description": "GPIO42. GNSS reset output on the accessory connector. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio41",
+          "x": 261.3,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO41. GNSS pulse-per-second input on the accessory connector. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio40",
+          "x": 261.3,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO40. GNSS wake output on the accessory connector. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio39",
+          "x": 261.3,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO39. Connected to the GNSS header. ESP32 TX to GNSS RX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio38",
+          "x": 261.3,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO38. Connected to the GNSS header. ESP32 RX from GNSS TX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio1",
+          "x": 261.3,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO1. ADC1 channel 0 and touch input. The board uses it to sense battery voltage. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio2",
+          "x": 261.3,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO2. Shared with the LoRa RF front-end enable control. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio3",
+          "x": 261.3,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO3. ADC1 channel 2, touch input and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio4",
+          "x": 261.3,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO4. ADC1 channel 3 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio5",
+          "x": 261.3,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO5. Shared with the KCT8103L RF front-end PA_CTX signal on this revision. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio6",
+          "x": 261.3,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO6. ADC1 channel 5 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio7",
+          "x": 261.3,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO7. Shared with the LoRa RF front-end supply control. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio18",
+          "x": 88.13979259999999,
+          "y": 522.2,
+          "face": "front",
+          "edge": "left",
+          "description": "GPIO18. Auxiliary pad. Shared with the onboard OLED SCL line. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio17",
+          "x": 113.5397926,
+          "y": 522.2,
+          "face": "front",
+          "edge": "left",
+          "description": "GPIO17. Auxiliary pad. Shared with the onboard OLED SDA line. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio16",
+          "x": 180.02,
+          "y": 522.2,
+          "face": "front",
+          "edge": "right",
+          "description": "GPIO16. Auxiliary pad. ADC2 channel 5 and alternate 32 kHz crystal input. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio15",
+          "x": 205.42,
+          "y": 522.2,
+          "face": "front",
+          "edge": "right",
+          "description": "GPIO15. Auxiliary pad. ADC2 channel 4 and alternate 32 kHz crystal input. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. Leave all four optional auxiliary headers unpopulated or upward. USB, battery, solar, GNSS and antenna interfaces retain their normal cable connections.",
+      "bodyEvidence": "Manufacturer revision-specific datasheet drawings dimension two 18-contact 2.54 mm rows, 22.86 mm apart. V4.2 and V4.3.1 share the same published mechanical drawing; the R8 datasheet independently specifies that complete header pattern. Auxiliary-hole positions and USB/PCB silhouette use the V4.3.1 family STEP mechanical reference. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+      "body": {
+        "x": 20,
+        "y": 20.99657583037,
+        "width": 254,
+        "height": 528.0120536189701
+      },
+      "bodyRegions": [
+        {
+          "x": 20,
+          "y": 52.3,
+          "width": 254,
+          "height": 457.2
+        },
+        {
+          "x": 41.59,
+          "y": 30.71,
+          "width": 52.7,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 199.71,
+          "y": 30.71,
+          "width": 52.7,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 38.415000000000006,
+          "y": 33.885000000000005,
+          "width": 59.052499999999995,
+          "height": 3.1750000000000034
+        },
+        {
+          "x": 196.5325,
+          "y": 33.885000000000005,
+          "width": 59.052499999999995,
+          "height": 3.1750000000000034
+        },
+        {
+          "x": 35.239999999999995,
+          "y": 37.06,
+          "width": 65.405,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 193.355,
+          "y": 37.06,
+          "width": 65.405,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 32.065,
+          "y": 40.235,
+          "width": 71.75750000000001,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 190.1775,
+          "y": 40.235,
+          "width": 71.75750000000001,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 28.89,
+          "y": 43.410000000000004,
+          "width": 236.22,
+          "height": 2.2224999999999984
+        },
+        {
+          "x": 26.66749999999999,
+          "y": 45.6325,
+          "width": 240.66500000000002,
+          "height": 2.2225000000000006
+        },
+        {
+          "x": 24.445000000000007,
+          "y": 47.855000000000004,
+          "width": 245.10999999999999,
+          "height": 2.2225000000000006
+        },
+        {
+          "x": 22.222499999999997,
+          "y": 50.0775,
+          "width": 249.555,
+          "height": 2.2224999999999984
+        },
+        {
+          "x": 96.2,
+          "y": 509.5,
+          "width": 101.6,
+          "height": 38.1
+        },
+        {
+          "x": 83.5,
+          "y": 509.5,
+          "width": 127,
+          "height": 25.4
+        },
+        {
+          "x": 62.8625,
+          "y": 509.5,
+          "width": 168.275,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 67.625,
+          "y": 514.2625,
+          "width": 158.75,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 72.3875,
+          "y": 519.0250000000001,
+          "width": 149.225,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 77.15,
+          "y": 523.7875,
+          "width": 139.7,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 81.91249999999994,
+          "y": 528.5500000000001,
+          "width": 130.17500000000013,
+          "height": 4.762499999999932
+        },
+        {
+          "x": 86.67499999999994,
+          "y": 533.3125,
+          "width": 120.65000000000012,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 91.43749999999994,
+          "y": 538.075,
+          "width": 111.12500000000011,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 96.19999999999995,
+          "y": 542.8375,
+          "width": 101.60000000000011,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 90.30129394712,
+          "y": 20.99657583037,
+          "width": 113.40000086456,
+          "height": 75.97699162227
+        },
+        {
+          "x": 132.00044578974,
+          "y": 518.0086291155201,
+          "width": 30.00000100145,
+          "height": 31.000000333819997
+        }
+      ],
+      "viewBounds": {
+        "x": 19.4,
+        "y": 20.396575830369997,
+        "width": 255.2,
+        "height": 529.2120536189701
+      },
+      "viewConnections": [
+        [
+          "gnd",
+          "gnd-2"
+        ],
+        [
+          "3v3",
+          "3v3-2"
+        ],
+        [
+          "ve",
+          "ve-2"
+        ]
+      ],
+      "connectionSource": {
+        "label": "Heltec WiFi LoRa 32 V4.3 R2 manufacturer schematic: repeated ground, 3.3 V and Vext header nets",
+        "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/Schematic/HTIT-WB32LAF_V4.3.pdf"
+      }
+    },
+    {
+      "id": "heltec-v4-3-r8",
+      "name": "Heltec WiFi LoRa 32 V4.3.2 R8",
+      "status": "enabled",
+      "source": {
+        "label": "Heltec WiFi LoRa 32 V4-R8 datasheet, mechanical drawing page 15",
+        "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4-R8/datasheet/WiFi_LoRa_32_V4R8.pdf"
+      },
+      "reason": "Exact manufacturer revision/family dimension drawing confirms both complete 18-pin 2.54 mm strips and 22.86 mm opposing-row spacing.",
+      "contacts": [
+        {
+          "pinId": "gnd",
+          "x": -11.43,
+          "y": 0
+        },
+        {
+          "pinId": "5v",
+          "x": -11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "ve",
+          "x": -11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "ve-2",
+          "x": -11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio44",
+          "x": -11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio43",
+          "x": -11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "reset",
+          "x": -11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio0",
+          "x": -11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio36",
+          "x": -11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio35",
+          "x": -11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio34",
+          "x": -11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio33",
+          "x": -11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio47",
+          "x": -11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio48",
+          "x": -11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio26",
+          "x": -11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio21",
+          "x": -11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio20",
+          "x": -11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio19",
+          "x": -11.43,
+          "y": 43.18
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 11.43,
+          "y": 0
+        },
+        {
+          "pinId": "3v3",
+          "x": 11.43,
+          "y": 2.54
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 11.43,
+          "y": 5.08
+        },
+        {
+          "pinId": "gpio37",
+          "x": 11.43,
+          "y": 7.62
+        },
+        {
+          "pinId": "gpio46",
+          "x": 11.43,
+          "y": 10.16
+        },
+        {
+          "pinId": "gpio45",
+          "x": 11.43,
+          "y": 12.7
+        },
+        {
+          "pinId": "gpio42",
+          "x": 11.43,
+          "y": 15.24
+        },
+        {
+          "pinId": "gpio41",
+          "x": 11.43,
+          "y": 17.78
+        },
+        {
+          "pinId": "gpio40",
+          "x": 11.43,
+          "y": 20.32
+        },
+        {
+          "pinId": "gpio39",
+          "x": 11.43,
+          "y": 22.86
+        },
+        {
+          "pinId": "gpio38",
+          "x": 11.43,
+          "y": 25.4
+        },
+        {
+          "pinId": "gpio1",
+          "x": 11.43,
+          "y": 27.94
+        },
+        {
+          "pinId": "gpio2",
+          "x": 11.43,
+          "y": 30.48
+        },
+        {
+          "pinId": "gpio3",
+          "x": 11.43,
+          "y": 33.02
+        },
+        {
+          "pinId": "gpio4",
+          "x": 11.43,
+          "y": 35.56
+        },
+        {
+          "pinId": "gpio5",
+          "x": 11.43,
+          "y": 38.1
+        },
+        {
+          "pinId": "gpio6",
+          "x": 11.43,
+          "y": 40.64
+        },
+        {
+          "pinId": "gpio7",
+          "x": 11.43,
+          "y": 43.18
+        }
+      ],
+      "retainedPinCount": 40,
+      "physicalView": "breadboard",
+      "physicalPins": [
+        {
+          "pinId": "gnd",
+          "x": 32.7,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "5v",
+          "x": 32.7,
+          "y": 90.4,
+          "face": "front",
+          "description": "5 V rail and alternative power input. Use this input or USB power. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve",
+          "x": 32.7,
+          "y": 115.8,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO40 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "ve-2",
+          "x": 32.7,
+          "y": 141.2,
+          "face": "front",
+          "description": "Switched 3.3 V output. Drive GPIO40 low to enable it. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio44",
+          "x": 32.7,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO44. UART0 RX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio43",
+          "x": 32.7,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO43. UART0 TX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "reset",
+          "x": 32.7,
+          "y": 217.4,
+          "face": "front",
+          "description": "Active-low chip enable and reset. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio0",
+          "x": 32.7,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO0. Program button and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio36",
+          "x": 32.7,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO36. Reserved for the in-package octal PSRAM data bus. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio35",
+          "x": 32.7,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO35. Reserved for the in-package octal PSRAM data bus. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio34",
+          "x": 32.7,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO34. Reserved for the in-package octal PSRAM data bus. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio33",
+          "x": 32.7,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO33. Reserved for the in-package octal PSRAM data bus. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio47",
+          "x": 32.7,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO47. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio48",
+          "x": 32.7,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO48. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio26",
+          "x": 32.7,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO26. SPI chip select for in-package PSRAM. Leave unused while PSRAM is enabled. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio21",
+          "x": 32.7,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO21. Shared with the onboard OLED reset line. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio20",
+          "x": 32.7,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO20. Native USB D+ and ADC2 channel 9. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio19",
+          "x": 32.7,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO19. Native USB D− and ADC2 channel 8. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gnd-2",
+          "x": 261.3,
+          "y": 65,
+          "face": "front",
+          "description": "Ground and signal reference. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3",
+          "x": 261.3,
+          "y": 90.4,
+          "face": "front",
+          "description": "Main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "3v3-2",
+          "x": 261.3,
+          "y": 115.8,
+          "face": "front",
+          "description": "Second contact on the main 3.3 V rail. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio37",
+          "x": 261.3,
+          "y": 141.2,
+          "face": "front",
+          "description": "GPIO37. Reserved for the in-package octal PSRAM data strobe. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio46",
+          "x": 261.3,
+          "y": 166.6,
+          "face": "front",
+          "description": "GPIO46. Boot strapping pin. Shared with the onboard user LED on the R8 variant. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio45",
+          "x": 261.3,
+          "y": 192,
+          "face": "front",
+          "description": "GPIO45. Boot strapping pin. Also routed to the display connector on V4. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio42",
+          "x": 261.3,
+          "y": 217.4,
+          "face": "front",
+          "description": "GPIO42. Active-low GNSS supply control. Also shared with the accessory reset line on V4.3.2. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio41",
+          "x": 261.3,
+          "y": 242.8,
+          "face": "front",
+          "description": "GPIO41. GNSS pulse-per-second input on the accessory connector. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio40",
+          "x": 261.3,
+          "y": 268.2,
+          "face": "front",
+          "description": "GPIO40. Active-low control for both switched VE outputs. Also routed to the GNSS wake pin. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio39",
+          "x": 261.3,
+          "y": 293.6,
+          "face": "front",
+          "description": "GPIO39. Connected to the GNSS header. ESP32 TX to GNSS RX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio38",
+          "x": 261.3,
+          "y": 319,
+          "face": "front",
+          "description": "GPIO38. Connected to the GNSS header. ESP32 RX from GNSS TX. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio1",
+          "x": 261.3,
+          "y": 344.40000000000003,
+          "face": "front",
+          "description": "GPIO1. ADC1 channel 0 and touch input. The board uses it to sense battery voltage. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio2",
+          "x": 261.3,
+          "y": 369.8,
+          "face": "front",
+          "description": "GPIO2. Shared with the LoRa RF front-end enable control. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio3",
+          "x": 261.3,
+          "y": 395.20000000000005,
+          "face": "front",
+          "description": "GPIO3. ADC1 channel 2, touch input and boot strapping. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio4",
+          "x": 261.3,
+          "y": 420.6,
+          "face": "front",
+          "description": "GPIO4. ADC1 channel 3 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio5",
+          "x": 261.3,
+          "y": 446,
+          "face": "front",
+          "description": "GPIO5. Shared with the KCT8103L RF front-end PA_CTX signal on this revision. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio6",
+          "x": 261.3,
+          "y": 471.4,
+          "face": "front",
+          "description": "GPIO6. ADC1 channel 5 and touch input. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio7",
+          "x": 261.3,
+          "y": 496.8,
+          "face": "front",
+          "description": "GPIO7. Shared with the LoRa RF front-end supply control. Straight downward male header on the manufacturer nominal 2.54 mm assembly grid."
+        },
+        {
+          "pinId": "gpio18",
+          "x": 88.13979259999999,
+          "y": 522.2,
+          "face": "front",
+          "edge": "left",
+          "description": "GPIO18. Auxiliary pad. Shared with the onboard OLED SCL line. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio17",
+          "x": 113.5397926,
+          "y": 522.2,
+          "face": "front",
+          "edge": "left",
+          "description": "GPIO17. Auxiliary pad. Shared with the onboard OLED SDA line. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio16",
+          "x": 180.02,
+          "y": 522.2,
+          "face": "front",
+          "edge": "right",
+          "description": "GPIO16. Auxiliary pad. ADC2 channel 5 and alternate 32 kHz crystal input. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        },
+        {
+          "pinId": "gpio15",
+          "x": 205.42,
+          "y": 522.2,
+          "face": "front",
+          "edge": "right",
+          "description": "GPIO15. Auxiliary pad. ADC2 channel 4 and alternate 32 kHz crystal input. Optional front through-hole contact. Leave its auxiliary header unpopulated or upward; this is not a downward breadboard lead. Auxiliary positions follow the manufacturer V4.3.1 family CAD reference."
+        }
+      ],
+      "installation": "Install straight 2.54 mm male headers with insertion leads below the PCB. Populate both complete 18-pin edge rows. Leave all four optional auxiliary headers unpopulated or upward. USB, battery, solar, GNSS and antenna interfaces retain their normal cable connections.",
+      "bodyEvidence": "Manufacturer revision-specific datasheet drawings dimension two 18-contact 2.54 mm rows, 22.86 mm apart. V4.2 and V4.3.1 share the same published mechanical drawing; the R8 datasheet independently specifies that complete header pattern. Auxiliary-hole positions and USB/PCB silhouette use the V4.3.1 family STEP mechanical reference. Sloped PCB edges are represented by inscribed material bands for socket masking; USB and projecting coax material are separate. OLED hardware and small passives remain representative. Default artwork and native assets are unchanged.",
+      "body": {
+        "x": 20,
+        "y": 20.99657583037,
+        "width": 254,
+        "height": 528.0120536189701
+      },
+      "bodyRegions": [
+        {
+          "x": 20,
+          "y": 52.3,
+          "width": 254,
+          "height": 457.2
+        },
+        {
+          "x": 41.59,
+          "y": 30.71,
+          "width": 52.7,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 199.71,
+          "y": 30.71,
+          "width": 52.7,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 38.415000000000006,
+          "y": 33.885000000000005,
+          "width": 59.052499999999995,
+          "height": 3.1750000000000034
+        },
+        {
+          "x": 196.5325,
+          "y": 33.885000000000005,
+          "width": 59.052499999999995,
+          "height": 3.1750000000000034
+        },
+        {
+          "x": 35.239999999999995,
+          "y": 37.06,
+          "width": 65.405,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 193.355,
+          "y": 37.06,
+          "width": 65.405,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 32.065,
+          "y": 40.235,
+          "width": 71.75750000000001,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 190.1775,
+          "y": 40.235,
+          "width": 71.75750000000001,
+          "height": 3.174999999999999
+        },
+        {
+          "x": 28.89,
+          "y": 43.410000000000004,
+          "width": 236.22,
+          "height": 2.2224999999999984
+        },
+        {
+          "x": 26.66749999999999,
+          "y": 45.6325,
+          "width": 240.66500000000002,
+          "height": 2.2225000000000006
+        },
+        {
+          "x": 24.445000000000007,
+          "y": 47.855000000000004,
+          "width": 245.10999999999999,
+          "height": 2.2225000000000006
+        },
+        {
+          "x": 22.222499999999997,
+          "y": 50.0775,
+          "width": 249.555,
+          "height": 2.2224999999999984
+        },
+        {
+          "x": 96.2,
+          "y": 509.5,
+          "width": 101.6,
+          "height": 38.1
+        },
+        {
+          "x": 83.5,
+          "y": 509.5,
+          "width": 127,
+          "height": 25.4
+        },
+        {
+          "x": 62.8625,
+          "y": 509.5,
+          "width": 168.275,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 67.625,
+          "y": 514.2625,
+          "width": 158.75,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 72.3875,
+          "y": 519.0250000000001,
+          "width": 149.225,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 77.15,
+          "y": 523.7875,
+          "width": 139.7,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 81.91249999999994,
+          "y": 528.5500000000001,
+          "width": 130.17500000000013,
+          "height": 4.762499999999932
+        },
+        {
+          "x": 86.67499999999994,
+          "y": 533.3125,
+          "width": 120.65000000000012,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 91.43749999999994,
+          "y": 538.075,
+          "width": 111.12500000000011,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 96.19999999999995,
+          "y": 542.8375,
+          "width": 101.60000000000011,
+          "height": 4.762500000000003
+        },
+        {
+          "x": 90.30129394712,
+          "y": 20.99657583037,
+          "width": 113.40000086456,
+          "height": 75.97699162227
+        },
+        {
+          "x": 132.00044578974,
+          "y": 518.0086291155201,
+          "width": 30.00000100145,
+          "height": 31.000000333819997
+        }
+      ],
+      "viewBounds": {
+        "x": 19.4,
+        "y": 20.396575830369997,
+        "width": 255.2,
+        "height": 529.2120536189701
+      },
+      "viewConnections": [
+        [
+          "gnd",
+          "gnd-2"
+        ],
+        [
+          "3v3",
+          "3v3-2"
+        ],
+        [
+          "ve",
+          "ve-2"
+        ]
+      ],
+      "connectionSource": {
+        "label": "Heltec WiFi LoRa 32 V4.3.2 R8 manufacturer schematic: repeated ground, 3.3 V and Vext header nets",
+        "url": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4-R8/Schematic/HTIT-WBR8H_V4.3.2.pdf"
+      }
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { physicalComponent } from "../shared/physical-contacts.js";
 import { defineFamily } from "../registry.js";
 import { chip, circle, label, line, path, pinRow, rect, smd } from "../shared/svg.js";
+import { heltecMounting } from "../shared/heltec-board-mounting.js";
 
 const heltecV3Page = "https://heltec.org/project/wifi-lora-32-v3/";
 const heltecV4Page = "https://heltec.org/project/wifi-lora-32-v4/";
@@ -294,4 +295,4 @@ const heltecSemtechModels = {
   },
 };
 
-export default defineFamily("heltec-semtech", (heltecSemtechComponents).map(component => ({ component, render: (heltecSemtechArt)[component.art], footprint: (heltecSemtechFootprints)[component.id], model: heltecSemtechModels[component.id] })));
+export default defineFamily("heltec-semtech", (heltecSemtechComponents).map(component => ({ component, render: (heltecSemtechArt)[component.art], footprint: (heltecSemtechFootprints)[component.id], model: heltecSemtechModels[component.id], mounting: heltecMounting(component) })));
