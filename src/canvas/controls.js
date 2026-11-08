@@ -1,8 +1,8 @@
 import { componentForPart } from '../model/part-component.js';
-import { instancePins } from '../model/part-pins.js';
 import { escapeText } from '../shared/text.js';
-import { pointOnPart, translation } from '../geometry/parts.js';
+import { translation } from '../geometry/parts.js';
 import { group, SceneLayer, updateWireHandle } from './layers.js';
+import { leadControlLayout, LEAD_HIT_RADIUS } from './lead-control-layout.js';
 import { wireHandleLayout } from './scene.js';
 
 export class CanvasControls {
@@ -37,9 +37,9 @@ export class CanvasControls {
     const { geometry, selection, selections, scale } = this.getState();
     const part = selection?.type === 'part' && selections?.length === 1 && geometry?.parts.get(selection.id)?.part;
     const visible = this.partEnabled && part?.leads;
-    const markup = visible ? instancePins(part, componentForPart(part)).map(pin => {
-      const point = pointOnPart(part, pin);
-      return `<g class="canvas-pin lead-tip-control" data-part="${part.id}" data-pin="${pin.id}" role="button" tabindex="0" aria-label="Adjust ${escapeText(pin.label)} lead; use Wire to connect a jumper" transform="${translation(point.x, point.y)} scale(${1 / scale})"><title>Drag ${escapeText(pin.label)} lead to a hole</title><circle r="10" fill="transparent"/><circle r="5" fill="#f3f8ff" stroke="#346fad" stroke-width="1.7"/><circle r="1.5" fill="#346fad"/></g>`;
+    const markup = visible ? leadControlLayout(part, componentForPart(part), scale).map(({ pin, point, display }) => {
+      const leader = display === point ? '' : `<line x1="${point.x}" y1="${point.y}" x2="${display.x}" y2="${display.y}" stroke="#6e8db5" stroke-width="1.2" vector-effect="non-scaling-stroke" pointer-events="none"/>`;
+      return `${leader}<g class="canvas-pin lead-tip-control" data-part="${part.id}" data-pin="${pin.id}" data-hit-x="${display.x}" data-hit-y="${display.y}" role="button" tabindex="0" aria-label="Adjust ${escapeText(pin.label)} lead; use Wire to connect a jumper" transform="${translation(display.x, display.y)} scale(${1 / scale})"><title>Drag ${escapeText(pin.label)} lead to a hole</title><circle r="${LEAD_HIT_RADIUS}" fill="transparent"/><circle r="5" fill="#f3f8ff" stroke="#346fad" stroke-width="1.7"/><circle r="1.5" fill="#346fad"/></g>`;
     }).join('') : '';
     if (markup !== this.leadMarkup) { this.leadNode.innerHTML = markup; this.leadMarkup = markup; }
   }

@@ -1,3 +1,6 @@
+import { pointInsidePartBody } from '../geometry/parts.js';
+import { foregroundParts } from './scene.js';
+
 const targetSelector = '.canvas-pin, .canvas-junction, .wire-hit, .part-body';
 export const handleSelector = '.wire-handle';
 export const selectionOptions = event => ({
@@ -20,16 +23,35 @@ function targetInfo(target, selector) {
 
 export function canvasTargets(canvas, svg) {
   const document = svg.ownerDocument;
+  let drawingParts, ranks = new Map();
   function hitAt(event, { handles = true, excludeWire, selecting = false } = {}) {
     const point = canvas.point(event.clientX, event.clientY);
     const stack = document.elementsFromPoint(event.clientX, event.clientY);
     const selector = handles ? `${handleSelector}, ${targetSelector}` : targetSelector;
-    const selectable = selecting ? stack.find(node => svg.contains(node) && node.closest('.canvas-junction, .wire-hit')) : undefined;
-    const target = selectable ?? stack.find(node => {
+    // Physical artwork is below the shared pin layer. Reject contacts hidden
+    // by a foreground body, including transparent halos from adjacent holes.
+    const bodies = new Set(stack.filter(node => svg.contains(node)).map(node => node.closest('.part-body'))
+      .filter(node => node && node.dataset.partRegion !== 'caption').map(node => node.dataset.part));
+    if (drawingParts !== canvas.geometry?.parts) {
+      drawingParts = canvas.geometry?.parts;
+      ranks = new Map([...foregroundParts(drawingParts ?? []).keys()].map((id, index) => [id, index]));
+    }
+    let bodyRank = -1;
+    for (const id of bodies) {
+      const part = drawingParts?.get(id)?.part;
+      if (part && pointInsidePartBody(part, point)) bodyRank = Math.max(bodyRank, ranks.get(id));
+    }
+    const available = node => {
       const candidate = svg.contains(node) && node.closest(selector);
-      return candidate && (!excludeWire || candidate.dataset.wire !== excludeWire);
-    });
-    const hit = targetInfo(target ?? (excludeWire ? svg : event.target), selector);
+      if (!candidate || (excludeWire && candidate.dataset.wire === excludeWire)) return false;
+      return !candidate.dataset.pin || candidate.dataset.hitX !== undefined ||
+        (ranks.get(candidate.dataset.part) ?? Infinity) >= bodyRank;
+    };
+    const selectable = selecting ? stack.find(node => svg.contains(node) && node.closest('.canvas-junction, .wire-hit')) : undefined;
+    const target = selectable ?? stack.find(available);
+    const fallback = !excludeWire && available(event.target) ? event.target : svg;
+    const hitTarget = target ?? fallback;
+    const hit = targetInfo(hitTarget, selector);
     if (hit.handle) {
       const candidates = new Set(stack.map(node => node.closest(handleSelector)).filter(Boolean));
       let minimum = Infinity;
@@ -43,11 +65,14 @@ export function canvasTargets(canvas, svg) {
       }
     }
     if (hit.pin) {
-      const candidates = new Set(stack.filter(node => svg.contains(node)).map(node => node.closest('.canvas-pin')).filter(Boolean));
+      const leadControl = hitTarget.closest('.lead-tip-control');
+      const candidates = new Set(stack.filter(available).map(node => node.closest('.canvas-pin')).filter(Boolean));
       let minimum = Infinity;
       for (const candidate of candidates) {
+        if (leadControl && !candidate.closest('.lead-tip-control')) continue;
         const pin = targetInfo(candidate, '.canvas-pin').pin;
-        const anchor = canvas.position(pin);
+        const anchor = candidate.dataset.hitX !== undefined
+          ? { x: Number(candidate.dataset.hitX), y: Number(candidate.dataset.hitY) } : canvas.position(pin);
         const distance = Math.hypot(point.x - anchor.x, point.y - anchor.y);
         if (distance < minimum) {
           hit.pin = pin;
